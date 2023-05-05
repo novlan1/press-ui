@@ -64,4 +64,4 @@ locale.add(messages);
 | 法语               | fr-FR        |
 | 越南语             | vi-VN        |
 
-> 在 [这里]() 查看所有的语言包源文件。
+> 在 [这里](https://github.com/novlan1/press-ui/tree/master/src/packages/locale/lang) 查看所有的语言包源文件。

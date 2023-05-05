@@ -14,7 +14,7 @@ press-ui是一套易用的、灵活的，基于uni-app的跨端组件库。
 
 也可用于普通h5项目，需要加一个 [loader](https://github.com/novlan1/uni-plugin-light/tree/master/loader/ifdef-loader) 去掉条件编译部分。
 
-文档地址在[这里]()。
+文档地址在[这里](https://novlan1.github.io/press-ui/)。
 
 ## 1. 开发
 

@@ -62,4 +62,4 @@ Current supported languages:
 | Vietnamese               | vi-VN        |
 
 
-> View all language configs [Here]().
+> View all language configs [Here](https://github.com/novlan1/press-ui/tree/master/src/packages/locale/lang).
