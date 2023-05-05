@@ -1,0 +1,653 @@
+{
+  "leftWindow": {
+    "path": "windows/left-window.vue",
+    "style": {
+      "width": "350px"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "%index.title%"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/vue",
+      "pages": []
+    },
+    {
+      "root": "pages/press/button",
+      "pages": [
+        {
+          "path": "button",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/cell",
+      "pages": [
+        {
+          "path": "cell",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/col",
+      "pages": [
+        {
+          "path": "col",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/icon",
+      "pages": [
+        {
+          "path": "icon",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/icon-plus",
+      "pages": [
+        {
+          "path": "icon-plus",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/popup",
+      "pages": [
+        {
+          "path": "popup",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/popup-plus",
+      "pages": [
+        {
+          "path": "popup-plus",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/toast",
+      "pages": [
+        {
+          "path": "toast",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/transition",
+      "pages": [
+        {
+          "path": "transition",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/calendar",
+      "pages": [
+        {
+          "path": "calendar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/checkbox",
+      "pages": [
+        {
+          "path": "checkbox",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/datetime-picker",
+      "pages": [
+        {
+          "path": "datetime-picker",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/field",
+      "pages": [
+        {
+          "path": "field",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/picker",
+      "pages": [
+        {
+          "path": "picker",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/picker-plus",
+      "pages": [
+        {
+          "path": "picker-plus",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/radio",
+      "pages": [
+        {
+          "path": "radio",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/rate",
+      "pages": [
+        {
+          "path": "rate",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/search",
+      "pages": [
+        {
+          "path": "search",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/slider",
+      "pages": [
+        {
+          "path": "slider",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/stepper",
+      "pages": [
+        {
+          "path": "stepper",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/switch",
+      "pages": [
+        {
+          "path": "switch",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/action-sheet",
+      "pages": [
+        {
+          "path": "action-sheet",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/dialog",
+      "pages": [
+        {
+          "path": "dialog",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/dialog-plus",
+      "pages": [
+        {
+          "path": "dialog-plus",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/dropdown-menu",
+      "pages": [
+        {
+          "path": "dropdown-menu",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/loading",
+      "pages": [
+        {
+          "path": "loading",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/loading-plus",
+      "pages": [
+        {
+          "path": "loading-plus",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/notify",
+      "pages": [
+        {
+          "path": "notify",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/overlay",
+      "pages": [
+        {
+          "path": "overlay",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/popover",
+      "pages": [
+        {
+          "path": "popover",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/share-sheet",
+      "pages": [
+        {
+          "path": "share-sheet",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/swipe-cell",
+      "pages": [
+        {
+          "path": "swipe-cell",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/card",
+      "pages": [
+        {
+          "path": "card",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/circle",
+      "pages": [
+        {
+          "path": "circle",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/collapse",
+      "pages": [
+        {
+          "path": "collapse",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/count-down",
+      "pages": [
+        {
+          "path": "count-down",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/divider",
+      "pages": [
+        {
+          "path": "divider",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/empty",
+      "pages": [
+        {
+          "path": "empty",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/fab",
+      "pages": [
+        {
+          "path": "fab",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/notice-bar",
+      "pages": [
+        {
+          "path": "notice-bar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/progress",
+      "pages": [
+        {
+          "path": "progress",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/skeleton",
+      "pages": [
+        {
+          "path": "skeleton",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/steps",
+      "pages": [
+        {
+          "path": "steps",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/sticky",
+      "pages": [
+        {
+          "path": "sticky",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/tag",
+      "pages": [
+        {
+          "path": "tag",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/grid",
+      "pages": [
+        {
+          "path": "grid",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/index-bar",
+      "pages": [
+        {
+          "path": "index-bar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/nav-bar",
+      "pages": [
+        {
+          "path": "nav-bar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/sidebar",
+      "pages": [
+        {
+          "path": "sidebar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/tab",
+      "pages": [
+        {
+          "path": "tab",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/tabbar",
+      "pages": [
+        {
+          "path": "tabbar",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/tree-select",
+      "pages": [
+        {
+          "path": "tree-select",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/area",
+      "pages": [
+        {
+          "path": "area",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/message-board",
+      "pages": [
+        {
+          "path": "message-board",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/message-detail",
+      "pages": [
+        {
+          "path": "message-detail",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/message-list",
+      "pages": [
+        {
+          "path": "message-list",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "PRESS UI",
+    "navigationBarBackgroundColor": "#f7f8fa",
+    "backgroundColor": "#f5f5f5",
+    "h5": {
+      "maxWidth": 1190
+    },
+    "mp-weixin": {
+      "usingComponents": {}
+    },
+    "mp-qq": {
+      "usingComponents": {}
+    }
+  }
+}

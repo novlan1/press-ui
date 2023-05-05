@@ -1,0 +1,53 @@
+.press-hairline,
+.press-hairline--bottom,
+.press-hairline--left,
+.press-hairline--right,
+.press-hairline--surround,
+.press-hairline--top,
+.press-hairline--top-bottom {
+  position: relative
+}
+
+.press-hairline--bottom:after,
+.press-hairline--left:after,
+.press-hairline--right:after,
+.press-hairline--surround:after,
+.press-hairline--top-bottom:after,
+.press-hairline--top:after,
+.press-hairline:after {
+  border: 0 solid #ebedf0;
+  bottom: -50%;
+  box-sizing: border-box;
+  content: ' ';
+  left: -50%;
+  pointer-events: none;
+  position: absolute;
+  right: -50%;
+  top: -50%;
+  transform: scale(.5);
+  transform-origin: center
+}
+
+.press-hairline--top:after {
+  border-top-width: 1px
+}
+
+.press-hairline--left:after {
+  border-left-width: 1px
+}
+
+.press-hairline--right:after {
+  border-right-width: 1px
+}
+
+.press-hairline--bottom:after {
+  border-bottom-width: 1px
+}
+
+.press-hairline--top-bottom:after {
+  border-width: 1px 0
+}
+
+.press-hairline--surround:after {
+  border-width: 1px
+}

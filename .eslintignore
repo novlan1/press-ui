@@ -1,0 +1,7 @@
+unpackage
+node_modules/
+coverage
+static/common/*
+dist/
+/log/
+!.vuepress

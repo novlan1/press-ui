@@ -1,0 +1,75 @@
+<template>
+  <uni-shadow-root class="press-sidebar-index">
+    <div
+      class="press-sidebar"
+      :class="customClass"
+    >
+      <slot />
+    </div>
+  </uni-shadow-root>
+</template>
+
+<script>
+
+import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
+import { ParentMixin } from '../mixins/relation';
+import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
+
+
+export default {
+  options: {
+    ...defaultOptions,
+    styleIsolation: 'shared',
+  },
+  mixins: [
+    ParentMixin(PARENT),
+  ],
+  props: {
+    activeKey: {
+      type: Number,
+      default: 0,
+    },
+    ...defaultProps,
+  },
+  watch: {
+    activeKey: {
+      handler(val) {
+        this.setActive(val);
+      },
+    },
+  },
+  beforeCreate() {
+    this.currentActive = -1;
+  },
+  created() {
+    this.children = [];
+  },
+  mounted() {
+    this.setActive(this.activeKey);
+  },
+  methods: {
+    setActive(activeKey) {
+      const { children, currentActive } = this;
+      if (!children.length) {
+        return Promise.resolve();
+      }
+      this.currentActive = activeKey;
+      const stack = [];
+      if (currentActive !== activeKey && children[currentActive]) {
+        stack.push(children[currentActive].setActive(false));
+      }
+      if (children[activeKey]) {
+        stack.push(children[activeKey].setActive(true));
+      }
+      return Promise.all(stack);
+    },
+  },
+};
+
+</script>
+<style platform="mp-weixin" lang="scss">
+@import "../common/style/index.scss";
+.press-sidebar {
+  width: var(--sidebar-width, 80px);
+}
+</style>

@@ -1,0 +1,69 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+.press-picker-view {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+
+  &__tip {
+
+    // 有tip的时候，content略微向上
+    &__content {
+      padding-top: 60px;
+    }
+  }
+
+  &--mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .95), hsla(0, 0%, 100%, .2)), linear-gradient(0deg, hsla(0, 0%, 100%, .95), hsla(0, 0%, 100%, .2));
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    background-size: 100% 112px;
+    pointer-events: none;
+  }
+
+  &--indicator {
+    position: absolute;
+    left: 0;
+    top: 112px;
+    width: 100%;
+    height: 56px;
+    z-index: 3;
+  }
+
+
+  &--content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 112px 0;
+    z-index: 1;
+    transition: all .3s cubic-bezier(0, 0, 0.2, 1.15) 0s;
+  }
+
+  &--item {
+    height: 56px;
+    line-height: 56px;
+    font-size: $font-l;
+    color: $color-gray-5;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    touch-action: manipulation;
+    transition: all .15s ease;
+
+    &__active {
+      font-size: $font-xxl;
+      color: $color-primary;
+    }
+  }
+}

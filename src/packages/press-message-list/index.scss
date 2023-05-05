@@ -1,0 +1,119 @@
+@import "../base/layout.scss";
+@import "../base/mixin.scss";
+
+@mixin ellipsis() {
+  width: 4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.press-message-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+
+  &__empty {
+    position: absolute;
+    top: 44px;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.press-message-unread-wrap {
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: .22rem;
+  height: .22rem;
+  background: $color-red;
+  border-radius: 0.03rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  font-weight: 600;
+  font-size: .16rem;
+  color: $color-white;
+
+  &__num {
+    transform: rotate(-45deg);
+  }
+}
+
+.press-message-item {
+  background: rgba(255, 255, 255, 0.85);
+  height: 1.52rem;
+  display: flex;
+  padding: 0 0.32rem;
+  align-items: center;
+
+  &__img-wrap {
+    width: .88rem;
+    height: .88rem;
+    margin-right: .16rem;
+    position: relative;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: .88rem;
+    height: .88rem;
+
+  }
+
+  &__box {
+    height: .84rem;
+    flex: 1;
+
+    &__title {
+      height: .48rem;
+      line-height: .48rem;
+      font-size: $font-l;
+      color: $color-black;
+
+      &--ellipsis {
+        @include ellipsis;
+      }
+    }
+
+    &__content {
+      height: .36rem;
+      line-height: .36rem;
+      color: $color-gray;
+      font-size: $font-xxs;
+
+      &--ellipsis {
+        @include ellipsis;
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: $color-gray;
+      font-size: $font-xxs;
+    }
+  }
+
+  &__right {
+    background: $color-red;
+    color: $color-white;
+    font-size: $font-l;
+    text-align: center;
+    height: 1.52rem;
+    line-height: 1.52rem;
+    width: 2.2rem;
+  }
+}
