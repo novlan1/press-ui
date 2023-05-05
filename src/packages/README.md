@@ -19,11 +19,7 @@ press-ui是一套易用的、灵活的，基于uni-app的跨端组件库。
 
 
 
-
-
-
-
-## 1. 如何使用
+## 2. 如何使用
 
 1. 安装npm包
 
@@ -65,7 +61,7 @@ module.exports = {
 }
 ```
 
-## 2. 立即体验
+## 3. 立即体验
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600">
 
