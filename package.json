@@ -85,13 +85,15 @@
     "gen:theme": "node script/theme/theme",
     "gen:sig": "node script/tim/user-sig",
     "new:comp": "node script/new/generate-new-component/generate-new-component",
-    "release": " standard-version --release-as patch -a && npm run version:tip",
+    "release": "standard-version --release-as patch -a && npm run version:tip",
+    "release:mine": "node script/version/pre-commit",
     "version:tip": "node script/deploy/version-tip",
     "test": "jest --coverage --verbose -u",
     "cp:readme": "node script/docs-demo/readme",
     "prepare": "husky install && npm run init",
     "demo:build:deploy": "npm run init:env && npm run init && npm run build && npm run deploy",
-    "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy"
+    "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
+    "docs:build:deploy:mine": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy:mine"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.1-alpha-36420220922001",
