@@ -2,13 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const { mkDirsSync } = require('t-comm');
 
-const COMP_TYPE_MAP = require('./component-config.json');
-const DOC_SIDE_BAR_CONFIG_PATH = './docs/.vuepress/sidebar/sidebar.json';
-const DOC_SIDE_BAR_EN_CONFIG_PATH = './docs/.vuepress/sidebar/sidebar-en.json';
-const DEMO_INDEX_CONFIG_PATH = 'src/pages/index/page-config.json';
-const DEMO_PAGES_JSON_PATH = './src/pages.json';
-const DEMO_I18N_PATH = 'src/utils/i18n/title-i18n.json';
+const componentConfig = require('./component-config.json');
+
+
 const DEMO_PAGES_JSON_LAST_INDEX = 0;
+const PATH_MAP = {
+  DOC_SIDE_BAR_CONFIG: './docs/.vuepress/sidebar/sidebar.json',
+  DOC_SIDE_BAR_EN_CONFIG: './docs/.vuepress/sidebar/sidebar-en.json',
+  DEMO_INDEX_CONFIG: 'src/pages/index/page-config.json',
+  DEMO_PAGES_JSON: './src/pages.json',
+  DEMO_I18N: 'src/utils/i18n/title-i18n.json',
+};
 
 
 function hyphenate(str) {
@@ -21,11 +25,17 @@ function getCompUrl(name) {
   return `/press/${newName}/${newName}`;
 }
 
+function saveJsonToFile(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), {
+    encoding: 'utf-8',
+  });
+}
+
 
 function getCompDemoPages() {
-  const list = Object.keys(COMP_TYPE_MAP)
+  const list = Object.keys(componentConfig)
     .map((key) => {
-      const value = COMP_TYPE_MAP[key];
+      const value = componentConfig[key];
       const { name, list } = value;
       const newList = list.map(item => ({
         // name: `${item.name} ${item.title}`,
@@ -45,9 +55,9 @@ function getCompDemoPages() {
 
 
 function getSidebarConfig(isEn) {
-  const list = Object.keys(COMP_TYPE_MAP)
+  const list = Object.keys(componentConfig)
     .map((key) => {
-      const value = COMP_TYPE_MAP[key];
+      const value = componentConfig[key];
       const { title, name, list } = value;
       const newList = list.map(item => (isEn ? {
         title: item.name,
@@ -70,9 +80,9 @@ function getSidebarConfig(isEn) {
 }
 
 function getPagesJsonConfig() {
-  const list = Object.keys(COMP_TYPE_MAP)
+  const list = Object.keys(componentConfig)
     .map((key) => {
-      const value = COMP_TYPE_MAP[key];
+      const value = componentConfig[key];
       const { list } = value;
       const newList = list.map((item) => {
         const hyphenatedName = hyphenate(item.name);
@@ -102,74 +112,59 @@ function getTitleI18nConfig() {
     'zh-CN': {},
     'en-US': {},
   };
-  // const list =
-  Object.keys(COMP_TYPE_MAP)
+  Object.keys(componentConfig)
     .forEach((key) => {
-      const value = COMP_TYPE_MAP[key];
+      const value = componentConfig[key];
       const { list, name, title } = value;
 
       res['zh-CN'][name] = title;
       res['en-US'][name] = name;
 
-      const newList = list.forEach((item) => {
+      list.forEach((item) => {
         const hyphenatedName = hyphenate(item.name);
         res['zh-CN'][hyphenatedName] = `${item.name} ${item.title}`;
         res['en-US'][hyphenatedName] = `${item.name}`;
       });
-
-      return newList;
     });
-  // .flat();
 
   return res;
 }
 
 function writeDemoIndexConfig() {
   const pages = getCompDemoPages();
-  fs.writeFileSync(DEMO_INDEX_CONFIG_PATH, JSON.stringify(pages, null, 2), {
-    encoding: 'utf-8',
-  });
+  saveJsonToFile(PATH_MAP.DEMO_INDEX_CONFIG, pages);
 }
 
 function writeDocSidebar() {
   const sidebarConfig = getSidebarConfig();
   const sidebarEnConfig = getSidebarConfig(true);
 
-  mkDirsSync(path.dirname(DOC_SIDE_BAR_CONFIG_PATH));
-
-  fs.writeFileSync(DOC_SIDE_BAR_CONFIG_PATH, JSON.stringify(sidebarConfig, null, 2), {
-    encoding: 'utf-8',
-  });
-  fs.writeFileSync(DOC_SIDE_BAR_EN_CONFIG_PATH, JSON.stringify(sidebarEnConfig, null, 2), {
-    encoding: 'utf-8',
-  });
+  mkDirsSync(path.dirname(PATH_MAP.DOC_SIDE_BAR_CONFIG));
+  saveJsonToFile(PATH_MAP.DOC_SIDE_BAR_CONFIG, sidebarConfig);
+  saveJsonToFile(PATH_MAP.DOC_SIDE_BAR_EN_CONFIG, sidebarEnConfig);
 }
 
 
 function writeDemoPagesJson() {
   const pagesJsonConfig = getPagesJsonConfig();
-  const configPath = path.resolve(process.cwd(), DEMO_PAGES_JSON_PATH);
+  const configPath = path.resolve(process.cwd(), PATH_MAP.DEMO_PAGES_JSON);
   const json = require(configPath);
   json.subPackages = [
     json.subPackages[DEMO_PAGES_JSON_LAST_INDEX],
     ...pagesJsonConfig,
   ];
-  fs.writeFileSync(configPath, JSON.stringify(json, null, 2), {
-    encoding: 'utf-8',
-  });
+  saveJsonToFile(configPath, json);
 }
 
 function writeDemoTitleI18n() {
   const title = getTitleI18nConfig();
 
-  fs.writeFileSync(DEMO_I18N_PATH, JSON.stringify(title, null, 2), {
-    encoding: 'utf-8',
-  });
+  saveJsonToFile(PATH_MAP.DEMO_I18N, title);
 }
 
 function main() {
-  writeDemoIndexConfig();
   writeDocSidebar();
+  writeDemoIndexConfig();
   writeDemoPagesJson();
   writeDemoTitleI18n();
 }

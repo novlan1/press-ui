@@ -1,9 +1,10 @@
 const path = require('path');
-const { RemToRpxPlugin } = require('uni-plugin-light/lib/plugin');
+const { RemToRpxPlugin, GenVersionMpPlugin } = require('uni-plugin-light/lib/plugin');
 
 const plugins = [];
 
-if (process.env.VUE_APP_PLATFORM !== 'h5') {
+if (process.env.UNI_PLATFORM !== 'h5') {
+  plugins.push(new GenVersionMpPlugin());
   plugins.push(new RemToRpxPlugin());
 }
 

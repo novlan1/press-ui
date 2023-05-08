@@ -1,6 +1,5 @@
 <template>
-  <!-- TODO: tab-index后面去掉，冗余 -->
-  <uni-shadow-root :class="'' + bem3('tab-index') + ' ' + bem3('tab__pane-wrapper')">
+  <uni-shadow-root :class="'' + bem3('tab__pane-wrapper')">
     <div
       :class="tabClass"
       :style="shouldShow ? '' : 'display: none;'"

@@ -79,6 +79,9 @@
 
 <script>
 import { getRect } from '../common/dom/rect';
+import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
+
+
 let platform = 'other';
 // #ifdef APP-NVUE
 platform = uni.getSystemInfoSync().platform;
@@ -97,6 +100,9 @@ const switchPos = {
 
 export default {
   name: 'PressFab',
+  components: {
+    UniIcons,
+  },
   props: {
     pattern: {
       type: Object,

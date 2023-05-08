@@ -6,7 +6,7 @@ url : pages/press/message-board/message-board
 
 留言板功能。
 
-为方便使用，留言板内部为两个组件，一个是留言列表，一个是输入框。
+为方便使用，留言板内部为3个组件，分别是留言列表、留言`item`、输入框。
 
 
 ## 代码演示
@@ -15,20 +15,36 @@ url : pages/press/message-board/message-board
 
 
 ```html
-<PressMessageBoardList
-  :list="msgList"
-  captain-uid="good_uid"
-/>
-<PressMessageBoardInput
-  v-model="msgContent"
-  :send-btn-enable="sendBtnEnable"
-  @sendMsg="sendMsg"
-/>
+<div class="wrap">
+  <div class="demo-list-wrap">
+    <PressMessageBoardList
+      custom-class="demo-message-list"
+    >
+      <PressMessageBoardItem
+        v-for="(item,index) of msgList"
+        :key="index"
+        :item="item"
+        captain-uid="good_uid"
+        :caption-badge-at-right="false"
+      />
+    </PressMessageBoardList>
+  </div>
+
+  <div class="demo-input-wrap">
+    <PressMessageBoardInput
+      v-model="msgContent"
+      :send-btn-enable="sendBtnEnable"
+      @clickInput="clickInput"
+      @sendMsg="sendMsg"
+    />
+  </div>
+</div>
 ```
 
 ```ts
-import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input.vue';
-import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list.vue';
+import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
+import PressMessageBoardList from 'src/packages/press-message-board/press-message-board-list.vue';
+import PressMessageBoardItem from 'src/packages/press-message-board/press-message-board-item.vue';
 
 
 const MSG_LIST = [
@@ -65,6 +81,7 @@ export default {
   components: {
     PressMessageBoardInput,
     PressMessageBoardList,
+    PressMessageBoardItem,
   },
   data() {
     return {
@@ -80,7 +97,6 @@ export default {
   },
   methods: {
      sendMsg() {
-      console.log('sendMsg', this.msgContent);
     },
   }
 }
@@ -88,35 +104,41 @@ export default {
 
 ## API
 
-### MessageBoardList Props
 
 
-| 参数       | 说明     | 类型    | 默认值 |
-| ---------- | -------- | ------- | ------ |
-| list       | 消息列表 | _Array_ | `[]`   |
-| captainUid | 队长uid  | string  | -      |
+
+### MessageBoardItem Props
 
 
-### MessageBoardList Event
+| 参数                   | 说明                 | 类型      | 默认值 |
+| ---------------------- | -------------------- | --------- | ------ |
+| item                   | 消息内容             | _Object_  | `{}`   |
+| captain-uid            | 队长uid              | _string_  | -      |
+| captain-badge-at-right | 队长图标是否在右边   | _boolean_ | false  |
+| colon                  | 是否显示冒号         | _boolean_ | true   |
+| reply-colon            | 是否显示回复中的冒号 | _boolean_ | true   |
+
+### MessageBoardItem Event
 
 
 | 事件名     | 说明     | 回调参数            |
 | ---------- | -------- | ------------------- |
 | replyClick | 点击回复 | 消息item，消息index |
 
+
 ### MessageBoardInput Props
 
 
-| 参数                 | 说明                       | 类型               | 默认值  |
-| -------------------- | -------------------------- | ------------------ | ------- |
-| value                | 输入内容                   | _string_           | -       |
-| sendBtnEnable        | 是否可以发送               | _boolean_          | `false` |
-| textAreaIsFocus      | 是否聚焦                   | _boolean_          | `false` |
-| inputBottom          | 距底部高度                 | _[number, string]_ | `0`     |
-| placeholder          | 占位文字                   | _boolean_          | `false` |
-| textAreaIsAutoHeight | 是否自动调整高度           | _boolean_          | `false` |
-| adjustPosition       | 对应小程序adjust-position  | _boolean_          | `false` |
-| showConfirmBar       | 对应小程序show-confirm-bar | _boolean_          | `false` |
+| 参数                     | 说明                       | 类型               | 默认值  |
+| ------------------------ | -------------------------- | ------------------ | ------- |
+| value                    | 输入内容                   | _string_           | -       |
+| send-btn-enable          | 是否可以发送               | _boolean_          | `false` |
+| text-area-is-focus       | 是否聚焦                   | _boolean_          | `false` |
+| input-bottom             | 距底部高度                 | _[number, string]_ | `0`     |
+| placeholder              | 占位文字                   | _boolean_          | `false` |
+| text-area-is-auto-height | 是否自动调整高度           | _boolean_          | `false` |
+| adjust-position          | 对应小程序adjust-position  | _boolean_          | `false` |
+| show-confirm-bar         | 对应小程序show-confirm-bar | _boolean_          | `false` |
 
 
 ### MessageBoardInput Event

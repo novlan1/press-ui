@@ -33,7 +33,7 @@
       <div
         class="home-content"
       >
-        <uni-card
+        <press-card
           padding="0"
         >
           <div
@@ -62,29 +62,33 @@
               />
             </uni-list>
           </div>
-
-          <uni-section
-            key="other-ability-section"
-            :title="t('introduce.otherAbility')"
-            color="#007aff"
-            type="line"
-            header-style="font-weight: 500;margin-bottom: 6px;"
-          />
-
-          <uni-list
-            key="other-ability-list"
-            :border="false"
+          <div
+            v-if="showToggleLanguage"
+            :key="getUniqueKey('section', 111111)"
           >
-            <uni-list-item
-              custom-class="list-item"
-              :border="false"
-              show-arrow
-              clickable
-              :title="t('introduce.toggleLanguage')"
-              @click="onToggleLanguage"
+            <uni-section
+              key="other-ability-section"
+              :title="t('introduce.otherAbility')"
+              color="#007aff"
+              type="line"
+              header-style="font-weight: 500;margin-bottom: 6px;"
             />
-          </uni-list>
-        </uni-card>
+
+            <uni-list
+              key="other-ability-list"
+              :border="false"
+            >
+              <uni-list-item
+                custom-class="list-item"
+                :border="false"
+                show-arrow
+                clickable
+                :title="t('introduce.toggleLanguage')"
+                @click="onToggleLanguage"
+              />
+            </uni-list>
+          </div>
+        </press-card>
       </div>
     </scroll-view>
   </div>
@@ -92,17 +96,27 @@
 <script>
 import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
+import PressCard from 'src/packages/press-card/press-card.vue';
+import UniList from 'src/pages/components/uni-list/components/uni-list/uni-list.vue';
+import UniListItem from 'src/pages/components/uni-list/components/uni-list-item/uni-list-item.vue';
+import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
 
 const pagesConfig = require('./page-config.json');
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
 
 export default {
-  components: {},
+  components: {
+    PressCard,
+    UniList,
+    UniListItem,
+    UniSection,
+  },
   mixins: [morsePwdMixin([1, 1, 1], toggleI18n)],
   data() {
     return {
       scrollTop: 0,
       pages: pagesConfig.pages.filter(item => item.list && item.list.length),
+      showToggleLanguage: false,
     };
   },
   onLoad() {
@@ -116,6 +130,9 @@ export default {
     // #ifdef H5
     this.scrollTop = +uni.getStorageSync(SCROLL_TOP_KEY) || 0;
     // #endif
+    setTimeout(() => {
+      this.showToggleLanguage = true;
+    }, 2000);
   },
   onHide() {
     uni.setStorageSync(SCROLL_TOP_KEY, this.scrollTop);

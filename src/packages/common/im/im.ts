@@ -18,6 +18,7 @@ export class IM {
   tim: IChatSDK;
 
   // #ifdef H5
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   TIM: typeof TIM_TYPE;
   // #endif
 

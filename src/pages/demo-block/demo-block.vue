@@ -13,7 +13,12 @@
   </uni-section>
 </template>
 <script>
+import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+
 export default {
+  components: {
+    UniSection,
+  },
   props: {
     title: {
       type: String,

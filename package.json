@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "0.7.24-alpha.0",
+  "version": "0.7.24",
   "private": true,
   "repository": {
     "type": "git",
@@ -19,9 +19,10 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run demo:watch\" \"npm run serve\"",
+    "dev:mp": "concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
-    "deploy": "node script/deploy-h5-demo",
+    "deploy": "node script/deploy/web-demo",
     "env": "node env",
     "build:mp": "npm run build:mp-weixin",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
@@ -65,26 +66,32 @@
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
-    "demo:watch": "node script/docs/watch-demo",
-    "docs:watch": "node script/docs/watch-docs",
+    "demo:watch": "node script/docs-demo/watch-demo",
+    "docs:watch": "node script/docs-demo/watch-docs",
     "docs:serve": "vuepress dev docs",
     "docs:dev": "concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
-    "docs:gen": "node script/docs/move-doc-demo && npm run gen:config",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "node script/deploy-docs",
+    "docs:deploy": "node script/deploy/docs",
+    "docs:deploy:mine": "node script/deploy/docs-mine",
     "lint": "eslint --ext .js,.ts,.vue .",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
     "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}",
-    "gen:icon:list": "node script/icon-list",
-    "gen:theme": "node script/docs/theme",
+    "dispatch": "node script/docs-demo/dispatch",
+    "init:env": "node script/env/rainbow-env",
+    "init": "npm run dispatch && npm run gen:config",
+    "gen:icon:list": "node script/icon/icon-list",
+    "gen:config": "node script/component-config/generate-component-config",
+    "gen:theme": "node script/theme/theme",
+    "gen:sig": "node script/tim/user-sig",
     "new:comp": "node script/new/generate-new-component/generate-new-component",
     "release": " standard-version --release-as patch -a && npm run version:tip",
-    "gen:config": "node script/component-config/generate-component-config",
+    "version:tip": "node script/deploy/version-tip",
     "test": "jest --coverage --verbose -u",
-    "version:tip": "node script/version-tip",
-    "gen:sig": "node script/tim/user-sig",
-    "prepare": "npm run docs:gen"
+    "cp:readme": "node script/docs-demo/readme",
+    "prepare": "husky install && npm run init",
+    "demo:build:deploy": "npm run init:env && npm run init && npm run build && npm run deploy",
+    "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.1-alpha-36420220922001",
@@ -110,6 +117,7 @@
     "aegis-mp-sdk": "^1.37.1",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
+    "lint-staged": "^13.0.4",
     "regenerator-runtime": "^0.12.1",
     "tim-wx-sdk": "^2.26.6",
     "vue": "^2.6.11",
@@ -119,6 +127,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "~7.17.9",
+    "@commitlint/config-conventional": "^17.1.0",
     "@dcloudio/types": "^3.0.4",
     "@dcloudio/uni-automator": "^2.0.1-alpha-36420220922001",
     "@dcloudio/uni-cli-i18n": "^2.0.1-alpha-36420220922001",
@@ -130,6 +139,7 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.1-alpha-36420220922001",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.1-alpha-36420220922001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-alpha-36420220922001",
+    "stylelint-config-common": "^0.0.3",
     "@types/jest": "^29.2.3",
     "@vue/cli-plugin-babel": "~4.5.11",
     "@vue/cli-plugin-typescript": "~4.5.19",
@@ -144,6 +154,7 @@
     "eslint": "^8.28.0",
     "eslint-config-light": "^1.0.6",
     "gulp": "^4.0.2",
+    "husky": "^8.0.1",
     "inquirer": "^8.2.5",
     "jest": "^25.5.4",
     "jest-environment-jsdom": "^25.5.0",
@@ -155,12 +166,12 @@
     "sass": "^1.49.11",
     "standard-version": "^9.5.0",
     "stylelint": "^14.14.1",
-    "t-comm": "^0.3.15",
+    "t-comm": "^1.1.27",
     "tim-js-sdk": "^2.26.6",
     "tls-sig-api-v2": "^1.0.2",
     "ts-jest": "^29.0.3",
     "typescript": "^4.9.3",
-    "uni-plugin-light": "^1.0.0",
+    "uni-plugin-light": "^1.0.1",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.9.7",
     "vuepress-plugin-code-copy": "^1.0.6"
@@ -174,6 +185,14 @@
   },
   "uni-app": {
     "scripts": {}
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "eslint --fix"
+    ],
+    "*.{html,css,sass,scss,less}": [
+      "stylelint --fix"
+    ]
   },
   "standard-version": {
     "scripts": {

@@ -39,6 +39,7 @@ module.exports = {
   themeConfig: {
     logo: {
       img: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
+      // link: 'https://novlan1.github.io/press-ui/',
     },
     subLogo: {
       // img: '',

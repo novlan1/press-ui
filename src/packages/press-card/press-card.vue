@@ -1,17 +1,17 @@
 <template>
   <div
-    class="uni-card"
-    :class="{ 'uni-card--full': isFull, 'uni-card--shadow': isShadow,'uni-card--border':border}"
+    class="press-card"
+    :class="{ 'press-card--full': isFull, 'press-card--shadow': isShadow,'press-card--border':border}"
     :style="{'margin':isFull?0:margin,'padding':spacing,'box-shadow':isShadow?shadow:''}"
   >
     <!-- 封面 -->
     <slot name="cover">
       <div
         v-if="cover"
-        class="uni-card__cover"
+        class="press-card__cover"
       >
         <image
-          class="uni-card__cover-image"
+          class="press-card__cover-image"
           mode="widthFix"
           :src="cover"
           @click="onClick('cover')"
@@ -22,40 +22,40 @@
     <slot name="title">
       <div
         v-if="title || extra"
-        class="uni-card__header"
+        class="press-card__header"
       >
         <!-- 卡片标题 -->
         <div
-          class="uni-card__header-box"
+          class="press-card__header-box"
           @click="onClick('title')"
         >
           <div
             v-if="thumbnail"
-            class="uni-card__header-avatar"
+            class="press-card__header-avatar"
           >
             <image
-              class="uni-card__header-avatar-image"
+              class="press-card__header-avatar-image"
               :src="thumbnail"
               mode="aspectFit"
             />
           </div>
-          <div class="uni-card__header-content">
-            <span class="uni-card__header-content-title uni-ellipsis">
+          <div class="press-card__header-content">
+            <span class="press-card__header-content-title press-ellipsis">
               {{ title }}
             </span>
             <span
               v-if="title&&subTitle"
-              class="uni-card__header-content-subtitle uni-ellipsis"
+              class="press-card__header-content-subtitle press-ellipsis"
             >
               {{ subTitle }}
             </span>
           </div>
         </div>
         <div
-          class="uni-card__header-extra"
+          class="press-card__header-extra"
           @click="onClick('extra')"
         >
-          <span class="uni-card__header-extra-text">
+          <span class="press-card__header-extra-text">
             {{ extra }}
           </span>
         </div>
@@ -64,7 +64,7 @@
 
     <!-- 卡片内容 -->
     <div
-      class="uni-card__content"
+      class="press-card__content"
       :style="{padding:padding}"
       @click="onClick('content')"
     >
@@ -72,7 +72,7 @@
     </div>
 
     <div
-      class="uni-card__actions"
+      class="press-card__actions"
       @click="onClick('actions')"
     >
       <slot name="actions" />
@@ -146,28 +146,28 @@ export default {
 </script>
 
 <style lang="scss">
-$uni-border-3: #ebeef5 !default;
-$uni-shadow-base: 0 0px 6px 1px
+$press-border-3: #ebeef5 !default;
+$press-shadow-base: 0 0px 6px 1px
   rgba(
     $color: #a5a5a5,
     $alpha: 0.2,
   ) !default;
-$uni-main-color: #3a3a3a !default;
-$uni-base-color: #6a6a6a !default;
-$uni-secondary-color: #909399 !default;
-$uni-spacing-sm: 8px !default;
-$uni-border-color: $uni-border-3;
-$uni-shadow: $uni-shadow-base;
-$uni-card-title: 15px;
-$uni-cart-title-color: $uni-main-color;
-$uni-card-subtitle: 12px;
-$uni-cart-subtitle-color: $uni-secondary-color;
-$uni-card-spacing: 10px;
-$uni-card-content-color: $uni-base-color;
+$press-main-color: #3a3a3a !default;
+$press-base-color: #6a6a6a !default;
+$press-secondary-color: #909399 !default;
+$press-spacing-sm: 8px !default;
+$press-border-color: $press-border-3;
+$press-shadow: $press-shadow-base;
+$press-card-title: 15px;
+$press-cart-title-color: $press-main-color;
+$press-card-subtitle: 12px;
+$press-cart-subtitle-color: $press-secondary-color;
+$press-card-spacing: 10px;
+$press-card-content-color: $press-base-color;
 
-.uni-card {
-  margin: $uni-card-spacing;
-  padding: 0 $uni-spacing-sm;
+.press-card {
+  margin: $press-card-spacing;
+  padding: 0 $press-spacing-sm;
   border-radius: 4px;
   overflow: hidden;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
@@ -175,13 +175,13 @@ $uni-card-content-color: $uni-base-color;
   background-color: #fff;
   flex: 1;
 
-  .uni-card__cover {
+  .press-card__cover {
     position: relative;
-    margin-top: $uni-card-spacing;
+    margin-top: $press-card-spacing;
     flex-direction: row;
     overflow: hidden;
     border-radius: 4px;
-    .uni-card__cover-image {
+    .press-card__cover-image {
       flex: 1;
       // width: 100%;
       /* #ifndef APP-PLUS */
@@ -190,15 +190,15 @@ $uni-card-content-color: $uni-base-color;
     }
   }
 
-  .uni-card__header {
+  .press-card__header {
     display: flex;
-    border-bottom: 1px $uni-border-color solid;
+    border-bottom: 1px $press-border-color solid;
     flex-direction: row;
     align-items: center;
-    padding: $uni-card-spacing;
+    padding: $press-card-spacing;
     overflow: hidden;
 
-    .uni-card__header-box {
+    .press-card__header-box {
       /* #ifndef APP-NVUE */
       display: flex;
       /* #endif */
@@ -208,20 +208,20 @@ $uni-card-content-color: $uni-base-color;
       overflow: hidden;
     }
 
-    .uni-card__header-avatar {
+    .press-card__header-avatar {
       width: 40px;
       height: 40px;
       overflow: hidden;
       border-radius: 5px;
-      margin-right: $uni-card-spacing;
-      .uni-card__header-avatar-image {
+      margin-right: $press-card-spacing;
+      .press-card__header-avatar-image {
         flex: 1;
         width: 40px;
         height: 40px;
       }
     }
 
-    .uni-card__header-content {
+    .press-card__header-content {
       /* #ifndef APP-NVUE */
       display: flex;
       /* #endif */
@@ -231,53 +231,53 @@ $uni-card-content-color: $uni-base-color;
       // height: 40px;
       overflow: hidden;
 
-      .uni-card__header-content-title {
-        font-size: $uni-card-title;
-        color: $uni-cart-title-color;
+      .press-card__header-content-title {
+        font-size: $press-card-title;
+        color: $press-cart-title-color;
         // line-height: 22px;
       }
 
-      .uni-card__header-content-subtitle {
-        font-size: $uni-card-subtitle;
+      .press-card__header-content-subtitle {
+        font-size: $press-card-subtitle;
         margin-top: 5px;
-        color: $uni-cart-subtitle-color;
+        color: $press-cart-subtitle-color;
       }
     }
 
-    .uni-card__header-extra {
+    .press-card__header-extra {
       line-height: 12px;
 
-      .uni-card__header-extra-text {
+      .press-card__header-extra-text {
         font-size: 12px;
-        color: $uni-cart-subtitle-color;
+        color: $press-cart-subtitle-color;
       }
     }
   }
 
-  .uni-card__content {
-    padding: $uni-card-spacing;
+  .press-card__content {
+    padding: $press-card-spacing;
     font-size: 14px;
-    color: $uni-card-content-color;
+    color: $press-card-content-color;
     line-height: 22px;
   }
 
-  .uni-card__actions {
+  .press-card__actions {
     font-size: 12px;
   }
 }
 
-.uni-card--border {
-  border: 1px solid $uni-border-color;
+.press-card--border {
+  border: 1px solid $press-border-color;
 }
 
-.uni-card--shadow {
+.press-card--shadow {
   position: relative;
   /* #ifndef APP-NVUE */
-  box-shadow: $uni-shadow;
+  box-shadow: $press-shadow;
   /* #endif */
 }
 
-.uni-card--full {
+.press-card--full {
   margin: 0;
   border-left-width: 0;
   border-left-width: 0;
@@ -285,12 +285,12 @@ $uni-card-content-color: $uni-base-color;
 }
 
 /* #ifndef APP-NVUE */
-.uni-card--full:after {
+.press-card--full:after {
   border-radius: 0;
 }
 
 /* #endif */
-.uni-ellipsis {
+.press-ellipsis {
   /* #ifndef APP-NVUE */
   overflow: hidden;
   white-space: nowrap;

@@ -342,13 +342,16 @@ export default {
   },
 };
 </script>
-<style  lang="scss">
-@import "src/packages/base/mixin.scss";
-.demo-list-wrap {
-  padding: 0 20px;
-  // height: 100vh;
-}
-.demo-input-wrap {
-  padding-bottom: 20px;
+<style lang="scss">
+.wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .demo-list-wrap {
+    padding: 0 20px;
+    flex: 1;
+    overflow: hidden;
+  }
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <uni-card
+    <press-card
       :is-shadow="false"
       is-full
     >
       <text class="uni-h6">
         仅保留 empty 图标，其他图标请使用 press-icon-plus。
       </text>
-    </uni-card>
+    </press-card>
     <uni-section
       title="图标"
       type="line"
@@ -46,8 +46,14 @@
 
 <script>
 import IconMap from 'src/common/icon.json';
+import PressCard from 'src/packages/press-card/press-card.vue';
+import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+
 export default {
-  components: {},
+  components: {
+    PressCard,
+    UniSection,
+  },
   data() {
     const pressIconList = Object.keys(IconMap).map(key => ({
       name: key,

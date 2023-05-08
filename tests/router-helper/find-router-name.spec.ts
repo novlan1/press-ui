@@ -56,6 +56,12 @@ describe('findRouteName', () => {
         battleid: '123',
       },
       path: '/views/match-config/match-ob-room',
+      meta: {
+        rawPath: [
+          '/match-ob-room/:battleid',
+        ],
+        useDefaultTitle: true,
+      },
     });
   });
 
@@ -69,6 +75,13 @@ describe('findRouteName', () => {
         inviteteamid: 'abcd',
       },
       path: '/views/match/match-detail-index',
+      meta: {
+        useDefaultTitle: false,
+        keepPosition: true,
+        rawPath: [
+          '/match/match-detail-index/:childid/:inviteteamid?',
+        ],
+      },
     });
   });
 
@@ -81,6 +94,13 @@ describe('findRouteName', () => {
         childid: '100100',
       },
       path: '/views/match/match-detail-index',
+      meta: {
+        useDefaultTitle: false,
+        keepPosition: true,
+        rawPath: [
+          '/match/match-detail-index/:childid/:inviteteamid?',
+        ],
+      },
     });
   });
 
@@ -95,6 +115,13 @@ describe('findRouteName', () => {
         adtag: 'qq',
       },
       path: '/views/match/match-detail-index',
+      meta: {
+        useDefaultTitle: false,
+        keepPosition: true,
+        rawPath: [
+          '/match/match-detail-index/:childid/:inviteteamid?',
+        ],
+      },
     });
   });
 
@@ -105,6 +132,12 @@ describe('findRouteName', () => {
       params: {
       },
       path: '/views/homepage/login',
+      meta: {
+        needLogin: false,
+        rawPath: [
+          '/login',
+        ],
+      },
     });
   });
 

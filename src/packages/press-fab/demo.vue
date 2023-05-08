@@ -37,10 +37,12 @@
 
 <script>
 import PressFab from 'src/packages/press-fab/press-fab.vue';
+import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
 
 export default {
   components: {
     PressFab,
+    UniSection,
   },
   data() {
     return {

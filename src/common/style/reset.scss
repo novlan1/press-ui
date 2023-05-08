@@ -6,14 +6,19 @@
 
   //禁止复制
   -webkit-touch-callout: none;
+
   /*系统默认菜单被禁用*/
-  -webkit-user-select: none;
+  user-select: none;
+
   /*webkit浏览器*/
-  -khtml-user-select: none;
+  user-select: none;
+
   /*早期浏览器*/
-  -moz-user-select: none;
+  user-select: none;
+
   /*火狐*/
-  -ms-user-select: none;
+  user-select: none;
+
   /*IE10*/
   user-select: none;
 }
@@ -28,9 +33,9 @@ body {
 }
 
 html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-touch-action: none;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: none;
 }
 
 
@@ -39,7 +44,7 @@ html {
 }
 
 a {
-  -webkit-user-select: none;
+  user-select: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
@@ -48,7 +53,7 @@ a {
 img {
   display: block;
   width: 100%;
-  border: none;
+  border: 0;
   outline: none;
   will-change: transform;
 }
@@ -75,15 +80,15 @@ img {
   color: #09134e;
   font-size: 14px;
   outline: none;
-  border: none;
+  border: 0;
   appearance: none;
   background: none;
   resize: none;
   user-select: auto !important;
   opacity: 1;
-  -webkit-user-select: auto !important;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  user-select: auto !important;
+  appearance: none;
+  appearance: none;
 }
 
 .uni-textarea-textarea {
@@ -101,7 +106,7 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
-  color: #9299C6;
+  color: #9299c6;
   font-size: 14px;
   white-space: inherit;
   word-break: inherit;
@@ -129,7 +134,7 @@ img {
   position: absolute;
   top: auto !important;
   left: 0;
-  color: #9299C6;
+  color: #9299c6;
   font-size: 14px;
   font-weight: 400;
   overflow: hidden;
@@ -150,13 +155,13 @@ input[type=file] {
   cursor: pointer;
 }
 
-input[type="file"]::-webkit-file-upload-button,
-input[type="button"] {
+input[type='file']::-webkit-file-upload-button,
+input[type='button'] {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  border: none;
+  border: 0;
   background-color: transparent;
 }
 
@@ -165,7 +170,7 @@ uni-button {
   padding: 0;
 
   &:after {
-    border: none;
+    border: 0;
     transform: none;
     border-radius: 0;
   }
@@ -204,22 +209,25 @@ li {
 }
 
 @font-face {
-  font-family: "DINCond-Bold";
-  src: url("https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.eot");
+  font-family: 'DINCond-Bold';
+  src: url('https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.eot');
+
   /* IE9 Compat Modes */
-  src: url("https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.woff") format("woff"),
-    /* Modern Browsers */
-    url("https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-    url("https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */
-    url("https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.svg") format("svg");
+  src: url('https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.woff') format('woff'),
+
+    url('https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.ttf') format('truetype'),
+
+    url('https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.eot?#iefix') format('embedded-opentype'),
+
+    url('https://image-1251917893.file.myqcloud.com/TIP_GameSystem_2020/toC/v2.0/font/DINCondensedBold.svg') format('svg');
+
   /* Legacy iOS */
   font-weight: normal;
   font-style: normal;
 }
 
 // 兼容复用hippy的组件
+
 /* 单行省略 */
 .single-line-ellipsis {
   max-width: 100%;
@@ -320,9 +328,13 @@ p {
 
 /* 直播间横屏适配 */
 @media screen and (orientation: landscape) {
-
   /*横屏 css*/
   html {
     font-size: 50px !important;
   }
 }
+
+/* #ifndef H5 */
+@import 'src/common/style/reset-mp.scss';
+
+/* #endif */

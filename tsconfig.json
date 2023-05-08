@@ -20,7 +20,8 @@
       "webpack-env",
       "@dcloudio/types",
       "miniprogram-api-typings",
-      "mini-types"
+      "mini-types",
+      "jest"
     ],
     "paths": {
       "@/*": [

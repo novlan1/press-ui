@@ -69,11 +69,14 @@ export default {
 
 ### Props
 
-|   属性名    |  类型  |  默认值  |     说明     |
-| :---------: | :----: | :------: | :----------: |
-|    title    | String | 温馨提示 |     标题     |
-| htmlContent | String |    -     |   html内容   |
-|   content   | String |    -     |     内容     |
-| confirmText | String |   确定   | 确认按钮文案 |
-| cancelText  | String |    -     | 取消按钮文案 |
+|    属性名    |   类型    |  默认值  |     说明     |
+| :----------: | :-------: | :------: | :----------: |
+|     show     | _boolean_ |  false   |   是否显示   |
+|     src      | _string_  |    -     |   图片地址   |
+|    title     | _string_  | 温馨提示 |     标题     |
+|   content    | _string_  |    -     |     内容     |
+| html-content | _string_  |    -     |   html内容   |
+| confirm-text | _string_  |   确定   | 确认按钮文案 |
+| cancel-text  | _string_  |    -     | 取消按钮文案 |
+|   z-index    | _number_  |    99    |     层级     |
 

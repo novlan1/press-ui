@@ -206,20 +206,20 @@ export default {
 
 ### Popup Props 
 
-|      属性名      |   类型   | 默认值 |                         说明                         |
-| :--------------: | :------: | :----: | :--------------------------------------------------: |
-|   isShowTitle    | Boolean  |  true  |                     是否显示标题                     |
-|    popupTitle    |  String  |   -    |                       弹窗标题                       |
-|  popupTitleBtn   |  String  |   -    |                     弹窗标题按钮                     |
-|   isBorderBtn    | Boolean  | false  |                     标题按钮样式                     |
-| validateConfirm  | Function |   -    | 在执行确认动画前，validateConfirm返回false则进行拦截 |
-|      zIndex      |  String  |  '99'  |                       弹窗层级                       |
-|    popupClass    |  String  |   -    |                        class                         |
-|  canTouchRemove  | Boolean  |  true  |                 是否可以点击蒙版关闭                 |
-| isShowpopupClose | Boolean  | false  |                   是否显示关闭按钮                   |
-|  showBackArrow   | Boolean  | false  |                  是否显示为返回箭头                  |
-|   isCrossSlab    | Boolean  | false  |                   是否切换横板样式                   |
-|   widthNumber    |  Number  |  100   |                  横板弹窗宽度百分比                  |
+|       属性名       |    类型    | 默认值  |                           说明                            |
+| :----------------: | :--------: | :-----: | :-------------------------------------------------------: |
+|   is-show-title    | _boolean_  | `true`  |                       是否显示标题                        |
+|    popup-title     |  _string_  |    -    |                         弹窗标题                          |
+|  popup-title-btn   |  _string_  |    -    |                       弹窗标题按钮                        |
+|   is-border-btn    | _boolean_  | `false` |                       标题按钮样式                        |
+|      z-index       |  _string_  |  `99`   |                         弹窗层级                          |
+|    popup-class     |  _string_  |    -    |                           类名                            |
+|  can-touch-remove  | _boolean_  | `true`  |                   是否可以点击蒙版关闭                    |
+| is-showpopup-close | _boolean_  | `false` |                     是否显示关闭按钮                      |
+|  show-back-arrow   | _boolean_  | `false` |                    是否显示为返回箭头                     |
+|   is-cross-slab    | _boolean_  | `false` |                     是否切换横板样式                      |
+|    width-number    |  _number_  |  `100`  |                    横板弹窗宽度百分比                     |
+|  validate-confirm  | _Function_ |    -    | 在执行确认动画前，`validate-confirm`返回`false`则进行拦截 |
 
 
 

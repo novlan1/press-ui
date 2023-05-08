@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "0.7.24-alpha.0",
+  "version": "0.7.24",
   "description": "易用的跨端组件库",
   "main": "index.js",
   "scripts": {

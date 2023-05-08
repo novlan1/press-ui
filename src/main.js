@@ -39,17 +39,6 @@ import PressTransition from 'src/packages/press-transition/press-transition.vue'
 import PressOverlay from 'src/packages/press-overlay/press-overlay.vue';
 import PressToast from 'src/packages/press-toast/press-toast.vue';
 
-import UniCard from 'src/packages/uni-card/components/uni-card/uni-card.vue';
-import UniIcons from 'src/packages/uni-icons/components/uni-icons/uni-icons.vue';
-import UniList from 'src/packages/uni-list/components/uni-list/uni-list.vue';
-import UniListItem from 'src/packages/uni-list/components/uni-list-item/uni-list-item.vue';
-import UniSection from 'src/packages/uni-section/components/uni-section/uni-section.vue';
-
-Vue.component('UniCard', UniCard);
-Vue.component('UniIcons', UniIcons);
-Vue.component('UniList', UniList);
-Vue.component('UniListItem', UniListItem);
-Vue.component('UniSection', UniSection);
 
 Vue.component('DemoBlock', DemoBlock);
 Vue.component('DemoBlockPlus', DemoBlockPlus);

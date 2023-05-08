@@ -138,7 +138,7 @@
 </template>
 <script>
 import PressCard from 'src/packages/press-card/press-card.vue';
-import UniIcons from 'src/packages/uni-icons/components/uni-icons/uni-icons.vue';
+import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
 
 export default {

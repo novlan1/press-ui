@@ -1,6 +1,6 @@
 # 快速开始
 
-1. 安装npm包
+1. 安装`npm`包
 
 
 ```bash
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-3. 配置`vue.config.js`
+3. 配置
 
 注意，需要在`vue.config.js`中配置下 `transpileDependencies`：
 

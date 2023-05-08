@@ -26,7 +26,7 @@
           >
             <div
               v-if="type === 'line'"
-              :class="[`${bem3('tabs__line')}`]"
+              :class="[`${bem3('tabs__line')} ${lineClass}`]"
               :style="lineStyle"
             />
             <div
@@ -191,6 +191,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    extraClassPrefix: {
+      type: String,
+      // 兼容旧的class，可传入van-
+      default: '',
+    },
   },
   data() {
     return {
@@ -222,7 +227,8 @@ export default {
     },
     theNavClass() {
       const { type, ellipsis, navClass } = this;
-      return `${this.bem3('tabs__nav', [type, { complete: !ellipsis }])} ${navClass}`;
+      const realNavClass = `${navClass} nav-class`;
+      return `${this.bem3('tabs__nav', [type, { complete: !ellipsis }])} ${realNavClass}`;
     },
     navStyle() {
       const { color, type } = this;
@@ -299,11 +305,14 @@ export default {
     },
     getTabClass(item, index) {
       const { currentIndex, ellipsis, tabClass, tabActiveClass } = this;
+      const realActiveClass = `${tabActiveClass} tab-active-class`;
+      const realTabClass = `${tabClass} tab-class`;
+
       return `${this.bem3('tab', {
         active: index === currentIndex,
         disabled: item.disabled,
         complete: !ellipsis,
-      })} ${this.bem3('ellipsis')} ${tabClass} ${index === currentIndex ? tabActiveClass : ''}`;
+      })} ${this.bem3('ellipsis')} ${realTabClass} ${index === currentIndex ? realActiveClass : ''}`;
     },
     getTabStyle(item, index) {
       const {

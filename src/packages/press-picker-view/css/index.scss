@@ -1,5 +1,5 @@
-@import "../../base/layout.scss";
-@import "../../base/mixin.scss";
+@import '../../base/layout.scss';
+@import '../../base/mixin.scss';
 
 .press-picker-view {
   position: relative;
@@ -46,7 +46,7 @@
     width: 100%;
     padding: 112px 0;
     z-index: 1;
-    transition: all .3s cubic-bezier(0, 0, 0.2, 1.15) 0s;
+    transition: all .3s cubic-bezier(0, 0, .2, 1.15) 0s;
   }
 
   &--item {

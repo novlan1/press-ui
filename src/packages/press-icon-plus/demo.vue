@@ -161,6 +161,7 @@ import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
 import icons from 'src/packages/press-icon-plus/config';
 import { RED } from 'src/packages/common/constant/color';
 
+
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
   const el = document.createElement('textarea');
@@ -230,10 +231,21 @@ export default {
       demoImage: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
 
       offsetTop,
-      icons,
+      icons: {
+        basic: [],
+        outline: [],
+        filled: [],
+      },
     };
   },
-
+  mounted() {
+    setTimeout(() => {
+      this.icons = {
+        ...(this.icons),
+        ...(icons || {}),
+      };
+    }, 1000);
+  },
   methods: {
     copy(icon, option = {}) {
       let tag = `<press-icon-plus name="${icon}"`;

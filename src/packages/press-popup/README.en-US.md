@@ -150,20 +150,20 @@ Set `is-cross-slab` to `true`.
 
 ### Popup Props
 
-|  property name   |   type   | default value | description                                                                                             |
-| :--------------: | :------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
-|   isShowTitle    | Boolean  |     true      | whether to show the title                                                                               |
-|    popupTitle    |  String  |       -       | popup window title                                                                                      |
-|  popupTitleBtn   |  String  |       -       | Popup title button                                                                                      |
-|   isBorderBtn    | Boolean  |     false     | header button style                                                                                     |
+|  property name   |   type   | default value |                                               description                                               |
+| :--------------: | :------: | :-----------: | :-----------------------------------------------------------------------------------------------------: |
+|   isShowTitle    | Boolean  |     true      |                                        whether to show the title                                        |
+|    popupTitle    |  String  |       -       |                                           popup window title                                            |
+|  popupTitleBtn   |  String  |       -       |                                           Popup title button                                            |
+|   isBorderBtn    | Boolean  |     false     |                                           header button style                                           |
 | validateConfirm  | Function |       -       | Before the confirmation animation is executed, if validateConfirm returns false, it will be intercepted |
-|      zIndex      |  String  |     '99'      | popup level                                                                                             |
-|    popupClass    |  String  |       -       | class                                                                                                   |
-|  canTouchRemove  | Boolean  |     true      | Can touch the mask to close                                                                             |
-| isShowpopupClose | Boolean  |     false     | Whether to show the close button                                                                        |
-|  showBackArrow   | Boolean  |     false     | whether to show back arrow                                                                              |
-|   isCrossSlab    | Boolean  |     false     | Whether to switch the cross-slab style                                                                  |
-|   widthNumber    |  Number  |      100      | Percentage of horizontal popup window width                                                             |
+|      zIndex      |  String  |     '99'      |                                               popup level                                               |
+|    popupClass    |  String  |       -       |                                                  class                                                  |
+|  canTouchRemove  | Boolean  |     true      |                                       Can touch the mask to close                                       |
+| isShowpopupClose | Boolean  |     false     |                                    Whether to show the close button                                     |
+|  showBackArrow   | Boolean  |     false     |                                       whether to show back arrow                                        |
+|   isCrossSlab    | Boolean  |     false     |                                 Whether to switch the cross-slab style                                  |
+|   widthNumber    |  Number  |      100      |                               Percentage of horizontal popup window width                               |
 
 
 

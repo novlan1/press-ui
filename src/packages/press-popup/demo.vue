@@ -66,7 +66,7 @@
 
     <PressPopup
       v-if="popupOptions.cancel.show"
-      :is-showpopup-close="true"
+      :is-showpopup-close="false"
       :show-back-arrow="true"
       :popup-title="popupOptions.cancel.title"
       :popup-title-btn="t('confirm')"

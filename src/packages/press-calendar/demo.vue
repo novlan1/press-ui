@@ -69,7 +69,7 @@
         is-link
         :value="rangeValue"
         @click="onDisplay('range', true, {
-          formatter: 'tFormatter',
+          useFormatter: true,
         })"
       />
       <press-cell

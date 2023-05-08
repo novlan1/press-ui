@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 //css函数
 @function tovmin($rpx) {
@@ -23,7 +23,7 @@ $color-primary: #1181d7;
 $color-yellow: #eda12d;
 $color-yellow-1: #fdbb56;
 $color-yellow-2: #a38766;
-$color-yellow-3: #57301B;
+$color-yellow-3: #57301b;
 $color-white: #fff;
 $color-bg: #f5f6fa;
 $color-black: #09134e;
@@ -46,8 +46,8 @@ $color-blue-4: #3aa7ed;
 $color-blue-5: #6cc9ff;
 $color-blue-6: #ccecff;
 $color-blue-7: #47a3e6;
-$color-blue-8: #1874C1;
-$color-blue-9: #53C3F7;
+$color-blue-8: #1874c1;
+$color-blue-9: #53c3f7;
 $color-red: #dd2d4d;
 $color-red-1: #932135;
 $color-red-2: #f5727a;
@@ -58,9 +58,9 @@ $color-red-6: #f96e79;
 $color-red-7: #f76060;
 $color-red-8: #e22d4b;
 $color-red-9: #ee0a24;
-$color-red-10: #FF6D7B;
+$color-red-10: #ff6d7b;
 $color-green: #08bcc8;
-$color-green-2: #4CBF00;
+$color-green-2: #4cbf00;
 $color-primary-btn: linear-gradient(to bottom, #336bcf 0%, #339ce5 100%);
 $color-secondary-btn: #dfe2ea;
 $color-primary-active: linear-gradient(to bottom, #336bcf 0%, #339ce5 100%);

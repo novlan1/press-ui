@@ -6,15 +6,12 @@ import { watchMessage } from 'src/utils/post-message/post-message';
 
 export default {
   onLaunch() {
-    console.log('App Launch');
     watchMessage();
     updateManager();
   },
   onShow() {
-    console.log('App Show');
   },
   onHide() {
-    console.log('App Hide');
   },
   watch: {
     $route: {

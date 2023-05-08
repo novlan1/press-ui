@@ -1,7 +1,7 @@
 // #ifdef H5
 import TIM_WEB from 'tim-js-sdk';
 // #endif
-// #ifdef MP-WEIXIN
+// #ifndef H5
 import TIM_MP from 'tim-wx-sdk';
 // #endif
 
@@ -11,7 +11,7 @@ let TIM;
 TIM = TIM_WEB;
 // #endif
 
-// #ifdef MP-WEIXIN
+// #ifndef H5
 TIM = TIM_MP;
 // #endif
 

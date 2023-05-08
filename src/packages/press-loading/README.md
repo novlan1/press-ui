@@ -38,10 +38,10 @@ export default {
 
 ### Props
 
-|属性名				|类型		|默认值	|说明																																														|
-|:-:					|:-:		|:-:		|:-:																																														|
-|loadingBg					|String	|-			|loading背景色																																												|
-|loadingScenes					|String	|page|loading的场景，可选项：page/btn|
+|     属性名     |   类型   | 默认值 |                说明                 |
+| :------------: | :------: | :----: | :---------------------------------: |
+|   loading-bg   | _string_ |   -    |           `loading`背景色           |
+| loading-scenes | _string_ | `page` | `loading`的场景，可选项：`page/btn` |
 
 
 

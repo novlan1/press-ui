@@ -68,13 +68,13 @@ export default {
 
 ### Props
 
-|属性名				|类型		|默认值	|说明																																														|
-|:-:					|:-:		|:-:		|:-:																																														|
-|title					|String	|-			|标题																																												|
-|showBackArrow					|Boolean	|false|左上角是否显示为返回箭头|
-|selectList					|Array	|[]|数据列表|
-|selectItem					|Object	|null|当前选中项|
-|tip					|String	|-|提示|
+|     属性名      |   类型    | 默认值  |           说明           |
+| :-------------: | :-------: | :-----: | :----------------------: |
+|      title      | _string_  |    -    |           标题           |
+| show-back-arrow | _boolean_ | `false` | 左上角是否显示为返回箭头 |
+|   select-list   |  _Array_  |  `[]`   |         数据列表         |
+|   select-item   | _Object_  | `null`  |        当前选中项        |
+|       tip       | _string_  |    -    |           提示           |
 
 
 
