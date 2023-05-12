@@ -34,7 +34,7 @@
         />
 
         <div
-          v-if="showBackArrow"
+          v-else-if="showBackArrow"
           class="press-popup--arrow iconfont icon-back"
           @click.stop="clickCancel"
         />
