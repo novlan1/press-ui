@@ -1,10 +1,12 @@
 <template>
   <PickerInner
-    :data="selectList"
-    :current="selectItem"
-    :title="title"
-    :show-back-arrow="showBackArrow"
-    :tip="tip"
+    v-if="innerShow"
+    :data="getPropOrData('list')"
+    :current="getPropOrData('current')"
+    :title="getPropOrData('title')"
+    :arrow-icon="getPropOrData('arrowIcon')"
+    :tip="getPropOrData('tip')"
+    :virtual-list-threshold="getPropOrData('virtualListThreshold')"
     @onCancel="remove"
     @onSelect="onClickSelect"
   />
@@ -12,87 +14,64 @@
 
 <script>
 import PickerInner from './picker-inner.vue';
+import { allProps, propsKeyMap } from './computed';
+import { functionalMixin } from '../mixins/functional';
+
 export default {
-  name: 'TipMatchSelectListDialog',
+  name: 'PresPicker',
   components: {
     PickerInner,
   },
+  mixins: [functionalMixin(allProps, {
+    showProp: false,
+    propsKeyMap,
+  })],
   props: {
-    // 左上角是否显示为返回箭头
-    showBackArrow: {
-      type: Boolean,
-      default: false,
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    // 数据列表
-    selectList: {
-      type: Array,
-      default: () => [], // 默认值不要给null，报错
-      required: false,
-    },
-    selectItem: {
-      type: Object,
-      default: null,
-      required: false,
-    },
-    // 提示
-    tip: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    onClickConfirm: {
-      type: Function,
-      default: null,
-      required: false,
-    },
-    onRemove: {
-      type: Function,
-      default: null,
-      required: false,
-    },
   },
   data() {
     return {
-      isDialogShow: false,
     };
   },
   mounted() {
-    this.showDialog();
+    if (!this.isFunctionMode) {
+      this.showDialog();
+    }
   },
   methods: {
-    // 弹出messageBox,并创建promise对象
-    showDialog() {
-      this.isDialogShow = true;
-    },
     onClickSelect(item) {
       this.$emit('onClickConfirm', item);
-      if (this.onClickConfirm) {
-        this.onClickConfirm(item);
+      this.$emit('confirm', item);
+      this.innerShow = false;
+      if (this.getPropOrData('confirm')) {
+        this.getPropOrData('confirm')(item);
       }
+
+      this.promiseCallback('confirm', { item });
       setTimeout(() => {
         this.destroy();
       }, 100);
     },
     remove() {
       this.$emit('onRemove');
-      if (this.onRemove) {
-        this.onRemove();
+      this.$emit('cancel');
+      this.innerShow = false;
+      if (this.getPropOrData('cancel')) {
+        this.getPropOrData('cancel')();
       }
+
+      this.promiseCallback('cancel');
       setTimeout(() => {
         this.destroy();
       }, 100);
     },
     destroy() {
+      if (this.isFunctionMode) return;
+
       this.$destroy();
 
       // #ifdef H5
       if (document.body.contains(this.$el)) {
         this.$el?.parentElement?.removeChild?.(this.$el);
-        // document.body.removeChild(this.$el);
       }
       // #endif
     },

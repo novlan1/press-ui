@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="demo-wrap">
     <press-card
       :is-shadow="false"
       is-full
@@ -8,18 +8,7 @@
         仅保留 empty 图标，其他图标请使用 press-icon-plus。
       </text>
     </press-card>
-    <uni-section
-      title="图标"
-      type="line"
-    >
-      <!-- <template #right>
-        <div>
-          <switch
-            :checked="checked"
-            @change="change"
-          />
-        </div>
-      </template> -->
+    <demo-block title="图标">
       <div class="icon-content">
         <div
           v-for="(item,index) in pressIconList"
@@ -33,26 +22,51 @@
             size="30"
           />
           <text
-            :style="{color:activeIndex === index?'#007aff':'#5e6d82'}"
+            :style="{color: activeIndex === index ? '#007aff':'#5e6d82'}"
             class="uni-mt-5 uni-subtitle"
           >
             {{ checked? item.unicode: item.name }}
           </text>
         </div>
       </div>
-    </uni-section>
+    </demo-block>
+
+    <demo-block title="icon-music">
+      <div class="icon-content flex-end">
+        <div class="icon-item">
+          <PressIconMusic />
+        </div>
+
+        <div class="icon-item">
+          <PressIconMusic
+            color="rgb(94, 109, 130)"
+          />
+        </div>
+
+        <div class="icon-item">
+          <PressIconMusic :number="5" />
+        </div>
+
+        <div class="icon-item">
+          <PressIconMusic
+            width="60px"
+            height="60px"
+          />
+        </div>
+      </div>
+    </demo-block>
   </div>
 </template>
 
 <script>
 import IconMap from 'src/common/icon.json';
 import PressCard from 'src/packages/press-card/press-card.vue';
-import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+import PressIconMusic from 'src/packages/press-icon/press-icon-music.vue';
 
 export default {
   components: {
     PressCard,
-    UniSection,
+    PressIconMusic,
   },
   data() {
     const pressIconList = Object.keys(IconMap).map(key => ({
@@ -88,18 +102,21 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .icon-content {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   // justify-content: center;
+  &.flex-end {
+    align-items: flex-end;
+  }
 
   .icon-item {
     /* #ifndef APP-NVUE */
     display: flex;
     box-sizing: border-box;
-    width: calc(100% / 4);
+    width: calc(100% / 5);
     /* #endif */
     /* #ifdef APP-NVUE */
     width: 187rpx;

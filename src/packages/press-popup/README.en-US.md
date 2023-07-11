@@ -10,19 +10,19 @@ Pop-up layer component, which pops up a message prompt window, prompt box, etc. 
 
 ### close icon
 
-Set `is-showpopup-close` to `true`.
+Set `close-icon` to `true`.
 
 
 ```html
 <template>
    <Press Popup
      v-if="show"
-     :is-showpopup-close="true"
-     :show-back-arrow="false"
-     :popup-title="title"
-     popup-title-btn="OK"
-     @onConfirm="onConfirm"
-     @onCancel="onCancel"
+     :close-icon="true"
+     :arrow-icon="false"
+     :title="title"
+     title-btn="OK"
+     @confirm="confirm"
+     @cancel="cancel"
    >
      <view class="content">
        some content
@@ -40,10 +40,10 @@ export default {
      }
    },
    methods: {
-     onCancel() {
+     cancel() {
        this. show = false;
      },
-     onConfirm() {
+     confirm() {
        this. show = false;
      },
    }
@@ -53,19 +53,19 @@ export default {
 
 ### cancel icon
 
-Set `is-showpopup-close` to `true` and `show-back-arrow` to `true`.
+Set `close-icon` to `true` and `arrow-icon` to `true`.
 
 
 ```html
 <template>
    <Press Popup
      v-if="show"
-     :is-showpopup-close="true"
-     :show-back-arrow="true"
-     :popup-title="title"
-     popup-title-btn="OK"
-     @onConfirm="onConfirm"
-     @onCancel="onCancel"
+     :close-icon="true"
+     :arrow-icon="true"
+     :title="title"
+     title-btn="OK"
+     @confirm="confirm"
+     @cancel="cancel"
    >
      <view class="content">
        some content
@@ -76,19 +76,19 @@ Set `is-showpopup-close` to `true` and `show-back-arrow` to `true`.
 
 ### No close/cancel
 
-Set `is-showpopup-close` to `false` and `show-back-arrow` to `false`.
+Set `close-icon` to `false` and `arrow-icon` to `false`.
 
 
 ```html
 <template>
    <Press Popup
      v-if="show"
-     :is-showpopup-close="false"
-     :show-back-arrow="false"
-     :popup-title="title"
-     popup-title-btn="OK"
-     @onConfirm="onConfirm"
-     @onCancel="onCancel"
+     :close-icon="false"
+     :arrow-icon="false"
+     :title="title"
+     title-btn="OK"
+     @confirm="confirm"
+     @cancel="cancel"
    >
      <view class="content">
        some content
@@ -101,20 +101,20 @@ Set `is-showpopup-close` to `false` and `show-back-arrow` to `false`.
 
 ### Wireframe confirmation icon
 
-Set `is-border-btn` to `true`.
+Set `border-button` to `true`.
 
 
 ```html
 <template>
    <Press Popup
      v-if="show"
-     :is-showpopup-close="true"
-     :show-back-arrow="false"
-     :is-border-btn="true"
-     :popup-title="title"
-     popup-title-btn="OK"
-     @onConfirm="onConfirm"
-     @onCancel="onCancel"
+     :close-icon="true"
+     :arrow-icon="false"
+     :border-button="true"
+     :title="title"
+     title-btn="OK"
+     @confirm="confirm"
+     @cancel="cancel"
    >
      <view class="content">
        some content
@@ -125,19 +125,19 @@ Set `is-border-btn` to `true`.
 
 ### Horizontal version
 
-Set `is-cross-slab` to `true`.
+Set `horizontal` to `true`.
 
 
 ```html
 <template>
    <Press Popup
      v-if="show"
-     :is-showpopup-close="true"
-     :is-cross-slab="true"
+     :close-icon="true"
+     :horizontal="true"
      :width-number="54"
-     :popup-title="title"
-     @onConfirm="onConfirm"
-     @onCancel="onCancel"
+     :title="title"
+     @confirm="confirm"
+     @cancel="cancel"
    >
      <view class="content">
        some content
@@ -146,25 +146,123 @@ Set `is-cross-slab` to `true`.
 </template>
 ```
 
+### Asynchronous shutdown
+
+An asynchronous shutdown will be triggered when there is `validateConfirm` in the parent component method.
+
+```html
+  <Press Popup
+   v-if="popupOptions.noClose.show"
+   :close-icon="false"
+   :arrow-icon="false"
+   :title="popupOptions.noClose.title"
+   :title-btn="t('confirm')"
+   @confirm="popupOptions.noClose.confirm"
+   @cancel="popupOptions.noClose.cancel"
+>
+   <div class="content">
+     {{ t('SomeContent') }}
+   </div>
+</PressPopup>
+```
+
+```ts
+export default {
+   data() {
+     return {
+       popupOptions: {
+         noClose: {
+           show: false,
+           title: this.t('wayToWin'),
+           cancel: () => {
+             this.popupOptions.noClose.show = false;
+           },
+           confirm: () => {
+             this.popupOptions.noClose.show = false;
+           },
+         },
+       }
+     }
+   },
+   methods: {
+     validateConfirm() {
+       if (['noClose', 'borderBtn']. indexOf(this. type) <= -1) return true;
+
+       return new Promise((resolve) => {
+         setTimeout(() => {
+           if (this. type === 'noClose') {
+             console.log('can be closed after asynchronous confirmation');
+             resolve(true);
+           } else {
+             resolve(false);
+             console.log('Close prohibited after asynchronous confirmation');
+           }
+         }, 2000);
+       });
+     }
+   }
+}
+```
+
+### Function call
+
+To support functional calls, you need to pre-embed components under the page, and specify `mode` as `functional`.
+
+```html
+<press-popup
+   :id="PRESS_PICKER_ID"
+   mode="functional"
+>
+   <div class="content">
+     {{ t('SomeContent') }}
+   </div>
+</press-popup>
+```
+
+```ts
+export default {
+   methods: {
+     onShowFunctionalPicker() {
+       showFunctionalComponent. call(this, {
+       selector: `#${PRESS_PICKER_ID}`,
+       title: this.t('wayToWin'),
+       button: this.t('confirm'),
+       horizontal: false,
+       closeIcon: false,
+       arrowIcon: true,
+       borderButton: false,
+       customStyle: '',
+     }).then(() => {
+       this.onTip('confirm');
+     })
+       .catch(() => {
+         this.onTip('cancel');
+       });
+     },
+   }
+}
+```
+
+
 ## API
 
 ### Popup Props
 
-|  property name   |   type   | default value |                                               description                                               |
-| :--------------: | :------: | :-----------: | :-----------------------------------------------------------------------------------------------------: |
-|   isShowTitle    | Boolean  |     true      |                                        whether to show the title                                        |
-|    popupTitle    |  String  |       -       |                                           popup window title                                            |
-|  popupTitleBtn   |  String  |       -       |                                           Popup title button                                            |
-|   isBorderBtn    | Boolean  |     false     |                                           header button style                                           |
-| validateConfirm  | Function |       -       | Before the confirmation animation is executed, if validateConfirm returns false, it will be intercepted |
-|      zIndex      |  String  |     '99'      |                                               popup level                                               |
-|    popupClass    |  String  |       -       |                                                  class                                                  |
-|  canTouchRemove  | Boolean  |     true      |                                       Can touch the mask to close                                       |
-| isShowpopupClose | Boolean  |     false     |                                    Whether to show the close button                                     |
-|  showBackArrow   | Boolean  |     false     |                                       whether to show back arrow                                        |
-|   isCrossSlab    | Boolean  |     false     |                                 Whether to switch the cross-slab style                                  |
-|   widthNumber    |  Number  |      100      |                               Percentage of horizontal popup window width                               |
-
+|     property name      |    type    | default value | description                                                                                 |
+| :--------------------: | :--------: | :-----------: | :------------------------------------------------------------------------------------------ |
+|       show-title       | _boolean_  |    `true`     | Whether to show the title                                                                   |
+|         title          |  _string_  |       -       | popup window title                                                                          |
+|         button         |  _string_  |       -       | popup title button                                                                          |
+|     border-button      | _boolean_  |    `false`    | header button style                                                                         |
+|        z-index         |  _string_  |     `99`      | popup level                                                                                 |
+|      popup-class       |  _string_  |       -       | class name                                                                                  |
+| close-on-click-overlay | _boolean_  |    `true`     | Whether to click the overlay to close                                                       |
+|       close-icon       | _boolean_  |    `false`    | Whether to display the close icon                                                           |
+|       arrow-icon       | _boolean_  |    `false`    | Whether to display as a back arrow                                                          |
+|       horizontal       | _boolean_  |    `false`    | Whether to switch the horizontal panel style                                                |
+|      width-number      |  _number_  |     `100`     | Horizontal popup window width percentage                                                    |
+|    validate-confirm    | _Function_ |       -       | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
+|          mode          |  _string_  |       -       | pass `functional` when calling a function                                                   |
 
 
 
@@ -173,5 +271,21 @@ Set `is-cross-slab` to `true`.
 
 | event name |   description   | return value |
 | :--------: | :-------------: | :----------: |
-|  onCancel  | Click to cancel |      -       |
-| onConfirm  |    Click OK     |      -       |
+|   cancel   | Click to cancel |      -       |
+|  confirm   |    Click OK     |      -       |
+
+The following properties are deprecated (`v0.7.32`):
+
+
+| Type  |         Old         |          New           |
+| :---: | :-----------------: | :--------------------: |
+| Prop  |   show-back-arrow   |       arrow-icon       |
+| Prop  | is-show popup-close |       close-icon       |
+| Prop  |    is-show-title    |       show-title       |
+| Prop  |    is-cross-slab    |       horizontal       |
+| Prop  |     popup-title     |         title          |
+| Prop  |   popup-title-btn   |         button         |
+| Prop  |    is-border-btn    |     border-button      |
+| Prop  |  can-touch-remove   | close-on-click-overlay |
+| Event |      onConfirm      |        confirm         |
+| Event |      onCancel       |         cancel         |

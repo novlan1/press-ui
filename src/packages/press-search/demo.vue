@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
       <press-search
         :value="value"
@@ -96,17 +96,16 @@ export default {
   },
   methods: {
     onCancel() {
-      console.log('onCancel');
+      this.onGTip('cancel');
     },
     onSearch() {
-      console.log('onSearch');
+      this.onGTip('search');
     },
     onClick() {
-      console.log('onClick');
+      this.onGTip('click');
     },
   },
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

@@ -3,7 +3,7 @@ export function isInIFrame() {
   return res;
 }
 export const storageUtil = {
-  get(key) {
+  get(key: string) {
     let res;
     // #ifdef H5
     res = localStorage.getItem(key);
@@ -13,13 +13,13 @@ export const storageUtil = {
     // #endif
     return res;
   },
-  set(key, value) {
+  set(key: string, value: string | number) {
     let res ;
     // #ifdef H5
-    res = localStorage.setItem(key, value);
+    res = localStorage.setItem(key, `${value}`);
     // #endif
     // #ifndef H5
-    res = uni.setStorageSync(key, value);
+    res = uni.setStorageSync(key, `${value}`);
     // #endif
     return res;
   },

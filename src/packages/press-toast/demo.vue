@@ -1,57 +1,40 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('text')">
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="customStyle"
+      <press-cell
+        :title="t('check')"
+        is-link
         @click="onShowToast"
-      >
-        {{ t('check') }}
-      </PressButton>
+      />
     </demo-block>
     <demo-block :title="t('loading')">
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="customStyle"
+      <press-cell
+        :title="t('default')"
+        is-link
         @click="onShowToastLoading('normal')"
-      >
-        {{ t('default') }}
-      </PressButton>
-
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="`${customStyle};margin-left:12px;`"
+      />
+      <press-cell
+        title="Spinner"
+        is-link
         @click="onShowToastLoading('spinner')"
-      >
-        Spinner
-      </PressButton>
+      />
     </demo-block>
-    <demo-block :title="t('success')">
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="customStyle"
+    <demo-block :title="t('customTip')">
+      <press-cell
+        :title="t('success')"
+        is-link
         @click="onShowToastSuccess('success')"
-      >
-        {{ t('check') }}
-      </PressButton>
-    </demo-block>
-    <demo-block :title="t('fail')">
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="customStyle"
+      />
+      <press-cell
+        :title="t('fail')"
+        is-link
         @click="onShowToastSuccess('fail')"
-      >
-        {{ t('check') }}
-      </PressButton>
-    </demo-block>
-    <demo-block :title="t('dynamic')">
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="customStyle"
+      />
+      <press-cell
+        :title="t('dynamic')"
+        is-link
         @click="onShowDynamicToast"
-      >
-        {{ t('check') }}
-      </PressButton>
+      />
     </demo-block>
 
     <!-- #ifndef H5 -->
@@ -65,6 +48,7 @@ import Toast from 'src/packages/press-toast';
 export default {
   i18n: {
     'zh-CN': {
+      customTip: '自定义提示',
       text: '文字提示',
       loading: '加载提示',
       default: '默认',
@@ -79,6 +63,7 @@ export default {
       dynamicTip: second =>  `倒计时 ${second} 秒`,
     },
     'en-US': {
+      customTip: 'Custom Tip',
       text: 'Show',
       loading: 'Loading',
       default: 'Default',

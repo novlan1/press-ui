@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('type')">
       <div class="demo-button-row">
         <press-button
@@ -12,11 +12,13 @@
         <press-button
           type="primary"
           :custom-style="`${customStyle}`"
+          @click="onVibrateShort"
         >
           {{ t('primary') }}
         </press-button>
         <press-button
           type="info"
+          @click="onVibrateLong"
         >
           {{ t('info') }}
         </press-button>
@@ -384,16 +386,35 @@ export default {
     onClick(event) {
       console.log(event);
     },
+    onVibrateLong() {
+      uni.vibrateLong({
+        success() {
+          console.log('success');
+        },
+        fail() {
+          console.log('fail');
+        },
+      });
+    },
+    onVibrateShort() {
+      // #ifdef H5
+      navigator.vibrate(1000);
+      // #endif
+
+      uni.vibrateLong({
+        success() {
+          console.log('success');
+        },
+        fail() {
+          console.log('fail');
+        },
+      });
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-.wrap {
-  padding-bottom: 20px;
-  background: #fff;
-}
-
 .demo-button-row {
   margin-bottom: 12px;
 }

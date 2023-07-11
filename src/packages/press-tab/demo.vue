@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block
       :title="t('basicUsage')"
       header-style="background: #f7f8fa;"
@@ -33,6 +33,25 @@
           :key="index"
           :title="`${t('tab')} ${index+1}`"
           :name="item.name"
+        >
+          <div class="content">
+            {{ t('content') }} {{ index+1 }}
+          </div>
+        </press-tab>
+      </press-tabs>
+    </demo-block>
+
+    <demo-block
+      :title="t('title6')"
+      header-style="background: #f7f8fa;"
+    >
+      <press-tabs
+        sticky
+      >
+        <press-tab
+          v-for="(item,index) of tabs4"
+          :key="index"
+          :title="`${t('tab')} ${index+1}`"
         >
           <div class="content">
             {{ t('content') }} {{ index+1 }}
@@ -106,25 +125,6 @@
       >
         <press-tab
           v-for="(item,index) of tabs2"
-          :key="index"
-          :title="`${t('tab')} ${index+1}`"
-        >
-          <div class="content">
-            {{ t('content') }} {{ index+1 }}
-          </div>
-        </press-tab>
-      </press-tabs>
-    </demo-block>
-
-    <demo-block
-      :title="t('title6')"
-      header-style="background: #f7f8fa;"
-    >
-      <press-tabs
-        sticky
-      >
-        <press-tab
-          v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
         >
@@ -262,10 +262,8 @@ export default {
 
 <style scoped lang="scss">
 .demo-wrap {
-  font-size: 16px;
-  height: 1000px;
-  overflow: scroll;
-  padding-bottom: 30px;
+  // 不能为100%，否则page无法滚动
+  height: auto;
 
   .content {
     padding: 20px;
@@ -273,3 +271,9 @@ export default {
 }
 </style>
 
+<style lang="scss">
+page {
+  height: 100%;
+  overflow: auto;
+}
+</style>

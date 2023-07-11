@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { traverseFolder } = require('t-comm');
 
-const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md'];
+const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/'];
 const PATH_MAP = {
   SOURCE_PACKAGES: 'src/packages',
   TARGET_PACKAGES: 'log/packages',

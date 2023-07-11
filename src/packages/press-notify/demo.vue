@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <!-- #ifndef H5 -->
     <PressNotify
       id="press-notify"
@@ -8,75 +8,55 @@
 
 
     <demo-block :title="t('basicUsage')">
-      <press-button
-        type="e-sport-primary"
-        custom-style="width: auto;"
+      <press-cell
+        :title="t('basicUsage')"
+        is-link
         @click="showNotify(t('content'))"
-      >
-        {{ t('basicUsage') }}
-      </press-button>
+      />
     </demo-block>
 
     <demo-block :title="t('notifyType')">
-      <div style="margin-bottom: 12px;">
-        <press-button
-          type="e-sport-primary"
-          custom-style="margin: 0 12px 0 0;width: auto;"
-          @click="showNotify({ type: 'primary', message: t('content') })"
-        >
-          {{ t('primary') }}
-        </press-button>
-
-        <press-button
-          type="e-sport-primary"
-          custom-style="width: auto;"
-          @click="showNotify({ type: 'success', message: t('content') })"
-        >
-          {{ t('success') }}
-        </press-button>
-      </div>
-      <div>
-        <press-button
-          type="e-sport-primary"
-          custom-style="margin: 0 12px 0 0;width: auto;"
-          @click="showNotify({ type: 'danger', message:t('content') })"
-        >
-          {{ t('danger') }}
-        </press-button>
-
-        <press-button
-          type="e-sport-primary"
-          custom-style="width: auto;"
-          @click="showNotify({ type: 'warning', message: t('content')})"
-        >
-          {{ t('warning') }}
-        </press-button>
-      </div>
+      <press-cell
+        :title="t('primary')"
+        is-link
+        @click="showNotify({ type: 'primary', message: t('content') })"
+      />
+      <press-cell
+        :title="t('success')"
+        is-link
+        @click="showNotify({ type: 'success', message: t('content') })"
+      />
+      <press-cell
+        :title="t('danger')"
+        is-link
+        @click="showNotify({ type: 'danger', message:t('content') })"
+      />
+      <press-cell
+        :title="t('warning')"
+        is-link
+        @click="showNotify({ type: 'warning', message: t('content')})"
+      />
     </demo-block>
 
     <demo-block :title="t('customNotify')">
-      <press-button
-        type="e-sport-primary"
-        custom-style="margin: 0 12px 0 0;width: auto;"
+      <press-cell
+        :title="t('customColor')"
+        is-link
         @click="showNotify({
           message: t('customColor'),
           color: '#ad0000',
           background: '#ffe1e1',
         })"
-      >
-        {{ t('customColor') }}
-      </press-button>
+      />
 
-      <press-button
-        type="e-sport-primary"
-        custom-style="width: auto;"
+      <press-cell
+        :title="t('customDuration')"
+        is-link
         @click="showNotify({
           message: t('customDuration'),
           duration: 1000,
         })"
-      >
-        {{ t('customDuration') }}
-      </press-button>
+      />
     </demo-block>
   </div>
 </template>
@@ -142,5 +122,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

@@ -1,17 +1,17 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       v-for="(item,index) of demoList"
       :key="index"
       :title="item.title"
     >
-      <press-button
-        type="e-sport-primary"
-        custom-style="width: auto;"
-        @click="onShowActionSheet(item.type)"
-      >
-        {{ t('check') }}
-      </press-button>
+      <press-cell
+        v-for="(info) of item.list"
+        :key="info.title"
+        :title="info.title"
+        is-link
+        @click="onShowActionSheet(info.type)"
+      />
     </demo-block>
 
 
@@ -45,6 +45,7 @@ import PressActionSheet from 'src/packages/press-action-sheet/press-action-sheet
 export default {
   i18n: {
     'zh-CN': {
+      custom: '自定义',
       option1: '选项一',
       option2: '选项二',
       option3: '选项三',
@@ -61,6 +62,7 @@ export default {
       getUserInfo: '获取用户信息',
     },
     'en-US': {
+      custom: 'Custom',
       option1: 'Option 1',
       option2: 'Option 2',
       option3: 'Option 3',
@@ -82,33 +84,49 @@ export default {
     PressActionSheet,
   },
   data() {
-    const  demoList = [
+    const demoList = [
       {
         title: this.t('basicUsage'),
-        type: 'basic',
+        list: [
+          {
+            title: this.t('check'),
+            type: 'basic',
+          },
+        ],
       },
       {
-        title: this.t('optionStatus'),
-        type: 'status',
+        title: this.t('custom'),
+        list: [
+          {
+            title: this.t('optionStatus'),
+            type: 'status',
+          },
+          {
+            title: this.t('showCancel'),
+            type: 'cancel',
+          },
+          {
+            title: this.t('showDescription'),
+            type: 'description',
+          },
+          {
+            title: this.t('customPanel'),
+            type: 'title',
+          },
+        ],
       },
-      {
-        title: this.t('showCancel'),
-        type: 'cancel',
-      },
-      {
-        title: this.t('showDescription'),
-        type: 'description',
-      },
-      {
-        title: this.t('customPanel'),
-        type: 'title',
-      },
+
 
     ];
     if (process.env.UNI_PLATFORM !== 'h5') {
       demoList.push({
         title: this.t('wxOpen'),
-        type: 'wxOpen',
+        list: [
+          {
+            title: this.t('check'),
+            type: 'wxOpen',
+          },
+        ],
       });
     }
 

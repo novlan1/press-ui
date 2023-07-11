@@ -5,6 +5,9 @@ export async function waitReady(tim) {
     return Promise.resolve(1);
   }
   return new Promise((resolve) => {
-    tim.on(TIM.EVENT.SDK_READY, resolve);
+    function resolveCallback() {
+      resolve(1);
+    }
+    tim.on(TIM.EVENT.SDK_READY, resolveCallback);
   });
 }

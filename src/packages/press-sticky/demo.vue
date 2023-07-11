@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       :title="t('basicUsage')"
       section-style="margin: 0;"
@@ -107,12 +107,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.wrap {
-  font-size: 16px;
+.demo-wrap {
   height: 1000px;
-  background: #fff;
-  overflow-y: auto;
 
   .btn1 {
     margin-left: 10px;
@@ -123,5 +119,12 @@ export default {
   .btn3 {
     margin-left: 160px;
   }
+}
+</style>
+
+<style lang="scss">
+page {
+  height: 100%;
+  overflow: auto;
 }
 </style>

@@ -1,0 +1,353 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+$popoverPadding: 11px;
+$popoverBorderWidth: 7px;
+$popoverCardBorderOffset: 4px;
+
+
+// 会话框的三角形
+@mixin triangle() {
+
+  &--left,
+  &--right {
+    position: relative;
+  }
+
+  &--left::after,
+  &--right::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: '';
+    border-top: .07rem solid $color-bg;
+    border-bottom: .07rem solid $color-bg;
+    width: 0;
+    top: .37rem;
+  }
+
+  &--left::after {
+    left: -$popoverBorderWidth;
+    border-right: $popoverBorderWidth solid $color-white;
+  }
+
+  &--right::after {
+    right: -$popoverBorderWidth;
+    border-left: $popoverBorderWidth solid $color-primary;
+  }
+}
+
+.press-message-detail {
+  height: 100%;
+  position: relative;
+
+  &__scroll-view {
+    height: 100%;
+    // height: auto;
+    // flex: 1;
+    overflow: scroll;
+    position: relative;
+    overflow-anchor: auto;
+  }
+
+  &__placeholder {
+    height: 0;
+  }
+
+  &__scrollbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.28rem;
+    background: #f5f6fa;
+  }
+
+  &__layout {
+    position: relative;
+    height: auto;
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    // position: absolute;
+    left: 0;
+    right: 0;
+    // top: 0;
+    height: 18px;
+  }
+}
+
+
+
+.press-message-item {
+  overflow: hidden;
+
+  &__time,
+  &__tip {
+    margin-top: .32rem;
+    height: .36rem;
+    line-height: .36rem;
+    text-align: center;
+    color: $color-gray;
+    font-size: $font-xxs;
+  }
+
+  &__tip {
+    &__btn {
+      color: $color-primary;
+    }
+  }
+
+  &__box {
+    padding: 0 .32rem;
+    display: flex;
+    margin-top: .32rem;
+
+    &__avatar {
+      border-radius: 50%;
+      width: 0.88rem;
+      height: 0.88rem;
+      background: url("https://image-1251917893.file.myqcloud.com/Esports/new/user/helper-logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: relative;
+    }
+
+    &__img {
+      width: 1.92rem;
+      border-radius: .08rem;
+      margin: 0 0.2rem;
+    }
+
+
+    &__popover {
+      padding: $popoverPadding;
+      background: $color-white;
+      color: $color-black;
+      max-width: 4.46rem;
+      margin: 0 .2rem;
+      border-radius: .1rem;
+
+      @include triangle();
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+
+      .press-message-item__box__popover {
+        background: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    .press-message-status {
+      font-size: $font-xxs;
+      display: flex;
+      align-items: flex-end;
+
+      &--read {
+        color: $color-gray-4;
+      }
+
+      &--unread {
+        color: $color-gray;
+      }
+    }
+
+    // img {
+    //   border-radius: 50%;
+    //   width: .88rem;
+    //   height: .88rem;
+    // }
+  }
+
+
+
+  &:last-child {
+    padding-bottom: 0.32rem;
+  }
+
+  &__content {
+    word-break: break-all;
+  }
+
+
+
+  &__title {
+    line-height: .48rem;
+    font-size: $font-l;
+    margin-bottom: .2rem;
+    font-weight: 600;
+  }
+
+  &__content {
+    line-height: .48rem;
+    font-size: $font-xm;
+    line-height: .44rem;
+    text-align: justify;
+
+    &__link {
+      color: $color-primary;
+    }
+  }
+}
+
+
+// 卡片信息
+.press-message-item-card {
+  width: 5.14rem;
+  padding: 0 $popoverPadding;
+  box-sizing: border-box;
+  @include triangle();
+
+
+  &__title {
+    padding: 0.16rem 0.24rem 0;
+    height: 1.12rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/card-tit-bg.png) no-repeat;
+    background-size: 100% 100%;
+
+    &__main,
+    &__desc {
+      font-weight: 600;
+      font-size: $font-xm;
+      line-height: .44rem;
+      color: $color-white;
+    }
+
+    &__desc {
+      font-weight: 400;
+      font-size: $font-s;
+      line-height: .36rem;
+      transform: scale(0.83);
+      transform-origin: 0 center;
+    }
+  }
+
+  &__main {
+    padding: .24rem;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(67.27deg, #CCECFF -65.69%, #FFFFFF 125.52%);
+  }
+
+  &--right::after {
+    right: .1rem;
+    border-left: $popoverBorderWidth solid #7BD0F8;
+  }
+
+  &--left::after {
+    left: $popoverCardBorderOffset;
+    border-right: $popoverBorderWidth solid #4ca1e2;
+  }
+
+  &--owner {
+    .press-message-item-card__title {
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/owner-card-tit-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .press-message-item-card__main {
+      background: linear-gradient(246.76deg, rgba(255, 255, 255, 0.67) 0%, rgba(255, 255, 255, 0.402) 100%), linear-gradient(58.41deg, #BCCFF9 1.84%, #DAE6FD 114.52%);
+    }
+
+    &.press-message-item-card--right::after {
+      border-left: $popoverBorderWidth solid #8199cc;
+    }
+
+    &.press-message-item-card--left::after {
+      border-right: $popoverBorderWidth solid #5A71AB;
+    }
+  }
+}
+
+// 卡片主体，不包含标题、描述
+.press-message-card {
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: .88rem;
+    height: .88rem;
+    margin-right: .16rem;
+    border-radius: 50%;
+  }
+
+  &__user-meta {
+    flex: 1;
+  }
+
+  &__user-name {
+    font-weight: 600;
+    font-size: $font-xm;
+    line-height: .44rem;
+    color: $color-black;
+    @include single-line-ellipsis;
+    max-width: 3.2rem;
+  }
+
+  &__user-desc {
+    font-size: $font-s;
+    line-height: .36rem;
+    color: $color-gray;
+    transform: scale(0.83);
+    transform-origin: 0 center;
+  }
+
+  &__contact {
+    margin-top: .22rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding-top: .1rem;
+
+      .iconfont {
+        font-size: $font-l;
+        color: $color-gray;
+        margin-right: .1rem;
+
+        &.icon-wx2 {
+          font-size: $font-xm;
+        }
+      }
+    }
+
+    &__value {
+      font-size: $font-s;
+      line-height: .4rem;
+      align-items: center;
+      color: $color-black;
+      @include single-line-ellipsis;
+      flex: 1;
+    }
+
+    &__tip,
+    &__tag {
+      font-size: $font-s;
+      line-height: .36rem;
+      transform: scale(0.83);
+      color: $color-gray;
+      margin-left: auto;
+    }
+
+    &__tag {
+      color: $color-primary;
+    }
+
+    &__btn {
+      font-size: $font-xm;
+      line-height: .44rem;
+      color: $color-primary;
+      text-align: center;
+      margin-top: .24rem;
+
+      &--disable {
+        color: $color-gray-4;
+      }
+    }
+  }
+}

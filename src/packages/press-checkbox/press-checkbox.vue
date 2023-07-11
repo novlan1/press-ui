@@ -43,7 +43,7 @@ import utils from '../common/utils/utils';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { ChildrenMixin } from '../mixins/relation';
-import computed from './index.js';
+import computed from './index';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 
 function emit(target, value) {

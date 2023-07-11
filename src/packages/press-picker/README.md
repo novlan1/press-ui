@@ -16,12 +16,12 @@ url : pages/press/picker/picker
 <press-picker
   v-if="pickerOption.tip.show"
   :title="pickerOption.tip.title"
-  :show-back-arrow="pickerOption.tip.showBackArrow"
-  :select-list="pickerOption.tip.selectList"
+  :arrowIcon="pickerOption.tip.arrowIcon"
+  :list="pickerOption.tip.list"
   :tip="pickerOption.tip.tip"
-  :select-item="pickerOption.tip.selectItem"
-  @onClickConfirm="pickerOption.tip.onClickConfirm"
-  @onRemove="pickerOption.tip.onRemove"
+  :current="pickerOption.tip.current"
+  @confirm="pickerOption.tip.confirm"
+  @cancel="pickerOption.tip.cancel"
 />
 ```
 
@@ -34,13 +34,13 @@ export default {
           show: false,
           title: 'Ban位设置',
           tip: '创建比赛后，可按比赛轮次精确设置。',
-          showBackArrow: false,
-          selectList: bpList,
-          selectItem: { label: bpList[0].label, value: 1 },
-          onClickConfirm: (boItem) => {
+          arrowIcon: false,
+          list: bpList,
+          current: { label: bpList[0].label, value: 1 },
+          confirm: (boItem) => {
             this.pickerOption.tip.show = false;
           },
-          onRemove: () => {
+          cancel: () => {
             this.pickerOption.tip.show = false;
           },
         },
@@ -63,30 +63,142 @@ export default {
 },
 ```
 
+### 函数式调用
+
+支持函数式调用，需要在页面下预埋组件，并指定`mode`为`functional`。
+
+
+```html
+<press-picker
+  :id="PRESS_PICKER_ID"
+  mode="functional"
+/>
+```
+
+```ts
+export default {
+  methods: {
+     onShowFunctionalPicker() {
+      const { bpList } = this;
+      showFunctionalComponent.call(this, {
+        selector: `#${PRESS_PICKER_ID}`,
+        list: bpList,
+        arrowIcon: true,
+        current: { label: bpList[1].label, value: 3 },
+        title: this.t('banSet'),
+        tip: this.t('tipContent'),
+      }).then((item) => {
+        this.onSuccessTip(item);
+      })
+        .catch(() => {
+          this.onTip('cancel');
+        });
+    },
+  }
+}
+```
+
+### 虚拟列表
+
+对于数量大于`virtual-list-threshold`的列表，`picker`内部会使用虚拟列表。
+
+实现原理是在`picker-view`上下各插入了一个占位`Dom`，并根据`currentIndex`计算它们的高度，同时将展示的数据减少。
+
+```html
+<div
+  :style="transformStyle"
+>
+  <div :style="hiddenUpPartStyle" />
+  <div
+    v-for="(item, index) in showingData"
+    :key="index"
+  >
+    {{ item.label }}
+  </div>
+  <div :style="hiddenBottomPartStyle" />
+</div>
+```
+
+```ts
+export default {
+  computed: {
+    hiddenUpPartStyle() {
+      const { currentIndex, itemHeight, virtualListThreshold } = this;
+      return `height: ${(currentIndex - virtualListThreshold) * itemHeight}px;`;
+    },
+    hiddenBottomPartStyle() {
+      const { currentIndex, data, itemHeight, virtualListThreshold } = this;
+      return `height: ${(data.length - currentIndex - virtualListThreshold) * itemHeight}px;`;
+    },
+    showingData() {
+      const { currentIndex, virtualListThreshold } = this;
+      const upMissed = Math.max(0, currentIndex - virtualListThreshold);
+      return this.data
+        .slice(upMissed, currentIndex + virtualListThreshold).map((item, index) => ({
+          ...item,
+          uniqueKey: index + upMissed,
+        }));
+    },
+    transformStyle() {
+      const res = `transform: translate3d(0, ${this.currentScroll}px, 0);`;
+      return res;
+    },
+  }
+}
+```
+
 
 ## API
 
 ### Props
 
-|     属性名      |   类型    | 默认值  |           说明           |
-| :-------------: | :-------: | :-----: | :----------------------: |
-|      title      | _string_  |    -    |           标题           |
-| show-back-arrow | _boolean_ | `false` | 左上角是否显示为返回箭头 |
-|   select-list   |  _Array_  |  `[]`   |         数据列表         |
-|   select-item   | _Object_  | `null`  |        当前选中项        |
-|       tip       | _string_  |    -    |           提示           |
-
+|         属性名         |   类型    | 默认值  |            说明            |
+| :--------------------: | :-------: | :-----: | :------------------------: |
+|         title          | _string_  |    -    |            标题            |
+|       arrow-icon       | _boolean_ | `false` |  左上角是否显示为返回箭头  |
+|          list          |  _Array_  |  `[]`   |          数据列表          |
+|        current         | _Object_  | `null`  |         当前选中项         |
+|          tip           | _string_  |    -    |            提示            |
+|          mode          | _string_  |    -    | 函数式调用时传`functional` |
+| virtual-list-threshold | _number_  |  `50`   |   触发虚拟列表的最小数量   |
 
 
 
 ### Events
 
-|    事件称名    |   说明   | 返回值 |
-| :------------: | :------: | :----: |
-|    onRemove    | 点击取消 |   -    |
-| onClickConfirm | 点击确定 |   -    |
+| 事件称名 |   说明   | 返回值 |
+| :------: | :------: | :----: |
+|  cancel  | 点击取消 |   -    |
+| confirm  | 点击确定 |   -    |
+
+
+以下为废弃属性（`v0.7.32`）：
+
+
+
+| 类型  |       旧        |     新     |
+| :---: | :-------------: | :--------: |
+| Prop  | show-back-arrow | arrow-icon |
+| Prop  |   select-list   |    list    |
+| Prop  |   select-item   |  current   |
+| Event | onClickConfirm  |  confirm   |
+| Event |    onRemove     |   cancel   |
+
+
 
 
 ## 主题定制
 
 <theme-config />
+
+
+## 常见问题
+
+### 虚拟列表对比
+
+下面是`picker`有`8000`项时的对比，左图是未使用虚拟列表，右图是使用虚拟列表。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/7/virtual-list-before.gif" width="400">
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/7/virtual-list-after.gif" width="400">
+

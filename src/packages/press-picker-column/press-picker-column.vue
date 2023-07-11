@@ -33,7 +33,7 @@
   </uni-shadow-root>
 </template>
 <script>
-import computed from './index.js';
+import computed from './index';
 import Vue from 'vue';
 import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';

@@ -5,7 +5,7 @@
              `press-popover--${placement}`,
              popperClass,
              customClass,
-             animateShow ? 'tip-match-fade-in':'tip-match-fade-out'
+             animateShow ? 'press--animation__fade-in':'press--animation__fade-out'
     ]"
   >
     <slot />
@@ -67,6 +67,7 @@ export default {
 </script>
 <style lang="scss">
 @import "../base/layout.scss";
+@import "../base/animate.scss";
 
 .press-popover {
   position: absolute;

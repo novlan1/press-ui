@@ -1,376 +1,387 @@
 <template>
-  <!-- :style="{backgroundPositionY:mpHeaderHeightStr}" -->
-  <div
-    class="room-page-container"
-    :class="customClass"
-  >
+  <div class="press-message-detail">
     <scroll-view
-      id="tipMatchMsgWrap"
+      :id="SELECTOR_MAP.SCROLL_VIEW_ID"
       :scroll-y="scrollY"
       enable-flex="true"
       enhanced="true"
-      class="tip-match-msg-wrap"
+      class="press-message-detail__scroll-view"
       :scroll-with-animation="scrollWithAnimation"
-      :enable-passive="true"
-      :scroll-anchoring="true"
-      @scroll="onScroll"
-      @touchmove="onTouchMove"
+      :enable-passive="false"
+      @scroll="scroll"
+      @touchmove="touchmove"
     >
-      <div
-        v-if="loading"
-        class="loading-wrap"
-      >
-        <press-loading-plus
-          size="16px"
-          color="rgba(0,0,0,0.7)"
-        />
-      </div>
-      <div
-        v-for="(item) in list"
-        :id="`msgDetailItem-${item.id}`"
-        :key="item.id"
-        class="message-detail-item"
-      >
-        <p
-          v-if="item.msgType === 'TIME'"
-          class="message-item-time"
-        >
-          {{ item.content.text }}
-        </p>
+      <div class="press-message-detail__placeholder" />
+      <div class="press-message-detail__layout">
         <div
-          v-else-if="item.msgType === 'MESSAGE_TEXT'"
-          :class="['message-item-box',
-                   item.isMine ? 'message-item-right':'',
-                   item.teamInvite ? 'message-item-invite':'',
-                   item.isSolo ? 'message-item-solo':'' ]"
+          v-for="(item) in reversedList"
+          :id="`${SELECTOR_MAP.MESSAGE_ITEM_PREFIX}${item.id}`"
+          :key="item.id"
+          class="press-message-item"
         >
-          <!-- <img
-            v-if="item.avatar"
-            :key="item.avatar"
-            :src="item.avatar"
-          > -->
-          <div
-            class="im-avatar"
-            :style="{'background-image': `url(${item.avatar})`}"
-            @click.stop="onClickAvatar(item)"
-          />
-          <div
-            class="message-item-popover"
-            :class="item.isMine ? 'message-popover-right' : 'message-popover-left'"
-            @click.stop="onReSendMsg(item)"
+          <!-- 时间信息 -->
+          <p
+            v-if="item.messageType === MESSAGE_TYPE_MAP.TIME"
+            class="press-message-item__time"
           >
-            <!-- 战队邀请 -->
-            <div
-              v-if="item.teamInvite"
-              class="message-team-invite"
+            {{ item.text || '' }}
+          </p>
+          <!-- 系统信息 -->
+          <div v-else-if="item.messageType === MESSAGE_TYPE_MAP.EXCHANGE_TEXT">
+            <p
+              class="press-message-item__tip"
             >
-              <div class="message-team-info">
-                <div class="message-team-tip">
-                  邀请你加入TA的战队
-                </div>
-                <div class="message-team-name">
-                  战队名称最多八字
-                </div>
-                <div class="iconfont icon-back" />
-              </div>
-              <div class="message-team-btn">
-                <p>同意加入</p>
-              </div>
-            </div>
-            <!-- 正常文本消息 -->
+              {{ item.text || '' }}
+            </p>
+            <p
+              v-if="item.showAutoAgreeExchangeCardText"
+              class="press-message-item__tip"
+            >
+              <span>根据您的设置，自动同意了交换名片，</span>
+              <span
+                class="press-message-item__tip__btn"
+                @click.stop="goSetCardPage(item)"
+              >设置></span>
+            </p>
+          </div>
+
+          <!-- 普通消息 -->
+          <div
+            v-else-if="item.messageType === MESSAGE_TYPE_MAP.MESSAGE_TEXT"
+            class="press-message-item__box"
+            :class="item.isMine ? 'press-message-item__box--right' : ''"
+          >
+            <div
+              class="press-message-item__box__avatar"
+              :style="item.avatar ? `background-image: url(${item.avatar})` : ''"
+              @click.stop="clickAvatar(item)"
+            />
+            <image
+              v-if="item.picUrl "
+              mode="widthFix"
+              class="press-message-item__box__img"
+              :src="item.picUrl"
+              @click="clickPic(item.picUrl, item)"
+            />
             <div
               v-else
-              class="message-popover-info"
+              class="press-message-item__box__popover"
+              :class="item.isMine
+                ? 'press-message-item__box__popover--right' : 'press-message-item__box__popover--left'"
+              @click.stop="reSend(item)"
             >
               <div
-                v-if="item.content.title"
-                class="message-popover-title"
+                v-if="item.title"
+                class="press-message-item__title"
               >
-                {{ item.content.title }}
+                {{ item.title }}
               </div>
-              <div
-                v-if="item.content.text"
-                class="message-popover-text"
-              >
-                <div class="main-text">
-                  {{ item.content.text }}
+              <div class="press-message-item__content">
+                <div class="press-message-item__content__item">
+                  <div
+                    v-for="textItem of item.textList"
+                    :key="textItem.key"
+                  >
+                    {{ textItem.value }}
+                  </div>
                 </div>
                 <span
-                  v-if="item.content.link"
-                  @click.stop="onCheckDetail(item.content.link)"
+                  v-if="item.link"
+                  class="press-message-item__content__link"
+                  @click.stop="checkDetail(item.link, item)"
                 >
                   查看详情
                 </span>
-                <!-- 1v1 solo -->
-                <div
-                  v-if="item.isSolo"
-                  class="message-popover-btn"
-                >
-                  点击进入 09:59
+              </div>
+            </div>
+
+            <p
+              v-if="item.isCustomFail"
+              class="press-message-status"
+              @click.stop="reSend(item)"
+            >
+              ❗️
+            </p>
+            <p
+              v-else-if="item.isMine"
+              class="press-message-status"
+              :class="item.isPeerRead ? 'press-message-status--read' : 'press-message-status--unread'"
+            >
+              {{ item.isPeerRead ? '已读' : '未读' }}
+            </p>
+          </div>
+          <!-- 个人名片卡片消息 -->
+          <div
+            v-else-if="item.messageType === MESSAGE_TYPE_MAP.EXCHANGE_CARD"
+            class="press-message-item__box"
+            :class="item.isMine ? 'press-message-item__box--right' : ''"
+          >
+            <div
+              class="press-message-item__box__avatar"
+              :style="item.avatar ? `background-image: url(${item.avatar})` : ''"
+              @click.stop="clickAvatar(item)"
+            />
+            <div
+              :class="[
+                'press-message-item-card',
+                item.isMine ? 'press-message-item-card--right' : 'press-message-item-card--left',
+                item.isOwner ? 'press-message-item-card--owner' : ''
+              ]"
+            >
+              <div class="press-message-item-card__title">
+                <p class="press-message-item-card__title__main">
+                  {{ item.cardTip || '' }}
+                </p>
+                <p class="press-message-item-card__title__desc">
+                  {{ item.cardDesc || '' }}
+                </p>
+              </div>
+
+              <div class="press-message-item-card__main">
+                <div class="press-message-card__user">
+                  <img
+                    class="press-message-card__avatar"
+                    :src="item.avatar"
+                  >
+                  <div class="press-message-card__user-meta">
+                    <div class="press-message-card__user-name">
+                      {{ item.nick }}
+                    </div>
+                    <div class="press-message-card__user-desc">
+                      {{ item.userGradeDesc }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="press-message-card__contact">
+                  <!-- 手机号 -->
+                  <div
+                    v-for="contact of item.cardContactList"
+                    :key="contact.key"
+                    class="press-message-card__contact__item"
+                  >
+                    <div :class="['iconfont', contact.icon || '']" />
+                    <div class="press-message-card__contact__value">
+                      {{ contact.value || '' }}
+                    </div>
+                    <span
+                      v-if="contact.tip"
+                      class="press-message-card__contact__tip"
+                    >
+                      {{ contact.tip }}
+                    </span>
+                    <a
+                      v-if="contact.showPhoneCallLink"
+                      class="press-message-card__contact__tag"
+                      :href="`tel:${contact.phone}`"
+                      @click.stop="makePhoneCall(contact.phone, contact, item)"
+                    >
+                      拨打
+                    </a>
+                    <span
+                      v-if="contact.showCopy || contact.showCopyInMp"
+                      id="message-wx-copy2"
+                      class="press-message-card__contact__tag"
+                      @click.stop="clickCopy('#message-wx-copy2', contact.copyValue, contact, item)"
+                    >
+                      复制
+                    </span>
+                  </div>
+                  <div
+                    v-if="item.showAgreeExchangeCardButton"
+                    class="press-message-card__contact__btn"
+                    @click.stop="agreeExchangeCard(item)"
+                  >
+                    同意交换
+                  </div>
+                  <div
+                    v-else-if="item.showExchangedCardButton"
+                    class="press-message-card__contact__btn press-message-card__contact__btn--disable"
+                  >
+                    已交换
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- 消息发送失败 -->
-          <p
-            v-if="item.isCustomFail"
-            @click.stop="onReSendMsg(item)"
-          >
-            ❗️
-          </p>
-          <!-- 消息是否已读 -->
-          <p
-            v-else-if="item.isMine"
-            :class="item.isPeerRead ? 'message-popover-read' : 'message-popover-unread'"
-          >
-            {{ item.isPeerRead ? '已读' : '未读' }}
-          </p>
+        </div>
+
+        <div
+          v-if="innerLoading"
+          class="press-message-detail__loading"
+        >
+          <press-loading-plus
+            size="16px"
+            color="rgba(0,0,0,0.7)"
+          />
         </div>
       </div>
     </scroll-view>
-    <!-- v-if="oppositeInfo.uid !== 'esportRobot'" -->
-    <div
-      v-if="showInput"
-      :style="{ transform: `translateY(-${inputBottom}px)` }"
-      class="message-bottom"
-    >
-      <div
-        class="team-zone-input-wrap"
-      >
-        <!-- 全国大赛solo -->
-        <div
-          v-if="isShowSolo"
-          class="team-solo"
-        />
-        <!-- div模拟输入框 -->
-        <div
-          id="msg-footer-input"
-          ref="msgFooterInput"
-          class="team-zone-input"
-        >
-          <input
-            id="msg-footer-textarea"
-            v-model="inputContent"
-            placeholder-style="color:#596297"
-            show-confirm-bar="false"
-            :adjust-position="false"
-            :placeholder="placeholder"
-            :auto-height="textAreaIsAutoHeight"
-            maxlength="100"
-            @focus="onFocus"
-            @blur="onBlur"
-          >
-        </div>
-        <div
-          :class="{'disabled': !sendBtnEnable}"
-          class="submit-btn"
-          @click.stop="onSend"
-        >
-          <p>发送</p>
-        </div>
-      </div>
-    </div>
+    <div class="press-message-detail__scrollbar" />
   </div>
 </template>
 <script>
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus';
-import { isH5 } from '../common/utils/validator';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { MESSAGE_TYPE_MAP } from '../common/im/message-detail/config';
+
+import { SELECTOR_MAP } from './config';
+import { getScrollSelector } from '../common/dom/scroll';
+import { getRect } from '../common/dom/rect';
+
+const scrollSelector = getScrollSelector(SELECTOR_MAP.SCROLL_VIEW_ID);
 
 export default {
-  options: {
-    ...defaultOptions,
-    styleIsolation: 'shared',
-  },
   components: {
     PressLoadingPlus,
   },
   props: {
-    list: {
-      type: Array,
-      default: () => ([]),
-    },
     loading: {
       type: Boolean,
       default: false,
     },
-    showInput: {
-      type: Boolean,
-      default: true,
+    list: {
+      type: Array,
+      default: () => ([]),
     },
-    isShowSolo: {
-      type: Boolean,
-      default: false,
+    placeHolderTop: {
+      type: Number,
+      default: () => 0,
     },
-    ...defaultProps,
+    offset: {
+      type: Number,
+      default: 300,
+    },
   },
   data() {
     return {
-      scrollWithAnimation: true,
+      MESSAGE_TYPE_MAP,
+      SELECTOR_MAP,
       scrollY: true,
-      textAreaIsAutoHeight: process.env.UNI_PLATFORM === 'mp-weixin' ? 'true' : 'false',
-      placeholder: '说点什么...',
-      inputBottom: '0', // 输入框底部padding
-      helpIshow: false,
+      scrollWithAnimation: true,
+      scrollTop: 0,
 
-      inputContent: '',
+      innerLoading: this.loading,
+      scrollerHeight: 0,
     };
   },
-  onPageShow() {
-    uni.onKeyboardHeightChange((res) => { // 监听键盘高度变化
-      // const systemInfo = uni.getSystemInfoSync();
-      const keyHeight = res.height;
-      // - (systemInfo.screenHeight - systemInfo.windowHeight + systemInfo.safeAreaInsets.bottom);
-
-      this.inputBottom = `${keyHeight > 0 ? keyHeight : 0}`;
-    });
-  },
-  onPageHide() {
-    uni.offKeyboardHeightChange();
-  },
   computed: {
-    sendBtnEnable() {
-      return this.inputContent && this.inputContent.length < 100;
+    reversedList() {
+      const res = [
+        ...this.list,
+      ];
+      res.reverse();
+      return res;
+    },
+  },
+  watch: {
+    loading(val) {
+      // console.log('watch.loading', val);
+      this.innerLoading = val;
     },
   },
   methods: {
-    onScroll(event) {
+    scroll(event) {
+      this.$emit('onScroll', event);
       this.watchScrollTop(event);
     },
-    onTouchMove(event) {
-      this.watchScrollTop(event);
+    touchmove(event) {
+      this.$emit('touchMove', event);
+      // this.watchScrollTop(event);
     },
-    onClickAvatar(item) {
-      if (item.isMine) return;
-      if (item.uid === 'esportRobot') return;
-      this.$emit('onShowMemberDialog');
+    clickPic(pickUrl, messageItem) {
+      this.$emit('clickPic', pickUrl, messageItem);
     },
-    watchScrollTop(event) {
-      const scrollTopThreshold = 0;
-      if (!isH5()) {
-        const { scrollTop } = event.detail || {};
-        if (!this.list || this.list.length < 1) {
-          return;
-        }
-        const firstItemId = this.list[0]?.id;
-        const cb = () => {
-          const view = this.createSelectorQuery().select('#tipMatchMsgWrap');
-          this.scrollWithAnimation = false;
-          view
-            .node()
-            .exec((res) => {
-              const scrollView = res[0]?.node;
-              if (!scrollView) return;
-              scrollView.scrollIntoView(`#msgDetailItem-${firstItemId}`);
-            });
-          setTimeout(() => {
-            this.scrollWithAnimation = true;
-          }, 1000);
-          return;
-        };
-        if (scrollTop <= 10) {
-          this.$emit('loadMore', cb);
-        }
-        return;
-      }
-      const wrap = document.querySelector('#tipMatchMsgWrap');
-      if (!wrap) return;
-      if (this.loading) return;
-
-      const {  scrollTop, scrollHeight } = wrap;
-
-      const cb = () => {
-        // this.scrollY = true;
-        wrap.scrollTop = wrap.scrollHeight - scrollHeight + scrollTopThreshold;
-      };
-      if (scrollTop <= scrollTopThreshold) {
-        // this.scrollY = false;
-        this.$emit('loadMore', cb);
-      }
+    clickAvatar(messageItem) {
+      this.$emit('clickAvatar', messageItem);
     },
-    onSend() {
-      if (!this.sendBtnEnable) return;
-      this.$emit('send', this.inputContent);
-      this.inputContent = '';
+    checkDetail(link, messageItem) {
+      this.$emit('checkDetail', link, messageItem);
     },
-    onFocus() {
-      this?.scrollToBottom();
+    reSend(messageItem) {
+      this.$emit('reSend', messageItem);
     },
-    onBlur() {
-      this.inputBottom = 0;
+    agreeExchangeCard(messageItem) {
+      this.$emit('agreeExchangeCard', messageItem);
+    },
+    goSetCardPage(messageItem) {
+      this.$emit('goSetCardPage', messageItem);
+    },
+    makePhoneCall(phone, contactItem, messageItem) {
+      this.$emit('makePhoneCall', phone, contactItem, messageItem);
+    },
+    clickCopy(selector, copyValue, contactItem, messageItem) {
+      this.$emit('clickCopy', selector, copyValue, contactItem, messageItem);
     },
     scrollToBottom() {
-      if (this.list?.length <= 1) return;
-      if (!isH5()) {
-        const view = this.createSelectorQuery().select('#tipMatchMsgWrap');
+      if (!this.list?.length) return;
 
-
-        view
-          .node()
-          .exec((res) => {
-            const scrollView = res[0]?.node;
-            if (!scrollView) return;
-            if (!this.list || this.list.length < 1) {
-              return;
-            }
-            const id = `#msgDetailItem-${this.list[this.list.length - 1]?.id}`;
-            scrollView.scrollIntoView(id);
+      // #ifndef H5
+      this?.createSelectorQuery?.()
+        .select(scrollSelector)
+        .node()
+        .exec((res) => {
+          const scrollView = res[0]?.node;
+          if (!scrollView) return;
+          scrollView.scrollTo({
+            top: 0,
+            duration: 20,
           });
-        return;
-      }
-      const dom = document.querySelector('#tipMatchMsgWrap');
-      if (!dom) return;
-      dom.scrollTop = dom.scrollHeight - dom.clientHeight;
-    },
-    tGoBack() {
-      this.$goBack();
-      this.$emit('setMessageRead');
-    },
-    onCheckDetail() {
-      // const parsed = parseRobotLink(link);
-      // if (parsed) {
-      //   this.$router.push(parsed);
-      //   return;
-      // }
+        });
+      // #endif
 
-      // window.location.href = link;
+      // #ifdef H5
+      const dom = document.querySelector(scrollSelector);
+      if (!dom) return;
+      dom.scrollTop = 0;
+      // #endif
     },
-    onReSendMsg(item) {
-      if (!item.isCustomFail) return;
-      this.$emit('onReSend', item);
+    getScrollerHeight() {
+      if (this.scrollerHeight)  {
+        return Promise.resolve(this.scrollerHeight);
+      }
+      return new Promise((resolve) => {
+        getRect(this, scrollSelector).then((res) => {
+          // console.log('getRect.res', res);
+          this.scrollerHeight = res.height;
+          resolve(res.height);
+        });
+      });
+    },
+
+
+    watchScrollTop(event) {
+      // console.log('innerLoading', this.innerLoading);
+      if (!this.list?.length || this.innerLoading) return;
+      const { scrollTop, scrollHeight } = event.detail || {};
+      // console.log('scrollTop', scrollTop, event);
+      this.getScrollerHeight().then((scrollerHeight) => {
+        if (scrollTop + scrollerHeight > scrollHeight - this.offset) {
+          this.$emit('loadMore');
+        }
+      });
+      // getRect(this, scrollSelector).then((res) => {
+      //   console.log('getRect.res', res);
+      //   this.scrollerHeight = res.height;
+      //   // if (scrollTop < 100) {
+      //   if (scrollTop + res.height > scrollHeight - 100) {
+      //     this.$emit('loadMore');
+      //   }
+      //   // if (res.top + 100 <= this.placeHolderTop) {
+      //   //   this.$emit('loadMore');
+      //   // }
+      // });
+      return;
     },
   },
 };
 </script>
-<style lang="scss" src="./index.scss"></style>
-<style scoped land="scss">
-.room-page-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.tip-match-msg-wrap {
-  flex: 1;
-  overflow: scroll;
-  position: relative;
-  overflow-anchor: auto;
-}
-.im-avatar {
-  border-radius: 50%;
-  width: 0.88rem;
-  height: 0.88rem;
-  background: url("https://image-1251917893.file.myqcloud.com/Esports/new/user/helper-logo.png")
-    no-repeat center center;
-  background-size: contain;
-}
-.loading-wrap {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-.message-detail-item:last-child {
-  padding-bottom: 0.32rem;
+<style scoped lang="scss" src="./css/index.scss"></style>
+<style scoped lang="scss" src="./css/reverse.scss"></style>
+<style>
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 </style>

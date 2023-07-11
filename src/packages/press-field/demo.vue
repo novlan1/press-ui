@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap demo-wrap--gray">
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"
@@ -8,6 +8,7 @@
       <press-field
         :value="value"
         :placeholder="t('placeholder')"
+        title-width="0"
         :border="false"
         @change="onChange"
       />
@@ -256,20 +257,20 @@ export default {
   },
   methods: {
     onChange(val) {
-      console.log('onChange.val', val);
+      this.onTip(val);
     },
     onClickIcon() {
-      console.log('onClickIcon');
+      this.onTip('Click Icon');
+    },
+    onTip(title) {
+      uni.showToast({
+        title,
+        icon: 'none',
+        duration: 1000,
+      });
     },
   },
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-page,
-.wrap {
-  background: #f7f8fa !important;
-  min-height: 100%;
-  padding-bottom: 20px;
-}
 </style>

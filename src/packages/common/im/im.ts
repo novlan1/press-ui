@@ -10,17 +10,13 @@ import {
   TIM,
 } from './helper';
 
-// #ifdef H5
-import TIM_TYPE from 'tim-js-sdk/tim-js';
-// #endif
+import type TIM_TYPE from 'tim-js-sdk/tim-js';
 
 export class IM {
   tim: IChatSDK;
 
-  // #ifdef H5
   // eslint-disable-next-line @typescript-eslint/naming-convention
   TIM: typeof TIM_TYPE;
-  // #endif
 
   constructor({
     appId,
@@ -55,6 +51,10 @@ export class IM {
       tim,
     });
     return tim;
+  }
+
+  waitReady() {
+    return waitReady(this.tim);
   }
 
   setEventListener(type, cb) {
@@ -145,7 +145,8 @@ export class IM {
   }
 
   // 修改个人标配资料
-  updateMyProfile(profile) {
+  async updateMyProfile(profile) {
+    await waitReady(this.tim);
     return this.tim.updateMyProfile(profile);
   }
 

@@ -2,7 +2,7 @@
   <div
     :class="switchClass"
     :style="switchStyle"
-    @click="onClick"
+    @click.stop="onClick"
   >
     <div
       class="press-switch__node "

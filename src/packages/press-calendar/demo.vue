@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
       <press-cell
         :title="t('selectSingle')"
@@ -128,13 +128,14 @@
 <script>
 import PressCalendar from 'src/packages/press-calendar/press-calendar.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
-import { initialMinDate, initialMaxDate } from 'src/packages/press-calendar/utils';
+import { INITIAL_MIX_DATE, INITIAL_MAX_DATE } from 'src/packages/press-calendar/utils';
 import { t } from 'src/packages/locale';
+import { timeStampFormat } from 'src/packages/common/format/time';
 
 const DEFAULT_DATA = {
   color: '',
-  minDate: initialMinDate,
-  maxDate: initialMaxDate,
+  minDate: INITIAL_MIX_DATE,
+  maxDate: INITIAL_MAX_DATE,
   confirmText: t('calendar.confirm'),
   confirmDisabledText: t('calendar.confirm'),
   useFormatter: false,
@@ -257,27 +258,31 @@ export default {
       return `${date.getMonth() + 1}/${date.getDate()}`;
     },
     onConfirm(result) {
-      console.log('onConfirm.result', result);
+      console.log('[onConfirm] result: ', result);
       this.onClose();
 
       if (this.type === 'range') {
         const [start, end] = result;
         this.rangeValue = `${this.formatDate(start)} - ${this.formatDate(end)}`;
+        this.onTip([start, end], ' - ');
       } else if (this.type === 'multiple') {
         this.multipleValue = this.t('selectCount', result.length);
+        this.onTip(result);
       } else if (this.type === 'single') {
         this.singleValue = this.formatDate(result);
+        this.onTip([result]);
       }
+    },
+    onTip(list, separator = ', ') {
+      const formatTime = time => timeStampFormat(time.getTime(), 'yyyy-MM-dd');
+      const str = list.map(time => formatTime(time)).join(separator);
+      this.onGTip(str, 3000);
     },
   },
 };
 </script>
 <style scoped lang="scss">
-.demo-wrap {
-  padding-bottom: 20px;
-
-  .calendar {
-    --calendar-height: 500px;
-  }
+.calendar {
+  --calendar-height: 500px;
 }
 </style>

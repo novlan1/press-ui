@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
       <press-card>
         <span class="press-body">
@@ -199,11 +199,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.demo-wrap {
-  padding-bottom: 20px;
-}
-
 .card-actions {
   display: flex;
   flex-direction: row;

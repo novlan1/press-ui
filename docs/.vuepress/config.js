@@ -2,6 +2,53 @@ const fs = require('fs');
 const SIDEBAR_CONFIG_PATH = './docs/.vuepress/sidebar/sidebar.json';
 const SIDEBAR_EN_CONFIG_PATH = './docs/.vuepress/sidebar/sidebar-en.json';
 
+
+const LOGIC_SIDEBAR_CONFIG = {
+  zh: {
+    title: '通用逻辑',
+    collapsable: false,
+    children: [
+      {
+        title: 'IM',
+        subTitle: '即时通信',
+        path: '/components/logic/im.md',
+      },
+      {
+        title: 'Protocol',
+        subTitle: '协议',
+        path: '/components/logic/protocol.md',
+      },
+      {
+        title: 'Router',
+        subTitle: '路由',
+        path: '/components/logic/router.md',
+      },
+    ],
+  },
+  en: {
+    title: 'General Logic',
+    collapsable: false,
+    children: [
+      {
+        title: 'IM',
+        subTitle: '',
+        path: '/en/components/logic/im.md',
+      },
+      {
+        title: 'Protocol',
+        subTitle: '',
+        path: '/en/components/logic/protocol.md',
+      },
+      {
+        title: 'Router',
+        subTitle: '',
+        path: '/en/components/logic/router.md',
+      },
+    ],
+  },
+};
+
+
 function getSidebarConfig(isEn) {
   const path = isEn ? SIDEBAR_EN_CONFIG_PATH : SIDEBAR_CONFIG_PATH;
   const data = fs.readFileSync(path);
@@ -16,7 +63,7 @@ module.exports = {
     lineNumbers: false,
     extractHeaders: ['h2', 'h3', 'h4'],
   },
-  base: '/press-ui/',
+  base: process.env.PUBLISH_PATH || '/press-ui/',
   head: [
     [
       'link', { rel: 'icon', href: '/images/favicon.ico' },
@@ -95,6 +142,7 @@ module.exports = {
           },
           '/en/quickstart',
           '/en/locale',
+          '/en/contributing',
           // '/changelog.md',
           // '/questions.md',
           // {
@@ -102,6 +150,7 @@ module.exports = {
           // 	title: '风格指南',
           // },
           ...getSidebarConfig(true).sidebar,
+          LOGIC_SIDEBAR_CONFIG.en,
         ],
       },
     },
@@ -112,6 +161,7 @@ module.exports = {
       },
       '/quickstart',
       '/locale',
+      '/contributing',
       // '/changelog.md',
       // '/questions.md',
       // {
@@ -119,6 +169,7 @@ module.exports = {
       // 	title: '风格指南',
       // },
       ...getSidebarConfig().sidebar,
+      LOGIC_SIDEBAR_CONFIG.zh,
     ],
   },
   plugins: [

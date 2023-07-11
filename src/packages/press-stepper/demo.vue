@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <press-cell :title="t('basicUsage')">
       <press-stepper
         :value="value"
@@ -138,5 +138,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

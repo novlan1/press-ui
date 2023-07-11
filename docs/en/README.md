@@ -5,17 +5,58 @@
 
 ---
 
-
 ### 1 Introduction
 
 `press-ui` is an easy-to-use, flexible, cross-end component library based on `uni-app`.
 
 
-It can be used in ordinary `h5` projects, just add a [loader](https://github.com/novlan1/uni-plugin-light/tree/master/loader/ifdef-loader) to remove the condition Compile part.
+- 70+ basic components, covering mainstream mobile scenarios
+- Support H5, WeChat applet, QQ applet based on `uni-app`
+- Support common H5 items
+- Zero external dependencies, no third-party npm packages
+- Provide rich Chinese and English documents and component examples
+- Support theme customization, built-in 600+ theme variables
+- Support internationalization, built-in 16+ language packs
+
+
+### 2. Solve pain points
+
+
+`press-ui` mainly solves the following pain points:
+
+1. Can support the smooth migration of H5 projects containing `vant` to `uni-app` projects, only need to change the reference address and component name.
+2. Rich component types and easy-to-use API make `uni-app` development easy.
+3. Support internationalization, theme customization, etc., more flexible components
+
+
+At the same time, depositing business components in the project into `press-ui` has the following benefits:
+
+
+- Enhance maintainability and improve development efficiency
+   - Make components pure, enhance maintainability, and improve efficiency by organizing code, merging attributes, separating business logic, etc.
+- Reduce the coupling of business and components, reduce their respective complexity, and reduce bugs
+- Encapsulate core logic and control changes
+   - Don't worry about external collaborators modifying the code and overwriting problems when resolving conflicts
+- UI problem location is simple
+   - The codes of the three terminals are released at the same time, as well as various types of examples, with full coverage, easy to find ui problems, and inconsistent performance of the three terminals
+- can improve performance
+   - Locate performance bottlenecks and solve performance problems by customizing variables such as the number of teams
+- Improves reusability and can be applied to other projects
+- Technology precipitation, technology accumulation, and continuous polishing of component details
+
+
+### 3. Application scenarios
+
+`press-ui` can be applied to `uni-app` projects, or ordinary H5 projects, and has been applied to projects such as Wangwang Saibao, HoK Club, Saibao pro and so on.
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
+
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/hok-club-screenshot.png" width="300">
 
 
 
-### 2. How to use
+### 4. How to use
 
 1. Install `npm` package
 
@@ -59,101 +100,12 @@ module.exports = {
 
 
 
-### 3. Try Now
+### 5. Try Now
 
 The following figure is an example QR code with three terminals:
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600">
 
+### 6. Contribution Guidelines
 
-### 4. Directory structure
-
-```bash
-- docs # document address
-- plugin # [demo] Plugins used in the project
-- script # script
-- src
-   - common # [demo] public content
-   - packages # Package content released externally
-   - pages # [demo] page content
-   - static # [demo] static content
-   - App.vue # [demo] application entry
-   - main.js
-   - pages.json
-```
-
-### 5. Development
-
-First, execute the following command to distribute components:
-
-```bash
-npm run init
-```
-
-#### 5.1. Component development
-
-
-```bash
-npm run dev
-# h5
-
-npm run dev:mp-weixin
-# WeChat applet
-
-npm run dev:mp-qq
-# qq applet
-```
-
-
-
-#### 5.2. Document development
-
-Document development command:
-
-```bash
-npm run docs:dev
-```
-
-Documentation build command:
-
-```bash
-npm run docs:build
-```
-
-When deploying the document, you need to write the server address and password in `.env.local`:
-
-```
-HOST_NAME=xxx
-HOST_PWD=xxx
-```
-
-Then execute:
-
-```
-npm run docs:deploy
-```
-
-#### 5.3. New components
-
-Execute the following command:
-
-```bash
-npm run new:comp
-```
-
-Then interactively input the English name, Chinese name and other content of the component.
-#### 5.4. Style Specification
-
-
-BEM way to name CSS, refer to [this article](https://juejin.cn/post/7102980936232337445).
-
-The outermost structure is named `press-component-name`, such as `press-loading`.
-
-
-
-
-### 6. rem unit
-
-Some components currently use `rem`
--Advantage: the h5 end is better adapted and more suitable
-- Disadvantage: Additional plug-ins are required for conversion on other ends such as applets
+Check it out [here](https://github.com/novlan1/press-ui/blob/release/CONTRIBUTING.md).

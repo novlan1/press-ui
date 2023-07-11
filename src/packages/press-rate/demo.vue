@@ -100,9 +100,8 @@ export default {
   },
   methods: {
     onChange(val) {
-      console.log('onChange.val', val);
+      this.onGTip(`value: ${val}`);
     },
-
   },
 };
 </script>

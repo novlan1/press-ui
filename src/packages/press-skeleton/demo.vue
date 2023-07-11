@@ -101,7 +101,7 @@ export default {
   margin: 0 16px 8px;
 }
 
-.demo-wrap ::v-deep .demo-preview {
+::v-deep .demo-preview {
   display: flex;
   padding: 0 16px;
 

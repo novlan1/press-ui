@@ -6,29 +6,45 @@ url : pages/press/message-board/message-board
 
 Message board function.
 
-For ease of use, there are two components inside the message board, one is the message list and the other is the input box.
+For the convenience of use, there are 3 components inside the message board, which are message list, message `item`, and input box.
 
 
 ## Code Demo
 
-### Basic Usage
+### Basic usage
 
 
 ```html
-<PressMessageBoardList
-   :list="msgList"
-   captain-uid="good_uid"
-/>
-<PressMessageBoardInput
-   v-model="msgContent"
-   :send-btn-enable="sendBtnEnable"
-   @sendMsg="sendMsg"
-/>
+<div class="wrap">
+   <div class="demo-list-wrap">
+     <PressMessageBoardList
+       custom-class="demo-message-list"
+     >
+       <PressMessageBoardItem
+         v-for="(item, index) of msgList"
+         :key="index"
+         :item="item"
+         captain-uid="good_uid"
+         :caption-badge-at-right="false"
+       />
+     </PressMessageBoardList>
+   </div>
+
+   <div class="demo-input-wrap">
+     <PressMessageBoardInput
+       v-model="msgContent"
+       :send-btn-enable="sendBtnEnable"
+       @clickInput="clickInput"
+       @sendMsg="sendMsg"
+     />
+   </div>
+</div>
 ```
 
 ```ts
-import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input.vue';
-import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list.vue';
+import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
+import PressMessageBoardList from 'src/packages/press-message-board/press-message-board-list.vue';
+import PressMessageBoardItem from 'src/packages/press-message-board/press-message-board-item.vue';
 
 
 const MSG_LIST = [
@@ -65,6 +81,7 @@ export default {
    components: {
      PressMessageBoardInput,
      PressMessageBoardList,
+     PressMessageBoardItem,
    },
    data() {
      return {
@@ -80,7 +97,6 @@ export default {
    },
    methods: {
       sendMsg() {
-       console.log('sendMsg', this.msgContent);
      },
    }
 }
@@ -88,35 +104,41 @@ export default {
 
 ## API
 
-### MessageBoardList Props
 
 
-| Parameter  | Description  | Type    | Default |
-| ---------- | ------------ | ------- | ------- |
-| list       | message list | _Array_ | `[]`    |
-| captainUid | captain uid  | string  | -       |
+
+### MessageBoardItem Props
 
 
-### MessageBoardList Event
+| Parameter              | Description                               | Type      | Default |
+| ---------------------- | ----------------------------------------- | --------- | ------- |
+| item                   | message content                           | _Object_  | `{}`    |
+| captain-uid            | captain uid                               | _string_  | -       |
+| captain-badge-at-right | Whether the captain badge is on the right | _boolean_ | false   |
+| colon                  | Whether to display the colon              | _boolean_ | true    |
+| reply-colon            | Whether to show the colon in the reply    | _boolean_ | true    |
+
+### MessageBoardItem Event
 
 
 | Event Name | Description    | Callback Parameters         |
 | ---------- | -------------- | --------------------------- |
 | replyClick | Click to reply | message item, message index |
 
+
 ### MessageBoardInput Props
 
 
-| Parameter            | Description                                | Type               | Default |
-| -------------------- | ------------------------------------------ | ------------------ | ------- |
-| value                | input content                              | _string_           | -       |
-| sendBtnEnable        | Can send                                   | _boolean_          | `false` |
-| textAreaIsFocus      | Whether to focus                           | _boolean_          | `false` |
-| inputBottom          | height from bottom                         | _[number, string]_ | `0`     |
-| placeholder          | placeholder text                           | _boolean_          | `false` |
-| textAreaIsAutoHeight | Whether to automatically adjust the height | _boolean_          | `false` |
-| adjustPosition       | corresponds to the applet adjust-position  | _boolean_          | `false` |
-| showConfirmBar       | Corresponding applet show-confirm-bar      | _boolean_          | `false` |
+| Parameter                | Description                            | Type               | Default |
+| ------------------------ | -------------------------------------- | ------------------ | ------- |
+| value                    | input content                          | _string_           | -       |
+| send-btn-enable          | Whether to enable sending              | _boolean_          | `false` |
+| text-area-is-focus       | Whether to focus                       | _boolean_          | `false` |
+| input-bottom             | height from bottom                     | _[number, string]_ | `0`     |
+| placeholder              | placeholder text                       | _boolean_          | `false` |
+| text-area-is-auto-height | Whether to adjust height automatically | _boolean_          | `false` |
+| adjust-position          | Corresponding applet adjust-position   | _boolean_          | `false` |
+| show-confirm-bar         | Corresponding applet show-confirm-bar  | _boolean_          | `false` |
 
 
 ### MessageBoardInput Event

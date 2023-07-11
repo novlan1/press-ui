@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -159,29 +159,25 @@ export default {
   },
   methods: {
     onChange(val) {
-      console.log('onChange.val', val);
-      this.$toast(`${this.t('text')}${val.toString()}`, val);
+      console.log('[onChange] val: ', val);
+      this.onGTip(`${this.t('text')}${val.toString()}`);
     },
     onDrag(val) {
-      console.log('onDrag', val);
+      console.log('[onDrag] val: ', val);
+      this.onGTip(`drag: ${val}`);
       this.dragValue = val;
     },
   },
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.wrap {
-  padding-bottom: 20px;
-
-  .custom-button {
-    width: 26px;
-    color: #fff;
-    font-size: 10px;
-    line-height: 18px;
-    text-align: center;
-    background-color: #ee0a24;
-    border-radius: 100px;
-  }
+.custom-button {
+  width: 26px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  background-color: #ee0a24;
+  border-radius: 100px;
 }
 </style>

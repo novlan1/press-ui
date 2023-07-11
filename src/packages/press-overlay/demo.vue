@@ -1,21 +1,19 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <button
-        type="primary"
+      <press-cell
+        :title="t('check')"
+        is-link
         @click="onClickShow('normal')"
-      >
-        {{ t('showOverlay') }}
-      </button>
+      />
     </demo-block>
 
     <demo-block :title="t('embeddedContent')">
-      <button
-        type="primary"
+      <press-cell
+        :title="t('check')"
+        is-link
         @click="onClickShow('content')"
-      >
-        {{ t('embeddedContent') }}
-      </button>
+      />
     </demo-block>
 
     <press-overlay
@@ -41,12 +39,10 @@
 export default {
   i18n: {
     'zh-CN': {
-      showOverlay: '显示遮罩层',
       embeddedContent: '嵌入内容',
     },
     'en-US': {
-      showOverlay: 'Show Overlay',
-      embeddedContent: 'Embedded Content',
+      embeddedContent: 'Embedded',
     },
   },
 

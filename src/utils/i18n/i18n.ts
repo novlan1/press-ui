@@ -109,7 +109,7 @@ export function demoI18n() {
           }
           return value;
         }
-        return t(key, ...args);
+        return t.call(this, key, ...args);
       },
     },
   });

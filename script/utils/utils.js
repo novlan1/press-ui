@@ -1,11 +1,13 @@
+const { hyphenate } = require('t-comm');
 
 const COMP_PREFIX = 'press-';
 
 
-function hyphenate(str) {
-  const hyphenateRE = /\B([A-Z])/g;
-  return str.replace(hyphenateRE, '-$1').toLowerCase();
-}
+// function hyphenate(str) {
+//   const hyphenateRE = /\B([A-Z])/g;
+//   return str.replace(hyphenateRE, '-$1').toLowerCase();
+// }
+
 
 function getFullCompName(name) {
   name = hyphenate(name);

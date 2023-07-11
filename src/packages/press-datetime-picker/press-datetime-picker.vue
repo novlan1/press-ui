@@ -75,7 +75,10 @@ export default {
     value: {
       type: null,
     },
-    filter: null,
+    filter: {
+      type: [Function, null],
+      default: null,
+    },
     type: {
       type: String,
       default: 'datetime',
@@ -85,7 +88,7 @@ export default {
       default: true,
     },
     formatter: {
-      type: null,
+      type: [Function, null],
       default: defaultFormatter,
     },
     minDate: {
@@ -201,19 +204,19 @@ export default {
     updateColumns() {
       const formatter = this.formatter || defaultFormatter;
       const results = this.getOriginColumns().map(column => ({
-        values: column.values.map(value => formatter(column.type, value)),
+        values: column.values.map(value => formatter(column.type, value, this.innerValue)),
       }));
       return this.set({ columns: results });
     },
     getOriginColumns() {
-      const { filter } = this;
+      const { filter, innerValue } = this;
       const results = this.getRanges().map(({ type, range }) => {
         let values = times(range[1] - range[0] + 1, (index) => {
           const value = range[0] + index;
           return type === 'year' ? `${value}` : padZero(value);
         });
         if (filter) {
-          values = filter(type, values);
+          values = filter(type, values, innerValue);
         }
         return { type, values };
       });
@@ -363,24 +366,28 @@ export default {
     },
     updateColumnValue(value) {
       let values = [];
-      const { type } = this;
+      const { type, innerValue } = this;
       const formatter = this.formatter || defaultFormatter;
       const picker = this.getPicker();
 
       if (type === 'time') {
         const pair = value.split(':');
-        values = [formatter('hour', pair[0]), formatter('minute', pair[1])];
+        values = [formatter('hour', pair[0], innerValue), formatter('minute', pair[1])];
       } else {
         const date = new Date(value);
         values = [
-          formatter('year', `${date.getFullYear()}`),
-          formatter('month', padZero(date.getMonth() + 1)),
+          formatter('year', `${date.getFullYear()}`, innerValue),
+          formatter('month', padZero(date.getMonth() + 1), innerValue),
         ];
         if (type === 'date') {
-          values.push(formatter('day', padZero(date.getDate())));
+          values.push(formatter('day', padZero(date.getDate()), innerValue));
         }
         if (type === 'datetime') {
-          values.push(formatter('day', padZero(date.getDate())), formatter('hour', padZero(date.getHours())), formatter('minute', padZero(date.getMinutes())));
+          values.push(
+            formatter('day', padZero(date.getDate()), innerValue),
+            formatter('hour', padZero(date.getHours()), innerValue),
+            formatter('minute', padZero(date.getMinutes()), innerValue),
+          );
         }
       }
 

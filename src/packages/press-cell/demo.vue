@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap demo-wrap--gray">
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"
@@ -282,11 +282,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-page {
-  background: #f7f8fa !important;
-}
-
 .demo-wrap {
   .press-cell-text {
     margin-right: 4px;
@@ -295,10 +290,6 @@ page {
 }
 </style>
 <style lang="scss">
-.demo-wrap {
-  padding-bottom: 20px;
-}
-
 .demo--e-sport-wrap {
   --cell-background-color: rgba(255, 255, 255, 0.85);
   --cell-active-color: #f5f6fa;

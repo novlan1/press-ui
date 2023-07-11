@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       v-for="(demo) of demoList"
       :key="demo.key"
@@ -195,7 +195,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 .demo-part {
   margin-right: 12px;
   display: inline-block;

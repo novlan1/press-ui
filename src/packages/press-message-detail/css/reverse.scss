@@ -1,0 +1,49 @@
+.press-message-detail {
+  &__scroll-view {
+    transform: rotate(180deg);
+  }
+
+  ::v-deep .uni-scroll-view-content {
+    // display: flex;
+    // flex-direction: column-reverse;
+    height: auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  &__placeholder {
+    flex: 1;
+  }
+
+  /* #ifndef H5 */
+
+  &__scroll-view {
+    display: flex;
+    flex-direction: column;
+    // min-height: 100%;
+  }
+
+  /* #endif */
+
+  &__loading {
+    bottom: 0;
+    top: auto;
+  }
+
+  .press-message-item {
+    transform: rotate(180deg);
+
+    &:first-of-type {
+      padding-bottom: 0.32rem;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+
+  }
+}

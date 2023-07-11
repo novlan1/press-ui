@@ -38,7 +38,7 @@
       >
         {{ item.text }}
         <press-icon-plus
-          v-if="computed.isActive(activeId, item.id)"
+          v-if="isActive(activeId, item.id)"
           :name="selectedIcon"
           size="16px"
           class="press-tree-select__selected"
@@ -54,7 +54,7 @@ import PressSidebarItem from '../press-sidebar-item/press-sidebar-item.vue';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 
 import utils from '../common/utils/utils';
-import computed from './computed';
+import { isActive } from './computed';
 
 export default {
   options: {
@@ -106,7 +106,7 @@ export default {
       subItems: [],
 
       utils,
-      computed,
+      isActive,
     };
   },
   computed: {
@@ -130,7 +130,7 @@ export default {
   methods: {
     treeSelectItemClass(item) {
       const { activeId } = this;
-      return `press-ellipsis content-item-class ${utils.bem2('tree-select__item', { active: computed.isActive(activeId, item.id), disabled: item.disabled })} ${computed.isActive(activeId, item.id) ? 'content-active-class' : ''} ${item.disabled ? 'content-disabled-class' : ''}`;
+      return `press-ellipsis content-item-class ${utils.bem2('tree-select__item', { active: isActive(activeId, item.id), disabled: item.disabled })} ${isActive(activeId, item.id) ? 'content-active-class' : ''} ${item.disabled ? 'content-disabled-class' : ''}`;
     },
     // 当一个子项被选择时
     onSelectItem(item) {

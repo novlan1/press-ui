@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('buttonMode')">
       <div
         class="primary-btn"
@@ -89,12 +89,6 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "src/packages/base/mixin.scss";
-
-.wrap {
-  width: 100%;
-  height: 100%;
-}
-
 .section-content {
   margin: 0 10px;
 }

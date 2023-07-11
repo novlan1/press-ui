@@ -168,7 +168,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 .item {
   display: inline-block;
   width: 22px;

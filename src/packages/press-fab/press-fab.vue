@@ -271,8 +271,8 @@ export default {
       this.isShow = false;
     },
     /**
-			 * 按钮点击事件
-			 */
+     * 按钮点击事件
+     */
     onItemClick(index, item) {
       if (!this.isShow) {
         return;
@@ -283,8 +283,8 @@ export default {
       });
     },
     /**
-			 * 获取 位置信息
-			 */
+     * 获取 位置信息
+     */
     getPosition(types, paramA, paramB) {
       if (types === 0) {
         return this.horizontal === paramA && this.vertical === paramB;

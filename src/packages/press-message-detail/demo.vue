@@ -1,560 +1,177 @@
 <template>
-  <div class="wrap">
-    <PressMessageDetail
-      :list="msgList"
-      :is-show-solo="isSolo"
-      @send="send"
-    />
+  <div class="demo-wrap demo-wrap--flex demo-wrap--gray">
+    <div class="demo-list-wrap">
+      <PressMessageDetail
+        :ref="pressMessageDetailRef"
+        :list="list"
+        :loading="loading"
+        :place-holder-top="placeHolderTop"
+        @onScroll="onScroll"
+        @touchMove="touchMove"
+        @clickAvatar="clickAvatar"
+        @clickPic="clickPic"
+        @makePhoneCall="makePhoneCall"
+        @goSetCardPage="goSetCardPage"
+        @reSend="reSend"
+        @checkDetail="checkDetail"
+        @agreeExchangeCard="agreeExchangeCard"
+        @clickCopy="clickCopy"
+        @loadMore="loadMore"
+      />
+    </div>
 
-    <press-picker
-      v-if="picker.show"
-      :title="picker.title"
-      :select-list="picker.userList"
-      @onClickConfirm="picker.confirm"
-      @onRemove="picker.show = false"
-    />
+    <div class="demo-input-wrap">
+      <PressMessageBoardInput
+        v-model="msgContent"
+        :send-btn-enable="sendBtnEnable"
+        @clickInput="clickInput"
+        @sendMsg="sendMsg"
+      />
+    </div>
   </div>
 </template>
 <script>
 import PressMessageDetail from 'src/packages/press-message-detail/press-message-detail.vue';
-import { IM } from 'src/packages/common/im/im';
-import { getUserSig } from 'src/utils/im/sig';
+import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
+import { genMockData, getLessList } from 'src/packages/press-message-detail/demo-helper/mock-data';
+import { setClipboardData } from 'src/packages/common/clipboard/clipboard';
 
-const IMHandler = new IM({ appId: 1400800161 });
+const pressMessageDetailRef = 'pressMessageDetail';
+let ref;
 
-const userList = [
-  {
-    label: 'Little 1',
-    value: 'Little 1',
-  },
-  {
-    label: 'Little 2',
-    value: 'Little 2',
-  },
-];
-
-const MSG_LIST = [
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 1,
-    msgType: 'TIME',
-    content: {
-      text: '昨天 11:10',
-    },
-  },
-  {
-    id: 2,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 3,
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 4,
-    msgType: 'MESSAGE_TEXT',
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '123123',
-    },
-  },
-  {
-    id: 5,
-    msgType: 'MESSAGE_TEXT',
-    teamInvite: true,
-    avatar: 'https://dummyimage.com/44x44',
-  },
-  {
-    id: 6,
-    msgType: 'MESSAGE_TEXT',
-    teamInvite: false,
-    isSolo: true,
-    isMine: true,
-    avatar: 'https://dummyimage.com/44x44',
-    content: {
-      text: '来一局1V1看看操作',
-    },
-  },
-];
-
-
-function formatMessageList(list) {
-  return list.map((item, index) => ({
-    id: index,
-    content: {
-      text: item.payload.text,
-    },
-    msgType: 'MESSAGE_TEXT',
-    avatar: 'https://dummyimage.com/44x44',
-    isMine: true,
-  }));
-}
 
 export default {
   components: {
     PressMessageDetail,
+    PressMessageBoardInput,
   },
   data() {
+    let placeHolderTop = 0;
+    // #ifdef H5
+    placeHolderTop = 44;
+    // #endif
+
     return {
-      msgList: MSG_LIST,
-      isSolo: true,
-      userList,
-      picker: {
-        show: false,
-        title: '请选择你的用户名',
-        userList,
-        confirm: this.onConfirmUser,
-      },
-      chatInfo: {
-        from: '',
-        to: 'Little 2',
-      },
+      list: [],
+      msgContent: '',
+      pressMessageDetailRef,
+      loading: false,
+      placeHolderTop,
+      loadTime: 0,
     };
   },
+  computed: {
+    sendBtnEnable() {
+      const res = !!(this.msgContent && this.msgContent.trim().length > 0);
+      return res;
+    },
+  },
   mounted() {
-    const user = localStorage.getItem('IM_USER');
-    if (!user) {
-      this.picker.show = true;
-    }
+    this.list = genMockData(this.loadTime);
+    // this.$nextTick 在小程序下无效
+    setTimeout(() => {
+      ref = this.$refs[this.pressMessageDetailRef];
+      ref?.scrollToBottom();
+    });
   },
   methods: {
-    getMessageList(uid) {
-      console.log('uid', uid);
-      IMHandler.getMessageList({
-        conversationId: `C2C${uid}`,
-
-      }).then((res) => {
-        console.log('[getIMMessageList] res', res);
-        const list = formatMessageList(res?.data?.messageList || []);
-        console.log('[list]: ', list);
-        this.msgList = list;
-      })
-        .catch((err) => {
-          console.log('[getIMMessageList] err', err);
-        });
+    clickInput() {
+      this.onGTip('Click Input');
     },
-    async send(content) {
-      console.log('chatInfo', this.chatInfo);
-      if (!this.chatInfo.to) return;
-
-      IMHandler.sendMessage({
-        to: this.chatInfo.to,
-        text: content,
-      }).then((res) => {
-        console.log('[sendIMMessage] res: ', res);
-      })
-        .catch((err) => {
-          console.log('[sendIMMessage] err: ', err);
-        });
+    sendMsg() {
+      console.log('[sendMsg]', this.msgContent);
+      this.onGTip(this.msgContent);
     },
-    onConfirmOtherUser(item) {
-      this.picker.show = false;
-      console.log('[item]', item);
-      this.getMessageList(item.value);
-      this.chatInfo = {
-        ...this.chatInfo,
-        to: item.value,
-      };
+    onScroll() {
+      // console.log('[onScroll]', ...args);
+      // this.onGTip('[EVENT] onScroll');
     },
-    onConfirmUser(item) {
-      this.picker.show = false;
-      this.chatInfo = {
-        ...this.chatInfo,
-        from: item.value,
-      };
-
+    touchMove() {
+      // console.log('[touchMove]');
+      // this.onGTip('[EVENT] touchMove');
+    },
+    clickAvatar(...args) {
+      console.log('[clickAvatar]', ...args);
+      this.onGTip('[EVENT] clickAvatar');
       setTimeout(() => {
-        this.picker = {
-          ...this.picker,
-          show: true,
-          title: '请选择你的聊天对象',
-          confirm: this.onConfirmOtherUser,
-        };
-      }, 300);
-
-      console.log('[onConfirmUser] item', item);
-
-      getUserSig(item.value).then((userSig) => {
-        IMHandler.login({
-          userId: item.value,
-          userSig,
-        }).then(() => {
-          console.log('tttttttt');
-        })
-          .catch(() => {
-            console.log('ccccccc');
-          })
-          .finally(() => {
-            console.log('ffffff');
-          });
+        this.list = getLessList();
+      }, 3000);
+    },
+    clickPic(...args) {
+      console.log('[clickPic]', ...args);
+      this.onGTip('[EVENT] clickPic');
+    },
+    makePhoneCall(...args) {
+      console.log('[makePhoneCall]', ...args);
+      this.onGTip('[EVENT] makePhoneCall');
+      uni.makePhoneCall({
+        phoneNumber: `${args[0]}`,
+        success(res) {
+          console.log('success', res);
+        },
+        fail(error) {
+          console.log('fail', error);
+        },
       });
+    },
+    goSetCardPage(...args) {
+      console.log('[goSetCardPage]', ...args);
+      this.onGTip('[EVENT] goSetCardPage');
+    },
+    reSend(...args) {
+      console.log('[reSend]', ...args);
+      this.onGTip('[EVENT] reSend');
+    },
+    checkDetail(...args) {
+      console.log('[checkDetail]', ...args);
+      this.onGTip('[EVENT] checkDetail');
+    },
+    agreeExchangeCard(...args) {
+      console.log('[agreeExchangeCard]', ...args);
+      this.onGTip('[EVENT] agreeExchangeCard');
+    },
+    clickCopy(selector, value) {
+      setClipboardData(value).then(() => {
+        this.onGTip('复制成功');
+      })
+        .catch(() => {
+          this.onGTip('复制失败');
+        });
+    },
+    loadMore() {
+      if (this.loading) return;
+      if (this.loadTime > 10) return;
+
+      this.loading = true;
+      this.loadTime += 1;
+      setTimeout(() => {
+        this.list = [
+          ...(genMockData(this.loadTime).map(item => ({
+            ...item,
+            id: `${item.id}-${Math.random()}`,
+          }))),
+          ...this.list,
+        ];
+
+        this.loading = false;
+      }, 1000);
     },
   },
 };
 </script>
-<style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.wrap {
-  height: 100%;
+<style lang="scss">
+.demo-list-wrap {
+  // padding: 0 20px;
+  flex: 1;
+  overflow: auto;
+}
+</style>
+
+<style>
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 </style>

@@ -1,74 +1,56 @@
 <template>
-  <div>
+  <div class="demo-wrap">
     <demo-block
       :title="t('basicUsage')"
     >
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="`${customStyle};padding:0;`"
+      <press-cell
+        :title="t('basicUsage')"
+        is-link
         @click="onShowPicker('normal')"
-      >
-        {{ t('check') }}
-      </PressButton>
-    </demo-block>
-
-    <demo-block
-      :title="t('topTip')"
-    >
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="`${customStyle};padding:0;`"
+      />
+      <press-cell
+        :title="t('topTip')"
+        is-link
         @click="onShowPicker('tip')"
-      >
-        {{ t('check') }}
-      </PressButton>
+      />
+      <press-cell
+        :title="t('longList')"
+        is-link
+        @click="onShowPicker('long')"
+      />
     </demo-block>
 
     <demo-block
-      :title="t('longList')"
+      :title="t('functional')"
     >
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="`${customStyle};padding:0;`"
-        @click="onShowPicker('long')"
-      >
-        {{ t('check') }}
-      </PressButton>
+      <press-cell
+        :title="t('check')"
+        is-link
+        @click="onShowFunctionalPicker"
+      />
     </demo-block>
 
     <press-picker
-      v-if="pickerOption.normal.show"
-      :title="pickerOption.normal.title"
-      :show-back-arrow="pickerOption.normal.showBackArrow"
-      :select-list="pickerOption.normal.selectList"
-      :tip="pickerOption.normal.tip"
-      :select-item="pickerOption.normal.selectItem"
-      @onClickConfirm="pickerOption.normal.onClickConfirm"
-      @onRemove="pickerOption.normal.onRemove"
+      v-if="curPicker.show"
+      :title="curPicker.title"
+      :show-back-arrow="curPicker.showBackArrow"
+      :select-list="curPicker.selectList"
+      :tip="curPicker.tip"
+      :select-item="curPicker.selectItem"
+      :virtual-list-threshold="30"
+      @onClickConfirm="curPicker.onClickConfirm"
+      @onRemove="curPicker.onRemove"
     />
+
     <press-picker
-      v-if="pickerOption.tip.show"
-      :title="pickerOption.tip.title"
-      :show-back-arrow="pickerOption.tip.showBackArrow"
-      :select-list="pickerOption.tip.selectList"
-      :tip="pickerOption.tip.tip"
-      :select-item="pickerOption.tip.selectItem"
-      @onClickConfirm="pickerOption.tip.onClickConfirm"
-      @onRemove="pickerOption.tip.onRemove"
-    />
-    <press-picker
-      v-if="pickerOption.long.show"
-      :title="pickerOption.long.title"
-      :show-back-arrow="pickerOption.long.showBackArrow"
-      :select-list="pickerOption.long.selectList"
-      :tip="pickerOption.long.tip"
-      :select-item="pickerOption.long.selectItem"
-      @onClickConfirm="pickerOption.long.onClickConfirm"
-      @onRemove="pickerOption.long.onRemove"
+      :id="PRESS_PICKER_ID"
+      mode="functional"
     />
   </div>
 </template>
 <script>
+import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+const PRESS_PICKER_ID = 'press-picker-functional';
 
 
 export default {
@@ -76,7 +58,7 @@ export default {
     'zh-CN': {
       topTip: '顶部提示',
       longList: '超长列表',
-      banSet: 'Ban位设置',
+      functional: '函数式调用',
       tipContent: '创建比赛后，可按比赛轮次精确设置。',
       addVirtualTeam: '添加虚拟队伍',
       addTeam: num => `添加${num}队`,
@@ -84,108 +66,111 @@ export default {
     'en-US': {
       topTip: 'Top Tips',
       longList: 'Super Long List',
-      banSet: 'Ban Set',
+      functional: 'Functional Mode',
       tipContent: 'Can be set precisely according to the round of the game',
       addVirtualTeam: 'Add Virtual Team',
       addTeam: num => `Add ${num} Teams`,
     },
   },
   data() {
-    const pickerBoList = [
+    const PICKER_BO_LIST = [
       { label: this.t('bo1'), value: 1 },
       { label: this.t('bo3'), value: 3 },
       { label: this.t('bo5'), value: 5 },
       { label: this.t('bo7'), value: 7 },
     ];
-    const boStrList = [
-      '',
-      this.t('bo1'),
-      '',
-      this.t('bo3'),
-      '',
-      this.t('bo5'),
-      '',
-      this.t('bo7'),
-    ];
-    const bpList = [
-      { label: this.t('ban0'), value: 1 },
-      { label: this.t('ban2'), value: 3 },
-      { label: this.t('ban3'), value: 4 },
-      { label: this.t('ban4'), value: 0 },
-    ];
-    const longList = Array.from({ length: 800 }).map((item, index) => ({
+    const longList = Array.from({ length: 8000 }).map((item, index) => ({
       label: this.t('addTeam', index + 1),
       value: index + 1,
     }));
 
+    const commonOptions = {
+      onClickConfirm: (boItem) => {
+        this.onSuccessTip(boItem);
+        this.curPicker.show = false;
 
-    return {
-      customStyle: '',
-      pickerOption: {
-        normal: {
-          show: false,
-          title: this.t('wayToWin'),
-          tip: '',
-          showBackArrow: false,
-          selectList: pickerBoList,
-          selectItem: { label: boStrList[7], value: 7 },
-          onClickConfirm: (boItem) => {
-            console.log('boItem', boItem);
-            this.pickerOption.normal.show = false;
-          },
-          onRemove: () => {
-            this.pickerOption.normal.show = false;
-          },
-        },
-        tip: {
-          show: false,
-          title: this.t('banSet'),
-          tip: this.t('tipContent'),
-          showBackArrow: false,
-          selectList: bpList,
-          selectItem: { label: bpList[0].label, value: 1 },
-          onClickConfirm: (boItem) => {
-            console.log('boItem', boItem);
-            this.pickerOption.tip.show = false;
-          },
-          onRemove: () => {
-            this.pickerOption.tip.show = false;
-          },
-        },
-        long: {
-          show: false,
-          title: this.t('addVirtualTeam'),
-          tip: '',
-          showBackArrow: false,
-          selectList: longList,
-          selectItem: { label: longList[0].label, value: 1 },
-          onClickConfirm: (boItem) => {
-            console.log('boItem', boItem);
-            this.pickerOption.long.show = false;
-          },
-          onRemove: () => {
-            this.pickerOption.long.show = false;
-          },
-        },
+        if (this.pickerOption[this.curType]) {
+          this.pickerOption[this.curType].selectItem = { value: boItem.value };
+        }
       },
-      selectBoOptions: {
-
+      onRemove: () => {
+        this.onTip('cancel');
+        this.curPicker.show = false;
       },
     };
+
+    return {
+      customStyle: 'padding:0;',
+      PICKER_BO_LIST,
+      pickerOption: {
+        normal: {
+          title: this.t('wayToWin'),
+          tip: '',
+          selectList: PICKER_BO_LIST,
+          selectItem: { label: PICKER_BO_LIST[3].label, value: 7 },
+        },
+        tip: {
+          title: this.t('wayToWin'),
+          tip: this.t('tipContent'),
+          selectList: PICKER_BO_LIST,
+          selectItem: { label: PICKER_BO_LIST[1].label, value: 3 },
+        },
+        long: {
+          title: this.t('addVirtualTeam'),
+          tip: '',
+          selectList: longList,
+          selectItem: { value: 1 },
+        },
+      },
+      PRESS_PICKER_ID,
+      pressPickerFunctionalData: {},
+      curPicker: {
+        ...commonOptions,
+      },
+      curType: '',
+    };
+  },
+  computed: {
   },
   methods: {
     onShowPicker(type) {
-      console.log('onShowPicker.type', type);
-      if (this.pickerOption[type]) {
-        this.pickerOption[type].show = true;
-      }
+      uni.hideToast();
+      this.curType = type;
+      this.curPicker = {
+        ...this.curPicker,
+        ...this.pickerOption[type],
+        show: true,
+      };
     },
-    onConfirm(...args) {
-      console.log('onConfirm.args', args);
-      this.pickerOption[args[1]].show = false;
+    onConfirm() {
     },
-    onChange(...args) {
-      console.log('onChange.args', args);
+    onTip(title) {
+      uni.showToast({
+        title,
+        icon: 'none',
+        duration: 1500,
+      });
+    },
+    onSuccessTip(item) {
+      const { label, value } = item;
+      this.curPicker.show = false;
+      this.onTip(`value: ${value}, label: ${label}`);
+    },
+    onShowFunctionalPicker() {
+      const { PICKER_BO_LIST } = this;
+      showFunctionalComponent.call(this, {
+        selector: `#${PRESS_PICKER_ID}`,
+        list: PICKER_BO_LIST,
+        arrowIcon: true,
+        current: { label: PICKER_BO_LIST[1].label, value: 3 },
+        title: this.t('wayToWin'),
+        tip: this.t('tipContent'),
+      }).then(({ item }) => {
+        this.onSuccessTip(item);
+      })
+        .catch(() => {
+          this.onTip('cancel');
+        });
     },
   },
 };

@@ -4,7 +4,7 @@
     hover-class="press-cell--hover hover-class"
     hover-stay-time="70"
     :style="customStyle"
-    @click="onClick"
+    @click.stop="onClick"
   >
     <press-icon-plus
       v-if="icon"

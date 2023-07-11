@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('type')">
       <div>
         <press-loading-plus />
@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wrap {
+.demo-wrap {
   ::v-deep .section-content {
     display: flex;
     align-items: center;

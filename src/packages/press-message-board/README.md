@@ -129,16 +129,16 @@ export default {
 ### MessageBoardInput Props
 
 
-| 参数                     | 说明                       | 类型               | 默认值  |
-| ------------------------ | -------------------------- | ------------------ | ------- |
-| value                    | 输入内容                   | _string_           | -       |
-| send-btn-enable          | 是否可以发送               | _boolean_          | `false` |
-| text-area-is-focus       | 是否聚焦                   | _boolean_          | `false` |
-| input-bottom             | 距底部高度                 | _[number, string]_ | `0`     |
-| placeholder              | 占位文字                   | _boolean_          | `false` |
-| text-area-is-auto-height | 是否自动调整高度           | _boolean_          | `false` |
-| adjust-position          | 对应小程序adjust-position  | _boolean_          | `false` |
-| show-confirm-bar         | 对应小程序show-confirm-bar | _boolean_          | `false` |
+| 参数                     | 说明                         | 类型               | 默认值  |
+| ------------------------ | ---------------------------- | ------------------ | ------- |
+| value                    | 输入内容                     | _string_           | -       |
+| send-btn-enable          | 是否可以发送                 | _boolean_          | `false` |
+| text-area-is-focus       | 是否聚焦                     | _boolean_          | `false` |
+| input-bottom             | 距底部高度                   | _[number, string]_ | `0`     |
+| placeholder              | 占位文字                     | _boolean_          | `false` |
+| text-area-is-auto-height | 是否自动调整高度             | _boolean_          | `false` |
+| adjust-position          | 对应小程序`adjust-position`  | _boolean_          | `false` |
+| show-confirm-bar         | 对应小程序`show-confirm-bar` | _boolean_          | `false` |
 
 
 ### MessageBoardInput Event

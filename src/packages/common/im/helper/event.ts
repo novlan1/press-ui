@@ -72,13 +72,14 @@ function executeCallbacks({
 
 export function watchIMEvent({ tim }) {
   EVENT_LIST.forEach((type) => {
-    tim.on(type, (event) => {
+    const callbackFunc = function (event) {
       executeCallbacks({
         type,
         event,
         tim,
       });
-    });
+    };
+    tim.on(type, callbackFunc);
   });
 }
 

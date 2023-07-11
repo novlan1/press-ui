@@ -6,17 +6,58 @@
 
 ---
 
-
 ### 1. 介绍
 
 `press-ui`是一套易用的、灵活的，基于`uni-app`的跨端组件库。
 
 
-可用于普通`h5`项目，只需加一个 [loader](https://github.com/novlan1/uni-plugin-light/tree/master/loader/ifdef-loader) 去掉条件编译部分。
+- 70+ 基础组件，覆盖移动端主流场景
+- 支持基于`uni-app`的H5、微信小程序、QQ小程序
+- 支持普通H5项目
+- 零外部依赖，不依赖三方 npm 包
+- 提供丰富的中英文文档和组件示例
+- 支持主题定制，内置 600+ 个主题变量
+- 支持国际化，内置 16+ 种语言包
+
+
+### 2. 解决痛点
+
+
+`press-ui`主要解决了以下痛点：
+
+1. 可支持包含`vant`的H5项目平滑迁移至`uni-app`项目，只需要改下引用地址和组件名称。
+2. 丰富的组件类型，以及易用的API，让`uni-app`开发变得简单。
+3. 支持国际化、主题定制等，组件灵活性更强
+
+
+同时，将项目中业务组件沉淀到`press-ui`中，有以下好处：
+
+
+- 增强可维护性，提升开发效率
+  - 通过整理代码，合并属性，分离业务逻辑等，让组件变纯粹，增强可维护性，进而提升效率
+- 减少业务和组件的耦合，降低各自复杂度，并减少bug
+- 封装核心逻辑，控制变化
+  - 不用担心外部合作人员改乱代码，以及解决冲突时的覆盖问题
+- UI问题定位简单
+  - 三端代码同时发布，以及多种类型的示例，覆盖面全，容易发现ui问题，以及三端表现不一致问题
+- 可提升性能
+  - 通过自定义队伍数等变量，定位性能瓶颈，并解决性能问题
+- 提高可复用性，可应用到其他项目
+- 技术沉淀，技术积累，不断打磨组件细节
+
+
+### 3. 应用场景
+
+`press-ui`可应用于`uni-app`项目，或者普通的H5项目，目前已应用在王者赛宝、HoK Club、赛宝pro等项目中。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
+
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/hok-club-screenshot.png" width="300">
 
 
 
-### 2. 如何使用
+### 4. 如何使用
 
 1. 安装`npm`包
 
@@ -60,103 +101,13 @@ module.exports = {
 
 
 
-### 3. 立即体验
+### 5. 立即体验
 
 下图是三端示例二维码：
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600">
 
+### 6. 贡献指南
 
-### 4. 目录结构
-
-```bash
-- docs            # 文档地址
-- plugin          # [demo]工程用到的插件
-- script          # 脚本
-- src
-  - common        # [demo]公共内容
-  - packages      # 对外发布的包内容
-  - pages         # [demo]页面内容
-  - static        # [demo]静态内容
-  - App.vue       # [demo]应用入口
-  - main.js
-  - pages.json
-```
-
-### 5. 开发
-
-首先要执行如下命令，进行组件的派发：
-
-```bash
-npm run init
-```
-
-#### 5.1. 组件开发
-
-
-```bash
-npm run dev
-# h5
-
-npm run dev:mp-weixin
-# 微信小程序
-
-npm run dev:mp-qq
-# qq小程序
-```
-
-
-
-#### 5.2. 文档开发
-
-文档开发命令：
-
-```bash
-npm run docs:dev
-```
-
-文档构建命令：
-
-```bash
-npm run docs:build
-```
-
-文档部署时，需要在`.env.local`中写入服务器地址和密码：
-
-```
-HOST_NAME=xxx
-HOST_PWD=xxx
-```
-
-然后执行：
-
-```
-npm run docs:deploy
-```
-
-#### 5.3. 新增组件
-
-执行以下命令：
-
-```bash
-npm run new:comp
-```
-
-然后交互式的输入组件英文名、中文名等内容即可。
-#### 5.4. 样式规范
-
-
-BEM方式命名CSS，参考[这篇文章](https://juejin.cn/post/7102980936232337445)。
-
-最外层结构命名为`press-组件名称`，如`press-loading`。
-
-
-
-
-### 6. rem单位
-
-目前有的组件使用的单位是`rem`
-- 优势：h5端适配更好，更合适
-- 劣势：在小程序等其他端需要额外的插件来转换
-
+请查看[这里](https://github.com/novlan1/press-ui/blob/release/CONTRIBUTING.md)。
 

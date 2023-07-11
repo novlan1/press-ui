@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
       <press-picker-plus
         :columns="columns"
@@ -20,6 +20,7 @@
         show-toolbar
         :title="t('title')"
         :columns="columns"
+        @change="onChange"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
@@ -233,18 +234,31 @@ export default {
     },
     onChangePicker(val) {
       console.log('onChangePicker.val', val);
-      const citys = this.t('column3');
+      const cities = this.t('column3');
       const { value } = val;
-      this.$refs.picker.setColumnValues(1, citys[value[0]]);
+      this.$refs.picker.setColumnValues(1, cities[value[0]]);
+      this.onTip(val);
     },
     onChange(val) {
       console.log('onChange.val', val);
+      this.onTip(val);
     },
     onCancel(val) {
       console.log('onCancel.val', val);
+      this.onTip(val, '[cancel] ');
     },
     onConfirm(val) {
       console.log('onConfirm.val', val);
+      this.onTip(val, '[confirm] ');
+    },
+    onTip(val, prefix = '') {
+      const { value, index } = val;
+      const title = `${prefix}value: ${value.text || value}, index: ${index}`;
+      uni.showToast({
+        title,
+        icon: 'none',
+        duration: 1500,
+      });
     },
   },
 };

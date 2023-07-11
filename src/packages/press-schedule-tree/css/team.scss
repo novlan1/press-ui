@@ -1,0 +1,81 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+.press-schedule-team {
+  margin-bottom: 16px;
+  transition: all .4s;
+
+  &-main {
+    &--selected {
+      position: relative;
+
+      &::after {
+        z-index: 2;
+
+        @include halfBorder($color-blue-1, 8px);
+      }
+
+      .press-schedule-team-one--up {
+        &::after {
+          border-top-width: 0;
+          border-top-color: transparent;
+          border-left-width: 0;
+          border-left-color: transparent;
+          border-right-width: 0;
+          border-right-color: transparent;
+          z-index: 3;
+        }
+      }
+
+      .press-schedule-team-one--down {
+        &::after {
+          display: none;
+        }
+
+        &.press-schedule-team-one--active {
+          background-color: #fff;
+          color: $color-black
+        }
+      }
+    }
+  }
+
+  &-tips {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    font-size: $font-xxs;
+    color: $color-gray;
+  }
+
+  &-tip {
+    margin-right: 3px;
+    line-height: 20px;
+
+    &--bg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 16px;
+      min-width: 16px;
+      padding: 0 2px;
+      background: $color-gray-3;
+      border-radius: 2px;
+      margin-right: 4px;
+    }
+
+    &--light {
+      color: $color-green;
+    }
+  }
+
+  &-tip-icon {
+    font-size: $font-s;
+    margin-right: 3px;
+
+    &--green {
+      color: $color-green;
+    }
+  }
+}

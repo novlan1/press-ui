@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { dialogProps } from './computed';
+
 // #ifdef H5
 import VueDialog from './press-dialog.vue';
 // #endif
@@ -22,7 +23,7 @@ function getContext() {
 function initInstance() {
   const dialogId = 'tip-dialog-showCommTipsDialog';
   const oldDialog = document.getElementById(dialogId);
-  if (oldDialog) {
+  if (oldDialog?.parentNode) {
     oldDialog.parentNode.removeChild(oldDialog);
   }
   const dialogRootDiv = document.createElement('div');
@@ -44,32 +45,35 @@ const Dialog = (options) => {
   delete options.selector;
 
 
-  // #ifdef H5
+// #ifdef H5
   if (!dialog) {
     dialog = initInstance();
   }
-  // #endif
+// #endif
 
   if (dialog) {
     const newOptions = {
       ...options,
     };
 
-    // #ifdef H5
+// #ifdef H5
     dialog.setData(newOptions);
-    // #endif
-    // #ifndef H5
+// #endif
+
+// #ifndef H5
     dialog.$vm.setData(newOptions);
-    // #endif
+// #endif
 
     let promise;
-    // #ifdef H5
-    promise = dialog.showDialog(options);
-    // #endif
 
-    // #ifndef H5
+// #ifdef H5
+    promise = dialog.showDialog(options);
+// #endif
+
+// #ifndef H5
     promise = dialog.$vm.showDialog(options);
-    // #endif
+// #endif
+
     return promise.then(val => Promise.resolve(val))
       .catch(err => Promise.reject(err));
   }
@@ -80,12 +84,14 @@ Dialog.show = options => Dialog(options);
 Dialog.confirm = options => Dialog(Object.assign({ showCancelButton: true }, options));
 Dialog.close = () => {
   queue.forEach((dialog) => {
+    // @ts-ignore
     dialog.close();
   });
   queue = [];
 };
 Dialog.stopLoading = () => {
   queue.forEach((dialog) => {
+    // @ts-ignore
     dialog.stopLoading();
   });
 };

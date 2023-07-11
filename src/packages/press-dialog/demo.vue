@@ -1,17 +1,18 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block
       v-for="(item, index) of dialogTypeList"
       :key="index"
       :title="item.title"
       :section-style="sectionStyle"
     >
-      <press-button
-        type="e-sport-primary-bg"
-        @click="onShowDialog(item.name)"
-      >
-        {{ t('check') }}
-      </press-button>
+      <press-cell
+        v-for="(info) of item.list"
+        :key="info.name"
+        :title="info.title"
+        is-link
+        @click="onShowDialog(info.name)"
+      />
     </demo-block>
 
     <PressDialogComp id="tip-match-comm-tips-dialog" />
@@ -20,22 +21,24 @@
       :title="t('title')"
       :show="show"
       content="Some fake news"
-      @confirm="onConfirm()"
-      @cancel="show = false"
+      @confirm="onConfirm('show')"
+      @cancel="onCancel('show')"
     />
 
     <PressDialogComp
       :title="t('title')"
       :show="show2"
       content="Some fake news 2"
-      @confirm="show2 = false"
-      @cancel="show2 = false"
+      @confirm="onConfirm('show2')"
+      @cancel="onCancel('show2')"
     />
   </div>
 </template>
 <script>
 import PressDialog from 'src/packages/press-dialog';
-import PressDialogComp from 'src/packages/press-dialog/press-dialog';
+import PressDialogComp from 'src/packages/press-dialog/press-dialog.vue';
+import { saveMpImage } from 'src/packages/common/utils/save-mp-image';
+
 
 const loadingConfirm = function () {
   return new Promise((resolve) => {
@@ -48,6 +51,8 @@ const loadingConfirm = function () {
 export default {
   i18n: {
     'zh-CN': {
+      customButton: '自定义按钮',
+      customContent: '自定义内容',
       noCancel: '没有取消按钮',
       noCancelLoading: '没有取消+加载中',
       image: '图片',
@@ -73,6 +78,8 @@ export default {
       ].join('<br/>'),
     },
     'en-US': {
+      customButton: 'Custom Button',
+      customContent: 'Custom Content',
       noCancel: 'No Cancel',
       noCancelLoading: 'No Cancel and Loading',
       image: 'Image',
@@ -122,44 +129,64 @@ export default {
       show2: false,
       dialogTypeList: [
         {
-          name: 'normal',
           title: this.t('basicUsage'),
+          list: [
+            {
+              name: 'normal',
+              title: this.t('basicUsage'),
+            },
+            {
+              name: 'noTouchMove',
+              title: this.t('noMask'),
+            },
+          ],
         },
         {
-          name: 'noCancel',
-          title: this.t('noCancel'),
+          title: this.t('customContent'),
+          list: [
+            {
+              name: 'img',
+              title: this.t('image'),
+            },
+            {
+              name: 'html',
+              title: this.t('html'),
+            },
+            {
+              name: 'longText',
+              title: this.t('longText'),
+            },
+          ],
         },
         {
-          name: 'loading',
-          title: this.t('loadingStatus'),
+          title: this.t('customButton'),
+          list: [
+            {
+              name: 'noCancel',
+              title: this.t('noCancel'),
+            },
+            {
+              name: 'loading',
+              title: this.t('loadingStatus'),
+            },
+            {
+              name: 'noCancelLoading',
+              title: this.t('noCancelLoading'),
+            },
+          ],
         },
         {
-          name: 'noCancelLoading',
-          title: this.t('noCancelLoading'),
-        },
-        {
-          name: 'img',
-          title: this.t('image'),
-        },
-        {
-          name: 'html',
-          title: this.t('html'),
-        },
-        {
-          name: 'noTouchMove',
-          title: this.t('noMask'),
-        },
-        {
-          name: 'longText',
-          title: this.t('longText'),
-        },
-        {
-          name: 'componentCall',
           title: this.t('componentCall'),
-        },
-        {
-          name: 'multiple',
-          title: this.t('multiple'),
+          list: [
+            {
+              name: 'componentCall',
+              title: this.t('componentCall'),
+            },
+            {
+              name: 'multiple',
+              title: this.t('multiple'),
+            },
+          ],
         },
       ],
     };
@@ -172,6 +199,7 @@ export default {
     // #endif
   },
   methods: {
+
     onShowDialog(type) {
       if (type === 'componentCall') {
         this.show = true;
@@ -189,6 +217,7 @@ export default {
       let content = this.t('onlyCaption');
       let htmlContent = '';
       let src = '';
+      let onLongPressImage = null;
       let canTouchRemove = true;
       let useScrollView = false;
 
@@ -206,6 +235,9 @@ export default {
         htmlContent = `<div>${this.t('custom')}<span style="color: red;">${this.t('content')}</span></div>`;
       } else if (type === 'img') {
         src = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/qrcode-wx-mp.png';
+        // #ifdef MP-QQ
+        onLongPressImage = saveMpImage.bind(null, src);
+        // #endif
       } else if (type === 'noTouchMove') {
         canTouchRemove = false;
       } else if (type === 'longText') {
@@ -219,6 +251,7 @@ export default {
         content,
         htmlContent,
         src,
+        onLongPressImage,
         confirmText: this.t('confirm'),
         cancelText,
         dialogType,
@@ -227,22 +260,23 @@ export default {
         useScrollView,
       })
         .then(() => {
-          console.log('then');
+          this.onGTip('confirm');
         })
         .catch(() => {
-          console.log('cancel');
+          this.onGTip('cancel');
         });
     },
-
-    onConfirm() {
-      this.show = false;
+    onConfirm(key) {
+      this[key] = false;
+      this.onGTip('confirm');
+    },
+    onCancel(key) {
+      this[key] = false;
+      this.onGTip('cancel');
     },
   },
 };
 </script>
 
 <style scoped>
-.wrap {
-  padding-bottom: 20px;
-}
 </style>

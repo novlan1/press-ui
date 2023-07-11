@@ -1,59 +1,61 @@
 <template>
-  <div
+  <scroll-view
     class="press-message-list"
-    :class="customClass"
+    scroll-with-animation
+    :scroll-y="true"
   >
-    <div v-if="list.length">
+    <div
+      v-for="(item) in computedList"
+      :key="item.uniqueKey"
+      @click.stop="onClickDetail(item)"
+    >
       <press-swipe-cell
-        v-for="(item, index) in list"
-        :key="index"
         :right-width="100"
         @open="onOpenCell(item)"
-        @click="onClickDetail(item, index)"
         @close="onCloseCell"
       >
         <div
           class="press-message-item"
+          @click.stop="onClickDetail(item)"
         >
-          <div class="press-message-item__img-wrap">
+          <div class="press-message-item__avatar-wrap">
             <img
-              v-if="useLazy"
-              v-lazy="item.avatar"
-              class="press-message-item__img"
-            >
-            <img
-              v-else
-              class="press-message-item__img"
               :src="item.avatar"
+              class="press-message-item__avatar"
             >
-
             <div
-              v-if="item.unreadCount"
-              class="press-message-unread-wrap"
+              v-if="item.showRedDot"
+              class="press-message-item__red-dot"
+            />
+            <div
+              v-else-if="item.unreadCount"
+              class="press-message-item__unread-icon"
             >
-              <div class="press-message-unread-wrap__num">
+              <div class="press-message-item__unread-count">
                 {{ item.unreadCount > 99 ? '99' : item.unreadCount }}
               </div>
             </div>
           </div>
-
           <div class="press-message-item__box">
-            <div class="press-message-item__box__title press-message-item__box__title--ellipsis">
+            <div class="press-message-item__nick">
               {{ item.nick }}
             </div>
-            <div class="press-message-item__box__content press-message-item__box__content--ellipsis">
+            <div
+              v-if="item.content"
+              class="press-message-item__content"
+            >
               {{ item.content }}
+              <!-- {{ item.content.indexOf('TipBusinessCard') > -1 ? '【名片信息】'
+                : item.content.replace('\\n', '').replace('\n', '') }} -->
             </div>
           </div>
-
-          <div class="press-message-item__box__right">
+          <div class="press-message-item__time">
             {{ item.time }}
           </div>
         </div>
-
         <template #right>
           <div
-            class="press-message-item__right"
+            class="press-message-item__delete"
             @click.stop="e=>onDelete(item, e)"
           >
             {{ isConfirmDelete ? '确认删除' : '删除' }}
@@ -61,25 +63,9 @@
         </template>
       </press-swipe-cell>
     </div>
-
-    <PressLoading
-      v-else-if="loading"
-    />
-
-    <div
-      v-else
-      class="press-message-list__empty"
-    >
-      <PressEmpty
-        type="e-sport"
-        :html-empty-content="'暂无消息'"
-      />
-    </div>
-  </div>
+  </scroll-view>
 </template>
 <script>
-import PressLoading from '../press-loading/press-loading.vue';
-import PressEmpty from '../press-empty/press-empty.vue';
 import PressSwipeCell from '../press-swipe-cell/press-swipe-cell.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
@@ -90,19 +76,9 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressLoading,
-    PressEmpty,
     PressSwipeCell,
   },
   props: {
-    useLazy: {
-      type: Boolean,
-      default: true,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
     list: {
       type: Array,
       default: () => ([]),
@@ -115,12 +91,17 @@ export default {
       curOpenid: null,
     };
   },
-  methods: {
-    onClearAll() {
-      this.$emit('clearAll');
+  computed: {
+    computedList() {
+      return this.list.map(item => ({
+        uniqueKey: `unique-key-${item.uniqueKey || ''}-${item.id}`,
+        ...item,
+      }));
     },
-    onClickDetail(item, index) {
-      this.$emit('onClickDetail', this.list[index]);
+  },
+  methods: {
+    onClickDetail(item) {
+      this.$emit('onClickDetail', item);
     },
     onDelete(item, event) {
       if (typeof event?.stopPropagation === 'function') {
@@ -136,10 +117,10 @@ export default {
       }
     },
     onOpenCell(item) {
-      if (this.curOpenid !== item.id) {
+      if (this.curOpenid !== item.uniqueKey) {
         this.isConfirmDelete = false;
       }
-      this.curOpenid = item.id;
+      this.curOpenid = item.uniqueKey;
     },
     onCloseCell() {
       this.isConfirmDelete = false;

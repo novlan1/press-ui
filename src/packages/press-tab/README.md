@@ -190,19 +190,19 @@ export default {
 | title-active-color   | 标题选中态颜色                                                 | _string_           | -         |
 | title-inactive-color | 标题默认态颜色                                                 | _string_           | -         |
 | z-index              | z-index 层级                                                   | _number_           | `1`       |
-| extraClassPrefix     | 兼容旧的`class`，可传入`van-`，不推荐使用                      | _string_           | -         |
+| extra-class-prefix   | 兼容旧的`class`，可传入`van-`，不推荐使用                      | _string_           | -         |
 
 ### Tab Props
 
-| 参数             | 说明                                      | 类型               | 默认值       |
-| ---------------- | ----------------------------------------- | ------------------ | ------------ |
-| name             | 标签名称，作为匹配的标识符                | _string \| number_ | 标签的索引值 |
-| title            | 标题                                      | _string_           | -            |
-| disabled         | 是否禁用标签                              | _boolean_          | `false`      |
-| dot              | 是否显示小红点                            | _boolean_          | -            |
-| info             | 图标右上角提示信息                        | _string \| number_ | -            |
-| title-style      | 自定义标题样式                            | _string_           | -            |
-| extraClassPrefix | 兼容旧的`class`，可传入`van-`，不推荐使用 | _string_           | -            |
+| 参数               | 说明                                      | 类型               | 默认值       |
+| ------------------ | ----------------------------------------- | ------------------ | ------------ |
+| name               | 标签名称，作为匹配的标识符                | _string \| number_ | 标签的索引值 |
+| title              | 标题                                      | _string_           | -            |
+| disabled           | 是否禁用标签                              | _boolean_          | `false`      |
+| dot                | 是否显示小红点                            | _boolean_          | -            |
+| info               | 图标右上角提示信息                        | _string \| number_ | -            |
+| title-style        | 自定义标题样式                            | _string_           | -            |
+| extra-class-prefix | 兼容旧的`class`，可传入`van-`，不推荐使用 | _string_           | -            |
 
 ### Tabs Slot
 

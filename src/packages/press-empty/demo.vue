@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -119,7 +119,6 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "src/packages/base/mixin.scss";
 .bottom-button {
   width: 160px;
   height: 40px;

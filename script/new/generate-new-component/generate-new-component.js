@@ -2,8 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { execSync } = require('child_process');
+const { camelize, capitalize } = require('t-comm');
 const { copyComponentDir } = require('./copy-dir');
 const { sortComponentConfig } = require('./sort');
+const { getPureCompName } = require('../../utils/utils');
 
 const COMPONENT_CONFIG_PATH = path.resolve(process.cwd(), './script/component-config/component-config.json');
 
@@ -94,7 +96,7 @@ async function getComponentConfig() {
   }
 
   return {
-    name: name.trim(),
+    name: capitalize(camelize(getPureCompName(name.trim()))),
     title: title.trim(),
     type: typeMap[type],
   };

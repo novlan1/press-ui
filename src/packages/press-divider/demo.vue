@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
       <press-divider />
     </demo-block>
@@ -95,8 +95,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.wrap {
-  padding-bottom: 20px;
-}
 </style>

@@ -9,62 +9,38 @@ IM chat details.
 ### Basic Usage
 
 ```html
-<PressMessageDetail
-   :msg-list="msgList"
+  <PressMessageDetail
+   :list="list"
+   @onScroll="onScroll"
+   @touchMove="touchMove"
+   @clickAvatar="clickAvatar"
+   @makePhoneCall="makePhoneCall"
+   @goSetCardPage="goSetCardPage"
+   @reSend="reSend"
+   @checkDetail="checkDetail"
+   @agreeExchangeCard="agreeExchangeCard"
+   @clickCopy="clickCopy"
 />
 ```
 
 ```ts
-const MSG_LIST = [
-   {
-     id: 1,
-     msgType: 'TIME',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 2,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 3,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 4,
-     msgType: 'MESSAGE_TEXT',
-     isMine: true,
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 5,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-];
 
 export default {
    data() {
      return {
-       msgList: MSG_LIST,
+       list: [],
      }
    },
    methods: {
+     onScroll() {},
+     touchMove() {},
+     clickAvatar() {},
+     makePhoneCall() {},
+     goSetCardPage() {},
+     reSend() {},
+     checkDetail() {},
+     agreeExchangeCard() {},
+     clickCopy() {},
    }
 }
 ```
@@ -74,17 +50,23 @@ export default {
 ### Props
 
 
-| Parameter | Description                   | Type      | Default |
-| --------- | ----------------------------- | --------- | ------- |
-| list      | message list                  | _Array_   | `[]`    |
-| loading   | Whether to show loading       | _boolean_ | `false` |
-| showInput | Whether to show the input box | _boolean_ | `true`  |
+| Parameter | Description             | Type    | Default |
+| --------- | ----------------------- | ------- | ------- |
+| list      | list of message details | _Array_ | `[]`    |
 
 
-###Event
+### Event
 
 
-| Event Name | Description  | Callback Parameters |
-| ---------- | ------------ | ------------------- |
-| loadMore   | Load More    | -                   |
-| send       | send message | message content     |
+| Event Name        | Description                          | Callback Parameters                             |
+| ----------------- | ------------------------------------ | ----------------------------------------------- |
+| onScroll          | `onScroll-view` scrolling            | `event`                                         |
+| touchMove         | manual dragging                      | `event`                                         |
+| clickAvatar       | click on the avatar                  | `messageItem`                                   |
+| clickPic          | Click on the picture in the message  | `pickUrl, messageItem`                          |
+| checkDetail       | Click to view details in the message | `link, messageItem`                             |
+| reSend            | resend                               | `messageItem`                                   |
+| agreeExchangeCard | Agree to exchange business cards     | `messageItem`                                   |
+| goSetCardPage     | Jump to card setting page            | `messageItem`                                   |
+| makePhoneCall     | Make a call                          | `phone, contactItem, messageItem`               |
+| clickCopy         | click to copy                        | `selector, copyValue, contactItem, messageItem` |

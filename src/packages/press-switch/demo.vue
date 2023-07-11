@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
       <PressSwitch
         :checked="checkedMap.basic"
@@ -154,8 +154,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.demo-wrap {
-  padding-bottom: 20px;
-}
 </style>
 

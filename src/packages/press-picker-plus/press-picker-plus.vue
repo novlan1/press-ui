@@ -64,7 +64,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 
 import { t } from '../locale';
-import computed from './index.js';
+import computed from './index';
 
 export default {
   options: {
@@ -298,6 +298,8 @@ export default {
   &__mask {
     position: absolute;
     top: 0;
+    bottom: 0;
+    right: 0;
     left: 0;
     z-index: 2;
     width: 100%;

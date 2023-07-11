@@ -1,5 +1,10 @@
-import { filterSameRequest } from './filter-same-request';
+// import { filterSameRequest } from './filter-same-request';
 import { IChatSDK } from '../types';
+import { Scheduler } from '../../scheduler/scheduler';
+
+
+let scheduler;
+
 
 async function innerLogin({
   tim,
@@ -32,20 +37,29 @@ export async function login({
   userSig: string;
   tim: IChatSDK;
 }) {
-  const url = 'LOGIN';
+  if (!scheduler) {
+    scheduler = new Scheduler(1);
+  }
+  // const url = 'LOGIN';
 
   tim.updateUserId(userId);
   tim.updateUserSig(userSig);
 
-  const reqData = { userId, userSig };
+  // const reqData = { userId, userSig };
 
-  return await filterSameRequest({
-    url,
-    reqData,
-    handle: innerLogin.bind(null, {
-      userId,
-      userSig,
-      tim,
-    }),
-  });
+  return await scheduler.add(innerLogin.bind(null, {
+    userId,
+    userSig,
+    tim,
+  }));
+
+  // return await filterSameRequest({
+  //   url,
+  //   reqData,
+  //   handle: innerLogin.bind(null, {
+  //     userId,
+  //     userSig,
+  //     tim,
+  //   }),
+  // });
 }

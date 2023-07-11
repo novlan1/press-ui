@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gray">
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"
@@ -213,9 +213,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-page,
-.wrap {
-  background: #f7f8fa !important;
-}
 </style>

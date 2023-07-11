@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap--gap">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -199,7 +199,7 @@ export default {
   },
   methods: {
     onChange(val, type) {
-      console.log('onChange.val', val, type);
+      console.log('[onChange.val]', val, type);
       this.checkedMap[type] = val;
     },
   },
@@ -207,8 +207,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wrap {
-  padding-bottom: 20px;
-}
 </style>
 

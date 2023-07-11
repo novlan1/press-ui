@@ -1,7 +1,15 @@
 const CHANGE_IFRAME_STYLE_TYPE = 'CHANGE_IFRAME_STYLE_TYPE';
 
 
-function onMessage(e) {
+function onMessage(e: {
+  data: {
+    type: string,
+    data: {
+      name: string;
+      value: string;
+    }
+  }
+}) {
   if (e.data.type !== CHANGE_IFRAME_STYLE_TYPE) {
     return ;
   }

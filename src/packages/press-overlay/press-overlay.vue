@@ -4,6 +4,7 @@
       v-if="lockScroll"
       :show="show"
       :overlay="true"
+      :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
       @click.native="onClick"
@@ -16,6 +17,7 @@
       v-else
       :show="show"
       :overlay="true"
+      :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
       @click.native="onClick"

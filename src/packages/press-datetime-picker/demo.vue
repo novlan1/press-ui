@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('datetimeType')">
       <press-datetime-picker
         type="datetime"
@@ -49,11 +49,31 @@
         @input="onInputTime"
       />
     </demo-block>
+
+    <demo-block
+      :title="t('withPopup')"
+    >
+      <press-cell
+        :title="t('functional')"
+        is-link
+        @click="onShowFunctionalPicker"
+      />
+    </demo-block>
+
+    <PressDatetimePickerPopup
+      :id="DATE_TIME_PICKER_ID"
+      mode="functional"
+    />
   </div>
 </template>
 <script>
+import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
+import { timeStampFormat } from 'src/packages/common/format/time';
+import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
 
 let that;
+const DATE_TIME_PICKER_ID = 'press-picker-functional';
+const ONE_YEAR_MIL_SECONDS = 1000 * 60 * 60 * 24 * 365;
 
 export default {
   i18n: {
@@ -71,6 +91,8 @@ export default {
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
       sortColumns: '自定义列排序',
+      withPopup: '结合Popup',
+      functional: '函数式调用',
     },
     'en-US': {
       day: ' Day',
@@ -86,7 +108,12 @@ export default {
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
       sortColumns: 'Columns Order',
+      withPopup: 'With Popup',
+      functional: 'Functional Mode',
     },
+  },
+  components: {
+    PressDatetimePickerPopup,
   },
   data() {
     return {
@@ -103,8 +130,15 @@ export default {
         }
         return options;
       },
-
-
+      DATE_TIME_PICKER_ID,
+      datetimePicker: {
+        value: new Date().getTime(),
+        minDate: new Date().getTime() - ONE_YEAR_MIL_SECONDS,
+        maxDate: new Date().getTime() + ONE_YEAR_MIL_SECONDS,
+        input(event) {
+          that.onInput(event);
+        },
+      },
     };
   },
   onLoad() {
@@ -123,7 +157,6 @@ export default {
       const hour = that.t('hour');
       const minute = that.t('minute');
 
-      console.log('type', type, val);
       if (type === 'year') {
         return `${val}${year}`;
       } if (type === 'month') {
@@ -137,20 +170,63 @@ export default {
       }
     },
     onInput(event) {
-      console.log('onInput.event', event);
       this.currentDate = event;
+      this.onTip(`${timeStampFormat(event, 'yyyy-MM-dd hh:mm')}`);
     },
     onInputTime(event) {
-      console.log('onInputTime.event', event);
       this.currentTime = event;
+      this.onTip(event);
+    },
+    onShowFunctionalPicker() {
+      let inputValue = '';
+      showFunctionalComponent.call(this, {
+        selector: `#${DATE_TIME_PICKER_ID}`,
+        title: this.t('timeType'),
+        button: this.t('confirm'),
+        horizontal: false,
+        closeIcon: false,
+        arrowIcon: false,
+        borderButton: false,
+        customStyle: '',
+        datetimePicker: {
+          value: new Date().getTime(),
+          minDate: new Date().getTime() - ONE_YEAR_MIL_SECONDS,
+          maxDate: new Date().getTime() + ONE_YEAR_MIL_SECONDS,
+          input(event) {
+            that.onInput(event);
+            inputValue = event;
+            console.log('inputValue', inputValue);
+          },
+        },
+      }).then((resp = {}) => {
+        const { context } = resp;
+        console.log('inputValue', inputValue);
+        this.onTip('confirm');
+        context.innerShow = false;
+      })
+        .catch((err = {}) => {
+          const { context } = err;
+          this.onTip('cancel');
+          context.innerShow = false;
+        });
+    },
+    confirm() {
+
+    },
+    cancel() {
+
+    },
+    onTip(title) {
+      uni.showToast({
+        title: `${title}`,
+        icon: 'none',
+        duration: 1500,
+      });
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-// .wrap {
-//   padding: 20px;
-// }
 </style>
 

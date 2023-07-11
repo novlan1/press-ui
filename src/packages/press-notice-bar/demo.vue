@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -120,8 +120,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.demo-wrap {
-  padding-bottom: 30px;
-}
 </style>

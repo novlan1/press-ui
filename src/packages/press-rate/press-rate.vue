@@ -38,7 +38,7 @@
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { getAllRect } from '../common/dom/rect';
 import utils from '../common/utils/utils';
-import style from '../common/utils/style';
+import { style } from '../common/utils/style';
 
 export default {
   components: {

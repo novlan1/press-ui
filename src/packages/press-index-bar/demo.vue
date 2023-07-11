@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wrap"
+    class="demo-wrap"
     :style="wrapStyle"
   >
     <press-index-bar
@@ -76,5 +76,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

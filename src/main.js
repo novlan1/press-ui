@@ -3,6 +3,7 @@ import App from './App.vue';
 import { reportAegis } from 'src/utils/report/report';
 import { demoI18n } from 'src/utils/i18n/i18n';
 import { initMixin } from 'src/utils/mixin/mixin';
+// import { loadVConsole } from './utils/vconsole/vconsole';
 
 import DemoBlock from 'src/pages/demo-block/demo-block.vue';
 import DemoBlockPlus from 'src/pages/demo-block/demo-block-plus.vue';
@@ -86,3 +87,8 @@ const app = new Vue({
 });
 app.$mount();
 initMixin();
+
+
+// #ifdef H5
+// loadVConsole();
+// #endif

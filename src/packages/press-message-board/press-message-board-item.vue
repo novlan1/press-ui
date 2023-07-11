@@ -1,7 +1,8 @@
 <template>
   <div
     class="press-message-board-item"
-    :custom-class="customClass"
+    :class="customClass"
+    :style="customStyle"
   >
     <!-- 玩家留言 -->
     <div
@@ -48,36 +49,44 @@
           @click.stop="replyClick(comment)"
         >
           <div
-            v-if="captainUid && comment.uid === captainUid && !captionBadgeAtRight"
-            class="press-message-board-item__reply-avatar"
-          />
-
-          <span
-            v-if="comment.parent_comm_id"
-            class="press-message-board-item__reply-nick"
+            class="press-message-board-item__reply-wrap"
           >
-            {{ comment.nick }}
-
             <div
-              v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
+              v-if="captainUid && comment.uid === captainUid && !captionBadgeAtRight"
               class="press-message-board-item__reply-avatar"
-            />
+            >
+              队长
+            </div>
 
-            <p
-              class="press-message-board-item__reply-word"
-            >{{ replyContent }}
-              <template v-if="replyColon">
+            <!-- A回复B: -->
+            <div
+              v-if="comment.parent_comm_id"
+              class="press-message-board-item__reply-nick"
+            >
+              {{ comment.nick }}
+              <div
+                v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
+                class="press-message-board-item__reply-avatar"
+              />
+              <p
+                class="press-message-board-item__reply-word"
+              >
+                {{ replyContent }}
+              <!-- <template v-if="replyColon">
                 ：
-              </template>
-            </p>
-            {{ comment.parent_nick }}
-          </span>
+              </template> -->
+              </p>
+              {{ comment.parent_nick }}
+            </div>
 
-          <span
-            v-else
-            class="press-message-board-item__reply-nick"
-          >{{ comment.nick }}</span>
-
+            <!-- 没有回复关键字，即 A: -->
+            <div
+              v-else
+              class="press-message-board-item__reply-nick"
+            >
+              {{ comment.nick }}
+            </div>
+          </div>
           <div
             v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
             class="press-message-board-item__reply-avatar"
@@ -147,6 +156,10 @@ export default {
     replyColon: {
       type: Boolean,
       default: true,
+    },
+    customStyle: {
+      type: String,
+      default: '',
     },
     ...defaultProps,
   },
@@ -293,12 +306,18 @@ export default {
         }
       }
 
+      .press-message-board-item__reply-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       .press-message-board-item__reply-avatar {
         position: relative;
         top: 0.02rem;
-        display: inline-block;
+        // display: inline-block;
         height: 0.28rem;
-        line-height: 0.28rem;
+        // line-height: 0.28rem;
         font-size: 0.2rem;
         color: $color-white;
         padding: 0 0.08rem;
@@ -308,15 +327,15 @@ export default {
 
       .press-message-board-item__reply-nick {
         color: $color-gray;
-        display: inline;
-        line-height: 0.44rem;
-        vertical-align: middle;
+        // display: inline;
+        // line-height: 0.44rem;
+        // vertical-align: middle;
 
         .press-message-board-item__reply-word {
           display: inline;
-          width: 100%;
-          vertical-align: middle;
-          line-height: 0.44rem;
+          // width: 100%;
+          // vertical-align: middle;
+          // line-height: 0.44rem;
           color: $color-black;
         }
       }

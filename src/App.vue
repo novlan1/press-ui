@@ -24,16 +24,6 @@ export default {
 };
 </script>
 
-<style>
-/*每个页面公共css */
-uni-page-body {
-  height: 100%;
-  background: #fff;
-}
-page {
-  min-height: 100%;
-  background: #fff !important;
-}
-</style>
+
 <style lang="scss" src="src/common/style/reset.scss"></style>
 <style lang="scss" src="src/common/style/iconfont-mp.scss"></style>

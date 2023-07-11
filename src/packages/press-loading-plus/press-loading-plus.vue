@@ -30,7 +30,7 @@
 </template>
 <script>
 import utils from '../common/utils/utils';
-import computed from './index.js';
+import computed from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 

@@ -1,12 +1,13 @@
-page {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 
-  ::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-    color: transparent;
-  }
+page {
+  box-sizing: border-box;
+  overflow-y: hidden;
+  height: 100%;
+  background: #fff;
 }

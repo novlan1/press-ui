@@ -1,46 +1,49 @@
+$transition-timing-function-show: ease;
+$transition-timing-function-hide: ease;
+
 /* 渐隐渐现 */
 .press--animation__fade-in {
-  animation: fade-in .3s ease-out both;
+  animation: fade-in .3s $transition-timing-function-show both;
 }
 
 .press--animation__fade-out {
-  animation: fade-out .3s ease-in both;
+  animation: fade-out .3s $transition-timing-function-hide both;
 }
 
 /* 底部进出 */
 .press--animation__bottom-leave {
-  animation: down-leave .3s ease-in both;
+  animation: down-leave .3s $transition-timing-function-hide both;
 }
 
 .press--animation__bottom-enter {
-  animation: up-enter .3s ease-out both;
+  animation: up-enter .3s $transition-timing-function-show both;
 }
 
 /* 头部进出 */
 .press--animation__top-leave {
-  animation: top-leave .3s ease-in both, fade-out .3s ease-in both;
+  animation: top-leave .3s $transition-timing-function-hide both, fade-out .3s $transition-timing-function-hide both;
 }
 
 .press--animation__top-enter {
-  animation: top-enter .3s ease-out both, fade-in .3s ease-out both;
+  animation: top-enter .3s $transition-timing-function-show both, fade-in .3s $transition-timing-function-show both;
 }
 
 /* 居中弹窗动效 */
 .press--animation__bounce-enter {
-  animation: bounce-enter .3s ease-out both;
+  animation: bounce-enter .3s $transition-timing-function-show both;
 }
 
 .press--animation__bounce-leave {
-  animation: bounce-leave .3s ease-in both;
+  animation: bounce-leave .3s $transition-timing-function-hide both;
 }
 
 /* 右部进出 */
 .press--animation__right-leave {
-  animation: right-leave .3s ease-in both;
+  animation: right-leave .3s $transition-timing-function-hide both;
 }
 
 .press--animation__right-enter {
-  animation: right-enter .3s ease-out both;
+  animation: right-enter .3s $transition-timing-function-show both;
 }
 
 @keyframes fade-in {

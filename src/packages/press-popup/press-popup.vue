@@ -1,49 +1,53 @@
 <template>
   <div
     v-if="innerShow"
-    :class="['press-popup',popupClass ,isCrossSlab? 'press-popup__hor':'press-popup__vert']"
-    :style="{zIndex: `${zIndex}`}"
+    :class="[
+      'press-popup',
+      getPropOrData('popupClass'),
+      getPropOrData('horizontal') ? 'press-popup__hor' : 'press-popup__vert']"
+    :style="popupStyle"
     @touchmove.stop="preventTouchMove"
   >
     <!-- 透明遮罩 -->
     <div
       :class="['press-popup--mask',
-               isShowPopup ? 'press--animation__fade-in':'press--animation__fade-out']"
+               isEnter ? 'press--animation__fade-in':'press--animation__fade-out']"
       @click.stop="onClickTouch"
     />
     <div
       :class="['press-popup--content',
-               isShowPopup ?
-                 isCrossSlab ? 'press--animation__right-enter':'press--animation__bottom-enter':
-                 isCrossSlab ? 'press--animation__right-leave':'press--animation__bottom-leave']"
-      :style="{width:isCrossSlab ? `${widthNumber}%` : '100%'}"
+               isEnter ?
+                 getPropOrData('horizontal') ? 'press--animation__right-enter':'press--animation__bottom-enter':
+                 getPropOrData('horizontal') ? 'press--animation__right-leave':'press--animation__bottom-leave']"
+      :style="{width: getPropOrData('horizontal') ? `${getPropOrData('widthNumber')}%` : '100%'}"
     >
       <div
-        v-if="!isShowTitle && (!isCrossSlab || !isShowpopupClose || !showBackArrow)"
+        v-if="!getPropOrData('showTitle')
+          && (!getPropOrData('horizontal') || !getPropOrData('closeIcon') || !getPropOrData('arrowIcon'))"
         class="press-popup--title-line"
         @click.stop="clickCancel"
       />
       <div
-        v-if="isShowTitle"
+        v-if="getPropOrData('showTitle')"
         class="press-popup--title-wrap"
       >
         <div
-          v-if="isShowpopupClose"
+          v-if="getPropOrData('closeIcon')"
           class="press-popup--close iconfont icon-close"
           @click.stop="clickCancel"
         />
 
         <div
-          v-else-if="showBackArrow"
+          v-else-if="getPropOrData('arrowIcon')"
           class="press-popup--arrow iconfont icon-back"
           @click.stop="clickCancel"
         />
 
         <p
-          v-if="popupTitle"
+          v-if="getPropOrData('title')"
           class="press-popup--title"
         >
-          {{ popupTitle }}
+          {{ getPropOrData('title') }}
         </p>
         <slot
           v-else
@@ -52,12 +56,12 @@
 
         <div class="press-popup--title-btn-wrap">
           <PressButton
-            v-if="popupTitleBtn"
-            :type="isBorderBtn ? 'e-sport-border' : 'e-sport-primary'"
+            v-if="getPropOrData('button')"
+            :type="getPropOrData('borderButton') ? 'e-sport-border' : 'e-sport-primary'"
             custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
             @click.stop="clickConfirm"
           >
-            {{ popupTitleBtn }}
+            {{ getPropOrData('button') }}
           </PressButton>
         </div>
       </div>
@@ -68,115 +72,62 @@
 <script>
 import PressButton from '../press-button/press-button.vue';
 import { toPromise } from '../common/format/function';
-const ANIMATION_TIME = 400;
+import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
+import { allProps, propsKeyMap } from './computed';
+
+
+const ANIMATION_TIME = 300;
 
 export default {
-  name: 'PopupContainer',
+  name: 'PressPopup',
   components: {
     PressButton,
   },
   props: {
-    // 是否显示标题
-    isShowTitle: {
-      type: Boolean,
-      default: true,
-      required: false,
-    },
-    // 横板弹窗宽度百分比
-    widthNumber: {
-      type: Number,
-      default: 100,
-      required: false,
-    },
-    // 是否切换横板样式
-    isCrossSlab: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
-    // 是否显示关闭按钮
-    isShowpopupClose: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
-    // 左上角是否显示为返回箭头
-    showBackArrow: {
-      type: Boolean,
-      default: false,
-    },
-    // 弹窗标题
-    popupTitle: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    // 弹窗标题按钮
-    popupTitleBtn: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    // 标题按钮样式
-    isBorderBtn: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
-    // 在执行确认动画前，validateConfirm返回false则进行拦截
-    validateConfirm: {
-      type: [Function, null],
-      default: null,
-    },
-    isShow: {
-      type: Boolean,
-      default: true,
-      required: false,
-    },
-    // 弹窗层级
-    zIndex: {
-      type: String,
-      default: '99',
-      required: false,
-    },
-    // class
-    popupClass: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    // 是否可以点击蒙版关闭
-    canTouchRemove: {
-      type: Boolean,
-      default: true,
-    },
+    ...allProps,
   },
   options: {
     virtualHost: true,
   },
   data() {
     return {
-      isShowPopup: true,
-      innerShow: true,
+      isEnter: true,
+      innerShow: this.mode === FUNCTIONAL ? false : !!this.isShow,
       timer: 0,
+      watchShowTimer: null,
+      functionModeData: { ...getDefaultProps(allProps) },
     };
+  },
+  computed: {
+    popupStyle() {
+      const customStyle = this.getPropOrData('customStyle');
+      const zIndex = this.getPropOrData('zIndex');
+      return `z-index: ${zIndex};${customStyle};`;
+    },
+    isFunctionMode() {
+      return this.mode === FUNCTIONAL;
+    },
   },
   watch: {
     isShow: {
       handler(val) {
-        this.isShowPopup = val;
+        if (this.isFunctionMode) return;
+        this.isEnter = val;
+
         if (!val) {
-          setTimeout(() => {
+          clearTimeout(this.watchShowTimer);
+          this.watchShowTimer = setTimeout(() => {
             this.innerShow = false;
           }, ANIMATION_TIME);
         } else {
+          clearTimeout(this.watchShowTimer);
           this.innerShow = true;
         }
       },
       immediate: true,
     },
     // #ifdef H5
-    isShowPopup: {
+    isEnter: {
       handler(val) {
         if (val) {
           document.body.style.overflowY = 'hidden';
@@ -196,15 +147,51 @@ export default {
     clearTimeout(this.timer);
   },
   methods: {
+    showDialog(options) {
+      if (options) {
+        this.functionModeData = {
+          ...this.functionModeData,
+          ...options,
+        };
+      }
+      this.innerShow = true;
+      this.isEnter = true;
+    },
+    getPropOrData(key) {
+      return getPropOrData({
+        allProps,
+        isFunctionMode: this.isFunctionMode,
+        functionModeData: this.functionModeData,
+        propsKeyMap,
+        key,
+        context: this,
+      });
+    },
     preventTouchMove() {
       return;
     },
     onClickTouch() {
-      if (this.canTouchRemove) {
+      if (this.getPropOrData('closeOnClickOverlay')) {
         this.clickCancel();
       }
     },
     clickCancel() {
+      if (typeof this.asyncCancel === 'function') {
+        toPromise(this.asyncCancel()).then((value) => {
+          if (value) {
+            this.emitCancel();
+          }
+        });
+        return;
+      }
+      if (typeof this.asyncClose === 'function') {
+        toPromise(this.asyncClose()).then((value) => {
+          if (value) {
+            this.emitCancel();
+          }
+        });
+        return;
+      }
       if (this.$parent.validateCancel) {
         toPromise(this.$parent.validateCancel()).then((value) => {
           if (value) {
@@ -213,15 +200,33 @@ export default {
         });
         return;
       }
+
       this.emitCancel();
     },
     emitCancel() {
-      this.isShowPopup = false;
+      this.isEnter = false;
+
       this.timer = setTimeout(() => {
         this.$emit('onCancel');
+        this.$emit('cancel');
+        this.innerShow = false;
       }, ANIMATION_TIME);
+
+      const { callback } = this.functionModeData;
+      if (typeof callback === 'function') {
+        callback('cancel');
+      }
     },
     clickConfirm() {
+      if (typeof this.asyncConfirm === 'function') {
+        toPromise(this.asyncConfirm()).then((value) => {
+          if (value) {
+            this.emitConfirm();
+          }
+        });
+        return;
+      }
+
       if (this.$parent.validateConfirm) {
         toPromise(this.$parent.validateConfirm()).then((value) => {
           if (value) {
@@ -230,13 +235,22 @@ export default {
         });
         return;
       }
+
       this.emitConfirm();
     },
     emitConfirm() {
-      this.isShowPopup = false;
+      this.isEnter = false;
+
       this.timer = setTimeout(() => {
         this.$emit('onConfirm');
+        this.$emit('confirm');
+        this.innerShow = false;
       }, ANIMATION_TIME);
+
+      const { callback } = this.functionModeData;
+      if (typeof callback === 'function') {
+        callback('confirm');
+      }
     },
   },
 };

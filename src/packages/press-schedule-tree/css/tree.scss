@@ -1,0 +1,262 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+.press-schedule-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+
+  &-tab-mask {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    content: '';
+    width: 40px;
+    height: 22px;
+    background-image: linear-gradient(270deg, rgba(248, 249, 252, 0) 0%, #f8f9fc 100%);
+    z-index: 6;
+  }
+
+  &-tabs {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-bottom: 12px;
+    user-select: none;
+    transition: all .45s;
+    z-index: 5;
+  }
+
+  &-tab {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+    // width: 164px;
+    transition: all .45s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -12px;
+      height: 2px;
+      background: $color-gray-3;
+      transition: all .45s;
+    }
+
+    &:first-child {
+      &-icon {
+        top: -20px;
+      }
+
+      &::after {
+        background: $color-blue-1;
+      }
+    }
+
+    &:last-child {
+      padding-right: 16px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      left: -3px;
+      top: -21px;
+      width: 17px;
+      height: 17px;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-icon.png) no-repeat center;
+      background-size: contain;
+      transition: all .45s;
+      z-index: 1;
+    }
+
+    &-title {
+      color: $color-black;
+      font-size: $font-l;
+      line-height: 23px;
+    }
+
+    &-desc {
+      position: relative;
+      color: $color-gray;
+      font-size: $font-xm;
+      padding-left: 5px;
+      line-height: 22px;
+
+      &-icon {
+        position: relative;
+        top: -5px;
+        font-size: $font-s;
+        color: $color-gray;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-layout {
+    display: flex;
+    height: 100%;
+
+    &--shadow {
+      height: fit-content;
+    }
+  }
+
+  &-main {
+    position: relative;
+    display: flex;
+    flex: 1;
+    padding-left: 16px;
+    user-select: none;
+    z-index: 6;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: all .45s;
+  }
+
+  &-column {
+    transition: all .45s;
+    position: relative;
+
+    &:first-child {
+      .press-schedule-tree-pair {
+        padding-left: 0;
+      }
+    }
+
+    &--shadow {
+      &::after {
+        content: '';
+        z-index: -1;
+        background: linear-gradient(180deg, rgba(223, 226, 234, 0), #dfe2ea);
+        position: absolute;
+        top: 0;
+        bottom: 16px;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-pair {
+    position: relative;
+    padding: 0 8px;
+  }
+
+  &-pair-border {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 59px;
+    width: 9px;
+    border: 1px solid $color-gray-3;
+    border-left: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -7px;
+      transform: translateY(-50%);
+      display: block;
+      width: 7px;
+      height: 1px;
+      background: $color-gray-3;
+      z-index: -1;
+    }
+
+    // 双败赛败者组平行线
+    &--parallel {
+      width: 18px;
+      right: -9px;
+      border-right: 0;
+
+      &::after {
+        display: none;
+      }
+
+    }
+
+    // &:last-child {
+    //   display: none;
+    // }
+  }
+}
+
+
+@mixin sch-item-margin-bottom($n) {
+  $pow: 1;
+  $tmp: 0;
+  $base: 2;
+
+  @while $tmp < $n {
+    $marginBottom: calc(($pow - 1) * 116 + 16);
+    $translateY: calc(($pow - 1) * 116 / 2);
+    $ChampionTranslateY: calc((($pow / $base) - 1) * 116 / 2 + 20);
+
+    .press-schedule-tree-column {
+      &--scroll-#{$tmp} {
+        transform: translateY($translateY + px) !important;
+
+        .press-schedule-team {
+          margin-bottom: $marginBottom + px !important;
+        }
+
+        &.press-schedule-tree-column__champion {
+          transform: translateY($ChampionTranslateY + px) !important;
+        }
+      }
+    }
+
+    $pow: calc($pow * $base);
+    $tmp: $tmp + 1;
+  }
+}
+
+@include sch-item-margin-bottom(10);
+
+@mixin sche-tab-highlight($n) {
+  $max: 1;
+
+  @while $n < $max {
+    .press-schedule-tree-tab {
+      &--scroll-#{$n} {
+
+        .press-schedule-tree-tab-icon {
+          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png') !important;
+        }
+
+        &::after {
+          background: $color-primary !important;
+        }
+      }
+
+      &--scroll-#{$n + 1} {
+        .press-schedule-tree-tab-icon {
+          top: -21px !important;
+          width: 26px !important;
+          height: 21px !important;
+          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png') !important;
+        }
+      }
+    }
+
+    $n: $n + 1;
+  }
+}
+
+@include sche-tab-highlight(-3);

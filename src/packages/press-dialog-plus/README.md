@@ -14,7 +14,7 @@ url : pages/press/dialog-plus/dialog-plus
 用于提示一些消息，只包含一个确认按钮。
 
 ```html
-<press-dialog id="press-dialog" />
+<press-dialog-plus id="press-dialog" />
 ```
 
 ```javascript
@@ -39,7 +39,7 @@ Dialog.alert({
 用于确认消息，包含取消和确认按钮。
 
 ```html
-<press-dialog id="press-dialog" />
+<press-dialog-plus id="press-dialog" />
 ```
 
 ```javascript
@@ -62,7 +62,7 @@ Dialog.confirm({
 将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗。
 
 ```html
-<press-dialog id="press-dialog" />
+<press-dialog-plus id="press-dialog" />
 ```
 
 ```javascript
@@ -89,7 +89,7 @@ Dialog.alert({
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```html
-<press-dialog id="press-dialog" />
+<press-dialog-plus id="press-dialog" />
 ```
 
 ```javascript

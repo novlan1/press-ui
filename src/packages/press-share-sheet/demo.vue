@@ -1,17 +1,17 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       v-for="(item, index) of demoList"
       :key="index"
       :title="item.title"
     >
-      <press-button
-        type="e-sport-primary"
-        custom-style="width: auto;"
-        @click="onShowShareSheet(item.type)"
-      >
-        {{ t('check') }}
-      </press-button>
+      <press-cell
+        v-for="info of item.list"
+        :key="info.title"
+        :title="info.title"
+        is-link
+        @click="onShowShareSheet(info.type)"
+      />
     </demo-block>
 
     <press-share-sheet
@@ -30,6 +30,7 @@ import PressShareSheet from 'src/packages/press-share-sheet/press-share-sheet.vu
 export default {
   i18n: {
     'zh-CN': {
+      Custom: '自定义',
       qq: 'QQ',
       name: '名称',
       link: '复制链接',
@@ -47,6 +48,7 @@ export default {
       wechatMoments: '朋友圈',
     },
     'en-US': {
+      Custom: 'Custom',
       qq: 'QQ',
       name: 'Name',
       link: 'Link',
@@ -73,20 +75,32 @@ export default {
       demoList: [
         {
           title: this.t('basicUsage'),
-          type: 'basic',
+          list: [
+            {
+              title: this.t('basicUsage'),
+              type: 'basic',
+            },
+          ],
         },
         {
-          title: this.t('multiLine'),
-          type: 'multiLine',
+          title: this.t('Custom'),
+          list: [
+            {
+              title: this.t('multiLine'),
+              type: 'multiLine',
+            },
+            {
+              title: this.t('customIcon'),
+              type: 'customIcon',
+            },
+            {
+              title: this.t('withDesc'),
+              type: 'description',
+            },
+          ],
         },
-        {
-          title: this.t('customIcon'),
-          type: 'customIcon',
-        },
-        {
-          title: this.t('withDesc'),
-          type: 'description',
-        },
+
+
       ],
       showShare: false,
       description: '',
@@ -187,5 +201,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

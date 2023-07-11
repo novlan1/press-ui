@@ -86,6 +86,16 @@
                 :title="t('introduce.toggleLanguage')"
                 @click="onToggleLanguage"
               />
+              <!-- #ifdef H5 -->
+              <uni-list-item
+                custom-class="list-item"
+                :border="false"
+                show-arrow
+                clickable
+                :title="t('introduce.openVConsole')"
+                @click="onOpenVConsole"
+              />
+              <!-- #endif -->
             </uni-list>
           </div>
         </press-card>
@@ -100,6 +110,8 @@ import PressCard from 'src/packages/press-card/press-card.vue';
 import UniList from 'src/pages/components/uni-list/components/uni-list/uni-list.vue';
 import UniListItem from 'src/pages/components/uni-list/components/uni-list-item/uni-list-item.vue';
 import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+
+import { loadVConsole } from '../../utils/vconsole/vconsole';
 
 const pagesConfig = require('./page-config.json');
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
@@ -155,6 +167,9 @@ export default {
     },
     getUniqueKey(a, b) {
       return `${a}-${b}`;
+    },
+    onOpenVConsole() {
+      loadVConsole();
     },
   },
 

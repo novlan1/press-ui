@@ -1,79 +1,60 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-button
-        type="e-sport-primary-bg"
+      <press-cell
+        :title="t('basicUsage')"
+        is-link
         @click="onShowPopup('center')"
-      >
-        {{ t('show') }}
-      </press-button>
+      />
     </demo-block>
 
     <demo-block :title="t('position')">
-      <press-button
-        type="e-sport-primary-bg"
-        custom-style="margin: 0 12px 12px 0;"
+      <press-cell
+        :title="t('top')"
+        is-link
         @click="onShowPopup('top')"
-      >
-        {{ t('top') }}
-      </press-button>
-
-      <press-button
-        type="e-sport-primary-bg"
-        custom-style="margin: 0 0 12px 0;"
+      />
+      <press-cell
+        :title="t('bottom')"
+        is-link
         @click="onShowPopup('bottom')"
-      >
-        {{ t('bottom') }}
-      </press-button>
-
-      <press-button
-        type="e-sport-primary-bg"
-        custom-style="margin: 0 12px 0 0;"
+      />
+      <press-cell
+        :title="t('left')"
+        is-link
         @click="onShowPopup('left')"
-      >
-        {{ t('left') }}
-      </press-button>
-
-      <press-button
-        type="e-sport-primary-bg"
+      />
+      <press-cell
+        :title="t('right')"
+        is-link
         @click="onShowPopup('right')"
-      >
-        {{ t('right') }}
-      </press-button>
+      />
     </demo-block>
 
     <demo-block :title="t('closeIcon')">
-      <press-button
-        type="e-sport-primary-bg"
-        custom-style="margin: 0 12px 12px 0;"
+      <press-cell
+        :title="t('closeIcon')"
+        is-link
         @click="onShowPopup('bottom', { closeable: true })"
-      >
-        {{ t('closeIcon') }}
-      </press-button>
-
-      <press-button
-        type="e-sport-primary-bg"
-        custom-style="margin: 0 0 12px 0;"
+      />
+      <press-cell
+        :title="t('customIcon')"
+        is-link
         @click="onShowPopup('bottom', { closeable: true, closeIcon: 'close' })"
-      >
-        {{ t('customIcon') }}
-      </press-button>
-
-      <press-button
-        type="e-sport-primary-bg"
+      />
+      <press-cell
+        :title="t('iconPosition')"
+        is-link
         @click="onShowPopup('bottom', { closeable: true, closeIconPosition: 'top-left' })"
-      >
-        {{ t('iconPosition') }}
-      </press-button>
+      />
     </demo-block>
 
     <demo-block :title="t('round')">
-      <press-button
-        type="e-sport-primary-bg"
-        @click="onShowPopup('bottom', { round: true })"
-      >
-        {{ t('round') }}
-      </press-button>
+      <press-cell
+        :title="t('round')"
+        is-link
+        @click="onShowPopup('bottom', { round: true, })"
+      />
     </demo-block>
 
     <press-popup-plus
@@ -98,12 +79,12 @@ const DEFAULT_CLOSE_ICON_POSITION = 'top-right';
 export default {
   i18n: {
     'zh-CN': {
-      show: '展示弹出层',
+      show: '查看',
       position: '弹出位置',
       bottom: '底部弹出',
-      top: 'top',
-      left: 'left',
-      right: 'right',
+      top: '顶部弹出',
+      left: '左侧弹出',
+      right: '右侧弹出',
       closeIcon: '关闭图标',
       customIcon: '自定义图标',
       iconPosition: '图标位置',
@@ -189,5 +170,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

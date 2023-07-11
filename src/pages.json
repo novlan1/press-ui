@@ -448,6 +448,28 @@
       ]
     },
     {
+      "root": "pages/press/image-preview",
+      "pages": [
+        {
+          "path": "image-preview",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/list",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
       "root": "pages/press/notice-bar",
       "pages": [
         {
@@ -628,6 +650,50 @@
       "pages": [
         {
           "path": "message-list",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/popup-cell",
+      "pages": [
+        {
+          "path": "popup-cell",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/protocol",
+      "pages": [
+        {
+          "path": "protocol",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/schedule-list",
+      "pages": [
+        {
+          "path": "schedule-list",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/schedule-tree",
+      "pages": [
+        {
+          "path": "schedule-tree",
           "style": {
             "navigationBarTitleText": ""
           }

@@ -18,7 +18,7 @@
 </template>
 <script>
 import utils from '../common/utils/utils';
-import computed from './index.js';
+import computed from './index';
 import Vue from 'vue';
 
 import { getRect } from '../common/dom/rect';

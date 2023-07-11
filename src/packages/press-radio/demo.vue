@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-radio-group">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
       <press-radio-group
         :value="valueMap.basic"
@@ -252,15 +252,11 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.demo-radio-group {
-  padding-bottom: 20px;
-  &::v-deep .press-radio {
-    margin-bottom: 8px;
-  }
-  img {
-    height: 20px;
-    width: 25px;
-  }
+::v-deep .press-radio {
+  margin-bottom: 8px;
+}
+img {
+  height: 20px;
+  width: 25px;
 }
 </style>

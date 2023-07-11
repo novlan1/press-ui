@@ -16,9 +16,11 @@ export function init(appId, logLevel = 0) {
   tim.setLogLevel(logLevel); // 普通级别，日志量较多，接入时建议使用
   // tim.setLogLevel(1); // release 级别，SDK 输出关键信息，生产环境时建议使用
 
-  tim.on(TIM.EVENT.SDK_READY, () => {
+  const watchReadyCallback = function () {
     tim.updateReadyStatus(true);
-  });
+  };
+
+  tim.on(TIM.EVENT.SDK_READY, watchReadyCallback);
 
   tim.updateUserId = (userId: string) => {
     tim.userId = userId;

@@ -22,28 +22,29 @@
       :style="transformStyle"
     >
       <!-- 选中添加类名drop-list-item-active -->
+      <div :style="hiddenUpPartStyle" />
       <div
-        v-for="(item, index) in data"
-        :id="index"
+        v-for="(item, index) in showingData"
         :key="index"
-        :data-index="index"
         class="press-picker-view--item"
-        :class="[index == currentIndex ? 'press-picker-view--item__active':'']"
+        :class="[item.uniqueKey == currentIndex ? 'press-picker-view--item__active':'']"
         @mousedown="itemDown"
         @mousemove="itemMove"
-        @mouseup="itemUp"
+        @mouseup="e=>itemUp(e, item.uniqueKey)"
         @touchstart="itemDown"
         @touchmove="itemMove"
-        @touchend="itemUp"
+        @touchend="e=>itemUp(e, item.uniqueKey)"
       >
         {{ item.label }}
       </div>
+      <div :style="hiddenBottomPartStyle" />
     </div>
   </div>
 </template>
 
 <script>
 import { getRect } from '../common/dom/rect';
+
 
 function getTouch(e) {
   if (e.changedTouches && e.changedTouches[0]) {
@@ -93,6 +94,10 @@ export default {
       default: false,
       required: false,
     },
+    virtualListThreshold: {
+      type: Number,
+      default: 50,
+    },
   },
   options: {
     virtualHost: true,
@@ -119,6 +124,26 @@ export default {
     };
   },
   computed: {
+    upMissed() {
+      const { currentIndex, virtualListThreshold } = this;
+      return Math.max(0, currentIndex - virtualListThreshold);
+    },
+    hiddenUpPartStyle() {
+      const { itemHeight, upMissed } = this;
+      return `height: ${upMissed * itemHeight}px;`;
+    },
+    hiddenBottomPartStyle() {
+      const { currentIndex, data, itemHeight, virtualListThreshold } = this;
+      return `height: ${(data.length - currentIndex - virtualListThreshold) * itemHeight}px;`;
+    },
+    showingData() {
+      const { currentIndex, virtualListThreshold, upMissed } = this;
+      return this.data
+        .slice(upMissed, currentIndex + virtualListThreshold).map((item, index) => ({
+          ...item,
+          uniqueKey: index + upMissed,
+        }));
+    },
     transformStyle() {
       const res = `transform: translate3d(0, ${this.currentScroll}px, 0);`;
       return res;
@@ -245,13 +270,13 @@ export default {
       this.upX = touch?.clientX;
       this.upY = touch?.clientY;
     },
-    itemUp(e) {
+    itemUp(e, index) {
       const distance = this.twoPointDistance(
         { x: this.downX, y: this.downY },
         { x: this.upX, y: this.upY },
       );
       if (distance < 10) {
-        this.currentIndex = e.currentTarget.dataset.index;
+        this.currentIndex = index; // e.currentTarget.dataset.index;
         this.currentScroll = -this.currentIndex * this.itemHeight;
         this.hasClick = true;
       }

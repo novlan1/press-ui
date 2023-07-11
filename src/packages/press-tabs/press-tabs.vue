@@ -84,10 +84,10 @@ import { getAllRect, getRect } from '../common/dom/rect';
 import { isDef } from '../common/utils/validator';
 import { ParentMixin } from '../mixins/relation';
 import utils from '../common/utils/utils';
-import computed from './index.js';
+import computed from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
-import style from '../common/utils/style';
+import { style } from '../common/utils/style';
 
 
 export default {
@@ -240,7 +240,7 @@ export default {
     },
     trackClass() {
       const { animated } = this;
-      return `${this.bem3('tabs__track', [{ animated }])}}`;
+      return `${this.bem3('tabs__track', [{ animated }])}`;
     },
     trackStyle() {
       const { duration, currentIndex, animated } = this;

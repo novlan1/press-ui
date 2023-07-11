@@ -1,13 +1,17 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block :title="t('basicUsage')">
-      <press-area :area-list="areaList" />
+      <press-area
+        :area-list="areaList"
+        @change="onChange"
+      />
     </demo-block>
 
     <demo-block :title="t('title2')">
       <press-area
         :area-list="areaList"
         value="440304"
+        @change="onChange"
       />
     </demo-block>
 
@@ -16,6 +20,7 @@
         :area-list="areaList"
         :columns-num="2"
         value="440304"
+        @change="onChange"
       />
     </demo-block>
 
@@ -24,6 +29,7 @@
         :area-list="areaList"
         value="440304"
         :columns-placeholder="t('columnsPlaceholder')"
+        @change="onChange"
       />
     </demo-block>
   </div>
@@ -159,12 +165,22 @@ export default {
         this.areaList = data,
       ]);
     },
+    onChange(value) {
+      console.log('[onChange] value: ', value);
+      const { index, values } = value;
+      const names = values.map(item => item.name).join('-');
+
+      this.onTip(`${names}, index: ${index}`);
+    },
+    onTip(title) {
+      uni.showToast({
+        title,
+        icon: 'none',
+        duration: 1500,
+      });
+    },
   },
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
-.demo-wrap {
-  padding-bottom: 30px;
-}
 </style>

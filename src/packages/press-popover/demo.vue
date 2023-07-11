@@ -1,22 +1,24 @@
 <template>
-  <div class="demo-wrap">
+  <div
+    class="demo-wrap demo-wrap--gap"
+    @click.stop="onClickPage"
+  >
     <demo-block
-      v-for="(item,index) of list"
-      :key="index"
-      :title="item"
+      :title="t('basicUsage')"
     >
-      <press-button
-        type="e-sport-primary"
-        @click.stop="onShowPopover(item)"
-      >
-        {{ t('check') }}
-      </press-button>
+      <press-cell
+        v-for="(item,index) of list"
+        :key="index"
+        :title="item"
+        is-link
+        @click="onShowPopover(item)"
+      />
     </demo-block>
 
     <div class="demo-block-wrap">
       <div class="demo-block">
         <PressPopover
-          :show="!!direction"
+          :show="show"
           :placement="direction"
           :custom-class="`demo-nav-popover demo-nav-popover--${direction}`"
         >
@@ -50,25 +52,27 @@ export default {
   },
   data() {
     return {
-      list: ['top', 'bottom', 'left', 'right'],
+      list: ['Top', 'Bottom', 'Left', 'Right'],
       dataList: [1, 2, 3],
       direction: '',
+      show: false,
 
     };
   },
   methods: {
     onShowPopover(direction) {
-      this.direction = direction;
+      this.direction = direction.toLowerCase();
+      this.show = true;
+    },
+    onClickPage() {
+      if (this.direction) {
+        this.show = false;
+      }
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "src/packages/base/mixin.scss";
-.demo-wrap {
-  padding-bottom: 20px;
-}
-
 .demo-block-wrap {
   display: flex;
   align-items: center;

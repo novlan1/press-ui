@@ -69,7 +69,7 @@
 </template>
 <script>
 import utils from '../common/utils/utils';
-import style from '../common/utils/style';
+import { style } from '../common/utils/style';
 
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/utils/version';

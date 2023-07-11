@@ -12,6 +12,11 @@ module.exports = {
   rules: {
     'vue/no-v-text-v-html-on-component': 0,
   },
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module',
+  },
 };
 
 

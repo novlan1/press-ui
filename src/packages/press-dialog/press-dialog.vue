@@ -40,6 +40,8 @@
           class="press-dialog__img"
           :show-menu-by-longpress="true"
           :src="dataSrc"
+          @click.stop="handleClickImage"
+          @longpress="handleLongPressImage"
         >
       </div>
       <div class="press-dialog__btn--wrap">
@@ -104,12 +106,12 @@ export default {
       mShowButtonLoading: false,
 
       ...getPropsData(this, dialogProps),
-
-
     };
   },
   watch: {
     ...getPropsWatch(dialogProps),
+  },
+  mounted() {
   },
   methods: {
     setData(data) {
@@ -176,6 +178,18 @@ export default {
       this.mShowButtonLoading = false;
     },
     destroy() {
+    },
+    handleLongPressImage() {
+      if (typeof this.dataOnLongPressImage === 'function') {
+        this.dataOnLongPressImage();
+      }
+      this.$emit('onLongPressImage');
+    },
+    handleClickImage() {
+      if (typeof this.dataOnClickImage === 'function') {
+        this.dataOnClickImage();
+      }
+      this.$emit('onClickImage');
     },
 
   },

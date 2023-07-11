@@ -1,17 +1,17 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <demo-block
-      v-for="(item,index) of transitionList"
+      v-for="(item,index) of transitionDemoList"
       :key="index"
-      :title="item"
+      :title="item.title"
     >
-      <PressButton
-        type="e-sport-primary"
-        :custom-style="`${customStyle};padding:0;`"
-        @click="onShowTransition(item)"
-      >
-        {{ item }}
-      </PressButton>
+      <press-cell
+        v-for="(info) of item.list"
+        :key="info"
+        :title="info"
+        is-link
+        @click="onShowTransition(info)"
+      />
     </demo-block>
 
     <press-transition
@@ -38,29 +38,46 @@
 <script>
 
 let timer = null;
-
+const formatTransitionName = name => name.toLowerCase().replace(/\s+/, '-');
 
 export default {
   data() {
-    const transitionList = [
-      'fade',
-      'fade-up',
-      'fade-down',
-      'fade-left',
-      'fade-right',
-      'slide-up',
-      'slide-down',
-      'slide-left',
-      'slide-right',
-      'custom',
+    const transitionDemoList = [
+      {
+        title: 'Fade',
+        list: [
+          'Fade',
+          'Fade Up',
+          'Fade Down',
+          'Fade Left',
+          'Fade Right',
+        ],
+      },
+      {
+        title: 'Slide',
+        list: [
+          'Slide Up',
+          'Slide Down',
+          'Slide Left',
+          'Slide Right',
+        ],
+      },
+      {
+        title: 'Custom',
+        list: [
+          'Custom',
+        ],
+      },
     ];
+    const transitionList = transitionDemoList.reduce((acc, item) => acc.concat(item.list), []);
 
     return {
       customStyle: '',
       curTransitionType: 'fade',
-      transitionList,
+      transitionDemoList,
       options: transitionList.reduce((acc, item) => {
-        acc[item] = false;
+        const transitionName = formatTransitionName(item);
+        acc[transitionName] = false;
         return acc;
       }, {}),
       showCustom: false,
@@ -75,12 +92,13 @@ export default {
   },
   methods: {
     onShowTransition(type) {
-      this.options[type] = true;
-      this.curTransitionType = type;
+      const name = formatTransitionName(type);
+      this.options[name] = true;
+      this.curTransitionType = name;
       clearTimeout(timer);
-      const time = type === 'custom' ? 2000 : 1000;
+      const time = name === 'custom' ? 2000 : 1000;
       timer = setTimeout(() => {
-        this.options[type] = false;
+        this.options[name] = false;
       }, time);
     },
   },
@@ -88,10 +106,6 @@ export default {
 </script>
 
 <style lang="scss">
-.wrap {
-  padding-bottom: 20px;
-  background: #fff;
-}
 .block {
   position: fixed;
   top: 50%;

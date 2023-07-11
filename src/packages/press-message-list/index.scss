@@ -1,53 +1,12 @@
 @import "../base/layout.scss";
 @import "../base/mixin.scss";
 
-@mixin ellipsis() {
-  width: 4rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 .press-message-list {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-  overflow-y: auto;
-
-  &__empty {
-    position: absolute;
-    top: 44px;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.press-message-unread-wrap {
+  flex: 1;
   overflow: hidden;
-  right: 0;
-  top: 0;
-  position: absolute;
-  width: .22rem;
-  height: .22rem;
-  background: $color-red;
-  border-radius: 0.03rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(45deg);
-  font-weight: 600;
-  font-size: .16rem;
-  color: $color-white;
-
-  &__num {
-    transform: rotate(-45deg);
-  }
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .press-message-item {
@@ -57,57 +16,93 @@
   padding: 0 0.32rem;
   align-items: center;
 
-  &__img-wrap {
+  &__avatar-wrap {
     width: .88rem;
     height: .88rem;
     margin-right: .16rem;
     position: relative;
   }
 
-  &__img {
+  &__red-dot {
+    position: relative;
+
+    // &::after {
+    // content: '';
+    position: absolute;
+    top: 0;
+    right: 0.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    background: $color-red;
+    transform: rotate(45deg);
+    // }
+
+  }
+
+  &__unread-icon {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: .22rem;
+    height: .22rem;
+    transform: rotate(45deg);
+    z-index: 1;
+    border-radius: 0.03rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: .16rem;
+    color: $color-white;
+    background: $color-red;
+  }
+
+  &__unread-count {
+    transform: rotate(-45deg);
+  }
+
+  &__avatar {
     border-radius: 50%;
     width: .88rem;
     height: .88rem;
-
+    position: relative;
+    z-index: 0;
   }
 
   &__box {
     height: .84rem;
     flex: 1;
-
-    &__title {
-      height: .48rem;
-      line-height: .48rem;
-      font-size: $font-l;
-      color: $color-black;
-
-      &--ellipsis {
-        @include ellipsis;
-      }
-    }
-
-    &__content {
-      height: .36rem;
-      line-height: .36rem;
-      color: $color-gray;
-      font-size: $font-xxs;
-
-      &--ellipsis {
-        @include ellipsis;
-      }
-    }
-
-    &__right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      color: $color-gray;
-      font-size: $font-xxs;
-    }
   }
 
-  &__right {
+  &__nick {
+    height: .48rem;
+    line-height: .48rem;
+    font-size: $font-l;
+    color: $color-black;
+  }
+
+  &__content,
+  &__time {
+    height: .36rem;
+    line-height: .36rem;
+    color: $color-gray;
+    font-size: $font-xxs;
+  }
+
+  &__nick,
+  &__content {
+    width: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__delete {
     background: $color-red;
     color: $color-white;
     font-size: $font-l;

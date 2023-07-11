@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="demo-wrap">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -177,20 +177,15 @@ export default {
   methods: {
     onClickNav(index) {
       this.mainActiveIndex = index || 0;
-      // this.setData({
-      // mainActiveIndex: detail.index || 0,
-      // });
     },
 
     onClickItem(detail) {
-      console.log('detail', detail);
+      console.log('[detail]', detail);
       const activeId = this.activeId === detail.id ? null : detail.id;
       this.activeId = activeId;
-      // this.setData({ activeId });
     },
   },
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 </style>

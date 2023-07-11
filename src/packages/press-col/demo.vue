@@ -78,7 +78,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
 .demo-wrap {
   ::v-deep .press-col {
     margin-bottom: 10px;

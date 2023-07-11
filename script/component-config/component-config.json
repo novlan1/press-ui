@@ -178,6 +178,14 @@
         "title": "悬浮按钮"
       },
       {
+        "name": "ImagePreview",
+        "title": "图片预览"
+      },
+      {
+        "name": "List",
+        "title": "列表"
+      },
+      {
         "name": "NoticeBar",
         "title": "通知栏"
       },
@@ -256,7 +264,28 @@
       {
         "name": "MessageList",
         "title": "消息列表"
+      },
+      {
+        "name": "PopupCell",
+        "title": "弹出层单元格"
+      },
+      {
+        "name": "Protocol",
+        "title": "协议"
+      },
+      {
+        "name": "ScheduleList",
+        "title": "赛程列表"
+      },
+      {
+        "name": "ScheduleTree",
+        "title": "赛程树"
       }
     ]
+  },
+  "act": {
+    "name": "Act Components",
+    "title": "活动组件",
+    "list": []
   }
 }

@@ -115,8 +115,8 @@ The placeholder prompt text for each column can be configured through the `colum
 
 ### Props
 
-| Parameter | Description | Type | Default |
-| --------- | ----------- | ---- | ------- ||
+| Parameter             | Description                                                                                            | Type               | Default   |
+| --------------------- | ------------------------------------------------------------------------------------------------------ | ------------------ | --------- |
 | value                 | `code` of the currently selected province or city                                                      | _string_           | -         |
 | title                 | top bar title                                                                                          | _string_           | -         |
 | area-list             | Provincial and urban data, see the format below                                                        | _object_           | -         |

@@ -101,24 +101,9 @@ export default {
     };
   },
   computed: {
-
   },
   mounted() {
   },
-  // onPageShow() {
-  //   console.log('[onPageShow]');
-  //   uni.onKeyboardHeightChange((res) => { // 监听键盘高度变化
-  //     // const systemInfo = uni.getSystemInfoSync();
-  //     const keyHeight = res.height;
-  //     console.log('[onKeyboardHeightChange] res', res);
-  //     // - (systemInfo.screenHeight - systemInfo.windowHeight + systemInfo.safeAreaInsets.bottom);
-
-  //     this.inputBottom = `${keyHeight > 0 ? keyHeight : 0}`;
-  //   });
-  // },
-  // onPageHide() {
-  //   uni.offKeyboardHeightChange();
-  // },
   methods: {
     onInput(e) {
       this.$emit('input', e.target.value);
@@ -130,14 +115,12 @@ export default {
       this.$emit('sendMsg', this.value);
     },
     keyboardheightchange(res) {
-      // this.$emit('keyboardheightchange', e);
       const keyHeight = res.detail && res.detail.height;
-      console.log('[keyboardheightchange] res', res);
-      // - (systemInfo.screenHeight - systemInfo.windowHeight + systemInfo.safeAreaInsets.bottom);
-
+      console.info('[keyboardheightchange] res: ', res);
       this.inputBottom = `${keyHeight > 0 ? keyHeight : 0}`;
     },
     onBlur() {
+      this.inputBottom = 0;
       this.$emit('blur');
     },
     onFocus() {

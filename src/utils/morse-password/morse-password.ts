@@ -1,3 +1,12 @@
+interface IMorsePwd {
+  pwd: Array<number>;
+  cb: Function;
+  quiet: boolean;
+  holdTime: number;
+  envType: 'H5' | 'h5' | 'mp' | 'MP';
+  selector?: keyof HTMLElementTagNameMap;
+}
+
 class MorsePwd {
   /**
    * 初始化
@@ -30,7 +39,6 @@ class MorsePwd {
    *     this.morsePwd = MorsePwd.init({
    *       pwd: [1, 1, 1, 2, 2, 2, 1, 1, 1],
    *       cb: () => {
-   *         console.log('===');
    *         this.showToast('hhh');
    *       },
    *       envType: 'MP',
@@ -75,26 +83,26 @@ class MorsePwd {
    *
    * @returns {Object} MorsePwd实例
    */
-  static init(options) {
+  static init(options: IMorsePwd) {
     return new MorsePwd(options);
   }
 
-  pwd;
-  cb;
-  holdTime;
-  quiet;
-  selector;
-  envType;
+  pwd: Array<number>;
+  cb: Function;
+  holdTime: number;
+  quiet: Boolean;
+  selector?: keyof HTMLElementTagNameMap;
+  envType?: 'H5' | 'h5' | 'mp' | 'MP';
 
-  clickCode;
-  longPressCode;
+  clickCode: number;
+  longPressCode: number;
 
-  curIdx;
-  holdTimer;
-  h5Dom;
+  curIdx: number;
+  holdTimer: any;
+  h5Dom: any;
 
-  longPressTimer;
-  isLongTouch;
+  longPressTimer: any;
+  isLongTouch: Boolean;
 
   /**
    * 摩斯密码初始化
@@ -107,12 +115,12 @@ class MorsePwd {
    * @param {'H5' | 'h5' | 'mp' | 'MP'} options.envType 环境类型
    * @param {String} options.selector h5模式下的选择器
    */
-  constructor(options) {
+  constructor(options: IMorsePwd) {
     const DEFAULT_CODE_MAP = {
       CLICK: 1,
       LONG_PRESS: 2,
     };
-    const { pwd, cb, quiet = false, holdTime = 5000, envType = '', selector } = options;
+    const { pwd, cb, quiet = false, holdTime = 5000, envType = 'H5', selector } = options;
     this.pwd = pwd || [];
     this.cb = cb;
     this.holdTime = holdTime;
@@ -185,7 +193,7 @@ class MorsePwd {
     this.h5Dom.removeEventListener('touchmove', this.onTouchMove.bind(this));
   }
 
-  operation(type) {
+  operation(type: number) {
     this.log(`type: ${type}, curIdx: ${this.curIdx}, pwd: ${this.pwd}`);
 
     clearTimeout(this.holdTimer);
@@ -222,7 +230,7 @@ class MorsePwd {
     this.operation(this.longPressCode);
   }
 
-  log(...args) {
+  log(...args: Array<unknown>) {
     if (this.quiet) return;
     console.log(...args);
   }

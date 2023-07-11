@@ -1,29 +1,22 @@
 <template>
-  <view class="container">
-    <uni-section
-      title="基本功能"
-      sub-title="点击按钮,切换 fab 不同状态"
-      type="line"
+  <view class="demo-wrap">
+    <demo-block
+      :title="t('basicUsage')"
     >
-      <view class="warp">
-        <button
-          class="button"
-          type="primary"
-          @click="switchBtn(0)"
-        >
-          切换菜单方向({{ directionStr }})
-        </button>
-        <button
-          class="button"
-          type="primary"
-          @click="switchColor"
-        >
-          修改颜色
-        </button>
-      </view>
-    </uni-section>
+      <press-cell
+        :title="t('toggleDirection')"
+        is-link
+        @click="switchBtn(0)"
+      />
+      <press-cell
+        :title="t('changeColor')"
+        is-link
+        @click="switchColor"
+      />
+    </demo-block>
+
     <press-fab
-      ref="fab"
+      ref="fabRef"
       :pattern="pattern"
       :content="content"
       :horizontal="horizontal"
@@ -37,17 +30,38 @@
 
 <script>
 import PressFab from 'src/packages/press-fab/press-fab.vue';
-import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
 
 export default {
+  i18n: {
+    'zh-CN': {
+      toggleDirection: '切换方向',
+      changeColor: '修改颜色',
+      prompt: '提示',
+      you: '您',
+      image: '相册',
+      home: '首页',
+      star: '收藏',
+      modalContent: (target, selected) => `你${selected ? '选中了' : '取消了'}${target}`,
+    },
+    'en-US': {
+      toggleDirection: 'Direction',
+      changeColor: 'Color',
+      prompt: 'Prompt',
+      selected: 'selected',
+      cancelled: 'cancelled',
+      you: 'You',
+      image: 'image',
+      home: 'home',
+      star: 'star',
+      modalContent: (target, selected) => `You ${selected ? 'selected' : 'cancelled'} ${target}`,
+    },
+  },
   components: {
     PressFab,
-    UniSection,
   },
   data() {
     return {
       title: 'press-fab',
-      directionStr: '垂直',
       horizontal: 'right',
       vertical: 'bottom',
       direction: 'horizontal',
@@ -60,59 +74,70 @@ export default {
       },
       is_color_type: false,
       content: [{
-        iconPath: '/static/image.png',
-        selectedIconPath: '/static/image-active.png',
-        text: '相册',
+        iconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_394e9b73a2b402c417.png',
+        selectedIconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ddaf193c855d2d4b93.png',
+        text: this.t('image'),
         active: false,
       },
       {
-        iconPath: '/static/home.png',
-        selectedIconPath: '/static/home-active.png',
-        text: '首页',
+        iconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_48f3dce2ae13561480.png',
+        selectedIconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_119ad562534f721c7f.png',
+        text: this.t('home'),
         active: false,
       },
       {
-        iconPath: '/static/star.png',
-        selectedIconPath: '/static/star-active.png',
-        text: '收藏',
+        iconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_069e81d6aae9e308e1.png',
+        selectedIconPath: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_eda1e7d95cb62dc6e1.png',
+        text: this.t('star'),
         active: false,
       },
       ],
     };
   },
   onBackPress() {
-    if (this.$refs.fab.isShow) {
-      this.$refs.fab.close();
+    if (this.$refs.fabRef.isShow) {
+      this.$refs.fabRef.close();
       return true;
     }
     return false;
   },
   methods: {
     trigger(e) {
-      console.log(e);
+      const that = this;
+      const { t, content } = this;
+      console.log('[trigger] e: ', e);
       this.content[e.index].active = !e.item.active;
+
       uni.showModal({
-        title: '提示',
-        content: `您${this.content[e.index].active ? '选中了' : '取消了'}${e.item.text}`,
+        title: t('prompt'),
+        content: this.t('modalContent', e.item.text, content[e.index].active),
+        confirmText: t('confirm'),
+        cancelText: t('cancel'),
         success(res) {
           if (res.confirm) {
-            console.log('用户点击确定');
+            that.onTip('confirm');
           } else if (res.cancel) {
-            console.log('用户点击取消');
+            that.onTip('cancel');
           }
         },
       });
     },
-    fabClick() {
+    onTip(title) {
       uni.showToast({
-        title: '点击了悬浮按钮',
+        title,
         icon: 'none',
       });
     },
+    fabClick() {
+
+    },
     switchBtn(hor, ver) {
+      const { onClick, isShow } = this.$refs.fabRef;
+      if (!isShow) {
+        onClick?.();
+      }
       if (hor === 0) {
         this.direction = this.direction === 'horizontal' ? 'vertical' : 'horizontal';
-        this.directionStr = this.direction === 'horizontal' ? '垂直' : '水平';
       } else {
         this.horizontal = hor;
         this.vertical = ver;
@@ -134,11 +159,6 @@ export default {
 </script>
 
 <style lang="scss">
-.warp {
-  padding: 10px;
-  height: 1000px;
-}
-
 .button {
   margin-bottom: 10px;
 }

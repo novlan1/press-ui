@@ -1,105 +1,75 @@
 <template>
-  <div>
+  <div class="demo-wrap">
     <div>
-      <demo-block :title="t('closeIcon')">
-        <PressButton
-          type="e-sport-primary"
-          :custom-style="customStyle"
+      <demo-block :title="t('basicUsage')">
+        <press-cell
+          :title="t('closeIcon')"
+          is-link
           @click="onShowPopup('normal')"
-        >
-          {{ t('check') }}
-        </PressButton>
-      </demo-block>
-      <demo-block :title="t('cancelIcon')">
-        <PressButton
-          type="e-sport-primary"
-          :custom-style="customStyle"
+        />
+        <press-cell
+          :title="t('cancelIcon')"
+          is-link
           @click="onShowPopup('cancel')"
-        >
-          {{ t('check') }}
-        </PressButton>
-      </demo-block>
-      <demo-block :title="t('noCloseOrCancel')">
-        <PressButton
-          type="e-sport-primary"
-          :custom-style="customStyle"
+        />
+        <press-cell
+          :title="t('noCloseOrCancel')"
+          is-link
           @click="onShowPopup('noClose')"
-        >
-          {{ t('check') }}
-        </PressButton>
-      </demo-block>
-
-      <demo-block :title="t('plainButtonConfirm')">
-        <PressButton
-          type="e-sport-primary"
-          :custom-style="customStyle"
+        />
+        <press-cell
+          :title="t('plainButtonConfirm')"
+          is-link
           @click="onShowPopup('borderBtn')"
-        >
-          {{ t('check') }}
-        </PressButton>
+        />
+        <press-cell
+          :title="t('horizontal')"
+          is-link
+          @click="onShowPopup('hor')"
+        />
       </demo-block>
 
-      <demo-block :title="t('horizontal')">
-        <PressButton
-          type="e-sport-primary"
-          :custom-style="customStyle"
-          @click="onShowPopup('hor')"
-        >
-          {{ t('check') }}
-        </PressButton>
+      <demo-block :title="t('asyncClose')">
+        <press-cell
+          :title="t('notPromiseFunction')"
+          is-link
+          @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_NORMAL)"
+        />
+        <press-cell
+          :title="t('promiseFunction')"
+          is-link
+          @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_PROMISE)"
+        />
+      </demo-block>
+
+      <demo-block :title="t('useWay')">
+        <press-cell
+          :title="t('controlledPopup')"
+          is-link
+          @click="onShowControlledPopup"
+        />
+        <press-cell
+          :title="t('functional')"
+          is-link
+          @click="onShowFunctionalPicker"
+        />
       </demo-block>
     </div>
 
     <PressPopup
-      v-if="popupOptions.normal.show"
-      :is-showpopup-close="true"
-      :show-back-arrow="false"
-      :popup-title="popupOptions.normal.title"
-      :popup-title-btn="t('confirm')"
-      @onConfirm="popupOptions.normal.onConfirm"
-      @onCancel="popupOptions.normal.onCancel"
-    >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      v-if="popupOptions.cancel.show"
-      :is-showpopup-close="false"
-      :show-back-arrow="true"
-      :popup-title="popupOptions.cancel.title"
-      :popup-title-btn="t('confirm')"
-      @onConfirm="popupOptions.cancel.onConfirm"
-      @onCancel="popupOptions.cancel.onCancel"
-    >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      v-if="popupOptions.noClose.show"
-      :is-showpopup-close="false"
-      :show-back-arrow="false"
-      :popup-title="popupOptions.noClose.title"
-      :popup-title-btn="t('confirm')"
-      @onConfirm="popupOptions.noClose.onConfirm"
-      @onCancel="popupOptions.noClose.onCancel"
-    >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      v-if="popupOptions.hor.show"
-      :is-showpopup-close="true"
-      :is-cross-slab="true"
+      v-if="curPicker.show"
+      :is-showpopup-close="curPicker.isShowpopuoClose"
+      :show-back-arrow="curPicker.showBackArrow"
+      :is-cross-slab="curPicker.isCrossSlab"
+      :is-border-btn="curPicker.isBorderBtn"
       :width-number="54"
-      :popup-title="popupOptions.hor.title"
-      @onConfirm="popupOptions.hor.onConfirm"
-      @onCancel="popupOptions.hor.onCancel"
+      :custom-style="curPicker.customStyle"
+      :popup-title="curPicker.title"
+      :popup-title-btn="curPicker.popupTitleBtn"
+      :async-confirm="asyncConfirm"
+      :async-close="asyncCancel"
+      @onConfirm="curPicker.onConfirm"
+      @onCancel="curPicker.onCancel"
     >
       <div class="content">
         {{ t('SomeContent') }}
@@ -107,102 +77,158 @@
     </PressPopup>
 
     <PressPopup
-      v-if="popupOptions.borderBtn.show"
-      :is-showpopup-close="true"
-      :show-back-arrow="false"
-      :is-border-btn="true"
-      :popup-title="popupOptions.borderBtn.title"
-      :popup-title-btn="t('confirm')"
-      @onConfirm="popupOptions.borderBtn.onConfirm"
-      @onCancel="popupOptions.borderBtn.onCancel"
+      :is-show="showControlledPopup"
+      :button="t('confirm')"
+      :title="t('controlledPopup')"
+      @confirm="showControlledPopup = false"
+      @cancel="showControlledPopup = false"
     >
       <div class="content">
         {{ t('SomeContent') }}
       </div>
     </PressPopup>
+
+    <press-popup
+      :id="PRESS_PICKER_ID"
+      mode="functional"
+    >
+      <div class="content">
+        {{ t('SomeContent') }}
+      </div>
+    </press-popup>
   </div>
 </template>
 <script>
+import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+
+const PRESS_PICKER_ID = 'press-picker-functional';
+const TYPE_MAP = {
+  ASYNC_NORMAL: 'async-normal',
+  ASYNC_PROMISE: 'async-promise',
+};
+
+function asyncClose({
+  t,
+  type,
+  onTip,
+}) {
+  return new Promise((resolve) => {
+    uni.showLoading({
+      title: t('asyncConfirm'),
+      mask: true,
+    });
+    setTimeout(() => {
+      if (type === 'confirm') {
+        onTip(t('asyncConfirmSuccess'));
+        resolve(true);
+      } else {
+        resolve(false);
+        onTip(t('asyncConfirmFail'));
+      }
+    }, 500);
+  });
+}
+let that;
 
 export default {
   i18n: {
     'zh-CN': {
       wayToWin: '决胜方式',
       SomeContent: '一些内容',
+      controlledPopup: '受控组件',
+      functional: '函数式调用',
       check: '查看',
       closeIcon: '关闭图标',
       cancelIcon: '取消图标',
       noCloseOrCancel: '没有关闭/取消',
-      plainButtonConfirm: '线框确认图标',
+      plainButtonConfirm: '线框按钮',
       horizontal: '横版',
+      asyncClose: '异步关闭',
+      asyncConfirm: '异步确认中...',
+      asyncConfirmSuccess: '异步确认后可以关闭',
+      asyncConfirmFail: '异步确认后禁止关闭',
+      useWay: '使用方式',
+      notPromiseFunction: 'Not Promise',
+      promiseFunction: 'Promise',
     },
     'en-US': {
       wayToWin: 'Bo Number',
       SomeContent: 'Some Content',
+      controlledPopup: 'Controlled Popup',
+      functional: 'Functional Mode',
       check: 'Check',
       closeIcon: 'Close Ion',
       cancelIcon: 'Cancel Icon',
       noCloseOrCancel: 'No Close Or Cancel',
-      plainButtonConfirm: 'Plain Confirm Button',
+      plainButtonConfirm: 'Plain Button',
       horizontal: 'Horizontal Version',
+      asyncClose: 'Async Close',
+      asyncConfirm: 'Async Confirm ...',
+      asyncConfirmSuccess: 'Async Confirm Success',
+      asyncConfirmFail: 'Async Confirm Fail',
+      useWay: 'Use Way',
+      notPromiseFunction: 'Not Promise',
+      promiseFunction: 'Promise',
     },
   },
+  components: {
+  },
   data() {
+    that = this;
+    const commonOptions = {
+      title: this.t('wayToWin'),
+      popupTitleBtn: this.t('confirm'),
+      isCrossSlab: false,
+      isShowpopuoClose: false,
+      showBackArrow: false,
+      isBorderBtn: false,
+      customStyle: '',
+      onConfirm: () => {
+        // this.onTip('confirm');
+        this.curPicker.show = false;
+      },
+      onCancel: () => {
+        // this.onTip('cancel');
+        this.curPicker.show = false;
+      },
+    };
+
+    let popupCustomStyle = '';
+
+    // #ifdef H5
+    popupCustomStyle = 'top: 44px;';
+    // #endif
+
     return {
       type: '',
       customStyle: '',
       popupOptions: {
         normal: {
-          show: false,
-          title: this.t('wayToWin'),
-          onCancel: () => {
-            this.popupOptions.normal.show = false;
-          },
-          onConfirm: () => {
-            this.popupOptions.normal.show = false;
-          },
+          isShowpopuoClose: true,
         },
         cancel: {
-          show: false,
-          title: this.t('wayToWin'),
-          onCancel: () => {
-            this.popupOptions.cancel.show = false;
-          },
-          onConfirm: () => {
-            this.popupOptions.cancel.show = false;
-          },
+          showBackArrow: true,
         },
-        noClose: {
-          show: false,
-          title: this.t('wayToWin'),
-          onCancel: () => {
-            this.popupOptions.noClose.show = false;
-          },
-          onConfirm: () => {
-            this.popupOptions.noClose.show = false;
-          },
-        },
+        noClose: {},
         hor: {
-          show: false,
-          title: this.t('wayToWin'),
-          onCancel: () => {
-            this.popupOptions.hor.show = false;
-          },
-          onConfirm: () => {
-            this.popupOptions.hor.show = false;
-          },
+          popupTitleBtn: '',
+          isCrossSlab: true,
+          isShowpopuoClose: true,
+          customStyle: popupCustomStyle,
         },
         borderBtn: {
-          show: false,
-          title: this.t('wayToWin'),
-          onCancel: () => {
-            this.popupOptions.borderBtn.show = false;
-          },
-          onConfirm: () => {
-            this.popupOptions.borderBtn.show = false;
-          },
+          isShowpopuoClose: true,
+          isBorderBtn: true,
         },
       },
+      commonOptions,
+      curPicker: {
+        ...commonOptions,
+      },
+      pressPickerFunctionalData: {},
+      PRESS_PICKER_ID,
+      showControlledPopup: false,
+      TYPE_MAP,
     };
   },
   onLoad() {
@@ -214,27 +240,95 @@ export default {
   },
   methods: {
     onShowPopup(type) {
+      uni.hideToast();
       this.type = type;
-      console.log('type', type);
-      if (this.popupOptions[type]) {
-        this.popupOptions[type].show = true;
-      }
-    },
-    validateConfirm() {
-      if (['noClose', 'borderBtn'].indexOf(this.type) <= -1) return true;
 
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          if (this.type === 'noClose') {
-            console.log('异步确认后可以关闭');
-            resolve(true);
-          } else {
-            resolve(false);
-            console.log('异步确认后禁止关闭');
-          }
-        }, 2000);
+      this.curPicker = {
+        ...this.commonOptions,
+        ...this.popupOptions[type],
+        show: true,
+      };
+    },
+    // validateConfirm 没有用了，被 asyncCancel/asyncConfirm 拦截
+    // validateConfirm() {
+    //   if (['noClose', 'borderBtn'].indexOf(this.type) <= -1) return true;
+    //   return asyncClose({
+    //     t: this.t,
+    //     type: this.type === 'noClose' ? 'confirm' : 'cancel',
+    //     onTip: this.onTip,
+    //   });
+    // },
+    onTip(title) {
+      uni.hideLoading();
+      uni.showToast({
+        title,
+        icon: 'none',
+        duration: 1500,
       });
     },
+    onShowFunctionalPicker() {
+      showFunctionalComponent.call(this, {
+        selector: `#${PRESS_PICKER_ID}`,
+        title: this.t('wayToWin'),
+        button: this.t('confirm'),
+        horizontal: false,
+        closeIcon: false,
+        arrowIcon: true,
+        borderButton: false,
+        customStyle: '',
+      }).then(() => {
+        this.onTip('confirm');
+      })
+        .catch(() => {
+          this.onTip('cancel');
+        });
+    },
+    onConfirm() {
+      this.onTip('confirm');
+    },
+    onCancel() {
+      this.onTip('cancel');
+    },
+    onShowControlledPopup() {
+      this.showControlledPopup = true;
+    },
+    onShowAsyncClosePopup(type) {
+      this.type = type;
+      this.curPicker = {
+        ...this.commonOptions,
+        isShowpopuoClose: true,
+        show: true,
+      };
+    },
+    asyncConfirm() {
+      if (that.type === TYPE_MAP.ASYNC_PROMISE) {
+        return asyncClose({
+          t: that.t,
+          type: 'confirm',
+          onTip: that.onTip,
+        });
+      }
+      if (that.type === TYPE_MAP.ASYNC_NORMAL) {
+        that.onTip('Can Close');
+        return true;
+      }
+      return true;
+    },
+    asyncCancel() {
+      if (that.type === TYPE_MAP.ASYNC_PROMISE) {
+        return asyncClose({
+          t: that.t,
+          type: 'cancel',
+          onTip: that.onTip,
+        });
+      }
+      if (that.type === TYPE_MAP.ASYNC_NORMAL) {
+        that.onTip('Can not close');
+        return false;
+      }
+      return true;
+    },
+
   },
 };
 </script>

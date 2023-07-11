@@ -2,8 +2,7 @@
 url : pages/press/picker/picker
 ---
 
-## Picker 
-
+## Picker
 
 Selector component for forms
 
@@ -16,12 +15,12 @@ Selector component for forms
 <press-picker
    v-if="pickerOption.tip.show"
    :title="pickerOption.tip.title"
-   :show-back-arrow="pickerOption.tip.showBackArrow"
-   :select-list="pickerOption.tip.selectList"
+   :arrowIcon="pickerOption.tip.arrowIcon"
+   :list="pickerOption.tip.list"
    :tip="pickerOption.tip.tip"
-   :select-item="pickerOption.tip.selectItem"
-   @onClickConfirm="pickerOption.tip.onClickConfirm"
-   @onRemove="pickerOption.tip.onRemove"
+   :current="pickerOption.tip.current"
+   @confirm="pickerOption.tip.confirm"
+   @cancel="pickerOption.tip.cancel"
 />
 ```
 
@@ -34,13 +33,13 @@ export default {
            show: false,
            title: 'Ban bit setting',
            tip: 'After the game is created, it can be set precisely according to the round of the game. ',
-           showBackArrow: false,
-           selectList: bpList,
-           selectItem: { label: bpList[0].label, value: 1 },
-           onClickConfirm: (boItem) => {
+           arrowIcon: false,
+           list: bpList,
+           current: { label: bpList[0].label, value: 1 },
+           confirm: (boItem) => {
              this.pickerOption.tip.show = false;
            },
-           onRemove: () => {
+           cancel: () => {
              this.pickerOption.tip.show = false;
            },
          },
@@ -63,30 +62,73 @@ export default {
 },
 ```
 
+### Function call
+
+To support functional calls, you need to pre-embed components under the page, and specify `mode` as `functional`.
+
+```html
+<press-picker
+   :id="PRESS_PICKER_ID"
+   mode="functional"
+/>
+```
+
+```ts
+export default {
+   methods: {
+      onShowFunctionalPicker() {
+       const { bpList } = this;
+       showFunctionalComponent. call(this, {
+         selector: `#${PRESS_PICKER_ID}`,
+         list: bpList,
+         arrowIcon: true,
+         current: { label: bpList[1].label, value: 3 },
+         title: this.t('banSet'),
+         tip: this.t('tipContent'),
+       }).then((item) => {
+         this.onSuccessTip(item);
+       })
+         .catch(() => {
+           this.onTip('cancel');
+         });
+     },
+   }
+}
+```
 
 ## API
 
 ### Props
 
-| Property Name |  Type   | Default Value |                        Description                         |
-| :-----------: | :-----: | :-----------: | :--------------------------------------------------------: |
-|     title     | String  |       -       |                           title                            |
-| showBackArrow | Boolean |     false     | Whether the upper left corner is displayed as a back arrow |
-|  selectList   |  Array  |      []       |                         data list                          |
-|  selectItem   | Object  |     null      |                  Currently selected item                   |
-|      tip      | String  |       -       |                            tip                             |
-
+| property name |   type    | default value | description                                                   |
+| :-----------: | :-------: | :-----------: | :------------------------------------------------------------ |
+|     title     | _string_  |       -       | title                                                         |
+|  arrow-icon   | _boolean_ |    `false`    | Whether the upper left corner should be shown as a back arrow |
+|     list      |  _Array_  |     `[]`      | data list                                                     |
+|    current    | _Object_  |    `null`     | currently selected item                                       |
+|      tip      | _string_  |       -       | tip                                                           |
+|     mode      | _string_  |       -       | pass `functional` when calling a function                     |
 
 
 
 ### Events
 
-|   event name   |   description   | return value |
-| :------------: | :-------------: | :----------: |
-|    onRemove    | Click to cancel |      -       |
-| onClickConfirm |    Click OK     |      -       |
+| event name |   description   | return value |
+| :--------: | :-------------: | :----------: |
+|   cancel   | Click to cancel |      -       |
+|  confirm   |    Click OK     |      -       |
 
 
+The following properties are deprecated (`v0.7.32`):
+
+
+| Type  |       Old       |    New     |
+| :---: | :-------------: | :--------: |
+| Prop  | show-back-arrow | arrow-icon |
+| Prop  |   select-list   |    list    |
+| Prop  |   select-item   |  current   |
+| Event | onClickConfirm  |  confirm   |
+| Event |    onRemove     |   cancel   |
 ## Theme customization
 
 <theme-config />

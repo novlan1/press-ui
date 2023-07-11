@@ -1,12 +1,12 @@
 <template>
   <PressPopup
-    :is-showpopup-close="true"
-    :show-back-arrow="showBackArrow"
-    :popup-title="title"
-    :popup-title-btn="t('picker.confirm')"
+    :close-icon="!arrowIcon"
+    :show-back-arrow="arrowIcon"
+    :title="title"
+    :button="t('picker.confirm')"
     :class="tip ? 'press-picker__tip' : ''"
-    @onCancel="onCancel"
-    @onConfirm="onConfirm"
+    @cancel="onCancel"
+    @confirm="onConfirm"
   >
     <div
       v-if="tip"
@@ -19,6 +19,7 @@
       :data="data"
       :has-tip="!!tip"
       :current="current"
+      :virtual-list-threshold="virtualListThreshold"
       @currentIndexChanged="onCurrentIndexChanged"
     />
   </PressPopup>
@@ -41,11 +42,10 @@ export default {
       required: false,
     },
     // 左上角是否显示为返回箭头
-    showBackArrow: {
+    arrowIcon: {
       type: Boolean,
       default: false,
     },
-
     // 提示
     tip: {
       type: String,
@@ -56,32 +56,17 @@ export default {
     // [{label: '文本', value: '值'}]
     data: {
       type: Array,
-      default: () => ([
-        {
-          label: 'test',
-        },
-        {
-          label: 'test',
-        },
-        {
-          label: 'test',
-        },
-        {
-          label: 'test',
-        },
-        {
-          label: 'test',
-        },
-        {
-          label: 'test',
-        },
-      ]),
+      default: () => ([]),
       required: true,
     },
     current: {
       type: Object,
       default: null,
       required: false,
+    },
+    virtualListThreshold: {
+      type: Number,
+      default: 50,
     },
   },
   options: {

@@ -1,7 +1,7 @@
 import { MorsePwd } from './morse-password';
 
 
-export const morsePwdMixin = (pwd, cb) => ({
+export const morsePwdMixin = (pwd: number[], cb: Function) => ({
   data() {
     return {
       morsePwd: null,

@@ -1,70 +1,42 @@
 ---
-url: pages/press/message-detail/message-detail
+url : pages/press/message-list/message-list
 ---
 
 ## MessageList 
 
-IM chat details.
+
+It can be used to display the IM message list.
 
 ### Basic Usage
 
 ```html
-<PressMessageDetail
-   :msg-list="msgList"
+<PressMessageList
+   :list="list"
+   @onClickDetail="onClickDetail"
 />
 ```
 
 ```ts
-const MSG_LIST = [
-   {
-     id: 1,
-     msgType: 'TIME',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 2,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 3,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 4,
-     msgType: 'MESSAGE_TEXT',
-     isMine: true,
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-   {
-     id: 5,
-     msgType: 'MESSAGE_TEXT',
-     avatar: 'https://dummyimage.com/44x44',
-     content: {
-       text: '123123',
-     },
-   },
-];
-
 export default {
    data() {
      return {
-       msgList: MSG_LIST,
+       list: [{
+         id: '1',
+         nick: 'This is the nickname,
+         content: 'Here is the content of the message',
+         unreadCount: 99,
+         time: '08-20 11:32',
+         avatar: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/wechat_avatar.png',
+       }],
      }
    },
    methods: {
+     onClickDetail(item) {
+       console.log('Clicked: ', item);
+     },
+     onDelete(item) {
+       console.log('Deleting: ', item);
+     },
    }
 }
 ```
@@ -74,17 +46,22 @@ export default {
 ### Props
 
 
-| Parameter | Description                   | Type      | Default |
-| --------- | ----------------------------- | --------- | ------- |
-| list      | message list                  | _Array_   | `[]`    |
-| loading   | Whether to show loading       | _boolean_ | `false` |
-| showInput | Whether to show the input box | _boolean_ | `true`  |
+| Parameter | Description  | Type                                   | Default |
+| --------- | ------------ | -------------------------------------- | ------- |
+| list      | message list | _Array<{nick, content, time, avatar}>_ | `[]`    |
 
 
-###Event
+### Event
 
 
-| Event Name | Description  | Callback Parameters |
-| ---------- | ------------ | ------------------- |
-| loadMore   | Load More    | -                   |
-| send       | send message | message content     |
+| Event Name    | Description        | Callback Parameters |
+| ------------- | ------------------ | ------------------- |
+| onClickDetail | click message item | message `item`      |
+| onDelete      | Click to delete    | Message `item`      |
+
+
+## common problem
+
+### unique `id`
+
+The `id` of each item in `list` should be unique, otherwise `swipe-cell` will not be closed after deleting a certain message.
