@@ -1,13 +1,13 @@
 {
   "name": "press-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/novlan1/press-ui"
   },
   "author": "guowangyang",
-  "homepage": "https://test.igame.qq.com/tip/press-ui/press-ui",
+  "homepage": "https://novlan1.github.io/press-ui",
   "bugs": {
     "url": "https://github.com/novlan1/press-ui/issues"
   },

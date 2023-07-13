@@ -1,6 +1,7 @@
 <template>
   <div
     v-if="innerShow"
+    :style="customStyle"
     :class="['press-popover',
              `press-popover--${placement}`,
              popperClass,
@@ -33,6 +34,10 @@ export default {
       default: '',
     },
     ...defaultProps,
+    customStyle: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {

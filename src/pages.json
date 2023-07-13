@@ -699,6 +699,17 @@
           }
         }
       ]
+    },
+    {
+      "root": "pages/press/act-tip-dialog",
+      "pages": [
+        {
+          "path": "act-tip-dialog",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
     }
   ],
   "globalStyle": {

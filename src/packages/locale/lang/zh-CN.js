@@ -65,4 +65,7 @@ export default {
     subscribe: '订阅',
     subscribed: '已订阅',
   },
+  actTipDialog: {
+    prompt: '提示描述',
+  },
 };

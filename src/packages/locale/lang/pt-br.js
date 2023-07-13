@@ -61,4 +61,7 @@ export default {
     subscribe: 'Assinar',
     subscribed: 'Assinado',
   },
+  actTipDialog: {
+    prompt: 'Prompt Description',
+  },
 };

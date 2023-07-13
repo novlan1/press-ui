@@ -72,4 +72,5 @@ export default {
 | :-----------: | :-----: | :-----------: | :----------------: |
 |     show      | Boolean |     true      | whether to display |
 |   placement   | String  |     right     | popup box position |
-|  customClass  | String  |       -       | custom class name  |
+| custom-class  | String  |       -       | custom class name  |
+| custom-style  | String  |       -       |    custom style    |

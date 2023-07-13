@@ -286,6 +286,11 @@
   "act": {
     "name": "Act Components",
     "title": "活动组件",
-    "list": []
+    "list": [
+      {
+        "name": "ActTipDialog",
+        "title": "活动提示弹窗"
+      }
+    ]
   }
 }

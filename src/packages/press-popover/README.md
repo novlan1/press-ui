@@ -68,8 +68,9 @@ export default {
 
 ### Props
 
-|   属性名    |  类型   | 默认值 |    说明    |
-| :---------: | :-----: | :----: | :--------: |
-|    show     | Boolean |  true  |  是否显示  |
-|  placement  | String  | right  | 弹出框位置 |
-| customClass | String  |   -    | 自定义类名 |
+|    属性名    |  类型   | 默认值 |    说明    |
+| :----------: | :-----: | :----: | :--------: |
+|     show     | Boolean |  true  |  是否显示  |
+|  placement   | String  | right  | 弹出框位置 |
+| custom-class | String  |   -    | 自定义类名 |
+| custom-style | String  |   -    | 自定义样式 |

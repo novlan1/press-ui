@@ -65,4 +65,7 @@ export default {
     subscribe: 'Subscribe',
     subscribed: 'Subscribed',
   },
+  actTipDialog: {
+    prompt: 'Prompt Description',
+  },
 };

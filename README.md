@@ -20,7 +20,7 @@
 - 支持主题定制，内置 600+ 个主题变量
 - 支持国际化，内置 16+ 种语言包
 
-文档地址在[这里](https://test.igame.qq.com/tip/press-ui/press-ui/)。
+文档地址在[这里](https://novlan1.github.io/press-ui/)。
 
 
 ### 2. 解决痛点
