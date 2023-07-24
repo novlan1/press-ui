@@ -25,7 +25,10 @@
           :key="round.uniqueKey"
           class="press-schedule-tree-tab"
           :style="{width: `${tabScrollWidth}px`}"
-          :class="[`press-schedule-tree-tab--scroll-${roundIndex - scrollTime}`]"
+          :class="[
+            `press-schedule-tree-tab--scroll-${roundIndex - scrollTime}`,
+            isAdmin ? 'press-schedule-tree-tab--clickable' : ''
+          ]"
         >
           <p
             class="press-schedule-tree-tab-title"
@@ -214,6 +217,7 @@
 <script>
 import TwoTeamWrap from './press-schedule-team.vue';
 import { endTouch, REF_MAP, scrollToH5 } from './touch-helper';
+import { scrollRelative, getScrollStartY, initScrollBounce, scrollBounce } from './drag-helper';
 import { t } from '../locale';
 
 const MY_TEAM_SCHE_PAIR_CLASS = 'press-schedule-tree-pair--mine';
@@ -224,6 +228,7 @@ const DIRECTION_MAP = {
 const PENDING_PIC = 'https://image-1251917893.file.myqcloud.com/Esports/new/user/dd.png';
 
 let movingDirection = '';
+let isMoving = false;
 const scrollInfo = {
   endX: 0,
   endY: 0,
@@ -589,8 +594,16 @@ export default {
   },
   mounted() {
     this.locateMyTeam();
+    // #ifdef H5
+    window?.addEventListener('mouseup', this.unwatchMouseUp);
+    // #endif
   },
   updated() {
+  },
+  destroyed() {
+    // #ifdef H5
+    window?.removeEventListener('mouseup', this.unwatchMouseUp);
+    // #endif
   },
   methods: {
     getColumnStyle(scrollTime) {
@@ -662,6 +675,7 @@ export default {
     },
     // 触发按下事件
     start(e) {
+      isMoving = true;
       movingDirection = '';
 
       // 如果touches存在就说明是移动端
@@ -671,9 +685,13 @@ export default {
       this.startY = touch?.clientY;
       this.touchStartTime = Date.now();
       this.$emit('scheduleOnClick');
+
+      getScrollStartY();
     },
     // 触发移动事件，通过x轴移动的距离判断是左滑又滑
     move(e) {
+      if (!isMoving) return;
+
       const touch = e.touches?.[0] || e;
       const moveEndX = touch?.clientX;
       scrollInfo.endX = moveEndX - this.startX;
@@ -683,12 +701,22 @@ export default {
       const VERTICAL_SCROLL_Y = 120;
       if (Math.abs(scrollInfo.endY) > Math.abs(scrollInfo.endX) || Math.abs(scrollInfo.endY) > VERTICAL_SCROLL_Y) {
         movingDirection = DIRECTION_MAP.VERTICAL;
+
+        // #ifdef H5
+        initScrollBounce(scrollInfo);
+        scrollRelative(-scrollInfo.endY, false);
+        // #endif
       }
     },
     // 触摸移动结束事件
     end() {
+      isMoving = false;
       if (movingDirection === DIRECTION_MAP.VERTICAL) {
         movingDirection = '';
+
+        // #ifdef H5
+        scrollBounce();
+        // #endif
         return;
       }
 
@@ -731,6 +759,9 @@ export default {
 
       // 滑动的次数/当前列数
       this.scrollTime = newScrollTime;
+    },
+    unwatchMouseUp() {
+      isMoving = false;
     },
   },
 };

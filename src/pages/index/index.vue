@@ -111,7 +111,7 @@ import UniList from 'src/pages/components/uni-list/components/uni-list/uni-list.
 import UniListItem from 'src/pages/components/uni-list/components/uni-list-item/uni-list-item.vue';
 import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
 
-import { loadVConsole } from '../../utils/vconsole/vconsole';
+import { loadVConsole } from 't-comm/lib/v-console/v-console';
 
 const pagesConfig = require('./page-config.json');
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';

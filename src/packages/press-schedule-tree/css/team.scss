@@ -6,6 +6,8 @@
   transition: all .4s;
 
   &-main {
+    cursor: pointer;
+
     &--selected {
       position: relative;
 
@@ -76,6 +78,7 @@
 
     &--green {
       color: $color-green;
+      cursor: pointer;
     }
   }
 }

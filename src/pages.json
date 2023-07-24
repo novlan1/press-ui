@@ -481,6 +481,17 @@
       ]
     },
     {
+      "root": "pages/press/pagination",
+      "pages": [
+        {
+          "path": "pagination",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
       "root": "pages/press/progress",
       "pages": [
         {
@@ -694,6 +705,17 @@
       "pages": [
         {
           "path": "schedule-tree",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/turntable",
+      "pages": [
+        {
+          "path": "turntable",
           "style": {
             "navigationBarTitleText": ""
           }

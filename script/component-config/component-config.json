@@ -190,6 +190,10 @@
         "title": "通知栏"
       },
       {
+        "name": "Pagination",
+        "title": "分页"
+      },
+      {
         "name": "Progress",
         "title": "进度条"
       },
@@ -280,6 +284,10 @@
       {
         "name": "ScheduleTree",
         "title": "赛程树"
+      },
+      {
+        "name": "Turntable",
+        "title": "转盘"
       }
     ]
   },

@@ -2,10 +2,12 @@ const path = require('path');
 const {
   RemToRpxPlugin,
   GenVersionMpPlugin,
+  GenVersionWebPlugin,
   DispatchVuePlugin,
   //  DispatchScriptPlugin
 } = require('uni-plugin-light/lib/plugin');
 const V_LAZY_LOADER = 'uni-plugin-light/lib/loader/v-lazy';
+const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
 
 const plugins = [];
 
@@ -19,6 +21,11 @@ if (process.env.UNI_PLATFORM !== 'h5') {
       insertRequireVendor: true,
     }));
   }
+} else {
+  plugins.push(new GenVersionWebPlugin({
+    buildName: BUILD_NAME_MAP.build,
+    commitName: BUILD_NAME_MAP.commit,
+  }));
 }
 
 

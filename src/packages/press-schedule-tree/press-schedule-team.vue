@@ -4,7 +4,10 @@
   >
     <!-- 队伍 -->
     <div
-      :class="{'press-schedule-team-main--selected': selectedSchId && selectedSchId == scheGroupInfo.schid}"
+      :class="{
+        'press-schedule-team-main': true,
+        'press-schedule-team-main--selected': selectedSchId && selectedSchId == scheGroupInfo.schid
+      }"
       @click.stop="onClickSche"
     >
       <!-- 队伍 蓝方 -->

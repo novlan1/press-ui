@@ -5,7 +5,7 @@ export const REF_MAP = {
   TREE_ID: 'scheduleTreeId',
 };
 
-const scrollSelector = getScrollSelector(REF_MAP.TREE_ID);
+export const SCROLL_SELECTOR = getScrollSelector(REF_MAP.TREE_ID);
 
 
 const TOUCH_THRESHOLD = 60; // 滑动阈值
@@ -13,7 +13,7 @@ const SCROLL_DURATION = 500;
 
 function backToTopMp(context) {
   context?.createSelectorQuery?.()
-    ?.select?.(scrollSelector)
+    ?.select?.(SCROLL_SELECTOR)
     ?.node?.()
     ?.exec?.((res) => {
       const scrollView = res[0]?.node;
@@ -89,7 +89,7 @@ export function scrollToH5(endPosition = 0, {
   // 记录开始时间
   const beginTime = Date.now();
   const ref = document
-    ?.querySelector(scrollSelector);
+    ?.querySelector(SCROLL_SELECTOR);
   if (!ref) return;
 
   // 初始位置

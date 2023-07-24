@@ -110,11 +110,11 @@ export default {
       return this.picker;
     },
     onCancel(event) {
-      this.emit('cancel', event.detail);
+      this.emit('cancel', event);
     },
     onConfirm(event) {
-      const { index } = event.detail;
-      let { value } = event.detail;
+      const { index } = event;
+      let { value } = event;
       value = this.parseValues(value);
       this.emit('confirm', { value, index });
     },

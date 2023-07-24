@@ -75,3 +75,9 @@ export default {
   },
 }
 ```
+
+## 常见问题
+
+### 安卓机型下页面滚动方向与手指滑动方向相反
+
+组件后一个元素不能设置为`position: absolute; top: 0;bottom: 0`。

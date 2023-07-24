@@ -33,6 +33,7 @@
     user-select: none;
     transition: all .45s;
     z-index: 5;
+    cursor: grab;
   }
 
   &-tab {
@@ -42,6 +43,15 @@
     flex-shrink: 0;
     // width: 164px;
     transition: all .45s;
+
+    &--clickable {
+
+      .press-schedule-tree-tab-title,
+      .press-schedule-tree-tab-desc,
+      .press-schedule-tree-tab-desc-icon.icon-back {
+        cursor: pointer;
+      }
+    }
 
     &::after {
       content: '';
@@ -126,6 +136,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     transition: all .45s;
+    cursor: grab;
   }
 
   &-column {

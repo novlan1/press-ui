@@ -1,4 +1,4 @@
-import { MorsePwd } from './morse-password';
+import { MorsePwd } from 't-comm/lib/morse-pwd/morse-pwd';
 
 
 export const morsePwdMixin = (pwd: number[], cb: Function) => ({

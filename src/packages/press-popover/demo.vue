@@ -26,6 +26,7 @@
             v-for="(item,index) of dataList"
             :key="index"
             class="demo-nav-item"
+            @click.stop="noop"
           >
             {{ t('options', item) }}
           </div>
@@ -69,6 +70,7 @@ export default {
         this.show = false;
       }
     },
+    noop() {},
   },
 };
 </script>

@@ -16,7 +16,7 @@ function replaceContent(content) {
   });
 }
 
-const filePath = 'src/packages/press-schedule-tree/css/team-one.scss';
+const filePath = 'src/packages/press-pagination/css/index.scss';
 
 function main() {
   const data = fs.readFileSync(filePath, {

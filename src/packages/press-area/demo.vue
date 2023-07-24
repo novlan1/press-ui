@@ -4,6 +4,8 @@
       <press-area
         :area-list="areaList"
         @change="onChange"
+        @confirm="onConfirm"
+        @cancel="onCancel"
       />
     </demo-block>
 
@@ -12,6 +14,8 @@
         :area-list="areaList"
         value="440304"
         @change="onChange"
+        @confirm="onConfirm"
+        @cancel="onCancel"
       />
     </demo-block>
 
@@ -21,6 +25,8 @@
         :columns-num="2"
         value="440304"
         @change="onChange"
+        @confirm="onConfirm"
+        @cancel="onCancel"
       />
     </demo-block>
 
@@ -30,6 +36,8 @@
         value="440304"
         :columns-placeholder="t('columnsPlaceholder')"
         @change="onChange"
+        @confirm="onConfirm"
+        @cancel="onCancel"
       />
     </demo-block>
   </div>
@@ -160,6 +168,12 @@ export default {
     this.init();
   },
   methods: {
+    onConfirm(...args) {
+      console.log('[onConfirm]: ', ...args);
+    },
+    onCancel(...args) {
+      console.log('[onCancel]: ', ...args);
+    },
     init() {
       this.t('areaList').then(data => [
         this.areaList = data,

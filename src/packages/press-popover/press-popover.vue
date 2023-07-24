@@ -6,7 +6,7 @@
              `press-popover--${placement}`,
              popperClass,
              customClass,
-             animateShow ? 'press--animation__fade-in':'press--animation__fade-out'
+             isEnter ? 'press--animation__fade-in':'press--animation__fade-out'
     ]"
   >
     <slot />
@@ -43,22 +43,28 @@ export default {
   data() {
     return {
       innerShow: false,
-      animateShow: false,
+      isEnter: false,
+
+      watchShowTimer: null,
     };
   },
   computed: {
   },
   watch: {
     show: {
-      handler(newVal) {
-        if (newVal) {
-          this.innerShow = newVal;
-          this.animateShow = newVal;
+      handler(value) {
+        if (value) {
+          clearTimeout(this.watchShowTimer);
+
+          this.innerShow = value;
+          this.isEnter = value;
         } else {
           // remove
-          this.animateShow = newVal;
-          setTimeout(() => {
-            this.innerShow = newVal;
+          this.isEnter = value;
+          clearTimeout(this.watchShowTimer);
+
+          this.watchShowTimer = setTimeout(() => {
+            this.innerShow = value;
           }, 300);
         }
       },
