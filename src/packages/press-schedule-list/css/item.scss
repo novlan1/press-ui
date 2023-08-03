@@ -236,7 +236,8 @@
   align-items: center;
   margin: tovmin(20) 0 tovmin(12);
 
-  &-num {
+  &-num,
+  &-vs {
     font-family: "DINCond-Bold";
     font-size: tovmin(48);
     color: $color-black;

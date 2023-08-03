@@ -33,6 +33,8 @@ module.exports = {
   configureWebpack: {
     devServer: {
       port: 9999,
+      // 防止报错：Invalid Host header
+      disableHostCheck: true,
     },
     resolve: {
       alias: {

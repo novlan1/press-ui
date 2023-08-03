@@ -263,6 +263,7 @@ export default {
 |      width-number      |  _number_  |     `100`     | Horizontal popup window width percentage                                                    |
 |    validate-confirm    | _Function_ |       -       | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
 |          mode          |  _string_  |       -       | pass `functional` when calling a function                                                   |
+|      disabledButton    | _boolean_  |    `false`    | button disabled                                                                             |
 
 
 

@@ -48,6 +48,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 
 
 export default {
+  name: 'PressMessageBoardInput',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',

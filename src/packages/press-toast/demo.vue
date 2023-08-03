@@ -81,6 +81,7 @@ export default {
   data() {
     return {
       customStyle: '',
+      timer: null,
     };
   },
   onLoad() {
@@ -127,12 +128,13 @@ export default {
         // selector: '#custom-selector',
       });
       let second = 3;
-      const timer = setInterval(() => {
+      clearInterval(this.timer);
+      this.timer = setInterval(() => {
         second -= 1;
         if (second) {
           toast.set('dataMessage', this.t('dynamicTip', second));
         } else {
-          clearInterval(timer);
+          clearInterval(this.timer);
           Toast.clear();
         }
       }, 1000);

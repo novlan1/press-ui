@@ -17,6 +17,7 @@ import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressTab',
   mixins: [
     ChildrenMixin(PARENT),
   ],

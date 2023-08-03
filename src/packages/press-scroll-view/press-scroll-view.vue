@@ -40,6 +40,7 @@ import ScrollViewWeb from './scroll-view-web';
 
 
 export default {
+  name: 'PressScrollView',
   components: {
     // #ifndef H5
     PlatScrollView: ScrollViewMp,

@@ -33,6 +33,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 
 
 export default {
+  name: 'PressOverlay',
   components: {
     PressTransition,
   },

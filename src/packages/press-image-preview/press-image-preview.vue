@@ -108,6 +108,7 @@ const imagePreviewProps = {
 };
 
 export default {
+  name: 'PressImagePreview',
   comments: {
     PressOverlay,
     PressIconPlus,

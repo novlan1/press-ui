@@ -24,6 +24,7 @@ import PressInfo from '../press-info/press-info.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressIconPlus',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -72,8 +73,9 @@ export default {
 };
 </script>
 
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
+
 .press-icon-plus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;

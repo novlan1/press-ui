@@ -88,6 +88,7 @@
           v-for="(item,index) of tabsDisabled"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
+          :dot="item.dot"
           :disabled="!!item.disabled"
         >
           <div class="content">
@@ -218,7 +219,7 @@ export default {
       tabs2: [1, 2],
       tabs4: [1, 2, 3, 4],
       tabs7: [1, 2, 3, 4, 5, 6, 7],
-      tabsDisabled: [{}, {}, { disabled: true }, {}],
+      tabsDisabled: [{ dot: true }, {}, { disabled: true }, {}],
       tabsWithName: [
         { name: 'a' },
         { name: 'b' },

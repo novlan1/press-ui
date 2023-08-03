@@ -29,7 +29,7 @@ export const DATE_TIME_PICKER_MAX_MIN_DATE = {
 };
 
 
-export function showPopupCell(options) {
+export function showPopupCell(options): Promise<any> {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL}`,
     ...options,
@@ -37,7 +37,7 @@ export function showPopupCell(options) {
 }
 
 
-export function showPopupCell2(options) {
+export function showPopupCell2(options): Promise<any> {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL_2}`,
     ...options,

@@ -84,6 +84,9 @@ import {
 
 
 export default {
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     CalendarHeader,
     Month,
@@ -146,11 +149,19 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
 .press-calendar {
+  display: flex;
+  flex-direction: column;
+  height: var(--calendar-height, $calendar-height);
+  background-color: var(
+    --calendar-background-color,
+    $calendar-background-color
+  );
+
   &__body {
     flex: 1;
     overflow: auto;
@@ -175,20 +186,20 @@ export default {
   &__footer:empty + &__footer {
     display: block !important;
   }
+}
 
-  &__confirm {
-    height: var(
-      --calendar-confirm-button-height,
-      $calendar-confirm-button-height
-    ) !important;
-    margin: var(
-      --calendar-confirm-button-margin,
-      $calendar-confirm-button-margin
-    ) !important;
-    line-height: var(
-      --calendar-confirm-button-line-height,
-      $calendar-confirm-button-line-height
-    ) !important;
-  }
+::v-deep .press-calendar__confirm {
+  height: var(
+    --calendar-confirm-button-height,
+    $calendar-confirm-button-height
+  ) !important;
+  margin: var(
+    --calendar-confirm-button-margin,
+    $calendar-confirm-button-margin
+  ) !important;
+  line-height: var(
+    --calendar-confirm-button-line-height,
+    $calendar-confirm-button-line-height
+  ) !important;
 }
 </style>

@@ -71,6 +71,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 
 
 export default {
+  name: 'PressMessageList',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',

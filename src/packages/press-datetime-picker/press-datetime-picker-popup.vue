@@ -19,12 +19,14 @@
     >
       <div class="press-datetime-picker-popup__picker">
         <PressDatetimePicker
+          ref="picker"
           :value="getPropOrData('datetimePicker.value')"
           :show-toolbar="getPropOrData('datetimePicker.showToolbar') || false"
           :item-height="getPropOrData('datetimePicker.itemHeight') || 56"
           :type="getPropOrData('datetimePicker.type') || 'datetime'"
           :max-date="getPropOrData('datetimePicker.maxDate')"
           :min-date="getPropOrData('datetimePicker.minDate')"
+          :immediate-check="immediateCheck"
           :formatter="timeFormatter"
           :filter="timeFilter"
           @input="onInput"
@@ -80,9 +82,17 @@ export default {
     };
   },
   computed: {
+    immediateCheck() {
+      const res = this.getPropOrData('datetimePicker.immediateCheck') || true;
+      return res;
+    },
+  },
+  watch: {
   },
   created() {
     gThis = this;
+  },
+  mounted() {
   },
   methods: {
     noop() {},

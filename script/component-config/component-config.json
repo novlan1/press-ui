@@ -258,6 +258,17 @@
         "title": "省市区选择"
       },
       {
+        "name": "HorMatchHeader",
+        "title": "横版赛事头部"
+      },
+      {
+        "name": "HorMatchIndex",
+        "title": "横版赛事首页",
+        "style": {
+          "navigationStyle": "custom"
+        }
+      },
+      {
         "name": "MessageBoard",
         "title": "留言板"
       },

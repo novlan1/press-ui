@@ -45,6 +45,7 @@ export default {
     detail: 'press-ui 是一套易用的、灵活的、基于uni-app的组件库',
     otherAbility: '其他功能',
     toggleLanguage: '切换语言',
-    openVConsole: '打开VConsole',
+    toggleVConsole: '切换VConsole',
+    launchApp: '拉起APP',
   },
 };

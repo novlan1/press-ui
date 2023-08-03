@@ -72,5 +72,25 @@
       opacity: 1;
       background: $color-blue-1;
     }
+
+    &--total-1 {
+      height: 100%;
+    }
+
+    &--total-2 {
+      height: 50%;
+    }
+
+    &--total-3 {
+      height: 33.33333333%;
+    }
+
+    &--total-4 {
+      height: 25%;
+    }
+
+    &--total-5 {
+      height: 20%;
+    }
   }
 }

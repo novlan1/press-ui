@@ -45,6 +45,7 @@ const THRESHOLD = 0.3;
 let ARRAY = [];
 
 export default {
+  name: 'PressSwipeCell',
   options: { ...defaultOptions },
   mixins: [touch],
   props: {
@@ -196,7 +197,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 
 .press-swipe-cell {

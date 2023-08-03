@@ -59,6 +59,7 @@ import utils from '../common/utils/utils';
 import status from './index-status';
 
 export default {
+  name: 'PressSteps',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -118,7 +119,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

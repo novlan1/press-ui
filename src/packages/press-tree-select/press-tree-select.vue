@@ -57,6 +57,7 @@ import utils from '../common/utils/utils';
 import { isActive } from './computed';
 
 export default {
+  name: 'PressTreeSelect',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -164,7 +165,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
@@ -174,7 +175,7 @@ export default {
   user-select: none;
   font-size: var(--tree-select-font-size, $tree-select-font-size);
 
-  &__nav {
+  ::v-deep &__nav {
     flex: 1;
     background-color: var(
       --tree-select-nav-background-color,
@@ -190,7 +191,7 @@ export default {
     // --sidebar-padding: $tree-select-nav-item-padding;
   }
 
-  &__content {
+  ::v-deep &__content {
     flex: 2;
     background-color: var(
       --tree-select-content-background-color,
@@ -198,7 +199,7 @@ export default {
     );
   }
 
-  &__item {
+  ::v-deep &__item {
     position: relative;
     // 【修改点】font-weight改成正常
     font-weight: normal;
@@ -220,7 +221,7 @@ export default {
     }
   }
 
-  &__selected {
+  ::v-deep &__selected {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

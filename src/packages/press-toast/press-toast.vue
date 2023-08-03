@@ -90,6 +90,7 @@ const props = {
 };
 
 export default {
+  name: 'PressToast',
   options: {
     ...defaultOptions,
   },
@@ -137,7 +138,7 @@ export default {
 };
 </script>
 
-<style  lang="scss" platform="mp-weixin">
+<style lang="scss" scoped>
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
@@ -178,7 +179,7 @@ export default {
     min-height: var(--toast-default-min-height, $toast-default-min-height);
     padding: var(--toast-default-padding, $toast-default-padding);
 
-    .press-toast__icon {
+    ::v-deep .press-toast__icon {
       font-size: var(--toast-icon-size, $toast-icon-size);
     }
 

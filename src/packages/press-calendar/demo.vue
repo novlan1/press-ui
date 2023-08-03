@@ -143,6 +143,7 @@ const DEFAULT_DATA = {
   maxRange: null,
   firstDayOfWeek: 0,
 };
+let that = this;
 
 
 export default {
@@ -201,6 +202,7 @@ export default {
     PressCell,
   },
   data() {
+    that = this;
     return {
       show: false,
       ifShow: false,
@@ -220,18 +222,18 @@ export default {
 
       if (month === 5) {
         if (date === 1) {
-          day.topInfo = this.t('laborDay');
+          day.topInfo = that.t('laborDay');
         } else if (date === 4) {
-          day.topInfo = this.t('youthDay');
+          day.topInfo = that.t('youthDay');
         } else if (date === 11) {
-          day.topInfo = this.t('today');
+          day.topInfo = that.t('today');
         }
       }
 
       if (day.type === 'start') {
-        day.bottomInfo = this.t('in');
+        day.bottomInfo = that.t('in');
       } else if (day.type === 'end') {
-        day.bottomInfo = this.t('out');
+        day.bottomInfo = that.t('out');
       }
 
       return day;

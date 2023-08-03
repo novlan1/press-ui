@@ -67,6 +67,12 @@ export const newProps = {
     default: false,
     required: false,
   },
+  // 按钮置灰
+  disabledButton: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
   // 在执行确认动画前，validateConfirm返回false则进行拦截
   validateConfirm: {
     type: [Function, null],

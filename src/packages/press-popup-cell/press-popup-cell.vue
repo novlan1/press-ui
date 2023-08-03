@@ -11,6 +11,7 @@
     :popup-class="getPropOrData('popupClass')"
     :close-on-click-overlay="getPropOrData('closeOnClickOverlay')"
     :custom-style="getPropOrData('customStyle')"
+    :async-confirm="onAsyncConfirm"
     @confirm="confirm"
     @cancel="cancel"
   >
@@ -37,7 +38,7 @@
             {{ item.label }}
           </div>
           <div
-            v-if="item.description"
+            v-if="item.description && item.description.length"
             class="press-popup-cell__description-wrap"
           >
             <span
@@ -90,9 +91,9 @@
             v-else-if="item.type === POPUP_CELL_TPE_MAP.CHECKBOX"
             class="press-popup-cell__checkbox"
             :class="{
-              'press-popup-cell__checkbox--checked': item.checked,
+              'press-popup-cell__checkbox--checked': checkedIndexList.indexOf(index) > -1,
             }"
-            @click.stop="onCheckboxChange(!item.checked, item, index)"
+            @click.stop="onCheckboxChange(item, index)"
           />
 
           <template v-else>
@@ -147,7 +148,7 @@ const popupCellProps = {
     default: () => [],
   },
 };
-
+let that;
 
 export default {
   name: 'PressPopupCell',
@@ -163,8 +164,10 @@ export default {
 
   },
   data() {
+    that = this;
     return {
       POPUP_CELL_TPE_MAP,
+      checkedIndexList: [],
     };
   },
   computed: {
@@ -198,8 +201,35 @@ export default {
     },
   },
   watch: {
+    cellList: {
+      handler() {
+        this.getCheckedList();
+      },
+      immediate: true,
+      deep: true,
+    },
+    functionModeData: {
+      handler() {
+        this.getCheckedList();
+      },
+      immediate: true,
+      deep: true,
+    },
   },
   methods: {
+    getCheckedList() {
+      that = this;
+      const cellList = this.getPropOrData('cellList') || [];
+      const checkedIndexList = cellList
+        .map((item, index) => ({
+          ...item,
+          index,
+        }))
+        .filter(item => item.checked)
+        .map(item => item.index);
+
+      this.checkedIndexList = checkedIndexList;
+    },
     emitClick({
       shouldEmitClick = true,
       item,
@@ -233,12 +263,13 @@ export default {
         options: {},
       });
     },
-    onCheckboxChange(value, item, index) {
+    onCheckboxChange(item, index) {
+      const checked = this.checkedIndexList.indexOf(index) > -1;
       this.emitClick({
         item,
         index,
         options: {
-          value,
+          value: !checked,
         },
       });
     },
@@ -254,9 +285,16 @@ export default {
     },
     onClickCell(item, index) {
       const { click } = item;
+      const { checkedIndexList } = this;
       const callbackParam = { item, index, context: this };
       if (item.type === POPUP_CELL_TPE_MAP.CHECKBOX) {
-        callbackParam.value = !item.checked;
+        const checked = checkedIndexList.indexOf(index) > -1;
+        callbackParam.value = checked;
+        if (checked) {
+          this.checkedIndexList = checkedIndexList.filter(item => item !== index);
+        } else {
+          this.checkedIndexList = checkedIndexList.concat([index]).sort();
+        }
       }
       if (typeof click === 'function') {
         click(callbackParam);
@@ -270,11 +308,23 @@ export default {
     },
     confirm() {
       this.$emit('confirm', { context: this });
-      this.promiseCallback('confirm');
+      this.promiseCallback('confirm', { checkedIndexList: this.checkedIndexList });
     },
     cancel() {
       this.$emit('cancel', { context: this });
-      this.promiseCallback('cancel');
+      this.promiseCallback('cancel', { checkedIndexList: this.checkedIndexList });
+    },
+    onAsyncConfirm() {
+      // 小程序中报错，this为undefined
+      const asyncConfirm = that.getPropOrData('asyncConfirm');
+
+      if (asyncConfirm) {
+        return asyncConfirm({
+          checkedIndexList: that.checkedIndexList,
+          context: that,
+        });
+      }
+      return true;
     },
   },
 };
@@ -298,12 +348,14 @@ export default {
     }
 
     &--checkbox {
-      height: 1.73rem;
+      // height: 1.73rem;
+      height: auto;
 
       .press-popup-cell__description-wrap {
         font-size: 0.24rem;
         margin-top: 0.08rem;
         line-height: 0.4rem;
+        height: 0.4rem;
       }
     }
     &--button {
@@ -320,6 +372,12 @@ export default {
     // align-items: center;
     align-items: flex-start;
     flex-direction: column;
+    padding: 0.36rem 0;
+  }
+
+  &__title {
+    line-height: 0.48rem;
+    height: 0.48rem;
   }
 
   &__description-wrap {

@@ -103,7 +103,7 @@ export function otherOptionDateTimePickerFilter({
     if (type === 'hour' && curMonth === month && curDate === day) {
       return options.slice(hours);
     }
-    if (type === 'minute' && curMonth === month && curDate === day && curHour === hours) {
+    if (type === 'minute' && curMonth === month && curDate === day && curHour <= hours) {
       return filterFiveMinutes(options.slice(minutes));
     }
   }

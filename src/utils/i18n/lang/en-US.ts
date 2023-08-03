@@ -45,6 +45,7 @@ export default {
     detail: 'Press UI is an easy-to-use, uni-app-based component library',
     otherAbility: 'Other Ability',
     toggleLanguage: 'Toggle Language',
-    openVConsole: '打开VConsole',
+    toggleVConsole: 'Toggle VConsole',
+    launchApp: 'Launch App',
   },
 };

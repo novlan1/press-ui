@@ -22,7 +22,9 @@
           :id="'seq-' + item"
           :key="index"
           class="press-scrollbar__scale"
-          :class="currSelItem === item ? 'press-scrollbar__scale--selected' : ''"
+          :class="[{
+            'press-scrollbar__scale--selected': currSelItem === item,
+          }, `press-scrollbar__scale--total-${total}`]"
           @click="handleSelect(item,index)"
         >
           <text>{{ item }}</text>
@@ -33,7 +35,7 @@
         placement="left"
         :custom-style="tipStyle"
       >
-        {{ pageTip }}
+        <p>{{ pageTip }}</p>
       </PressPopover>
     </view>
   </div>
@@ -45,6 +47,7 @@ import PressPopover from '../press-popover/press-popover';
 let popOverTimer = null;
 
 export default {
+  name: 'PressPagination',
   components: {
     PressPopover,
   },
@@ -95,7 +98,7 @@ export default {
       return Array.from({ length: this.total }).map((_, index) => index + 1);
     },
     tipStyle() {
-      return `top: ${this.tipOffset}px;bottom: unset;right: 50px;width: max-content;left: auto;transform: translateY(-50%);line-height: 16px;`;
+      return `top: ${this.tipOffset}px;bottom: unset;right: 50px;width: max-content;left: auto;transform: translateY(-50%);line-height: 16px;min-width: 42px;`;
     },
     pageTip() {
       return this.tipTemplate.replace('{{0}}', this.currSelItem);
@@ -174,16 +177,26 @@ export default {
           size: true,
         }, (box) => {
           item.boundingClientRect((data) => {
+            if (!data) return;
+
             const { top, bottom, height = 0 } = this.zonesBox;
             if (height > 0) {
               if (data.top - top < autoScroll * data.height) {
                 this.scrollTop = Math.max(1, (this.currSelItem - 1 - autoScroll) * data.height);
               } else if (bottom - data.bottom < autoScroll * data.height) {
                 // scrollTop + box.height = current * item.height
+                const target = (this.currSelItem + autoScroll) * data.height - height;
+                // #ifdef MP-QQ
+                // qq小程序上没有 box.scrollHeight
+                this.scrollTop = target;
+                // #endif
+
+                // #ifndef MP-QQ
                 this.scrollTop = Math.min(
-                  (this.currSelItem + autoScroll) * data.height - height,
+                  target,
                   box.scrollHeight - height,
                 );
+                // #endif
               }
               this.updatePopoverTipPosition();
             }

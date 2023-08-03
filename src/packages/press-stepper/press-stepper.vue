@@ -65,6 +65,7 @@ function equal(value1, value2) {
 
 
 export default {
+  name: 'PressStepper',
   field: true,
   classes: ['input-class', 'plus-class', 'minus-class'],
   props: {
@@ -273,7 +274,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

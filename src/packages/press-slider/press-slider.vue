@@ -76,6 +76,7 @@ import { canIUseModel } from '../common/utils/version';
 import { getRect } from '../common/dom/rect';
 import { addUnit } from '../common/format/unit';
 export default {
+  name: 'PressSlider',
   mixins: [touch],
   props: {
     range: Boolean,
@@ -269,7 +270,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

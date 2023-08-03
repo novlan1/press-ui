@@ -93,13 +93,20 @@ export default {
   methods: {
     onShowTransition(type) {
       const name = formatTransitionName(type);
-      this.options[name] = true;
       this.curTransitionType = name;
-      clearTimeout(timer);
-      const time = name === 'custom' ? 2000 : 1000;
-      timer = setTimeout(() => {
-        this.options[name] = false;
-      }, time);
+      Object.keys(this.options).forEach((key) => {
+        this.options[key] = false;
+      });
+
+      setTimeout(() => {
+        this.options[name] = true;
+
+        clearTimeout(timer);
+        const time = name === 'custom' ? 2000 : 1000;
+        timer = setTimeout(() => {
+          this.options[name] = false;
+        }, time);
+      });
     },
   },
 };

@@ -23,6 +23,7 @@ import { PARENT_TABBAR  as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressTabbar',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -122,7 +123,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

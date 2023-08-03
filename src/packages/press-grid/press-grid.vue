@@ -14,6 +14,7 @@ import { PARENT_GRID as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressGrid',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -132,7 +133,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 .press-grid {
   box-sizing: border-box;

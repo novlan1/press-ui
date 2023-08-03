@@ -86,11 +86,15 @@
             >
               {{ comment.nick }}
             </div>
+            <div
+              v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
+              class="press-message-board-item__reply-avatar"
+            >队长</div>
           </div>
-          <div
+          <!-- <div
             v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
             class="press-message-board-item__reply-avatar"
-          />
+          /> -->
           <p
             class="press-message-board-item__reply-content"
           >
@@ -130,6 +134,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { t } from '../locale';
 
 export default {
+  name: 'PressMessageBoardItem',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',

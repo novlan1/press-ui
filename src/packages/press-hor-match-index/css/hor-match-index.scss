@@ -1,0 +1,209 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+.press-index {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/bg.png) no-repeat;
+  background-size: 100% 100%;
+
+  padding-left: constant(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left);
+
+
+  &__content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__sidebar {
+    position: relative;
+    width: 2.08rem;
+    height: 100%;
+    flex-shrink: 0;
+    padding-left: .7rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/sidebar.png) no-repeat left top;
+    background-size: 2.23rem 5.31rem;
+
+    &.sidebar-1 {
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/sidebar2.png) no-repeat left .08rem;
+      background-size: 2.23rem 5.39rem;
+    }
+
+    &.sidebar-2 {
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/sidebar3.png) no-repeat left .16rem;
+      background-size: 2.23rem 4.97rem;
+    }
+  }
+
+  &__sidebar__item {
+    font-family: 'GAMEFONT';
+    color: #b3cde8;
+    font-size: $font-xs;
+    margin-bottom: .6rem;
+
+    &:first-child {
+      margin-top: .9rem;
+    }
+
+    &.sidebar-active {
+      color: $color-white;
+      text-shadow: 0 0 8px rgba(95, 147, 234, .69);
+    }
+  }
+
+  &__header__middle {
+    font-family: 'GAMEFONT';
+    font-size: .3rem;
+    color: transparent;
+    padding-left: .16rem;
+    background-image: linear-gradient(to bottom, #759ccd 0%, #fff 100%);
+    -webkit-background-clip: text;
+  }
+
+  &__header__right {
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__header__message {
+    width: .4rem;
+    height: .34rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/msg.png) no-repeat center center;
+    background-size: contain;
+
+    &.red-dot {
+      &::after {
+        right: -.06rem;
+        top: -.02rem;
+      }
+    }
+  }
+
+  &__header__home {
+    width: 1.2rem;
+    height: .4rem;
+    margin-left: .4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/person.png) no-repeat center center;
+    background-size: contain;
+
+    &.red-dot {
+      &::after {
+        right: .1rem;
+      }
+    }
+  }
+
+  &__recommend,
+  &__offline {
+    position: relative;
+    display: flex;
+    align-content: baseline;
+    flex-wrap: wrap;
+    width: 12.12rem;
+    height: 100%;
+    padding-top: .16rem;
+    margin: 0 auto;
+    padding-bottom: .4rem;
+    overflow-y: scroll;
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 98%);
+  }
+
+  &__online {
+    width: 12.12rem;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: .4rem;
+    mask-image: linear-gradient(to bottom, #000 80%, transparent 98%);
+    overflow: hidden;
+
+    ::v-deep {
+      .uni-scroll-view {
+        overflow: visible !important;
+      }
+
+      .press-sticky {
+        padding-left: .08rem;
+      }
+
+      .press-tabs {
+        height: 100%;
+        z-index: 2;
+      }
+
+      .press-tabs__content {
+        height: calc(100% - .48rem);
+        padding-top: .12rem;
+      }
+
+      .press-tabs__scroll {
+        background: transparent;
+      }
+
+      .press-tabs__wrap {
+        height: .48rem;
+        border-bottom: .02rem solid rgba(123, 197, 255, .15);
+        overflow: visible;
+      }
+
+      .press-tabs__nav,
+      .press-tabs__scroll--line {
+        height: 100%;
+      }
+
+      .press-tab {
+        font-family: 'GAMEFONT';
+        flex: none;
+        color: #84b0eb;
+        font-size: $font-xs;
+        padding: 0 .32rem;
+      }
+
+      .press-tabs__line {
+        bottom: -.08rem;
+        top: auto;
+        height: .54rem;
+        background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/tab-active.png) no-repeat center;
+        background-size: contain;
+        border-radius: 0;
+      }
+
+      .press-tab__pane {
+        height: 100%;
+      }
+
+      .tab-active-class {
+        color: $color-white;
+        text-shadow: 0 0 8px rgba(95, 147, 234, .69);
+      }
+    }
+  }
+
+
+  &__online__list {
+    position: relative;
+    display: flex;
+    align-content: baseline;
+    flex-wrap: wrap;
+  }
+}
+
+
+.press-red-dot {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    width: .2rem;
+    height: .2rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/red-dot.png) no-repeat center center;
+    background-size: contain;
+  }
+}

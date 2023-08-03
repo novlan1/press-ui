@@ -57,7 +57,7 @@
         <div class="press-popup--title-btn-wrap">
           <PressButton
             v-if="getPropOrData('button')"
-            :type="getPropOrData('borderButton') ? 'e-sport-border' : 'e-sport-primary'"
+            :type="buttonType"
             custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
             @click.stop="clickConfirm"
           >
@@ -99,6 +99,15 @@ export default {
     };
   },
   computed: {
+    buttonType() {
+      if (this.getPropOrData('borderButton')) {
+        return 'e-sport-border';
+      }
+      if (this.getPropOrData('disabledButton')) {
+        return 'e-sport-primary-disabled';
+      }
+      return 'e-sport-primary';
+    },
     popupStyle() {
       const customStyle = this.getPropOrData('customStyle');
       const zIndex = this.getPropOrData('zIndex');

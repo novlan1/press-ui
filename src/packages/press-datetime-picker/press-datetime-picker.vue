@@ -63,6 +63,7 @@ const defaultFormatter = (type, value) => value;
 
 
 export default {
+  name: 'PressDatetimePicker',
   options: {
     ...defaultOptions,
   },
@@ -114,6 +115,10 @@ export default {
     maxMinute: {
       type: Number,
       default: 59,
+    },
+    immediateCheck: {
+      type: Boolean,
+      default: false,
     },
   }),
   data() {
@@ -167,7 +172,11 @@ export default {
   mounted() {
     const innerValue = this.correctValue(this.value);
     this.updateColumnValue(innerValue).then(() => {
-      this.$emit('input', innerValue);
+      if (this.immediateCheck) {
+        this.onChange();
+      } else {
+        this.$emit('input', innerValue);
+      }
     });
   },
   methods: {
@@ -399,6 +408,6 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 </style>

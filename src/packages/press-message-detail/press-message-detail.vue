@@ -231,6 +231,7 @@ import { getRect } from '../common/dom/rect';
 const scrollSelector = getScrollSelector(SELECTOR_MAP.SCROLL_VIEW_ID);
 
 export default {
+  name: 'PressMessageDetail',
   components: {
     PressLoadingPlus,
   },

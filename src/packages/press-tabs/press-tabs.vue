@@ -91,8 +91,10 @@ import { style } from '../common/utils/style';
 
 
 export default {
+  name: 'PressTabs',
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   components: {
     PressInfo,
@@ -697,13 +699,12 @@ export default {
     color: var(--tab-disabled-text-color, $tab-disabled-text-color);
   }
 
-  &__title {
-    &__info {
-      position: relative !important;
-      top: -1px !important;
-      display: inline-block;
-      transform: translateX(0) !important;
-    }
+  ::v-deep .press__title__info,
+  ::v-deep .press-info {
+    position: relative !important;
+    top: -1px !important;
+    display: inline-block;
+    transform: translateX(0) !important;
   }
 }
 </style>

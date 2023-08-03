@@ -1,0 +1,48 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+.press-banner {
+  padding-left: .08rem;
+  padding-bottom: .12rem;
+  padding-right: .24rem;
+
+
+  &__swiper {
+    position: relative;
+    width: 5.84rem;
+    height: 1.44rem;
+
+    &__img {
+      width: 100%;
+      height: 1.44rem;
+    }
+
+    ::v-deep {
+      .uni-swiper-dots {
+        display: flex;
+        align-items: center;
+        left: .36rem;
+        right: auto;
+        bottom: .16rem;
+        transform: translateX(0);
+      }
+
+      .uni-swiper-dot {
+        display: block;
+        width: .16rem;
+        height: .16rem;
+        margin-right: .12rem;
+        background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/indicator.png) no-repeat center !important;
+        background-size: contain !important;
+        border-radius: 0;
+        transition: all .2s;
+      }
+
+      .uni-swiper-dot-active {
+        background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/indicator-active.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+      }
+    }
+  }
+}

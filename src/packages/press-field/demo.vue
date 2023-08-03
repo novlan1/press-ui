@@ -182,13 +182,13 @@ export default {
 
       text: '文本',
       digit: '整数',
-      phone: '手机号',
+      phone: '号码',
       number: '数字',
       customType: '自定义类型',
-      smsPlaceholder: '请输入短信验证码',
+      smsPlaceholder: '请输入号码',
       textPlaceholder: '请输入文本',
       digitPlaceholder: '请输入整数',
-      phonePlaceholder: '请输入手机号',
+      phonePlaceholder: '请输入号码',
       numberPlaceholder: '请输入数字（支持小数）',
 
       disabled: '禁用输入框',
@@ -196,14 +196,17 @@ export default {
       inputDisabled: '输入框已禁用',
 
       errorInfo: '错误提示',
-      phoneError: '手机号格式错误',
+      phoneError: '号码格式错误',
 
       inputAlign: '输入框内容对齐',
       alignPlaceHolder: '输入框内容右对齐',
 
-      sms: '短信验证码',
-      sendSMS: '发送验证码',
+      sms: '号码',
+      sendSMS: '发送号码',
       insertButton: '插入按钮',
+
+      username: '名称',
+      usernamePlaceholder: '请输入名称',
     },
     'en-US': {
       label: 'Label',

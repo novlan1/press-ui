@@ -85,9 +85,11 @@ if (canIUseFormFieldButton()) {
   mixins.push('wx://form-field-button');
 }
 export default {
+  name: 'PressButton',
   options: {
     virtualHost: true,
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   components: {
     PressIconPlus,
@@ -165,7 +167,13 @@ export default {
         eSportClasses = eSportTypeClassMap[type];
         typeClass = '';
       }
-
+      if (type.indexOf('-disabled') > -1) {
+        const realType = type.replace('-disabled', '');
+        eSportClasses = [
+          ...eSportTypeClassMap[realType],
+          'e-sport-disabled',
+        ];
+      }
       return `${customClass} ${utils.bem2('button', [typeClass, classSize, ...eSportClasses, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }])} ${hairline ? 'press-hairline--surround' : ''}`;
     },
     buttonStyle() {
@@ -200,7 +208,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
@@ -513,6 +521,10 @@ export default {
     &:not(.press-button--unclickable):active {
       background: $color-gray-3;
     }
+    &::before {
+      background-color: transparent;
+      border: none;
+    }
   }
 
   &--e-sport-border {
@@ -530,6 +542,10 @@ export default {
       border-color: $color-blue;
       color: $color-blue;
     }
+    &::before {
+      background-color: transparent;
+      border: none;
+    }
   }
 
   &--e-sport-bg {
@@ -545,6 +561,8 @@ export default {
         width: $button-e-sport-bg-before-lg-width;
         height: $button-e-sport-bg-before-lg-height;
         background-image: url($button-e-sport-bg-before-lg-img);
+        background-color: transparent;
+        border: none;
       }
       &::after {
         top: $button-e-sport-bg-after-lg-top;
@@ -562,14 +580,22 @@ export default {
         width: $button-e-sport-bg-before-xl-width;
         height: $button-e-sport-bg-before-xl-height;
         background-image: url($button-e-sport-bg-before-xl-img);
+        background-color: transparent;
+        border: none;
       }
       &::after {
         top: $button-e-sport-bg-after-xl-top;
         width: $button-e-sport-bg-after-xl-width;
         height: $button-e-sport-bg-after-xl-height;
         background-image: url($button-e-sport-bg-after-xl-img);
+        background-color: transparent;
+        border: none;
       }
     }
+  }
+
+  &--e-sport-disabled {
+    opacity: var(--button-disabled-opacity, $button-disabled-opacity);
   }
 }
 </style>

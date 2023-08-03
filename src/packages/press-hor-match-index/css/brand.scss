@@ -1,0 +1,59 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+.press-brand {
+  position: relative;
+  display: flex;
+  width: 5.84rem;
+  height: 1.44rem;
+  margin-bottom: .12rem;
+  mask-image: linear-gradient(to right, #000 80%, transparent 98%);
+
+  &__title {
+    width: .4rem;
+    height: 1.44rem;
+    margin-right: .08rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/brand-title.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    width: 1.4rem;
+    height: 100%;
+    margin-right: .08rem;
+    flex-shrink: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/brand-bg.png) no-repeat left bottom;
+    background-size: 1.4rem auto;
+
+    &:last-child {
+      width: 1.8rem;
+      padding-right: .4rem;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    width: .64rem;
+    height: .64rem;
+    margin: .15rem auto .1rem;
+    background-color: $color-white;
+    border: 1px solid #6d8ac3;
+  }
+
+  &__name {
+    font-size: $font-xxxs;
+    color: $color-white;
+    text-align: center;
+    padding: 0 .32rem;
+    @include single-line-ellipsis();
+  }
+}

@@ -62,6 +62,7 @@ const props = {
 
 
 export default {
+  name: 'PressNotify',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -122,7 +123,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
@@ -133,7 +134,7 @@ export default {
   font-size: var(--notify-font-size, $notify-font-size);
   line-height: var(--notify-line-height, $notify-line-height);
 
-  &__container {
+  ::v-deep &__container {
     position: fixed;
     top: 0;
     left: 0;

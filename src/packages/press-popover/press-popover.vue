@@ -16,6 +16,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressPopover',
   options: {
     ...defaultOptions,
     virtualHost: true,

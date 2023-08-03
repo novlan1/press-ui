@@ -43,6 +43,7 @@ import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 const DEFAULT_DURATION = 200;
 
 export default {
+  name: 'PressPickerColumn',
   options: {
     ...defaultOptions,
   },
@@ -198,7 +199,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

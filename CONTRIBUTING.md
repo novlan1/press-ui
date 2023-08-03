@@ -99,11 +99,20 @@ npm run docs:dev
 
 ### 3.3. 命名规范
 
-- 组件`props`、`event`应该简单，易记忆，与业界流行组件库对齐
-- 类名需符合[BEM](https://getbem.com/)规范，可参考这篇[文章](https://juejin.cn/post/7102980936232337445/)
 - 导出对象、类、组件，用大驼峰命名法，首字母大写
 - 导出方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等;
 - 文件名用小写+中划线，比如`message-dialog`，不能用`messageDialog`；
+
+
+
+### 3.4. 其他
+
+对外API需要简单，易记忆，比如`change`、`list`，最好一个单词组成，并且不能简写，并与业界流行组件库对齐。
+
+不能在组件内部`console.log`。
+
+类名需符合[BEM](https://getbem.com/)规范，并以`press`为前缀。
+
 
 ## 4. 细节
 

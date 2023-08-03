@@ -34,6 +34,7 @@ import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressPopupPlus',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -203,7 +204,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss" scoped>
+<style lang="scss" scoped>
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

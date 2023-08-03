@@ -197,6 +197,7 @@ const props = {
   ...defaultProps,
 };
 export default {
+  name: 'PressDialogPlus',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -279,11 +280,11 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
-.press-dialog {
+::v-deep .press-dialog {
   top: 45% !important;
   overflow: hidden;
   width: var(--dialog-width, $dialog-width);
@@ -377,7 +378,7 @@ export default {
 }
 
 @media (max-width: 321px) {
-  .press-dialog {
+  ::v-deep .press-dialog {
     width: var(--dialog-small-screen-width, $dialog-small-screen-width);
   }
 }

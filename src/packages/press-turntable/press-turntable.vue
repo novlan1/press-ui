@@ -28,7 +28,6 @@
       >
         <img
           v-if="item.img"
-          mode="heightFix"
           :src="item.img"
           class="press-turntable__prize__img"
         >
@@ -47,6 +46,7 @@ import { getRotateAngle } from '../common/turntable/turntable';
 
 
 export default {
+  name: 'PressTurntable',
   props: {
     list: {
       type: Array,

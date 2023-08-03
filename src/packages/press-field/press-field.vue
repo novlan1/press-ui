@@ -151,6 +151,7 @@ import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressField',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -321,7 +322,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

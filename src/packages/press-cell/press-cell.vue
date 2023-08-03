@@ -82,6 +82,7 @@ import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressCell',
   components: {
     PressIconPlus,
   },
@@ -154,7 +155,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 @import "../common/style/mixins/hairline.scss";

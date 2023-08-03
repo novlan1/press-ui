@@ -14,6 +14,7 @@ import { PARENT_RADIO_GROUP as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressRadioGroup',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -61,7 +62,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 .press-radio-group--horizontal {
   display: flex;

@@ -140,6 +140,7 @@ import { t } from '../locale';
 
 
 export default {
+  name: 'PressScheduleTeam',
   props: {
     scheGroupInfo: {
       type: Object,

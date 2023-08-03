@@ -14,7 +14,7 @@ export const morsePwdMixin = (pwd: number[], cb: Function) => ({
       pwd,
       cb: () => {
         if (typeof cb === 'function') {
-          cb();
+          cb.call(this);
         }
       },
       envType,

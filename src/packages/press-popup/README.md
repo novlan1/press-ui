@@ -290,6 +290,7 @@ export default {
 |          mode          |  _string_  |    -    |         函数式调用时传`functional`         |
 |     async-confirm      | _function_ |    -    | 异步`confirm`方法，可为`Promise`或普通方法 |
 |      async-cancel      | _function_ |    -    | 异步`cancel`方法，可为`Promise`或普通方法  |
+|      disabledButton    | _boolean_  | `false` |                   按钮置灰                |
 
 
 

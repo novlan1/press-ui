@@ -11,6 +11,7 @@ import { PARENT_COLLAPSE as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressCollapse',
   options: {
     ...defaultOptions,
   },
@@ -74,5 +75,5 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin">
+<style scoped lang="scss">
 </style>

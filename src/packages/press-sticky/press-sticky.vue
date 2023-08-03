@@ -39,6 +39,7 @@ const scrollMixin = pageScrollMixin(function (event) {
 
 
 export default {
+  name: 'PressSticky',
   options: {
     ...defaultOptions,
   },

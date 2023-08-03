@@ -51,10 +51,10 @@ const scrollSelector = getScrollSelector(SCROLL_VIEW_ID);
 
 
 export default {
+  name: 'PressList',
   options: {
     ...defaultOptions,
   },
-  name: 'PressList',
   components: {
     pressLoadingPlus,
   },

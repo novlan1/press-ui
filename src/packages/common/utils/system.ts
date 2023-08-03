@@ -2,11 +2,16 @@ import Vue from 'vue';
 import { canIUseGroupSetData } from './version';
 
 
-let systemInfo;
+let systemInfo: Record<string, any> = {};
 export function getSystemInfoSync() {
-  if (systemInfo == null && typeof uni.getSystemInfoSync === 'function') {
-    systemInfo = uni.getSystemInfoSync();
+  try {
+    if (systemInfo == null && typeof uni.getSystemInfoSync === 'function') {
+      systemInfo = uni.getSystemInfoSync();
+    }
+  } catch (err) {
+    console.log('[getSystemInfoSync] err', err);
   }
+
   return systemInfo;
 }
 

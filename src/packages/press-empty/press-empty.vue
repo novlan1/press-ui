@@ -46,6 +46,7 @@ import PressIcon from '../press-icon/press-icon.vue';
 const E_SPORT_TYPE = 'e-sport';
 
 export default {
+  name: 'PressEmpty',
   components: {
     PressIcon,
   },

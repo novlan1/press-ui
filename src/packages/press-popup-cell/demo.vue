@@ -16,6 +16,11 @@
           @click="onShowCustomType('checkboxType')"
         />
         <press-cell
+          :title="t('multipleCheckboxType')"
+          is-link
+          @click="onShowCustomType('multipleCheckboxType')"
+        />
+        <press-cell
           :title="t('tabType')"
           is-link
           @click="onShowCustomType('tabType')"
@@ -90,6 +95,7 @@ export default {
       customType: '自定义类型',
       examples: '案例',
       checkboxType: 'Checkbox',
+      multipleCheckboxType: 'Multiple Checkbox',
       tabType: 'Tab',
       switchType: 'Switch',
       buttonType: 'Button',
@@ -119,6 +125,7 @@ export default {
       customType: 'Custom Type',
       examples: 'Examples',
       checkboxType: 'Checkbox',
+      multipleCheckboxType: 'Multiple Checkbox',
       tabType: 'Tab',
       switchType: 'Switch',
       buttonType: 'Button',
@@ -179,6 +186,46 @@ export default {
               click: ({ context: popupContext }) => {
                 popupContext.closeDialog();
                 that.onGTip('修改成功');
+              },
+            },
+          ],
+        },
+        multipleCheckboxType: {
+          title: 'Checkbox',
+          button: '确定',
+          asyncConfirm: ({ checkedIndexList }) => {
+            console.log('[checkedIndexList]...', checkedIndexList);
+            if (!checkedIndexList?.length) {
+              this.onGTip('必须选择一路');
+              return false;
+            }
+
+            const nameStr = this.customType.multipleCheckboxType.cellList
+              .filter((_, index) => checkedIndexList.indexOf(index) > -1)
+              .map(item => item.label)
+              .join('、');
+            this.onGTip(`修改成功，${nameStr}`);
+            return true;
+          },
+          cellList: [
+            {
+              label: '对抗路',
+              type: 'checkbox',
+              click: () => {
+              },
+            },
+            {
+              label: '中路',
+              type: 'checkbox',
+              checked: true,
+              click: () => {
+              },
+            },
+            {
+              label: '发育路',
+              type: 'checkbox',
+              checked: true,
+              click: () => {
               },
             },
           ],
@@ -283,9 +330,13 @@ export default {
       showPopupCell({
         closeIcon: true,
         ...options,
-      }).catch(({ context }) => {
+      }).then(({ context, checkedIndexList }) => {
+        console.log('[checkedIndexList]', checkedIndexList);
         context.closeDialog();
-      });
+      })
+        .catch(({ context }) => {
+          context.closeDialog();
+        });
     },
     onShowPopupCell(func) {
       func(this);

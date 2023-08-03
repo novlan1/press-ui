@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gray">
     <demo-section>
       <!-- #ifndef H5 -->
       <PressNotify
@@ -212,7 +212,9 @@ export default {
       size: 'Icon Size',
     },
   },
-
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     PressTabs,
     PressTab,
@@ -288,30 +290,33 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import "src/packages/common/style/var.scss";
 
 .press-doc-demo-section {
   font-size: 0;
   background-color: #f7f8fa;
+}
 
-  & ::v-deep .press-tab__pane {
+.demo-wrap {
+  ::v-deep .press-tab__pane {
     width: auto;
     margin: 20px;
     background-color: #fff;
     border-radius: 12px;
   }
-  & ::v-deep .press-tabs__content {
+
+  ::v-deep .press-tabs__content {
     background-color: #f7f8fa;
   }
 
-  &-notify {
+  ::v-deep .press-doc-demo-section-notify {
     font-size: 13px;
   }
 
-  .press-col {
+  ::v-deep .press-col {
     display: inline-block;
-    float: none;
+    float: none !important;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -331,17 +336,10 @@ export default {
     }
   }
 
-  .press-icon-plus {
+  ::v-deep .press-icon-plus {
     margin: 16px 0 16px;
     color: $text-color;
     font-size: 32px;
-  }
-
-  .press-tab__pane {
-    width: auto;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 12px;
   }
 }
 </style>

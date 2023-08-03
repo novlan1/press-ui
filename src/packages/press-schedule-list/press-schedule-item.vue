@@ -87,7 +87,7 @@
             v-if="scheInfo.showVS"
             class="press-schedule-score"
           >
-            <div class="press-schedule-score-num">
+            <div class="press-schedule-score-vs">
               VS
             </div>
           </div>
@@ -188,6 +188,7 @@ import  { SPECIAL_TEAM_ID_MAP, PREVIEW_STATE_MAP } from '../press-schedule-tree/
 
 
 export default {
+  name: 'PressScheduleItem',
   options: {
     virtualHost: true,
   },

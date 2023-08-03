@@ -15,6 +15,7 @@
 import utils from '../common/utils/utils';
 
 export default {
+  name: 'PressCellGroup',
   props: {
     title: { type: String, default: '' },
     border: {
@@ -38,7 +39,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

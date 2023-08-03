@@ -24,5 +24,6 @@ expect -c "
         expect {
                 \"*yes/no*\" {send \"yes\r\"; exp_continue}
                 \"*password*\" {send \"$HOST_PWD\r\";}
+                \"*Password*\" {send \"$HOST_PWD\r\";}
                }
 expect eof;"

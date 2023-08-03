@@ -10,7 +10,7 @@ export const local = {
 };
 
 
-const PAGE_LIST = Array.from({ length: 5 })
+const PAGE_LIST = Array.from({ length: 4 })
   .map((_, i) => 10 ** i)
   .reduce((acc: Array<any>, item) => {
     for (let i = 1;i < 10;i++) {
@@ -25,14 +25,19 @@ const PAGE_LIST = Array.from({ length: 5 })
   }));
 
 
-export function showCustomPopup({ context, callback }) {
+export function showCustomPopup({
+  context,
+  callback,
+  pageTotal,
+  current,
+}) {
   showPopupCell({
     title: '自定义设置',
     closeIcon: true,
     cellList: [
       {
         label: '页面数',
-        value: local.pageTotal,
+        value: pageTotal,
         click: ({ context: popupContext }) => {
           popupContext.closeDialog();
 
@@ -41,7 +46,7 @@ export function showCustomPopup({ context, callback }) {
             closeIcon: true,
             list: PAGE_LIST,
             current: {
-              value: local.pageTotal,
+              value: pageTotal,
             },
           }).then(({ item }: any) => {
             local.pageTotal = item.value;
@@ -58,16 +63,16 @@ export function showCustomPopup({ context, callback }) {
       },
       {
         label: '当前页',
-        value: local.current,
+        value: current,
         click: ({ context: popupContext }) => {
           popupContext.closeDialog();
 
           showPicker({
             title: '当前页',
             closeIcon: true,
-            list: PAGE_LIST,
+            list: PAGE_LIST.filter(item => item.value <= pageTotal),
             current: {
-              value: local.current,
+              value: current,
             },
           }).then(({ item }: any) => {
             local.current = item.value;

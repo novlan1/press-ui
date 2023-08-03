@@ -1,6 +1,6 @@
 <template>
   <view
-    :class="'custom-class '+(utils.bem2('col', [span]))+' '+(offset ? 'press-col--offset-' + offset : '')"
+    :class="''+customClass+' '+(utils.bem2('col', [span]))+' '+(offset ? 'press-col--offset-' + offset : '')"
     :style="true ? computed.rootStyle({ gutter }) : ''"
   >
     <slot />
@@ -15,6 +15,7 @@ import { PARENT_ROW as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressCol',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -38,7 +39,7 @@ export default {
 };
 </script>
 
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 .press-col {
   box-sizing: border-box;
   float: left;

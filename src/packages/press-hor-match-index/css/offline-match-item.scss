@@ -1,0 +1,278 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+.press-match {
+  position: relative;
+  display: flex;
+  width: 6.02rem;
+  height: 3.04rem;
+  margin-right: .08rem;
+  margin-bottom: .08rem;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/top-bg.png) no-repeat left top;
+  background-size: contain;
+  mask: radial-gradient(circle at 69.4% 0%, transparent .07rem, #1d6cca 0);
+
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+
+
+  &__main {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: .7rem;
+    padding-bottom: .16rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/down-bg.png) no-repeat left bottom;
+    background-size: 100% auto;
+  }
+
+  &__brand {
+    display: block;
+    width: 5.84rem;
+    height: 1rem;
+    margin: 0 auto;
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: $font-s;
+    color: $color-white;
+    padding: .18rem .26rem .1rem .34rem;
+    @include single-line-ellipsis();
+  }
+
+  &__awards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .26rem;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: '';
+      width: .04rem;
+      height: 1.21rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/line.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__award {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: .82rem;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: .64rem;
+      height: .64rem;
+      margin-bottom: .1rem;
+    }
+
+    p {
+      font-size: .16rem;
+      color: $color-white;
+      text-align: center;
+    }
+  }
+
+  &__award__type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .64rem;
+    height: .24rem;
+    font-size: .16rem;
+    padding: 0 .04rem;
+    background: #1d6cca;
+    opacity: .6;
+
+    p {
+      text-align: center;
+      @include single-line-ellipsis();
+    }
+  }
+
+  &__award__name {
+    height: .44rem;
+    @include more-lines-ellipsis(.44rem, 2);
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1.77rem;
+    padding: .54rem .08rem 0;
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b3cde8;
+    font-size: .16rem;
+    margin-top: .1rem;
+    @include single-line-ellipsis();
+  }
+
+  &__btn--sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'GAMEFONT';
+    width: 1.26rem;
+    height: .48rem;
+    font-size: $font-m;
+    color: $color-white;
+    margin-top: .1rem;
+    // padding-top: .06rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/confirm.png) no-repeat center;
+    background-size: contain;
+  }
+
+  &__btn--end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'GAMEFONT';
+    width: 1.3rem;
+    height: .5rem;
+    font-size: $font-m;
+    color: $color-white;
+    margin-top: .1rem;
+    padding-top: .06rem;
+    opacity: .6;
+  }
+
+  &__btn--ing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'GAMEFONT';
+    width: 1.3rem;
+    height: .5rem;
+    font-size: $font-m;
+    color: $color-white;
+    margin-top: .1rem;
+    padding-top: .06rem;
+  }
+
+  &__tag--apply {
+    position: absolute;
+    top: 0;
+    right: .14rem;
+    width: .3rem;
+    height: .92rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/apply.png) no-repeat center;
+    background-size: contain;
+  }
+
+  &__tag--join {
+    position: absolute;
+    top: 0;
+    right: .14rem;
+    width: .3rem;
+    height: .92rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/join.png) no-repeat center;
+    background-size: contain;
+  }
+
+  &__loc {
+    position: absolute;
+    left: .34rem;
+    top: .12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: .98rem;
+    height: .32rem;
+    color: #b3cde8;
+    font-size: .16rem;
+    padding: 0 .1rem;
+    background: rgba(0, 0, 0, .5);
+    border-radius: .04rem;
+  }
+
+  &__popover {
+    position: absolute;
+    left: .16rem;
+    top: -.86rem;
+    width: 3.9rem;
+    padding: .16rem .46rem .16rem .12rem;
+    background: rgba(30, 61, 99, .95);
+    border: .02rem solid #3C6091;
+    z-index: 1;
+
+    p {
+      color: #82a0cc;
+      font-size: $font-xxs;
+      text-align: left;
+      margin-bottom: 0;
+
+      &:first-child {
+        font-family: 'GAMEFONT';
+        font-size: $font-s;
+        color: $color-white;
+        font-weight: 600;
+        margin-bottom: .04rem;
+        text-shadow: 0 0 8px rgba(95, 147, 234, .69);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      left: .4rem;
+      bottom: -.09rem;
+      content: '';
+      width: .18rem;
+      height: .09rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/award-arrow.png) no-repeat center center;
+      background-size: contain;
+    }
+
+    &-1 {
+      &::after {
+        left: 1.36rem;
+      }
+    }
+
+    &-2 {
+      &::after {
+        left: 2.34rem;
+      }
+    }
+
+    &-3 {
+      &::after {
+        left: 3.3rem;
+      }
+    }
+  }
+
+  &__popover__close {
+    position: absolute;
+    right: .1rem;
+    top: .1rem;
+    width: .26rem;
+    height: .26rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/close.png) no-repeat center center;
+    background-size: contain;
+  }
+}

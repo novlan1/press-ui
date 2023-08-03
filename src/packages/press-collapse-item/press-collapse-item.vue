@@ -67,6 +67,7 @@ import { PARENT_COLLAPSE as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressCollapseItem',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -152,13 +153,13 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
 .press-collapse-item {
   &__title {
-    .press-cell__right-icon {
+    ::v-deep .press-cell__right-icon {
       transform: rotate(90deg);
       transition: transform
         var(
@@ -167,7 +168,7 @@ export default {
         );
     }
 
-    &--expanded {
+    ::v-deep &--expanded {
       .press-cell__right-icon {
         transform: rotate(-90deg);
       }
@@ -175,15 +176,15 @@ export default {
 
     &--disabled {
       // 【修改点】改变disabled状态下的title颜色
-      .press-cell__title,
-      .press-cell__right-icon {
+      ::v-deep .press-cell__title,
+      ::v-deep .press-cell__right-icon {
         color: var(
           --collapse-item-title-disabled-color,
           $collapse-item-title-disabled-color
         ) !important;
       }
 
-      .press-cell--hover {
+      ::v-deep .press-cell--hover {
         background-color: $white !important;
       }
     }

@@ -35,12 +35,12 @@ export default {
   name: 'ActTipDialog',
   i18n: {
     'zh-CN': {
-      twoButtons: '提示弹窗',
-      oneButton: '确认弹窗',
+      oneButton: '提示弹窗',
+      twoButtons: '确认弹窗',
     },
     'en-US': {
-      twoButtons: 'Prompt Dialog',
-      oneButton: 'Confirm Dialog',
+      oneButton: 'Prompt Dialog',
+      twoButtons: 'Confirm Dialog',
     },
   },
   components: {
@@ -60,12 +60,12 @@ export default {
           title: this.t('basicUsage'),
           list: [
             {
-              name: 'two',
-              title: this.t('twoButtons'),
-            },
-            {
               name: 'one',
               title: this.t('oneButton'),
+            },
+            {
+              name: 'two',
+              title: this.t('twoButtons'),
             },
           ],
         },

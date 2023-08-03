@@ -73,6 +73,7 @@ import utils from '../common/utils/utils';
 import computed from './computed';
 
 export default {
+  name: 'PressNavBar',
   classes: ['title-class'],
   components: {
     PressIconPlus,
@@ -160,7 +161,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

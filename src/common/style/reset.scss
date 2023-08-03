@@ -28,3 +28,12 @@
     flex-direction: column;
   }
 }
+
+.vc-cmd,
+.vc-cmd-input {
+  user-select: auto !important;
+}
+
+.v-console-custom-tab #vConsolePluginInput {
+  user-select: auto !important;
+}

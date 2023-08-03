@@ -15,6 +15,7 @@ import { PARENT_ROW as PARENT } from '../common/constant/parent-map';
 
 
 export default {
+  name: 'PressRow',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -59,7 +60,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 .press-row {
   &::after {
     display: table;

@@ -23,6 +23,7 @@ import { getRect } from '../common/dom/rect';
 import computed from './computed';
 
 export default {
+  name: 'PressProgress',
   props: {
     inactive: Boolean,
     percentage: {
@@ -73,7 +74,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 
 .press-progress {

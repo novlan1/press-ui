@@ -126,6 +126,7 @@
               slot="right-icon"
               size="22px"
               :checked="checked"
+              @change="checked = !checked"
             />
           </press-cell>
         </template>

@@ -11,6 +11,7 @@ import { ParentMixin } from '../mixins/relation';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 
 export default {
+  name: 'PressCheckboxGroup',
   mixins: [
     ParentMixin(PARENT),
   ],
@@ -68,7 +69,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin">
+<style lang="scss" scoped>
 @import "../common/style/index.scss";
 .press-checkbox-group--horizontal {
   display: flex;

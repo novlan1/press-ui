@@ -92,6 +92,7 @@ export function startMatchSet(context) {
                           minDate: DATE_TIME_PICKER_MAX_MIN_DATE.ON_TIME_START.MIN,
                           maxDate: DATE_TIME_PICKER_MAX_MIN_DATE.ON_TIME_START.MAX,
                           value: local.fixStartTime * 1000,
+                          immediateCheck: true,
                           formatter: addPostfixDateTimeFormatter,
                           filter: fiveMinutesDateTimeFilter,
                         },
@@ -100,6 +101,10 @@ export function startMatchSet(context) {
                           popupContext.closeDialog();
                           local.fixStartTime = parseInt(`${value / 1000}`, 10);
                           clickStartBattleType({ type: 3, context });
+
+                          const showTIme = timeStampFormat(value, 'yyyy-MM-dd hh:mm:ss');
+                          console.log('[confirm] value', value, new Date(value));
+                          context.onGTip(`设置成功 ${showTIme}`, 3000);
                         })
                         .catch((err) => {
                           const { context: popupContext } = err;
@@ -147,6 +152,7 @@ export function startMatchSet(context) {
               minDate,
               maxDate,
               value: currentDate.getTime(),
+              immediateCheck: true,
 
               filter: (type, options, currentDate) => otherOptionDateTimePickerFilter({
                 type,
@@ -168,9 +174,12 @@ export function startMatchSet(context) {
             const firstDate = timeStampFormat(new Date(minDate).getTime(), 'yyyy');
             const formattedDate = timeStampFormat(value, 'yyyy');
             const isZero = formattedDate === firstDate;
+            const showTIme = timeStampFormat(value, 'yyyy-MM-dd hh:mm:ss');
 
             local.fixLatestReadyTime = isZero ? 0 : parseInt(`${new Date(value).getTime() / 1000}`, 10);
-            context.onGTip('设置成功');
+
+            console.log('[confirm] value', value, new Date(value));
+            context.onGTip(`设置成功 ${showTIme}`, 3000);
           })
             .catch((err) => {
               const { context: popupContext } = err;

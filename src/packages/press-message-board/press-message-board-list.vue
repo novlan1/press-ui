@@ -18,6 +18,7 @@ import PressScrollView from '../press-scroll-view/press-scroll-view.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressMessageBoardList',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',

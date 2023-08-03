@@ -57,6 +57,7 @@ function getTouch(e) {
 }
 
 export default {
+  name: 'PressPickerView',
   props: {
     // 列表数据
     // [{label: '文本', value: '值'}]

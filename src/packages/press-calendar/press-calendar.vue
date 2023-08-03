@@ -102,6 +102,7 @@ import { t } from '../locale';
 const getTime = date => (date instanceof Date ? date.getTime() : date);
 
 export default {
+  name: 'PressCalendar',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -358,30 +359,22 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
 .press-calendar {
-  display: flex;
-  flex-direction: column;
-  height: var(--calendar-height, $calendar-height);
-  background-color: var(
-    --calendar-background-color,
-    $calendar-background-color
-  );
-
   &__close-icon {
     top: 11px;
   }
 
-  &__popup--top,
-  &__popup--bottom {
+  ::v-deep &__popup--top,
+  ::v-deep &__popup--bottom {
     height: var(--calendar-popup-height, $calendar-popup-height);
   }
 
-  &__popup--left,
-  &__popup--right {
+  ::v-deep &__popup--left,
+  ::v-deep &__popup--right {
     height: 100%;
   }
 }

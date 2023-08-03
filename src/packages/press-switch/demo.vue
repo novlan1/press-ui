@@ -67,6 +67,7 @@
             slot="right-icon"
             size="22px"
             :checked="checkedMap.cell"
+            @change="onChange(!checkedMap.cell, 'cell')"
           />
         </press-cell>
       </press-cell-group>
@@ -134,7 +135,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
     onChange(value, type) {
-      console.log('value', value, type);
+      console.log('[value]', value, type);
 
       if (type === 'async') {
         PressDialogHandler.show({

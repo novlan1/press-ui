@@ -15,6 +15,7 @@
 import { style } from '../common/utils/style';
 
 export default {
+  name: 'PressIconMusic',
   props: {
     width: {
       type: String,

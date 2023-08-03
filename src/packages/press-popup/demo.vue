@@ -23,6 +23,11 @@
           @click="onShowPopup('borderBtn')"
         />
         <press-cell
+          :title="t('disabledButton')"
+          is-link
+          @click="onShowPopup('disabledButton')"
+        />
+        <press-cell
           :title="t('horizontal')"
           is-link
           @click="onShowPopup('hor')"
@@ -62,6 +67,7 @@
       :show-back-arrow="curPicker.showBackArrow"
       :is-cross-slab="curPicker.isCrossSlab"
       :is-border-btn="curPicker.isBorderBtn"
+      :disabled-button="curPicker.disabledButton"
       :width-number="54"
       :custom-style="curPicker.customStyle"
       :popup-title="curPicker.title"
@@ -142,6 +148,7 @@ export default {
       cancelIcon: '取消图标',
       noCloseOrCancel: '没有关闭/取消',
       plainButtonConfirm: '线框按钮',
+      disabledButton: '禁用状态',
       horizontal: '横版',
       asyncClose: '异步关闭',
       asyncConfirm: '异步确认中...',
@@ -161,6 +168,7 @@ export default {
       cancelIcon: 'Cancel Icon',
       noCloseOrCancel: 'No Close Or Cancel',
       plainButtonConfirm: 'Plain Button',
+      disabledButton: 'Disabled Button',
       horizontal: 'Horizontal Version',
       asyncClose: 'Async Close',
       asyncConfirm: 'Async Confirm ...',
@@ -182,6 +190,7 @@ export default {
       isShowpopuoClose: false,
       showBackArrow: false,
       isBorderBtn: false,
+      disabledButton: false,
       customStyle: '',
       onConfirm: () => {
         // this.onTip('confirm');
@@ -220,6 +229,10 @@ export default {
           isShowpopuoClose: true,
           isBorderBtn: true,
         },
+        disabledButton: {
+          isShowpopuoClose: true,
+          disabledButton: true,
+        },
       },
       commonOptions,
       curPicker: {
@@ -242,6 +255,11 @@ export default {
     onShowPopup(type) {
       uni.hideToast();
       this.type = type;
+      if (type === 'disabledButton') {
+        setTimeout(() => {
+          this.curPicker.disabledButton = false;
+        }, 3000);
+      }
 
       this.curPicker = {
         ...this.commonOptions,

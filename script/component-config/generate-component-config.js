@@ -93,6 +93,7 @@ function getPagesJsonConfig() {
             {
               path: hyphenatedName,
               style: {
+                ...(item.style || {}),
                 navigationBarTitleText: '',
               },
             },

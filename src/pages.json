@@ -3,6 +3,9 @@
     "path": "windows/left-window.vue",
     "style": {
       "width": "350px"
+    },
+    "matchMedia": {
+      "minWidth": 1000
     }
   },
   "pages": [
@@ -10,6 +13,18 @@
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "%index.title%"
+      }
+    },
+    {
+      "path": "pages/launch-app/launch-app",
+      "style": {
+        "navigationBarTitleText": "拉起APP"
+      }
+    },
+    {
+      "path": "pages/share/share",
+      "style": {
+        "navigationBarTitleText": "分享"
       }
     }
   ],
@@ -629,6 +644,29 @@
         {
           "path": "area",
           "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/hor-match-header",
+      "pages": [
+        {
+          "path": "hor-match-header",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/hor-match-index",
+      "pages": [
+        {
+          "path": "hor-match-index",
+          "style": {
+            "navigationStyle": "custom",
             "navigationBarTitleText": ""
           }
         }

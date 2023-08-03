@@ -30,6 +30,7 @@ const EMPTY_CODE = '000000';
 
 
 export default {
+  name: 'PressArea',
   options: {
     ...defaultOptions,
   },
@@ -287,5 +288,5 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin">
+<style scoped lang="scss">
 </style>

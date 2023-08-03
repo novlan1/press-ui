@@ -14,6 +14,7 @@ import { transition } from '../mixins/transition';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressTransition',
   mixins: [transition(true)],
   props: {
     overlay: {
@@ -82,8 +83,9 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin">
+<style lang="scss" scoped>
 @import "../common/style/index.scss";
+
 .press-transition {
   transition-timing-function: ease;
 }

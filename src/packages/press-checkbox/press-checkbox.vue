@@ -52,6 +52,7 @@ function emit(target, value) {
 }
 
 export default {
+  name: 'PressCheckbox',
   options: {
     ...defaultOptions,
   },
@@ -190,7 +191,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

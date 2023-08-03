@@ -1,23 +1,25 @@
 <template>
-  <div class="press-index-bar">
-    <slot />
+  <div>
+    <div class="press-index-bar">
+      <slot />
 
-    <div
-      v-if="showSidebar"
-      class="press-index-bar__sidebar"
-      @click.stop.prevent="onClick"
-      @touchmove.stop.prevent="onTouchMove"
-      @touchend.stop.prevent="onTouchStop"
-      @touchcancel.stop.prevent="onTouchStop"
-    >
       <div
-        v-for="(item,index) in (indexList)"
-        :key="item.index"
-        class="press-index-bar__index"
-        :style="'z-index: '+(zIndex + 1)+'; color: '+(activeAnchorIndex === index ? highlightColor : '')"
-        :data-index="index"
+        v-if="showSidebar"
+        class="press-index-bar__sidebar"
+        @click.stop.prevent="onClick"
+        @touchmove.stop.prevent="onTouchMove"
+        @touchend.stop.prevent="onTouchStop"
+        @touchcancel.stop.prevent="onTouchStop"
       >
-        {{ item }}
+        <div
+          v-for="(item,index) in (indexList)"
+          :key="item.index"
+          class="press-index-bar__index"
+          :style="'z-index: '+(zIndex + 1)+'; color: '+(activeAnchorIndex === index ? highlightColor : '')"
+          :data-index="index"
+        >
+          {{ item }}
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +37,6 @@ import { PARENT_INDEX_BAR  as PARENT } from '../common/constant/parent-map';
 import { BindEventMixin } from '../mixins/bind-event';
 import { getScroller } from '../common/dom/scroll';
 
-
 const indexList = () => {
   const indexList = [];
   const charCodeOfA = 'A'.charCodeAt(0);
@@ -47,6 +48,7 @@ const indexList = () => {
 
 
 export default {
+  name: 'PressIndexBar',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -285,7 +287,14 @@ export default {
       const sidebarLength = this.children.length;
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
+      let index;
+      // #ifdef H5
+      index = Math.floor((touch.clientY - this.sidebar.top + (this.top || 0)) / itemHeight);
+
+      // #endif
+      // #ifndef H5
+      index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
+      // #endif
       if (index < 0) {
         index = 0;
       } else if (index > sidebarLength - 1) {
@@ -302,7 +311,7 @@ export default {
       }
       this.scrollToAnchorIndex = index;
       const anchor = this.children.find(item => item.index === this.indexList[index]);
-      if (anchor) {
+      if (anchor !== undefined) {
         // #ifdef H5
         anchor.$el.scrollIntoView(this.scrollTop);
         // #endif
@@ -318,7 +327,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/var.scss";
 
 .press-index-bar {

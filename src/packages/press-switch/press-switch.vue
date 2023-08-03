@@ -23,6 +23,7 @@ import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 export default {
+  name: 'PressSwitch',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -94,7 +95,7 @@ export default {
 
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
@@ -127,7 +128,7 @@ export default {
       cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
-  &__loading {
+  ::v-deep &__loading {
     position: absolute !important;
     top: 25%;
     left: 25%;

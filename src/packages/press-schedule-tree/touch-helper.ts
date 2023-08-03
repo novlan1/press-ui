@@ -70,7 +70,7 @@ export function endTouch({
 }
 
 
-function backToTop(context) {
+export function backToTop(context) {
   // #ifdef H5
   scrollToH5(0, {
     animation: true,

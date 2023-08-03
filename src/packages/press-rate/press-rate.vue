@@ -41,6 +41,7 @@ import utils from '../common/utils/utils';
 import { style } from '../common/utils/style';
 
 export default {
+  name: 'PressRate',
   components: {
     PressIconPlus,
   },
@@ -131,7 +132,7 @@ export default {
 };
 
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

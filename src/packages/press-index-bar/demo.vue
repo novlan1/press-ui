@@ -76,4 +76,15 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.demo-wrap {
+  // 不能为100%，否则page无法滚动
+  height: auto;
+}
+</style>
+
+<style lang="scss">
+page {
+  height: 100%;
+  overflow: auto;
+}
 </style>

@@ -11,6 +11,7 @@
 </template>
 <script>
 export default {
+  name: 'PressLoading',
   props: {
     // loading背景色，默认透明
     loadingBg: {

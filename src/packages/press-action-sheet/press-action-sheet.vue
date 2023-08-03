@@ -90,6 +90,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import utils from '../common/utils/utils';
 
 export default {
+  name: 'PressActionSheet',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -182,11 +183,11 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 
-.press-action-sheet {
+::v-deep .press-action-sheet {
   max-height: var(
     --action-sheet-max-height,
     $action-sheet-max-height

@@ -67,6 +67,7 @@ import { t } from '../locale';
 import computed from './index';
 
 export default {
+  name: 'PressPickerPlus',
   options: {
     ...defaultOptions,
   },
@@ -257,7 +258,7 @@ export default {
   },
 };
 </script>
-<style platform="mp-weixin" lang="scss">
+<style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
 

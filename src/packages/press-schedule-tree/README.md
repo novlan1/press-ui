@@ -58,6 +58,8 @@ export default {
 | resume-position          | 赛程数据变少，右侧显示空白时候自动滚动位置，可为`left/right/数字` | _[String, Number]_ | `right` |
 | show-round-tab `v0.8.32` | 是否显示轮次tab                                                   | _Boolean_          | `true`  |
 | max-columns `v0.8.32`    | 同时显示的列数目，超出的部分会被隐藏，以提升性能                  | _Number_           | `3`     |
+| tabScrollWidth           | tab的宽度                                                       |  _String_            | `164`     |
+| scheduleScrollWidth      | 赛程树每列的宽度                                                 |  _String_            | `164`     |
 
 
 

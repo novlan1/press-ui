@@ -23,7 +23,7 @@
 
     <PressPagination
       :total="componentConfig.pageTotal"
-      :current="componentConfig.current + 1"
+      :current="componentConfig.current"
       :expand="componentConfig.expand"
       @change="onChange"
     />
@@ -59,6 +59,10 @@ export default {
   },
   methods: {
     onShowBasicPopupCell() {
+      const {
+        pageTotal,
+        current,
+      } = this.componentConfig;
       showCustomPopup({
         context: this,
         callback: {
@@ -66,6 +70,8 @@ export default {
           changeCurrent: this.changeCurrent,
           changeExpand: this.changeExpand,
         },
+        pageTotal,
+        current,
       });
     },
     changeExpand(expand) {
@@ -79,6 +85,9 @@ export default {
         ...this.componentConfig,
         pageTotal,
       };
+      if (this.componentConfig.current > pageTotal) {
+        this.componentConfig.current = pageTotal;
+      }
     },
     changeCurrent(current) {
       this.componentConfig = {
@@ -88,6 +97,7 @@ export default {
     },
     onChange(value) {
       console.log('[onChange]', value);
+      this.componentConfig.current = value;
     },
   },
 };

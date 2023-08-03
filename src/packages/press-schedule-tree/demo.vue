@@ -44,9 +44,8 @@ import { genScheList } from 'src/packages/press-schedule-tree/demo-helper/mock-d
 import { formatScheTreeData } from 'src/packages/press-schedule-tree/utils';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import {
-  FUNCTIONAL_ID_MAP,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
+
+import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
 import { showCustomPopup, local } from 'src/packages/press-schedule-tree/demo-helper/custom';
 import {
   STATUS_SCHE_MAP,

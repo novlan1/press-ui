@@ -175,7 +175,10 @@
                 <div
                   class="press-schedule-team-one--up press-schedule-team-one"
                   :class="{'press-schedule-team-one--active':
-                    myTeamId == champTeamInfo.teamid || (selectedTeamId && selectedTeamId == champTeamInfo.teamid)
+                             myTeamId == champTeamInfo.teamid
+                             || (selectedTeamId && selectedTeamId == champTeamInfo.teamid),
+                           'press-schedule-team-one--lose':
+                             [i18nMap.emptyTeam, i18nMap.pending].includes(champTeamInfo.teamname)
                   }"
                   @click.stop="jump2Finals"
                 >
@@ -216,7 +219,7 @@
 
 <script>
 import TwoTeamWrap from './press-schedule-team.vue';
-import { endTouch, REF_MAP, scrollToH5 } from './touch-helper';
+import { endTouch, REF_MAP, scrollToH5, backToTop } from './touch-helper';
 import { scrollRelative, getScrollStartY, initScrollBounce, scrollBounce } from './drag-helper';
 import { t } from '../locale';
 
@@ -252,6 +255,7 @@ function getFormattedResumePosition(resumePosition, column) {
 
 
 export default {
+  name: 'PressScheduleTree',
   components: {
     TwoTeamWrap,
   },
@@ -325,6 +329,14 @@ export default {
       type: Number,
       default: 3,
     },
+    tabScrollWidth: {
+      type: String,
+      default: '164',
+    },
+    scheduleScrollWidth: {
+      type: String,
+      default: '164',
+    },
     // childId: {
     //   type: Number,
     //   default: 0,
@@ -349,8 +361,8 @@ export default {
 
       touchStartTime: 0,
       pageWidth: '',
-      tabScrollWidth: 164, // '3.28',
-      scheduleScrollWidth: 164, // '3.28',
+      // tabScrollWidth: 164, // '3.28',
+      // scheduleScrollWidth: 164, // '3.28',
       tabScrollNum: '0',
       scheduleScrollNum: '0',
 
@@ -364,6 +376,7 @@ export default {
         pending: t('scheduleTree.pending'),
         champion: t('scheduleTree.champion'),
         thirdPlace: t('scheduleTree.thirdPlace'),
+        emptyTeam: t('scheduleTree.emptyTeam'),
       },
     };
   },
@@ -575,6 +588,7 @@ export default {
         const { page, totalPage } = value;
         const { page: oldPage } = oldVal;
         if (totalPage > 1 && page !== oldPage) {
+          backToTop(this);
           // 翻页后重置页面位置, 不同页面的树状图长度可能不一
           this.setScrollParams(0);
         }

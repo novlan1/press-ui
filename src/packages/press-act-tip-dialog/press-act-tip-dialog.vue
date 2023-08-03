@@ -34,6 +34,7 @@
 import { t } from '../locale';
 
 export default {
+  name: 'PressActTipDialog',
   props: {
     show: {
       type: Boolean,

@@ -63,7 +63,7 @@
             </uni-list>
           </div>
           <div
-            v-if="showToggleLanguage"
+            v-if="showMoreList"
             :key="getUniqueKey('section', 111111)"
           >
             <uni-section
@@ -92,10 +92,29 @@
                 :border="false"
                 show-arrow
                 clickable
-                :title="t('introduce.openVConsole')"
+                :title="t('introduce.toggleVConsole')"
                 @click="onOpenVConsole"
               />
               <!-- #endif -->
+              <!-- #ifdef H5 -->
+              <uni-list-item
+                v-if="showLaunchApp"
+                custom-class="list-item"
+                :border="false"
+                show-arrow
+                clickable
+                :title="t('introduce.launchApp')"
+                @click="onJumpToLaunchApp"
+              />
+              <!-- #endif -->
+              <uni-list-item
+                custom-class="list-item"
+                :border="false"
+                show-arrow
+                clickable
+                :title="t('share')"
+                @click="onJumpToSharePage"
+              />
             </uni-list>
           </div>
         </press-card>
@@ -104,31 +123,66 @@
   </div>
 </template>
 <script>
-import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
-import { toggleI18n } from '../../utils/i18n/toggle-i18n';
+
 import PressCard from 'src/packages/press-card/press-card.vue';
 import UniList from 'src/pages/components/uni-list/components/uni-list/uni-list.vue';
 import UniListItem from 'src/pages/components/uni-list/components/uni-list-item/uni-list-item.vue';
 import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
 
-import { loadVConsole } from 't-comm/lib/v-console/v-console';
+import { LAUNCH_APP_STORAGE } from '../launch-app/config';
+import { isInIFrame } from '../../utils/index';
+import { toggleVConsole } from '../../utils/v-console/v-console';
+import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
+import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 
 const pagesConfig = require('./page-config.json');
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
 
+
 export default {
+  i18n: {
+    'zh-CN': {
+      share: '分享',
+    },
+    'en-US': {
+      share: 'Share',
+    },
+  },
   components: {
     PressCard,
     UniList,
     UniListItem,
     UniSection,
   },
-  mixins: [morsePwdMixin([1, 1, 1], toggleI18n)],
+  mixins: [
+    morsePwdMixin([1, 1, 1, 1, 1], function () {
+      // #ifdef H5
+      if (isInIFrame()) return;
+      this.onShowLaunchApp();
+      // #endif
+    }),
+  ],
   data() {
+    let pages = pagesConfig.pages.filter(item => item.list && item.list.length);
+
+    // #ifndef H5
+    pages = pages.map(item => ({
+      ...item,
+      list: item.list.filter(item => !item.url.startsWith('/press/hor-match-')),
+    }));
+    // #endif
+
+
+    let showLaunchApp = false;
+    // #ifdef H5
+    showLaunchApp = sessionStorage.getItem(LAUNCH_APP_STORAGE.kEY) === LAUNCH_APP_STORAGE.VALUE;
+    // #endif
+
     return {
       scrollTop: 0,
-      pages: pagesConfig.pages.filter(item => item.list && item.list.length),
-      showToggleLanguage: false,
+      pages,
+      showMoreList: false,
+      showLaunchApp,
     };
   },
   onLoad() {
@@ -141,10 +195,14 @@ export default {
   onShow() {
     // #ifdef H5
     this.scrollTop = +uni.getStorageSync(SCROLL_TOP_KEY) || 0;
+    this.showMoreList = true;
     // #endif
+
+    // #ifndef H5
     setTimeout(() => {
-      this.showToggleLanguage = true;
+      this.showMoreList = true;
     }, 2000);
+    // #endif
   },
   onHide() {
     uni.setStorageSync(SCROLL_TOP_KEY, this.scrollTop);
@@ -169,7 +227,22 @@ export default {
       return `${a}-${b}`;
     },
     onOpenVConsole() {
-      loadVConsole();
+      toggleVConsole();
+    },
+    onJumpToLaunchApp() {
+      uni.navigateTo({
+        url: '/pages/launch-app/launch-app',
+      });
+    },
+    onShowLaunchApp() {
+      this.showLaunchApp = true;
+      sessionStorage.setItem(LAUNCH_APP_STORAGE.kEY, LAUNCH_APP_STORAGE.VALUE);
+      this.onGTip('展示成功');
+    },
+    onJumpToSharePage() {
+      uni.navigateTo({
+        url: '/pages/share/share',
+      });
     },
   },
 

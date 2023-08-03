@@ -35,6 +35,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 
 
 export default {
+  name: 'PressLoadingPlus',
   options: {
     ...defaultOptions,
   },

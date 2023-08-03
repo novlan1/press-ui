@@ -11,6 +11,10 @@
 import utils from '../common/utils/utils';
 
 export default {
+  name: 'PressInfo',
+  options: {
+    styleIsolation: 'shared',
+  },
   props: {
     dot: {
       type: Boolean,
@@ -21,6 +25,10 @@ export default {
       default: null,
     },
     customStyle: {
+      type: String,
+      default: '',
+    },
+    customClass: {
       type: String,
       default: '',
     },
