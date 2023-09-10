@@ -10,6 +10,18 @@ url : pages/press/transition/transition
 
 
 
+## 引入
+
+```ts
+import PressTransition from 'press-ui/press-transition/press-transition';
+
+export default {
+  components: {
+    PressTransition,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

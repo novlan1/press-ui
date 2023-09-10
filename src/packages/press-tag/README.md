@@ -7,6 +7,18 @@ url : pages/press/tag/tag
 用于标记关键词和概括主要内容。
 
 
+## 引入
+
+```ts
+import PressTag from 'press-ui/press-tag/press-tag';
+
+export default {
+  components: {
+    PressTag,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

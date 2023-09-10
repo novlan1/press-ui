@@ -55,6 +55,10 @@
   </div>
 </template>
 <script>
+import PressSticky from 'src/packages/press-sticky/press-sticky.vue';
+import PressButton from 'src/packages/press-button/press-button.vue';
+import { requestAnimationFrame } from 'src/packages/common/utils/system';
+
 
 export default {
   i18n: {
@@ -71,27 +75,24 @@ export default {
       show: 'Show Head',
     },
   },
-
+  components: {
+    PressSticky,
+    PressButton,
+  },
   data() {
     const that = this;
     return {
       container() {
-        let res;
-
-        // #ifdef H5
-        res = that.$refs.container;
-        // #endif
-
-        // #ifndef H5
-        res = uni.createSelectorQuery().select('#container');
-        // #endif
-
+        const res = that.$refs?.container;
         return res;
       },
       showHeader: true,
     };
   },
   mounted() {
+    requestAnimationFrame(() => {
+      this.container = () => this.$refs.container;
+    });
   },
   methods: {
     onToggleShowHeader() {
@@ -100,8 +101,12 @@ export default {
       if (this.showHeader) {
         style = 'block';
       }
-      const header = document.querySelector('uni-page-head');
-      header.style.display = style;
+
+      const header = document.querySelector('uni-page-head')
+      || document.querySelector('.uni-page-head-wrap');
+      if (header) {
+        header.style.display = style;
+      }
     },
   },
 };

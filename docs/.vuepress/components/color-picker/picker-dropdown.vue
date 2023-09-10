@@ -142,7 +142,9 @@ export default {
   height: 28px;
   line-height: 28px;
 }
+</style>
 
+<style>
 .press-button {
   display: inline-block;
   line-height: 1;

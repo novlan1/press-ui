@@ -35,6 +35,9 @@
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressOverlay from 'src/packages/press-overlay/press-overlay.vue';
+
 
 export default {
   i18n: {
@@ -45,7 +48,10 @@ export default {
       embeddedContent: 'Embedded',
     },
   },
-
+  components: {
+    PressCell,
+    PressOverlay,
+  },
   data() {
     return {
       options: {
@@ -53,13 +59,6 @@ export default {
         content: false,
       },
     };
-  },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
   },
   methods: {
     onClickShow(type) {

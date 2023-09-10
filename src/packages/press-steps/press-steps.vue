@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-steps-index">
+  <div class="press-steps-index">
     <div :class="stepsClass">
       <div class="press-step__wrapper">
         <div
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';

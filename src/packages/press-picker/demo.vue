@@ -49,7 +49,11 @@
   </div>
 </template>
 <script>
+import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+
+
 const PRESS_PICKER_ID = 'press-picker-functional';
 
 
@@ -71,6 +75,10 @@ export default {
       addVirtualTeam: 'Add Virtual Team',
       addTeam: num => `Add ${num} Teams`,
     },
+  },
+  components: {
+    PressPicker,
+    PressCell,
   },
   data() {
     const PICKER_BO_LIST = [
@@ -134,7 +142,7 @@ export default {
   },
   methods: {
     onShowPicker(type) {
-      uni.hideToast();
+      this.onGHideToast();
       this.curType = type;
       this.curPicker = {
         ...this.curPicker,
@@ -145,11 +153,7 @@ export default {
     onConfirm() {
     },
     onTip(title) {
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1500,
-      });
+      this.onGTip(title);
     },
     onSuccessTip(item) {
       const { label, value } = item;
@@ -159,6 +163,7 @@ export default {
     onShowFunctionalPicker() {
       const { PICKER_BO_LIST } = this;
       showFunctionalComponent.call(this, {
+        context: this,
         selector: `#${PRESS_PICKER_ID}`,
         list: PICKER_BO_LIST,
         arrowIcon: true,

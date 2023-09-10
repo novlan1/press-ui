@@ -43,5 +43,8 @@ export const button = {
     onOpenSetting(event) {
       this.triggerEvent('opensetting', event);
     },
+    onChooseAvatar(event) {
+      this.triggerEvent('chooseAvatar', event);
+    },
   },
 };

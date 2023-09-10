@@ -24,9 +24,9 @@ Set `close-icon` to `true`.
      @confirm="confirm"
      @cancel="cancel"
    >
-     <view class="content">
+     <div class="content">
        some content
-     </view>
+     </div>
    </PressPopup>
 </template>
 ```
@@ -67,9 +67,9 @@ Set `close-icon` to `true` and `arrow-icon` to `true`.
      @confirm="confirm"
      @cancel="cancel"
    >
-     <view class="content">
+     <div class="content">
        some content
-     </view>
+     </div>
    </PressPopup>
 </template>
 ```
@@ -90,9 +90,9 @@ Set `close-icon` to `false` and `arrow-icon` to `false`.
      @confirm="confirm"
      @cancel="cancel"
    >
-     <view class="content">
+     <div class="content">
        some content
-     </view>
+     </div>
    </PressPopup>
 </template>
 ```
@@ -116,9 +116,9 @@ Set `border-button` to `true`.
      @confirm="confirm"
      @cancel="cancel"
    >
-     <view class="content">
+     <div class="content">
        some content
-     </view>
+     </div>
    </PressPopup>
 </template>
 ```
@@ -139,9 +139,9 @@ Set `horizontal` to `true`.
      @confirm="confirm"
      @cancel="cancel"
    >
-     <view class="content">
+     <div class="content">
        some content
-     </view>
+     </div>
    </PressPopup>
 </template>
 ```
@@ -248,45 +248,45 @@ export default {
 
 ### Popup Props
 
-|     property name      |    type    | default value | description                                                                                 |
-| :--------------------: | :--------: | :-----------: | :------------------------------------------------------------------------------------------ |
-|       show-title       | _boolean_  |    `true`     | Whether to show the title                                                                   |
-|         title          |  _string_  |       -       | popup window title                                                                          |
-|         button         |  _string_  |       -       | popup title button                                                                          |
-|     border-button      | _boolean_  |    `false`    | header button style                                                                         |
-|        z-index         |  _string_  |     `99`      | popup level                                                                                 |
-|      popup-class       |  _string_  |       -       | class name                                                                                  |
-| close-on-click-overlay | _boolean_  |    `true`     | Whether to click the overlay to close                                                       |
-|       close-icon       | _boolean_  |    `false`    | Whether to display the close icon                                                           |
-|       arrow-icon       | _boolean_  |    `false`    | Whether to display as a back arrow                                                          |
-|       horizontal       | _boolean_  |    `false`    | Whether to switch the horizontal panel style                                                |
-|      width-number      |  _number_  |     `100`     | Horizontal popup window width percentage                                                    |
-|    validate-confirm    | _Function_ |       -       | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
-|          mode          |  _string_  |       -       | pass `functional` when calling a function                                                   |
-|      disabledButton    | _boolean_  |    `false`    | button disabled                                                                             |
+| property name          | type       | default value | description                                                                                 |
+| ---------------------- | ---------- | ------------- | :------------------------------------------------------------------------------------------ |
+| show-title             | _boolean_  | `true`        | Whether to show the title                                                                   |
+| title                  | _string_   | -             | popup window title                                                                          |
+| button                 | _string_   | -             | popup title button                                                                          |
+| border-button          | _boolean_  | `false`       | header button style                                                                         |
+| z-index                | _string_   | `99`          | popup level                                                                                 |
+| popup-class            | _string_   | -             | class name                                                                                  |
+| close-on-click-overlay | _boolean_  | `true`        | Whether to click the overlay to close                                                       |
+| close-icon             | _boolean_  | `false`       | Whether to display the close icon                                                           |
+| arrow-icon             | _boolean_  | `false`       | Whether to display as a back arrow                                                          |
+| horizontal             | _boolean_  | `false`       | Whether to switch the horizontal panel style                                                |
+| width-number           | _number_   | `100`         | Horizontal popup window width percentage                                                    |
+| validate-confirm       | _Function_ | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
+| mode                   | _string_   | -             | pass `functional` when calling a function                                                   |
+| disabledButton         | _boolean_  | `false`       | button disabled                                                                             |
 
 
 
 
 ### Popup Events
 
-| event name |   description   | return value |
-| :--------: | :-------------: | :----------: |
-|   cancel   | Click to cancel |      -       |
-|  confirm   |    Click OK     |      -       |
+| event name | description     | return value |
+| ---------- | --------------- | ------------ |
+| cancel     | Click to cancel | -            |
+| confirm    | Click OK        | -            |
 
 The following properties are deprecated (`v0.7.32`):
 
 
-| Type  |         Old         |          New           |
-| :---: | :-----------------: | :--------------------: |
-| Prop  |   show-back-arrow   |       arrow-icon       |
-| Prop  | is-show popup-close |       close-icon       |
-| Prop  |    is-show-title    |       show-title       |
-| Prop  |    is-cross-slab    |       horizontal       |
-| Prop  |     popup-title     |         title          |
-| Prop  |   popup-title-btn   |         button         |
-| Prop  |    is-border-btn    |     border-button      |
-| Prop  |  can-touch-remove   | close-on-click-overlay |
-| Event |      onConfirm      |        confirm         |
-| Event |      onCancel       |         cancel         |
+| Type  | Old                 | New                    |
+| ----- | ------------------- | ---------------------- |
+| Prop  | show-back-arrow     | arrow-icon             |
+| Prop  | is-show popup-close | close-icon             |
+| Prop  | is-show-title       | show-title             |
+| Prop  | is-cross-slab       | horizontal             |
+| Prop  | popup-title         | title                  |
+| Prop  | popup-title-btn     | button                 |
+| Prop  | is-border-btn       | border-button          |
+| Prop  | can-touch-remove    | close-on-click-overlay |
+| Event | onConfirm           | confirm                |
+| Event | onCancel            | cancel                 |

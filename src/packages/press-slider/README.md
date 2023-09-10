@@ -8,6 +8,18 @@ url : pages/press/slider/slider
 
 
 
+## 引入
+
+```ts
+import PressSlider from 'press-ui/press-slider/press-slider';
+
+export default {
+  components: {
+    PressSlider,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法
@@ -61,7 +73,7 @@ export default{
 
 ```html
 <press-slider :value="currentValue" use-button-slot @drag="onDrag">
-  <view class="custom-button" slot="button">{{ currentValue }}</view>
+  <div class="custom-button" slot="button">{{ currentValue }}</div>
 </press-slider>
 ```
 
@@ -83,7 +95,7 @@ export default {
 设置 `vertical` 属性后，滑块会垂直展示，且高度为 100% 父元素高度。
 
 ```html
-<view style="height: 150px;">
+<div style="height: 150px;">
   <press-slider value="50" vertical @change="onChange" />
   <press-slider
     :value="[10, 50]"
@@ -92,7 +104,7 @@ export default {
     style="margin-left: 100px;"
     @change="onChange"
   />
-</view>
+</div>
 ```
 
 

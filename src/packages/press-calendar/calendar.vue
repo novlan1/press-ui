@@ -71,6 +71,7 @@
 </template>
 
 <script>
+import { intersectionObserverPloyFill } from '../common/utils/system';
 import CalendarHeader from './components/header/header.vue';
 import Month from './components/month/month.vue';
 import PressButton from '../press-button/press-button.vue';
@@ -132,15 +133,41 @@ export default {
       if (this.contentObserver != null) {
         this.contentObserver.disconnect();
       }
+      const rootSelector = '.press-calendar__body';
+      const selector = '.month';
+      const threshold = [0, 0.1, 0.9, 1];
+      const observeAll = true;
+
+      // #ifdef H5
+      if (intersectionObserverPloyFill({
+        selector,
+        options: {
+          threshold,
+          observeAll,
+          root: document.querySelector(rootSelector),
+        },
+        callback: (changes) => {
+          for (const change of changes) {
+            if (change.boundingClientRect.top <= change.rootBounds.top) {
+              this.subtitle = formatMonthTitle(+change.target.dataset.date);
+              break;
+            }
+          }
+        },
+      })) {
+        return;
+      }
+      // #endif
+
       const contentObserver = uni.createIntersectionObserver(this, {
-        thresholds: [0, 0.1, 0.9, 1],
-        observeAll: true,
+        thresholds: threshold,
+        observeAll,
       });
 
       this.contentObserver = contentObserver;
-      contentObserver.relativeTo('.press-calendar__body');
+      contentObserver.relativeTo(rootSelector);
 
-      contentObserver.observe('.month', (res) => {
+      contentObserver.observe(selector, (res) => {
         if (res.boundingClientRect.top <= res.relativeRect.top) {
           this.subtitle = formatMonthTitle(res.dataset.date);
         }

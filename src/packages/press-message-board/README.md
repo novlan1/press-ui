@@ -9,6 +9,18 @@ url : pages/press/message-board/message-board
 为方便使用，留言板内部为3个组件，分别是留言列表、留言`item`、输入框。
 
 
+## 引入
+
+```ts
+import PressMessageBoard from 'press-ui/press-message-board/press-message-board';
+
+export default {
+  components: {
+    PressMessageBoard,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法
@@ -112,7 +124,7 @@ export default {
 
 | 参数                   | 说明                 | 类型      | 默认值 |
 | ---------------------- | -------------------- | --------- | ------ |
-| item                   | 消息内容             | _Object_  | `{}`   |
+| item                   | 消息内容             | _object_  | `{}`   |
 | captain-uid            | 队长uid              | _string_  | -      |
 | captain-badge-at-right | 队长图标是否在右边   | _boolean_ | false  |
 | colon                  | 是否显示冒号         | _boolean_ | true   |

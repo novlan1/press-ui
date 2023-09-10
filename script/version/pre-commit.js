@@ -3,6 +3,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { traverseFolder } = require('t-comm');
 
+const { insetDocChangeLog } = require('./change-log');
+
 const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/'];
 const PATH_MAP = {
   SOURCE_PACKAGES: 'src/packages',
@@ -68,6 +70,7 @@ function main() {
 
   genPureReleaseDir();
   copyReadme();
+  insetDocChangeLog();
 
   execSync('git add .', {
     stdio: 'inherit',

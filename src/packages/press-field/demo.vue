@@ -9,8 +9,13 @@
         :value="value"
         :placeholder="t('placeholder')"
         title-width="0"
+        :always-embed="true"
         :border="false"
         @change="onChange"
+        @input="onInput"
+        @confirm="onConfirm"
+        @focus="onFocus"
+        @blur="onBlur"
       />
     </demo-block>
 
@@ -26,6 +31,7 @@
         :label="t('label')"
         icon="question-o"
         :placeholder="t('placeholder')"
+        :always-embed="true"
         @click-icon="onClickIcon"
       />
 
@@ -37,6 +43,7 @@
         clearable
         type="tel"
         :border="false"
+        :always-embed="true"
         @change="onChange"
       />
 
@@ -48,6 +55,7 @@
         required
         clearable
         type="digit"
+        :always-embed="true"
         :border="false"
         @change="onChange"
       />
@@ -60,6 +68,7 @@
         clearable
         type="digit"
         :border="false"
+        :always-embed="true"
         @change="onChange"
       />
 
@@ -71,6 +80,7 @@
         clearable
         type="password"
         :border="false"
+        :always-embed="true"
         @change="onChange"
       />
     </demo-block>
@@ -86,6 +96,7 @@
         disabled
         :placeholder="t('inputDisabled')"
         :border="false"
+        :always-embed="true"
         @change="onChange"
       />
     </demo-block>
@@ -99,6 +110,7 @@
         :value="username"
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
+        :always-embed="true"
         error
         :border="false"
         @change="onChange"
@@ -108,6 +120,7 @@
         :label="t('phone')"
         :placeholder="t('phonePlaceholder')"
         :error-message="t('phoneError')"
+        :always-embed="true"
         :border="false"
         @change="onChange"
       />
@@ -121,6 +134,7 @@
       <press-field
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
+        :always-embed="true"
         :border="false"
         input-align="right"
         @change="onChange"
@@ -137,8 +151,10 @@
         type="textarea"
         :placeholder="t('placeholderAutoSize')"
         :border="false"
+        :always-embed="true"
         autosize
         @change="onChange"
+        @linechange="onLineChange"
       />
     </demo-block>
 
@@ -153,6 +169,7 @@
         :label="t('sms')"
         :placeholder="t('smsPlaceholder')"
         :border="false"
+        :always-embed="true"
         autosize
         @change="onChange"
       >
@@ -169,6 +186,7 @@
 </template>
 <script>
 import PressField from 'src/packages/press-field/press-field.vue';
+import PressButton from 'src/packages/press-button/press-button.vue';
 
 export default {
   i18n: {
@@ -243,6 +261,7 @@ export default {
   },
   components: {
     PressField,
+    PressButton,
   },
   data() {
     return {
@@ -260,20 +279,35 @@ export default {
   },
   methods: {
     onChange(val) {
-      this.onTip(val);
+      this.onGTip(`${val}`);
+    },
+    onInput(...args) {
+      console.log('[onInput]', args);
+    },
+    onConfirm(...args) {
+      console.log('[onConfirm]', args);
+    },
+    onFocus(...args) {
+      console.log('[onFocus]', args);
+    },
+    onBlur(...args) {
+      console.log('[onBlur]', args);
+    },
+    onLineChange(...args) {
+      console.log('[onLineChange]', args);
     },
     onClickIcon() {
-      this.onTip('Click Icon');
-    },
-    onTip(title) {
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1000,
-      });
+      this.onGTip('Click Icon');
     },
   },
 };
 </script>
 <style scoped lang="scss">
+::v-deep {
+  input,
+  textarea {
+    font-size: 14px;
+    color: #09134e;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-picker-column-index">
+  <div class="press-picker-column-index">
     <div
       class="press-picker-column"
       :class="customClass"
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import computed from './index';
@@ -121,15 +121,15 @@ export default {
         this[key] = data[key];
       });
     },
+    getCount() {
+      return this.options.length;
+    },
     set(data) {
       this.setData(data);
       // this.data = data;
       this.$forceUpdate();
       // eslint-disable-next-line vue/valid-next-tick
       return new Promise(resolve => Vue.nextTick(resolve));
-    },
-    getCount() {
-      return this.options.length;
     },
     onTouchStart(event) {
       this.setData({

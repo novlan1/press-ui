@@ -48,7 +48,7 @@ The content displayed by the grid can be customized through slots.
      v-for="(item,index) of 3"
      :key="index"
    >
-     <image
+     <img
        style="width: 100%; height: 90px;"
        :src="imageList[index]"
      />

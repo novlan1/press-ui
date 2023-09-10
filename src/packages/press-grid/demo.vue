@@ -121,13 +121,13 @@
         <press-grid-item
           icon="home-o"
           link-type="navigateTo"
-          url="/pages/index/index"
+          url="/pages/press/schedule-tree/schedule-tree"
           :text="`Navigate ${t('jump')}`"
         />
         <press-grid-item
           icon="search"
           link-type="reLaunch"
-          url="/pages/index/index"
+          url="/pages/press/schedule-tree/schedule-tree"
           :text="`ReLaunch ${t('jump')}`"
         />
       </press-grid>

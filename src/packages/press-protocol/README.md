@@ -7,6 +7,18 @@ url : pages/press/protocol/protocol
 
 数据驱动的协议组件，支持文字高亮、链接跳转。
 
+## 引入
+
+```ts
+import PressProtocol from 'press-ui/press-protocol/press-protocol';
+
+export default {
+  components: {
+    PressProtocol,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

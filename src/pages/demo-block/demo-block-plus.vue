@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/common/style/var";
+@import "src/utils/style/var";
 
 .press-doc-demo-block {
   &__title {

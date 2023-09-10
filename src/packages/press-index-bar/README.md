@@ -7,6 +7,20 @@ url : pages/press/index-bar/index-bar
 用于列表的索引分类显示和快速定位。
 
 
+## 引入
+
+```ts
+import PressIndexBar from 'press-ui/press-index-bar/press-index-bar';
+import PressIndexAnchor from 'press-ui/press-index-anchor/press-index-anchor';
+
+export default {
+  components: {
+    PressIndexBar,
+    PressIndexAnchor,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -15,19 +29,19 @@ url : pages/press/index-bar/index-bar
 
 ```html
 <press-index-bar>
-  <view>
+  <div>
     <press-index-anchor index="A" />
     <press-cell title="文本" />
     <press-cell title="文本" />
     <press-cell title="文本" />
-  </view>
+  </div>
 
-  <view>
+  <div>
     <press-index-anchor index="B" />
     <press-cell title="文本" />
     <press-cell title="文本" />
     <press-cell title="文本" />
-  </view>
+  </div>
 
   ...
 </press-index-bar>
@@ -39,19 +53,19 @@ url : pages/press/index-bar/index-bar
 
 ```html
 <press-index-bar :index-list="indexList">
-  <view>
+  <div>
     <press-index-anchor index="1">标题1</press-index-anchor>
     <press-cell title="文本" />
     <press-cell title="文本" />
     <press-cell title="文本" />
-  </view>
+  </div>
 
-  <view>
+  <div>
     <press-index-anchor index="2">标题2</press-index-anchor>
     <press-cell title="文本" />
     <press-cell title="文本" />
     <press-cell title="文本" />
-  </view>
+  </div>
 
   ...
 </press-index-bar>

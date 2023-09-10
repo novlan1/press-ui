@@ -96,21 +96,21 @@
 
     &-title {
       color: $color-black;
-      font-size: $font-l;
+      font-size: 16px;
       line-height: 23px;
     }
 
     &-desc {
       position: relative;
       color: $color-gray;
-      font-size: $font-xm;
+      font-size: 14px;
       padding-left: 5px;
       line-height: 22px;
 
       &-icon {
         position: relative;
         top: -5px;
-        font-size: $font-s;
+        font-size: 12px;
         color: $color-gray;
         transform: rotate(180deg);
       }
@@ -120,6 +120,14 @@
   &-layout {
     display: flex;
     height: 100%;
+
+    &--err-tip {
+      padding-top: 8px;
+
+      .press-schedule-team-main {
+        position: relative;
+      }
+    }
 
     &--shadow {
       height: fit-content;

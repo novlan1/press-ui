@@ -6,6 +6,20 @@ url : pages/press/picker-plus/picker-plus
 提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 弹出层 组件配合使用。
 
 
+## 引入
+
+```ts
+import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus';
+
+export default {
+  components: {
+    PressPickerPlus,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 ```html

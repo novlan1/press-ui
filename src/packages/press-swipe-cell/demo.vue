@@ -31,6 +31,8 @@
   </div>
 </template>
 <script>
+import PressSwipeCell from 'src/packages/press-swipe-cell/press-swipe-cell.vue';
+
 
 export default {
   i18n: {
@@ -55,27 +57,25 @@ export default {
       customContent: 'Custom Content',
     },
   },
-
+  components: {
+    PressSwipeCell,
+  },
   data() {
     return {
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
-    onClick(...args) {
-      console.log('onClick.args', args);
+    onClick(val) {
+      console.log('onClick.val', val);
+      this.onGTip(`click ${val}`);
     },
     onClose(...args) {
       console.log('onClose.args', args);
+      this.onGTip('close');
     },
     onOpen(...args) {
       console.log('onOpen.args', args);
+      this.onGTip('open');
     },
   },
 };

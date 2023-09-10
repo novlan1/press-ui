@@ -65,7 +65,7 @@ Specify icon width and height:
 ### Icon Props
 
 | property name |  type  | default value |            description             |
-| :-----------: | :----: | :-----------: | :--------------------------------: |
+| ----------- | ---- | ----------- | -------------------------------- |
 |     size      | Number |      24       |             Icon size              |
 |     type      | String |       -       | icon pattern, refer to the example |
 |     color     | String |       -       |             icon color             |
@@ -73,7 +73,7 @@ Specify icon width and height:
 ### Icon Events
 
 | event name |           description            | return value |
-| :--------: | :------------------------------: | :----------: |
+| -------- | ------------------------------ | ---------- |
 |   @click   | Click the Icon to fire the event |      -       |
 
 
@@ -81,7 +81,7 @@ Specify icon width and height:
 
 
 | property name |  type  | default value |                  description                  |
-| :-----------: | :----: | :-----------: | :-------------------------------------------: |
+| ----------- | ---- | ----------- | ------------------------------------------- |
 |    number     | Number |       3       | The number of vertical bars, supporting `1-5` |
 |     color     | String |   `#2979ff`   |                  icon color                   |
 |     width     | String |    `40px`     |        the overall height of the icon         |

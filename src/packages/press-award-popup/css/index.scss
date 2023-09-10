@@ -1,0 +1,263 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+.press-award-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .5);
+  animation: fadeOut .3s 1s linear both;
+  z-index: 98;
+
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+  }
+
+  &__close {
+    width: 3rem;
+    height: 3rem;
+    background: url(https://image-1251917893.file.myqcloud.com/box/close.png) no-repeat center;
+    background-size: contain;
+    animation: tada .5s ease-in-out both;
+  }
+
+  &__open {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background: url(https://image-1251917893.file.myqcloud.com/box/open.png) no-repeat center;
+    background-size: contain;
+    animation: fadeIn .3s .5s linear both;
+    opacity: 0;
+  }
+
+  &__images {
+    position: absolute;
+    width: .54rem;
+    height: .54rem;
+    animation: fadeIn .1s .65s linear both;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .54rem;
+    height: .54rem;
+  }
+}
+
+.press-award {
+  &__wrap {
+    height: 6rem;
+    overflow-y: scroll;
+  }
+
+  &__tip {
+    font-size: $font-s;
+    color: $color-gray;
+    padding: 0 .32rem;
+
+    &__highlight {
+      color: #5BBDFA;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .3rem .32rem;
+  }
+
+  &__button {
+    @include primary-btn(3.16rem, .72rem);
+    @include btn-default-bg;
+  }
+
+  &__roles {
+    flex: 1;
+    font-size: $font-xxs;
+    color: $color-gray;
+    line-height: .36rem;
+    overflow: hidden;
+  }
+
+  &__role {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: $font-s;
+      color: $color-black;
+      line-height: .4rem;
+      max-width: 3.08rem;
+
+      @include single-line-ellipsis;
+    }
+  }
+
+  .icon-change {
+    font-size: .24rem;
+    color: $color-black;
+    margin-left: .08rem;
+  }
+}
+
+
+@keyframes tada {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) rotate(3deg) scale(1);
+  }
+
+  20% {
+    opacity: .8;
+    transform: translateY(0px) rotate(0) scaleY(.8);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(0px) rotate(-3deg) scaleY(.8);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0) scaleY(.75);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0) rotate(3deg) scaleY(.75);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scaleY(.8);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scaleY(.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(1, 1);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.img-1 {
+  animation: fadeOutTopRight .25s .65s both;
+}
+
+.img-2 {
+  animation: fadeOutTopLeft .15s .65s both;
+}
+
+.img-3 {
+  animation: fadeOutBottomRight .35s .65s both;
+}
+
+.img-4 {
+  animation: fadeOutLeftMiddle .35s .65s both;
+}
+
+.img-5 {
+  animation: fadeOutBottomLeft .15s .65s both;
+}
+
+@keyframes fadeOutTopRight {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(350%, -350%, 0)
+  }
+}
+
+@keyframes fadeOutTopLeft {
+  0% {
+    opacity: 1;
+    transform: translateZ(0)
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-400%, -400%, 0)
+  }
+}
+
+@keyframes fadeOutLeftMiddle {
+  0% {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-500%, -40%, 0)
+  }
+}
+
+@keyframes fadeOutBottomLeft {
+  0% {
+    opacity: 1;
+    transform: translateZ(0)
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-400%, 400%, 0)
+  }
+}
+
+@keyframes fadeOutBottomRight {
+  0% {
+    opacity: 1;
+    transform: translateZ(0)
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(500%, 500%, 0)
+  }
+}

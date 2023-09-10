@@ -1,5 +1,5 @@
 <script>
-import { updateManager } from './utils/update-manager/update-manager';
+import { updateManager } from 't-comm/lib/mp/update-manager';
 import { setLang } from 'src/utils/i18n/i18n';
 import { watchMessage } from 'src/utils/post-message/post-message';
 
@@ -8,10 +8,6 @@ export default {
   onLaunch() {
     watchMessage();
     updateManager();
-  },
-  onShow() {
-  },
-  onHide() {
   },
   watch: {
     $route: {
@@ -25,5 +21,5 @@ export default {
 </script>
 
 
-<style lang="scss" src="src/common/style/reset.scss"></style>
-<style lang="scss" src="src/common/style/iconfont-mp.scss"></style>
+<style lang="scss" src="src/utils/style/reset.scss"></style>
+<style lang="scss" src="src/utils/style/iconfont-mp.scss"></style>

@@ -37,6 +37,7 @@ const clickStartBattleType = ({ context, type }) => {
 
 export function startMatchSet(context) {
   showPopupCell({
+    context,
     title: '开赛设置',
     closeIcon: true,
     cellList: [
@@ -48,6 +49,7 @@ export function startMatchSet(context) {
 
 
           showPopupCell2({
+            context,
             title: '开赛方式',
             closeIcon: true,
             cellList: [
@@ -85,6 +87,7 @@ export function startMatchSet(context) {
                       popupContext.closeDialog();
 
                       showDateTimePicker({
+                        context,
                         title: '定时开赛时间',
                         button: '确认',
                         closeIcon: true,
@@ -145,6 +148,7 @@ export function startMatchSet(context) {
           const maxDate =  DATE_TIME_PICKER_MAX_MIN_DATE.LATEST_READY.MAX;
 
           showDateTimePicker({
+            context,
             title: '自动弃权设置',
             button: '确认',
             closeIcon: true,
@@ -199,6 +203,7 @@ export function startMatchSet(context) {
 
 export function battleSet(context) {
   showPopupCell({
+    context,
     title: '对局设置',
     closeIcon: true,
     cellList: [
@@ -208,6 +213,7 @@ export function battleSet(context) {
         click: ({ context: popupContext }) => {
           popupContext.closeDialog();
           showPicker({
+            context,
             title: '决胜方式',
             closeIcon: true,
             list: PICKER_BO_LIST,
@@ -231,6 +237,7 @@ export function battleSet(context) {
           popupContext.closeDialog();
 
           showPicker({
+            context,
             title: 'Ban位设置',
             closeIcon: true,
             list: SELECT_BAN_LIST,

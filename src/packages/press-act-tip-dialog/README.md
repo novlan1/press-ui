@@ -4,6 +4,20 @@ url : pages/press/act-tip-dialog/act-tip-dialog
 
 ## ActTipDialog 活动提示弹窗
 
+## 引入
+
+```ts
+import PressActTipDialog from 'press-ui/press-act-tip-dialog/press-act-tip-dialog';
+
+export default {
+  components: {
+    PressActTipDialog,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 **示例**
@@ -54,17 +68,17 @@ export default {
 
 ### Props
 
-|       属性名        |    类型    |  默认值  |       说明       |
-| :-----------------: | :--------: | :------: | :--------------: |
-|        show         | _boolean_  | `false`  |   是否显示弹窗   |
-|        title        |  _string_  | 温馨提示 |       标题       |
-|       message       |  _string_  |    -     |       内容       |
-| show-cancel-button  | _boolean_  |  `true`  | 是否显示取消按钮 |
-| show-confirm-button | _boolean_  |  `true`  | 是否显示确认按钮 |
-|    confirm-text     |  _string_  |   确定   |   确认按钮文案   |
-|     cancel-text     |  _string_  |   取消   |   取消按钮文案   |
-|       cancel        | _function_ |  `null`  |  点击取消的事件  |
-|       confirm       | _function_ |  `null`  |  点击确认的事件  |
+| 参数                | 说明             | 类型       | 默认值   |
+| ------------------- | ---------------- | ---------- | -------- |
+| show                | 是否显示弹窗     | _boolean_  | `false`  |
+| title               | 标题             | _string_   | 温馨提示 |
+| message             | 内容             | _string_   | -        |
+| show-cancel-button  | 是否显示取消按钮 | _boolean_  | `true`   |
+| show-confirm-button | 是否显示确认按钮 | _boolean_  | `true`   |
+| confirm-text        | 确认按钮文案     | _string_   | 确定     |
+| cancel-text         | 取消按钮文案     | _string_   | 取消     |
+| cancel              | 点击取消的事件   | _function_ | `null`   |
+| confirm             | 点击确认的事件   | _function_ | `null`   |
 
 
 ### Events

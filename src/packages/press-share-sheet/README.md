@@ -6,6 +6,18 @@ url : pages/press/share-sheet/share-sheet
 
 底部弹起的分享面板，用于展示各分享渠道对应的操作按钮，不含具体的分享逻辑。
 
+## 引入
+
+```ts
+import PressShareSheet from 'press-ui/press-share-sheet/press-share-sheet';
+
+export default {
+  components: {
+    PressShareSheet,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

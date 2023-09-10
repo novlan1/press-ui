@@ -10,12 +10,12 @@
       :info="info"
       custom-class="press-icon-plus__info"
     />
-    <image
+    <img
       v-if="isImage"
       :src="name"
       mode="aspectFit"
       class="press-icon-plus__image"
-    />
+    >
   </div>
 </template>
 <script>

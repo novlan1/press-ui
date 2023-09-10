@@ -77,6 +77,7 @@ export default {
   methods: {
     clickInput() {
       this.onGTip('Click Input');
+      this.$refs[this.pressMessageDetailRef]?.scrollToBottom();
     },
     sendMsg() {
       console.log('[sendMsg]', this.msgContent);
@@ -92,10 +93,11 @@ export default {
     },
     clickAvatar(...args) {
       console.log('[clickAvatar]', ...args);
-      this.onGTip('[EVENT] clickAvatar');
+      this.onGTip('[EVENT] clickAvatar list will change');
       setTimeout(() => {
         this.list = getLessList();
-      }, 3000);
+        this.loadTime = 12;
+      }, 1000);
     },
     clickPic(...args) {
       console.log('[clickPic]', ...args);
@@ -152,6 +154,8 @@ export default {
           }))),
           ...this.list,
         ];
+
+        console.log('[loadMore] current total', this.list.length);
 
         this.loading = false;
       }, 1000);

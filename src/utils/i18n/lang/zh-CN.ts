@@ -40,12 +40,4 @@ export default {
   titleMap: {
     ...TITLE_I18N['zh-CN'],
   },
-  introduce: {
-    name: '全端兼容 高性能',
-    detail: 'press-ui 是一套易用的、灵活的、基于uni-app的组件库',
-    otherAbility: '其他功能',
-    toggleLanguage: '切换语言',
-    toggleVConsole: '切换VConsole',
-    launchApp: '拉起APP',
-  },
 };

@@ -7,6 +7,18 @@ url : pages/press/message-list/message-list
 
 可用于IM消息列表的展示。
 
+## 引入
+
+```ts
+import PressMessageList from 'press-ui/press-message-list/press-message-list';
+
+export default {
+  components: {
+    PressMessageList,
+  }
+}
+```
+
 ### 基本用法
 
 ```html
@@ -48,7 +60,7 @@ export default {
 
 | 参数 | 说明     | 类型                                   | 默认值 |
 | ---- | -------- | -------------------------------------- | ------ |
-| list | 消息列表 | _Array<{nick, content, time, avatar}>_ | `[]`   |
+| list | 消息列表 | _array<{nick, content, time, avatar}>_ | `[]`   |
 
 
 ### Event

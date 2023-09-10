@@ -143,16 +143,16 @@
         @change="onChange"
       >
         <press-tabbar-item icon="home-o">
-          {{ t('tag') }}
+          {{ t('tag') }}A
         </press-tabbar-item>
         <press-tabbar-item icon="search">
-          {{ t('tag') }}
+          {{ t('tag') }}B
         </press-tabbar-item>
         <press-tabbar-item icon="friends-o">
-          {{ t('tag') }}
+          {{ t('tag') }}C
         </press-tabbar-item>
         <press-tabbar-item icon="setting-o">
-          {{ t('tag') }}
+          {{ t('tag') }}D
         </press-tabbar-item>
       </press-tabbar>
     </demo-block>

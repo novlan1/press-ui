@@ -37,10 +37,10 @@ export default {
 
 ### Props
 
-| property name |  type  | default value |     description     |
-| :-----------: | :----: | :-----------: | :-----------------: |
-|     title     | String |     Tips      |        Title        |
-|  htmlContent  | String |       -       |    html content     |
-|    content    | String |       -       |       content       |
-|  confirmText  | String |      OK       | Confirm button text |
-|  cancelText   | String |       -       | Cancel button text  |
+| property name | type   | default value | description         |
+| ------------- | ------ | ------------- | ------------------- |
+| title         | String | Tips          | Title               |
+| htmlContent   | String | -             | html content        |
+| content       | String | -             | content             |
+| confirmText   | String | OK            | Confirm button text |
+| cancelText    | String | -             | Cancel button text  |

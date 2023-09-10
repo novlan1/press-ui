@@ -36,11 +36,17 @@
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressTransition from 'src/packages/press-transition/press-transition.vue';
 
 let timer = null;
 const formatTransitionName = name => name.toLowerCase().replace(/\s+/, '-');
 
 export default {
+  components: {
+    PressCell,
+    PressTransition,
+  },
   data() {
     const transitionDemoList = [
       {
@@ -82,13 +88,6 @@ export default {
       }, {}),
       showCustom: false,
     };
-  },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
   },
   methods: {
     onShowTransition(type) {

@@ -10,13 +10,31 @@ export function initMixin() {
         imageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
       };
     },
+    onLoad() {
+      // #ifdef MP-QQ
+      // @ts-ignore
+      qq?.showShareMenu?.({
+        showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
+      });
+      // #endif
+    },
     methods: {
       onGTip(title, duration = 1000) {
+        uni.hideToast();
         uni.showToast({
           title,
           icon: 'none',
           duration,
         });
+      },
+      onGShowLoading(title, options = {}) {
+        uni.showLoading({
+          title,
+          ...options,
+        });
+      },
+      onGHideToast() {
+        uni.hideToast();
       },
     },
 

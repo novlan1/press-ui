@@ -7,6 +7,22 @@ url : pages/press/checkbox/checkbox
 
 在一组备选项中进行多选。
 
+## 引入
+
+```ts
+import PressCheckbox from 'press-ui/press-checkbox/press-checkbox';
+import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group';
+
+export default {
+  components: {
+    PressCheckbox,
+    PressCheckboxGroup,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 通过`value`绑定复选框的勾选状态。

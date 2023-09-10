@@ -1,6 +1,6 @@
 <template>
-  <view class="uni-cursor-point">
-    <view
+  <div class="uni-cursor-point">
+    <div
       v-if="popMenu && (leftBottom || rightBottom || leftTop || rightTop) && content.length > 0"
       class="uni-fab"
       :style="{
@@ -8,7 +8,7 @@
         bottom: `${btnSwitchPos.y}px`
       }"
     >
-      <view
+      <div
         :class="{
           'uni-fab__content--left': horizontal === 'left',
           'uni-fab__content--right': horizontal === 'right',
@@ -21,36 +21,36 @@
         class="uni-fab__content"
         elevation="5"
       >
-        <view
+        <div
           v-if="flexDirectionStart || horizontalLeft"
           class="uni-fab__item uni-fab__item--first"
         />
-        <view
+        <div
           v-for="(item, index) in content"
           :key="index"
           :class="{ 'uni-fab__item--active': isShow }"
           class="uni-fab__item"
           @click="onItemClick(index, item)"
         >
-          <image
+          <img
             :src="item.active ? item.selectedIconPath : item.iconPath"
             class="uni-fab__item-image"
             mode="aspectFit"
-          />
-          <text
+          >
+          <span
             class="uni-fab__item-text"
             :style="{ color: item.active ? styles.selectedColor : styles.color }"
           >
             {{ item.text }}
-          </text>
-        </view>
-        <view
+          </span>
+        </div>
+        <div
           v-if="flexDirectionEnd || horizontalRight"
           class="uni-fab__item uni-fab__item--first"
         />
-      </view>
-    </view>
-    <view
+      </div>
+    </div>
+    <div
       :class="{
         'uni-fab__content--other-platform': !isAndroidNvue
       }"
@@ -71,16 +71,15 @@
         size="32"
         :class="{'uni-fab__plus--active': isShow && content.length > 0}"
       />
-      <!-- <view class="fab-circle-v"  :class="{'uni-fab__plus--active': isShow && content.length > 0}"></view>
-			<view class="fab-circle-h" :class="{'uni-fab__plus--active': isShow  && content.length > 0}"></view> -->
-    </view>
-  </view>
+      <!-- <div class="fab-circle-v"  :class="{'uni-fab__plus--active': isShow && content.length > 0}"></div>
+			<div class="fab-circle-h" :class="{'uni-fab__plus--active': isShow  && content.length > 0}"></div> -->
+    </div>
+  </div>
 </template>
 
 <script>
-import { getRect } from '../common/dom/rect';
+import { getRect, getWindowWidth } from '../common/dom/rect';
 import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
-
 
 let platform = 'other';
 // #ifdef APP-NVUE
@@ -135,6 +134,10 @@ export default {
     popMenu: {
       type: Boolean,
       default: true,
+    },
+    top: {
+      type: Number,
+      default: 0,
     },
   },
   emits: ['fabClick', 'trigger'],
@@ -238,10 +241,10 @@ export default {
   },
   methods: {
     getSwitchButtonSafeAreaXY(x, y) {
-      const { fabSize } = this;
-      const { windowWidth, windowHeight } = uni.getSystemInfoSync();
+      const { fabSize, top } = this;
+      const { windowWidth, windowHeight } = getWindowWidth();
       const docWidth = windowWidth;
-      const docHeight = windowHeight;
+      const docHeight = windowHeight - top;
       // check edge
       if (x + fabSize.width > docWidth) {
         x = docWidth - fabSize.width;

@@ -7,6 +7,23 @@ url : pages/press/tab/tab
 
 选项卡组件，用于在不同的内容区域之间进行切换。
 
+
+## 引入
+
+```ts
+import PressTab from 'press-ui/press-tab/press-tab';
+import PressTabs from 'press-ui/press-tabs/press-tabs';
+
+export default {
+  components: {
+    PressTab,
+    PressTabs,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 通过`active`设定当前激活标签对应的索引值，默认情况下启用第一个标签。
@@ -78,7 +95,7 @@ export default {
 设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`press-tabs`上监听`disabled`事件。
 
 ```html
-<press-tabs bind:disabled="onClickDisabled">
+<press-tabs @disabled="onClickDisabled">
   <press-tab title="标签 1">内容 1</press-tab>
   <press-tab title="标签 2" disabled>内容 2</press-tab>
   <press-tab title="标签 3">内容 3</press-tab>
@@ -103,7 +120,7 @@ export default {
 可以在`press-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符。
 
 ```html
-<press-tabs bind:click="onClick">
+<press-tabs @click="onClick">
   <press-tab title="标签 1">内容 1</press-tab>
   <press-tab title="标签 2">内容 2</press-tab>
 </press-tabs>
@@ -191,6 +208,7 @@ export default {
 | title-inactive-color | 标题默认态颜色                                                 | _string_           | -         |
 | z-index              | z-index 层级                                                   | _number_           | `1`       |
 | extra-class-prefix   | 兼容旧的`class`，可传入`van-`，不推荐使用                      | _string_           | -         |
+| mode                 | 模式，可传入`hor`                                              | _string_           | -         |
 
 ### Tab Props
 
@@ -219,12 +237,12 @@ export default {
 
 ### Tabs Event
 
-| 事件名        | 说明                     | 参数                                           |
-| ------------- | ------------------------ | ---------------------------------------------- |
-| bind:click    | 点击标签时触发           | name：标签标识符，title：标题                  |
-| bind:change   | 当前激活的标签改变时触发 | name：标签标识符，title：标题                  |
-| bind:disabled | 点击被禁用的标签时触发   | name：标签标识符，title：标题                  |
-| bind:scroll   | 滚动时触发               | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| 事件名   | 说明                     | 参数                                           |
+| -------- | ------------------------ | ---------------------------------------------- |
+| click    | 点击标签时触发           | index: 索引，name：标签标识符，title：标题     |
+| change   | 当前激活的标签改变时触发 | index: 索引，name：标签标识符，title：标题     |
+| disabled | 点击被禁用的标签时触发   | index: 索引，name：标签标识符，title：标题     |
+| scroll   | 滚动时触发               | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### 外部样式类
 
@@ -251,13 +269,13 @@ Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位
 
 #### 解决方法
 
-方法一，使用 `wx:if` 来控制组件展示，使组件重新初始化。
+方法一，使用 `v-if` 来控制组件展示，使组件重新初始化。
 
 ```html
-<press-tabs wx:if="show" />
+<press-tabs v-if="show" />
 ```
 
-方法二，调用组件的 resize 方法来主动触发重绘。
+方法二，调用组件的 `resize` 方法来主动触发重绘。
 
 ```html
 <press-tabs id="tabs" />
@@ -266,6 +284,41 @@ Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位
 ```js
 this.selectComponent('#tabs').resize();
 ```
+
+
+### 从vant组件迁移
+
+
+- 修改组件名，`van-tabs => press-tabs`，`van-tab => press-tab`
+- `line-width`属性改为 `number` 类型
+- 可选，为`press-tabs` 和 `press-tab` 传入 `extra-class-prefix="van-"`
+- 可选，`press-tabs` 的 `active` 事件参数取值修改，比如：
+- 可选，`v-model="tab"` 改为 `:active="tab"`
+
+
+```ts
+onTabChange(tab) {
+  if (this.isMpWeixin) {
+    tab = tab.detail.name;
+  }
+  this.tab = tab;
+  this.$emit('onTabChange', tab);
+},
+
+// 需要改为
+onTabChange(tab) {
+  this.tab = tab.name;
+  this.$emit('onTabChange', this.tab);
+},
+```
+
+
+`line-width`如果传`string`类型，可能会报错：
+
+```
+TypeError: Right-hand side of ‘instanceof‘ is not an object
+```
+
 
 ## 主题定制
 

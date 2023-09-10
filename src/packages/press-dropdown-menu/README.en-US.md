@@ -77,7 +77,7 @@ export default {
          @change="onSwitch2Change"
        />
      </press-cell>
-     <view style="padding: 5px 16px;">
+     <div style="padding: 5px 16px;">
        <press-button
          type="danger"
          block
@@ -86,7 +86,7 @@ export default {
        >
          confirm
        </press-button>
-     </view>
+     </div>
    </press-dropdown-item>
 </press-dropdown-menu>
 ```

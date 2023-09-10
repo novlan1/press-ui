@@ -8,6 +8,20 @@ url : pages/press/loading-plus/loading-plus
 加载中，分为circular和spinner两种
 
 
+## 引入
+
+```ts
+import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus';
+
+export default {
+  components: {
+    PressLoadingPlus,
+  }
+}
+```
+
+## 代码演示
+
 ### 加载类型
 
 ```html

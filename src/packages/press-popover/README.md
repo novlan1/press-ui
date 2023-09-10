@@ -6,6 +6,18 @@ url : pages/press/popover/popover
 
 弹出层的一种，与 Popup 相比是局部的，可用于承载一些选项卡。
 
+## 引入
+
+```ts
+import PressPopover from 'press-ui/press-popover/press-popover';
+
+export default {
+  components: {
+    PressPopover,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -68,9 +80,9 @@ export default {
 
 ### Props
 
-|    属性名    |  类型   | 默认值 |    说明    |
-| :----------: | :-----: | :----: | :--------: |
-|     show     | Boolean |  true  |  是否显示  |
-|  placement   | String  | right  | 弹出框位置 |
-| custom-class | String  |   -    | 自定义类名 |
-| custom-style | String  |   -    | 自定义样式 |
+| 参数         | 说明       | 类型      | 默认值 |
+| ------------ | ---------- | --------- | ------ |
+| show         | 是否显示   | _boolean_ | true   |
+| placement    | 弹出框位置 | _string_  | right  |
+| custom-class | 自定义类名 | _string_  | -      |
+| custom-style | 自定义样式 | _string_  | -      |

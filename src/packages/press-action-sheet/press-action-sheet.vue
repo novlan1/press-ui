@@ -89,6 +89,7 @@ import { button } from '../mixins/button';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 
+
 export default {
   name: 'PressActionSheet',
   options: {
@@ -207,6 +208,9 @@ export default {
       --action-sheet-item-background,
       $action-sheet-item-background
     );
+    display: block;
+    border: 0;
+    width: 100%;
 
     &--hover {
       background-color: $active-color;

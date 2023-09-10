@@ -47,6 +47,7 @@
       <press-notice-bar
         mode="closeable"
         :text="t('shortText')"
+        @close="onClose"
       />
 
       <!-- link 模式，在右侧显示链接箭头 -->
@@ -82,6 +83,8 @@
   </div>
 </template>
 <script>
+import PressNoticeBar from 'src/packages/press-notice-bar/press-notice-bar.vue';
+
 
 export default {
   i18n: {
@@ -108,14 +111,18 @@ export default {
       customSpeed: 'Speed',
     },
   },
-
+  components: {
+    PressNoticeBar,
+  },
   data() {
     return {
       sectionStyle: 'margin:0;',
     };
   },
   methods: {
-
+    onClose(val) {
+      console.log('[onClose] val', val);
+    },
   },
 };
 </script>

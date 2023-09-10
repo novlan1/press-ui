@@ -7,6 +7,18 @@ url : pages/press/skeleton/skeleton
 用于在内容加载过程中展示一组占位图形。
 
 
+## 引入
+
+```ts
+import PressSkeleton from 'press-ui/press-skeleton/press-skeleton';
+
+export default {
+  components: {
+    PressSkeleton,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -31,7 +43,7 @@ url : pages/press/skeleton/skeleton
 
 ```html
 <press-skeleton title avatar :row="3" :loading="loading">
-  <view>实际内容</view>
+  <div>实际内容</div>
 </press-skeleton>
 ```
 

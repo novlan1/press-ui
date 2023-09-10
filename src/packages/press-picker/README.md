@@ -5,7 +5,22 @@ url : pages/press/picker/picker
 ## Picker 选择器
 
 
-选择器组件，用于表单
+选择器组件，用于表单。
+
+
+## 引入
+
+```ts
+import PressPicker from 'press-ui/press-picker/press-picker';
+
+export default {
+  components: {
+    PressPicker,
+  }
+}
+```
+
+## 代码演示
 
 ### 基本用法
 
@@ -152,37 +167,37 @@ export default {
 
 ### Props
 
-|         属性名         |   类型    | 默认值  |            说明            |
-| :--------------------: | :-------: | :-----: | :------------------------: |
-|         title          | _string_  |    -    |            标题            |
-|       arrow-icon       | _boolean_ | `false` |  左上角是否显示为返回箭头  |
-|          list          |  _Array_  |  `[]`   |          数据列表          |
-|        current         | _Object_  | `null`  |         当前选中项         |
-|          tip           | _string_  |    -    |            提示            |
-|          mode          | _string_  |    -    | 函数式调用时传`functional` |
-| virtual-list-threshold | _number_  |  `50`   |   触发虚拟列表的最小数量   |
+| 参数                   | 说明                       | 类型      | 默认值  |
+| ---------------------- | -------------------------- | --------- | ------- |
+| title                  | 标题                       | _string_  | -       |
+| arrow-icon             | 左上角是否显示为返回箭头   | _boolean_ | `false` |
+| list                   | 数据列表                   | _array_   | `[]`    |
+| current                | 当前选中项                 | _object_  | `null`  |
+| tip                    | 提示                       | _string_  | -       |
+| mode                   | 函数式调用时传`functional` | _string_  | -       |
+| virtual-list-threshold | 触发虚拟列表的最小数量     | _number_  | `50`    |
 
 
 
 ### Events
 
-| 事件称名 |   说明   | 返回值 |
-| :------: | :------: | :----: |
-|  cancel  | 点击取消 |   -    |
-| confirm  | 点击确定 |   -    |
+| 事件    | 说明     | 返回值 |
+| ------- | -------- | ------ |
+| cancel  | 点击取消 | -      |
+| confirm | 点击确定 | -      |
 
 
 以下为废弃属性（`v0.7.32`）：
 
 
 
-| 类型  |       旧        |     新     |
-| :---: | :-------------: | :--------: |
+| 类型  | 旧              | 新         |
+| ----- | --------------- | ---------- |
 | Prop  | show-back-arrow | arrow-icon |
-| Prop  |   select-list   |    list    |
-| Prop  |   select-item   |  current   |
-| Event | onClickConfirm  |  confirm   |
-| Event |    onRemove     |   cancel   |
+| Prop  | select-list     | list       |
+| Prop  | select-item     | current    |
+| Event | onClickConfirm  | confirm    |
+| Event | onRemove        | cancel     |
 
 
 

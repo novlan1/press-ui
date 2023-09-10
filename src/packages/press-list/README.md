@@ -6,6 +6,21 @@ url : pages/press/list/list
 
 瀑布流滚动加载，用于展示长列表，当列表即将滚动到底部时，会触发事件并加载更多列表项。
 
+
+## 引入
+
+```ts
+import PressList from 'press-ui/press-list/press-list';
+
+export default {
+  components: {
+    PressList,
+  }
+}
+```
+
+## 代码演示
+
 ### 基本用法
 
 `List` 组件通过 `loading` 和 `finished` 两个变量控制加载状态，当组件滚动到底部时，会触发 `load` 事件并将 `loading` 设置成 `true`。此时可以发起异步操作并更新数据，数据更新完毕后，将 `loading` 设置成 `false` 即可。若数据已全部加载完毕，则直接将 `finished` 设置成 `true` 即可。
@@ -93,6 +108,10 @@ export default {
 | loading-text    | 加载过程中的提示文案                           | _string_  | `加载中...` |
 | finished-text   | 加载完成后的提示文案                           | _string_  | -           |
 | immediate-check | 是否在初始化时立即执行滚动位置检查             | _boolean_ | `true`      |
+| vertical        | 是否竖向滚动                                   | _boolean_ | `true`      |
+| finished-style  | 已完成自定义样式                               | _string_  | -           |
+| loading-style   | 加载中自定义样式                               | _string_  | -           |
+| loading-size    | 加载中图标尺寸                                 | _string_  | `20px`      |
 
 ### Event
 
@@ -101,6 +120,15 @@ export default {
 | ------ | ---------------------------------- | -------- |
 | load   | 滚动条与底部距离小于 offset 时触发 | -        |
 | scroll | 页面滚动时触发                     | -        |
+
+
+### Slots
+
+| 名称     | 说明                       |
+| -------- | -------------------------- |
+| default  | 列表内容                   |
+| loading  | 自定义底部加载中提示       |
+| finished | 自定义加载完成后的提示文案 |
 
 
 ## 常见问题
@@ -155,6 +183,9 @@ if (this.loading) return;
 
 在每次请求完毕后，需要手动将`loading`设置为`false`，表示加载结束。
 
+- 加载中，`loading`的值传递方向，组件内 => 组件外，变为`true`。
+- 加载结束，`loading`的值传递方向，组件外 => 组件内，变为`false`。
+
 ### 虚拟列表
 
 
@@ -172,3 +203,46 @@ if (this.loading) return;
   - 顶部插入占位Dom
 
 `press-picker`和`press-list`的示例都是用的第三种方法。
+
+
+### loading传递
+
+如果`press-list`在子组件，`loading`的值由父组件控制，可以这样传递：
+
+```html
+<!-- 父组件 -->
+<SomeComponent
+  :joined-loading="joinedLoading"
+  @update:joinedLoading="val => joinedLoading = val"
+/>
+```
+
+```html
+<!-- 子组件 -->
+<PressList
+  v-model="innerJoinedLoading"
+  @load="onLoadMore"
+>
+</PressList>
+```
+
+```ts
+export default {
+  props: {
+    joinedLoading: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    innerJoinedLoading: {
+      get() {
+        return this.joinedLoading;
+      },
+      set(value) {
+        this.$emit('update:joinedLoading', value);
+      },
+    },
+  }
+}
+```

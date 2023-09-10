@@ -6,6 +6,20 @@ url : pages/press/col/col
 
 基础布局组件。
 
+## 引入
+
+```ts
+import PressCol from 'press-ui/press-col/press-col';
+import PressRow from 'press-ui/press-row/press-row';
+
+export default {
+  components: {
+    PressCol,
+    PressRow,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法

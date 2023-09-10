@@ -45,11 +45,11 @@
           class="press-image-preview__swipe-item"
           @click="onClickSwiperItem"
         >
-          <image
+          <img
             class="press-image-preview__image"
             :src="image"
             fit="contain"
-          />
+          >
         </swiper-item>
       </swiper>
       <div />
@@ -61,7 +61,6 @@
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { functionalMixin } from '../mixins/functional';
-import PressTransition from '../press-transition/press-transition.vue';
 
 
 const imagePreviewProps = {
@@ -109,10 +108,9 @@ const imagePreviewProps = {
 
 export default {
   name: 'PressImagePreview',
-  comments: {
+  components: {
     PressOverlay,
     PressIconPlus,
-    PressTransition,
   },
   mixins: [functionalMixin(imagePreviewProps)],
   props: {
@@ -155,6 +153,7 @@ export default {
     onClosed() {
     },
     onChange(event) {
+      // swiper包装了event，可以用event.detail
       const { current = 0 } = event.detail;
       this.setActive(current);
     },

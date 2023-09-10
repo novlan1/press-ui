@@ -29,6 +29,7 @@
 </template>
 <script>
 import PressActTipDialog from 'src/packages/press-act-tip-dialog/press-act-tip-dialog.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 
 export default {
@@ -45,6 +46,7 @@ export default {
   },
   components: {
     PressActTipDialog,
+    PressCell,
   },
   data() {
     return {

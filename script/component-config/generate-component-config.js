@@ -40,6 +40,7 @@ function getCompDemoPages() {
       const newList = list.map(item => ({
         // name: `${item.name} ${item.title}`,
         url: getCompUrl(item.name),
+        navigationStyle: item?.style?.navigationStyle || '',
       }));
 
       return {

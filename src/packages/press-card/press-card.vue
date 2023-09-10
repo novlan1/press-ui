@@ -10,12 +10,12 @@
         v-if="cover"
         class="press-card__cover"
       >
-        <image
+        <img
           class="press-card__cover-image"
           mode="widthFix"
           :src="cover"
           @click="onClick('cover')"
-        />
+        >
       </div>
     </slot>
 
@@ -33,11 +33,11 @@
             v-if="thumbnail"
             class="press-card__header-avatar"
           >
-            <image
+            <img
               class="press-card__header-avatar-image"
               :src="thumbnail"
               mode="aspectFit"
-            />
+            >
           </div>
           <div class="press-card__header-content">
             <span class="press-card__header-content-title press-ellipsis">

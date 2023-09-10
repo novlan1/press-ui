@@ -76,7 +76,7 @@ The background color outside the search box can be set through the `background` 
    @change="onChange"
    @search="onSearch"
 >
-   <view slot="action" @tap="onClick">Search</view>
+   <div slot="action" @tap="onClick">Search</div>
 </press-search>
 ```
 
@@ -85,8 +85,8 @@ The background color outside the search box can be set through the `background` 
 
 ### Props
 
-| Parameter            | Description                                                                                                                                                           | Type               | Default   |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------- |  |
+| Parameter | Description | Type | Default |
+| --------- | ----------- | ---- | ------- ||
 | name                 | Identifier when submitted within the form                                                                                                                             | _string_           | -         |
 | label                | left text of search box                                                                                                                                               | _string_           | -         |
 | shape                | shape, optional value is `round`                                                                                                                                      | _string_           | `square`  |

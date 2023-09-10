@@ -6,6 +6,18 @@ url : pages/press/notify/notify
 
 在页面顶部展示消息提示，支持函数调用和组件调用两种方式。
 
+## 引入
+
+```ts
+import PressNotify from 'press-ui/press-notify/press-notify';
+
+export default {
+  components: {
+    PressNotify,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

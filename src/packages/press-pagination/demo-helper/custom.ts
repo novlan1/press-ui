@@ -1,5 +1,5 @@
 import {
-  showPopupCell,
+  showPopupCellAndClose,
   showPicker,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 
@@ -30,8 +30,10 @@ export function showCustomPopup({
   callback,
   pageTotal,
   current,
+  isHor,
 }) {
-  showPopupCell({
+  showPopupCellAndClose({
+    context,
     title: '自定义设置',
     closeIcon: true,
     cellList: [
@@ -87,29 +89,21 @@ export function showCustomPopup({
             });
         },
       },
-      // {
-      //   label: '是否为展开模式',
-      //   type: 'switch',
-      //   open: local.expand,
-      //   click: ({ context: popupContext }) => {
-      //     // if (value === undefined) return;
-      //     popupContext.closeDialog();
-      //     local.expand = !local.expand;
-      //     context.onGTip('设置成功');
+      {
+        label: '是否为Hor模式',
+        type: 'switch',
+        open: isHor,
+        click: ({ context: popupContext }) => {
+          // if (value === undefined) return;
+          popupContext.closeDialog();
+          // local.expand = !local.expand;
+          context.onGTip('设置成功');
 
-      //     if (typeof callback.changeExpand === 'function') {
-      //       callback.changeExpand.call(context, local.expand);
-      //     }
-      //   },
-      // },
+          if (typeof callback.changeHor === 'function') {
+            callback.changeHor.call(context, !isHor);
+          }
+        },
+      },
     ],
-  }).then((resp: any) => {
-    const { context: popupContext = {} } = resp || {};
-    popupContext.closeDialog();
-  })
-    .catch((err) => {
-      const { context: popupContext = {} } = err || {};
-      console.log('[showCustomPopup] err', err);
-      popupContext.closeDialog();
-    });
+  });
 }

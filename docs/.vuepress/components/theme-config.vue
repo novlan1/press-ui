@@ -35,7 +35,7 @@
           ✨ {{ t('copySuccess') }}
         </div>
         <button
-          class="config-button config-button--primary"
+          class="press-button config-button config-button--primary"
           @click.stop="onCopy"
         >
           {{ t('oneClickCopy') }}
@@ -49,7 +49,7 @@
           {{ t('restoreSuccess') }}
         </div>
         <button
-          class="config-button config-button--default"
+          class="press-button config-button config-button--default"
           @click.stop="onResume"
         >
           {{ t('restore') }}
@@ -290,28 +290,6 @@ export default {
 }
 
 .config-button {
-  display: inline-block;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #dcdfe6;
-  color: #606266;
-  -webkit-appearance: none;
-  text-align: center;
-  box-sizing: border-box;
-  outline: none;
-  margin: 0;
-  transition: 0.1s;
-  font-weight: 500;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  padding: 12px 20px;
-  font-size: 14px;
-  border-radius: 4px;
-
   margin-top: 20px;
 }
 

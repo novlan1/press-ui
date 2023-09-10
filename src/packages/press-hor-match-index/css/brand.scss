@@ -5,15 +5,15 @@
 .press-brand {
   position: relative;
   display: flex;
-  width: 5.84rem;
-  height: 1.44rem;
-  margin-bottom: .12rem;
+  width: vw(292);
+  height: vw(72);
+  margin-bottom: vw(6);
   mask-image: linear-gradient(to right, #000 80%, transparent 98%);
 
   &__title {
-    width: .4rem;
-    height: 1.44rem;
-    margin-right: .08rem;
+    width: vw(20);
+    height: vw(72);
+    margin-right: vw(4);
     background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/brand-title.png) no-repeat center center;
     background-size: contain;
   }
@@ -26,34 +26,34 @@
   }
 
   &__item {
-    width: 1.4rem;
+    width: vw(70);
     height: 100%;
-    margin-right: .08rem;
+    margin-right: vw(4);
     flex-shrink: 0;
     background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/brand-bg.png) no-repeat left bottom;
-    background-size: 1.4rem auto;
+    background-size: vw(70) auto;
 
     &:last-child {
-      width: 1.8rem;
-      padding-right: .4rem;
+      width: vw(90);
+      padding-right: vw(20);
     }
   }
 
   &__img {
     position: relative;
     display: block;
-    width: .64rem;
-    height: .64rem;
-    margin: .15rem auto .1rem;
+    width: vw(32);
+    height: vw(32);
+    margin: vw(7.5) auto vw(5);
     background-color: $color-white;
     border: 1px solid #6d8ac3;
   }
 
   &__name {
-    font-size: $font-xxxs;
+    font-size: vw(9);
     color: $color-white;
     text-align: center;
-    padding: 0 .32rem;
+    padding: 0 vw(16);
     @include single-line-ellipsis();
   }
 }

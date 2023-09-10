@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-dialog-index">
+  <div class="press-dialog-index">
     <press-popup
       :show="dataShow"
       :z-index="dataZIndex"
@@ -11,7 +11,7 @@
       :close-on-click-overlay="dataCloseOnClickOverlay"
       @close="onClickOverlay"
     >
-      <view
+      <div
         v-if="dataTitle || dataUseTitleSlot"
         :class="true ? utils.bem2('dialog__header', { isolated: !(dataMessage || dataUseSlot) }) : ''"
       >
@@ -22,17 +22,17 @@
         <template v-else-if="dataTitle">
           {{ dataTitle }}
         </template>
-      </view>
+      </div>
 
       <slot v-if="dataUseSlot" />
-      <view
+      <div
         v-else-if="dataMessage"
         :class="true ? utils.bem2('dialog__message', [dataTheme, dataMessageAlign, { hasTitle: dataTitle }]) : ''"
       >
-        <text class="press-dialog__message-text">
+        <span class="press-dialog__message-text">
           {{ dataMessage }}
-        </text>
-      </view>
+        </span>
+      </div>
 
       <!-- <press-goods-action
         v-if="theme === 'round-button'"
@@ -77,7 +77,7 @@
         </press-goods-action-button>
       </press-goods-action> -->
 
-      <view
+      <div
         v-if="true"
         class="press-hairline--top press-dialog__footer"
       >
@@ -118,9 +118,9 @@
         >
           {{ dataConfirmButtonText }}
         </press-button>
-      </view>
+      </div>
     </press-popup>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';

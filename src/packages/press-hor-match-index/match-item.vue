@@ -1,7 +1,8 @@
 <template>
   <!-- 推荐赛事 -->
   <div
-    class="press-match"
+    :class="['press-match',
+             popoverRotate ? 'press-match--popover-rotate':'']"
     @click.stop="clickMatch"
   >
     <div class="press-match__left">
@@ -9,39 +10,47 @@
         {{ matchInfo.matchName }}
       </div>
       <div class="press-match__awards">
-        <div
-          v-for="(item,index) in matchInfo.awardList"
-          :key="index"
-          class="press-match__award"
-          @click.stop="onShowPopover(item,index)"
-        >
-          <div class="press-match__award__type">
-            <p class="press-match__award__type__name">
-              {{ item.type }}
+        <template v-if="matchInfo.awardList && matchInfo.awardList.length">
+          <div
+            v-for="(item,index) in matchInfo.awardList"
+            :key="index"
+            class="press-match__award"
+            @click.stop="onShowPopover(item,index)"
+          >
+            <div class="press-match__award__type">
+              <p class="press-match__award__type__name">
+                {{ item.type }}
+              </p>
+            </div>
+            <img
+              :src="item.img"
+              alt="award-img"
+              class="press-match__award__img"
+            >
+            <p class="press-match__award__name">
+              {{ item.name }}
             </p>
           </div>
-          <img
-            :src="item.img"
-            alt="award-img"
-            class="press-match__award__img"
-          >
-          <p class="press-match__award__name">
-            {{ item.name }}
-          </p>
-        </div>
 
-        <!-- 奖励详情浮层 -->
-        <div
-          v-if="showPopover"
-          :class="['press-match__popover',`press-match__popover-${awardIndex}`]"
-        >
-          <p>{{ popoverTitle }}</p>
-          <p>{{ popoverContent }}</p>
+          <!-- 奖励详情浮层 -->
           <div
-            class="press-match__popover__close"
-            @click.stop="closePopover"
-          />
-        </div>
+            v-if="showPopover"
+            :class="['press-match__popover',`press-match__popover-${awardIndex}`]"
+          >
+            <p>{{ popoverTitle }}</p>
+            <p>{{ popoverContent }}</p>
+            <div
+              class="press-match__popover__close"
+              @click.stop="closePopover"
+            />
+          </div>
+        </template>
+
+        <img
+          v-else
+          :src="matchInfo.defaultAwardImg || 'https://image-1251917893.file.myqcloud.com/Esports/hor/home/default-reward.png'"
+          class="default-award"
+        >
       </div>
     </div>
     <div class="press-match__right">
@@ -65,59 +74,22 @@
         {{ matchInfo.btnTxt }}
       </div>
     </div>
-    <!-- 定位 -->
+
     <div
-      v-if="matchInfo.matchLoc"
-      class="press-match__loc"
+      v-if="matchInfo.tag"
+      class="press-match__tag"
     >
-      <p class="press-match__loc__name">
-        {{ matchInfo.matchLoc }}
-      </p>
+      {{ matchInfo.tag }}
     </div>
-    <!-- --apply--报名有奖，--join--参赛有奖 -->
-    <div
-      v-else
-      :class="{'press-match__tag--apply': matchInfo.showApplyTag,
-               'press-match__tag--join': matchInfo.showJoinTag}"
-    />
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    matchInfo: {
-      type: Object,
-      default: () => ({}),
-      required: false,
-    },
-  },
-  data() {
-    return {
-      awardIndex: '-1',
-      popoverTitle: '',
-      popoverContent: '',
-      showPopover: false,
-    };
-  },
-  methods: {
-    onShowPopover(item, index) {
-      this.awardIndex = index;
-      this.showPopover = true;
-      this.popoverTitle = item.popover?.title || item.name;
-      this.popoverContent = item.popover?.content || item.name;
-    },
+import { getMatchItemMixin } from './match-item-mixin';
 
-    closePopover() {
-      this.showPopover = false;
-    },
-    clickMatchButton() {
-      this.$emit('clickMatchButton', this.matchInfo);
-    },
-    clickMatch() {
-      this.$emit('clickMatch', this.matchInfo);
-    },
-  },
+
+export default {
+  mixins: [getMatchItemMixin()],
 };
 
 </script>

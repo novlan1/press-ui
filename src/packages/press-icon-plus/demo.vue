@@ -1,159 +1,158 @@
 <template>
   <div class="demo-wrap demo-wrap--gray">
-    <demo-section>
-      <!-- #ifndef H5 -->
-      <PressNotify
-        id="press-notify"
-      />
-      <!-- #endif -->
+    <!-- #ifndef H5 -->
+    <PressNotify
+      id="press-notify"
+    />
+    <!-- #endif -->
 
-      <press-tabs
-        v-model="tab"
-        :offset-top="offsetTop"
-        sticky
-      >
-        <press-tab :title="t('demo')">
-          <demo-block-plus :title="t('basicUsage')">
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                @click="copy(demoIcon)"
-              />
-            </press-col>
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoImage"
-                @click="copy(demoImage)"
-              />
-            </press-col>
-          </demo-block-plus>
-
-          <demo-block-plus :title="t('badge')">
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                dot
-                @click="copy(demoIcon, { dot: true })"
-              />
-            </press-col>
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                info="9"
-                @click="copy(demoIcon, { badge: '9' })"
-              />
-            </press-col>
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                info="99+"
-                @click="copy(demoIcon, { badge: '99+' })"
-              />
-            </press-col>
-          </demo-block-plus>
-
-          <demo-block-plus :title="t('color')">
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                name="cart-o"
-                color="#1989fa"
-                @click="copy(demoIcon, { color: '#1989fa' })"
-              />
-            </press-col>
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                name="fire-o"
-                :color="RED"
-                @click="copy(demoIcon, { color: RED })"
-              />
-            </press-col>
-          </demo-block-plus>
-
-          <demo-block-plus :title="t('size')">
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                size="40"
-                @click="copy(demoIcon, { size: '40' })"
-              />
-            </press-col>
-            <press-col
-              :span="6"
-            >
-              <press-icon-plus
-                :name="demoIcon"
-                size="1rem"
-                @click="copy(demoIcon, { size: '3rem' })"
-              />
-            </press-col>
-          </demo-block-plus>
-        </press-tab>
-
-        <press-tab :title="t('basic')">
+    <press-tabs
+      v-model="tab"
+      :offset-top="offsetTop"
+      sticky
+      swipeable
+    >
+      <press-tab :title="t('demo')">
+        <demo-block-plus :title="t('basicUsage')">
           <press-col
-            v-for="(icon) in icons.basic"
-            :key="icon"
             :span="6"
           >
             <press-icon-plus
-              :name="icon"
-              @click="copy(icon)"
+              :name="demoIcon"
+              @click="copy(demoIcon)"
             />
-            <span>{{ icon }}</span>
           </press-col>
-        </press-tab>
-
-        <press-tab :title="t('outline')">
           <press-col
-            v-for="icon in icons.outline"
-            :key="icon"
             :span="6"
           >
             <press-icon-plus
-              :name="icon"
-              @click="copy(icon)"
+              :name="demoImage"
+              @click="copy(demoImage)"
             />
-            <span>{{ icon }}</span>
           </press-col>
-        </press-tab>
+        </demo-block-plus>
 
-        <press-tab :title="t('filled')">
+        <demo-block-plus :title="t('badge')">
           <press-col
-            v-for="icon in icons.filled"
-            :key="icon"
             :span="6"
           >
             <press-icon-plus
-              :name="icon"
-              @click="copy(icon)"
+              :name="demoIcon"
+              dot
+              @click="copy(demoIcon, { dot: true })"
             />
-            <span>{{ icon }}</span>
           </press-col>
-        </press-tab>
-      </press-tabs>
-    </demo-section>
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              :name="demoIcon"
+              info="9"
+              @click="copy(demoIcon, { badge: '9' })"
+            />
+          </press-col>
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              :name="demoIcon"
+              info="99+"
+              @click="copy(demoIcon, { badge: '99+' })"
+            />
+          </press-col>
+        </demo-block-plus>
+
+        <demo-block-plus :title="t('color')">
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              name="cart-o"
+              color="#1989fa"
+              @click="copy(demoIcon, { color: '#1989fa' })"
+            />
+          </press-col>
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              name="fire-o"
+              :color="RED"
+              @click="copy(demoIcon, { color: RED })"
+            />
+          </press-col>
+        </demo-block-plus>
+
+        <demo-block-plus :title="t('size')">
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              :name="demoIcon"
+              size="40"
+              @click="copy(demoIcon, { size: '40' })"
+            />
+          </press-col>
+          <press-col
+            :span="6"
+          >
+            <press-icon-plus
+              :name="demoIcon"
+              size="1rem"
+              @click="copy(demoIcon, { size: '3rem' })"
+            />
+          </press-col>
+        </demo-block-plus>
+      </press-tab>
+
+      <press-tab :title="t('basic')">
+        <press-col
+          v-for="(icon) in icons.basic"
+          :key="icon"
+          :span="6"
+        >
+          <press-icon-plus
+            :name="icon"
+            @click="copy(icon)"
+          />
+          <span>{{ icon }}</span>
+        </press-col>
+      </press-tab>
+
+      <press-tab :title="t('outline')">
+        <press-col
+          v-for="icon in icons.outline"
+          :key="icon"
+          :span="6"
+        >
+          <press-icon-plus
+            :name="icon"
+            @click="copy(icon)"
+          />
+          <span>{{ icon }}</span>
+        </press-col>
+      </press-tab>
+
+      <press-tab :title="t('filled')">
+        <press-col
+          v-for="icon in icons.filled"
+          :key="icon"
+          :span="6"
+        >
+          <press-icon-plus
+            :name="icon"
+            @click="copy(icon)"
+          />
+          <span>{{ icon }}</span>
+        </press-col>
+      </press-tab>
+    </press-tabs>
   </div>
 </template>
 
 <script>
 import PressNotify from 'src/packages/press-notify/press-notify.vue';
-import PressNotifyHandler from 'src/packages/press-notify/';
+import DemoBlockPlus from 'src/pages/demo-block/demo-block-plus.vue';
 
 import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
 import PressTab from 'src/packages/press-tab/press-tab.vue';
@@ -162,30 +161,8 @@ import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
 
 import icons from 'src/packages/press-icon-plus/config';
 import { RED } from 'src/packages/common/constant/color';
+import { CLIPBOARD_MIXIN } from 'src/packages/press-icon-plus/demo-helper/clipboard-mixin';
 
-
-// from https://30secondsofcode.org
-function copyToClipboard(str) {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-
-  const selected = document.getSelection().rangeCount > 0
-    ? document.getSelection().getRangeAt(0)
-    : false;
-
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-
-  if (selected) {
-    document.getSelection().removeAllRanges();
-    document.getSelection().addRange(selected);
-  }
-}
 
 export default {
   i18n: {
@@ -201,10 +178,10 @@ export default {
       size: '图标大小',
     },
     'en-US': {
+      copied: 'Copied',
       title: 'Icon List',
       badge: 'Show Badge',
       basic: 'Basic',
-      copied: 'Copied',
       outline: 'Outline',
       filled: 'Filled',
       demo: 'Demo',
@@ -212,29 +189,25 @@ export default {
       size: 'Icon Size',
     },
   },
-  options: {
-    styleIsolation: 'shared',
-  },
   components: {
     PressTabs,
     PressTab,
     PressCol,
     PressIconPlus,
     PressNotify,
+    DemoBlockPlus,
+  },
+  mixins: [CLIPBOARD_MIXIN],
+  options: {
+    styleIsolation: 'shared',
   },
   data() {
     this.RED = RED;
-    let offsetTop = 0;
-
-    // #ifdef H5
-    offsetTop = 44;
-    // #endif
     return {
       tab: 0,
       demoIcon: 'chat-o',
       demoImage: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
 
-      offsetTop,
       icons: {
         basic: [],
         outline: [],
@@ -267,24 +240,8 @@ export default {
       }
       tag = `${tag} />`;
 
-      // #ifdef H5
-      copyToClipboard(tag);
-      // #endif
-
-      // #ifndef H5
-      uni.setClipboardData({
-        data: tag,
-      });
-      // #endif
-      console.log('tag', tag);
-
-      PressNotifyHandler({
-        type: 'success',
-        duration: 1500,
-        // className: 'demo-icon-notify',
-        message: `${this.t('copied')}：${tag}`,
-        top: this.offsetTop,
-      });
+      console.log('[tag] ', tag);
+      this.copyIconTag(tag);
     },
   },
 };
@@ -315,11 +272,14 @@ export default {
   }
 
   ::v-deep .press-col {
-    display: inline-block;
     float: none !important;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     span {
       display: block;

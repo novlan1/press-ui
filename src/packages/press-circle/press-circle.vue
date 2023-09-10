@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-circle-index">
+  <div class="press-circle-index">
     <div class="press-circle">
       <!-- #ifdef H5 -->
       <canvas
@@ -28,14 +28,22 @@
       >
         <slot />
       </div>
-      <cover-view
-        v-else
-        class="press-circle__text"
-      >
-        {{ text }}
-      </cover-view>
+      <template v-else>
+        <div
+          v-if="isNotInUni"
+          class="press-circle__text"
+        >
+          {{ text }}
+        </div>
+        <cover-view
+          v-else
+          class="press-circle__text"
+        >
+          {{ text }}
+        </cover-view>
+      </template>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 
@@ -44,7 +52,7 @@ import { getSystemInfoSync } from '../common/utils/system';
 import { isObj } from '../common/utils/validator';
 import { canIUseCanvas2d } from '../common/utils/version';
 import { adaptor } from './canvas';
-import utils from '../common/utils/utils';
+import utils, { isNotInUni } from '../common/utils/utils';
 
 let id = 0;
 
@@ -103,6 +111,7 @@ export default {
     return {
       hoverColor: BLUE,
       id: 1,
+      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -111,10 +120,12 @@ export default {
       return `width: ${utils.addUnit(size)};height: ${utils.addUnit(size)}`;
     },
     canvasId() {
-      if (process.env.UNI_PLATFORM !== 'h5') {
-        return 'press-circle';
-      }
-      return `press-circle-${this.id}`;
+      let result =  `press-circle-${this.id}`;
+      // #ifndef H5
+      result = 'press-circle';
+      // #endif
+
+      return result;
     },
   },
   watch: {
@@ -153,10 +164,23 @@ export default {
   methods: {
     getContext() {
       const { type, size } = this;
+      if (isNotInUni()) {
+        const dpr = window.devicePixelRatio;
+        const canvas = document.getElementById(this.canvasId);
+        const ctx = canvas.getContext('2d');
+        if (!this.inited) {
+          this.inited = true;
+          canvas.width = size * dpr;
+          canvas.height = size * dpr;
+          ctx.scale(dpr, dpr);
+        }
+        return Promise.resolve(adaptor(ctx));
+      }
       if (type === '' || !canIUseCanvas2d()) {
         const ctx = uni.createCanvasContext(this.canvasId, this);
         return Promise.resolve(ctx);
       }
+
       const dpr = getSystemInfoSync().pixelRatio;
       return new Promise((resolve) => {
         uni.createSelectorQuery()

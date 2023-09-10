@@ -27,9 +27,8 @@
   </div>
 </template>
 <script>
-import { getSystemInfoSync } from '../common/utils/system';
 import { addUnit } from '../common/format/unit';
-import { getRect } from '../common/dom/rect';
+import { getRect, getWindowWidth } from '../common/dom/rect';
 import utils from '../common/utils/utils';
 import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
@@ -115,11 +114,11 @@ export default {
     },
   },
   beforeCreate() {
-    const { windowHeight } = getSystemInfoSync();
-    this.windowHeight = windowHeight;
     ARRAY.push(this);
   },
   created() {
+    const { windowHeight } = getWindowWidth();
+    this.windowHeight = windowHeight;
     this.children = [];
   },
   destroyed() {

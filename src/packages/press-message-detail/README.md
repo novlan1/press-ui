@@ -6,6 +6,20 @@ url : pages/press/message-detail/message-detail
 
 IM聊天详情。
 
+## 引入
+
+```ts
+import PressMessageDetail from 'press-ui/press-message-detail/press-message-detail';
+
+export default {
+  components: {
+    PressMessageDetail,
+  }
+}
+```
+
+## 代码演示
+
 ### 基本用法
 
 ```html
@@ -36,9 +50,9 @@ export default {
 
 | 参数    | 说明                                           | 类型      | 默认值  |
 | ------- | ---------------------------------------------- | --------- | ------- |
-| list    | 消息详情列表                                   | _Array_   | `[]`    |
-| loading | 是否在加载中                                   | _Boolean_ | `false` |
-| offset  | 滚动条与顶部距离小于 `offset` 时触发`load`事件 | _Number_  | `300`   |
+| list    | 消息详情列表                                   | _array_   | `[]`    |
+| loading | 是否在加载中                                   | _boolean_ | `false` |
+| offset  | 滚动条与顶部距离小于 `offset` 时触发`load`事件 | _number_  | `300`   |
 
 
 

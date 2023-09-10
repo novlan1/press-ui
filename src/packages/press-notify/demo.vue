@@ -63,6 +63,7 @@
 <script>
 import PressNotify from 'src/packages/press-notify/press-notify.vue';
 import PressNotifyHandler from 'src/packages/press-notify/';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 
 export default {
@@ -95,6 +96,7 @@ export default {
 
   components: {
     PressNotify,
+    PressCell,
   },
   data() {
     return {
@@ -105,10 +107,13 @@ export default {
   },
   methods: {
     showNotify(options) {
+      // #ifndef H5
       if (process.env.UNI_PLATFORM !== 'h5') {
         PressNotifyHandler(options);
         return;
       }
+      // #endif
+
       let cOptions = options;
       if (typeof options !== 'object') {
         cOptions = { message: options };

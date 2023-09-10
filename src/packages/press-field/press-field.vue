@@ -1,5 +1,8 @@
 <template>
-  <uni-shadow-root class="press-field-index">
+  <div
+    class="press-field-index"
+    :class="customClass"
+  >
     <press-cell
       :size="size"
       :icon="leftIcon"
@@ -22,7 +25,7 @@
       <template #title>
         <div
           v-if="label"
-          :class="'label-class '+(utils.bem2('field__label', { disabled }))"
+          :class="labelClass + ' '+(utils.bem2('field__label', { disabled }))"
         >
           {{ label }}
         </div>
@@ -39,9 +42,10 @@
         >
           <slot name="input" />
         </div>
-        <textarea
+        <Textarea
           v-if="type === 'textarea'"
-          :class="'' + (utils.bem2('field__control', [inputAlign, type, { disabled, error }]))+' input-class'"
+          ref="input"
+          :class="'' + (utils.bem2('field__control', [inputAlign, type, { disabled, error }]))+' ' + inputClass"
           :fixed="fixed"
           :focus="focus"
           :cursor="cursor"
@@ -70,8 +74,10 @@
           @keyboardheightchange="onKeyboardHeightChange"
         />
 
-        <input
-          :class="'' + (utils.bem2('field__control', [inputAlign, { disabled, error }]))+' input-class'"
+        <Input
+          v-else
+          ref="input"
+          :class="'' + (utils.bem2('field__control', [inputAlign, { disabled, error }]))+' ' + inputClass"
           :type="type"
           :focus="focus"
           :cursor="cursor"
@@ -97,7 +103,7 @@
           @focus="onFocus"
           @confirm="onConfirm"
           @keyboardheightchange="onKeyboardHeightChange"
-        >
+        />
 
         <press-icon-plus
           v-if="showClear"
@@ -113,7 +119,7 @@
             v-if="rightIcon || icon"
             :name="rightIcon || icon"
             :class="'press-field__icon-root '+(iconClass)"
-            custom-class="right-icon-class"
+            :custom-class="rightIconClass"
           />
           <slot name="right-icon" />
           <slot name="icon" />
@@ -139,7 +145,7 @@
         {{ errorMessage }}
       </div>
     </press-cell>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressCell from '../press-cell/press-cell.vue';
@@ -149,6 +155,10 @@ import { commonProps, inputProps, textareaProps } from './props';
 import utils from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
+import { isObject } from '../common/utils/validator';
+import { getEventDetail, getEventValue } from '../common/dom/event';
+
 
 export default {
   name: 'PressField',
@@ -157,7 +167,6 @@ export default {
     styleIsolation: 'shared',
   },
   field: true,
-  classes: ['input-class', 'right-icon-class', 'label-class'],
   components: {
     PressCell,
     PressIconPlus,
@@ -209,6 +218,18 @@ export default {
       type: String,
       default: 'clear',
     },
+    inputClass: {
+      type: String,
+      default: '',
+    },
+    rightIconClass: {
+      type: String,
+      default: '',
+    },
+    labelClass: {
+      type: String,
+      default: '',
+    },
     ...defaultProps,
   },
   data() {
@@ -219,56 +240,50 @@ export default {
 
       utils,
       computed,
-      // dataValue: this.value,
     };
   },
   watch: {
     value: {
-      // observer(value) {
-      //   if (value !== this.value) {
-      //     this.setData({ innerValue: value });
-      //     this.value = value;
-      //   }
-      // },
       handler(val) {
         this.innerValue = val;
-        // this.dataValue = val;
+        this.$nextTick(this.adjustSize);
       },
     },
   },
   created() {
-    // this.dataValue = this.value;
     this.innerValue = this.value;
-    // this.setData({ innerValue: this.value });
+  },
+  mounted() {
+    this.$nextTick(this.adjustSize);
   },
   methods: {
     onInput(event) {
-      const { value = '' } = event.detail || {};
+      const value = getEventValue(event, this.$refs.input);
       this.innerValue = value;
-      // this.dataValue = value;
       this.setShowClear();
       this.emitChange();
+      this.$nextTick(this.adjustSize);
     },
     onFocus(event) {
       this.focused = true;
       this.setShowClear();
-      this.$emit('focus', event.detail);
+      this.$emit('focus', getEventDetail(event, this.$refs.input));
+      this.$nextTick(this.adjustSize);
     },
     onBlur(event) {
       this.focused = false;
       this.setShowClear();
-      this.$emit('blur', event.detail);
+      this.$emit('blur', getEventDetail(event, this.$refs.input));
+      this.$nextTick(this.adjustSize);
     },
     onClickIcon() {
       this.$emit('click-icon');
     },
     onClickInput(event) {
-      this.$emit('click-input', event.detail);
+      this.$emit('click-input', getEventDetail(event, this.$refs.input));
     },
     onClear() {
       this.innerValue = '';
-      // this.setData({ innerValue: '' });
-      // this.dataValue = '';
       this.setShowClear();
       nextTick(() => {
         this.emitChange();
@@ -276,31 +291,26 @@ export default {
       });
     },
     onConfirm(event) {
-      const { value = '' } = event.detail || {};
+      const value = getEventValue(event, this.$refs.input);
       this.innerValue = value;
-      // this.dataValue = value;
       this.setShowClear();
       this.$emit('confirm', value);
     },
     setValue(value) {
-      // this.dataValue = value;
       this.innerValue = value;
       this.setShowClear();
       if (value === '') {
         this.innerValue = '';
-        // this.setData({ innerValue: '' });
       }
       this.emitChange();
     },
     onLineChange(event) {
-      this.$emit('linechange', event.detail);
+      this.$emit('linechange', getEventDetail(event, this.$refs.input));
     },
     onKeyboardHeightChange(event) {
-      this.$emit('keyboardheightchange', event.detail);
+      this.$emit('keyboardheightchange', getEventDetail(event, this.$refs.input));
     },
     emitChange() {
-      // this.value = this.dataValue; // 去掉
-      // this.setData({ value: this.dataValue });
       nextTick(() => {
         this.$emit('input', this.innerValue);
         this.$emit('change', this.innerValue);
@@ -315,8 +325,33 @@ export default {
         const trigger = clearTrigger === 'always' || (clearTrigger === 'focus' && focused);
         showClear = hasValue && trigger;
       }
-      // this.setData({ showClear });
       this.showClear = showClear;
+    },
+    adjustSize() {
+      const { input } = this.$refs;
+      if (!(this.type === 'textarea' && this.autosize) || !input) {
+        return;
+      }
+
+      const scrollTop = getRootScrollTop();
+      input.style.height = 'auto';
+
+      let height = input.scrollHeight;
+      if (isObject(this.autosize)) {
+        const { maxHeight, minHeight } = this.autosize;
+        if (maxHeight) {
+          height = Math.min(height, maxHeight);
+        }
+        if (minHeight) {
+          height = Math.max(height, minHeight);
+        }
+      }
+
+      if (height) {
+        input.style.height = `${height}px`;
+        // https://github.com/vant-ui/vant/issues/9178
+        setRootScrollTop(scrollTop);
+      }
     },
     noop() { },
   },
@@ -368,6 +403,9 @@ export default {
     color: var(--field-input-text-color, $field-input-text-color);
     height: var(--cell-line-height, $cell-line-height);
     min-height: var(--cell-line-height, $cell-line-height);
+    user-select: auto;
+    outline: none;
+    font-size: var(--field-font-size, $field-font-size);
 
     &:empty {
       display: none;
@@ -499,5 +537,10 @@ export default {
       color: var(--field-word-num-full-color, $field-word-num-full-color);
     }
   }
+}
+</style>
+<style>
+::-webkit-scrollbar {
+  display: none;
 }
 </style>

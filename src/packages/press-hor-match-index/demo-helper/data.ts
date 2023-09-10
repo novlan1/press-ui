@@ -1,231 +1,91 @@
+const AWARD_LIST = Array.from({ length: 4 }).map((_, index) => ({
+  img: 'https://image-1251917893.file.myqcloud.com/Esports/admin/img/prize-1.png',
+  name: `小乔-${index}`,
+  type: '冠军奖',
+}));
+
+export const ONLINE_MATCH_LIST = Array.from({ length: 6 }).map((_, index) => {
+  const isEnd = index % 3 === 0; // 已结束
+  const isIng = index % 3 === 1; // 进行中
+  const isNotStart = index % 3 === 2; // 未开始
 
 
-const awardList = [
-  {
-    img: 'https://dummyimage.com/64x64',
-    name: '小乔',
-    type: '冠军奖',
-  },
-  {
-    img: 'https://dummyimage.com/64x64',
-    name: '小乔1',
-    type: '冠军奖',
-  },
-  {
-    img: 'https://dummyimage.com/64x64',
-    name: '小乔2',
-    type: '冠军奖',
-  },
-  {
-    img: 'https://dummyimage.com/64x64',
-    name: '小乔3',
-    type: '冠军奖',
-  },
-];
-export const onlineMatchList = [
-  {
+  let btnTxt = '';
+  let tag = '';
+  if (isEnd) {
+    btnTxt = '已结束';
+    tag = '报名有奖';
+  } else if (isIng) {
+    btnTxt = '进行中';
+    tag = '参赛有奖';
+  } else if (isNotStart) {
+    btnTxt = '去报名';
+  }
+
+  return {
+    banner: 'https://image-1251917893.file.myqcloud.com/Esports/hor/default-bg.png',
+    brandImg: 'https://image-1251917893.file.myqcloud.com/Esports/new/admin/icon-wzry.jpg',
+
     matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
+    awardList: index % 2 === 0 ? AWARD_LIST : [],
     matchDesc: '09.01 15:00 / 线上赛',
     matchType: '线上赛',
-    btnTxt: '去报名',
-    isEnd: false, // 已结束
-    isIng: false, // 进行中
-    isNotStart: true, // 未开始
-    showApplyTag: true, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线上赛',
-    btnTxt: '进行中',
-    isEnd: false, // 已结束
-    isIng: true, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: true, // 参赛有奖
-    matchLoc: '',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-  {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    brandImg: 'https://dummyimage.com/64x64',
-    matchDesc: '09.01 15:00 / 线上赛',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
-  },
-];
 
-export const onlineMatchMap = {
-  0: onlineMatchList,
-  1: onlineMatchList,
-  2: onlineMatchList,
+    isEnd,
+    isIng,
+    isNotStart,
+    btnTxt,
+
+    tag,
+
+    matchLoc: index % 2 === 0 ? '' : '350m',
+  };
+});
+
+
+export const ONLINE_MATCH_MAP = {
+  0: ONLINE_MATCH_LIST.map(item => ({
+    ...item,
+    matchName: `0-${item.matchName}`,
+  })),
+  1: ONLINE_MATCH_LIST.map(item => ({
+    ...item,
+    matchName: `1-${item.matchName}`,
+  })),
+  2: ONLINE_MATCH_LIST.map(item => ({
+    ...item,
+    matchName: `2-${item.matchName}`,
+  })),
 };
 
-export const brandList = [
-  {
-    img: 'https://dummyimage.com/80x80',
-    name: 'name',
-  },
-  {
-    img: 'https://dummyimage.com/80x80',
-    name: 'name',
-  },
-  {
-    img: 'https://dummyimage.com/80x80',
-    name: 'name',
-  },
-  {
-    img: 'https://dummyimage.com/80x80',
-    name: 'name',
-  },
-  {
-    img: 'https://dummyimage.com/80x80',
-    name: 'name',
-  },
+export const BRAND_LIST = Array.from({ length: 7 }).map(() => ({
+  img: 'https://igame-10037599.cos.ap-shanghai.myqcloud.com/18eaca68-1e8a-14db-e4d4-d792c0e55113.jpeg',
+  name: 'name',
+}));
+
+export const BANNER_LIST = [
+  'https://igame-10037599.cos.ap-shanghai.myqcloud.com/1a9a3313-e59b-dd49-dc93-5de0e020b085',
+  'https://igame-10037599.cos.ap-shanghai.myqcloud.com/1a9a3313-e59b-dd49-dc93-5de0e020b085',
+  'https://igame-10037599.cos.ap-shanghai.myqcloud.com/1a9a3313-e59b-dd49-dc93-5de0e020b085',
 ];
 
-export const bannerList = [
-  'https://dummyimage.com/584x144',
-  'https://dummyimage.com/584x145',
-  'https://dummyimage.com/584x146',
-];
-
-export const onlineTabList = [{
-  name: '精选赛事',
-},
-{
-  name: '报名有奖',
-},
-{
-  name: '参赛有奖',
-}];
-
-export const offlineMatchList = [
+export const ONLINE_TAB_LIST = [
   {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    banner: 'https://dummyimage.com/602x100',
-    matchDesc: '09.01 15:00',
-    matchType: '线上赛',
-    btnTxt: '去报名',
-    isEnd: false, // 已结束
-    isIng: false, // 进行中
-    isNotStart: true, // 未开始
-    showApplyTag: true, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '',
+    label: '精选赛事',
+    value: 0,
   },
   {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    banner: 'https://dummyimage.com/602x100',
-    matchDesc: '09.01 15:00',
-    matchType: '线上赛',
-    btnTxt: '进行中',
-    isEnd: false, // 已结束
-    isIng: true, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: true, // 参赛有奖
-    matchLoc: '',
+    label: '报名有奖',
+    value: 1,
   },
   {
-    matchName: '奈雪新茶饮总决赛',
-    awardList,
-    banner: 'https://dummyimage.com/602x100',
-    matchDesc: '09.01 15:00',
-    matchType: '线下赛',
-    btnTxt: '已结束',
-    isEnd: true, // 已结束
-    isIng: false, // 进行中
-    isNotStart: false, // 未开始
-    showApplyTag: false, // 报名有奖
-    showJoinTag: false, // 参赛有奖
-    matchLoc: '350m',
+    label: '参赛有奖',
+    value: 2,
+  },
+  {
+    label: '空状态',
+    value: 3,
   },
 ];
 
 
-export const recommendMatchList = onlineMatchList;

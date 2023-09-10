@@ -7,6 +7,18 @@ url : pages/press/rate/rate
 用于对事物进行评级操作。
 
 
+## 引入
+
+```ts
+import PressRate from 'press-ui/press-rate/press-rate';
+
+export default {
+  components: {
+    PressRate,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

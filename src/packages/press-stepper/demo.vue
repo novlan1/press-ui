@@ -83,6 +83,8 @@
 <script>
 import PressStepper from 'src/packages/press-stepper/press-stepper.vue';
 import PressToast from 'src/packages/press-toast/press-toast.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+
 
 export default {
   i18n: {
@@ -113,6 +115,7 @@ export default {
   components: {
     PressStepper,
     PressToast,
+    PressCell,
   },
   data() {
     return {

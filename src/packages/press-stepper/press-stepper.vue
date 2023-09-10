@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-stepper-index">
+  <div class="press-stepper-index">
     <div :class="(utils.bem2('stepper', [theme]))+' custom-class'">
       <div
         v-if="showMinus"
@@ -43,12 +43,14 @@
         <slot name="plus" />
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import { isDef } from '../common/utils/validator';
 import utils from '../common/utils/utils';
 import computed from './computed';
+import { getEventDetail, getEventValue } from '../common/dom/event';
+
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
@@ -182,12 +184,12 @@ export default {
       return disabled || disableMinus || currentValue <= min;
     },
     onFocus(event) {
-      this.$emit('focus', event.detail);
+      this.$emit('focus', getEventDetail(event));
     },
     onBlur(event) {
-      const value = this.format(event.detail.value);
+      const value = this.format(getEventValue(event));
       this.emitChange(value);
-      this.$emit('blur', Object.assign(Object.assign({}, event.detail), { value }));
+      this.$emit('blur', Object.assign(Object.assign({}, getEventDetail(event)), { value }));
     },
     // filter illegal characters
     filter(value) {
@@ -210,7 +212,8 @@ export default {
       return value;
     },
     onInput(event) {
-      const { value = '' } = event.detail || {};
+      const value = getEventValue(event);
+
       // allow input to be empty
       if (value === '') {
         return;
@@ -430,6 +433,7 @@ export default {
     );
     width: var(--stepper-input-width, $stepper-input-width);
     height: var(--stepper-input-height, $stepper-input-height);
+    user-select: auto;
 
     &--disabled {
       color: var(

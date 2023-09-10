@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-sidebar-item-index">
+  <div class="press-sidebar-item-index">
     <div
       :class="sidebarItemClass"
       hover-class="press-sidebar-item--hover"
@@ -21,7 +21,7 @@
         />
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressInfo from '../press-info/press-info.vue';

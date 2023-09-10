@@ -38,7 +38,7 @@ export default {
 
 ### Props
 
-| Property Name |  Type  | Default Value |           Description            |
-| :-----------: | :----: | :-----------: | :------------------------------: |
-|   loadingBg   | String |       -       |     loading background color     |
-| loadingScenes | String |     page      | loading scene, options: page/btn |
+| Property Name | Type   | Default Value | Description                      |
+| ------------- | ------ | ------------- | -------------------------------- |
+| loadingBg     | String | -             | loading background color         |
+| loadingScenes | String | page          | loading scene, options: page/btn |

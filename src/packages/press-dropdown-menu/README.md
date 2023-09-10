@@ -7,6 +7,20 @@ url : pages/press/dropdown-menu/dropdown-menu
 向下弹出的菜单列表。
 
 
+## 引入
+
+```ts
+import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu';
+import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item';
+
+export default {
+  components: {
+    PressDropdownMenu,
+    PressDropdownItem,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -77,7 +91,7 @@ export default {
         @change="onSwitch2Change"
       />
     </press-cell>
-    <view style="padding: 5px 16px;">
+    <div style="padding: 5px 16px;">
       <press-button
         type="danger"
         block
@@ -86,7 +100,7 @@ export default {
       >
         确认
       </press-button>
-    </view>
+    </div>
   </press-dropdown-item>
 </press-dropdown-menu>
 ```

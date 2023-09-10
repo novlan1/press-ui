@@ -51,6 +51,8 @@
   </div>
 </template>
 <script>
+import PressPickerPlus from 'src/packages/press-picker-plus/press-picker-plus.vue';
+
 
 const dateColumns = {
   'zh-CN': [
@@ -195,6 +197,9 @@ export default {
       toastContent: (value, index) => `Value: ${value}, Index：${index}`,
     },
   },
+  components: {
+    PressPickerPlus,
+  },
   data() {
     return {
     };
@@ -221,17 +226,7 @@ export default {
       ];
     },
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
-    onShow() {
-
-    },
     onChangePicker(val) {
       console.log('onChangePicker.val', val);
       const cities = this.t('column3');
@@ -254,11 +249,7 @@ export default {
     onTip(val, prefix = '') {
       const { value, index } = val;
       const title = `${prefix}value: ${value.text || value}, index: ${index}`;
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1500,
-      });
+      this.onGTip(title);
     },
   },
 };

@@ -1,16 +1,13 @@
-/* eslint-disable */
 function displayTitle(item) {
   if (item.title) {
     return item.title;
   }
 
-  var match = item.options.filter(function(option) {
-    return option.value === item.value;
-  });
-  var displayTitle = match.length ? match[0].text : '';
+  const match = item.options.filter(option => option.value === item.value);
+  const displayTitle = match.length ? match[0].text : '';
   return displayTitle;
 }
 
 export default {
-  displayTitle: displayTitle
+  displayTitle,
 };

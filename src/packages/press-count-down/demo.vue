@@ -89,6 +89,8 @@
 import PressCountDown from 'src/packages/press-count-down/press-count-down.vue';
 import PressGrid from 'src/packages/press-grid/press-grid.vue';
 import PressGridItem from 'src/packages/press-grid-item/press-grid-item.vue';
+import { selectComponent } from 'src/packages/common/functional-component';
+
 
 export default {
   i18n: {
@@ -133,7 +135,7 @@ export default {
       this.timeData = val;
     },
     start() {
-      const countDown = this.selectComponent('#controlCountDown');
+      const countDown = selectComponent(this, '#controlCountDown');
       // #ifdef H5
       countDown.start();
       // #endif
@@ -143,7 +145,7 @@ export default {
     },
 
     pause() {
-      const countDown = this.selectComponent('#controlCountDown');
+      const countDown = selectComponent(this, '#controlCountDown');
       // #ifdef H5
       countDown.pause();
       // #endif
@@ -153,7 +155,7 @@ export default {
     },
 
     reset() {
-      const countDown = this.selectComponent('#controlCountDown');
+      const countDown = selectComponent(this, '#controlCountDown');
       // #ifdef H5
       countDown.reset();
       // #endif

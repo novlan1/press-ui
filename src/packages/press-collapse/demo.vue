@@ -41,19 +41,19 @@
         @change="onChangeAccordion"
       >
         <press-collapse-item
-          :title="`${t('title')} 1`"
+          :title="`${t('title')} A`"
           name="1"
         >
           {{ t('text') }}
         </press-collapse-item>
         <press-collapse-item
-          :title="`${t('title')} 2`"
+          :title="`${t('title')} B`"
           name="2"
         >
           {{ t('text') }}
         </press-collapse-item>
         <press-collapse-item
-          :title="`${t('title')} 3`"
+          :title="`${t('title')} C`"
           name="3"
         >
           {{ t('text') }}
@@ -72,20 +72,20 @@
         @change="onChangeDisabled"
       >
         <press-collapse-item
-          :title="`${t('title')} 1`"
+          :title="`${t('title')} X`"
           name="1"
         >
           {{ t('text') }}
         </press-collapse-item>
         <press-collapse-item
-          :title="`${t('title')} 2`"
+          :title="`${t('title')} Y`"
           disabled
           name="2"
         >
           {{ t('text') }}
         </press-collapse-item>
         <press-collapse-item
-          :title="`${t('title')} 3`"
+          :title="`${t('title')} Z`"
           name="3"
           disabled
         >
@@ -125,6 +125,7 @@
 <script>
 import PressCollapseItem from 'src/packages/press-collapse-item/press-collapse-item.vue';
 import PressCollapse from 'src/packages/press-collapse/press-collapse.vue';
+import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
 
 
 export default {
@@ -144,6 +145,7 @@ export default {
   components: {
     PressCollapseItem,
     PressCollapse,
+    PressIconPlus,
   },
   data() {
     return {

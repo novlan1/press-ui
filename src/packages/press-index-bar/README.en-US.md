@@ -15,19 +15,19 @@ When the index bar is clicked, it will automatically jump to the corresponding `
 
 ```html
 <press-index-bar>
-   <view>
+   <div>
      <press-index-anchor index="A" />
      <press-cell title="text" />
      <press-cell title="text" />
      <press-cell title="text" />
-   </view>
+   </div>
 
-   <view>
+   <div>
      <press-index-anchor index="B" />
      <press-cell title="text" />
      <press-cell title="text" />
      <press-cell title="text" />
-   </view>
+   </div>
 
    ...
 </press-index-bar>
@@ -39,19 +39,19 @@ The list of index characters displayed can be customized through the `index-list
 
 ```html
 <press-index-bar :index-list="indexList">
-   <view>
+   <div>
      <press-index-anchor index="1">Title 1</press-index-anchor>
      <press-cell title="text" />
      <press-cell title="text" />
      <press-cell title="text" />
-   </view>
+   </div>
 
-   <view>
+   <div>
      <press-index-anchor index="2">Header 2</press-index-anchor>
      <press-cell title="text" />
      <press-cell title="text" />
      <press-cell title="text" />
-   </view>
+   </div>
 
    ...
 </press-index-bar>

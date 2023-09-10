@@ -7,6 +7,20 @@ url : pages/press/radio/radio
 在一组备选项中进行单选。
 
 
+## 引入
+
+```ts
+import PressRadio from 'press-ui/press-radio/press-radio';
+import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group';
+
+export default {
+  components: {
+    PressRadio,
+    PressRadioGroup,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -102,11 +116,11 @@ export default {
 <press-radio-group :value="radio" @change="onChange">
   <press-radio use-icon-slot :value="radio" name="1">
     自定义图标
-    <image slot="icon" :src="radio === '1' ? icon.active : icon.normal" />
+    <img slot="icon" :src="radio === '1' ? icon.active : icon.normal" />
   </press-radio>
   <press-radio use-icon-slot :value="radio" name="2">
     自定义图标
-    <image slot="icon" :src="radio === '2' ? icon.active : icon.normal" />
+    <img slot="icon" :src="radio === '2' ? icon.active : icon.normal" />
   </press-radio>
 </press-radio-group>
 ```

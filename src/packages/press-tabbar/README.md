@@ -8,6 +8,20 @@ url : pages/press/tabbar/tabbar
 
 
 
+## 引入
+
+```ts
+import PressTabbar from 'press-ui/press-tabbar/press-tabbar';
+import PressTabbarItem from 'press-ui/press-tabbar-item/press-tabbar-item';
+
+export default {
+  components: {
+    PressTabbar,
+    PressTabbarItem,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -82,13 +96,13 @@ export default {
 ```html
 <press-tabbar :active="active" @change="onChange">
   <press-tabbar-item info="3">
-    <image
+    <img
       slot="icon"
       src="{{ icon.normal }}"
       mode="aspectFit"
       style="width: 30px; height: 18px;"
     />
-    <image
+    <img
       slot="icon-active"
       src="{{ icon.active }}"
       mode="aspectFit"

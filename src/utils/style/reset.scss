@@ -1,9 +1,9 @@
 /* #ifndef H5 */
-@import 'src/common/style/reset-mp.scss';
+@import './reset-mp.scss';
 /* #endif */
 
 /* #ifdef H5 */
-@import 'src/common/style/reset-h5.scss';
+@import './reset-h5.scss';
 /* #endif */
 
 // common part

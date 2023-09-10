@@ -82,7 +82,7 @@ npm run docs:dev
 
 ### 2.4. 文档、示例部署
 
-`press-ui`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
+`Press UI`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
 
 
 ## 3. 开发规范
@@ -90,7 +90,6 @@ npm run docs:dev
 ### 3.1. 代码规范
 
 需符合公司代码规范。
-
 
 ### 3.2. 提交规范
 
@@ -100,19 +99,16 @@ npm run docs:dev
 ### 3.3. 命名规范
 
 - 导出对象、类、组件，用大驼峰命名法，首字母大写
-- 导出方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等;
-- 文件名用小写+中划线，比如`message-dialog`，不能用`messageDialog`；
-
-
+- 导出方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等
+- 文件名用小写+中划线，比如`message-dialog`，不能用`messageDialog`
 
 ### 3.4. 其他
 
-对外API需要简单，易记忆，比如`change`、`list`，最好一个单词组成，并且不能简写，并与业界流行组件库对齐。
+对外API需简单、易记忆，比如`change`、`list`，最好一个单词组成，并且不能简写，与业界流行组件库对齐。
 
 不能在组件内部`console.log`。
 
 类名需符合[BEM](https://getbem.com/)规范，并以`press`为前缀。
-
 
 ## 4. 细节
 
@@ -123,18 +119,18 @@ npm run docs:dev
 - 优势：h5端适配更好，更合适
 - 劣势：在小程序等其他端需要额外的插件来转换
 
-`press-ui`并不强制单位，只要组件内部统一即可。
+`Press UI`并不强制单位，只要组件内部统一即可。
 
 ### 4.2. 准入条件
 
-`press-ui`内的组件、逻辑需要有一定的通用性或复杂性，比如`button`、`input`、`area`、`message-detail`等组件通用型强，`schedule-tree`组件复杂度高。
+`Press UI`内的组件、逻辑需要有一定的通用性或复杂性，比如`button`、`input`、`area`、`message-detail`等组件通用型强，`schedule-tree`组件复杂度高。
 
 
 ### 4.3. 与业务隔离
 
 首先，并不是从业务中沉淀的就一定是业务组件，业务组件的含义一般是通用性差，但可以解决特定场景问题，变化形式不多，灵活性差，参数没有基础组件多。
 
-`press-ui`的组件、逻辑都应该减少与业务的耦合，保持稳定。基础组件很容易做到，也很容易判断是否耦合，对于业务中沉淀下来的，如何做到呢？
+`Press UI`的组件、逻辑都应该减少与业务的耦合，保持稳定。基础组件很容易做到，也很容易判断是否耦合，对于业务中沉淀下来的，如何做到呢？
 
 - 不能存在业务状态码，多重判断逻辑应该前置完成
 - 关注点分离，关注组件自身，而非业务
@@ -222,7 +218,7 @@ npm run docs:dev
 </div>
 ```
 
-可以改成业务无关的UI状态，在JS中前置判断业务状态码，得出UI状态。核心就是什么位置显示什么样式的什么内容：
+可以改成业务无关的UI状态，在JS中前置判断业务状态码，得出UI状态。核心就是**什么位置显示什么样式的什么内容**。
 
 - 是否显示带背景的文案，`bracketIdDesc`
 - 是否显示不带背景的标签，`timeDesc`
@@ -232,9 +228,7 @@ npm run docs:dev
 
 
 ```html
- <div
-  class="press-schedule-team-tips"
->
+<div class="press-schedule-team-tips">
   <p
     v-if="scheGroupInfo.bracketIdDesc"
     class="press-schedule-team-tip press-schedule-team-tip--bg"
@@ -270,5 +264,5 @@ npm run docs:dev
 
 上面的改动并不是最佳的，还可以继续优化。比如，直播图标和视频号图标，可以由参数传入，以此支持更多图标类型。命名可以更脱离业务，不命名为`timeDesc`、`statusDesc`。
 
-`js`比`html`灵活，能写在`js`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js`都能够很方便的复用，但是组件就不行。
+此外，`js`比`html`灵活，能写在`js`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js`都能够很方便的复用，但是组件就不行。
 

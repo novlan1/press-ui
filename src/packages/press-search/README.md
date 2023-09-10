@@ -6,6 +6,18 @@ url : pages/press/search/search
 
 用于搜索场景的输入框组件。
 
+## 引入
+
+```ts
+import PressSearch from 'press-ui/press-search/press-search';
+
+export default {
+  components: {
+    PressSearch,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -76,7 +88,7 @@ url : pages/press/search/search
   @change="onChange"
   @search="onSearch"
 >
-  <view slot="action" @tap="onClick">搜索</view>
+  <div slot="action" @tap="onClick">搜索</div>
 </press-search>
 ```
 

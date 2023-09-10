@@ -8,15 +8,29 @@ url : pages/press/sticky/sticky
 Sticky 组件与 CSS 中position: sticky属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。
 
 
+## 引入
+
+```ts
+import PressSticky from 'press-ui/press-sticky/press-sticky';
+
+export default {
+  components: {
+    PressSticky,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 将内容包裹在`Sticky`组件内即可。
 
 ```html
 <press-sticky>
-  <view class="btn1">
+  <div class="btn1">
     基础用法
-  </view>
+  </div>
 </press-sticky>
 ```
 
@@ -28,11 +42,11 @@ Sticky 组件与 CSS 中position: sticky属性实现的效果一致，当组件�
 <press-sticky
   :offset-top="50"
 >
-  <view
+  <div
     class="btn2"
   >
     吸顶距离
-  </view>
+  </div>
 </press-sticky>
 ```
 
@@ -47,9 +61,9 @@ Sticky 组件与 CSS 中position: sticky属性实现的效果一致，当组件�
   style="height: 150px;background: #eee;"
 >
   <press-sticky :container="container">
-    <view class="btn3">
+    <div class="btn3">
       指定容器
-    </view>
+    </div>
   </press-sticky>
 </div>
 ```
@@ -60,16 +74,7 @@ export default {
     const that = this;
     return {
       container() {
-        let res;
-
-        // #ifdef H5
-        res = that.$refs.container;
-        // #endif
-
-        // #ifndef H5
-        res = uni.createSelectorQuery().select('#container');
-        // #endif
-
+        const res = that.$refs.container;
         return res;
       },
     };

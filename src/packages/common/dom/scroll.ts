@@ -42,8 +42,9 @@ export function getRootScrollTop() {
 export function setRootScrollTop(value) {
   setScrollTop(window, value);
   setScrollTop(document.body, value);
-} // get distance from element top to page top or scroller top
+}
 
+// get distance from element top to page top or scroller top
 export function getElementTop(el, scroller) {
   if (isWindow(el)) {
     return 0;
@@ -69,7 +70,11 @@ export function getVisibleTop(el) {
 
 
 export function getScrollSelector(scrollViewId) {
-  let scrollSelector = `#${scrollViewId}`;
+  let scrollSelector = scrollViewId;
+
+  if (!scrollViewId.startsWith('#')) {
+    scrollSelector = `#${scrollViewId}`;
+  }
 
   // #ifdef H5
   scrollSelector = `${scrollSelector} > .uni-scroll-view > .uni-scroll-view`;

@@ -4,6 +4,21 @@ url : pages/press/icon-plus/icon-plus
 
 ## IconPlus 图标
 
+
+## 引入
+
+```ts
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus';
+
+export default {
+  components: {
+    PressIconPlus,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 `Icon`的`name`属性支持传入图标名称或图片链接。

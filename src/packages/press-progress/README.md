@@ -7,6 +7,18 @@ url : pages/press/progress/progress
 用于展示操作的当前进度。
 
 
+## 引入
+
+```ts
+import PressProgress from 'press-ui/press-progress/press-progress';
+
+export default {
+  components: {
+    PressProgress,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

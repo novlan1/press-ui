@@ -1,32 +1,22 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <!-- #ifdef APP-NVUE -->
-  <text
-    :style="{ color: color, 'font-size': iconSize }"
-    class="uni-icons"
-    @click="_onClick"
-  >
-    {{ unicode }}
-  </text>
-  <!-- #endif -->
-  <!-- #ifndef APP-NVUE -->
-  <text
+  <span
     :style="{ color: color, 'font-size': iconSize }"
     class="uni-icons"
     :class="['uniui-'+type,customPrefix,customPrefix?type:'']"
     @click="_onClick"
   />
-  <!-- #endif -->
 </template>
 
 <script>
 import icons from './icons.js';
-// eslint-disable-next-line linebreak-style
 import iconUrl from './uniicons.ttf';
+
 const getVal = (val) => {
   const reg = /^[0-9]*$/g;
   return (typeof val === 'number' || reg.test(val)) ? `${val}px` : val;
 };
+
+
 // #ifdef APP-NVUE
 const domModule = weex.requireModule('dom');
 domModule.addRule('fontFace', {
@@ -35,16 +25,7 @@ domModule.addRule('fontFace', {
 });
 // #endif
 
-/**
-	 * Icons 图标
-	 * @description 用于展示 icons 图标
-	 * @tutorial https://ext.dcloud.net.cn/plugin?id=28
-	 * @property {Number} size 图标大小
-	 * @property {String} type 图标图案，参考示例
-	 * @property {String} color 图标颜色
-	 * @property {String} customPrefix 自定义图标
-	 * @event {Function} click 点击 Icon 触发事件
-	 */
+
 export default {
   name: 'UniIcons',
   props: {

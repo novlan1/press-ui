@@ -4,7 +4,22 @@ url : pages/press/loading/loading
 
 ## Loading 加载中
 
-加载中，分为图片模式和页面模式两种
+加载中，分为图片模式和页面模式两种。
+
+
+## 引入
+
+```ts
+import PressLoading from 'press-ui/press-loading/press-loading';
+
+export default {
+  components: {
+    PressLoading,
+  }
+}
+```
+
+## 代码演示
 
 ### 基本用法
 
@@ -38,10 +53,10 @@ export default {
 
 ### Props
 
-|     属性名     |   类型   | 默认值 |                说明                 |
-| :------------: | :------: | :----: | :---------------------------------: |
-|   loading-bg   | _string_ |   -    |           `loading`背景色           |
-| loading-scenes | _string_ | `page` | `loading`的场景，可选项：`page/btn` |
+| 参数           | 说明                                | 类型     | 默认值 |
+| -------------- | ----------------------------------- | -------- | ------ |
+| loading-bg     | `loading`背景色                     | _string_ | -      |
+| loading-scenes | `loading`的场景，可选项：`page/btn` | _string_ | `page` |
 
 
 

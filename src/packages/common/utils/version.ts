@@ -38,12 +38,17 @@ export function canIUseAnimate() {
 export function canIUseGroupSetData() {
   return gte('2.4.0');
 }
-export function canIUseNextTick() {
-  return wx.canIUse('nextTick');
-}
+// export function canIUseNextTick() {
+//   return wx.canIUse('nextTick');
+// }
 export function canIUseCanvas2d() {
   return gte('2.9.0');
 }
 export function canIUseGetUserProfile() {
-  return !!wx.getUserProfile;
+  let result = false;
+
+  // #ifndef H5
+  result = !!wx.getUserProfile;
+  // #endif
+  return result;
 }

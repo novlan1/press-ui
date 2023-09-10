@@ -1,12 +1,12 @@
 <template>
-  <uni-shadow-root :class="'' + bem3('tab__pane-wrapper')">
+  <div :class="'' + bem3('tab__pane-wrapper')">
     <div
       :class="tabClass"
       :style="shouldShow ? '' : 'display: none;'"
     >
       <slot v-if="shouldRender" />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';
@@ -23,6 +23,7 @@ export default {
   ],
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   props: {
     ...defaultProps,

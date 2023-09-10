@@ -81,6 +81,8 @@
 import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+
 import {
   FUNCTIONAL_ID_MAP,
   showPopupCell,
@@ -88,6 +90,9 @@ import {
 import { battleSet,  startMatchSet } from 'src/packages/press-popup-cell/demo-helper/popup';
 import { batchSet } from 'src/packages/press-popup-cell/demo-helper/popup-batch';
 
+const local = {
+  activeRoundType: 'winner',
+};
 
 export default {
   i18n: {
@@ -156,6 +161,7 @@ export default {
     PressPopupCell,
     PressDatetimePickerPopup,
     PressPicker,
+    PressCell,
   },
   data() {
     const that = this;
@@ -236,7 +242,7 @@ export default {
             {
               type: 'tab',
               label: '分组',
-              active: 'winner',
+              active: local.activeRoundType,
               tabList: [
                 {
                   label: '胜者组',
@@ -246,9 +252,18 @@ export default {
                   value: 'loser',
                 },
               ],
-              click: ({ context: popupContext }) => {
-                popupContext.closeDialog();
-                that.onGTip('修改成功');
+              click: ({
+                // context: popupContext,
+                tabItem,
+                item,
+              }) => {
+                if (!tabItem || tabItem.value === item.active) return;
+                console.log('[tabItem, item]: ', tabItem, item);
+
+                local.activeRoundType = tabItem.value;
+                this.customType.tabType.cellList[0].active = tabItem.value;
+                // popupContext.closeDialog();
+                that.onGTip(`已切换至${tabItem.label}`);
               },
             },
           ],
@@ -292,42 +307,36 @@ export default {
       },
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
-    onTip(title) {
-      uni.hideLoading();
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1500,
-      });
-    },
     onShowBasicPopupCell() {
       showPopupCell({
+        context: this,
         closeIcon: true,
         title: 'Popup Cell',
         cellList: [{
           label: '决胜方式',
           value: '一局胜负',
+          click: ({ context: popupContext }) => {
+            popupContext.closeDialog();
+          },
         },
         {
           label: 'Ban位',
           value: '各禁4英雄',
+          click: ({ context: popupContext }) => {
+            popupContext.closeDialog();
+          },
         },
         ],
-      }).catch(({ context }) => {
+      }).catch((err) => {
+        const { context } = err;
         context.closeDialog();
       });
     },
     onShowCustomType(type) {
       const options = this.customType[type] || {};
       showPopupCell({
+        context: this,
         closeIcon: true,
         ...options,
       }).then(({ context, checkedIndexList }) => {

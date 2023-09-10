@@ -23,6 +23,7 @@
     padding: .48rem;
     border-radius: .16rem;
     background-color: $color-white;
+    box-sizing: border-box;
   }
 
   &__title {
@@ -70,6 +71,25 @@
     &--spacing {
       margin-right: .32rem;
       line-height: 0; // 修复两个按钮错位的问题
+    }
+  }
+}
+
+::v-deep {
+  .press-dialog__field {
+    margin-top: 12px;
+
+    .press-field {
+      background: #f3f3f3;
+      border-radius: 4px;
+
+      &__control {
+        font-size: 14px;
+      }
+    }
+
+    .press-cell__title {
+      display: none;
     }
   }
 }

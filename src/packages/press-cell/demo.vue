@@ -97,7 +97,7 @@
         is-link
         :title="t('cell')"
         link-type="navigateTo"
-        url="/pages/index/index"
+        url="/pages/press/col/col"
       />
     </demo-block>
 
@@ -213,6 +213,11 @@
 </template>
 <script>
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
+import PressTag from 'src/packages/press-tag/press-tag.vue';
+import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+
 
 export default {
   i18n: {
@@ -263,6 +268,10 @@ export default {
   },
   components: {
     PressSwitch,
+    PressCell,
+    PressCellGroup,
+    PressTag,
+    PressIconPlus,
   },
   data() {
     return {

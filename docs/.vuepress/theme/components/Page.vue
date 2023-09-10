@@ -1,5 +1,8 @@
 <template>
-  <main class="page">
+  <main
+    class="page"
+    :class="isHor ? 'page--hor' : ''"
+  >
     <slot name="top" />
     <div class="wrap">
       <Content class="theme-default-content" />
@@ -54,6 +57,7 @@ export default {
     return {
       url: '',
       lang: DEFAULT_LANG,
+      isHor: false,
     };
   },
   computed: {
@@ -71,6 +75,7 @@ export default {
       handler(newName) {
         const { frontmatter } = newName;
         this.url = frontmatter.url ? frontmatter.url : '';
+        this.isHor = frontmatter.type === 'horizontal';
       },
       immediate: true,
     },
@@ -107,6 +112,19 @@ export default {
 .page {
   padding-bottom: 2rem;
   display: block;
+}
+
+.page--hor {
+  .theme-default-content {
+    padding-right: 10px;
+  }
+
+  .wrap .simulator-box {
+    width: 600px;
+    height: 375px;
+    margin-top: 160px;
+    margin-right: -20px;
+  }
 }
 
 .wrap {
@@ -168,7 +186,7 @@ export default {
       .simulator-iframe {
         margin: -2px 0;
         width: 100%;
-        height: 100%;
+        height: calc(100% + 4px);
         border: none;
       }
     }

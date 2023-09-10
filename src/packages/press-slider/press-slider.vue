@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-slider-index">
+  <div class="press-slider-index">
     <div
       :class="'custom-class '+(utils.bem2('slider', { disabled, vertical }))"
       :style="wrapperStyle"
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';
@@ -75,6 +75,8 @@ import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/utils/version';
 import { getRect } from '../common/dom/rect';
 import { addUnit } from '../common/format/unit';
+
+
 export default {
   name: 'PressSlider',
   mixins: [touch],
@@ -99,13 +101,11 @@ export default {
     value: {
       type: null,
       default: 0,
-      // observer(val) {
-      //   if (val !== this.value) {
-      //     this.updateValue(val);
-      //   }
-      // },
     },
-    vertical: Boolean,
+    vertical: {
+      type: Boolean,
+      default: false,
+    },
     barHeight: { type: [Number, String], default: '' },
   },
   data() {
@@ -132,8 +132,8 @@ export default {
     onTouchStart(event) {
       if (this.disabled) return;
       const { index } = event.currentTarget.dataset;
-      if (typeof index === 'number') {
-        this.buttonIndex = index;
+      if (typeof index === 'number' || typeof index === 'string') {
+        this.buttonIndex = +index;
       }
       this.touchStart(event);
       this.startValue = this.format(this.dataValue);
@@ -157,8 +157,9 @@ export default {
         const delta = vertical ? this.deltaY : this.deltaX;
         const total = vertical ? rect.height : rect.width;
         const diff = (delta / total) * this.getRange();
+
         if (this.isRange(this.startValue)) {
-          this.newValue[this.buttonIndex] =                        this.startValue[this.buttonIndex] + diff;
+          this.newValue[this.buttonIndex] = this.startValue[this.buttonIndex] + diff;
         } else {
           this.newValue = this.startValue + diff;
         }
@@ -273,6 +274,10 @@ export default {
 <style scoped lang="scss">
 @import "../common/style/index.scss";
 @import "../common/style/var.scss";
+
+.press-slider-index {
+  display: inline;
+}
 
 .press-slider {
   position: relative;

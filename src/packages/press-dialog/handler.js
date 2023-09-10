@@ -1,5 +1,9 @@
+// 此文件不能改为ts，否则条件编译有问题
+
 import Vue from 'vue';
 import { dialogProps } from './computed';
+import { addFunctionForDialog } from '../press-dialog-plus/handler-helper';
+import { selectComponent } from '../common/functional-component';
 
 // #ifdef H5
 import VueDialog from './press-dialog.vue';
@@ -40,70 +44,57 @@ function initInstance() {
 const Dialog = (options) => {
   options = Object.assign(Object.assign({}, currentOptions), options);
   const context = options.context || getContext();
-  let dialog = context.selectComponent(options.selector);
+  let dialog = selectComponent(context, options.selector);
+
   delete options.context;
   delete options.selector;
 
 
-// #ifdef H5
+  // #ifdef H5
   if (!dialog) {
     dialog = initInstance();
   }
-// #endif
+  // #endif
 
   if (dialog) {
     const newOptions = {
       ...options,
     };
 
-// #ifdef H5
-    dialog.setData(newOptions);
-// #endif
-
-// #ifndef H5
-    dialog.$vm.setData(newOptions);
-// #endif
-
     let promise;
 
-// #ifdef H5
+    // #ifdef H5
+    dialog.setData(newOptions);
     promise = dialog.showDialog(options);
-// #endif
+    // #endif
 
-// #ifndef H5
+    // #ifndef H5
+    dialog.$vm.setData(newOptions);
     promise = dialog.$vm.showDialog(options);
-// #endif
+    // #endif
 
     return promise.then(val => Promise.resolve(val))
       .catch(err => Promise.reject(err));
   }
   console.warn('The press-dialog node is not found, please confirm whether the selector and context are correct');
 };
-Dialog.alert = options => Dialog(options);
+
+function updateQueue(arg) {
+  queue = arg;
+}
+
+function updateCurrentOptions(arg) {
+  currentOptions = arg;
+}
+
 Dialog.show = options => Dialog(options);
-Dialog.confirm = options => Dialog(Object.assign({ showCancelButton: true }, options));
-Dialog.close = () => {
-  queue.forEach((dialog) => {
-    // @ts-ignore
-    dialog.close();
-  });
-  queue = [];
-};
-Dialog.stopLoading = () => {
-  queue.forEach((dialog) => {
-    // @ts-ignore
-    dialog.stopLoading();
-  });
-};
-Dialog.currentOptions = currentOptions;
-Dialog.defaultOptions = defaultOptions;
-Dialog.setDefaultOptions = (options) => {
-  currentOptions = Object.assign(Object.assign({}, currentOptions), options);
-  Dialog.currentOptions = currentOptions;
-};
-Dialog.resetDefaultOptions = () => {
-  currentOptions = Object.assign({}, defaultOptions);
-  Dialog.currentOptions = currentOptions;
-};
-Dialog.resetDefaultOptions();
+addFunctionForDialog({
+  Dialog,
+  queue,
+  currentOptions,
+  defaultOptions,
+  updateQueue,
+  updateCurrentOptions,
+});
+
 export default Dialog;

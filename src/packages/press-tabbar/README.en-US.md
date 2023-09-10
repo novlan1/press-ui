@@ -82,13 +82,13 @@ Icons can be customized through slots, where icon slot represents the icon in th
 ```html
 <press-tabbar :active="active" @change="onChange">
    <press-tabbar-item info="3">
-     <image
+     <img
        slot="icon"
        src="{{ icon. normal }}"
        mode="aspectFit"
        style="width: 30px; height: 18px;"
      />
-     <image
+     <img
        slot="icon-active"
        src="{{ icon.active }}"
        mode="aspectFit"

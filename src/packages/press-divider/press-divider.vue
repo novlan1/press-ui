@@ -1,12 +1,12 @@
 <template>
-  <uni-shadow-root class="press-divider-index">
+  <div class="press-divider-index">
     <div
       :class="dividerClass"
       :style="dividerStyle"
     >
       <slot />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';

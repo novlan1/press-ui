@@ -31,7 +31,7 @@ Set the `loading` property to `false` to indicate that the content is loaded. At
 
 ```html
 <press-skeleton title avatar :row="3" :loading="loading">
-   <view>actual content</view>
+   <div>actual content</div>
 </press-skeleton>
 ```
 

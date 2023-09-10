@@ -191,6 +191,9 @@
 <script>
 import PressRadio from 'src/packages/press-radio/press-radio.vue';
 import PressRadioGroup from 'src/packages/press-radio-group/press-radio-group.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
+
 
 export default {
   i18n: {
@@ -223,6 +226,8 @@ export default {
   components: {
     PressRadio,
     PressRadioGroup,
+    PressCell,
+    PressCellGroup,
   },
   data() {
     return {

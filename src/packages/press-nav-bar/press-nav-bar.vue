@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-nav-bar-index">
+  <div class="press-nav-bar-index">
     <div
       v-if="fixed && placeholder"
       :style="'height: '+(height)+'px;'"
@@ -63,14 +63,14 @@
         </div>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { getSystemInfoSync } from '../common/utils/system';
-import { getRect } from '../common/dom/rect';
+import { getRect, getStatusBarHeight } from '../common/dom/rect';
 import utils from '../common/utils/utils';
 import computed from './computed';
+
 
 export default {
   name: 'PressNavBar',
@@ -131,7 +131,7 @@ export default {
     },
   },
   created() {
-    const { statusBarHeight } = getSystemInfoSync();
+    const statusBarHeight = getStatusBarHeight();
     this.statusBarHeight = statusBarHeight;
     this.height = 46 + statusBarHeight;
   },
@@ -149,7 +149,7 @@ export default {
       if (!this.fixed || !this.placeholder) {
         return;
       }
-      wx.nextTick(() => {
+      this.$nextTick(() => {
         getRect(this, '.press-nav-bar').then((res) => {
           if (res && 'height' in res) {
             this.height = res.height;

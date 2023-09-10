@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-datetime-picker-index">
+  <div class="press-datetime-picker-index">
     <press-picker
       ref="pressPicker"
       class="press-datetime-picker"
@@ -17,7 +17,7 @@
       @confirm="onConfirm"
       @cancel="onCancel"
     />
-  </uni-shadow-root>
+  </div>
 </template>
 
 <script>

@@ -37,6 +37,7 @@
 <script>
 import PressDialog from 'src/packages/press-dialog';
 import PressDialogComp from 'src/packages/press-dialog/press-dialog.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import { saveMpImage } from 'src/packages/common/utils/save-mp-image';
 
 
@@ -57,6 +58,7 @@ export default {
       noCancelLoading: '没有取消+加载中',
       image: '图片',
       html: 'HTML内容',
+      field: '输入框',
       noMask: '点击蒙层不可关闭',
       longText: '长文本',
       onlyCaption: '仅限队长报名，发给队长来报名吧！',
@@ -84,6 +86,7 @@ export default {
       noCancelLoading: 'No Cancel and Loading',
       image: 'Image',
       html: 'HTML Content',
+      field: 'Input',
       noMask: 'No Close By Mask',
       longText: 'Long Text',
       onlyCaption: 'Only the captain can sign up, send it to the captain to sign up!',
@@ -121,12 +124,14 @@ export default {
   },
   components: {
     PressDialogComp,
+    PressCell,
   },
   data() {
     return {
       sectionStyle: '',
       show: false,
       show2: false,
+      curType: '',
       dialogTypeList: [
         {
           title: this.t('basicUsage'),
@@ -155,6 +160,10 @@ export default {
             {
               name: 'longText',
               title: this.t('longText'),
+            },
+            {
+              name: 'field',
+              title: this.t('field'),
             },
           ],
         },
@@ -191,16 +200,9 @@ export default {
       ],
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
-
     onShowDialog(type) {
+      this.curType = type;
       if (type === 'componentCall') {
         this.show = true;
         return;
@@ -220,6 +222,9 @@ export default {
       let onLongPressImage = null;
       let canTouchRemove = true;
       let useScrollView = false;
+      let showField = false;
+      let fieldPlaceHolder = '';
+      let fieldValue = '';
 
       if (type === 'noCancel') {
         cancelText = '';
@@ -244,9 +249,24 @@ export default {
         content = '';
         htmlContent = `<div style="max-height:100%;overflow:scroll;">${this.t('longContent')}</div>`;
         useScrollView = true;
+      } else if (type === 'field') {
+        showField = true;
+        fieldPlaceHolder = '随便输点什么吧';
+        content = '';
+        fieldValue = 'Press UI';
+        canTouchRemove = false;
+        onConfirmClick = (context) => {
+          if (!context.inputValue) {
+            this.onGTip('请输入内容');
+            return false;
+          }
+          this.onGTip(`内容: ${context.inputValue}`);
+          return true;
+        };
       }
 
       PressDialog.show({
+        context: this,
         title: this.t('title'),
         content,
         htmlContent,
@@ -258,9 +278,14 @@ export default {
         onConfirmClick,
         canTouchRemove,
         useScrollView,
+        showField,
+        fieldPlaceHolder,
+        fieldValue,
       })
         .then(() => {
-          this.onGTip('confirm');
+          if (type !== 'field') {
+            this.onGTip('confirm');
+          }
         })
         .catch(() => {
           this.onGTip('cancel');
@@ -268,7 +293,9 @@ export default {
     },
     onConfirm(key) {
       this[key] = false;
-      this.onGTip('confirm');
+      if (this.curType !== 'field') {
+        this.onGTip('confirm');
+      }
     },
     onCancel(key) {
       this[key] = false;

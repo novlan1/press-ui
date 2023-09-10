@@ -7,6 +7,20 @@ url : pages/press/sidebar/sidebar
 垂直展示的导航栏，用于在不同的内容区域之间进行切换。
 
 
+## 引入
+
+```ts
+import PressSidebar from 'press-ui/press-sidebar/press-sidebar';
+import PressSidebarItem from 'press-ui/press-sidebar-item/press-sidebar-item';
+
+export default {
+  components: {
+    PressSidebar,
+    PressSidebarItem,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

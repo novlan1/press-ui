@@ -47,9 +47,9 @@ After setting the `use-slot` attribute, you can customize the countdown style. Y
 
 ```html
 <press-count-down use-slot :time="time" @change="onChange">
-   <text class="item">{{ timeData. hours }}</text>
-   <text class="item">{{ timeData. minutes }}</text>
-   <text class="item">{{ timeData. seconds }}</text>
+   <span class="item">{{ timeData. hours }}</span>
+   <span class="item">{{ timeData. minutes }}</span>
+   <span class="item">{{ timeData. seconds }}</span>
 </press-count-down>
 ```
 
@@ -132,8 +132,8 @@ export default {
 
 ### Props
 
-| Parameter   | Description                                                         | Type      | Default    |
-| ----------- | ------------------------------------------------------------------- | --------- | ---------- |  |
+| Parameter | Description | Type | Default |
+| --------- | ----------- | ---- | ------- ||
 | time        | countdown duration, in milliseconds                                 | _number_  | -          |
 | format      | time format, DD-day, HH-hour, mm-minute, ss-second, SSS-millisecond | _string_  | `HH:mm:ss` |
 | auto-start  | Whether to automatically start the countdown                        | _boolean_ | `true`     |
@@ -142,8 +142,8 @@ export default {
 
 ### Events
 
-| Event Name | Description                                                                | Callback Parameters |
-| ---------- | -------------------------------------------------------------------------- | ------------------- |  |
+| Event Name | Description | Callback Parameters |
+| ---------- | ----------- | ------------------- ||
 | @finish    | Triggered when the countdown ends                                          | -                   |
 | @change    | Triggered when the time changes, only triggered when `use-slot` is enabled | timeData            |
 
@@ -161,8 +161,8 @@ export default {
 
 You can get the CountDown instance and call the instance method through selectComponent.
 
-| method name | parameters | return value | description                                                                                        |
-| ----------- | ---------- | ------------ | -------------------------------------------------------------------------------------------------- |  |
+| method name | parameters | return value | description |
+| ----------- | ---------- | ------------ | ----------- ||
 | start       | -          | -            | Start countdown                                                                                    |
 | pause       | -          | -            | pause countdown                                                                                    |
 | reset       | -          | -            | Reset the countdown, if `auto-start` is `true`, the countdown will start automatically after reset |

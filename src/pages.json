@@ -650,6 +650,17 @@
       ]
     },
     {
+      "root": "pages/press/award-popup",
+      "pages": [
+        {
+          "path": "award-popup",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
       "root": "pages/press/hor-match-header",
       "pages": [
         {
@@ -774,7 +785,7 @@
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "PRESS UI",
+    "navigationBarTitleText": "Press UI",
     "navigationBarBackgroundColor": "#f7f8fa",
     "backgroundColor": "#f5f5f5",
     "h5": {

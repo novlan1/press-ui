@@ -26,6 +26,8 @@
 </template>
 <script>
 import PressShareSheet from 'src/packages/press-share-sheet/press-share-sheet.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+
 
 export default {
   i18n: {
@@ -69,6 +71,7 @@ export default {
 
   components: {
     PressShareSheet,
+    PressCell,
   },
   data() {
     return {
@@ -191,7 +194,9 @@ export default {
       this.showShare = true;
       this.description = description;
     },
-    onSelect() {
+    onSelect(val) {
+      console.log('[onSelect] val', val);
+
       this.showShare = false;
     },
     onClose() {

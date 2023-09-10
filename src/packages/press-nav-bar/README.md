@@ -6,6 +6,18 @@ url : pages/press/nav-bar/nav-bar
 
 为页面提供导航功能，常用于页面顶部。
 
+## 引入
+
+```ts
+import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar';
+
+export default {
+  components: {
+    PressNavBar,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

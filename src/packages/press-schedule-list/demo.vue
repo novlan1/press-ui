@@ -37,6 +37,7 @@
 import ScheduleItem from 'src/packages/press-schedule-list/press-schedule-item.vue';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 import { parseScheItemData } from 'src/packages/press-schedule-list/utils';
 
@@ -64,6 +65,7 @@ export default {
     ScheduleItem,
     PressPopupCell,
     PressPicker,
+    PressCell,
   },
   data() {
     const scheLocal = {

@@ -6,6 +6,18 @@ url : pages/press/fab/fab
 
 悬浮按钮，可以拖动。
 
+## 引入
+
+```ts
+import PressFab from 'press-ui/press-fab/press-fab';
+
+export default {
+  components: {
+    PressFab,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -71,3 +83,4 @@ export default {
 | pattern   | 可选样式配置项                                            | _object_ | -          |
 | direction | 展开菜单显示方式。horizontal:水平显示，vertical：垂直显示 | _string_ | horizontal |
 | content   | 展开菜单内容配置项                                        | _Array_  | -          |
+| top       | 顶部高度                                                  | _number_ | -          |

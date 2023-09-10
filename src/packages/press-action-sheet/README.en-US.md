@@ -110,7 +110,7 @@ Display the title bar by setting the `title` property, and you can use the slot 
 
 ```html
 <press-action-sheet :show="show" title="title">
-   <view>content</view>
+   <div>content</div>
 </press-action-sheet>
 ```
 

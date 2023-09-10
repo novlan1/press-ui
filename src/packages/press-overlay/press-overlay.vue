@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-overlay-index">
+  <div class="press-overlay-index">
     <press-transition
       v-if="lockScroll"
       :show="show"
@@ -24,7 +24,7 @@
     >
       <slot />
     </press-transition>
-  </uni-shadow-root>
+  </div>
 </template>
 
 <script>

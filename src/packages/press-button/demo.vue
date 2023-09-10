@@ -303,6 +303,9 @@
   </div>
 </template>
 <script>
+import PressButton from 'src/packages/press-button/press-button.vue';
+import { isNotInUni } from 'src/packages/common/utils/utils';
+
 
 export default {
   i18n: {
@@ -367,6 +370,9 @@ export default {
       blockElement: 'Block Element',
     },
   },
+  components: {
+    PressButton,
+  },
   data() {
     return {
       customStyle: 'margin-right: 16px;',
@@ -375,18 +381,13 @@ export default {
   onReady() {
 
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
     onClick(event) {
       console.log(event);
     },
     onVibrateLong() {
+      if (isNotInUni()) return;
+
       uni.vibrateLong({
         success() {
           console.log('success');
@@ -400,6 +401,8 @@ export default {
       // #ifdef H5
       navigator.vibrate(1000);
       // #endif
+
+      if (isNotInUni()) return;
 
       uni.vibrateLong({
         success() {

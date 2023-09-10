@@ -36,6 +36,10 @@
   </div>
 </template>
 <script>
+import PressNavBar from 'src/packages/press-nav-bar/press-nav-bar.vue';
+import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+
+
 export default {
   i18n: {
     'zh-CN': {
@@ -45,7 +49,10 @@ export default {
       useSlot: 'Use Slot',
     },
   },
-
+  components: {
+    PressNavBar,
+    PressIconPlus,
+  },
   data() {
     return {
       sectionStyle: 'margin: 0;background: #f7f8fa;',

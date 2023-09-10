@@ -1,11 +1,11 @@
 <template>
-  <view
+  <div
     class="press-row"
     :class="customClass"
     :style="true ? computed.rootStyle({ gutter }) : ''"
   >
     <slot />
-  </view>
+  </div>
 </template>
 <script>
 import computed from './computed';

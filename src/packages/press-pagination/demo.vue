@@ -25,11 +25,13 @@
       :total="componentConfig.pageTotal"
       :current="componentConfig.current"
       :expand="componentConfig.expand"
+      :mode="mode"
       @change="onChange"
     />
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressPagination from 'src/packages/press-pagination/press-pagination.vue';
 import {
   FUNCTIONAL_ID_MAP,
@@ -44,6 +46,7 @@ export default {
     PressPagination,
     PressPopupCell,
     PressPicker,
+    PressCell,
   },
   data() {
     const componentConfig = {
@@ -53,6 +56,7 @@ export default {
       sectionStyle: 'margin: 0;background: #f7f8fa;',
       headerStyle: 'background: #f7f8fa;',
       FUNCTIONAL_ID_MAP,
+      mode: '',
 
       componentConfig,
     };
@@ -68,10 +72,11 @@ export default {
         callback: {
           changePageTotal: this.changePageTotal,
           changeCurrent: this.changeCurrent,
-          changeExpand: this.changeExpand,
+          changeHor: this.changeHor,
         },
         pageTotal,
         current,
+        isHor: this.mode === 'hor',
       });
     },
     changeExpand(expand) {
@@ -94,6 +99,9 @@ export default {
         ...this.componentConfig,
         current,
       };
+    },
+    changeHor(isHor) {
+      this.mode = isHor ? 'hor' : '';
     },
     onChange(value) {
       console.log('[onChange]', value);

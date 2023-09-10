@@ -1,5 +1,5 @@
 <template>
-  <text
+  <span
     :style="{ color: color, 'font-size': iconSize }"
     class="iconfont"
     :class="['icon-'+type, customClass, customPrefix, customPrefix ? type : '']"

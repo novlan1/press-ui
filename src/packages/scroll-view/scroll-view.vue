@@ -81,18 +81,12 @@
 </template>
 <script>
 import scroller from '../mixins/scroller/index';
-import { supportsPassive } from '../common/utils/support-passive';
+import { passive, PASSIVE_OPTIONS } from '../common/utils/support-passive';
 // import {
 //   initScrollBounce,
 //   disableScrollBounce,
 // } from 'uni-platform/helpers/scroll';
 
-const passive = (passive = true) => (supportsPassive
-  ? {
-    passive,
-  }
-  : false);
-const passiveOptions = passive();
 
 // const PULLING = 'pulling'
 // const REFRESHING = 'refreshing'
@@ -326,10 +320,10 @@ export default {
         self._setRefreshState('refresherabort');
       }
     };
-    this.$refs.main.addEventListener('touchstart', this.__handleTouchStart, passiveOptions);
+    this.$refs.main.addEventListener('touchstart', this.__handleTouchStart, PASSIVE_OPTIONS);
     this.$refs.main.addEventListener('touchmove', this.__handleTouchMove, passive(false));
     this.$refs.main.addEventListener('scroll', this.__handleScroll, passive(false));
-    this.$refs.main.addEventListener('touchend', this.__handleTouchEnd, passiveOptions);
+    this.$refs.main.addEventListener('touchend', this.__handleTouchEnd, PASSIVE_OPTIONS);
     // initScrollBounce();
   },
   activated() {
@@ -341,12 +335,12 @@ export default {
     this.$refs.main.removeEventListener(
       'touchstart',
       this.__handleTouchStart,
-      passiveOptions,
+      PASSIVE_OPTIONS,
     );
     this.$refs.main.removeEventListener(
       'touchmove',
       this.__handleTouchMove,
-      passiveOptions,
+      PASSIVE_OPTIONS,
     );
     this.$refs.main.removeEventListener(
       'scroll',
@@ -356,7 +350,7 @@ export default {
     this.$refs.main.removeEventListener(
       'touchend',
       this.__handleTouchEnd,
-      passiveOptions,
+      PASSIVE_OPTIONS,
     );
   },
   methods: {

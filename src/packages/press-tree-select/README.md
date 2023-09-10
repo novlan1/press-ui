@@ -7,6 +7,18 @@ url : pages/press/tree-select/tree-select
 用于从一组相关联的数据集合中进行选择。
 
 
+## 引入
+
+```ts
+import PressTreeSelect from 'press-ui/press-tree-select/press-tree-select';
+
+export default {
+  components: {
+    PressTreeSelect,
+  }
+}
+```
+
 ## 代码演示
 
 ### 单选模式
@@ -99,7 +111,7 @@ export default {
   @click-nav="onClickNav"
   @click-item="onClickItem"
 >
-  <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg" slot="content" />
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg" slot="content" />
 </press-tree-select>
 ```
 
@@ -109,7 +121,7 @@ export default {
 
 | 参数              | 说明                          | 类型                        | 默认值     |
 | ----------------- | ----------------------------- | --------------------------- | ---------- |
-| items             | 分类显示所需的数据            | _Array_                     | `[]`       |
+| items             | 分类显示所需的数据            | _array_                     | `[]`       |
 | height            | 高度，默认单位为`px`          | _number \| string_          | `300`      |
 | main-active-index | 左侧选中项的索引              | _number_                    | `0`        |
 | active-id         | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0`        |

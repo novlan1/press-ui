@@ -61,4 +61,16 @@ export const dialogProps = {
     type: [Function, null],
     default: null,
   },
+  showField: {
+    type: Boolean,
+    default: false,
+  },
+  fieldPlaceHolder: {
+    type: String,
+    default: '',
+  },
+  fieldValue: {
+    type: String,
+    default: '',
+  },
 };

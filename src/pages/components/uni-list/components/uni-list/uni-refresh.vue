@@ -1,23 +1,11 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <!-- #ifdef APP-NVUE -->
-  <refresh
-    :display="display"
-    @refresh="onrefresh"
-    @pullingdown="onpullingdown"
-  >
-    <slot />
-  </refresh>
-  <!-- #endif -->
-  <!-- #ifndef APP-NVUE -->
-  <view
+  <div
     v-show="isShow"
     ref="uni-refresh"
     class="uni-refresh"
   >
     <slot />
-  </view>
-  <!-- #endif -->
+  </div>
 </template>
 
 <script>

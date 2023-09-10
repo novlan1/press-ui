@@ -99,7 +99,7 @@ export default {
    @click-nav="onClickNav"
    @click-item="onClickItem"
 >
-   <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg" slot="content" />
+   <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg" slot="content" />
 </press-tree-select>
 ```
 

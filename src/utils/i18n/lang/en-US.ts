@@ -40,12 +40,4 @@ export default {
   titleMap: {
     ...TITLE_I18N['en-US'],
   },
-  introduce: {
-    name: 'Fully Compatible',
-    detail: 'Press UI is an easy-to-use, uni-app-based component library',
-    otherAbility: 'Other Ability',
-    toggleLanguage: 'Toggle Language',
-    toggleVConsole: 'Toggle VConsole',
-    launchApp: 'Launch App',
-  },
 };

@@ -81,6 +81,8 @@
 </template>
 <script>
 import PressCircle from 'src/packages/press-circle/press-circle.vue';
+import PressButton from 'src/packages/press-button/press-button.vue';
+
 
 export default {
   i18n: {
@@ -104,6 +106,7 @@ export default {
 
   components: {
     PressCircle,
+    PressButton,
   },
   data() {
     return {

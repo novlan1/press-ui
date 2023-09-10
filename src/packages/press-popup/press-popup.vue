@@ -31,17 +31,21 @@
         v-if="getPropOrData('showTitle')"
         class="press-popup--title-wrap"
       >
-        <div
-          v-if="getPropOrData('closeIcon')"
-          class="press-popup--close iconfont icon-close"
-          @click.stop="clickCancel"
-        />
+        <div class="press-popup__left">
+          <slot name="icon">
+            <div
+              v-if="getPropOrData('closeIcon')"
+              class="press-popup--close iconfont icon-close"
+              @click.stop="clickCancel"
+            />
 
-        <div
-          v-else-if="getPropOrData('arrowIcon')"
-          class="press-popup--arrow iconfont icon-back"
-          @click.stop="clickCancel"
-        />
+            <div
+              v-else-if="getPropOrData('arrowIcon')"
+              class="press-popup--arrow iconfont icon-back"
+              @click.stop="clickCancel"
+            />
+          </slot>
+        </div>
 
         <p
           v-if="getPropOrData('title')"
@@ -55,14 +59,16 @@
         />
 
         <div class="press-popup--title-btn-wrap">
-          <PressButton
-            v-if="getPropOrData('button')"
-            :type="buttonType"
-            custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
-            @click.stop="clickConfirm"
-          >
-            {{ getPropOrData('button') }}
-          </PressButton>
+          <slot name="button">
+            <PressButton
+              v-if="getPropOrData('button')"
+              :type="buttonType"
+              custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
+              @click.stop="clickConfirm"
+            >
+              {{ getPropOrData('button') }}
+            </PressButton>
+          </slot>
         </div>
       </div>
       <slot />

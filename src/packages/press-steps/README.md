@@ -7,6 +7,18 @@ url : pages/press/steps/steps
 用于展示操作流程的各个环节，让用户了解当前的操作在整体流程中的位置。
 
 
+## 引入
+
+```ts
+import PressSteps from 'press-ui/press-steps/press-steps';
+
+export default {
+  components: {
+    PressSteps,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

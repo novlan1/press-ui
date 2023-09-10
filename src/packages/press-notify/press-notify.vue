@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-notify-index">
+  <div class="press-notify-index">
     <press-transition
       name="slide-down"
       :show="dataShow"
@@ -15,18 +15,19 @@
           v-if="dataSafeAreaInsetTop"
           :style="'height: '+(statusBarHeight)+'px'"
         />
-        <text>{{ dataMessage }}</text>
+        <span>{{ dataMessage }}</span>
       </div>
     </press-transition>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressTransition from '../press-transition/press-transition.vue';
 import { WHITE } from '../common/constant/color';
-import { getSystemInfoSync } from '../common/utils/system';
+import { getStatusBarHeight } from '../common/dom/rect';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import computed from './computed';
 import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+import { getEventDetail } from '../common/dom/event';
 
 
 const props = {
@@ -75,7 +76,6 @@ export default {
     return {
       ...getPropsData(this, props),
 
-      // show: false,
       onOpened: null,
       onClose: null,
       onClick: null,
@@ -86,37 +86,18 @@ export default {
     ...getPropsWatch(props),
   },
   created() {
-    const { statusBarHeight } = getSystemInfoSync();
+    const statusBarHeight = getStatusBarHeight();
+
     this.statusBarHeight = statusBarHeight;
-    // this.setData({ statusBarHeight });
   },
   methods: {
     setData(data) {
       setPropsToData.call(this, data);
     },
-    // showNotify() {
-    //   const { duration, onOpened } = this;
-    //   clearTimeout(this.timer);
-    //   // this.setData({ show: true });
-    //   this.show = true;
-    //   wx.nextTick(onOpened);
-    //   if (duration > 0 && duration !== Infinity) {
-    //     this.timer = setTimeout(() => {
-    //       this.hide();
-    //     }, duration);
-    //   }
-    // },
-    // hide() {
-    //   const { onClose } = this;
-    //   clearTimeout(this.timer);
-    //   // this.setData({ show: false });
-    //   this.show = false;
-    //   wx.nextTick(onClose);
-    // },
     onTap(event) {
       const { onClick } = this;
       if (onClick) {
-        onClick(event.detail);
+        onClick(getEventDetail(event));
       }
     },
   },

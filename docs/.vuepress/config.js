@@ -86,7 +86,7 @@ module.exports = {
   themeConfig: {
     logo: {
       img: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
-      // link: 'https://novlan1.github.io/press-ui/',
+      // link: '',
     },
     subLogo: {
       // img: '',
@@ -162,7 +162,7 @@ module.exports = {
       '/quickstart',
       '/locale',
       '/contributing',
-      // '/changelog.md',
+      '/changelog.md',
       // '/questions.md',
       // {
       // 	path: 'https://cn.vuejs.org/v2/style-guide/',

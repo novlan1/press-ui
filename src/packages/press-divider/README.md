@@ -6,6 +6,18 @@ url : pages/press/divider/divider
 
 用于将内容分隔为多个区域。
 
+## 引入
+
+```ts
+import PressDivider from 'press-ui/press-divider/press-divider';
+
+export default {
+  components: {
+    PressDivider,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

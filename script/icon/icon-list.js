@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ICON_SCSS_PATH = 'src/packages/press-icon/uniicons.css';
-const ICON_LIST_PATH = 'src/common/icon.json';
+const ICON_LIST_PATH = 'src/utils/icon/icon.json';
 const REG = /(?<=icon-)([\w-]+):before\s*{\s*content:\s*'(.*?)'/mg;
 
 function main() {

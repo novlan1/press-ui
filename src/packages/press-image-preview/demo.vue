@@ -42,7 +42,7 @@
       />
     </demo-block>
 
-    <ImagePreview
+    <ImagePreviewComp
       :show="show"
       closeable
       :start-position="1"
@@ -51,15 +51,17 @@
       @close="show = false"
     />
 
-    <ImagePreview
+    <ImagePreviewComp
       :id="FUNCTIONAL_ID_MAP.IMAGE_PREVIEW"
       mode="functional"
     />
   </div>
 </template>
 <script>
-import ImagePreview from 'src/packages/press-image-preview/press-image-preview.vue';
+import ImagePreviewComp from 'src/packages/press-image-preview/press-image-preview.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import { imagePreview } from 'src/packages/press-image-preview/index';
+
 
 const FUNCTIONAL_ID_MAP = {
   IMAGE_PREVIEW: 'press-image-preview',
@@ -89,7 +91,8 @@ export default {
     },
   },
   components: {
-    ImagePreview,
+    ImagePreviewComp,
+    PressCell,
   },
   data() {
     let customStyle = '';
@@ -113,6 +116,7 @@ export default {
   methods: {
     onShowImagePreview() {
       imagePreview({
+        context: this,
         selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
         images: this.images,
         customStyle: this.customStyle,
@@ -136,6 +140,7 @@ export default {
       }
 
       imagePreview({
+        context: this,
         selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
         images: this.images,
         customStyle: this.customStyle,

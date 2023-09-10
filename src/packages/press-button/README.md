@@ -6,6 +6,18 @@ url : pages/press/button/button
 
 按钮用于触发一个操作，如提交表单。
 
+## 引入
+
+```ts
+import PressButton from 'press-ui/press-button/press-button';
+
+export default {
+  components: {
+    PressButton,
+  }
+}
+```
+
 ## 代码演示
 
 ### 按钮类型

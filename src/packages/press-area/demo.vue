@@ -40,11 +40,39 @@
         @cancel="onCancel"
       />
     </demo-block>
+
+    <demo-block
+      :title="t('withPopup')"
+    >
+      <press-cell
+        :title="t('withPopup')"
+        is-link
+        @click="onShowAreaPopup"
+      />
+    </demo-block>
+
+    <PressPopup
+      :is-show="showPopup"
+      :button="t('confirm')"
+      :close-icon="true"
+      :title="t('popupTitle')"
+      @confirm="onConfirmPopup"
+      @cancel="onCancelPopup"
+    >
+      <press-area
+        ref="pressArea"
+        :show-toolbar="false"
+        :area-list="areaList"
+        @change="onChange"
+      />
+    </PressPopup>
   </div>
 </template>
 <script>
 import PressArea from 'src/packages/press-area/press-area.vue';
-
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressPopup from 'src/packages/press-popup/press-popup.vue';
+import { isNotInUni } from 'src/packages/common/utils/utils';
 
 const AREA_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json';
 
@@ -122,6 +150,24 @@ const AreaListEn = {
 
 function getAreaData() {
   return new Promise((resolve, reject) => {
+    // #ifdef H5
+    if (isNotInUni()) {
+      fetch(AREA_DATA_URL).then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        return {};
+      })
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+
+      return;
+    }
+    // #endif
     uni.request({
       url: AREA_DATA_URL,
       data: {},
@@ -145,6 +191,8 @@ export default {
       title3: '配置显示列',
       title4: '配置列占位提示文字',
       columnsPlaceholder: ['请选择', '请选择', '请选择'],
+      withPopup: '结合Popup',
+      popupTitle: '选择地区',
       areaList: getAreaData,
     },
     'en-US': {
@@ -152,16 +200,21 @@ export default {
       title3: 'Columns Number',
       title4: 'Columns Placeholder',
       columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
+      withPopup: 'With Popup',
+      popupTitle: 'Select Area',
       areaList: () => Promise.resolve(AreaListEn),
     },
   },
 
   components: {
     PressArea,
+    PressCell,
+    PressPopup,
   },
   data() {
     return {
       areaList: {},
+      showPopup: false,
     };
   },
   mounted() {
@@ -184,14 +237,20 @@ export default {
       const { index, values } = value;
       const names = values.map(item => item.name).join('-');
 
-      this.onTip(`${names}, index: ${index}`);
+      this.onGTip(`${names}, index: ${index}`);
     },
-    onTip(title) {
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1500,
-      });
+    onShowAreaPopup() {
+      this.showPopup = true;
+    },
+    onConfirmPopup() {
+      const values = this.$refs.pressArea?.getValues();
+      const index = this.$refs.pressArea?.getIndexes();
+      console.log('[onConfirmPopup] values index', values, index);
+
+      this.showPopup = false;
+    },
+    onCancelPopup() {
+      this.showPopup = false;
     },
   },
 };

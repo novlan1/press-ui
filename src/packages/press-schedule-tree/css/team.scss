@@ -7,6 +7,22 @@
 
   &-main {
     cursor: pointer;
+    position: relative;
+
+    .press-schedule-team--err-tip {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      z-index: 10;
+      transform: translate(50%, -50%);
+
+      .icon-red {
+        width: .32rem;
+        height: .32rem;
+        font-size: 16px;
+        color: $color-red-9;
+      }
+    }
 
     &--selected {
       position: relative;
@@ -46,7 +62,7 @@
     display: flex;
     align-items: center;
     height: 20px;
-    font-size: $font-xxs;
+    font-size: 10px;
     color: $color-gray;
   }
 
@@ -73,7 +89,7 @@
   }
 
   &-tip-icon {
-    font-size: $font-s;
+    font-size: 12px;
     margin-right: 3px;
 
     &--green {

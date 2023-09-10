@@ -7,6 +7,20 @@ url : pages/press/grid/grid
 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
 
 
+## 引入
+
+```ts
+import PressGrid from 'press-ui/press-grid/press-grid';
+import PressGridItem from 'press-ui/press-grid-item/press-grid-item';
+
+export default {
+  components: {
+    PressGrid,
+    PressGridItem,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法
@@ -48,7 +62,7 @@ url : pages/press/grid/grid
     v-for="(item,index) of 3"
     :key="index"
   >
-    <image
+    <img
       style="width: 100%; height: 90px;"
       :src="imageList[index]"
     />

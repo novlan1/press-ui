@@ -31,6 +31,15 @@
         {{ dataContent }}
       </p>
 
+      <PressField
+        v-if="dataShowField"
+        custom-class="press-dialog__field"
+        title-width="0"
+        :placeholder="dataFieldPlaceHolder"
+        :value="dataFieldValue"
+        @change="onChangeField"
+      />
+
       <div
         v-if="dataSrc"
         class="press-dialog__img-wrap"
@@ -84,19 +93,24 @@
 </template>
 <script>
 import PressButton from '../press-button/press-button.vue';
+import PressField from '../press-field/press-field.vue';
+
 import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
 import { dialogProps } from './computed';
+import { toPromise } from '../common/format/function';
 
 export default {
   name: 'PressDialog',
   components: {
     PressButton,
+    PressField,
   },
   props: {
     ...dialogProps,
   },
   options: {
     virtualHost: true,
+    styleIsolation: 'shared',
   },
   data() {
     return {
@@ -106,10 +120,18 @@ export default {
       mShowButtonLoading: false,
 
       ...getPropsData(this, dialogProps),
+
+      inputValue: '',
     };
   },
   watch: {
     ...getPropsWatch(dialogProps),
+    dataFieldValue: {
+      handler(value) {
+        this.inputValue = value;
+      },
+      immediate: true,
+    },
   },
   mounted() {
   },
@@ -126,14 +148,16 @@ export default {
           return;
         }
         this.mShowButtonLoading = true;
-        if (typeof this.dataOnConfirmClick === 'function') {
-          this.dataOnConfirmClick(this)
-            .then(() => {
+      }
+
+      if (typeof this.dataOnConfirmClick === 'function') {
+        toPromise(this.dataOnConfirmClick(this))
+          .then((value) => {
+            if (value) {
               this.resolveConfirm();
-            })
-            .catch(() => {
-            });
-        }
+            }
+          })
+          .catch(() => {});
       } else {
         this.resolveConfirm();
       }
@@ -190,6 +214,9 @@ export default {
         this.dataOnClickImage();
       }
       this.$emit('onClickImage');
+    },
+    onChangeField(value) {
+      this.inputValue = value;
     },
 
   },

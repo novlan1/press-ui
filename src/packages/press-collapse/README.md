@@ -7,6 +7,20 @@ url : pages/press/collapse/collapse
 
 将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。
 
+## 引入
+
+```ts
+import PressCollapse from 'press-ui/press-collapse/press-collapse';
+import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item';
+
+export default {
+  components: {
+    PressCollapse,
+    PressCollapseItem,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -130,7 +144,7 @@ export default {
 ```html
 <press-collapse :value="activeNames" @change="onChange">
   <press-collapse-item name="1">
-    <view slot="title">标题1<press-icon name="question-o" /></view>
+    <div slot="title">标题1<press-icon name="question-o" /></div>
     代码是写出来给人看的，附带能在机器上运行
   </press-collapse-item>
   <press-collapse-item title="标题2" name="2" icon="shop-o">

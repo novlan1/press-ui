@@ -67,9 +67,12 @@
   </div>
 </template>
 <script>
+import PressDatetimePicker from 'src/packages/press-datetime-picker/press-datetime-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
 import { timeStampFormat } from 'src/packages/common/format/time';
 import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+
 
 let that;
 const DATE_TIME_PICKER_ID = 'press-picker-functional';
@@ -113,9 +116,12 @@ export default {
     },
   },
   components: {
+    PressDatetimePicker,
     PressDatetimePickerPopup,
+    PressCell,
   },
   data() {
+    that = this;
     return {
       minHour: 10,
       maxHour: 20,
@@ -140,14 +146,6 @@ export default {
         },
       },
     };
-  },
-  onLoad() {
-    that = this;
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
   },
   methods: {
     formatter(type, val) {
@@ -180,6 +178,7 @@ export default {
     onShowFunctionalPicker() {
       let inputValue = '';
       showFunctionalComponent.call(this, {
+        context: this,
         selector: `#${DATE_TIME_PICKER_ID}`,
         title: this.t('timeType'),
         button: this.t('confirm'),
@@ -217,11 +216,7 @@ export default {
 
     },
     onTip(title) {
-      uni.showToast({
-        title: `${title}`,
-        icon: 'none',
-        duration: 1500,
-      });
+      this.onGTip(`${title}`, 1500);
     },
   },
 };

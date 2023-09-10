@@ -7,6 +7,18 @@ url : pages/press/empty/empty
 空状态时的占位提示。
 
 
+## 引入
+
+```ts
+import PressEmpty from 'press-ui/press-empty/press-empty';
+
+export default {
+  components: {
+    PressEmpty,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

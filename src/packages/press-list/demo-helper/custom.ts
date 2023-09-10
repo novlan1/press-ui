@@ -1,13 +1,14 @@
 import {
-  showPopupCell,
+  showPopupCellAndClose,
   showPicker,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 
 
 export const local = {
-  pageSize: 100,
-  total: 2000,
+  pageSize: 20,
+  total: 300,
   delay: 200,
+  vertical: true,
 };
 
 const PICKER_NUMBER_LIST = Array.from({ length: 5 })
@@ -29,7 +30,7 @@ const PICKER_NUMBER_MAP = PICKER_NUMBER_LIST.reduce((acc, item) => {
   return acc;
 }, {});
 
-const PICKER_DELAY_LIST = Array.from({ length: 100 }).map((_, i) => ({
+const PICKER_DELAY_LIST = Array.from({ length: 1000 }).map((_, i) => ({
   label: `${(i + 1) * 100}ms`,
   value: (i + 1) * 100,
 }));
@@ -41,7 +42,8 @@ const PICKER_DELAY_MAP = PICKER_DELAY_LIST.reduce((acc, item) => {
 
 
 export function showCustomPopup({ context, callback }) {
-  showPopupCell({
+  showPopupCellAndClose({
+    context,
     title: '自定义设置',
     closeIcon: true,
     cellList: [
@@ -123,14 +125,20 @@ export function showCustomPopup({ context, callback }) {
             });
         },
       },
+      {
+        label: '是否竖向滚动',
+        type: 'switch',
+        open: local.vertical,
+        click: ({ context: popupContext }) => {
+          popupContext.closeDialog();
+          local.vertical = !local.vertical;
+          context.onGTip('设置成功');
+
+          if (typeof callback.changeDirection === 'function') {
+            callback.changeDirection.call(context, local.vertical);
+          }
+        },
+      },
     ],
-  }).then((resp: any) => {
-    const { context: popupContext = {} } = resp || {};
-    popupContext.closeDialog();
-  })
-    .catch((err) => {
-      const { context: popupContext = {} } = err || {};
-      console.log('[showCustomPopup] err', err);
-      popupContext.closeDialog();
-    });
+  });
 }

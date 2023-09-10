@@ -198,6 +198,10 @@ export default {
       // 兼容旧的class，可传入van-
       default: '',
     },
+    mode: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
@@ -216,8 +220,10 @@ export default {
   },
   computed: {
     tabsClass() {
-      const { type, customClass  } = this;
-      return `${this.bem3('tabs', [type])} ${customClass}`;
+      const { type, customClass, mode } = this;
+      const isHor = mode === 'hor';
+
+      return `${this.bem3('tabs', [type, { hor: isHor }])} ${customClass}`;
     },
     tabsWrapClass() {
       const { scrollable, type, border } = this;
@@ -285,12 +291,7 @@ export default {
   mounted() {
     requestAnimationFrame(() => {
       this.swiping = true;
-      // #ifdef H5
       this.container = () => this.$refs.pressTabs;
-      // #endif
-      // #ifndef H5
-      this.container = () => this.createSelectorQuery().select('.press-tabs');
-      // #endif
 
       this.updateTabs();
       this.resize();
@@ -493,7 +494,7 @@ export default {
         });
     },
     onTouchScroll(event) {
-      this.$emit('scroll', event.detail);
+      this.$emit('scroll', event);
     },
     onTouchStart(event) {
       if (!this.swipeable) return;
@@ -705,6 +706,96 @@ export default {
     top: -1px !important;
     display: inline-block;
     transform: translateX(0) !important;
+  }
+}
+</style>
+<style lang="scss" scoped>
+@import "../base/layout.scss";
+@import "../base/mixin.scss";
+
+.press-tabs--hor {
+  height: 100%;
+
+  /* tab */
+  ::v-deep {
+    .press-tabs {
+      height: 100%;
+      z-index: 2;
+    }
+
+    .press-tabs__content {
+      height: calc(100% - .54rem);
+      padding-top: .12rem;
+    }
+
+    .press-tabs__scroll {
+      height: 100%;
+      background: transparent;
+      box-sizing: border-box;
+    }
+
+    .press-tabs__wrap {
+      position: relative;
+      height: .54rem;
+      &::before {
+        position: absolute;
+        bottom: .06rem;
+        left: 0;
+        right: 0;
+        content: '';
+        height: .02rem;
+        background: rgba(123, 197, 255, .15);
+      }
+    }
+
+    .press-tabs__nav,
+    .press-tabs__scroll--line {
+      height: 100%;
+    }
+
+    .press-tab {
+      font-family: "GAMEFONT";
+      flex: none;
+      color: #84b0eb;
+      font-size: $font-s;
+      padding: 0 .32rem .06rem;
+      z-index: 2;
+    }
+
+    .press-tabs__line {
+      height: 0.54rem;
+      background: transparent
+        url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/tab-act.png)
+        no-repeat center;
+      background-size: contain;
+      border-radius: 0;
+    }
+
+    .press-tab__pane {
+      height: 100%;
+    }
+
+    .press-tab--active {
+      color: $color-white;
+      text-shadow: 0 0 8px rgba(95, 147, 234, 0.69);
+    }
+
+    .press-ellipsis {
+      overflow: visible;
+    }
+
+    .press-info--dot {
+      top: -0.08rem !important;
+      right: -0.02rem !important;
+      width: 0.28rem;
+      height: 0.28rem;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/red-dot.png)
+        no-repeat center;
+      background-size: contain;
+    }
   }
 }
 </style>

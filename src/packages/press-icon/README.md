@@ -6,6 +6,18 @@ url : pages/press/icon/icon
 
 用于展示`icons`图标，目前仅保留`empty`，其他图标请使用`press-icon-plus`。
 
+## 引入
+
+```ts
+import PressIcon from 'press-ui/press-icon/press-icon';
+
+export default {
+  components: {
+    PressIcon,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法
@@ -65,25 +77,25 @@ export default {
 
 ### Icon Props
 
-| 属性名 |  类型  | 默认值 |        说明        |
-| :----: | :----: | :----: | :----------------: |
-|  size  | Number |   24   |      图标大小      |
-|  type  | String |   -    | 图标图案，参考示例 |
-| color  | String |   -    |      图标颜色      |
+| 参数  | 说明               | 类型     | 默认值 |
+| ----- | ------------------ | -------- | ------ |
+| size  | 图标大小           | _number_ | `24`   |
+| type  | 图标图案，参考示例 | _string_ | -      |
+| color | 图标颜色           | _string_ | -      |
 
 ### Icon Events
 
-| 事件名 |        说明        | 返回值 |
-| :----: | :----------------: | :----: |
-| @click | 点击 Icon 触发事件 |   -    |
+| 事件名 | 说明               | 返回值 |
+| ------ | ------------------ | ------ |
+| @click | 点击 Icon 触发事件 | -      |
 
 
 ### Icon Music Props
 
 
-| 属性名 |  类型  |  默认值   |        说明         |
-| :----: | :----: | :-------: | :-----------------: |
-| number | Number |     3     | 竖条个数，支持`1-5` |
-| color  | String | `#2979ff` |      图标颜色       |
-| width  | String |  `40px`   |    图标整体高度     |
-| height | String |  `50px`   |    图标整体宽度     |
+| 参数   | 说明                | 类型     | 默认值    |
+| ------ | ------------------- | -------- | --------- |
+| number | 竖条个数，支持`1-5` | _number_ | `3`       |
+| color  | 图标颜色            | _string_ | `#2979ff` |
+| width  | 图标整体高度        | _string_ | `40px`    |
+| height | 图标整体宽度        | _string_ | `50px`    |

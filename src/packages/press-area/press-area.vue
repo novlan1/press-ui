@@ -112,12 +112,15 @@ export default {
     },
     onCancel(event) {
       this.emit('cancel', event);
+      return event;
     },
     onConfirm(event) {
       const { index } = event;
       let { value } = event;
       value = this.parseValues(value);
-      this.emit('confirm', { value, index });
+      const result = { value, index };
+      this.emit('confirm', result);
+      return result;
     },
     emit(type, detail) {
       detail.values = detail.value;
@@ -256,6 +259,13 @@ export default {
         return [];
       }
       return this.parseValues(picker.getValues().filter(value => !!value));
+    },
+    getIndexes() {
+      const picker = this.getPicker();
+      if (!picker) {
+        return [];
+      }
+      return picker?.getIndexes() || [];
     },
     getDetail() {
       const values = this.getValues();

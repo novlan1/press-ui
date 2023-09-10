@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-rate-index">
+  <div class="press-rate-index">
     <div
       :class="'' + (utils.bem2('rate'))+' custom-class'"
       @touchmove="onTouchMove"
@@ -32,7 +32,7 @@
         />
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
@@ -106,7 +106,7 @@ export default {
     onSelect(score) {
       if (!this.disabled && !this.readonly) {
         this.innerValue = score + 1;
-        wx.nextTick(() => {
+        this.$nextTick(() => {
           this.$emit('input', score + 1);
           this.$emit('change', score + 1);
         });

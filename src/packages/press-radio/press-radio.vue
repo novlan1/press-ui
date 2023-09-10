@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-radio-index">
+  <div class="press-radio-index">
     <div :class="'' + (utils.bem2('radio', [direction]))+' custom-class'">
       <div
         v-if="labelPosition === 'left'"
@@ -35,7 +35,7 @@
         <slot />
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';

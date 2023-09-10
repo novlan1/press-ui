@@ -102,11 +102,11 @@ To customize the icon through the `icon` slot, you need to set the `use-icon-slo
 <press-radio-group :value="radio" @change="onChange">
    <press-radio use-icon-slot :value="radio" name="1">
      custom icon
-     <image slot="icon" :src="radio === '1' ? icon. active : icon. normal" />
+     <img slot="icon" :src="radio === '1' ? icon. active : icon. normal" />
    </press-radio>
    <press-radio use-icon-slot :value="radio" name="2">
      custom icon
-     <image slot="icon" :src="radio === '2' ? icon. active : icon. normal" />
+     <img slot="icon" :src="radio === '2' ? icon. active : icon. normal" />
    </press-radio>
 </press-radio-group>
 ```

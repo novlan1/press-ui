@@ -61,7 +61,7 @@ Add the `range` attribute to enable the dual slider mode, and ensure that the va
 
 ```html
 <press-slider :value="currentValue" use-button-slot @drag="onDrag">
-   <view class="custom-button" slot="button">{{ currentValue }}</view>
+   <div class="custom-button" slot="button">{{ currentValue }}</div>
 </press-slider>
 ```
 
@@ -83,7 +83,7 @@ export default {
 After setting the `vertical` attribute, the slider will be displayed vertically with a height of 100% of the height of the parent element.
 
 ```html
-<view style="height: 150px;">
+<div style="height: 150px;">
    <press-slider value="50" vertical @change="onChange" />
    <press-slider
      :value="[10, 50]"
@@ -92,7 +92,7 @@ After setting the `vertical` attribute, the slider will be displayed vertically 
      style="margin-left: 100px;"
      @change="onChange"
    />
-</view>
+</div>
 ```
 
 

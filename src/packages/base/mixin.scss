@@ -1,7 +1,7 @@
-@import './layout';
+@import "./layout";
 
 /* 主按钮 */
-@mixin primary-btn($width, $height, $fontSize, $color: $color-white, $borderRadius: .08rem, $bgColor: $color-primary-btn, $bgActive: $color-blue) {
+@mixin primary-btn($width, $height, $fontSize: $font-l, $color: $color-white, $borderRadius: .08rem, $bgColor: $color-primary-btn, $bgActive: $color-blue) {
   position: relative;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 }
 
 /* 次按钮 */
-@mixin secondary-btn($width, $height, $fontSize, $color: $color-black, $borderRadius: .08rem, $bgColor: $color-secondary-btn, $bgActive: $color-gray-3) {
+@mixin secondary-btn($width, $height, $fontSize: $font-l, $color: $color-black, $borderRadius: .08rem, $bgColor: $color-secondary-btn, $bgActive: $color-gray-3) {
   position: relative;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
 }
 
 /* 不可点击按钮 */
-@mixin disabled-btn($width, $height, $fontSize, $color: $color-white, $borderRadius: .08rem, $bgColor: $color-primary-btn, $bgActive: $color-primary-active) {
+@mixin disabled-btn($width, $height, $fontSize: $font-l, $color: $color-white, $borderRadius: .08rem, $bgColor: $color-primary-btn, $bgActive: $color-primary-active) {
   position: relative;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
 }
 
 /* 线框按钮 */
-@mixin border-btn($width, $height, $fontSize, $color: $color-primary, $borderColor: $color-primary, $borderRadius: .08rem, $bgColor: transparent, $bgActive: $color-bg, $borderActive: $color-blue, $textActive: $color-blue) {
+@mixin border-btn($width, $height, $fontSize: $font-l, $color: $color-primary, $borderColor: $color-primary, $borderRadius: .08rem, $bgColor: transparent, $bgActive: $color-bg, $borderActive: $color-blue, $textActive: $color-blue) {
   position: relative;
   display: flex;
   align-items: center;
@@ -135,8 +135,8 @@
     top: 0;
     right: 0;
     content: '';
-    width: 2.1rem;
-    height: .84rem;
+    width: 1.8rem;
+    height: .66rem;
     background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/agent-btn-bg-r.png) no-repeat center;
     background-size: contain;
     pointer-events: none;
@@ -147,8 +147,8 @@
     bottom: 0;
     left: 0;
     content: '';
-    width: 2.1rem;
-    height: .84rem;
+    width: 1.8rem;
+    height: .66rem;
     background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/agent-btn-bg-l.png) no-repeat center;
     background-size: contain;
     pointer-events: none;
@@ -170,6 +170,7 @@
   max-height: $height;
   -webkit-line-clamp: $line;
   overflow: hidden;
+  word-break: break-all;
 }
 
 /* 0.5px边框--横向上边框(通过伪元素控制显示) */

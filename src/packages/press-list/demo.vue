@@ -1,5 +1,8 @@
 <template>
-  <div class="demo-wrap demo-wrap--gray demo-wrap--flex">
+  <div
+    class="demo-wrap demo-wrap--gray demo-wrap--flex"
+    :class="listLocal.vertical ? '' : 'demo-wrap--hor'"
+  >
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"
@@ -17,16 +20,20 @@
         v-model="loading"
         :finished="finished"
         :immediate-check="immediateCheck"
+        :vertical="listLocal.vertical"
         finished-text="没有更多了"
         @load="load"
         @scroll="scroll"
       >
-        <div :style="wrapStyle">
+        <div
+          :style="wrapStyle"
+          class="list__wrap"
+        >
           <div :style="hiddenUpPartStyle" />
           <div
             v-for="item of showingData"
             :key="item.value"
-            class="list-item"
+            class="list__item"
           >
             {{ item.label }}
           </div>
@@ -48,6 +55,7 @@
 import PressList from 'src/packages/press-list/press-list.vue';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 import {
   FUNCTIONAL_ID_MAP,
@@ -88,6 +96,7 @@ export default {
     PressList,
     PressPopupCell,
     PressPicker,
+    PressCell,
   },
   mixins: [virtualListMixin],
   data() {
@@ -110,6 +119,16 @@ export default {
   },
   computed: {
   },
+  watch: {
+    listLocal: {
+      handler(value) {
+        if (!value.vertical) {
+          this.useVirtualList = false;
+        }
+      },
+      deep: true,
+    },
+  },
   mounted() {
     // this.loading = true;
     // this.onFetchData(true);
@@ -120,7 +139,7 @@ export default {
       this.onFetchData();
     },
     scroll(event, scrollerHeight) {
-      console.log('[scroll]', event, scrollerHeight);
+      // console.log('[scroll]', event, scrollerHeight);
       this.updateCurrentIndex(event, scrollerHeight);
     },
     onFetchData(isRefresh) {
@@ -140,6 +159,7 @@ export default {
         }
 
         this.list = list;
+        console.log('[current total]', list.length);
         this.loading = false;
         this.finished = this.list.length >= total;
       })
@@ -153,6 +173,7 @@ export default {
           changeTotal: this.changeTotal,
           changePageSize: this.changePageSize,
           changeDelay: this.changeDelay,
+          changeDirection: this.changeDirection,
         },
       });
     },
@@ -177,6 +198,13 @@ export default {
       };
       this.generateData();
     },
+    changeDirection(vertical) {
+      this.listLocal = {
+        ...this.listLocal,
+        vertical,
+      };
+      this.generateData();
+    },
     generateData() {
       this.loading = true;
       this.onFetchData(true);
@@ -191,7 +219,19 @@ export default {
   margin-top: 6px;
 }
 
-.list-item {
+.demo-wrap--hor {
+  .list__wrap {
+    display: flex;
+    height: 100%;
+  }
+  .list__item {
+    min-width: 100px;
+    border-right: 1px solid #f5f6fa;
+    height: 100%;
+  }
+}
+
+.list__item {
   width: 100%;
   height: 50px;
   display: flex;

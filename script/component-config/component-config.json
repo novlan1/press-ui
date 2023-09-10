@@ -258,6 +258,10 @@
         "title": "省市区选择"
       },
       {
+        "name": "AwardPopup",
+        "title": "奖励弹出层"
+      },
+      {
         "name": "HorMatchHeader",
         "title": "横版赛事头部"
       },

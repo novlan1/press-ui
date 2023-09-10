@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-notice-bar-index">
+  <div class="press-notice-bar-index">
     <div
       v-if="show"
       :class="noticeBarClass"
@@ -17,7 +17,6 @@
       />
 
       <div class="press-notice-bar__wrap">
-        <!-- :animation="animationData" -->
         <div
           :class="'press-notice-bar__content '+(scrollable === false && !wrapable ? 'press-ellipsis' : '')"
           :style="animationStyle"
@@ -34,30 +33,42 @@
         @click.native.stop.prevent="onClickIcon"
       />
 
-      <navigator
+      <template
         v-else-if="mode === 'link'"
-        :url="url"
-        :open-type="openType"
       >
         <press-icon-plus
+          v-if="isNotInUni"
           class="press-notice-bar__right-icon"
           name="arrow"
         />
-      </navigator>
+        <navigator
+          v-else
+          :url="url"
+          :open-type="openType"
+        >
+          <press-icon-plus
+            class="press-notice-bar__right-icon"
+            name="arrow"
+          />
+        </navigator>
+      </template>
+
       <slot
         v-else
         name="right-icon"
       />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { requestAnimationFrame } from '../common/utils/system';
 import { getRect } from '../common/dom/rect';
-import utils from '../common/utils/utils';
+import utils, { isNotInUni } from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getEventDetail } from '../common/dom/event';
+
 
 export default {
   name: 'PressNoticeBar',
@@ -109,12 +120,12 @@ export default {
   data() {
     return {
       show: true,
-      animationData: {}, // TODO: 纯H5模式下需要重构
 
       duration: 0,
       animationDuration: 0,
       contentWidth: 0,
       translateX: 0,
+      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -150,10 +161,10 @@ export default {
     },
   },
   created() {
-    this.resetAnimation = uni.createAnimation({
-      duration: 0,
-      timingFunction: 'linear',
-    });
+    // this.resetAnimation = uni.createAnimation({
+    // duration: 0,
+    // timingFunction: 'linear',
+    // });
   },
   destroyed() {
     this.timer && clearTimeout(this.timer);
@@ -169,7 +180,11 @@ export default {
           getRect(this, '.press-notice-bar__wrap'),
         ]).then((rects) => {
           const [contentRect, wrapRect] = rects;
-          const { speed, scrollable, delay } = this;
+          const {
+            speed,
+            scrollable,
+            // delay,
+          } = this;
           if (contentRect == null
                         || wrapRect == null
                         || !contentRect.width
@@ -182,11 +197,11 @@ export default {
             this.wrapWidth = wrapRect.width;
             this.contentWidth = contentRect.width;
             this.duration = duration;
-            this.animation = uni.createAnimation({
-              duration,
-              timingFunction: 'linear',
-              delay,
-            });
+            // this.animation = uni.createAnimation({
+            //   duration,
+            //   timingFunction: 'linear',
+            //   delay,
+            // });
             this.scroll(true);
           }
         });
@@ -198,18 +213,10 @@ export default {
 
       this.translateX = isInit ? 0 : this.wrapWidth;
       this.animationDuration = 0;
-      // this.animationData = this.resetAnimation
-      //   .translateX(isInit ? 0 : this.wrapWidth)
-      //   .step()
-      //   .export();
 
       requestAnimationFrame(() => {
         this.translateX = -this.contentWidth;
         this.animationDuration = this.duration;
-        // this.animationData = this.animation
-        //   .translateX(-this.contentWidth)
-        //   .step()
-        //   .export();
       });
 
       this.timer = setTimeout(() => {
@@ -221,7 +228,7 @@ export default {
         this.timer && clearTimeout(this.timer);
         this.timer = null;
         this.show = false;
-        this.$emit('close', event.detail);
+        this.$emit('close', getEventDetail(event));
       }
     },
     onClick(event) {

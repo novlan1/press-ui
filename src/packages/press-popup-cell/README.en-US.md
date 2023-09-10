@@ -146,45 +146,45 @@ export default {
 
 ### PopupCell Props
 
-|     property name      |   type    | default value | description                               |
-| :--------------------: | :-------: | :-----------: | :---------------------------------------- |
-|       show-title       | _boolean_ |    `true`     | Whether to show the title                 |
-|         title          | _string_  |       -       | popup window title                        |
-|         button         | _string_  |       -       | popup title button                        |
-|     border-button      | _boolean_ |    `false`    | Whether the border button is line style   |
-|        z-index         | _string_  |     `99`      | popup level                               |
-|      popup-class       | _string_  |       -       | class name                                |
-| close-on-click-overlay | _boolean_ |    `true`     | Whether to click the overlay to close     |
-|       close-icon       | _boolean_ |    `false`    | Whether to display the close icon         |
-|       arrow-icon       | _boolean_ |    `false`    | Whether to display as a back arrow        |
-|          mode          | _string_  |       -       | pass `functional` when calling a function |
-|        cellList        |  _Array_  |       -       | `cell` list                               |
-|          tip           | _string_  |       -       | bottom tip                                |
+| property name          | type      | default value | description                               |
+| ---------------------- | --------- | ------------- | :---------------------------------------- |
+| show-title             | _boolean_ | `true`        | Whether to show the title                 |
+| title                  | _string_  | -             | popup window title                        |
+| button                 | _string_  | -             | popup title button                        |
+| border-button          | _boolean_ | `false`       | Whether the border button is line style   |
+| z-index                | _string_  | `99`          | popup level                               |
+| popup-class            | _string_  | -             | class name                                |
+| close-on-click-overlay | _boolean_ | `true`        | Whether to click the overlay to close     |
+| close-icon             | _boolean_ | `false`       | Whether to display the close icon         |
+| arrow-icon             | _boolean_ | `false`       | Whether to display as a back arrow        |
+| mode                   | _string_  | -             | pass `functional` when calling a function |
+| cellList               | _Array_   | -             | `cell` list                               |
+| tip                    | _string_  | -             | bottom tip                                |
 
 
 ### PopupCell Events
 
-| event name |   description   | return value |
-| :--------: | :-------------: | :----------: |
-|   cancel   | Click to cancel |      -       |
-|  confirm   |    Click OK     |      -       |
+| event name | description     | return value |
+| ---------- | --------------- | ------------ |
+| cancel     | Click to cancel | -            |
+| confirm    | Click OK        | -            |
 
 ### PopupCell Item Props
 
-| property name |                   type                    | default value |                      description                      |
-| :-----------: | :---------------------------------------: | :-----------: | :---------------------------------------------------: |
-|     label     |                 _string_                  |       -       |                     `cell` title                      |
-|     value     |                 _string_                  |       -       |      `cell` content, valid when `type` is `cell`      |
-|     type      |                 _string_                  |    `cell`     | `cell` type, can be `cell/switch/checkbox/button/tab` |
-|     open      |                 _boolean_                 |       -       |    Whether to open, valid when `type` is `switch`     |
-|   disabled    |                 _boolean_                 |       -       |   Whether to disable, valid when `type` is `switch`   |
-|    tabList    | _Array<{label: string, active: boolean}>_ |       -       |        `tab` list, valid when `type` is `tab`         |
-|    checked    |                 _boolean_                 |       -       |  Whether to enable, valid when `type` is `checkbox`   |
+| property name | type                                      | default value | description                                           |
+| ------------- | ----------------------------------------- | ------------- | ----------------------------------------------------- |
+| label         | _string_                                  | -             | `cell` title                                          |
+| value         | _string_                                  | -             | `cell` content, valid when `type` is `cell`           |
+| type          | _string_                                  | `cell`        | `cell` type, can be `cell/switch/checkbox/button/tab` |
+| open          | _boolean_                                 | -             | Whether to open, valid when `type` is `switch`        |
+| disabled      | _boolean_                                 | -             | Whether to disable, valid when `type` is `switch`     |
+| tabList       | _Array<{label: string, active: boolean}>_ | -             | `tab` list, valid when `type` is `tab`                |
+| checked       | _boolean_                                 | -             | Whether to enable, valid when `type` is `checkbox`    |
 
 
 ### PopupCell Item Events
 
 
-| event name |   description    | return value |
-| :--------: | :--------------: | :----------: |
-|   click    | click `cellItem` |      -       |
+| event name | description      | return value |
+| ---------- | ---------------- | ------------ |
+| click      | click `cellItem` | -            |

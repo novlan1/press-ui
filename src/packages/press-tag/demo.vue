@@ -107,6 +107,8 @@
   </div>
 </template>
 <script>
+import PressTag from 'src/packages/press-tag/press-tag.vue';
+
 
 export default {
   i18n: {
@@ -142,7 +144,9 @@ export default {
       customPlainColor: 'Plain Color',
     },
   },
-
+  components: {
+    PressTag,
+  },
   data() {
     return {
       list: [

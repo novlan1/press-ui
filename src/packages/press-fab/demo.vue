@@ -1,5 +1,5 @@
 <template>
-  <view class="demo-wrap">
+  <div class="demo-wrap">
     <demo-block
       :title="t('basicUsage')"
     >
@@ -22,14 +22,18 @@
       :horizontal="horizontal"
       :vertical="vertical"
       :direction="direction"
+      :top="top"
       @trigger="trigger"
       @fabClick="fabClick"
     />
-  </view>
+  </div>
 </template>
 
 <script>
 import PressFab from 'src/packages/press-fab/press-fab.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import { isNotInUni } from 'src/packages/common/utils/utils';
+
 
 export default {
   i18n: {
@@ -58,6 +62,7 @@ export default {
   },
   components: {
     PressFab,
+    PressCell,
   },
   data() {
     return {
@@ -92,6 +97,7 @@ export default {
         active: false,
       },
       ],
+      top: isNotInUni() ? 44 : 0,
     };
   },
   onBackPress() {
@@ -115,21 +121,14 @@ export default {
         cancelText: t('cancel'),
         success(res) {
           if (res.confirm) {
-            that.onTip('confirm');
+            that.onGTip('confirm');
           } else if (res.cancel) {
-            that.onTip('cancel');
+            that.onGTip('cancel');
           }
         },
       });
     },
-    onTip(title) {
-      uni.showToast({
-        title,
-        icon: 'none',
-      });
-    },
     fabClick() {
-
     },
     switchBtn(hor, ver) {
       const { onClick, isShow } = this.$refs.fabRef;

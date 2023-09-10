@@ -66,6 +66,8 @@
 <script>
 import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
 import PressTab from 'src/packages/press-tab/press-tab.vue';
+import PressEmpty from 'src/packages/press-empty/press-empty.vue';
+import PressButton from 'src/packages/press-button/press-button.vue';
 
 
 export default {
@@ -93,6 +95,8 @@ export default {
   components: {
     PressTabs,
     PressTab,
+    PressEmpty,
+    PressButton,
   },
   data() {
     return {

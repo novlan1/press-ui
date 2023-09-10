@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-picker-index">
+  <div class="press-picker-index">
     <div
       class="press-picker"
       :class="customClass"
@@ -54,7 +54,7 @@
         v-if="toolbarPosition === 'bottom'"
       />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PickerColumn from '../press-picker-column/press-picker-column.vue';

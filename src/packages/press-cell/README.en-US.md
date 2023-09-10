@@ -95,10 +95,10 @@ If the above usage does not meet your needs, you can use slots to customize the 
    is-link
    :use-title-slot="true"
 >
-   <view slot="title">
-     <view class="press-cell-text">cell</view>
+   <div slot="title">
+     <div class="press-cell-text">cell</div>
      <press-tag type="danger">label</press-tag>
-   </view>
+   </div>
 </press-cell>
 <press-cell title="Cell">
    <press-icon slot="right-icon" name="search" class="custom-icon" />

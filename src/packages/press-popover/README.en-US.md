@@ -68,9 +68,9 @@ export default {
 
 ### Props
 
-| property name |  type   | default value |    description     |
-| :-----------: | :-----: | :-----------: | :----------------: |
-|     show      | Boolean |     true      | whether to display |
-|   placement   | String  |     right     | popup box position |
-| custom-class  | String  |       -       | custom class name  |
-| custom-style  | String  |       -       |    custom style    |
+| property name | type    | default value | description        |
+| ------------- | ------- | ------------- | ------------------ |
+| show          | Boolean | true          | whether to display |
+| placement     | String  | right         | popup box position |
+| custom-class  | String  | -             | custom class name  |
+| custom-style  | String  | -             | custom style       |

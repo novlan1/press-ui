@@ -35,7 +35,7 @@
     </demo-block>
 
 
-    <press-dialog-plus id="press-dialog" />
+    <PressDialogPlus id="press-dialog" />
 
     <press-dialog-plus
       use-slot
@@ -119,6 +119,7 @@ export default {
       }
 
       Dialog.alert({
+        context: this,
         title,
         showCancelButton,
         message: this.t('content'),

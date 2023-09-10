@@ -1,5 +1,5 @@
 {
-	"name": "PRESS UI",
+	"name": "Press UI",
 	"appid": "__UNI__FD40C16",
 	"locale": "en-US",
 	"description": "",
@@ -62,7 +62,7 @@
 			"mode": "hash",
 			"base": ""
 		},
-		"title": "PRESS UI",
+		"title": "Press UI",
 		"template": "template.h5.html",
 		"publicPath": "./"
 	},

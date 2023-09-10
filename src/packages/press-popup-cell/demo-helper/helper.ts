@@ -37,6 +37,21 @@ export function showPopupCell(options): Promise<any> {
 }
 
 
+export function showPopupCellAndClose(options) {
+  showFunctionalComponent({
+    selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL}`,
+    ...options,
+  }).then((resp: any) => {
+    const { context: popupContext = {} } = resp || {};
+    popupContext.closeDialog();
+  })
+    .catch((err) => {
+      const { context: popupContext = {} } = err || {};
+      popupContext.closeDialog();
+    });
+}
+
+
 export function showPopupCell2(options): Promise<any> {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL_2}`,

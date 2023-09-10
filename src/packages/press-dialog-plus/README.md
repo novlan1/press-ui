@@ -7,6 +7,18 @@ url : pages/press/dialog-plus/dialog-plus
 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作，支持函数调用和组件调用两种方式。
 
 
+## 引入
+
+```ts
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus';
+
+export default {
+  components: {
+    PressDialogPlus,
+  }
+}
+```
+
 ## 代码演示
 
 ### 消息提示
@@ -127,7 +139,7 @@ Dialog.confirm({
   @close="onClose"
   @getuserinfo="getUserInfo"
 >
-  <image src="https://img.yzcdn.cn/1.jpg" />
+  <img src="https://img.yzcdn.cn/1.jpg" />
 </press-dialog-plus>
 ```
 

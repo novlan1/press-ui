@@ -6,6 +6,18 @@ url : pages/press/stepper/stepper
 
 步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。
 
+## 引入
+
+```ts
+import PressStepper from 'press-ui/press-stepper/press-stepper';
+
+export default {
+  components: {
+    PressStepper,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

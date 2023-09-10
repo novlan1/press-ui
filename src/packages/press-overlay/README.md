@@ -5,6 +5,19 @@ url : pages/press/overlay/overlay
 
 创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。
 
+## 引入
+
+```ts
+import PressOverlay from 'press-ui/press-overlay/press-overlay';
+
+export default {
+  components: {
+    PressOverlay,
+  }
+}
+```
+
+## 代码演示
 
 
 ### 基础用法
@@ -60,12 +73,12 @@ export default {
   :show="options.content"
   @click="onClickHide('content')"
 >
-  <view class="wrapper">
-    <view
+  <div class="wrapper">
+    <div
       class="block"
       catch:tap="noop"
     />
-  </view>
+  </div>
 </press-overlay>
 ```
 

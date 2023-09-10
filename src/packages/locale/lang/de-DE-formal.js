@@ -1,4 +1,8 @@
+import EN_US_LANG from './en-US';
+
 export default {
+  ...EN_US_LANG,
+
   name: 'Name',
   tel: 'Telefon',
   save: 'Speichern',
@@ -21,47 +25,5 @@ export default {
     weekdays: ['So', 'Mo', 'Di', 'Mo', 'Do', 'Fr', 'Sa'],
     monthTitle: (year, month) => `${year}/${month}`,
     rangePrompt: maxRange => `Wähle nicht mehr als ${maxRange} Tage`,
-  },
-  dialog: {
-    title: 'Prompt',
-  },
-  scheduleTree: {
-    pending: 'Pending',
-    emptyTeam: 'Opponent No-Show',
-    quitScore: 'Forfeit',
-    champion: 'Champion',
-    thirdPlace: 'Third Place',
-    checkFinal: 'Check Final >',
-    groupedChampion: isChampion => (isChampion ? 'Group Champion' : 'Third Place In Group'),
-
-    ended: 'Ended',
-    playing: 'Match in Progress...',
-    currentBo: (curBo, boType) => `Current: Match (${curBo}/${boType})`,
-
-    joining: 'Joining...',
-    joiningAndTimeoutAutoQuit: 'Joining... Timeout Automatic Forfeit',
-    startMatchOnTime: 'Starts on MM-dd at hh:mm (UTC±0)',
-    endTimeFormat: 'MM-dd at hh:mm',
-
-    startBattleAuto: 'Start When Full',
-    startBattleManual: 'Waiting for administrator to start the match',
-    startBattleOnTime: 'Scheduled Start',
-  },
-  scheduleList: {
-    finals: 'Grand Finals',
-    finalsChampion: 'Champion',
-    me: 'Me',
-
-    joinDeadline: 'Dea\\dline: M-d at hh:mm',
-
-    manage: 'Manage',
-    spectate: 'Spectate',
-    toPlay: 'Play a Match',
-    reCap: 'Recap',
-    subscribe: 'Subscribe',
-    subscribed: 'Subscribed',
-  },
-  actTipDialog: {
-    prompt: 'Prompt Description',
   },
 };

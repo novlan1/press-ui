@@ -124,7 +124,7 @@ export default {
       this.$emit('cancel');
     },
     onSelect(event) {
-      this.$emit('select', event.detail);
+      this.$emit('select', event);
     },
     onClose() {
       this.$emit('close');

@@ -1,10 +1,10 @@
 <template>
-  <view
+  <div
     :class="''+customClass+' '+(utils.bem2('col', [span]))+' '+(offset ? 'press-col--offset-' + offset : '')"
     :style="true ? computed.rootStyle({ gutter }) : ''"
   >
     <slot />
-  </view>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';

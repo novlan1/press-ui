@@ -9,6 +9,18 @@ url : pages/press/field/field
 
 
 
+## 引入
+
+```ts
+import PressField from 'press-ui/press-field/press-field';
+
+export default {
+  components: {
+    PressField,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

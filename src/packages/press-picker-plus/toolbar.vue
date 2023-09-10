@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-picker-toolbar">
+  <div class="press-picker-toolbar">
     <div
       v-if="showToolbar"
       class="press-picker__toolbar toolbar-class"
@@ -31,7 +31,7 @@
         {{ confirmButtonText }}
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 
 <script>

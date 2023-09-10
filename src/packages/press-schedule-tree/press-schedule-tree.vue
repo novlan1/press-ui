@@ -2,7 +2,8 @@
   <div
     :class="[
       'press-schedule-tree',
-      mapClass
+      mapClass,
+      customClass
     ]"
   >
     <!-- 左侧遮罩 -->
@@ -57,7 +58,7 @@
         :class="[`press-schedule-tree-tab--scroll-${column - scrollTime}`]"
       >
         <p class="press-schedule-tree-tab-title">
-          {{ championTag }}
+          {{ innerChampionRoundName }}
         </p>
         <div class="press-schedule-tree-tab-icon" />
       </div>
@@ -86,6 +87,7 @@
         class="press-schedule-tree-layout"
         :class="{
           'press-schedule-tree-layout--shadow': shadow,
+          'press-schedule-tree-layout--err-tip': topRowWithErrTip,
         }"
       >
         <div
@@ -190,7 +192,7 @@
                     class="press-schedule-team-avatar"
                   >
                   <p class="press-schedule-team-name">
-                    {{ championName }}
+                    {{ innerChampionName }}
                   </p>
                   <p
                     v-if="champTeamInfo.teamname !== i18nMap.pending"
@@ -205,7 +207,7 @@
                       'press-schedule-team-tag--second': winnerName === i18nMap.thirdPlace,
                     }"
                   >
-                    {{ championTag }}
+                    {{ innerChampionTag }}
                   </div>
                 </div>
               </div>
@@ -228,7 +230,13 @@ const DIRECTION_MAP = {
   HORIZONTAL: 'HORIZONTAL',
   VERTICAL: 'VERTICAL',
 };
-const PENDING_PIC = 'https://image-1251917893.file.myqcloud.com/Esports/new/user/dd.png';
+
+const SPECIAL_AVATAR_MAP = {
+  PENDING: 'https://image-1251917893.file.myqcloud.com/Esports/new/user/dd.png',
+  BYE: 'https://image-1251917893.file.myqcloud.com/Esports/new/user/team-logo.png',
+  QUIT: 'https://image-1251917893.file.myqcloud.com/Esports/new/user/team-logo.png',
+};
+
 
 let movingDirection = '';
 let isMoving = false;
@@ -264,14 +272,14 @@ export default {
       type: String,
       default: '',
     },
+    customClass: {
+      type: String,
+      default: '',
+    },
     scheList: {
       type: Array,
       default: () => ([]),
     },
-    // roundList: {
-    //   type: Array,
-    //   default: () => ([]),
-    // },
     isAdmin: {
       type: Boolean,
       default: false,
@@ -287,27 +295,6 @@ export default {
     selectedSchId: {
       type: String,
       default: '',
-    },
-    winnerName: {
-      type: String,
-      default: t('scheduleTree.champion'),
-    },
-    // 当前页面page，影响进程标题显示
-    page: {
-      type: Number,
-      default: 0,
-    },
-    totalPage: {
-      type: Number,
-      default: 0,
-    },
-    automaticGrouping: {
-      type: Boolean,
-      default: false,
-    },
-    showChampion: {
-      type: Boolean,
-      default: true,
     },
     shadow: {
       type: Boolean,
@@ -337,22 +324,50 @@ export default {
       type: String,
       default: '164',
     },
-    // childId: {
-    //   type: Number,
-    //   default: 0,
-    // },
-    // siteId: {
-    //   type: Number,
-    //   default: 0,
-    // },
-    // isLoserTree: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-    // childInfo: {
-    //   type: Object,
-    //   default: () => ({}),
-    // },
+    showChampion: {
+      type: Boolean,
+      default: true,
+    },
+    championRoundName: {
+      type: String,
+      default: '',
+    },
+    championName: {
+      type: String,
+      default: '',
+    },
+    championTag: {
+      type: String,
+      default: '',
+    },
+    canClickFinalSche: {
+      type: Boolean,
+      default: false,
+    },
+    specialAvatarMap: {
+      type: Object,
+      default: () => (SPECIAL_AVATAR_MAP),
+    },
+
+    /* 废弃 */
+    winnerName: {
+      type: String,
+      default: t('scheduleTree.champion'),
+    },
+    // 当前页面page，影响进程标题显示
+    page: {
+      type: Number,
+      default: 0,
+    },
+    totalPage: {
+      type: Number,
+      default: 0,
+    },
+    automaticGrouping: {
+      type: Boolean,
+      default: false,
+    },
+    /* 废弃 */
   },
   data() {
     return {
@@ -385,6 +400,22 @@ export default {
     styleIsolation: 'shared',
   },
   computed: {
+    topRowWithErrTip() {
+      // 错误码待指定
+      let anyAbnormalMatch = false;
+      const { scheList } = this;
+      anyAbnormalMatch = !scheList.every((elem) => {
+        const status = elem.every((item) => {
+          const {
+            upScheGroup: { abnormalErr: upScheAbnormal } = {},
+          } = item;
+          return !upScheAbnormal;
+        });
+        // true : 无顶号异常
+        return status;
+      });
+      return anyAbnormalMatch;
+    },
     roundList() {
       const { scheList } = this;
       return scheList.map(item => item?.[0]?.roundInfo || {});
@@ -540,18 +571,34 @@ export default {
 
       const status = scheInfo?.battleList?.[0]?.realStatus;
       const defaultInfo = {
-        teamavatar: PENDING_PIC,
+        teamavatar: this.specialAvatarMap.PENDING,
         teamname: t('scheduleTree.pending'),
         score: 0,
       };
 
+      // TODO: 状态码去掉
       if (status == 400) {
         return defaultInfo;
       }
       const team = (scheInfo?.battleList?.[0]?.teamList || []).find(item => !!item.isWinner);
       return team || defaultInfo;
     },
-    championTag() {
+    innerChampionRoundName() {
+      if (this.championRoundName) {
+        return this.championRoundName;
+      }
+      return this.innerChampionTag;
+    },
+    innerChampionName() {
+      if (this.championName) {
+        return this.championName;
+      }
+      return this.haveNextPage ? t('scheduleTree.checkFinal') : this.champTeamInfo.teamname;
+    },
+    innerChampionTag() {
+      if (this.championTag) {
+        return this.championTag;
+      }
       // 分组情况，显示组内XX
       // 单败+自动分页，冠军显示：..., 季军还是季军
       // 其它走原始逻辑
@@ -565,6 +612,7 @@ export default {
 
       return this.winnerName;
     },
+    /* 废弃 */
     pagination() {
       const { page, totalPage } = this;
       return { page, totalPage };
@@ -578,11 +626,18 @@ export default {
         && totalPage > 1;
       return autoGrouped;
     },
-    championName() {
-      return this.haveNextPage ? t('scheduleTree.checkFinal') : this.champTeamInfo.teamname;
-    },
+    /* 废弃 */
   },
   watch: {
+    column: {
+      handler(value) {
+        const formattedResumePosition = getFormattedResumePosition(this.resumePosition, value);
+        if (this.scrollTime > value - 1) {
+          this.setScrollParams(formattedResumePosition);
+        }
+      },
+    },
+    /* 废弃 */
     pagination: {
       handler(value, oldVal) {
         const { page, totalPage } = value;
@@ -595,14 +650,7 @@ export default {
       },
       deep: true,
     },
-    column: {
-      handler(value) {
-        const formattedResumePosition = getFormattedResumePosition(this.resumePosition, value);
-        if (this.scrollTime > value - 1) {
-          this.setScrollParams(formattedResumePosition);
-        }
-      },
-    },
+    /* 废弃 */
   },
   created() {
   },
@@ -638,7 +686,7 @@ export default {
       return { height: 'auto', overflow: 'unset' };
     },
     jump2Finals() {
-      if (this.haveNextPage) {
+      if (this.canClickFinalSche || this.haveNextPage) {
         this.$emit('clickFinalSche');
       }
     },
@@ -773,6 +821,9 @@ export default {
 
       // 滑动的次数/当前列数
       this.scrollTime = newScrollTime;
+    },
+    setScrollTime(newScrollTime) {
+      this.setScrollParams(newScrollTime);
     },
     unwatchMouseUp() {
       isMoving = false;

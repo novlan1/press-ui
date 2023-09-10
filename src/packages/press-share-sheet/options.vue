@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-share-sheet-options">
+  <div class="press-share-sheet-options">
     <div :class="optionsClass">
       <div
         v-for="(item,index) in (options)"
@@ -12,10 +12,10 @@
           class="press-share-sheet__button"
           :open-type="item.openType"
         >
-          <image
+          <img
             :src="computed.getIconURL(item.icon)"
             class="press-share-sheet__icon"
-          />
+          >
           <div
             v-if="item.name"
             class="press-share-sheet__name"
@@ -31,7 +31,7 @@
         </button>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';

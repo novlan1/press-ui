@@ -7,6 +7,18 @@ url : pages/press/count-down/count-down
 用于实时展示倒计时数值，支持毫秒精度。
 
 
+## 引入
+
+```ts
+import PressCountDown from 'press-ui/press-count-down/press-count-down';
+
+export default {
+  components: {
+    PressCountDown,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基本用法
@@ -47,9 +59,9 @@ Page({
 
 ```html
 <press-count-down use-slot :time="time" @change="onChange">
-  <text class="item">{{ timeData.hours }}</text>
-  <text class="item">{{ timeData.minutes }}</text>
-  <text class="item">{{ timeData.seconds }}</text>
+  <span class="item">{{ timeData.hours }}</span>
+  <span class="item">{{ timeData.minutes }}</span>
+  <span class="item">{{ timeData.seconds }}</span>
 </press-count-down>
 ```
 

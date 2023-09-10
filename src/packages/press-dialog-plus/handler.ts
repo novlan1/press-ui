@@ -1,5 +1,13 @@
 import Vue from 'vue';
 import { t } from '../locale';
+import { addFunctionForDialog } from './handler-helper';
+import { selectComponent } from '../common/functional-component';
+
+
+// #ifdef H5
+import VueDialog from './press-dialog-plus.vue';
+// #endif
+
 
 let queue: Array<any> = [];
 const defaultOptions = {
@@ -26,19 +34,47 @@ const defaultOptions = {
   confirmButtonOpenType: '',
 };
 let currentOptions = Object.assign({}, defaultOptions);
+
+
 function getContext() {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
+
+function initInstance() {
+  const dialogId = 'press-dialog';
+  const oldDialog = document.getElementById(dialogId);
+  if (oldDialog?.parentNode) {
+    oldDialog.parentNode.removeChild(oldDialog);
+  }
+  const dialogRootDiv = document.createElement('div');
+  dialogRootDiv.id = dialogId;
+
+  document.body.appendChild(dialogRootDiv);
+
+  const instance = new (Vue.extend(VueDialog as any))({
+    el: dialogRootDiv,
+  });
+  return instance;
+}
+
+
 const Dialog = (options) => {
   options = Object.assign(Object.assign({}, currentOptions), options);
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
-    const dialog = context.selectComponent(options.selector);
+    let dialog = selectComponent(context, options.selector);
+
     delete options.context;
     delete options.selector;
+
+    // #ifdef H5
+    if (!dialog) {
+      dialog = initInstance();
+    }
+    // #endif
+
     if (dialog) {
-      console.log('dialog', dialog);
       // dialog.callback = (action, instance) => {
       //   action === 'confirm' ? resolve(instance) : reject(instance);
       // };
@@ -74,28 +110,21 @@ const Dialog = (options) => {
     }
   });
 };
-Dialog.alert = options => Dialog(options);
-Dialog.confirm = options => Dialog(Object.assign({ showCancelButton: true }, options));
-Dialog.close = () => {
-  queue.forEach((dialog) => {
-    dialog.close();
-  });
-  queue = [];
-};
-Dialog.stopLoading = () => {
-  queue.forEach((dialog) => {
-    dialog.stopLoading();
-  });
-};
-Dialog.currentOptions = currentOptions;
-Dialog.defaultOptions = defaultOptions;
-Dialog.setDefaultOptions = (options) => {
-  currentOptions = Object.assign(Object.assign({}, currentOptions), options);
-  Dialog.currentOptions = currentOptions;
-};
-Dialog.resetDefaultOptions = () => {
-  currentOptions = Object.assign({}, defaultOptions);
-  Dialog.currentOptions = currentOptions;
-};
-Dialog.resetDefaultOptions();
+
+function updateQueue(arg) {
+  queue = arg;
+}
+
+function updateCurrentOptions(arg) {
+  currentOptions = arg;
+}
+
+addFunctionForDialog({
+  Dialog,
+  queue,
+  currentOptions,
+  defaultOptions,
+  updateQueue,
+  updateCurrentOptions,
+});
 export default Dialog;

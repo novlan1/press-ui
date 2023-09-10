@@ -5,6 +5,18 @@ url : pages/press/pagination/pagination
 ## Pagination 分页
 
 
+## 引入
+
+```ts
+import PressPagination from 'press-ui/press-pagination/press-pagination';
+
+export default {
+  components: {
+    PressPagination,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -39,17 +51,17 @@ export default {
 ### Props
 
 
-|         属性名         |   类型    |            默认值            |          说明          |
-| :--------------------: | :-------: | :--------------------------: | :--------------------: |
-|         total          | _number_  |              -               |        页面总数        |
-|        current         | _number_  |              -               |         当前页         |
-|      tip-template      | _string_  | <code v-pre>第{{0}}页</code> |        提示模板        |
-| safe-area-inset-bottom | _boolean_ |            `true`            |  是否留出底部安全距离  |
-|      auto-scroll       | _number_  |             `1`              | 遇到边界自动滚动的页数 |
+| 参数                   | 说明                   | 类型      | 默认值                       |
+| ---------------------- | ---------------------- | --------- | ---------------------------- |
+| total                  | 页面总数               | _number_  | -                            |
+| current                | 当前页                 | _number_  | -                            |
+| tip-template           | 提示模板               | _string_  | <code v-pre>第{{0}}页</code> |
+| safe-area-inset-bottom | 是否留出底部安全距离   | _boolean_ | `true`                       |
+| auto-scroll            | 遇到边界自动滚动的页数 | _number_  | `1`                          |
 
 
 ###  Events
 
-| 事件称名 |    说明    | 返回值 |
-| :------: | :--------: | :----: |
-|  change  | 切换当前页 |  page  |
+| 事件   | 说明       | 返回值 |
+| ------ | ---------- | ------ |
+| change | 切换当前页 | page   |

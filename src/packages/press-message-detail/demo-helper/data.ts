@@ -113,6 +113,14 @@ export const MOCK_MESSAGE_DETAIL_LIST = [
     ...MOCK_USER_META,
     isMine: false,
     isOwner: false,
+    picUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/8/own_mike_fa81f5e602d598ce69.jpg',
+  },
+  {
+    messageType: 'MESSAGE_TEXT',
+    isPeerRead: false,
+    ...MOCK_USER_META,
+    isMine: false,
+    isOwner: false,
     title: '比赛报名日报',
     link: 'https://baidu.com',
     textList: [
@@ -130,7 +138,7 @@ export const MOCK_MESSAGE_DETAIL_LIST = [
     isOwner: false,
     textList: [
       {
-        value: '1231231231231231231231231231231231231231231231231312312312313',
+        value: '点击头像将切换列表为1个',
         key: 408006,
       },
     ],

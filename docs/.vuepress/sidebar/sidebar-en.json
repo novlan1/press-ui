@@ -1,0 +1,318 @@
+{
+  "sidebar": [
+    {
+      "title": "Basic Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "Button",
+          "path": "/en/components/press/press-button.md"
+        },
+        {
+          "title": "Cell",
+          "path": "/en/components/press/press-cell.md"
+        },
+        {
+          "title": "Col",
+          "path": "/en/components/press/press-col.md"
+        },
+        {
+          "title": "Icon",
+          "path": "/en/components/press/press-icon.md"
+        },
+        {
+          "title": "IconPlus",
+          "path": "/en/components/press/press-icon-plus.md"
+        },
+        {
+          "title": "Popup",
+          "path": "/en/components/press/press-popup.md"
+        },
+        {
+          "title": "PopupPlus",
+          "path": "/en/components/press/press-popup-plus.md"
+        },
+        {
+          "title": "Toast",
+          "path": "/en/components/press/press-toast.md"
+        },
+        {
+          "title": "Transition",
+          "path": "/en/components/press/press-transition.md"
+        }
+      ]
+    },
+    {
+      "title": "Form Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "Calendar",
+          "path": "/en/components/press/press-calendar.md"
+        },
+        {
+          "title": "Checkbox",
+          "path": "/en/components/press/press-checkbox.md"
+        },
+        {
+          "title": "DatetimePicker",
+          "path": "/en/components/press/press-datetime-picker.md"
+        },
+        {
+          "title": "Field",
+          "path": "/en/components/press/press-field.md"
+        },
+        {
+          "title": "Picker",
+          "path": "/en/components/press/press-picker.md"
+        },
+        {
+          "title": "PickerPlus",
+          "path": "/en/components/press/press-picker-plus.md"
+        },
+        {
+          "title": "Radio",
+          "path": "/en/components/press/press-radio.md"
+        },
+        {
+          "title": "Rate",
+          "path": "/en/components/press/press-rate.md"
+        },
+        {
+          "title": "Search",
+          "path": "/en/components/press/press-search.md"
+        },
+        {
+          "title": "Slider",
+          "path": "/en/components/press/press-slider.md"
+        },
+        {
+          "title": "Stepper",
+          "path": "/en/components/press/press-stepper.md"
+        },
+        {
+          "title": "Switch",
+          "path": "/en/components/press/press-switch.md"
+        }
+      ]
+    },
+    {
+      "title": "Action Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "ActionSheet",
+          "path": "/en/components/press/press-action-sheet.md"
+        },
+        {
+          "title": "Dialog",
+          "path": "/en/components/press/press-dialog.md"
+        },
+        {
+          "title": "DialogPlus",
+          "path": "/en/components/press/press-dialog-plus.md"
+        },
+        {
+          "title": "DropdownMenu",
+          "path": "/en/components/press/press-dropdown-menu.md"
+        },
+        {
+          "title": "Loading",
+          "path": "/en/components/press/press-loading.md"
+        },
+        {
+          "title": "LoadingPlus",
+          "path": "/en/components/press/press-loading-plus.md"
+        },
+        {
+          "title": "Notify",
+          "path": "/en/components/press/press-notify.md"
+        },
+        {
+          "title": "Overlay",
+          "path": "/en/components/press/press-overlay.md"
+        },
+        {
+          "title": "Popover",
+          "path": "/en/components/press/press-popover.md"
+        },
+        {
+          "title": "ShareSheet",
+          "path": "/en/components/press/press-share-sheet.md"
+        },
+        {
+          "title": "SwipeCell",
+          "path": "/en/components/press/press-swipe-cell.md"
+        }
+      ]
+    },
+    {
+      "title": "Display Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "Card",
+          "path": "/en/components/press/press-card.md"
+        },
+        {
+          "title": "Circle",
+          "path": "/en/components/press/press-circle.md"
+        },
+        {
+          "title": "Collapse",
+          "path": "/en/components/press/press-collapse.md"
+        },
+        {
+          "title": "CountDown",
+          "path": "/en/components/press/press-count-down.md"
+        },
+        {
+          "title": "Divider",
+          "path": "/en/components/press/press-divider.md"
+        },
+        {
+          "title": "Empty",
+          "path": "/en/components/press/press-empty.md"
+        },
+        {
+          "title": "Fab",
+          "path": "/en/components/press/press-fab.md"
+        },
+        {
+          "title": "ImagePreview",
+          "path": "/en/components/press/press-image-preview.md"
+        },
+        {
+          "title": "List",
+          "path": "/en/components/press/press-list.md"
+        },
+        {
+          "title": "NoticeBar",
+          "path": "/en/components/press/press-notice-bar.md"
+        },
+        {
+          "title": "Pagination",
+          "path": "/en/components/press/press-pagination.md"
+        },
+        {
+          "title": "Progress",
+          "path": "/en/components/press/press-progress.md"
+        },
+        {
+          "title": "Skeleton",
+          "path": "/en/components/press/press-skeleton.md"
+        },
+        {
+          "title": "Steps",
+          "path": "/en/components/press/press-steps.md"
+        },
+        {
+          "title": "Sticky",
+          "path": "/en/components/press/press-sticky.md"
+        },
+        {
+          "title": "Tag",
+          "path": "/en/components/press/press-tag.md"
+        }
+      ]
+    },
+    {
+      "title": "Navigation Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "Grid",
+          "path": "/en/components/press/press-grid.md"
+        },
+        {
+          "title": "IndexBar",
+          "path": "/en/components/press/press-index-bar.md"
+        },
+        {
+          "title": "NavBar",
+          "path": "/en/components/press/press-nav-bar.md"
+        },
+        {
+          "title": "Sidebar",
+          "path": "/en/components/press/press-sidebar.md"
+        },
+        {
+          "title": "Tab",
+          "path": "/en/components/press/press-tab.md"
+        },
+        {
+          "title": "Tabbar",
+          "path": "/en/components/press/press-tabbar.md"
+        },
+        {
+          "title": "TreeSelect",
+          "path": "/en/components/press/press-tree-select.md"
+        }
+      ]
+    },
+    {
+      "title": "Business Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "Area",
+          "path": "/en/components/press/press-area.md"
+        },
+        {
+          "title": "AwardPopup",
+          "path": "/en/components/press/press-award-popup.md"
+        },
+        {
+          "title": "HorMatchHeader",
+          "path": "/en/components/press/press-hor-match-header.md"
+        },
+        {
+          "title": "HorMatchIndex",
+          "path": "/en/components/press/press-hor-match-index.md"
+        },
+        {
+          "title": "MessageBoard",
+          "path": "/en/components/press/press-message-board.md"
+        },
+        {
+          "title": "MessageDetail",
+          "path": "/en/components/press/press-message-detail.md"
+        },
+        {
+          "title": "MessageList",
+          "path": "/en/components/press/press-message-list.md"
+        },
+        {
+          "title": "PopupCell",
+          "path": "/en/components/press/press-popup-cell.md"
+        },
+        {
+          "title": "Protocol",
+          "path": "/en/components/press/press-protocol.md"
+        },
+        {
+          "title": "ScheduleList",
+          "path": "/en/components/press/press-schedule-list.md"
+        },
+        {
+          "title": "ScheduleTree",
+          "path": "/en/components/press/press-schedule-tree.md"
+        },
+        {
+          "title": "Turntable",
+          "path": "/en/components/press/press-turntable.md"
+        }
+      ]
+    },
+    {
+      "title": "Act Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "ActTipDialog",
+          "path": "/en/components/press/press-act-tip-dialog.md"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import localeEn from 'src/packages/locale/lang/en-US';
-import locale, { t } from 'src/packages/locale';
+import localeEn from '../../packages/locale/lang/en-US';
+import locale, { t } from '../../packages/locale';
 
 import localeEnDemo from './lang/en-US';
 import localeZhDemo from './lang/zh-CN';
@@ -26,9 +26,11 @@ if (LOCALE_DEMO_AMP[curLang]) {
   locale.add(LOCALE_DEMO_AMP[curLang]);
 }
 
+
 function getLocaleFromLocation() {
   const { href } = window.location;
   if (href.indexOf('?') <= -1) return;
+
   const search = href.split('?')[1];
   const map: {
     locale?: string
@@ -39,7 +41,7 @@ function getLocaleFromLocation() {
     return acc;
   }, {});
 
-  console.log('map', map);
+  console.log('[map] ', map);
 
   return map.locale || map.lang;
 }
@@ -53,7 +55,7 @@ function getLocale() {
   // #endif
 
   const locale = storageUtil.get(LOCALE_STORAGE_KEY);
-  console.log('locale', locale);
+  console.log('[locale] ', locale);
   return LOCALE_NUMBER_MAP[locale || DEFAULT_LOCALE_NUMBER];
 }
 
@@ -63,7 +65,7 @@ export function setLang() {
   if (set) return ;
   set = true;
   curLang = getLocale() || DEFAULT_LANG;
-  console.log('curLang', curLang);
+  console.log('[curLang] ', curLang);
 
   if (LOCALE_MAP[curLang]) {
     locale.use(LOCALE_MAP[curLang]);
@@ -84,7 +86,7 @@ function getPage() {
   return name;
 }
 
-export function demoI18n() {
+export function initDemoI18n() {
   Vue.mixin({
     // @ts-ignore
     onReady() {
@@ -116,4 +118,4 @@ export function demoI18n() {
 }
 
 setLang();
-demoI18n();
+initDemoI18n();

@@ -2,7 +2,8 @@
   <scroll-view
     :id="SCROLL_VIEW_ID"
     style="height: 100%"
-    :scroll-y="true"
+    :scroll-y="vertical"
+    :scroll-x="!vertical"
     :scroll-with-animation="scrollWithAnimation"
     :scroll-anchoring="scrollAnchoring"
     :enhanced="enhanced"
@@ -10,39 +11,54 @@
     :enable-passive="enablePassive"
     :lower-threshold="offset"
     :scroll-into-view="scrollToElementById"
-    :class="customClass"
+    :class="scrollViewClass"
     @scrolltolower="scrollToLower"
     @scroll="scroll"
   >
-    <div class="press-list-layout">
+    <div class="press-list__layout">
       <slot />
-    </div>
 
-    <div
-      v-if="innerLoading || (finishedText && finished)"
-      class="press-list-loading"
-    >
-      <pressLoadingPlus
+      <slot
         v-if="innerLoading"
-        size="20px"
+        name="loading"
       >
-        {{ loadingText }}
-      </pressLoadingPlus>
+        <div
+          class="press-list__loading"
+          :style="loadingStyle"
+        >
+          <pressLoadingPlus
+            :vertical="!vertical"
+            :size="loadingSize"
+          >
+            {{ loadingText }}
+          </pressLoadingPlus>
+        </div>
+      </slot>
 
-      <div v-else-if="finishedText && finished">
-        {{ finishedText }}
-      </div>
+      <slot
+        v-if="finishedText && finished"
+        name="finished"
+      >
+        <div
+          class="press-list__finished"
+          :style="finishedStyle"
+        >
+          <div>
+            {{ finishedText }}
+          </div>
+        </div>
+      </slot>
+
+      <div
+        class="press-list__placeholder"
+      />
     </div>
-
-    <div
-      class="press-list-placeholder"
-    />
   </scroll-view>
 </template>
 
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import pressLoadingPlus from 'src/packages/press-loading-plus/press-loading-plus.vue';
+import pressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { getRect } from '../common/dom/rect';
 import { getScrollSelector } from '../common/dom/scroll';
 import {  SCROLL_VIEW_ID } from './config';
@@ -119,6 +135,22 @@ export default {
       type: String,
       default: '',
     },
+    vertical: {
+      type: Boolean,
+      default: true,
+    },
+    loadingStyle: {
+      type: String,
+      default: '',
+    },
+    loadingSize: {
+      type: String,
+      default: '20px',
+    },
+    finishedStyle: {
+      type: String,
+      default: '',
+    },
     ...defaultProps,
   },
   data() {
@@ -128,6 +160,11 @@ export default {
 
       scrollerHeight: 0,
     };
+  },
+  computed: {
+    scrollViewClass() {
+      return [this.vertical ? '' : 'press-list--hor', this.customClass].join(' ');
+    },
   },
   watch: {
     value: {
@@ -181,7 +218,7 @@ export default {
       const { offset }  = this;
 
       Promise.all([
-        getRect(this, '.press-list-placeholder'),
+        getRect(this, '.press-list__placeholder'),
         getRect(this, scrollSelector),
       ]).then((res) => {
         const { 0: placeholderRect, 1: scrollerRect } = res;
@@ -194,7 +231,10 @@ export default {
           return;
         }
 
-        const currentOffset = placeholderRect.bottom - scrollerRect.bottom;
+        let currentOffset = placeholderRect.bottom - scrollerRect.bottom;
+        if (!this.vertical) {
+          currentOffset = placeholderRect.right - scrollerRect.right;
+        }
 
         const isReachEdge = currentOffset <= offset;
         // console.log('[currentOffset]', currentOffset);
@@ -210,8 +250,24 @@ export default {
 };
 </script>
 
-<style scoped>
-.press-list-loading {
+<style scoped lang="scss">
+.press-list--hor {
+  ::v-deep {
+    .press-list__layout {
+      height: 100%;
+      display: flex;
+    }
+  }
+
+  .press-list__loading,
+  .press-list__finished {
+    min-width: 100px;
+    height: 100%;
+  }
+}
+
+.press-list__loading,
+.press-list__finished  {
   width: 100%;
   height: 50px;
   display: flex;
@@ -220,7 +276,7 @@ export default {
   color: #969799;
   font-size: 14px;
 }
-.press-list-placeholder {
+.press-list__placeholder {
   height: 0;
   pointer-events: none;
 }

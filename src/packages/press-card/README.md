@@ -6,6 +6,18 @@ url : pages/press/card/card
 
 用来展示一些信息。
 
+## 引入
+
+```ts
+import PressCard from 'press-ui/press-card/press-card';
+
+export default {
+  components: {
+    PressCard,
+  }
+}
+```
+
 ## 代码演示
 ### 基础用法
 

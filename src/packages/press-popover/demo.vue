@@ -37,6 +37,7 @@
 </template>
 <script>
 import PressPopover from 'src/packages/press-popover/press-popover.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 
 export default {
@@ -50,6 +51,7 @@ export default {
   },
   components: {
     PressPopover,
+    PressCell,
   },
   data() {
     return {

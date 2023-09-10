@@ -16,6 +16,15 @@
       />
     </demo-block>
 
+    <demo-block :title="t('customImage')">
+      <press-rate
+        :value="value"
+        void-icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png"
+        icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png"
+        @change="onChange"
+      />
+    </demo-block>
+
     <demo-block :title="t('customStyle')">
       <press-rate
         :value="value"
@@ -71,6 +80,7 @@ export default {
       halfStar: '半星',
       disabled: '禁用状态',
       customIcon: '自定义图标',
+      customImage: '自定义图片',
       customStyle: '自定义样式',
       customCount: '自定义数量',
       readonly: '只读状态',
@@ -80,6 +90,7 @@ export default {
     'en-US': {
       halfStar: 'Half Star',
       disabled: 'Disabled',
+      customImage: 'Custom Image',
       customIcon: 'Custom Icon',
       customStyle: 'Custom Style',
       customCount: 'Custom Count',

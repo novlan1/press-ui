@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="presst-toast-index">
+  <div class="presst-toast-index">
     <press-overlay
       v-if="mask || dataForbidClick"
       :show="dataShow"
@@ -15,16 +15,17 @@
         :class="toastClass"
         @touchmove.stop.prevent="noop"
       >
-        <text v-if="dataType === 'text'">
-          {{ dataMessage }}
-        </text>
+        <span v-if="dataType === 'text'">{{ dataMessage }}</span>
 
+        <span
+          v-else-if="notInUni && dataType === 'html'"
+          v-html="dataMessage"
+        />
 
         <rich-text
           v-else-if="dataType === 'html'"
           :nodes="dataMessage"
         />
-
 
         <template v-else>
           <!-- custom-class="press-toast__loading" -->
@@ -39,18 +40,16 @@
             class="press-toast__icon"
             :name="dataType"
           />
-          <text
+          <span
             v-if="dataMessage"
             class="press-toast__text"
-          >
-            {{ dataMessage }}
-          </text>
+          >{{ dataMessage }}</span>
         </template>
 
         <slot />
       </div>
     </press-transition>
-  </uni-shadow-root>
+  </div>
 </template>
 
 <script>
@@ -60,6 +59,8 @@ import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressTransition from '../press-transition/press-transition.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+
+import { isNotInUni } from '../common/utils/utils';
 
 
 const props = {
@@ -104,6 +105,7 @@ export default {
   data() {
     return {
       ...getPropsData(this, props),
+      notInUni: isNotInUni(),
     };
   },
   computed: {
@@ -155,6 +157,7 @@ export default {
   // allow newline charactor
   white-space: pre-wrap;
   word-wrap: break-word;
+  word-break: break-all;
   background-color: var(--toast-background-color, $toast-background-color);
   border-radius: var(--toast-border-radius, $toast-border-radius);
 
@@ -172,6 +175,7 @@ export default {
   &--text {
     min-width: var(--toast-text-min-width, $toast-text-min-width);
     padding: var(--toast-text-padding, $toast-text-padding);
+    box-sizing: border-box;
   }
 
   &--icon {
@@ -181,6 +185,7 @@ export default {
 
     ::v-deep .press-toast__icon {
       font-size: var(--toast-icon-size, $toast-icon-size);
+      white-space: normal;
     }
 
     .press-toast__text {

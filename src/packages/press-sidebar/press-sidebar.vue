@@ -1,12 +1,12 @@
 <template>
-  <uni-shadow-root class="press-sidebar-index">
+  <div class="press-sidebar-index">
     <div
       class="press-sidebar"
       :class="customClass"
     >
       <slot />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 
 <script>

@@ -59,6 +59,7 @@ import PressSidebar from 'src/packages/press-sidebar/press-sidebar.vue';
 import PressSidebarItem from 'src/packages/press-sidebar-item/press-sidebar-item.vue';
 import PressToast from 'src/packages/press-toast/press-toast.vue';
 
+
 export default {
   i18n: {
     'zh-CN': {
@@ -88,7 +89,7 @@ export default {
   },
   methods: {
     onChange(val) {
-      console.log('onChange.val', val);
+      console.log('[onChange] val: ', val);
       this.$toast(`${this.t('selectTip')}${val + 1}`);
     },
   },

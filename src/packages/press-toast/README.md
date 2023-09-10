@@ -8,18 +8,30 @@ url : pages/press/toast/toast
 在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。
 
 
+## 引入
+
+```html
+<press-toast id="press-toast" />
+```
+
+```ts
+import PressToast from 'press-ui/press-toast/press-toast';
+
+export default {
+  components: {
+    PressToast,
+  }
+}
+```
+
 ## 代码演示
 
 ### 文字提示
 
 ```javascript
-import Toast from 'press-ui/press-toast/press-toast';
+import Toast from 'press-ui/press-toast';
 
 Toast('我是提示文案，建议不超过十五字~');
-```
-
-```html
-<press-toast id="press-toast" />
 ```
 
 ### 加载提示
@@ -91,15 +103,15 @@ Toast({
 
 ### 方法
 
-| 方法名                    | 参数                 | 返回值     | 介绍                            |
-| ------------------------- | -------------------- | ---------- | ------------------------------- |
-| Toast                     | `options \| message` | toast 实例 | 展示提示                        |
-| Toast.loading             | `options \| message` | toast 实例 | 展示加载提示                    |
-| Toast.success             | `options \| message` | toast 实例 | 展示成功提示                    |
-| Toast.fail                | `options \| message` | toast 实例 | 展示失败提示                    |
-| Toast.clear               | `clearAll`           | `void`     | 关闭提示                        |
-| Toast.setDefaultOptions   | `options`            | `void`     | 修改默认配置，对所有 Toast 生效 |
-| Toast.resetDefaultOptions | -                    | `void`     | 重置默认配置，对所有 Toast 生效 |
+| 方法名                    | 参数       | 返回值   | 介绍                            |
+| ------------------------- | ---------- | -------- | ------------------------------- |
+| Toast                     | `options   | message` | toast 实例                      | 展示提示     |
+| Toast.loading             | `options   | message` | toast 实例                      | 展示加载提示 |
+| Toast.success             | `options   | message` | toast 实例                      | 展示成功提示 |
+| Toast.fail                | `options   | message` | toast 实例                      | 展示失败提示 |
+| Toast.clear               | `clearAll` | `void`   | 关闭提示                        |
+| Toast.setDefaultOptions   | `options`  | `void`   | 修改默认配置，对所有 Toast 生效 |
+| Toast.resetDefaultOptions | -          | `void`   | 重置默认配置，对所有 Toast 生效 |
 
 ### Options
 

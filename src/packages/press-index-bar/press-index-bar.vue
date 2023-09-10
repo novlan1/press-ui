@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <scroll-view
+    id="pressIndexBarWrapper"
+    class="press-index-bar-wrapper"
+    enhanced
+    :scroll-with-animation="false"
+    scroll-y
+    @scroll="onWatchScroll"
+  >
     <div class="press-index-bar">
       <slot />
 
@@ -8,7 +15,7 @@
         class="press-index-bar__sidebar"
         @click.stop.prevent="onClick"
         @touchmove.stop.prevent="onTouchMove"
-        @touchend.stop.prevent="onTouchStop"
+        @touchend.stop="onTouchStop"
         @touchcancel.stop.prevent="onTouchStop"
       >
         <div
@@ -17,12 +24,13 @@
           class="press-index-bar__index"
           :style="'z-index: '+(zIndex + 1)+'; color: '+(activeAnchorIndex === index ? highlightColor : '')"
           :data-index="index"
+          @click.stop="onClickInner"
         >
           {{ item }}
         </div>
       </div>
     </div>
-  </div>
+  </scroll-view>
 </template>
 
 <script>
@@ -30,12 +38,11 @@
 import { GREEN } from '../common/constant/color';
 import { getRect } from '../common/dom/rect';
 import { isDef } from '../common/utils/validator';
-import { pageScrollMixin } from '../mixins/page-scroll';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { ParentMixin } from '../mixins/relation';
 import { PARENT_INDEX_BAR  as PARENT } from '../common/constant/parent-map';
-import { BindEventMixin } from '../mixins/bind-event';
-import { getScroller } from '../common/dom/scroll';
+import { getScrollSelector } from '../common/dom/scroll';
+
 
 const indexList = () => {
   const indexList = [];
@@ -54,24 +61,7 @@ export default {
     styleIsolation: 'shared',
   },
   mixins: [
-    // #ifndef H5
-    pageScrollMixin(function (event) {
-      this.scrollTop = event ? event.scrollTop : 0;
-      this.onScroll();
-    }),
-    // #endif
 
-    // #ifdef H5
-    BindEventMixin(function (bind /* isBind*/) {
-      if (!this.scroller) {
-        this.scroller = getScroller(this.$el);
-      }
-
-      bind(this.scroller, 'scroll', this.onScroll, true);
-      bind(this.scroller, 'touchmove', this.onScroll, true);
-      this.onScroll();
-    }),
-    // #endif
 
     ParentMixin(PARENT),
   ],
@@ -280,8 +270,8 @@ export default {
         });
       }
     },
-    onClick(event) {
-      this.scrollToAnchor(+event.target.dataset.index);
+    onClick() {
+      // this.scrollToAnchor(+event.target.dataset.index);
     },
     onTouchMove(event) {
       const sidebarLength = this.children.length;
@@ -300,6 +290,7 @@ export default {
       } else if (index > sidebarLength - 1) {
         index = sidebarLength - 1;
       }
+
       this.scrollToAnchor(index);
     },
     onTouchStop() {
@@ -312,16 +303,42 @@ export default {
       this.scrollToAnchorIndex = index;
       const anchor = this.children.find(item => item.index === this.indexList[index]);
       if (anchor !== undefined) {
-        // #ifdef H5
-        anchor.$el.scrollIntoView(this.scrollTop);
-        // #endif
+        anchor.scrollIntoView(this.scrollTop, this.changeScrollerTop);
 
-        // #ifndef H5
-        anchor.scrollIntoView(this.scrollTop);
-        // #endif
 
         this.$emit('select', anchor.index);
       }
+    },
+    onClickInner(event) {
+      const index = event.currentTarget?.dataset?.index;
+      if (!index) return;
+      this.scrollToAnchor(+index);
+    },
+    onWatchScroll(e) {
+      this.onScroll(e);
+    },
+    changeScrollerTop(top) {
+      const selector = getScrollSelector('pressIndexBarWrapper');
+      // #ifdef H5
+      const ref = document
+        ?.querySelector(selector);
+      if (!ref) return;
+      ref.scrollTop = top;
+      // #endif
+
+      // #ifndef H5
+      this?.createSelectorQuery?.()
+        ?.select?.(selector)
+        ?.node?.()
+        ?.exec?.((res) => {
+          const scrollView = res[0]?.node;
+          if (!scrollView) return;
+          scrollView.scrollTo({
+            top,
+            duration: 0,
+          });
+        });
+      // #endif
     },
   },
 };
@@ -330,6 +347,9 @@ export default {
 <style scoped lang="scss">
 @import "../common/style/var.scss";
 
+.press-index-bar-wrapper {
+  height: 100%;
+}
 .press-index-bar {
   position: relative;
 

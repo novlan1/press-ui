@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import { canIUseGroupSetData } from './version';
-
+import { isNotInUni } from './utils';
 
 let systemInfo: Record<string, any> = {};
+
 export function getSystemInfoSync() {
   try {
-    if (systemInfo == null && typeof uni.getSystemInfoSync === 'function') {
+    if (!Object.keys(systemInfo).length
+      && typeof uni !== 'undefined'
+      && typeof uni?.getSystemInfoSync === 'function'
+    ) {
       systemInfo = uni.getSystemInfoSync();
     }
   } catch (err) {
@@ -48,4 +52,20 @@ export function groupSetData(context, cb) {
   } else {
     cb();
   }
+}
+
+export function intersectionObserverPloyFill({
+  selector,
+  callback,
+  options,
+}) {
+  if (isNotInUni()) {
+    const io = new IntersectionObserver(callback, options);
+    const target = document.querySelectorAll(selector);
+    target.forEach((element) => {
+      io.observe(element);
+    });
+    return true;
+  }
+  return false;
 }

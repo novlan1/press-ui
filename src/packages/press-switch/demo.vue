@@ -84,6 +84,9 @@
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
 import PressDialog from 'src/packages/press-dialog/press-dialog.vue';
 import PressDialogHandler from 'src/packages/press-dialog';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
+
 
 export default {
   i18n: {
@@ -110,6 +113,8 @@ export default {
   components: {
     PressSwitch,
     PressDialog,
+    PressCell,
+    PressCellGroup,
   },
   data() {
     return {
@@ -122,13 +127,6 @@ export default {
         cell: true,
       },
     };
-  },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
   },
   methods: {
     onSwitchChange() {

@@ -1,9 +1,9 @@
 <template>
-  <uni-shadow-root class="press-checkbox-group-index">
+  <div class="press-checkbox-group-index">
     <div :class="groupClass">
       <slot />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';

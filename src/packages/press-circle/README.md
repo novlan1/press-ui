@@ -7,6 +7,19 @@ url : pages/press/circle/circle
 圆环形的进度条组件，支持进度渐变动画。
 
 
+
+## 引入
+
+```ts
+import PressCircle from 'press-ui/press-circle/press-circle';
+
+export default {
+  components: {
+    PressCircle,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

@@ -6,6 +6,18 @@ url : pages/press/notice-bar/notice-bar
 
 用于循环播放展示一组消息通知。
 
+## 引入
+
+```ts
+import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar';
+
+export default {
+  components: {
+    PressNoticeBar,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

@@ -1,6 +1,4 @@
-import { ChatSDK } from 'tim-js-sdk';
-
-export interface IChatSDK extends ChatSDK {
+export interface IChatSDK {
   isOnline: boolean
   isReady: boolean
 
@@ -12,4 +10,16 @@ export interface IChatSDK extends ChatSDK {
 
   updateOnlineStatus: (status: boolean) => void;
   updateReadyStatus: (status: boolean) => void;
+
+  deleteConversation: Function;
+  setAllMessageRead: Function;
+  setMessageRead: Function;
+  updateMyProfile: Function;
+  getConversationList: Function;
+  logout: Function
+  login: Function
+
+  on: Function;
+  setLogLevel: Function;
+  getMessageList: Function;
 }

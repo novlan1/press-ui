@@ -40,6 +40,7 @@ function genTeamInfo(teamIndex = '') {
 
 function genScheGroupInfo(info: any = {}, teamIndex = '') {
   return {
+    // abnormalErr: true,
     nodeItem: {
       ...(info?.nodeItem || {}),
       utime: 1686100386,
@@ -143,8 +144,24 @@ export function genScheList({
   if (groupType === GROUP_TYPE_MAP.DOUBLE_FAIL_LOSER.name) {
     const newScheList = Array.from({ length: roundNumber })
       .map((_, roundIndex) => {
-        if (!roundIndex) return scheList[1];
-        if (roundIndex === 1) return scheList[1];
+        if (!roundIndex) {
+          return [{
+            ...scheList[1][0],
+            roundInfo: {
+              ...(scheList[1][0].roundInfo || {}),
+              round_name: `败者组第${roundNumber}轮`,
+            },
+          }];
+        }
+        if (roundIndex === 1) {
+          return [{
+            ...scheList[1][0],
+            roundInfo: {
+              ...(scheList[1][0].roundInfo || {}),
+              round_name: `败者组第${roundNumber - 1}轮`,
+            },
+          }];
+        }
         return Array.from({ length: 2 ** Math.floor((roundIndex - 2) / 2) }).map((_, schePairIndex) => genSchePairInfo({
           info,
           scheGroupNumber: 2,

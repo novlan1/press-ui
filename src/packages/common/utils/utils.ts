@@ -5,6 +5,8 @@ import { addUnit } from './add-unit';
 
 const memoizeBem = memoize(bem);
 
+export const isNotInUni = () => typeof uni === 'undefined';
+
 export default {
   bem: memoizeBem,
   memoize,

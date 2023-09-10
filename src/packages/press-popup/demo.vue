@@ -17,6 +17,9 @@
           is-link
           @click="onShowPopup('noClose')"
         />
+      </demo-block>
+
+      <demo-block :title="t('customStyle')">
         <press-cell
           :title="t('plainButtonConfirm')"
           is-link
@@ -31,6 +34,11 @@
           :title="t('horizontal')"
           is-link
           @click="onShowPopup('hor')"
+        />
+        <press-cell
+          :title="t('buttonSlot')"
+          is-link
+          @click="showSlotPopup = true"
         />
       </demo-block>
 
@@ -83,6 +91,38 @@
     </PressPopup>
 
     <PressPopup
+      :is-show="showSlotPopup"
+      @confirm="showSlotPopup = false"
+      @cancel="showSlotPopup = false"
+    >
+      <PressIconPlus
+        slot="icon"
+        name="gem-o"
+        size="22px"
+      />
+
+      <div
+        slot="title"
+      >
+        {{ t('wayToWin') }}
+        <PressIconPlus
+          name="like-o"
+          size="16"
+        />
+      </div>
+
+      <PressIconPlus
+        slot="button"
+        name="setting-o"
+        size="22px"
+      />
+
+      <div class="content">
+        {{ t('SomeContent') }}
+      </div>
+    </PressPopup>
+
+    <PressPopup
       :is-show="showControlledPopup"
       :button="t('confirm')"
       :title="t('controlledPopup')"
@@ -105,7 +145,11 @@
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressPopup from 'src/packages/press-popup/press-popup.vue';
 import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+
 
 const PRESS_PICKER_ID = 'press-picker-functional';
 const TYPE_MAP = {
@@ -117,11 +161,12 @@ function asyncClose({
   t,
   type,
   onTip,
+  onGShowLoading,
 }) {
   return new Promise((resolve) => {
-    uni.showLoading({
-      title: t('asyncConfirm'),
+    onGShowLoading(t('asyncConfirm'), {
       mask: true,
+      duration: 3000,
     });
     setTimeout(() => {
       if (type === 'confirm') {
@@ -145,6 +190,8 @@ export default {
       functional: '函数式调用',
       check: '查看',
       closeIcon: '关闭图标',
+      customStyle: '自定义样式',
+      buttonSlot: '使用slot',
       cancelIcon: '取消图标',
       noCloseOrCancel: '没有关闭/取消',
       plainButtonConfirm: '线框按钮',
@@ -164,6 +211,8 @@ export default {
       controlledPopup: 'Controlled Popup',
       functional: 'Functional Mode',
       check: 'Check',
+      customStyle: 'Custom Style',
+      buttonSlot: 'Use Slot',
       closeIcon: 'Close Ion',
       cancelIcon: 'Cancel Icon',
       noCloseOrCancel: 'No Close Or Cancel',
@@ -180,6 +229,9 @@ export default {
     },
   },
   components: {
+    PressCell,
+    PressPopup,
+    PressIconPlus,
   },
   data() {
     that = this;
@@ -241,19 +293,15 @@ export default {
       pressPickerFunctionalData: {},
       PRESS_PICKER_ID,
       showControlledPopup: false,
+      showSlotPopup: false,
       TYPE_MAP,
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
+  computed: {
   },
   methods: {
     onShowPopup(type) {
-      uni.hideToast();
+      this.onGHideToast();
       this.type = type;
       if (type === 'disabledButton') {
         setTimeout(() => {
@@ -277,12 +325,7 @@ export default {
     //   });
     // },
     onTip(title) {
-      uni.hideLoading();
-      uni.showToast({
-        title,
-        icon: 'none',
-        duration: 1500,
-      });
+      this.onGTip(title);
     },
     onShowFunctionalPicker() {
       showFunctionalComponent.call(this, {
@@ -324,6 +367,7 @@ export default {
           t: that.t,
           type: 'confirm',
           onTip: that.onTip,
+          onGShowLoading: that.onGShowLoading,
         });
       }
       if (that.type === TYPE_MAP.ASYNC_NORMAL) {
@@ -338,6 +382,7 @@ export default {
           t: that.t,
           type: 'cancel',
           onTip: that.onTip,
+          onGShowLoading: that.onGShowLoading,
         });
       }
       if (that.type === TYPE_MAP.ASYNC_NORMAL) {
@@ -350,7 +395,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .content {
   font-size: 16px;
   padding: 20px;

@@ -64,7 +64,9 @@
       :title="t('title2')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs>
+      <press-tabs
+        @scroll="onScroll"
+      >
         <press-tab
           v-for="(item,index) of tabs7"
           :key="index"
@@ -173,9 +175,36 @@
         </press-tab>
       </press-tabs>
     </demo-block>
+
+    <demo-block
+      :title="t('horTitle')"
+      header-style="background: #f7f8fa;"
+      section-style="background: #192841;color: #fff;margin: 0;padding: 10px 0;"
+    >
+      <press-tabs
+        :active="active"
+        mode="hor"
+        @change="onChange"
+        @input="onInput"
+      >
+        <press-tab
+          v-for="(item,index) of tabs4"
+          :key="index"
+          dot
+          :title="`${t('tab')} ${index+1}`"
+        >
+          <div class="content">
+            {{ t('content') }} {{ index+1 }}
+          </div>
+        </press-tab>
+      </press-tabs>
+    </demo-block>
   </div>
 </template>
 <script>
+import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
+import PressTab from 'src/packages/press-tab/press-tab.vue';
+
 
 export default {
   i18n: {
@@ -190,6 +219,7 @@ export default {
       title8: '切换动画',
       title9: '滑动切换',
       title10: '滚动导航',
+      horTitle: 'HOR',
       disabled: ' 已被禁用',
       matchByName: '通过名称匹配',
       beforeChange: '异步切换',
@@ -206,12 +236,16 @@ export default {
       title8: 'Switch Animation',
       title9: 'Swipeable',
       title10: 'Scrollspy',
+      horTitle: 'HOR',
       disabled: ' is disabled',
       matchByName: 'Match By Name',
       beforeChange: 'Before Change',
     },
   },
-
+  components: {
+    PressTabs,
+    PressTab,
+  },
   data() {
     return {
       active: 3,
@@ -227,13 +261,6 @@ export default {
       ],
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   mounted() {
     this.$nextTick(() => {
       // this.$refs.pressTabs.resize();
@@ -246,16 +273,19 @@ export default {
   },
   methods: {
     onChange(val) {
-      console.log('onChange.val', val);
+      console.log('[onChange] val: ', val);
     },
     onInput(val) {
-      console.log('onInput.val', val);
+      console.log('[onInput] val: ', val);
     },
     onClickDisabled(val) {
-      console.log('onClickDisabled.val', val);
+      console.log('[onClickDisabled] val: ', val);
     },
     onClick(val) {
-      console.log('onClick.val', val);
+      console.log('[onClick] val: ', val);
+    },
+    onScroll(val) {
+      console.log('[onScroll] val: ', val);
     },
   },
 };
@@ -278,3 +308,4 @@ page {
   overflow: auto;
 }
 </style>
+

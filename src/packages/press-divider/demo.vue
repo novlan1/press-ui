@@ -56,6 +56,9 @@
   </div>
 </template>
 <script>
+import PressDivider from 'src/packages/press-divider/press-divider.vue';
+
+
 export default {
   i18n: {
     'zh-CN': {
@@ -83,7 +86,9 @@ export default {
       textSize: 'Text Size',
     },
   },
-
+  components: {
+    PressDivider,
+  },
   data() {
     return {
 

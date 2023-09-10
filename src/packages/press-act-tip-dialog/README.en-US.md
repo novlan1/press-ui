@@ -2,7 +2,21 @@
 url : pages/press/act-tip-dialog/act-tip-dialog
 ---
 
-## ActTipDialog 
+## ActTipDialog
+
+## import
+
+```ts
+import PressActTipDialog from 'press-ui/press-act-tip-dialog/press-act-tip-dialog';
+
+export default {
+   components: {
+     PressActTipDialog,
+   }
+}
+```
+
+## Code Demo
 
 ### Basic usage
 
@@ -54,18 +68,17 @@ export default {
 
 ### Props
 
-|    property name    |    type    | default value | description                        |
-| :-----------------: | :--------: | :-----------: | :--------------------------------- |
-|        show         | _boolean_  |    `false`    | Whether to show popup              |
-|        title        |  _string_  |     Tips      | Title                              |
-|       message       |  _string_  |       -       | content                            |
-| show-cancel-button  | _boolean_  |    `true`     | Whether to show the cancel button  |
-| show-confirm-button | _boolean_  |    `true`     | Whether to show the confirm button |
-|    confirm-text     |  _string_  |      OK       | Confirm button text                |
-|     cancel-text     |  _string_  |    cancel     | cancel button text                 |
-|       cancel        | _function_ |    `null`     | click cancel event                 |
-|       confirm       | _function_ |    `null`     | clicked confirm event              |
-
+| Parameter           | Description                        | Type       | Default |
+| ------------------- | ---------------------------------- | ---------- | ------- |
+| show                | Whether to show popup              | _boolean_  | `false` |
+| title               | Title                              | _string_   | Tips    |
+| message             | content                            | _string_   | -       |
+| show-cancel-button  | Whether to show the cancel button  | _boolean_  | `true`  |
+| show-confirm-button | Whether to show the confirm button | _boolean_  | `true`  |
+| confirm-text        | Confirm button text                | _string_   | OK      |
+| cancel-text         | cancel button text                 | _string_   | cancel  |
+| cancel              | click to cancel event              | _function_ | `null`  |
+| confirm             | event for confirm click            | _function_ | `null`  |
 
 
 ### Events

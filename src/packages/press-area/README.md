@@ -6,6 +6,18 @@ url : pages/press/area/area
 
 省市区选择组件通常与 弹出层 组件配合使用。
 
+## 引入
+
+```ts
+import PressArea from 'press-ui/press-area/press-area';
+
+export default {
+  components: {
+    PressArea,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -44,7 +56,7 @@ const areaList = {
 
 ### 数据来源
 
-Press 提供了一份默认的省市区数据，[地址在这里](https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json)。
+Press UI 提供了一份默认的省市区数据，[地址在这里](https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json)。
 
 
 
@@ -110,6 +122,52 @@ export default {
 />
 ```
 
+
+### 结合popup
+
+结合`press-popup`后，需要将`showToolbar`置为`false`，否则会出现两层工具栏。
+
+另外，点击确定可以通过`press-area`组件上的`getValues`获取当前`values`，通过`getIndexes`获取当前`index`。
+
+```html
+<PressPopup
+  :is-show="showPopup"
+  button="确定"
+  :close-icon="true"
+  title="结合Popup"
+  @confirm="onConfirmPopup"
+  @cancel="onCancelPopup"
+>
+  <press-area
+    ref="pressArea"
+    :show-toolbar="false"
+    :area-list="areaList"
+    @change="onChange"
+  />
+</PressPopup>
+```
+
+```ts
+export default {
+  data() {
+    return {
+      showPopup: false,
+    }
+  },
+  methods: {
+    onConfirmPopup() {
+      const values = this.$refs.pressArea.getValues();
+      const index = this.$refs.pressArea.getIndexes();
+      console.log('[onConfirmPopup] values index', values, index);
+
+      this.showPopup = false;
+    },
+    onCancelPopup() {
+      this.showPopup = false;
+    },
+  }
+}
+```
 
 ## API
 

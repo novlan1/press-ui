@@ -71,6 +71,7 @@ function showBatchSetInnerPopup({
       click: ({ context: popupContext }) => {
         popupContext.closeDialog();
         showPicker({
+          context,
           title: '选择轮次',
           button: '确定',
           closeIcon: true,
@@ -96,6 +97,7 @@ function showBatchSetInnerPopup({
       click: ({ context: popupContext }) => {
         popupContext.closeDialog();
         showDateTimePicker({
+          context,
           title: meta.timePickerTitle,
           closeIcon: true,
           button: '确认',
@@ -178,6 +180,7 @@ function showBatchSetInnerPopup({
       click: ({ context: popupContext }) => {
         popupContext.closeDialog();
         showPicker({
+          context,
           title: '后续轮次间隔时间',
           button: '确定',
           closeIcon: true,
@@ -201,6 +204,7 @@ function showBatchSetInnerPopup({
 
 
   showPopupCell2({
+    context,
     title: meta.title,
     closeIcon: true,
     button: '确定',
@@ -227,6 +231,7 @@ export function batchSet(context) {
   };
 
   showPopupCell({
+    context,
     bottomButton: '取消',
     showTitle: false,
     arrowIcon: true,

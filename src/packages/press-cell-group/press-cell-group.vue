@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-cell-group-index">
+  <div class="press-cell-group-index">
     <div
       v-if="title"
       :class="titleClass"
@@ -9,7 +9,7 @@
     <div :class="groupClass">
       <slot />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';

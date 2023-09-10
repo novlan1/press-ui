@@ -72,6 +72,10 @@
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressPopupPlus from 'src/packages/press-popup-plus/press-popup-plus.vue';
+
+
 const DEFAULT_POSITION = 'center';
 const DEFAULT_CLOSE_ICON = 'cross';
 const DEFAULT_CLOSE_ICON_POSITION = 'top-right';
@@ -102,6 +106,10 @@ export default {
       iconPosition: 'Icon Position',
       round: 'Round',
     },
+  },
+  components: {
+    PressCell,
+    PressPopupPlus,
   },
   data() {
     return {

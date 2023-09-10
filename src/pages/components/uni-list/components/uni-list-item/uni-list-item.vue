@@ -2,35 +2,34 @@
   <!-- #ifdef APP-NVUE -->
   <cell>
     <!-- #endif -->
-
-    <view
+    <div
       :class="[{'uni-list-item--disabled': disabled,}, customClass]"
       :hover-class="(!clickable && !link) || disabled || showSwitch ? '' : 'uni-list-item--hover'"
       class="uni-list-item"
       @click="onClick"
     >
-      <view
+      <div
         v-if="!isFirstChild"
         class="border--left"
         :class="{ 'uni-list--border': border }"
       />
-      <view
+      <div
         class="uni-list-item__container"
         :class="{ 'container--right': showArrow || link, 'flex--direction': direction === 'column' }"
       >
         <slot name="header">
-          <view class="uni-list-item__header">
-            <view
+          <div class="uni-list-item__header">
+            <div
               v-if="thumb"
               class="uni-list-item__icon"
             >
-              <image
+              <img
                 :src="thumb"
                 class="uni-list-item__icon-img"
                 :class="['uni-list--' + thumbSize]"
-              />
-            </view>
-            <view
+              >
+            </div>
+            <div
               v-else-if="showExtraIcon"
               class="uni-list-item__icon"
             >
@@ -39,41 +38,41 @@
                 :size="extraIcon.size"
                 :type="extraIcon.type"
               />
-            </view>
-          </view>
+            </div>
+          </div>
         </slot>
         <slot name="body">
-          <view
+          <div
             class="uni-list-item__content"
             :class="{ 'uni-list-item__content--center': thumb || showExtraIcon || showBadge || showSwitch }"
           >
-            <text
+            <span
               v-if="title"
               class="uni-list-item__content-title"
               :class="[ellipsis !== 0 && ellipsis <= 2 ? 'uni-ellipsis-' + ellipsis : '']"
             >
               {{ title }}
-            </text>
-            <text
+            </span>
+            <span
               v-if="note"
               class="uni-list-item__content-note"
             >
               {{ note }}
-            </text>
-          </view>
+            </span>
+          </div>
         </slot>
         <slot name="footer">
-          <view
+          <div
             v-if="rightText || showBadge || showSwitch"
             class="uni-list-item__extra"
             :class="{ 'flex--justify': direction === 'column' }"
           >
-            <text
+            <span
               v-if="rightText"
               class="uni-list-item__extra-text"
             >
               {{ rightText }}
-            </text>
+            </span>
             <uni-badge
               v-if="showBadge"
               :type="badgeType"
@@ -86,9 +85,9 @@
               :checked="switchChecked"
               @change="onSwitchChange"
             />
-          </view>
+          </div>
         </slot>
-      </view>
+      </div>
       <uni-icons
         v-if="showArrow || link"
         :size="16"
@@ -96,53 +95,22 @@
         color="#bbb"
         type="arrowright"
       />
-    </view>
+    </div>
     <!-- #ifdef APP-NVUE -->
   </cell>
   <!-- #endif -->
 </template>
-
 <script>
 import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
-/**
-	 * ListItem 列表子组件
-	 * @description 列表子组件
-	 * @tutorial https://ext.dcloud.net.cn/plugin?id=24
-	 * @property {String} 	title 							标题
-	 * @property {String} 	note 							描述
-	 * @property {String} 	thumb 							左侧缩略图，若thumb有值，则不会显示扩展图标
-	 * @property {String}  	thumbSize = [lg|base|sm]		略缩图大小
-	 * 	@value 	 lg			大图
-	 * 	@value 	 base		一般
-	 * 	@value 	 sm			小图
-	 * @property {String} 	badgeText						数字角标内容
-	 * @property {String} 	badgeType 						数字角标类型，参考[uni-icons](https://ext.dcloud.net.cn/plugin?id=21)
-	 * @property {Object}   badgeStyle           数字角标样式
-	 * @property {String} 	rightText 						右侧文字内容
-	 * @property {Boolean} 	disabled = [true|false]			是否禁用
-	 * @property {Boolean} 	clickable = [true|false] 		是否开启点击反馈
-	 * @property {String} 	link = [navigateTo|redirectTo|reLaunch|switchTab] 是否展示右侧箭头并开启点击反馈
-	 *  @value 	navigateTo 	同 uni.navigateTo()
-	 * 	@value redirectTo 	同 uni.redirectTo()
-	 * 	@value reLaunch   	同 uni.reLaunch()
-	 * 	@value switchTab  	同 uni.switchTab()
-	 * @property {String | PageURIString} 	to  			跳转目标页面
-	 * @property {Boolean} 	showBadge = [true|false] 		是否显示数字角标
-	 * @property {Boolean} 	showSwitch = [true|false] 		是否显示Switch
-	 * @property {Boolean} 	switchChecked = [true|false] 	Switch是否被选中
-	 * @property {Boolean} 	showExtraIcon = [true|false] 	左侧是否显示扩展图标
-	 * @property {Object} 	extraIcon 						扩展图标参数，格式为 {color: '#4cd964',size: '22',type: 'spinner'}
-	 * @property {String} 	direction = [row|column]		排版方向
-	 * @value row 			水平排列
-	 * @value column 		垂直排列
-	 * @event {Function} 	click 							点击 uniListItem 触发事件
-	 * @event {Function} 	switchChange 					点击切换 Switch 时触发
-	 */
+import { isNotInUni } from 'src/packages/common/utils/utils';
+import { UNI_LIST_MIXIN } from '../../mixins/uni-list-mixin';
+
 export default {
   name: 'UniListItem',
   components: {
     UniIcons,
   },
+  mixins: [UNI_LIST_MIXIN],
   options: {
     addGlobalClass: true,
   },
@@ -245,47 +213,15 @@ export default {
     },
   },
   emits: ['click', 'switchChange'],
-  // inject: ['list'],
   data() {
     return {
       isFirstChild: false,
     };
   },
   mounted() {
-    this.list = this.getForm();
-    // 判断是否存在 uni-list 组件
-    if (this.list) {
-      if (!this.list.firstChildAppend) {
-        this.list.firstChildAppend = true;
-        this.isFirstChild = true;
-      }
-    }
+    this.initList(false);
   },
   methods: {
-    /**
-			 * 获取父元素实例
-			 */
-    getForm(name = 'uniList') {
-      let parent = this.$parent;
-      let parentName = parent.$options.name;
-      while (parentName !== name) {
-        parent = parent.$parent;
-        if (!parent) return false;
-        parentName = parent.$options.name;
-      }
-      return parent;
-    },
-    onClick() {
-      if (this.to !== '') {
-        this.openPage();
-        return;
-      }
-      if (this.clickable || this.link) {
-        this.$emit('click', {
-          data: {},
-        });
-      }
-    },
     onSwitchChange(e) {
       this.$emit('switchChange', e.detail);
     },
@@ -297,6 +233,13 @@ export default {
       }
     },
     pageApi(api) {
+      // #ifdef H5
+      if (isNotInUni()) {
+        this.$router.push(this.to);
+        return;
+      }
+      // #endif
+
       const callback = {
         url: this.to,
         success: (res) => {

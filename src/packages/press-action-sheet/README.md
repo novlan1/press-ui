@@ -6,6 +6,18 @@ url : pages/press/action-sheet/action-sheet
 
 底部弹起的模态面板，包含与当前情境相关的多个选项。
 
+## 引入
+
+```ts
+import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet';
+
+export default {
+  components: {
+    PressActionSheet,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -110,7 +122,7 @@ export default {
 
 ```html
 <press-action-sheet :show="show" title="标题">
-  <view>内容</view>
+  <div>内容</div>
 </press-action-sheet>
 ```
 

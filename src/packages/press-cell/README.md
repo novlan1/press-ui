@@ -7,6 +7,20 @@ url : pages/press/cell/cell
 
 单元格为列表中的单个展示项。
 
+## 引入
+
+```ts
+import PressCell from 'press-ui/press-cell/press-cell';
+import PressCellGroup from 'press-ui/press-cell-group/press-cell-group';
+
+export default {
+  components: {
+    PressCell,
+    PressCellGroup,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -95,10 +109,10 @@ url : pages/press/cell/cell
   is-link
   :use-title-slot="true"
 >
-  <view slot="title">
-    <view class="press-cell-text">单元格</view>
+  <div slot="title">
+    <div class="press-cell-text">单元格</div>
     <press-tag type="danger">标签</press-tag>
-  </view>
+  </div>
 </press-cell>
 <press-cell title="单元格">
   <press-icon slot="right-icon" name="search" class="custom-icon" />

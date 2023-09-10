@@ -95,6 +95,13 @@
           {{ bottomTeamInfo.scoreDesc }}
         </p>
       </div>
+      <!-- 顶号提示 -->
+      <div
+        v-if="abnormalTip"
+        class="press-schedule-team--err-tip"
+      >
+        <div class="iconfont icon-abnormal-err icon-red" />
+      </div>
     </div>
 
     <!-- 赛事信息 -->
@@ -167,19 +174,6 @@ export default {
       type: String,
       default: '',
     },
-    // scheduleInfo: {
-    //   type: Object,
-    //   default: () => ({}),
-    // },
-    // 是否是上面的两支战队，默认是
-    // isUpTwoTeam: {
-    //   type: Boolean,
-    //   default: true,
-    // },
-    // childId: {
-    //   type: Number,
-    //   default: 0,
-    // },
   },
   data() {
     return {
@@ -197,44 +191,19 @@ export default {
     bottomTeamInfo() {
       return this.scheGroupInfo.downTeamInfo || {};
     },
+    abnormalTip() {
+      const { abnormalErr = false } = this.scheGroupInfo;
+      return abnormalErr;
+    },
   },
   mounted() {
   },
   methods: {
     onClickSche() {
       this.$emit('clickSche', this.scheGroupInfo.schid, this.scheGroupInfo);
-      // if (this.isPreview) return;
-
-      // const { scheGroupInfo } = this;
-      // const { specState } = scheGroupInfo?.nodeItem || {};
-      // const isLunKongOrDaiDing = ['LUN_KONG', 'DAI_DING'].indexOf(specState) > -1;
-
-
-      // if (this.isAdmin) {
-      //   if (isLunKongOrDaiDing) {
-      //     onClickScheAndJump.call(this);
-      //   } else {
-      //   }
-      // } else {
-      //   // 弃权不能跳转
-      //   if (this.bottomTeamInfo.score == '弃' || this.upTeamInfo.score === '弃') {
-      //     return;
-      //   }
-
-      //   onClickScheAndJump.call(this);
-      // }
     },
     onWatchBattle() {
       this.$emit('clickVideoIcon', this.scheGroupInfo.schid, this.scheGroupInfo);
-      // if (this.isPreview) return;
-
-      // // 有视频号，跳视频号
-      // if (this.scheGroupInfo.isWeChatLiving) {
-      //   openLiveAccount(this.scheGroupInfo.liveInfo?.finder_username);
-      //   return;
-      // }
-
-      // this.$router.push({ path: `/room/${this.childId}/${this.scheGroupInfo.schid}/` });
     },
   },
 };

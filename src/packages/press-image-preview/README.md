@@ -7,6 +7,18 @@ url : pages/press/image-preview/image-preview
 图片放大预览，支持函数调用和组件调用两种方式。
 
 
+## 引入
+
+```ts
+import PressImagePreview from 'press-ui/press-image-preview/press-image-preview';
+
+export default {
+  components: {
+    PressImagePreview,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -120,18 +132,18 @@ imagePreview({
 ### Props
 
 
-| 参数              | 说明                             | 类型             | 默认值      |
-| ----------------- | -------------------------------- | ---------------- | ----------- |
-| show              | 是否显示，函数调用时固定为`true` | _boolean_        | `false`     |
-| images            | 图片列表                         | _Array<string\>_ | -           |
-| startPosition     | 初始位置                         | _number_         | `0`         |
-| showIndex         | 是否展示索引                     | _boolean_        | `false`     |
-| asyncClose        | 是否异步关闭                     | _boolean_        | `false`     |
-| closeable         | 是否显示关闭图标                 | _boolean_        | `false`     |
-| closeIcon         | 关闭图标名称                     | _string_         | `clear`     |
-| closeIconPosition | 关闭图标位置                     | _string_         | `top-right` |
-| custom-style      | 自定义样式                       | _string_         | -           |
-| custom-class      | 自定义类名                       | _string_         | -           |
+| 参数                | 说明                             | 类型             | 默认值      |
+| ------------------- | -------------------------------- | ---------------- | ----------- |
+| show                | 是否显示，函数调用时固定为`true` | _boolean_        | `false`     |
+| images              | 图片列表                         | _array<string\>_ | -           |
+| start-position      | 初始位置                         | _number_         | `0`         |
+| show-index          | 是否展示索引                     | _boolean_        | `false`     |
+| async-close         | 是否异步关闭                     | _boolean_        | `false`     |
+| closeable           | 是否显示关闭图标                 | _boolean_        | `false`     |
+| close-icon          | 关闭图标名称                     | _string_         | `clear`     |
+| close-icon-position | 关闭图标位置                     | _string_         | `top-right` |
+| custom-style        | 自定义样式                       | _string_         | -           |
+| custom-class        | 自定义类名                       | _string_         | -           |
 
 ### Events
 

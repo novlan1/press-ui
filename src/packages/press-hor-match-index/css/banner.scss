@@ -3,36 +3,37 @@
 
 
 .press-banner {
-  padding-left: .08rem;
-  padding-bottom: .12rem;
-  padding-right: .24rem;
+  padding-left: vw(4);
+  padding-bottom: vw(6);
+  padding-right: vw(12);
 
 
   &__swiper {
     position: relative;
-    width: 5.84rem;
-    height: 1.44rem;
+    width: vw(292);
+    height: vw(72);
 
     &__img {
       width: 100%;
-      height: 1.44rem;
+      height: vw(72);
     }
 
     ::v-deep {
       .uni-swiper-dots {
         display: flex;
         align-items: center;
-        left: .36rem;
+        left: vw(18);
         right: auto;
-        bottom: .16rem;
+        bottom: vw(8);
         transform: translateX(0);
+        z-index: 3;
       }
 
       .uni-swiper-dot {
         display: block;
-        width: .16rem;
-        height: .16rem;
-        margin-right: .12rem;
+        width: vw(8);
+        height: vw(8);
+        margin-right: vw(6);
         background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/indicator.png) no-repeat center !important;
         background-size: contain !important;
         border-radius: 0;

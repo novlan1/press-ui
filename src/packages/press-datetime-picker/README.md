@@ -6,7 +6,19 @@ url : pages/press/datetime-picker/datetime-picker
 
 用于选择时间，支持日期、时分等时间维度，通常与 弹出层 组件配合使用。
 
+## 引入
 
+```ts
+import PressDatetimePicker from 'press-ui/press-datetime-picker/press-datetime-picker';
+
+export default {
+  components: {
+    PressDatetimePicker,
+  }
+}
+```
+
+## 代码演示
 
 ### 选择完整时间
 

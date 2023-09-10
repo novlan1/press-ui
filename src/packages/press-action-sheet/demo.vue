@@ -40,6 +40,7 @@
 </template>
 <script>
 import PressActionSheet from 'src/packages/press-action-sheet/press-action-sheet.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 
 export default {
@@ -82,6 +83,7 @@ export default {
 
   components: {
     PressActionSheet,
+    PressCell,
   },
   data() {
     const demoList = [
@@ -115,20 +117,19 @@ export default {
           },
         ],
       },
-
-
     ];
-    if (process.env.UNI_PLATFORM !== 'h5') {
-      demoList.push({
-        title: this.t('wxOpen'),
-        list: [
-          {
-            title: this.t('check'),
-            type: 'wxOpen',
-          },
-        ],
-      });
-    }
+
+    // #ifndef H5
+    demoList.push({
+      title: this.t('wxOpen'),
+      list: [
+        {
+          title: this.t('check'),
+          type: 'wxOpen',
+        },
+      ],
+    });
+    // #endif
 
     return {
       demoList,

@@ -60,12 +60,12 @@ Arbitrary content can be embedded on the mask layer through the default slot.
    :show="options.content"
    @click="onClickHide('content')"
 >
-   <view class="wrapper">
-     <view
+   <div class="wrapper">
+     <div
        class="block"
        catch:tap="noop"
      />
-   </view>
+   </div>
 </press-overlay>
 ```
 

@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'iconfont';
   src: url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e');
-
   /* IE9 */
   src: url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e#iefix') format('embedded-opentype'),
     /* IE6-IE8 */
@@ -11,7 +10,6 @@
     url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.ttf?t=13a02cbb9e9c634e54e36069099a2d1e') format('truetype'),
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
     url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.svg?t=13a02cbb9e9c634e54e36069099a2d1e#iconfont') format('svg');
-
   /* iOS 4.1- */
 }
 
@@ -71,10 +69,6 @@
   content: '\e02a';
 }
 
-.icon-download-video:before {
-  content: '\e02b';
-}
-
 .icon-sz:before {
   content: '\e036';
 }
@@ -93,10 +87,6 @@
 
 .icon-empty:before {
   content: '\e03f';
-}
-
-.icon-kong:before {
-  content: '\e048';
 }
 
 .icon-video-number:before {
@@ -125,10 +115,6 @@
 
 .icon-notice:before {
   content: '\e05b';
-}
-
-.icon-eliminate:before {
-  content: '\e05f';
 }
 
 .icon-back:before {
@@ -205,14 +191,6 @@
 
 .icon-equipment:before {
   content: '\e078';
-}
-
-.icon-transfer:before {
-  content: '\e07a';
-}
-
-.icon-schedule:before {
-  content: '\e07b';
 }
 
 .icon-share-new:before {
@@ -315,10 +293,6 @@
   content: '\e09b';
 }
 
-.icon-search:before {
-  content: '\e09c';
-}
-
 .icon-unlock:before {
   content: '\e09d';
 }
@@ -329,14 +303,6 @@
 
 .icon-cancel-group:before {
   content: '\e09f';
-}
-
-.icon-add-member:before {
-  content: '\e0a0';
-}
-
-.icon-clear:before {
-  content: '\e0a1';
 }
 
 .icon-qrcode:before {
@@ -417,4 +383,208 @@
 
 .icon-filter:before {
   content: '\e0b9';
+}
+
+.icon-comment:before {
+  content: '\e0bb';
+}
+
+.icon-protocol:before {
+  content: '\e0bc';
+}
+
+.icon-question2:before {
+  content: '\e0c3';
+}
+
+.icon-account:before {
+  content: '\e0c4';
+}
+
+.icon-camera:before {
+  content: '\e0c5';
+}
+
+.icon-time:before {
+  content: '\e0c6';
+}
+
+.icon-match2:before {
+  content: '\e0c7';
+}
+
+.icon-up2:before {
+  content: '\e0c8';
+}
+
+.icon-search:before {
+  content: '\e0c9';
+}
+
+.icon-place:before {
+  content: '\e0ca';
+}
+
+.icon-clear:before {
+  content: '\e0cc';
+}
+
+.icon-prize:before {
+  content: '\e0ce';
+}
+
+.icon-change-judge:before {
+  content: '\e0cf';
+}
+
+.icon-start:before {
+  content: '\e0d0';
+}
+
+.icon-reset:before {
+  content: '\e0d1';
+}
+
+.icon-add-member:before {
+  content: '\e0d2';
+}
+
+.icon-eliminate:before {
+  content: '\e0d3';
+}
+
+.icon-team-set:before {
+  content: '\e0d4';
+}
+
+.icon-phone2:before {
+  content: '\e0d5';
+}
+
+.icon-interpretation:before {
+  content: '\e0d6';
+}
+
+.icon-share2:before {
+  content: '\e0d7';
+}
+
+.icon-transfer:before {
+  content: '\e0d8';
+}
+
+.icon-download-video:before {
+  content: '\e0d9';
+}
+
+.icon-match-set:before {
+  content: '\e0da';
+}
+
+.icon-kong:before {
+  content: '\e0db';
+}
+
+.icon-schedule:before {
+  content: '\e0dc';
+}
+
+.icon-progress:before {
+  content: '\e0dd';
+}
+
+.icon-link:before {
+  content: '\e0de';
+}
+
+.icon-notice2:before {
+  content: '\e0df';
+}
+
+.icon-id:before {
+  content: '\e0e0';
+}
+
+.icon-place2:before {
+  content: '\e0e1';
+}
+
+.icon-reward:before {
+  content: '\e0e2';
+}
+
+.icon-buy:before {
+  content: '\e0e3';
+}
+
+.icon-judge-close:before {
+  content: '\e0e5';
+}
+
+.icon-judge-open:before {
+  content: '\e0e6';
+}
+
+.icon-upload:before {
+  content: '\e0e8';
+}
+
+.icon-map:before {
+  content: '\e0e9';
+}
+
+.icon-rounds:before {
+  content: '\e0ea';
+}
+
+.icon-zone:before {
+  content: '\e0eb';
+}
+
+.icon-people:before {
+  content: '\e0ed';
+}
+
+.icon-speed:before {
+  content: '\e0ee';
+}
+
+.icon-set2:before {
+  content: '\e0f0';
+}
+
+.icon-speed-close:before {
+  content: '\e0f8';
+}
+
+.icon-speed-open:before {
+  content: '\e0f9';
+}
+
+.icon-focus:before {
+  content: '\e0fa';
+}
+
+.icon-focused:before {
+  content: '\e0fb';
+}
+
+.icon-copy:before {
+  content: '\e0fc';
+}
+
+.icon-speak:before {
+  content: '\e0fd';
+}
+
+.icon-close-interpretation:before {
+  content: '\e0ff';
+}
+
+.icon-filter:before {
+  content: '\e0b9';
+}
+
+.icon-abnormal-err:before {
+  content: '\e113';
 }

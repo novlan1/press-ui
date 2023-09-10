@@ -8,6 +8,20 @@ url : pages/press/popup/popup
 弹出层组件，在应用中弹出一个消息提示窗口、提示框等
 
 
+## 引入
+
+```ts
+import PressPopup from 'press-ui/press-popup/press-popup';
+
+export default {
+  components: {
+    PressPopup,
+  }
+}
+```
+
+## 代码演示
+
 ### 关闭图标
 
 设置`close-icon`为`true`。
@@ -24,9 +38,9 @@ url : pages/press/popup/popup
     @confirm="confirm"
     @cancel="cancel"
   >
-    <view class="content">
+    <div class="content">
       一些内容
-    </view>
+    </div>
   </PressPopup>
 </template>
 ```
@@ -57,21 +71,19 @@ export default {
 
 
 ```html
-<template>
-  <PressPopup
-    v-if="show"
-    :close-icon="false"
-    :arrow-icon="true"
-    :title="title"
-    title-btn="确定"
-    @confirm="confirm"
-    @cancel="cancel"
-  >
-    <view class="content">
-      一些内容
-    </view>
-  </PressPopup>
-</template>
+<PressPopup
+  v-if="show"
+  :close-icon="false"
+  :arrow-icon="true"
+  :title="title"
+  title-btn="确定"
+  @confirm="confirm"
+  @cancel="cancel"
+>
+  <div class="content">
+    一些内容
+  </div>
+</PressPopup>
 ```
 
 ### 没有关闭/取消
@@ -80,21 +92,19 @@ export default {
 
 
 ```html
-<template>
-  <PressPopup
-    v-if="show"
-    :close-icon="false"
-    :arrow-icon="false"
-    :title="title"
-    title-btn="确定"
-    @confirm="confirm"
-    @cancel="cancel"
-  >
-    <view class="content">
-      一些内容
-    </view>
-  </PressPopup>
-</template>
+<PressPopup
+  v-if="show"
+  :close-icon="false"
+  :arrow-icon="false"
+  :title="title"
+  title-btn="确定"
+  @confirm="confirm"
+  @cancel="cancel"
+>
+  <div class="content">
+    一些内容
+  </div>
+</PressPopup>
 ```
 
 
@@ -105,22 +115,20 @@ export default {
 
 
 ```html
-<template>
-  <PressPopup
-    v-if="show"
-    :close-icon="true"
-    :arrow-icon="false"
-    :border-button="true"
-    :title="title"
-    title-btn="确定"
-    @confirm="confirm"
-    @cancel="cancel"
-  >
-    <view class="content">
-      一些内容
-    </view>
-  </PressPopup>
-</template>
+<PressPopup
+  v-if="show"
+  :close-icon="true"
+  :arrow-icon="false"
+  :border-button="true"
+  :title="title"
+  title-btn="确定"
+  @confirm="confirm"
+  @cancel="cancel"
+>
+  <div class="content">
+    一些内容
+  </div>
+</PressPopup>
 ```
 
 ### 横版
@@ -129,22 +137,61 @@ export default {
 
 
 ```html
-<template>
-  <PressPopup
-    v-if="show"
-    :close-icon="true"
-    :horizontal="true"
-    :width-number="54"
-    :title="title"
-    @confirm="confirm"
-    @cancel="cancel"
-  >
-    <view class="content">
-      一些内容
-    </view>
-  </PressPopup>
-</template>
+<PressPopup
+  v-if="show"
+  :close-icon="true"
+  :horizontal="true"
+  :width-number="54"
+  :title="title"
+  @confirm="confirm"
+  @cancel="cancel"
+>
+  <div class="content">
+    一些内容
+  </div>
+</PressPopup>
 ```
+
+
+### 使用slot
+
+
+```html
+<PressPopup
+  v-if="show"
+  :close-icon="true"
+  :horizontal="true"
+  :width-number="54"
+  :title="title"
+  @confirm="confirm"
+  @cancel="cancel"
+>
+  <PressIconPlus
+    slot="icon"
+    name="gem-o"
+    size="22px"
+  />
+
+  <div slot="title">
+    {{ t('wayToWin') }}
+    <PressIconPlus
+      name="like-o"
+      size="16"
+    />
+  </div>
+
+  <PressIconPlus
+    slot="button"
+    name="setting-o"
+    size="22px"
+  />
+
+  <div class="content">
+    {{ t('SomeContent') }}
+  </div>
+</PressPopup>
+```
+
 
 ### 异步关闭
 
@@ -274,49 +321,60 @@ export default {
 
 ### Popup Props 
 
-|         属性名         |    类型    | 默认值  |                    说明                    |
-| :--------------------: | :--------: | :-----: | :----------------------------------------: |
-|       show-title       | _boolean_  | `true`  |                是否显示标题                |
-|         title          |  _string_  |    -    |                  弹窗标题                  |
-|         button         |  _string_  |    -    |                弹窗标题按钮                |
-|     border-button      | _boolean_  | `false` |             标题按钮是否为线型             |
-|        z-index         |  _string_  |  `99`   |                  弹窗层级                  |
-|      popup-class       |  _string_  |    -    |                    类名                    |
-| close-on-click-overlay | _boolean_  | `true`  |            是否可以点击蒙版关闭            |
-|       close-icon       | _boolean_  | `false` |              是否显示关闭按钮              |
-|       arrow-icon       | _boolean_  | `false` |             是否显示为返回箭头             |
-|       horizontal       | _boolean_  | `false` |              是否切换横板样式              |
-|      width-number      |  _number_  |  `100`  |             横板弹窗宽度百分比             |
-|          mode          |  _string_  |    -    |         函数式调用时传`functional`         |
-|     async-confirm      | _function_ |    -    | 异步`confirm`方法，可为`Promise`或普通方法 |
-|      async-cancel      | _function_ |    -    | 异步`cancel`方法，可为`Promise`或普通方法  |
-|      disabledButton    | _boolean_  | `false` |                   按钮置灰                |
+| 参数                   | 说明                                       | 类型       | 默认值  |
+| ---------------------- | ------------------------------------------ | ---------- | ------- |
+| show-title             | 是否显示标题                               | _boolean_  | `true`  |
+| title                  | 弹窗标题                                   | _string_   | -       |
+| button                 | 弹窗标题按钮                               | _string_   | -       |
+| border-button          | 标题按钮是否为线型                         | _boolean_  | `false` |
+| z-index                | 弹窗层级                                   | _string_   | `99`    |
+| popup-class            | 类名                                       | _string_   | -       |
+| close-on-click-overlay | 是否可以点击蒙版关闭                       | _boolean_  | `true`  |
+| close-icon             | 是否显示关闭按钮                           | _boolean_  | `false` |
+| arrow-icon             | 是否显示为返回箭头                         | _boolean_  | `false` |
+| horizontal             | 是否切换横板样式                           | _boolean_  | `false` |
+| width-number           | 横板弹窗宽度百分比                         | _number_   | `100`   |
+| mode                   | 函数式调用时传`functional`                 | _string_   | -       |
+| async-confirm          | 异步`confirm`方法，可为`Promise`或普通方法 | _function_ | -       |
+| async-cancel           | 异步`cancel`方法，可为`Promise`或普通方法  | _function_ | -       |
+| disabled-button        | 按钮置灰                                   | _boolean_  | `false` |
 
 
 
 ### Popup Events
 
-| 事件称名 |   说明   | 返回值 |
-| :------: | :------: | :----: |
-|  cancel  | 点击取消 |   -    |
-| confirm  | 点击确定 |   -    |
+| 事件    | 说明     | 返回值 |
+| ------- | -------- | ------ |
+| cancel  | 点击取消 | -      |
+| confirm | 点击确定 | -      |
 
 以下为废弃属性（`v0.7.32`）：
 
 
 
-| 类型  |         旧         |           新           |
-| :---: | :----------------: | :--------------------: |
-| Prop  |  show-back-arrow   |       arrow-icon       |
-| Prop  | is-showpopup-close |       close-icon       |
-| Prop  |   is-show-title    |       show-title       |
-| Prop  |   is-cross-slab    |       horizontal       |
-| Prop  |    popup-title     |         title          |
-| Prop  |  popup-title-btn   |         button         |
-| Prop  |   is-border-btn    |     border-button      |
-| Prop  |  can-touch-remove  | close-on-click-overlay |
-| Event |     onConfirm      |        confirm         |
-| Event |      onCancel      |         cancel         |
+| 类型  | 旧                 | 新                     |
+| ----- | ------------------ | ---------------------- |
+| Prop  | show-back-arrow    | arrow-icon             |
+| Prop  | is-showpopup-close | close-icon             |
+| Prop  | is-show-title      | show-title             |
+| Prop  | is-cross-slab      | horizontal             |
+| Prop  | popup-title        | title                  |
+| Prop  | popup-title-btn    | button                 |
+| Prop  | is-border-btn      | border-button          |
+| Prop  | can-touch-remove   | close-on-click-overlay |
+| Event | onConfirm          | confirm                |
+| Event | onCancel           | cancel                 |
+
+
+
+### Popup Slot
+
+| 名称   | 说明             |
+| ------ | ---------------- |
+| title  | 顶部标题         |
+| icon   | 左侧图标位置内容 |
+| button | 右侧按钮位置内容 |
+
 
 ## 常见问题
 

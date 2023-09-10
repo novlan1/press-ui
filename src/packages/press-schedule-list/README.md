@@ -5,6 +5,18 @@ url : pages/press/schedule-list/schedule-list
 ## ScheduleList 赛程列表
 
 
+## 引入
+
+```ts
+import PressScheduleList from 'press-ui/press-schedule-list/press-schedule-list';
+
+export default {
+  components: {
+    PressScheduleList,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法
@@ -44,15 +56,15 @@ export default {
 ### ScheduleItem Props
 
 
-| 参数                  | 说明                                                        | 类型      | 默认值 |
-| --------------------- | ----------------------------------------------------------- | --------- | ------ |
-| sche-info             | 赛程信息，与赛程树中的`schePair`相同                        | _Object_  | -      |
-| selected              | 是否选中                                                    | _Boolean_ | false  |
-| is-admin              | 是否为管理员                                                | _Boolean_ | false  |
-| is-preview            | 是否为预览阶段，0 不是， 1 普通预览，2 预览，且自定义了赛程 | _Number_  | 0      |
-| my-team-id            | 我的队伍id                                                  | _String_  | -      |
-| sche-sub-status-map   | 已订阅的赛程`uni-id`对象，判断是否已订阅                    | _Object_  | -      |
-| can-show-order-button | 是否可以显示订阅按钮，可根据环境设置                        | _Boolean_ | true   |
+| 参数                  | 说明                                                        | 类型      | 默认值  |
+| --------------------- | ----------------------------------------------------------- | --------- | ------- |
+| sche-info             | 赛程信息，与赛程树中的`schePair`相同                        | _object_  | -       |
+| selected              | 是否选中                                                    | _boolean_ | `false` |
+| is-admin              | 是否为管理员                                                | _boolean_ | `false` |
+| is-preview            | 是否为预览阶段，0 不是， 1 普通预览，2 预览，且自定义了赛程 | _number_  | `0`     |
+| my-team-id            | 我的队伍id                                                  | _string_  | -       |
+| sche-sub-status-map   | 已订阅的赛程`uni-id`对象，判断是否已订阅                    | _object_  | -       |
+| can-show-order-button | 是否可以显示订阅按钮，可根据环境设置                        | _boolean_ | `true`  |
 
 
 

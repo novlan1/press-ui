@@ -80,6 +80,8 @@ import { link } from '../mixins/link';
 import utils from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getEventDetail } from '../common/dom/event';
+
 
 export default {
   name: 'PressCell',
@@ -148,7 +150,7 @@ export default {
   },
   methods: {
     onClick(event) {
-      this.$emit('click', event.detail);
+      this.$emit('click', getEventDetail(event));
       this.jumpLink();
     },
   },

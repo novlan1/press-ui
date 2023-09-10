@@ -1,7 +1,7 @@
 <template>
-  <view class="left-window-style">
+  <div class="left-window-style">
     <indexPage />
-  </view>
+  </div>
 </template>
 <script>
 import indexPage from '@/pages/index/index';

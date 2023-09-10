@@ -14,9 +14,9 @@ Just wrap the content inside the `Sticky` component.
 
 ```html
 <press-sticky>
-   <view class="btn1">
+   <div class="btn1">
      Basic usage
-   </view>
+   </div>
 </press-sticky>
 ```
 
@@ -28,11 +28,11 @@ The distance between the component and the top can be set by the `offset-top` pr
 <press-sticky
    :offset-top="50"
 >
-   <view
+   <div
      class="btn2"
    >
      Ceiling distance
-   </view>
+   </div>
 </press-sticky>
 ```
 
@@ -47,9 +47,9 @@ The container of the component can be specified through the `container` attribut
    style="height: 150px;background: #eee;"
 >
    <press-sticky :container="container">
-     <view class="btn3">
+     <div class="btn3">
        designated container
-     </view>
+     </div>
    </press-sticky>
 </div>
 ```
@@ -59,19 +59,10 @@ export default {
    data() {
      const that = this;
      return {
-       container() {
-         let res;
-
-         // #ifdef H5
-         res = that. $refs. container;
-         // #endif
-
-         // #ifndef H5
-         res = uni.createSelectorQuery().select('#container');
-         // #endif
-
-         return res;
-       },
+        container() {
+          const res = that.$refs.container;
+          return res;
+        },
      };
    },
 };

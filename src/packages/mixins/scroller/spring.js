@@ -6,6 +6,32 @@ function a(e, t) {
   return o(e, 0, t);
 }
 
+function commonBetweenEAndDe({
+  e,
+  c,
+  u,
+}) {
+  let t;
+  let n;
+  if (e === this._t) {
+    t = this._powER1T;
+    n = this._powER2T;
+  }
+  this._t = e;
+  if (!t) {
+    this._powER1T = Math.pow(Math.E, c * e);
+    t = this._powER1T;
+  }
+  if (!n) {
+    this._powER2T = Math.pow(Math.E, u * e);
+    n = this._powER2T;
+  }
+  return {
+    t,
+    n,
+  };
+}
+
 export function Spring(e, t, n) {
   this._m = e;
   this._k = t;
@@ -41,39 +67,11 @@ Spring.prototype._solve = function (e, t) {
     const s = e - l;
     return {
       x(e) {
-        let t;
-        let n;
-        if (e === this._t) {
-          t = this._powER1T;
-          n = this._powER2T;
-        }
-        this._t = e;
-        if (!t) {
-          this._powER1T = Math.pow(Math.E, c * e);
-          t = this._powER1T;
-        }
-        if (!n) {
-          this._powER2T = Math.pow(Math.E, u * e);
-          n = this._powER2T;
-        }
+        const { t, n } = commonBetweenEAndDe({ e, c, u });
         return s * t + l * n;
       },
       dx(e) {
-        let t;
-        let n;
-        if (e === this._t) {
-          t = this._powER1T;
-          n = this._powER2T;
-        }
-        this._t = e;
-        if (!t) {
-          this._powER1T = Math.pow(Math.E, c * e);
-          t = this._powER1T;
-        }
-        if (!n) {
-          this._powER2T = Math.pow(Math.E, u * e);
-          n = this._powER2T;
-        }
+        const { t, n } = commonBetweenEAndDe({ e, c, u });
         return s * c * t + l * u * n;
       },
     };

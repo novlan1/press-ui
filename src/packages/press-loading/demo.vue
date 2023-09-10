@@ -44,6 +44,9 @@
   </div>
 </template>
 <script>
+import PressLoading from 'src/packages/press-loading/press-loading.vue';
+
+
 export default {
   i18n: {
     'zh-CN': {
@@ -61,7 +64,9 @@ export default {
       disappear: 'Check',
     },
   },
-
+  components: {
+    PressLoading,
+  },
   data() {
     return {
       options: {

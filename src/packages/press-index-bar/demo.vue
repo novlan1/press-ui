@@ -5,8 +5,9 @@
   >
     <press-index-bar
       :sticky-offset-top="stickyOffsetTop"
+      @select="onSelect"
     >
-      <view
+      <div
         v-for="(item,index) of anchorList"
         :key="index"
       >
@@ -14,11 +15,12 @@
         <press-cell :title="t('text')" />
         <press-cell :title="t('text')" />
         <press-cell :title="t('text')" />
-      </view>
+      </div>
     </press-index-bar>
   </div>
 </template>
 <script>
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressIndexBar from 'src/packages/press-index-bar/press-index-bar.vue';
 import PressIndexAnchor from 'src/packages/press-index-anchor/press-index-anchor.vue';
 
@@ -47,6 +49,7 @@ export default {
   },
 
   components: {
+    PressCell,
     PressIndexBar,
     PressIndexAnchor,
   },
@@ -54,7 +57,7 @@ export default {
     let wrapStyle = '';
     let stickyOffsetTop = 0;
     // #ifdef H5
-    wrapStyle = 'height: 100%; overflow-y: auto;';
+    // wrapStyle = 'height: 100%; overflow-y: auto;';
     stickyOffsetTop = 44;
     // #endif
 
@@ -71,20 +74,15 @@ export default {
   mounted() {
   },
   methods: {
-
+    onSelect(index) {
+      console.log('[onSelect]: ', index);
+    },
   },
 };
 </script>
 <style scoped lang="scss">
 .demo-wrap {
-  // 不能为100%，否则page无法滚动
-  height: auto;
+  height: 100%;
 }
 </style>
 
-<style lang="scss">
-page {
-  height: 100%;
-  overflow: auto;
-}
-</style>

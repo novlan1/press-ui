@@ -1,11 +1,11 @@
 <template>
-  <view class="uni-section">
-    <view
+  <div class="uni-section">
+    <div
       class="uni-section-header"
       :style="headerStyle"
       @click="onClick"
     >
-      <view
+      <div
         v-if="type"
         class="uni-section-header__decoration"
         :class="type"
@@ -15,35 +15,35 @@
         name="decoration"
       />
 
-      <view class="uni-section-header__content">
-        <text
+      <div class="uni-section-header__content">
+        <span
           :style="{'font-size':titleFontSize,'color':titleColor}"
           class="uni-section__content-title"
           :class="{'distraction':!subTitle}"
         >
           {{ title }}
-        </text>
-        <text
+        </span>
+        <span
           v-if="subTitle"
           :style="{'font-size':subTitleFontSize,'color':subTitleColor}"
           class="uni-section-header__content-sub"
         >
           {{ subTitle }}
-        </text>
-      </view>
+        </span>
+      </div>
 
-      <view class="uni-section-header__slot-right">
+      <div class="uni-section-header__slot-right">
         <slot name="right" />
-      </view>
-    </view>
+      </div>
+    </div>
 
-    <view
+    <div
       class="uni-section-content"
       :style="{padding: _padding}"
     >
       <slot />
-    </view>
-  </view>
+    </div>
+  </div>
 </template>
 
 <script>

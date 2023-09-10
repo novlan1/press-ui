@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-loading-index">
+  <div class="press-loading-index">
     <div
       :class="loadingClass"
       :style="customStyle"
@@ -26,7 +26,7 @@
         <slot />
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import utils from '../common/utils/utils';

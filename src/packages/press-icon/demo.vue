@@ -1,12 +1,18 @@
 <template>
   <div class="demo-wrap">
+    <!-- #ifndef H5 -->
+    <PressNotify
+      id="press-notify"
+    />
+    <!-- #endif -->
+
     <press-card
       :is-shadow="false"
       is-full
     >
-      <text class="uni-h6">
+      <span class="uni-h6">
         仅保留 empty 图标，其他图标请使用 press-icon-plus。
-      </text>
+      </span>
     </press-card>
     <demo-block title="图标">
       <div class="icon-content">
@@ -18,36 +24,48 @@
         >
           <press-icon
             :type="item.name"
-            :color="activeIndex === index?'#007aff':'#5e6d82'"
+            :color="activeIndex === index ? '#007aff' : '#5e6d82'"
             size="30"
           />
-          <text
-            :style="{color: activeIndex === index ? '#007aff':'#5e6d82'}"
+          <span
+            :style="{color: activeIndex === index ? '#007aff' : '#5e6d82'}"
             class="uni-mt-5 uni-subtitle"
           >
-            {{ checked? item.unicode: item.name }}
-          </text>
+            {{ checked ? item.unicode: item.name }}
+          </span>
         </div>
       </div>
     </demo-block>
 
     <demo-block title="icon-music">
       <div class="icon-content flex-end">
-        <div class="icon-item">
+        <div
+          class="icon-item"
+          @click.stop="onCopyIconMusic()"
+        >
           <PressIconMusic />
         </div>
 
-        <div class="icon-item">
+        <div
+          class="icon-item"
+          @click.stop="() => onCopyIconMusic(['color', 'rgb(94, 109, 130)'])"
+        >
           <PressIconMusic
             color="rgb(94, 109, 130)"
           />
         </div>
 
-        <div class="icon-item">
+        <div
+          class="icon-item"
+          @click.stop="onCopyIconMusic(['number', '5'])"
+        >
           <PressIconMusic :number="5" />
         </div>
 
-        <div class="icon-item">
+        <div
+          class="icon-item"
+          @click.stop="onCopyIconMusic(['width', '60px'], ['height', '60px'])"
+        >
           <PressIconMusic
             width="60px"
             height="60px"
@@ -59,15 +77,30 @@
 </template>
 
 <script>
-import IconMap from 'src/common/icon.json';
+import IconMap from 'src/utils/icon/icon.json';
 import PressCard from 'src/packages/press-card/press-card.vue';
+import PressIcon from 'src/packages/press-icon/press-icon.vue';
 import PressIconMusic from 'src/packages/press-icon/press-icon-music.vue';
+import PressNotify from 'src/packages/press-notify/press-notify.vue';
+import { CLIPBOARD_MIXIN } from 'src/packages/press-icon-plus/demo-helper/clipboard-mixin';
+
 
 export default {
+  i18n: {
+    'zh-CN': {
+      copied: '复制成功',
+    },
+    'en-US': {
+      copied: 'Copied',
+    },
+  },
   components: {
     PressCard,
     PressIconMusic,
+    PressIcon,
+    PressNotify,
   },
+  mixins: [CLIPBOARD_MIXIN],
   data() {
     const pressIconList = Object.keys(IconMap).map(key => ({
       name: key,
@@ -82,21 +115,19 @@ export default {
   mounted() {
   },
   methods: {
-    change(e) {
-      // e.detail.value在安卓手机上可能是String类型，后续修复后要修改
-      this.checked = !(e.detail.value === 'false' || !e.detail.value);
-    },
     switchActive(index, item) {
-      this.activeIndex = index;
-      uni.setClipboardData({
-        data: !this.checked ? item.name : item.unicode,
-        success: () => {
-          uni.showToast({
-            icon: 'none',
-            title: `${!this.checked ? '图标名称' : 'unicode'}复制成功`,
-          });
-        },
-      });
+      // this.activeIndex = index;
+      const tag = `<press-icon name="${item.name}" />`;
+      this.copyIconTag(tag);
+    },
+    onCopyIconMusic(...args) {
+      const propsStr = args.map((item) => {
+        const { 0: name, 1: value } = item;
+        return `${name}="${value}"`;
+      }).join(' ');
+
+      const tag = `<press-icon-music ${propsStr}/>`;
+      this.copyIconTag(tag);
     },
   },
 };

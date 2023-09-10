@@ -6,6 +6,18 @@ url : pages/press/hor-match-header/hor-match-header
 
 可用于游戏内页面头部。
 
+## 引入
+
+```ts
+import PressHorMatchHeader from 'press-ui/press-hor-match-header/press-hor-match-header';
+
+export default {
+  components: {
+    PressHorMatchHeader,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

@@ -1,9 +1,9 @@
 <template>
-  <uni-shadow-root class="press-radio-group-index">
+  <div class="press-radio-group-index">
     <div :class="'' + utils.bem2('radio-group', [direction])">
       <slot />
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 

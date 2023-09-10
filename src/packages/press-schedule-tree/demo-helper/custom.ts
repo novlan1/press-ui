@@ -1,6 +1,6 @@
 import {
   // FUNCTIONAL_ID_MAP,
-  showPopupCell,
+  showPopupCellAndClose,
   showPicker,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 import {
@@ -19,11 +19,69 @@ export const local = {
   status: STATUS_MAP.NOT_START,
   isAdmin: false,
   groupType: GROUP_TYPE_LIST[0].value,
+  showError: false,
 };
 
+export function adminPopupCell({
+  local,
+  context,
+  callback,
+}) {
+  return {
+    label: '是否为管理员',
+    type: 'switch',
+    open: local.isAdmin,
+    click: ({ context: popupContext }) => {
+      // if (value === undefined) return;
+      popupContext.closeDialog();
+      local.isAdmin = !local.isAdmin;
+      context.onGTip('设置成功');
+
+      if (typeof callback.changeAdmin === 'function') {
+        callback.changeAdmin.call(context, local.isAdmin);
+      }
+    },
+  };
+}
+
+
+export function currentStatusPopupCell({
+  local,
+  context,
+  callback,
+}) {
+  return {
+    label: '当前状态',
+    value: STATUS_TITLE_MAP[local.status],
+    click: ({ context: popupContext }) => {
+      popupContext.closeDialog();
+
+      showPicker({
+        context,
+        title: '当前状态',
+        closeIcon: true,
+        list: STATUS_LIST,
+        current: {
+          value: local.status,
+        },
+      }).then(({ item }: any) => {
+        local.status = item.value;
+        context.onGTip('设置成功');
+
+        if (typeof callback.changeStatus === 'function') {
+          callback.changeStatus.call(context, item.value);
+        }
+      })
+        .catch(() => {
+
+        });
+    },
+  };
+}
 
 export function showCustomPopup({ context, callback }) {
-  showPopupCell({
+  showPopupCellAndClose({
+    context,
     title: '自定义设置',
     closeIcon: true,
     cellList: [
@@ -33,6 +91,7 @@ export function showCustomPopup({ context, callback }) {
         click: ({ context: popupContext }) => {
           popupContext.closeDialog();
           showPicker({
+            context,
             title: '队伍个数',
             closeIcon: true,
             list: TEAM_LIST,
@@ -51,32 +110,11 @@ export function showCustomPopup({ context, callback }) {
             });
         },
       },
-      {
-        label: '当前状态',
-        value: STATUS_TITLE_MAP[local.status],
-        click: ({ context: popupContext }) => {
-          popupContext.closeDialog();
-
-          showPicker({
-            title: '当前状态',
-            closeIcon: true,
-            list: STATUS_LIST,
-            current: {
-              value: local.status,
-            },
-          }).then(({ item }: any) => {
-            local.status = item.value;
-            context.onGTip('设置成功');
-
-            if (typeof callback.changeStatus === 'function') {
-              callback.changeStatus.call(context, item.value);
-            }
-          })
-            .catch(() => {
-
-            });
-        },
-      },
+      currentStatusPopupCell({
+        local,
+        context,
+        callback,
+      }),
       {
         label: '赛制',
         value: GROUP_TYPE_MAP[local.groupType].title,
@@ -84,6 +122,7 @@ export function showCustomPopup({ context, callback }) {
           popupContext.closeDialog();
 
           showPicker({
+            context,
             title: '当前状态',
             closeIcon: true,
             list: GROUP_TYPE_LIST,
@@ -103,29 +142,25 @@ export function showCustomPopup({ context, callback }) {
             });
         },
       },
+      adminPopupCell({
+        local,
+        context,
+        callback,
+      }),
       {
-        label: '是否为管理员',
+        label: '是否显示顶号异',
         type: 'switch',
-        open: local.isAdmin,
+        open: local.showError,
         click: ({ context: popupContext }) => {
-          // if (value === undefined) return;
           popupContext.closeDialog();
-          local.isAdmin = !local.isAdmin;
+          local.showError = !local.showError;
           context.onGTip('设置成功');
 
-          if (typeof callback.changeAdmin === 'function') {
-            callback.changeAdmin.call(context, local.isAdmin);
+          if (typeof callback.changeErrorTip === 'function') {
+            callback.changeErrorTip.call(context, local.showError);
           }
         },
       },
     ],
-  }).then((resp: any) => {
-    const { context: popupContext = {} } = resp || {};
-    popupContext.closeDialog();
-  })
-    .catch((err) => {
-      const { context: popupContext = {} } = err || {};
-      console.log('[showCustomPopup] err', err);
-      popupContext.closeDialog();
-    });
+  });
 }

@@ -11,7 +11,10 @@
       @scroll="scroll"
       @touchmove="touchmove"
     >
-      <div class="press-message-detail__placeholder" />
+      <div
+        class="press-message-detail__placeholder"
+        :style="placeHolderStyle"
+      />
       <div class="press-message-detail__layout">
         <div
           v-for="(item) in reversedList"
@@ -56,13 +59,13 @@
               :style="item.avatar ? `background-image: url(${item.avatar})` : ''"
               @click.stop="clickAvatar(item)"
             />
-            <image
+            <img
               v-if="item.picUrl "
               mode="widthFix"
               class="press-message-item__box__img"
               :src="item.picUrl"
               @click="clickPic(item.picUrl, item)"
-            />
+            >
             <div
               v-else
               class="press-message-item__box__popover"
@@ -227,8 +230,11 @@ import { MESSAGE_TYPE_MAP } from '../common/im/message-detail/config';
 import { SELECTOR_MAP } from './config';
 import { getScrollSelector } from '../common/dom/scroll';
 import { getRect } from '../common/dom/rect';
+import { getEventDetail } from '../common/dom/event';
+
 
 const scrollSelector = getScrollSelector(SELECTOR_MAP.SCROLL_VIEW_ID);
+
 
 export default {
   name: 'PressMessageDetail',
@@ -263,6 +269,7 @@ export default {
 
       innerLoading: this.loading,
       scrollerHeight: 0,
+      placeHolderStyle: '',
     };
   },
   computed: {
@@ -276,8 +283,16 @@ export default {
   },
   watch: {
     loading(val) {
-      // console.log('watch.loading', val);
       this.innerLoading = val;
+    },
+    list: {
+      handler() {
+        // #ifdef MP-QQ
+        this.setPlaceholderHeight();
+        // #endif
+      },
+      deep: true,
+      immediate: true,
     },
   },
   methods: {
@@ -287,7 +302,6 @@ export default {
     },
     touchmove(event) {
       this.$emit('touchMove', event);
-      // this.watchScrollTop(event);
     },
     clickPic(pickUrl, messageItem) {
       this.$emit('clickPic', pickUrl, messageItem);
@@ -318,9 +332,9 @@ export default {
 
       // #ifndef H5
       this?.createSelectorQuery?.()
-        .select(scrollSelector)
-        .node()
-        .exec((res) => {
+        ?.select(scrollSelector)
+        ?.node?.()
+        ?.exec((res) => {
           const scrollView = res[0]?.node;
           if (!scrollView) return;
           scrollView.scrollTo({
@@ -342,36 +356,37 @@ export default {
       }
       return new Promise((resolve) => {
         getRect(this, scrollSelector).then((res) => {
-          // console.log('getRect.res', res);
           this.scrollerHeight = res.height;
           resolve(res.height);
         });
       });
     },
-
-
     watchScrollTop(event) {
-      // console.log('innerLoading', this.innerLoading);
       if (!this.list?.length || this.innerLoading) return;
-      const { scrollTop, scrollHeight } = event.detail || {};
-      // console.log('scrollTop', scrollTop, event);
+
+      const { scrollTop, scrollHeight } = getEventDetail(event) || {};
       this.getScrollerHeight().then((scrollerHeight) => {
         if (scrollTop + scrollerHeight > scrollHeight - this.offset) {
           this.$emit('loadMore');
         }
       });
-      // getRect(this, scrollSelector).then((res) => {
-      //   console.log('getRect.res', res);
-      //   this.scrollerHeight = res.height;
-      //   // if (scrollTop < 100) {
-      //   if (scrollTop + res.height > scrollHeight - 100) {
-      //     this.$emit('loadMore');
-      //   }
-      //   // if (res.top + 100 <= this.placeHolderTop) {
-      //   //   this.$emit('loadMore');
-      //   // }
-      // });
-      return;
+    },
+    setPlaceholderHeight() {
+      this.$nextTick(() => {
+        Promise.all([
+          getRect(this, '.press-message-detail__scroll-view'),
+          getRect(this, '.press-message-detail__layout'),
+        ]).then((res) => {
+          const { 0: scrollViewRect, 1: layoutRect } = res;
+          const placeholderHeight = scrollViewRect.height - layoutRect.height;
+
+          if (placeholderHeight > 0) {
+            this.placeHolderStyle = `height: ${placeholderHeight}px;`;
+          } else {
+            this.placeHolderStyle = 'height: 0';
+          }
+        });
+      });
     },
   },
 };

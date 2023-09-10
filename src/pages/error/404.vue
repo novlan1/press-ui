@@ -1,14 +1,14 @@
 <template>
   <div>
     <div>
-      <text style="font-size: 25px;color: #333;">
+      <span style="font-size: 25px;color: #333;">
         404 Page Not Found
-      </text>
+      </span>
     </div>
     <div>
-      <text style="font-size: 18px;color: #999;">
+      <span style="font-size: 18px;color: #999;">
         {{ errMsg }}
-      </text>
+      </span>
     </div>
   </div>
 </template>

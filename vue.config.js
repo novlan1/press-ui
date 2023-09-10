@@ -25,6 +25,7 @@ if (process.env.UNI_PLATFORM !== 'h5') {
   plugins.push(new GenVersionWebPlugin({
     buildName: BUILD_NAME_MAP.build,
     commitName: BUILD_NAME_MAP.commit,
+    delay: 1,
   }));
 }
 

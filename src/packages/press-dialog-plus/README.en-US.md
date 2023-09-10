@@ -127,7 +127,7 @@ If you need to embed components or other custom content in the pop-up window, yo
    @close="onClose"
    @getuserinfo="getUserInfo"
 >
-   <image src="https://img.yzcdn.cn/1.jpg" />
+   <img src="https://img.yzcdn.cn/1.jpg" />
 </press-dialog>
 ```
 

@@ -120,25 +120,27 @@
           name="a"
           :custom-style="customStyle"
         >
-          {{ t('checkbox') }} a
+          {{ t('checkbox') }} A
         </press-checkbox>
         <press-checkbox
           name="b"
           :custom-style="customStyle"
         >
-          {{ t('checkbox') }} b
+          {{ t('checkbox') }} B
         </press-checkbox>
         <press-checkbox
           name="c"
           :custom-style="customStyle"
         >
-          {{ t('checkbox') }} c
+          {{ t('checkbox') }} C
         </press-checkbox>
       </press-checkbox-group>
     </demo-block>
   </div>
 </template>
 <script>
+import PressCheckbox from 'src/packages/press-checkbox/press-checkbox.vue';
+import PressCheckboxGroup from 'src/packages/press-checkbox-group/press-checkbox-group.vue';
 
 export default {
   i18n: {
@@ -173,7 +175,10 @@ export default {
       disableLabel: 'Disable label click',
     },
   },
-
+  components: {
+    PressCheckbox,
+    PressCheckboxGroup,
+  },
   data() {
     return {
       checkedMap: {
@@ -189,13 +194,6 @@ export default {
       sectionStyle: 'margin: 1px 18px;',
       customStyle: 'margin-bottom: 8px;',
     };
-  },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
   },
   methods: {
     onChange(val, type) {

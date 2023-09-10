@@ -1,37 +1,21 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <!-- #ifndef APP-NVUE -->
-  <view class="uni-list uni-border-top-bottom">
-    <view
+  <div class="uni-list uni-border-top-bottom">
+    <div
       v-if="border"
       class="uni-list--border-top"
     />
     <slot />
-    <view
+    <div
       v-if="border"
       class="uni-list--border-bottom"
     />
-  </view>
-  <!-- #endif -->
-  <!-- #ifdef APP-NVUE -->
-  <list
-    class="uni-list"
-    :class="{ 'uni-list--border': border }"
-    :enable-back-to-top="enableBackToTop"
-    loadmoreoffset="15"
-  >
-    <slot />
-  </list>
+  </div>
   <!-- #endif -->
 </template>
 
 <script>
-/**
- * List 列表
- * @description 列表组件
- * @tutorial https://ext.dcloud.net.cn/plugin?id=24
- * @property {String} 	border = [true|false] 		标题
- */
+
 export default {
   name: 'UniList',
   'mp-weixin': {
@@ -53,11 +37,6 @@ export default {
       default: true,
     },
   },
-  // provide() {
-  // 	return {
-  // 		list: this
-  // 	};
-  // },
   created() {
     this.firstChildAppend = false;
   },

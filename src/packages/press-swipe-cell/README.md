@@ -7,6 +7,21 @@ url : pages/press/swipe-cell/swipe-cell
 
 可以左右滑动来展示操作按钮的单元格组件。
 
+
+## 引入
+
+```ts
+import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell';
+
+export default {
+  components: {
+    PressSwipeCell,
+  }
+}
+```
+
+## 代码演示
+
 ### 基础用法
 
 将内容包裹在`Sticky`组件内即可。

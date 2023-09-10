@@ -51,7 +51,7 @@
               @change="onSwitch2Change"
             />
           </press-cell>
-          <view style="padding: 5px 16px;">
+          <div style="padding: 5px 16px;">
             <press-button
               type="danger"
               block
@@ -60,7 +60,7 @@
             >
               {{ t('confirm') }}
             </press-button>
-          </view>
+          </div>
         </press-dropdown-item>
       </press-dropdown-menu>
     </demo-block>
@@ -123,6 +123,9 @@
 import PressDropdownMenu from 'src/packages/press-dropdown-menu/press-dropdown-menu.vue';
 import PressDropdownItem from 'src/packages/press-dropdown-item/press-dropdown-item.vue';
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressButton from 'src/packages/press-button/press-button.vue';
+
 
 export default {
   i18n: {
@@ -170,6 +173,8 @@ export default {
     PressDropdownMenu,
     PressDropdownItem,
     PressSwitch,
+    PressCell,
+    PressButton,
   },
   data() {
     return {

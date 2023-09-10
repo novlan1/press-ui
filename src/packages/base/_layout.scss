@@ -1,22 +1,28 @@
 @use 'sass:math';
 
-//css函数
+//css函数--小程序横版适配
 @function tovmin($rpx) {
   //$rpx为需要转换的字号
   @return #{math.div($rpx * 100,750)}vmin;
 }
 
+//css函数--游戏内横版vw适配
+@function vw($px) {
+  //$rpx为需要转换的字号
+  @return #{math.div($px * 100,812)}vw;
+}
+
 /* 字号 */
-$font-xxXl: .48rem;
-$font-xxl: .4rem;
-$font-xl: .36rem;
-$font-l: .32rem;
-$font-xm: .28rem;
+$font-xxXl: .48rem; // 24px
+$font-xxl: .4rem; // 20px
+$font-xl: .36rem; // 18px
+$font-l: .32rem; // 16px
+$font-xm: .28rem; // 14px
 $font-m: .26rem;
-$font-s: .24rem;
+$font-s: .24rem; // 12px
 $font-xs: .22rem;
-$font-xxs: .2rem;
-$font-xxxs: .18rem;
+$font-xxs: .2rem; // 10px
+$font-xxxs: .18rem; // 9px
 
 /* color */
 $color-primary: #1181d7;

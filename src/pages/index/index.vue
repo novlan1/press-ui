@@ -2,30 +2,31 @@
   <div class="home-container">
     <scroll-view
       scroll-y
+      class="scroll-view"
       :scroll-top="scrollTop"
       @scroll="onScroll"
     >
       <div class="home-header">
-        <image
+        <img
           class="home-header__bg"
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/uniui-header-bg.png"
           mode="widthFix"
-        />
-        <image
+        >
+        <img
           class="home-header__logo"
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
           mode="aspectFit"
           @longpress.stop="onMorsePwdLongPress"
           @click.stop="onMorsePwdClick"
-        />
+        >
         <div class="home-header__content">
           <div class="home-header__content-title">
-            {{ t('introduce.name') }}
+            {{ t('name') }}
           </div>
           <div class="home-header__content-info">
-            <text class="home-header__content-subtitle">
-              {{ t('introduce.detail') }}
-            </text>
+            <span class="home-header__content-subtitle">
+              {{ t('detail') }}
+            </span>
           </div>
         </div>
       </div>
@@ -68,7 +69,7 @@
           >
             <uni-section
               key="other-ability-section"
-              :title="t('introduce.otherAbility')"
+              :title="t('otherAbility')"
               color="#007aff"
               type="line"
               header-style="font-weight: 500;margin-bottom: 6px;"
@@ -83,7 +84,7 @@
                 :border="false"
                 show-arrow
                 clickable
-                :title="t('introduce.toggleLanguage')"
+                :title="t('toggleLanguage')"
                 @click="onToggleLanguage"
               />
               <!-- #ifdef H5 -->
@@ -92,7 +93,7 @@
                 :border="false"
                 show-arrow
                 clickable
-                :title="t('introduce.toggleVConsole')"
+                :title="t('toggleVConsole')"
                 @click="onOpenVConsole"
               />
               <!-- #endif -->
@@ -103,7 +104,7 @@
                 :border="false"
                 show-arrow
                 clickable
-                :title="t('introduce.launchApp')"
+                :title="t('launchApp')"
                 @click="onJumpToLaunchApp"
               />
               <!-- #endif -->
@@ -134,6 +135,7 @@ import { isInIFrame } from '../../utils/index';
 import { toggleVConsole } from '../../utils/v-console/v-console';
 import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
+import { isNotInUni } from '../../packages/common/utils/utils';
 
 const pagesConfig = require('./page-config.json');
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
@@ -143,9 +145,21 @@ export default {
   i18n: {
     'zh-CN': {
       share: '分享',
+      name: '全端兼容 高性能',
+      detail: 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库',
+      otherAbility: '其他功能',
+      toggleLanguage: '切换语言',
+      toggleVConsole: '切换VConsole',
+      launchApp: '拉起APP',
     },
     'en-US': {
       share: 'Share',
+      name: 'Fully Compatible',
+      detail: 'Press UI is an easy-to-use, uni-app-based component library',
+      otherAbility: 'Other Ability',
+      toggleLanguage: 'Toggle Language',
+      toggleVConsole: 'Toggle VConsole',
+      launchApp: 'Launch App',
     },
   },
   components: {
@@ -185,16 +199,9 @@ export default {
       showLaunchApp,
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
-  onShow() {
+  mounted() {
     // #ifdef H5
-    this.scrollTop = +uni.getStorageSync(SCROLL_TOP_KEY) || 0;
+    this.scrollTop = +localStorage.getItem(SCROLL_TOP_KEY) || 0;
     this.showMoreList = true;
     // #endif
 
@@ -204,8 +211,10 @@ export default {
     }, 2000);
     // #endif
   },
-  onHide() {
-    uni.setStorageSync(SCROLL_TOP_KEY, this.scrollTop);
+  beforeDestroy() {
+    // #ifdef H5
+    localStorage.setItem(SCROLL_TOP_KEY, this.scrollTop);
+    // #endif
   },
   methods: {
     onScroll(e) {
@@ -221,7 +230,7 @@ export default {
       return this.t(`titleMap.${item.name}`);
     },
     onToggleLanguage() {
-      toggleI18n();
+      toggleI18n(this.onGTip);
     },
     getUniqueKey(a, b) {
       return `${a}-${b}`;
@@ -230,6 +239,12 @@ export default {
       toggleVConsole();
     },
     onJumpToLaunchApp() {
+      // #ifdef H5
+      if (isNotInUni()) {
+        this.$router.push('/pages/press/launch-app/launch-app');
+        return;
+      }
+      // #endif
       uni.navigateTo({
         url: '/pages/launch-app/launch-app',
       });
@@ -240,6 +255,13 @@ export default {
       this.onGTip('展示成功');
     },
     onJumpToSharePage() {
+      // #ifdef H5
+      if (isNotInUni()) {
+        this.$router.push('/pages/press/share/share');
+        return;
+      }
+      // #endif
+
       uni.navigateTo({
         url: '/pages/share/share',
       });
@@ -256,6 +278,7 @@ export default {
   height: 100%;
   overflow: auto;
 
+  .scroll-view,
   scroll-view {
     height: 100%;
     overflow: auto;

@@ -139,8 +139,10 @@
 </template>
 <script>
 import PressCard from 'src/packages/press-card/press-card.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
+
 
 export default {
   i18n: {
@@ -173,6 +175,7 @@ export default {
     PressCard,
     UniIcons,
     PressSwitch,
+    PressCell,
   },
   data() {
     return {
@@ -191,10 +194,7 @@ export default {
       console.log(e);
     },
     actionsClick(text) {
-      uni.showToast({
-        title: text,
-        icon: 'none',
-      });
+      this.onGTip(text);
     },
   },
 };

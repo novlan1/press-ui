@@ -6,6 +6,17 @@ url : pages/press/calendar/calendar
 
 日历组件用于选择日期或日期区间。
 
+## 引入
+
+```ts
+import PressCalendar from 'press-ui/press-calendar/press-calendar';
+
+export default {
+  components: {
+    PressCalendar,
+  }
+}
+```
 
 ## 代码演示
 

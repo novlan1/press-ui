@@ -1,7 +1,7 @@
 function sortComponentConfig(config) {
   return Object.keys(config).reduce((acc, key) => {
     const value = config[key];
-    console.log('value', value);
+    // console.log('value', value);
 
     value.list.sort((a, b) => {
       if (a.name > b.name) return 1;

@@ -167,12 +167,15 @@ export default {
     margin: 0 auto;
     border-left: 0.16rem solid #eef0f6;
     border-right: 0.16rem solid #eef0f6;
+    border-top: 0;
+    border-bottom: 0;
     flex: 1;
     border-radius: 0.08rem;
     background-color: #eef0f6;
     font-size: $font-xm;
     caret-color: $color-black;
     box-sizing: border-box;
+    user-select: auto;
 
     &::placeholder {
       color: $color-gray;

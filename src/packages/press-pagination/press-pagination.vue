@@ -2,9 +2,12 @@
   <!-- 分页滚动条 -->
   <div
     class="press-pagination"
-    :class="{'press-pagination--safe' : safeAreaInsetBottom}"
+    :class="[customClass,
+             {'press-pagination--safe' : safeAreaInsetBottom,},
+             {'press-pagination--hor': mode === 'hor'}
+    ]"
   >
-    <view
+    <div
       v-if="zones.length > 1"
       class="press-pagination__wrap"
     >
@@ -17,7 +20,7 @@
         :scroll-top="scrollTop"
         @scroll="scroll"
       >
-        <view
+        <div
           v-for="(item,index) in zones"
           :id="'seq-' + item"
           :key="index"
@@ -27,8 +30,8 @@
           }, `press-scrollbar__scale--total-${total}`]"
           @click="handleSelect(item,index)"
         >
-          <text>{{ item }}</text>
-        </view>
+          <span>{{ item }}</span>
+        </div>
       </scroll-view>
       <PressPopover
         :show="selectedEvent"
@@ -37,12 +40,14 @@
       >
         <p>{{ pageTip }}</p>
       </PressPopover>
-    </view>
+    </div>
   </div>
 </template>
 
 <script>
 import PressPopover from '../press-popover/press-popover';
+import { getRect, getScrollHeight } from '../common/dom/rect';
+import { isNotInUni } from '../common/utils/utils';
 
 let popOverTimer = null;
 
@@ -76,9 +81,18 @@ export default {
       type: Boolean,
       default: true,
     },
+    customClass: {
+      type: String,
+      default: '',
+    },
+    mode: {
+      type: String,
+      default: '',
+    },
   },
   options: {
     virtualHost: true,
+    styleIsolation: 'shared',
   },
   data() {
     return {
@@ -122,6 +136,13 @@ export default {
         });
       },
     },
+    mode: {
+      handler() {
+        this.$nextTick(() => {
+          this.getScrollBarSize();
+        });
+      },
+    },
   },
   mounted() {
     this.selectedEvent = false;
@@ -141,67 +162,63 @@ export default {
   },
   methods: {
     getScrollBarSize() {
-      const item = uni.createSelectorQuery().in(this);
-      item.select('.press-scrollbar')
-        .boundingClientRect((res) => {
-          if (res) {
-            this.zonesBox = { top: res.top, bottom: res.bottom, height: res.height };
-          }
-        })
-        .exec();
+      getRect(this, '.press-scrollbar').then((res) => {
+        if (res) {
+          this.zonesBox = { top: res.top, bottom: res.bottom, height: res.height };
+        }
+      });
     },
     updatePopoverTipPosition() {
-      const item = uni.createSelectorQuery().in(this);
-      item.select(`#seq-${this.currSelItem}`)
-        .boundingClientRect((res) => {
-          if (res) {
-            this.tipOffset = res.top - this.zonesBox.top + res.height / 2;
-          }
-        })
-        .exec();
+      getRect(this, `#seq-${this.currSelItem}`).then((res) => {
+        if (res) {
+          this.tipOffset = res.top - this.zonesBox.top + res.height / 2;
+        }
+      });
     },
     scroll(e) {
-      this.old.scrollTop = e.detail.scrollTop;
+      if (isNotInUni()) {
+        this.old.scrollTop = e.target.scrollTop;
+      } else {
+        this.old.scrollTop = e.detail.scrollTop;
+      }
       this.updatePopoverTipPosition();
     },
     scrollTo() {
       const { autoScroll } = this;
       this.scrollToView = `seq-${this.currSelItem}`;
-      const item = this.createSelectorQuery().select(`#seq-${this.currSelItem}`);
-      const list = this.createSelectorQuery().select('#zoneBox');
       this.scrollTop = this.old.scrollTop;
 
-      list
-        .fields({
-          scrollOffset: true,
-          size: true,
-        }, (box) => {
-          item.boundingClientRect((data) => {
-            if (!data) return;
+      Promise.all([
+        getScrollHeight(this, '#zoneBox'),
+        getRect(this, `#seq-${this.currSelItem}`),
+      ])
+        .then(([box, data]) => {
+          if (!data) return;
 
-            const { top, bottom, height = 0 } = this.zonesBox;
-            if (height > 0) {
-              if (data.top - top < autoScroll * data.height) {
-                this.scrollTop = Math.max(1, (this.currSelItem - 1 - autoScroll) * data.height);
-              } else if (bottom - data.bottom < autoScroll * data.height) {
-                // scrollTop + box.height = current * item.height
-                const target = (this.currSelItem + autoScroll) * data.height - height;
-                // #ifdef MP-QQ
-                // qq小程序上没有 box.scrollHeight
-                this.scrollTop = target;
-                // #endif
+          const { top, bottom, height = 0 } = this.zonesBox;
+          if (height > 0) {
+            if (data.top - top < autoScroll * data.height) {
+              // 顶部不足
+              this.scrollTop = Math.max(1, (this.currSelItem - 1 - autoScroll) * data.height);
+            } else if (bottom - data.bottom < autoScroll * data.height) {
+              // 底部不足
+              // scrollTop + box.height = current * item.height
+              const target = (this.currSelItem + autoScroll) * data.height - height;
+              // #ifdef MP-QQ
+              // qq小程序上没有 box.scrollHeight
+              this.scrollTop = target;
+              // #endif
 
-                // #ifndef MP-QQ
-                this.scrollTop = Math.min(
-                  target,
-                  box.scrollHeight - height,
-                );
-                // #endif
-              }
-              this.updatePopoverTipPosition();
+              // #ifndef MP-QQ
+              this.scrollTop = Math.min(
+                target,
+                box.scrollHeight - height,
+              );
+            // #endif
             }
-          }).exec();
-        }).exec();
+            this.updatePopoverTipPosition();
+          }
+        });
     },
     handleSelect(item) {
       // 清理上一次定时器
@@ -227,3 +244,4 @@ export default {
 
 </script>
 <style lang="scss" scoped src="./css/index.scss"></style>
+<style lang="scss" scoped src="./css/hor.scss"></style>

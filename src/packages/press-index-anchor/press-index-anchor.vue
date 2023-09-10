@@ -10,7 +10,7 @@
       >
         <slot v-if="useSlot" />
         <template v-else>
-          <text>{{ index }}</text>
+          <span>{{ index }}</span>
         </template>
       </div>
     </div>
@@ -55,12 +55,12 @@ export default {
         this[item] = data[item];
       });
     },
-    scrollIntoView(scrollTop) {
+    scrollIntoView(scrollTop, callback) {
       getRect(this, '.press-index-anchor-wrapper').then((rect) => {
-        wx.pageScrollTo({
-          duration: 0,
-          scrollTop: scrollTop + rect.top - this[PARENT].stickyOffsetTop,
-        });
+        const newScrollTop = scrollTop + rect.top - this[PARENT].stickyOffsetTop;
+
+
+        callback?.(newScrollTop);
       });
     },
   },

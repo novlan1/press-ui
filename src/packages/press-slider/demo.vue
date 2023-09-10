@@ -115,6 +115,7 @@
 import PressSlider from 'src/packages/press-slider/press-slider.vue';
 import PressToast from 'src/packages/press-toast/press-toast.vue';
 
+
 export default {
   i18n: {
     'zh-CN': {

@@ -44,6 +44,7 @@ import { genScheList } from 'src/packages/press-schedule-tree/demo-helper/mock-d
 import { formatScheTreeData } from 'src/packages/press-schedule-tree/utils';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressCell from 'src/packages/press-cell/press-cell.vue';
 
 import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
 import { showCustomPopup, local } from 'src/packages/press-schedule-tree/demo-helper/custom';
@@ -66,6 +67,7 @@ export default {
     ScheduleTree,
     PressPopupCell,
     PressPicker,
+    PressCell,
   },
   data() {
     return {
@@ -103,6 +105,7 @@ export default {
           changeStatus: this.changeStatus,
           changeAdmin: this.changeAdmin,
           changeGroupType: this.changeGroupType,
+          changeErrorTip: this.changeErrorTip,
         },
       });
     },
@@ -123,6 +126,13 @@ export default {
       };
       this.generateData();
     },
+    changeErrorTip(showError) {
+      this.scheLocal = {
+        ...this.scheLocal,
+        showError,
+      };
+      this.generateData();
+    },
     changeGroupType(groupType) {
       this.scheLocal = {
         ...this.scheLocal,
@@ -131,11 +141,20 @@ export default {
       this.generateData();
     },
     generateData() {
-      const { isAdmin, teamNumber: teamNumber, status, groupType } = this.scheLocal;
+      const {
+        isAdmin,
+        teamNumber: teamNumber,
+        status,
+        groupType,
+        showError,
+      } = this.scheLocal;
 
 
       const newScheList = genScheList({
-        info: STATUS_SCHE_MAP[status],
+        info: {
+          ...STATUS_SCHE_MAP[status],
+          abnormalErr: !!showError,
+        },
         teamNumber,
         groupType,
       });

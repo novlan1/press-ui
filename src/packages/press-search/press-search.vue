@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-search-index">
+  <div class="press-search-index">
     <div
       :class="'custom-class ' + (utils.bem2('search', { withaction: showAction || useActionSlot }))"
       :style="'background: '+(background)"
@@ -76,7 +76,7 @@
         </div>
       </div>
     </div>
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 import PressField from '../press-field/press-field.vue';

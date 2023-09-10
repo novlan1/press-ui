@@ -17,9 +17,10 @@ function flattenVNodes(vnodes) {
 
   traverse(vnodes);
   return result;
-} // sort children instances by vnodes order
+}
 
 
+// sort children instances by vnodes order
 export function sortChildren(children, parent) {
   const { componentOptions } = parent.$vnode;
 

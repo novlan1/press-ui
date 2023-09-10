@@ -6,6 +6,18 @@ url : pages/press/popup-plus/popup-plus
 
 弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。
 
+## 引入
+
+```ts
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus';
+
+export default {
+  components: {
+    PressPopupPlus,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

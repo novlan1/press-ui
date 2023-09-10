@@ -1,5 +1,5 @@
 <template>
-  <uni-shadow-root class="press-calendar-index">
+  <div class="press-calendar-index">
     <press-popup
       v-if="poppable"
       :custom-class="'press-calendar__popup--'+(position)"
@@ -44,6 +44,12 @@
 
     <Calendar
       v-else
+      :max-date="maxDate"
+      :row-height="rowHeight"
+      :show-mark="showMark"
+      :show-title="showTitle"
+      :show-confirm="showConfirm"
+      :show-subtitle="showSubtitle"
       :title="title"
       :color="color"
       :formatter="formatter"
@@ -52,28 +58,22 @@
       :allow-same-day="allowSameDay"
       :type="type"
       :min-date="minDate"
-      :max-date="maxDate"
-      :row-height="rowHeight"
-      :show-mark="showMark"
-      :show-title="showTitle"
-      :show-confirm="showConfirm"
-      :show-subtitle="showSubtitle"
       :safe-area-inset-bottom="safeAreaInsetBottom"
       :first-day-of-week="firstDayOfWeek"
       :scroll-into-view-data="scrollIntoViewData"
       :current-date="currentDate"
       :subtitle="subtitle"
       :poppable="poppable"
-      @onConfirm="onConfirm"
-      @onClickSubtitle="onClickSubtitle"
       @scrollIntoView="scrollIntoView"
       @onClickDay="onClickDay"
+      @onConfirm="onConfirm"
+      @onClickSubtitle="onClickSubtitle"
     />
 
     <!-- #ifndef H5 -->
     <press-toast id="press-toast" />
     <!-- #endif -->
-  </uni-shadow-root>
+  </div>
 </template>
 <script>
 

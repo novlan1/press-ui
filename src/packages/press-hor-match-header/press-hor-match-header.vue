@@ -4,6 +4,9 @@
       class="press-hor-match-header__back"
       @click="back"
     />
+    <div class="press-hor-match__title">
+      {{ title }}
+    </div>
     <div class="press-hor-match-header__middle">
       <slot name="middle" />
     </div>
@@ -18,6 +21,10 @@
 export default {
   name: 'PressHorMatchHeader',
   props: {
+    title: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
@@ -43,8 +50,19 @@ export default {
   padding-top: 0.12rem;
   padding-bottom: 0.18rem;
 
+  &__title {
+    font-family: 'GAMEFONT';
+    font-size: .3rem;
+    color: transparent;
+    padding-left: .16rem;
+    background-image: linear-gradient(to bottom, #759ccd 0%,#abcef4 100%);
+    -webkit-background-clip: text;
+  }
+
   &__middle {
     flex: 1;
+    min-width: 0;
+    width: 0;
     overflow: hidden;
   }
 

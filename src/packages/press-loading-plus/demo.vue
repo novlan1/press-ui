@@ -55,6 +55,8 @@
   </div>
 </template>
 <script>
+import PressLoadingPlus from 'src/packages/press-loading-plus/press-loading-plus.vue';
+
 
 export default {
   i18n: {
@@ -75,24 +77,16 @@ export default {
       textColor: 'Text Color',
     },
   },
-
+  components: {
+    PressLoadingPlus,
+  },
   data() {
     return {
       isOpen: false,
       customStyle: 'margin-left: 20px;',
     };
   },
-  onLoad() {
-    // #ifdef MP-QQ
-    qq.showShareMenu({
-      showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
-    });
-    // #endif
-  },
   methods: {
-    onShow() {
-
-    },
     onSwitchChange() {
       this.isOpen = !this.isOpen;
     },

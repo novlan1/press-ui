@@ -100,35 +100,35 @@ export default {
 
 ### Props
 
-| property name |   type    | default value | description                                                   |
-| :-----------: | :-------: | :-----------: | :------------------------------------------------------------ |
-|     title     | _string_  |       -       | title                                                         |
-|  arrow-icon   | _boolean_ |    `false`    | Whether the upper left corner should be shown as a back arrow |
-|     list      |  _Array_  |     `[]`      | data list                                                     |
-|    current    | _Object_  |    `null`     | currently selected item                                       |
-|      tip      | _string_  |       -       | tip                                                           |
-|     mode      | _string_  |       -       | pass `functional` when calling a function                     |
+| property name | type      | default value | description                                                   |
+| ------------- | --------- | ------------- | :------------------------------------------------------------ |
+| title         | _string_  | -             | title                                                         |
+| arrow-icon    | _boolean_ | `false`       | Whether the upper left corner should be shown as a back arrow |
+| list          | _Array_   | `[]`          | data list                                                     |
+| current       | _Object_  | `null`        | currently selected item                                       |
+| tip           | _string_  | -             | tip                                                           |
+| mode          | _string_  | -             | pass `functional` when calling a function                     |
 
 
 
 ### Events
 
-| event name |   description   | return value |
-| :--------: | :-------------: | :----------: |
-|   cancel   | Click to cancel |      -       |
-|  confirm   |    Click OK     |      -       |
+| event name | description     | return value |
+| ---------- | --------------- | ------------ |
+| cancel     | Click to cancel | -            |
+| confirm    | Click OK        | -            |
 
 
 The following properties are deprecated (`v0.7.32`):
 
 
-| Type  |       Old       |    New     |
-| :---: | :-------------: | :--------: |
+| Type  | Old             | New        |
+| ----- | --------------- | ---------- |
 | Prop  | show-back-arrow | arrow-icon |
-| Prop  |   select-list   |    list    |
-| Prop  |   select-item   |  current   |
-| Event | onClickConfirm  |  confirm   |
-| Event |    onRemove     |   cancel   |
+| Prop  | select-list     | list       |
+| Prop  | select-item     | current    |
+| Event | onClickConfirm  | confirm    |
+| Event | onRemove        | cancel     |
 ## Theme customization
 
 <theme-config />

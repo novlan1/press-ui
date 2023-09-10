@@ -7,6 +7,18 @@ url : pages/press/switch/switch
 
 用于在打开和关闭状态之间进行切换。
 
+## 引入
+
+```ts
+import PressSwitch from 'press-ui/press-switch/press-switch';
+
+export default {
+  components: {
+    PressSwitch,
+  }
+}
+```
+
 ## 代码演示
 
 ### 基础用法

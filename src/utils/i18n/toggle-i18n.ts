@@ -1,7 +1,8 @@
 import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
 import { isInIFrame, storageUtil } from '../index';
 
-export function toggleI18n() {
+
+export function toggleI18n(onGTip) {
   // #ifdef H5
   if (isInIFrame()) return;
   // #endif
@@ -12,10 +13,8 @@ export function toggleI18n() {
   storageUtil.set(LOCALE_STORAGE_KEY, newNumber);
 
   // #ifdef H5
-  uni.showToast({
-    title: '正在切换语言',
-    icon: 'none',
-  });
+  onGTip('正在切换语言');
+
   window.location.reload();
   // #endif
 
