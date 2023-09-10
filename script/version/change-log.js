@@ -81,7 +81,7 @@ function insetDocChangeLog() {
   console.log('[reg]', reg);
 
   const match = changeLog.match(reg);
-  console.log('[match]', match[1]);
+  console.log('[match]', match?.[1]);
 
   if (!match?.[1]) return;
 
