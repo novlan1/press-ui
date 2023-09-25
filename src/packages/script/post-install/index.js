@@ -95,6 +95,6 @@ npmInstallTip({
   packagePostfixEn: 'component library',
   feedbackList: [
     'https://github.com/novlan1/press-ui/issues',
-    'wxwork://message?username=guowangyang',
+    'https://github.com/novlan1',
   ],
 });
