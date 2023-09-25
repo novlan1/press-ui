@@ -58,21 +58,25 @@
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
+      :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL_2"
+      :ref="FUNCTIONAL_ID_MAP.POPUP_CELL_2"
       mode="functional"
     />
 
     <PressPicker
       :id="FUNCTIONAL_ID_MAP.PICKER"
+      :ref="FUNCTIONAL_ID_MAP.PICKER"
       mode="functional"
     />
 
     <PressDatetimePickerPopup
       :id="FUNCTIONAL_ID_MAP.DATE_TIME_PICKER"
+      :ref="FUNCTIONAL_ID_MAP.DATE_TIME_PICKER"
       mode="functional"
     />
   </div>

@@ -25,9 +25,7 @@ export function toggleI18n(onGTip) {
     showCancel: false,
     success(res) {
       if (res.confirm) {
-        uni.exitMiniProgram({
-
-        });
+        uni?.exitMiniProgram?.({});
       }
     },
   });

@@ -1,7 +1,6 @@
-import Vue from 'vue';
 import { IS_SERVER } from '../utils/validator';
 import { parseOptions } from './component-handler';
-// import type { VueConstructor } from 'vue/types/umd';
+import { extendComponent } from '../vue3/adapter';
 
 
 function isInDocument(element: Node | null) {
@@ -50,11 +49,9 @@ export function getH5ComponentHandler({
 
       document.body.appendChild(dialogRootDiv);
 
-      const dialog = new (Vue.extend(component))({
-        el: dialogRootDiv,
-      });
+      const dialog = extendComponent(dialogRootDiv, component);
 
-      dialog.$on('input', (value: any) => {
+      dialog?.$on?.('input', (value: any) => {
         (dialog as any).value = value;
       });
 
@@ -95,17 +92,26 @@ export function getH5ComponentHandler({
       queue = queue.filter(item => item !== dialog);
 
       setTimeout(() => {
-        if (document.body.contains(dialog.$el)) {
-          document.body.removeChild(dialog.$el);
+        if (document.body.contains(dialog.$el) && dialog.$el) {
+          dialog.$el.parentNode.removeChild(dialog.$el);
+          // document.body.removeChild(dialog.$el);
         }
       }, options.animationDuration || 0);
     };
 
     dialog.set = (...args: any[]) => {
-      dialog.$set(dialog, ...args);
+      if (typeof dialog.$set === 'function') {
+        dialog.$set(dialog, ...args);
+      } else {
+        // vue3 已废弃 $set
+        dialog[args[0]] = args[1];
+      }
     };
 
-    Object.assign(dialog, options);
+    dialog.setData(options);
+    // vue3 不支持 Object.assign 的赋值方式
+    // Object.assign(dialog, options);
+
     clearTimeout(dialog.timer);
     dialog.setData({ show: true });
 

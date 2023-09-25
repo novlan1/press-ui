@@ -88,6 +88,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['select'],
   data() {
     return {
       activeAnchorIndex: null,
@@ -191,8 +192,8 @@ export default {
       return -1;
     },
     onScroll(event) {
-      if (event && event.target) {
-        this.scrollTop = event.target.scrollTop;
+      if (event && (event.target || event.detail)) {
+        this.scrollTop = event.target.scrollTop || event.detail.scrollTop;
       }
       const { children = [], scrollTop } = this;
       if (!children.length) {

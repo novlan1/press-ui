@@ -46,6 +46,7 @@ export default {
     ...defaultProps,
   },
 
+  emits: ['click'],
   data() {
     return {
 
@@ -66,8 +67,8 @@ export default {
     },
   },
   methods: {
-    onClick() {
-      this.$emit('click');
+    onClick(event) {
+      this.$emit('click', event);
     },
   },
 };

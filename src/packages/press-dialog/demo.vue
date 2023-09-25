@@ -15,7 +15,10 @@
       />
     </demo-block>
 
-    <PressDialogComp id="tip-match-comm-tips-dialog" />
+    <PressDialogComp
+      id="tip-match-comm-tips-dialog"
+      ref="tip-match-comm-tips-dialog"
+    />
 
     <PressDialogComp
       :title="t('title')"

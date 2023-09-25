@@ -1,6 +1,7 @@
 <template>
-  <!-- 需要再加一个最外层，因为this.$el.querySelector找不到最外层的元素 -->
   <div>
+    <!-- 注释不要写在第一行，否则 vue3 中的 this.$el 会取到注释 -->
+    <!-- 需要再加一个最外层，因为this.$el.querySelector找不到最外层的元素 -->
     <div
       ref="sticky"
       class="press-sticky"
@@ -19,7 +20,6 @@
 <script>
 import utils from '../common/utils/utils';
 import computed from './index';
-import Vue from 'vue';
 
 import { getRect } from '../common/dom/rect';
 import { isDef } from '../common/utils/validator';
@@ -87,6 +87,7 @@ export default {
       default: null,
     },
   },
+  emits: ['scroll'],
   data() {
     return {
       height: 0,
@@ -199,7 +200,7 @@ export default {
       });
     },
     setDataAfterDiff(data) {
-      Vue.nextTick(() => {
+      this.$nextTick(() => {
         const diff = Object.keys(data).reduce((prev, key) => {
           if (data[key] !== this[key]) {
             prev[key] = data[key];

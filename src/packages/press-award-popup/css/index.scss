@@ -82,7 +82,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .3rem .32rem;
+    display: flex;
+    padding: .32rem;
+
+    // press-popup已经有安全区了，这里重复了
+    // padding-bottom: calc(.32rem + constant(safe-area-inset-bottom));
+    // padding-bottom: calc(.32rem + env(safe-area-inset-bottom));
+
+    ::v-deep .press-button,
+    ::v-deep press-button {
+      width: 100%;
+    }
   }
 
   &__button {
@@ -161,6 +171,7 @@
     transform: translateY(0) rotate(0deg) scale(1, 1);
   }
 }
+
 
 
 @keyframes fadeIn {

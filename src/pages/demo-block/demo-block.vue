@@ -1,5 +1,5 @@
 <template>
-  <uni-section
+  <PressSection
     :title="title"
     :header-style="headerStyle"
     type="line"
@@ -10,14 +10,14 @@
     >
       <slot />
     </div>
-  </uni-section>
+  </PressSection>
 </template>
 <script>
-import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+import PressSection from '../components/press-section/press-section.vue';
 
 export default {
   components: {
-    UniSection,
+    PressSection,
   },
   props: {
     title: {

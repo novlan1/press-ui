@@ -17,34 +17,19 @@
       center
       @click="onClick"
     >
-      <!-- #ifndef H5 -->
-      <template
-        #title
-      >
+      <template #title>
         <slot
-          slot="title"
           name="title"
         />
       </template>
-      <!-- #endif -->
-      <!-- #ifdef H5 -->
-      <slot
-        slot="title"
-        name="title"
-      />
-      <!-- #endif -->
-
-      <!-- <slot
-          slot="icon"
-          name="icon"
-        /> -->
 
       <slot name="value" />
 
-      <slot
-        slot="right-icon"
-        name="right-icon"
-      />
+      <template #right-icon>
+        <slot
+          name="right-icon"
+        />
+      </template>
     </press-cell>
 
     <div
@@ -99,6 +84,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       expanded: false,

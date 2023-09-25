@@ -288,13 +288,11 @@ this.selectComponent('#tabs').resize();
 
 ### 从vant组件迁移
 
-
 - 修改组件名，`van-tabs => press-tabs`，`van-tab => press-tab`
 - `line-width`属性改为 `number` 类型
 - 可选，为`press-tabs` 和 `press-tab` 传入 `extra-class-prefix="van-"`
-- 可选，`press-tabs` 的 `active` 事件参数取值修改，比如：
 - 可选，`v-model="tab"` 改为 `:active="tab"`
-
+- 可选，`press-tabs` 的 `change` 事件参数取值修改，比如：
 
 ```ts
 onTabChange(tab) {

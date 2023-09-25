@@ -53,40 +53,46 @@ export default {
 
 ### Props
 
-| 参数                           | 说明                                                                    | 类型               | 默认值  |
-| ------------------------------ | ----------------------------------------------------------------------- | ------------------ | ------- |
-| sche-list                      | 赛程列表                                                                | _array_            | -       |
-| is-admin                       | 是否为管理员                                                            | _boolean_          | `false` |
-| is-preview                     | 是否为预览阶段，0 不是， 1 普通预览，2 预览，且自定义了赛程             | _number_           | `0`     |
-| my-team-id                     | 我的队伍id                                                              | _string_           | -       |
-| selected-sch-id                | 选中的赛程id                                                            | _string_           | -       |
-| show-champion                  | 是否显示冠军列，循环赛时可设置为`false`                                 | _boolean_          | `true`  |
-| champion-round-name `v1.0.23`  | 冠军列轮次名称，可设置为冠军、分组冠军等，为空时，会取`championTag`的值 | _string_           | -       |
-| champion-name `v1.0.23`        | 冠军队伍名称，可设置为具体队伍名称、待定等                              | _string_           | -       |
-| champion-tag `v1.0.23`         | 冠军标签，可设置为冠军、分组冠军等                                      | _string_           | -       |
-| can-click-final-sche `v1.0.23` | 是否可以点击冠军队伍                                                    | _boolean_          | `false` |
-| shadow                         | 是否设置间隔阴影，循环赛时可设置为`true`                                | _boolean_          | `false` |
-| auto-back-to-top               | 左右滚动时是否自动回到顶部，循环赛时可设置为`false`                     | _boolean_          | `true`  |
-| resume-position                | 赛程数据变少，右侧显示空白时候自动滚动位置，可为`left/right/数字`       | _[string, number]_ | `right` |
-| show-round-tab `v0.8.32`       | 是否显示轮次tab                                                         | _boolean_          | `true`  |
-| max-columns `v0.8.32`          | 同时显示的列数目，超出的部分会被隐藏，以提升性能                        | _number_           | `3`     |
-| tab-scroll-width               | tab的宽度                                                               | _string_           | `164`   |
-| schedule-scroll-width          | 赛程树每列的宽度                                                        | _string_           | `164`   |
-| page                           | 当前赛程树所在页，分组淘汰赛时可用，`v1.0.23`废弃                       | _number_           | `0`     |
-| total-page                     | 赛程树总页数，分组淘汰赛时可用，`v1.0.23`废弃                           | _number_           | `0`     |
-| automatic-grouping             | 是否自动分组，`v1.0.23`废弃                                             | _boolean_          | `false` |
-| winner-name                    | 冠军列的名称，可为冠军、季军等，`v1.0.23`废弃                           | _string_           | -       |
+| 参数                  | 说明                                                                    | 类型               | 默认值      |
+| --------------------- | ----------------------------------------------------------------------- | ------------------ | ----------- |
+| sche-list             | 赛程列表                                                                | _array_            | -           |
+| is-admin              | 是否为管理员                                                            | _boolean_          | `false`     |
+| is-preview            | 是否为预览阶段，0 不是， 1 普通预览，2 预览，且自定义了赛程             | _number_           | `0`         |
+| my-team-id            | 我的队伍id                                                              | _string_           | -           |
+| selected-sch-id       | 选中的赛程id                                                            | _string_           | -           |
+| show-champion         | 是否显示冠军列，循环赛时可设置为`false`                                 | _boolean_          | `true`      |
+| champion-round-name   | 冠军列轮次名称，可设置为冠军、分组冠军等，为空时，会取`championTag`的值 | _string_           | -           |
+| champion-name         | 冠军队伍名称，可设置为具体队伍名称、待定等                              | _string_           | -           |
+| champion-tag          | 冠军标签，可设置为冠军、分组冠军等                                      | _string_           | -           |
+| can-click-final-sche  | 是否可以点击冠军队伍                                                    | _boolean_          | `false`     |
+| shadow                | 是否设置间隔阴影，循环赛时可设置为`true`                                | _boolean_          | `false`     |
+| auto-back-to-top      | 左右滚动时是否自动回到顶部，循环赛时可设置为`false`                     | _boolean_          | `true`      |
+| resume-position       | 赛程数据变少，右侧显示空白时候自动滚动位置，可为`left/right/数字`       | _[string, number]_ | `right`     |
+| show-round-tab        | 是否显示轮次tab                                                         | _boolean_          | `true`      |
+| max-columns           | 同时显示的列数目，超出的部分会被隐藏，以提升性能                        | _number_           | `3`         |
+| tab-scroll-width      | tab的宽度                                                               | _string_           | `164`       |
+| schedule-scroll-width | 赛程树每列的宽度                                                        | _string_           | `164`       |
+| loading               | 是否为加载中                                                            | _boolean_          | `false`     |
+| loadingSize           | 加载中尺寸                                                              | _string_           | `20px`      |
+| loadingText           | 加载中文案                                                              | _string_           | `加载中...` |
+| finished              | 是否加载完成                                                            | _boolean_          | `false`     |
+| finishedText          | 加载完成文案                                                            | _string_           | -           |
+| page                  | 当前赛程树所在页，分组淘汰赛时可用，`v1.0.23`废弃                       | _number_           | `0`         |
+| total-page            | 赛程树总页数，分组淘汰赛时可用，`v1.0.23`废弃                           | _number_           | `0`         |
+| automatic-grouping    | 是否自动分组，`v1.0.23`废弃                                             | _boolean_          | `false`     |
+| winner-name           | 冠军列的名称，可为冠军、季军等，`v1.0.23`废弃                           | _string_           | -           |
 
 
 ### Events
 
-| 事件名称       | 说明             | 回调参数                                                      |
-| -------------- | ---------------- | ------------------------------------------------------------- |
-| clickRoundTab  | 点击轮次tab      | round.round_type, round                                       |
-| clickSche      | 点击赛程组       | schId, scheGroup, schePair                                    |
-| clickVideoIcon | 点击视频小图标   | schId, scheGroup, schePair                                    |
-| clickFinalSche | 点击冠军队伍     | -                                                             |
-| scroll         | 左右滚动时候触发 | scrollTime（当前滚动次数，最左侧为0）, roundTotal（轮次总数） |
+| 事件名称       | 说明           | 回调参数                                                      |
+| -------------- | -------------- | ------------------------------------------------------------- |
+| clickRoundTab  | 点击轮次tab    | round.round_type, round                                       |
+| clickSche      | 点击赛程组     | schId, scheGroup, schePair                                    |
+| clickVideoIcon | 点击视频小图标 | schId, scheGroup, schePair                                    |
+| clickFinalSche | 点击冠军队伍   | -                                                             |
+| scroll         | 左右滚动时触发 | scrollTime（当前滚动次数，最左侧为0）, roundTotal（轮次总数） |
+| scrollToLower  | 滚动到底时触发 | scrollTime（当前滚动次数，最左侧为0）, roundTotal（轮次总数） |
 
 
 ### Methods
@@ -95,6 +101,15 @@ export default {
 | 方法名        | 说明                                  | 参数         |
 | ------------- | ------------------------------------- | ------------ |
 | setScrollTime | 设置滚动次数，设置为`0`，可回到最左侧 | `scrollTime` |
+| setBackToTop  | 设置滚动到顶部                        | -            |
+
+### Slots
+
+| 名称     | 说明                       |
+| -------- | -------------------------- |
+| loading  | 自定义底部加载中提示       |
+| finished | 自定义加载完成后的提示文案 |
+
 
 
 ### scheList
@@ -123,6 +138,7 @@ type ISchePair = {
   battleList: Array<IScheGroup>;
   roundInfo: IRoundInfo;
   isChamp: boolean;
+  hidden: boolean;
 }
 
 

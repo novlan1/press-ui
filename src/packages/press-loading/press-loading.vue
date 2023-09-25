@@ -29,6 +29,7 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: [],
   data() {
     return {
     };

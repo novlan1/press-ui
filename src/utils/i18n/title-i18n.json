@@ -72,6 +72,7 @@
     "protocol": "Protocol 协议",
     "schedule-list": "ScheduleList 赛程列表",
     "schedule-tree": "ScheduleTree 赛程树",
+    "team-search": "TeamSearch 队伍搜索",
     "turntable": "Turntable 转盘",
     "Act Components": "活动组件",
     "act-tip-dialog": "ActTipDialog 活动提示弹窗"
@@ -149,6 +150,7 @@
     "protocol": "Protocol",
     "schedule-list": "ScheduleList",
     "schedule-tree": "ScheduleTree",
+    "team-search": "TeamSearch",
     "turntable": "Turntable",
     "Act Components": "Act Components",
     "act-tip-dialog": "ActTipDialog"

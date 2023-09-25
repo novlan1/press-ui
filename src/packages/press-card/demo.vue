@@ -65,50 +65,51 @@
         <span class="press-body">
           {{ t('content') }}
         </span>
-        <div
-          slot="actions"
-          class="card-actions"
-        >
+        <template #actions>
           <div
-            class="card-actions-item"
-            @click="actionsClick( t('share'))"
+            class="card-actions"
           >
-            <uni-icons
-              type="redo"
-              size="18"
-              color="#999"
-            />
-            <span class="card-actions-item-text">
-              {{ t('share') }}
-            </span>
+            <div
+              class="card-actions-item"
+              @click="actionsClick( t('share'))"
+            >
+              <press-icon-plus
+                name="share-o"
+                size="18"
+                color="#999"
+              />
+              <span class="card-actions-item-text">
+                {{ t('share') }}
+              </span>
+            </div>
+            <div
+              class="card-actions-item"
+              @click="actionsClick( t('star'))"
+            >
+              <press-icon-plus
+                name="like-o"
+                size="18"
+                color="#999"
+              />
+              <span class="card-actions-item-text">
+                {{ t('star') }}
+              </span>
+            </div>
+            <div
+              class="card-actions-item"
+              @click="actionsClick( t('comment'))"
+            >
+              <press-icon-plus
+                name="chat-o"
+                size="18"
+                color="#999"
+              />
+              <span class="card-actions-item-text">
+                {{ t('comment') }}
+              </span>
+            </div>
           </div>
-          <div
-            class="card-actions-item"
-            @click="actionsClick( t('star'))"
-          >
-            <uni-icons
-              type="heart"
-              size="18"
-              color="#999"
-            />
-            <span class="card-actions-item-text">
-              {{ t('star') }}
-            </span>
-          </div>
-          <div
-            class="card-actions-item"
-            @click="actionsClick( t('comment'))"
-          >
-            <uni-icons
-              type="chatbubble"
-              size="18"
-              color="#999"
-            />
-            <span class="card-actions-item-text">
-              {{ t('comment') }}
-            </span>
-          </div>
-        </div>
+        </template>
       </press-card>
     </demo-block>
 
@@ -122,12 +123,13 @@
             clickable
             @click="checked = !checked"
           >
-            <press-switch
-              slot="right-icon"
-              size="22px"
-              :checked="checked"
-              @change="checked = !checked"
-            />
+            <template #right-icon>
+              <press-switch
+                size="22px"
+                :checked="checked"
+                @change="checked = !checked"
+              />
+            </template>
           </press-cell>
         </template>
         <span class="press-body uni-mt-5">
@@ -140,7 +142,7 @@
 <script>
 import PressCard from 'src/packages/press-card/press-card.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
-import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
+import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
 import PressSwitch from 'src/packages/press-switch/press-switch.vue';
 
 
@@ -173,7 +175,7 @@ export default {
   },
   components: {
     PressCard,
-    UniIcons,
+    PressIconPlus,
     PressSwitch,
     PressCell,
   },

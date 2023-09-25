@@ -6,7 +6,6 @@
 	"versionName": "1.0.0",
 	"versionCode": "100",
 	"transformPx": false,
-	// "debug":true,
 	"app-plus": {
 		"nvueCompiler": "uni-app",
 		"nvueStyleCompiler": "uni-app",

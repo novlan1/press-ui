@@ -35,22 +35,12 @@ export function preventDefault(event, isStopPropagation) {
 }
 
 
-export function getEventValue(event, ref: any = null) {
-  return getEventDetail(event, ref).value || '';
+export function getEventValue(event) {
+  return getEventDetail(event).value || '';
 }
 
 
-export function getEventDetail(event, ref: any = null) {
-  // #ifdef H5
-  if (ref) {
-    return {
-      value: ref?.value || '',
-      scrollTop: ref?.scrollTop || '',
-      scrollHeight: ref?.scrollHeight || '',
-    };
-  }
-  // #endif
-
+export function getEventDetail(event) {
   if (isNotInUni()) {
     return {
       value: event?.target?.value || '',

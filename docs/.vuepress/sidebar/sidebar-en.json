@@ -299,6 +299,10 @@
           "path": "/en/components/press/press-schedule-tree.md"
         },
         {
+          "title": "TeamSearch",
+          "path": "/en/components/press/press-team-search.md"
+        },
+        {
           "title": "Turntable",
           "path": "/en/components/press/press-turntable.md"
         }

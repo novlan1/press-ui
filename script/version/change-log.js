@@ -26,34 +26,34 @@ function readFile(file) {
 
 const replaceList = [
   {
-    from: '🐛 Bug Fixes \\| Bug 修复',
+    from: '🐛 Bug Fixes | Bug 修复',
     to: 'Bug Fixes 🐞',
   }, {
-    from: '✨ Features \\| 新功能',
+    from: '✨ Features | 新功能',
     to: 'Features 🎉',
   },
   {
-    from: '✏️ Documentation \\| 文档',
+    from: '✏️ Documentation | 文档',
     to: 'Documentation 📖',
   },
   {
-    from: '♻️ Code Refactoring \\| 代码重构',
+    from: '♻️ Code Refactoring | 代码重构',
     to: 'Code Refactoring ♻️',
   },
   {
-    from: '🚀 Chore \\| 构建/工程依赖/工具',
+    from: '🚀 Chore | 构建/工程依赖/工具',
     to: 'Chore 🚀 ',
   },
   {
-    from: '📦‍ Build System \\| 打包构建',
+    from: '📦‍ Build System | 打包构建',
     to: 'Build System 📦‍',
   },
   {
-    from: '✅ Tests \\| 测试',
+    from: '✅ Tests | 测试',
     to: 'Tests ✅',
   },
   {
-    from: '💄 Styles \\| 风格',
+    from: '💄 Styles | 风格',
     to: 'Styles 💄',
   },
 ];

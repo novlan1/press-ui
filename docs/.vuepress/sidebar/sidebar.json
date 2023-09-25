@@ -365,6 +365,11 @@
           "path": "/components/press/press-schedule-tree.md"
         },
         {
+          "title": "TeamSearch",
+          "subTitle": "队伍搜索",
+          "path": "/components/press/press-team-search.md"
+        },
+        {
           "title": "Turntable",
           "subTitle": "转盘",
           "path": "/components/press/press-turntable.md"

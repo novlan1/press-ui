@@ -90,7 +90,7 @@ export default {
   methods: {
     onChange(val) {
       console.log('[onChange] val: ', val);
-      this.$toast(`${this.t('selectTip')}${val + 1}`);
+      this.onGTip(`${this.t('selectTip')}${val + 1}`);
     },
   },
 };

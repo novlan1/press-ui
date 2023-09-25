@@ -53,6 +53,7 @@
 
     <ImagePreviewComp
       :id="FUNCTIONAL_ID_MAP.IMAGE_PREVIEW"
+      :ref="FUNCTIONAL_ID_MAP.IMAGE_PREVIEW"
       mode="functional"
     />
   </div>

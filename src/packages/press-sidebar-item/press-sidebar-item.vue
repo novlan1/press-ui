@@ -54,6 +54,7 @@ export default {
     activeClass: { type: String, default: '' },
     disabledClass: { type: String, default: '' },
   },
+  emits: ['click', 'change'],
   data() {
     return {
       utils,

@@ -34,6 +34,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       utils,

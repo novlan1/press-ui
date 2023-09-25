@@ -103,6 +103,7 @@ export default {
       default: true,
     },
   },
+  emits: ['click-left', 'click-right'],
   data() {
     return {
       height: 46,

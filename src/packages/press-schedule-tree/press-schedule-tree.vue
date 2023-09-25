@@ -11,6 +11,7 @@
 
     <!-- 赛程阶段tab -->
     <div
+      v-if="showRoundTab"
       class="press-schedule-tree-tabs"
       :style="{width: `${tabWidth}%`, transform: `translate3d(${tabScrollNum}px, 0, 0)`}"
       @mousedown="start"
@@ -20,40 +21,38 @@
       @mouseup="end"
       @touchend="end"
     >
-      <template v-if="showRoundTab">
-        <div
-          v-for="(round, roundIndex) in fakeRoundList"
-          :key="round.uniqueKey"
-          class="press-schedule-tree-tab"
-          :style="{width: `${tabScrollWidth}px`}"
-          :class="[
-            `press-schedule-tree-tab--scroll-${roundIndex - scrollTime}`,
-            isAdmin ? 'press-schedule-tree-tab--clickable' : ''
-          ]"
+      <div
+        v-for="(round, roundIndex) in fakeRoundList"
+        :key="round.uniqueKey"
+        class="press-schedule-tree-tab"
+        :style="{width: `${tabScrollWidth}px`}"
+        :class="[
+          `press-schedule-tree-tab--scroll-${roundIndex - scrollTime}`,
+          isAdmin ? 'press-schedule-tree-tab--clickable' : ''
+        ]"
+      >
+        <p
+          class="press-schedule-tree-tab-title"
+          @click.stop="clickRoundTab(roundIndex)"
         >
-          <p
-            class="press-schedule-tree-tab-title"
-            @click.stop="clickRoundTab(roundIndex)"
-          >
-            {{ getRoundName(roundIndex) || '' }}
-          </p>
-          <p
-            class="press-schedule-tree-tab-desc"
-            @click.stop="clickRoundTab(roundIndex)"
-          >
-            {{ getBoType(roundIndex) || '' }}
-          </p>
-          <div
-            v-if="isAdmin"
-            class="press-schedule-tree-tab-desc-icon iconfont icon-back"
-            @click.stop="clickRoundTab(roundIndex)"
-          />
-          <div class="press-schedule-tree-tab-icon" />
-        </div>
-      </template>
+          {{ getRoundName(roundIndex) || '' }}
+        </p>
+        <p
+          class="press-schedule-tree-tab-desc"
+          @click.stop="clickRoundTab(roundIndex)"
+        >
+          {{ getBoType(roundIndex) || '' }}
+        </p>
+        <div
+          v-if="isAdmin"
+          class="press-schedule-tree-tab-desc-icon iconfont icon-back"
+          @click.stop="clickRoundTab(roundIndex)"
+        />
+        <div class="press-schedule-tree-tab-icon" />
+      </div>
 
       <div
-        v-if="showChampion && showRoundTab"
+        v-if="showChampion"
         class="press-schedule-tree-tab"
         :class="[`press-schedule-tree-tab--scroll-${column - scrollTime}`]"
       >
@@ -82,6 +81,7 @@
       @touchend="end"
       @mouseup="end"
       @scroll="onScroll"
+      @scrolltolower="scrollToLower"
     >
       <div
         class="press-schedule-tree-layout"
@@ -111,7 +111,10 @@
             :key="schePair.uniqueKey"
             :ref="`scheRef-${colIndex}-${schePairIndex}`"
             class="press-schedule-tree-pair"
-            :class="hasMyTeam(colIndex, schePairIndex) ? MY_TEAM_SCHE_PAIR_CLASS : ''"
+            :class="{
+              [MY_TEAM_SCHE_PAIR_CLASS]: hasMyTeam(colIndex, schePairIndex),
+              'press-schedule-tree-pair--hidden': scheList[colIndex][schePairIndex].hidden,
+            }"
           >
             <TwoTeamWrap
               :is-admin="isAdmin"
@@ -215,11 +218,41 @@
           </div>
         </div>
       </div>
+
+      <slot
+        v-if="loading"
+        name="loading"
+      >
+        <div
+          class="press-schedule-tree__loading"
+        >
+          <PressLoadingPlus
+            :vertical="false"
+            :size="loadingSize"
+          >
+            {{ loadingText }}
+          </PressLoadingPlus>
+        </div>
+      </slot>
+
+      <slot
+        v-if="finishedText && finished"
+        name="finished"
+      >
+        <div
+          class="press-schedule-tree__finished"
+        >
+          <div>
+            {{ finishedText }}
+          </div>
+        </div>
+      </slot>
     </scroll-view>
   </div>
 </template>
 
 <script>
+import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import TwoTeamWrap from './press-schedule-team.vue';
 import { endTouch, REF_MAP, scrollToH5, backToTop } from './touch-helper';
 import { scrollRelative, getScrollStartY, initScrollBounce, scrollBounce } from './drag-helper';
@@ -266,6 +299,7 @@ export default {
   name: 'PressScheduleTree',
   components: {
     TwoTeamWrap,
+    PressLoadingPlus,
   },
   props: {
     mapClass: {
@@ -348,6 +382,26 @@ export default {
       type: Object,
       default: () => (SPECIAL_AVATAR_MAP),
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    loadingSize: {
+      type: String,
+      default: '20px',
+    },
+    loadingText: {
+      type: String,
+      default: '加载中...',
+    },
+    finished: {
+      type: Boolean,
+      default: false,
+    },
+    finishedText: {
+      type: String,
+      default: '',
+    },
 
     /* 废弃 */
     winnerName: {
@@ -369,6 +423,15 @@ export default {
     },
     /* 废弃 */
   },
+  emits: [
+    'clickFinalSche',
+    'clickRoundTab',
+    'scheduleOnClick',
+    'scroll',
+    'scrollToLower',
+    'clickSche',
+    'clickVideoIcon',
+  ],
   data() {
     return {
       startX: 0,
@@ -663,11 +726,17 @@ export default {
   updated() {
   },
   destroyed() {
-    // #ifdef H5
-    window?.removeEventListener('mouseup', this.unwatchMouseUp);
-    // #endif
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
   },
   methods: {
+    onDestroyed() {
+      // #ifdef H5
+      window?.removeEventListener('mouseup', this.unwatchMouseUp);
+    // #endif
+    },
     getColumnStyle(scrollTime) {
       const { maxColumns } = this;
 
@@ -799,6 +868,9 @@ export default {
     },
     onScroll() {
     },
+    scrollToLower() {
+      this.$emit('scrollToLower', this.scrollTime, this.column + 1);
+    },
     clickSche(schId, scheGroup, colIndex, schePairIndex) {
       this.resetSelect();
       const schePair = this.scheList?.[colIndex]?.[schePairIndex] || {};
@@ -824,6 +896,9 @@ export default {
     },
     setScrollTime(newScrollTime) {
       this.setScrollParams(newScrollTime);
+    },
+    setBackToTop() {
+      backToTop();
     },
     unwatchMouseUp() {
       isMoving = false;

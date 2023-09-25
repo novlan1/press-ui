@@ -278,6 +278,18 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: [
+    'changeTab',
+    'clickMessage',
+    'clickPerson',
+    'clickSidebar',
+    'back',
+    'clickBanner',
+    'clickBrand',
+    'clickMatchButton',
+    'clickMatch',
+    'loadMore',
+  ],
   data() {
     return {
       sidebarIndex: 0,
@@ -332,12 +344,15 @@ export default {
   methods: {
     changeTab(tab) {
       this.curTabIndexMap[this.sidebarIndex] = tab.index;
+      this.closePopover();
       this.$emit('changeTab', tab);
     },
     clickMessage() {
+      this.closePopover();
       this.$emit('clickMessage');
     },
     clickPerson() {
+      this.closePopover();
       this.$emit('clickPerson');
     },
     sidebarSwitch(item, index) {
@@ -345,21 +360,27 @@ export default {
       if (item.mode === 'link') {
         return;
       }
+      this.closePopover();
       this.sidebarIndex = index;
     },
     back() {
+      this.closePopover();
       this.$emit('back');
     },
     clickBanner(item, index) {
+      this.closePopover();
       this.$emit('clickBanner', item, index);
     },
     clickBrand(item, index) {
+      this.closePopover();
       this.$emit('clickBrand', item, index);
     },
     clickMatchButton(item, index) {
+      this.closePopover();
       this.$emit('clickMatchButton', item, index);
     },
     clickMatch(item, index) {
+      this.closePopover();
       this.$emit('clickMatch', item, index);
     },
     onLoadMore() {

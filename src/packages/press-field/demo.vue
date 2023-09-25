@@ -173,13 +173,14 @@
         autosize
         @change="onChange"
       >
-        <press-button
-          slot="button"
-          size="small"
-          type="primary"
-        >
-          {{ t('sendSMS') }}
-        </press-button>
+        <template #button>
+          <press-button
+            size="small"
+            type="primary"
+          >
+            {{ t('sendSMS') }}
+          </press-button>
+        </template>
       </press-field>
     </demo-block>
   </div>
@@ -279,7 +280,10 @@ export default {
   },
   methods: {
     onChange(val) {
-      this.onGTip(`${val}`);
+      // Vue3下，payload 可能为Event对象
+      if (typeof val === 'string') {
+        this.onGTip(`${val}`);
+      }
     },
     onInput(...args) {
       console.log('[onInput]', args);

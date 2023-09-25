@@ -44,6 +44,7 @@
 
     <press-picker
       :id="PRESS_PICKER_ID"
+      :ref="PRESS_PICKER_ID"
       mode="functional"
     />
   </div>

@@ -102,6 +102,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['click-item', 'click-nav'],
   data() {
     return {
       subItems: [],

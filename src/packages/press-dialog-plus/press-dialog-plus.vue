@@ -208,6 +208,7 @@ export default {
   },
   mixins: [button],
   props,
+  emits: ['close', 'confirm', 'cancel'],
   data() {
     return {
       ...getPropsData(this, props),

@@ -28,6 +28,7 @@ export default {
     offset: { type: Number, default: 0 },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       utils,

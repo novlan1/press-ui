@@ -89,7 +89,9 @@
             <div
               v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
               class="press-message-board-item__reply-avatar"
-            >队长</div>
+            >
+              队长
+            </div>
           </div>
           <!-- <div
             v-if="captainUid && comment.uid === captainUid && captionBadgeAtRight"
@@ -168,6 +170,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['replyClick'],
   data() {
     return {
     };

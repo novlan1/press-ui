@@ -8,11 +8,11 @@ url: pages/press/award-popup/award-popup
 ## Introduction
 
 ```ts
-import Press award popup layer from 'press-ui/press-award-popup/press-award-popup';
+import PressAwardPopup from 'press-ui/press-award-popup/press-award-popup';
 
 export default {
    components: {
-     Press reward popup layer,
+     PPressAwardPopup,
    }
 }
 ```

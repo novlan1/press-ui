@@ -20,13 +20,18 @@
       :award-list="awardList"
       :tip-title="tipTitle"
       :is-hor="customParams.isHor"
+      :is-game-prize="customParams.isGamePrize"
       :confirm-text="t('confirm')"
+      @onGoAward="onGoAward"
+      @onShowSwitchRoleDialog="onShowSwitchRoleDialog"
+      @onExchange="onExchange"
       @dimissDialog="onCloseAwardDialog"
       @onConfirm="onCloseAwardDialog"
     />
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
+      :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
   </div>
@@ -86,6 +91,15 @@ export default {
     changeParams(params) {
       this.customParams = params;
       this.genDemoData();
+    },
+    onGoAward() {
+      this.onGTip('[onGoAward]');
+    },
+    onShowSwitchRoleDialog() {
+      this.onGTip('[onShowSwitchRoleDialog]');
+    },
+    onExchange() {
+      this.onGTip('[onExchange]');
     },
     genDemoData() {
       const { empty } = this.customParams;

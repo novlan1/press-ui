@@ -90,6 +90,7 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: ['onCheckClick', 'onItemClick'],
   data() {
     return {
     };

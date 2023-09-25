@@ -79,6 +79,7 @@ export default {
     useSlot: Boolean,
     ...defaultProps,
   },
+  emits: ['click'],
   data() {
     return {
       viewStyle: '',

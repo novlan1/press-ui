@@ -4,6 +4,8 @@
     :class="transitionClass"
     :style="rootStyle"
     @transitionend="onTransitionEnd"
+    @click="onClick"
+    @touchmove="onTouchmove"
   >
     <slot />
   </div>
@@ -47,6 +49,16 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [
+    'click',
+    'touchmove',
+    'before-enter',
+    'enter',
+    'after-enter',
+    'before-leave',
+    'leave',
+    'after-leave',
+  ],
   data() {
     return {
       classes: '',
@@ -79,6 +91,9 @@ export default {
     },
     onClick() {
       this.$emit('click');
+    },
+    onTouchmove() {
+      this.$emit('touchmove');
     },
   },
 };

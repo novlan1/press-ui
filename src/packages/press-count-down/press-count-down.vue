@@ -34,6 +34,7 @@ export default {
       default: true,
     },
   },
+  emits: ['change', 'finish'],
   data() {
     return {
       timeData: parseTimeData(0),
@@ -49,10 +50,16 @@ export default {
     },
   },
   destroyed() {
-    clearTimeout(this.tid);
-    this.tid = null;
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
   },
   methods: {
+    onDestroyed() {
+      clearTimeout(this.tid);
+      this.tid = null;
+    },
     // 开始
     start() {
       if (this.counting) {

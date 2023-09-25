@@ -1,4 +1,7 @@
-import Vue from 'vue';
+// #ifndef VUE3
+import { Vue } from '../common/vue3/vue';
+// #endif
+
 import defaultLang from './lang/zh-CN';
 import { deepAssign } from '../common/utils/object';
 
@@ -7,6 +10,7 @@ let merged = false;
 
 
 let i18nHandler = function (this: Object) {
+  // #ifndef VUE3
   const vuei18n = Object.getPrototypeOf(this || Vue).$t;
   if (typeof vuei18n === 'function' && !!(Vue as any).locale) {
     if (!merged) {
@@ -18,6 +22,9 @@ let i18nHandler = function (this: Object) {
     }
     return vuei18n.apply(this, arguments);
   }
+  // #endif
+
+  return;
 };
 
 export const t = function (this: any, path = '', ...options): any {
@@ -66,4 +73,10 @@ export const getLang = function () {
   return lang;
 };
 
-export default { use, t, i18n, add, getLang };
+export default {
+  use,
+  t,
+  i18n,
+  add,
+  getLang,
+};

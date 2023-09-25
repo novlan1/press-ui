@@ -16,11 +16,11 @@
       z-index: 10;
       transform: translate(50%, -50%);
 
-      .icon-red {
+      .press-schedule-team__err-icon {
         width: .32rem;
         height: .32rem;
-        font-size: 16px;
-        color: $color-red-9;
+        background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/warn.png) no-repeat;
+        background-size: 100% 100%;
       }
     }
 

@@ -128,6 +128,7 @@ export default {
     titleStyle: { type: String, default: '' },
     ...defaultProps,
   },
+  emits: ['click'],
   computed: {
     cellClass() {
       const {

@@ -15,7 +15,7 @@
       <input
         id="msg-footer-textarea"
         class="press-message-board-input__input"
-        :value="value"
+        :value="realModelValue"
         placeholder-style="color:#596297"
         :show-confirm-bar="showConfirmBar"
         :placeholder="placeholder"
@@ -45,6 +45,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { vModelMixin } from '../common/vue3/adapter';
 
 
 export default {
@@ -53,11 +54,8 @@ export default {
     ...defaultOptions,
     styleIsolation: 'shared',
   },
+  mixins: [vModelMixin],
   props: {
-    value: {
-      type: String,
-      default: '',
-    },
     sendBtnEnable: {
       type: Boolean,
       default: false,
@@ -96,6 +94,14 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [
+    'input',
+    'update:modelValue',
+    'clickInput',
+    'sendMsg',
+    'blur',
+    'focus',
+  ],
   data() {
     return {
       inputBottom: 0,
@@ -107,13 +113,14 @@ export default {
   },
   methods: {
     onInput(e) {
-      this.$emit('input', e.target.value);
+      const value = e.target.value || e.detail.value;
+      this.emitModelValue(value);
     },
     clickInput() {
       this.$emit('clickInput');
     },
     sendMsg() {
-      this.$emit('sendMsg', this.value);
+      this.$emit('sendMsg', this.realModelValue);
     },
     keyboardheightchange(res) {
       const keyHeight = res.detail && res.detail.height;

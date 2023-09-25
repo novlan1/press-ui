@@ -22,6 +22,7 @@ function flattenVNodes(vnodes) {
 
 // sort children instances by vnodes order
 export function sortChildren(children, parent) {
+  // #ifndef VUE3
   const { componentOptions } = parent.$vnode;
 
   if (!componentOptions?.children) {
@@ -30,4 +31,5 @@ export function sortChildren(children, parent) {
 
   const vnodes = flattenVNodes(componentOptions.children);
   children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
+  // #endif
 }

@@ -95,6 +95,7 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: ['onCancel', 'cancel', 'onConfirm', 'confirm'],
   data() {
     return {
       isEnter: true,
@@ -156,12 +157,16 @@ export default {
   },
   mounted() {
   },
-  destroyed() {
-  },
   beforeDestroy() {
-    clearTimeout(this.timer);
+    this.onBeforeDestroy();
+  },
+  beforeUnmount() {
+    this.onBeforeDestroy();
   },
   methods: {
+    onBeforeDestroy() {
+      clearTimeout(this.timer);
+    },
     showDialog(options) {
       if (options) {
         this.functionModeData = {

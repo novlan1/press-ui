@@ -116,6 +116,7 @@ export default {
   props: {
     ...imagePreviewProps,
   },
+  emits: ['close', 'change'],
   data() {
     return {
       active: 0,

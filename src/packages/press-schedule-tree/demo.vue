@@ -22,18 +22,24 @@
       :auto-back-to-top="showChampion"
       :my-team-id="myTeamId"
       :max-columns="6"
+      :loading="loading"
+      :finished="finished"
+      finished-text="-- 已经拉到底了 --"
       @clickRoundTab="clickRoundTab"
       @clickSche="clickSche"
       @clickVideoIcon="clickVideoIcon"
       @scroll="onScroll"
+      @scrollToLower="scrollToLower"
     />
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
+      :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
     <PressPicker
       :id="FUNCTIONAL_ID_MAP.PICKER"
+      :ref="FUNCTIONAL_ID_MAP.PICKER"
       mode="functional"
     />
   </div>
@@ -83,6 +89,12 @@ export default {
     };
   },
   computed: {
+    finished() {
+      return this.scheLocal.teamNumber == 4 && this.shadow;
+    },
+    loading() {
+      return this.scheLocal.teamNumber == 2 && this.shadow;
+    },
     showChampion() {
       return this.scheLocal.groupType !== GROUP_TYPE_MAP.CYCLE.name;
     },
@@ -96,6 +108,11 @@ export default {
   methods: {
     onScroll(scrollTime, roundTotal) {
       this.onGTip(`[scroll] ${scrollTime} ${roundTotal}`);
+    },
+    scrollToLower(scrollTime, roundTotal) {
+      const tip = `[scrollToLower] ${scrollTime} ${roundTotal}`;
+      this.onGTip(tip);
+      console.log(tip);
     },
     onShowBasicPopupCell() {
       showCustomPopup({

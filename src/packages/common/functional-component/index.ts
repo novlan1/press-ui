@@ -2,6 +2,7 @@ import { isNotInUni } from '../utils/utils';
 const DEFAULT_SHOW_FUNCTION = 'showDialog';
 
 function getContext() {
+  // @ts-ignore
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
@@ -22,14 +23,23 @@ function traverseChildren(context, key, target) {
 }
 
 export function selectComponent(context, selector) {
+  let attribute = selector;
+  if (attribute.match(/^[^\w]/)) {
+    attribute = attribute.slice(1);
+  }
+
   // #ifdef H5
   if (isNotInUni()) {
     const key = selector.startsWith('#') ? 'id' : 'class';
-    return traverseChildren(context, key, selector.slice(1));
+    return traverseChildren(context, key, attribute);
   }
   // #endif
 
-  return context.selectComponent(selector);
+  if (!context.$children && context.$refs?.[attribute]) {
+    return context.$refs[attribute];
+  }
+
+  return context?.selectComponent?.(selector);
 }
 
 export function showFunctionalComponent(options: {

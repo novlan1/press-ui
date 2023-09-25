@@ -1,8 +1,8 @@
-import Vue from 'vue';
+import { getIsServer } from '../vue3/adapter';
 
 export const IN_BROWSER = typeof window !== 'undefined';
 
-export const IS_SERVER = Vue.prototype.$isServer;
+export const IS_SERVER = getIsServer();
 
 export function isDef(val) {
   return val !== undefined && val !== null;

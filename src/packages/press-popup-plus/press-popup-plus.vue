@@ -20,7 +20,7 @@
         v-if="closeable"
         :name="closeIcon"
         :class="cCloseIconClass"
-        @click.native="onClickCloseIcon"
+        @click="onClickCloseIcon"
       />
     </div>
   </div>
@@ -131,6 +131,16 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [
+    'close',
+    'click-overlay',
+    'before-enter',
+    'enter',
+    'after-enter',
+    'before-leave',
+    'leave',
+    'after-leave',
+  ],
   data() {
     return {
       classes: '',

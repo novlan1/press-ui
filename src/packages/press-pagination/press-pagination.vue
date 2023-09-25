@@ -1,5 +1,5 @@
+<!-- 分页滚动条 -->
 <template>
-  <!-- 分页滚动条 -->
   <div
     class="press-pagination"
     :class="[customClass,
@@ -94,6 +94,7 @@ export default {
     virtualHost: true,
     styleIsolation: 'shared',
   },
+  emits: ['change'],
   data() {
     return {
       currSelItem: 0, // 当前选中索引
@@ -149,11 +150,10 @@ export default {
     this.getScrollBarSize();
   },
   destroyed() {
-    this.selectedEvent = false;
-    if (popOverTimer) {
-      clearTimeout(popOverTimer);
-      popOverTimer = null;
-    }
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
   },
   updated() {
     this.$nextTick().then(() => {
@@ -161,6 +161,13 @@ export default {
     });
   },
   methods: {
+    onDestroyed() {
+      this.selectedEvent = false;
+      if (popOverTimer) {
+        clearTimeout(popOverTimer);
+        popOverTimer = null;
+      }
+    },
     getScrollBarSize() {
       getRect(this, '.press-scrollbar').then((res) => {
         if (res) {

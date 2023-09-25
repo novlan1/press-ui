@@ -26,6 +26,7 @@ export default {
       default: '',
     },
   },
+  emits: ['back'],
   data() {
     return {
     };

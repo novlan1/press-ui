@@ -104,10 +104,12 @@
         @change="onChangeTitle"
       >
         <press-collapse-item name="1">
-          <div slot="title">
-            {{ t('title') }} 1
-            <press-icon-plus name="question-o" />
-          </div>
+          <template #title>
+            <div>
+              {{ t('title') }} 1
+              <press-icon-plus name="question-o" />
+            </div>
+          </template>
           {{ t('text') }}
         </press-collapse-item>
 

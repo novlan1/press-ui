@@ -30,10 +30,6 @@
   ],
   "subPackages": [
     {
-      "root": "pages/vue",
-      "pages": []
-    },
-    {
       "root": "pages/press/button",
       "pages": [
         {
@@ -754,6 +750,17 @@
       "pages": [
         {
           "path": "schedule-tree",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/team-search",
+      "pages": [
+        {
+          "path": "team-search",
           "style": {
             "navigationBarTitleText": ""
           }

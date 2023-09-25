@@ -7,7 +7,6 @@
     <!-- #endif -->
 
     <press-tabs
-      v-model="tab"
       :offset-top="offsetTop"
       sticky
       swipeable
@@ -204,7 +203,6 @@ export default {
   data() {
     this.RED = RED;
     return {
-      tab: 0,
       demoIcon: 'chat-o',
       demoImage: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
 
@@ -250,11 +248,6 @@ export default {
 <style scoped lang="scss">
 @import "src/packages/common/style/var.scss";
 
-.press-doc-demo-section {
-  font-size: 0;
-  background-color: #f7f8fa;
-}
-
 .demo-wrap {
   ::v-deep .press-tab__pane {
     width: auto;
@@ -265,10 +258,6 @@ export default {
 
   ::v-deep .press-tabs__content {
     background-color: #f7f8fa;
-  }
-
-  ::v-deep .press-doc-demo-section-notify {
-    font-size: 13px;
   }
 
   ::v-deep .press-col {

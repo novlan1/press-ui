@@ -130,7 +130,7 @@
         is-link
         :use-title-slot="true"
       >
-        <template slot="title">
+        <template #title>
           <span class="press-cell-text">
             {{ t('cell') }}
           </span>
@@ -143,11 +143,12 @@
         :title="t('cell')"
         icon="shop-o"
       >
-        <press-icon-plus
-          slot="right-icon"
-          name="search"
-          class="custom-icon"
-        />
+        <template #right-icon>
+          <press-icon-plus
+            name="search"
+            class="custom-icon"
+          />
+        </template>
       </press-cell>
     </demo-block>
 
@@ -186,12 +187,13 @@
           :title="t('allowModifyAvatar')"
           :border="false"
         >
-          <press-switch
-            slot="right-icon"
-            custom-class="press-switch--e-sport"
-            :checked="switchChecked[1]"
-            @change="val=>onChangeSwitch(val, 1)"
-          />
+          <template #right-icon>
+            <press-switch
+              custom-class="press-switch--e-sport"
+              :checked="switchChecked[1]"
+              @change="val=>onChangeSwitch(val, 1)"
+            />
+          </template>
         </press-cell>
 
         <press-cell
@@ -200,12 +202,13 @@
           center
           :border="false"
         >
-          <press-switch
-            slot="right-icon"
-            custom-class="press-switch--e-sport"
-            :checked="switchChecked[2]"
-            @change="val=>onChangeSwitch(val, 2)"
-          />
+          <template #right-icon>
+            <press-switch
+              custom-class="press-switch--e-sport"
+              :checked="switchChecked[2]"
+              @change="val=>onChangeSwitch(val, 2)"
+            />
+          </template>
         </press-cell>
       </div>
     </demo-block>

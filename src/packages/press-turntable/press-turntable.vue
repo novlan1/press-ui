@@ -89,6 +89,7 @@ export default {
       default: '',
     },
   },
+  emits: ['start', 'end'],
   data() {
     return {
       innerStartAngle: this.startAngle,

@@ -34,14 +34,17 @@
       v-else-if="isShowPopup && !isHor"
       :is-show="isShowPopup"
       :is-showpopup-close="isShowpopupClose"
-      :popup-title="title"
+      :popup-title="innerTitle"
       @onCancel="dimissDialog"
     >
       <scroll-view
         scroll-y="true"
         class="press-award__wrap"
       >
-        <p class="press-award__tip">
+        <p
+          v-if="isGamePrize"
+          class="press-award__tip"
+        >
           仅展示游戏礼包，其他奖品已发放至<span
             class="press-award__tip__highlight"
             @click.stop="onGoAward"
@@ -49,7 +52,11 @@
         </p>
         <PressAwardPopupList :props-check-list="awardList" />
       </scroll-view>
-      <div class="press-award__bottom">
+
+      <div
+        v-if="isGamePrize"
+        class="press-award__bottom"
+      >
         <div class="press-award__roles">
           <p>发放到游戏邮箱：</p>
           <div
@@ -66,6 +73,18 @@
         >
           确认领取
         </div>
+      </div>
+
+      <div
+        v-else
+        class="press-award__bottom"
+      >
+        <PressButton
+          type="e-sport-primary-bg-xl"
+          @click.stop="onGoAward"
+        >
+          查看奖励
+        </PressButton>
       </div>
     </PressPopup>
 
@@ -84,21 +103,30 @@
 <script>
 import PressPopup from '../press-popup/press-popup';
 import PressDialog from '../press-dialog/press-dialog';
+import PressButton from '../press-button/press-button';
 import PressAwardPopupList from '../press-award-popup-list/press-award-popup-list';
 import PressAwardPopupHor from './press-award-popup-hor';
 
+const DEFAULT_VERT_TITLE = '恭喜获得游戏礼包';
+
+
 export default {
   name: 'PressAwardPopup',
+  options: {
+    virtualHost: true,
+    styleIsolation: 'shared',
+  },
   components: {
     PressPopup,
     PressDialog,
     PressAwardPopupList,
     PressAwardPopupHor,
+    PressButton,
   },
   props: {
     title: {
       type: String,
-      default: '恭喜获得游戏礼包',
+      default: DEFAULT_VERT_TITLE,
     },
     curRoleName: {
       type: String,
@@ -108,6 +136,10 @@ export default {
       type: Array,
       default: () => [],
       required: false,
+    },
+    isGamePrize: {
+      type: Boolean,
+      default: true,
     },
     tipTitle: {
       type: String,
@@ -146,9 +178,7 @@ export default {
       default: '本次仅发放游戏礼包（其他奖励请联系办赛方），已发放到「我的奖品」，请在有效期内兑换',
     },
   },
-  options: {
-    virtualHost: true,
-  },
+  emits: ['dimissDialog', 'onShowSwitchRoleDialog', 'onExchange', 'onConfirm', 'onCancel', 'onGoAward'],
   data() {
     return {
       isShowpopupClose: true,
@@ -157,6 +187,18 @@ export default {
       // 是否显示未中奖弹窗
       isShowTipDialog: false,
     };
+  },
+  computed: {
+    innerTitle() {
+      const { title } = this;
+      console.log('title', title, this.isGamePrize);
+      if (title === DEFAULT_VERT_TITLE) {
+        if (!this.isGamePrize) {
+          return '恭喜获得';
+        }
+      }
+      return title;
+    },
   },
   mounted() {
     setTimeout(() => {

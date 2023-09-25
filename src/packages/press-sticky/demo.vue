@@ -113,7 +113,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .demo-wrap {
-  height: 1000px;
+  height: 200vh;
 
   .btn1 {
     margin-left: 10px;

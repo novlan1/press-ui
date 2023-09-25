@@ -76,7 +76,10 @@
 
 
     <!-- #ifndef H5 -->
-    <PressToast id="press-toast" />
+    <PressToast
+      id="press-toast"
+      ref="press-toast"
+    />
     <!-- #endif -->
   </div>
 </template>
@@ -131,6 +134,10 @@ export default {
       this.$toast.loading({
         duration: 1000,
       });
+      // QQ小程序不能使用空字符串
+      // this.onGShowLoading(' ', {
+      //   duration: 1000,
+      // });
       setTimeout(() => {
         console.log('onSyncChange.val', val);
         this.asyncValue = val;

@@ -47,6 +47,11 @@
         is-link
         @click="onShowPopup('bottom', { closeable: true, closeIconPosition: 'top-left' })"
       />
+      <press-cell
+        :title="t('rightCloseIcon')"
+        is-link
+        @click="onShowPopup('right', { closeable: true })"
+      />
     </demo-block>
 
     <demo-block :title="t('round')">
@@ -92,6 +97,7 @@ export default {
       closeIcon: '关闭图标',
       customIcon: '自定义图标',
       iconPosition: '图标位置',
+      rightCloseIcon: '右侧弹出关闭图标',
       round: '圆角弹窗',
     },
     'en-US': {
@@ -104,6 +110,7 @@ export default {
       closeIcon: 'Close Icon',
       customIcon: 'Custom Icon',
       iconPosition: 'Icon Position',
+      rightCloseIcon: 'Right with Icon',
       round: 'Round',
     },
   },
@@ -135,6 +142,12 @@ export default {
       this.isCloseable = !!props.closeable;
       this.closeIcon = props.closeIcon || DEFAULT_CLOSE_ICON;
       this.closeIconPosition = props.closeIconPosition || DEFAULT_CLOSE_ICON_POSITION;
+      const sidePositionStyle = `${[
+        'width: 30%',
+        'height: calc(100% - var(--window-top, 0px))',
+        'top: calc(50% + var(--window-top, 0px) / 2)',
+        'bottom: 0',
+      ].join(';')};`;
 
       switch (position) {
         case 'top': {
@@ -148,12 +161,12 @@ export default {
         }
 
         case 'left': {
-          customStyle = 'width: 30%;height: 100%;';
+          customStyle = sidePositionStyle ;
           break;
         }
 
         case 'right': {
-          customStyle = 'width: 30%;height: 100%;';
+          customStyle = sidePositionStyle;
           break;
         }
 

@@ -51,6 +51,7 @@ export default {
       default: 4,
     },
   },
+  emits: [],
   data() {
     return {
       right: 0,

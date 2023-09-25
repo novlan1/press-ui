@@ -24,15 +24,17 @@
         :class="true ? utils.bem2('dropdown-item__option', { active: item.value === innerValue } ) : ''"
         clickable
         :icon="item.icon"
-        @click.native="onOptionTap(item)"
+        @click="onOptionTap(item)"
       >
-        <div
-          slot="title"
-          class="press-dropdown-item__title"
-          :style="item.value === innerValue ? 'color:' + activeColor : ''"
-        >
-          {{ item.text }}
-        </div>
+        <template #title>
+          <div
+            class="press-dropdown-item__title"
+            :style="item.value === innerValue ? 'color:' + activeColor : ''"
+          >
+            {{ item.text }}
+          </div>
+        </template>
+
         <press-icon-plus
           v-if="item.value === innerValue"
           name="success"
@@ -91,6 +93,7 @@ export default {
     popupStyle: { type: String, default: '' },
     ...defaultProps,
   },
+  emits: ['open', 'opened', 'close', 'closed', 'change'],
   data() {
     return {
       transition: true,

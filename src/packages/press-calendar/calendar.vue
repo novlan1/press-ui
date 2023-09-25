@@ -10,10 +10,11 @@
       :first-day-of-week="firstDayOfWeek"
       @click-subtitle="onClickSubtitle"
     >
-      <slot
-        slot="title"
-        name="title"
-      />
+      <template #title>
+        <slot
+          name="title"
+        />
+      </template>
     </CalendarHeader>
 
     <scroll-view
@@ -104,6 +105,12 @@ export default {
       default: null,
     },
   },
+  emits: [
+    'onConfirm',
+    'onClickSubtitle',
+    'scrollIntoView',
+    'onClickDay',
+  ],
   data() {
     return {
       computed,
@@ -169,7 +176,7 @@ export default {
 
       contentObserver.observe(selector, (res) => {
         if (res.boundingClientRect.top <= res.relativeRect.top) {
-          this.subtitle = formatMonthTitle(res.dataset.date);
+          this.subtitle = formatMonthTitle(+res.dataset.date);
         }
       });
     },

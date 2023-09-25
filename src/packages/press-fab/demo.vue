@@ -33,6 +33,7 @@
 import PressFab from 'src/packages/press-fab/press-fab.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 import { isNotInUni } from 'src/packages/common/utils/utils';
+import { forceUpdate } from 'src/packages/common/vue3/adapter';
 
 
 export default {
@@ -141,7 +142,7 @@ export default {
         this.horizontal = hor;
         this.vertical = ver;
       }
-      this.$forceUpdate();
+      forceUpdate(this);
     },
     switchColor() {
       this.is_color_type = !this.is_color_type;

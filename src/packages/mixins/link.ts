@@ -9,7 +9,7 @@ export const link = {
     },
   },
   methods: {
-    jumpLink(urlKey = 'url') {
+    jumpLink(this: any, urlKey = 'url') {
       const url = this[urlKey];
       if (url) {
         // #ifdef H5
@@ -19,11 +19,14 @@ export const link = {
         }
         // #endif
 
-        if ((this as any).linkType === 'navigateTo'
-                    && getCurrentPages().length > 9) {
+        const linkType = this.linkType || 'navigateTo';
+
+        if (linkType === 'navigateTo'
+            && getCurrentPages().length > 9
+        ) {
           uni.redirectTo({ url });
         } else {
-          uni[(this as any).linkType]({ url });
+          uni[linkType]({ url });
         }
       }
     },

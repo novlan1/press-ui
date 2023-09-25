@@ -30,6 +30,7 @@ export default {
       required: false,
     },
   },
+  emits: ['clickBanner'],
   data() {
     return {
 

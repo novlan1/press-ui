@@ -64,22 +64,20 @@
       @touchend="onTouchEnd"
       @touchmove.stop.prevent="onTouchMove"
     >
-      <uni-icons
-        class="fab-circle-icon"
-        type="plusempty"
+      <press-icon-plus
+        name="cross"
         :color="styles.iconColor"
         size="32"
+        class="fab-circle-icon"
         :class="{'uni-fab__plus--active': isShow && content.length > 0}"
       />
-      <!-- <div class="fab-circle-v"  :class="{'uni-fab__plus--active': isShow && content.length > 0}"></div>
-			<div class="fab-circle-h" :class="{'uni-fab__plus--active': isShow  && content.length > 0}"></div> -->
     </div>
   </div>
 </template>
 
 <script>
 import { getRect, getWindowWidth } from '../common/dom/rect';
-import UniIcons from 'src/pages/components/uni-icons/components/uni-icons/uni-icons.vue';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
 let platform = 'other';
 // #ifdef APP-NVUE
@@ -100,7 +98,7 @@ const switchPos = {
 export default {
   name: 'PressFab',
   components: {
-    UniIcons,
+    PressIconPlus,
   },
   props: {
     pattern: {

@@ -100,7 +100,7 @@
         v-if="abnormalTip"
         class="press-schedule-team--err-tip"
       >
-        <div class="iconfont icon-abnormal-err icon-red" />
+        <div class="press-schedule-team__err-icon" />
       </div>
     </div>
 
@@ -175,6 +175,7 @@ export default {
       default: '',
     },
   },
+  emits: ['clickSche', 'clickVideoIcon'],
   data() {
     return {
       i18nMap: {

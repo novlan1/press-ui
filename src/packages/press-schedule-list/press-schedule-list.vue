@@ -6,6 +6,7 @@ export default {
   name: 'PressScheduleList',
   props: {
   },
+  emits: [],
   data() {
     return {
     };

@@ -137,6 +137,7 @@ export default {
     color: { type: String, default: '' },
     ...defaultProps,
   },
+  emits: ['click', 'getuserinfo'],
   data() {
     return {
       baseStyle: '',

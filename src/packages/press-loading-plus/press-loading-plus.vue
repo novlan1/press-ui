@@ -51,6 +51,7 @@ export default {
     size: { type: String, default: '' },
     textSize: { type: String, default: '' },
   },
+  emits: [],
   data() {
     return {
       array12: Array.from({ length: 12 }),

@@ -163,6 +163,7 @@ export default {
   props: {
 
   },
+  emits: ['click', 'cancel', 'confirm'],
   data() {
     that = this;
     return {

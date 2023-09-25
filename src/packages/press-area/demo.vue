@@ -235,7 +235,7 @@ export default {
     onChange(value) {
       console.log('[onChange] value: ', value);
       const { index, values } = value;
-      const names = values.map(item => item.name).join('-');
+      const names = values.map(item => item?.name || '').join('-');
 
       this.onGTip(`${names}, index: ${index}`);
     },

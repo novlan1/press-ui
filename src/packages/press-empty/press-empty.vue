@@ -1,14 +1,15 @@
 <template>
   <div
     class="press-empty"
-    :class="customClass"
+    :class="emptyClass"
+    :style="customStyle"
   >
     <press-icon
       v-if="isESportType"
       type="empty"
       color="#bfc3e1"
-      custom-class="customClass"
-      size="30"
+      size="10.66667vmin"
+      custom-class="press-icon--e-sport"
     />
 
     <template v-else>
@@ -52,6 +53,7 @@ export default {
   },
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   props: {
     description: { type: String, default: '' },
@@ -64,8 +66,13 @@ export default {
       type: String,
       default: '',
     },
+    customStyle: {
+      type: String,
+      default: '',
+    },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       computed,
@@ -74,6 +81,14 @@ export default {
   computed: {
     isESportType() {
       return this.type === E_SPORT_TYPE;
+    },
+    emptyClass() {
+      const { isESportType, customClass } = this;
+
+      return [
+        isESportType ? 'press-empty--e-sport' : '',
+        customClass,
+      ].join(' ');
     },
   },
   mounted() {
@@ -141,9 +156,29 @@ export default {
   }
 }
 
-.customClass {
-  font-size: 0.8vmin;
+
+</style>
+<style scoped lang="scss">
+@import "../base/layout.scss";
+@import "../base/mixin.scss";
+
+.press-empty {
+  &--e-sport {
+    height: tovmin(200);
+    padding: 0;
+
+    .press-empty__description {
+      font-size: tovmin(28);
+      color: $color-gray-5;
+      margin-top: 0;
+    }
+  }
+}
+
+.press-icon--e-sport {
+  margin-bottom: tovmin(8);
+  font-size: tovmin(80);
   color: $color-gray-4;
-  min-height: 0.84vmin;
+  min-height: tovmin(84);
 }
 </style>

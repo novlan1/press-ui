@@ -103,6 +103,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['input', 'change'],
   data() {
     return {
       parentDisabled: false,

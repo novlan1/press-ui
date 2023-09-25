@@ -1,7 +1,7 @@
-import Vue from 'vue';
 import { t } from '../locale';
 import { addFunctionForDialog } from './handler-helper';
 import { selectComponent } from '../common/functional-component';
+import { nextTick, extendComponent } from '../common/vue3/adapter';
 
 
 // #ifdef H5
@@ -52,9 +52,8 @@ function initInstance() {
 
   document.body.appendChild(dialogRootDiv);
 
-  const instance = new (Vue.extend(VueDialog as any))({
-    el: dialogRootDiv,
-  });
+  const instance = extendComponent(dialogRootDiv, VueDialog);
+
   return instance;
 }
 
@@ -94,7 +93,7 @@ const Dialog = (options) => {
       // dialog.setData(newOptions);
 
 
-      Vue.nextTick(() => {
+      nextTick(() => {
         // #ifdef H5
         dialog.setData({ show: true });
         // #endif

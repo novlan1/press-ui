@@ -1,9 +1,9 @@
 // 此文件不能改为ts，否则条件编译有问题
 
-import Vue from 'vue';
 import { dialogProps } from './computed';
 import { addFunctionForDialog } from '../press-dialog-plus/handler-helper';
 import { selectComponent } from '../common/functional-component';
+import { extendComponent } from '../common/vue3/adapter';
 
 // #ifdef H5
 import VueDialog from './press-dialog.vue';
@@ -35,9 +35,8 @@ function initInstance() {
 
   document.body.appendChild(dialogRootDiv);
 
-  const instance = new (Vue.extend(VueDialog))({
-    el: dialogRootDiv,
-  });
+  const instance = extendComponent(dialogRootDiv, VueDialog);
+
   return instance;
 }
 

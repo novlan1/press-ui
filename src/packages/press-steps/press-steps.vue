@@ -91,6 +91,7 @@ export default {
     inactiveIcon: { type: String, default: '' },
     ...defaultProps,
   },
+  emits: ['click-step'],
   data() {
     return {
       status,

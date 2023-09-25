@@ -12,16 +12,18 @@
       :required="required"
       :clickable="clickable"
       :title-width="titleWidth"
+      :title-style="(label || useLabelSlot) ? 'margin-right: 12px;': 'display: none;'"
       :use-title-slot="!!(useLabelSlot || label)"
-      title-style="margin-right: 12px;"
       :custom-style="customStyle"
       :arrow-direction="arrowDirection"
       custom-class="press-field"
     >
-      <slot
-        slot="icon"
-        name="left-icon"
-      />
+      <template #icon>
+        <slot
+          name="left-icon"
+        />
+      </template>
+
       <template #title>
         <div
           v-if="label"
@@ -42,7 +44,7 @@
         >
           <slot name="input" />
         </div>
-        <Textarea
+        <textarea
           v-if="type === 'textarea'"
           ref="input"
           :class="'' + (utils.bem2('field__control', [inputAlign, type, { disabled, error }]))+' ' + inputClass"
@@ -74,7 +76,7 @@
           @keyboardheightchange="onKeyboardHeightChange"
         />
 
-        <Input
+        <input
           v-else
           ref="input"
           :class="'' + (utils.bem2('field__control', [inputAlign, { disabled, error }]))+' ' + inputClass"
@@ -103,13 +105,13 @@
           @focus="onFocus"
           @confirm="onConfirm"
           @keyboardheightchange="onKeyboardHeightChange"
-        />
+        >
 
         <press-icon-plus
           v-if="showClear"
           :name="clearIcon"
           class="press-field__clear-root press-field__icon-root"
-          @touchstart.native.stop.prevent="onClear"
+          @click.stop.prevent="onClear"
         />
         <div
           class="press-field__icon-container"
@@ -150,7 +152,6 @@
 <script>
 import PressCell from '../press-cell/press-cell.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { nextTick } from '../common/utils/system';
 import { commonProps, inputProps, textareaProps } from './props';
 import utils from '../common/utils/utils';
 import computed from './computed';
@@ -158,7 +159,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
 import { isObject } from '../common/utils/validator';
 import { getEventDetail, getEventValue } from '../common/dom/event';
-
+import { nextTick } from '../common/vue3/adapter';
 
 export default {
   name: 'PressField',
@@ -232,6 +233,18 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [
+    'focus',
+    'blur',
+    'click-icon',
+    'click-input',
+    'clear',
+    'confirm',
+    'linechange',
+    'keyboardheightchange',
+    'input',
+    'change',
+  ],
   data() {
     return {
       focused: false,
@@ -246,7 +259,7 @@ export default {
     value: {
       handler(val) {
         this.innerValue = val;
-        this.$nextTick(this.adjustSize);
+        nextTick(this.adjustSize);
       },
     },
   },
@@ -254,36 +267,42 @@ export default {
     this.innerValue = this.value;
   },
   mounted() {
-    this.$nextTick(this.adjustSize);
+    nextTick(this.adjustSize);
   },
   methods: {
     onInput(event) {
-      const value = getEventValue(event, this.$refs.input);
+      const value = getEventValue(event);
       this.innerValue = value;
       this.setShowClear();
       this.emitChange();
-      this.$nextTick(this.adjustSize);
+      nextTick(this.adjustSize);
     },
     onFocus(event) {
       this.focused = true;
       this.setShowClear();
-      this.$emit('focus', getEventDetail(event, this.$refs.input));
-      this.$nextTick(this.adjustSize);
+      this.$emit('focus', getEventDetail(event));
+      nextTick(this.adjustSize);
     },
     onBlur(event) {
       this.focused = false;
-      this.setShowClear();
-      this.$emit('blur', getEventDetail(event, this.$refs.input));
-      this.$nextTick(this.adjustSize);
+      this.$emit('blur', getEventDetail(event));
+      nextTick(this.adjustSize);
+
+      setTimeout(() => {
+        this.setShowClear();
+      }, 200);
     },
     onClickIcon() {
       this.$emit('click-icon');
     },
     onClickInput(event) {
-      this.$emit('click-input', getEventDetail(event, this.$refs.input));
+      this.$emit('click-input', getEventDetail(event));
     },
     onClear() {
       this.innerValue = '';
+      // if (this.$refs.input) {
+      //   this.$refs.input.value = '';
+      // }
       this.setShowClear();
       nextTick(() => {
         this.emitChange();
@@ -291,7 +310,7 @@ export default {
       });
     },
     onConfirm(event) {
-      const value = getEventValue(event, this.$refs.input);
+      const value = getEventValue(event);
       this.innerValue = value;
       this.setShowClear();
       this.$emit('confirm', value);
@@ -305,10 +324,10 @@ export default {
       this.emitChange();
     },
     onLineChange(event) {
-      this.$emit('linechange', getEventDetail(event, this.$refs.input));
+      this.$emit('linechange', getEventDetail(event));
     },
     onKeyboardHeightChange(event) {
-      this.$emit('keyboardheightchange', getEventDetail(event, this.$refs.input));
+      this.$emit('keyboardheightchange', getEventDetail(event));
     },
     emitChange() {
       nextTick(() => {
@@ -329,7 +348,10 @@ export default {
     },
     adjustSize() {
       const { input } = this.$refs;
-      if (!(this.type === 'textarea' && this.autosize) || !input) {
+      if (!(this.type === 'textarea' && this.autosize)
+        || !input
+        || !input.style
+      ) {
         return;
       }
 
@@ -405,6 +427,7 @@ export default {
     min-height: var(--cell-line-height, $cell-line-height);
     user-select: auto;
     outline: none;
+    font: inherit;
     font-size: var(--field-font-size, $field-font-size);
 
     &:empty {

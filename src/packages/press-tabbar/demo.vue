@@ -107,18 +107,21 @@
         @change="onChange"
       >
         <press-tabbar-item info="3">
-          <img
-            slot="icon"
-            :src="icon.normal"
-            mode="aspectFit"
-            style="width: 23px; height: 18px;"
-          >
-          <img
-            slot="icon-active"
-            :src="icon.active"
-            mode="aspectFit"
-            style="width: 23px; height: 18px;"
-          >
+          <template #icon>
+            <img
+              :src="icon.normal"
+              mode="aspectFit"
+              style="width: 23px; height: 18px;"
+            >
+          </template>
+
+          <template #icon-active>
+            <img
+              :src="icon.active"
+              mode="aspectFit"
+              style="width: 23px; height: 18px;"
+            >
+          </template>
           {{ t('custom') }}
         </press-tabbar-item>
         <press-tabbar-item icon="search">

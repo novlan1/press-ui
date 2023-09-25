@@ -11,7 +11,7 @@
       {{ scheInfo.finalsLabel || '' }}
     </div>
     <div class="press-schedule-item-layout">
-      <template>
+      <template v-if="true">
         <div
           v-if="isPreview == PREVIEW_STATE_MAP.PREVIEW"
           class="press-schedule-team--preview"
@@ -82,7 +82,7 @@
         </div>
 
         <!-- the VS or score -->
-        <template>
+        <template v-if="true">
           <div
             v-if="scheInfo.showVS"
             class="press-schedule-score"
@@ -121,7 +121,7 @@
 
 
       <!-- the avatar teamname of right team -->
-      <template>
+      <template v-if="true">
         <!-- 预赛程S -->
         <div
           v-if="isPreview == PREVIEW_STATE_MAP.PREVIEW"
@@ -226,6 +226,7 @@ export default {
       default: true,
     },
   },
+  emits: ['clickScheItem', 'clickScheItemButton'],
   data() {
     return {
       SPECIAL_TEAM_ID_MAP,

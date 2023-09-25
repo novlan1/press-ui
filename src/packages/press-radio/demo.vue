@@ -114,20 +114,24 @@
           use-icon-slot
         >
           {{ t('radio') }} 1
-          <img
-            slot="icon"
-            :src="valueMap.customIcon === 'a' ? icon.active : icon.normal"
-          >
+          <template #icon>
+            <img
+              class="img"
+              :src="valueMap.customIcon === 'a' ? icon.active : icon.normal"
+            >
+          </template>
         </press-radio>
         <press-radio
           name="b"
           use-icon-slot
         >
           {{ t('radio') }} 2
-          <img
-            slot="icon"
-            :src="valueMap.customIcon === 'b' ? icon.active : icon.normal"
-          >
+          <template #icon>
+            <img
+              class="img"
+              :src="valueMap.customIcon === 'b' ? icon.active : icon.normal"
+            >
+          </template>
         </press-radio>
       </press-radio-group>
     </demo-block>
@@ -167,10 +171,11 @@
             data-name="1"
             @click="valueMap.cell = '1'"
           >
-            <press-radio
-              slot="right-icon"
-              name="1"
-            />
+            <template #right-icon>
+              <press-radio
+                name="1"
+              />
+            </template>
           </press-cell>
           <press-cell
             :title="`${t('radio')} 2`"
@@ -178,10 +183,11 @@
             data-name="2"
             @click="valueMap.cell = '2'"
           >
-            <press-radio
-              slot="right-icon"
-              name="2"
-            />
+            <template #right-icon>
+              <press-radio
+                name="2"
+              />
+            </template>
           </press-cell>
         </press-cell-group>
       </press-radio-group>
@@ -260,7 +266,7 @@ export default {
 ::v-deep .press-radio {
   margin-bottom: 8px;
 }
-img {
+.img {
   height: 20px;
   width: 25px;
 }

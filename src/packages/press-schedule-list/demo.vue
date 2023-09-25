@@ -25,10 +25,12 @@
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
+      :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
     <PressPicker
       :id="FUNCTIONAL_ID_MAP.PICKER"
+      :ref="FUNCTIONAL_ID_MAP.PICKER"
       mode="functional"
     />
   </div>

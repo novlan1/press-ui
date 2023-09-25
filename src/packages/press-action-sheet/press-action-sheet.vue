@@ -137,6 +137,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['select', 'close', 'cancel', 'click-overlay', 'getuserinfo'],
   data() {
     return {
 

@@ -27,10 +27,11 @@
         left-arrow
         :safe-area-inset-top="false"
       >
-        <press-icon-plus
-          slot="right"
-          name="search"
-        />
+        <template #right>
+          <press-icon-plus
+            name="search"
+          />
+        </template>
       </press-nav-bar>
     </demo-block>
   </div>

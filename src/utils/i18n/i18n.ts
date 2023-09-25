@@ -1,6 +1,6 @@
-import Vue from 'vue';
 import localeEn from '../../packages/locale/lang/en-US';
 import locale, { t } from '../../packages/locale';
+import { initGlobalMixin } from '../../packages/common/vue3/adapter';
 
 import localeEnDemo from './lang/en-US';
 import localeZhDemo from './lang/zh-CN';
@@ -86,8 +86,8 @@ function getPage() {
   return name;
 }
 
-export function initDemoI18n() {
-  Vue.mixin({
+export function initDemoI18n(app) {
+  const mixin = {
     // @ts-ignore
     onReady() {
       const name = getPage();
@@ -114,8 +114,10 @@ export function initDemoI18n() {
         return t.call(this, key, ...args);
       },
     },
-  });
+  };
+
+  initGlobalMixin(mixin, app);
 }
 
 setLang();
-initDemoI18n();
+// initDemoI18n();

@@ -4,16 +4,17 @@
   white-space: nowrap
 }
 
-.press-multi-ellipsis--l2 {
-  -webkit-line-clamp: 2
-}
-
 .press-multi-ellipsis--l2,
 .press-multi-ellipsis--l3 {
   -webkit-box-orient: vertical;
-  display: box;
+  // display: box;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis
+}
+
+.press-multi-ellipsis--l2 {
+  -webkit-line-clamp: 2
 }
 
 .press-multi-ellipsis--l3 {

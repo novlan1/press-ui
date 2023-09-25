@@ -30,7 +30,7 @@
         v-if="mode === 'closeable'"
         class="press-notice-bar__right-icon"
         name="cross"
-        @click.native.stop.prevent="onClickIcon"
+        @click="onClickIcon"
       />
 
       <template
@@ -117,6 +117,7 @@ export default {
     wrapable: Boolean,
     ...defaultProps,
   },
+  emits: ['close', 'click'],
   data() {
     return {
       show: true,
@@ -166,13 +167,19 @@ export default {
     // timingFunction: 'linear',
     // });
   },
-  destroyed() {
-    this.timer && clearTimeout(this.timer);
-  },
   mounted() {
     this.init();
   },
+  destroyed() {
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
+  },
   methods: {
+    onDestroyed() {
+      this.timer && clearTimeout(this.timer);
+    },
     init() {
       requestAnimationFrame(() => {
         Promise.all([

@@ -34,6 +34,7 @@ export default {
       default: '#2979ff',
     },
   },
+  emits: [],
   data() {
     return {
 

@@ -62,6 +62,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['cancel', 'confirm', 'change'],
   data() {
     return {
       columns: [{ values: [] }, { values: [] }, { values: [] }],
@@ -95,6 +96,7 @@ export default {
           county: val[2] || '',
         };
       },
+      immediate: true,
     },
   },
   mounted() {

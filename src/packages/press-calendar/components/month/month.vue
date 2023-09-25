@@ -100,6 +100,7 @@ export default {
     showSubtitle: SHARE_PROPS.showSubtitle,
     showMonthTitle: Boolean,
   },
+  emits: ['click'],
   data() {
     return {
       visible: true,

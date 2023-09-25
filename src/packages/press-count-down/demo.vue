@@ -55,6 +55,7 @@
     >
       <press-count-down
         id="controlCountDown"
+        ref="controlCountDown"
         millisecond
         :time="3000"
         :auto-start="false"

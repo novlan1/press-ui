@@ -34,11 +34,11 @@
 </template>
 <script>
 import computed from './index';
-import Vue from 'vue';
 import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
+import { toInject, nextTick, forceUpdate } from '../common/vue3/adapter';
 
 const DEFAULT_DURATION = 200;
 
@@ -47,11 +47,8 @@ export default {
   options: {
     ...defaultOptions,
   },
-  inject: {
-    [PARENT]: {
-      default: null,
-    },
-  },
+  ...toInject(PARENT),
+
   props: {
     ...defaultProps,
     activeClass: { type: String, default: '' },
@@ -68,6 +65,7 @@ export default {
       default: 0,
     },
   },
+  emits: ['change'],
   data() {
     return {
       startY: 0,
@@ -126,10 +124,11 @@ export default {
     },
     set(data) {
       this.setData(data);
-      // this.data = data;
-      this.$forceUpdate();
+
+      forceUpdate(this);
+
       // eslint-disable-next-line vue/valid-next-tick
-      return new Promise(resolve => Vue.nextTick(resolve));
+      return new Promise(resolve => nextTick(resolve));
     },
     onTouchStart(event) {
       this.setData({

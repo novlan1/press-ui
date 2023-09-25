@@ -29,27 +29,30 @@
         />
         <press-dropdown-item
           id="item"
+          ref="item"
           :title="itemTitle"
         >
           <press-cell :title="switchTitle1">
-            <press-switch
-              slot="right-icon"
-              size="24px"
-              style="height: 26px"
-              :checked="switch1"
-              active-color="#ee0a24"
-              @change="onSwitch1Change"
-            />
+            <template #right-icon>
+              <press-switch
+                size="24px"
+                style="height: 26px"
+                :checked="switch1"
+                active-color="#ee0a24"
+                @change="onSwitch1Change"
+              />
+            </template>
           </press-cell>
           <press-cell :title="switchTitle2">
-            <press-switch
-              slot="right-icon"
-              size="24px"
-              style="height: 26px"
-              :checked="switch2"
-              active-color="#ee0a24"
-              @change="onSwitch2Change"
-            />
+            <template #right-icon>
+              <press-switch
+                size="24px"
+                style="height: 26px"
+                :checked="switch2"
+                active-color="#ee0a24"
+                @change="onSwitch2Change"
+              />
+            </template>
           </press-cell>
           <div style="padding: 5px 16px;">
             <press-button
@@ -195,12 +198,7 @@ export default {
   },
   methods: {
     onConfirm() {
-      // #ifdef H5
-      this.selectComponent('#item').toggle();
-      // #endif
-      // #ifndef H5
-      this.selectComponent('#item').$vm.toggle();
-      // #endif
+      this.$refs.item.toggle();
     },
 
     onSwitch1Change(detail) {

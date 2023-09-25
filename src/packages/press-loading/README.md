@@ -62,3 +62,8 @@ export default {
 
 
 
+## 常见问题
+
+### 实现原理
+
+`press-loading` 采用的是绝对定位，`left/right/bottom/top` 均为`0`，所以要改变其高度，只需要修改最近的 `position: relative`的祖先元素（父元素）即可。

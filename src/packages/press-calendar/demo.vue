@@ -143,7 +143,7 @@ const DEFAULT_DATA = {
   maxRange: null,
   firstDayOfWeek: 0,
 };
-let that = this;
+let that = null;
 
 
 export default {

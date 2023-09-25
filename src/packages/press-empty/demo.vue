@@ -59,6 +59,7 @@
       <press-empty
         type="e-sport"
         :description="t('description')"
+        custom-style="height: 300px;"
       />
     </demo-block>
   </div>

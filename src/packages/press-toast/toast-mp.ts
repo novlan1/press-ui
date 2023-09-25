@@ -1,6 +1,6 @@
-import Vue from 'vue';
-import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
 import { getMPComponentHandler, makeExtraMethods } from '../common/component-handler';
+import { initGlobalProps } from '../common/vue3/adapter';
+import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
 
 
 const Toast = getMPComponentHandler({
@@ -10,6 +10,9 @@ const Toast = getMPComponentHandler({
 
 makeExtraMethods(Toast, ['loading', 'success', 'fail'], DEFAULT_KEY);
 
-Vue.prototype.$toast = Toast;
+initGlobalProps({
+  name: '$toast',
+  prop: Toast,
+});
 
 export default Toast;

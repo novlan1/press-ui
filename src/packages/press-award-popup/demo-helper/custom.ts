@@ -6,6 +6,7 @@ import {
 export const local = {
   empty: false,
   isHor: false,
+  isGamePrize: true,
 };
 
 export function showCustomPopup({ context, callback }) {
@@ -35,6 +36,20 @@ export function showCustomPopup({ context, callback }) {
         click: ({ context: popupContext }) => {
           popupContext.closeDialog();
           local.isHor = !local.isHor;
+          context.onGTip('设置成功');
+
+          if (typeof callback.changeParams === 'function') {
+            callback.changeParams.call(context, local);
+          }
+        },
+      },
+      {
+        label: '是否为游戏礼包',
+        type: 'switch',
+        open: local.isGamePrize,
+        click: ({ context: popupContext }) => {
+          popupContext.closeDialog();
+          local.isGamePrize = !local.isGamePrize;
           context.onGTip('设置成功');
 
           if (typeof callback.changeParams === 'function') {

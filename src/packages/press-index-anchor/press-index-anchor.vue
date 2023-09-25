@@ -42,6 +42,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       active: false,

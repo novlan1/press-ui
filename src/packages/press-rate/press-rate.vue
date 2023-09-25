@@ -77,6 +77,7 @@ export default {
       default: true,
     },
   },
+  emits: ['input', 'change'],
   data() {
     return {
       innerValue: 0,

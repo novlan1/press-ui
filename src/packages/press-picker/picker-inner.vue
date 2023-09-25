@@ -72,6 +72,7 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: ['onSelect', 'onCancel'],
   data() {
     return {
       currentIndex: -1,

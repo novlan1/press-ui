@@ -148,7 +148,7 @@ export function showCustomPopup({ context, callback }) {
         callback,
       }),
       {
-        label: '是否显示顶号异',
+        label: '是否显示顶号异常',
         type: 'switch',
         open: local.showError,
         click: ({ context: popupContext }) => {

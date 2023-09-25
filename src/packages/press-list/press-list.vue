@@ -26,12 +26,12 @@
           class="press-list__loading"
           :style="loadingStyle"
         >
-          <pressLoadingPlus
+          <PressLoadingPlus
             :vertical="!vertical"
             :size="loadingSize"
           >
             {{ loadingText }}
-          </pressLoadingPlus>
+          </PressLoadingPlus>
         </div>
       </slot>
 
@@ -58,10 +58,12 @@
 
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import pressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { getRect } from '../common/dom/rect';
 import { getScrollSelector } from '../common/dom/scroll';
 import {  SCROLL_VIEW_ID } from './config';
+import { vModelMixin } from '../common/vue3/adapter';
+
 
 const scrollSelector = getScrollSelector(SCROLL_VIEW_ID);
 
@@ -72,16 +74,13 @@ export default {
     ...defaultOptions,
   },
   components: {
-    pressLoadingPlus,
+    PressLoadingPlus,
   },
+  mixins: [vModelMixin],
   props: {
     offset: {
       type: [Number, String],
       default: 50,
-    },
-    value: {
-      type: Boolean,
-      default: false,
     },
     finished: {
       type: Boolean,
@@ -153,9 +152,15 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [
+    'scroll',
+    'input',
+    'load',
+    'update:modelValue',
+  ],
   data() {
     return {
-      innerLoading: this.value,
+      innerLoading: this.realModelValue,
       SCROLL_VIEW_ID,
 
       scrollerHeight: 0,
@@ -167,7 +172,7 @@ export default {
     },
   },
   watch: {
-    value: {
+    realModelValue: {
       handler(val) {
         this.innerLoading = val;
         this.check();
@@ -202,7 +207,7 @@ export default {
     emitInput() {
       if (this.innerLoading || this.finished) return;
       this.innerLoading = true;
-      this.$emit('input', true);
+      this.emitModelValue(true);
       this.$emit('load');
     },
     check() {

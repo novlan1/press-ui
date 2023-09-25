@@ -30,6 +30,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       computed,

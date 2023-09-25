@@ -14,10 +14,11 @@
       @clickMessage="clickMessage"
       @clickPerson="clickPerson"
     >
-      <press-empty
-        slot="empty"
-        description="暂无数据"
-      />
+      <template #empty>
+        <press-empty
+          description="暂无数据"
+        />
+      </template>
     </PressHorMatchIndex>
   </div>
 </template>

@@ -63,12 +63,13 @@
           clickable
           @click="onChange(!checkedMap.cell, 'cell')"
         >
-          <press-switch
-            slot="right-icon"
-            size="22px"
-            :checked="checkedMap.cell"
-            @change="onChange(!checkedMap.cell, 'cell')"
-          />
+          <template #right-icon>
+            <press-switch
+              size="22px"
+              :checked="checkedMap.cell"
+              @change="onChange(!checkedMap.cell, 'cell')"
+            />
+          </template>
         </press-cell>
       </press-cell-group>
     </demo-block>
@@ -76,6 +77,7 @@
     <!-- #ifndef H5 -->
     <PressDialog
       id="tip-match-comm-tips-dialog"
+      ref="tip-match-comm-tips-dialog"
     />
     <!-- #endif -->
   </div>
@@ -137,6 +139,7 @@ export default {
 
       if (type === 'async') {
         PressDialogHandler.show({
+          context: this,
           title: this.t('title'),
           content: this.t('message'),
           confirmText: this.t('confirm'),

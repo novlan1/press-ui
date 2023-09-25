@@ -7,8 +7,8 @@
       :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
-      @click.native="onClick"
-      @touchmove.native.stop.prevent="noop"
+      @click="onClick"
+      @touchmove.stop.prevent="noop"
     >
       <slot />
     </press-transition>
@@ -20,7 +20,7 @@
       :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
-      @click.native="onClick"
+      @click="onClick"
     >
       <slot />
     </press-transition>

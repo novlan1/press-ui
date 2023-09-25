@@ -58,6 +58,7 @@ export default {
 | title            | 标题                                   | _string_  | -                                                                                    |
 | award-list       | 奖励列表                               | _array_   | -                                                                                    |
 | cur-role-name    | 角色名称                               | _string_  | -                                                                                    |
+| is-game-prize    | 是否仅为游戏礼包                       | _boolean_ | `true`                                                                               |
 | tip-title        | 奖励为空时，弹窗标题，为空时弹窗不显示 | _string_  | -                                                                                    |
 | confirm-text     | 奖励为空时，弹窗确认按钮文案           | _string_  | -                                                                                    |
 | cancel-text      | 奖励为空时，弹窗取消按钮文案           | _string_  | -                                                                                    |

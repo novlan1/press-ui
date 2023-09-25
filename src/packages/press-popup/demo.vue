@@ -95,27 +95,30 @@
       @confirm="showSlotPopup = false"
       @cancel="showSlotPopup = false"
     >
-      <PressIconPlus
-        slot="icon"
-        name="gem-o"
-        size="22px"
-      />
-
-      <div
-        slot="title"
-      >
-        {{ t('wayToWin') }}
+      <template #icon>
         <PressIconPlus
-          name="like-o"
-          size="16"
+          name="gem-o"
+          size="22px"
         />
-      </div>
+      </template>
 
-      <PressIconPlus
-        slot="button"
-        name="setting-o"
-        size="22px"
-      />
+      <!-- v-slot:title -->
+      <template #title>
+        <div>
+          {{ t('wayToWin') }}
+          <PressIconPlus
+            name="like-o"
+            size="16"
+          />
+        </div>
+      </template>
+
+      <template #button>
+        <PressIconPlus
+          name="setting-o"
+          size="22px"
+        />
+      </template>
 
       <div class="content">
         {{ t('SomeContent') }}
@@ -136,6 +139,7 @@
 
     <press-popup
       :id="PRESS_PICKER_ID"
+      :ref="PRESS_PICKER_ID"
       mode="functional"
     >
       <div class="content">
@@ -329,6 +333,7 @@ export default {
     },
     onShowFunctionalPicker() {
       showFunctionalComponent.call(this, {
+        context: this,
         selector: `#${PRESS_PICKER_ID}`,
         title: this.t('wayToWin'),
         button: this.t('confirm'),

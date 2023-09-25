@@ -1,5 +1,11 @@
-const { execSync } = require('child_process');
+const { execCommand } = require('t-comm');
 const ENV_FILE = '.env.local';
+
+function tExecCommand(command, root, stdio) {
+  console.log('[Doing]', command);
+  execCommand(command, root, stdio);
+}
+
 
 function main() {
   require('dotenv').config({ path: ENV_FILE });
@@ -9,9 +15,11 @@ function main() {
   const hostName = process.env.HOST_NAME;
   const hostPwd =  process.env.HOST_PWD;
 
-  execSync(`sh script/deploy/docs.sh ${sourceDir} ${targetDir} ${hostName} ${hostPwd}`, {
-    stdio: 'inherit',
-  });
+  tExecCommand(`npx t-comm publish -s ${sourceDir} \
+  -t ${targetDir} \
+  -n ${hostName} \
+  -p ${hostPwd}
+  `, process.cwd(), 'inherit');
 }
 
 main();

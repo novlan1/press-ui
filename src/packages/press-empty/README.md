@@ -71,10 +71,13 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 
 ### E-SPORT
 
-新增`e-sport`类型。
+新增`e-sport`类型，要撑满父元素高度的话可以传入 `custom-style="height: 100%;"`。
 
 ```html
-<press-empty type="e-sport" />
+<press-empty 
+  type="e-sport" 
+  custom-style="height: 300px;"
+/>
 ```
 
 ## API

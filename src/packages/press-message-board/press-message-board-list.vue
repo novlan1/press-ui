@@ -29,6 +29,7 @@ export default {
   props: {
     ...defaultProps,
   },
+  emits: ['replyClick'],
   data() {
     return {
       scrollOffset: 0,

@@ -1,30 +1,30 @@
 <template>
-  <div class="home-container">
+  <div class="index-page">
     <scroll-view
       scroll-y
       class="scroll-view"
       :scroll-top="scrollTop"
       @scroll="onScroll"
     >
-      <div class="home-header">
+      <div class="index-page__header">
         <img
-          class="home-header__bg"
+          class="index-page__header-bg"
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/uniui-header-bg.png"
           mode="widthFix"
         >
         <img
-          class="home-header__logo"
+          class="index-page__header-logo"
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
           mode="aspectFit"
           @longpress.stop="onMorsePwdLongPress"
           @click.stop="onMorsePwdClick"
         >
-        <div class="home-header__content">
-          <div class="home-header__content-title">
+        <div class="index-page__header-content">
+          <div class="index-page__header-title">
             {{ t('name') }}
           </div>
-          <div class="home-header__content-info">
-            <span class="home-header__content-subtitle">
+          <div class="index-page__header-info">
+            <span class="index-page__header-subtitle">
               {{ t('detail') }}
             </span>
           </div>
@@ -32,103 +32,101 @@
       </div>
 
       <div
-        class="home-content"
+        class="index-page__main"
       >
-        <press-card
-          padding="0"
-        >
+        <div class="index-page__card">
           <div
             v-for="(item, index) of pages"
             :key="getUniqueKey('section', index)"
           >
-            <uni-section
+            <press-section
               :title="getComponentTypeTitle(item)"
-              color="#007aff"
+              :color="sectionStyle.color"
               type="line"
-              header-style="font-weight: 500;margin-bottom: 6px;"
-            />
-            <uni-list
-              :key="`list-${index}`"
-              :border="false"
-            >
-              <uni-list-item
-                v-for="(nav, idx) in item.list"
-                :key="getUniqueKey('nav', idx)"
-                custom-class="list-item"
-                :border="false"
-                show-arrow
-                :title="getNavName(nav)"
-                link
-                :to="`/pages${nav.url}`"
-              />
-            </uni-list>
-          </div>
-          <div
-            v-if="showMoreList"
-            :key="getUniqueKey('section', 111111)"
-          >
-            <uni-section
-              key="other-ability-section"
-              :title="t('otherAbility')"
-              color="#007aff"
-              type="line"
-              header-style="font-weight: 500;margin-bottom: 6px;"
+              :header-style="sectionStyle.header"
             />
 
-            <uni-list
-              key="other-ability-list"
-              :border="false"
-            >
-              <uni-list-item
-                custom-class="list-item"
-                :border="false"
-                show-arrow
-                clickable
-                :title="t('toggleLanguage')"
-                @click="onToggleLanguage"
-              />
-              <!-- #ifdef H5 -->
-              <uni-list-item
-                custom-class="list-item"
-                :border="false"
-                show-arrow
-                clickable
-                :title="t('toggleVConsole')"
-                @click="onOpenVConsole"
-              />
-              <!-- #endif -->
-              <!-- #ifdef H5 -->
-              <uni-list-item
-                v-if="showLaunchApp"
-                custom-class="list-item"
-                :border="false"
-                show-arrow
-                clickable
-                :title="t('launchApp')"
-                @click="onJumpToLaunchApp"
-              />
-              <!-- #endif -->
-              <uni-list-item
-                custom-class="list-item"
-                :border="false"
-                show-arrow
-                clickable
-                :title="t('share')"
-                @click="onJumpToSharePage"
-              />
-            </uni-list>
+            <PressCell
+              v-for="(nav, idx) in item.list"
+              :key="getUniqueKey('nav', idx)"
+              is-link
+              :title="getNavName(nav)"
+              link-type="navigateTo"
+              :url="`/pages${nav.url}`"
+            />
           </div>
-        </press-card>
+
+          <press-section
+            key="other-ability-section"
+            :title="t('otherAbility')"
+            :color="sectionStyle.color"
+            type="line"
+            :header-style="sectionStyle.header"
+          />
+          <PressCell
+            is-link
+            :title="t('toggleLanguage')"
+            @click="onToggleLanguage"
+          />
+
+          <!-- #ifdef H5 -->
+          <PressCell
+            is-link
+            :title="t('toggleVConsole')"
+            @click="onOpenVConsole"
+          />
+          <PressCell
+            v-if="showLaunchApp"
+            is-link
+            :title="t('launchApp')"
+            @click="onJumpToLaunchApp"
+          />
+          <!-- #endif -->
+
+          <PressCell
+            is-link
+            :title="t('share')"
+            @click="onJumpToSharePage"
+          />
+
+          <press-section
+            v-if="showOtherDemoMap.vue2Uni
+              || showOtherDemoMap.vue2NotUni
+              || showOtherDemoMap.vue3Uni"
+            key="other-project-section"
+            :title="t('otherProject')"
+            :color="sectionStyle.color"
+            type="line"
+            :header-style="sectionStyle.header"
+          />
+
+          <PressCell
+            v-if="showOtherDemoMap.vue2Uni"
+            is-link
+            :title="t('checkNormal')"
+            @click="onJumpToOtherDemo('vue2-uni')"
+          />
+          <PressCell
+            v-if="showOtherDemoMap.vue2NotUni"
+            is-link
+            :title="t('checkPure')"
+            @click="onJumpToOtherDemo('vue2-not-uni')"
+          />
+          <PressCell
+            v-if="showOtherDemoMap.vue3Uni"
+            is-link
+            :title="t('checkVue3')"
+            @click="onJumpToOtherDemo('vue3-uni')"
+          />
+        </div>
       </div>
     </scroll-view>
   </div>
 </template>
 <script>
 
-import PressCard from 'src/packages/press-card/press-card.vue';
-import UniList from 'src/pages/components/uni-list/components/uni-list/uni-list.vue';
-import UniListItem from 'src/pages/components/uni-list/components/uni-list-item/uni-list-item.vue';
-import UniSection from 'src/pages/components/uni-section/components/uni-section/uni-section.vue';
+import PressSection from '../components/press-section/press-section.vue';
+import PressCell from '../../packages/press-cell/press-cell.vue';
 
 import { LAUNCH_APP_STORAGE } from '../launch-app/config';
 import { isInIFrame } from '../../utils/index';
@@ -137,9 +135,68 @@ import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 import { isNotInUni } from '../../packages/common/utils/utils';
 
-const pagesConfig = require('./page-config.json');
-const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
+// const pagesConfig = require('./page-config.json');
+import pagesConfig from './page-config.json';
 
+const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
+const DEMO_LINK_MAP = {
+  'vue2-uni': 'https://novlan1.github.io/press-ui-demo/',
+  'vue2-not-uni': 'https://novlan1.github.io/press-ui-pure/',
+  'vue3-uni': 'https://novlan1.github.io/press-ui-v3/',
+};
+
+
+function getShowDemoMap() {
+  let showOtherDemoMap = {
+    vue2Uni: false,
+    vue2NotUni: false,
+    vue3Uni: false,
+  };
+  // #ifdef H5
+  showOtherDemoMap = {
+    vue2Uni: true,
+    vue2NotUni: true,
+    vue3Uni: true,
+  };
+  // #endif
+
+  // #ifdef VUE3
+  showOtherDemoMap.vue3Uni = false;
+  // #endif
+
+  if (isNotInUni()) {
+    showOtherDemoMap.vue2NotUni = false;
+  }
+
+  // #ifndef VUE3
+  if (!isNotInUni()) {
+    showOtherDemoMap.vue2Uni = false;
+  }
+  // #endif
+
+  return showOtherDemoMap;
+}
+
+function getAllPages() {
+  let pages = pagesConfig.pages.filter(item => item.list && item.list.length);
+
+  // #ifndef H5
+  pages = pages.map(item => ({
+    ...item,
+    list: item.list.filter(item => !item.url.startsWith('/press/hor-match-')),
+  }));
+  // #endif
+  return pages;
+}
+
+
+function getShowLaunchApp() {
+  let showLaunchApp = false;
+  // #ifdef H5
+  showLaunchApp = sessionStorage.getItem(LAUNCH_APP_STORAGE.kEY) === LAUNCH_APP_STORAGE.VALUE;
+  // #endif
+  return showLaunchApp;
+}
 
 export default {
   i18n: {
@@ -151,6 +208,10 @@ export default {
       toggleLanguage: '切换语言',
       toggleVConsole: '切换VConsole',
       launchApp: '拉起APP',
+      otherProject: '其他项目',
+      checkNormal: '基础',
+      checkPure: '非 Uni App',
+      checkVue3: 'Vue3',
     },
     'en-US': {
       share: 'Share',
@@ -160,13 +221,15 @@ export default {
       toggleLanguage: 'Toggle Language',
       toggleVConsole: 'Toggle VConsole',
       launchApp: 'Launch App',
+      otherProject: 'Other Project',
+      checkNormal: 'Vue2 Uni App Project',
+      checkPure: 'Vue2 Not Uni App Project',
+      checkVue3: 'Vue3 Uni App Project',
     },
   },
   components: {
-    PressCard,
-    UniList,
-    UniListItem,
-    UniSection,
+    PressSection,
+    PressCell,
   },
   mixins: [
     morsePwdMixin([1, 1, 1, 1, 1], function () {
@@ -177,46 +240,46 @@ export default {
     }),
   ],
   data() {
-    let pages = pagesConfig.pages.filter(item => item.list && item.list.length);
-
-    // #ifndef H5
-    pages = pages.map(item => ({
-      ...item,
-      list: item.list.filter(item => !item.url.startsWith('/press/hor-match-')),
-    }));
-    // #endif
-
-
-    let showLaunchApp = false;
-    // #ifdef H5
-    showLaunchApp = sessionStorage.getItem(LAUNCH_APP_STORAGE.kEY) === LAUNCH_APP_STORAGE.VALUE;
-    // #endif
-
     return {
       scrollTop: 0,
-      pages,
-      showMoreList: false,
-      showLaunchApp,
+      pages: getAllPages(),
+      // showMoreList: true,
+      showLaunchApp: getShowLaunchApp(),
+      isNotInUni: isNotInUni(),
+      showOtherDemoMap: getShowDemoMap(),
+      sectionStyle: {
+        header: 'font-weight: 500;margin-bottom: 6px;',
+        color: '#007aff',
+      },
     };
   },
   mounted() {
-    // #ifdef H5
-    this.scrollTop = +localStorage.getItem(SCROLL_TOP_KEY) || 0;
-    this.showMoreList = true;
-    // #endif
-
-    // #ifndef H5
-    setTimeout(() => {
-      this.showMoreList = true;
-    }, 2000);
-    // #endif
+    this.init();
   },
   beforeDestroy() {
-    // #ifdef H5
-    localStorage.setItem(SCROLL_TOP_KEY, this.scrollTop);
-    // #endif
+    this.onBeforeDestroy();
+  },
+  beforeUnmount() {
+    this.onBeforeDestroy();
   },
   methods: {
+    init() {
+      // #ifdef H5
+      this.scrollTop = +localStorage.getItem(SCROLL_TOP_KEY) || 0;
+      // this.showMoreList = true;
+      // #endif
+
+      // #ifndef H5
+      // setTimeout(() => {
+      //   this.showMoreList = true;
+      // }, 2000);
+      // #endif
+    },
+    onBeforeDestroy() {
+      // #ifdef H5
+      localStorage.setItem(SCROLL_TOP_KEY, this.scrollTop);
+      // #endif
+    },
     onScroll(e) {
       // #ifdef H5
       this.scrollTop = e.target.scrollTop;
@@ -230,6 +293,7 @@ export default {
       return this.t(`titleMap.${item.name}`);
     },
     onToggleLanguage() {
+      console.log('[onToggleLanguage]');
       toggleI18n(this.onGTip);
     },
     getUniqueKey(a, b) {
@@ -266,93 +330,25 @@ export default {
         url: '/pages/share/share',
       });
     },
+    onJumpToOtherDemo(type) {
+      const link = DEMO_LINK_MAP[type];
+      if (!link) return;
+
+      this.$toast.loading({
+        message: '正在跳转...',
+        forbidClick: true,
+        duration: 300,
+        loadingType: 'spinner',
+      });
+
+      this.onBeforeDestroy();
+      setTimeout(() => {
+        window.location.href = link;
+      }, 300);
+    },
   },
 
 };
 </script>
 
-<style lang="scss">
-.home-container {
-  position: relative;
-  background-color: #fff;
-  height: 100%;
-  overflow: auto;
-
-  .scroll-view,
-  scroll-view {
-    height: 100%;
-    overflow: auto;
-  }
-}
-
-.home-header {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  /* #ifndef APP-NVUE */
-  box-sizing: border-box;
-
-  /* #endif */
-  &__bg {
-    display: flex;
-    margin-top: 20px;
-    /* #ifdef APP-NVUE */
-    flex: 1;
-    /* #endif */
-    /* #ifndef APP-NVUE */
-    width: 100%;
-    /* #endif */
-  }
-
-  &__logo {
-    position: absolute;
-    top: 22px;
-    left: 20px;
-    width: 112px;
-    height: 22px;
-    z-index: 1;
-  }
-
-  &__content {
-    position: absolute;
-    top: 58px;
-    left: 48px;
-    width: 200px;
-    z-index: 1;
-
-    &-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1f1f1f;
-    }
-
-    &-info {
-      /* #ifdef H5 */
-      font-size: 16px;
-      /* #endif */
-    }
-
-    &-subtitle {
-      margin-top: 8px;
-      font-size: 12px;
-      font-weight: 400;
-      color: #666;
-    }
-  }
-}
-
-.home-content {
-  margin-top: 170px;
-  overflow: hidden;
-
-  .list-item {
-    background: #f7f8fa;
-    border-radius: 99px;
-    margin: 0 0 12px;
-    padding-left: 20px;
-  }
-}
-</style>
+<style lang="scss" scoped src="./index.scss"></style>

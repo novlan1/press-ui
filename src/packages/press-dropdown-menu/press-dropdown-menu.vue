@@ -79,6 +79,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: [],
   data() {
     return {
       itemListData: [],
@@ -122,9 +123,15 @@ export default {
     this.children = [];
   },
   destroyed() {
-    ARRAY = ARRAY.filter(item => item !== this);
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
   },
   methods: {
+    onDestroyed() {
+      ARRAY = ARRAY.filter(item => item !== this);
+    },
     updateItemListData() {
       this.itemListData = this.children.map((child) => {
         const { titleClass, showPopup, disabled, innerValue: value, title, text, options } = child;

@@ -77,12 +77,13 @@
         @change="onChange"
         @drag="onDrag"
       >
-        <div
-          slot="button"
-          class="custom-button"
-        >
-          {{ dragValue }}
-        </div>
+        <template #button>
+          <div
+            class="custom-button"
+          >
+            {{ dragValue }}
+          </div>
+        </template>
       </PressSlider>
     </demo-block>
 

@@ -48,6 +48,7 @@ export default {
     showBorder: Boolean,
     ...defaultProps,
   },
+  emits: ['select'],
   data() {
     return {
       computed,

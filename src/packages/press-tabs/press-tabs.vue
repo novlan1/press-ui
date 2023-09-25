@@ -30,7 +30,7 @@
               :style="lineStyle"
             />
             <div
-              v-for="(item,index) in (tabs)"
+              v-for="(item, index) in (tabs)"
               :key="item.index"
               :data-index="index"
               :class="[`${getTabClass(item, index)}`]"
@@ -38,7 +38,7 @@
               @click="onTap"
             >
               <div
-                :class="ellipsis ? 'press-ellipsis' : ''"
+                :class="[`${bem3('tab__text')}`, ellipsis ? 'press-ellipsis' : '']"
                 :style="item.titleStyle"
               >
                 {{ item.title }}
@@ -88,6 +88,7 @@ import computed from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
 import { style } from '../common/utils/style';
+import { forceUpdate } from '../common/vue3/adapter';
 
 
 export default {
@@ -153,12 +154,12 @@ export default {
       default: false,
     },
     lineWidth: {
-      type: [Number, null],
+      type: [Number, String, null],
       default: 40,
       // observer: 'resize',
     },
     lineHeight: {
-      type: [Number, null],
+      type: [Number, String, null],
       default: -1,
     },
     active: {
@@ -203,6 +204,7 @@ export default {
       default: '',
     },
   },
+  emits: ['scroll', 'disabled', 'click', 'input', 'change'],
   data() {
     return {
       tabs: [],
@@ -414,7 +416,7 @@ export default {
       const shouldEmitChange = this.currentIndex !== null;
       this.setData({ currentIndex });
 
-      this.$forceUpdate();
+      forceUpdate(this);
 
       requestAnimationFrame(() => {
         this.resize();

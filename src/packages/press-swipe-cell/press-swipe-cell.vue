@@ -71,6 +71,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['click', 'open', 'close'],
   data() {
     return {
       catchMove: false,

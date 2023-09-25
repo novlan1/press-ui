@@ -48,6 +48,7 @@ export default {
     showSubtitle: SHARE_PROPS.showSubtitle,
     firstDayOfWeek: SHARE_PROPS.firstDayOfWeek,
   },
+  emits: ['click-subtitle'],
   data() {
     return {
       weekdays: [],
@@ -91,6 +92,7 @@ export default {
   &__header-title,
   &__header-subtitle {
     text-align: center;
+    font-size: var(--calendar-header-title-font-size, $calendar-header-title-font-size);
     height: var(--calendar-header-title-height, $calendar-header-title-height);
     font-weight: var(--font-weight-bold, $font-weight-bold);
     line-height: var(

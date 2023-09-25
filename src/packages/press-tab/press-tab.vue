@@ -57,6 +57,7 @@ export default {
       default: '',
     },
   },
+  emits: [],
   data() {
     return {
       active: false,

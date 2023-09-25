@@ -50,7 +50,7 @@ import PressDatetimePicker from './press-datetime-picker.vue';
 import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
 import { functionalMixin } from '../mixins/functional';
 
-let gThis = this;
+let gThis;
 
 const componentProps = {
   ...PRESS_POPUP_CELL_PROPS,
@@ -76,6 +76,7 @@ export default {
   mixins: [functionalMixin(componentProps)],
   props: {
   },
+  emits: [],
   data() {
     return {
       currentValue: this.getPropOrData('datetimePicker.value'),

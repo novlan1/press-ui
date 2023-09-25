@@ -5,7 +5,7 @@
       :show="dataShow"
       custom-class="press-notify__container"
       :custom-style="computed.rootStyle({ zIndex: dataZIndex, top: dataTop })"
-      @click.native="onTap"
+      @click="onTap"
     >
       <div
         :class="'press-notify press-notify--'+(dataType)"
@@ -72,6 +72,7 @@ export default {
     PressTransition,
   },
   props,
+  emits: [],
   data() {
     return {
       ...getPropsData(this, props),

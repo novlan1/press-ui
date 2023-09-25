@@ -1,7 +1,7 @@
-import Vue from 'vue';
+import { getH5ComponentHandler, makeExtraMethods } from '../common/component-handler';
+import { initGlobalProps } from '../common/vue3/adapter';
 import VueToast from './press-toast.vue';
 import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
-import { getH5ComponentHandler, makeExtraMethods } from '../common/component-handler';
 
 
 const Toast = getH5ComponentHandler({
@@ -12,6 +12,9 @@ const Toast = getH5ComponentHandler({
 
 makeExtraMethods(Toast, ['loading', 'success', 'fail'], DEFAULT_KEY);
 
-Vue.prototype.$toast = Toast;
+initGlobalProps({
+  name: '$toast',
+  prop: Toast,
+});
 
 export default Toast;

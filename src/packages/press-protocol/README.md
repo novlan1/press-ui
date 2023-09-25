@@ -122,8 +122,8 @@ Array<{
 
       //// 句子 //// 
       text: string;
-      light?: boolean;
-      link?: string;
+      light?: boolean; // 是否高亮
+      link?: string; // 是否为链接
       uniqueKey: string;
     }>;
     uniqueKey: string;
@@ -134,4 +134,4 @@ Array<{
 
 `light`表示文案高亮，`link`表示文案可跳转。
 
-为方便使用，`press-ui`提供了 [parseProtocol](../logic/protocol) 方法，可以灵活的配置数据。
+为方便使用，`press-ui`提供了 [parseProtocol](../logic/protocol.html) 方法，可以灵活的配置数据。

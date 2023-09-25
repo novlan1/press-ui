@@ -259,6 +259,19 @@ export default {
       default: 300,
     },
   },
+  emits: [
+    'onScroll',
+    'touchMove',
+    'clickPic',
+    'clickAvatar',
+    'checkDetail',
+    'reSend',
+    'agreeExchangeCard',
+    'goSetCardPage',
+    'makePhoneCall',
+    'clickCopy',
+    'loadMore',
+  ],
   data() {
     return {
       MESSAGE_TYPE_MAP,

@@ -14,6 +14,7 @@
 - 🚀 70+ 基础组件，覆盖移动端主流场景
 - 🚀 支持基于`uni-app`的H5、微信小程序、QQ小程序
 - 💪 支持普通H5项目
+- 💪 支持 Vue2 和 Vue3
 - 💪 零外部依赖，不依赖三方 npm 包
 - 📖 提供丰富的中英文文档和组件示例
 - 🍭 支持主题定制，内置 600+ 个主题变量
@@ -43,10 +44,14 @@
 6. 提高可复用性，可应用到其他项目
 7. 技术沉淀，技术积累，不断打磨组件细节
 
-
 ### 3. 应用场景
 
-`Press UI`可应用于`uni-app`项目，或者普通的H5项目，目前已应用在王者赛宝、HoK Club、赛宝pro等项目中。
+`Press UI`可应用于`uni-app`项目，或者普通的H5项目，同时支持 Vue2 和 Vue3。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/9/own_mike_6db062b47baf2148e9.png" width="600">
+
+
+目前已应用在王者赛宝、HoK Club、赛宝pro等项目中。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
 

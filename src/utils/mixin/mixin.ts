@@ -1,7 +1,9 @@
-import Vue from 'vue';
+import { initGlobalMixin, initGlobalProps } from '../../packages/common/vue3/adapter';
+import Toast from '../../packages/press-toast/index';
 
-export function initMixin() {
-  Vue.mixin({
+// Vue2 和 Vue3 的 uni-app 工程，共用的mixin
+export function initMixin(app: any) {
+  const mixin = {
     // @ts-ignore
     onShareAppMessage() {
       return {
@@ -19,7 +21,7 @@ export function initMixin() {
       // #endif
     },
     methods: {
-      onGTip(title, duration = 1000) {
+      onGTip(title: string, duration = 1000) {
         uni.hideToast();
         uni.showToast({
           title,
@@ -27,7 +29,7 @@ export function initMixin() {
           duration,
         });
       },
-      onGShowLoading(title, options = {}) {
+      onGShowLoading(title?: string, options = {}) {
         uni.showLoading({
           title,
           ...options,
@@ -38,5 +40,13 @@ export function initMixin() {
       },
     },
 
-  });
+  };
+
+  initGlobalMixin(mixin, app);
+
+  // 注册$toast
+  initGlobalProps({
+    name: '$toast',
+    prop: Toast,
+  }, app);
 }

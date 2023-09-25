@@ -43,7 +43,10 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <press-toast id="press-toast" />
+    <press-toast
+      id="press-toast"
+      ref="press-toast"
+    />
     <!-- #endif -->
   </div>
 </template>

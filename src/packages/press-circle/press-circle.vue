@@ -107,6 +107,7 @@ export default {
       default: true,
     },
   },
+  emits: [],
   data() {
     return {
       hoverColor: BLUE,
@@ -159,9 +160,15 @@ export default {
     });
   },
   destroyed() {
-    this.clearMockInterval();
+    this.onDestroyed();
+  },
+  unmounted() {
+    this.onDestroyed();
   },
   methods: {
+    onDestroyed() {
+      this.clearMockInterval();
+    },
     getContext() {
       const { type, size } = this;
       if (isNotInUni()) {

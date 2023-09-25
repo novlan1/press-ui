@@ -301,6 +301,10 @@
         "title": "赛程树"
       },
       {
+        "name": "TeamSearch",
+        "title": "队伍搜索"
+      },
+      {
         "name": "Turntable",
         "title": "转盘"
       }

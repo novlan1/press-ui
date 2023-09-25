@@ -62,6 +62,7 @@
 
     <PressDatetimePickerPopup
       :id="DATE_TIME_PICKER_ID"
+      :ref="DATE_TIME_PICKER_ID"
       mode="functional"
     />
   </div>

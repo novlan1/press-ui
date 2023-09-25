@@ -64,6 +64,7 @@ export default {
       default: '',
     },
   },
+  emits: ['click'],
   data() {
     return {
     };
@@ -93,9 +94,11 @@ export default {
     no-repeat;
   background-size: 100%;
 
+  /* #ifdef H5 */
   * {
     user-select: auto;
   }
+  /* #endif */
 
   &__layout {
     height: 100%;

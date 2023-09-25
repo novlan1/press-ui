@@ -6,8 +6,8 @@
   >
     <img
       v-if="matchInfo.banner"
+      v-lazy="matchInfo.banner"
       class="press-match__brand"
-      :src="matchInfo.banner"
       alt="brandImg"
     >
     <div class="press-match__main">

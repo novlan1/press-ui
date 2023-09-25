@@ -1,6 +1,6 @@
-import Vue from 'vue';
 import { canIUseGroupSetData } from './version';
 import { isNotInUni } from './utils';
+export { nextTick } from '../vue3/adapter';
 
 let systemInfo: Record<string, any> = {};
 
@@ -17,11 +17,6 @@ export function getSystemInfoSync() {
   }
 
   return systemInfo;
-}
-
-export function nextTick(cb) {
-  Vue.nextTick(cb);
-  return;
 }
 
 

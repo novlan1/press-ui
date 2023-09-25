@@ -114,13 +114,12 @@
     align-items: center;
     justify-content: center;
     width: vw(32);
-    height: vw(12);
-    font-size: vw(8);
-    padding: 0 vw(2);
+    padding: 1px vw(2);
     background: rgba(59,135,225,.6);
 
     p {
       color: #86b8ff;
+      font-size: .16rem;
       text-align: center;
       @include single-line-ellipsis();
     }
@@ -194,13 +193,13 @@
     position: absolute;
     top: 0;
     right: vw(6);
-    width: vw(15);
-    height: vw(46);
+    width: .3rem;
+    height: .92rem;
     font-family: 'GAMEFONT';
-    font-size: vw(8);
+    font-size: .16rem;
     color: #722f0b;
     font-weight: 600;
-    padding: 1px 0 0 vw(2.5);
+    padding: 1px 0 0 .05rem;
     writing-mode: vertical-lr;
     text-shadow: 1px 1px 0 rgba(255, 244, 181, .5);
     background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/tag-bg.png) no-repeat center;

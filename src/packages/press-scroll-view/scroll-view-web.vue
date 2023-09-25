@@ -35,6 +35,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['scroll', 'scrolltolower'],
   data() {
     const randomId = `__scrollView_${new Date().getDate()}${Math.random()}`;
     return {

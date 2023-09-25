@@ -68,7 +68,7 @@ export default {
     :options="option1"
   />
   <press-dropdown-item
-    id="item"
+    ref="item"
     :title="itemTitle"
   >
     <press-cell :title="switchTitle1">
@@ -122,7 +122,7 @@ export default {
   },
   methods: {
     onConfirm() {
-      this.selectComponent('#item').toggle();
+      this.$refs.item.toggle();
     },
 
     onSwitch1Change({ detail }) {
@@ -220,7 +220,7 @@ export default {
 
 ### DropdownItem 方法
 
-通过 selectComponent(id) 可访问。
+通过 ref 可访问。
 
 | 方法名 | 说明                                                          | 参数           | 返回值 |
 | ------ | ------------------------------------------------------------- | -------------- | ------ |

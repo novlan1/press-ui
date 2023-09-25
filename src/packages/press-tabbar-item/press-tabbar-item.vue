@@ -67,6 +67,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['click'],
   data() {
     return {
       utils,

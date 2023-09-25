@@ -110,6 +110,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['click-overlay', 'cancel', 'select', 'close'],
   data() {
     return {
       computed,

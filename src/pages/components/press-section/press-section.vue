@@ -1,13 +1,13 @@
 <template>
-  <div class="uni-section">
+  <div class="press-section">
     <div
-      class="uni-section-header"
+      class="press-section-header"
       :style="headerStyle"
       @click="onClick"
     >
       <div
         v-if="type"
-        class="uni-section-header__decoration"
+        class="press-section-header__decoration"
         :class="type"
       />
       <slot
@@ -15,10 +15,10 @@
         name="decoration"
       />
 
-      <div class="uni-section-header__content">
+      <div class="press-section-header__content">
         <span
           :style="{'font-size':titleFontSize,'color':titleColor}"
-          class="uni-section__content-title"
+          class="press-section__content-title"
           :class="{'distraction':!subTitle}"
         >
           {{ title }}
@@ -26,20 +26,20 @@
         <span
           v-if="subTitle"
           :style="{'font-size':subTitleFontSize,'color':subTitleColor}"
-          class="uni-section-header__content-sub"
+          class="press-section-header__content-sub"
         >
           {{ subTitle }}
         </span>
       </div>
 
-      <div class="uni-section-header__slot-right">
+      <div class="press-section-header__slot-right">
         <slot name="right" />
       </div>
     </div>
 
     <div
-      class="uni-section-content"
-      :style="{padding: _padding}"
+      class="press-section-content"
+      :style="{padding: innerPadding}"
     >
       <slot />
     </div>
@@ -50,7 +50,7 @@
 
 
 export default {
-  name: 'UniSection',
+  name: 'PressSection',
   props: {
     type: {
       type: String,
@@ -92,19 +92,12 @@ export default {
   },
   emits: ['click'],
   computed: {
-    _padding() {
+    innerPadding() {
       if (typeof this.padding === 'string') {
         return this.padding;
       }
 
       return this.padding ? '10px' : '';
-    },
-  },
-  watch: {
-    title(newVal) {
-      if (uni.report && newVal !== '') {
-        uni.report('title', newVal);
-      }
     },
   },
   methods: {
@@ -115,11 +108,11 @@ export default {
 };
 </script>
 <style lang="scss">
-$uni-primary: #2979ff !default;
+$press-primary: #2979ff !default;
 
-.uni-section {
+.press-section {
   background-color: #fff;
-  .uni-section-header {
+  .press-section-header {
     position: relative;
     /* #ifndef APP-NVUE */
     display: flex;
@@ -132,7 +125,7 @@ $uni-primary: #2979ff !default;
 
     &__decoration {
       margin-right: 6px;
-      background-color: $uni-primary;
+      background-color: $press-primary;
       &.line {
         width: 4px;
         height: 12px;
@@ -177,7 +170,7 @@ $uni-primary: #2979ff !default;
     }
   }
 
-  .uni-section-content {
+  .press-section-content {
     font-size: 14px;
   }
 }

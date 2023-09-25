@@ -112,6 +112,7 @@ export default {
     virtualHost: true,
     styleIsolation: 'shared',
   },
+  emits: ['confirm', 'cancel', 'onLongPressImage', 'onClickImage'],
   data() {
     return {
       resolve: '',

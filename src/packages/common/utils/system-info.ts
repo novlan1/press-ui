@@ -21,10 +21,10 @@ export function sortObject(obj) {
 
 
 let browserInfo: Record<string, any> = {};
-let _initBrowserInfo = true;
+let innerInitBrowserInfo = true;
 
 function initBrowserInfo() {
-  if (!_initBrowserInfo) return;
+  if (!innerInitBrowserInfo) return;
   browserInfo = getBrowserInfo();
 }
 
@@ -90,13 +90,13 @@ export function getAppBaseInfo() {
  * 获取系统信息-同步
  */
 export function getSystemInfoSync() {
-  _initBrowserInfo = true;
+  innerInitBrowserInfo = true;
   initBrowserInfo();
-  _initBrowserInfo = false;
+  innerInitBrowserInfo = false;
   const windowInfo = getWindowInfo();
   const deviceInfo = getDeviceInfo();
   const appBaseInfo = getAppBaseInfo();
-  _initBrowserInfo = true;
+  innerInitBrowserInfo = true;
 
   const { ua, browserName, browserVersion, osname, osversion } = browserInfo;
 

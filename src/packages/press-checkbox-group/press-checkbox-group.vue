@@ -30,6 +30,7 @@ export default {
       default: 'vertical',
     },
   },
+  emits: [],
   data() {
     return {};
   },

@@ -87,6 +87,7 @@ export default {
       default: () => ([]),
     },
   },
+  emits: ['close', 'exchange'],
   data() {
     return {
     };

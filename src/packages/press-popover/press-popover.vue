@@ -41,6 +41,7 @@ export default {
     },
   },
 
+  emits: [],
   data() {
     return {
       innerShow: false,

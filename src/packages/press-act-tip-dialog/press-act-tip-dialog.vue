@@ -65,6 +65,7 @@ export default {
       default: t('confirm'),
     },
   },
+  emits: ['confirm', 'cancel'],
   data() {
     return {
     };

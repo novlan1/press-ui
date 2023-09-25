@@ -82,6 +82,13 @@ export default {
       default: 'rgba(53, 53, 53, 0.6)',
     },
   },
+  emits: [
+    'update:current',
+    'update:currentItemId',
+    'change',
+    'animationfinish',
+    'transition',
+  ],
   data() {
     return {
       currentSync: Math.round(this.current) || 0,

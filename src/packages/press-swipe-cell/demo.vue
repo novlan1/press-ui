@@ -11,21 +11,25 @@
         @close="onClose"
         @open="onOpen"
       >
-        <div
-          slot="left"
-          class="left"
-        >
-          {{ t('select' ) }}
-        </div>
+        <template #left>
+          <div
+            class="left"
+          >
+            {{ t('select' ) }}
+          </div>
+        </template>
+
         <div class="content">
           {{ t('content') }}
         </div>
-        <div
-          slot="right"
-          class="right"
-        >
-          {{ t('delete') }}
-        </div>
+
+        <template #right>
+          <div
+            class="right"
+          >
+            {{ t('delete') }}
+          </div>
+        </template>
       </press-swipe-cell>
     </demo-block>
   </div>

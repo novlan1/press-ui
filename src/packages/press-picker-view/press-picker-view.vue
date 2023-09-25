@@ -103,6 +103,7 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: ['currentIndexChanged'],
   data() {
     return {
       currentIndex: 0, // 当前选中
@@ -183,11 +184,17 @@ export default {
     // #endif
   },
   beforeDestroy() {
-    // #ifdef H5
-    document.removeEventListener('mouseup', this.mouseUp);
-    // #endif
+    this.onBeforeDestroy();
+  },
+  beforeUnmount() {
+    this.onBeforeDestroy();
   },
   methods: {
+    onBeforeDestroy() {
+      // #ifdef H5
+      document.removeEventListener('mouseup', this.mouseUp);
+    // #endif
+    },
     // 开始点击
     mouseDown(e) {
       document.addEventListener('mousemove', this.mouseMove);

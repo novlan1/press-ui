@@ -86,6 +86,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['onClickDetail', 'onDelete'],
   data() {
     return {
       isConfirmDelete: false,

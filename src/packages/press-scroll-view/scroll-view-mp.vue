@@ -73,6 +73,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['scroll', 'scrolltolower'],
   data() {
     return {
       scrollTop: 0,

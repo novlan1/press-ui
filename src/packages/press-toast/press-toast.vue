@@ -1,5 +1,5 @@
 <template>
-  <div class="presst-toast-index">
+  <div class="press-toast-index">
     <press-overlay
       v-if="mask || dataForbidClick"
       :show="dataShow"
@@ -102,6 +102,7 @@ export default {
     PressTransition,
   },
   props,
+  emits: [],
   data() {
     return {
       ...getPropsData(this, props),

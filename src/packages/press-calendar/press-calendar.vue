@@ -71,7 +71,10 @@
     />
 
     <!-- #ifndef H5 -->
-    <press-toast id="press-toast" />
+    <press-toast
+      id="press-toast"
+      ref="press-toast"
+    />
     <!-- #endif -->
   </div>
 </template>
@@ -147,6 +150,17 @@ export default {
     readonly: Boolean,
     ...defaultProps,
   },
+  emits: [
+    'open',
+    'opened',
+    'close',
+    'closed',
+    'unselect',
+    'select',
+    'over-range',
+    'confirm',
+    'click-subtitle',
+  ],
   data() {
     return {
       subtitle: '',
@@ -375,7 +389,9 @@ export default {
 
   ::v-deep &__popup--left,
   ::v-deep &__popup--right {
-    height: 100%;
+    height: calc(100% - var(--window-top, 0px));
+    bottom: 0;
+    top: calc(50% + var(--window-top, 0px) / 2);
   }
 }
 </style>

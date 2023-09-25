@@ -65,6 +65,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['change'],
   data() {
     return {
       height: 50,

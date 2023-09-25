@@ -28,6 +28,7 @@ export default {
   })],
   props: {
   },
+  emits: ['onClickConfirm', 'confirm', 'onRemove', 'cancel'],
   data() {
     return {
     };

@@ -108,6 +108,7 @@ export default {
     },
     barHeight: { type: [Number, String], default: '' },
   },
+  emits: ['drag-start', 'drag-end', 'drag', 'change'],
   data() {
     return {
       utils,

@@ -4,6 +4,7 @@
       <press-search
         :value="value"
         :placeholder="t('placeholder')"
+        @change="onChange"
       />
     </demo-block>
 
@@ -14,6 +15,7 @@
         show-action
         @search="onSearch"
         @cancel="onCancel"
+        @change="onChange"
       />
     </demo-block>
 
@@ -24,6 +26,7 @@
         input-align="center"
         @search="onSearch"
         @cancel="onCancel"
+        @change="onChange"
       />
     </demo-block>
 
@@ -32,6 +35,7 @@
         :value="value"
         disabled
         :placeholder="t('placeholder')"
+        @change="onChange"
       />
     </demo-block>
 
@@ -41,6 +45,7 @@
         shape="round"
         background="#4fc08d"
         :placeholder="t('placeholder')"
+        @change="onChange"
       />
     </demo-block>
 
@@ -50,13 +55,15 @@
         :label="t('label')"
         use-action-slot
         :placeholder="t('placeholder')"
+        @change="onChange"
       >
-        <div
-          slot="action"
-          @click="onClick"
-        >
-          {{ t('search') }}
-        </div>
+        <template #action>
+          <div
+            @click="onClick"
+          >
+            {{ t('search') }}
+          </div>
+        </template>
       </press-search>
     </demo-block>
   </div>
@@ -95,6 +102,11 @@ export default {
     };
   },
   methods: {
+    onChange(val) {
+      if (typeof val === 'string') {
+        this.onGTip(`${val}`);
+      }
+    },
     onCancel() {
       this.onGTip('cancel');
     },

@@ -44,16 +44,19 @@
           @clear="onClear"
           @click-input="onClickInput"
         >
-          <slot
-            v-if="useLeftIconSlot"
-            slot="left-icon"
-            name="left-icon"
-          />
-          <slot
-            v-if="useRightIconSlot"
-            slot="right-icon"
-            name="right-icon"
-          />
+          <template #left-icon>
+            <slot
+              v-if="useLeftIconSlot"
+              name="left-icon"
+            />
+          </template>
+
+          <template #right-icon>
+            <slot
+              v-if="useRightIconSlot"
+              name="right-icon"
+            />
+          </template>
         </press-field>
       </div>
 
@@ -138,6 +141,15 @@ export default {
       default: 'clear',
     },
   },
+  emits: [
+    'change',
+    'cancel',
+    'search',
+    'focus',
+    'blur',
+    'clear',
+    'click-input',
+  ],
   data() {
     return {
       utils,
@@ -154,8 +166,11 @@ export default {
   },
   methods: {
     onChange(value) {
-      this.innerValue = value;
-      this.$emit('change', value);
+      // Vue3下，payload 可能为Event对象
+      if (typeof value === 'string') {
+        this.innerValue = value;
+        this.$emit('change', value);
+      }
     },
     onCancel() {
       /**

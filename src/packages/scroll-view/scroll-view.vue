@@ -152,6 +152,16 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'update:refresherTriggered',
+    'scroll',
+    'scrolltoupper',
+    'scrolltolower',
+    'refresherpulling',
+    'refresherrefresh',
+    'refresherabort',
+    'refresherrestore',
+  ],
   data() {
     return {
       lastScrollTop: Number(this.scrollTop) || 0,

@@ -62,6 +62,7 @@ import Loading from '../press-loading-plus/press-loading-plus.vue';
 import ToolBar from './toolbar.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
+import { toProvideThis } from '../common/vue3/adapter';
 
 import { t } from '../locale';
 import computed from './index';
@@ -76,11 +77,8 @@ export default {
     Loading,
     ToolBar,
   },
-  provide() {
-    return {
-      [PARENT]: this,
-    };
-  },
+  ...toProvideThis(PARENT),
+
 
   classes: ['active-class', 'toolbar-class', 'column-class'],
   props: {
@@ -121,6 +119,7 @@ export default {
       default: () => [],
     },
   },
+  emits: ['change', 'confirm', 'cancel'],
   data() {
     return {
       simple: true,

@@ -121,6 +121,7 @@ export default {
     theme: { type: String, default: '' },
     alwaysEmbed: Boolean,
   },
+  emits: ['focus', 'blur', 'change', 'overlimit', 'minus', 'plus'],
   data() {
     return {
       currentValue: '',

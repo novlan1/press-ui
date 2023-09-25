@@ -5,7 +5,7 @@ const { mkDirsSync } = require('t-comm');
 const componentConfig = require('./component-config.json');
 
 
-const DEMO_PAGES_JSON_LAST_INDEX = 0;
+// const DEMO_PAGES_JSON_LAST_INDEX = 0;
 const PATH_MAP = {
   DOC_SIDE_BAR_CONFIG: './docs/.vuepress/sidebar/sidebar.json',
   DOC_SIDE_BAR_EN_CONFIG: './docs/.vuepress/sidebar/sidebar-en.json',
@@ -152,7 +152,7 @@ function writeDemoPagesJson() {
   const configPath = path.resolve(process.cwd(), PATH_MAP.DEMO_PAGES_JSON);
   const json = require(configPath);
   json.subPackages = [
-    json.subPackages[DEMO_PAGES_JSON_LAST_INDEX],
+    // json.subPackages[DEMO_PAGES_JSON_LAST_INDEX],
     ...pagesJsonConfig,
   ];
   saveJsonToFile(configPath, json);

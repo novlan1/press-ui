@@ -106,6 +106,7 @@ export default {
       default: '',
     },
   },
+  emits: ['scrolltolower', 'loadmore', 'scroll'],
   data() {
     return {};
   },

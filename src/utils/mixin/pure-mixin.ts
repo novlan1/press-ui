@@ -1,24 +1,30 @@
-import Vue from 'vue';
+// 适配示例项目的mixin
+// 包括 uni-app 下的 Vue3、非 uni-ap p的 Vue2 项目
+
 import Toast from '../../packages/press-toast/index';
 import DemoBlock from '../../pages/demo-block/demo-block.vue';
+import { initGlobalComponent, initGlobalMixin } from '../../packages/common/vue3/adapter';
 
 
 /**
  * 普通Vue项目示例的mixin
  */
-export function initPureDemoMixin() {
-  Vue.component('DemoBlock', DemoBlock);
+export function initPureDemoMixin(app?: any) {
+  initGlobalComponent({
+    name: 'DemoBlock',
+    component: DemoBlock,
+  }, app);
 
-  Vue.mixin({
+  const mixin = {
     methods: {
-      onGTip(title, duration = 1000) {
+      onGTip(title: string, duration = 1000) {
         Toast.clear();
         Toast({
           message: title,
           duration,
         });
       },
-      onGShowLoading(title, options = {}) {
+      onGShowLoading(title: string, options = {}) {
         Toast.loading({
           message: title,
           ...options,
@@ -29,5 +35,7 @@ export function initPureDemoMixin() {
         Toast.clear();
       },
     },
-  });
+  };
+
+  initGlobalMixin(mixin, app);
 }
