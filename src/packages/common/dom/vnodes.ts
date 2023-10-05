@@ -33,3 +33,11 @@ export function sortChildren(children, parent) {
   children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
   // #endif
 }
+
+
+export function sortMPChildren(children) {
+  const shouldSort = children.find(child => child.sortIndex);
+  if (shouldSort) {
+    children.sort((a, b) => a.sortIndex - b.sortIndex);
+  }
+}

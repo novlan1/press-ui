@@ -291,6 +291,10 @@
           "path": "/en/components/press/press-protocol.md"
         },
         {
+          "title": "ScheduleCard",
+          "path": "/en/components/press/press-schedule-card.md"
+        },
+        {
           "title": "ScheduleList",
           "path": "/en/components/press/press-schedule-list.md"
         },

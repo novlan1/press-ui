@@ -293,6 +293,10 @@
         "title": "协议"
       },
       {
+        "name": "ScheduleCard",
+        "title": "赛程卡片"
+      },
+      {
         "name": "ScheduleList",
         "title": "赛程列表"
       },

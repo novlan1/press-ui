@@ -317,6 +317,34 @@ onTabChange(tab) {
 TypeError: Right-hand side of ‘instanceof‘ is not an object
 ```
 
+### 延迟加载的 tab 排序问题
+
+对于小程序平台，可以传入 `sortIndex` 来指定每个 `tab` 的位置，如：
+
+```html
+<press-tabs
+  swipeable
+>
+  <press-tab
+    v-if="showLazyTab"
+    title="Tab A"
+    :sort-index="0"
+  >
+    <div class="content">
+      Tab A
+    </div>
+  </press-tab>
+
+   <press-tab
+    title="Tab B"
+    :sort-index="1"
+  >
+    <div class="content">
+      Tab B
+    </div>
+  </press-tab>
+</press-tabs>
+```
 
 ## 主题定制
 

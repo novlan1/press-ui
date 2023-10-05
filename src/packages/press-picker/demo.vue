@@ -87,6 +87,7 @@ export default {
       { label: this.t('bo3'), value: 3 },
       { label: this.t('bo5'), value: 5 },
       { label: this.t('bo7'), value: 7 },
+      { label: this.t('bo9'), value: 9 },
     ];
     const longList = Array.from({ length: 8000 }).map((item, index) => ({
       label: this.t('addTeam', index + 1),

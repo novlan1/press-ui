@@ -1,0 +1,41 @@
+.press-card-nav {
+  width: 7.1rem;
+  height: 0.88rem;
+  padding: 0.26rem 0.16rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    color: var(--1, #2a333c);
+    font-family: PingFang SC;
+    font-size: 0.28rem;
+    font-weight: 600;
+  }
+
+  &__info {
+    margin-left: 0.15rem;
+    color: var(--1, #2a333c);
+    font-size: 0.2rem;
+  }
+
+  &__right {
+    color: var(--2, #575e6a);
+    font-size: 0.2rem;
+  }
+
+  &__exchange-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__exchange {
+    margin-left: 0.08rem;
+  }
+}

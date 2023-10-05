@@ -1,0 +1,43 @@
+.press-sche-card-match {
+  width: 6.94rem;
+  height: 2.16rem;
+  background-color: #e5f7f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &--gray {
+    filter: grayscale(1);
+  }
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__result-icon {
+    width: 0.7rem;
+    height: 0.96rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/apex/attend-success.png) center center no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__result-text {
+    color: #2a333c;
+    font-family: MFGeHeiNoncommercial;
+    font-size: 0.56rem;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 0.2rem;
+  }
+
+  &__result-tips {
+    margin-top: 0.18rem;
+    color: #575e6a;
+    text-align: center;
+    font-family: PingFang SC;
+    font-size: 0.24rem;
+  }
+}

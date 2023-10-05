@@ -31,7 +31,7 @@
             />
             <div
               v-for="(item, index) in (tabs)"
-              :key="item.index"
+              :key="getTabKey(item, index)"
               :data-index="index"
               :class="[`${getTabClass(item, index)}`]"
               :style="[`${getTabStyle(item, index)}`]"
@@ -533,6 +533,9 @@ export default {
         }
       }
       return -1;
+    },
+    getTabKey(item, index) {
+      return `${item.title || ''} - ${index} -${item.index}`;
     },
   },
 // });

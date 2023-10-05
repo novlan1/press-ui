@@ -177,6 +177,46 @@
     </demo-block>
 
     <demo-block
+      :title="t('lazyTab')"
+      header-style="background: #f7f8fa;"
+    >
+      <press-tabs
+        swipeable
+      >
+        <press-tab
+          v-if="showLazyTab"
+          key="tabA"
+          :sort-index="0"
+          :title="`${t('tab')} A`"
+        >
+          <div class="content">
+            {{ t('content') }} A
+          </div>
+        </press-tab>
+
+        <press-tab
+          key="tabB"
+          :sort-index="1"
+          :title="`${t('tab')} B`"
+        >
+          <div class="content">
+            {{ t('content') }} B
+          </div>
+        </press-tab>
+
+        <press-tab
+          key="tabC"
+          :title="`${t('tab')} C`"
+          :sort-index="2"
+        >
+          <div class="content">
+            {{ t('content') }} C
+          </div>
+        </press-tab>
+      </press-tabs>
+    </demo-block>
+
+    <demo-block
       :title="t('horTitle')"
       header-style="background: #f7f8fa;"
       section-style="background: #192841;color: #fff;margin: 0;padding: 10px 0;"
@@ -223,6 +263,7 @@ export default {
       disabled: ' 已被禁用',
       matchByName: '通过名称匹配',
       beforeChange: '异步切换',
+      lazyTab: '延迟加载',
     },
     'en-US': {
       tab: 'Tab ',
@@ -240,6 +281,7 @@ export default {
       disabled: ' is disabled',
       matchByName: 'Match By Name',
       beforeChange: 'Before Change',
+      lazyTab: 'LAZY TAB',
     },
   },
   components: {
@@ -248,6 +290,7 @@ export default {
   },
   data() {
     return {
+      showLazyTab: false,
       active: 3,
       activeName: 'c',
       tabs2: [1, 2],
@@ -269,7 +312,11 @@ export default {
     setTimeout(() => {
       this.tabs4 = [1, 2, 3];
       this.active = 2;
-    }, 3000);
+
+      setTimeout(() => {
+        this.showLazyTab = true;
+      }, 1000);
+    }, 2000);
   },
   methods: {
     onChange(val) {

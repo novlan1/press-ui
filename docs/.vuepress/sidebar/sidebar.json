@@ -355,6 +355,11 @@
           "path": "/components/press/press-protocol.md"
         },
         {
+          "title": "ScheduleCard",
+          "subTitle": "赛程卡片",
+          "path": "/components/press/press-schedule-card.md"
+        },
+        {
           "title": "ScheduleList",
           "subTitle": "赛程列表",
           "path": "/components/press/press-schedule-list.md"

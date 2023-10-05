@@ -1,5 +1,5 @@
 const MOCK_USER_META = {
-  avatar: 'http://thirdqq.qlogo.cn/g?b=oidb&k=HFh953g22kPgQny1h7KITQ&kti=ZJJzkQAAAAE&s=640&t=1556998035',
+  avatar: 'https://thirdqq.qlogo.cn/g?b=oidb&k=HFh953g22kPgQny1h7KITQ&kti=ZJJzkQAAAAE&s=640&t=1556998035',
   nick: '杨',
 };
 
@@ -105,7 +105,7 @@ export const MOCK_MESSAGE_DETAIL_LIST = [
     ...MOCK_USER_META,
     isMine: true,
     isOwner: false,
-    picUrl: 'http://thirdqq.qlogo.cn/g?b=oidb&k=HFh953g22kPgQny1h7KITQ&kti=ZJJzkQAAAAE&s=640&t=1556998035',
+    picUrl: 'https://thirdqq.qlogo.cn/g?b=oidb&k=HFh953g22kPgQny1h7KITQ&kti=ZJJzkQAAAAE&s=640&t=1556998035',
   },
   {
     messageType: 'MESSAGE_TEXT',

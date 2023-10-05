@@ -1,0 +1,183 @@
+// 按钮组件
+.press-card-button {
+  position: relative;
+
+  /*提示气泡*/
+  &__tips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0 0.25rem;
+
+    top: -0.48rem;
+    left: 50%;
+    transform: translateX(-50%) skewX(-15deg);
+
+    min-width: 2rem;
+    max-width: 6.5rem;
+    white-space: nowrap;
+    height: 0.36rem;
+    line-height: 0.36rem;
+
+    color: #ffffff;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    background: #2a333c;
+    text-align: center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -0.1rem;
+      left: 50%;
+      margin-left: -0.1rem;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.1rem 0.1rem 0 0.1rem;
+      border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+    }
+  }
+
+  &__avatar-tips {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: -0.72rem;
+    left: 50%;
+    min-width: 3.7rem;
+    max-width: 6.5rem;
+    width: 100%;
+    white-space: nowrap;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color: #ffffff;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    background: #2a333c;
+    text-align: center;
+
+    padding: 0 0.15rem;
+    transform: translateX(-50%);
+    box-sizing: content-box;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -0.1rem;
+      left: 50%;
+      margin-left: -0.1rem;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.1rem 0.1rem 0 0.1rem;
+      border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+    }
+  }
+
+  &__avatars {
+    margin-left: 0.08rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar-wrap {
+    position: relative;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.08rem;
+
+    &--green {
+      &::after {
+        content: "";
+        width: 0.08rem;
+        height: 0.08rem;
+        background-color: #48c284;
+        border-radius: 50%;
+        position: absolute;
+        right: -0.01rem;
+        bottom: 0;
+        fill: #48c284;
+      }
+    }
+
+    &--yellow {
+      &::after {
+        content: "";
+        width: 0.08rem;
+        height: 0.08rem;
+        background-color: #ffbf00;
+        border-radius: 50%;
+        position: absolute;
+        right: -0.01rem;
+        bottom: 0;
+        fill: #ffbf00;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__avatar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  &__main {
+    position: relative;
+    width: 4rem;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+    margin-top: 0.032rem;
+
+    color: #2a333c;
+    font-size: 0.32rem;
+    text-align: center;
+    font-family: "PEACE";
+    font-weight: 700;
+    background: linear-gradient(90deg, #33e2d1 22.22%, #98eb8e 88.89%);
+    clip-path: polygon(50% 0%, 100% 0, 100% 76%, 96% 100%, 0 100%, 0% 60%, 0 0);
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &--green {
+      color: #2a333c;
+      background: linear-gradient(90deg, #33e2d1 22.22%, #98eb8e 88.89%);
+
+      .press-count-down {
+        color: #323233;
+      }
+    }
+
+    &--gray {
+      color: #eaeff2;
+      background: #8e95a0;
+
+      .press-count-down {
+        color: #fff;
+      }
+    }
+
+
+    .press-count-down {
+      display: inline-block;
+      font-family: "PEACE";
+      font-size: 0.24rem;
+      font-style: normal;
+      font-weight: 700;
+      margin-right: -0.9rem;
+      margin-left: 0.1rem;
+      min-width: 1rem;
+    }
+  }
+}

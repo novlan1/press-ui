@@ -43,7 +43,14 @@ export default {
   },
   watch: {
     time: {
-      handler() {
+      handler(value) {
+        const { remain, millisecond } = this;
+        if (!millisecond
+          && (Math.floor(value / 1000) === Math.floor(remain / 1000)
+          || Math.round(value / 1000) === Math.round(remain / 1000))
+        ) {
+          return;
+        }
         this.reset();
       },
       immediate: true,

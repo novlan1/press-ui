@@ -1,4 +1,5 @@
-import { sortChildren } from '../common/dom/vnodes';
+import { sortChildren, sortMPChildren } from '../common/dom/vnodes';
+
 
 export function ChildrenMixin(parent, options: Record<string, any> = {}) {
   const indexKey = options.indexKey || 'index';
@@ -82,6 +83,10 @@ export function ChildrenMixin(parent, options: Record<string, any> = {}) {
         } catch (err) {
           console.log('err', err);
         }
+        // #endif
+
+        // #ifndef H5
+        sortMPChildren(children);
         // #endif
 
         this[parent].children = children;

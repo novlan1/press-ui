@@ -18,6 +18,163 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+### [1.1.35](https://github.com/novlan1/press-ui/compare/v1.1.34...v1.1.35) (2023-10-04)
+
+
+### Bug Fixes 🐞
+
+* **schedule-card:** fix siteId and childId ([c0e2314](https://github.com/novlan1/press-ui/commit/c0e231435490c802af73d80fe0705b026abee1cd))
+
+### [1.1.34](https://github.com/novlan1/press-ui/compare/v1.1.33...v1.1.34) (2023-10-03)
+
+
+### Documentation 📖
+
+* 优化卡片数据处理 ([34c4325](https://github.com/novlan1/press-ui/commit/34c43256bc90b30e6801ce2813a26591572d3911))
+
+
+### Features 🎉
+
+* **dialog:** 没有confirmText时候不现实button ([3e9419b](https://github.com/novlan1/press-ui/commit/3e9419b2a3aa9c932870076931b0cd04b00d63e2))
+
+### [1.1.33](https://github.com/novlan1/press-ui/compare/v1.1.32...v1.1.33) (2023-10-02)
+
+
+### Documentation 📖
+
+* **schedule-card:** 优化卡片demo ([4e42650](https://github.com/novlan1/press-ui/commit/4e42650d10a7ff3b442ad38f50838f634fada6a2))
+
+
+### Features 🎉
+
+* **schedule-card:** add click event ([dbadeea](https://github.com/novlan1/press-ui/commit/dbadeea1968c0a24431f940db6ad8eb2404153a6))
+
+
+### Bug Fixes 🐞
+
+* **field:** fix textarea autosize ([72d9500](https://github.com/novlan1/press-ui/commit/72d9500f838ef23d2b0e847b1a4eba6ad49a50f5))
+* **schedule-card:** 处理倒计时时 ([f9bbf57](https://github.com/novlan1/press-ui/commit/f9bbf5720346e9f537ee438af5b298361e5ed4ff))
+
+### [1.1.32](https://github.com/novlan1/press-ui/compare/v1.1.31...v1.1.32) (2023-09-30)
+
+
+### Bug Fixes 🐞
+
+* **count-down:** not reset if new value equals remain in seconds ([710f873](https://github.com/novlan1/press-ui/commit/710f8730f99ae627df87aadbc92ec4d4b24dd12a))
+
+### [1.1.31](https://github.com/novlan1/press-ui/compare/v1.1.30...v1.1.31) (2023-09-30)
+
+
+### Bug Fixes 🐞
+
+* **schedule-card:** update count down ([d0dcac5](https://github.com/novlan1/press-ui/commit/d0dcac517d0ab95c4ebae689d1a1bbf97febf77e))
+
+### [1.1.30](https://github.com/novlan1/press-ui/compare/v1.1.29...v1.1.30) (2023-09-30)
+
+
+### Bug Fixes 🐞
+
+* **schedule-card:** event playload ([157da58](https://github.com/novlan1/press-ui/commit/157da588d2bb112efb0944910fe359e45c31170d))
+
+### [1.1.29](https://github.com/novlan1/press-ui/compare/v1.1.28...v1.1.29) (2023-09-30)
+
+
+### Documentation 📖
+
+* resolve two kind of iconfont conflicts ([96c8e7c](https://github.com/novlan1/press-ui/commit/96c8e7c7177889c9bb42bda8d729058bce768ae5))
+
+
+### Bug Fixes 🐞
+
+* **schedule-card:** 防止触发太多finish ([fb6e155](https://github.com/novlan1/press-ui/commit/fb6e155ad95ac23527ff9115a9994080d53a32f7))
+
+### [1.1.28](https://github.com/novlan1/press-ui/compare/v1.1.27...v1.1.28) (2023-09-30)
+
+
+### Styles 💄
+
+* **schedule-card:** update title font size ([c0d2b7e](https://github.com/novlan1/press-ui/commit/c0d2b7e6dd326d7ea399f2bdbbfae3090ca3b072))
+
+### [1.1.27](https://github.com/novlan1/press-ui/compare/v1.1.26...v1.1.27) (2023-09-30)
+
+
+### Documentation 📖
+
+* **tab:** update tab faq ([8aaad3c](https://github.com/novlan1/press-ui/commit/8aaad3c587e812f35757380baefb327a90565f44))
+
+
+### Styles 💄
+
+* **schedule-card:** updaet style in mini phone ([6002cc7](https://github.com/novlan1/press-ui/commit/6002cc727f8e0e1643d461690edad9ad7e68b6f2))
+
+
+### Bug Fixes 🐞
+
+* **schedule-card:** 兼容小程序及修复积分点击 ([d06f5e4](https://github.com/novlan1/press-ui/commit/d06f5e4ca0a1815ad6eee065dde1ec75f8b5aca6))
+
+
+### Features 🎉
+
+* 优化背景色 ([5d97deb](https://github.com/novlan1/press-ui/commit/5d97deb188968a7648e42d154104133029b2cad1))
+* **schedule-card:** 兼容小程序 ([78c8dc0](https://github.com/novlan1/press-ui/commit/78c8dc0f26d52ffa6b936965eb4d3d9027da4031))
+* **schedule-card:** 新增赛程卡片 ([a88a51b](https://github.com/novlan1/press-ui/commit/a88a51b7a7fd844d15c6d2e117abba33f1e19f01))
+* **schedule-card:** add card state ([864c448](https://github.com/novlan1/press-ui/commit/864c44808b65226c9117ef4ae8b4011e4bebbbdf))
+* **schedule-card:** add card-iconfont ([b4edb8a](https://github.com/novlan1/press-ui/commit/b4edb8aebf21170ef5eb95445de60a717ca1964a))
+
+
+### Code Refactoring ♻️
+
+* **schedule-card:** split to many files ([2e7b3a0](https://github.com/novlan1/press-ui/commit/2e7b3a004fdb2ba6ec94b95f64aba7d1e25bbd2c))
+* update css class name ([c1dda55](https://github.com/novlan1/press-ui/commit/c1dda5576d0eb84866d1ff2875cb8a4f352ce4e2))
+* update schedule card class with bem ([81b9edd](https://github.com/novlan1/press-ui/commit/81b9edd68881e1eb0ed8aec87cd987e731ecb226))
+
+### [1.1.26](https://github.com/novlan1/press-ui/compare/v1.1.25...v1.1.26) (2023-09-27)
+
+
+### Bug Fixes 🐞
+
+* **tab:** sort lazy tab in mp ([428cde1](https://github.com/novlan1/press-ui/commit/428cde191ddbceb64dda04e4db1872f5f1900427))
+
+### [1.1.25](https://github.com/novlan1/press-ui/compare/v1.1.24...v1.1.25) (2023-09-25)
+
+
+### Build System 📦‍
+
+* use t-comm deploy tools ([049be55](https://github.com/novlan1/press-ui/commit/049be55f041c1c86d429f89bb06d02fdc8c1cbe2))
+
+
+### Documentation 📖
+
+* **protocol:** update protocol demo ([386a38c](https://github.com/novlan1/press-ui/commit/386a38cc97b6dfd12dfc11136bc83ebdb9327258))
+* **team-search:** update team search docs ([f9b43c2](https://github.com/novlan1/press-ui/commit/f9b43c277f6c06d3643da3d45319243bda684bd2))
+* update readme ([63221c3](https://github.com/novlan1/press-ui/commit/63221c38bc3069ca44bbaa96325e3a13434e05d1))
+* update readme ([c5def2a](https://github.com/novlan1/press-ui/commit/c5def2ae4ded2b13653feb27ec6d65e7201dfb02))
+* update readme ([7e325c6](https://github.com/novlan1/press-ui/commit/7e325c6bca14f951ca3d240a4de2b49d21c9a50f))
+
+
+### Chore 🚀 
+
+* lint ([cfc8976](https://github.com/novlan1/press-ui/commit/cfc897619545973380e4bc0c7430460339c16e22))
+* update dependencies ([428ecaf](https://github.com/novlan1/press-ui/commit/428ecaf57d137f2b8b540ca510bd4189def9bab1))
+* update pure adapter to adapt vue3 ([8410bbf](https://github.com/novlan1/press-ui/commit/8410bbfa6b26fd0e5aba71db5a7f61169faeef52))
+* update t-comm ([345bd59](https://github.com/novlan1/press-ui/commit/345bd59dba29ef1e910525329287eaa8d467de0e))
+
+
+### Bug Fixes 🐞
+
+* **picker:** fix empty picker list in mp ([3e8d07b](https://github.com/novlan1/press-ui/commit/3e8d07b65317f865d5e08be7214beebbb5b98bdb))
+
 ### [1.1.24](https://github.com/novlan1/press-ui/compare/v1.1.23...v1.1.24) (2023-09-22)
 
 

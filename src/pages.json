@@ -18,7 +18,13 @@
     {
       "path": "pages/launch-app/launch-app",
       "style": {
-        "navigationBarTitleText": "拉起APP"
+        "navigationBarTitleText": "Launch App"
+      }
+    },
+    {
+      "path": "pages/launch-game/launch-game",
+      "style": {
+        "navigationBarTitleText": "Launch Game"
       }
     },
     {
@@ -728,6 +734,17 @@
       "pages": [
         {
           "path": "protocol",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/press/schedule-card",
+      "pages": [
+        {
+          "path": "schedule-card",
           "style": {
             "navigationBarTitleText": ""
           }

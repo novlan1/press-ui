@@ -33,6 +33,7 @@ export default {
   bo3: 'Best of Three',
   bo5: 'Best of Five',
   bo7: 'Best of Seven',
+  bo9: 'Best of Nine',
   ban0: 'Ban 0 Heroes',
   ban2: 'Ban 2 Heroes',
   ban3: 'Ban 3 Heroes',

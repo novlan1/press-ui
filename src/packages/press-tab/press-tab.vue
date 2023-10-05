@@ -14,6 +14,7 @@ import utils from '../common/utils/utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
+import { requestAnimationFrame } from '../common/utils/system';
 
 
 export default {
@@ -55,6 +56,10 @@ export default {
       type: String,
       // 兼容旧的class，可传入van-
       default: '',
+    },
+    sortIndex: {
+      type: Number,
+      default: 0,
     },
   },
   emits: [],
@@ -125,6 +130,9 @@ export default {
     update() {
       if (this[PARENT]) {
         this[PARENT].updateTabs();
+        requestAnimationFrame(() => {
+          this[PARENT].resize();
+        });
       }
     },
     destroyCallback() {

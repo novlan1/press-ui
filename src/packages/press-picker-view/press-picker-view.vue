@@ -230,7 +230,9 @@ export default {
       const index = Math.round(this.currentScroll / this.itemHeight);
       this.currentIndex = -index;
       this.time = new Date().getTime();
-      this.speed = (this.move - this.lastMove) / (this.time - this.lastTime);
+      if (this.time !== this.lastTime) {
+        this.speed = (this.move - this.lastMove) / (this.time - this.lastTime);
+      }
       this.lastMove = this.move;
       this.lastTime = this.time;
     },

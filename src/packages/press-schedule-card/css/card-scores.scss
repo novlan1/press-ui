@@ -1,0 +1,67 @@
+.press-sche-card-join {
+  &__score-list {
+    margin: 0.2rem auto 0;
+    width: 6.2rem;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  &__score-item {
+    margin-right: 0.84rem;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__score-num {
+    color: #2a333c;
+    font-family: "PEACE";
+    font-size: 0.72rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__score-result {
+    display: flex;
+    align-items: center;
+
+    line-height: 0.28rem;
+    text-align: center;
+    flex-shrink: 0;
+    border-radius: 0.04rem;
+    text-align: center;
+
+    font-family: PingFang SC;
+  }
+
+  &__score-round {
+    font-size: .24rem;
+  }
+
+  &__score-bg {
+    display: inline-block;
+    margin-left: 0.08rem;
+    width: 0.28rem;
+    height: 0.28rem;
+    color: #fff;
+    font-size: 0.2rem;
+
+
+    &---green {
+      background: #33e2d1;
+    }
+
+    &---pink {
+      background: #f115c7;
+    }
+
+    &---gray {
+      background: #8c8b9b;
+    }
+  }
+}

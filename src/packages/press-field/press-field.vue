@@ -184,7 +184,7 @@ export default {
     isLink: Boolean,
     leftIcon: { type: String, default: '' },
     rightIcon: { type: String, default: '' },
-    autosize: { type: Boolean, default: false },
+    autosize: { type: [Boolean, Object], default: false },
     required: Boolean,
     iconClass: { type: String, default: '' },
     clickable: Boolean,
@@ -347,13 +347,17 @@ export default {
       this.showClear = showClear;
     },
     adjustSize() {
-      const { input } = this.$refs;
+      let { input } = this.$refs;
       if (!(this.type === 'textarea' && this.autosize)
         || !input
-        || !input.style
       ) {
         return;
       }
+
+      if (!input.style) {
+        input = input.$el;
+      }
+      if (!input || !input.style) return;
 
       const scrollTop = getRootScrollTop();
       input.style.height = 'auto';

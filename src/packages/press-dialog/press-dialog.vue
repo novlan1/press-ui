@@ -77,7 +77,7 @@
           </PressButton>
         </template>
 
-        <template v-else>
+        <template v-else-if="dataConfirmText || mShowButtonLoading">
           <PressButton
             type="e-sport-primary-bg"
             :loading="mShowButtonLoading"
