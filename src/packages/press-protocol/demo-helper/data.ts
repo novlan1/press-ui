@@ -121,7 +121,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: '参考文档',
           light: true,
-          link: 'https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui/quickstart.html#vue3-%E9%A1%B9%E7%9B%AE',
+          link: 'https://novlan1.github.io/press-ui/quickstart.html#vue3-%E9%A1%B9%E7%9B%AE',
         },
         '。',
       ],

@@ -64,12 +64,6 @@ export default {
   },
   data() {
     return {
-      // redirectQQUrl: '',
-      // redirectWxUrl: '',
-      // qrcodeSrc: '',
-      // hideCanvas: false,
-      // showDialogLoginChoose: false,
-      // showDialogLoginWx: false,
     };
   },
   mounted() {
@@ -77,13 +71,6 @@ export default {
   },
   methods: {
     init() {
-      // cookie中设置，需要刷新
-      // cookie.set('refresh_login', '1', { domain: '.igame.qq.com', expires: 1.0 / 6 }); // 是否需要刷新登录态
-
-      // this.redirectQQUrl = this.getLoginUrl(this.url, false);
-      // this.redirectWxUrl = this.getLoginUrl(this.url, true);
-      // this.showDialogLoginChoose = true;
-
       // #ifdef H5
       if (typeof this.loader === 'function') {
         this.loader(WX_JS_SDK, () => {
@@ -107,26 +94,6 @@ export default {
         href: 'https://image-1251917893.file.myqcloud.com/igame-admin/weixinlogin.css',
       });
     },
-    // jumpToNext() {
-    //   this.closeDialog();
-    //   if (this.redirectQQUrl && this.redirectQQUrl.length > 0) {
-    //     window.location.href = this.redirectQQUrl;
-    //   }
-    // },
-    // showWxDialog() {
-    //   this.showDialogLoginChoose = false;
-    //   this.showDialogLoginWx = true;
-    // },
-    // getLoginUrl(url, isWx) {
-    //   let loginUrl = '';
-    //   if (isWx) {
-    //     loginUrl = `https://igame.qq.com/prod/pmdtrpc.commcgi.user.user/QueryUserInfo?_ltype=tiploginwxpc&_jumpurl=${encodeURIComponent(url)}`;
-    //   } else {
-    //     const redirectUrl = `https://igame.qq.com/prod/pmdtrpc.commcgi.user.user/QueryUserInfo?_ltype=tiploginqq&_jumpurl=${encodeURIComponent(url)}`;
-    //     loginUrl = `https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101425236&redirect_uri=${encodeURIComponent(redirectUrl)}&scope=get_user_info&state=7&display=pc`;
-    //   }
-    //   return loginUrl;
-    // },
     closeDialog() {
       this.$emit('update:show', false);
       if (this.destroyedWhenClosed) {
@@ -137,9 +104,6 @@ export default {
         }
       }
     },
-    // getCurrentUrl() {
-    //   return window.location.href;
-    // },
     getActClass(...args) {
       return getActClass(this.useTipClass, args);
     },
