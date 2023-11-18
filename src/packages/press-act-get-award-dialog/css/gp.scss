@@ -1,0 +1,182 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-gp.scss';
+@import '../../common/style/act/button/_button-gp.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__full-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-get-bg.png) no-repeat top center;
+    background-size: 100% 100%;
+    z-index: 99;
+    animation-name: scaleDraw;
+    /*关键帧名称*/
+    animation-timing-function: ease-in-out;
+    /*动画的速度曲线*/
+    animation-duration: 1s;
+    /*动画所花费的时间*/
+  }
+
+  /* 放大出现 */
+  @keyframes scaleDraw {
+
+    /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+    0% {
+      transform: scale(0);
+      opacity: 0;
+      /*开始为原始大小*/
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .press__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .press__content--get::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: .38rem;
+    content: '';
+    width: 8.96rem;
+    height: 1.59rem;
+    margin: auto;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-get-title.png) no-repeat center center;
+    background-size: auto 100%;
+  }
+
+  .press__content--received::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: .38rem;
+    content: '';
+    width: 8.96rem;
+    height: 1.59rem;
+    margin: auto;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-got-title.png) no-repeat center center;
+    background-size: auto 100%;
+  }
+
+  .press__center {
+    text-align: center;
+    padding-top: .62rem;
+    margin: auto;
+  }
+
+  .press__center-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 1.04rem;
+      height: 1.04rem;
+      margin-right: .1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .press__base-info {
+    line-height: 1;
+  }
+
+  .press__goods-name {
+    font-size: $font-m;
+    color: #fcfcfc;
+    margin-top: .14rem;
+  }
+
+  .press__goods-desc {
+    font-size: $font-xxs;
+    color: #cdd1d6;
+    margin-top: .24rem;
+
+    span {
+      color: #b5ddde;
+    }
+  }
+
+  .tip-comp-dialog--fullpage-waiting-issue {
+    display: none;
+    height: .35rem;
+    line-height: .35rem;
+    position: relative;
+    margin: .1rem 0 .2rem;
+    text-align: center;
+    color: white;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: #4b5b6c;
+      top: .16rem;
+    }
+
+    &::before {
+      left: .4rem;
+    }
+
+    &:after {
+      right: .4rem;
+    }
+  }
+
+  .press__tips {
+    font-size: $font-xxs;
+    color: #cdd1d6;
+    margin-top: .14rem;
+
+    span {
+      color: #e4b853;
+    }
+  }
+
+  .press__button-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .66rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    a {
+      margin-right: 1.2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .press__stay-out-new {
+    display: none;
+  }
+}

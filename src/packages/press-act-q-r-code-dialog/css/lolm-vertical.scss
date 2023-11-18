@@ -1,0 +1,82 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99;
+  }
+
+  /* 二维码弹窗 start */
+  .press__dialog--qr {
+    width: 6rem;
+    height: 5.6rem;
+    position: fixed;
+    border-radius: .08rem;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: #5569a2;
+    margin: auto;
+    text-align: center;
+    padding: 0 0rem .34rem;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background: white;
+    color: #999;
+  }
+
+  .press__title {
+    margin-top: .48rem;
+    color: #303030;
+    font-size: .36rem;
+    line-height: .44rem;
+    text-align: center;
+  }
+
+  .press__dialog--qr .press__close {
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/2021/a20210730fazaiMerc/images/btn_close.png) no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+    position: absolute;
+    top: 6rem;
+    right: 2.6rem;
+    text-indent: -1000rem;
+  }
+
+  .press__content {
+    margin-top: .68rem;
+  }
+
+  .press__image {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: .08rem;
+    padding: .08rem;
+    background: #fff;
+    display: inline-block;
+  }
+
+  .press__desc {
+    margin-top: .2rem;
+    font-size: .24rem;
+    color: #666;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .press__button-wrap {
+    display: none;
+  }
+
+  /* 二维码弹窗 end */
+}

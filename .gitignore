@@ -34,6 +34,7 @@ docs/en/components/press/
 
 # demo地址
 src/pages/press/
+src/pages/act/
 
 # demo首页配置
 # src/pages/index/page-config.json
@@ -49,4 +50,5 @@ tests/coverage
 private.key
 mp_ci_preview_destination.png
 sm.zip
+lib/
 pnpm-lock.yaml

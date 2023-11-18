@@ -149,6 +149,7 @@ export function showCustomPopup({ context, callback }) {
       }),
       {
         label: '是否显示顶号异常',
+        description: '需设置管理员',
         type: 'switch',
         open: local.showError,
         click: ({ context: popupContext }) => {

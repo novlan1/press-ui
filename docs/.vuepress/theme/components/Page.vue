@@ -6,22 +6,30 @@
     <slot name="top" />
     <div class="wrap">
       <Content class="theme-default-content" />
+
       <div
-        ref="simulator"
-        class="simulator-box"
+        class="simulator-wrap"
       >
-        <div class="simulator-top">
-          <div class="simulator-top_box" />
+        <div
+          ref="simulator"
+          class="simulator-box"
+          :style="simulatorBoxStyle"
+        >
+          <div class="simulator-content">
+            <iframe
+              class="simulator-iframe"
+              :src="path"
+            />
+          </div>
         </div>
-        <div class="simulator-content">
-          <div class="simulator-seat" />
-          <iframe
-            class="simulator-iframe"
-            :src="path"
-          />
-        </div>
-        <div class="simulator-bottom">
-          <div class="simulator-bottom_box" />
+
+        <div class="button-wrap">
+          <div
+            class="press-button press-button--primary"
+            @click.stop="onChangeHor"
+          >
+            {{ isHor ? '竖屏' :'横屏' }}
+          </div>
         </div>
       </div>
     </div>
@@ -39,6 +47,7 @@
 <script>
 import PageEdit from '@theme/components/PageEdit.vue';
 import PageNav from '@theme/components/PageNav.vue';
+import { watchMessageFromIFrame, IFRAME_MESSAGE_TYPE_MAP, DEMO_PAGE_DIRECTION } from '../../utils/message';
 
 const WEB_DEMO_BASE_LINK_PROD = 'https://novlan1.github.io/press-ui-demo/#/';
 const WEB_DEMO_BASE_LINK_DEV = 'http://localhost:9999/#/';
@@ -64,6 +73,23 @@ export default {
     path() {
       return `${WEB_DEMO_BASE_LINK + this.url}?v=${new Date().getTime()}&lang=${this.lang}`;
     },
+    simulatorBoxStyle() {
+      const { horWidth, horHeight, marginRight } = this.$page.frontmatter;
+      if (!this.isHor) {
+        return '';
+      }
+      const list = [];
+      if (horWidth) {
+        list.push(`width: ${horWidth}px;`);
+      }
+      if (horHeight) {
+        list.push(`height: ${horHeight}px;`);
+      }
+      if (marginRight) {
+        list.push(`margin-right: ${marginRight}px;`);
+      }
+      return list.join(' ');
+    },
   },
   watch: {
     $route: {
@@ -85,8 +111,18 @@ export default {
   },
   mounted() {
     this.getLang();
+    watchMessageFromIFrame((event) => {
+      const { type, data } = event.data;
+      // console.log('[iframe.event]', type, data);
+      if (type === IFRAME_MESSAGE_TYPE_MAP.CHANGE_DEMO_PAGE_DIRECTION) {
+        this.isHor = data === DEMO_PAGE_DIRECTION.HOR;
+      }
+    });
   },
   methods: {
+    onChangeHor() {
+      this.isHor = !this.isHor;
+    },
     onload() {
     },
     getLang() {
@@ -106,8 +142,9 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @require '../styles/wrapper.styl';
+@require '../styles/button.styl';
 
 .page {
   padding-bottom: 2rem;
@@ -121,9 +158,20 @@ export default {
 
   .wrap .simulator-box {
     width: 600px;
-    height: 375px;
-    margin-top: 160px;
+    height: 400px;
+    margin-top: 60px;
     margin-right: -20px;
+    padding-bottom: 3px;
+    background: none;
+
+    .simulator-content {
+      border-radius: 10px;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .button-wrap {
+    margin-top: 20px;
   }
 }
 
@@ -133,93 +181,53 @@ export default {
   width: auto;
   margin: 0 auto;
 
-  .simulator-box {
-    position: -webkit-sticky;
+  .simulator-wrap {
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 9;
+    // height: 800px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
-    // margin-left 50px
+    align-items: center;
+  }
+
+  .simulator-box {
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 0px;
+    // z-index: 9;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
     flex-shrink: 0;
-    width: 400px;
+    width: 390.26px;
     height: 790px;
     border-radius: 20px;
-    background-color: #333;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
     transform: scale(0.85);
     box-sizing: border-box;
-
-    .simulator-top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-shrink: 0;
-      height: 36px;
-
-      .simulator-top_box {
-        width: 55px;
-        height: 14px;
-        background-color: #222;
-        border-radius: 8px;
-        box-shadow: -1px -2px 1px 0px rgba(255, 255, 255, 0.4) inset;
-      }
-    }
+    background-image: url('https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_255356ffde6cc5c8c1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 58px 14px 32px;
 
     .simulator-content {
       position: relative;
       flex: 1;
-      // height 100%
-      margin: 0 20px;
       border-radius: 5px;
       background-color: #FFFFFF;
       overflow: hidden;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
 
-      // .simulator-seat
-      // position absolute
-      // left 0px
-      // top 0px
-      // width 44px
-      // height 44px
-      // background-color rgb(0, 122, 255)
       .simulator-iframe {
         margin: -2px 0;
         width: 100%;
         height: calc(100% + 4px);
         border: none;
-      }
-    }
-
-    .simulator-bottom {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-shrink: 0;
-      height: 70px;
-
-      .simulator-bottom_box {
-        position: relative;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background-color: #555;
-        border: 1px #666 solid;
-        box-shadow: 0px 10px 5px 1px rgba(0, 0, 0, 0.3) inset;
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 15px;
-          height: 15px;
-          margin: auto;
-          top: 1px;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          border-radius: 5px;
-          border: 2px #777 solid;
-        }
       }
     }
 
@@ -233,6 +241,12 @@ export default {
   }
 }
 
+.wrap .simulator-wrap {
+  @media (max-width: 1300px) {
+    display: none;
+  }
+}
+
 .page-nav {
   max-width: 1400px;
   margin: 0 auto;
@@ -241,5 +255,11 @@ export default {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.button-wrap {
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -12,7 +12,7 @@ function fallback(fn) {
   return id;
 }
 
-
+// @ts-ignore
 const root = IS_SERVER ? global : window;
 
 const iRaf = root.requestAnimationFrame || fallback;

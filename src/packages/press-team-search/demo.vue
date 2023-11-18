@@ -4,6 +4,7 @@
       :team-list="teamList"
       :loading="loading"
       :finished="finished"
+      :default-search-words="defaultSearchWords"
       @load="onLoadMore"
       @update:loading="value => loading = value"
       @search="onSearch"
@@ -58,8 +59,12 @@ export default {
       loading: false,
       finished: false,
       searchValue: '',
+      defaultSearchWords: '123',
       loadTime: 0,
     };
+  },
+  mounted() {
+    this.onSearch(this.defaultSearchWords);
   },
   methods: {
     async onSearch(value) {
@@ -108,7 +113,8 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   background: #f5f6fa;
-  background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/fullpage-light-bg.png) no-repeat center 0.88rem;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/fullpage-light-bg.png)
+    no-repeat center 0.88rem;
   background-size: 100% auto;
   display: flex;
   overflow: hidden;

@@ -1,4 +1,4 @@
-function kebabCase(word) {
+export function kebabCase(word) {
   const reg = /[A-Z]/g;
   const newWord = word
     .replace(reg, i => `-${i}`)

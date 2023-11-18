@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`press-grid ${customClass} `+(border && !gutter ? 'press-hairline--top' : '')"
-    :style="true ? computed.rootStyle({ gutter }) : ''"
+    :style="true ? computed.rootStyle({ customStyle, gutter }) : ''"
   >
     <slot />
   </div>
@@ -56,6 +56,10 @@ export default {
     reverse: {
       type: Boolean,
       default: false,
+    },
+    customStyle: {
+      type: String,
+      default: '',
     },
     ...defaultProps,
   },

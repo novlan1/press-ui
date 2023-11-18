@@ -4,7 +4,7 @@
       class="press-hor-match-header__back"
       @click="back"
     />
-    <div class="press-hor-match__title">
+    <div class="press-hor-match-header__title">
       {{ title }}
     </div>
     <div class="press-hor-match-header__middle">
@@ -52,11 +52,11 @@ export default {
   padding-bottom: 0.18rem;
 
   &__title {
-    font-family: 'GAMEFONT';
-    font-size: .3rem;
+    font-family: "GAMEFONT";
+    font-size: 0.3rem;
     color: transparent;
-    padding-left: .16rem;
-    background-image: linear-gradient(to bottom, #759ccd 0%,#abcef4 100%);
+    padding-left: 0.16rem;
+    background-image: linear-gradient(to bottom, #759ccd 0%, #abcef4 100%);
     -webkit-background-clip: text;
   }
 

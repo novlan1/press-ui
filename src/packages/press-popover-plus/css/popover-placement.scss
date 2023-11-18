@@ -1,0 +1,106 @@
+.press-popover {
+
+  &--bottom,
+  &--bottom-start,
+  &--bottom-end {
+    top: calc(100% + 10px);
+
+    .press-popover__arrow {
+      top: -12px;
+      border-bottom-color: currentColor;
+    }
+  }
+
+  &--bottom,
+  &--top {
+    left: 50%;
+    transform: translateX(-50%);
+
+    .press-popover__arrow {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--bottom-start,
+  &--top-start {
+    left: 0;
+
+    .press-popover__arrow {
+      left: 16px;
+    }
+  }
+
+  &--bottom-end,
+  &--top-end {
+    right: 0;
+
+    .press-popover__arrow {
+      right: 16px;
+    }
+  }
+
+
+  &--top,
+  &--top-start,
+  &--top-end {
+    bottom: calc(100% + 10px);
+
+    .press-popover__arrow {
+      bottom: -12px;
+      border-top-color: currentColor;
+    }
+  }
+
+  &--left,
+  &--left-start,
+  &--left-end {
+    right: calc(100% + 10px);
+
+    .press-popover__arrow {
+      right: -12px;
+      border-left-color: currentColor;
+    }
+  }
+
+  &--right,
+  &--right-start,
+  &--right-end {
+    left: calc(100% + 10px);
+
+    .press-popover__arrow {
+      left: -12px;
+      border-right-color: currentColor;
+    }
+  }
+
+
+  &--left,
+  &--right {
+    top: 50%;
+    transform: translateY(-50%);
+
+    .press-popover__arrow {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--left-start,
+  &--right-start {
+    top: 0;
+
+    .press-popover__arrow {
+      top: 16px;
+    }
+  }
+
+  &--left-end,
+  &--right-end {
+    bottom: 0;
+
+    .press-popover__arrow {
+      bottom: 16px;
+    }
+  }
+}

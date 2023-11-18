@@ -4,7 +4,7 @@
       <div class="press-step__wrapper">
         <div
           v-for="(item,index) in (steps)"
-          :key="item.index"
+          :key="index"
           :data-index="index"
           :class="true ? getStepClass(index) : ''"
           :style="true ? getStepStyle(index) : ''"
@@ -226,7 +226,7 @@ export default {
     &.press-step--process {
       color: var(--step-process-text-color, $step-process-text-color);
 
-      .press-step__icon {
+      ::v-deep .press-step__icon {
         display: block;
         line-height: 1;
         font-size: var(--step-icon-size, $step-icon-size);
@@ -259,7 +259,7 @@ export default {
       }
     }
 
-    .press-step__icon,
+    ::v-deep .press-step__icon,
     .press-step__circle,
     .press-step__line {
       position: absolute;
@@ -269,7 +269,7 @@ export default {
       transform: translate3d(-50%, -50%, 0);
     }
 
-    .press-step__icon {
+    ::v-deep .press-step__icon {
       line-height: 1;
       font-size: var(--step-icon-size, $step-icon-size);
     }

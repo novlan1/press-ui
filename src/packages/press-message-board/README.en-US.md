@@ -42,9 +42,9 @@ For the convenience of use, there are 3 components inside the message board, whi
 ```
 
 ```ts
-import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
-import PressMessageBoardList from 'src/packages/press-message-board/press-message-board-list.vue';
-import PressMessageBoardItem from 'src/packages/press-message-board/press-message-board-item.vue';
+import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input.vue';
+import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list.vue';
+import PressMessageBoardItem from 'press-ui/press-message-board/press-message-board-item.vue';
 
 
 const MSG_LIST = [

@@ -21,8 +21,8 @@ export default {
       default: false,
     },
     info: {
-      type: [String, null],
-      default: null,
+      type: [String, Number, null],
+      default: '',
     },
     customStyle: {
       type: String,

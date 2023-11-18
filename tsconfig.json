@@ -6,21 +6,21 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "allowJs": true,
-    "noEmit": true,
+    "allowJs": false,
+    "noEmit": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
     "types": [
       "webpack-env",
       "@dcloudio/types",
       "miniprogram-api-typings",
-      "mini-types",
       "jest"
     ],
     "paths": {
@@ -33,12 +33,18 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
   },
+  "include": [
+    "./**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "unpackage",
-    "dist",
-    "src/**/*.nvue"
+    "dist/",
+    "src/**/*.nvue",
+    "./**/*.spec.ts",
+    "log/",
+    "lib/"
   ]
 }

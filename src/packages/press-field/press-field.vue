@@ -135,8 +135,8 @@
         v-if="showWordLimit && maxlength"
         class="press-field__word-limit"
       >
-        <div :class="'' + utils.bem2('field__word-num', { full: value.length >= maxlength })">
-          {{ value.length >= maxlength ? maxlength : value.length }}
+        <div :class="'' + utils.bem2('field__word-num', { full: innerValue.length >= maxlength })">
+          {{ innerValue.length >= maxlength ? maxlength : innerValue.length }}
         </div>/{{ maxlength }}
       </div>
 
@@ -159,7 +159,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
 import { isObject } from '../common/utils/validator';
 import { getEventDetail, getEventValue } from '../common/dom/event';
-import { nextTick } from '../common/vue3/adapter';
+import { nextTick, vModelMixin } from '../common/vue3/adapter';
 
 export default {
   name: 'PressField',
@@ -172,6 +172,7 @@ export default {
     PressCell,
     PressIconPlus,
   },
+  mixins: [vModelMixin],
   props: {
     ...commonProps,
     ...inputProps,
@@ -256,7 +257,7 @@ export default {
     };
   },
   watch: {
-    value: {
+    realModelValue: {
       handler(val) {
         this.innerValue = val;
         nextTick(this.adjustSize);
@@ -264,7 +265,7 @@ export default {
     },
   },
   created() {
-    this.innerValue = this.value;
+    this.innerValue = this.realModelValue;
   },
   mounted() {
     nextTick(this.adjustSize);
@@ -331,7 +332,8 @@ export default {
     },
     emitChange() {
       nextTick(() => {
-        this.$emit('input', this.innerValue);
+        // this.$emit('input', this.innerValue);
+        this.emitModelValue(this.innerValue);
         this.$emit('change', this.innerValue);
       });
     },

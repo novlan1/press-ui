@@ -1,0 +1,80 @@
+@import '../../common/style/act/mixin/mixin.scss';
+
+@import '../../common/style/act/layout/_layout-smoba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    margin: auto;
+    text-align: center;
+    color: #999;
+  }
+
+  .press__dialog--qr {
+    width: 5.6rem;
+    padding: .48rem;
+    border-radius: .16rem;
+    background-color: $color-white;
+  }
+
+  .press__image {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: .08rem;
+    margin: 0 auto;
+    background: unset;
+    border: 1px solid $color-gray-7;
+  }
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    font-size: .32rem;
+    font-weight: 600;
+    color: $color-black;
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: .32rem;
+  }
+
+  .press__desc {
+    margin-top: .22rem;
+    font-size: .26rem;
+    letter-spacing: 0;
+    text-align: center;
+    color: $color-gray;
+  }
+
+  .press__button-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: .48rem;
+  }
+
+  .press__button-wrap a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.04rem;
+    height: .72rem;
+    text-align: center;
+    font-size: $font-l;
+    color: $color-white;
+    padding: 0 .16rem;
+    border-radius: .08rem;
+    background-image: $color-primary-btn;
+
+    &:active {
+      background: $color-blue;
+    }
+  }
+}

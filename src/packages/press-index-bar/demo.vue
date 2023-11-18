@@ -5,6 +5,7 @@
   >
     <press-index-bar
       :sticky-offset-top="stickyOffsetTop"
+      :window-top="44"
       @select="onSelect"
     >
       <div

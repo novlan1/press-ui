@@ -1,0 +1,207 @@
+/* #ifdef H5 */
+@import "https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css";
+/* #endif */
+
+.press-player {
+  width: 100%;
+  height: 100%;
+  // height: 210px;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .press-player__main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    background-size: 100% 100%;
+
+    ::v-deep .tcplayer {
+      height: 100%;
+      width: 100%;
+
+      .vjs-tech {
+        height: 100%;
+      }
+
+      .vjs-hidden {
+        display: none;
+      }
+
+      .vjs-error-display {
+        display: none;
+      }
+
+      .vjs-big-play-button {
+        display: none;
+      }
+
+      .tcp-loading-spinner {
+        display: none;
+      }
+
+      .vjs-control-bar {
+        padding: 0 0.32rem;
+        height: 0.72rem;
+        background-color: rgb(0 0 0 / 32%);
+        display: flex;
+        align-items: center;
+
+        .vjs-play-control {
+          height: 0.24rem;
+          width: 0.26rem;
+          background-repeat: no-repeat;
+          background-image: url("https://res.edata.qq.com/nestim/images/player.png");
+          background-size: 100% 100%;
+          margin-right: 0.08rem;
+
+          .vjs-icon-placeholder {
+            display: none;
+          }
+
+          .vjs-control-text {
+            display: none;
+          }
+        }
+
+        .vjs-paused {
+          background-repeat: no-repeat;
+          background-image: url("https://res.edata.qq.com/nestim/images/player.png");
+          background-size: 100% 100%;
+        }
+
+        .vjs-playing {
+          background-repeat: no-repeat;
+          background-image: url("https://res.edata.qq.com/nestim/images/pause.png");
+          background-size: 100% 100%;
+        }
+
+        .vjs-volume-panel {
+          display: none;
+          align-items: center;
+
+          .vjs-button {
+            margin: 0em 0.5em;
+            padding: 0;
+            background-repeat: no-repeat;
+          }
+
+          .vjs-button>.vjs-icon-placeholder:before {
+            font-size: 0.28rem;
+            line-height: 0.72rem;
+          }
+        }
+
+        .vjs-live-control {
+          display: none;
+        }
+
+        .vjs-fullscreen-control {
+          margin: 0.5em 0;
+          width: 1em;
+          height: 1em;
+          background-repeat: no-repeat;
+          background-image: url("https://res.edata.qq.com/nestim/images/fullscreen.png");
+          background-size: 100% 100%;
+
+          .vjs-icon-placeholder {
+            display: none;
+          }
+
+          .vjs-control-text {
+            display: none;
+          }
+        }
+
+        .vjs-time-control {
+          >div {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+
+        .vjs-duration,
+        .vjs-current-time {
+          font-family: DIN Condensed;
+          font-weight: bold;
+          font-size: 0.24rem;
+          padding: 0.04rem 0.04rem 0;
+        }
+
+        .vjs-time-divider {
+          font-size: 0.24rem;
+          font-weight: bold;
+          padding: 0rem 0.04rem 0;
+        }
+
+        .vjs-progress-control {
+          position: relative;
+          display: flex;
+          align-items: center;
+          top: 0;
+          height: 0.04rem;
+
+          .vjs-progress-holder {
+            height: 0.04rem;
+          }
+
+          .vjs-play-progress {
+            background-color: #fdbb56;
+            height: 0.04rem;
+          }
+
+          .vjs-play-progress:before {
+            width: 0.24rem;
+            height: 0.26rem;
+            background-color: transparent;
+            background-image: url("https://res.edata.qq.com/nestim/images/player-time-point.png");
+            background-size: 100% 100%;
+            font-size: 0rem;
+            top: -0.12rem;
+            right: -0.08rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.controller-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-size: 100% 100%;
+
+  .controller-content {
+    height: 0.8rem;
+    width: 100%;
+    margin: 0;
+    padding: 0 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.32);
+
+    .play-img {
+      width: 0.3rem;
+      height: 0.3rem;
+    }
+
+    .full-img {
+      width: 0.3rem;
+      height: 0.3rem;
+    }
+  }
+
+  .controller-content.fullscreen {
+    padding: 0 1.2rem;
+  }
+}

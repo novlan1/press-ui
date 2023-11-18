@@ -114,6 +114,13 @@ $navbar-horizontal-padding = 1.5rem;
 
 .navbar {
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
+  display: flex;
+  align-items: center;
+
+  .home-link {
+    display: flex;
+    align-items: center;
+  }
 
   // line-height $navbarHeight - 1.6rem
   a, span, img {

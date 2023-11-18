@@ -1,0 +1,132 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-gp.scss';
+@import '../../common/style/act/button/_button-gp.scss';
+
+$dialog-close_bg: 'https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-close.png';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 6.54rem;
+    height: 3.58rem;
+    line-height: 1;
+    margin: auto;
+    text-align: center;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-small-bg.png) no-repeat center center;
+    background-size: contain;
+    z-index: 99;
+    overflow: hidden;
+  }
+
+  .press__close {
+    position: absolute;
+    right: .26rem;
+    top: .18rem;
+
+    @include icon_img(.42rem, .36rem, $dialog-close_bg, center center, contain);
+  }
+
+  .press__title {
+    position: absolute;
+    left: .52rem;
+    top: .24rem;
+    font-size: $font-m;
+    color: #2e3438;
+  }
+
+  .press__content {
+    position: relative;
+    width: 3.24rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    .press__phone-number {
+      width: 100%;
+      height: .52rem;
+      font-size: $font-xxs;
+      color: #737a80;
+      padding: 0 .08rem;
+      background: rgba(205, 209, 214, .5);
+      border: 1px solid rgba(33, 33, 36, .15);
+
+      &::placeholder {
+        color: #737a80;
+      }
+    }
+
+    .press__code-wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: .08rem;
+    }
+
+    .press__code-number {
+      width: 1.88rem;
+      height: .52rem;
+      font-size: $font-xxs;
+      color: #737a80;
+      padding: 0 .08rem;
+      background: rgba(205, 209, 214, .5);
+      border: 1px solid rgba(33, 33, 36, .15);
+
+      &::placeholder {
+        color: #737a80;
+      }
+    }
+
+    .press__code-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: .52rem;
+      font-size: $font-xxs;
+      color: #737a80;
+      padding: 0 .14rem;
+      margin-left: .08rem;
+      white-space: nowrap;
+      border: 1px solid rgba(33, 33, 36, .15);
+    }
+
+    .press__code-btn--disabled {
+      color: gray;
+    }
+  }
+
+  .press__dialog-update {
+    .press__button-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .64rem;
+
+      .press__btn--cancel {
+        display: none;
+      }
+    }
+  }
+
+  .tip-comp-dialog--input-info-tips {
+    color: #737a80;
+    font-size: $font-s;
+    text-align: left;
+  }
+
+  &.press__cover {
+    .tip-comp-dialog--btn-cont {
+      margin: auto;
+      padding: 0;
+    }
+
+    .press__dialog-update input {
+      margin: auto;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+/*loading旋转*/
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform-origin: center;
+    transform: rotate(-720deg);
+    transform: rotate(-720deg);
+    transform: rotate(-720deg);
+    opacity: 1;
+  }
+
+  to {
+    transform-origin: center;
+    transform-origin: center;
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform-origin: center;
+    transform: rotate(-720deg);
+    transform: rotate(-720deg);
+    transform: rotate(-720deg);
+    opacity: 1;
+  }
+
+  to {
+    transform-origin: center;
+    transform-origin: center;
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/*提示气泡抖动*/
+@keyframes tipsbounce {
+  from {
+    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+
+/*横屏全屏弹框animation*/
+@keyframes rotateLight {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes dialogFadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

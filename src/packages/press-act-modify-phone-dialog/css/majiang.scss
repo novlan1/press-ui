@@ -1,0 +1,130 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-majiang.scss';
+@import '../../common/style/act/button/_button-majiang.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .tip-comp-dialog--close {
+    display: none;
+  }
+
+  .press__dialog {
+    width: 8.14rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: $color-blue-6;
+    margin: auto;
+    text-align: center;
+    min-height: 5rem;
+    padding: 0 .34rem .34rem;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200423mahjong/pop-bg1.png) no-repeat top center;
+    background-size: contain;
+  }
+
+  .press__title {
+    height: .76rem;
+    font-size: 0;
+    margin: .04rem auto 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/majiang/image/icon/modify-phone-title.png) no-repeat center center;
+    background-size: auto .76rem;
+  }
+
+  .press__content {
+    position: relative;
+    width: 5.52rem;
+    margin: 0 auto;
+    margin-top: .6rem;
+
+    .press__phone-number {
+      width: 100%;
+      height: .64rem;
+      font-size: $font-s;
+      color: #5668a1;
+      padding: 0 .16rem;
+      background: rgba(66, 126, 220, .2);
+      border-radius: .08rem;
+
+      &::placeholder {
+        color: #5668a1;
+      }
+    }
+
+    .press__code-wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: .16rem;
+    }
+
+    .press__code-number {
+      width: 3.48rem;
+      height: .64rem;
+      font-size: $font-s;
+      color: #5668a1;
+      padding: 0 .16rem;
+      background: rgba(66, 126, 220, .2);
+      border-radius: .08rem;
+
+      &::placeholder {
+        color: #5668a1;
+      }
+    }
+
+    .press__code-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: .64rem;
+      font-size: $font-s;
+      color: #5769a2;
+      padding: 0 .36rem;
+      margin-left: .16rem;
+      white-space: nowrap;
+      border-radius: .08rem;
+      border: 1px solid #d0e1f4;
+    }
+
+    .press__code-btn--disabled {
+      color: gray;
+    }
+  }
+
+  .press__dialog-update {
+    .press__button-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .68rem;
+
+      .press__btn--cancel {
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  .tip-comp-dialog--input-info-tips {
+    color: #5668a1;
+    font-size: $font-s;
+    text-align: left;
+  }
+
+  &.press__cover {
+    .tip-comp-dialog--btn-cont {
+      margin: auto;
+      padding: 0;
+    }
+
+    .press__dialog-update input {
+      margin: auto;
+      text-align: left;
+    }
+  }
+}

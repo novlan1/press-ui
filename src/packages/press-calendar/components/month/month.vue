@@ -23,7 +23,7 @@
 
       <div
         v-for="(item,index) in (days)"
-        :key="item.index"
+        :key="index"
         :style="true ? computed.getDayStyle(item.type, index, date, rowHeight, color, firstDayOfWeek) : ''"
         :class="true ? (utils.bem2('calendar__day', [item.type]))+' '+(item.className) : ''"
         :data-index="index"

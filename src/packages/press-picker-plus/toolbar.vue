@@ -74,6 +74,7 @@ export default {
   &__confirm {
     padding: var(--picker-action-padding, $picker-action-padding);
     font-size: var(--picker-action-font-size, $picker-action-font-size);
+    line-height: var(--picker-toolbar-height, $picker-toolbar-height);
 
     &--hover {
       opacity: $active-opacity;
@@ -93,6 +94,7 @@ export default {
     text-align: center;
     font-weight: var(--font-weight-bold, $font-weight-bold);
     font-size: var(--picker-option-font-size, $picker-option-font-size);
+    line-height: var(--picker-toolbar-height, $picker-toolbar-height);
   }
 }
 </style>

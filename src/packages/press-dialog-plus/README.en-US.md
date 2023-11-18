@@ -18,7 +18,7 @@ Used to prompt some messages, only contains a confirmation button.
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.alert({
    title: 'Title',
@@ -43,7 +43,7 @@ Used for confirmation messages, containing cancel and confirm buttons.
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.confirm({
    title: 'Title',
@@ -66,7 +66,7 @@ Set the theme option to `round-button` to display rounded button style popups.
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.alert({
    title: 'Title',
@@ -93,7 +93,7 @@ Through the `beforeClose` attribute, a callback function can be passed in to per
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 const beforeClose = (action) => new Promise((resolve) => {
    setTimeout(() => {

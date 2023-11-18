@@ -1,0 +1,24 @@
+@mixin reset-uni-input($fontSize: .2rem, $fontColor: #9299c6, $placeholderColor: rgba(255, 255, 255, 0.15)) {
+
+  ::v-deep .uni-input-input,
+  ::v-deep .uni-textarea-textarea {
+    color: $fontColor;
+  }
+
+  ::v-deep .uni-input-placeholder {
+    color: $placeholderColor;
+  }
+
+  /* #ifndef H5 */
+  ::v-deep input,
+  ::v-deep textarea,
+  /* #endif */
+
+  ::v-deep .uni-input-placeholder,
+  ::v-deep .uni-input-input,
+  ::v-deep .uni-textarea-textarea,
+  ::v-deep .uni-textarea-placeholder {
+    text-align: left;
+    font-size: $fontSize;
+  }
+}

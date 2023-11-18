@@ -1,7 +1,7 @@
 <template>
   <div class="press-circle-index">
     <div class="press-circle">
-      <!-- #ifdef H5 -->
+      <!-- #ifdef H5 || APP-PLUS -->
       <canvas
         :id="canvasId"
         class="press-circle__canvas"
@@ -11,7 +11,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifndef H5 -->
+      <!-- #ifndef H5 || APP-PLUS -->
       <!-- 小程序中动态canvasId不生效，相同问题: https://ask.dcloud.net.cn/question/67534 -->
       <canvas
         :id="canvasId"
@@ -122,7 +122,7 @@ export default {
     },
     canvasId() {
       let result =  `press-circle-${this.id}`;
-      // #ifndef H5
+      // #ifndef H5 || APP-PLUS
       result = 'press-circle';
       // #endif
 

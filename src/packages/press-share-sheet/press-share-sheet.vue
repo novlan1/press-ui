@@ -38,7 +38,7 @@
     <template v-if="computed.isMulti(options)">
       <options
         v-for="(item,index) in (options)"
-        :key="item.index"
+        :key="index"
         :show-border="index !== 0"
         :options="item"
         @select="onSelect"

@@ -15,6 +15,16 @@
     }
   }
 
+  &--hor {
+    .press-picker-view--item {
+      font-size: 16px;
+
+      &__active {
+        font-size: 20px;
+      }
+    }
+  }
+
   &--mask {
     position: absolute;
     left: 0;

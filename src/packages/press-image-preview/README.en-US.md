@@ -21,7 +21,7 @@ First embed the component in the page, and then call `imagePreview` functionally
 ```
 
 ```ts
-import ImagePreview from 'src/packages/press-image-preview/press-image-preview.vue';
+import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
 import { imagePreview } from 'press-ui/press-image-preview/index';
 
 

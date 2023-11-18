@@ -412,6 +412,16 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'click',
+    'clickButton',
+    'checkDataDetail',
+    'clickStep',
+    'countDownChange',
+    'countDownFinish',
+    'buttonCountDownFinish',
+    'exchange',
+  ],
   data() {
     return {
       SCHEDULE_CARD_STATE_MAP,

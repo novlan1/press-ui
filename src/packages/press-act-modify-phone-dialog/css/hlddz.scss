@@ -1,0 +1,117 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-hlddz.scss';
+@import '../../common/style/act/button/_button-hlddz.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__title {
+    margin-top: .14rem;
+    margin-left: .34rem;
+    width: 1.5rem;
+    height: .32rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/title-modify-phone.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .press__close {
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+    width: .38rem;
+    height: .36rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/pop-close.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__content {
+    position: relative;
+    width: 5.6rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    .press__phone-number {
+      width: 100%;
+      height: .56rem;
+      font-size: $font-s;
+      color: #5668a1;
+      padding: 0 .16rem;
+      background: rgba(#427edc, .1);
+      border-radius: .08rem;
+
+      // &::placeholder {
+      //   color: #427edc;
+      // }
+    }
+
+    .press__code-wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: .24rem;
+    }
+
+    .press__code-number {
+      width: 3.5rem;
+      height: .56rem;
+      font-size: $font-s;
+      color: #427edc;
+      padding: 0 .16rem;
+      background: rgba(#427edc, .1);
+      border-radius: .08rem;
+
+      // &::placeholder {
+      //   color: #427edc;
+      // }
+    }
+
+    .press__code-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: .56rem;
+      font-size: $font-s;
+      color: #414a83;
+      padding: 0 .34rem;
+      margin-left: .2rem;
+      white-space: nowrap;
+      border-radius: .08rem;
+      border: .02rem solid #999fbf;
+    }
+
+    .press__code-btn--disabled {
+      color: gray;
+    }
+  }
+
+  .press__dialog-update {
+    .press__button-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .7rem;
+
+      .press__btn--cancel {
+        margin-right: .9rem;
+      }
+    }
+  }
+
+  .tip-comp-dialog--input-info-tips {
+    color: #5668a1;
+    font-size: $font-s;
+    text-align: left;
+  }
+
+  &.press__cover {
+    .tip-comp-dialog--btn-cont {
+      margin: auto;
+      padding: 0;
+    }
+
+    .press__dialog-update input {
+      margin: auto;
+      text-align: left;
+    }
+  }
+}

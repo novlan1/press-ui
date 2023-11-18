@@ -30,7 +30,8 @@
               <span
                 class="press-protocol__text "
                 :class="{
-                  'press-protocol__text--light': infoItem.light
+                  'press-protocol__text--light': infoItem.light,
+                  'press-protocol__text--underline': infoItem.underline,
                 }"
                 @click.stop="clickProtocol(infoItem)"
               >{{ infoItem.text }}</span>
@@ -127,6 +128,10 @@ export default {
     &--light {
       color: $color-primary;
       display: inline;
+    }
+
+    &--underline {
+      text-decoration: underline;
     }
   }
 }

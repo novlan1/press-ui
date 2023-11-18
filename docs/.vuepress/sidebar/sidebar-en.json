@@ -25,6 +25,10 @@
           "path": "/en/components/press/press-icon-plus.md"
         },
         {
+          "title": "Image",
+          "path": "/en/components/press/press-image.md"
+        },
+        {
           "title": "Popup",
           "path": "/en/components/press/press-popup.md"
         },
@@ -53,6 +57,10 @@
         {
           "title": "Checkbox",
           "path": "/en/components/press/press-checkbox.md"
+        },
+        {
+          "title": "CodeInput",
+          "path": "/en/components/press/press-code-input.md"
         },
         {
           "title": "DatetimePicker",
@@ -93,6 +101,10 @@
         {
           "title": "Switch",
           "path": "/en/components/press/press-switch.md"
+        },
+        {
+          "title": "Uploader",
+          "path": "/en/components/press/press-uploader.md"
         }
       ]
     },
@@ -137,6 +149,10 @@
           "path": "/en/components/press/press-popover.md"
         },
         {
+          "title": "PopoverPlus",
+          "path": "/en/components/press/press-popover-plus.md"
+        },
+        {
           "title": "ShareSheet",
           "path": "/en/components/press/press-share-sheet.md"
         },
@@ -150,6 +166,18 @@
       "title": "Display Components",
       "collapsable": false,
       "children": [
+        {
+          "title": "Avatar",
+          "path": "/en/components/press/press-avatar.md"
+        },
+        {
+          "title": "Badge",
+          "path": "/en/components/press/press-badge.md"
+        },
+        {
+          "title": "Barcode",
+          "path": "/en/components/press/press-barcode.md"
+        },
         {
           "title": "Card",
           "path": "/en/components/press/press-card.md"
@@ -165,6 +193,10 @@
         {
           "title": "CountDown",
           "path": "/en/components/press/press-count-down.md"
+        },
+        {
+          "title": "CountTo",
+          "path": "/en/components/press/press-count-to.md"
         },
         {
           "title": "Divider",
@@ -197,6 +229,10 @@
         {
           "title": "Progress",
           "path": "/en/components/press/press-progress.md"
+        },
+        {
+          "title": "QRCode",
+          "path": "/en/components/press/press-q-r-code.md"
         },
         {
           "title": "Skeleton",
@@ -259,28 +295,16 @@
           "path": "/en/components/press/press-area.md"
         },
         {
+          "title": "AreaIndexBar",
+          "path": "/en/components/press/press-area-index-bar.md"
+        },
+        {
           "title": "AwardPopup",
           "path": "/en/components/press/press-award-popup.md"
         },
         {
-          "title": "HorMatchHeader",
-          "path": "/en/components/press/press-hor-match-header.md"
-        },
-        {
-          "title": "HorMatchIndex",
-          "path": "/en/components/press/press-hor-match-index.md"
-        },
-        {
-          "title": "MessageBoard",
-          "path": "/en/components/press/press-message-board.md"
-        },
-        {
-          "title": "MessageDetail",
-          "path": "/en/components/press/press-message-detail.md"
-        },
-        {
-          "title": "MessageList",
-          "path": "/en/components/press/press-message-list.md"
+          "title": "LivePlayer",
+          "path": "/en/components/press/press-live-player.md"
         },
         {
           "title": "PopupCell",
@@ -291,16 +315,8 @@
           "path": "/en/components/press/press-protocol.md"
         },
         {
-          "title": "ScheduleCard",
-          "path": "/en/components/press/press-schedule-card.md"
-        },
-        {
-          "title": "ScheduleList",
-          "path": "/en/components/press/press-schedule-list.md"
-        },
-        {
-          "title": "ScheduleTree",
-          "path": "/en/components/press/press-schedule-tree.md"
+          "title": "QRCodePopup",
+          "path": "/en/components/press/press-q-r-code-popup.md"
         },
         {
           "title": "TeamSearch",
@@ -313,9 +329,157 @@
       ]
     },
     {
+      "title": "Message Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "MessageBoard",
+          "path": "/en/components/press/press-message-board.md"
+        },
+        {
+          "title": "MessageDetail",
+          "path": "/en/components/press/press-message-detail.md"
+        },
+        {
+          "title": "MessageList",
+          "path": "/en/components/press/press-message-list.md"
+        }
+      ]
+    },
+    {
+      "title": "Schedule Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "ScheduleCard",
+          "path": "/en/components/press/press-schedule-card.md"
+        },
+        {
+          "title": "ScheduleList",
+          "path": "/en/components/press/press-schedule-list.md"
+        },
+        {
+          "title": "ScheduleMatchMode",
+          "path": "/en/components/press/press-schedule-match-mode.md"
+        },
+        {
+          "title": "ScheduleTab",
+          "path": "/en/components/press/press-schedule-tab.md"
+        },
+        {
+          "title": "ScheduleTree",
+          "path": "/en/components/press/press-schedule-tree.md"
+        }
+      ]
+    },
+    {
+      "title": "Hor Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "HorMatchHeader",
+          "path": "/en/components/press/press-hor-match-header.md"
+        },
+        {
+          "title": "HorMatchIndex",
+          "path": "/en/components/press/press-hor-match-index.md"
+        },
+        {
+          "title": "HorOwnerIndex",
+          "path": "/en/components/press/press-hor-owner-index.md"
+        },
+        {
+          "title": "HorScheduleManage",
+          "path": "/en/components/press/press-hor-schedule-manage.md"
+        },
+        {
+          "title": "HorSwiperLight",
+          "path": "/en/components/press/press-hor-swiper-light.md"
+        }
+      ]
+    },
+    {
+      "title": "Login Components",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "AuthLogin",
+          "path": "/en/components/press/press-auth-login.md"
+        },
+        {
+          "title": "BindLogin",
+          "path": "/en/components/press/press-bind-login.md"
+        },
+        {
+          "title": "MobileLogin",
+          "path": "/en/components/press/press-mobile-login.md"
+        },
+        {
+          "title": "PCLogin",
+          "path": "/en/components/press/press-p-c-login.md"
+        },
+        {
+          "title": "PCScanLogin",
+          "path": "/en/components/press/press-p-c-scan-login.md"
+        }
+      ]
+    },
+    {
       "title": "Act Components",
       "collapsable": false,
       "children": [
+        {
+          "title": "ActAwardDialog",
+          "path": "/en/components/press/press-act-award-dialog.md"
+        },
+        {
+          "title": "ActBarcodeDialog",
+          "path": "/en/components/press/press-act-barcode-dialog.md"
+        },
+        {
+          "title": "ActBenefitItem",
+          "path": "/en/components/press/press-act-benefit-item.md"
+        },
+        {
+          "title": "ActExplainDialog",
+          "path": "/en/components/press/press-act-explain-dialog.md"
+        },
+        {
+          "title": "ActGetAwardDialog",
+          "path": "/en/components/press/press-act-get-award-dialog.md"
+        },
+        {
+          "title": "ActInputAddressDialog",
+          "path": "/en/components/press/press-act-input-address-dialog.md"
+        },
+        {
+          "title": "ActInputPhoneDialog",
+          "path": "/en/components/press/press-act-input-phone-dialog.md"
+        },
+        {
+          "title": "ActLaunchDialog",
+          "path": "/en/components/press/press-act-launch-dialog.md"
+        },
+        {
+          "title": "ActModifyPhoneDialog",
+          "path": "/en/components/press/press-act-modify-phone-dialog.md"
+        },
+        {
+          "title": "ActNotAchievedDialog",
+          "path": "/en/components/press/press-act-not-achieved-dialog.md"
+        },
+        {
+          "title": "ActPromptDialog",
+          "path": "/en/components/press/press-act-prompt-dialog.md"
+        },
+        {
+          "title": "ActQRCodeDialog",
+          "path": "/en/components/press/press-act-q-r-code-dialog.md"
+        },
+        {
+          "title": "ActStoreItem",
+          "path": "/en/components/press/press-act-store-item.md"
+        },
         {
           "title": "ActTipDialog",
           "path": "/en/components/press/press-act-tip-dialog.md"

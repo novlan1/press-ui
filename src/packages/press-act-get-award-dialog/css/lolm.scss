@@ -1,0 +1,229 @@
+@import "../../common/style/act/mixin/mixin.scss";
+@import "../../common/style/act/layout/_layout-pvp.scss";
+@import "../../common/style/act/button/_button-lolm.scss";
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__full-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(13, 19, 32, 0.8);
+    // background-image: linear-gradient(
+    //   180deg,
+    //   rgba(25, 48, 91, 0) 73%,
+    //   #19305b 100%
+    // );
+  }
+
+  .press__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 4.72rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/lgame/ingame-lolm/ingame-dialog--bigger.png) no-repeat center center;
+    background-size: auto 100%;
+    padding-top: 0;
+    margin: 0;
+    z-index: 100;
+  }
+
+  .press__content--get::before {
+    position: relative;
+    content: "恭喜获得";
+    width: 5.7rem;
+    height: auto;
+    font-family: "GAMEFONT";
+    color: #f0e6d2;
+    font-size: 0.36rem;
+  }
+
+  .press__content--received::before {
+    position: relative;
+    color: #f0e6d2;
+    display: block;
+    width: 8.48rem;
+    content: "您已获得";
+    margin: 0 auto;
+    height: auto;
+    font-size: 0.36rem;
+    margin: auto;
+    background-size: auto 100%;
+    box-sizing: border-box;
+    padding: 0.24rem 0 0.12rem;
+    border-bottom: 1px solid #5d4f33;
+  }
+
+  .press__center {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    height: 2.9rem;
+  }
+
+  .press__center-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 1.28rem;
+      height: 1.28rem;
+      margin-right: 0.1rem;
+      border-radius: 0.08rem;
+      margin-bottom: 0.12rem;
+    }
+  }
+
+  .press__base-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #425365;
+  }
+
+  .press__goods-name,
+  .press__goods-desc {
+    line-height: 0.28rem;
+    color: #cdbe91;
+    text-align: center;
+    font-size: 0.2rem;
+  }
+
+  .tip-comp-dialog--fullpage-waiting-issue {
+    height: 0.35rem;
+    line-height: 0.35rem;
+    position: relative;
+    margin: 0.1rem 0 0.2rem;
+    text-align: center;
+    color: #4b5b6c;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: #4b5b6c;
+      top: 0.16rem;
+    }
+
+    &::before {
+      left: 0.4rem;
+    }
+
+    &:after {
+      right: 0.4rem;
+    }
+  }
+
+  .press__tips {
+    color: #cdbe91;
+    text-align: center;
+    margin-top: 0.3rem;
+    font-size: 0.2rem;
+
+    span {
+      color: #f5b74c;
+    }
+  }
+
+  .press__button-wrap {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    width: 6.4rem;
+    height: 0.72rem;
+    margin: auto;
+    position: relative;
+  }
+
+  .press__sub-wrap {
+    position: absolute;
+    bottom: -0.74rem;
+    right: 0.26rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.22rem;
+    color: #d6eaff;
+  }
+
+  .press__sub {
+    display: block;
+    -webkit-appearance: none;
+    width: 0.4rem;
+    height: 0.4rem;
+    outline: none;
+    border: none;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/check.png) no-repeat center center;
+    background-size: contain;
+    margin-right: 0.08rem;
+    cursor: pointer;
+    visibility: visible;
+  }
+
+  .press__sub:checked {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/checked.png) no-repeat center center;
+    background-size: contain;
+    visibility: visible;
+  }
+
+  .press__sub:checked+label {
+    color: #d6eaff;
+  }
+
+  .press__stay-out-new {
+    display: none;
+  }
+
+  .press__btn--large-primary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #f0e6d2;
+    width: 2.1rem;
+    height: 0.6rem;
+    line-height: normal;
+    font-size: 0.24rem;
+    border: 0.02rem solid;
+    border-image: linear-gradient(to bottom, #eee2cc, #c39d53) 1 10;
+    background-image: none;
+    background: linear-gradient(to bottom, #151b21 0%, #3a382d 100%);
+    font-family: inherit;
+  }
+
+  .press__btn--medium-secondary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #cdbe91;
+    width: 2.1rem;
+    height: 0.6rem;
+    line-height: normal;
+    font-size: 0.24rem;
+    border: 0.02rem solid;
+    border-image: linear-gradient(to bottom, #bea369, #5f5033) 1 10;
+    background-image: linear-gradient(180deg, #14181c 0%, #212325 100%);
+    font-family: inherit;
+  }
+}

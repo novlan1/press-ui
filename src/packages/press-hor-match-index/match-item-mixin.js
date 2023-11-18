@@ -38,6 +38,9 @@ export function getMatchItemMixin() {
       },
     },
     methods: {
+      clickPrize() {
+        this.$emit('clickPrize');
+      },
       onShowPopover(item, index) {
         this.$emit('onShowPopover', item, index);
       },

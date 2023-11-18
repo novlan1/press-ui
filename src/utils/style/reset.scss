@@ -37,3 +37,7 @@
 .v-console-custom-tab #vConsolePluginInput {
   user-select: auto !important;
 }
+
+uni-page[data-page="pages/index/help"] uni-page-head {
+  display: none;
+}

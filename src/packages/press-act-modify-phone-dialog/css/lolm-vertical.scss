@@ -1,0 +1,122 @@
+.press-act:not(.press-act--hidden-tip) {
+
+  // 竖版h5
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .75);
+    z-index: 999;
+  }
+
+  .press__dialog-update {
+    width: 5.6rem;
+    padding: .32rem 0 0;
+    border-radius: .08rem;
+    background: #fff;
+  }
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    font-size: .36rem;
+    color: #303030;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: .24rem;
+  }
+
+  .press__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      height: .72rem;
+      font-size: .28rem;
+      color: #333;
+      padding: 0 .12rem;
+      border-radius: .08rem;
+
+      &::placeholder {
+        color: #a0acb5;
+      }
+    }
+
+    .press__phone-number {
+      width: 4.64rem;
+      background: #f6f6f6;
+      margin: 0 auto;
+      margin-bottom: .16rem;
+    }
+
+    .press__code-wrap {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      margin-bottom: .3rem;
+    }
+
+    .press__code-number {
+      width: 2.84rem;
+      border: .02rem solid #f6f6f6;
+    }
+
+    .press__code-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: .72rem;
+      font-size: .24rem;
+      color: #303030;
+      padding: 0 .22rem;
+      margin-left: .12rem;
+      white-space: nowrap;
+      border-radius: .08rem;
+      border: .02rem solid #f3eee9;
+    }
+
+    .press__code-btn--disabled {
+      color: gray;
+    }
+  }
+
+  .press__button-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-top: .02rem solid #f6f6f6;
+
+    .press__btn--cancel,
+    .press__btn--sure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      height: 1.06rem;
+      font-size: .32rem;
+    }
+
+    .press__btn--cancel {
+      color: #303030;
+      border-right: .02rem solid #f6f6f6;
+    }
+
+    .press__btn--sure {
+      color: #de990e;
+    }
+  }
+
+  .tip-comp-dialog--input-info-tips {
+    color: #333;
+    font-size: .24rem;
+    text-align: left;
+  }
+}

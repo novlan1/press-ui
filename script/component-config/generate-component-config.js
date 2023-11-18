@@ -3,6 +3,12 @@ const path = require('path');
 const { mkDirsSync } = require('t-comm');
 
 const componentConfig = require('./component-config.json');
+const { isActComponent } = require('../utils/utils');
+const {
+  hyphenate,
+  getComponentPath,
+  writeSrcIndexJs,
+} = require('./generate-entry');
 
 
 // const DEMO_PAGES_JSON_LAST_INDEX = 0;
@@ -12,17 +18,16 @@ const PATH_MAP = {
   DEMO_INDEX_CONFIG: 'src/pages/index/page-config.json',
   DEMO_PAGES_JSON: './src/pages.json',
   DEMO_I18N: 'src/utils/i18n/title-i18n.json',
+  BUILD_CONFIG: 'script/build/components.json',
+  SRC_INDEX: 'src/index.js',
 };
 
 
-function hyphenate(str) {
-  const hyphenateRE = /\B([A-Z])/g;
-  return str.replace(hyphenateRE, '-$1').toLowerCase();
-}
-
 function getCompUrl(name) {
   const newName = hyphenate(name);
-  return `/press/${newName}/${newName}`;
+  const isAct = isActComponent(newName);
+  const prefix = isAct ? 'act' : 'press';
+  return `/${prefix}/${newName}/${newName}`;
 }
 
 function saveJsonToFile(filePath, data) {
@@ -80,25 +85,20 @@ function getSidebarConfig(isEn) {
   return { sidebar: list };
 }
 
-function getPagesJsonConfig() {
-  const list = Object.keys(componentConfig)
+function getPagesJsonPages(config, keys) {
+  const list = keys
     .map((key) => {
-      const value = componentConfig[key];
+      const value = config[key];
       const { list } = value;
       const newList = list.map((item) => {
         const hyphenatedName = hyphenate(item.name);
 
         return {
-          root: `pages/press/${hyphenatedName}`,
-          pages: [
-            {
-              path: hyphenatedName,
-              style: {
-                ...(item.style || {}),
-                navigationBarTitleText: '',
-              },
-            },
-          ],
+          path: `${hyphenatedName}/${hyphenatedName}`,
+          style: {
+            ...(item.style || {}),
+            navigationBarTitleText: '',
+          },
         };
       });
 
@@ -107,6 +107,24 @@ function getPagesJsonConfig() {
     .flat();
 
   return list;
+}
+
+function getPagesJsonConfig() {
+  const keys = Object.keys(componentConfig);
+  const pressSubPackages = getPagesJsonPages(componentConfig, keys.filter(item => item !== 'act'));
+  const actSubPackages = getPagesJsonPages(componentConfig, ['act']);
+
+  const pressPages = [
+    {
+      root: 'pages/press',
+      pages: pressSubPackages,
+    },
+    {
+      root: 'pages/act',
+      pages: actSubPackages,
+    },
+  ];
+  return pressPages;
 }
 
 function getTitleI18nConfig() {
@@ -150,12 +168,23 @@ function writeDocSidebar() {
 function writeDemoPagesJson() {
   const pagesJsonConfig = getPagesJsonConfig();
   const configPath = path.resolve(process.cwd(), PATH_MAP.DEMO_PAGES_JSON);
-  const json = require(configPath);
-  json.subPackages = [
-    // json.subPackages[DEMO_PAGES_JSON_LAST_INDEX],
-    ...pagesJsonConfig,
-  ];
-  saveJsonToFile(configPath, json);
+  const data = fs.readFileSync(configPath, {
+    encoding: 'utf-8',
+  });
+  const newData = data.replace(/"subPackages":\s*\[[\s\S]+(?="preloadRule)/m, `"subPackages": ${JSON.stringify(pagesJsonConfig, null, 2)},
+  `);
+
+
+  // const json = require(configPath);
+  // json.subPackages = [
+  //   // json.subPackages[DEMO_PAGES_JSON_LAST_INDEX],
+  //   ...pagesJsonConfig,
+  // ];
+  // saveJsonToFile(configPath, newData);
+
+  fs.writeFileSync(configPath, newData, {
+    encoding: 'utf-8',
+  });
 }
 
 function writeDemoTitleI18n() {
@@ -164,11 +193,37 @@ function writeDemoTitleI18n() {
   saveJsonToFile(PATH_MAP.DEMO_I18N, title);
 }
 
+
+function getBuildConfigJson() {
+  const res = {};
+  Object.keys(componentConfig)
+    .forEach((key) => {
+      const value = componentConfig[key];
+      const { list } = value;
+
+
+      list.forEach((item) => {
+        const hyphenatedName = hyphenate(item.name);
+        const compPath = getComponentPath(hyphenatedName);
+        res[hyphenatedName] = `./src/packages/press-${hyphenatedName}/press-${compPath}.vue`;
+      });
+    });
+  return res;
+}
+
+
+function writeBuildConfig() {
+  const json = getBuildConfigJson();
+  saveJsonToFile(PATH_MAP.BUILD_CONFIG, json);
+}
+
 function main() {
   writeDocSidebar();
   writeDemoIndexConfig();
   writeDemoPagesJson();
   writeDemoTitleI18n();
+  writeBuildConfig();
+  writeSrcIndexJs(componentConfig, PATH_MAP.SRC_INDEX);
 }
 
 main();

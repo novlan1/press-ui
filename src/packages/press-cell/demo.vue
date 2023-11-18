@@ -174,18 +174,21 @@
         <press-cell
           :title="t('matchMode')"
           :value="t('knockout')"
+          type="e-sport"
           is-link
           :border="false"
         />
         <press-cell
           :title="t('wayToWin')"
           :value="t('defaultBo1')"
+          type="e-sport"
           is-link
           :border="false"
         />
         <press-cell
           :title="t('allowModifyAvatar')"
           :border="false"
+          type="e-sport"
         >
           <template #right-icon>
             <press-switch
@@ -199,6 +202,7 @@
         <press-cell
           :title="t('getPhoneNumber')"
           :label="t('getPhoneNumberDesc')"
+          type="e-sport"
           center
           :border="false"
         >
@@ -299,29 +303,5 @@ export default {
     margin-right: 4px;
     vertical-align: middle;
   }
-}
-</style>
-<style lang="scss">
-.demo--e-sport-wrap {
-  --cell-background-color: rgba(255, 255, 255, 0.85);
-  --cell-active-color: #f5f6fa;
-  --cell-height: 1.12rem;
-  --cell-line-height: unset;
-
-  --cell-vertical-padding: 0.32rem;
-  --cell-horizontal-padding: 0.32rem;
-
-  --cell-text-color: #09134e;
-  --cell-font-size: 0.32rem;
-
-  --cell-value-font-size: 0.28rem;
-  --cell-value-color: #9299c6;
-
-  --cell-label-font-size: 0.2rem;
-  --cell-label-color: #9299c6;
-  --cell-label-margin-top: 0;
-
-  --cell-icon-size: 0.24rem;
-  --cell-right-icon-color: #9299c6;
 }
 </style>

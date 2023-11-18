@@ -11,6 +11,12 @@
         <div class="press-index__header__right">
           <!-- 红点--press-red-dot -->
           <div
+            v-if="showFeedback"
+            :class="['press-index__header__feedback',
+                     showFeedBackDot ? 'press-red-dot':'']"
+            @click="clickFeedback"
+          />
+          <div
             :class="['press-index__header__message',
                      showMessageDot ? 'press-red-dot':'']"
             @click="clickMessage"
@@ -26,22 +32,11 @@
 
     <div class="press-index__content">
       <!-- 侧边栏 -->
-      <div class="press-index__sidebar">
-        <div
-          v-for="(item, index) in sidebarList"
-          :key="index"
-          :class="['press-index__sidebar__item',
-                   sidebarIndex == index ? `sidebar-on`:'']"
-          @click="sidebarSwitch(item, index)"
-        >
-          {{ item.label }}
-        </div>
-
-        <div
-          class="press-index__sidebar__active"
-          :style="{ transform: `translateY(${sidebarIndex * .88}rem)` }"
-        />
-      </div>
+      <Sidebar
+        :list="sidebarList"
+        :current="sidebarIndex"
+        @change="sidebarSwitch"
+      />
 
       <!-- 推荐 -->
       <div
@@ -89,6 +84,7 @@
                 @closePopover="closePopover"
                 @clickMatchButton="clickMatchButton(item, index, 'recommend')"
                 @clickMatch="clickMatch(item, index, 'recommend')"
+                @clickPrize="clickPrize(item, index, 'recommend')"
               />
             </template>
           </div>
@@ -143,6 +139,7 @@
                   @closePopover="closePopover"
                   @clickMatchButton="clickMatchButton(onlineItem, onlineIndex, 'online')"
                   @clickMatch="clickMatch(onlineItem, onlineIndex, 'online')"
+                  @clickPrize="clickPrize(onlineItem, onlineIndex, 'online')"
                 />
               </div>
             </PressList>
@@ -169,10 +166,10 @@
           v-if="curMatchList.length"
           v-model="curLoading"
           :finished="curFinished"
-          :finished-text="finishedText"
           :immediate-check="immediateCheck"
-          :loading-style="loadingStyle"
+          :finished-text="finishedText"
           :finished-style="finishedStyle"
+          :loading-style="loadingStyle"
           :loading-size="loadingSize"
           @load="onLoadMore"
         >
@@ -191,6 +188,7 @@
               @closePopover="closePopover"
               @clickMatchButton="clickMatchButton(item, index, 'offline')"
               @clickMatch="clickMatch(item, index, 'offline')"
+              @clickPrize="clickPrize(item, index, 'offline')"
             />
           </div>
         </PressList>
@@ -209,6 +207,7 @@ import Banner from './banner';
 import Brand from './brand';
 import MatchItem from './match-item';
 import OfflineMatchItem from './offline-match-item';
+import Sidebar from './side-bar.vue';
 import MatchHeader from '../press-hor-match-header/press-hor-match-header.vue';
 import PressTab from '../press-tab/press-tab';
 import PressTabs from '../press-tabs/press-tabs';
@@ -221,6 +220,7 @@ export default {
     Banner,
     Brand,
     MatchItem,
+    Sidebar,
     OfflineMatchItem,
     MatchHeader,
     PressTab,
@@ -231,6 +231,14 @@ export default {
     title: {
       type: String,
       default: '商户赛',
+    },
+    showFeedback: {
+      type: Boolean,
+      default: false,
+    },
+    showFeedBackDot: {
+      type: Boolean,
+      default: false,
     },
     showMessageDot: {
       type: Boolean,
@@ -262,6 +270,10 @@ export default {
       type: String,
       default: '没有更多了',
     },
+    finishedStyle: {
+      type: String,
+      default: '',
+    },
     loadingStyle: {
       type: String,
       default: '',
@@ -269,10 +281,6 @@ export default {
     loadingSize: {
       type: String,
       default: '20px',
-    },
-    finishedStyle: {
-      type: String,
-      default: '',
     },
   },
   options: {
@@ -288,6 +296,7 @@ export default {
     'clickBrand',
     'clickMatchButton',
     'clickMatch',
+    'clickPrize',
     'loadMore',
   ],
   data() {
@@ -351,6 +360,10 @@ export default {
       this.closePopover();
       this.$emit('clickMessage');
     },
+    clickFeedback() {
+      this.closePopover();
+      this.$emit('clickFeedback');
+    },
     clickPerson() {
       this.closePopover();
       this.$emit('clickPerson');
@@ -382,6 +395,9 @@ export default {
     clickMatch(item, index) {
       this.closePopover();
       this.$emit('clickMatch', item, index);
+    },
+    clickPrize(item, index) {
+      this.$emit('clickPrize', item, index);
     },
     onLoadMore() {
       this.$emit('loadMore', this.sidebarIndex, this.curTabIndex);

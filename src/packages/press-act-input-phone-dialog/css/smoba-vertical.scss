@@ -1,0 +1,251 @@
+@import '../../common/style/act/mixin/mixin.scss';
+
+@import '../../common/style/act/layout/_layout-smoba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+  }
+
+  .press__dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5.8rem;
+    background-color: $color-white;
+    border-radius: .16rem;
+    z-index: 99;
+  }
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    font-size: .32rem;
+    font-weight: 600;
+    color: $color-black;
+    text-align: center;
+    margin-top: .48rem;
+  }
+
+  // 2填写手机号[
+
+  .press__content {
+    margin: auto;
+    padding: 0 .48rem;
+  }
+
+  .press__box input {
+    display: block;
+    width: 4.84rem;
+    height: 0.72rem;
+    color: $color-black;
+    font-size: .28rem;
+    line-height: 0.72rem;
+    padding: 0 .24rem;
+    margin-bottom: .2rem;
+    border-radius: 4px;
+    border: none;
+    background-color: $color-bg;
+
+    &::placeholder {
+      color: $color-gray;
+    }
+  }
+
+  .press__message {
+    display: none
+  }
+
+  .press__button-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: .48rem;
+    padding-bottom: .48rem;
+  }
+
+  .press__dialog-phone {
+    .press__button-wrap {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: .72rem;
+        text-align: center;
+        font-size: $font-l;
+        color: $color-white;
+        padding: 0 .16rem;
+        border-radius: .08rem;
+        background-image: $color-primary-btn;
+
+        &:active {
+          background: $color-blue;
+        }
+
+        p {
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      .press__btn--cancel {
+        color: $color-black;
+        background: $color-secondary-btn;
+        margin-right: 0.48rem;
+
+        &:active {
+          background: $color-gray-3;
+        }
+      }
+
+      .press__btn--sure {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          top: .08rem;
+          right: 0;
+          content: '';
+          width: 1.52rem;
+          height: .3rem;
+          background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/btn-bg-r.png) no-repeat center;
+          background-size: contain;
+          pointer-events: none;
+        }
+
+        &::before {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 1.26rem;
+          height: .3rem;
+          background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/btn-bg-r.png) no-repeat center;
+          background-size: contain;
+          pointer-events: none;
+        }
+      }
+
+      .press__btn--disabled {
+        opacity: .4;
+      }
+    }
+  }
+
+  // 2填写手机号]
+
+  /* 协议 */
+  .press__treaty-wrap {
+    display: flex;
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+    color: $color-black;
+    margin-top: 0.1rem;
+  }
+
+  .press__treaty-check {
+    width: .32rem !important;
+    height: .32rem !important;
+    flex-shrink: 0;
+    margin-right: .08rem;
+    background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/new/user/select-new.png) no-repeat center;
+    background-size: contain;
+
+    ::v-deep .van-checkbox__icon {
+      width: .32rem !important;
+      height: .32rem !important;
+      border: none !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    ::v-deep .van-icon {
+      width: .32rem !important;
+      height: .32rem !important;
+      border: none !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    ::v-deep .van-checkbox__icon--checked {
+      width: .32rem !important;
+      height: .32rem !important;
+      border: none !important;
+      background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/new/user/selected-new.png) no-repeat center;
+      background-size: contain;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon {
+      width: .32rem !important;
+      height: .32rem !important;
+      border: none !important;
+      background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/new/user/selected-new.png) no-repeat center !important;
+      background-size: contain !important;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon-success:before {
+      display: none !important;
+    }
+  }
+
+  .press__treaty-check:checked,
+  .press__act-checkbox--checked {
+    background: transparent url(https://image-1251917893.file.myqcloud.com/Esports/new/user/selected-new.png) no-repeat center !important;
+    background-size: contain !important;
+  }
+
+  .press__treaty-terms {
+    color: $color-gray;
+    font-size: .24rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .press__treaty-desc {
+    color: $color-blue-1;
+  }
+
+  .press__box {
+    margin-top: .32rem;
+
+    .press__code-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: .2rem;
+
+      .press__code-number {
+        flex: 1;
+        min-width: 1rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .press__code-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: .72rem;
+      font-size: .24rem;
+      color: $color-primary;
+      padding: 0 .22rem;
+      margin-left: .12rem;
+      white-space: nowrap;
+      border-radius: .08rem;
+      border: .02rem solid $color-gray-3;
+    }
+  }
+}

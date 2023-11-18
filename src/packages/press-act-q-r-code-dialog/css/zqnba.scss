@@ -1,0 +1,76 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-majiang.scss';
+@import '../../common/style/act/button/_button-majiang.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    width: 8.14rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: $color-blue-6;
+    margin: auto;
+    text-align: center;
+    min-height: 5rem;
+    padding: 0 .34rem .34rem;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200423mahjong/pop-bg1.png) no-repeat top center;
+    background-size: contain;
+  }
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    height: .7rem;
+    line-height: .7rem;
+    margin: .05rem auto 0;
+    text-indent: -10000px;
+  }
+
+  .press__title--qr {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200423mahjong/pop-title2.png) no-repeat center center;
+    background-size: auto 100%;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    min-height: 4rem;
+    padding-top: $font-xs;
+    text-align: center;
+  }
+
+  .press__desc {
+    margin-top: $font-xs;
+    font-size: $font-s;
+    color: $cooor-blue-12;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .press__desc span {
+    color: #cf4204;
+  }
+
+  .press__image {
+    width: 2rem;
+    height: 2rem;
+    border-radius: .08rem;
+    padding: .08rem;
+    background: #031226;
+  }
+
+  // 组件内不存在此类名
+  // .tip-comp-dialog--scan-code-text {
+  //   color: $color-blue-6;
+  // }
+}

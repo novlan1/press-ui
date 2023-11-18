@@ -1,5 +1,12 @@
 <template>
   <div class="demo-wrap">
+    <!-- #ifdef APP-PLUS -->
+    <press-notice-bar
+      mode="closeable"
+      text="Sticky 组件暂不支持 App"
+    />
+    <!-- #endif -->
+
     <demo-block
       :title="t('basicUsage')"
       section-style="margin: 0;"
@@ -57,8 +64,9 @@
 <script>
 import PressSticky from 'src/packages/press-sticky/press-sticky.vue';
 import PressButton from 'src/packages/press-button/press-button.vue';
+import PressNoticeBar from 'src/packages/press-notice-bar/press-notice-bar.vue';
 import { requestAnimationFrame } from 'src/packages/common/utils/system';
-
+import { getHideHeaderMixin } from 'src/utils/mixin/hide-header';
 
 export default {
   i18n: {
@@ -78,7 +86,9 @@ export default {
   components: {
     PressSticky,
     PressButton,
+    PressNoticeBar,
   },
+  mixins: [getHideHeaderMixin],
   data() {
     const that = this;
     return {
@@ -86,7 +96,7 @@ export default {
         const res = that.$refs?.container;
         return res;
       },
-      showHeader: true,
+      // showHeader: true,
     };
   },
   mounted() {
@@ -95,19 +105,19 @@ export default {
     });
   },
   methods: {
-    onToggleShowHeader() {
-      this.showHeader = !this.showHeader;
-      let style = 'none';
-      if (this.showHeader) {
-        style = 'block';
-      }
+    // onToggleShowHeader() {
+    //   this.showHeader = !this.showHeader;
+    //   let style = 'none';
+    //   if (this.showHeader) {
+    //     style = 'block';
+    //   }
 
-      const header = document.querySelector('uni-page-head')
-      || document.querySelector('.uni-page-head-wrap');
-      if (header) {
-        header.style.display = style;
-      }
-    },
+    //   const header = document.querySelector('uni-page-head')
+    //   || document.querySelector('.uni-page-head-wrap');
+    //   if (header) {
+    //     header.style.display = style;
+    //   }
+    // },
   },
 };
 </script>

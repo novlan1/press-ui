@@ -1,4 +1,6 @@
 import { isNotInUni } from '../utils/utils';
+import { setData } from '../component-handler/set-data';
+
 const DEFAULT_SHOW_FUNCTION = 'showDialog';
 
 function getContext() {
@@ -23,6 +25,8 @@ function traverseChildren(context, key, target) {
 }
 
 export function selectComponent(context, selector) {
+  if (!selector) return;
+
   let attribute = selector;
   if (attribute.match(/^[^\w]/)) {
     attribute = attribute.slice(1);
@@ -35,7 +39,9 @@ export function selectComponent(context, selector) {
   }
   // #endif
 
-  if (!context.$children && context.$refs?.[attribute]) {
+  if (
+    // !context.$children &&
+    context.$refs?.[attribute]) {
     return context.$refs[attribute];
   }
 
@@ -50,23 +56,28 @@ export function showFunctionalComponent(options: {
 }) {
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
-    // context.selectComponent(options.selector);
-    const dialog = selectComponent(context, options.selector);
+    let { dialog } = options;
+    if (!dialog) {
+      dialog = selectComponent(context, options.selector);
+    }
 
-    const newOptions = {
+    const newOptions: Record<string, any> = {
       callback: (action: string,  args: unknown) => {
         action === 'confirm' ? resolve(args) : reject(args);
       },
       ...options,
     };
+    delete newOptions.dialog;
     delete newOptions.context;
     const showFunction = options.showFunction || DEFAULT_SHOW_FUNCTION;
 
-    // #ifdef H5
-    dialog[showFunction](newOptions);
-    // #endif
-    // #ifndef H5
-    dialog.$vm[showFunction](newOptions);
-    // #endif
+    setData(dialog, newOptions, showFunction);
+
+    // // #ifdef H5
+    // dialog[showFunction](newOptions);
+    // // #endif
+    // // #ifndef H5
+    // dialog.$vm[showFunction](newOptions);
+    // // #endif
   });
 }

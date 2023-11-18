@@ -30,7 +30,7 @@
     <div v-if="actions && actions.length">
       <button
         v-for="(item,index) in (actions)"
-        :key="item.index"
+        :key="index"
         :open-type="getOpenType(item)"
         :style="item.color ? 'color: ' + item.color : ''"
         :class="true ? getActionClass(item) : ''"

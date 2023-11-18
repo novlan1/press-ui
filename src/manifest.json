@@ -48,7 +48,9 @@
 		"lazyCodeLoading": "requiredComponents",
 		"appid": "wxd593abb04ef95f3e",
 		"setting": {
-			"urlCheck": true
+			"urlCheck": true,
+			"ignoreUploadUnusedFiles": true,
+			"minified": true
 		}
 	},
 	"mp-qq": {

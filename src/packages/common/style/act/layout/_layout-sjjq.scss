@@ -1,0 +1,52 @@
+html {
+  background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame_plugins/sjjq/bg.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+/* #ifdef H5 */
+
+@font-face {
+  font-family: 'GAMEFONT';
+  src: url('https://image-1251917893.file.myqcloud.com/tipcomm/pvp_gamefont/UI3.0/GAMEFONT.eot') format('eot'),
+    url('https://image-1251917893.file.myqcloud.com/tipcomm/pvp_gamefont/UI3.0/GAMEFONT.TTF') format('TTF'),
+    url('https://image-1251917893.file.myqcloud.com/tipcomm/pvp_gamefont/UI3.0/GAMEFONT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* #endif */
+
+//  整理样式[[
+$color-pop-cover: rgba(0, 0, 0, .6);
+$color-ccc: #ccc;
+$color-9b: #9b9b9b;
+$color-999: #999;
+
+$color-main: #84b0eb;
+$color-white: #fff;
+$color-white-2: #dcdfe5;
+$color-white-3: #f4f4f6;
+$color-white-4: #d6eaff;
+$color-blue-1: #b0d3fd;
+$color-blue-2: #adceeb;
+$color-blue-3: #82a0cc;
+$color-blue-4: #4f6f95;
+$color-blue-5: #579bf8;
+$color-blue-6: #35669e;
+$color-blue-7: #395d7e;
+$color-blue-8: #3d74b0;
+$color-blue-9: #17314c;
+$color-blue-10: #112237;
+
+$color-yellow: #ffb52b;
+$color-storelist-bg: rgba(23, 49, 76, .4);
+//  整理样式]]
+
+/*pvp-font-size   9px  10px  11px 12px 13px 14px 15px*/
+$font-xl: .3rem;
+$font-l: .28rem;
+$font-m: .26rem;
+$font-s: .24rem;
+$font-xs: .22rem;
+$font-xxs: .2rem;
+$font-xxxs: .18rem;

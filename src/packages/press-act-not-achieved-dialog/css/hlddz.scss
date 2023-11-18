@@ -1,0 +1,98 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-hlddz.scss';
+@import '../../common/style/act/button/_button-hlddz.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__title--fail {
+    margin-top: .14rem;
+    margin-left: .34rem;
+    width: 2.4rem;
+    height: .34rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/title-notachieved.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .press__close {
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+    width: .38rem;
+    height: .36rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/pop-close.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    min-height: 3rem;
+    padding-top: .2rem;
+    text-align: center;
+  }
+
+  .press__name {
+    color: $color-white;
+    font-size: $font-m;
+    margin: .5rem auto 0rem;
+    display: none;
+  }
+
+  .press__user {
+    text-align: center;
+    margin-top: .5rem;
+    padding: 0 .4rem;
+    color: #3b437f;
+    font-size: .28rem;
+    font-weight: 600;
+  }
+
+  .press__progress-wrap {
+    width: 5.2rem;
+    padding: .32rem .3rem .32rem;
+    margin: .08rem auto 0;
+    background: rgba(#80a3e4, .25);
+    text-align: center;
+    border-radius: .04rem;
+  }
+
+  .press__progress {
+    font-size: .28rem;
+    color: #5e6a8e;
+  }
+
+  .press__progress span {
+    color: #cf4204;
+  }
+
+  .press__progress-bar {
+    margin: .18rem auto .08rem;
+    width: 50%;
+    height: .08rem;
+    background-color: rgba(#fff, .5);
+    overflow: hidden;
+  }
+
+  .press__progress-bar i {
+    display: block;
+    height: 100%;
+    width: 10%;
+    background: #ff862d;
+  }
+
+  // 组件内不存在此类名
+  // .tip-comp-dialog--notachieved-btn {
+  //   position: relative;
+  //   padding: 0 0;
+  //   display: flex;
+  //   -webkit-box-align: center;
+  //   -ms-flex-align: center;
+  //   align-items: center;
+  //   -webkit-box-pack: center;
+  //   -ms-flex-pack: center;
+  //   justify-content: space-evenly;
+  //   margin: 0rem auto .2rem;
+  //   z-index: 2;
+  // }
+}

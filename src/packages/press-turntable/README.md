@@ -33,8 +33,6 @@ export default {
 ```
 
 ```ts
-import PressTurnTable from 'src/packages/press-turntable/press-turntable.vue';
-
 export default {
   data() {
     return {

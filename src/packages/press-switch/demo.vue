@@ -11,6 +11,7 @@
       <PressSwitch
         :checked="checkedMap.basic"
         disabled
+        @click="onClick"
         @change="value=>onChange(value, 'basic')"
       />
     </demo-block>
@@ -150,6 +151,9 @@ export default {
         return;
       }
       this.checkedMap[type] = value;
+    },
+    onClick() {
+      this.onGTip('[click]');
     },
   },
 };

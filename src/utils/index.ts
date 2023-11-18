@@ -1,7 +1,11 @@
+import { isNotInUni } from '../packages/common/utils/utils';
+
+
 export function isInIFrame() {
   const res = window.frames.length != parent.frames.length;
   return res;
 }
+
 export const storageUtil = {
   get(key: string) {
     let res;
@@ -24,3 +28,66 @@ export const storageUtil = {
     return res;
   },
 };
+
+
+export function fetchData(url) {
+  return new Promise((resolve, reject) => {
+    // #ifdef H5
+    if (isNotInUni()) {
+      fetch(url).then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        return {};
+      })
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+
+      return;
+    }
+    // #endif
+    uni.request({
+      url,
+      data: {},
+      method: 'GET',
+      sslVerify: true,
+      success: ({ data }) => {
+        resolve(data);
+      },
+      fail: (error) => {
+        reject(error);
+      },
+    });
+  });
+}
+
+
+export function routerBack() {
+  // #ifdef H5
+  if (isNotInUni()) {
+    // @ts-ignore
+    this.$router.back();
+    return;
+  }
+  // #endif
+  uni.navigateBack();
+}
+
+
+export function routerPush(url, notUniUrl) {
+  // #ifdef H5
+  if (isNotInUni()) {
+    // @ts-ignore
+    this.$router.push(notUniUrl || url);
+    return;
+  }
+  // #endif
+  uni.navigateTo({
+    url,
+  });
+}
+

@@ -1,0 +1,77 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__store {
+
+    .press__icon--primary,
+    .press__icon--secondary {
+      display: none;
+    }
+
+    .press__distance--secondary {
+      display: none;
+    }
+  }
+
+  .press__distance--primary::before {
+    display: inline-block;
+    /* #ifdef H5 */
+    content: url('./pin.svg');
+    /* #endif */
+    width: .16rem;
+    height: .2rem;
+  }
+
+  &.press__store {
+    position: relative;
+    overflow: hidden;
+    width: 9rem;
+    height: 1.16rem;
+    background: rgba(9, 23, 33, .5);
+    padding: .24rem .2rem;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .press__img {
+    display: none;
+  }
+
+  .press__address {
+    color: #4d616c;
+    line-height: .28rem;
+    font-size: .2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    word-break: break-all;
+  }
+
+  .press__name {
+    font-size: .24rem;
+    line-height: .34rem;
+    color: #f0e6d2;
+    margin: 0 0 .1rem 0;
+  }
+
+  .press__icon-state {
+    width: .72rem;
+    height: .28rem;
+    background: #000;
+    text-align: center;
+    line-height: .28rem;
+    position: absolute;
+    color: #79ad65;
+    transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    font-size: .16rem;
+    top: 0;
+    left: -.22rem;
+
+    &.press__icon--instore {}
+
+    &.press__icon--eventbeen {}
+
+    &.press__icon--lately {}
+  }
+}

@@ -121,6 +121,9 @@
         </div>
       </div>
     </scroll-view>
+
+
+    <!-- <Tabbar /> -->
   </div>
 </template>
 <script>
@@ -129,13 +132,12 @@ import PressSection from '../components/press-section/press-section.vue';
 import PressCell from '../../packages/press-cell/press-cell.vue';
 
 import { LAUNCH_APP_STORAGE } from '../launch-app/config';
-import { isInIFrame } from '../../utils/index';
+import { isInIFrame, routerPush } from '../../utils/index';
 import { toggleVConsole } from '../../utils/v-console/v-console';
 import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 import { isNotInUni } from '../../packages/common/utils/utils';
 
-// const pagesConfig = require('./page-config.json');
 import pagesConfig from './page-config.json';
 
 const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
@@ -145,6 +147,13 @@ const DEMO_LINK_MAP = {
   'vue3-uni': 'https://novlan1.github.io/press-ui-v3/',
 };
 
+const NOT_SHOW_IN_MP_COMPONENTS = [
+  'hor-match-header',
+  'hor-match-index',
+  'hor-owner-index',
+  'hor-schedule-manage',
+  'p-c-scan-login',
+];
 
 function getShowDemoMap() {
   let showOtherDemoMap = {
@@ -183,7 +192,11 @@ function getAllPages() {
   // #ifndef H5
   pages = pages.map(item => ({
     ...item,
-    list: item.list.filter(item => !item.url.startsWith('/press/hor-match-')),
+    list: item.list.filter((item) => {
+      const list = item.url.split('/');
+      const name = list[list.length - 1];
+      return NOT_SHOW_IN_MP_COMPONENTS.indexOf(name) <= -1;
+    }),
   }));
   // #endif
   return pages;
@@ -230,6 +243,7 @@ export default {
   components: {
     PressSection,
     PressCell,
+    // Tabbar,
   },
   mixins: [
     morsePwdMixin([1, 1, 1, 1, 1], function () {
@@ -303,15 +317,11 @@ export default {
       toggleVConsole();
     },
     onJumpToLaunchApp() {
-      // #ifdef H5
-      if (isNotInUni()) {
-        this.$router.push('/pages/press/launch-app/launch-app');
-        return;
-      }
-      // #endif
-      uni.navigateTo({
-        url: '/pages/launch-app/launch-app',
-      });
+      routerPush.call(
+        this,
+        '/pages/launch-app/launch-app',
+        '/pages/press/launch-app/launch-app',
+      );
     },
     onShowLaunchApp() {
       this.showLaunchApp = true;
@@ -319,16 +329,15 @@ export default {
       this.onGTip('展示成功');
     },
     onJumpToSharePage() {
-      // #ifdef H5
-      if (isNotInUni()) {
-        this.$router.push('/pages/press/share/share');
-        return;
-      }
-      // #endif
-
-      uni.navigateTo({
-        url: '/pages/share/share',
-      });
+      routerPush.call(
+        this,
+        '/pages/share/share',
+        '/pages/press/share/share',
+      );
+      // const url = 'https://baidu.com';
+      // uni.navigateTo({
+      //   url: `/pages/webview/webview?url=${url}`,
+      // });
     },
     onJumpToOtherDemo(type) {
       const link = DEMO_LINK_MAP[type];

@@ -91,6 +91,7 @@ import PressCountDown from 'src/packages/press-count-down/press-count-down.vue';
 import PressGrid from 'src/packages/press-grid/press-grid.vue';
 import PressGridItem from 'src/packages/press-grid-item/press-grid-item.vue';
 import { selectComponent } from 'src/packages/common/functional-component';
+import { setData } from 'src/packages/common/component-handler/set-data';
 
 
 export default {
@@ -137,32 +138,35 @@ export default {
     },
     start() {
       const countDown = selectComponent(this, '#controlCountDown');
-      // #ifdef H5
-      countDown.start();
-      // #endif
-      // #ifndef H5
-      countDown.$vm.start();
-      // #endif
+      setData(countDown, null, 'start');
+      // // #ifdef H5
+      // countDown.start();
+      // // #endif
+      // // #ifndef H5
+      // countDown.$vm.start();
+      // // #endif
     },
 
     pause() {
       const countDown = selectComponent(this, '#controlCountDown');
-      // #ifdef H5
-      countDown.pause();
-      // #endif
-      // #ifndef H5
-      countDown.$vm.pause();
-      // #endif
+      setData(countDown, null, 'pause');
+      // // #ifdef H5
+      // countDown.pause();
+      // // #endif
+      // // #ifndef H5
+      // countDown.$vm.pause();
+      // // #endif
     },
 
     reset() {
       const countDown = selectComponent(this, '#controlCountDown');
-      // #ifdef H5
-      countDown.reset();
-      // #endif
-      // #ifndef H5
-      countDown.$vm.reset();
-      // #endif
+      setData(countDown, null, 'reset');
+      // // #ifdef H5
+      // countDown.reset();
+      // // #endif
+      // // #ifndef H5
+      // countDown.$vm.reset();
+      // // #endif
     },
     finished() {
 

@@ -4,6 +4,10 @@
     :show-back-arrow="arrowIcon"
     :title="title"
     :button="t('picker.confirm')"
+    mode="white"
+    :horizontal="horizontal"
+    :width-number="54"
+    popup-class="press-popup-picker"
     :class="tip ? 'press-picker__tip' : ''"
     @cancel="onCancel"
     @confirm="onConfirm"
@@ -19,6 +23,7 @@
       :data="data"
       :has-tip="!!tip"
       :current="current"
+      :horizontal="horizontal"
       :virtual-list-threshold="virtualListThreshold"
       @currentIndexChanged="onCurrentIndexChanged"
     />
@@ -68,9 +73,14 @@ export default {
       type: Number,
       default: 50,
     },
+    horizontal: {
+      type: Boolean,
+      default: false,
+    },
   },
   options: {
     virtualHost: true,
+    styleIsolation: 'shared',
   },
   emits: ['onSelect', 'onCancel'],
   data() {

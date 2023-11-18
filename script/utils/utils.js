@@ -23,9 +23,12 @@ function getPureCompName(name) {
   return name.replace(new RegExp(`^${COMP_PREFIX}`), '');
 }
 
+const isActComponent = component => component.startsWith('press-act-') || component.startsWith('act-');
+
 
 module.exports = {
   hyphenate,
   getFullCompName,
   getPureCompName,
+  isActComponent,
 };

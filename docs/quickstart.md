@@ -16,19 +16,23 @@ npm i press-ui
 
 2. 在页面中正常引入并使用
 
-比如 `message-detail` 组件：
+比如 `button` 组件：
 
-```js
+```vue
 <template>
-  <PressMessageDetail />
+  <PressButton>
+    按钮
+  </PressButton>
 </template>
-import PressMessageDetail from 'press-ui/press-message-detail/press-message-detail.vue'
+<script>
+import PressButton from 'press-ui/press-button/press-button.vue'
 
 export default {
   components: {
-    PressMessageDetail, 
+    PressButton, 
   }
 }
+</script>
 ```
 
 3. 配置
@@ -44,9 +48,7 @@ module.exports = {
 
 ## 普通Vue项目
 
-`Press UI` 支持普通Vue项目，可扫描下面二维码体验。
-
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/8/own_mike_32e3f24500cdc9b1c0.png" width="250">
+`Press UI` 支持普通Vue项目。
 
 `Press UI` 组件比普通的组件多了以下内容：
 
@@ -125,9 +127,7 @@ export default {
 
 ## Vue3 项目
 
-`Press UI` 支持 Vue3 项目，可扫描下面二维码体验。
-
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/9/own_mike_ccae70ddaae15082b8.png" width="250">
+`Press UI` 支持 Vue3 项目。
 
 对于 Vue3 的`uni-app`项目，在函数式调用组件时，需传入`ref`，而非`id`。
 

@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      show: false,
+      show: true,
       title: this.t('dialog.title'),
       message: 'Some Tips',
       showCancelButton: true,

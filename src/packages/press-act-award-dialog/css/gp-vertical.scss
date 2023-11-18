@@ -1,0 +1,22 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__award {
+    font-size: 0;
+
+    img {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 130px;
+      content: '暂无此游戏样式';
+      width: 256px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+      color: #f76060;
+    }
+  }
+}

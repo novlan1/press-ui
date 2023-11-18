@@ -3,7 +3,8 @@
 import { dialogProps } from './computed';
 import { addFunctionForDialog } from '../press-dialog-plus/handler-helper';
 import { selectComponent } from '../common/functional-component';
-import { extendComponent } from '../common/vue3/adapter';
+import { setData } from '../common/component-handler/set-data';
+import { initH5Instance } from '../common/component-handler/h5-handler';
 
 // #ifdef H5
 import VueDialog from './press-dialog.vue';
@@ -24,21 +25,6 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function initInstance() {
-  const dialogId = 'tip-dialog-showCommTipsDialog';
-  const oldDialog = document.getElementById(dialogId);
-  if (oldDialog?.parentNode) {
-    oldDialog.parentNode.removeChild(oldDialog);
-  }
-  const dialogRootDiv = document.createElement('div');
-  dialogRootDiv.id = dialogId;
-
-  document.body.appendChild(dialogRootDiv);
-
-  const instance = extendComponent(dialogRootDiv, VueDialog);
-
-  return instance;
-}
 
 const Dialog = (options) => {
   options = Object.assign(Object.assign({}, currentOptions), options);
@@ -51,7 +37,7 @@ const Dialog = (options) => {
 
   // #ifdef H5
   if (!dialog) {
-    dialog = initInstance();
+    dialog = initH5Instance(VueDialog, 'tip-dialog-showCommTipsDialog');
   }
   // #endif
 
@@ -60,16 +46,19 @@ const Dialog = (options) => {
       ...options,
     };
 
-    let promise;
+    // let promise;
+
+    setData(dialog, newOptions);
+    const promise = setData(dialog, newOptions, 'showDialog');
 
     // #ifdef H5
-    dialog.setData(newOptions);
-    promise = dialog.showDialog(options);
+    // dialog.setData(newOptions);
+    // promise = dialog.showDialog(options);
     // #endif
 
     // #ifndef H5
-    dialog.$vm.setData(newOptions);
-    promise = dialog.$vm.showDialog(options);
+    // dialog.$vm.setData(newOptions);
+    // promise = dialog.$vm.showDialog(options);
     // #endif
 
     return promise.then(val => Promise.resolve(val))

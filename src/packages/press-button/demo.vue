@@ -28,11 +28,13 @@
         <press-button
           type="warning"
           :custom-style="customStyle"
+          @click="onLaunchMp"
         >
           {{ t('warning') }}
         </press-button>
         <press-button
           type="danger"
+          @click="onLaunchMp(1)"
         >
           {{ t('danger') }}
         </press-button>
@@ -305,6 +307,7 @@
 <script>
 import PressButton from 'src/packages/press-button/press-button.vue';
 import { isNotInUni } from 'src/packages/common/utils/utils';
+import { launchMiniProgram } from 't-comm/lib/msdk/mini-program';
 
 
 export default {
@@ -382,6 +385,15 @@ export default {
 
   },
   methods: {
+    onLaunchMp(isQQ) {
+      console.log('[launchMiniProgram]');
+      // #ifdef H5
+      launchMiniProgram({
+        appId: 'wx99c1c10a389e7433',
+        isWxMp: !isQQ,
+      });
+      // #endif
+    },
     onClick(event) {
       console.log(event);
     },

@@ -1,0 +1,132 @@
+@import '../var/press-prefix.scss';
+
+// 模块整理
+@mixin text-overflow($width: 100%, $display: block) {
+  width: $width;
+  display: $display;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 圆角
+@mixin border-radius($b_radius) {
+  border-radius: $b_radius;
+}
+
+// 背景图片设置
+@mixin bg-img($bg_img, $bg_position, $bg_size) {
+  background: url($bg_img) no-repeat $bg_position;
+  background-size: $bg_size;
+}
+
+// 图片尺寸设置
+@mixin img-size($width, $height, $display: inline-block, $padding: 0, $border: 0px, $img-bg: none) {
+  width: $width;
+  height: $height;
+  display: $display;
+  padding: $padding;
+  border: $border;
+  background: $img-bg;
+}
+
+//  设置背景图片
+@mixin bg_img($bg_img, $bg_position, $bg_size: contain) {
+  background: url($bg_img) no-repeat $bg_position;
+  background-size: $bg_size;
+}
+
+//小icon以背景图片方式设置;
+@mixin icon_img($width, $height, $icon_bg, $bg_position, $bg_size: contain) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: url($icon_bg) no-repeat $bg_position;
+  background-size: $bg_size;
+  vertical-align: middle;
+}
+
+%text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//  文字超长处理单行
+@mixin text-overflow-line1($width: 100%, $display: block) {
+  width: $width;
+  display: $display;
+
+  @extend %text-overflow;
+}
+
+//  文字超长处理多行
+@mixin text-overflow-line2($width: 100%, $display: block) {
+  width: $width;
+  display: $display;
+  white-space: pre-line;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+// inline-vertical
+@mixin inline-vertical-content($location: middle) {
+  display: inline-block;
+  vertical-align: $location;
+}
+
+// css自定义箭头样式 >
+@mixin icon_direction($right, $top, $width_height, $color, $rotate) {
+  content: "";
+  position: absolute;
+  right: $right;
+  top: $top;
+  width: $width_height;
+  height: $width_height;
+  border-top: 1px solid $color;
+  border-right: 1px solid $color;
+  transform: rotate($rotate);
+}
+
+// 弹框定义-- 底部遮罩层
+// 命名修改，之前: tip-comp-dialog_cover
+@mixin press-dialog-cover($dialog_bg-color, $z-index) {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $dialog_bg-color;
+  background-image: none;
+  z-index: $z-index;
+}
+
+// flex
+@mixin flex-content-row($align: center, $justify: space-between) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-content-column($align: center, $justify: space-between) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+
+// mixin 中不应该包含具体样式
+.press-act:not(.press-act--hidden-tip) {
+
+  .#{$TIP_PREFIX}cover,
+  &.#{$TIP_PREFIX}cover,
+  .#{$PRESS_PREFIX}cover,
+  &.#{$PRESS_PREFIX}cover {
+    @include press-dialog-cover(rgba(0, 0, 0, 0.6), 100);
+  }
+}

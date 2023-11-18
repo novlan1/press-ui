@@ -47,7 +47,7 @@
 <script>
 import ScheduleTree from 'src/packages/press-schedule-tree/press-schedule-tree.vue';
 import { genScheList } from 'src/packages/press-schedule-tree/demo-helper/mock-data';
-import { formatScheTreeData } from 'src/packages/press-schedule-tree/utils';
+import { formatScheTreeData } from 'src/packages/press-schedule-tree/helper/sche-list';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
@@ -58,6 +58,7 @@ import {
   STATUS_SCHE_MAP,
   GROUP_TYPE_MAP,
 } from 'src/packages/press-schedule-tree/demo-helper/helper';
+// import { MOCK_DATA } from 'src/packages/press-schedule-tree/demo-helper/mock-data-pure'
 
 
 export default {
@@ -82,6 +83,7 @@ export default {
       FUNCTIONAL_ID_MAP,
       myTeamId: 'team-id-515-b-a',
       scheList: [],
+      // mockScheList: MOCK_DATA,
       isPreview: 0,
       scheLocal: {
         ...local,
@@ -148,7 +150,9 @@ export default {
         ...this.scheLocal,
         showError,
       };
+
       this.generateData();
+      this.$refs?.pressScheduleTreeRef?.scrollToOneSche('511-a');
     },
     changeGroupType(groupType) {
       this.scheLocal = {
@@ -175,7 +179,9 @@ export default {
         teamNumber,
         groupType,
       });
+      // #ifdef H5
       console.log('[Origin ScheList]', JSON.stringify(newScheList));
+      // #endif
 
       this.scheList = formatScheTreeData({
         scheList: newScheList,
@@ -183,7 +189,9 @@ export default {
         isAdmin,
       });
 
+      // #ifdef H5
       console.log('[Parsed ScheList]', JSON.stringify(this.scheList));
+      // #endif
     },
     clickRoundTab(args) {
       console.log('[clickRoundTab]', ...args);

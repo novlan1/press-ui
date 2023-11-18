@@ -1,0 +1,159 @@
+.press-act:not(.press-act--hidden-tip) {
+
+  /* 	dialogStyle:*8,提示弹窗组件 -merchant-ui\src\tip-comp-dialog-prompt- start */
+  /* 公共 -- start */
+  /* 0.遮罩层  -- start*/
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 101;
+  }
+
+  /* 0.遮罩层  -- end*/
+  /* 1.背景 */
+  .press__dialog--prompt {
+    width: 6.88rem;
+    min-height: 3.2rem;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+  }
+
+  /* 2.关闭按钮 */
+  .press__close {
+    width: 0.28rem;
+    height: 0.28rem;
+    background: url('https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/goods-page/dialog-closed-btn.png') no-repeat center;
+    background-size: 100% auto;
+    position: absolute;
+    top: 0.28rem;
+    right: 0.28rem;
+    z-index: 10;
+  }
+
+  /* 3.标题 */
+  .press__title--prompt {
+    margin: 0.3rem 0 0 0.28rem;
+    position: relative;
+    font-size: 0.26rem;
+    color: #303030;
+    background-image: -webkit-linear-gradient(top, #303030, #303030);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 0.45rem;
+    padding-left: 0.06rem;
+    text-align: left;
+  }
+
+  /* 4.按钮----------- start */
+
+  /* 按钮 */
+  .press__content .press__button-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem auto 0.24rem;
+  }
+
+  .press__btn--medium-secondary,
+  .press__btn--cancel {
+    display: block;
+    color: #f4997b;
+    border-radius: 2px;
+    background: #fff1d5;
+    text-align: center;
+    width: 2.64rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    margin: 0 0.16rem;
+  }
+
+  .press__btn--sure,
+  .press__btn--medium-primary,
+  .tip-comp-btn-large-primary {
+    display: block;
+    border-radius: 2px;
+    background: linear-gradient(45deg, #f99b73 0%, #9473ff 100%);
+    color: #fff;
+    width: 2.64rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    margin: 0 0.16rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.28rem;
+  }
+
+  /* 4.按钮----------- end */
+  /* 公共 -- end */
+
+  .press__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 3rem;
+    justify-content: center;
+  }
+
+  /* 消息提示 */
+  .press__notice {
+    font-size: 0.22rem;
+    color: #303030;
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem;
+    width: 5.08rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .press__text {
+    margin-top: 0.15rem;
+    font-size: 0.24rem;
+    color: #303030;
+    text-align: center;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+    word-break: break-all;
+  }
+
+  /* 商户图 */
+  .press__pic-wrap {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.26rem;
+    font-weight: 600;
+  }
+
+  .press__pic-wrap img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 auto;
+  }
+
+  .press__pic-wrap p {
+    margin-top: 0.05rem;
+    text-align: center;
+  }
+
+  /* 空数据 */
+  .press__empty {
+    width: 2.2rem;
+    height: 1.2rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/goods-page/list-empty-icon.png) center center no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+  }
+
+  /* 	dialogStyle:*8,提示弹窗组件 -merchant-ui\src\tip-comp-dialog-prompt- end */
+}

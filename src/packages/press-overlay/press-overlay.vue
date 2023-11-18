@@ -1,5 +1,6 @@
 <template>
   <div class="press-overlay-index">
+    <!-- @touchmove.stop.prevent="noop" -->
     <press-transition
       v-if="lockScroll"
       :show="show"
@@ -8,7 +9,6 @@
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
       @click="onClick"
-      @touchmove.stop.prevent="noop"
     >
       <slot />
     </press-transition>

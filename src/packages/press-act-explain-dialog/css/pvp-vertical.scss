@@ -1,0 +1,85 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+
+  .press__dialog {
+    width: 6.3rem;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+
+  // 标题-[[
+  .press__title--explain {
+    padding: 0.5rem 0 0.22rem;
+    color: #4a4a4a;
+    font-size: 0.28rem;
+    line-height: 0.34rem;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  // 标题--]]
+
+  // 内容 [[
+  .press__detail {
+    padding: 0 0.48rem;
+    margin-bottom: 0.78rem;
+    max-height: 6rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #9b9b9b;
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+  }
+
+  // 内容 ]]
+
+  // 按钮 [[
+  .press__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0.34rem auto 0.4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: -0.2rem;
+    z-index: 2;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  .press__close {
+    width: 0.6rem;
+    height: 0.6rem;
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    margin-left: -0.3rem;
+    background: url(https://game.gtimg.cn/images/user/m/webigame2019/dialog-close.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  // 按钮 ]]
+}

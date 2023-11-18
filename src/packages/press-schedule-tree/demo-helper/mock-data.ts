@@ -39,13 +39,24 @@ function genTeamInfo(teamIndex = '') {
 }
 
 function genScheGroupInfo(info: any = {}, teamIndex = '') {
+  let nodeItem = {
+    ...(info?.nodeItem || {}),
+    utime: 1686100386,
+  };
+  if (info.abnormalErr) {
+    nodeItem = {
+      ...nodeItem,
+      sch_score: {
+        ...(nodeItem.sch_score || {}),
+        err_flag: 9999,
+      },
+    };
+  }
+
   return {
-    // abnormalErr: true,
-    nodeItem: {
-      ...(info?.nodeItem || {}),
-      utime: 1686100386,
-    },
+    nodeItem,
     ...info,
+    schid: teamIndex,
     teamList: [
       genTeamInfo(`${teamIndex}-a`),
       genTeamInfo(`${teamIndex}-b`),

@@ -1,5 +1,6 @@
 ---
 url : pages/press/hor-match-index/hor-match-index
+type: horizontal
 ---
 
 ## HorMatchIndex 
@@ -56,7 +57,7 @@ export default {
 ### Events
 
 | Event Name | Description | Callback Parameters |
-| ---------- | ----------- | ------------------- |-------------------------------------------------- ----------- |
+| ---------- | ----------- | ------------------- |  |----------- |
 | back | Click the back icon in the upper left corner | - |
 | clickMessage | Click the message icon in the upper right corner | - |
 | clickPerson | Click on the personal center in the upper right corner | - |

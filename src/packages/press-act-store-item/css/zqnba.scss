@@ -1,0 +1,143 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-nba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  // 组件内不存在此类名
+  // .tip-comp-storelist-box {
+  //   width: 100%;
+  // }
+
+  &.press__store {
+    .press__icon--primary {
+      display: none;
+    }
+
+    .press__distance--secondary {
+      display: none;
+    }
+  }
+
+  &.press__store {
+    position: relative;
+    display: flex;
+    padding: .46rem .4rem;
+    margin-bottom: 1px;
+    background: $color-black-4;
+  }
+
+  .press__img {
+    width: .9rem;
+    height: .9rem;
+    margin-right: $font-xs;
+    background: white;
+
+    img {
+      -o-object-fit: contain;
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .press__detail {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  // 金牌特权+银牌特权icon [[
+  .press__icon--jp {
+    display: inline-block;
+    width: 1.36rem;
+    height: $font-xl;
+    margin-right: .1rem;
+    text-indent: -1000px;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+    background-position: -2.96rem -.12rem;
+    background-size: 4.42rem 4.28rem;
+    vertical-align: middle;
+  }
+
+  .press__icon--yp {
+    display: inline-block;
+    width: 1.36rem;
+    height: $font-xl;
+    margin-right: .1rem;
+    text-indent: -1000px;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+    background-position: -.1rem -2.16rem;
+    background-size: 4.42rem 4.28rem;
+    vertical-align: middle;
+  }
+
+  // 金牌特权+银牌特权icon ]]
+  .press__addr {
+    line-height: .34rem;
+    color: $color-bbb;
+  }
+
+  .press__icon--addr {
+    display: inline-block;
+    vertical-align: middle;
+    width: .22rem;
+    height: $font-s;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+    background-position: -.1rem -3.96rem;
+    background-size: 4.42rem 4.28rem;
+  }
+
+  .press__name {
+    display: inline-block;
+    font-size: $font-m;
+    font-weight: bold;
+    color: $color-white;
+    margin-right: $font-xs;
+    vertical-align: bottom;
+    max-width: 8rem;
+    height: .4rem;
+    line-height: .4rem;
+
+    @extend %text-overflow;
+  }
+
+  .press__distance {
+    font-size: .22rem;
+    color: $color-bbb;
+    margin: 0rem .1rem;
+    height: .4rem;
+    line-height: .4rem;
+  }
+
+  // 当前状态icon（离你最近+当前在店+曾经去过）[[
+  .press__icon-state {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    height: $font-xl;
+    width: 1.42rem;
+    z-index: 2;
+    text-indent: -1000rem;
+
+    &.press__icon--instore {
+      background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+      background-position: -.1rem -1rem;
+      background-size: 4.42rem 4.28rem;
+    }
+
+    &.press__icon--eventbeen {
+      background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+      background-position: -1.3rem -.12rem;
+      background-size: 4.42rem 4.28rem;
+    }
+
+    &.press__icon--lately {
+      background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/css_sprites.png) no-repeat top center;
+      background-position: -.1rem -1.6rem;
+      background-size: 4.42rem 4.28rem;
+    }
+  }
+
+  // 当前状态icon ]]
+}

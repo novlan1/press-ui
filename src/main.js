@@ -6,10 +6,21 @@ import { initMixin } from './utils/mixin/mixin';
 import { checkAndShowVConsole } from './utils/v-console/v-console';
 
 import DemoBlock from './pages/demo-block/demo-block.vue';
-import Toast from './packages/press-toast/index';
 
+import PressCell from './packages/press-cell/press-cell.vue';
+import PressPicker from './packages/press-picker/press-picker.vue';
+import PressPopupCell from './packages/press-popup-cell/press-popup-cell.vue';
+
+import Toast from './packages/press-toast/index';
+// import PressUI from 'src/lib/index';
+
+
+// Vue.use(PressUI);
 
 Vue.component('DemoBlock', DemoBlock);
+Vue.component('PressCell', PressCell);
+Vue.component('PressPicker', PressPicker);
+Vue.component('PressPopupCell', PressPopupCell);
 
 
 Vue.config.productionTip = false;

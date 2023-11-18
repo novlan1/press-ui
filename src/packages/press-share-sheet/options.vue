@@ -3,7 +3,7 @@
     <div :class="optionsClass">
       <div
         v-for="(item,index) in (options)"
-        :key="item.index"
+        :key="index"
         class="press-share-sheet__option"
         :data-index="index"
         @click="onSelect"

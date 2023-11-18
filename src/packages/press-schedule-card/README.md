@@ -8,11 +8,11 @@ url : pages/press/schedule-card/schedule-card
 ## 引入
 
 ```ts
-import Press赛程卡片 from 'press-ui/press-schedule-card/press-schedule-card';
+import PressScheduleCard from 'press-ui/press-schedule-card/press-schedule-card';
 
 export default {
   components: {
-    Press赛程卡片,
+    PressScheduleCard,
   }
 }
 ```

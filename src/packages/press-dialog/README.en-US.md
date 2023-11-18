@@ -16,7 +16,7 @@ Pop-up window component, support function call
 ```
 
 ```ts
-import PressDialogHandler from 'src/packages/press-dialog';
+import PressDialogHandler from 'press-ui/press-dialog';
 
 export default {
    methods: {

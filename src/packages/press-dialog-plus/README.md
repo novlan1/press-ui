@@ -30,7 +30,7 @@ export default {
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.alert({
   title: '标题',
@@ -55,7 +55,7 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.confirm({
   title: '标题',
@@ -78,7 +78,7 @@ Dialog.confirm({
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 Dialog.alert({
   title: '标题',
@@ -105,7 +105,7 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'src/packages/press-dialog-plus/handler';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 const beforeClose = (action) => new Promise((resolve) => {
   setTimeout(() => {

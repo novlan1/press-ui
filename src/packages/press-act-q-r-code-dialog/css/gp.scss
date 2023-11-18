@@ -1,0 +1,76 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-gp.scss';
+@import '../../common/style/act/button/_button-gp.scss';
+
+$dialog-close_bg: 'https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-close.png';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 95;
+  }
+
+  .press__dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 7.98rem;
+    height: 5.02rem;
+    line-height: 1;
+    margin: auto;
+    text-align: center;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/popup-meduim-bg.png) no-repeat center center;
+    background-size: contain;
+    z-index: 99;
+    overflow: hidden;
+  }
+
+  .press__close {
+    position: absolute;
+    right: .24rem;
+    top: .18rem;
+
+    @include icon_img(.42rem, .36rem, $dialog-close_bg, center center, contain);
+  }
+
+  .press__title {
+    position: absolute;
+    left: .56rem;
+    top: .26rem;
+    font-size: $font-m;
+    color: #2e3438;
+  }
+
+  .press__image {
+    width: 2.04rem;
+    height: 2.04rem;
+    margin: 0 auto;
+  }
+
+  .press__content {
+    width: 100%;
+    margin: auto;
+    padding-top: 1.2rem;
+    text-align: center;
+  }
+
+  .press__desc {
+    font-size: $font-xxs;
+    color: #737a80;
+    margin-top: .32rem;
+    text-align: center;
+  }
+
+  .press__button-wrap {
+    display: none;
+  }
+}

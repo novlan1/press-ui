@@ -122,48 +122,117 @@ export default {
 />
 ```
 
+### 特殊处理数据
 
-### 结合popup
-
-结合`press-popup`后，需要将`showToolbar`置为`false`，否则会出现两层工具栏。
-
-另外，点击确定可以通过`press-area`组件上的`getValues`获取当前`values`，通过`getIndexes`获取当前`index`。
+可以通过解析处理，展示一些特殊逻辑。
 
 ```html
-<PressPopup
-  :is-show="showPopup"
-  button="确定"
-  :close-icon="true"
-  title="结合Popup"
-  @confirm="onConfirmPopup"
-  @cancel="onCancelPopup"
->
-  <press-area
-    ref="pressArea"
-    :show-toolbar="false"
-    :area-list="areaList"
-    @change="onChange"
-  />
-</PressPopup>
+<press-area
+  :area-list="parseData(areaList)"
+  value="070000"
+/>
 ```
 
 ```ts
+import { parseData } from 'press-ui/press-area/helper/parse';
+
 export default {
   data() {
     return {
-      showPopup: false,
+      areaList: [],
     }
   },
   methods: {
-    onConfirmPopup() {
-      const values = this.$refs.pressArea.getValues();
-      const index = this.$refs.pressArea.getIndexes();
-      console.log('[onConfirmPopup] values index', values, index);
+    parseData,
+  }
+}
+```
 
-      this.showPopup = false;
+上面的 `parseData` 是 `Press UI` 为业务逻辑提供的，可以参考实现自己所需的。
+
+
+```ts
+export function parseData(data) {
+  const { province_list: provObj = {}, city_list: cityObj = {} } = data || {};
+
+  const res: Record<string, any> = {};
+  const SPECIAL_NUMBER_MAP = {
+    ALL: {
+      value: '07',
+      label: '全部',
     },
-    onCancelPopup() {
-      this.showPopup = false;
+    OFFLINE: {
+      value: '08',
+      label: '线下',
+    },
+    ONLINE: {
+      value: '09',
+      label: '线上',
+    },
+  };
+  const offlineNumber = SPECIAL_NUMBER_MAP.OFFLINE.value;
+
+  res.city_list = Object.keys(provObj)
+    .reduce((acc, item) => {
+      const key = offlineNumber + item.slice(0, 4);
+      acc[key] = provObj[item];
+      return acc;
+    }, {});
+
+  res.province_list = Object.keys(SPECIAL_NUMBER_MAP)
+    .reduce((acc, item) => {
+      const value = SPECIAL_NUMBER_MAP[item];
+      acc[`${value.value}0000`] = value.label;
+      return acc;
+    }, {});
+
+  res.county_list = Object.keys(cityObj).reduce((acc, item) => {
+    const key = offlineNumber + item.slice(0, 4);
+    acc[key] = cityObj[item];
+    return acc;
+  }, {});
+
+  return  res;
+}
+```
+
+
+### 结合popup
+
+要在弹出层中使用，可以引入 `press-area-popup`。
+
+`type` 为 `e-sport` 时，会使用 `press-popup-plus`，默认使用 `press-popup`。
+
+```html
+<PressAreaPopup
+  :show.sync="showPopup"
+  :area-list="areaList"
+  :value="selectArea"
+  :type="areaType"
+  @confirm="onConfirmArea"
+/>
+```
+
+
+```ts
+import PressAreaPopup from 'press-ui/press-area/press-area-popup';
+
+
+export default {
+  components: {
+    PressAreaPopup,
+  },
+  data() {
+    return {
+      showPopup: false,
+      selectArea: '',
+      areaType: '',
+    }
+  },
+  methods: {
+    onConfirmArea() {
+      console.log('[onConfirmArea] values index', values, index);
+      this.selectArea = values[values.length - 1]?.code;
     },
   }
 }
@@ -171,7 +240,7 @@ export default {
 
 ## API
 
-### Props
+### Area Props
 
 | 参数                  | 说明                                   | 类型               | 默认值  |
 | --------------------- | -------------------------------------- | ------------------ | ------- |
@@ -187,7 +256,7 @@ export default {
 | cancel-button-text    | 取消按钮文字                           | _string_           | `取消`  |
 | show-toolbar `1.10.3` | 是否显示顶部栏                         | _boolean_          | `true`  |
 
-### Events
+### Area Events
 
 | 事件    | 说明               | 回调参数                                    |
 | ------- | ------------------ | ------------------------------------------- |
@@ -195,13 +264,30 @@ export default {
 | cancel  | 点击取消按钮时     | -                                           |
 | change  | 选项改变时触发     | Picker 实例，所有列选中值，当前列对应的索引 |
 
-### 方法
+### Area 方法
 
 通过 selectComponent 可以获取到 Area 实例并调用实例方法。
 
 | 方法名 | 参数         | 返回值 | 介绍                                                |
 | ------ | ------------ | ------ | --------------------------------------------------- |
 | reset  | code: string | -      | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
+
+
+### AreaPopup Props
+
+| 参数      | 说明                     | 类型      | 默认值  |
+| --------- | ------------------------ | --------- | ------- |
+| show      | 是否显示                 | _boolean_ | `false` |
+| value     | 当前选中的省市区`code`   | _string_  | -       |
+| area-list | 省市区数据，格式见下方   | _object_  | -       |
+| type      | 类型，可选值为 `e-sport` | _string_  | -       |
+
+### AreaPopup Event
+
+| 事件    | 说明               | 回调参数        |
+| ------- | ------------------ | --------------- |
+| confirm | 点击右上方完成按钮 | values, indexes |
+
 
 ### 点击完成时返回的数据格式
 

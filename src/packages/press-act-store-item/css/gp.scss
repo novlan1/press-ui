@@ -1,0 +1,141 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-gp.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  // 组件内不存在此类名
+  // .tip-comp-storelist-box {
+  //   width: 100%;
+  // }
+
+  &.press__store {
+    .press__distance--primary {
+      display: none;
+    }
+  }
+
+  &.press__store {
+    position: relative;
+    display: flex;
+    flex: 1;
+    padding: .24rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/m-fl-bg.png) no-repeat left top;
+    background-size: 100% 100%;
+
+    &::after {
+      position: absolute;
+      left: .44rem;
+      right: .44rem;
+      bottom: .02rem;
+      content: '';
+      height: .04rem;
+      background-color: rgba(46, 52, 56, .5);
+      box-shadow: inset 0 -.4px 0 0 rgba(255, 255, 255, .5);
+      z-index: 1;
+    }
+
+    &:nth-last-of-type(1) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .press__img {
+    width: .8rem;
+    height: .8rem;
+    margin-right: .24rem;
+    background: #fff;
+    border: .01rem solid #b5ddde;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-fit: cover;
+    }
+  }
+
+  .press__detail {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 0;
+    overflow: hidden;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .press__addr {
+    color: $color-primary;
+    font-size: $font-xxxs;
+    display: flex;
+    align-items: center;
+
+    .press__address {
+      display: inline-block;
+      max-width: 80%;
+      line-height: normal;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .press__icon--addr {
+    position: relative;
+    display: inline-block;
+    width: .12rem;
+    height: .16rem;
+    margin-right: .06rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/m-fl-location.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__name {
+    display: inline-block;
+    max-width: 80%;
+    font-size: $font-xxs;
+    color: #fcfcfc;
+    line-height: normal;
+    margin-right: .12rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .press__distance {
+    font-size: $font-xxxs;
+    color: #91a4d5;
+    margin-right: .08rem;
+  }
+
+  .press__icon-state {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 1.12rem;
+    height: .36rem;
+    z-index: 2;
+    text-indent: -1000rem;
+
+    &.press__icon--instore {
+      background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/inshop.png) no-repeat center center;
+      background-size: contain;
+    }
+
+    &.press__icon--eventbeen {
+      background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/used-to.png) no-repeat center center;
+      background-size: contain;
+    }
+
+    &.press__icon--lately {
+      background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/nearby.png) no-repeat center center;
+      background-size: contain;
+    }
+  }
+}

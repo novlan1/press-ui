@@ -8,11 +8,11 @@ url : pages/press/award-popup/award-popup
 ## 引入
 
 ```ts
-import Press奖励弹出层 from 'press-ui/press-award-popup/press-award-popup';
+import PressAwardPopup from 'press-ui/press-award-popup/press-award-popup';
 
 export default {
   components: {
-    Press奖励弹出层,
+    PressAwardPopup,
   }
 }
 ```

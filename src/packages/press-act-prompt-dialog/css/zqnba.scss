@@ -1,0 +1,135 @@
+@import "../../common/style/act/mixin/mixin.scss";
+@import "../../common/style/act/layout/_layout-nba.scss";
+@import "../../common/style/act/button/_button-nba.scss";
+
+$dialog-close_bg: "https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/icon-close.png";
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__close {
+    position: absolute;
+    right: 0.16rem;
+    top: 0.1rem;
+
+    @include icon_img(0.32rem, 0.32rem, $dialog-close_bg, center center, contain);
+  }
+
+  .press__dialog {
+    width: 7.15rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: #999;
+    margin: auto;
+    text-align: center;
+    min-height: 5.2rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-bg.png) repeat bottom center;
+    background-size: 100% auto;
+  }
+
+  .press__title {
+    height: 0.52rem;
+    line-height: 0.52rem;
+    font-size: $font-m;
+    color: $color-white;
+    // text-align: left;
+    padding-left: 0.25rem;
+    font-weight: bold;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .press__dialog--prompt {
+    width: 7.15rem;
+    height: auto;
+    min-height: 4.2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .press__box {
+    margin: 1.04rem auto 0.4rem;
+    text-align: center;
+  }
+
+  .press__notice {
+    color: $color-white;
+    font-size: $font-m;
+    line-height: 0.4rem;
+    margin-bottom: 0.16rem;
+    word-wrap: break-word;
+    word-break: normal;
+  }
+
+  .press__text {
+    color: #999;
+    font-size: $font-s;
+    line-height: 0.34rem;
+  }
+
+  .tip-comp-dialog--prompt-btn {
+    display: flex;
+    margin: 0 0.6rem;
+  }
+
+  .tip-comp-dialog--prompt-btn-cancel {
+    display: block;
+    width: 2.6rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    font-size: $font-m;
+    color: $color-white;
+    border-radius: 2px;
+    background: #9b9b9b;
+    margin: 0rem 0.1rem;
+  }
+
+  .tip-comp-dialog--prompt-btn-sure {
+    display: block;
+    width: 2.6rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    font-size: $font-m;
+    color: $color-white;
+    border-radius: 2px;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200414privilege_peacegame/btn/btn-y-440.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin: 0rem 0.1rem;
+  }
+
+  .press__button-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0.34rem auto 0.2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  .press__empty {
+    display: none;
+  }
+
+  .press__pic-wrap {
+    display: none;
+  }
+}

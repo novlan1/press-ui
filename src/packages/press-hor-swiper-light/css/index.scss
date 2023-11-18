@@ -1,0 +1,162 @@
+.press-light {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--window-top, 0);
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, .85) !important;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient(to top, rgba(25, 48, 91, .85) 0%, rgba(25, 48, 91, 0) 100%);
+  }
+
+  &__main {
+    position: relative;
+    width: 10.76rem;
+    z-index: 2;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: .86rem;
+    width: .42rem;
+    height: .42rem;
+    background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor-web/match-detail/close.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin: 0 auto;
+    width: 4.96rem;
+    height: .96rem;
+    font-size: 0;
+    background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor-web/match-detail/title-highlight.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__swiper {
+    width: 100%;
+    height: 4.54rem;
+    width: 9.06rem;
+    margin: 0 auto;
+  }
+
+  &__swiper-item {
+    width: 6.9rem;
+    height: 4.54rem;
+    margin: 0 auto;
+  }
+
+  &__video-wrap {
+    width: 100%;
+    height: 3.88rem;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    height: .66rem;
+    padding: 0 .14rem;
+    background: linear-gradient(180deg, #35588B 0%, #366AA5 100%);
+  }
+
+  &__avatar {
+    width: .54rem;
+    height: .54rem;
+  }
+
+  &__avatar-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__meta-content {
+    margin-left: .14rem;
+  }
+
+  &__meta-name {
+    font-size: .22rem;
+    color: #fff;
+  }
+
+  &__meta-time {
+    font-size: .16rem;
+    color: #B3CDE8;
+  }
+
+  &__source {
+    margin-left: auto;
+    align-self: flex-end;
+    font-size: .16rem;
+    color: #84B0EB;
+    margin-bottom: .1rem;
+  }
+
+  &__pages {
+    text-align: center;
+    font-size: .16rem;
+    color: #B3CDE8;
+    line-height: .36rem;
+    padding: .08rem 0 .04rem;
+  }
+
+  &__btn-confirm {
+    margin: 0 auto 0;
+    width: 2.24rem;
+    height: .56rem;
+    line-height: .6rem;
+    color: #fff;
+    font-size: .28rem;
+    font-family: "GAMEFONT";
+    text-align: center;
+    background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor/btn-confirm-bg-xl.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  // swipe按钮样式
+  &__btn-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-70%) rotate(180deg);
+    width: .36rem;
+    height: .5rem;
+    background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor-web/match-detail/swiper-arrow.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 9;
+  }
+
+  &__btn-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-70%);
+    width: .36rem;
+    height: .5rem;
+    background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor-web/match-detail/swiper-arrow.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 9;
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../base/layout.scss";
+@import "../../base/mixin.scss";
+
+
+// .tip-match-popup-content {
+//   height: tovmin(900);
+//   overflow: auto;
+// }
+
+.press-area {
+
+  ::v-deep {
+    .press-index-bar-wrapper {
+      height: tovmin(900);
+    }
+
+    .press-index-bar__sidebar {
+      top: 62%;
+    }
+
+    .press-index-bar__index {
+      height: .32rem;
+    }
+
+    .press-index-anchor-wrapper {
+      background: $color-bg;
+    }
+
+    .press-index-anchor {
+      color: $color-gray-5;
+    }
+  }
+
+  &__top-bar {
+    margin-top: .24rem;
+  }
+
+  &__addresses {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__address--selected {
+    padding-left: .32rem;
+    font-size: $font-xm;
+    color: $color-black;
+  }
+
+  &__address--unselected {
+    padding-left: .32rem;
+    font-size: $font-xm;
+    color: $color-primary;
+  }
+
+  &__address-limit {
+    font-size: $font-l;
+    color: $color-black;
+    padding: .32rem 0 .32rem .32rem;
+  }
+
+  &__area-item {
+    padding: .32rem;
+  }
+
+  &__area-name {
+    font-size: $font-l;
+    color: $color-black;
+  }
+
+}
+
+
+
+
+// .tip-match-city-name {
+//   padding: .32rem;
+//   font-size: $font-l;
+//   color: $color-black;
+// }

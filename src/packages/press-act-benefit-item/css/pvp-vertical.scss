@@ -1,0 +1,197 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__benefit {
+    width: 4.4rem;
+    height: 1.67rem;
+    margin-bottom: .08rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2022/a20220408wwkhActivity/img/list_box.png) no-repeat;
+    background-size: 100%;
+  }
+
+  /*! 商家信息 */
+  .press__top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: .42rem;
+    padding: .06rem .08rem;
+    box-sizing: border-box;
+  }
+
+  .press__shop-icon {
+    width: .32rem;
+    height: .32rem;
+    margin-right: .08rem;
+    background-color: #fff
+  }
+
+  .press__shop-name {
+    max-width: 65%;
+    font-size: .24rem;
+    color: #fff;
+    padding-right: .14rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .press__shop-desc {
+    font-size: .2rem;
+    color: #fff;
+  }
+
+  .press__main {
+    display: flex;
+    align-items: center;
+    padding-left: .1rem;
+    padding-right: .1rem;
+    padding-top: .1rem;
+  }
+
+  .press__goods-img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: .08rem;
+    background: #fff;
+  }
+
+  .press__goods-img img {
+    display: block;
+    max-width: 1rem;
+    width: 1rem;
+    height: 1rem;
+    border: .02rem solid #fff8d5;
+  }
+
+  .press__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .press__main .press__goods-name {
+    color: #fff;
+  }
+
+  .press__main .press__goods-desc {
+    color: #fbdca1;
+  }
+
+  .press__main .press__tip {
+    color: #ffeded;
+  }
+
+  .press__goods-name {
+    max-width: 1.7rem;
+    font-size: .24rem;
+    line-height: .34rem;
+    color: #fbdca1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+
+  .press__goods-desc {
+    max-width: 1.7rem;
+    font-size: .2rem;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+
+  .press__tip-line {
+    position: relative;
+    height: .3rem;
+    margin-top: .1rem;
+  }
+
+  .press__tip-wrap {
+    display: flex;
+    align-items: center;
+    width: 1.6rem;
+    height: .3rem;
+    padding: 0 .09rem;
+    border-radius: .3rem;
+    background: rgba(68, 96, 170, .4);
+  }
+
+  .press__tip {
+    font-size: .2rem;
+    color: #a6d4ff;
+    max-width: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    line-height: .3rem;
+  }
+
+  .press__tip-wrap img {
+    width: .3rem;
+    height: .3rem;
+    margin-left: .06rem;
+    object-fit: cover;
+  }
+
+  .press__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .press__process {
+    max-width: 2.2rem;
+    font-size: .2rem;
+    line-height: .4rem;
+    color: #fff;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .press__benefit-btn--out,
+  .press__benefit-btn--use,
+  .press__benefit-btn {
+    width: 1.1rem;
+    height: .37rem;
+    margin-top: .02rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20211009anniversary/images/btn-sprites.png) no-repeat;
+    background-size: 3.47rem auto;
+  }
+
+  .press__benefit-btn {
+    width: 1.12rem !important;
+    height: .38rem !important;
+    margin: 0 auto;
+    background: url(https://image-1251917893.file.myqcloud.com/2022/a20220408wwkhActivity/img/btn-samll-receive.png) no-repeat !important;
+    background-size: 100% auto !important;
+  }
+
+
+  @media screen and (orientation: portrait) {
+    &.press__benefit {
+      width: 6.76rem;
+      height: 1.67rem;
+      margin: 0 auto .08rem;
+      background: url(https://image-1251917893.file.myqcloud.com/2022/a20220408wwkhActivity/img/slist-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .press__main {
+      padding: .1rem .2rem .1rem .1rem;
+    }
+
+    .press__goods-name,
+    .press__goods-desc {
+      max-width: 3.6rem;
+    }
+  }
+}

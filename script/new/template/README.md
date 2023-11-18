@@ -8,11 +8,11 @@ url : pages/press/COMP/COMP
 ## 引入
 
 ```ts
-import PressTITLE from 'press-ui/press-COMP/press-COMP';
+import PressSUBTITLE from 'press-ui/press-COMP/press-COMP';
 
 export default {
   components: {
-    PressTITLE,
+    PressSUBTITLE,
   }
 }
 ```

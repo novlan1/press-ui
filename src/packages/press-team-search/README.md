@@ -8,11 +8,11 @@ url : pages/press/team-search/team-search
 ## 引入
 
 ```ts
-import Press队伍搜索 from 'press-ui/press-team-search/press-team-search';
+import PressTeamSearch from 'press-ui/press-team-search/press-team-search';
 
 export default {
   components: {
-    Press队伍搜索,
+    PressTeamSearch,
   }
 }
 ```

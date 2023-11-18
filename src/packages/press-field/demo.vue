@@ -159,6 +159,35 @@
     </demo-block>
 
     <demo-block
+      :title="t('wordLimit')"
+      :header-style="headerStyle"
+      :section-style="sectionStyle"
+    >
+      <press-field
+        :value="username"
+        :label="t('username')"
+        :placeholder="t('usernamePlaceholder')"
+        :always-embed="true"
+        :border="false"
+        :show-word-limit="true"
+        :maxlength="20"
+        @change="onChange"
+      />
+      <press-field
+        :label="t('message')"
+        type="textarea"
+        :placeholder="t('placeholderAutoSize')"
+        :border="false"
+        :always-embed="true"
+        :show-word-limit="true"
+        :maxlength="100"
+        autosize
+        @change="onChange"
+        @linechange="onLineChange"
+      />
+    </demo-block>
+
+    <demo-block
       :title="t('insertButton')"
       :header-style="headerStyle"
       :section-style="sectionStyle"
@@ -226,6 +255,7 @@ export default {
 
       username: '名称',
       usernamePlaceholder: '请输入名称',
+      wordLimit: '字数限制',
     },
     'en-US': {
       label: 'Label',
@@ -258,6 +288,7 @@ export default {
       sms: 'SMS',
       sendSMS: 'Send SMS',
       insertButton: 'Insert Button',
+      wordLimit: 'Word Limit',
     },
   },
   components: {

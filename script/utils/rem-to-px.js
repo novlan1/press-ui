@@ -16,7 +16,7 @@ function replaceContent(content) {
   });
 }
 
-const filePath = 'src/packages/press-pagination/css/index.scss';
+const filePath = 'src/packages/press-live-player/css/live-player-message.scss';
 
 function main() {
   const data = fs.readFileSync(filePath, {

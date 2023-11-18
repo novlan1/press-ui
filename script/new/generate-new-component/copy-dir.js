@@ -1,13 +1,15 @@
 const fs = require('fs');
 const path = require('path');
-const { copyDir } = require('t-comm');
-const { getFullCompName, getPureCompName } = require('../../utils/utils');
+const { copyDir, execCommand } = require('t-comm');
+const { getFullCompName, getPureCompName, isActComponent } = require('../../utils/utils');
 
 const TEMPLATE_PATH = './script/new/template';
 const COMP_TARGET_PATH = './src/packages';
 const DEFAULT_COMP_NAME = 'press.vue';
 const DEFAULT_README_NAME = 'README.md';
 const DEFAULT_README_EN_NAME = 'README.en-US.md';
+const DEFAULT_DEMO_NAME = 'demo.vue';
+
 
 function copyComponentDir(config) {
   const { name, title  } = config;
@@ -28,6 +30,12 @@ function copyComponentDir(config) {
     console.log(`[NEW] ${fullName} 拷贝成功`);
   });
 
+  if (isActComponent(fullName)) {
+    execCommand('rm -rf demo.vue && mv demo-act.vue demo.vue', targetDir, 'inherit');
+  } else {
+    execCommand('rm -rf demo-act.vue', targetDir, 'inherit');
+  }
+
   const compVue = path.resolve(COMP_TARGET_PATH, fullName, DEFAULT_COMP_NAME);
   const newCompName = path.resolve(COMP_TARGET_PATH, fullName, `${fullName}.vue`);
 
@@ -46,6 +54,20 @@ function copyComponentDir(config) {
     title,
     name,
     isEn: true,
+  });
+  changeDemo({
+    fullName,
+    pureName,
+    title,
+    name,
+    newCompName,
+  });
+  changeComponent({
+    fullName,
+    pureName,
+    title,
+    name,
+    newCompName,
   });
   console.log(`[NEW] ${fullName} 文档变量替换成功`);
 }
@@ -78,6 +100,57 @@ function changeReadme({
 }
 
 
+function changeDemo({
+  fullName,
+  pureName,
+  name,
+  title,
+  newCompName,
+}) {
+  const filePath = path.resolve(COMP_TARGET_PATH, fullName, newCompName);
+  const data = fs.readFileSync(filePath, {
+    encoding: 'utf-8',
+  });
+
+  const newData = data
+    .replace(/COMP/g, pureName)
+    .replace(/SUBTITLE/g, name)
+    .replace(/TITLE/g, title);
+
+  fs.writeFileSync(filePath, newData, {
+    encoding: 'utf-8',
+  });
+
+  fs.writeFileSync(filePath, newData, {
+    encoding: 'utf-8',
+  });
+}
+
+
+function changeComponent({
+  fullName,
+  pureName,
+  name,
+  title,
+}) {
+  const filePath = path.resolve(COMP_TARGET_PATH, fullName, DEFAULT_DEMO_NAME);
+  const data = fs.readFileSync(filePath, {
+    encoding: 'utf-8',
+  });
+
+  const newData = data
+    .replace(/COMP/g, pureName)
+    .replace(/SUBTITLE/g, name)
+    .replace(/TITLE/g, title);
+
+  fs.writeFileSync(filePath, newData, {
+    encoding: 'utf-8',
+  });
+
+  fs.writeFileSync(filePath, newData, {
+    encoding: 'utf-8',
+  });
+}
 module.exports = {
   copyComponentDir,
 };

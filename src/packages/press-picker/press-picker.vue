@@ -7,6 +7,7 @@
     :arrow-icon="getPropOrData('arrowIcon')"
     :tip="getPropOrData('tip')"
     :virtual-list-threshold="getPropOrData('virtualListThreshold')"
+    :horizontal="getPropOrData('horizontal')"
     @onCancel="remove"
     @onSelect="onClickSelect"
   />
@@ -19,6 +20,9 @@ import { functionalMixin } from '../mixins/functional';
 
 export default {
   name: 'PresPicker',
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     PickerInner,
   },

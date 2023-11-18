@@ -123,6 +123,7 @@ Array<{
       //// 句子 //// 
       text: string;
       light?: boolean; // 是否高亮
+      underline?: boolean; // 是否为下划线
       link?: string; // 是否为链接
       uniqueKey: string;
     }>;
@@ -132,6 +133,6 @@ Array<{
 }>
 ```
 
-`light`表示文案高亮，`link`表示文案可跳转。
+`light`表示文案高亮，`underline`表示文案为下划线，`link`表示文案可跳转。
 
 为方便使用，`press-ui`提供了 [parseProtocol](../logic/protocol.html) 方法，可以灵活的配置数据。

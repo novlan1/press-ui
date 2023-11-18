@@ -1,12 +1,25 @@
 {
   "name": "press-ui",
-  "version": "1.1.35",
+  "version": "1.2.41",
   "description": "易用的跨端组件库",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "author": "guowangyang",
+  "homepage": "https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "keywords": [
+    "press-ui",
+    "uni-app",
+    "uniapp",
+    "component"
+  ],
   "scripts": {
     "postinstall": "node -e \"try{require('./script/post-install/index')}catch(e){}\""
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC"
 }

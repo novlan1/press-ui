@@ -1,0 +1,91 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/button/_button-nba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    width: 7.15rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1000;
+    color: #999;
+    margin: auto;
+    text-align: center;
+    min-height: 5.2rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-bg.png) repeat bottom center;
+    background-size: 100% auto;
+  }
+
+  // 标题-[[
+  .press__title {
+    height: .52rem;
+    line-height: .52rem;
+    font-size: $font-m;
+    color: $color-white;
+    padding-left: .25rem;
+    font-weight: bold;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  // .press__title--explain {
+  //   background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/majiang/image/icon/icon-mz.png) no-repeat top center;
+  //   background-size: contain;
+  // }
+
+  // 标题--]]
+
+  // 内容 [[
+  .press__detail {
+    text-align: left;
+    padding: 0 .5rem;
+    margin: .3rem auto .2rem;
+    height: 3rem;
+    line-height: .32rem;
+    font-size: .24rem;
+    color: #fff;
+    overflow-y: auto;
+
+    p {
+      margin-bottom: .1rem;
+
+      span {
+        display: block;
+        padding-left: .2rem;
+        margin-top: .1rem;
+      }
+    }
+  }
+
+  // 内容 ]]
+
+  // 按钮 [[
+  .press__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: .34rem auto .4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  // 按钮 ]]
+}

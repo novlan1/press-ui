@@ -1,8 +1,8 @@
 export const commonProps = {
-  value: {
-    type: String,
-    default: '',
-  },
+  // value: {
+  //   type: String,
+  //   default: '',
+  // },
   placeholder: { type: String, default: '' },
   placeholderStyle: { type: String, default: '' },
   placeholderClass: { type: String, default: '' },

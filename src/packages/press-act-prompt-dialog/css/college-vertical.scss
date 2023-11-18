@@ -1,0 +1,128 @@
+.press-act:not(.press-act--hidden-tip) {
+
+  /*学生验证组件样式*/
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99;
+  }
+
+  .press__dialog--prompt {
+    width: 5.8rem;
+    background: #fff;
+    border-radius: .04rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+  }
+
+  .press__title--prompt {
+    margin: .5rem 0 .18rem;
+    color: #4a4a4a;
+    font-size: .32rem;
+    line-height: .44rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .press__box {
+    position: relative;
+    margin: 0 .64rem .64rem;
+    color: #9b9b9b;
+    font-size: .28rem;
+    line-height: .44rem;
+    text-align: center;
+
+    .press__text--gold {
+      color: #007aff;
+    }
+  }
+
+  .press__notice {
+    word-wrap: break-word;
+    word-break: normal;
+    text-align: center;
+  }
+
+  .press__button-wrap {
+    display: flex;
+    border-top: 1px solid #d8d8d8;
+  }
+
+  .press__button-wrap a {
+    display: block;
+    flex: 1;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    font-size: .28rem;
+    border-radius: .04rem;
+  }
+
+  .press__button-wrap a:first-child {
+    border-right: 1px solid #d8d8d8;
+  }
+
+  .press__btn--cancel {
+    color: #333;
+  }
+
+  .press__btn--sure {
+    color: #007aff;
+  }
+
+  .press__pic-wrap {
+    img {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: .08rem;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: .24rem;
+      color: #425365;
+      padding: .08rem 0 .16rem;
+    }
+  }
+
+  .tip-qqhongbao-prompt {
+    .press__text {
+      margin: 0 auto;
+      width: 4.6rem;
+      white-space: pre-line;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    .press__notice {
+      width: 100%;
+      position: absolute;
+      margin: 3.68rem auto 0;
+    }
+
+    .press__close {
+      position: absolute;
+      top: .32rem;
+      right: .32rem;
+      width: .48rem;
+      height: .48rem;
+      background: url(https://image-1251917893.file.myqcloud.com/igame/common/image/close-icon.png) center/100% 100%;
+    }
+
+    .press__button-wrap a {
+      color: #fff;
+      text-align: center;
+      background: #007aff;
+      border-radius: .04rem;
+      margin: 0 auto .8rem;
+    }
+  }
+}

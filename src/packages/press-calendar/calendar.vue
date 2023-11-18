@@ -23,9 +23,9 @@
       :scroll-into-view="scrollIntoViewData"
     >
       <month
-        v-for="(item,index) in (computed.getMonths(minDate, maxDate))"
+        v-for="(item, index) in (computed.getMonths(minDate, maxDate))"
         :id="'month'+(index)"
-        :key="item.index"
+        :key="index"
         class="month"
         :data-date="item"
         :date="item"

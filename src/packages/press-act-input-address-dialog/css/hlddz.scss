@@ -1,0 +1,122 @@
+@import '../../common/style/act/layout/_layout-hlddz.scss';
+@import '../../common/style/act/button/_button-hlddz.scss';
+
+@import '../../common/style/act/mixin/uni.scss';
+
+
+.press-act:not(.press-act--hidden-tip) {
+  @include reset-uni-input(.2rem, #09134e, grey);
+
+  .press__title--address {
+    margin-top: .14rem;
+    margin-left: .34rem;
+    width: 1.2rem;
+    height: .34rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/title-addr.png) no-repeat;
+    background-size: 100%;
+
+  }
+
+  .press__close {
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+    width: .38rem;
+    height: .36rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/pop-close.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__info {
+    width: 75%;
+    margin: auto;
+    min-height: 4rem;
+    text-align: center;
+  }
+
+  .press__tip {
+    font-size: .24rem;
+    text-align: left;
+    padding-left: .1rem;
+    color: #3b437f;
+  }
+
+  .press__button-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .12rem;
+    margin: auto;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .press__btn--cancel {
+    margin-right: .9rem;
+  }
+
+  .press__info-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: .2rem;
+
+    .press__input-wrap {
+      flex: 1;
+    }
+
+    .press__info-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 2.8rem;
+      height: .56rem;
+      line-height: .2rem;
+      background: rgba(#427edc, .1);
+      color: #3b437f;
+      padding: 0 .1rem;
+      margin: 0 0 .24rem;
+      margin-bottom: .24rem;
+      border-radius: .08rem;
+
+      &:last-child {
+        flex-grow: 1;
+        height: 1rem;
+        padding: .1rem;
+
+        textarea {
+          width: 100%;
+          height: 100%;
+          line-height: .48rem;
+        }
+      }
+
+      label {
+        font-size: .24rem;
+        white-space: nowrap;
+        flex: unset;
+      }
+
+      input,
+      .press__input-area {
+        width: 100%;
+        background: transparent;
+        font-size: .24rem;
+        color: #3b437f;
+        vertical-align: middle;
+        border: none;
+        box-sizing: border-box;
+        text-align: left;
+      }
+    }
+  }
+}

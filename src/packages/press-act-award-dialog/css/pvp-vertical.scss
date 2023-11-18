@@ -1,0 +1,231 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__award {
+    font-size: 0;
+
+    img {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 130px;
+      content: '暂无此游戏样式';
+      width: 256px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+      color: #f76060;
+    }
+  }
+
+  &.press__award {
+    .press__text--get {
+      width: 2.48rem;
+      height: .64rem;
+      color: #fff;
+      margin: 0 auto;
+      background: url('https://image-1251917893.file.myqcloud.com/tip-project/campaign/picker-title.png') center center no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      font-size: .32rem;
+      font-weight: bold;
+      line-height: .64rem;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.24rem;
+    }
+
+    .press__main {
+      position: fixed;
+      width: 100vw;
+      height: calc(100vh - 200.00rpx);
+      border-radius: 24.00rpx 24.00rpx 0 0;
+      background-color: #fff;
+      background-image: url(https://image-1251917893.file.myqcloud.com/tip-project/campaign/picker-bg.png), linear-gradient(180deg, rgb(203, 214, 255) 0%, rgb(255, 255, 255) 40%);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      z-index: 12;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  }
+
+  &.press__award {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &.press__award {
+    .press__exchange-type {
+      color: #4A4A4A;
+      font-size: .24rem;
+      font-weight: normal;
+
+      .press__link {
+        color: #5675EC;
+      }
+    }
+
+    .press__btn--normal-top {
+      display: block;
+      text-align: center;
+      color: #fff;
+      font-size: .28rem;
+      line-height: .8rem;
+      margin: .24rem auto;
+      width: 5.6rem;
+      height: .8rem;
+      flex-shrink: 0;
+      border-radius: .08rem;
+      background: linear-gradient(90deg, #50ABFF 0%, #6663FE 50%, #925FFF 100%);
+    }
+
+    .press__icon--close {
+      position: absolute;
+      top: .16rem;
+      width: .4rem;
+      height: .4rem;
+      right: .23rem;
+      background: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="&%23229;&%23189;&%23162;&%23231;&%23138;&%23182;&%23231;&%23187;&%23147;&%23229;&%23144;&%23136;" fill-rule="evenodd" clip-rule="evenodd" d="M6.70711 6.00002L11.3033 1.40383L10.5962 0.696719L6 5.29291L1.40381 0.696719L0.696699 1.40383L5.29289 6.00002L0.696699 10.5962L1.40381 11.3033L6 6.70713L10.5962 11.3033L11.3033 10.5962L6.70711 6.00002Z" fill="%23333333" style="fill:%23333333;fill:color(display-p3 0.2000 0.2000 0.2000);fill-opacity:1;"/></svg>');
+      background-size: .24rem .24rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      z-index: 20;
+    }
+
+    .press__exchange-title {
+      padding: .16rem .48rem;
+      font-size: .28rem;
+      color: #4A4A4A;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 100%;
+
+    }
+
+    .press__content {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      padding-top: .92rem;
+      padding-bottom: env(safe-area-inset-bottom);
+      box-sizing: border-box;
+    }
+
+    .press__des-discount {
+      color: #9b9b9b;
+      padding: 0 .48rem .16rem;
+      font-size: .24rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .press__goods-box {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      width: 6.54rem;
+      height: 2rem;
+      background: url(https://image-1251917893.file.myqcloud.com/tip-project/campaign/ticket.png) center center no-repeat;
+      background-size: 100% 100%;
+      margin: 0 auto 0;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      .press__goods-img {
+        width: 2rem;
+        height: 100%;
+        padding: .3rem;
+        box-sizing: border-box;
+
+        image {
+          display: block;
+          width: 1.36rem;
+          height: 1.36rem;
+          border: 1px solid #ECECEC;
+        }
+      }
+
+      .press__goods-detail {
+        flex: 1;
+        box-sizing: border-box;
+        padding: 32.00rpx 0 32.00rpx 32.00rpx;
+
+        .press__goods-tag {
+          font-weight: bold;
+          font-size: .26rem;
+          color: #4A4A4A;
+          height: .36rem;
+          line-height: .36rem;
+        }
+
+        .press__goods-name {
+          font-weight: bold;
+          color: #FF353A;
+          height: .4rem;
+          line-height: .4rem;
+          margin: .1rem 0;
+        }
+
+        .press__goods-time {
+          color: #5D5BE5;
+          font-size: 20.00rpx;
+          padding: 6.00rpx 18.00rpx;
+          background: rgba(93, 91, 229, 0.1);
+          width: 382.00rpx;
+          height: 40.00rpx;
+          border-radius: 20.00rpx;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  &.press__award .press__content .press__left .press__bg-get {
+    .press__label--got {
+      position: absolute;
+      top: 0.7rem;
+      width: 1.72rem;
+      height: 1.71rem;
+      left: 5.5rem;
+      display: block;
+      pointer-events: none;
+      z-index: 30;
+      background: url('https://image-1251917893.file.myqcloud.com/tip-project/campaign/get.png') no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .press__label--used {
+      position: absolute;
+      top: 0.7rem;
+      width: 1.72rem;
+      height: 1.71rem;
+      left: 5.5rem;
+      display: block;
+      pointer-events: none;
+      z-index: 30;
+      background: url('https://image-1251917893.file.myqcloud.com/tip-project/campaign/use.png') no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .press__label--overtime {
+      position: absolute;
+      top: 0.7rem;
+      width: 1.72rem;
+      height: 1.71rem;
+      left: 5.5rem;
+      display: block;
+      pointer-events: none;
+      z-index: 30;
+      background: url('https://image-1251917893.file.myqcloud.com/tip-project/campaign/expired.png') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}

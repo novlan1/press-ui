@@ -7,9 +7,13 @@
     <press-icon
       v-if="isESportType"
       type="empty"
-      color="#bfc3e1"
       size="10.66667vmin"
       custom-class="press-icon--e-sport"
+    />
+
+    <div
+      v-else-if="isHor"
+      class="press-empty__icon--hor"
     />
 
     <template v-else>
@@ -44,7 +48,10 @@ import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressIcon from '../press-icon/press-icon.vue';
 
-const E_SPORT_TYPE = 'e-sport';
+const EXTRA_TYPE_MAP = {
+  E_SPORT: 'e-sport',
+  HOR: 'hor',
+};
 
 export default {
   name: 'PressEmpty',
@@ -80,13 +87,17 @@ export default {
   },
   computed: {
     isESportType() {
-      return this.type === E_SPORT_TYPE;
+      return this.type === EXTRA_TYPE_MAP.E_SPORT;
+    },
+    isHor() {
+      return this.type === EXTRA_TYPE_MAP.HOR;
     },
     emptyClass() {
-      const { isESportType, customClass } = this;
+      const { isESportType, customClass, isHor } = this;
 
       return [
         isESportType ? 'press-empty--e-sport' : '',
+        isHor ? 'press-empty--hor' : '',
         customClass,
       ].join(' ');
     },
@@ -155,8 +166,6 @@ export default {
     margin-top: $empty-bottom-margin-top;
   }
 }
-
-
 </style>
 <style scoped lang="scss">
 @import "../base/layout.scss";
@@ -173,9 +182,40 @@ export default {
       margin-top: 0;
     }
   }
+
+  &--hor {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    .press-empty__description {
+      max-width: 4rem;
+      font-size: $font-xxs;
+      color: #6297dd;
+      text-align: center;
+      line-height: 0.44rem;
+      margin-top: 0;
+      // padding-bottom: 0.6rem;
+    }
+
+    .press-empty__bottom {
+      margin-top: 0;
+    }
+  }
+
+  &__icon--hor {
+    width: 1.62rem;
+    height: 2.02rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/empty.png)
+      no-repeat center center;
+    background-size: contain;
+    min-height: auto;
+    margin-bottom: -0.32rem;
+  }
 }
 
-.press-icon--e-sport {
+::v-deep .press-icon--e-sport {
   margin-bottom: tovmin(8);
   font-size: tovmin(80);
   color: $color-gray-4;

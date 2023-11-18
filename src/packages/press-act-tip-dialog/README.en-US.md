@@ -1,5 +1,5 @@
 ---
-url : pages/press/act-tip-dialog/act-tip-dialog
+url : pages/act/act-tip-dialog/act-tip-dialog
 ---
 
 ## ActTipDialog
@@ -37,7 +37,7 @@ export default {
 ```
 
 ```js
-import PressActTipDialog from 'src/packages/press-act-tip-dialog/press-act-tip-dialog.vue';
+import PressActTipDialog from 'press-ui/press-act-tip-dialog/press-act-tip-dialog.vue';
 export default {
    components: {
      PressActTipDialog,

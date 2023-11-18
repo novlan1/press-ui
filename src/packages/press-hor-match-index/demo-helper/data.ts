@@ -1,4 +1,4 @@
-const AWARD_LIST = Array.from({ length: 4 }).map((_, index) => ({
+const AWARD_LIST = Array.from({ length: 3 }).map((_, index) => ({
   img: 'https://image-1251917893.file.myqcloud.com/Esports/admin/img/prize-1.png',
   name: `小乔-${index}`,
   type: '冠军奖',
@@ -32,11 +32,15 @@ export const ONLINE_MATCH_LIST = Array.from({ length: 6 }).map((_, index) => {
     matchType: '线上赛',
 
     isEnd,
-    isIng,
-    isNotStart,
+    isIng: false,
+    isNotStart: isIng || isNotStart,
+
+    // isIng,
+    // isNotStart,
     btnTxt,
 
     tag,
+    isSigned: index % 2 === 0,
 
     matchLoc: index % 2 === 0 ? '' : '350m',
   };

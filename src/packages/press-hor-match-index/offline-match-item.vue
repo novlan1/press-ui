@@ -13,7 +13,15 @@
     <div class="press-match__main">
       <div class="press-match__left">
         <div class="press-match__name">
-          {{ matchInfo.matchName }}
+          <p class="press-match__name__desc">
+            {{ matchInfo.matchName }}
+          </p>
+          <div
+            v-if="matchInfo.tag"
+            class="press-match__award__tag"
+          >
+            <p>{{ matchInfo.tag }}</p>
+          </div>
         </div>
         <div
           class="press-match__awards"
@@ -24,7 +32,6 @@
               v-for="(item,index) in matchInfo.awardList"
               :key="index"
               class="press-match__award"
-              @click.stop="onShowPopover(item,index)"
             >
               <div class="press-match__award__type">
                 <p>{{ item.type }}</p>
@@ -32,29 +39,18 @@
               <img
                 :src="item.img"
                 alt="award-img"
+                @click.stop="clickPrize(item, index)"
               >
               <p class="press-match__award__name">
                 {{ item.name }}
               </p>
-            </div>
-
-            <!-- 奖励详情浮层 -->
-            <div
-              v-if="showPopover"
-              :class="['press-match__popover',`press-match__popover-${awardIndex}`]"
-            >
-              <p>{{ popoverTitle }}</p>
-              <p>{{ popoverContent }}</p>
-              <div
-                class="press-match__popover__close"
-                @click.stop="closePopover"
-              />
             </div>
           </template>
           <img
             v-else
             :src="matchInfo.defaultAwardImg || 'https://image-1251917893.file.myqcloud.com/Esports/hor/home/default-reward.png'"
             class="default-award"
+            @click.stop="clickPrize"
           >
         </div>
       </div>
@@ -84,11 +80,17 @@
     </div>
 
     <div
-      v-if="matchInfo.tag"
+      v-if="matchInfo.isSigned"
+      class="press-match__signed__tag"
+    >
+      已报名
+    </div>
+    <!-- <div
+      v-else-if="matchInfo.tag"
       class="press-match__tag"
     >
       {{ matchInfo.tag }}
-    </div>
+    </div> -->
   </div>
 </template>
 

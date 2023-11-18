@@ -17,3 +17,9 @@ export function padZero(num, targetLength) {
 
   return str;
 }
+
+
+export function hyphenate(str) {
+  const hyphenateRE = /\B([A-Z])/g;
+  return str.replace(hyphenateRE, '-$1').toLowerCase();
+}

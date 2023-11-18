@@ -1,0 +1,59 @@
+.press-act:not(.press-act--hidden-tip) {
+
+  /* 拉起微信 start*/
+  .dialog-up-wechat {
+    z-index: 99;
+    width: 4.8rem;
+    height: 2.2rem;
+    background: #fff;
+    border-radius: 0.08rem;
+  }
+
+  .dialog-up-wechat .icon-up-wechat {
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/icon-up-wechat.png) no-repeat;
+    background-size: 100%;
+    width: 1.64rem;
+    height: 2.02rem;
+    margin: 2.44rem auto 0;
+    display: none;
+    // -webkit-animation: bounce-down 1.6s linear infinite;
+    // animation: bounce-down 1.6s linear infinite;
+  }
+
+  .dialog-up-wechat .btn-blue {
+    position: relative;
+    margin: auto;
+  }
+
+  @-webkit-keyframes bounce-down {
+    25% {
+      -webkit-transform: translateY(-4px);
+    }
+
+    50%,
+    100% {
+      -webkit-transform: translateY(0);
+    }
+
+    75% {
+      -webkit-transform: translateY(4px);
+    }
+  }
+
+  @keyframes bounce-down {
+    25% {
+      transform: translateY(-4px);
+    }
+
+    50%,
+    100% {
+      transform: translateY(0);
+    }
+
+    75% {
+      transform: translateY(4px);
+    }
+  }
+
+  /* 拉起微信 end*/
+}

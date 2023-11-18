@@ -47,7 +47,7 @@ import { saveMpImage } from 'src/packages/common/utils/save-mp-image';
 const loadingConfirm = function () {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve();
+      resolve(true);
     }, 3000);
   });
 };

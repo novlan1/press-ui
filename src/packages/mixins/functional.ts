@@ -70,7 +70,7 @@ export const functionalMixin = (allProps, {
       },
       getPropOrData(key) {
         const { isFunctionMode, functionModeData } = this as any;
-        return getPropOrData({
+        const res = getPropOrData({
           allProps,
           isFunctionMode,
           functionModeData,
@@ -78,6 +78,8 @@ export const functionalMixin = (allProps, {
           key,
           context: this,
         });
+        // console.log('[getPropOrData] key: ', key, res);
+        return res;
       },
       promiseCallback(type: 'confirm' | 'cancel', options = {}) {
         const { callback } = (this as any).functionModeData;

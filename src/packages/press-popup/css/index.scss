@@ -5,7 +5,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: var(--window-top, 0);
   bottom: 0;
   display: flex;
   align-items: flex-end;
@@ -25,6 +25,11 @@
     .press-popup--content {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+    }
+  }
+
+  &__hor:not(.press-popup--white) {
+    .press-popup--content {
       background: rgba(18, 18, 31, 0.95);
     }
 
@@ -65,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: tovmin(114);
+    height: tovmin(116);
     padding-bottom: tovmin(24);
     box-sizing: border-box;
 
@@ -114,6 +119,7 @@
   &--title {
     font-size: tovmin(32);
     color: $color-black;
+    line-height: tovmin(48);
   }
 
   &__left {
@@ -123,14 +129,14 @@
     align-items: center;
     justify-content: center;
     width: tovmin(104);
-    height: tovmin(90);
+    height: tovmin(92);
     font-size: tovmin(40);
   }
 
   &--close,
   &--arrow {
     font-size: inherit;
-    color: $color-gray;
+    color: $color-black;
   }
 
   // 改为press-button

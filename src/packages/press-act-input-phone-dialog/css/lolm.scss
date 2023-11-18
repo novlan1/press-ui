@@ -1,0 +1,188 @@
+@import '../../common/style/act/button/_button-lolm.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 95;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .press__dialog-phone {
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/lgame/ingame-lolm/ingame-dialog--big.png) no-repeat center center;
+    background-size: 100% auto;
+    width: 9.16rem;
+    height: 4.68rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    margin: auto;
+    text-align: center;
+  }
+
+  .press__close {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/tip-project/lgame/ingame-lolm/dialogicon-close.png) no-repeat center center;
+    background-size: 100% auto;
+    vertical-align: middle;
+    position: absolute;
+    right: 0.36rem;
+    top: 0.44rem;
+    text-indent: -1000rem;
+    z-index: 5;
+  }
+
+  .press__title {
+    font-size: 0.32rem;
+    color: #f0e6d2;
+    padding: 0 0.36rem 0 0.36rem;
+    box-sizing: border-box;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    text-align: left;
+  }
+
+  .press__title::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #5d4f33;
+  }
+
+  .press__box input {
+    display: block;
+    width: 5.5rem;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    font-size: 0.24rem;
+    color: #585753;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #cdbe91;
+    line-height: normal;
+    font-size: 0.24rem;
+    border: 0.02rem solid;
+    -o-border-image: linear-gradient(to bottom, #bea369, #5f5033) 1 10;
+    border-image: -webkit-gradient(linear,
+        left top,
+        left bottom,
+        from(#bea369),
+        to(#5f5033)) 1 10;
+    border-image: linear-gradient(to bottom, #bea369, #5f5033) 1 10;
+    background: #141618;
+    margin: 0.3rem auto 0;
+    padding: 0 0.2rem;
+    background-color: transparent;
+
+    &.press__code-number {
+      width: 3.84rem;
+      margin-top: 0.22rem;
+    }
+  }
+
+  .press__code-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 5.5rem;
+    margin: 0 auto;
+
+    .press__code-btn {
+      width: 1.46rem;
+      height: 0.56rem;
+      line-height: 0.56rem;
+      color: #cdbe91;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      color: #cdbe91;
+      margin-right: 12px;
+      line-height: normal;
+      font-size: 0.24rem;
+      border: 0.02rem solid;
+      border-image: linear-gradient(to bottom, #bea369, #5f5033) 1 10;
+      background: #141618;
+      margin: 0.22rem 0 0 0.2rem;
+    }
+  }
+
+  .press__message {
+    font-size: 0.24rem;
+    color: #85817c;
+    margin: 0.1rem 0;
+  }
+
+  .press__content .press__button-wrap {
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 4.52rem;
+    margin: 0.44rem auto;
+    position: inherit;
+  }
+
+  .press__treaty-wrap {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.24rem;
+    color: #85817c;
+
+    label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &+.press__button-wrap {
+      margin: 0.22rem auto 0;
+    }
+  }
+
+  .press__treaty-check {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.08rem;
+    flex-shrink: 0;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/tip-project/lgame/ingame-lolm/checkbox-icon.png) no-repeat center center;
+    background-size: 100% auto;
+  }
+
+  .press__act-checkbox--checked {
+    background: url(https://image-1251917893.file.myqcloud.com/UI/page/college/checked-blue.png) 50%/100% 100% no-repeat;
+  }
+}

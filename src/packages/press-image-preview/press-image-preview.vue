@@ -1,14 +1,9 @@
 <template>
   <PressOverlay
     :show="innerShow"
-    custom-style="background: rgba(0, 0, 0, 0.9);"
+    :custom-style="`background: rgba(0, 0, 0, 0.9);z-index: ${getPropOrData('zIndex')};`"
     @click="onClickOverlay"
   >
-    <!-- <PressTransition
-      :show="innerShow"
-      :name="getPropOrData('transition')"
-      @afterLeave="onClosed"
-    > -->
     <div
       class="press-image-preview"
       :style="imagePreviewStyle"
@@ -54,7 +49,6 @@
       </swiper>
       <div />
     </div>
-    <!-- </PressTransition> -->
   </PressOverlay>
 </template>
 <script>
@@ -103,6 +97,10 @@ const imagePreviewProps = {
   closeIconPosition: {
     type: String,
     default: 'top-right',
+  },
+  zIndex: {
+    type: Number,
+    default: 10,
   },
 };
 
@@ -191,10 +189,11 @@ export default {
 
 .press-image-preview {
   position: fixed;
-  top: 0;
+  // top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--window-top, 0px));
   z-index: 2;
 
   &__swipe {
@@ -228,7 +227,8 @@ export default {
       -webkit-user-drag: none;
     }
 
-    .van-image {
+    .van-image,
+    .press-image {
       &__error {
         top: 30%;
         height: 40%;

@@ -1,0 +1,69 @@
+@import "../../common/style/gp-match/palette.scss";
+
+.press__bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 100%;
+  background: url(https://image-1251917893.file.myqcloud.com/igame/match/gp/horz-match/right-bar-bg.png) no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+.press__close {
+  width: 1.34rem;
+  height: .6rem;
+  background: url(https://image-1251917893.file.myqcloud.com/igame/match/gp/horz-match/right-bar-close.png) no-repeat;
+  background-size: 100%;
+  margin-bottom: .4rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:active {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.press__bar-item {
+  width: 1.72rem;
+  height: .68rem;
+  font-size: $font-xxs;
+  color: $color-bright;
+  line-height: .62rem;
+  text-align: center;
+  margin-bottom: .12rem;
+}
+
+.press__bar-item--active {
+  width: 1.72rem;
+  height: .68rem;
+  background: url(https://image-1251917893.file.myqcloud.com/tip-project/pubg/pubg-match/horizon/data-btn--active.png) no-repeat;
+  background-size: 100%;
+  color: #fff;
+  font-size: .24rem;
+}

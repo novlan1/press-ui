@@ -83,7 +83,6 @@ npm run docs:dev
 
 `press-ui` is connected to CI, and the code will be automatically built after the code is pushed, and the three-terminal examples and documents of H5, WeChat applet, and QQ applet will be deployed.
 
-
 ## 3. Development specification
 
 ### 3.1. Code specification

@@ -1,0 +1,103 @@
+/* 	dialogStyle:*2,拉起微信 弹窗 -merchant-ui/src/tip-comp-dialog-launch-wechat- start */
+.press-act:not(.press-act--hidden-tip) {
+  &.press__wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 101;
+  }
+
+  /*! 拉起微信 */
+  .press__box--launch .press__icon--launch-wx {
+    width: 2.02rem;
+    height: 1.96rem;
+    margin: 0 auto;
+    /* animation: rotate 5s linear infinite;
+	-webkit-animation: rotate 5s linear infinite; */
+    background: url('https://image-1251917893.cos.ap-guangzhou.myqcloud.com/tip-project/liebian-tlbb/goods-page/wechat-no-data.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .press__box--launch .press__text {
+    color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.41rem;
+    text-align: center;
+  }
+
+  .press__box--launch .btn-cancel {
+    display: block;
+    color: #f4997b;
+    border-radius: 2px;
+    background: #fff1d5;
+    text-align: center;
+    width: 2.64rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    margin: 0.34rem 0.16rem 0;
+  }
+
+  .press__box--launch .press__btn--blue {
+    margin: calc(24 / 376 * 100vh) auto 0;
+  }
+
+  @-webkit-keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes bounce-down {
+    25% {
+      -webkit-transform: translateY(calc(-2 / 376 * 100vh));
+    }
+
+    100%,
+    50% {
+      -webkit-transform: translateY(0);
+    }
+
+    75% {
+      -webkit-transform: translateY(calc(2 / 376 * 100vh));
+    }
+  }
+
+  @keyframes bounce-down {
+    25% {
+      transform: translateY(calc(-2 / 376 * 100vh));
+    }
+
+    100%,
+    50% {
+      transform: translateY(0);
+    }
+
+    75% {
+      transform: translateY(calc(2 / 376 * 100vh));
+    }
+  }
+
+  /* 	dialogStyle:*2,拉起微信 弹窗 -merchant-ui/src/tip-comp-dialog-launch-wechat- end */
+
+}

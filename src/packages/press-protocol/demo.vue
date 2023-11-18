@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap">
+  <div class="demo-wrap demo-wrap--gap">
     <PressProtocol
       :list="list"
       @click="onClickProtocol"
@@ -8,7 +8,10 @@
 </template>
 <script>
 import PressProtocol from 'src/packages/press-protocol/press-protocol.vue';
-import { getMockProtocol } from 'src/packages/press-protocol/demo-helper/data';
+import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'src/packages/press-protocol/demo-helper/data';
+import { parseProtocol } from 'src/packages/common/protocol/parse-protocol';
+import { setClipboardData } from 'src/utils/clipboard/clipboard';
+
 
 export default {
   components: {
@@ -16,12 +19,27 @@ export default {
   },
   data() {
     return {
-      list: getMockProtocol(),
+      list: parseProtocol(DEFAULT_PRESS_UI_INTRODUCE),
     };
   },
+  mounted() {
+    this.onFetchData();
+  },
   methods: {
+    onFetchData() {
+      getPressUIIntroduce().then((res) => {
+        this.list = res;
+      });
+    },
     onClickProtocol(item) {
-      this.onGTip(`[Click] ${item.link}`);
+      // #ifdef H5
+      window.location.href = item.link;
+      // #endif
+      // #ifndef H5
+      setClipboardData(item.link).then(() => {
+        this.onGTip('🎉 复制成功，请到浏览器中查看');
+      });
+      // #endif
     },
   },
 };
@@ -29,6 +47,7 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   display: flex;
+  margin-top: 10px;
 }
 
 press-protocol {

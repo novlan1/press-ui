@@ -1,0 +1,172 @@
+@import '../var/press-prefix.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+
+  .#{$TIP_BUTTON_PREFIX}small-primary,
+  .#{$PRESS_BUTTON_PREFIX}small-primary {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+    background: #ff7800;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}small-secondary,
+  .#{$PRESS_BUTTON_PREFIX}small-secondary {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: rgba(255, 120, 0, .4);
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}small-disabled,
+  .#{$PRESS_BUTTON_PREFIX}small-disabled {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: #d8d8d8;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}medium-primary,
+  .#{$PRESS_BUTTON_PREFIX}medium-primary {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+    background: #ff7800;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}medium-secondary,
+  .#{$PRESS_BUTTON_PREFIX}medium-secondary {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: rgba(255, 120, 0, .4);
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}medium-disabled,
+  .#{$PRESS_BUTTON_PREFIX}medium-disabled {
+    width: 1.28rem;
+    height: .56rem;
+    line-height: .56rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: #d8d8d8;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}large-primary,
+  .#{$PRESS_BUTTON_PREFIX}large-primary {
+    width: 2.64rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+    background: #ff7800;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}large-secondary,
+  .#{$PRESS_BUTTON_PREFIX}large-secondary {
+    width: 2.64rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: rgba(255, 120, 0, .4);
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}large-disabled,
+  .#{$PRESS_BUTTON_PREFIX}large-disabled {
+    width: 2.64rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: #d8d8d8;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}maxlarge-primary,
+  .#{$PRESS_BUTTON_PREFIX}maxlarge-primary {
+    width: 3.88rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+    background: #ff7800;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}maxlarge-secondary,
+  .#{$PRESS_BUTTON_PREFIX}maxlarge-secondary {
+    width: 3.88rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: rgba(255, 120, 0, .4);
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .#{$TIP_BUTTON_PREFIX}maxlarge-disabled,
+  .#{$PRESS_BUTTON_PREFIX}maxlarge-disabled {
+    width: 3.88rem;
+    height: .64rem;
+    line-height: .64rem;
+    display: inline-block;
+    text-align: center;
+    font-size: .28rem;
+    background: #d8d8d8;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+}

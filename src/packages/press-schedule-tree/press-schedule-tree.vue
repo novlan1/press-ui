@@ -110,11 +110,7 @@
             :id="`scheRef-${colIndex}-${schePairIndex}`"
             :key="schePair.uniqueKey"
             :ref="`scheRef-${colIndex}-${schePairIndex}`"
-            class="press-schedule-tree-pair"
-            :class="{
-              [MY_TEAM_SCHE_PAIR_CLASS]: hasMyTeam(colIndex, schePairIndex),
-              'press-schedule-tree-pair--hidden': scheList[colIndex][schePairIndex].hidden,
-            }"
+            :class="[getTreePairClass(colIndex, schePairIndex)]"
           >
             <TwoTeamWrap
               :is-admin="isAdmin"
@@ -257,6 +253,8 @@ import TwoTeamWrap from './press-schedule-team.vue';
 import { endTouch, REF_MAP, scrollToH5, backToTop } from './touch-helper';
 import { scrollRelative, getScrollStartY, initScrollBounce, scrollBounce } from './drag-helper';
 import { t } from '../locale';
+import utils from '../common/utils/utils';
+
 
 const MY_TEAM_SCHE_PAIR_CLASS = 'press-schedule-tree-pair--mine';
 const DIRECTION_MAP = {
@@ -277,6 +275,10 @@ const scrollInfo = {
   endX: 0,
   endY: 0,
 };
+
+function getBattleScheId(info) {
+  return info?.schId || info.schid;
+}
 
 
 function getFormattedResumePosition(resumePosition, column) {
@@ -718,7 +720,14 @@ export default {
   created() {
   },
   mounted() {
-    this.locateMyTeam();
+    let delay = 0;
+    // #ifndef H5
+    delay = 300;
+    // #endif
+    setTimeout(() => {
+      this.locateMyTeam();
+    }, delay);
+
     // #ifdef H5
     window?.addEventListener('mouseup', this.unwatchMouseUp);
     // #endif
@@ -779,6 +788,9 @@ export default {
       if (!this.myTeamId || this.teamTotal <= 8) {
         return;
       }
+      this.innerLocateOnSche(MY_TEAM_SCHE_PAIR_CLASS);
+    },
+    innerLocateOnSche(targetScheClass) {
       // #ifndef H5
       this.createSelectorQuery?.()
         ?.select?.(`#${REF_MAP.TREE_ID}`)
@@ -786,12 +798,13 @@ export default {
         ?.exec?.((res) => {
           const scrollView = res[0]?.node;
           if (!scrollView) return;
-          scrollView.scrollIntoView(`.${MY_TEAM_SCHE_PAIR_CLASS}`);
+          scrollView.scrollIntoView(`.${targetScheClass}`);
         });
       // #endif
 
       // #ifdef H5
-      const node =  document?.querySelectorAll?.(`.${MY_TEAM_SCHE_PAIR_CLASS}`)[0];
+      const node =  document?.querySelectorAll?.(`.${targetScheClass}`)[0];
+
       if (!node) return;
       scrollToH5(node.offsetTop, {
         animation: false,
@@ -897,11 +910,29 @@ export default {
     setScrollTime(newScrollTime) {
       this.setScrollParams(newScrollTime);
     },
+    scrollToOneSche(schId) {
+      if (!schId) return;
+
+      this.innerLocateOnSche(`press-schedule-tree-pair--id-${schId}`);
+    },
     setBackToTop() {
       backToTop();
     },
     unwatchMouseUp() {
       isMoving = false;
+    },
+    getTreePairClass(colIndex, schePairIndex) {
+      const { scheList } = this;
+      const schePair = scheList[colIndex][schePairIndex];
+
+      return utils.bem2('schedule-tree-pair', [
+        {
+          mine: this.hasMyTeam(colIndex, schePairIndex),
+          hidden: schePair.hidden,
+        },
+        `id-${getBattleScheId(schePair.battleList[0])}`,
+        schePair.battleList?.[1] ?  `id-${getBattleScheId(schePair.battleList?.[1])}` : '',
+      ]);
     },
   },
 };

@@ -1,7 +1,10 @@
 <template>
   <div
     class="press-picker-view"
-    :class="hasTip ? 'press-picker-view__tip' : ''"
+    :class="[
+      hasTip ? 'press-picker-view__tip' : '',
+      horizontal? 'press-picker-view--hor' : ''
+    ]"
     @mousedown.stop.prevent="mouseDown"
     @mouseup.stop.prevent="mouseUp"
     @touchstart.stop.prevent="handleStart"
@@ -98,6 +101,10 @@ export default {
     virtualListThreshold: {
       type: Number,
       default: 50,
+    },
+    horizontal: {
+      type: Boolean,
+      default: false,
     },
   },
   options: {

@@ -49,6 +49,10 @@ export const newProps = {
     type: Number,
     default: 50,
   },
+  horizontal: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 

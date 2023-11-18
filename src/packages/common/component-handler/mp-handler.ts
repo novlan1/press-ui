@@ -1,9 +1,11 @@
 import { parseOptions } from './component-handler';
+import { setData, vmSet } from './set-data';
 
 function getContext() {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
+
 
 export function getMPComponentHandler({
   defaultOptions,
@@ -38,7 +40,7 @@ export function getMPComponentHandler({
 
     // 设置clear
     dialog.clear = () => {
-      dialog.$vm.setData({ show: false });
+      setData(dialog, { show: false });
       if (options.onClose) {
         options.onClose();
       }
@@ -46,12 +48,12 @@ export function getMPComponentHandler({
 
     // 为了让h5和小程序的函数调用一样
     dialog.set = (...args) => {
-      dialog.$vm.$set(dialog.$vm, ...args);
+      vmSet(dialog, ...args);
     };
 
     queue.push(dialog);
     // 开始展示
-    dialog.$vm.setData(options);
+    setData(dialog, options);
 
     clearTimeout(dialog.timer);
 

@@ -18,6 +18,11 @@
         is-link
         @click="onShowPicker('long')"
       />
+      <press-cell
+        :title="t('horizontal')"
+        is-link
+        @click="onShowPicker('horizontal')"
+      />
     </demo-block>
 
     <demo-block
@@ -34,9 +39,10 @@
       v-if="curPicker.show"
       :title="curPicker.title"
       :show-back-arrow="curPicker.showBackArrow"
-      :select-list="curPicker.selectList"
+      :list="curPicker.selectList"
       :tip="curPicker.tip"
-      :select-item="curPicker.selectItem"
+      :current="curPicker.selectItem"
+      :horizontal="curPicker.horizontal"
       :virtual-list-threshold="30"
       @onClickConfirm="curPicker.onClickConfirm"
       @onRemove="curPicker.onRemove"
@@ -64,6 +70,7 @@ export default {
       topTip: '顶部提示',
       longList: '超长列表',
       functional: '函数式调用',
+      horizontal: '横版',
       tipContent: '创建比赛后，可按比赛轮次精确设置。',
       addVirtualTeam: '添加虚拟队伍',
       addTeam: num => `添加${num}队`,
@@ -72,10 +79,14 @@ export default {
       topTip: 'Top Tips',
       longList: 'Super Long List',
       functional: 'Functional Mode',
+      horizontal: 'Horizontal',
       tipContent: 'Can be set precisely according to the round of the game',
       addVirtualTeam: 'Add Virtual Team',
       addTeam: num => `Add ${num} Teams`,
     },
+  },
+  options: {
+    styleIsolation: 'shared',
   },
   components: {
     PressPicker,
@@ -118,18 +129,28 @@ export default {
           tip: '',
           selectList: PICKER_BO_LIST,
           selectItem: { label: PICKER_BO_LIST[3].label, value: 7 },
+          horizontal: false,
         },
         tip: {
           title: this.t('wayToWin'),
           tip: this.t('tipContent'),
           selectList: PICKER_BO_LIST,
           selectItem: { label: PICKER_BO_LIST[1].label, value: 3 },
+          horizontal: false,
         },
         long: {
           title: this.t('addVirtualTeam'),
           tip: '',
           selectList: longList,
           selectItem: { value: 1 },
+          horizontal: false,
+        },
+        horizontal: {
+          title: this.t('wayToWin'),
+          tip: '',
+          selectList: PICKER_BO_LIST,
+          selectItem: { label: PICKER_BO_LIST[3].label, value: 7 },
+          horizontal: true,
         },
       },
       PRESS_PICKER_ID,

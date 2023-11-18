@@ -1,0 +1,113 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-hlddz.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  // 组件内不存在此类名
+  // .tip-comp-storelist-box {
+  //   width: 100%;
+  // }
+
+  &.press__store {
+
+    .press__icon--primary,
+    .press__icon--secondary {
+      display: none;
+    }
+
+    .press__distance--primary {
+      display: none;
+    }
+  }
+
+  &.press__store {
+    padding: .25rem .5rem;
+    background: $color-white;
+    background-image: linear-gradient(0deg, rgba(236, 244, 255, .4) 0%, rgba(236, 244, 255, 0) 100%);
+    border: 1px solid rgba(255, 255, 255, .1);
+    box-shadow: inset 0 0 5px 0 rgba(255, 255, 255, .1);
+    position: relative;
+    display: flex;
+    margin-bottom: 1px;
+  }
+
+  .press__img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: $font-xs;
+    background: white;
+
+    img {
+      object-fit: contain;
+      object-fit: contain;
+      border-radius: .08rem;
+    }
+  }
+
+  .press__detail {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .press__addr {
+    font-size: .24rem;
+    line-height: .45rem;
+    color: $color-blue-3;
+  }
+
+  .press__icon--addr {
+    //display: inline-block;
+    display: none;
+    vertical-align: middle;
+    width: $font-s;
+    height: $font-s;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200423mahjong/icon-addr.png) no-repeat center left;
+    background-size: auto 100%;
+  }
+
+  .press__name {
+    display: inline-block;
+    margin-right: $font-xs;
+    vertical-align: bottom;
+    max-width: 8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: .32rem;
+    letter-spacing: 0;
+    color: $color-skyblue;
+  }
+
+  .press__distance {
+    display: none;
+    padding-right: $font-xs;
+    border-right: 1px solid #bbb;
+    margin: 0 .1rem 0 0;
+  }
+
+  .press__icon-state {
+    font-size: .28rem;
+    top: 42%;
+    right: 0;
+    margin: auto;
+    display: inline-block;
+    height: $font-s;
+    width: 1.42rem;
+    z-index: 2;
+    text-indent: -1000rem;
+
+    &.press__icon--instore {
+      color: $color-origin-2;
+    }
+
+    &.press__icon--eventbeen {
+      color: $color-blue-6;
+    }
+
+    &.press__icon--lately {
+      color: $color-blue-3;
+    }
+  }
+}

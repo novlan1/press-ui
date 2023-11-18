@@ -41,17 +41,42 @@
       />
     </demo-block>
 
+    <demo-block :title="t('parseData')">
+      <press-area
+        :area-list="parseData(areaList)"
+        value="070000"
+        @change="onChange"
+        @confirm="onConfirm"
+        @cancel="onCancel"
+      />
+    </demo-block>
+
     <demo-block
       :title="t('withPopup')"
     >
       <press-cell
-        :title="t('withPopup')"
+        title="Normal"
         is-link
-        @click="onShowAreaPopup"
+        @click="onShowAreaPopup('')"
+      />
+
+      <press-cell
+        title="E-Sport"
+        is-link
+        @click="onShowAreaPopup('e-sport')"
       />
     </demo-block>
 
-    <PressPopup
+    <PressAreaPopup
+      :show.sync="showPopup"
+      :area-list="areaList"
+      :value="selectArea"
+      :type="areaType"
+      @confirm="onConfirmArea"
+      @cancel="onCancelPopup"
+    />
+
+    <!-- <PressPopup
       :is-show="showPopup"
       :button="t('confirm')"
       :close-icon="true"
@@ -65,14 +90,16 @@
         :area-list="areaList"
         @change="onChange"
       />
-    </PressPopup>
+    </PressPopup> -->
   </div>
 </template>
 <script>
 import PressArea from 'src/packages/press-area/press-area.vue';
+import PressAreaPopup from 'src/packages/press-area/press-area-popup.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressPopup from 'src/packages/press-popup/press-popup.vue';
-import { isNotInUni } from 'src/packages/common/utils/utils';
+// import PressPopup from 'src/packages/press-popup/press-popup.vue';
+import { fetchData } from 'src/utils/index';
+import { parseData } from 'src/packages/press-area/helper/parse.ts';
 
 const AREA_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json';
 
@@ -149,38 +176,7 @@ const AreaListEn = {
 };
 
 function getAreaData() {
-  return new Promise((resolve, reject) => {
-    // #ifdef H5
-    if (isNotInUni()) {
-      fetch(AREA_DATA_URL).then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-        return {};
-      })
-        .then((data) => {
-          resolve(data);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-
-      return;
-    }
-    // #endif
-    uni.request({
-      url: AREA_DATA_URL,
-      data: {},
-      method: 'GET',
-      sslVerify: true,
-      success: ({ data }) => {
-        resolve(data);
-      },
-      fail: (error) => {
-        reject(error);
-      },
-    });
-  });
+  return fetchData(AREA_DATA_URL);
 }
 
 
@@ -193,6 +189,7 @@ export default {
       columnsPlaceholder: ['请选择', '请选择', '请选择'],
       withPopup: '结合Popup',
       popupTitle: '选择地区',
+      parseData: '特殊处理数据',
       areaList: getAreaData,
     },
     'en-US': {
@@ -202,6 +199,7 @@ export default {
       columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
       withPopup: 'With Popup',
       popupTitle: 'Select Area',
+      parseData: 'Parse Data',
       areaList: () => Promise.resolve(AreaListEn),
     },
   },
@@ -209,18 +207,22 @@ export default {
   components: {
     PressArea,
     PressCell,
-    PressPopup,
+    // PressPopup,
+    PressAreaPopup,
   },
   data() {
     return {
       areaList: {},
       showPopup: false,
+      selectArea: '',
+      areaType: '',
     };
   },
   mounted() {
     this.init();
   },
   methods: {
+    parseData,
     onConfirm(...args) {
       console.log('[onConfirm]: ', ...args);
     },
@@ -239,18 +241,26 @@ export default {
 
       this.onGTip(`${names}, index: ${index}`);
     },
-    onShowAreaPopup() {
+    onShowAreaPopup(type) {
       this.showPopup = true;
+      console.log('type', type);
+      this.areaType = type || '';
     },
-    onConfirmPopup() {
-      const values = this.$refs.pressArea?.getValues();
-      const index = this.$refs.pressArea?.getIndexes();
-      console.log('[onConfirmPopup] values index', values, index);
+    // onConfirmPopup() {
+    //   const values = this.$refs.pressArea?.getValues();
+    //   const index = this.$refs.pressArea?.getIndexes();
+    //   console.log('[onConfirmPopup] values index', values, index);
 
-      this.showPopup = false;
-    },
+    //   this.showPopup = false;
+    // },
     onCancelPopup() {
-      this.showPopup = false;
+      // this.showPopup = false;
+    },
+    onConfirmArea(values, index) {
+      console.log('[onConfirmArea] values index', values, index);
+      this.selectArea = values[values.length - 1]?.code;
+      const names = values.map(item => item?.name || '').join('-');
+      this.onGTip(`${this.selectArea}: ${names}`);
     },
   },
 };

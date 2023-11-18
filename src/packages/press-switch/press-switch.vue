@@ -79,11 +79,14 @@ export default {
   methods: {
     onClick() {
       const { activeValue, inactiveValue, disabled, loading } = this;
+      const checked = this.realChecked === activeValue;
+      const value = checked ? inactiveValue : activeValue;
+
+      this.$emit('click', checked);
       if (disabled || loading) {
         return;
       }
-      const checked = this.realChecked === activeValue;
-      const value = checked ? inactiveValue : activeValue;
+
       this.$emit('input', value);
       this.$emit('change', value);
 

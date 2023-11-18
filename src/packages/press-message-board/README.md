@@ -12,11 +12,16 @@ url : pages/press/message-board/message-board
 ## 引入
 
 ```ts
-import PressMessageBoard from 'press-ui/press-message-board/press-message-board';
+import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input';
+import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list';
+import PressMessageBoardItem from 'press-ui/press-message-board/press-message-board-item';
+
 
 export default {
   components: {
-    PressMessageBoard,
+    PressMessageBoardInput,
+    PressMessageBoardList,
+    PressMessageBoardItem,
   }
 }
 ```
@@ -54,9 +59,9 @@ export default {
 ```
 
 ```ts
-import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
-import PressMessageBoardList from 'src/packages/press-message-board/press-message-board-list.vue';
-import PressMessageBoardItem from 'src/packages/press-message-board/press-message-board-item.vue';
+import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input.vue';
+import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list.vue';
+import PressMessageBoardItem from 'press-ui/press-message-board/press-message-board-item.vue';
 
 
 const MSG_LIST = [

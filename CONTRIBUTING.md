@@ -25,6 +25,8 @@
 
 ```bash
 - press-button
+  - demo-helper/        # 非必需，组件示例相关数据、方法
+  - helper/             # 非必需，业务层处理数据的相关方法，可能引入 t-comm 第三方模块
   - demo.vue            # 组件示例
   - press-button.vue    # 组件
   - README.md           # 组件中文文档
@@ -35,6 +37,9 @@
 
 上面的组织结构并不能直接用，还需要把`README.md`移动到`docs`中，把`demo.vue`移动到`src/pages`中。开发时会监听这些文件变动，发生变动后就把它们拷贝到需要的位置上。
 
+<img 
+  src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_2de0d5cb1567b66aa7.png" width="700"
+/>
 
 ## 2. 开发
 
@@ -84,7 +89,6 @@ npm run docs:dev
 
 `Press UI`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
 
-
 ## 3. 开发规范
 
 ### 3.1. 代码规范
@@ -125,10 +129,40 @@ npm run docs:dev
 
 `Press UI`内的组件、逻辑需要有一定的通用性或复杂性，比如`button`、`input`、`area`、`message-detail`等组件通用型强，`schedule-tree`组件复杂度高。
 
+### 4.3. Javascript 优先
 
-### 4.3. 与业务隔离
+`js`比`html`灵活，能写在`js`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js`都能够很方便的复用，但是组件就不行。
 
-首先，并不是从业务中沉淀的就一定是业务组件，业务组件的含义一般是通用性差，但可以解决特定场景问题，变化形式不多，灵活性差，参数没有基础组件多。
+### 4.4. 项目依赖关系
+
+Press UI 底层依赖 `t-comm`、`uni-plugin-light` 等库。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/11/own_mike_531f563c0322f19dc1.png" width="500" />
+
+
+### 4.5. 适配多平台、多场景
+
+Press UI 在兼容 Vue3 项目、非 `uni-app` 环境、APP 环境时，采用的实现方式为，新建工程，并将 Press UI 组件库作为子仓库。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_889e9d727ea8d8b63e.png" width="500" />
+
+### 4.6. 通用 & 灵活
+
+下图是 H5、小程序、APP语法灵活度的对比。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_76f35297c8da15ecea.png" width="300" />
+
+Press UI 在编写跨端代码的时候，采用以下原则：
+
+1. 对齐短板，抹平差异，提供通用API
+2. 特殊场景下，条件编译，保持灵活性
+
+这里举一个灵活性的例子，在 H5 平台函数式调用组件的时候，可以动态创建 Dom，无需预埋组件。
+
+
+### 4.7. 与业务隔离
+
+首先，并不是从业务中沉淀的就一定是业务组件，业务组件的含义一般是**通用性差，但可以解决特定场景问题**，变化形式不多，**灵活性差，参数没有基础组件多**。
 
 `Press UI`的组件、逻辑都应该减少与业务的耦合，保持稳定。基础组件很容易做到，也很容易判断是否耦合，对于业务中沉淀下来的，如何做到呢？
 
@@ -138,7 +172,7 @@ npm run docs:dev
   
 举个例子，赛程树组件中点击轮次Tab的事件，不能命名为`jumpToSetPage`，需改为与业务无关的`clickRoundTab`，因为跳转轮次设置页面是业务设定，并不一定稳定，有可能过几天需求就改了，而点击Tab事件却是实实在在的，永久的。
 
-另外，赛程树的文案不能由是业务状态驱动，而应该UI驱动。下面是改之前的代码，与业务过度耦合，业务如果增加比赛状态，必然会改动组件。
+另外，赛程树的文案**不能由是业务状态驱动，而应该UI驱动**。下面是改之前的代码，与业务过度耦合，业务如果增加比赛状态，必然会改动组件。
 
 ```html
 <!-- 预览状态 -->
@@ -174,47 +208,6 @@ npm run docs:dev
   <p>
     已结束
   </p>
-</div>
-
-<!-- 未开始 -->
-<div
-  v-else-if="isScheNotStart"
-  class="tip-match-current-pk-tip"
->
-  <p
-    v-if="battleDetail.bracketIdDesc"
-    class="tip-match-num"
-  >
-    {{ battleDetail.bracketIdDesc }}
-  </p>
-  <p>
-    {{ readyInfoDesc }}
-  </p>
-</div>
-
-<!-- 比赛中 -->
-<div
-  v-else-if="isSchPlaying"
-  class="tip-match-current-pk-tip"
->
-  <p
-    v-if="battleDetail.bracketIdDesc"
-    class="tip-match-num"
-  >
-    {{ battleDetail.bracketIdDesc }}
-  </p>
-  <p>当前{{ battleDetail.curBo }}/{{ battleDetail.boType }}局</p>
-  <p class="tip-match-match-status">
-    比赛中
-  </p>
-  <div
-    class="tip-match-match-zhibo-icon iconfont icon-live"
-    @click.stop="onWatchBattle"
-  />
-  <div
-    v-if="battleDetail.isWeChatLiving"
-    class="iconfont icon-video-number"
-  />
 </div>
 ```
 
@@ -263,6 +256,3 @@ npm run docs:dev
 ```
 
 上面的改动并不是最佳的，还可以继续优化。比如，直播图标和视频号图标，可以由参数传入，以此支持更多图标类型。命名可以更脱离业务，不命名为`timeDesc`、`statusDesc`。
-
-此外，`js`比`html`灵活，能写在`js`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js`都能够很方便的复用，但是组件就不行。
-

@@ -1,36 +1,39 @@
 <template>
-  <scroll-view
-    id="pressIndexBarWrapper"
-    class="press-index-bar-wrapper"
-    enhanced
-    :scroll-with-animation="false"
-    scroll-y
-    @scroll="onWatchScroll"
+  <div
+    class="press-index-bar-container"
   >
-    <div class="press-index-bar">
-      <slot />
-
+    <scroll-view
+      id="pressIndexBarWrapper"
+      class="press-index-bar-wrapper"
+      enhanced
+      :scroll-with-animation="false"
+      scroll-y
+      @scroll="onWatchScroll"
+    >
+      <div class="press-index-bar">
+        <slot />
+      </div>
+    </scroll-view>
+    <div
+      v-if="showSidebar"
+      class="press-index-bar__sidebar"
+      @click.stop.prevent="onClick"
+      @touchmove.stop.prevent="onTouchMove"
+      @touchend.stop="onTouchStop"
+      @touchcancel.stop.prevent="onTouchStop"
+    >
       <div
-        v-if="showSidebar"
-        class="press-index-bar__sidebar"
-        @click.stop.prevent="onClick"
-        @touchmove.stop.prevent="onTouchMove"
-        @touchend.stop="onTouchStop"
-        @touchcancel.stop.prevent="onTouchStop"
+        v-for="(item,index) in (indexList)"
+        :key="index"
+        class="press-index-bar__index"
+        :style="'z-index: '+(zIndex + 1)+'; color: '+(activeAnchorIndex === index ? highlightColor : '')"
+        :data-index="index"
+        @click.stop="onClickInner"
       >
-        <div
-          v-for="(item,index) in (indexList)"
-          :key="item.index"
-          class="press-index-bar__index"
-          :style="'z-index: '+(zIndex + 1)+'; color: '+(activeAnchorIndex === index ? highlightColor : '')"
-          :data-index="index"
-          @click.stop="onClickInner"
-        >
-          {{ item }}
-        </div>
+        {{ item }}
       </div>
     </div>
-  </scroll-view>
+  </div>
 </template>
 
 <script>
@@ -86,6 +89,10 @@ export default {
       type: Array,
       default: () => indexList(),
     },
+    windowTop: {
+      type: Number,
+      default: 0,
+    },
     ...defaultProps,
   },
   emits: ['select'],
@@ -138,6 +145,7 @@ export default {
           height: rect.height,
           top: rect.top + this.scrollTop,
         });
+        return anchor;
       })));
     },
     setListRect() {
@@ -184,7 +192,7 @@ export default {
       const { sticky, stickyOffsetTop } = this;
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
-        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
+        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : this.stickyOffsetTop;
         if (reachTop + scrollTop >= children[i].top) {
           return i;
         }
@@ -195,12 +203,16 @@ export default {
       if (event && (event.target || event.detail)) {
         this.scrollTop = event.target.scrollTop || event.detail.scrollTop;
       }
+      // console.log('[scrollTop]', this.scrollTop);
+
       const { children = [], scrollTop } = this;
       if (!children.length) {
         return;
       }
       const { sticky, stickyOffsetTop, zIndex, highlightColor } = this;
       const active = this.getActiveAnchorIndex();
+      // console.log('[active]', active);
+
       this.setDiffData({
         target: this,
         data: {
@@ -279,13 +291,16 @@ export default {
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
       let index;
+      console.log('[onTouchMove]',  touch.clientY, this.sidebar.top, this.top);
       // #ifdef H5
-      index = Math.floor((touch.clientY - this.sidebar.top + (this.top || 0)) / itemHeight);
+      index = Math.floor((touch.clientY + this.windowTop - this.sidebar.top) / itemHeight);
 
       // #endif
       // #ifndef H5
       index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
       // #endif
+      console.log('[onTouchMove]', index);
+
       if (index < 0) {
         index = 0;
       } else if (index > sidebarLength - 1) {
@@ -304,6 +319,7 @@ export default {
       this.scrollToAnchorIndex = index;
       const anchor = this.children.find(item => item.index === this.indexList[index]);
       if (anchor !== undefined) {
+        console.log('[scrollTop]', this.scrollTop);
         anchor.scrollIntoView(this.scrollTop, this.changeScrollerTop);
 
 
@@ -312,7 +328,9 @@ export default {
     },
     onClickInner(event) {
       const index = event.currentTarget?.dataset?.index;
-      if (!index) return;
+      if (index === undefined) return;
+      console.log('[index]', index, this.indexList);
+
       this.scrollToAnchor(+index);
     },
     onWatchScroll(e) {
@@ -320,6 +338,8 @@ export default {
     },
     changeScrollerTop(top) {
       const selector = getScrollSelector('pressIndexBarWrapper');
+      console.log('[changeScrollerTop] top', top);
+
       // #ifdef H5
       const ref = document
         ?.querySelector(selector);
@@ -332,8 +352,10 @@ export default {
         ?.select?.(selector)
         ?.node?.()
         ?.exec?.((res) => {
+          console.log('[changeScrollerTop] node', res);
           const scrollView = res[0]?.node;
           if (!scrollView) return;
+          console.log('[changeScrollerTop] scrollView', scrollView);
           scrollView.scrollTo({
             top,
             duration: 0,
@@ -348,6 +370,7 @@ export default {
 <style scoped lang="scss">
 @import "../common/style/var.scss";
 
+.press-index-bar-container,
 .press-index-bar-wrapper {
   height: 100%;
 }

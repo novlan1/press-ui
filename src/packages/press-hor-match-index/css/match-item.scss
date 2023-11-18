@@ -5,38 +5,66 @@
 .press-match {
   position: relative;
   display: flex;
-  width: vw(301);
-  height: vw(117);
-  margin-right: vw(4);
+  width: vw(292);
+  height: vw(122);
+  margin-right: vw(10);
+  margin-bottom: vw(8);
   background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/match-bg.png) no-repeat center center;
   background-size: contain;
 
   &:nth-child(even) {
     margin-right: 0;
   }
+
   &:nth-child(odd) {
     &:last-child {
-      margin-right: vw(305);
+      margin-right: vw(302);
     }
   }
 
 
   &__left {
     flex: 1;
+    padding-left: vw(15);
     overflow: hidden;
   }
 
   &__name {
-    font-size: vw(12);
-    color: $color-white;
-    padding: vw(9) vw(13) vw(10) vw(17);
-    @include single-line-ellipsis();
+    display: flex;
+    align-items: center;
+    padding: vw(8) 0 vw(5) 0;
+
+    &__desc {
+      font-size: vw(12);
+      color: $color-white;
+      padding-right: vw(5);
+      line-height: vw(15);
+      @include single-line-ellipsis();
+      max-width: vw(136);
+    }
+  }
+
+  &__award__tag {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: vw(42.5);
+    height: vw(12);
+    font-size: vw(8);
+    color: #13233c;
+    font-weight: 600;
+    padding: 0 vw(2);
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/match-tag.png) no-repeat center;
+    background-size: contain;
+
+    p {
+      @include single-line-ellipsis();
+    }
   }
 
   &__awards {
     display: flex;
     align-items: flex-start;
-    padding: 0 vw(13);
   }
 
   &__award {
@@ -45,20 +73,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: vw(41);
-    margin-right: vw(7.5);
+    width: vw(51);
+    margin-right: vw(9);
     flex-shrink: 0;
+
     &:last-child {
       margin-right: 0;
     }
 
     &__img {
       display: block;
-      width: vw(32);
-      height: vw(32);
-      margin-bottom: vw(5);
+      width: vw(51);
+      height: vw(50);
+      margin-bottom: vw(4);
       background: #13233c;
-      border: 1px solid rgba(136,190,247, .5);
+      border: 1px solid rgba(136, 190, 247, .5);
     }
 
     &__name {
@@ -72,9 +101,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: vw(32);
+    width: vw(51);
     padding: 1px vw(2);
-    background: rgba(59,135,225,.6);
+    background: rgba(59, 135, 225, .6);
 
     &__name {
       color: #86b8ff;
@@ -95,14 +124,14 @@
     flex-direction: column;
     align-items: center;
     width: vw(88.5);
-    padding: vw(12) vw(8) 0 vw(4);
+    padding: vw(15) vw(8) 0 vw(11);
     overflow: hidden;
 
     &__img {
       display: block;
       width: vw(40);
       height: vw(40);
-      border: 1px solid rgba(109,138,195,.8);
+      border: 1px solid rgba(109, 138, 195, .8);
       background-color: #13233c;
     }
   }
@@ -113,85 +142,6 @@
     margin-top: vw(5);
     @include single-line-ellipsis();
   }
-
-  &__popover {
-    position: absolute;
-    left: vw(8);
-    top: vw(-20);
-    width: vw(195);
-    padding: vw(8) vw(23) vw(8) vw(6);
-    background: rgba(8, 36, 70, .95);
-    border: .02rem solid #3C6091;
-    z-index: 1;
-
-    p {
-      color: #82a0cc;
-      font-size: vw(10);
-      text-align: left;
-      margin-bottom: 0;
-
-      &:first-child {
-        font-family: 'GAMEFONT';
-        font-size: vw(12);
-        color: $color-white;
-        font-weight: 600;
-        margin-bottom: vw(2);
-        text-shadow: 0 0 vw(8) rgba(95, 147, 234, .69);
-      }
-    }
-
-    &::after {
-      position: absolute;
-      left: vw(20);
-      bottom: vw(-4.5);
-      content: '';
-      width: vw(9);
-      height: vw(4.5);
-      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/award-arrow.png) no-repeat center center;
-      background-size: contain;
-    }
-
-    &-1 {
-      &::after {
-        left: vw(68);
-      }
-    }
-
-    &-2 {
-      &::after {
-        left: vw(117);
-      }
-    }
-
-    &-3 {
-      &::after {
-        left: vw(165);
-      }
-    }
-  }
-
-  &__popover__close {
-    position: absolute;
-    right: vw(5);
-    top: vw(5);
-    width: vw(13);
-    height: vw(13);
-    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/close.png) no-repeat center center;
-    background-size: contain;
-  }
-
-  &--popover-rotate {
-    .press-match__popover {
-      top: vw(83);
-
-      &::after {
-        bottom: auto;
-        top: vw(-4);
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
 
   &__btn {
     display: flex;
@@ -211,39 +161,65 @@
     }
 
     &--end {
-      width: vw(65);
-      height: vw(25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'GAMEFONT';
+      width: vw(63);
+      height: vw(24);
       font-size: vw(13);
       color: $color-white;
-      margin-top: vw(5);
+      margin-top: vw(8);
       padding-top: vw(3);
-      opacity: .4;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/btn-secondary-bg-xs.png) no-repeat center;
+      background-size: contain;
     }
 
     &--ing {
-      width: vw(65);
-      height: vw(25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'GAMEFONT';
+      width: vw(63);
+      height: vw(24);
       font-size: vw(13);
       color: $color-white;
-      margin-top: vw(5);
+      margin-top: vw(8);
       padding-top: vw(3);
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/btn-secondary-bg-xs.png) no-repeat center;
+      background-size: contain;
     }
   }
 
   &__tag {
     position: absolute;
-    top: vw(2);
-    right: vw(6);
-    width: .3rem;
-    height: .92rem;
-    font-family: 'GAMEFONT';
-    font-size: .16rem;
-    color: #722f0b;
+    top: 0;
+    right: vw(-1);
+    width: vw(16.5);
+    height: vw(41);
+    font-size: vw(9);
+    color: #fff;
     font-weight: 600;
-    padding: 1px 0 0 .05rem;
+    padding: 1px 0 2px vw(2);
+    letter-spacing: 1px;
     writing-mode: vertical-lr;
-    text-shadow: 1px 1px 0 rgba(255, 244, 181, .5);
-    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/tag-bg.png) no-repeat center;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/btn-tag.png) no-repeat center;
+    background-size: contain;
+  }
+
+  &__signed__tag {
+    position: absolute;
+    top: 0;
+    right: vw(-1);
+    width: vw(16);
+    height: vw(41);
+    font-size: vw(9);
+    color: #fff;
+    font-weight: 600;
+    padding: 1px 0 2px vw(2);
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/yellow-tag.png ) no-repeat center;
     background-size: contain;
     @include single-line-ellipsis;
   }

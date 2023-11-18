@@ -1,0 +1,158 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/button/_button-nba.scss';
+
+$dialog-close_bg: 'https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/icon-close.png';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__close {
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+
+    @include icon_img(.32rem, .32rem, $dialog-close_bg, center center, contain);
+  }
+
+  .press__dialog {
+    width: 7.15rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: #999;
+    margin: auto;
+    text-align: center;
+    min-height: 5.2rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-bg.png) repeat bottom center;
+    background-size: 100% auto;
+  }
+
+  .press__title {
+    height: .52rem;
+    line-height: .52rem;
+    font-size: $font-m;
+    color: $color-white;
+    // text-align: left;
+    padding-left: .25rem;
+    font-weight: bold;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    min-height: 3rem;
+    padding-top: .2rem;
+    text-align: center;
+  }
+
+  .press__name {
+    color: $color-white;
+    font-size: $font-m;
+    margin: .5rem auto 0rem;
+  }
+
+  .press__user {
+    text-align: center;
+    margin-top: .1rem;
+    padding: 0 .4rem;
+  }
+
+  .press__progress-wrap {
+    width: 5.2rem;
+    padding: .32rem .3rem .32rem;
+    margin: .3rem auto 0;
+    background: rgba(255, 255, 255, .11);
+
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .press__progress {
+    font-weight: 700;
+    color: $color-white;
+    font-size: $font-s;
+  }
+
+  .press__progress span {
+    color: #cf4204;
+  }
+
+  .press__num {
+    display: inline;
+  }
+
+  .press__progress-bar {
+    width: 3rem;
+    margin: .18rem auto .08rem;
+    height: .16rem;
+    transform: skew(-12deg);
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200414privilege_peacegame/progressbar-bg.png) no-repeat left center;
+    background-size: 100% 100%;
+    display: block;
+  }
+
+  .press__progress-bar i {
+    display: block;
+    height: .16rem;
+    width: 20%;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200414privilege_peacegame/progressbar.png) no-repeat left center;
+    background-size: 3rem 100%;
+  }
+
+  // 按钮外框
+  // .tip-comp-dialog--notachieved-btn {
+  //   position: relative;
+  //   padding: 0 0;
+  //   margin: 0.3rem auto 0.1rem;
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: flex;
+  //   -webkit-box-align: center;
+  //   -ms-flex-align: center;
+  //   align-items: center;
+  //   -webkit-box-pack: center;
+  //   -ms-flex-pack: center;
+  //   justify-content: space-evenly;
+  //   margin: 0.34rem auto 0.4rem;
+  //   z-index: 2;
+  // }
+  .press__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: .34rem auto .2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  .press__title {
+    height: .52rem;
+    line-height: .52rem;
+    font-size: $font-m;
+    color: $color-white;
+    // text-align: left;
+    padding-left: .25rem;
+    font-weight: bold;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+}

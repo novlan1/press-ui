@@ -1,0 +1,211 @@
+@import "../../common/style/act/mixin/mixin.scss";
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+  }
+
+  .press__dialog {
+    width: 5.6rem;
+    min-height: 4.6rem;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+  }
+
+  //  关闭X按钮的图片
+  $dialog-close_bg: "https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_close.png";
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    margin-top: .32rem;
+    color: #303030;
+    font-weight: bold;
+    font-size: 0.32rem;
+    line-height: 0.76rem;
+    text-align: center;
+    width: 100%;
+    height: .76rem;
+  }
+
+  // 2填写手机号[
+
+  .press__content {
+    margin: auto;
+    text-align: center;
+  }
+
+  .press__box input {
+    width: 4.64rem;
+    margin: 0.2rem auto 0.2rem;
+    display: block;
+    height: 0.72rem;
+    padding: 0 0.2rem;
+    background: #eff3ff;
+    color: rgba(33, 33, 36, 0.45);
+    font-size: 0.28rem;
+    line-height: 0.72rem;
+  }
+
+  .press__message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 1rem;
+    font-size: 0.24rem;
+    line-height: 1.2;
+    padding: 0 0.48rem;
+    color: #999;
+  }
+
+  .press__button-wrap {
+    display: flex;
+  }
+
+  .press__dialog-phone {
+    .press__button-wrap {
+      a {
+        display: block;
+        text-align: center;
+      }
+
+      .press__btn--cancel {
+        color: #999;
+      }
+    }
+  }
+
+  // 2填写手机号]
+
+  /* 协议 */
+  .press__treaty-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+    padding: 0 0.48rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 0.1rem;
+  }
+
+  .press__treaty-check {
+    width: .3rem !important;
+    height: .3rem !important;
+    flex-shrink: 0;
+    margin-right: .08rem;
+
+    ::v-deep .van-checkbox__icon {
+      width: .3rem !important;
+      height: .3rem !important;
+      border: 0 none !important;
+      background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/check-icon.png) center top no-repeat !important;
+      background-size: .26rem .27rem !important;
+
+      ::v-deep .van-icon {
+        width: .3rem !important;
+        height: .3rem !important;
+        border: 0 none !important;
+      }
+    }
+
+    ::v-deep .van-checkbox__icon--checked {
+      width: .3rem !important;
+      height: .3rem !important;
+      border: 0 none !important;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon {
+      width: .3rem !important;
+      height: .3rem !important;
+      border: 0 none !important;
+      background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/gp2.0/img/checked-icon.png) center top no-repeat !important;
+      background-size: .26rem .27rem !important;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon-success:before {
+      content: '';
+    }
+  }
+
+
+
+
+
+
+  .press__treaty-terms {
+    text-align: left;
+    color: #999;
+  }
+
+  .press__button-wrap .press__btn--medium-secondary {
+    position: absolute;
+    top: .2rem;
+    right: .2rem;
+    width: .32rem;
+    height: .32rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-indent: -1000rem;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/PUBG/user/close-icon.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .press__button-wrap .press__btn--medium-primary {
+    display: inline-block;
+    margin: .32rem auto;
+    width: 3.34rem;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    font-size: 0.24rem;
+    color: #5a350a;
+    text-align: center;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/PUBG/user/pubg-bottom-button.png) no-repeat;
+    background-size: 100% auto;
+  }
+
+  .press__box {
+    margin-top: .8rem;
+
+    .press__code-wrap {
+      position: relative;
+
+      input {
+        padding-right: 1.8rem;
+      }
+    }
+
+    .press__code-btn {
+      display: inline-block;
+      position: absolute;
+      font-size: 0.28rem;
+      top: 0;
+      text-align: center;
+      line-height: .72rem;
+      width: 1.8rem;
+      right: 0.5rem;
+      color: #91A4D5;
+    }
+  }
+
+  .press__treaty-desc {
+    color: #91A4D5;
+  }
+
+  .press__btn--medium-primary.press__btn--disabled {
+    color: #9da2a6;
+    background: #d2d8dc;
+  }
+}

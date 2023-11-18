@@ -88,7 +88,7 @@ export default {
   @change="onChange"
   @search="onSearch"
 >
-  <div slot="action" @tap="onClick">搜索</div>
+  <div slot="action" @click="onClick">搜索</div>
 </press-search>
 ```
 

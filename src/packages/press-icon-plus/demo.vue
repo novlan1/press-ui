@@ -68,7 +68,7 @@
             <press-icon-plus
               name="cart-o"
               color="#1989fa"
-              @click="copy(demoIcon, { color: '#1989fa' })"
+              @click="copy('cart-o', { color: '#1989fa' })"
             />
           </press-col>
           <press-col
@@ -77,7 +77,7 @@
             <press-icon-plus
               name="fire-o"
               :color="RED"
-              @click="copy(demoIcon, { color: RED })"
+              @click="copy('fire-o', { color: RED })"
             />
           </press-col>
         </demo-block-plus>
@@ -201,8 +201,8 @@ export default {
     styleIsolation: 'shared',
   },
   data() {
-    this.RED = RED;
     return {
+      RED,
       demoIcon: 'chat-o',
       demoImage: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
 

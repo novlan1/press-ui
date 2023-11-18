@@ -41,7 +41,7 @@ import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 
-import { parseScheItemData } from 'src/packages/press-schedule-list/utils';
+import { formatScheItemData } from 'src/packages/press-schedule-list/helper/sche-item';
 
 import {
   FUNCTIONAL_ID_MAP,
@@ -131,7 +131,7 @@ export default {
         info: STATUS_SCHE_MAP[status],
       });
 
-      this.scheInfo = parseScheItemData({
+      this.scheInfo = formatScheItemData({
         scheInfo: mockData,
         isPreview,
         isAdmin,

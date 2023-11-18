@@ -3,16 +3,16 @@
     <div
       v-for="(item, index) of list"
       :key="index"
-      class="config-item"
+      class="press-config-item"
     >
-      <div class="config-name">
+      <div class="press-config-name">
         {{ item.name }}：
       </div>
-      <div class="config-input">
+      <div class="press-config-input">
         <input
           v-model="item.value"
           placeholder="请输入"
-          class="input-inner"
+          class="press-input-inner"
           :data-name="item.name"
           @change="e=>onChangeTheme(e, item)"
         >
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="config-item">
+    <div class="press-config-item">
       <div style="position: relative;">
         <div
           v-if="copied"
@@ -35,7 +35,7 @@
           ✨ {{ t('copySuccess') }}
         </div>
         <button
-          class="press-button config-button config-button--primary"
+          class="press-button press-button--primary"
           @click.stop="onCopy"
         >
           {{ t('oneClickCopy') }}
@@ -49,7 +49,7 @@
           {{ t('restoreSuccess') }}
         </div>
         <button
-          class="press-button config-button config-button--default"
+          class="press-button press-button--default"
           @click.stop="onResume"
         >
           {{ t('restore') }}
@@ -61,8 +61,8 @@
 <script>
 import themeDefaultJson from './theme-default.json';
 import ColorPicker from './color-picker/color-picker.vue';
+import { sendMessageToIframe, IFRAME_MESSAGE_TYPE_MAP } from '../utils/message';
 
-const CHANGE_IFRAME_STYLE_TYPE = 'CHANGE_IFRAME_STYLE_TYPE';
 const DEFAULT_LANG = 'zh-CN';
 const LANG_MAP = {
   en: 'en-US',
@@ -194,8 +194,10 @@ export default {
       });
     },
     changeIframe(style) {
-      const iframe = document.getElementsByTagName('iframe')[0];
-      iframe.contentWindow.postMessage({ type: CHANGE_IFRAME_STYLE_TYPE, data: style }, '*');
+      sendMessageToIframe({
+        type: IFRAME_MESSAGE_TYPE_MAP.CHANGE_IFRAME_STYLE_TYPE,
+        data: style,
+      });
     },
     getChangedStyle() {
       const copyList = getComponentTheme(this.type);
@@ -239,70 +241,16 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="stylus">
+@require '../theme/styles/button.styl';
+
 .config-wrap {
   min-height: 50px;
   padding: 20px 0;
 }
 
-.config-item {
-  display: flex;
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.config-name {
-  height: 40px;
-  /* line-height: 40px; */
-  display: flex;
-  align-items: center;
-  width: 310px;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 15px;
-}
-
-.config-input {
-  width: 320px;
-  position: relative;
-  font-size: 14px;
-  display: inline-block;
-
-  margin-right: 15px;
-  flex: 1;
-}
-
-.input-inner {
-  -webkit-appearance: none;
-  background-color: #fff;
-  background-image: none;
-  border-radius: 4px;
-  border: 1px solid #dcdfe6;
-  box-sizing: border-box;
-  color: #606266;
-  display: inline-block;
-  font-size: inherit;
-  height: 40px;
-  line-height: 40px;
-  outline: none;
-  padding: 0 15px;
-  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  width: 100%;
-}
-
-.config-button {
+.press-button {
   margin-top: 20px;
-}
-
-.config-button--primary {
-  color: #fff;
-  background-color: #409eff;
-  border-color: #409eff;
-}
-
-.config-button--primary:active {
-  background: #3a8ee6;
-  border-color: #3a8ee6;
-  color: #fff;
 }
 
 .config-tooltip {

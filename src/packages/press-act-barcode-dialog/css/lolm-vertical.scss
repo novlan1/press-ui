@@ -1,0 +1,195 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__barcode {
+    position: fixed;
+    background: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  .press__main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .press__main .press__icon--close {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_close.png) no-repeat;
+    background-size: 100%;
+    width: 1.96rem;
+    height: .8rem;
+    position: absolute;
+    top: .24rem;
+    right: 0rem;
+  }
+
+  .press__main .text-get {
+    margin-top: .36rem;
+    margin-left: .76rem;
+    color: #fff;
+    font-family: 'GAMEFONT';
+  }
+
+  .dialog-small .dialog-content {
+    width: 6.9rem;
+    margin-left: .26rem;
+  }
+
+  .dialog-middle .dialog-content {
+    width: 8.04rem;
+    margin-left: .26rem;
+  }
+
+  .dialog-big .dialog-content {
+    width: 9.66rem;
+    margin-left: .52rem;
+  }
+
+  .btn-blue {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/btn/secondary_large_btn_icon_bg.png) no-repeat;
+    background-size: 100%;
+    width: 2.24rem;
+    height: .56rem;
+    line-height: .56rem;
+    text-align: center;
+    color: #fff;
+    font-size: .28rem;
+  }
+
+  .btn-normal {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/btn/primary_large_btn_icon_bg.png) no-repeat;
+    background-size: 100%;
+    width: 2.24rem;
+    height: .56rem;
+    line-height: .56rem;
+    text-align: center;
+    color: #fff;
+    font-size: .28rem;
+  }
+
+  .btn-normal.center {
+    position: absolute;
+    bottom: .34rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .btn-normal.center {
+    transform: translateX(.13rem);
+  }
+
+  .dialog-content .radio-group {
+    display: flex;
+    align-items: center;
+    font-size: .24rem;
+    color: #fff;
+    justify-content: center;
+    margin-top: .36rem;
+  }
+
+  .dialog-content .radio-group .radio {
+    width: .4rem;
+    height: .4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/icon-uncheck.png) no-repeat;
+    background-size: 100%;
+    transform: translateY(-.02rem);
+    margin-right: .12rem;
+  }
+
+  .dialog-content .radio-group .radio.act {
+    width: .4rem;
+    height: .4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/icon-check.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .dialog-content .radio-group span {
+    color: #ffb52b;
+  }
+
+  .dialog-small {
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/dialog-bg-s.png) no-repeat;
+    background-size: 100%;
+    width: 7.16rem;
+    height: 4.55rem;
+  }
+
+  .dialog-middle {
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/dialog-bg-m.png) no-repeat;
+    background-size: 100%;
+    width: 8.31rem;
+    height: 5.25rem;
+  }
+
+  .dialog-big {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_large_bg.png) no-repeat;
+    background-size: 100%;
+    width: 10.18rem;
+    height: 6.12rem;
+  }
+
+  /* 条形码弹窗 start*/
+  .press__main--barcode {
+    width: 5.52rem;
+    height: 4rem;
+  }
+
+  .press__main.press__main--barcode .press__icon--close {
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/dialog-close.png) no-repeat;
+    background-size: 100%;
+    width: .42rem;
+    height: .42rem;
+    position: absolute;
+    top: -.02rem;
+    right: -.4rem;
+  }
+
+  .press__main--barcode .press__title {
+    font-size: .28rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: .2rem;
+  }
+
+  .press__main--barcode .press__barcode-wrap {
+    width: 5.52rem;
+    height: 3.76rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/pvp/a20210709summerVacation/dialog-bar-code.png) no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .4rem;
+    box-sizing: border-box;
+  }
+
+  .press__main--barcode .press__barcode-wrap .press__barcode-left {
+    width: .96rem;
+    height: 3.04rem;
+  }
+
+  .press__main--barcode .press__barcode-wrap .press__barcode-left>img {
+    width: .96rem;
+    height: 3.04rem;
+  }
+
+  .press__main--barcode .press__barcode-wrap .press__barcode-right {
+    width: 3.04rem;
+    height: 3.04rem;
+    background: #fff;
+  }
+
+  .press__main--barcode .press__barcode-wrap .press__barcode-right>img {
+    width: 3.04rem;
+    height: 3.04rem;
+  }
+
+  /* 条形码弹窗 end*/
+
+}

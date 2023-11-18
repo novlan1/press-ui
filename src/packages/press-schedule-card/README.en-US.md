@@ -8,11 +8,11 @@ url: pages/press/schedule-card/schedule-card
 ## Introduction
 
 ```ts
-import Press schedule card from 'press-ui/press-schedule-card/press-schedule-card';
+import PressScheduleCard from 'press-ui/press-schedule-card/press-schedule-card';
 
 export default {
    components: {
-     Press schedule card,
+     PressScheduleCard,
    }
 }
 ```

@@ -1,6 +1,6 @@
 <template>
   <span
-    :style="{ color: color, 'font-size': iconSize }"
+    :style="{'font-size': iconSize }"
     class="iconfont"
     :class="['icon-'+type, customClass, customPrefix, customPrefix ? type : '']"
     @click="onClick"
@@ -85,5 +85,7 @@ export default {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #5e6d82;
+  display: inline-block;
 }
 </style>

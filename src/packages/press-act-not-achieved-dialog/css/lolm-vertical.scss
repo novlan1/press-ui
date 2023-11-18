@@ -1,0 +1,148 @@
+@import '../../common/style/act/button/_button-lolm-vertical.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 95;
+  }
+
+  .press__dialog--fail {
+    width: 6rem;
+    height: 4rem;
+    position: fixed;
+    border-radius: .08rem;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: #5569a2;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fafbfc;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .press__dialog--fail .press__close {
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/2021/a20210730fazaiMerc/images/btn_close.png) no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+    position: absolute;
+    top: 4.2rem;
+    right: 2.7rem;
+    text-indent: -1000rem;
+  }
+
+  .press__dialog--fail .press__buttons {
+    width: 100%;
+    border-top: .02rem solid #e6e6e6;
+    display: flex;
+    justify-self: center;
+    position: relative;
+  }
+
+  .press__dialog--fail .press__buttons a {
+    display: block;
+  }
+
+  .press__btn--maxlarge-primary {
+    display: block;
+    text-align: center;
+    color: #1c1c1c;
+    font-size: .28rem;
+    line-height: .4rem;
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    background: unset;
+  }
+
+  .press__title--fail {
+    display: none;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    padding-top: .5rem;
+    text-align: center;
+  }
+
+  .press__name {
+    font-weight: bold;
+    color: #333;
+    font-size: .3rem;
+  }
+
+  .press__user {
+    text-align: center;
+    margin-top: .1rem;
+    padding: 0 .4rem;
+    color: #1c1c1c;
+    font-size: .24rem;
+  }
+
+  .press__progress-wrap {
+    background: #f0f3f7;
+    width: 4.6rem;
+    min-height: .88rem;
+    padding: .24rem .2rem;
+    margin: 0 auto;
+  }
+
+  .press__progress {
+    margin: 0 auto .16rem;
+    color: #333;
+    font-size: .24rem;
+  }
+
+  .press__progress span {
+    color: #cf4204;
+  }
+
+  .press__num {
+    display: inline;
+  }
+
+  .press__progress-bar {
+    width: 75%;
+    height: .08rem;
+    background: #dcdfe5;
+    overflow: hidden;
+    border-radius: .055rem;
+    margin: auto;
+  }
+
+  .press__progress-bar i {
+    height: 100%;
+    border-radius: .04rem;
+    display: block;
+    background: #6984af;
+  }
+
+  // 组件内不存在此类名
+  // .tip-comp-dialog--notachieved-btn {
+  //   display: block;
+  //   text-align: center;
+  //   color: #757e7f;
+  //   font-size: .28rem;
+  //   line-height: .4rem;
+  //   width: 100%;
+  //   height: .8rem;
+  //   line-height: .8rem;
+  // }
+}

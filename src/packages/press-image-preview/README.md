@@ -34,7 +34,7 @@ export default {
 ```
 
 ```ts
-import ImagePreview from 'src/packages/press-image-preview/press-image-preview.vue';
+import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
 import { imagePreview } from 'press-ui/press-image-preview/index';
 
 
@@ -144,6 +144,7 @@ imagePreview({
 | close-icon-position | 关闭图标位置                     | _string_         | `top-right` |
 | custom-style        | 自定义样式                       | _string_         | -           |
 | custom-class        | 自定义类名                       | _string_         | -           |
+| z-index             | 层级                             | _number_         | `10`        |
 
 ### Events
 

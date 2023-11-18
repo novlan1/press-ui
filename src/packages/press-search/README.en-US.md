@@ -76,7 +76,7 @@ The background color outside the search box can be set through the `background` 
    @change="onChange"
    @search="onSearch"
 >
-   <div slot="action" @tap="onClick">Search</div>
+   <div slot="action" @click="onClick">Search</div>
 </press-search>
 ```
 

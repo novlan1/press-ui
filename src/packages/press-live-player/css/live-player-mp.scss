@@ -1,0 +1,95 @@
+.press-player-mp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-size: 100% 100%;
+
+    .press-live-player {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  &__refuel-box {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+  }
+
+  &__refuel-progress {
+    width: 100%;
+    position: relative;
+    height: 3px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__refuel-progress-left {
+    background: linear-gradient(272.01deg, #53c3f7 0%, #1181d7 100%);
+    margin-right: 3px;
+    // #ifdef MP-QQ
+    margin-right: 0;
+    // #endif
+    padding-left: 4px;
+  }
+
+  &__refuel-progress-right {
+    background: linear-gradient(272.01deg, #ff6d7b 0%, #dd2d4d 100%);
+    margin-left: 3px;
+    // #ifdef MP-QQ
+    margin-left: 0;
+    // #endif
+    padding-right: 4px;
+    text-align: right;
+  }
+
+  &__refuel-progress-left,
+  &__refuel-progress-right {
+    position: relative;
+    color: #fff;
+    font-size: 10px;
+    height: 3px;
+  }
+
+  &__refuel-progress-left::after,
+  &__refuel-progress-right::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 0;
+  }
+
+  &__refuel-progress-left::after {
+    right: -2.5px;
+    // #ifdef MP-QQ
+    right: 0;
+    // #endif
+    border-top: 3px solid #53c3f7;
+    border-right: 3px solid rgba(0, 0, 0, 0);
+  }
+
+  &__refuel-progress-right::after {
+    left: -2.5px;
+    // #ifdef MP-QQ
+    left: 0;
+    // #endif
+    border-bottom: 3px solid #dd2d4d;
+    border-left: 3px solid rgba(0, 0, 0, 0);
+  }
+}
+
+::v-deep {
+  .press-picker-view--item {
+    font-size: 16px;
+  }
+}

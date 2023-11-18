@@ -1,4 +1,4 @@
-import { t } from 'src/packages/locale';
+import { t } from '../locale';
 
 export const ROW_HEIGHT = 64;
 

@@ -13,8 +13,8 @@
         @change="onClickNav"
       >
         <press-sidebar-item
-          v-for="(item) in (items)"
-          :key="item.index"
+          v-for="(item, index) in (items)"
+          :key="index"
           custom-class="main-item-class"
           active-class="main-active-class"
           disabled-class="main-disabled-class"

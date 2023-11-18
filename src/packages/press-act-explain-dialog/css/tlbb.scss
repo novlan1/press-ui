@@ -1,0 +1,76 @@
+@import '../../common/style/act/mixin/mixin.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    background-color: rgba(0, 0, 0, .75);
+    // display: flex;
+    // justify-content: center;
+    padding-top: 1rem;
+    box-sizing: border-box;
+  }
+
+  .press__dialog {
+    // position: fixed;
+    // left: 0;
+    // right: 0;
+    // top: 50%;
+    // -webkit-transform: translateY(-50%);
+    // -ms-transform: translateY(-50%);
+    // transform: translateY(-50%);
+    z-index: 1000;
+    margin: 0 auto;
+  }
+
+  /* 免责声明弹窗 */
+  .press__dialog--tip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8.59rem;
+    height: 5.54rem;
+    padding: 1.2rem 0 .4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/tlbb/20211204xiechengact/popup-rule.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__close {
+    position: absolute;
+    right: -.44rem;
+    top: -.32rem;
+    width: .52rem;
+    height: .52rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/tlbb/20211204xiechengact/close.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__title--explain {
+    position: absolute;
+    top: .62rem;
+    left: .72rem;
+    width: 1.19rem;
+    height: .29rem;
+    font-size: 0;
+  }
+
+  .press__detail {
+    width: 9.2rem;
+    font-size: .18rem;
+    color: #277384;
+    line-height: .4rem;
+    padding: 0 .65rem;
+    overflow: hidden;
+    overflow-y: auto;
+
+    p {
+      text-align: left;
+      margin-bottom: .3rem;
+    }
+
+    span {
+      display: block;
+      padding-left: .2rem;
+      margin-top: .1rem;
+    }
+  }
+}

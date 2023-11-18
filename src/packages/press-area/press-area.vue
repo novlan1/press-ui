@@ -26,6 +26,7 @@ import { requestAnimationFrame } from '../common/utils/system';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
+
 const EMPTY_CODE = '000000';
 
 

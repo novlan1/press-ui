@@ -62,6 +62,17 @@
         custom-style="height: 300px;"
       />
     </demo-block>
+
+    <demo-block
+      title="HOR"
+      header-style="background: #f7f8fa;"
+      section-style="background: #192841;color: #fff;margin: 0;padding: 10px 0;"
+    >
+      <press-empty
+        type="hor"
+        :description="t('description')"
+      />
+    </demo-block>
   </div>
 </template>
 <script>

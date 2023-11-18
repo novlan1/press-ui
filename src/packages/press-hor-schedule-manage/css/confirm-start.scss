@@ -1,0 +1,123 @@
+@import "../../common/style/gp-match/mixin.scss";
+
+.press__team-group {
+  display: flex;
+  margin-top: .24rem;
+  // overflow-x: auto;
+  // overflow-y: hidden;
+}
+
+.press__team-item {
+  position: relative;
+  width: 3.32rem;
+  margin-right: .2rem;
+  // background: #fff;
+
+  .press__item-top {
+    padding-top: .24rem;
+    width: 3.32rem;
+    height: 1.32rem;
+    background-image: url(https://image-1251917893.file.myqcloud.com/tip-project/pubg/pubg-match/horizon/team-item-top.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    &.press__item-top--gray {
+      background-image: url(https://image-1251917893.file.myqcloud.com/tip-project/pubg/pubg-match/horizon/team-item-top-gray.png);
+    }
+  }
+
+  .press__team-name {
+    text-align: center;
+    font-size: .36rem;
+    color: #fff;
+  }
+
+  .press__team-desc {
+    margin-top: .04rem;
+    text-align: center;
+    font-size: .24rem;
+    color: rgba(255, 255, 255, 0.60);
+  }
+
+  .press__item-bottom {
+    height: 2.78rem;
+    padding: .24rem .24rem .12rem;
+    background: #fff;
+  }
+
+  .press__item-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .press__item-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .8rem;
+    height: .8rem;
+    background: linear-gradient(180deg, #D6DADD 0%, #DEE1E6 100%);
+    margin: 0 .2rem .16rem 0;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    img {
+      width: .66rem;
+      height: .66rem;
+      object-fit: contain;
+    }
+  }
+
+  .press__item-status {
+    height: .48rem;
+    line-height: .48rem;
+    text-align: center;
+    font-size: .28rem;
+    color: #fff;
+    font-family: "PEACE";
+    background-image: url(https://image-1251917893.file.myqcloud.com/tip-project/pubg/pubg-match/horizon/item-status.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    &.gray {
+      background-image: url(https://image-1251917893.file.myqcloud.com/tip-project/pubg/pubg-match/horizon/item-status-gray.png);
+    }
+  }
+
+  .press__item-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: .48rem;
+    line-height: .48rem;
+    font-size: .28rem;
+    color: #ED7B2F;
+
+    .press__icon-guide {
+      margin-left: .1rem;
+      color: #ED7B2F;
+      font-size: .26rem;
+    }
+  }
+
+  .press__label-gray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.84rem;
+    height: 0.22rem;
+    line-height: 0.22rem;
+    padding-left: 0.08rem;
+    color: #2E3438;
+    font-size: 0.16rem;
+    font-family: "PEACE";
+    background: -webkit-gradient(linear, right top, left top, color-stop(22.22%, #888888), color-stop(73.15%, #A0A0A0));
+    background: linear-gradient(270deg, #888888 22.22%, #A0A0A0 73.15%);
+    clip-path: polygon(0 0, 100% 0%, 72% 100%, 0% 100%);
+  }
+}

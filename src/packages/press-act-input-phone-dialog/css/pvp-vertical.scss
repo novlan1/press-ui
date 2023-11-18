@@ -1,0 +1,181 @@
+@import "../../common/style/act/mixin/mixin.scss";
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+  }
+
+  .press__dialog {
+    width: 6.3rem;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+  }
+
+  //  关闭X按钮的图片
+  $dialog-close_bg: "https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_close.png";
+
+  .press__close {
+    display: none;
+  }
+
+  .press__title {
+    margin-top: 0.48rem;
+    color: #303030;
+    font-size: 0.36rem;
+    line-height: 0.44rem;
+    text-align: center;
+  }
+
+  // 2填写手机号[
+
+  .press__content {
+    margin: auto;
+    text-align: center;
+  }
+
+  .press__box input {
+    height: 0.72rem;
+    padding: 0 0.2rem;
+    color: #303030;
+    font-size: 0.28rem;
+    line-height: 0.72rem;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+    width: 4.64rem;
+    margin: 0.32rem auto 0.2rem;
+    display: block;
+  }
+
+  .press__message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 1rem;
+    font-size: 0.24rem;
+    line-height: 1.2;
+    padding: 0 0.8rem;
+    color: #999;
+  }
+
+  .press__button-wrap {
+    margin-top: 0.4rem;
+    display: flex;
+    border-top: 1px solid rgba(246, 246, 246, 0.5);
+  }
+
+  .press__dialog-phone {
+    .press__button-wrap {
+      a {
+        display: block;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 1.08rem;
+        line-height: 1.08rem;
+        text-align: center;
+        font-size: 0.32rem;
+      }
+
+      .press__btn--cancel {
+        color: #999;
+        border-right: 1px solid rgba(246, 246, 246, 0.5);
+      }
+
+      .press__btn--sure {
+        color: #d49b38;
+      }
+    }
+  }
+
+  // 2填写手机号]
+
+  /* 协议 */
+  .press__treaty-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+    padding: 0 0.8rem;
+    color: #999;
+    margin-top: 0.1rem;
+  }
+
+  .press__treaty-check {
+    width: .24rem !important;
+    height: .24rem !important;
+    flex-shrink: 0;
+    margin: .06rem .06rem 0 0;
+
+    ::v-deep .van-checkbox__icon {
+      width: .24rem !important;
+      height: .24rem !important;
+      border: 1px solid #999 !important;
+
+      ::v-deep .van-icon {
+        width: .24rem !important;
+        height: .24rem !important;
+        border: 0 none !important;
+      }
+    }
+
+    ::v-deep .van-checkbox__icon--checked {
+      width: .24rem !important;
+      height: .24rem !important;
+      border: 1px solid #999 !important;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon {
+      width: .24rem !important;
+      height: .24rem !important;
+      background: url(https://image-1251917893.file.myqcloud.com/igame/merchant/component-icon/pvp-checked-icon.png) no-repeat 50% !important;
+      background-size: contain !important;
+      border: 0 none !important;
+    }
+
+    ::v-deep .van-checkbox__icon--checked .van-icon-success:before {
+      content: '';
+    }
+  }
+
+  .press__treaty-terms {
+    color: #4A4A4A;
+    font-size: .24rem;
+    line-height: 1.4;
+  }
+
+  .press__box {
+    margin-top: .8rem;
+
+    .press__code-wrap {
+      position: relative;
+
+      input {
+        padding-right: 1.8rem;
+      }
+    }
+
+    .press__code-btn {
+      display: inline-block;
+      position: absolute;
+      font-size: 0.28rem;
+      top: 0;
+      text-align: center;
+      line-height: .72rem;
+      width: 1.8rem;
+      right: 0.84rem;
+      color: #d49b38;
+    }
+  }
+}

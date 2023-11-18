@@ -46,7 +46,11 @@
       @close="onClose"
       @getuserinfo="getUserInfo"
     >
-      <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg">
+      <img
+        src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg"
+        style="width: 100%;margin-top: 16px;"
+        mode="aspectFit"
+      >
     </press-dialog-plus>
   </div>
 </template>

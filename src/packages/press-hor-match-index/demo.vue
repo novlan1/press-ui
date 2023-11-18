@@ -6,13 +6,18 @@
       :brand-list="BRAND_LIST"
       :show-person-dot="true"
       :show-message-dot="true"
+      :show-feedback="showFeedback"
       finished-style="font-size: 12px;"
       loading-size="16px"
       @back="onBack"
       @clickSidebar="onClickSidebar"
       @loadMore="loadMore"
       @clickMessage="clickMessage"
+      @clickFeedback="clickFeedback"
       @clickPerson="clickPerson"
+      @clickPrize="clickPrize"
+      @clickMatch="clickMatch"
+      @clickMatchButton="clickMatchButton"
     >
       <template #empty>
         <press-empty
@@ -25,13 +30,14 @@
 <script>
 import PressHorMatchIndex from 'src/packages/press-hor-match-index/press-hor-match-index.vue';
 import PressEmpty from 'src/packages/press-empty/press-empty.vue';
-import { isNotInUni } from 'src/packages/common/utils/utils';
 import {
   BANNER_LIST,
   BRAND_LIST,
   ONLINE_TAB_LIST,
   ONLINE_MATCH_MAP,
 } from 'src/packages/press-hor-match-index/demo-helper/data';
+import { routerBack } from 'src/utils/index';
+
 
 export default {
   components: {
@@ -42,6 +48,7 @@ export default {
     return {
       BANNER_LIST,
       BRAND_LIST,
+      showFeedback: true,
       sidebarList: [
         {
           label: '推荐',
@@ -96,14 +103,13 @@ export default {
   },
   methods: {
     onBack() {
-      if (isNotInUni()) {
-        this.$router.back();
-        return;
-      }
-      uni.navigateBack();
+      routerBack.call(this);
     },
     clickMessage() {
       this.onGTip('message');
+    },
+    clickFeedback() {
+      this.onGTip('clickFeedback');
     },
     clickPerson() {
       this.onGTip('home');
@@ -124,6 +130,18 @@ export default {
         matchInfo.finished =  matchInfo.list.length > 30;
       }, 2000);
     },
+    clickPrize(item, index) {
+      console.log('[clickPrize]', item, index);
+      this.onGTip(`[clickPrize] ${index}`);
+    },
+    clickMatchButton(item, index) {
+      console.log('[clickMatchButton]', item, index);
+      this.onGTip(`[clickMatchButton] ${index}`);
+    },
+    clickMatch(item, index) {
+      console.log('[clickMatch]', item, index);
+      this.onGTip(`[clickMatch] ${index}`);
+    },
   },
 };
 </script>
@@ -133,7 +151,8 @@ export default {
 
   ::v-deep {
     .press-index {
-      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/bg.png) no-repeat;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/bg.png)
+        no-repeat;
       background-size: 100% 100%;
     }
   }

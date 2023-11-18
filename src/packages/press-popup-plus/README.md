@@ -27,7 +27,7 @@ export default {
 ```html
 <press-cell title="展示弹出层" is-link @click="showPopup" />
 
-<press-popup :show="show" @close="onClose">内容</press-popup>
+<press-popup-plus :show="show" @close="onClose">内容</press-popup-plus>
 ```
 
 ```javascript
@@ -37,11 +37,11 @@ Page({
   },
 
   showPopup() {
-    this.setData({ show: true });
+    this.show = true;
   },
 
   onClose() {
-    this.setData({ show: false });
+    this.show = false;
   },
 });
 ```
@@ -51,7 +51,7 @@ Page({
 通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`。
 
 ```html
-<press-popup
+<press-popup-plus
   :show="show"
   position="top"
   custom-style="height: 20%;"
@@ -64,7 +64,7 @@ Page({
 设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
 
 ```html
-<press-popup
+<press-popup-plus
   :show="show"
   closeable
   position="bottom"
@@ -73,7 +73,7 @@ Page({
 />
 
 <!-- 自定义图标 -->
-<press-popup
+<press-popup-plus
   :show="show"
   closeable
   close-icon="close"
@@ -83,7 +83,7 @@ Page({
 />
 
 <!-- 图标位置 -->
-<press-popup
+<press-popup-plus
   :show="show"
   closeable
   close-icon-position="top-left"
@@ -98,7 +98,7 @@ Page({
 设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式。
 
 ```html
-<press-popup
+<press-popup-plus
   :show="show"
   round
   position="bottom"
@@ -121,7 +121,7 @@ Page({
 <!-- page-meta 只能是页面内的第一个节点 -->
 <page-meta :page-style="show ? 'overflow: hidden;' : ''" />
 
-<press-popup :show="show" catch:touchstart />
+<press-popup-plus :show="show" catch:touchstart />
 ```
 
 ## API
@@ -143,6 +143,7 @@ Page({
 | close-icon             | 关闭图标名称或图片链接                           | _string_           | `cross`  |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                  | _boolean_          | `true`   |
 | safe-area-inset-top    | 是否留出顶部安全距离（状态栏高度）               | _boolean_          | `false`  |
+| custom-class           | 自定义类名                                       | _string_           | -        |
 | lock-scroll `v1.7.3`   | 是否锁定背景滚动                                 | _boolean_          | `true`   |
 
 ### Events
@@ -157,10 +158,4 @@ Page({
 | before-leave  | 离开前触发       | -    |
 | leave         | 离开中触发       | -    |
 | after-leave   | 离开后触发       | -    |
-
-### 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
 

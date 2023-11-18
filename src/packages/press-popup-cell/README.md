@@ -34,7 +34,7 @@ export default {
 ```
 
 ```ts
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell';
 
 function showPopupCell(options) {
   return showFunctionalComponent({

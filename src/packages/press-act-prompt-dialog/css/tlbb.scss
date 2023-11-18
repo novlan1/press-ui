@@ -1,0 +1,277 @@
+.press-act:not(.press-act--hidden-tip) {
+
+  /* 遮罩层 */
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 95;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* 背景 */
+  .press__dialog {
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+    width: 7.65rem;
+    height: 5.48rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  /* 关闭按钮 */
+  .press__dialog .press__close {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.91rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-close.png) no-repeat center center;
+    background-size: 100% auto;
+    vertical-align: middle;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.14rem;
+    text-indent: -1000rem;
+    z-index: 5;
+  }
+
+  /* 标题 */
+  .press__title--prompt {
+    font-size: 0.36rem;
+    font-weight: 600;
+    color: #be400f;
+    text-align: center;
+    margin-top: 0.458rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .press__title--prompt::after {
+    content: '';
+    width: 1.82rem;
+    height: 0.28rem;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/tip-project/liebian-tlbb/title-left-icon.png) center center no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    left: -2.05rem;
+    top: 0.1rem;
+  }
+
+  .press__title--prompt::before {
+    content: '';
+    width: 1.82rem;
+    height: 0.28rem;
+    background: url(https://image-1251917893.cos.ap-guangzhou.myqcloud.com/tip-project/liebian-tlbb/title-right-icon.png) center center no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    right: -2.05rem;
+    top: 0.1rem;
+  }
+
+  /* 内容区域 */
+  .press__button-wrap {
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 4.52rem;
+    margin: 0.2rem auto;
+    position: inherit;
+  }
+
+  .press__button-wrap a {
+    margin: auto;
+  }
+
+  .press__content {
+    margin-top: 0.12rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .press__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    min-height: 1.8rem;
+  }
+
+  /* 提示标题 */
+  .press__notice {
+    font-size: 0.24rem;
+    color: #85817c;
+    line-height: 0.34rem;
+    padding: 0 0.32rem;
+    word-wrap: break-word;
+    word-break: normal;
+    color: #6a3a2a;
+    font-weight: 600;
+    font-size: 0.36rem;
+    margin-bottom: 0.2rem;
+  }
+
+  /* 提示内容 */
+  .press__text {
+    color: #6a3a2a;
+    font-size: 0.22rem;
+    line-height: 0.34rem;
+    padding: 0 0.32rem;
+    max-height: 2.4rem;
+    width: 6rem;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: break-all;
+    /* margin-top: -0.12rem; */
+  }
+
+  /* 按钮 --- start */
+  .press__dialog--prompt .press__button-wrap {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.2rem;
+    z-index: 2;
+    padding: 0;
+    justify-content: space-around;
+    width: 6rem;
+  }
+
+  .press__dialog--prompt .press__btn--cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--sure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--medium-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .press__dialog--prompt .press__btn--medium-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.51rem;
+    height: 0.87rem;
+    line-height: 1;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/warn-tip-dialog-btn.png) no-repeat center center;
+    background-size: contain;
+    color: #8d2108;
+    font-size: 0.32rem;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  /* 按钮 --- end */
+
+  /* 商圈 */
+  .press__pic-wrap p {
+    color: #6a3a2a;
+    font-size: 0.22rem;
+    margin-top: 0.1rem;
+  }
+
+  .press__pic-wrap img {
+    width: 1.94rem;
+    height: 1.94rem;
+  }
+}

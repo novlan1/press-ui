@@ -20,6 +20,8 @@
 - 🍭 支持主题定制，内置 600+ 个主题变量
 - 🌍 支持国际化，内置 16+ 种语言包
 
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_13f3281f0a188e0fbd.png" width="600">
+
 ### 2. 解决痛点
 
 
@@ -48,16 +50,21 @@
 
 `Press UI`可应用于`uni-app`项目，或者普通的H5项目，同时支持 Vue2 和 Vue3。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/9/own_mike_6db062b47baf2148e9.png" width="600">
-
-
-目前已应用在王者赛宝、HoK Club、赛宝pro等项目中。
+目前已应用在王者赛宝、HoK Club、赛宝Pro、和平赛事、高能赛事、商户赛等项目中。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
 
-
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/hok-club-screenshot.png" width="300">
 
+<br/>
+
+<!-- <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_fa5d34c18c86ae412c.jpg" width="300"> -->
+
+<!-- <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_fb1530d4d6e351383c.jpg" width="300"> -->
+
+<!-- <br/> -->
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_2bfb54a9ad6b9bc0ff.jpg" width="600">
 
 
 ### 4. 如何使用
@@ -108,9 +115,11 @@ module.exports = {
 
 下图是示例二维码，分别为H5、微信小程序、QQ小程序，以及非`uni-app`环境的普通H5项目。
 
-<!-- <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600"> -->
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_4fb4574312ab01757e.png" width="700">
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/8/own_mike_826bfef42386729465.png" width="700">
+下面是 Vue3 版本的H5、微信小程序，及 Vue2 版本的安卓项目。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_dd8154ddb53764c3d0.png" width="510">
 
 ### 6. 贡献指南
 

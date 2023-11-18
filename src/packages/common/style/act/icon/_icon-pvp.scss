@@ -1,0 +1,136 @@
+//  icon 的样式函数
+@mixin icon-style($width, $height, $display:inline-block, $overflow:hidden) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  overflow: $overflow;
+}
+
+//  1商户入驻
+%icon-add {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-add.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.82rem, .82rem);
+}
+
+
+//2 页面返回按钮
+%icon-back {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-back.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.8rem, .5rem);
+}
+
+// 3来过
+%icon-been {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-been.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.6rem, .62rem);
+}
+
+//4品牌
+%icon-brand {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-brand.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.6rem, .62rem);
+}
+
+// 5空状态
+%icon-empty {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-empty.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(1.88rem, 1.76rem);
+}
+
+//6金牌特权
+%icon-gold {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-gold.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.82rem, .82rem);
+}
+
+// 7在店
+%icon-in {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-in.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.6rem, .62rem);
+}
+
+//8限量
+%icon-limited {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-limited.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.34rem, .62rem);
+}
+
+//9
+%icon-mingwen_select {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-mingwen_select.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(1.08rem, 1.1rem);
+}
+
+//10 最近
+%icon-nearest {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-nearest.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.6rem, .62rem);
+}
+
+// 11规则
+%icon-rule-32 {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-rule-32.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.32rem, .32rem);
+}
+
+//12银牌特权
+%icon-silver {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-silver.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.8rem, .28rem);
+}
+
+//13 tab-select选中态
+%icon-tabs_select {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-tabs_select.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(1.52rem, .56rem);
+}
+
+//14弹框订阅背景
+%icon-unchecked_bg {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/icon-unchecked_bg.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.4rem, .4rem);
+}
+
+//15 弹框关闭按钮
+%pop-close {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/pop-close.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(.4rem, .4rem);
+}
+
+// 16全屏弹框-标题
+%pop-title_bg {
+  background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/pvp3.0/image/icon/pop-title_bg.png) no-repeat center center;
+  background-size: contain;
+
+  @include icon-style(5.68rem, 1.2rem);
+}

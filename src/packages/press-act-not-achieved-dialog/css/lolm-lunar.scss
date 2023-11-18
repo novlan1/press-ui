@@ -1,0 +1,119 @@
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    &.press__dialog--fail {
+      background: url('https://image-1251917893.file.myqcloud.com/tip-project/lgame/ingame-lolm/ingame-dialog--bigger.png') center top no-repeat;
+      background-size: 100% auto;
+      width: 9.16rem;
+      height: 4.68rem;
+
+      .press__progress-wrap {
+        width: 6.56rem;
+        height: 1.14rem;
+        background: rgba(0, 0, 0, .5);
+        border-radius: .08rem;
+        margin: 0 auto;
+        padding: .24rem 0 0;
+
+        .press__progress-bar {
+          width: 2.36rem;
+          height: .04rem;
+          background: #333;
+          border-radius: .02rem;
+          margin: 0 auto;
+
+          i {
+            display: block;
+            height: .04rem;
+            border-radius: .02rem;
+            background: #f9be0a;
+          }
+        }
+
+        .press__progress {
+          font-size: .24rem;
+          color: #85817c;
+          line-height: .42rem;
+          text-align: center;
+          margin: 0 auto .16rem;
+        }
+      }
+
+      .press__btn {
+        display: flex;
+        margin-left: .24rem;
+        align-items: center;
+        justify-content: center;
+        color: #f0e6d2;
+        width: 2.12rem;
+        height: .6rem;
+        line-height: normal;
+        font-size: .24rem;
+        border: .02rem solid;
+        border-image: linear-gradient(to bottom, #eee2cc, #c39d53) 1 10;
+        background-image: none;
+        background: linear-gradient(to bottom, #151b21 0%, #3a382d 100%);
+      }
+
+      .press__buttons {
+        display: flex;
+        justify-content: center;
+        margin: .28rem auto 0;
+      }
+
+      .press__content {
+        .press__name {
+          color: #f0e6d2;
+          font-size: .32rem;
+          height: .44rem;
+          line-height: .44rem;
+          margin: .29rem auto .02rem;
+        }
+
+        .press__user {
+          color: #85817c;
+          font-size: .24rem;
+          line-height: .44rem;
+          margin: 0 auto .12rem;
+        }
+      }
+
+      .press__title {
+        padding: .3rem .36rem .17rem;
+
+        &.press__title--fail {
+          color: #f0e6d2;
+          font-size: .32rem;
+          text-align: left;
+          line-height: .44rem;
+          position: relative;
+
+          &::after {
+            display: block;
+            content: '';
+            border-bottom: .02rem solid #5d4f33;
+            width: 8.44rem;
+            height: 0;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+
+      .press__close {
+        display: block;
+        position: absolute;
+        top: .36rem;
+        right: .36rem;
+        background: url('https://image-1251917893.file.myqcloud.com/tip-project/lgame/ingame-lolm/dialog-close.png') center center no-repeat;
+        background-size: 100% auto;
+        width: .2rem;
+        height: .2rem;
+        z-index: 10;
+      }
+    }
+  }
+
+  .press__num {
+    display: inline;
+  }
+}

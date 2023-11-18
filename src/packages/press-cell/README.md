@@ -127,6 +127,57 @@ export default {
 <press-cell center title="单元格" value="内容" label="描述信息" />
 ```
 
+### E-Sport
+
+设置`type`属性为`e-sport`。
+
+```html
+ <press-cell
+  :title="t('matchMode')"
+  :value="t('knockout')"
+  type="e-sport"
+  is-link
+  :border="false"
+/>
+<press-cell
+  :title="t('wayToWin')"
+  :value="t('defaultBo1')"
+  type="e-sport"
+  is-link
+  :border="false"
+/>
+<press-cell
+  :title="t('allowModifyAvatar')"
+  :border="false"
+  type="e-sport"
+>
+  <template #right-icon>
+    <press-switch
+      custom-class="press-switch--e-sport"
+      :checked="switchChecked[1]"
+      @change="val=>onChangeSwitch(val, 1)"
+    />
+  </template>
+</press-cell>
+
+<press-cell
+  :title="t('getPhoneNumber')"
+  :label="t('getPhoneNumberDesc')"
+  type="e-sport"
+  center
+  :border="false"
+>
+  <template #right-icon>
+    <press-switch
+      custom-class="press-switch--e-sport"
+      :checked="switchChecked[2]"
+      @change="val=>onChangeSwitch(val, 2)"
+    />
+  </template>
+</press-cell>
+```
+
+
 ## API
 
 ### CellGroup Props
@@ -163,6 +214,7 @@ export default {
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down`                      | _string_           | -            |
 | use-label-slot  | 是否使用 label slot                                        | _boolean_          | `false`      |
 | title-style     | 标题样式                                                   | _string_           | -            |
+| type            | 额外类型，可选值为 `e-sport`                               | _string_           | -            |
 
 ### Cell Event
 

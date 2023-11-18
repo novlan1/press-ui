@@ -1,0 +1,150 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-nba.scss';
+@import '../../common/style/act/button/_button-nba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__full-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+  }
+
+  .press__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 4.2rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-bg-3.png) repeat center center;
+    background-size: 100% auto;
+
+    margin: 0rem;
+    z-index: 100;
+
+    align-items: center;
+    display: flex;
+  }
+
+  .press__full-page .press__content {
+    padding: 7% 0rem 2%;
+  }
+
+  .press__full-page--portrait .press__content {
+    padding: 8% 0rem 2%;
+  }
+
+  .press__content--get::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1rem;
+    width: 7.64rem;
+    height: 2.64rem;
+    margin: auto;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-gxhd.png) no-repeat center center;
+    background-size: auto 100%;
+  }
+
+  .press__content--received::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1rem;
+    width: 7.64rem;
+    height: 2.64rem;
+    margin: auto;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-ylq.png) no-repeat center center;
+    background-size: auto 100%;
+  }
+
+  //下面的是暂时移过来的
+
+  .press__center {
+    width: 66%;
+    padding-top: $font-xs;
+    text-align: center;
+    margin: auto;
+    position: relative;
+  }
+
+  .press__center-item {
+    text-align: center;
+    font-size: .28rem;
+    color: #f4f4f6;
+
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: .08rem;
+    }
+  }
+
+  .press__base-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #425365;
+    margin-top: .1rem;
+  }
+
+  .press__goods-name {
+    font-size: $font-m;
+    font-weight: bold;
+    line-height: .4rem;
+    color: #f4f4f6;
+  }
+
+  .press__goods-desc {
+    display: none;
+  }
+
+  .tip-comp-dialog--fullpage-waiting-issue {
+    width: 1.6rem;
+    height: .52rem;
+    line-height: .52rem;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+  }
+
+  .press__full-page--portrait .press__tips {
+    margin: .2rem auto 0rem;
+    color: #fff;
+    padding-left: 1.6rem;
+    text-align: left;
+    width: 8.64rem;
+    height: .52rem;
+    line-height: .52rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-lq-tips.png) no-repeat center center;
+    background-size: contain;
+
+    span {
+      color: #f1b841;
+    }
+  }
+
+  .press__button-wrap {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    width: 6.4rem;
+    height: .92rem;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1.1rem;
+  }
+
+  .press__stay-out-new {
+    display: none;
+  }
+}

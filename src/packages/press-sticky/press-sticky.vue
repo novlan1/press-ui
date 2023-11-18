@@ -228,7 +228,11 @@ export default {
       // #endif
 
       // #ifndef H5
-      res = new Promise(resolve => nodesRef.boundingClientRect(resolve).exec());
+      if (typeof nodesRef.boundingClientRect === 'function') {
+        res = new Promise(resolve => nodesRef.boundingClientRect(resolve).exec());
+      } else {
+        res = Promise.resolve({ });
+      }
       // #endif
       return res;
     },

@@ -7,14 +7,22 @@
     />
 
     <PressField
+      v-if="curGameParams.roomId"
       v-model="inputRoomId"
-      label="Room Id"
-      placeholder="Please Input Room Id"
+      :label="curGameParams.roomId.label"
+      :placeholder="`Please Input ${curGameParams.roomId.label}`"
     />
     <PressField
+      v-if="curGameParams.roomPwd"
       v-model="inputRoomPwd"
-      label="Room Pwd"
-      placeholder="Please Input Room Pwd"
+      :label="curGameParams.roomPwd.label"
+      :placeholder="`Please Input ${curGameParams.roomPwd.label}`"
+    />
+    <PressField
+      v-if="curGameParams.uin"
+      v-model="inputUin"
+      label="Uin"
+      placeholder="Please Input Uin"
     />
     <press-cell
       title="Game"
@@ -63,41 +71,72 @@
   </div>
 </template>
 <script>
-// import { getQueryObj } from 't-comm/lib/url/url';
+import QRcode from 'qrcode';
+import {
+  launchGNGameRoom,
+  launchDDZGameRoom,
+  launchGPGameRoom,
+  launchMJGameRoom,
+} from 't-comm/lib/launch-game/launch-game';
+import { flatten } from 't-comm/lib/base/list';
 
-import { FUNCTIONAL_ID_MAP,
-  showPicker,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressButton from 'src/packages/press-button/press-button.vue';
 import PressField from 'src/packages/press-field/press-field.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
+
 import PressDialogHandler from 'src/packages/press-dialog';
 import {
-  launchGNGameRoom,
-} from 't-comm/lib/launch-game/launch-game';
-import QRcode from 'qrcode';
+  FUNCTIONAL_ID_MAP,
+  showPicker,
+} from 'src/packages/press-popup-cell/demo-helper/helper';
 
 
 const GAME_LIST = [
   {
     label: 'GN',
     value: 'GN',
+    launchFunc: launchGNGameRoom,
+    launchParams: {
+      uin: false,
+      roomId: { label: 'Room Id' },
+      roomPwd: { label: 'Room Pwd' },
+    },
   },
   {
     label: 'GP',
     value: 'GP',
+    launchFunc: launchGPGameRoom,
+    launchParams: {
+      uin: false,
+      roomId: { label: 'Room Id' },
+      roomPwd: { label: 'Room Pwd' },
+    },
   },
   {
     label: 'DDZ',
     value: 'DDZ',
+    launchFunc: launchDDZGameRoom,
+    launchParams: {
+      uin: true,
+      roomId: { label: 'Series Id' },
+      roomPwd: { label: 'Game Id' },
+    },
   },
   {
     label: 'MJ',
     value: 'MJ',
+    launchFunc: launchMJGameRoom,
+    launchParams: {
+      uin: true,
+      roomId: { label: 'Series Id' },
+      roomPwd: { label: 'Game Id' },
+    },
   },
 ];
+
+const gameMap = flatten(GAME_LIST, 'value');
 
 
 export default {
@@ -113,8 +152,16 @@ export default {
       FUNCTIONAL_ID_MAP,
       inputRoomId: '',
       inputRoomPwd: '',
+      inputUin: '',
+
       curGame: 'GN',
     };
+  },
+  computed: {
+    curGameParams() {
+      const { launchParams } = gameMap[this.curGame] || {};
+      return launchParams || {};
+    },
   },
   created() {
   },
@@ -122,9 +169,17 @@ export default {
   },
   methods: {
     onLaunchGame() {
-      launchGNGameRoom({
+      const launchHandler = gameMap[this.curGame]?.launchFunc;
+      if (!launchHandler) return;
+
+      launchHandler({
         roomId: this.inputRoomId || '',
         roomPwd: this.inputRoomPwd || '',
+
+        seriesId: this.inputRoomId || '',
+        gameId: this.inputRoomPwd || '',
+        uin: this.inputUin || '',
+
         context: this,
         qrCodeLib: QRcode,
         dialogHandler: PressDialogHandler,
@@ -155,9 +210,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-// .demo-wrap {
-//   margin-top: 20px;
-// }
 .button__wrap{
   display: flex;
   justify-content: center;

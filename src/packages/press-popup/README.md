@@ -198,7 +198,6 @@ export default {
 
 可传入`asyncConfirm`、`asyncCancel`方法控制异步关闭，如果返回`false`或`Promise<false>`则不会关闭`popup`。
 
-
 ```html
  <PressPopup
   :close-icon="false"
@@ -225,6 +224,26 @@ export default {
     },
     asyncCancel() {
       return false;
+    },
+  }
+}
+```
+
+注意在小程序平台，`asyncConfirm` 和 `asyncCancel` 的 `this` 执向有问题。
+
+```ts
+let that = null;
+
+export default {
+  data() {
+    that = this;
+
+    return {}
+  },
+  methods: {
+    asyncConfirm() {
+      // 小程序中回调 this 是子组件
+      return that.isAuthenticationPopup;
     },
   }
 }

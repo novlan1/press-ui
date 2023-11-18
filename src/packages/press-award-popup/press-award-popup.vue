@@ -91,6 +91,7 @@
     <!-- 未获得奖励 -->
     <PressDialog
       v-if="tipTitle"
+      :can-touch-remove="false"
       :show="isShowTipDialog"
       :title="tipTitle"
       :confirm-text="confirmText"

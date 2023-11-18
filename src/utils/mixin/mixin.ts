@@ -1,5 +1,15 @@
 import { initGlobalMixin, initGlobalProps } from '../../packages/common/vue3/adapter';
 import Toast from '../../packages/press-toast/index';
+import {
+  FUNCTIONAL_ID_MAP,
+} from '../../packages/press-popup-cell/demo-helper/helper';
+
+
+const SHARE_INFO = {
+  title: 'Press UI 组件库',
+  // path: '/pages/index/index',
+  imageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
+};
 
 // Vue2 和 Vue3 的 uni-app 工程，共用的mixin
 export function initMixin(app: any) {
@@ -7,9 +17,12 @@ export function initMixin(app: any) {
     // @ts-ignore
     onShareAppMessage() {
       return {
-        title: 'Press UI 组件库演示',
-        // path: '/pages/index/index',
-        imageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
+        ...SHARE_INFO,
+      };
+    },
+    onShareTimeline() {
+      return {
+        ...SHARE_INFO,
       };
     },
     onLoad() {
@@ -19,6 +32,11 @@ export function initMixin(app: any) {
         showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
       });
       // #endif
+    },
+    data() {
+      return {
+        FUNCTIONAL_ID_MAP,
+      };
     },
     methods: {
       onGTip(title: string, duration = 1000) {

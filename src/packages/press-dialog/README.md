@@ -28,7 +28,7 @@ export default {
 ```
 
 ```ts
-import PressDialog from 'src/packages/press-dialog';
+import PressDialog from 'press-ui/press-dialog';
 
 export default {
   methods: {
@@ -87,10 +87,11 @@ export default {
 ```
 
 
-### 嵌入输入框
+### 嵌入输入框并异步关闭
 
+设置 `showField` 为 `true`，可展示输入框。
 
-可通过`onConfirmClick`进行输入内容的校验，返回`false`、`Promise<false>`则不会关闭。
+可通过 `onConfirmClick` 进行输入内容的校验，返回`false`、`Promise<false>`则不会关闭。
 
 ```ts
 export default {

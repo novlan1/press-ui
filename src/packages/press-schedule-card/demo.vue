@@ -37,36 +37,13 @@
       @exchange="exchange"
     />
 
-    <demo-block
-      :title="t('mockData')"
+    <DemoInput
       :section-style="sectionStyle"
       :header-style="headerStyle"
-    >
-      <div class="input__wrap">
-        <PressField
-          v-model="inputValue"
-          type="textarea"
-          :autosize="autosize"
-          placeholder="请输入赛程数据"
-        />
-        <div class="input__buttons">
-          <PressButton
-            size="small"
-            custom-style="margin-right: 8px"
-            @click="onClearInput"
-          >
-            清空
-          </PressButton>
-          <PressButton
-            type="primary"
-            size="small"
-            @click="onConfirmInput"
-          >
-            确定
-          </PressButton>
-        </div>
-      </div>
-    </demo-block>
+      :autosize="autosize"
+      :value="MOCK_SCHEDULE_DATA"
+      @confirm="onConfirmInput"
+    />
 
     <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
@@ -85,8 +62,7 @@ import PressScheduleCard from 'src/packages/press-schedule-card/press-schedule-c
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
 import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressField from 'src/packages/press-field/press-field.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import DemoInput from 'src/pages/components/demo-input/demo-input.vue';
 
 import { SCHEDULE_CARD_STATE_MAP, RESULT_TYPE_MAP } from 'src/packages/press-schedule-card/config';
 import {
@@ -99,7 +75,6 @@ import {
 import { MOCK_SCHEDULE_DATA } from 'src/packages/press-schedule-card/demo-helper/data';
 import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
 import { parseScheduleData } from 'src/packages/press-schedule-card/utils';
-
 
 const MOCK_PLAYING_INDEX = 1;
 const MOCK_COUNT_DOWN = 1000 * 60 * 60 * 26;
@@ -120,8 +95,7 @@ export default {
     PressCell,
     PressPopupCell,
     PressPicker,
-    PressField,
-    PressButton,
+    DemoInput,
   },
   data() {
     return {
@@ -159,7 +133,7 @@ export default {
       FUNCTIONAL_ID_MAP,
       // SCHEDULE_CARD_STATE_MAP,
       autosize: { maxHeight: 600, minHeight: 50 },
-      inputValue: MOCK_SCHEDULE_DATA,
+      MOCK_SCHEDULE_DATA,
     };
   },
   methods: {
@@ -225,11 +199,7 @@ export default {
     countDownChange() {
 
     },
-    onClearInput() {
-      this.inputValue = '';
-    },
-    onConfirmInput() {
-      const { inputValue } = this;
+    onConfirmInput(inputValue) {
       let scheInfo = {};
 
       try {
@@ -255,12 +225,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.input__wrap {
-  padding: 0 10px 20px;
-}
-.input__buttons {
-  padding-top: 12px;
-  display: flex;
-  justify-content: flex-end;
-}
 </style>

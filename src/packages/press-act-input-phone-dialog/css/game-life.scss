@@ -1,0 +1,217 @@
+/* 	dialogStyle:*13,输入手机号 -merchant-ui\src\tip-comp-dialog-input-phone-info- start */
+/* 公共 -- start */
+/* 0.遮罩层  -- start*/
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 101;
+  }
+
+  /* 0.遮罩层  -- end*/
+  /* 1.背景 */
+  .press__dialog-phone {
+    width: 6.88rem;
+    height: auto;
+    padding-bottom: 0.3rem;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+  }
+
+  /* 2.关闭按钮 */
+  .press__close {
+    width: 0.28rem;
+    height: 0.28rem;
+    background: url('https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/goods-page/dialog-closed-btn.png') no-repeat center;
+    background-size: 100% auto;
+    position: absolute;
+    top: 0.28rem;
+    right: 0.28rem;
+    z-index: 10;
+  }
+
+  /* 3.标题 */
+  .press__title--phone {
+    margin: 0.3rem 0 0 0.28rem;
+    position: relative;
+    font-size: 0.26rem;
+    color: #303030;
+    background-image: -webkit-linear-gradient(top, #303030, #303030);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 0.45rem;
+    padding-left: 0.06rem;
+    text-align: left;
+  }
+
+  /* 4.按钮----------- start */
+  .press__dialog-phone .press__button-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8rem auto 0;
+  }
+
+  .press__btn--medium-secondary,
+  .press__btn--cancel {
+    display: block;
+    color: #f4997b;
+    border-radius: 2px;
+    background: #fff1d5;
+    text-align: center;
+    width: 2.64rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    margin: 0 0.16rem;
+  }
+
+  .press__btn--sure,
+  .press__btn--medium-primary,
+  .tip-comp-btn-large-primary {
+    display: block;
+    border-radius: 2px;
+    background: linear-gradient(45deg, #f99b73 0%, #9473ff 100%);
+    color: #fff;
+    width: 2.64rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    margin: 0 0.16rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.28rem;
+  }
+
+  /* 4.按钮----------- end */
+  /* 5.input 输入框 ------- start */
+  .press__phone-number,
+  .tip-act-dialog-main input,
+  .press__content input,
+  .tip-comp-dialog--input-qq-content input,
+  .tip-comp-dialog-content input {
+    width: 5.08rem;
+    height: 0.56rem;
+    padding: 0 0.3rem;
+    color: rgba(0, 0, 0, 0.3);
+    border: 0.02rem solid #fff;
+    background: rgba(231, 231, 231, 0.5);
+    font-size: 0.2rem;
+  }
+
+  .press__phone-number::placeholder,
+  .tip-act-dialog-main input::placeholder,
+  .press__content input::placeholder,
+  .tip-comp-dialog--input-qq-content input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .tip-act-dialog-main .press__phone-number,
+  .press__content .press__phone-number {
+    width: 5.08rem;
+  }
+
+  /* 5.input 输入框 ------- end */
+  /* 公共 -- end */
+
+  /* 验证码输入框 */
+  .press__code-wrap .press__code-number {
+    width: 3.42rem;
+  }
+
+  .press__content {
+    margin-top: 0.44rem;
+  }
+
+  /* 获取验证码wrap */
+  .press__code-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+
+  /* 获取验证码 */
+  .press__code-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.48rem;
+    width: 1.5rem;
+    font-size: 0.2rem;
+    border-radius: 2px;
+    background: linear-gradient(45deg, #f99b73 0%, #9473ff 100%);
+    color: #fff;
+    white-space: nowrap;
+    margin-left: 0.13rem;
+    flex-shrink: 0;
+  }
+
+  .press__message {
+    width: 4.98rem;
+    color: #303030;
+    font-size: 0.2rem;
+    line-height: 0.41rem;
+    text-align: center;
+    margin: 0.24rem auto 0;
+  }
+
+  .press__treaty-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.24rem;
+    justify-content: center;
+    color: #303030;
+    margin: 0.05rem auto 0;
+  }
+
+  .press__treaty-terms,
+  .press__treaty-desc {
+    font-size: 0.24rem;
+    display: inline;
+  }
+
+  /* checkbox -- start */
+  .press__treaty-check .van-checkbox__icon .van-icon-success {
+    font-size: 0 !important;
+    width: 0.4rem;
+    height: 0.4rem;
+    display: block;
+    border: none !important;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/goods-page/icon-uncheck.png) no-repeat !important;
+    background-size: 100% 100% !important;
+  }
+
+  .press__treaty-check .van-checkbox__icon--checked .van-icon-success {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-project/liebian-tlbb/goods-page/icon-check.png) no-repeat !important;
+    background-size: 100% 100% !important;
+  }
+
+  .press__treaty-check .van-checkbox__icon--checked .van-icon-success::before {
+    display: none;
+  }
+
+  .press__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* checkbox -- start */
+  /* dialogStyle:*13,输入手机号 -merchant-ui\src\tip-comp-dialog-input-phone-info- end */
+
+}

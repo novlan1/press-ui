@@ -258,10 +258,10 @@ export default {
       },
     };
 
-    let popupCustomStyle = '';
+    const popupCustomStyle = '';
 
     // #ifdef H5
-    popupCustomStyle = 'top: 44px;';
+    // popupCustomStyle = 'top: 44px;';
     // #endif
 
     return {

@@ -25,7 +25,7 @@ import PressPicker from '../press-picker-plus/press-picker-plus.vue';
 import { isDef } from '../common/utils/validator';
 import { pickerProps } from '../press-picker-plus/shared';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { forceUpdate } from '../common/vue3/adapter';
+import { forceUpdate, nextTick } from '../common/vue3/adapter';
 
 
 const currentYear = new Date().getFullYear();
@@ -192,7 +192,7 @@ export default {
       forceUpdate(this);
 
       // eslint-disable-next-line vue/valid-next-tick
-      return new Promise(resolve => this.$nextTick(resolve));
+      return new Promise(resolve => nextTick(resolve));
     },
     updateValue() {
       const val = this.correctValue(this.value);

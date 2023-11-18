@@ -11,7 +11,7 @@ let merged = false;
 
 let i18nHandler = function (this: Object) {
   // #ifndef VUE3
-  const vuei18n = Object.getPrototypeOf(this || Vue).$t;
+  const vuei18n = Object.getPrototypeOf(this || Vue)?.$t;
   if (typeof vuei18n === 'function' && !!(Vue as any).locale) {
     if (!merged) {
       merged = true;

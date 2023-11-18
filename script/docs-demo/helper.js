@@ -1,13 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const { mkDirsSync } = require('t-comm');
-const { getPureCompName } = require('../utils/utils');
+const { getPureCompName, isActComponent } = require('../utils/utils');
 
 
 const PATH_MAP = {
   DOC_PATH: './docs/components/press',
   DOC_EN_PATH: './docs/en/components/press',
   DEMO_PATH: './src/pages/press',
+  DEMO_ACT_PATH: './src/pages/act',
   COMPONENT_DIR: './src/packages',
 };
 
@@ -110,11 +111,17 @@ function writeCompDoc(data, name, docPath) {
  */
 function writeCompDemo(data, name) {
   const pureName = getPureCompName(name);
+  const isAct = isActComponent(pureName);
+  const demoPath = isAct ? PATH_MAP.DEMO_ACT_PATH : PATH_MAP.DEMO_PATH;
+
   console.log(`[AUTO] 正在写入 ${pureName} demo...`);
-  if (!fs.existsSync(PATH_MAP.DEMO_PATH)) {
-    mkDirsSync(PATH_MAP.DEMO_PATH);
+  if (!fs.existsSync(demoPath)) {
+    mkDirsSync(demoPath);
   }
-  const dir = path.resolve(PATH_MAP.DEMO_PATH, pureName);
+  const dir = path.resolve(
+    demoPath,
+    pureName,
+  );
 
   if (!fs.existsSync(dir)) {
     mkDirsSync(dir);

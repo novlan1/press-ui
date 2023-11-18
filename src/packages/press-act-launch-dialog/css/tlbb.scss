@@ -1,0 +1,43 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__wrap {
+    position: fixed;
+    background: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    display: block;
+    padding-top: 1rem;
+
+  }
+
+  .press__box {
+    margin: 0 auto;
+    width: 7.71rem;
+    height: 3.96rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2021/act/tlbb/20211204xiechengact/popup-wechat.png) no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .press__box--launch .press__text {
+    color: #277384;
+    font-size: .28rem;
+    text-align: center;
+    letter-spacing: .08rem;
+  }
+
+  .press__icon--launch-wx {
+    display: none;
+  }
+
+  .press__btn--blue {
+    display: none;
+  }
+
+  /* 拉起微信 end*/
+
+}

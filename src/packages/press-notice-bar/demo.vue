@@ -77,7 +77,7 @@
         :text="t('shortText')"
         :speed="100"
         scrollable
-        left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+        left-icon="https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
       />
     </demo-block>
   </div>

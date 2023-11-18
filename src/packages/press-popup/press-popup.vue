@@ -4,7 +4,9 @@
     :class="[
       'press-popup',
       getPropOrData('popupClass'),
-      getPropOrData('horizontal') ? 'press-popup__hor' : 'press-popup__vert']"
+      getPropOrData('horizontal') ? 'press-popup__hor' : 'press-popup__vert',
+      mode === 'white' ? 'press-popup--white' : ''
+    ]"
     :style="popupStyle"
     @touchmove.stop="preventTouchMove"
   >
@@ -94,6 +96,7 @@ export default {
   },
   options: {
     virtualHost: true,
+    styleIsolation: 'shared',
   },
   emits: ['onCancel', 'cancel', 'onConfirm', 'confirm'],
   data() {
@@ -178,7 +181,7 @@ export default {
       this.isEnter = true;
     },
     getPropOrData(key) {
-      return getPropOrData({
+      const res = getPropOrData({
         allProps,
         isFunctionMode: this.isFunctionMode,
         functionModeData: this.functionModeData,
@@ -186,6 +189,8 @@ export default {
         key,
         context: this,
       });
+
+      return res;
     },
     preventTouchMove() {
       return;
