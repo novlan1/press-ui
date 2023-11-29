@@ -164,7 +164,7 @@
     "@dcloudio/webpack-uni-mp-loader": "^2.0.1-alpha-36420220922001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-alpha-36420220922001",
     "stylelint-config-common": "^0.0.3",
-    "uni-plugin-light": "1.1.22-alpha.1",
+    "uni-plugin-light": "1.1.23",
     "@types/jest": "^29.2.3",
     "@types/webpack-env": "^1.18.1",
     "@vue/babel-preset-app": "^5.0.8",
