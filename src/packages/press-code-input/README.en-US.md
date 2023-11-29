@@ -129,7 +129,7 @@ Set `focus` to `true` to automatically obtain focus.
 
 
 
-##API
+## API
 
 ### Props
 

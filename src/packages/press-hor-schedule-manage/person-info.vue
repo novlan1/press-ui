@@ -162,6 +162,10 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'onClickDetail',
+    'onInviteMember',
+  ],
   data() {
     return {
     };

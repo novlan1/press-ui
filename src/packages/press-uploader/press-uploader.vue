@@ -143,7 +143,7 @@ import * as test from './test';
 
 
 export default {
-  name: 'PressUpload',
+  name: 'PressUploader',
   options: {
     virtualHost: true,
     styleIsolation: 'shared',
@@ -153,6 +153,11 @@ export default {
     PressLoadingPlus,
   },
   mixins: [mixin, props],
+  emits: [
+    'afterRead',
+    'error',
+    'oversize',
+  ],
   data() {
     return {
       // #ifdef APP-NVUE

@@ -29,11 +29,35 @@ export default {
   :code.sync="code"
   :need-phone-check="true"
   protocol-name="Press UI 协议"
-  @clickButton="onclickButton"
-  @clickProtocol="onClickProtocol"
-  @clickUserProtocol="onClickUserProtocol"
-  @clickCloseButton="closeGetTaskRewardDialog"
+  @clickButton="clickButton"
+  @clickProtocol="clickProtocol"
+  @clickUserProtocol="clickUserProtocol"
+  @clickCloseButton="clickCloseButton"
 />
+```
+
+```ts
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    clickButton() {
+      this.onGTip('[clickButton]');
+    },
+    clickProtocol() {
+      this.onGTip('[clickProtocol]');
+    },
+    clickUserProtocol() {
+      this.onGTip('[clickUserProtocol]');
+    },
+    clickCloseButton() {
+      this.onGTip('[clickCloseButton]');
+    },
+  }
+}
 ```
 
 ## API

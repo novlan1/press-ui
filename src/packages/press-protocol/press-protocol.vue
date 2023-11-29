@@ -84,8 +84,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../base/layout.scss";
-@import "../base/mixin.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/mixin.scss";
 
 .press-protocol {
   position: relative;

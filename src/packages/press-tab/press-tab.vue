@@ -145,7 +145,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../common/style/index.scss";
+@import "../common/style/press/index.scss";
 .press-tab__pane-wrapper {
   box-sizing: border-box;
   flex-shrink: 0;

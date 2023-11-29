@@ -139,6 +139,10 @@ export default {
 | finished-style  | 已完成自定义样式                   | _string_  | -                |
 | loading-style   | 加载中自定义样式                   | _string_  | -                |
 | loading-size    | 加载中图标尺寸                     | _string_  | `20px`           |
+| show-new-rank   | 是否显示新版排行版                 | _boolean_ | `false`          |
+| my-follow       | 我关注的主理人，结构同 `rankMap`   | _object_  | -                |
+| friends-follow  | 好友关注的主理人，结构同 `rankMap` | _object_  | -                |
+| cur-rank-tab    | 当前排行榜`Tab`                    | _number_  | `0`              |
 
 
 ###  Events
@@ -149,13 +153,15 @@ export default {
 | clickOwnerRegister | 点击注册主理人           | -                                                      |
 | clickMyOwnerInfo   | 点击我的主理人信息       | -                                                      |
 | clickSidebar       | 切换侧边栏               | `sidebarItem`, `sidebarIndex`, `tabIndex`              |
-| changeTab          | 切换横向Tab              | `tab`                                                  |
+| changeTab          | 切换横向`Tab`            | `tab`                                                  |
 | clickMatch         | 点击比赛                 | `matchItem`, `matchIndex`,  `sidebarIndex`, `tabIndex` |
 | clickMatchButton   | 点击比赛按钮，比如“详情” | `matchItem`, `matchIndex`,  `sidebarIndex`, `tabIndex` |
 | clickRankItem      | 点击排名项               | `rankItem`, `rankIndex`                                |
 | focus              | 关注其他用户             | `rankItem`, `rankIndex`                                |
 | update:loading     | 更新 `loading`           | `key`, `value`                                         |
 | loadMore           | 加载更多                 | `sidebarIndex`, `tabIndex`                             |
+| changeRankTab      | 切换排行榜`Tab`          | `tab`                                                  |
+| clickRankGames     | 点击排行榜主理人赛事链接 | `rankItem`, `rankIndex`                                |
 
 
 ### Slot

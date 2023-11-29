@@ -261,6 +261,15 @@ export default {
       default: () => ([]),
     },
   },
+  emits: [
+    'changeStartRoundId',
+    'loadMore',
+    'search',
+    'searchTeam',
+    'startAllGame',
+    'startGame',
+    'update:loading',
+  ],
   data() {
     return {
       NUMBER_CHI_MAP,

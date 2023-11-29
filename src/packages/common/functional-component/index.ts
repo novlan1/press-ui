@@ -40,7 +40,6 @@ export function selectComponent(context, selector) {
   // #endif
 
   if (
-    // !context.$children &&
     context.$refs?.[attribute]) {
     return context.$refs[attribute];
   }
@@ -72,12 +71,5 @@ export function showFunctionalComponent(options: {
     const showFunction = options.showFunction || DEFAULT_SHOW_FUNCTION;
 
     setData(dialog, newOptions, showFunction);
-
-    // // #ifdef H5
-    // dialog[showFunction](newOptions);
-    // // #endif
-    // // #ifndef H5
-    // dialog.$vm[showFunction](newOptions);
-    // // #endif
   });
 }

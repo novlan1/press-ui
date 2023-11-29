@@ -71,6 +71,9 @@ export default {
     PressIconPlus,
   },
   mixins: [props],
+  emits: [
+    'click',
+  ],
   data() {
     return {
       colors: RANDOM_COLOR_LIST,

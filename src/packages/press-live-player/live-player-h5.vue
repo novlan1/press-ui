@@ -47,6 +47,13 @@ export default {
   mixins: [LIVE_PLAYER_MIXIN],
   props: {
   },
+  emits: [
+    'clickFeedbackIcon',
+    'fullScreenChange',
+    'goOtherMatch',
+    'playError',
+    'playStatusChange',
+  ],
   data() {
     return {
       playerId: 'pressTCVideoRef',

@@ -80,8 +80,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../../../common/style/index.scss";
-@import "../../../common/style/var.scss";
+@import "../../../common/style/press/index.scss";
+@import "../../../common/style/press/var.scss";
 
 .press-calendar {
   &__header {
@@ -92,7 +92,10 @@ export default {
   &__header-title,
   &__header-subtitle {
     text-align: center;
-    font-size: var(--calendar-header-title-font-size, $calendar-header-title-font-size);
+    font-size: var(
+      --calendar-header-title-font-size,
+      $calendar-header-title-font-size
+    );
     height: var(--calendar-header-title-height, $calendar-header-title-height);
     font-weight: var(--font-weight-bold, $font-weight-bold);
     line-height: var(

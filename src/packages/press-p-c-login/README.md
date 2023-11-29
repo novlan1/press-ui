@@ -71,12 +71,13 @@ export default {
 
 ### Props
 
-| 参数                  | 说明             | 类型      | 默认值  |
-| --------------------- | ---------------- | --------- | ------- |
-| show                  | 是否展示         | _boolean_ | `false` |
-| show-q-q              | 是否显示QQ登录   | _boolean_ | `true`  |
-| show-w-x              | 是否显示微信登录 | _boolean_ | `true`  |
-| destroyed-when-closed | 是否在关闭时销毁 | _boolean_ | `false` |
+| 参数                  | 说明                             | 类型      | 默认值  |
+| --------------------- | -------------------------------- | --------- | ------- |
+| show                  | 是否展示                         | _boolean_ | `false` |
+| show-q-q              | 是否显示QQ登录                   | _boolean_ | `true`  |
+| show-w-x              | 是否显示微信登录                 | _boolean_ | `true`  |
+| destroyed-when-closed | 是否在关闭时销毁                 | _boolean_ | `false` |
+| use-tip-class         | 是否使用 `tip-comp` 为前缀的类名 | _boolean_ | `false` |
 
 ### Events
 

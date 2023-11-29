@@ -1,0 +1,453 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-hlddz.scss';
+@import '../../common/style/act/button/_button-hlddz.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 7.98rem;
+    height: 5.02rem;
+    line-height: 1;
+    margin: auto;
+    text-align: center;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/hlddz/dialog-ddz-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+    z-index: 99;
+    overflow: hidden;
+  }
+
+  .press__title {
+    text-align: left;
+    margin-left: 0.4rem;
+    font-size: 0.28rem;
+    margin-top: 0.36rem;
+    background-image: linear-gradient(to bottom, #e7f4fb, #f1c160);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+  }
+
+  .press__close {
+    position: absolute;
+    width: .36rem;
+    height: .36rem;
+    right: .24rem;
+    top: .28rem;
+    z-index: 20;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/hlddz/close.png) center/100% 100%;
+  }
+
+  // .press__title--select {
+  //     background: url(https://image-1251917893.file.myqcloud.com/2020/a20200331dz/20200701/css_sprites.png) no-repeat;
+  //     background-size: 2.84rem 5.58rem;
+  //     background-position: 50% -.7rem;
+  // }
+
+  .press__content {
+    color: #3b437f;
+    padding-top: .2rem;
+    text-align: center;
+    width: 6.56rem;
+    margin: .1rem auto 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: auto;
+  }
+
+  .tip-comp-dialog--reward-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .tip-comp-dialog--reward-img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: .1rem;
+    border-radius: .08rem;
+  }
+
+  .tip-comp-dialog--reward-detalinfo {
+    text-align: left;
+    width: auto;
+    font-size: .24rem;
+    overflow: hidden;
+    letter-spacing: 0;
+  }
+
+  .tip-comp-dialog--received-name {
+    color: #427edc;
+    font-size: $font-m;
+    line-height: .4rem;
+  }
+
+  .tip-comp-dialog--reward-data {
+    position: relative;
+    // background: #e2f4f9;
+    // padding: .1rem .15rem;
+    text-align: left;
+    margin-top: .2rem;
+  }
+
+  .tip-comp-dialog--reward-data a {
+    color: #3b437f;
+    font-size: $font-s;
+    line-height: .34rem;
+  }
+
+  .tip-comp-dialog--reward-dividing-line {
+    color: #3b437f;
+    font-size: $font-s;
+    line-height: .34rem;
+    margin-bottom: .1rem;
+    position: relative;
+    text-align: left;
+    margin: .15rem 0rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 1px;
+      top: .16rem;
+      width: 4.06rem;
+      height: 1px;
+      background: #ccc;
+    }
+  }
+
+  .tip-comp-dialog--reward-extragifts {
+    padding: .22rem .34rem;
+    margin-bottom: $font-s;
+    background: #e2f4f9;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .tip-comp-dialog--reward-icon-limit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: .7rem;
+    height: .32rem;
+    font-size: .2rem;
+    color: $color-white;
+    text-align: center;
+    line-height: .32rem;
+    background: rgba(17, 178, 222, .8);
+    border-radius: 0 0 0 .24rem;
+  }
+
+  .tip-comp-dialog--reward-subhead {
+    color: $color-origin-1;
+    font-size: $font-s;
+    line-height: .34rem;
+    text-align: left;
+  }
+
+  .tip-comp-dialog--reward-goodinfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .tip-comp-dialog--reward-goodimg {
+    width: .72rem;
+    height: .72rem;
+    display: block;
+    border: 1px solid #ffe09d;
+    margin-right: .18rem;
+  }
+
+  .tip-comp-dialog--reward-baseinfo {
+    text-align: left;
+    width: auto;
+    color: $color-origin-1;
+    font-size: .24rem;
+    overflow: hidden;
+    letter-spacing: 0;
+  }
+
+  .tip-comp-dialog--reward-available a {
+    font-size: .2rem;
+    color: #3b437f;
+    text-decoration: none;
+  }
+
+  .tip-comp-dialog--reward-rule {
+    white-space: pre-line;
+    margin: .1rem 0 0;
+    text-align: left;
+    padding-bottom: .45rem;
+    position: relative;
+  }
+
+  .tip-comp-dialog--reward-rulebox {
+    margin-top: .2rem;
+  }
+
+  .tip-comp-dialog--reward-rulebox li {
+    padding-left: .2rem;
+    text-indent: -.2rem;
+    margin-bottom: .05rem;
+  }
+
+  .tip-comp-dialog--received-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .2rem;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .tip-comp-dialog--reward-highlight {
+    color: $color-origin-1;
+  }
+
+  .tip-comp-dialog--reward-treasure-box {
+    display: block;
+  }
+
+  .tip-comp-dialog--reward-treasure-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .tip-comp-dialog--reward-treasure-img {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: .72rem;
+      height: .72rem;
+      margin-right: .1rem;
+    }
+
+    img {
+      display: block;
+      width: .72rem;
+      height: .72rem;
+      border: 1px solid rgba(255, 255, 255, .2);
+    }
+  }
+
+  .tip-comp-dialog--reward-treasure-desc {
+    flex: 1;
+
+    p {
+      text-align: left;
+      padding-bottom: .12rem;
+      font-size: $font-xxs;
+      color: #3b437f;
+
+      &:last-child {
+        border-bottom: 1px solid rgba(33, 33, 36, .15);
+      }
+    }
+  }
+
+  .tip-comp-dialog--reward-treasure-detail {
+    padding-left: .8rem;
+    padding-top: .12rem;
+
+    p {
+      font-size: $font-xxxs;
+      color: #3b437f;
+      text-align: left;
+      padding-top: .12rem;
+    }
+  }
+
+  .tip-comp-dialog--reward-treasure-prize {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+      display: block;
+      width: .72rem;
+      height: .72rem;
+      border: 1px solid rgba(255, 255, 255, .2);
+      box-shadow: inset 0 1px 10px 0 rgba(0, 0, 0, .5);
+    }
+  }
+
+  .tip-comp-dialog--reward-treasure-prize-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: .72rem;
+    height: .72rem;
+    margin-right: .04rem;
+  }
+
+  .tip-comp-dialog--reward-treasure-prize-hovertips {
+    padding: .2rem .18rem;
+    display: flex;
+    position: absolute;
+    top: .52rem;
+    left: 0;
+    background: rgba(42, 37, 29, .9);
+    border-radius: .08rem;
+    font-size: $font-xxs;
+    color: white;
+  }
+
+  /*弹窗礼包*/
+  .tip-comp-dialog--recommed-list {
+    display: none;
+  }
+
+  .tip-comp-dialog--enter-btn {
+    display: none;
+  }
+
+  .tip-comp-dialog--dy-btn {
+    display: none;
+  }
+
+  .press__award-list {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .press__award-item {
+    display: inline-block;
+    width: 1.8rem;
+    height: 2.18rem;
+    margin: .08rem;
+  }
+
+  .press__box {
+    display: flex;
+    box-sizing: border-box;
+    width: 1.72rem;
+    height: 1.72rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9EEF5;
+    border-radius: .08rem;
+  }
+
+  .press__award-item.press__award-item--active {
+    .press__box {
+      background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/hlddz/hlddz-bg.png) center/100% 100%;
+    }
+
+    .press__name {
+      display: inline-block;
+    }
+  }
+
+  .press__image {
+    max-width: 1.54rem;
+    max-height: 1.54rem;
+  }
+
+  .press__name {
+    display: none;
+    font-size: .24rem;
+    color: #455278;
+    line-height: .4rem;
+    height: .4rem;
+  }
+
+  .press__buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.54rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    .press__btn {
+      width: 2.12rem;
+      height: .64rem;
+      line-height: .64rem;
+      text-shadow: none;
+      color: #8C5337;
+      border-radius: .4rem;
+      background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/hlddz/button.png) no-repeat center center;
+    }
+  }
+
+  .press__right {
+    display: none;
+  }
+
+  .press__btn.press__btn--disabled {
+    width: 2.12rem;
+    height: .64rem;
+    line-height: .64rem;
+    mix-blend-mode: luminosity;
+    filter: grayscale(100%);
+  }
+
+  .press__info-wrap,
+  .press__bottom {
+    display: none;
+  }
+
+  .press__award-item.press__award-item--active {
+    .press__bottom {
+      position: fixed;
+      padding-top: .16rem;
+      left: .78rem;
+      width: 6.4rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .press__name {
+    width: auto;
+  }
+
+  .press__tip {
+    font-size: .24rem;
+    line-height: .3rem;
+    opacity: .5;
+  }
+
+  .press__btn--close {
+    text-indent: -1000rem;
+    margin-top: 0.1rem;
+    margin-right: 0.8rem;
+    width: 2.14rem;
+    height: 0.74rem;
+    line-height: 0.64rem;
+    border-radius: 0.4rem;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/hlddz/nexttime-btn.png) center/100% 100% no-repeat;
+  }
+}

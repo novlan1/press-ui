@@ -3,7 +3,7 @@ const path = require('path');
 const { mkDirsSync } = require('t-comm');
 
 const componentConfig = require('./component-config.json');
-const { isActComponent } = require('../utils/utils');
+const { getActPageDir, ACT_DETAIL_COMPONENTS } = require('../utils/utils');
 const {
   hyphenate,
   getComponentPath,
@@ -25,8 +25,7 @@ const PATH_MAP = {
 
 function getCompUrl(name) {
   const newName = hyphenate(name);
-  const isAct = isActComponent(newName);
-  const prefix = isAct ? 'act' : 'press';
+  const prefix = getActPageDir(newName);
   return `/${prefix}/${newName}/${newName}`;
 }
 
@@ -109,6 +108,16 @@ function getPagesJsonPages(config, keys) {
   return list;
 }
 
+const getComponentNameFromPath = item => item.path.split('/')[0];
+
+function getActDetailPages(pages) {
+  return pages.filter(item => ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
+}
+
+function getNotActDetailPages(pages) {
+  return pages.filter(item => !ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
+}
+
 function getPagesJsonConfig() {
   const keys = Object.keys(componentConfig);
   const pressSubPackages = getPagesJsonPages(componentConfig, keys.filter(item => item !== 'act'));
@@ -121,7 +130,11 @@ function getPagesJsonConfig() {
     },
     {
       root: 'pages/act',
-      pages: actSubPackages,
+      pages: getNotActDetailPages(actSubPackages),
+    },
+    {
+      root: 'pages/act-detail',
+      pages: getActDetailPages(actSubPackages),
     },
   ];
   return pressPages;

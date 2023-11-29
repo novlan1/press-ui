@@ -39,10 +39,10 @@
       />
 
       <p :class="[getActClass('save')]">
-        截图或长按保存图片
+        {{ description }}
       </p>
       <p :class="[getActClass('tip')]">
-        使用{{ typeName }}扫码打开访问页面
+        {{ innerTip }}
       </p>
     </div>
   </div>
@@ -72,11 +72,22 @@ export default {
       type: String,
       default: '',
     },
+    description: {
+      type: String,
+      default: '截图或长按保存图片',
+    },
+    tip: {
+      type: String,
+      default: '',
+    },
     useTipClass: {
       type: Boolean,
       default: false,
     },
   },
+  emits: [
+    'onCancel',
+  ],
   data() {
     return {
       isShowPopup: true,
@@ -92,6 +103,13 @@ export default {
         return title;
       }
       return `请使用${typeName}扫码打开活动`;
+    },
+    innerTip() {
+      const { typeName, tip } = this;
+      if (tip) {
+        return tip;
+      }
+      return `使用${typeName}扫码打开访问页面`;
     },
   },
   methods: {

@@ -42,8 +42,8 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../base/layout.scss";
-@import "../base/mixin.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/mixin.scss";
 
 .press-hor-match-header {
   display: flex;

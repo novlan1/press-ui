@@ -64,6 +64,12 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'close',
+    'jumpToLoginQQ',
+    'jumpToLoginWX',
+    'update:show',
+  ],
   data() {
     return {
     };

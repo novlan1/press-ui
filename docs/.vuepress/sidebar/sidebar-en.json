@@ -377,6 +377,14 @@
       "collapsable": false,
       "children": [
         {
+          "title": "HorAwardExplain",
+          "path": "/en/components/press/press-hor-award-explain.md"
+        },
+        {
+          "title": "HorDialog",
+          "path": "/en/components/press/press-hor-dialog.md"
+        },
+        {
           "title": "HorMatchHeader",
           "path": "/en/components/press/press-hor-match-header.md"
         },
@@ -389,12 +397,24 @@
           "path": "/en/components/press/press-hor-owner-index.md"
         },
         {
+          "title": "HorOwnerTheme",
+          "path": "/en/components/press/press-hor-owner-theme.md"
+        },
+        {
+          "title": "HorRule",
+          "path": "/en/components/press/press-hor-rule.md"
+        },
+        {
           "title": "HorScheduleManage",
           "path": "/en/components/press/press-hor-schedule-manage.md"
         },
         {
           "title": "HorSwiperLight",
           "path": "/en/components/press/press-hor-swiper-light.md"
+        },
+        {
+          "title": "HorTask",
+          "path": "/en/components/press/press-hor-task.md"
         }
       ]
     },
@@ -457,6 +477,10 @@
           "path": "/en/components/press/press-act-input-phone-dialog.md"
         },
         {
+          "title": "ActInputQQ",
+          "path": "/en/components/press/press-act-input-q-q.md"
+        },
+        {
           "title": "ActLaunchDialog",
           "path": "/en/components/press/press-act-launch-dialog.md"
         },
@@ -475,6 +499,10 @@
         {
           "title": "ActQRCodeDialog",
           "path": "/en/components/press/press-act-q-r-code-dialog.md"
+        },
+        {
+          "title": "ActSelectAward",
+          "path": "/en/components/press/press-act-select-award.md"
         },
         {
           "title": "ActStoreItem",

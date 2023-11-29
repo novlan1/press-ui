@@ -1,6 +1,9 @@
 <template>
   <!-- 轮播图 -->
-  <div class="press-banner">
+  <div
+    v-treport="bannerReportData"
+    class="press-banner"
+  >
     <swiper
       class="press-banner__swiper"
       :autoplay="true"
@@ -28,6 +31,10 @@ export default {
       type: Array,
       default: () => [],
       required: false,
+    },
+    bannerReportData: {
+      type: Object,
+      default: () => ({}),
     },
   },
   emits: ['clickBanner'],

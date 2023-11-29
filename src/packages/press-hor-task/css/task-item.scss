@@ -1,0 +1,86 @@
+@import "../../common/style/smoba/mixin.scss";
+
+.press__task-item {
+  width: 100%;
+  margin-bottom: .2rem;
+  padding: .14rem .32rem .18rem;
+  border: .02rem solid;
+  border-image: linear-gradient(to right, rgba(#5777a4, .5), rgba(#152f4e, .5)) 1;
+  border-radius: .04rem;
+  background: linear-gradient(to right, rgba(#2b568b, .8) 0%, rgba(#1a3453, .8) 100%);
+}
+
+.press__task-name {
+  background: linear-gradient(to right, #f4f4ff, #d1d5f6);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: .24rem;
+  font-family: "GAMEFONT";
+}
+
+.press__task-box {
+  display: flex;
+  align-items: center;
+  margin-top: .14rem;
+}
+
+.press__task-award-img {
+  display: flex;
+  overflow-x: auto;
+  width: 4.96rem;
+  mask-image: linear-gradient(to right, #000 94%, transparent 98%);
+
+  img {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: .14rem;
+    border: 1px solid #6d8ac3;
+
+    &:last-child {
+      margin-right: .28rem;
+    }
+  }
+}
+
+.press__btn--primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.28rem;
+  height: .48rem;
+  margin-left: auto;
+  font-family: 'GAMEFONT';
+  font-size: .26rem;
+  color: #fff;
+  padding-top: .04rem;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/btn-confirm-bg-xs.png) no-repeat center;
+  background-size: contain;
+}
+
+.press__btn--secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.28rem;
+  height: .48rem;
+  margin-left: auto;
+  font-family: 'GAMEFONT';
+  font-size: .26rem;
+  color: #fff;
+  padding-top: .04rem;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/btn-secondary-bg-xs.png) no-repeat center;
+  background-size: contain;
+}
+
+.press__btn--text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.28rem;
+  height: .48rem;
+  margin-left: auto;
+  font-family: 'GAMEFONT';
+  font-size: .26rem;
+  color: #fff;
+  padding-top: .04rem;
+}

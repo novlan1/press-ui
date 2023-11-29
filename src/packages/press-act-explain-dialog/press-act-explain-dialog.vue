@@ -67,6 +67,9 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'update:show',
+  ],
   data() {
     return {};
   },

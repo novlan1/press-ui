@@ -131,6 +131,10 @@ export default {
       ]),
     },
   },
+  emits: [
+    'click',
+    'finish',
+  ],
   data() {
     return {
       SWITCH_TYPE,

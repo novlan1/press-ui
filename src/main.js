@@ -3,9 +3,10 @@ import App from './App.vue';
 import { reportAegis } from './utils/report/report';
 import { initDemoI18n } from './utils/i18n/i18n';
 import { initMixin } from './utils/mixin/mixin';
-import { checkAndShowVConsole } from './utils/v-console/v-console';
+import { checkAndShowVConsole } from 't-comm/lib/v-console/toggle';
 
 import DemoBlock from './pages/demo-block/demo-block.vue';
+import ToggleHeader from './pages/components/toggle-header/toggle-header.vue';
 
 import PressCell from './packages/press-cell/press-cell.vue';
 import PressPicker from './packages/press-picker/press-picker.vue';
@@ -18,6 +19,8 @@ import Toast from './packages/press-toast/index';
 // Vue.use(PressUI);
 
 Vue.component('DemoBlock', DemoBlock);
+Vue.component('ToggleHeader', ToggleHeader);
+
 Vue.component('PressCell', PressCell);
 Vue.component('PressPicker', PressPicker);
 Vue.component('PressPopupCell', PressPopupCell);
@@ -34,5 +37,8 @@ const app = new Vue({
 });
 app.$mount();
 initMixin();
+
+// #ifdef H5
 checkAndShowVConsole();
+// #endif
 

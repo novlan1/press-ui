@@ -125,6 +125,10 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'change',
+    'finish',
+  ],
   data() {
     return {
       timeData: {},

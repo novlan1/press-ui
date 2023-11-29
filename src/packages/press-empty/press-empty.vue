@@ -110,8 +110,8 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-empty {
   display: flex;
@@ -168,8 +168,8 @@ export default {
 }
 </style>
 <style scoped lang="scss">
-@import "../base/layout.scss";
-@import "../base/mixin.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/mixin.scss";
 
 .press-empty {
   &--e-sport {

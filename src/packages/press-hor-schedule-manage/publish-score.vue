@@ -206,6 +206,11 @@ export default {
     //   default: () => ([]),
     // },
   },
+  emits: [
+    'changeScoreRoundId',
+    'publishScore',
+    'selectGroupInScore',
+  ],
   data() {
     return {
       curGroupSeq: 1,

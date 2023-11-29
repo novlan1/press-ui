@@ -133,27 +133,19 @@ import PressCell from '../../packages/press-cell/press-cell.vue';
 
 import { LAUNCH_APP_STORAGE } from '../launch-app/config';
 import { isInIFrame, routerPush } from '../../utils/index';
-import { toggleVConsole } from '../../utils/v-console/v-console';
+import { toggleVConsole } from 't-comm/lib/v-console/toggle';
 import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 import { isNotInUni } from '../../packages/common/utils/utils';
 
 import pagesConfig from './page-config.json';
+import {
+  SCROLL_TOP_KEY,
+  DEMO_LINK_MAP,
+  NOT_SHOW_IN_MP_COMPONENTS,
+  NOT_SHOW_IN_PURE_PROJECT,
+} from './index-config';
 
-const SCROLL_TOP_KEY = 'INDEX_SCROLL_TOP';
-const DEMO_LINK_MAP = {
-  'vue2-uni': 'https://novlan1.github.io/press-ui-demo/',
-  'vue2-not-uni': 'https://novlan1.github.io/press-ui-pure/',
-  'vue3-uni': 'https://novlan1.github.io/press-ui-v3/',
-};
-
-const NOT_SHOW_IN_MP_COMPONENTS = [
-  'hor-match-header',
-  'hor-match-index',
-  'hor-owner-index',
-  'hor-schedule-manage',
-  'p-c-scan-login',
-];
 
 function getShowDemoMap() {
   let showOtherDemoMap = {
@@ -189,16 +181,26 @@ function getShowDemoMap() {
 function getAllPages() {
   let pages = pagesConfig.pages.filter(item => item.list && item.list.length);
 
+  let disableList = [];
+
   // #ifndef H5
+  disableList = NOT_SHOW_IN_MP_COMPONENTS;
+  // #endif
+  // #ifdef H5
+  if (isNotInUni()) {
+    disableList = NOT_SHOW_IN_PURE_PROJECT;
+  }
+  // #endif
+
   pages = pages.map(item => ({
     ...item,
     list: item.list.filter((item) => {
       const list = item.url.split('/');
       const name = list[list.length - 1];
-      return NOT_SHOW_IN_MP_COMPONENTS.indexOf(name) <= -1;
+      return disableList.indexOf(name) < 0;
     }),
   }));
-  // #endif
+
   return pages;
 }
 

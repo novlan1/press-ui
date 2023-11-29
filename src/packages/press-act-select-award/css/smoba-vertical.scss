@@ -1,0 +1,249 @@
+@import '../../common/style/act/mixin/mixin.scss';
+
+@import '../../common/style/act/layout/_layout-smoba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+  }
+
+  /* 物品自选底部弹层 start */
+
+  .press__dialog {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: .4rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    padding-bottom: calc(.4rem + env(safe-area-inset-bottom));
+    padding-bottom: calc(.4rem + constant(safe-area-inset-bottom));
+    z-index: 1000;
+  }
+
+  .press__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.14rem;
+    font-size: .32rem;
+    color: $color-black;
+    padding-bottom: .24rem;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      content: "";
+      width: 6.86rem;
+      height: .24rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/popup-line.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .press__close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.04rem;
+    height: .9rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/close.png) center center no-repeat;
+    background-size: .4rem .4rem;
+    z-index: 3;
+  }
+
+  .press__content {
+    width: 100%;
+    height: 7.80rem;
+    padding: 0 .32rem;
+  }
+
+  .press__left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .press__select-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .8rem;
+    height: .8rem;
+    font-size: 0;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: .4rem;
+      height: .4rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/select-new.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .press__award-item--active .press__select-button {
+    &::after {
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/selected-new.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .press__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.96rem;
+    height: 1.96rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/props-bg.png) no-repeat center;
+    background-size: contain;
+    border-radius: .16rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .press__image {
+    margin: auto;
+    max-width: 1.08rem;
+    max-height: 1.08rem;
+  }
+
+  .press__name {
+    font-size: $font-xm;
+    color: $color-black;
+    line-height: .44rem;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: .88rem;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-all;
+  }
+
+  .press__award-item {
+    display: flex;
+    align-items: center;
+    padding: .16rem 0;
+    background: $color-white;
+    overflow: hidden;
+  }
+
+  .press__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: .08rem;
+    background-color: #fff;
+  }
+
+  .press__award-list {
+    height: 100%;
+    padding-bottom: .4rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .press__content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1.4rem;
+    bottom: calc(1.4rem + env(safe-area-inset-bottom));
+    bottom: calc(1.4rem + constant(safe-area-inset-bottom));
+    width: 100%;
+    height: 1rem;
+    z-index: 2;
+    background-image: linear-gradient(to top, #fff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .press__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: .96rem;
+    margin: 0 .32rem;
+    font-size: $font-l;
+    color: $color-white;
+    padding: 0 .16rem;
+    border-radius: .08rem;
+    background-image: $color-primary-btn;
+
+    &:active {
+      background: $color-blue;
+    }
+
+    &::after {
+      position: absolute;
+      top: .08rem;
+      right: 0;
+      content: '';
+      width: 1.52rem;
+      height: .3rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/btn-bg-r.png) no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 1.26rem;
+      height: .3rem;
+      background: url(https://image-1251917893.file.myqcloud.com/Esports/new/user/btn-bg-r.png) no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+    }
+  }
+
+  .press__info-wrap {
+    flex: 1;
+    padding: 0 .24rem;
+    overflow: hidden;
+  }
+
+  .press__tip {
+    font-size: $font-xm;
+    color: $color-gray;
+    padding-top: .48rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .press__btn.press__btn--disabled {
+    opacity: .4;
+  }
+
+  .press__bottom,
+  .press__btn--close {
+    display: none;
+  }
+}

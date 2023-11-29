@@ -68,5 +68,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../common/style/index.scss";
+@import "../common/style/press/index.scss";
 </style>

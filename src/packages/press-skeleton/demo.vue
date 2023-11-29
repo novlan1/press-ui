@@ -95,7 +95,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/base/mixin.scss";
+@import "src/packages/common/style/smoba/mixin.scss";
 
 .demo-switch-wrap {
   margin: 0 16px 8px;

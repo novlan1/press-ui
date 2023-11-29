@@ -64,7 +64,7 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/index.scss";
+@import "../common/style/press/index.scss";
 .press-radio-group--horizontal {
   display: flex;
   flex-wrap: wrap;

@@ -173,9 +173,9 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
-@import "../common/style/mixins/hairline.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
+@import "../common/style/press/mixins/hairline.scss";
 
 .press-cell--e-sport {
   --cell-background-color: rgba(255, 255, 255, 0.85);

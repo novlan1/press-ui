@@ -1,0 +1,79 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/button/_button-hlddz.scss';
+
+// 3兑换至QQ账号start
+.press-act:not(.press-act--hidden-tip) {
+  .press__title--qq {
+    margin-top: .14rem;
+    margin-left: .34rem;
+    width: 2.04rem;
+    height: .38rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/title-qq.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .press__close {
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+    width: .38rem;
+    height: .36rem;
+    font-size: 0;
+    background: url(https://image-1251917893.file.myqcloud.com/tip-privilege-Merchant/hlddz/version3D/img/pop-close.png) no-repeat center center;
+    background-size: contain;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    min-height: 4rem;
+    padding-top: $font-xs;
+    text-align: center;
+  }
+
+  .press__box input {
+    display: block;
+    width: 5.6rem;
+    height: .56rem;
+    border: none;
+    border-radius: .08rem;
+    background: rgba(#427edc, .1);
+    font-size: .24rem;
+    color: #3b437f;
+    margin: 1.1rem auto 0;
+    padding-left: .16rem;
+    letter-spacing: 0;
+  }
+
+  // 3兑换至QQ账号】】
+
+  .press__button-wrap {
+    // display: box;
+    display: flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: .34rem auto .6rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1rem;
+  }
+
+  .press__button-wrap a {
+    margin: auto;
+  }
+
+  .press__btn--medium-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

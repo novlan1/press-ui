@@ -153,12 +153,39 @@ export default {
       type: Boolean,
       default: false,
     },
+    watchCurrentUrl: {
+      type: Boolean,
+      default: true,
+    },
   },
+  emits: [
+    'dialogVisibleEvent',
+    'jumpToLoginQQ',
+    'jumpToLoginWX',
+    'update:showChooseDialog',
+    'update:showScanDialog',
+    'update:showTipDialog',
+  ],
   data() {
     return {
       qrcodeSrc: '',
       hideCanvas: false,
     };
+  },
+  watch: {
+    currentUrl: {
+      handler() {
+        if (!this.watchCurrentUrl) {
+          return;
+        }
+
+        const qrCodeId = document.getElementById('qrcodeid');
+        if (qrCodeId) {
+          qrCodeId.innerHTML = '';
+        }
+        this.init();
+      },
+    },
   },
   mounted() {
     this.init();

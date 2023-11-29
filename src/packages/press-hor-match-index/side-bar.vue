@@ -28,6 +28,9 @@ export default {
       default: '-1',
     },
   },
+  emits: [
+    'change',
+  ],
   data() {
     return {
 
@@ -41,8 +44,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../base/layout.scss";
-@import "../base/mixin.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/mixin.scss";
 
 .press-index {
   &__sidebar {
@@ -50,9 +53,9 @@ export default {
     width: 2.08rem;
     height: 100%;
     flex-shrink: 0;
-    padding-left: .7rem;
+    padding-left: 0.7rem;
     background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/sidebar-line.png)
-      no-repeat .46rem top;
+      no-repeat 0.46rem top;
     background-size: 0.02rem 6.33rem;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -84,7 +87,7 @@ export default {
 
     &.sidebar-on {
       color: $color-white;
-      text-shadow: 0 0 .16rem rgba(95, 147, 234, 0.69);
+      text-shadow: 0 0 0.16rem rgba(95, 147, 234, 0.69);
     }
   }
 }

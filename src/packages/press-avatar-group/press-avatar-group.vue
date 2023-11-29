@@ -62,6 +62,9 @@ export default {
     PressAvatar,
   },
   mixins: [props],
+  emits: [
+    'showMore',
+  ],
   data() {
     return {
 

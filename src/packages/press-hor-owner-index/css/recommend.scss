@@ -1,4 +1,4 @@
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 .press-match {
   position: relative;
@@ -8,7 +8,7 @@
   margin-bottom: .08rem;
   padding: .16rem .06rem .06rem .36rem;
   background: url(https://image-1251917893.file.myqcloud.com/Esports/hor-web/home/recommend-bg.png) no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 100%;
 
   &:nth-child(even) {
     margin-right: 0;
@@ -205,7 +205,7 @@
     text-align: center;
 
     p {
-      margin-bottom:  .08rem;
+      margin-bottom: .08rem;
       @include single-line-ellipsis;
     }
   }

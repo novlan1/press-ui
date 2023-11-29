@@ -6,7 +6,12 @@ import localeEnDemo from './lang/en-US';
 import localeZhDemo from './lang/zh-CN';
 import { isInIFrame, storageUtil } from '../index';
 
-import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
+import {
+  LOCALE_STORAGE_KEY,
+  DEFAULT_LOCALE_NUMBER,
+  LOCALE_NUMBER_MAP,
+  NO_I18N_TITLE_LIST,
+} from './config';
 
 const DEFAULT_LANG = 'zh-CN';
 
@@ -78,6 +83,10 @@ export function setLang() {
 function getPage() {
   const pages = getCurrentPages();
   const path: string = pages[pages.length - 1].route || '';
+
+  if (NO_I18N_TITLE_LIST.includes(path)) {
+    return;
+  }
 
   // const { path } = this.$route;
   const list = path.split('/');

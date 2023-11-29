@@ -22,19 +22,7 @@
       />
 
       <!-- #ifdef H5 -->
-      <press-cell
-        title="显示头部"
-        center
-        :border="false"
-      >
-        <template #right-icon>
-          <press-switch
-            custom-class="press-switch--e-sport"
-            :checked="showHeader"
-            @change="onToggleShowHeader"
-          />
-        </template>
-      </press-cell>
+      <ToggleHeader />
       <!-- #endif -->
 
       <press-cell

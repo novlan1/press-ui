@@ -131,6 +131,15 @@ export default {
       default: 200,
     },
   },
+  emits: [
+    'close',
+    'closed',
+    'input',
+    'open',
+    'opened',
+    'select',
+    'touchstart',
+  ],
   data() {
     return {
       utils,

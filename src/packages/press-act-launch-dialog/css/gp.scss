@@ -6,6 +6,7 @@
     left: 0;
     top: 0;
     z-index: 99;
+    background: rgba(0, 0, 0, .7);
   }
 
   .press__box {
@@ -52,7 +53,7 @@
   }
 
   .press__box--launch .press__text {
-    color: #3a434a;
+    color: #fcfcfc;
     font-size: .28rem;
     text-align: center;
     margin-top: .4rem;

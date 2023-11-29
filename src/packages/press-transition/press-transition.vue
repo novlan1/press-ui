@@ -99,7 +99,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../common/style/index.scss";
+@import "../common/style/press/index.scss";
 
 .press-transition {
   transition-timing-function: ease;

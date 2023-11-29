@@ -101,19 +101,21 @@ export default {
 ### Props
 
 
-| 参数                  | 说明                          | 类型       | 默认值                                                                           |
-| --------------------- | ----------------------------- | ---------- | -------------------------------------------------------------------------------- |
-| show-q-q              | 是否显示 QQ                   | _boolean_  | `true`                                                                           |
-| show-w-x              | 是否显示微信                  | _boolean_  | `true`                                                                           |
-| current-url           | 当前 URL，会据此生成二维码    | _string_   | -                                                                                |
-| loader                | 动态加载方法                  | _function_ | `null`                                                                           |
-| show-choose-dialog    | 是否显示选择弹窗              | _boolean_  | `false`                                                                          |
-| show-scan-dialog      | 是否显示扫描弹窗              | _boolean_  | `false`                                                                          |
-| show-tip-dialog       | 是否显示提示弹窗              | _boolean_  | `false`                                                                          |
-| destroyed-when-closed | 是否在关闭后销毁              | _boolean_  | `false`                                                                          |
-| scan-code-type        | 扫码类型，可选值位 `WX`, `QQ` | _string_   | `WX`                                                                             |
-| tip-title             | 提示弹窗标题                  | _string_   | `微信中不支持QQ区账号登录`                                                       |
-| tip-image             | 提示弹窗图片                  | _string_   | `https://image-1251917893.file.myqcloud.com/tipcomm/public_dialog-img/wx-zy.jpg` |
+| 参数                  | 说明                                   | 类型       | 默认值                                                                           |
+| --------------------- | -------------------------------------- | ---------- | -------------------------------------------------------------------------------- |
+| show-q-q              | 是否显示 QQ                            | _boolean_  | `true`                                                                           |
+| show-w-x              | 是否显示微信                           | _boolean_  | `true`                                                                           |
+| current-url           | 当前 URL，会据此生成二维码             | _string_   | -                                                                                |
+| loader                | 动态加载方法                           | _function_ | `null`                                                                           |
+| show-choose-dialog    | 是否显示选择弹窗                       | _boolean_  | `false`                                                                          |
+| show-scan-dialog      | 是否显示扫描弹窗                       | _boolean_  | `false`                                                                          |
+| show-tip-dialog       | 是否显示提示弹窗                       | _boolean_  | `false`                                                                          |
+| destroyed-when-closed | 是否在关闭后销毁                       | _boolean_  | `false`                                                                          |
+| scan-code-type        | 扫码类型，可选值位 `WX`, `QQ`          | _string_   | `WX`                                                                             |
+| tip-title             | 提示弹窗标题                           | _string_   | `微信中不支持QQ区账号登录`                                                       |
+| tip-image             | 提示弹窗图片                           | _string_   | `https://image-1251917893.file.myqcloud.com/tipcomm/public_dialog-img/wx-zy.jpg` |
+| use-tip-class         | 是否使用 `tip-comp` 为前缀的类名       | _boolean_  | `false`                                                                          |
+| watch-current-url     | 是否监听 `currentUrl` 变化并生成二维码 | _boolean_  | `true`                                                                           |
 
 
 ### Events
@@ -124,6 +126,7 @@ export default {
 | jumpToLoginWX | 点击跳转微信 | -    |
 | closeDialog   | 关闭弹窗     | -    |
 
+## 常见问题
 
 ### 规范
 
@@ -134,3 +137,17 @@ export default {
 - Wx
 - wx
 
+### canvas
+
+`canvas` 图片在某些机型下无法长按保存，该组件采用的方式是，提取 `canvas` 的图片地址，放到 `img` 标签上显示。
+
+```ts
+const qrcode = window.document.getElementById('qrcodeid');
+if (qrcode) {
+  const canvas = qrcode.getElementsByTagName('canvas');
+  if (canvas && canvas.length > 0 && canvas[0]) {
+    this.qrcodeSrc = canvas[0].toDataURL('image/png');
+    this.hideCanvas = true;
+  }
+}
+```

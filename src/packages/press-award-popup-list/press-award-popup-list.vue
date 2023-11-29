@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: 'PropsCheck',
+  name: 'PressAwardPopupList',
   props: {
     propsCheckList: {
       type: Array,

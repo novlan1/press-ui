@@ -130,6 +130,7 @@ export default {
       });
     },
     fabClick() {
+      console.log('[fabClick]');
     },
     switchBtn(hor, ver) {
       const { onClick, isShow } = this.$refs.fabRef;

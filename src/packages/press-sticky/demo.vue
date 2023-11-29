@@ -68,6 +68,7 @@ import PressNoticeBar from 'src/packages/press-notice-bar/press-notice-bar.vue';
 import { requestAnimationFrame } from 'src/packages/common/utils/system';
 import { getHideHeaderMixin } from 'src/utils/mixin/hide-header';
 
+
 export default {
   i18n: {
     'zh-CN': {
@@ -88,7 +89,7 @@ export default {
     PressButton,
     PressNoticeBar,
   },
-  mixins: [getHideHeaderMixin],
+  mixins: [getHideHeaderMixin()],
   data() {
     const that = this;
     return {

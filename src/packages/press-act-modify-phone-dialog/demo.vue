@@ -15,6 +15,8 @@
         :is-disable-get-code="isDisableGetCode"
         :hide-tip-style.sync="hideTipStyle"
         :use-tip-class.sync="useTipClass"
+        @clickButton="clickButton"
+        @clickGetCodeButton="clickGetCodeButton"
       />
     </ActDemo>
 
@@ -56,6 +58,12 @@ export default {
   mounted() {
   },
   methods: {
+    clickButton() {
+      this.onGTip('[clickButton]');
+    },
+    clickGetCodeButton() {
+      this.onGTip('[clickGetCodeButton]');
+    },
   },
 };
 </script>

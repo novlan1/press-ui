@@ -47,17 +47,6 @@ const createMethod = (obj: Function, type: string, defaultKey: string) => (optio
 
 
   return obj(newOptions);
-  // const promise = {};
-  // return new Promise((resolve) => {
-  //   const realOptions = obj.getOptions();
-
-  //   setTimeout(() => {
-  //     resolve();
-  //   }, realOptions.duration);
-  // });
-
-
-  // return promise;
 };
 
 

@@ -119,7 +119,7 @@
 
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.30); */
   box-sizing: border-box;
-  width: 675px !important;
+  width: 675px;
   height: 468px;
   padding: 0 16px;
 }
@@ -149,4 +149,15 @@
   top: 8px;
   right: 5px;
   font-size: 40px;
+}
+
+@media (max-width: 719px) {
+  .press__content {
+    width: 300px;
+    padding: 0 6px;
+  }
+
+  .press__header-button {
+    right: 10px;
+  }
 }

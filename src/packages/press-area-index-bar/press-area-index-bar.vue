@@ -116,6 +116,7 @@ import PressIndexBar from '../press-index-bar/press-index-bar';
 
 
 export default {
+  name: 'PressAreaIndexBar',
   options: {
     styleIsolation: 'shared',
   },
@@ -154,6 +155,11 @@ export default {
       default: true,
     },
   },
+  emits: [
+    'onCancel',
+    'onConfirm',
+    'onUnLimit',
+  ],
   data() {
     return {
       cityList: [],

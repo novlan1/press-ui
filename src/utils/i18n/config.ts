@@ -15,3 +15,7 @@ function reverseMap(map) {
     return acc;
   }, {});
 }
+
+export const NO_I18N_TITLE_LIST = [
+  'pages/count-down/count-down',
+];

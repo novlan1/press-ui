@@ -19,6 +19,7 @@
 </template>
 <script>
 export default {
+  name: 'PressScheduleTab',
   options: {
     virtualHost: true,
   },
@@ -36,6 +37,9 @@ export default {
       required: false,
     },
   },
+  emits: [
+    'change',
+  ],
   data() {
     return {
     };

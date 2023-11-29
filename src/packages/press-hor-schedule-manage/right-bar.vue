@@ -40,6 +40,10 @@ export default {
       require: false,
     },
   },
+  emits: [
+    'changeTab',
+    'close',
+  ],
   data() {
     return {
     };

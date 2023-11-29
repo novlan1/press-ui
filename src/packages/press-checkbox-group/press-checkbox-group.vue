@@ -71,7 +71,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../common/style/index.scss";
+@import "../common/style/press/index.scss";
 .press-checkbox-group--horizontal {
   display: flex;
   flex-wrap: wrap;

@@ -17,6 +17,10 @@
         :is-agree-protocol.sync="isAgreeProtocol"
         :need-phone-check="true"
         protocol-name="Press UI 协议"
+        @clickButton="clickButton"
+        @clickProtocol="clickProtocol"
+        @clickUserProtocol="clickUserProtocol"
+        @clickCloseButton="clickCloseButton"
       />
     </ActDemo>
 
@@ -58,6 +62,18 @@ export default {
   mounted() {
   },
   methods: {
+    clickButton() {
+      this.onGTip('[clickButton]');
+    },
+    clickProtocol() {
+      this.onGTip('[clickProtocol]');
+    },
+    clickUserProtocol() {
+      this.onGTip('[clickUserProtocol]');
+    },
+    clickCloseButton() {
+      this.onGTip('[clickCloseButton]');
+    },
   },
 };
 </script>

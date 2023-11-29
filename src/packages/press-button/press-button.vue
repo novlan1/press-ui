@@ -210,8 +210,8 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-button {
   position: relative;
@@ -447,7 +447,7 @@ export default {
 }
 </style>
 <style scoped lang="scss">
-@import "../common/style/var.scss";
+@import "../common/style/press/var.scss";
 
 @mixin bgMixin(
   $beforeWidth: $button-e-sport-bg-before-md-width,

@@ -1,5 +1,5 @@
 <template>
-  <view
+  <div
     class="press-barcode"
     :style="customStyle"
   >
@@ -25,14 +25,16 @@
       :style="{width:canvasWidth+'px',height:canvasHeight+'px'}"
     />
     <!-- #endif -->
-  </view>
+  </div>
 </template>
 
 <script>
 // #ifdef H5
 import VueBarcode from 'vue-barcode';
 // #endif
+// #ifndef H5
 import Barcode from './barcode.js';
+// #endif
 
 
 const DEFAULT_OPTIONS = {
@@ -98,15 +100,10 @@ export default {
       type: String,
       default: '',
     },
-    // onval: {
-    //   type: Boolean,
-    //   default: true,
-    // },
-    // loadMake: {
-    //   type: Boolean,
-    //   default: true,
-    // },
   },
+  emits: [
+    'result',
+  ],
   data() {
     return {
       result: '',
@@ -122,78 +119,34 @@ export default {
   onUnload() {
   },
   watch: {
-    // size(n, o) {
-    //   this.innerClearCode();
-    //   if (n != o && !this.testEmpty(n)) {
-    //     this.cSize = n;
-    //     if (!this.testEmpty(this.value)) {
-    //       setTimeout(() => {
-    //         this.innerMakeCode();
-    //       }, 0);
-    //     }
-    //   }
-    // },
     value(n, o) {
       this.innerClearCode();
-      // if (this.onval) {
       if (n != o && !this.testEmpty(n)) {
         setTimeout(() => {
           this.innerMakeCode();
         }, 0);
       }
-      // }
     },
-    // options: {
-    //   handler(value) {
-    //     this.innerOptions = {
-    //       ...DEFAULT_OPTIONS,
-    //       ...(value || {}),
-    //     };
-    //   },
-    //   deep: true,
-    //   immediate: true,
-    // },
   },
   mounted() {
     this.innerClearCode();
-    // if (this.loadMake) {
     if (!this.testEmpty(this.value)) {
       setTimeout(() => {
         this.innerMakeCode();
       }, 0);
     }
-    // }
   },
   methods: {
     innerMakeCode() {
       const that = this;
-      // if (that.unit == 'upx') {
-      //   if (that.options.width) {
-      //     that.options.width = uni.upx2px(that.options.width);
-      //   }
-      //   if (that.options.height) {
-      //     that.options.height = uni.upx2px(that.options.height);
-      //   }
-      //   if (that.options.fontSize) {
-      //     that.options.fontSize = uni.upx2px(that.options.fontSize);
-      //   }
-      // }
-
-      // if (that.testEmpty(that.innerOptions.text)) {
-      // that.innerOptions.text = that.value;
-      // }
-      // if (that.testEmpty(that.innerOptions.format)) {
-      // that.innerOptions.format = that.format;
-      // }
       this.getInnerOptions();
-      console.log('innerOptions', this.innerOptions);
 
+      // #ifndef H5
       new Barcode(
         that,
         that.cid,
         that.innerOptions,
         ((res) => { // 生成条形码款高回调
-          console.log('res', res);
           that.canvasWidth = res.width;
           that.canvasHeight = res.height;
         }),
@@ -201,6 +154,7 @@ export default {
           that.setResult(res);
         }),
       );
+      // #endif
     },
     innerClearCode() {
       this.setResult('');
@@ -265,7 +219,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .press-barcode {
   position: relative;
 }

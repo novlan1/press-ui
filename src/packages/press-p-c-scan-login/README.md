@@ -63,14 +63,15 @@ export default {
 
 ### Props
 
-| 参数                  | 说明             | 类型       | 默认值     |
-| --------------------- | ---------------- | ---------- | ---------- |
-| show                  | 是否显示         | _boolean_  | `false`    |
-| url                   | 重定向URL        | _string_   | -          |
-| title                 | 标题             | _string_   | `微信登录` |
-| destroyed-when-closed | 是否在关闭时销毁 | _boolean_  | `false`    |
-| loader                | 动态加载方法     | _function_ | -          |
-| wxLoginConfig         | 登录参数         | _object_   | -          |
+| 参数                  | 说明                             | 类型       | 默认值     |
+| --------------------- | -------------------------------- | ---------- | ---------- |
+| show                  | 是否显示                         | _boolean_  | `false`    |
+| url                   | 重定向URL                        | _string_   | -          |
+| title                 | 标题                             | _string_   | `微信登录` |
+| destroyed-when-closed | 是否在关闭时销毁                 | _boolean_  | `false`    |
+| loader                | 动态加载方法                     | _function_ | -          |
+| wx-login-config       | 登录参数                         | _object_   | -          |
+| use-tip-class         | 是否使用 `tip-comp` 为前缀的类名 | _boolean_  | `false`    |
 
 
 ### wxLoginConfig

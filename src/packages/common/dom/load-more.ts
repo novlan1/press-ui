@@ -36,11 +36,11 @@ export function holdWhenScroll({
   // #endif
 
   // #ifndef H5
-  // const view = this.createSelectorQuery().select(`#${id}`);
   const view = uni.createSelectorQuery()
     .in(context)
     .select(`#${eleId}`);
   context.scrollWithAnimation = false;
+
   view
     // @ts-ignore
     .node()
@@ -49,6 +49,7 @@ export function holdWhenScroll({
       if (!scrollView) return;
       scrollView.scrollIntoView(targetId);
     });
+
   setTimeout(() => {
     context.scrollWithAnimation = true;
   }, 1000);

@@ -27,6 +27,10 @@ export default {
     styleIsolation: 'shared',
   },
   mixins: [props],
+  emits: [
+    'change',
+    'end',
+  ],
   data() {
     return {
       localStartVal: this.startValue,

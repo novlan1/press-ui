@@ -72,7 +72,6 @@
 </template>
 <script>
 import PressCodeInput from 'src/packages/press-code-input/press-code-input.vue';
-import DemoBlock from '@/pages/demo-block/demo-block.vue';
 
 export default {
   i18n: {
@@ -97,7 +96,6 @@ export default {
   },
   components: {
     PressCodeInput,
-    DemoBlock,
   },
   data() {
     return {

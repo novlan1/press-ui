@@ -84,6 +84,11 @@ export default {
     PressTransition,
   },
   mixins: [props],
+  emits: [
+    'click',
+    'error',
+    'load',
+  ],
   data() {
     return {
       // 图片是否加载错误，如果是，则显示错误占位图

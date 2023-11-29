@@ -10,14 +10,18 @@ export function getWindowWidth() {
     return {
       windowWidth,
       windowHeight,
+      windowTop: 0,
+      windowBottom: 0,
     };
   }
 
-  const { windowWidth, windowHeight } = uni.getSystemInfoSync();
+  const { windowWidth, windowHeight, windowTop, windowBottom } = uni.getSystemInfoSync();
 
   return {
     windowWidth,
     windowHeight,
+    windowTop,
+    windowBottom,
   };
 }
 

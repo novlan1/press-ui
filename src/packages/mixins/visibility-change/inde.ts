@@ -1,10 +1,8 @@
 export const visibilityChangeMixin = callback => ({
-  mounted() {
-    // @ts-ignore
+  mounted(this: any) {
     window.addEventListener('visibilitychange', this._watchVisibleChange);
   },
-  destroyed() {
-    // @ts-ignore
+  destroyed(this: any) {
     window.removeEventListener('visibilitychange', this._watchVisibleChange);
   },
   methods: {

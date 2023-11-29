@@ -458,6 +458,16 @@
       "collapsable": false,
       "children": [
         {
+          "title": "HorAwardExplain",
+          "subTitle": "横版奖励说明",
+          "path": "/components/press/press-hor-award-explain.md"
+        },
+        {
+          "title": "HorDialog",
+          "subTitle": "横版弹窗",
+          "path": "/components/press/press-hor-dialog.md"
+        },
+        {
           "title": "HorMatchHeader",
           "subTitle": "横版赛事头部",
           "path": "/components/press/press-hor-match-header.md"
@@ -473,6 +483,16 @@
           "path": "/components/press/press-hor-owner-index.md"
         },
         {
+          "title": "HorOwnerTheme",
+          "subTitle": "横版赛事列表",
+          "path": "/components/press/press-hor-owner-theme.md"
+        },
+        {
+          "title": "HorRule",
+          "subTitle": "横版规则弹窗",
+          "path": "/components/press/press-hor-rule.md"
+        },
+        {
           "title": "HorScheduleManage",
           "subTitle": "横版赛程管理",
           "path": "/components/press/press-hor-schedule-manage.md"
@@ -481,6 +501,11 @@
           "title": "HorSwiperLight",
           "subTitle": "精彩集锦弹窗",
           "path": "/components/press/press-hor-swiper-light.md"
+        },
+        {
+          "title": "HorTask",
+          "subTitle": "横版任务",
+          "path": "/components/press/press-hor-task.md"
         }
       ]
     },
@@ -555,6 +580,11 @@
           "path": "/components/press/press-act-input-phone-dialog.md"
         },
         {
+          "title": "ActInputQQ",
+          "subTitle": "输入QQ弹窗",
+          "path": "/components/press/press-act-input-q-q.md"
+        },
+        {
           "title": "ActLaunchDialog",
           "subTitle": "拉起弹窗",
           "path": "/components/press/press-act-launch-dialog.md"
@@ -578,6 +608,11 @@
           "title": "ActQRCodeDialog",
           "subTitle": "二维码弹窗",
           "path": "/components/press/press-act-q-r-code-dialog.md"
+        },
+        {
+          "title": "ActSelectAward",
+          "subTitle": "选择奖励弹窗",
+          "path": "/components/press/press-act-select-award.md"
         },
         {
           "title": "ActStoreItem",

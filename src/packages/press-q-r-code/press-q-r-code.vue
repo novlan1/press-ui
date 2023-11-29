@@ -16,7 +16,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifndef MP-WEIXIN || H5 -->
+      <!-- #ifdef MP-QQ || APP-PLUS || APP -->
       <canvas
         :id="canvasId"
         :style="style"
@@ -43,7 +43,7 @@ import PressQRCodeWeb from 'vue-qrcode';
 import drawWxQRcode from 'weapp-qrcode-canvas-2d';
 // #endif
 
-// #ifndef MP-WEIXIN || H5
+// #ifdef MP-QQ || APP-PLUS || APP
 import UQRCode from 'uqrcodejs';
 // #endif
 
@@ -71,6 +71,9 @@ export default {
       default: 0,
     },
   },
+  emits: [
+    'result',
+  ],
   data() {
     return {
       codeImg: '',
@@ -102,7 +105,7 @@ export default {
       this.codeMpWx();
       // #endif
 
-      // #ifndef MP-WEIXIN || H5
+      // #ifdef MP-QQ || APP-PLUS || APP
       this.codeMpQQ();
       // #endif
     },

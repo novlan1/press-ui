@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const PATH_MAP = {
-  THEME_VAR: './src/packages/common/style/var.scss',
+  THEME_VAR: './src/packages/common/style/press/var.scss',
   THEME_CONFIG: './docs/.vuepress/components/theme-default.json',
 };
 

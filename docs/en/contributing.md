@@ -117,6 +117,11 @@ Some components currently use `rem`
 
 Components and logic in `press-ui` need to have certain generality or complexity, such as `button`, `input`, `area`, `message-detail` and other components are universal and strong, and `schedule-tree` components High complexity.
 
+It is better to have less than too much. The sunken components must complete the BEM transformation and must be fully decoupled from the business.
+
+>Get it from above, get it from within it, get it from it, get it from below, get it from below, and get nothing.
+
+Try to design the components well from the beginning and adhere to high standards to avoid rework later.
 
 ### 4.3. Isolation from business
 

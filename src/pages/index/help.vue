@@ -1,23 +1,23 @@
 <template>
-  <view class="about">
-    <view class="about__header">
+  <div class="about">
+    <div class="about__header">
       <image
         class="about__banner"
         :src="helpConfig.banner"
         mode="aspectFill"
       />
-      <view class="about__slogan">
-        <view class="about__title">
+      <div class="about__slogan">
+        <div class="about__title">
           Press UI
-        </view>
-        <view class="about__subtitle">
+        </div>
+        <div class="about__subtitle">
           灵活、易用、丰富的跨端组件库
-        </view>
-      </view>
-    </view>
+        </div>
+      </div>
+    </div>
 
-    <view class="about__main">
-      <view class="about__help">
+    <div class="about__main">
+      <div class="about__help">
         <div
           v-for="(item, index) of helpConfig.cellList"
           :key="index"
@@ -39,8 +39,8 @@
             </div>
           </div>
         </div>
-      </view>
-    </view>
+      </div>
+    </div>
 
     <PressDialogComp
       id="tip-match-comm-tips-dialog"
@@ -48,7 +48,7 @@
     />
 
     <!-- <Tabbar :active="1" /> -->
-  </view>
+  </div>
 </template>
 
 <script>

@@ -1,0 +1,122 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-nba.scss';
+@import '../../common/style/act/button/_button-nba.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  .press__dialog {
+    width: 7.15rem;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    color: #999;
+    margin: auto;
+    text-align: center;
+    min-height: 4.2rem;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-bg.png) repeat bottom center;
+    background-size: 100% auto;
+  }
+
+  .press__close {
+    display: inline-block;
+    width: .32rem;
+    height: .32rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/icon-close.png) no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+    position: absolute;
+    right: .16rem;
+    top: .1rem;
+  }
+
+  .press__title {
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .28rem;
+    color: #fff;
+    padding-left: .25rem;
+    font-weight: bold;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/pop/pop-title-bg.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: auto;
+    min-height: 4rem;
+    padding-top: .2rem;
+    text-align: center;
+  }
+
+  .press__box input {
+    display: block;
+    width: 5rem;
+    height: .7rem;
+    background: #09152d;
+    border: 1px solid #4b6096;
+    font-size: .28rem;
+    color: #a1b6d5;
+    margin: .5rem auto .2rem;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .press__button-wrap {
+    // display: box;
+    display: flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: .34rem auto .2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  .press__btn--medium-secondary {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/btn/btn-blue-234.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    margin: auto;
+    font-size: .28rem;
+    font-weight: bold;
+    color: #fff;
+    width: 2.34rem;
+    height: .92rem;
+    line-height: .8rem;
+    text-align: center;
+    text-shadow: 0 0 4px rgba(52, 2, 2, .69);
+  }
+
+  .press__btn--medium-primary {
+    background: url(https://image-1251917893.file.myqcloud.com/2020/a20200707NBA/btn/btn-yellow-234.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    margin: auto;
+    font-size: .28rem;
+    font-weight: bold;
+    color: #fff;
+    width: 2.34rem;
+    height: .92rem;
+    line-height: .8rem;
+    text-align: center;
+    text-shadow: 0 0 4px rgba(52, 2, 2, .69);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

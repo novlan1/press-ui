@@ -10,7 +10,7 @@ export default {
           console.warn('只有微信小程序才支持把 accept 配置为 all、media 之一');
         }
         // #endif
-        // #ifndef H5 || MP-WEIXIN
+        // #ifdef MP-QQ || APP-PLUS || APP
         if (val === 'file') {
           console.warn('只有微信小程序和H5才支持把 accept 配置为 file');
         }

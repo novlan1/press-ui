@@ -1,0 +1,72 @@
+@import "../../common/style/smoba/mixin.scss";
+
+.press__match-item {
+  position: relative;
+  padding: .12rem .3rem .32rem;
+  border: .02rem solid;
+  border-image: linear-gradient(to right, rgba(#5777a4, .5), rgba(#152f4e, .5)) 1;
+  border-radius: .04rem;
+  background: linear-gradient(to right, rgba(#2b568b, .8) 0%, rgba(#1a3453, .8) 100%);
+}
+
+.press__match-label {
+  position: absolute;
+  top: 0;
+  right: -.04rem;
+  width: .32rem;
+  height: .82rem;
+  font-size: .18rem;
+  color: #fff;
+  font-family: 'GAMEFONT';
+  line-height: .2rem;
+  padding: .04rem 0 0 .06rem;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/yellow-tag.png) no-repeat;
+  background-size: 100%;
+}
+
+.press__match-meta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: .2rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -.06rem;
+    width: 2.84rem;
+    height: .1rem;
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/match-top-line.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+.press__match-image {
+  width: .48rem;
+  height: .48rem;
+  margin-right: .14rem;
+}
+
+.press__match-name {
+  font-size: .24rem;
+  color: #fff;
+  @include single-line-ellipsis();
+  max-width: 2.06rem;
+}
+
+.press__match-awards {
+  display: flex;
+  margin-top: .12rem;
+
+  img {
+    width: .66rem;
+    height: .66rem;
+    margin-right: .06rem;
+    border: 1px solid #6d8ac3;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

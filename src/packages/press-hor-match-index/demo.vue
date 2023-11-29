@@ -4,9 +4,11 @@
       :sidebar-list="sidebarList"
       :banner-list="BANNER_LIST"
       :brand-list="BRAND_LIST"
+      :report-list="REPORT_LIST"
       :show-person-dot="true"
       :show-message-dot="true"
       :show-feedback="showFeedback"
+      :is-brand-swiper="isBrandSwiper"
       finished-style="font-size: 12px;"
       loading-size="16px"
       @back="onBack"
@@ -18,6 +20,7 @@
       @clickPrize="clickPrize"
       @clickMatch="clickMatch"
       @clickMatchButton="clickMatchButton"
+      @clickReport="clickReport"
     >
       <template #empty>
         <press-empty
@@ -33,6 +36,7 @@ import PressEmpty from 'src/packages/press-empty/press-empty.vue';
 import {
   BANNER_LIST,
   BRAND_LIST,
+  REPORT_LIST,
   ONLINE_TAB_LIST,
   ONLINE_MATCH_MAP,
 } from 'src/packages/press-hor-match-index/demo-helper/data';
@@ -49,6 +53,8 @@ export default {
       BANNER_LIST,
       BRAND_LIST,
       showFeedback: true,
+      REPORT_LIST,
+      isBrandSwiper: false,
       sidebarList: [
         {
           label: '推荐',
@@ -118,6 +124,10 @@ export default {
       if (item.link) {
         window.location.href = item.link;
       }
+    },
+    clickReport(item, index) {
+      this.onGTip(`[clickReport] ${index}`);
+      console.log('[clickReport]', item, index);
     },
     loadMore(sidebarIndex, curTabIndex) {
       const matchInfo = this.sidebarList[sidebarIndex].matchMap[curTabIndex];

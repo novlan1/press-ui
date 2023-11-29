@@ -78,17 +78,18 @@ export default {
 
 ### Props
 
-| 参数                | 说明               | 类型      | 默认值                                                        |
-| ------------------- | ------------------ | --------- | ------------------------------------------------------------- |
-| title               | 标题               | _string_  | `绑定游戏账号`                                                |
-| logo                | 图片               | _string_  | `https://image-1251917893.file.myqcloud.com/live/tg-logo.png` |
-| name                | 名称               | _string_  | -                                                             |
-| description         | 描述               | _string_  | -                                                             |
-| show-q-q            | 是否显示QQ登录     | _boolean_ | `true`                                                        |
-| show-w-x            | 是否显示微信登录   | _boolean_ | `true`                                                        |
-| agreement-name      | 协议名称           | _string_  | `用户协议`                                                    |
-| show-next-agreement | 是否展示另一个协议 | _boolean_ | `false`                                                       |
-| next-agreement-name | 另一个协议名称     | _string_  | -                                                             |
+| 参数                | 说明                             | 类型      | 默认值                                                        |
+| ------------------- | -------------------------------- | --------- | ------------------------------------------------------------- |
+| title               | 标题                             | _string_  | `绑定游戏账号`                                                |
+| logo                | 图片                             | _string_  | `https://image-1251917893.file.myqcloud.com/live/tg-logo.png` |
+| name                | 名称                             | _string_  | -                                                             |
+| description         | 描述                             | _string_  | -                                                             |
+| show-q-q            | 是否显示QQ登录                   | _boolean_ | `true`                                                        |
+| show-w-x            | 是否显示微信登录                 | _boolean_ | `true`                                                        |
+| agreement-name      | 协议名称                         | _string_  | `用户协议`                                                    |
+| show-next-agreement | 是否展示另一个协议               | _boolean_ | `false`                                                       |
+| next-agreement-name | 另一个协议名称                   | _string_  | -                                                             |
+| use-tip-class       | 是否使用 `tip-comp` 为前缀的类名 | _boolean_ | `false`                                                       |
 
 
 

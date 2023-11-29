@@ -1,5 +1,5 @@
-@import "../../base/layout.scss";
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/layout.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 
 .press-match {
@@ -9,7 +9,7 @@
   height: vw(122);
   margin-right: vw(10);
   margin-bottom: vw(8);
-  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/match-bg.png) no-repeat center center;
+  background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/match-bg-new.png) no-repeat center center;
   background-size: contain;
 
   &:nth-child(even) {
@@ -223,4 +223,8 @@
     background-size: contain;
     @include single-line-ellipsis;
   }
+}
+
+.default-award {
+  padding-right: vw(15);
 }

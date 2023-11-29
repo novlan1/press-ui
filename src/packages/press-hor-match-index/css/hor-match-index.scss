@@ -1,5 +1,5 @@
-@import "../../base/layout.scss";
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/layout.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 .press-index {
   display: flex;
@@ -60,7 +60,6 @@
     width: 0;
     flex: 1;
     height: 100%;
-    padding-top: .16rem;
     padding-bottom: .4rem;
     margin: 0 auto;
     overflow-y: scroll;
@@ -71,6 +70,11 @@
       align-content: baseline;
       flex-wrap: wrap;
     }
+  }
+
+  &__offline,
+  &__recommend--top {
+    padding-top: .16rem;
   }
 
   &__online {

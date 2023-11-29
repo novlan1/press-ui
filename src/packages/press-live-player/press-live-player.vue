@@ -26,6 +26,7 @@ import { LIVE_PLAYER_MIXIN } from './mixin-props';
 
 
 export default {
+  name: 'PressLivePlayer',
   components: {
     // #ifdef H5
     LivePlayerH5,

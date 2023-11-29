@@ -142,8 +142,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-toast {
   display: flex;

@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'SUBTITLE',
+  name: 'PressSUBTITLE',
   props: {
   },
   data() {

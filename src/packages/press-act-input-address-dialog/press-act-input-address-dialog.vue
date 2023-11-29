@@ -179,6 +179,12 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'clickButton',
+    'clickCloseButton',
+    'update:propsData',
+    'update:show',
+  ],
   data() {
     return {
       mUseraddr: {},

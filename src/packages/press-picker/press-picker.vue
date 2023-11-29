@@ -19,7 +19,7 @@ import { allProps, propsKeyMap } from './computed';
 import { functionalMixin } from '../mixins/functional';
 
 export default {
-  name: 'PresPicker',
+  name: 'PressPicker',
   options: {
     styleIsolation: 'shared',
   },

@@ -73,3 +73,5 @@ export function findRouteName(path, routes) {
     }
   }
 }
+
+// export { findRouteName } from 't-comm/lib/router/find-route-name';

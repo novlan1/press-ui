@@ -31,6 +31,9 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'checkDataDetail',
+  ],
   data() {
     return {};
   },

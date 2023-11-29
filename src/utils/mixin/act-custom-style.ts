@@ -62,24 +62,6 @@ export function getActCustomStyleMixin(componentName, styleList, defaultCustomSt
     watch: {
       customStyle: {
         handler(this: any, value) {
-          // #ifdef H5
-          // const classes = [...document.body.classList];
-          // const prefix = `${hyphenate(component.name)}--type-`;
-          // const findOne = classes.find(item => item.startsWith(prefix));
-          // if (findOne) {
-          //   document.body.classList.remove(findOne);
-          // }
-          // #endif
-
-          // if (value && value !== CUSTOM_STYLE_DEFAULT) {
-          //   // #ifdef H5
-          //   document.body.classList.add(this.curGameClass);
-          //   // #endif
-          // } else {
-          //   return;
-          // }
-
-
           if (!value.endsWith('vertical')) {
             if (this.showHeader) {
               this.onToggleShowHeader();

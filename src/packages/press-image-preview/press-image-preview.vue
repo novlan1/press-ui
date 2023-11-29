@@ -185,7 +185,7 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/var.scss";
+@import "../common/style/press/var.scss";
 
 .press-image-preview {
   position: fixed;

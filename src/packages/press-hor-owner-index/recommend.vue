@@ -34,7 +34,6 @@
             v-for="(item,index) in recommendInfo.awardList"
             :key="index"
             class="press-match__award"
-            @click="showAward(item,index)"
           >
             <div class="press-match__award-type">
               <p class="press-match__award-type-name">
@@ -111,6 +110,10 @@ export default {
       required: false,
     },
   },
+  emits: [
+    'clickMatch',
+    'clickMatchButton',
+  ],
   data() {
     return {
     };

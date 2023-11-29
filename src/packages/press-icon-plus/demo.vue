@@ -246,7 +246,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "src/packages/common/style/var.scss";
+@import "src/packages/common/style/press/var.scss";
 
 .demo-wrap {
   ::v-deep .press-tab__pane {

@@ -1,0 +1,283 @@
+@import '../../common/style/act/mixin/mixin.scss';
+
+@import '../../common/style/act/layout/_layout-pvp.scss';
+@import '../../common/style/act/button/_button-pvp.scss';
+@import '../../common/style/act/icon/_icon-pvp.scss';
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    background-color: rgba(13, 19, 32, .8);
+    background-image: linear-gradient(180deg, rgba(25, 48, 91, 0) 73%, #19305b 100%);
+  }
+
+  %dialog-medium-bg {
+    width: 8.54rem;
+    height: 5.12rem;
+    padding: .2rem 0 0 .45rem;
+    background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_medium_bg.png) no-repeat center center;
+    background-size: contain;
+  }
+
+
+  .press__dialog {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    margin: auto;
+    text-align: center;
+  }
+
+
+  //  关闭X按钮的图片
+  $dialog-close_bg: 'https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_close.png';
+
+  .press__close {
+    position: absolute;
+    right: 0;
+    top: .24rem;
+
+    @include icon_img(1.96rem, .8rem, $dialog-close_bg, center center, contain);
+  }
+
+  .press__title {
+    font-family: 'GAMEFONT';
+    padding-top: .16rem;
+    padding-left: .3rem;
+    font-size: .26rem;
+    color: $color-white;
+    text-align: left;
+    text-shadow: 0 0 .04rem #3967b3;
+  }
+
+  // 5 今日战绩未达成哦[
+
+  .tip-comp-dialog--notachieved-content {
+    margin: auto;
+    padding-top: $font-xs;
+    text-align: center;
+  }
+
+  .tip-comp-dialog--notachieved-prizesmsg-name {
+    font-family: 'GAMEFONT';
+    font-size: .24rem;
+    color: $color-white;
+    margin-top: .2rem;
+  }
+
+  .tip-comp-dialog--notachieved-useinfo {
+    font-size: $font-xxs;
+    color: $color-blue-3;
+    text-align: center;
+    margin-top: .2rem;
+  }
+
+  .tip-comp-dialog--notachieved-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 6.12rem;
+    height: 1.4rem;
+    text-align: center;
+    margin: .3rem auto 0;
+    background: rgba(23, 49, 76, .4);
+    box-shadow: inset 0 0 0 0 rgba(68, 114, 163, .2);
+  }
+
+  .tip-comp-dialog--notachieved-progressdetail {
+    color: $color-white-4;
+    font-size: $font-xxs;
+    margin-bottom: .16rem;
+  }
+
+
+  .tip-comp-dialog--notachieved-progressbar {
+    width: 1.9rem;
+    height: .04rem;
+    border-radius: .04rem;
+    background: #0f2039;
+    overflow: hidden;
+  }
+
+  .tip-comp-dialog--notachieved-progressbar i {
+    display: block;
+    height: 100%;
+    border-radius: .04rem;
+    background-image: linear-gradient(90deg, #8cb2e7 0%, #b5e2ff 100%);
+  }
+
+  .press__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .32rem;
+    z-index: 2;
+  }
+
+
+  //  按钮覆盖
+  .press__dialog {
+    @extend %dialog-medium-bg;
+
+    .press__buttons {
+      a {
+        display: flex;
+      }
+    }
+  }
+
+  // 5 今日战绩未达成哦]
+
+  .press__award-list {
+    overflow-x: auto;
+    width: 100%;
+    height: 2.88rem;
+    display: flex;
+    white-space: nowrap;
+    background: Linear Gradient #DBE3FA 0%,
+      #EAF1FA 100%
+  }
+
+  .press__award-item {
+    display: inline-block;
+    width: 1.8rem;
+    height: 2.18rem;
+    margin: .12rem;
+  }
+
+  .press__box {
+    display: flex;
+    box-sizing: border-box;
+    width: 1.72rem;
+    height: 1.72rem;
+    margin-bottom: .2rem;
+    justify-content: center;
+    align-items: center;
+    background: rgba(61, 116, 176, 0.2);
+  }
+
+  .press__award-item.press__award-item--active {
+    .press__box {
+      background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/pvp/pvp-outborder.png) center/108% 108% no-repeat;
+      background-color: rgba(61, 116, 176, 0.2);
+    }
+  }
+
+  .press__image {
+    max-width: 1.2rem;
+    max-height: 1.2rem;
+  }
+
+  .press__name {
+    font-family: 'GAMEFONT';
+    font-size: .24rem;
+    color: $color-white;
+    overflow: hidden;
+    font-size: .24rem;
+    width: 1.5rem;
+    line-height: .3rem;
+    height: 0.6rem;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-left: .36rem;
+  }
+
+  .press__dialog .press__buttons {
+    position: absolute;
+    left: .4rem;
+    right: 0;
+    bottom: 0.32rem;
+    transform: translateY(0.24rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 0;
+  }
+
+  .press__content {
+    width: 80%;
+    margin: .4rem 0 0 .8rem;
+  }
+
+  .press__right {
+    display: none;
+  }
+
+  .press__btn.press__btn--disabled {
+    mix-blend-mode: luminosity;
+  }
+
+  .press__btn.press__btn--disabled {
+    width: 2.12rem;
+    height: .64rem;
+    line-height: .64rem;
+    mix-blend-mode: luminosity;
+    filter: grayscale(100%);
+  }
+
+  .press__info-wrap,
+  .press__bottom {
+    display: none;
+  }
+
+  .press__award-item.press__award-item--active {
+
+    .press__bottom {
+      position: fixed;
+      left: 1rem;
+      width: 6.6rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .press__name {
+    width: auto;
+    font-weight: bold;
+  }
+
+  .press__tip {
+    font-size: .24rem;
+    line-height: .3rem;
+    opacity: .5;
+    color: #F9FCFF;
+  }
+
+  .press__btn--close {
+    text-indent: -1000rem;
+    margin-right: 0.8rem;
+    width: 2.24rem;
+    height: 0.56rem;
+    line-height: 0.64rem;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/pvp/nexttime-btn.png) center/100% 100% no-repeat;
+  }
+
+  &.press__cover .press__btn.press__btn--maxlarge-primary {
+    height: .64rem;
+  }
+
+  .press__btn--close {
+    font-family: GAMEFONT;
+  }
+}

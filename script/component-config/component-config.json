@@ -376,6 +376,14 @@
     "title": "横版组件",
     "list": [
       {
+        "name": "HorAwardExplain",
+        "title": "横版奖励说明"
+      },
+      {
+        "name": "HorDialog",
+        "title": "横版弹窗"
+      },
+      {
         "name": "HorMatchHeader",
         "title": "横版赛事头部"
       },
@@ -394,6 +402,17 @@
         }
       },
       {
+        "name": "HorOwnerTheme",
+        "title": "横版赛事列表",
+        "style": {
+          "navigationStyle": "custom"
+        }
+      },
+      {
+        "name": "HorRule",
+        "title": "横版规则弹窗"
+      },
+      {
         "name": "HorScheduleManage",
         "title": "横版赛程管理",
         "style": {
@@ -403,6 +422,13 @@
       {
         "name": "HorSwiperLight",
         "title": "精彩集锦弹窗"
+      },
+      {
+        "name": "HorTask",
+        "title": "横版任务",
+        "style": {
+          "navigationStyle": "custom"
+        }
       }
     ]
   },
@@ -465,6 +491,10 @@
         "title": "填写手机号弹窗"
       },
       {
+        "name": "ActInputQQ",
+        "title": "输入QQ弹窗"
+      },
+      {
         "name": "ActLaunchDialog",
         "title": "拉起弹窗"
       },
@@ -483,6 +513,10 @@
       {
         "name": "ActQRCodeDialog",
         "title": "二维码弹窗"
+      },
+      {
+        "name": "ActSelectAward",
+        "title": "选择奖励弹窗"
       },
       {
         "name": "ActStoreItem",

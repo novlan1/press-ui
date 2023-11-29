@@ -59,6 +59,11 @@ import props, { getPx } from './computed';
 export default {
   name: 'PressCodeInput',
   mixins: [props],
+  emits: [
+    'change',
+    'finish',
+    'input',
+  ],
   data() {
     return {
       inputValue: '',

@@ -132,6 +132,12 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'confirmAdjustGroup',
+    'loadMore',
+    'selectNumPerGroup',
+    'update:loading',
+  ],
   data() {
     return {
       showSelectTeamList: false,

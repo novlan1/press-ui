@@ -222,7 +222,7 @@
                         water.isBindWechat &&
                         (water.bindNick || water.wxNick)
                     "
-                    :class="[getActClass('barcode-bg')]"
+                    :class="[getActClass('exchange-type')]"
                   >
                     奖励{{ water.bindWechatExchange ? '将' : '' }}默认发放至
                     <span>
@@ -238,7 +238,7 @@
                   </div>
                   <div
                     v-if="water.vipNumber && water.displayType != 1"
-                    :class="[getActClass('barcode-bg')]"
+                    :class="[getActClass('exchange-type')]"
                   >
                     {{
                       water.cdkey && water.cdkey.length
@@ -286,15 +286,6 @@
                         format="CODE128"
                       />
                       <!-- #endif -->
-
-                      <PressBarcode
-                        :value="water.cdkey"
-                        :height="0.7 * 50"
-                        :width="1"
-                        :font-size="0.3 * 50"
-                        style="transform: rotate(-90deg) translateX(-1.5rem)"
-                        format="CODE128"
-                      />
                     </div>
                     <div :class="[getActClass('right')]">
                       <!-- #ifdef H5 -->
@@ -686,6 +677,19 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'clickBtn',
+    'clickButton',
+    'clickCloseButton',
+    'clickEnter',
+    'clickExtraAct',
+    'clickGoodItem',
+    'clickModfy',
+    'clickSub',
+    'clickUsedShop',
+    'gotoGoodsDetailDesc',
+    'update:show',
+  ],
   data() {
     return {
       showPopoverIndex: -1,

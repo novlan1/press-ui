@@ -11,7 +11,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifndef H5 || APP-PLUS -->
+      <!-- #ifdef MP -->
       <!-- 小程序中动态canvasId不生效，相同问题: https://ask.dcloud.net.cn/question/67534 -->
       <canvas
         :id="canvasId"
@@ -122,7 +122,7 @@ export default {
     },
     canvasId() {
       let result =  `press-circle-${this.id}`;
-      // #ifndef H5 || APP-PLUS
+      // #ifdef MP
       result = 'press-circle';
       // #endif
 
@@ -300,8 +300,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-circle {
   position: relative;

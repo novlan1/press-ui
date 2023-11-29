@@ -542,8 +542,8 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-tabs {
   position: relative;
@@ -715,8 +715,8 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
-@import "../base/layout.scss";
-@import "../base/mixin.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/mixin.scss";
 
 .press-tabs--hor {
   height: 100%;
@@ -729,8 +729,8 @@ export default {
     }
 
     .press-tabs__content {
-      height: calc(100% - .54rem);
-      padding-top: .12rem;
+      height: calc(100% - 0.54rem);
+      padding-top: 0.12rem;
     }
 
     .press-tabs__scroll {
@@ -741,15 +741,15 @@ export default {
 
     .press-tabs__wrap {
       position: relative;
-      height: .54rem;
+      height: 0.54rem;
       &::before {
         position: absolute;
-        bottom: .06rem;
+        bottom: 0.06rem;
         left: 0;
         right: 0;
-        content: '';
-        height: .02rem;
-        background: rgba(123, 197, 255, .15);
+        content: "";
+        height: 0.02rem;
+        background: rgba(123, 197, 255, 0.15);
       }
     }
 
@@ -763,7 +763,7 @@ export default {
       flex: none;
       color: #84b0eb;
       font-size: $font-s;
-      padding: 0 .32rem .06rem;
+      padding: 0 0.32rem 0.06rem;
       z-index: 2;
     }
 

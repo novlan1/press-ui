@@ -86,6 +86,7 @@ import ZSwiperItem from '@zebra-ui/swiper/components/z-swiper-item/z-swiper-item
 
 
 export default {
+  name: 'PressHorSwiperLight',
   components: {
     ZSwiper,
     ZSwiperItem,
@@ -97,6 +98,10 @@ export default {
       required: false,
     },
   },
+  emits: [
+    'close',
+    'share',
+  ],
   data() {
     return {
       options: {

@@ -17,10 +17,12 @@ export const getRankList = mineIndex => Array.from({ length: 10 }).map((item, in
     rank: index + 1,
     showButton: !isMine,
 
+    canJoinGameNum: index % 3 === 0 ? index : 0,
     // myRankStr: 10,
     myRankStr: '未上榜',
     diffNumStr: '距前1名还差50人',
 
+    followLength: 23,
   };
 });
 

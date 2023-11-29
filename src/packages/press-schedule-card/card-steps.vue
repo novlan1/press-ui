@@ -59,6 +59,9 @@ export default {
       default: () => [],
     },
   },
+  emits: [
+    'click',
+  ],
   data() {
     return {
       // tabIndex: 1,

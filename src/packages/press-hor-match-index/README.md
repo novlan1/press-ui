@@ -137,21 +137,23 @@ export default {
 ### Props
 
 
-| 参数             | 说明                               | 类型      | 默认值       |
-| ---------------- | ---------------------------------- | --------- | ------------ |
-| title            | 页面标题                           | _string_  | `商户赛`     |
-| show-message-dot | 是否显示消息红点                   | _boolean_ | `false`      |
-| show-feedback    | 是否显示反馈                       | _boolean_ | `false`      |
-| show-person-dot  | 是否显示个人中心红点               | _boolean_ | `false`      |
-| banner-list      | `banner` 列表, 尺寸为`584 * 146`   | _array_   | -            |
-| brand-list       | 品牌列表，尺寸为`80 * 80`          | _array_   | -            |
-| sidebar-list     | 侧边栏数据列表                     | _array_   | -            |
-| immediate-check  | 是否在初始化时立即执行滚动位置检查 | _boolean_ | `false`      |
-| finished-text    | 加载完成后的提示文案               | _string_  | `没有更多了` |
-| finished-style   | 已完成自定义样式                   | _string_  | -            |
-| loading-style    | 加载中自定义样式                   | _string_  | -            |
-| loading-size     | 加载中图标尺寸                     | _string_  | `20px`       |
-
+| 参数               | 说明                               | 类型      | 默认值       |
+| ------------------ | ---------------------------------- | --------- | ------------ |
+| title              | 页面标题                           | _string_  | `商户赛`     |
+| show-message-dot   | 是否显示消息红点                   | _boolean_ | `false`      |
+| show-feedback      | 是否显示反馈                       | _boolean_ | `false`      |
+| show-person-dot    | 是否显示个人中心红点               | _boolean_ | `false`      |
+| banner-list        | `banner` 列表, 尺寸为`584 * 146`   | _array_   | -            |
+| brand-list         | 品牌列表，尺寸为`80 * 80`          | _array_   | -            |
+| sidebar-list       | 侧边栏数据列表                     | _array_   | -            |
+| immediate-check    | 是否在初始化时立即执行滚动位置检查 | _boolean_ | `false`      |
+| finished-text      | 加载完成后的提示文案               | _string_  | `没有更多了` |
+| finished-style     | 已完成自定义样式                   | _string_  | -            |
+| loading-style      | 加载中自定义样式                   | _string_  | -            |
+| loading-size       | 加载中图标尺寸                     | _string_  | `20px`       |
+| banner-report-data | `banner` 上报数据                  | _object_  | -            |
+| report-list        | 播报列表                           | _array_   | -            |
+| is-brand-swiper    | 品牌列表是否为 `swiper` 模式       | _boolean_ | `false`      |
 
 ###  Events
 
@@ -189,6 +191,7 @@ type IBannerList = Array<string>
 type IBrandList = Array<{
   name: string;
   img: string
+  reportData?: object; // 品牌上报数据
 }>
 
 
@@ -225,14 +228,19 @@ type IMatchList = Array<{
   brandImg: string;
   matchDesc: string; // 如 09.01 15:00 / 线下赛
   
-  // 按钮默认无背景图，指定 isNotStart/isEnd/isIng 才有
-  isNotStart: boolean; // 金黄色按钮
-  isEnd: boolean; // 蓝色按钮
-  isIng: boolean; // 金黄色按钮，同 isNotStart
+  btnPrimary: boolean;  // 金黄色按钮 同 isNotStart
+  btnSecondary: boolean; // 蓝色按钮, 同 isEnd, isIng
+
   btnTxt: string;
 
   matchLoc: string; // 距离
   tag: string; // 标签名称
-  isSigned; boolean; // 是否已报名
+  
+  labelText: string; // 标签
+  labelPrimary: boolean; // 是否标签金黄色
+  labelSecondary: boolean; // 是否标签黄色
+
+  reportData?: object; // 赛事上报数据
+  buttonReportData?: object; // 赛事按钮上报数据
 }>
 ```

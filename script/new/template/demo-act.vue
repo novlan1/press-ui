@@ -1,12 +1,19 @@
 <template>
-  <div class="demo-wrap">
+  <div
+    class="demo-wrap"
+    :class="curGameClass"
+  >
     <ActDemo
       :custom-style-str="styleMap[customStyle].label"
       :show.sync="show"
+      :hide-tip-style.sync="hideTipStyle"
+      :use-tip-class.sync="useTipClass"
       @onCustom="onCustom"
     >
       <PressSUBTITLE
         :show.sync="show"
+        :hide-tip-style.sync="hideTipStyle"
+        :use-tip-class.sync="useTipClass"
       />
     </ActDemo>
 
@@ -38,7 +45,7 @@ export default {
     ActDemo,
   },
   mixins: [
-    getActCustomStyleMixin(PressSUBTITLE, STYLE_LIST),
+    getActCustomStyleMixin('PressSUBTITLE', STYLE_LIST),
   ],
   data() {
     return {

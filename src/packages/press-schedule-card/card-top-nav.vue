@@ -66,6 +66,9 @@ export default {
       default: '',
     },
   },
+  emits: [
+    'exchange',
+  ],
   data() {
     return {
 

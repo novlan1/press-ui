@@ -171,6 +171,12 @@ export default {
       default: '暂无主理人榜单',
     },
   },
+  emits: [
+    'clickRankItem',
+    'focus',
+    'loadMore',
+    'update:loading',
+  ],
   data() {
     return {
     };
@@ -184,7 +190,7 @@ export default {
         return this.rankMap.loading;
       },
       set(val) {
-        this.$emit('update:loading', val);
+        this.$emit('update:loading', 'rankMap', val);
       },
     },
   },

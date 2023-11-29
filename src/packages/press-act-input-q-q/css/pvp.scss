@@ -1,0 +1,147 @@
+@import '../../common/style/act/mixin/mixin.scss';
+@import '../../common/style/act/layout/_layout-pvp.scss';
+@import '../../common/style/act/button/_button-pvp.scss';
+@import '../../common/style/act/icon/_icon-pvp.scss';
+
+@import '../../common/style/act/mixin/uni.scss';
+
+//  弹框背景--start
+%dialog-bg-small {
+  width: 7.32rem;
+  height: 4.38rem;
+  padding: .3rem 0 0 .4rem;
+  background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_small_bg.png) no-repeat center center;
+  background-size: contain;
+}
+
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    background-color: rgba(13, 19, 32, .8);
+    background-image: linear-gradient(180deg, rgba(25, 48, 91, 0) 73%, #19305b 100%);
+    @include reset-uni-input;
+  }
+
+
+  .press__dialog {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+    margin: auto;
+    text-align: center;
+
+  }
+
+
+  //  关闭X按钮的图片
+  $dialog-close_bg: 'https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/dialog/dialog_close.png';
+
+  .press__close {
+    position: absolute;
+    right: 0;
+    top: .18rem;
+
+    @include icon_img(1.96rem, .8rem, $dialog-close_bg, center center, contain);
+  }
+
+
+  .press__title {
+    font-family: 'GAMEFONT';
+    padding-left: .3rem;
+    font-size: .26rem;
+    color: $color-white;
+    text-align: left;
+    text-shadow: 0 0 2px #3967b3;
+  }
+
+
+  // 3兑换至QQ账号[
+
+  .press__content {
+    margin: auto;
+    text-align: center;
+  }
+
+  .press__box input {
+    display: block;
+    width: 3.68rem;
+    height: .48rem;
+    font-size: $font-xxs;
+    color: $color-blue-3;
+    background: #112237;
+    border: 1px solid #35669e;
+    padding: 0 .24rem;
+    margin: 1.2rem auto .16rem;
+  }
+
+  .press__box input::-webkit-input-placeholder {
+    color: $color-blue-3;
+  }
+
+  // 3兑换至QQ账号]
+  .press__button-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    left: .4rem;
+    right: 0;
+    bottom: .32rem;
+    z-index: 2;
+  }
+
+
+  //  按钮覆盖
+  .press__dialog--qq {
+    @extend %dialog-bg-small;
+
+    .press__button-wrap {
+      a {
+        display: block;
+        font-family: 'GAMEFONT';
+        margin-right: .6rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .press__btn--cancel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.24rem;
+        height: .56rem;
+        line-height: normal;
+        font-size: .28rem;
+        background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/btn/secondary_large_btn_icon_bg.png) no-repeat center center;
+        background-size: contain;
+      }
+
+      .press__btn--sure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.24rem;
+        height: .56rem;
+        line-height: normal;
+        font-size: .28rem;
+        background: url(https://image-1251917893.file.myqcloud.com/2020/Tip-wsq/V3.0/img/btn/primary_large_btn_icon_bg.png) no-repeat center center;
+        background-size: contain;
+      }
+    }
+  }
+
+  // 2填写手机号]
+}

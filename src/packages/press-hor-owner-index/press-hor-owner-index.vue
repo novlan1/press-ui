@@ -169,6 +169,7 @@
         class="press-owner__rank"
       >
         <HorRank
+          v-if="!showNewRank"
           :rank-map="rankMap"
           :my-rank-info="myRankInfo"
           :rank-title="rankTitle"
@@ -179,6 +180,23 @@
           @focus="focus"
           @clickRankItem="clickRankItem"
         />
+        <HorNewRank
+          v-if="showNewRank"
+          :rank-map="rankMap"
+          :my-rank-info="myRankInfo"
+          :rank-title="rankTitle"
+          :rank-num-prefix="rankNumPrefix"
+          :rank-empty-text="rankEmptyText"
+          :my-follow="myFollow"
+          :friends-follow="friendsFollow"
+          :cur-rank-tab="curRankTab"
+          @loadMore="loadMore"
+          @update:loading="updateLoading"
+          @focus="focus"
+          @clickRankItem="clickRankItem"
+          @changeRankTab="changeRankTab"
+          @clickRankGames="clickRankGames"
+        />
       </div>
     </div>
   </div>
@@ -188,6 +206,7 @@
 import RecommendItem from './recommend';
 import MatchItem from './match';
 import HorRank from './rank';
+import HorNewRank from './new-rank';
 
 import MatchHeader from '../press-hor-match-header/press-hor-match-header.vue';
 
@@ -199,6 +218,7 @@ import PressList from '../press-list/press-list.vue';
 
 
 export default {
+  name: 'PressHorOwnerIndex',
   options: {
     virtualHost: true,
   },
@@ -212,8 +232,13 @@ export default {
     PressTabs,
     PressEmpty,
     PressList,
+    HorNewRank,
   },
   props: {
+    showNewRank: {
+      type: Boolean,
+      default: false,
+    },
     title: {
       type: String,
       default: '',
@@ -227,6 +252,18 @@ export default {
       default: () => ({}),
     },
     rankMap: {
+      type: Object,
+      default: () => ({}),
+    },
+    curRankTab: {
+      type: Number,
+      default: 0,
+    },
+    myFollow: {
+      type: Object,
+      default: () => ({}),
+    },
+    friendsFollow: {
       type: Object,
       default: () => ({}),
     },
@@ -376,8 +413,8 @@ export default {
     loadMore() {
       this.$emit('loadMore', this.sidebarIndex, this.tabIndex);
     },
-    updateLoading(value) {
-      this.$emit('update:loading', 'rankMap', value);
+    updateLoading(key = 'rankMap', value) {
+      this.$emit('update:loading', key, value);
     },
     focus(item, index) {
       this.$emit('focus', item, index);
@@ -388,8 +425,14 @@ export default {
     clickMatch(matchInfo, matchIndex) {
       this.$emit('clickMatch', matchInfo, matchIndex, this.sidebarIndex, this.tabIndex);
     },
+    changeRankTab(item) {
+      this.$emit('changeRankTab', item);
+    },
     clickRankItem(item, index) {
       this.$emit('clickRankItem', item, index);
+    },
+    clickRankGames(item, index) {
+      this.$emit('clickRankGames', item, index);
     },
     clickOwnerRegister() {
       this.$emit('clickOwnerRegister');

@@ -24,11 +24,32 @@ export default {
 ```html
 <PressActModifyPhoneDialog
   :show.sync="show"
-  :phone.sync="inputPhone"
-  :code.sync="code"
-  @clickButton="onConfirmUpdatePhone"
-  @clickGetCodeButton="onGetVeriCode"
+  :is-disable-get-code="isDisableGetCode"
+  @clickButton="clickButton"
+  @clickGetCodeButton="clickGetCodeButton"
 />
+```
+
+```ts
+export default {
+  data() {
+    return {
+      show: true,
+      isDisableGetCode: false,
+    };
+  },
+
+  mounted() {
+  },
+  methods: {
+    clickButton() {
+      this.onGTip('[clickButton]');
+    },
+    clickGetCodeButton() {
+      this.onGTip('[clickGetCodeButton]');
+    },
+  },
+}
 ```
 
 ## API

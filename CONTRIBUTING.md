@@ -89,6 +89,52 @@ npm run docs:dev
 
 `Press UI`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
 
+
+### 2.5. 辅助方法
+
+Press UI 内部提供了一些提效工具，包括：
+
+- 提取 `props`，可用于文档
+- 提取 `event`，可用于文档
+- 提取 `class`，可用于 BEM 改造中的映射表
+- CSS 单位转化，`rem` => `px`
+- 自动添加、修正组件的 `name` 属性
+- 自动添加组件的 `emits` 属性，Vue3 需要
+- 活动组件增加隐藏 @TIP_STYLE_NAME 样式
+- 活动组件进行 CSS 替换
+
+使用方法如下：
+
+```bash
+# 提取 props
+# npm run extract:props [componentPath]
+npm run extract:props src/packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue
+
+# 提取 event
+# npm run extract:event [componentPath]
+npm run extract:event src/packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue
+
+# 提取 class
+# npm run extract:class [componentPath]
+npm run extract:class src/packages/press-hor-owner-index/press-hor-owner-index.vue
+
+# rem 转 px
+# npm run rem:px [componentPath]
+npm run rem:px src/packages/press-message-board/press-message-board-input.vue
+
+# 添加、修正 name 属性
+npm run add:name
+
+# 添加 emits 属性
+npm run add:emits
+
+# 活动组件增加隐藏 TIP_STYLE_NAME 样式
+npm run act:hide:tip
+
+# 活动组件进行 CSS 替换
+npm run act:replace:class
+```
+
 ## 3. 开发规范
 
 ### 3.1. 代码规范
@@ -128,6 +174,12 @@ npm run docs:dev
 ### 4.2. 准入条件
 
 `Press UI`内的组件、逻辑需要有一定的通用性或复杂性，比如`button`、`input`、`area`、`message-detail`等组件通用型强，`schedule-tree`组件复杂度高。
+
+宁缺毋滥，沉入的组件必须完成 BEM 改造，必须与业务充分解耦。
+
+>取乎其上，得乎其中，取乎其中，得乎其下，取乎其下，其无所得也。
+
+一开始就尽量把组件设计好，坚持高标准，避免后面返工。
 
 ### 4.3. Javascript 优先
 

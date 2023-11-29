@@ -131,6 +131,13 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'clickQQLogin',
+    'clickWXLogin',
+    'onCancel',
+    'openAgreement',
+    'openNextAgreement',
+  ],
   data() {
     return {
       isShowPopup: true,

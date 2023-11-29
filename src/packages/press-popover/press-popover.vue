@@ -79,8 +79,8 @@ export default {
 
 </script>
 <style lang="scss">
-@import "../base/layout.scss";
-@import "../base/animate.scss";
+@import "../common/style/smoba/layout.scss";
+@import "../common/style/smoba/animate.scss";
 
 .press-popover {
   position: absolute;

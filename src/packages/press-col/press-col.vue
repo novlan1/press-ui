@@ -48,10 +48,10 @@ export default {
 
 @for $i from 1 through 24 {
   .press-col--#{$i} {
-    width: calc(#{$i} * (100% / 24));
+    width: $i * (100% / 24);
   }
   .press-col--offset-#{$i} {
-    margin-left: calc(#{$i} * (100% / 24));
+    margin-left: $i * (100% / 24);
   }
 }
 </style>

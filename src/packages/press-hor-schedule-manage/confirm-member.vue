@@ -206,6 +206,16 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'checkTeam',
+    'doneConfirmSignUp',
+    'loadMore',
+    'onCancelSearch',
+    'onClickSearch',
+    'search',
+    'toggleAllQualification',
+    'update:loading',
+  ],
   data() {
     return {
       showPopover: false,

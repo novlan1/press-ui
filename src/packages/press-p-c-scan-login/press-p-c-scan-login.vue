@@ -36,6 +36,7 @@ const WX_JS_SDK = 'https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js
 
 
 export default {
+  name: 'PressPCScanLogin',
   props: {
     show: {
       type: Boolean,
@@ -61,10 +62,31 @@ export default {
       type: Boolean,
       default: false,
     },
+    wxLoginConfig: {
+      type: Object,
+      default: () => ({}),
+    },
   },
+  emits: [
+    'update:show',
+  ],
   data() {
     return {
     };
+  },
+  watch: {
+    show: {
+      handler(value) {
+        if (value) {
+          this.init();
+        }
+      },
+    },
+    url: {
+      handler() {
+        this.init();
+      },
+    },
   },
   mounted() {
     this.init();
@@ -92,6 +114,7 @@ export default {
         state: '7a6d6ed5589082dd6c41d64d5206b064',
         style: 'black', // 二维码黑白风格
         href: 'https://image-1251917893.file.myqcloud.com/igame-admin/weixinlogin.css',
+        ...(this.wxLoginConfig || {}),
       });
     },
     closeDialog() {

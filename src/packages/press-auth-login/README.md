@@ -105,5 +105,6 @@ export default {
 | after-cancel        | 点击关闭图标的回调                            | _function_ | -                                                                      |
 | after-confirm       | 点击确认按钮的回调                            | _function_ | -                                                                      |
 | is-show-by-function | 是否为函数式调用                              | _boolean_  | `false`                                                                |
+| use-tip-class       | 是否使用 `tip-comp` 为前缀的类名              | _boolean_  | `false`                                                                |
 
 

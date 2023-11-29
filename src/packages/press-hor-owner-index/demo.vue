@@ -8,13 +8,19 @@
       :my-match-map="myMatchMap"
       :rank-map="rankMap"
       :my-rank-info="myRankInfo"
+      :show-new-rank="showNewRank"
       finished-text="没有更多了"
+      :my-follow="myFollow"
+      :friends-follow="friendsFollow"
+      :cur-rank-tab="curRankTab"
       @back="back"
       @clickOwnerRegister="clickOwnerRegister"
       @clickMyOwnerInfo="clickMyOwnerInfo"
       @clickMatch="clickMatch"
       @clickMatchButton="clickMatchButton"
       @clickRankItem="clickRankItem"
+      @clickRankGames="clickRankGames"
+      @changeRankTab="changeRankTab"
       @focus="focus"
       @update:loading="updateLoading"
       @loadMore="loadMore"
@@ -63,10 +69,35 @@ export default {
         finished: false,
         loading: false,
       },
+      myFollow: {
+        list: getRankList(5),
+        finished: false,
+        loading: false,
+      },
+      friendsFollow: {
+        list: getRankList(5),
+        finished: false,
+        loading: false,
+      },
+      curRankTab: 0,
       myRankInfo: getRankList(-1)[0],
       ownerInfo: MOCK_OWNER_INFO,
       isOwner: true,
+      showNewRank: true,
     };
+  },
+  computed: {
+    curRankMap() {
+      const { rankMap, myFollow, friendsFollow, curRankTab } = this;
+      const keyMap = {
+        0: rankMap,
+        1: myFollow,
+        2: friendsFollow,
+      };
+
+      const curMap = keyMap[curRankTab];
+      return curMap;
+    },
   },
   mounted() {
   },
@@ -91,11 +122,13 @@ export default {
       }, 1000);
     },
     loadMoreRank() {
-      const { rankMap } = this;
+      const { curRankMap } = this;
+      curRankMap.loading = true;
+
       setTimeout(() => {
-        rankMap.list = rankMap.list.concat(getRankList(-1));
-        rankMap.loading = false;
-        rankMap.finished =  rankMap.list.length >= 30;
+        curRankMap.list = curRankMap.list.concat(getRankList(-1));
+        curRankMap.loading = false;
+        curRankMap.finished =  curRankMap.list.length >= 30;
       }, 1000);
     },
     loadMore(sidebarIndex, tabIndex) {
@@ -132,10 +165,19 @@ export default {
         this.myMatchMap[args[3]].list = [];
       }
     },
+    changeRankTab(item) {
+      this.onGTip('[changeRankTab]');
+      console.log('[changeRankTab]', item);
+      this.curRankTab = item.name;
+    },
     clickRankItem(...args) {
       this.onGTip('[clickRankItem]');
       console.log('[clickRankItem]', args);
-      this.rankMap.list = [];
+      this.curRankMap.list = [];
+    },
+    clickRankGames(...args) {
+      this.onGTip('[clickRankGames]');
+      console.log('[clickRankGames]', args);
     },
     clickOwnerRegister() {
       this.onGTip('[clickOwnerRegister]');
@@ -159,11 +201,11 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   ::v-deep {
-    .press-owner {
-      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/bg.png)
-        no-repeat;
-      background-size: 100% 100%;
-    }
+    // .press-owner {
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/bg.png)
+      no-repeat;
+    background-size: 100% 100%;
   }
+  // }
 }
 </style>

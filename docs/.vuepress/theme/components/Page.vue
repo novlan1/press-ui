@@ -54,6 +54,8 @@ const WEB_DEMO_BASE_LINK_DEV = 'http://localhost:9999/#/';
 
 const WEB_DEMO_BASE_LINK = process.env.NODE_ENV === 'production' ? WEB_DEMO_BASE_LINK_PROD : WEB_DEMO_BASE_LINK_DEV;
 const DEFAULT_LANG = 'zh-CN';
+const DEFAULT_URL = 'pages/index/index';
+
 
 const LANG_MAP = {
   en: 'en-US',
@@ -100,7 +102,7 @@ export default {
     $page: {
       handler(newName) {
         const { frontmatter } = newName;
-        this.url = frontmatter.url ? frontmatter.url : '';
+        this.url = frontmatter.url ? frontmatter.url : DEFAULT_URL;
         this.isHor = frontmatter.type === 'horizontal';
       },
       immediate: true,

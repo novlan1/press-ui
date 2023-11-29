@@ -99,7 +99,7 @@ export default {
    },
 }
 ```
-##API
+## API
 
 ### Props
 

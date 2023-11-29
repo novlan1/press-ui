@@ -47,6 +47,9 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'onClickOutside',
+  ],
   data() {
     return {
 

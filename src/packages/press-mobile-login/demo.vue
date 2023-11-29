@@ -37,6 +37,9 @@ export default {
     let showChooseDialog = false;
     // #ifdef H5
     currentUrl = document.location.href;
+    if (currentUrl.indexOf('http://localhost') > -1) {
+      currentUrl = 'https://novlan1.github.io/press-ui-demo/';
+    }
     showChooseDialog = true;
     // #endif
 
@@ -51,6 +54,11 @@ export default {
       showQQ: true,
       showWX: true,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.currentUrl = 'https://www.qq.com';
+    }, 2000);
   },
   methods: {
     jumpToLoginWX() {

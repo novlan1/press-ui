@@ -69,6 +69,7 @@ import { defaultOptions } from '../common/component-handler/press-component';
 
 
 export default {
+  name: 'PressScheduleMatchMode',
   options: {
     ...defaultOptions,
     styleIsolation: 'shared',
@@ -117,6 +118,14 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'clickRoundTab',
+    'clickSche',
+    'clickScheItem',
+    'clickScheItemButton',
+    'clickVideoIcon',
+    'scrollToLower',
+  ],
   data() {
     return {
       currentTab: 1,

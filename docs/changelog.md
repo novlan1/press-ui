@@ -76,6 +76,242 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+### [1.2.52](https://github.com/novlan1/press-ui/compare/v1.2.51...v1.2.52) (2023-11-28)
+
+
+### Features 🎉
+
+* **hor-owner-theme:** add hor owner theme ([7889173](https://github.com/novlan1/press-ui/commit/78891733b593686c1fbd311a63c17234204e4101))
+
+
+### Documentation 📖
+
+* update docs ([ea578b1](https://github.com/novlan1/press-ui/commit/ea578b18a4a878999d77653cccc5749cc53e2630))
+
+### [1.2.51](https://github.com/novlan1/press-ui/compare/v1.2.50...v1.2.51) (2023-11-27)
+
+
+### Code Refactoring ♻️
+
+* **name:** modify name for component ([7e8938e](https://github.com/novlan1/press-ui/commit/7e8938e097ad8e8384cadb56ab6d7759bd79b874))
+* remove extra comment ([c399659](https://github.com/novlan1/press-ui/commit/c399659d616eae3546b52572ca278a4a287f7da2))
+
+
+### Chore 🚀 
+
+* add emits ([e42608b](https://github.com/novlan1/press-ui/commit/e42608b821df36562c9a0d5b0870268f47976b3d))
+* update extract props ([1ccef42](https://github.com/novlan1/press-ui/commit/1ccef42b3deed40b611979cf93dc652ae04b7d60))
+* update script ([9a0558e](https://github.com/novlan1/press-ui/commit/9a0558eb7e082284c60a8c1638c71e534bd672f4))
+
+
+### Features 🎉
+
+* **owner-match:** add follow map ([e3422b4](https://github.com/novlan1/press-ui/commit/e3422b47e646c014b9d76909cb114c34faf17613))
+
+### [1.2.50](https://github.com/novlan1/press-ui/compare/v1.2.49...v1.2.50) (2023-11-27)
+
+
+### Code Refactoring ♻️
+
+* **press-style:** move press base style ([056ea1a](https://github.com/novlan1/press-ui/commit/056ea1a464daab5f900569348008e1fc23dade00))
+* **scss:** move smoba scss ([4cfaed5](https://github.com/novlan1/press-ui/commit/4cfaed569348614746b6d767810e946bc35d4860))
+
+
+### Features 🎉
+
+* **press-hor-match-index:** 首页样式更新 ([70b2ed5](https://github.com/novlan1/press-ui/commit/70b2ed51ce3f26a6d9bbda7ce86dd3766a762acc))
+
+### [1.2.49](https://github.com/novlan1/press-ui/compare/v1.2.48...v1.2.49) (2023-11-27)
+
+
+### Chore 🚀 
+
+* update uni plugin light ([2e4cbda](https://github.com/novlan1/press-ui/commit/2e4cbda4347fd4297e5b62eabf8d45cbdfc56767))
+
+
+### Documentation 📖
+
+* update docs path ([b1ac829](https://github.com/novlan1/press-ui/commit/b1ac8291eb939f67a802a4673a671716a16170c1))
+
+
+### Styles 💄
+
+* 格式化 ([c055ad0](https://github.com/novlan1/press-ui/commit/c055ad0858cdda02e20292d62c567213b0a99dc5))
+
+
+### Bug Fixes 🐞
+
+* 解決版本问题 ([47f7b16](https://github.com/novlan1/press-ui/commit/47f7b16fd7ddb265555ac4b3dfabf70a6503745f))
+* 去除无用代码 ([47cb4bb](https://github.com/novlan1/press-ui/commit/47cb4bb436a87be9ec577c02cad82534eb88e58c))
+
+
+### Features 🎉
+
+* 主理人赛事优化 ([b1ef5b8](https://github.com/novlan1/press-ui/commit/b1ef5b85c1b28591dec144588e2135e4e03725fb))
+* **hor-match-index:** update button key ([16000f1](https://github.com/novlan1/press-ui/commit/16000f11fbf34acb8378e155514272e45323a632))
+
+### [1.2.48](https://github.com/novlan1/press-ui/compare/v1.2.47...v1.2.48) (2023-11-23)
+
+
+### Features 🎉
+
+* **selct-award:** add act select award ([a7dee4e](https://github.com/novlan1/press-ui/commit/a7dee4efebd419ebd22580e99784bfc7e94e8ae0))
+
+
+### Documentation 📖
+
+* **hor-task:** add types for task ([c062384](https://github.com/novlan1/press-ui/commit/c06238464d9e524f39df3b4fd6eb6ddafb49ef28))
+* **select-award:** update docs ([ec08ace](https://github.com/novlan1/press-ui/commit/ec08ace69548d38f598ea211a0e6e5cdf68291c5))
+
+
+### Bug Fixes 🐞
+
+* **act-award:** fix award style ([7d6a98a](https://github.com/novlan1/press-ui/commit/7d6a98ae80d1aabd0498356b575a7d8eb5a02320))
+
+### [1.2.47](https://github.com/novlan1/press-ui/compare/v1.2.46...v1.2.47) (2023-11-23)
+
+
+### Features 🎉
+
+* **hor-award-explain:** add hor award explain ([df6e1a2](https://github.com/novlan1/press-ui/commit/df6e1a2f5ed0ebd383582f788897c441a92a3dd0))
+* **hor-popup:** add hor popup ([16f738e](https://github.com/novlan1/press-ui/commit/16f738eb7d50d19885e33e9ad10660aafd3b003e))
+* **hor-rule:** add hor rule ([5553107](https://github.com/novlan1/press-ui/commit/555310748ed2c55cb03476644b2d2a683649e6ae))
+* **hor-task:** add hor task ([e77dea9](https://github.com/novlan1/press-ui/commit/e77dea997d8c5ecbff6bae0b2aed87a50ba818ef))
+
+
+### Code Refactoring ♻️
+
+* **hor-dialog:** use hor dialog ([5426530](https://github.com/novlan1/press-ui/commit/54265305747fd2f266b3fd47570846046a93020c))
+* **hor-dialog:** use press class ([2fa0081](https://github.com/novlan1/press-ui/commit/2fa0081d2a3e4ae843fc4ad2fcec90a527309807))
+
+
+### Documentation 📖
+
+* update docs ([33883ba](https://github.com/novlan1/press-ui/commit/33883ba22ea61f51c10dc31e4a18c1d508e9ba15))
+* update mp demo ([494015d](https://github.com/novlan1/press-ui/commit/494015d80a66ff01c9eced3d6422d9d42e13ea47))
+
+### [1.2.46](https://github.com/novlan1/press-ui/compare/v1.2.45...v1.2.46) (2023-11-22)
+
+
+### Styles 💄
+
+* **input-q-q:** update style ([e37fca0](https://github.com/novlan1/press-ui/commit/e37fca0446ae00d3a1b09718f6591c75fb8873be))
+
+
+### Documentation 📖
+
+* **act-input-qq:** update docs ([1a1777a](https://github.com/novlan1/press-ui/commit/1a1777af9b5fef87d2466645d880aef9f48b6066))
+* update docs ([b8a1af1](https://github.com/novlan1/press-ui/commit/b8a1af1819a29771687433293cc0c38fc7cd02fd))
+
+
+### Code Refactoring ♻️
+
+* **hor-match-index:** 兼容之前结构 ([52c39ba](https://github.com/novlan1/press-ui/commit/52c39babcbb9ea887cce1bb172a402e603686a5e))
+* **input-qq:** add hidden tip class ([4358d8c](https://github.com/novlan1/press-ui/commit/4358d8c2cb1aba801142a644583c50f21bb7be6d))
+* remove display: box ([28888dd](https://github.com/novlan1/press-ui/commit/28888ddeb486ca676f3b0e7829e0764acc5ce035))
+* use press class ([e72581b](https://github.com/novlan1/press-ui/commit/e72581b120434d0a9461e288de797ffecfb572e3))
+
+
+### Features 🎉
+
+* **act-input-qq:** add act input qq ([7c0be59](https://github.com/novlan1/press-ui/commit/7c0be59bd0f9d3632383eb2a85cfbb111392186f))
+* **hor-match-index:** add click report ([2359fc0](https://github.com/novlan1/press-ui/commit/2359fc0f13720a12b22a91c7902dd0bdf8375bde))
+* **hor-match:** add report ([4e98dd6](https://github.com/novlan1/press-ui/commit/4e98dd6eec109dba8f44f44c157165116edb197c))
+
+### [1.2.45](https://github.com/novlan1/press-ui/compare/v1.2.44...v1.2.45) (2023-11-21)
+
+
+### Bug Fixes 🐞
+
+* **press-hor-owner-index:** 优化主理人赛事样式 ([6703f83](https://github.com/novlan1/press-ui/commit/6703f8323575ed5c50849abf79dcc5ce652658f0))
+
+### [1.2.44](https://github.com/novlan1/press-ui/compare/v1.2.43...v1.2.44) (2023-11-21)
+
+
+### Documentation 📖
+
+* **hor-match-index:** update docs ([51f6a77](https://github.com/novlan1/press-ui/commit/51f6a7791d827bab284faf0eadcfa4ff600fc26d))
+
+
+### Styles 💄
+
+* **bind-login:** update style ([7fcc2af](https://github.com/novlan1/press-ui/commit/7fcc2af04d98b4cc5dc798100a9179d6512a0792))
+
+
+### Code Refactoring ♻️
+
+* use t-comm v-console ([72e910c](https://github.com/novlan1/press-ui/commit/72e910c1cb07265de4d87307bf2e4f9717e35c94))
+
+
+### Features 🎉
+
+* **hor-match-index:** add treport ([9eaf131](https://github.com/novlan1/press-ui/commit/9eaf13163afba15fd3abd91c562b8272bc315ca2))
+* **mobile-login:** watch current url ([ce2cb9e](https://github.com/novlan1/press-ui/commit/ce2cb9e62fa52bf4dbf7178ce921319bf84e22ab))
+
+### [1.2.43](https://github.com/novlan1/press-ui/compare/v1.2.42...v1.2.43) (2023-11-20)
+
+
+### Documentation 📖
+
+* update index page ([f20f720](https://github.com/novlan1/press-ui/commit/f20f7207c0128b74a78eddac23e61ed617e31df0))
+
+
+### Bug Fixes 🐞
+
+* **ActLaunchDialog:** 优化拉起弹窗和平样式 ([5fc8622](https://github.com/novlan1/press-ui/commit/5fc862250edcf72edc373d1e0f10af22c0fec3dd))
+
+### [1.2.42](https://github.com/novlan1/press-ui/compare/v1.2.41...v1.2.42) (2023-11-20)
+
+
+### Features 🎉
+
+* **pc-scan-login:** add pc scan login ([10a0d30](https://github.com/novlan1/press-ui/commit/10a0d3047857aeff3468e9cdf8c3a8dedcd30e18))
+
+
+### Code Refactoring ♻️
+
+* **login:** update props default value ([09a63b7](https://github.com/novlan1/press-ui/commit/09a63b7f80eefb7726c231b852d996003ca78c23))
+* **login:** use bem ([79dc68a](https://github.com/novlan1/press-ui/commit/79dc68aef90c358391b54cb13e716041d32cdba8))
+* update idndef ([a1d3e46](https://github.com/novlan1/press-ui/commit/a1d3e462a8ba1c9a6e6814726e4e589abd739743))
+* view 改为 div，兼容非 uni-app ([2aba47b](https://github.com/novlan1/press-ui/commit/2aba47bcddfd6234dfd21693e7843cb9dacb981c))
+
+
+### Styles 💄
+
+* **act-award:** update style ([da0733b](https://github.com/novlan1/press-ui/commit/da0733b608d44d53e5b99f5f2d0e6617d8474143))
+
+
+### Documentation 📖
+
+* 发布流水线 ([ce3d09a](https://github.com/novlan1/press-ui/commit/ce3d09a33a6371695df70e307c5679a6da9804a4))
+* 发布流水线 ([832668a](https://github.com/novlan1/press-ui/commit/832668ad2e6463b3a348e5cafcb17ce7e980a909))
+* udpate docs ([80efe72](https://github.com/novlan1/press-ui/commit/80efe72e6ed8292eafc259e578fe931b7dc91391))
+* update demo ([989da44](https://github.com/novlan1/press-ui/commit/989da444e173fa53f292f19372010f694fa991df))
+* update docs ([75ebff8](https://github.com/novlan1/press-ui/commit/75ebff869d76479c9a30d8cf2e9f8197ace82c64))
+* update docs ([7495651](https://github.com/novlan1/press-ui/commit/74956511a0309d0652859db90a99354409b9bd65))
+* update docs ([cfe2600](https://github.com/novlan1/press-ui/commit/cfe2600e704d51d7814681f76cdb9e7475fa6aab))
+
+
+### Chore 🚀 
+
+* update uni-plugin-light ([e50bda8](https://github.com/novlan1/press-ui/commit/e50bda8aea9581954298cd485f87c4863f360aa0))
+
+
+### Bug Fixes 🐞
+
+* **ActLaunchDialog:** 优化拉起弹窗和平样式 ([6e538ae](https://github.com/novlan1/press-ui/commit/6e538ae8a0fd35d266009d199f704dc84f386316))
+
 ### [1.2.41](https://github.com/novlan1/press-ui/compare/v1.2.40...v1.2.41) (2023-11-18)
 
 

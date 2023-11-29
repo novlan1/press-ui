@@ -1,5 +1,5 @@
-@import "../../base/layout.scss";
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/layout.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 
 .press-brand {
@@ -10,12 +10,29 @@
   margin-bottom: vw(8);
   mask-image: linear-gradient(to right, #000 80%, transparent 98%);
 
+  &--task {
+    .press-brand__img {
+      margin: vw(4) auto;
+    }
+
+    .press-brand__name {
+      padding: 0 vw(10);
+      line-height: vw(10);
+      white-space: unset;
+      @include more-lines-ellipsis(vw(20), $line: 2);
+    }
+  }
+
   &__title {
     width: vw(20);
     height: vw(72);
     margin-right: vw(4);
     background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/brand-title.png) no-repeat center center;
     background-size: contain;
+
+    &--task {
+      background-image: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/task-title.png);
+    }
   }
 
   &__list {
@@ -37,6 +54,22 @@
       width: vw(90);
       padding-right: vw(20);
     }
+  }
+
+  &__swiper {
+    position: absolute;
+    top: 0;
+    left: vw(24);
+    width: vw(296);
+    height: vw(72);
+  }
+
+  &__item__box {
+    width: vw(70);
+    height: vw(72.5);
+    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/home/task-bg.png) no-repeat;
+    background-size: vw(70) auto;
+    overflow: hidden;
   }
 
   &__img {

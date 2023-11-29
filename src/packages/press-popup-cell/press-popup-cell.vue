@@ -332,7 +332,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../base/layout.scss";
+@import "../common/style/smoba/layout.scss";
 
 .press-popup-cell {
   &__item {

@@ -80,11 +80,16 @@ import ScheduleList from './packages/press-schedule-list/press-schedule-list.vue
 import ScheduleMatchMode from './packages/press-schedule-match-mode/press-schedule-match-mode.vue';
 import ScheduleTab from './packages/press-schedule-tab/press-schedule-tab.vue';
 import ScheduleTree from './packages/press-schedule-tree/press-schedule-tree.vue';
+import HorAwardExplain from './packages/press-hor-award-explain/press-hor-award-explain.vue';
+import HorDialog from './packages/press-hor-dialog/press-hor-dialog.vue';
 import HorMatchHeader from './packages/press-hor-match-header/press-hor-match-header.vue';
 import HorMatchIndex from './packages/press-hor-match-index/press-hor-match-index.vue';
 import HorOwnerIndex from './packages/press-hor-owner-index/press-hor-owner-index.vue';
+import HorOwnerTheme from './packages/press-hor-owner-theme/press-hor-owner-theme.vue';
+import HorRule from './packages/press-hor-rule/press-hor-rule.vue';
 import HorScheduleManage from './packages/press-hor-schedule-manage/press-hor-schedule-manage.vue';
 import HorSwiperLight from './packages/press-hor-swiper-light/press-hor-swiper-light.vue';
+import HorTask from './packages/press-hor-task/press-hor-task.vue';
 import AuthLogin from './packages/press-auth-login/press-auth-login.vue';
 import BindLogin from './packages/press-bind-login/press-bind-login.vue';
 import MobileLogin from './packages/press-mobile-login/press-mobile-login.vue';
@@ -97,11 +102,13 @@ import ActExplainDialog from './packages/press-act-explain-dialog/press-act-expl
 import ActGetAwardDialog from './packages/press-act-get-award-dialog/press-act-get-award-dialog.vue';
 import ActInputAddressDialog from './packages/press-act-input-address-dialog/press-act-input-address-dialog.vue';
 import ActInputPhoneDialog from './packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue';
+import ActInputQQ from './packages/press-act-input-q-q/press-act-input-q-q.vue';
 import ActLaunchDialog from './packages/press-act-launch-dialog/press-act-launch-dialog.vue';
 import ActModifyPhoneDialog from './packages/press-act-modify-phone-dialog/press-act-modify-phone-dialog.vue';
 import ActNotAchievedDialog from './packages/press-act-not-achieved-dialog/press-act-not-achieved-dialog.vue';
 import ActPromptDialog from './packages/press-act-prompt-dialog/press-act-prompt-dialog.vue';
 import ActQRCodeDialog from './packages/press-act-q-r-code-dialog/press-act-q-r-code-dialog.vue';
+import ActSelectAward from './packages/press-act-select-award/press-act-select-award.vue';
 import ActStoreItem from './packages/press-act-store-item/press-act-store-item.vue';
 import ActTipDialog from './packages/press-act-tip-dialog/press-act-tip-dialog.vue';
 
@@ -187,11 +194,16 @@ const components = [
   ScheduleMatchMode,
   ScheduleTab,
   ScheduleTree,
+  HorAwardExplain,
+  HorDialog,
   HorMatchHeader,
   HorMatchIndex,
   HorOwnerIndex,
+  HorOwnerTheme,
+  HorRule,
   HorScheduleManage,
   HorSwiperLight,
+  HorTask,
   AuthLogin,
   BindLogin,
   MobileLogin,
@@ -204,11 +216,13 @@ const components = [
   ActGetAwardDialog,
   ActInputAddressDialog,
   ActInputPhoneDialog,
+  ActInputQQ,
   ActLaunchDialog,
   ActModifyPhoneDialog,
   ActNotAchievedDialog,
   ActPromptDialog,
   ActQRCodeDialog,
+  ActSelectAward,
   ActStoreItem,
   ActTipDialog,
 ];
@@ -311,11 +325,16 @@ export default {
   ScheduleMatchMode,
   ScheduleTab,
   ScheduleTree,
+  HorAwardExplain,
+  HorDialog,
   HorMatchHeader,
   HorMatchIndex,
   HorOwnerIndex,
+  HorOwnerTheme,
+  HorRule,
   HorScheduleManage,
   HorSwiperLight,
+  HorTask,
   AuthLogin,
   BindLogin,
   MobileLogin,
@@ -328,11 +347,13 @@ export default {
   ActGetAwardDialog,
   ActInputAddressDialog,
   ActInputPhoneDialog,
+  ActInputQQ,
   ActLaunchDialog,
   ActModifyPhoneDialog,
   ActNotAchievedDialog,
   ActPromptDialog,
   ActQRCodeDialog,
+  ActSelectAward,
   ActStoreItem,
   ActTipDialog,
 };

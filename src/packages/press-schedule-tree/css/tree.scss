@@ -1,5 +1,5 @@
-@import "../../base/layout.scss";
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/layout.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 
 .press-schedule-tree {
@@ -241,30 +241,34 @@
   $base: 2;
 
   @while $tmp < $n {
-    $marginBottom: calc(($pow - 1) * 116 + 16);
-    $translateY: calc(($pow - 1) * 116 / 2);
-    $ChampionTranslateY: calc((($pow / $base) - 1) * 116 / 2 + 20);
+    $marginBottom: (
+      $pow - 1) * 116 + 16;
+    $translateY: (
+      $pow - 1) * 116 / 2;
+    $ChampionTranslateY: (
+      ($pow / $base) - 1) * 116 / 2 + 20;
 
     .press-schedule-tree-column {
       &--scroll-#{$tmp} {
-        transform: translateY($translateY + px) !important;
+        transform: translateY($translateY + px);
 
         .press-schedule-team {
-          margin-bottom: $marginBottom + px !important;
+          margin-bottom: $marginBottom + px;
         }
 
         &.press-schedule-tree-column__champion {
-          transform: translateY($ChampionTranslateY + px) !important;
+          transform: translateY($ChampionTranslateY + px);
         }
       }
     }
 
-    $pow: calc($pow * $base);
+    $pow: $pow * $base;
     $tmp: $tmp + 1;
   }
 }
 
-@include sch-item-margin-bottom(10);
+@include sch-item-margin-bottom(10
+);
 
 @mixin sche-tab-highlight($n) {
   $max: 1;
@@ -274,20 +278,20 @@
       &--scroll-#{$n} {
 
         .press-schedule-tree-tab-icon {
-          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png') !important;
+          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png');
         }
 
         &::after {
-          background: $color-primary !important;
+          background: $color-primary ;
         }
       }
 
       &--scroll-#{$n + 1} {
         .press-schedule-tree-tab-icon {
-          top: -21px !important;
-          width: 26px !important;
-          height: 21px !important;
-          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png') !important;
+          top: -21px;
+          width: 26px;
+          height: 21px;
+          background-image: url('https://image-1251917893.file.myqcloud.com/Esports/new/user/sch-border-r-icon.png');
         }
       }
     }

@@ -96,9 +96,9 @@ export default {
     PressCell,
   },
   data() {
-    let customStyle = '';
+    const customStyle = '';
     // #ifdef H5
-    customStyle = 'height: calc(100% - 44px);bottom: 0;top: auto;';
+    // customStyle = 'height: calc(100% - 44px);bottom: 0;top: auto;';
     // #endif
 
     return {

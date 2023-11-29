@@ -17,15 +17,6 @@ export function getAutoLaunchGameMixin() {
           dialogHandler: null,
           otherDialogParams: null,
         }).then(() => {
-          // this.$router.replace({
-          //   path: this.$route.path,
-          //   query: {
-          //     ...this.$route.query,
-          //     enterGame: '',
-          //     roomId: '',
-          //     roomPwd: '',
-          //   },
-          // });
         })
           .catch((err) => {
             console.warn('[auto launch game err]', err);

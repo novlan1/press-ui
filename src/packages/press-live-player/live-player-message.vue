@@ -125,6 +125,12 @@ export default {
       default: true,
     },
   },
+  emits: [
+    'clickFeedbackIcon',
+    'goOtherMatch',
+    'reloadPlayer',
+    'startPlay',
+  ],
   data() {
     return {
       isTryFailed: false,

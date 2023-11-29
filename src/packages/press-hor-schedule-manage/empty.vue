@@ -36,6 +36,9 @@ export default {
       required: false,
     },
   },
+  emits: [
+    'clickConfirm',
+  ],
   data() {
     return {
     };

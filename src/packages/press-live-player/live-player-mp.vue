@@ -122,6 +122,15 @@ export default {
       default: () => ({}),
     },
   },
+  emits: [
+    'battleReview',
+    'fullScreenChange',
+    'goNotifyError',
+    'goOtherMatch',
+    'matchReview',
+    'playError',
+    'playStatusChange',
+  ],
   data() {
     return {
       isShowResolutionPopup: false,

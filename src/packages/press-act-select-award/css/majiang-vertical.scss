@@ -1,0 +1,174 @@
+.press-act:not(.press-act--hidden-tip) {
+  &.press__cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+  }
+
+  /* 物品自选底部弹层 start */
+
+  .press__dialog {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    height: 70vh;
+    max-height: 90vh;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: .4rem;
+    z-index: 1000;
+  }
+
+  .press__title {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    transform: translateX(-50%);
+    left: 50%;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    text-align: center;
+    font-size: .32rem;
+  }
+
+  .press__close {
+    position: absolute;
+    background: url(https://image-1251917893.file.myqcloud.com/privilege/2020QQConsoleWx/picker-close.svg) center center no-repeat;
+    width: .48rem;
+    height: .48rem;
+    top: .40rem;
+    right: .32rem;
+  }
+
+  .press__content {
+    width: 6.90rem;
+    height: 7.80rem;
+    overflow-y: auto;
+    margin: 0 auto;
+  }
+
+  .press__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .press__select-button {
+    text-indent: -100rem;
+    width: .32rem;
+    height: .32rem;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/pvp/pvp-check-false.png) center/100% 100%;
+  }
+
+  .press__award-item--active .press__select-button {
+    border-color: transparent;
+    background: url(https://image-1251917893.file.myqcloud.com/TIP_XCX/igame/majiang/majiang-check-true.png) center/100% 100%;
+  }
+
+  .press__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.08rem;
+    height: 1.08rem;
+    background-color: #F6F6F6;
+  }
+
+  .press__image {
+    margin: auto;
+    max-width: 1.08rem;
+    max-height: 1.08rem;
+  }
+
+  .press__name {
+    font-size: .24rem;
+    max-width: 3.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    box-sizing: border-box;
+  }
+
+  .press__award-item {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .60rem;
+  }
+
+  .press__buttons {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .press__award-list {
+    height: 7.2rem;
+    overflow-y: auto;
+    margin-bottom: .40rem;
+  }
+
+  .press__award-list::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    transform: translateY(-160%);
+    background-image: linear-gradient(to top, #fff 30%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .press__btn {
+    position: absolute;
+    width: 5.60rem;
+    height: .80rem;
+    line-height: .80rem;
+    text-align: center;
+    font-size: .24rem;
+    letter-spacing: .08rem;
+    margin: 0 .94rem;
+    color: #893A0B;
+    bottom: .52rem;
+    border-radius: .08rem;
+    background-image: linear-gradient(88.83deg, #FDEF71 0%, #F6CD5B 100%);
+  }
+
+  .press__info-wrap {
+    width: 2rem;
+    display: flex;
+    margin-left: 0.28rem;
+    flex-direction: column;
+  }
+
+  .press__tip {
+    font-size: .24rem;
+    line-height: .3rem;
+    margin-top: .08rem;
+    color: #2E343880;
+  }
+
+  .press__btn.press__btn--disabled {
+    border-radius: 0;
+    color: #2E3438;
+    mix-blend-mode: luminosity;
+    filter: grayscale(100%);
+  }
+
+  .press__bottom,
+  .press__btn--close {
+    display: none;
+  }
+
+  &.press__cover .press__btn.press__btn--maxlarge-primary {
+    margin: 0 auto;
+  }
+}

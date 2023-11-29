@@ -3,6 +3,12 @@
     <div
       v-if="popMenu && (leftBottom || rightBottom || leftTop || rightTop) && content.length > 0"
       class="uni-fab"
+      :class="{
+        'uni-fab--leftBottom': leftBottom,
+        'uni-fab--rightBottom': rightBottom,
+        'uni-fab--leftTop': leftTop,
+        'uni-fab--rightTop': rightTop,
+      }"
       :style="{
         right: `${btnSwitchPos.x}px`,
         bottom: `${btnSwitchPos.y}px`
@@ -67,7 +73,7 @@
       <press-icon-plus
         name="cross"
         :color="styles.iconColor"
-        size="32"
+        :size="styles.iconFontSize"
         class="fab-circle-icon"
         :class="{'uni-fab__plus--active': isShow && content.length > 0}"
       />
@@ -137,6 +143,18 @@ export default {
       type: Number,
       default: 0,
     },
+    bottomThreshold: {
+      type: Number,
+      default: 20,
+    },
+    initX: {
+      type: Number,
+      default: 12,
+    },
+    initY: {
+      type: Number,
+      default: 62,
+    },
   },
   emits: ['fabClick', 'trigger'],
   data() {
@@ -150,6 +168,7 @@ export default {
         backgroundColor: '#fff',
         buttonColor: '#007AFF',
         iconColor: '#fff',
+        iconFontSize: 32,
       },
 
       btnSwitchPos: { x: 0, y: 0 },
@@ -224,8 +243,8 @@ export default {
     this.styles = Object.assign({}, this.styles, this.pattern);
     // if (this.rightBottom) {
     this.btnSwitchPos = {
-      x: 15,
-      y: 30,
+      x: this.initX,
+      y: this.initY,
     };
     switchPos.x = this.btnSwitchPos.x;
     switchPos.y = this.btnSwitchPos.y;
@@ -239,23 +258,26 @@ export default {
   },
   methods: {
     getSwitchButtonSafeAreaXY(x, y) {
-      const { fabSize, top } = this;
-      const { windowWidth, windowHeight } = getWindowWidth();
+      const { fabSize, top, bottomThreshold } = this;
+      const { windowWidth, windowHeight, windowTop, windowBottom } = getWindowWidth();
       const docWidth = windowWidth;
       const docHeight = windowHeight - top;
+
       // check edge
       if (x + fabSize.width > docWidth) {
         x = docWidth - fabSize.width;
       }
-      if (y + fabSize.height > docHeight) {
-        y = docHeight - fabSize.height;
+      if (y + fabSize.height - windowTop > docHeight) {
+        y = docHeight - fabSize.height + windowTop;
       }
+
       if (x < 0) {
         x = 0;
       }
-      if (y < 20) {
-        y = 20;
-      } // safe area for iOS Home indicator
+      if (y < bottomThreshold + windowBottom) {
+        y = bottomThreshold + windowBottom;
+      }
+      // safe area for iOS Home indicator
       return [x, y];
     },
     onClick() {

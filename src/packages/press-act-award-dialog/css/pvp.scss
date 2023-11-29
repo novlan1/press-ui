@@ -414,10 +414,11 @@
 
   .press__exchange-wrap .press__exchange-title .press__exchange-type .press__name {
     display: block;
-    width: 1rem;
+    max-width: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    line-height: .32rem;
   }
 
   .press__exchange-wrap .press__exchange-title .press__exchange-type>span.press__link {

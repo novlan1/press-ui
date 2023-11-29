@@ -1,6 +1,7 @@
 <template>
   <!-- 线下赛事 -->
   <div
+    v-treport="matchInfo.reportData"
     class="press-match"
     @click.stop="clickMatch"
   >
@@ -61,10 +62,11 @@
         </div>
         <!-- 默认未开始，已结束--press-match__btn--end，进行中--press-match__btn--ing -->
         <div
+          v-treport="matchInfo.buttonReportData"
           class="press-match__btn"
-          :class="{'press-match__btn--sign': matchInfo.isNotStart,
-                   'press-match__btn--end': matchInfo.isEnd,
-                   'press-match__btn--ing': matchInfo.isIng}"
+          :class="{'press-match__btn--sign': matchInfo.isNotStart || matchInfo.btnPrimary,
+                   'press-match__btn--end': matchInfo.isEnd || matchInfo.btnSecondary || matchInfo.isIng,
+          }"
           @click.stop="clickMatchButton"
         >
           {{ matchInfo.btnTxt }}
@@ -80,11 +82,15 @@
     </div>
 
     <div
-      v-if="matchInfo.isSigned"
-      class="press-match__signed__tag"
+      v-if="matchInfo.labelText"
+      :class="{
+        'press-match__signed__tag': matchInfo.labelPrimary,
+        'press-match__tag': matchInfo.labelSecondary,
+      }"
     >
-      已报名
+      {{ matchInfo.labelText }}
     </div>
+
     <!-- <div
       v-else-if="matchInfo.tag"
       class="press-match__tag"

@@ -78,6 +78,10 @@ export default {
       default: false,
     },
   },
+  emits: [
+    'clickMatch',
+    'clickMatchButton',
+  ],
   data() {
     return {
     };

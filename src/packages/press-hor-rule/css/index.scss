@@ -1,0 +1,12 @@
+@import "../../common/style/smoba/mixin.scss";
+
+.press-rule {
+  margin-top: .2rem;
+  height: 4.86rem;
+  padding: 0 .48rem .52rem;
+  font-size: .24rem;
+  color: #77A7DF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  mask-image: linear-gradient(to bottom, #000 85%, transparent 92%);
+}

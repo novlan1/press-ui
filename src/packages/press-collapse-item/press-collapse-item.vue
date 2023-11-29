@@ -140,8 +140,8 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../common/style/index.scss";
-@import "../common/style/var.scss";
+@import "../common/style/press/index.scss";
+@import "../common/style/press/var.scss";
 
 .press-collapse-item {
   &__title {

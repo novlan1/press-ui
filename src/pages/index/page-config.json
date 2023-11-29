@@ -368,6 +368,14 @@
       "name": "Hor Components",
       "list": [
         {
+          "url": "/press/hor-award-explain/hor-award-explain",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/hor-dialog/hor-dialog",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/hor-match-header/hor-match-header",
           "navigationStyle": ""
         },
@@ -380,12 +388,24 @@
           "navigationStyle": "custom"
         },
         {
+          "url": "/press/hor-owner-theme/hor-owner-theme",
+          "navigationStyle": "custom"
+        },
+        {
+          "url": "/press/hor-rule/hor-rule",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/hor-schedule-manage/hor-schedule-manage",
           "navigationStyle": "custom"
         },
         {
           "url": "/press/hor-swiper-light/hor-swiper-light",
           "navigationStyle": ""
+        },
+        {
+          "url": "/press/hor-task/hor-task",
+          "navigationStyle": "custom"
         }
       ]
     },
@@ -426,7 +446,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/act/act-benefit-item/act-benefit-item",
+          "url": "/act-detail/act-benefit-item/act-benefit-item",
           "navigationStyle": ""
         },
         {
@@ -443,6 +463,10 @@
         },
         {
           "url": "/act/act-input-phone-dialog/act-input-phone-dialog",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/act-detail/act-input-q-q/act-input-q-q",
           "navigationStyle": ""
         },
         {
@@ -466,7 +490,11 @@
           "navigationStyle": ""
         },
         {
-          "url": "/act/act-store-item/act-store-item",
+          "url": "/act-detail/act-select-award/act-select-award",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/act-detail/act-store-item/act-store-item",
           "navigationStyle": ""
         },
         {

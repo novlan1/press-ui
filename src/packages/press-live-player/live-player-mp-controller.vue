@@ -176,6 +176,16 @@ export default {
   options: {
     virtualHost: true,
   },
+  emits: [
+    'battleReview',
+    'hideController',
+    'matchReview',
+    'onFullScreen',
+    'pauseVideo',
+    'playVideo',
+    'showResolutionSelector',
+    'unFullScreen',
+  ],
   data() {
     return {
     };

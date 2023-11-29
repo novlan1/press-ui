@@ -42,7 +42,13 @@
       <div
         v-if="curSidebar.mode === 'recommend'"
         class="press-index__recommend"
+        :class="{'press-index__recommend--top': !reportList || !reportList.length}"
       >
+        <Report
+          v-if="reportList && reportList.length"
+          :report-list="reportList"
+          @clickReport="clickReport"
+        />
         <PressList
           v-model="curLoading"
           :finished="curFinished"
@@ -59,6 +65,7 @@
             <!-- banner -->
             <Banner
               :banner-list="bannerList"
+              :banner-report-data="bannerReportData"
               @clickBanner="clickBanner"
             />
 
@@ -66,6 +73,7 @@
             <Brand
               v-if="brandList && brandList.length"
               :brand-list="brandList"
+              :is-brand-swiper="isBrandSwiper"
               @clickBrand="clickBrand"
             />
 
@@ -205,6 +213,7 @@
 <script>
 import Banner from './banner';
 import Brand from './brand';
+import Report from './report.vue';
 import MatchItem from './match-item';
 import OfflineMatchItem from './offline-match-item';
 import Sidebar from './side-bar.vue';
@@ -219,6 +228,7 @@ export default {
   components: {
     Banner,
     Brand,
+    Report,
     MatchItem,
     Sidebar,
     OfflineMatchItem,
@@ -281,6 +291,18 @@ export default {
     loadingSize: {
       type: String,
       default: '20px',
+    },
+    bannerReportData: {
+      type: Object,
+      default: () => ({}),
+    },
+    reportList: {
+      type: Array,
+      default: () => ([]),
+    },
+    isBrandSwiper: {
+      type: Boolean,
+      default: false,
     },
   },
   options: {
@@ -413,6 +435,9 @@ export default {
     getShowPopover(mode, matchIndex) {
       const { popoverAwardIndex } = this;
       return popoverAwardIndex[0] === mode && popoverAwardIndex[1] === matchIndex;
+    },
+    clickReport(reportItem, reportIndex) {
+      this.$emit('clickReport', reportItem, reportIndex);
     },
   },
 };

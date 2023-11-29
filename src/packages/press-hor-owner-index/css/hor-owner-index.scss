@@ -1,4 +1,4 @@
-@import "../../base/mixin.scss";
+@import "../../common/style/smoba/mixin.scss";
 
 .press-owner {
   display: flex;
@@ -12,6 +12,7 @@
       padding-left: .47rem;
       background-position: .14rem top;
     }
+
     .press-index__sidebar__active {
       left: -.32rem;
     }
