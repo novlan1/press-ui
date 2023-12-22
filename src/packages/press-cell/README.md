@@ -182,17 +182,12 @@ export default {
 
 ### CellGroup Props
 
-| 参数   | 说明                   | 类型      | 默认值  |
-| ------ | ---------------------- | --------- | ------- |
-| title  | 分组标题               | _string_  | `-`     |
-| inset  | 是否展示为圆角卡片风格 | _boolean_ | `false` |
-| border | 是否显示外边框         | _boolean_ | `true`  |
-
-### CellGroup 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
+| 参数         | 说明                   | 类型      | 默认值  |
+| ------------ | ---------------------- | --------- | ------- |
+| title        | 分组标题               | _string_  | -       |
+| inset        | 是否展示为圆角卡片风格 | _boolean_ | `false` |
+| border       | 是否显示外边框         | _boolean_ | `true`  |
+| custom-class | 根节点样式类           | _string_  | -       |
 
 ### Cell Props
 
@@ -215,6 +210,10 @@ export default {
 | use-label-slot  | 是否使用 label slot                                        | _boolean_          | `false`      |
 | title-style     | 标题样式                                                   | _string_           | -            |
 | type            | 额外类型，可选值为 `e-sport`                               | _string_           | -            |
+| custom-class    | 根节点样式类                                               | _string_           | -            |
+| title-class     | 标题样式类                                                 | _string_           | -            |
+| label-class     | 描述信息样式类                                             | _string_           | -            |
+| value-class     | 右侧内容样式类                                             | _string_           | -            |
 
 ### Cell Event
 
@@ -231,16 +230,6 @@ export default {
 | label      | 自定义`label`显示内容，需要设置 `use-label-slot`属性           |
 | icon       | 自定义`icon`显示内容，如果设置了`icon`属性则不生效             |
 | right-icon | 自定义右侧按钮，默认是`arrow`，如果设置了`is-link`属性则不生效 |
-
-### Cell 外部样式类
-
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| title-class  | 标题样式类     |
-| label-class  | 描述信息样式类 |
-| value-class  | 右侧内容样式类 |
-
 
 ## 主题定制
 

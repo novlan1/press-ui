@@ -3,7 +3,7 @@ import { hasOwn } from './object';
 /**
  * 暂存的文件对象
  */
-const files = {};
+const files: Record<string, any> = {};
 
 /**
  * 从url读取File
@@ -11,7 +11,7 @@ const files = {};
  * @param {boolean} local
  * @param {Promise}
  */
-export function urlToFile(url, local?: boolean) {
+export function urlToFile(url: string, local?: boolean) {
   const file = files[url];
   if (file) {
     return Promise.resolve(file);
@@ -39,9 +39,9 @@ export function urlToFile(url, local?: boolean) {
  * @param {string} base64
  * @return {File}
  */
-export function base64ToFile(base64) {
-  base64 = base64.split(',');
-  const type = base64[0].match(/:(.*?);/)[1];
+export function base64ToFile(base64: string) {
+  const base64Array = base64.split(',');
+  const type = base64Array[0]?.match(/:(.*?);/)?.[1] || '';
   const str = atob(base64[1]);
   let n = str.length;
   const array = new Uint8Array(n);
@@ -56,7 +56,7 @@ export function base64ToFile(base64) {
  * @param {string} type
  * @return {string}
  */
-function getExtname(type) {
+function getExtname(type: string) {
   const extname = type.split('/')[1];
   return extname ? `.${extname}` : '';
 }
@@ -64,7 +64,7 @@ function getExtname(type) {
  * 简易获取文件名
  * @param {*} url
  */
-export function getFileName(url) {
+export function getFileName(url: string) {
   url = url.split('#')[0].split('?')[0];
   const array = url.split('/');
   return array[array.length - 1];
@@ -76,7 +76,7 @@ export function getFileName(url) {
  * @param {string} type
  * @return {File}
  */
-export function blobToFile(blob, type) {
+export function blobToFile(blob: any, type = '') {
   if (!(blob instanceof File)) {
     type = type || blob.type || '';
     const filename = `${Date.now()}${getExtname(type)}`;
@@ -94,7 +94,7 @@ export function blobToFile(blob, type) {
  * @param {Blob|File} file
  * @return {string}
  */
-export function fileToUrl(file) {
+export function fileToUrl(file: any) {
   for (const key in files) {
     if (hasOwn(files, key)) {
       const oldFile = files[key];
@@ -108,7 +108,7 @@ export function fileToUrl(file) {
   return url;
 }
 
-export function getSameOriginUrl(url) {
+export function getSameOriginUrl(url: string) {
   const a = document.createElement('a');
   a.href = url;
   if (a.origin === location.origin) {
@@ -117,7 +117,7 @@ export function getSameOriginUrl(url) {
   return urlToFile(url).then(fileToUrl);
 }
 
-export function revokeObjectURL(url) {
+export function revokeObjectURL(url: string) {
   (window.URL || window.webkitURL).revokeObjectURL(url);
   delete files[url];
 }

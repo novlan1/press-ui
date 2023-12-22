@@ -1,6 +1,6 @@
 <template>
   <div
-    class="press-progress custom-class"
+    :class="['press-progress', customClass]"
     :style="true ? computed.rootStyle({ strokeWidth, trackColor }) : ''"
   >
     <div
@@ -21,6 +21,7 @@
 import { BLUE } from '../common/constant/color';
 import { getRect } from '../common/dom/rect';
 import computed from './computed';
+
 
 export default {
   name: 'PressProgress',
@@ -49,6 +50,10 @@ export default {
     strokeWidth: {
       type: [Number, String],
       default: 4,
+    },
+    customClass: {
+      type: String,
+      default: '',
     },
   },
   emits: [],

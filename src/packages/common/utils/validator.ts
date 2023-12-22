@@ -4,15 +4,15 @@ export const IN_BROWSER = typeof window !== 'undefined';
 
 export const IS_SERVER = getIsServer();
 
-export function isDef(val) {
+export function isDef(val: any) {
   return val !== undefined && val !== null;
 }
 
-export function isFunction(val) {
+export function isFunction(val: any) {
   return typeof val === 'function';
 }
 
-export function isObject(val) {
+export function isObject(val: any) {
   return val !== null && typeof val === 'object';
 }
 
@@ -46,7 +46,7 @@ export function isObject(val) {
  * _.isEmpty({ 'a': 1 });
  * // => false
  */
-export function isEmpty(value) {
+export function isEmpty(value: any) {
   if (value == null) {
     return true;
   }
@@ -59,54 +59,54 @@ export function isEmpty(value) {
 }
 
 
-export function isPlainObject(val) {
+export function isPlainObject(val: any) {
   return val !== null && typeof val === 'object' && !Array.isArray(val);
 }
-export function isPromise(val) {
+export function isPromise(val: any) {
   return isPlainObject(val) && isFunction(val.then) && isFunction(val.catch);
 }
 
-export function isObj(x) {
+export function isObj(x: any) {
   const type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
 }
 
-export function isNumber(value) {
+export function isNumber(value: any) {
   return /^\d+(\.\d+)?$/.test(value);
 }
-export function isBoolean(value) {
+export function isBoolean(value: any) {
   return typeof value === 'boolean';
 }
 
 const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
 const VIDEO_REGEXP = /\.(mp4|mpg|mpeg|dat|asf|avi|rm|rmvb|mov|wmv|flv|mkv)/i;
 
-export function isImageUrl(url) {
+export function isImageUrl(url: any) {
   return IMAGE_REGEXP.test(url);
 }
-export function isVideoUrl(url) {
+export function isVideoUrl(url: any) {
   return VIDEO_REGEXP.test(url);
 }
 
-export function isDate(val) {
+export function isDate(val: any) {
   return Object.prototype.toString.call(val) === '[object Date]' && !isNaN(val.getTime());
 }
 
-export function isEmail(value) {
+export function isEmail(value: any) {
   const reg = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
   return reg.test(value.trim());
 }
 
-export function isMobile(value) {
+export function isMobile(value: any) {
   value = value.replace(/[^-|\d]/g, '');
   return /^((\+86)|(86))?(1)\d{10}$/.test(value) || /^0[0-9-]{10,13}$/.test(value);
 }
 
-export function isNumeric(val) {
+export function isNumeric(val: any) {
   return /^\d+(\.\d+)?$/.test(val);
 }
 
-export function isNaN(val) {
+export function isNaN(val: any) {
   if (Number.isNaN) {
     return Number.isNaN(val);
   }

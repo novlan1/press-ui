@@ -1,20 +1,23 @@
 <template>
   <div class="press-rate-index">
     <div
-      :class="'' + (utils.bem2('rate'))+' custom-class'"
+      :class="[
+        utils.bem2('rate'),
+        customClass
+      ]"
       @touchmove="onTouchMove"
     >
       <div
         v-for="(item,index) in (innerCountArray)"
         :key="index"
-        :class="'' + utils.bem2('rate__item')"
+        :class="[utils.bem2('rate__item')]"
         :style="'' + style({ paddingRight: index !== count - 1 ? utils.addUnit(gutter) : null })"
       >
         <press-icon-plus
           :name="index + 1 <= innerValue ? icon : voidIcon"
-          :class="'' + utils.bem2('rate__icon', [{ disabled, full: index + 1 <= innerValue }])"
+          :class="[utils.bem2('rate__icon', [{ disabled, full: index + 1 <= innerValue }])]"
           :style="'' + style({ fontSize: utils.addUnit(size) })"
-          custom-class="icon-class"
+          :custom-class="iconClass"
           :data-score="index"
           :color="disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor"
           @click="onSelect(index)"
@@ -23,9 +26,9 @@
         <press-icon-plus
           v-if="allowHalf"
           :name="index + 0.5 <= innerValue ? icon : voidIcon"
-          :class="'' + utils.bem2('rate__icon', ['half', { disabled, full: index + 0.5 <= innerValue }])"
+          :class="[utils.bem2('rate__icon', ['half', { disabled, full: index + 0.5 <= innerValue }])]"
           :style="'' + style({ fontSize: utils.addUnit(size) })"
-          custom-class="icon-class"
+          :custom-class="iconClass"
           :data-score="index - 0.5"
           :color="disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor"
           @click="onSelect(index - 0.5)"
@@ -46,7 +49,6 @@ export default {
     PressIconPlus,
   },
   field: true,
-  classes: ['icon-class'],
   props: {
     value: {
       type: Number,
@@ -75,6 +77,14 @@ export default {
     touchable: {
       type: Boolean,
       default: true,
+    },
+    customClass: {
+      type: String,
+      default: '',
+    },
+    iconClass: {
+      type: String,
+      default: '',
     },
   },
   emits: ['input', 'change'],

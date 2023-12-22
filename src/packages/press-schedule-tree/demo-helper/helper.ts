@@ -65,7 +65,7 @@ export const TEAM_LIST = Array.from({ length: MAX_ROUND_NUMBER }).map((_, i) => 
   value: 2 ** (i + 1),
 }));
 
-export const TEAM_MAP = TEAM_LIST.reduce((acc, item) => {
+export const TEAM_MAP = TEAM_LIST.reduce((acc: Record<string, any>, item) => {
   acc[item.value] = item.label;
   return acc;
 }, {});
@@ -87,6 +87,6 @@ export const GROUP_TYPE_MAP = {
 };
 
 export const GROUP_TYPE_LIST = Object.keys(GROUP_TYPE_MAP).map(item => ({
-  label: GROUP_TYPE_MAP[item].title,
-  value: GROUP_TYPE_MAP[item].name,
+  label: GROUP_TYPE_MAP[item as keyof typeof GROUP_TYPE_MAP].title,
+  value: GROUP_TYPE_MAP[item as keyof typeof GROUP_TYPE_MAP].name,
 }));

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gray demo-wrap--gap">
+  <div class="demo-wrap demo-wrap--gray">
     <demo-block
       :title="t('basicUsage')"
       :section-style="sectionStyle"

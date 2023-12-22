@@ -119,14 +119,20 @@ export default {
 
 ### Props
 
-| 参数              | 说明                          | 类型                        | 默认值     |
-| ----------------- | ----------------------------- | --------------------------- | ---------- |
-| items             | 分类显示所需的数据            | _array_                     | `[]`       |
-| height            | 高度，默认单位为`px`          | _number \| string_          | `300`      |
-| main-active-index | 左侧选中项的索引              | _number_                    | `0`        |
-| active-id         | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0`        |
-| max               | 右侧项最大选中个数            | _number_                    | _Infinity_ |
-| selected-icon     | 自定义右侧栏选中状态的图标    | _string_                    | `success`  |
+| 参数                   | 说明                          | 类型                        | 默认值     |
+| ---------------------- | ----------------------------- | --------------------------- | ---------- |
+| items                  | 分类显示所需的数据            | _array_                     | `[]`       |
+| height                 | 高度，默认单位为`px`          | _number \| string_          | `300`      |
+| main-active-index      | 左侧选中项的索引              | _number_                    | `0`        |
+| active-id              | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0`        |
+| max                    | 右侧项最大选中个数            | _number_                    | _Infinity_ |
+| selected-icon          | 自定义右侧栏选中状态的图标    | _string_                    | `success`  |
+| main-item-class        | 左侧选项样式类                | _string_                    | -          |
+| content-item-class     | 右侧选项样式类                | _string_                    | -          |
+| main-active-class      | 左侧选项选中样式类            | _string_                    | -          |
+| content-active-class   | 右侧选项选中样式类            | _string_                    | -          |
+| main-disabled-class    | 左侧选项禁用样式类            | _string_                    | -          |
+| content-disabled-class | 右侧选项禁用样式类            | _string_                    | -          |
 
 ### Events
 
@@ -174,17 +180,6 @@ export default {
   },
 ];
 ```
-
-### 外部样式类
-
-| 类名                   | 说明               |
-| ---------------------- | ------------------ |
-| main-item-class        | 左侧选项样式类     |
-| content-item-class     | 右侧选项样式类     |
-| main-active-class      | 左侧选项选中样式类 |
-| content-active-class   | 右侧选项选中样式类 |
-| main-disabled-class    | 左侧选项禁用样式类 |
-| content-disabled-class | 右侧选项禁用样式类 |
 
 ## 主题定制
 

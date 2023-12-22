@@ -26,12 +26,12 @@ export function adminPopupCell({
   local,
   context,
   callback,
-}) {
+}: Record<string, any>) {
   return {
     label: '是否为管理员',
     type: 'switch',
     open: local.isAdmin,
-    click: ({ context: popupContext }) => {
+    click: ({ context: popupContext }: any) => {
       // if (value === undefined) return;
       popupContext.closeDialog();
       local.isAdmin = !local.isAdmin;
@@ -49,11 +49,11 @@ export function currentStatusPopupCell({
   local,
   context,
   callback,
-}) {
+}: Record<string, any>) {
   return {
     label: '当前状态',
     value: STATUS_TITLE_MAP[local.status],
-    click: ({ context: popupContext }) => {
+    click: ({ context: popupContext }: any) => {
       popupContext.closeDialog();
 
       showPicker({
@@ -79,7 +79,7 @@ export function currentStatusPopupCell({
   };
 }
 
-export function showCustomPopup({ context, callback }) {
+export function showCustomPopup({ context, callback }: any) {
   showPopupCellAndClose({
     context,
     title: '自定义设置',
@@ -88,7 +88,7 @@ export function showCustomPopup({ context, callback }) {
       {
         label: '队伍个数',
         value: TEAM_MAP[local.teamNumber],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
           showPicker({
             context,
@@ -117,8 +117,8 @@ export function showCustomPopup({ context, callback }) {
       }),
       {
         label: '赛制',
-        value: GROUP_TYPE_MAP[local.groupType].title,
-        click: ({ context: popupContext }) => {
+        value: GROUP_TYPE_MAP[local.groupType as keyof typeof GROUP_TYPE_MAP].title,
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -152,7 +152,7 @@ export function showCustomPopup({ context, callback }) {
         description: '需设置管理员',
         type: 'switch',
         open: local.showError,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
           local.showError = !local.showError;
           context.onGTip('设置成功');

@@ -4,7 +4,7 @@ interface IProtocolItem {
   link?: string;
 }
 
-function parseProtocolItem(info) {
+function parseProtocolItem(info: any) {
   let infoList: Array<IProtocolItem> = [];
   if (!Array.isArray(info)) {
     infoList = [{

@@ -181,7 +181,7 @@ export default {
 | name      | unique identifier, default is index value                                                                       | _string \| number_ | `index` |
 | title     | content on the left side of the title bar                                                                       | _string \| number_ | -       |
 | size      | The size of the title bar, the optional value is `large`                                                        | _string_           | -       |
-| icon      | The icon name or image link on the left side of the title bar, see [Icon Component](#/icon) for optional values | _string_           | -       |
+| icon      | The icon name or image link on the left side of the title bar, see [Icon Component](./press-icon-plus) for optional values | _string_           | -       |
 | value     | content on the right side of the title bar                                                                      | _string \| number_ | -       |
 | label     | title bar description                                                                                           | _string_           | -       |
 | border    | Whether to show the inner border                                                                                | _boolean_          | `true`  |

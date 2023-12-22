@@ -9,7 +9,7 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function traverseChildren(context, key, target) {
+function traverseChildren(context: any, key: string, target: any): any {
   const children = context.$children;
   for (const child of children) {
     if (child.$attrs[key] === target) {
@@ -24,7 +24,7 @@ function traverseChildren(context, key, target) {
   }
 }
 
-export function selectComponent(context, selector) {
+export function selectComponent(context: any, selector: string) {
   if (!selector) return;
 
   let attribute = selector;

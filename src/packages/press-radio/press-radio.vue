@@ -1,6 +1,11 @@
 <template>
   <div class="press-radio-index">
-    <div :class="'' + (utils.bem2('radio', [direction]))+' custom-class'">
+    <div
+      :class="[
+        utils.bem2('radio', [direction]),
+        customClass
+      ]"
+    >
       <div
         v-if="labelPosition === 'left'"
         :class="radioLabelClass"
@@ -17,19 +22,18 @@
           v-if="useIconSlot"
           name="icon"
         />
-        <!-- :style="'' + computed.iconStyle({ iconSize, checkedColor, disabled, parentDisabled, value, name })" -->
         <press-icon-plus
           v-else
           name="success"
           :class="radioIconClass"
-          custom-class="icon-class"
+          :custom-class="iconClass"
           :custom-style="'' +
             computed.iconCustomStyle({ iconSize, checkedColor, disabled, parentDisabled, value: dataValue, name })"
         />
       </div>
       <div
         v-if="labelPosition === 'right'"
-        :class="'label-class '+(utils.bem2('radio__label', [labelPosition, { disabled: disabled || parentDisabled }]))"
+        :class="radioLabelClass"
         @click="onClickLabel"
       >
         <slot />
@@ -60,7 +64,6 @@ export default {
     ChildrenMixin(PARENT),
   ],
   field: true,
-  classes: ['icon-class', 'label-class'],
   props: {
     name: { type: [String, Number], default: '' },
     value: { type: [String, Number], default: '' },
@@ -79,6 +82,14 @@ export default {
     iconSize: {
       type: null,
       default: 20,
+    },
+    iconClass: {
+      type: String,
+      default: '',
+    },
+    labelClass: {
+      type: String,
+      default: '',
     },
     ...defaultProps,
   },
@@ -109,8 +120,9 @@ export default {
         labelPosition,
         disabled,
         parentDisabled,
+        labelClass,
       } = this;
-      return `${utils.bem2('radio__label', [labelPosition, { disabled: disabled || parentDisabled }])} label-class`;
+      return `${utils.bem2('radio__label', [labelPosition, { disabled: disabled || parentDisabled }])} ${labelClass}`;
     },
   },
   mounted() {

@@ -70,6 +70,8 @@ export default {
 | z-index             | 元素 z-index                       | _number_  | `1`     |
 | custom-style        | 根节点自定义样式                   | _string_  | -       |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `true`  |
+| custom-class        | 根节点样式类                       | _string_  | -       |
+| title-class         | 标题样式类                         | _string_  | -       |
 
 ### Slot
 
@@ -85,14 +87,6 @@ export default {
 | ----------- | ------------------ | ---- |
 | click-left  | 点击左侧按钮时触发 | -    |
 | click-right | 点击右侧按钮时触发 | -    |
-
-### 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
-| title-class  | 标题样式类   |
-
 
 ## 主题定制
 

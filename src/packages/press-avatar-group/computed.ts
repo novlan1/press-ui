@@ -37,7 +37,7 @@ export default {
     // 头像之间的遮挡比例
     gap: {
       type: [String, Number],
-      validator(value) {
+      validator(value: any) {
         return value >= 0 && value <= 1;
       },
       default: '0.5',

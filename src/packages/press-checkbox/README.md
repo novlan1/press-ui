@@ -137,30 +137,25 @@ export default {
 | use-icon-slot  | 是否使用 icon slot              | _boolean_          | `false`   |
 | checked-color  | 选中状态颜色                    | _string_           | `#1989fa` |
 | icon-size      | icon 大小                       | _string \| number_ | `20px`    |
+| custom-class   | 根节点样式类                    | _string_           | -         |
+| icon-class     | 图标样式类                      | _string_           | -         |
+| label-class    | 描述信息样式类                  | _string_           | -         |
 
 ### CheckboxGroup Props
 
-| 参数               | 说明                            | 类型      | 默认值        |
-| ------------------ | ------------------------------- | --------- | ------------- |
-| name               | 在表单内提交时的标识符          | _string_  | -             |
-| value              | 所有选中项的 name               | _Array_   | -             |
-| disabled           | 是否禁用所有单选框              | _boolean_ | `false`       |
-| max                | 设置最大可选数                  | _number_  | `0`（无限制） |
-| direction `v1.7.0` | 排列方向，可选值为 `horizontal` | _string_  | `vertical`    |
+| 参数      | 说明                            | 类型      | 默认值        |
+| --------- | ------------------------------- | --------- | ------------- |
+| name      | 在表单内提交时的标识符          | _string_  | -             |
+| value     | 所有选中项的 name               | _Array_   | -             |
+| disabled  | 是否禁用所有单选框              | _boolean_ | `false`       |
+| max       | 设置最大可选数                  | _number_  | `0`（无限制） |
+| direction | 排列方向，可选值为 `horizontal` | _string_  | `vertical`    |
 
 ### Checkbox Event
 
 | 事件名 | 说明                     | 回调参数     |
 | ------ | ------------------------ | ------------ |
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
-
-### Checkbox 外部样式类
-
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| icon-class   | 图标样式类     |
-| label-class  | 描述信息样式类 |
 
 ### CheckboxGroup Event
 

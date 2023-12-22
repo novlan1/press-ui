@@ -31,7 +31,7 @@ export function showCustomPopup({
   pageTotal,
   current,
   isHor,
-}) {
+}: any) {
   showPopupCellAndClose({
     context,
     title: '自定义设置',
@@ -40,7 +40,7 @@ export function showCustomPopup({
       {
         label: '页面数',
         value: pageTotal,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -66,7 +66,7 @@ export function showCustomPopup({
       {
         label: '当前页',
         value: current,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -93,7 +93,7 @@ export function showCustomPopup({
         label: '是否为Hor模式',
         type: 'switch',
         open: isHor,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           // if (value === undefined) return;
           popupContext.closeDialog();
           // local.expand = !local.expand;

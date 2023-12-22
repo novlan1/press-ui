@@ -1,7 +1,7 @@
 import { sortChildren, sortMPChildren } from '../common/dom/vnodes';
 
 
-export function ChildrenMixin(parent, options: Record<string, any> = {}) {
+export function ChildrenMixin(parent: string, options: Record<string, any> = {}) {
   const indexKey = options.indexKey || 'index';
 
   return {
@@ -26,7 +26,7 @@ export function ChildrenMixin(parent, options: Record<string, any> = {}) {
 
         that.bindRelation();
 
-        if (this[parent]) {
+        if (that[parent]) {
           return that[parent].children.indexOf(this);
         }
 
@@ -35,7 +35,7 @@ export function ChildrenMixin(parent, options: Record<string, any> = {}) {
     },
 
     watch: {
-      disableBindRelation(val) {
+      disableBindRelation(val: any) {
         const that = this as any;
         if (!val) {
           that.bindRelation();
@@ -63,14 +63,14 @@ export function ChildrenMixin(parent, options: Record<string, any> = {}) {
     beforeDestroy() {
       const that = this as any;
       if (that[parent]) {
-        that[parent].children = that[parent].children.filter(item => item !== that);
+        that[parent].children = that[parent].children.filter((item: any) => item !== that);
 
         that?.destroyCallback?.();
       }
     },
 
     methods: {
-      bindRelation() {
+      bindRelation(this: any) {
         if (!this[parent] || this[parent].children.indexOf(this) !== -1) {
           return;
         }
@@ -95,7 +95,7 @@ export function ChildrenMixin(parent, options: Record<string, any> = {}) {
   };
 }
 
-export function ParentMixin(parent) {
+export function ParentMixin(parent: string) {
   return {
     provide() {
       return {

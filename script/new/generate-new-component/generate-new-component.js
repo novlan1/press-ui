@@ -7,7 +7,7 @@ const { copyComponentDir } = require('./copy-dir');
 const { sortComponentConfig } = require('./sort');
 const { getPureCompName } = require('../../utils/utils');
 
-const COMPONENT_CONFIG_PATH = path.resolve(process.cwd(), './script/component-config/component-config.json');
+const COMPONENT_CONFIG_PATH = path.resolve(process.cwd(), '.../../config/component-config.json');
 
 
 function getTypeMap() {

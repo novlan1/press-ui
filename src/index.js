@@ -2,10 +2,8 @@
 import Button from './packages/press-button/press-button.vue';
 import Cell from './packages/press-cell/press-cell.vue';
 import Col from './packages/press-col/press-col.vue';
-import Icon from './packages/press-icon/press-icon.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
 import Image from './packages/press-image/press-image.vue';
-import Popup from './packages/press-popup/press-popup.vue';
 import PopupPlus from './packages/press-popup-plus/press-popup-plus.vue';
 import Toast from './packages/press-toast/press-toast.vue';
 import Transition from './packages/press-transition/press-transition.vue';
@@ -14,7 +12,6 @@ import Checkbox from './packages/press-checkbox/press-checkbox.vue';
 import CodeInput from './packages/press-code-input/press-code-input.vue';
 import DatetimePicker from './packages/press-datetime-picker/press-datetime-picker.vue';
 import Field from './packages/press-field/press-field.vue';
-import Picker from './packages/press-picker/press-picker.vue';
 import PickerPlus from './packages/press-picker-plus/press-picker-plus.vue';
 import Radio from './packages/press-radio/press-radio.vue';
 import Rate from './packages/press-rate/press-rate.vue';
@@ -24,14 +21,11 @@ import Stepper from './packages/press-stepper/press-stepper.vue';
 import Switch from './packages/press-switch/press-switch.vue';
 import Uploader from './packages/press-uploader/press-uploader.vue';
 import ActionSheet from './packages/press-action-sheet/press-action-sheet.vue';
-import Dialog from './packages/press-dialog/press-dialog.vue';
 import DialogPlus from './packages/press-dialog-plus/press-dialog-plus.vue';
 import DropdownMenu from './packages/press-dropdown-menu/press-dropdown-menu.vue';
-import Loading from './packages/press-loading/press-loading.vue';
 import LoadingPlus from './packages/press-loading-plus/press-loading-plus.vue';
 import Notify from './packages/press-notify/press-notify.vue';
 import Overlay from './packages/press-overlay/press-overlay.vue';
-import Popover from './packages/press-popover/press-popover.vue';
 import PopoverPlus from './packages/press-popover-plus/press-popover-plus.vue';
 import ShareSheet from './packages/press-share-sheet/press-share-sheet.vue';
 import SwipeCell from './packages/press-swipe-cell/press-swipe-cell.vue';
@@ -49,12 +43,12 @@ import Fab from './packages/press-fab/press-fab.vue';
 import ImagePreview from './packages/press-image-preview/press-image-preview.vue';
 import List from './packages/press-list/press-list.vue';
 import NoticeBar from './packages/press-notice-bar/press-notice-bar.vue';
-import Pagination from './packages/press-pagination/press-pagination.vue';
 import Progress from './packages/press-progress/press-progress.vue';
 import QRCode from './packages/press-q-r-code/press-q-r-code.vue';
 import Skeleton from './packages/press-skeleton/press-skeleton.vue';
 import Steps from './packages/press-steps/press-steps.vue';
 import Sticky from './packages/press-sticky/press-sticky.vue';
+import Swiper from './packages/press-swiper/press-swiper.vue';
 import Tag from './packages/press-tag/press-tag.vue';
 import Grid from './packages/press-grid/press-grid.vue';
 import IndexBar from './packages/press-index-bar/press-index-bar.vue';
@@ -63,63 +57,20 @@ import Sidebar from './packages/press-sidebar/press-sidebar.vue';
 import Tab from './packages/press-tab/press-tab.vue';
 import Tabbar from './packages/press-tabbar/press-tabbar.vue';
 import TreeSelect from './packages/press-tree-select/press-tree-select.vue';
-import Area from './packages/press-area/press-area.vue';
-import AreaIndexBar from './packages/press-area-index-bar/press-area-index-bar.vue';
-import AwardPopup from './packages/press-award-popup/press-award-popup.vue';
-import LivePlayer from './packages/press-live-player/press-live-player.vue';
-import PopupCell from './packages/press-popup-cell/press-popup-cell.vue';
-import Protocol from './packages/press-protocol/press-protocol.vue';
-import QRCodePopup from './packages/press-q-r-code-popup/press-q-r-code-popup.vue';
-import TeamSearch from './packages/press-team-search/press-team-search.vue';
-import Turntable from './packages/press-turntable/press-turntable.vue';
-import MessageBoard from './packages/press-message-board/press-message-board-list.vue';
-import MessageDetail from './packages/press-message-detail/press-message-detail.vue';
-import MessageList from './packages/press-message-list/press-message-list.vue';
-import ScheduleCard from './packages/press-schedule-card/press-schedule-card.vue';
-import ScheduleList from './packages/press-schedule-list/press-schedule-list.vue';
-import ScheduleMatchMode from './packages/press-schedule-match-mode/press-schedule-match-mode.vue';
-import ScheduleTab from './packages/press-schedule-tab/press-schedule-tab.vue';
-import ScheduleTree from './packages/press-schedule-tree/press-schedule-tree.vue';
-import HorAwardExplain from './packages/press-hor-award-explain/press-hor-award-explain.vue';
-import HorDialog from './packages/press-hor-dialog/press-hor-dialog.vue';
-import HorMatchHeader from './packages/press-hor-match-header/press-hor-match-header.vue';
-import HorMatchIndex from './packages/press-hor-match-index/press-hor-match-index.vue';
-import HorOwnerIndex from './packages/press-hor-owner-index/press-hor-owner-index.vue';
-import HorOwnerTheme from './packages/press-hor-owner-theme/press-hor-owner-theme.vue';
-import HorRule from './packages/press-hor-rule/press-hor-rule.vue';
-import HorScheduleManage from './packages/press-hor-schedule-manage/press-hor-schedule-manage.vue';
-import HorSwiperLight from './packages/press-hor-swiper-light/press-hor-swiper-light.vue';
-import HorTask from './packages/press-hor-task/press-hor-task.vue';
-import AuthLogin from './packages/press-auth-login/press-auth-login.vue';
-import BindLogin from './packages/press-bind-login/press-bind-login.vue';
-import MobileLogin from './packages/press-mobile-login/press-mobile-login.vue';
-import PCLogin from './packages/press-p-c-login/press-p-c-login.vue';
-import PCScanLogin from './packages/press-p-c-scan-login/press-p-c-scan-login.vue';
-import ActAwardDialog from './packages/press-act-award-dialog/press-act-award-dialog.vue';
-import ActBarcodeDialog from './packages/press-act-barcode-dialog/press-act-barcode-dialog.vue';
-import ActBenefitItem from './packages/press-act-benefit-item/press-act-benefit-item.vue';
-import ActExplainDialog from './packages/press-act-explain-dialog/press-act-explain-dialog.vue';
-import ActGetAwardDialog from './packages/press-act-get-award-dialog/press-act-get-award-dialog.vue';
-import ActInputAddressDialog from './packages/press-act-input-address-dialog/press-act-input-address-dialog.vue';
-import ActInputPhoneDialog from './packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue';
-import ActInputQQ from './packages/press-act-input-q-q/press-act-input-q-q.vue';
-import ActLaunchDialog from './packages/press-act-launch-dialog/press-act-launch-dialog.vue';
-import ActModifyPhoneDialog from './packages/press-act-modify-phone-dialog/press-act-modify-phone-dialog.vue';
-import ActNotAchievedDialog from './packages/press-act-not-achieved-dialog/press-act-not-achieved-dialog.vue';
-import ActPromptDialog from './packages/press-act-prompt-dialog/press-act-prompt-dialog.vue';
-import ActQRCodeDialog from './packages/press-act-q-r-code-dialog/press-act-q-r-code-dialog.vue';
-import ActSelectAward from './packages/press-act-select-award/press-act-select-award.vue';
-import ActStoreItem from './packages/press-act-store-item/press-act-store-item.vue';
-import ActTipDialog from './packages/press-act-tip-dialog/press-act-tip-dialog.vue';
+import Dialog from './packages/press-dialog/press-dialog.vue';
+import Icon from './packages/press-icon/press-icon.vue';
+import Loading from './packages/press-loading/press-loading.vue';
+import Pagination from './packages/press-pagination/press-pagination.vue';
+import Picker from './packages/press-picker/press-picker.vue';
+import Popover from './packages/press-popover/press-popover.vue';
+import Popup from './packages/press-popup/press-popup.vue';
 
 const components = [
   Button,
   Cell,
   Col,
-  Icon,
   IconPlus,
   Image,
-  Popup,
   PopupPlus,
   Toast,
   Transition,
@@ -128,7 +79,6 @@ const components = [
   CodeInput,
   DatetimePicker,
   Field,
-  Picker,
   PickerPlus,
   Radio,
   Rate,
@@ -138,14 +88,11 @@ const components = [
   Switch,
   Uploader,
   ActionSheet,
-  Dialog,
   DialogPlus,
   DropdownMenu,
-  Loading,
   LoadingPlus,
   Notify,
   Overlay,
-  Popover,
   PopoverPlus,
   ShareSheet,
   SwipeCell,
@@ -163,12 +110,12 @@ const components = [
   ImagePreview,
   List,
   NoticeBar,
-  Pagination,
   Progress,
   QRCode,
   Skeleton,
   Steps,
   Sticky,
+  Swiper,
   Tag,
   Grid,
   IndexBar,
@@ -177,54 +124,13 @@ const components = [
   Tab,
   Tabbar,
   TreeSelect,
-  Area,
-  AreaIndexBar,
-  AwardPopup,
-  LivePlayer,
-  PopupCell,
-  Protocol,
-  QRCodePopup,
-  TeamSearch,
-  Turntable,
-  MessageBoard,
-  MessageDetail,
-  MessageList,
-  ScheduleCard,
-  ScheduleList,
-  ScheduleMatchMode,
-  ScheduleTab,
-  ScheduleTree,
-  HorAwardExplain,
-  HorDialog,
-  HorMatchHeader,
-  HorMatchIndex,
-  HorOwnerIndex,
-  HorOwnerTheme,
-  HorRule,
-  HorScheduleManage,
-  HorSwiperLight,
-  HorTask,
-  AuthLogin,
-  BindLogin,
-  MobileLogin,
-  PCLogin,
-  PCScanLogin,
-  ActAwardDialog,
-  ActBarcodeDialog,
-  ActBenefitItem,
-  ActExplainDialog,
-  ActGetAwardDialog,
-  ActInputAddressDialog,
-  ActInputPhoneDialog,
-  ActInputQQ,
-  ActLaunchDialog,
-  ActModifyPhoneDialog,
-  ActNotAchievedDialog,
-  ActPromptDialog,
-  ActQRCodeDialog,
-  ActSelectAward,
-  ActStoreItem,
-  ActTipDialog,
+  Dialog,
+  Icon,
+  Loading,
+  Pagination,
+  Picker,
+  Popover,
+  Popup,
 ];
 
 const install = function (Vue, opts = {}) {
@@ -244,116 +150,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Button,
-  Cell,
-  Col,
-  Icon,
-  IconPlus,
-  Image,
-  Popup,
-  PopupPlus,
-  Toast,
-  Transition,
-  Calendar,
-  Checkbox,
-  CodeInput,
-  DatetimePicker,
-  Field,
-  Picker,
-  PickerPlus,
-  Radio,
-  Rate,
-  Search,
-  Slider,
-  Stepper,
-  Switch,
-  Uploader,
-  ActionSheet,
-  Dialog,
-  DialogPlus,
-  DropdownMenu,
-  Loading,
-  LoadingPlus,
-  Notify,
-  Overlay,
-  Popover,
-  PopoverPlus,
-  ShareSheet,
-  SwipeCell,
-  Avatar,
-  Badge,
-  Barcode,
-  Card,
-  Circle,
-  Collapse,
-  CountDown,
-  CountTo,
-  Divider,
-  Empty,
-  Fab,
-  ImagePreview,
-  List,
-  NoticeBar,
-  Pagination,
-  Progress,
-  QRCode,
-  Skeleton,
-  Steps,
-  Sticky,
-  Tag,
-  Grid,
-  IndexBar,
-  NavBar,
-  Sidebar,
-  Tab,
-  Tabbar,
-  TreeSelect,
-  Area,
-  AreaIndexBar,
-  AwardPopup,
-  LivePlayer,
-  PopupCell,
-  Protocol,
-  QRCodePopup,
-  TeamSearch,
-  Turntable,
-  MessageBoard,
-  MessageDetail,
-  MessageList,
-  ScheduleCard,
-  ScheduleList,
-  ScheduleMatchMode,
-  ScheduleTab,
-  ScheduleTree,
-  HorAwardExplain,
-  HorDialog,
-  HorMatchHeader,
-  HorMatchIndex,
-  HorOwnerIndex,
-  HorOwnerTheme,
-  HorRule,
-  HorScheduleManage,
-  HorSwiperLight,
-  HorTask,
-  AuthLogin,
-  BindLogin,
-  MobileLogin,
-  PCLogin,
-  PCScanLogin,
-  ActAwardDialog,
-  ActBarcodeDialog,
-  ActBenefitItem,
-  ActExplainDialog,
-  ActGetAwardDialog,
-  ActInputAddressDialog,
-  ActInputPhoneDialog,
-  ActInputQQ,
-  ActLaunchDialog,
-  ActModifyPhoneDialog,
-  ActNotAchievedDialog,
-  ActPromptDialog,
-  ActQRCodeDialog,
-  ActSelectAward,
-  ActStoreItem,
-  ActTipDialog,
+  ...components,
 };

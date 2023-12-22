@@ -1,10 +1,10 @@
 <template>
   <press-picker
     ref="pressPicker"
-    class="press-area__picker"
-    active-class="active-class"
-    toolbar-class="toolbar-class"
-    column-class="column-class"
+    :class="['press-area__picker', customClass]"
+    :active-class="activeClass"
+    :toolbar-class="toolbarClass"
+    :column-class="columnClass"
     :show-toolbar="showToolbar"
     value-key="name"
     :title="title"
@@ -38,7 +38,6 @@ export default {
   components: {
     PressPicker,
   },
-  classes: ['active-class', 'toolbar-class', 'column-class'],
   props: {
     ...pickerProps,
     showToolbar: {
@@ -62,6 +61,18 @@ export default {
       default: () => [],
     },
     ...defaultProps,
+    activeClass: {
+      type: String,
+      default: '',
+    },
+    toolbarClass: {
+      type: String,
+      default: '',
+    },
+    columnClass: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['cancel', 'confirm', 'change'],
   data() {

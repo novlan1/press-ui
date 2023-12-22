@@ -19,7 +19,7 @@ const POST_MESSAGE_CALLBACK_MAP = {
   [IFRAME_MESSAGE_TYPE_MAP.CHANGE_EXTERNAL_STYLE_CONTENT]: watchExternalStyleContent,
 };
 
-function watchCssToken(data) {
+function watchCssToken(data: any) {
   if (!data) return;
 
   const { name, value } = data;
@@ -27,24 +27,21 @@ function watchCssToken(data) {
   html.style.setProperty(name, value);
 }
 
-function watchExternalStyleLink(data) {
+function watchExternalStyleLink(data: string) {
   const list = data.split(';')
     .filter(item => item.startsWith('http'))
     .map(item => item.trim());
   loadStyles(list);
 }
 
-function watchExternalStyleContent(data) {
+function watchExternalStyleContent(data: string) {
   loadCssCode(data);
 }
 
 function onMessage(e: {
   data: {
-    type: string,
-    data: {
-      name: string;
-      value: string;
-    }
+    type: string;
+    data: any;
   }
 }) {
   const callback = POST_MESSAGE_CALLBACK_MAP[e.data.type];
@@ -59,7 +56,7 @@ export function watchMessageFromTop() {
   // #endif
 }
 
-export function sendMessageToTop(type, data) {
+export function sendMessageToTop(type: string, data: any) {
   // #ifdef H5
   window.parent.postMessage({ type,  data }, '*');
   // #endif

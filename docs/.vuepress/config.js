@@ -14,14 +14,14 @@ const LOGIC_SIDEBAR_CONFIG = {
         path: '/components/logic/im.md',
       },
       {
-        title: 'Protocol',
-        subTitle: '协议',
-        path: '/components/logic/protocol.md',
-      },
-      {
         title: 'Router',
         subTitle: '路由',
         path: '/components/logic/router.md',
+      },
+      {
+        title: 'Common',
+        subTitle: '公共方法',
+        path: '/components/logic/common.md',
       },
     ],
   },
@@ -33,11 +33,6 @@ const LOGIC_SIDEBAR_CONFIG = {
         title: 'IM',
         subTitle: '',
         path: '/en/components/logic/im.md',
-      },
-      {
-        title: 'Protocol',
-        subTitle: '',
-        path: '/en/components/logic/protocol.md',
       },
       {
         title: 'Router',
@@ -93,6 +88,10 @@ module.exports = {
       // link: ''
     },
     nav: [
+      {
+        text: 'Press Plus',
+        link: 'https://novlan1.github.io/press-plus',
+      },
       {
         text: '源码地址',
         link: 'https://github.com/novlan1/press-ui',
@@ -163,6 +162,7 @@ module.exports = {
       '/locale',
       '/contributing',
       '/changelog.md',
+      '/questions.md',
       // '/questions.md',
       // {
       // 	path: 'https://cn.vuejs.org/v2/style-guide/',

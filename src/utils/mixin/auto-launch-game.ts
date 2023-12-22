@@ -16,7 +16,7 @@ export function getAutoLaunchGameMixin() {
           qrCodeLib: null,
           dialogHandler: null,
           otherDialogParams: null,
-        }).then(() => {
+        } as any).then(() => {
         })
           .catch((err) => {
             console.warn('[auto launch game err]', err);

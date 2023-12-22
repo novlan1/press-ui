@@ -11,6 +11,6 @@ export const TIP_CLASS_MAP = {
   'btn--blue': 'btn-blue',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

@@ -36,7 +36,7 @@ export function getStatusBarHeight() {
 }
 
 
-export function getScrollHeight(context, id): any {
+export function getScrollHeight(context: any, id: string): any {
   return new Promise((resolve) => {
     const selector = getScrollSelector(id);
 
@@ -67,7 +67,7 @@ export function getScrollHeight(context, id): any {
   });
 }
 
-export function getRect(context, selector): any {
+export function getRect(context: any, selector: string): any {
   return new Promise((resolve) => {
     // #ifdef H5
     const el = context.$el;
@@ -90,7 +90,7 @@ export function getRect(context, selector): any {
   });
 }
 
-export function getAllRect(context, selector) {
+export function getAllRect(context: any, selector: string) {
   return new Promise((resolve) => {
   // #ifdef H5
     const el = context.$el;

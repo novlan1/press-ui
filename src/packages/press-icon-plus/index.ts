@@ -1,11 +1,11 @@
 import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
 
-function isImage(name) {
+function isImage(name: string) {
   return name.indexOf('/') !== -1;
 }
 
-function rootClass(data) {
+function rootClass(data: Record<string, any>) {
   const classes = [data.customClass || ''];
 
   if (data.classPrefix != null) {
@@ -21,7 +21,7 @@ function rootClass(data) {
   return classes.join(' ');
 }
 
-function rootStyle(data) {
+function rootStyle(data: Record<string, any>) {
   return style([
     {
       color: data.color,

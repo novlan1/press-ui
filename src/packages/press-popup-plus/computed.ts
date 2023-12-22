@@ -1,6 +1,6 @@
 import { style } from '../common/utils/style';
 
-function popupStyle(data) {
+function popupStyle(data: Record<string, any>) {
   return style([
     {
       'z-index': data.zIndex,

@@ -11,7 +11,7 @@ export const local = {
   isAdmin: false,
 };
 
-export function showCustomPopup({ context, callback }) {
+export function showCustomPopup({ context, callback }: any) {
   showPopupCellAndClose({
     context,
     title: '自定义设置',

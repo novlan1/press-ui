@@ -1,7 +1,7 @@
 import { SCROLL_SELECTOR } from './touch-helper';
 
 let scrollStartY = 0;
-let rAF;
+let rAF: any;
 
 const slideTimeThreshold = 300;
 const slideLimitDistance = 200000;
@@ -15,7 +15,7 @@ export function getScrollStartY() {
     ?.querySelector(SCROLL_SELECTOR)?.scrollTop || 0;
 }
 
-export function scrollRelative(moveY, animation) {
+export function scrollRelative(moveY: number, animation: boolean) {
   const ref = document
     ?.querySelector(SCROLL_SELECTOR);
   if (!ref) return;
@@ -24,7 +24,7 @@ export function scrollRelative(moveY, animation) {
     const distance = -moveY;
     const beginTime = Date.now();
     cancelAnimationFrame(rAF);
-    rAF = window.requestAnimationFrame || (func => setTimeout(func, 16));
+    rAF = window.requestAnimationFrame || ((func: Function) => setTimeout(func, 16));
     const frameFunc = () => {
     // 进度，500ms 内将页面滚动到顶部
       const progress = (Date.now() - beginTime) / 300;
@@ -44,7 +44,7 @@ export function scrollRelative(moveY, animation) {
 }
 
 
-export function initScrollBounce(scrollInfo) {
+export function initScrollBounce(scrollInfo: Record<string, any>) {
   const time = new Date().getTime();
   speed = (scrollInfo.endY - lastMove) / (time - lastTime);
   lastMove = scrollInfo.endY;

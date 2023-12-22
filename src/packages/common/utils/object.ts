@@ -7,7 +7,7 @@ const REGEXP = /{|}|"/g;
 export function noop() {}
 
 
-export function get(object, path) {
+export function get(object: any, path: string) {
   const keys = path.split('.');
   let result = object;
 
@@ -19,7 +19,7 @@ export function get(object, path) {
 }
 
 
-export function keys(obj) {
+export function keys(obj: Record<string, any>) {
   return JSON.stringify(obj)
     .replace(REGEXP, '')
     .split(',')
@@ -29,12 +29,12 @@ export function keys(obj) {
 const { hasOwnProperty } = Object.prototype;
 
 
-export function hasOwn(obj, key) {
+export function hasOwn(obj: Record<string, any>, key: string) {
   return hasOwnProperty.call(obj, key);
 }
 
 
-function assignKey(to, from, key) {
+function assignKey(to: Record<string, any>, from: Record<string, any>, key: string) {
   const val = from[key];
 
   if (!isDef(val)) {
@@ -49,7 +49,7 @@ function assignKey(to, from, key) {
   }
 }
 
-export function deepAssign(to, from) {
+export function deepAssign(to: Record<string, any>, from: Record<string, any>) {
   Object.keys(from).forEach((key) => {
     assignKey(to, from, key);
   });
@@ -61,11 +61,11 @@ export function deepAssign(to, from) {
 // export default { keys };
 
 
-export function pickExclude(obj, keys) {
+export function pickExclude(obj: Record<string, any>, keys: Array<string>) {
   if (!isPlainObject(obj)) {
     return {};
   }
-  return Object.keys(obj).reduce((prev, key) => {
+  return Object.keys(obj).reduce((prev: Record<string, any>, key) => {
     if (!keys.includes(key)) {
       prev[key] = obj[key];
     }
@@ -74,7 +74,7 @@ export function pickExclude(obj, keys) {
 }
 
 
-export function isEmpty(object) {
+export function isEmpty(object: any) {
   if (!object) return true;
   if (Array.isArray(object)) {
     return !object.length;

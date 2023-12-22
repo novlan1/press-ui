@@ -1,6 +1,6 @@
 import { isDef, IN_BROWSER, isNumeric } from '../utils/validator';
 
-export function addUnit(value) {
+export function addUnit(value: any) {
   if (!isDef(value)) {
     return undefined;
   }
@@ -9,7 +9,7 @@ export function addUnit(value) {
   return isNumeric(value) ? `${value}px` : value;
 } // cache
 
-let rootFontSize;
+let rootFontSize: number;
 
 function getRootFontSize() {
   if (!rootFontSize) {
@@ -21,22 +21,22 @@ function getRootFontSize() {
   return rootFontSize;
 }
 
-function convertRem(value) {
+function convertRem(value: string) {
   value = value.replace(/rem/g, '');
   return +value * getRootFontSize();
 }
 
-function convertVw(value) {
+function convertVw(value: string) {
   value = value.replace(/vw/g, '');
   return +value * window.innerWidth / 100;
 }
 
-function convertVh(value) {
+function convertVh(value: string) {
   value = value.replace(/vh/g, '');
   return +value * window.innerHeight / 100;
 }
 
-export function unitToPx(value) {
+export function unitToPx(value: string) {
   if (typeof value === 'number') {
     return value;
   }

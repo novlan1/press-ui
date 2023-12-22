@@ -17,6 +17,6 @@ export const TIP_CLASS_MAP = {
   'btn--sure': 'tip-comp-dialog-sure',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

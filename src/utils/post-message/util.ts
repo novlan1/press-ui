@@ -12,12 +12,12 @@ const ACT_COMMON_CSS = [
 ];
 
 // 测试链接:  https://image-1251917893.file.myqcloud.com/2022/a20220408wwkhActivity/css/comm.css
-export function loadStyles(urls) {
+export function loadStyles(urls: Array<string>) {
   loaderUnity('https://image-1251917893.file.myqcloud.com/igame/common/js/adapter.js', () => {});
   commLoadStyles([...ACT_COMMON_CSS, ...urls], 'load-style');
 }
 
-export function loadCssCode(code) {
+export function loadCssCode(code: string) {
   commLoadCssCode(code, 'load-css-code');
 }
 

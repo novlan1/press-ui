@@ -22,6 +22,7 @@ import utils from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
+
 export default {
   name: 'PressSwitch',
   options: {
@@ -32,7 +33,6 @@ export default {
     PressLoading,
   },
   field: true,
-  // classes: ['node-class'],
   props: {
     open: { type: [Boolean, null], default: null },
     checked: { type: Boolean, default: false },

@@ -1,10 +1,13 @@
 import { compareMonth } from './utils';
 
-function getDate(date) {
+type IDate = string | number | Date;
+
+
+function getDate(date: IDate) {
   return new Date(date);
 }
 
-function getMonths(minDate, maxDate) {
+function getMonths(minDate: IDate, maxDate: IDate) {
   const months: Array<number> = [];
   const cursor = getDate(minDate);
 
@@ -18,7 +21,7 @@ function getMonths(minDate, maxDate) {
   return months;
 }
 
-function getButtonDisabled(type, currentDate) {
+function getButtonDisabled(type: string, currentDate?: any) {
   if (currentDate == null) {
     return true;
   }

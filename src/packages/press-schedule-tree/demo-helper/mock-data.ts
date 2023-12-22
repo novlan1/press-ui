@@ -72,7 +72,7 @@ function genSchePairInfo({
   scheGroupNumber = 2,
   groupType,
   teamNumber,
-}) {
+}: Record<string, any>) {
   const battleList = [genScheGroupInfo(info, `${teamIndex}-a`)];
   const roundNumber = getRoundNumber(teamNumber, groupType);
   if (scheGroupNumber === 2) {
@@ -96,7 +96,7 @@ function getRoundName({
   roundNumber,
   groupType,
   minusRoundNumber,
-}) {
+}: Record<string, any>) {
   if (groupType === GROUP_TYPE_MAP.KNOCK_OUT.name) {
     return minusRoundNumber - 1 === 0 ? '决赛' : `${2 ** (minusRoundNumber)}进${2 ** (minusRoundNumber - 1)}`;
   }
@@ -111,7 +111,7 @@ function getRoundName({
 }
 
 
-function getRoundNumber(number, groupType) {
+function getRoundNumber(number: number, groupType: string) {
   const roundNumber = Math.log(number) / Math.log(2);
   if (groupType !== GROUP_TYPE_MAP.DOUBLE_FAIL_LOSER.name) {
     return roundNumber;
@@ -125,7 +125,7 @@ export function genScheList({
   info,
   teamNumber,
   groupType,
-}) {
+}: Record<string, any>) {
   const roundNumber = getRoundNumber(teamNumber, groupType);
   const { scheList } = MOCK_DATA;
 

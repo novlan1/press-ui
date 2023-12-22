@@ -1,10 +1,13 @@
 <template>
   <div class="press-search-index">
     <div
-      :class="'custom-class ' + (utils.bem2('search', { withaction: showAction || useActionSlot }))"
+      :class="[
+        customClass,
+        utils.bem2('search', { withaction: showAction || useActionSlot })
+      ]"
       :style="'background: '+(background)"
     >
-      <div :class="'' + utils.bem2('search__content', [shape])">
+      <div :class="[utils.bem2('search__content', [shape])]">
         <div
           v-if="label"
           class="press-search__label"
@@ -24,7 +27,7 @@
           :error="error"
           :border="false"
           confirm-type="search"
-          class="press-search__field field-class"
+          :class="['press-search__field', fieldClass]"
           :value="innerValue"
           :disabled="disabled"
           :readonly="readonly"
@@ -33,7 +36,7 @@
           :clear-icon="clearIcon"
           :maxlength="maxlength"
           :input-align="inputAlign"
-          input-class="input-class"
+          :input-class="inputClass"
           :placeholder="placeholder"
           :placeholder-style="placeholderStyle"
           custom-style="padding: 5px 10px 5px 0; background-color: transparent;"
@@ -72,7 +75,7 @@
         />
         <div
           v-else
-          class="cancel-class"
+          :class="cancelClass"
           @click="onCancel"
         >
           {{ actionText }}
@@ -86,13 +89,13 @@ import PressField from '../press-field/press-field.vue';
 import utils from '../common/utils/utils';
 import { t } from '../locale';
 
+
 export default {
   name: 'PressSearch',
   components: {
     PressField,
   },
   field: true,
-  classes: ['field-class', 'input-class', 'cancel-class'],
   props: {
     value: { type: String, default: '' },
     label: { type: String, default: '' },
@@ -139,6 +142,22 @@ export default {
     clearIcon: {
       type: String,
       default: 'clear',
+    },
+    customClass: {
+      type: String,
+      default: '',
+    },
+    fieldClass: {
+      type: String,
+      default: '',
+    },
+    inputClass: {
+      type: String,
+      default: '',
+    },
+    cancelClass: {
+      type: String,
+      default: '',
     },
   },
   emits: [

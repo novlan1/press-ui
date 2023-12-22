@@ -4,12 +4,12 @@ import { getBrowserInfo } from './browser-info';
 // import { sortObject } from 'uni-shared';
 const { toString } = Object.prototype;
 
-export function isPlainObject(obj) {
+export function isPlainObject(obj: any) {
   return toString.call(obj) === '[object Object]';
 }
 
-export function sortObject(obj) {
-  const sortObj = {};
+export function sortObject(obj: any) {
+  const sortObj: Record<string, any> = {};
   if (isPlainObject(obj)) {
     Object.keys(obj).sort()
       .forEach((key) => {

@@ -144,17 +144,21 @@ export default {
 | disable-minus  | 是否禁用减少按钮                                                                | _boolean_          | -       |
 | long-press     | 是否开启长按手势                                                                | _boolean_          | `true`  |
 | always-embed   | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效) | _boolean_          | `false` |
+| custom-class   | 根节点样式类                                                                    | _string_           | -       |
+| input-class    | 输入框样式类                                                                    | _string_           | -       |
+| plus-class     | 加号按钮样式类                                                                  | _string_           | -       |
+| minus-class    | 减号按钮样式类                                                                  | _string_           | -       |
 
 ### Events
 
-| 事件名     | 说明                     | 回调参数                   |
-| ---------- | ------------------------ | -------------------------- |
-| @change    | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
-| @overlimit | 点击不可用的按钮时触发   | -                          |
-| @plus      | 点击增加按钮时触发       | -                          |
-| @minus     | 点击减少按钮时触发       | -                          |
-| @focus     | 输入框聚焦时触发         | -                          |
-| @blur      | 输入框失焦时触发         | -                          |
+| 事件名    | 说明                     | 回调参数                     |
+| --------- | ------------------------ | ---------------------------- |
+| change    | 当绑定值变化时触发的事件 | `event.detail`: 当前输入的值 |
+| overlimit | 点击不可用的按钮时触发   | -                            |
+| plus      | 点击增加按钮时触发       | -                            |
+| minus     | 点击减少按钮时触发       | -                            |
+| focus     | 输入框聚焦时触发         | -                            |
+| blur      | 输入框失焦时触发         | -                            |
 
 ### Slot
 
@@ -162,15 +166,6 @@ export default {
 | ----- | -------- |
 | plus  | 加号按钮 |
 | minus | 减号按钮 |
-
-### 外部样式类
-
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| input-class  | 输入框样式类   |
-| plus-class   | 加号按钮样式类 |
-| minus-class  | 减号按钮样式类 |
 
 ## 主题定制
 

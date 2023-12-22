@@ -41,8 +41,8 @@ export const defaultOptions = {
   addGlobalClass: true,
 };
 
-export function getDefaultProps(props) {
-  const defaultProps = Object.keys(props).reduce((acc, key) => {
+export function getDefaultProps(props: Record<string, any>) {
+  const defaultProps = Object.keys(props).reduce((acc: Record<string, any>, key) => {
     acc[key] = getDefaultValue(props, key);
     return acc;
   }, {});
@@ -50,7 +50,7 @@ export function getDefaultProps(props) {
 }
 
 
-export function genAllProps(newProps, propsMap) {
+export function genAllProps(newProps: Record<string, any>, propsMap: Record<string, any>) {
   if (!newProps || !propsMap) return {};
   return Object.keys(propsMap).reduce((acc, key) => {
     const oldKey = propsMap[key];

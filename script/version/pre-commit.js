@@ -3,7 +3,9 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { traverseFolder } = require('t-comm');
 
-const { insetDocChangeLog } = require('./change-log');
+const { insertDocChangeLog } = require('./change-log');
+const PRE_RELEASE_VERSION = /\d+\.\d+\.\d+-(\w+).\d+/;
+
 
 const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/'];
 const PATH_MAP = {
@@ -15,6 +17,11 @@ const PATH_MAP = {
   TARGET_README: './log/packages/README.md',
 };
 
+function getPreReleaseTag(version) {
+  const match = version.match(PRE_RELEASE_VERSION);
+  if (!match || !match[1]) return '';
+  return match[1];
+}
 
 function getNewVersion() {
   const pkg = JSON.parse(fs.readFileSync(PATH_MAP.ROOT_PACKAGE_JSON, {
@@ -35,9 +42,16 @@ function changeVersion() {
   fs.writeFileSync(PATH_MAP.PACKAGE_JSON, JSON.stringify(pkg, null, 2), {
     encoding: 'utf-8',
   });
+  return newVersion;
 }
-function release() {
-  execSync(`cd ${PATH_MAP.TARGET_PACKAGES} && npm publish`, {
+function release(version) {
+  const publishTag = getPreReleaseTag(version);
+  let publishScript = 'npm publish';
+  if (publishTag) {
+    publishScript = `npm publish --tag ${publishTag}`;
+  }
+
+  execSync(`cd ${PATH_MAP.TARGET_PACKAGES} && ${publishScript}`, {
     stdio: 'inherit',
   });
 }
@@ -66,17 +80,17 @@ function copyReadme() {
 
 
 function main() {
-  changeVersion();
+  const version = changeVersion();
 
   genPureReleaseDir();
   copyReadme();
-  insetDocChangeLog();
+  insertDocChangeLog();
 
   execSync('git add .', {
     stdio: 'inherit',
   });
 
-  release();
+  release(version);
 }
 
 

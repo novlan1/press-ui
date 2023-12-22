@@ -1,6 +1,6 @@
 <template>
   <div class="press-radio-group-index">
-    <div :class="'' + utils.bem2('radio-group', [direction])">
+    <div :class="[utils.bem2('radio-group', [direction])]">
       <slot />
     </div>
   </div>

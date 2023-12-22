@@ -29,7 +29,7 @@ export const DATE_TIME_PICKER_MAX_MIN_DATE = {
 };
 
 
-export function showPopupCell(options): Promise<any> {
+export function showPopupCell(options?: any): Promise<any> {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL}`,
     ...options,
@@ -37,7 +37,7 @@ export function showPopupCell(options): Promise<any> {
 }
 
 
-export function showPopupCellAndClose(options) {
+export function showPopupCellAndClose(options?: any) {
   showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL}`,
     ...options,
@@ -52,7 +52,7 @@ export function showPopupCellAndClose(options) {
 }
 
 
-export function showPopupCell2(options): Promise<any> {
+export function showPopupCell2(options?: any): Promise<any> {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.POPUP_CELL_2}`,
     ...options,
@@ -60,7 +60,7 @@ export function showPopupCell2(options): Promise<any> {
 }
 
 
-export function showPicker(options) {
+export function showPicker(options?: any) {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.PICKER}`,
     ...options,
@@ -68,7 +68,7 @@ export function showPicker(options) {
 }
 
 
-export function showDateTimePicker(options) {
+export function showDateTimePicker(options?: any) {
   return showFunctionalComponent({
     selector: `#${FUNCTIONAL_ID_MAP.DATE_TIME_PICKER}`,
     ...options,
@@ -76,7 +76,7 @@ export function showDateTimePicker(options) {
 }
 
 
-function getMinute(time) {
+function getMinute(time: number) {
   return parseInt(`${time / 1000 / 60}`, 10);
 }
 
@@ -88,7 +88,7 @@ export function getDefaultLatestReadyTime() {
   return  parseInt(`${time / 1000}`, 10);
 }
 
-export function getStartWayDesc(startBattleType, startTime) {
+export function getStartWayDesc(startBattleType: number | string, startTime: number) {
   let startWay = '';
 
   if (startBattleType == 1) {
@@ -102,7 +102,7 @@ export function getStartWayDesc(startBattleType, startTime) {
 }
 
 
-export function getAutoQuitDesc(latestReadyTime) {
+export function getAutoQuitDesc(latestReadyTime?: number) {
   let res = '';
 
   if (!latestReadyTime) {
@@ -160,12 +160,19 @@ export const SELECT_BAN_LIST = [
   { label: '各禁4英雄', value: 0 },
 ];
 
-export function latestReadyTimeFormat(value) {
+export function latestReadyTimeFormat(value: number) {
   if (!value) return '不启用';
   return timeStampFormat(value, 'M/d hh:mm 截止上场');
 }
 
-export function onTimeStartTimeFormat(value) {
+export function onTimeStartTimeFormat(value: number) {
   return timeStampFormat(value, 'M/d hh:mm');
 }
 
+export type IPopupContext = {
+  closeDialog: () => void;
+};
+
+export type IPopupCellClick = {
+  context: IPopupContext
+};

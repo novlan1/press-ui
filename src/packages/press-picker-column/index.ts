@@ -1,22 +1,22 @@
 import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
 
-function isObj(x) {
+function isObj(x: any) {
   const type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
 }
 
-function optionText(option, valueKey) {
+function optionText(option: any, valueKey?: any) {
   return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
 }
 
-function rootStyle(data) {
+function rootStyle(data: Record<string, any>) {
   return style({
     height: addUnit(data.itemHeight * data.visibleItemCount),
   });
 }
 
-function wrapperStyle(data) {
+function wrapperStyle(data: Record<string, any>) {
   const offset = addUnit(data.offset + (data.itemHeight * (data.visibleItemCount - 1)) / 2);
 
   return style({

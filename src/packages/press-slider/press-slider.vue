@@ -1,17 +1,17 @@
 <template>
   <div class="press-slider-index">
     <div
-      :class="'custom-class '+(utils.bem2('slider', { disabled, vertical }))"
+      :class="customClass + ' '+(utils.bem2('slider', { disabled, vertical }))"
       :style="wrapperStyle"
       @click="onClick"
     >
       <div
-        :class="'' + utils.bem2('slider__bar')"
+        :class="[utils.bem2('slider__bar')]"
         :style="(barStyle)+'; '+(style({ backgroundColor: activeColor }))"
       >
         <div
           v-if="range"
-          :class="'' + utils.bem2('slider__button-wrapper-left')"
+          :class="[utils.bem2('slider__button-wrapper-left')]"
           :data-index="0"
           @touchstart="onTouchStart"
           @touchmove.stop.prevent="onTouchMove"
@@ -24,12 +24,12 @@
           />
           <div
             v-else
-            :class="'' + utils.bem2('slider__button')"
+            :class="[utils.bem2('slider__button')]"
           />
         </div>
         <div
           v-if="range"
-          :class="'' + utils.bem2('slider__button-wrapper-right')"
+          :class="[utils.bem2('slider__button-wrapper-right')]"
           :data-index="1"
           @touchstart="onTouchStart"
           @touchmove.stop.prevent="onTouchMove"
@@ -42,13 +42,13 @@
           />
           <div
             v-else
-            :class="'' + utils.bem2('slider__button')"
+            :class="[utils.bem2('slider__button')]"
           />
         </div>
 
         <div
           v-if="(!range)"
-          :class="'' + utils.bem2('slider__button-wrapper')"
+          :class="[utils.bem2('slider__button-wrapper')]"
           @touchstart="onTouchStart"
           @touchmove.stop.prevent="onTouchMove"
           @touchend="onTouchEnd"
@@ -60,7 +60,7 @@
           />
           <div
             v-else
-            :class="'' + utils.bem2('slider__button')"
+            :class="[utils.bem2('slider__button')]"
           />
         </div>
       </div>
@@ -106,7 +106,14 @@ export default {
       type: Boolean,
       default: false,
     },
-    barHeight: { type: [Number, String], default: '' },
+    barHeight: {
+      type: [Number, String],
+      default: '',
+    },
+    customClass: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['drag-start', 'drag-end', 'drag', 'change'],
   data() {

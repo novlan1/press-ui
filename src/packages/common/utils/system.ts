@@ -20,7 +20,7 @@ export function getSystemInfoSync() {
 }
 
 
-export function requestAnimationFrame(cb) {
+export function requestAnimationFrame(cb: Function) {
   return setTimeout(() => {
     cb();
   }, 1000 / 30);
@@ -41,7 +41,7 @@ export function requestAnimationFrame(cb) {
 }
 
 
-export function groupSetData(context, cb) {
+export function groupSetData(context: any, cb: Function) {
   if (canIUseGroupSetData() && context.groupSetData) {
     context.groupSetData(cb);
   } else {
@@ -53,7 +53,7 @@ export function intersectionObserverPloyFill({
   selector,
   callback,
   options,
-}) {
+}: any) {
   if (isNotInUni()) {
     const io = new IntersectionObserver(callback, options);
     const target = document.querySelectorAll(selector);

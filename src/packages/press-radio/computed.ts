@@ -1,8 +1,8 @@
 import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
 
-function iconStyle(data) {
-  const styles = {
+function iconStyle(data: Record<string, any>) {
+  const styles: Record<string, string> = {
     'font-size': addUnit(data.iconSize),
   };
 
@@ -18,8 +18,8 @@ function iconStyle(data) {
   return style(styles);
 }
 
-function iconCustomStyle(data) {
-  const styles = {
+function iconCustomStyle(data: Record<string, any>) {
+  const styles: Record<string, string> = {
     'font-size': addUnit(data.iconSize),
     'line-height': addUnit(data.iconSize),
     display: 'block',

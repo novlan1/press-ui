@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 const ENV_FILE = '.env.local';
 const BASH_FILE = path.resolve(__dirname, '../../../', './bash/deploy-github-page.sh');
 
-export function deployGithubPage(options) {
+export function deployGithubPage(options: Record<string, any>) {
   dotenv.config({ path: ENV_FILE });
   const { env } = process;
 

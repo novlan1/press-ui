@@ -15,7 +15,7 @@ function getCardState({
   battleList,
   curBattleNo,
   gameStateRemain,
-}) {
+}: Record<string, any>) {
   if (gameStatus <= GAME_STATUS_MAP.WILL_START) {
     return {
       cardState: SCHEDULE_CARD_STATE_MAP.GAME_WILL_START,
@@ -23,14 +23,14 @@ function getCardState({
     };
   }
 
-  battleList.forEach((battle) => {
+  battleList.forEach((battle: Record<string, any>) => {
     if (!battle.battle_status) {
       battle.battle_status = 0;
     }
     // battle.can_enter_game = true;
   });
 
-  const getBattleCountDown = (battleIndex) => {
+  const getBattleCountDown = (battleIndex: number) => {
     const battle = battleList[battleIndex];
     if (battle.battle_start_remain) {
       return battle.battle_start_remain;
@@ -82,7 +82,7 @@ function getCardState({
             cardState: SCHEDULE_CARD_STATE_MAP.BATTLE_STARTED,
             roomId: battleList[index].room_id,
             roomPwd: battleList[index].room_pwd,
-            buttonTip: `第${NUMBER_CHI_MAP[index + 1]}局已开赛`,
+            buttonTip: `第${NUMBER_CHI_MAP[index + 1 as keyof typeof NUMBER_CHI_MAP]}局已开赛`,
           };
         }
 
@@ -164,32 +164,35 @@ export function parseScheduleData(data: Record<string, any> = {}, childInfo: Rec
     gameStateRemain: newGameStateRemain,
   }) || {};
 
-  const parsedBattleList = battleList.map((item, index) => {
+  const parsedBattleList = battleList.map((item: Record<string, any>, index: number) => {
     const { start_time: startTime } = item;
     return {
-      title: `第${NUMBER_CHI_MAP[index + 1]}局`,
+      title: `第${NUMBER_CHI_MAP[index + 1 as keyof typeof NUMBER_CHI_MAP]}局`,
       time: timeStampFormat(startTime, 'hh:mm'),
       isCurrent: index === curBattleNo - 1,
     };
   });
 
-  const scoreList = battleList.map((item, index) => {
+  const scoreList = battleList.map((item: Record<string, any>, index: number) => {
     if (index > curBattleNo) {
       return {
-        title: `第${NUMBER_CHI_MAP[index + 1]}局`,
+        title: `第${NUMBER_CHI_MAP[index + 1 as keyof typeof NUMBER_CHI_MAP]}局`,
         score: '--',
         isWinner: 3, // 1 胜 2 负 3 --
       };
     }
     return {
-      title: `第${NUMBER_CHI_MAP[index + 1]}局`,
+      title: `第${NUMBER_CHI_MAP[index + 1 as keyof typeof NUMBER_CHI_MAP]}局`,
       score: item.score || '-',
       isWinner: item.isvictor,
     };
   });
 
-  const battleIndexStr = battleList.map((_, index) => NUMBER_CHI_MAP[index + 1]).join('/');
-  const battleScoreStr = battleList.map(item => item.score || '-').join('/');
+  const battleIndexStr = battleList
+    .map((_: Record<string, any>, index: number) => NUMBER_CHI_MAP[index + 1 as keyof typeof NUMBER_CHI_MAP])
+    .join('/');
+  const battleScoreStr = battleList
+    .map((item: Record<string, any>) => item.score || '-').join('/');
 
   const resultList = [{
     name: '总积分排名',

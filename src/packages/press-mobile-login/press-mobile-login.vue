@@ -13,21 +13,19 @@
           登录游戏账号
         </h4>
         <div :class="[getActClass('login')]">
-          <!--QQ登录-->
           <a
             v-if="showQQ"
             @click="jumpToLoginQQ"
           >
-            <img src="https://image-1251917893.file.myqcloud.com/igame/common/image/qq.png">
-            <span :class="[getActClass('text')]">QQ区登录</span>
+            <img :src="LOGIN_CONFIG.QQ_IMAGE">
+            <span :class="[getActClass('text')]">{{ LOGIN_CONFIG.QQ_TEXT }}</span>
           </a>
-          <!--微信登录-->
           <a
             v-if="showWX"
             @click="jumpToLoginWX"
           >
-            <img src="https://image-1251917893.file.myqcloud.com/igame/common/image/wx.png">
-            <span :class="[getActClass('text')]">微信区登录</span>
+            <img :src="LOGIN_CONFIG.WX_IMAGE">
+            <span :class="[getActClass('text')]">{{ LOGIN_CONFIG.WX_TEXT }}</span>
           </a>
         </div>
       </div>
@@ -100,6 +98,7 @@
 </template>
 <script>
 import { getActClass } from './utils';
+import { LOGIN_CONFIG } from './config';
 
 
 export default {
@@ -170,6 +169,7 @@ export default {
     return {
       qrcodeSrc: '',
       hideCanvas: false,
+      LOGIN_CONFIG,
     };
   },
   watch: {

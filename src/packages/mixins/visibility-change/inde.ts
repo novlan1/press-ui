@@ -1,4 +1,4 @@
-export const visibilityChangeMixin = callback => ({
+export const visibilityChangeMixin = (callback: Function) => ({
   mounted(this: any) {
     window.addEventListener('visibilitychange', this._watchVisibleChange);
   },

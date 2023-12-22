@@ -1,4 +1,4 @@
-export function kebabCase(word) {
+export function kebabCase(word: string) {
   const reg = /[A-Z]/g;
   const newWord = word
     .replace(reg, i => `-${i}`)
@@ -7,7 +7,7 @@ export function kebabCase(word) {
   return newWord;
 }
 
-export function style(styles) {
+export function style(styles: any): string {
   if (Array.isArray(styles)) {
     return styles
       .filter(item => item != null && item !== '')

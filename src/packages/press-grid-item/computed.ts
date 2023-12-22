@@ -1,7 +1,7 @@
 import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
 
-function wrapperStyle(data) {
+function wrapperStyle(data: Record<string, any>) {
   const width = `${100 / data.columnNum}%`;
 
   return style({
@@ -15,7 +15,7 @@ function wrapperStyle(data) {
   });
 }
 
-function contentStyle(data) {
+function contentStyle(data: Record<string, any>) {
   return data.square
     ? style({
       right: addUnit(data.gutter),

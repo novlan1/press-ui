@@ -1,5 +1,8 @@
 <template>
-  <div class="press-picker-toolbar">
+  <div
+    class="press-picker-toolbar"
+    :class="customClass"
+  >
     <div
       v-if="showToolbar"
       class="press-picker__toolbar toolbar-class"
@@ -48,6 +51,10 @@ export default {
     confirmButtonText: {
       type: String,
       default: t('picker.confirm'),
+    },
+    customClass: {
+      type: String,
+      default: '',
     },
   },
   methods: {

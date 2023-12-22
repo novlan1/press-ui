@@ -244,15 +244,6 @@ export default {
 | disabled | 点击被禁用的标签时触发   | index: 索引，name：标签标识符，title：标题     |
 | scroll   | 滚动时触发               | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
-### 外部样式类
-
-| 类名             | 说明             |
-| ---------------- | ---------------- |
-| custom-class     | 根节点样式类     |
-| nav-class        | 标签栏样式类     |
-| tab-class        | 标签样式类       |
-| tab-active-class | 标签激活态样式类 |
-
 ### 方法
 
 通过 selectComponent 可以获取到 Tabs 实例并调用实例方法。

@@ -4,7 +4,7 @@
 import { IS_SERVER } from '../utils/validator';
 let prev = Date.now();
 
-function fallback(fn) {
+function fallback(fn: Function) {
   const curr = Date.now();
   const ms = Math.max(0, 16 - (curr - prev));
   const id = setTimeout(fn, ms);
@@ -20,16 +20,16 @@ const iRaf = root.requestAnimationFrame || fallback;
 const iCancel = root.cancelAnimationFrame || root.clearTimeout;
 
 
-export function raf(fn) {
+export function raf(fn: any) {
   return iRaf.call(root, fn);
 }
 
 // double raf for animation
-export function doubleRaf(fn) {
+export function doubleRaf(fn: any) {
   raf(() => {
     raf(fn);
   });
 }
-export function cancelRaf(id) {
+export function cancelRaf(id: any) {
   iCancel.call(root, id);
 }

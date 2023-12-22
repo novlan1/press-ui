@@ -90,9 +90,7 @@
           />
 
           <press-section
-            v-if="showOtherDemoMap.vue2Uni
-              || showOtherDemoMap.vue2NotUni
-              || showOtherDemoMap.vue3Uni"
+            v-if="quickLinkList.length"
             key="other-project-section"
             :title="t('otherProject')"
             :color="sectionStyle.color"
@@ -101,29 +99,15 @@
           />
 
           <PressCell
-            v-if="showOtherDemoMap.vue2Uni"
+            v-for="(quickLink) of quickLinkList"
+            :key="quickLink.link"
             is-link
-            :title="t('checkNormal')"
-            @click="onJumpToOtherDemo('vue2-uni')"
-          />
-          <PressCell
-            v-if="showOtherDemoMap.vue2NotUni"
-            is-link
-            :title="t('checkPure')"
-            @click="onJumpToOtherDemo('vue2-not-uni')"
-          />
-          <PressCell
-            v-if="showOtherDemoMap.vue3Uni"
-            is-link
-            :title="t('checkVue3')"
-            @click="onJumpToOtherDemo('vue3-uni')"
+            :title="quickLink.label"
+            @click="onJumpToOtherDemo(quickLink)"
           />
         </div>
       </div>
     </scroll-view>
-
-
-    <!-- <Tabbar /> -->
   </div>
 </template>
 <script>
@@ -132,19 +116,20 @@ import PressSection from '../components/press-section/press-section.vue';
 import PressCell from '../../packages/press-cell/press-cell.vue';
 
 import { LAUNCH_APP_STORAGE } from '../launch-app/config';
-import { isInIFrame, routerPush } from '../../utils/index';
+import { isInIFrame, fetchData, routerPush } from '../../utils/index';
 import { toggleVConsole } from 't-comm/lib/v-console/toggle';
-import { morsePwdMixin } from '../../utils/morse-password/morse-password-mixin';
+import { morsePwdMixin } from 't-comm/lib/mixin/morse-password-mixin';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 import { isNotInUni } from '../../packages/common/utils/utils';
+import { setClipboardData } from 'src/packages/common/clipboard/clipboard';
 
 import pagesConfig from './page-config.json';
 import {
   SCROLL_TOP_KEY,
-  DEMO_LINK_MAP,
   NOT_SHOW_IN_MP_COMPONENTS,
   NOT_SHOW_IN_PURE_PROJECT,
 } from './index-config';
+import { HELP_DATA_URL } from './help-config';
 
 
 function getShowDemoMap() {
@@ -153,13 +138,11 @@ function getShowDemoMap() {
     vue2NotUni: false,
     vue3Uni: false,
   };
-  // #ifdef H5
   showOtherDemoMap = {
     vue2Uni: true,
     vue2NotUni: true,
     vue3Uni: true,
   };
-  // #endif
 
   // #ifdef VUE3
   showOtherDemoMap.vue3Uni = false;
@@ -267,10 +250,29 @@ export default {
         header: 'font-weight: 500;margin-bottom: 6px;',
         color: '#007aff',
       },
+      helpConfig: {},
     };
+  },
+  computed: {
+    quickLinkList() {
+      const { showOtherDemoMap, helpConfig = {} } = this;
+      let list = helpConfig.quickLinkList || [];
+
+      if (!showOtherDemoMap.vue2Uni) {
+        list = list.filter(item => item.name !== 'vue2-uni');
+      }
+      if (!showOtherDemoMap.vue2NotUni) {
+        list = list.filter(item => item.name !== 'vue2-not-uni');
+      }
+      if (!showOtherDemoMap.vue3Uni) {
+        list = list.filter(item => item.name !== 'vue3-uni');
+      }
+      return list;
+    },
   },
   mounted() {
     this.init();
+    this.getHelpData();
   },
   beforeDestroy() {
     this.onBeforeDestroy();
@@ -341,10 +343,11 @@ export default {
       //   url: `/pages/webview/webview?url=${url}`,
       // });
     },
-    onJumpToOtherDemo(type) {
-      const link = DEMO_LINK_MAP[type];
+    onJumpToOtherDemo(item) {
+      const { link } = item;
       if (!link) return;
 
+      // #ifdef H5
       this.$toast.loading({
         message: '正在跳转...',
         forbidClick: true,
@@ -356,6 +359,18 @@ export default {
       setTimeout(() => {
         window.location.href = link;
       }, 300);
+      // #endif
+
+      // #ifndef H5
+      setClipboardData(link).then(() => {
+        this.onGTip('🎉 复制成功，请到浏览器中查看');
+      });
+      // #endif
+    },
+    getHelpData() {
+      fetchData(HELP_DATA_URL).then((data) => {
+        this.helpConfig = data;
+      });
     },
   },
 

@@ -1,5 +1,5 @@
 <template>
-  <div :class="'custom-class press-collapse '+(border ? 'press-hairline--top-bottom' : '')">
+  <div :class="customClass + ' press-collapse ' + (border ? 'press-hairline--top-bottom' : '')">
     <slot />
   </div>
 </template>

@@ -2,14 +2,14 @@
 <div align="center">
   <img alt="logo" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style="margin-bottom: -25px;">
 </div>
-<h3 align="center">易用、灵活、基于uni-app的跨端组件库</h3>
+<h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
 
 ---
+
 
 ### 1. 介绍
 
 `Press UI`是一套易用的、灵活的，基于`uni-app`的跨端组件库。
-
 
 - 🚀 70+ 基础组件，覆盖移动端主流场景
 - 🚀 支持基于`uni-app`的H5、微信小程序、QQ小程序
@@ -23,7 +23,6 @@
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_13f3281f0a188e0fbd.png" width="600">
 
 ### 2. 解决痛点
-
 
 `Press UI`作为基础组件库，解决了以下痛点：
 
@@ -66,35 +65,32 @@
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_2bfb54a9ad6b9bc0ff.jpg" width="600">
 
-
 ### 4. 如何使用
 
 1. 安装`npm`包
-
 
 ```bash
 npm i press-ui
 ```
 
-
 2. 在页面中正常引入并使用
 
-比如 `message-detail` 组件：
+比如 `button` 组件：
 
 ```html
 <template>
-  <PressMessageDetail />
+  <PressButton />
 </template>
 ```
 
 ```ts
 <script>
-import PressMessageDetail from 'press-ui/press-message-detail/press-message-detail.vue'
+import PressButton from 'press-ui/press-button/press-button.vue'
 
 export default {
   components: {
-    PressMessageDetail, 
-  }
+    PressButton, 
+  },
 }
 </script>
 ```
@@ -108,8 +104,6 @@ module.exports = {
   transpileDependencies: ['press-ui'],
 }
 ```
-
-
 
 ### 5. 立即体验
 

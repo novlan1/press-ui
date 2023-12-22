@@ -45,6 +45,6 @@ export const TIP_CLASS_MAP = {
   sub: 'tip-comp-dialog--subscription-check',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

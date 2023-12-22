@@ -106,7 +106,6 @@ export default {
 
     ParentMixin(PARENT),
   ],
-  classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
   props: {
     ...defaultProps,
     navClass: {
@@ -768,7 +767,7 @@ export default {
     }
 
     .press-tabs__line {
-      height: 0.54rem;
+      height: 27px;
       background: transparent
         url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/tab-act.png)
         no-repeat center;

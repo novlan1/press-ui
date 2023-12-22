@@ -11,12 +11,12 @@ export function getMPComponentHandler({
   defaultOptions,
   name = 'press-toast',
   defaultKey = 'message',
-}) {
+}: any) {
   let queue: Array<any> = [];
   let currentOptions = { ...defaultOptions };
-  let defaultOptionsMap = {};
+  let defaultOptionsMap: Record<string, any> = {};
 
-  function CompHandler(toastOptions) {
+  function CompHandler(toastOptions: any) {
     let options = parseOptions(toastOptions, defaultKey);
 
     options = {
@@ -47,7 +47,7 @@ export function getMPComponentHandler({
     };
 
     // 为了让h5和小程序的函数调用一样
-    dialog.set = (...args) => {
+    dialog.set = (...args: Array<any>) => {
       vmSet(dialog, ...args);
     };
 
@@ -73,14 +73,14 @@ export function getMPComponentHandler({
     });
     queue = [];
   };
-  CompHandler.setDefaultOptions = (type, options) => {
+  CompHandler.setDefaultOptions = (type: any, options: any) => {
     if (typeof type === 'string') {
       defaultOptionsMap[type] = options;
     } else {
       Object.assign(currentOptions, type);
     }
   };
-  CompHandler.resetDefaultOptions = (type) => {
+  CompHandler.resetDefaultOptions = (type: any) => {
     if (typeof type === 'string') {
       defaultOptionsMap[type] = null;
     } else {

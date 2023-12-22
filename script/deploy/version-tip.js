@@ -1,8 +1,9 @@
 const { genVersionTip, batchSendWxRobotMarkdown  } = require('t-comm');
 const pkg = require('../../package.json');
+const { DEPLOY_CONFIG } = require('../../config/deploy-config');
 
 function main() {
-  const webhookUrl = 'PRESS_UI_ROBOT___60b39ee3-5f01-43fe-83f6-7875e0f16b77';
+  const webhookUrl = DEPLOY_CONFIG.VERSION_TIP_WEBHOOK_URL;
   console.log('webhookUrl: ', webhookUrl);
 
   const content = genVersionTip({

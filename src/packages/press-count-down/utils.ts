@@ -1,4 +1,4 @@
-function padZero(num, targetLength = 2) {
+function padZero(num: number | string, targetLength = 2) {
   let str = `${num}`;
   while (str.length < targetLength) {
     str = `0${str}`;
@@ -9,7 +9,7 @@ const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
-export function parseTimeData(time) {
+export function parseTimeData(time: number) {
   const days = Math.floor(time / DAY);
   const hours = Math.floor((time % DAY) / HOUR);
   const minutes = Math.floor((time % HOUR) / MINUTE);
@@ -23,7 +23,7 @@ export function parseTimeData(time) {
     milliseconds,
   };
 }
-export function parseFormat(format, timeData) {
+export function parseFormat(format: string, timeData: Record<string, any>) {
   const { days } = timeData;
   let { hours, minutes, seconds, milliseconds } = timeData;
   if (format.indexOf('DD') === -1) {
@@ -48,6 +48,6 @@ export function parseFormat(format, timeData) {
   }
   return format.replace('SSS', padZero(milliseconds, 3));
 }
-export function isSameSecond(time1, time2) {
+export function isSameSecond(time1: number, time2: number) {
   return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
 }

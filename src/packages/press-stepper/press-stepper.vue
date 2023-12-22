@@ -1,12 +1,19 @@
 <template>
   <div class="press-stepper-index">
-    <div :class="(utils.bem2('stepper', [theme]))+' custom-class'">
+    <div
+      :class="[
+        utils.bem2('stepper', [theme]),
+        customClass
+      ]"
+    >
       <div
         v-if="showMinus"
         data-type="minus"
         :style="'' + computed.buttonStyle({ buttonSize })"
-        :class="'minus-class '+
-          (utils.bem2('stepper__minus', { disabled: disabled || disableMinus || currentValue <= min }))"
+        :class="[
+          minusClass,
+          utils.bem2('stepper__minus', { disabled: disabled || disableMinus || currentValue <= min })
+        ]"
         hover-class="press-stepper__minus--hover"
         hover-stay-time="70"
         @click="onTap"
@@ -18,7 +25,7 @@
       <input
         :always-embed="false"
         :type="integer ? 'number' : 'digit'"
-        :class="'input-class '+
+        :class="inputClass + ' '+
           (utils.bem2('stepper__input', { disabled: disabled || disableInput }))"
         :style="'' + computed.inputStyle({ buttonSize, inputWidth })"
         :value="currentValue"
@@ -32,7 +39,7 @@
         v-if="showPlus"
         data-type="plus"
         :style="'' + computed.buttonStyle({ buttonSize })"
-        :class="'plus-class '+
+        :class="plusClass + ' '+
           (utils.bem2('stepper__plus', { disabled: disabled || disablePlus || currentValue >= max }))"
         hover-class="press-stepper__plus--hover"
         hover-stay-time="70"
@@ -69,16 +76,13 @@ function equal(value1, value2) {
 export default {
   name: 'PressStepper',
   field: true,
-  classes: ['input-class', 'plus-class', 'minus-class'],
   props: {
     value: {
       type: [Number, String],
       default: 0,
-      // observer: 'observeValue',
     },
     integer: {
       type: Boolean,
-      // observer: 'check',
     },
     disabled: Boolean,
     inputWidth: { type: String, default: '' },
@@ -88,17 +92,14 @@ export default {
     decimalLength: {
       type: Number,
       default: 0,
-      // observer: 'check',
     },
     min: {
       type: Number,
       default: 1,
-      // observer: 'check',
     },
     max: {
       type: Number,
       default: Number.MAX_SAFE_INTEGER,
-      // observer: 'check',
     },
     step: {
       type: Number,
@@ -120,6 +121,22 @@ export default {
     },
     theme: { type: String, default: '' },
     alwaysEmbed: Boolean,
+    customClass: {
+      type: String,
+      default: '',
+    },
+    inputClass: {
+      type: String,
+      default: '',
+    },
+    minusClass: {
+      type: String,
+      default: '',
+    },
+    plusClass: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['focus', 'blur', 'change', 'overlimit', 'minus', 'plus'],
   data() {

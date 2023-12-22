@@ -20,6 +20,6 @@ export const TIP_CLASS_MAP = {
   agreement: 'tip-match-agreement',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

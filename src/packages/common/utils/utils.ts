@@ -16,7 +16,7 @@ export default {
 };
 
 
-export function random(min, max) {
+export function random(min: number, max: number) {
   if (min >= 0 && max > 0 && max >= min) {
     const gab = max - min + 1;
     return Math.floor(Math.random() * gab + min);
@@ -24,7 +24,12 @@ export function random(min, max) {
   return 0;
 }
 
-export function updateElementStyle(element, styles) {
+export function updateElementStyle(
+  element: {
+    style: Record<string, string>
+  },
+  styles: Record<string, string>,
+) {
   Object.keys(styles).forEach((attrName) => {
     element.style[attrName] = styles[attrName];
   });

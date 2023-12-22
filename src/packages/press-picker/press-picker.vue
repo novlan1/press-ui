@@ -72,7 +72,7 @@ export default {
     destroy() {
       if (this.isFunctionMode) return;
 
-      this.$destroy();
+      this?.$destroy?.();
 
       // #ifdef H5
       if (document.body.contains(this.$el)) {

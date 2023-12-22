@@ -1,9 +1,9 @@
 import { getCurrentPage } from '../common/utils/page';
 import { isDef } from '../common/utils/validator';
 
-function onPageScroll(event) {
+function onPageScroll(event: any) {
   const { pressPageScroller = [] } = getCurrentPage() as any;
-  pressPageScroller.forEach((scroller) => {
+  pressPageScroller.forEach((scroller: any) => {
     if (typeof scroller === 'function') {
       scroller(event);
     }
@@ -11,7 +11,7 @@ function onPageScroll(event) {
 }
 
 
-export const pageScrollMixin = scroller => ({
+export const pageScrollMixin = (scroller: any) => ({
   created() {
     const page = getCurrentPage() as any;
     if (!isDef(page)) {
@@ -29,7 +29,7 @@ export const pageScrollMixin = scroller => ({
   destroy() {
     const page = getCurrentPage() as any;
     if (isDef(page)) {
-      page.pressPageScroller = page.pressPageScroller?.filter(item => item !== scroller) || [];
+      page.pressPageScroller = page.pressPageScroller?.filter((item: any) => item !== scroller) || [];
     }
   },
 });

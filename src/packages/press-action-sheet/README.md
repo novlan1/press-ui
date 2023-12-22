@@ -181,18 +181,18 @@ export default {
 
 ### Events
 
-| 事件名         | 说明                                                                                                                                                        | 参数                         |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| select         | 选中选项时触发，禁用或加载状态下不会触发                                                                                                                    | event.detail: 选项对应的对象 |
-| close          | 关闭时触发                                                                                                                                                  | -                            |
-| cancel         | 取消按钮点击时触发                                                                                                                                          | -                            |
-| click-overlay  | 点击遮罩层时触发                                                                                                                                            | -                            |
-| getuserinfo    | 用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，<a href="#/action-sheet#actions">openType</a>="getUserInfo"时有效 | -                            |
-| contact        | 客服消息回调，<a href="#/action-sheet#actions">openType</a>="contact"时有效                                                                                 | -                            |
-| getphonenumber | 获取用户手机号回调，<a href="#/action-sheet#actions">openType</a>="getPhoneNumber"时有效                                                                    | -                            |
-| error          | 当使用开放能力时，发生错误的回调，<a href="#/action-sheet#actions">openType</a>="launchApp"时有效                                                           | -                            |
-| launchapp      | 打开 APP 成功的回调，<a href="#/action-sheet#actions">openType</a>="launchApp"时有效                                                                        | -                            |
-| opensetting    | 在打开授权设置页后回调，<a href="#/action-sheet#actions">openType</a>="openSetting"时有效                                                                   | -                            |
+| 事件名         | 说明                                                                                                                                          | 参数                         |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| select         | 选中选项时触发，禁用或加载状态下不会触发                                                                                                      | event.detail: 选项对应的对象 |
+| close          | 关闭时触发                                                                                                                                    | -                            |
+| cancel         | 取消按钮点击时触发                                                                                                                            | -                            |
+| click-overlay  | 点击遮罩层时触发                                                                                                                              | -                            |
+| getuserinfo    | 用户点击该按钮时，会返回获取到的用户信息，回调的 detail 数据与 wx.getUserInfo 返回的一致，<a href="#actions">openType</a>="getUserInfo"时有效 | -                            |
+| contact        | 客服消息回调，<a href="#actions">openType</a>="contact"时有效                                                                                 | -                            |
+| getphonenumber | 获取用户手机号回调，<a href="#actions">openType</a>="getPhoneNumber"时有效                                                                    | -                            |
+| error          | 当使用开放能力时，发生错误的回调，<a href="#actions">openType</a>="launchApp"时有效                                                           | -                            |
+| launchapp      | 打开 APP 成功的回调，<a href="#actions">openType</a>="launchApp"时有效                                                                        | -                            |
+| opensetting    | 在打开授权设置页后回调，<a href="#actions">openType</a>="openSetting"时有效                                                                   | -                            |
 
 ### actions
 

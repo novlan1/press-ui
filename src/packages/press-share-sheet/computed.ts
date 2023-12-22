@@ -1,4 +1,4 @@
-function isMulti(options) {
+function isMulti(options: any) {
   if (options == null || options[0] == null) {
     return false;
   }

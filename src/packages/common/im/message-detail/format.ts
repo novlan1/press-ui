@@ -4,7 +4,7 @@ import { formatTime, isJsonStr } from './helper';
 const INSERT_TIME_DURATION = 1 * 60 * 60;
 
 
-function formatMessageContent(message, userInfo) {
+function formatMessageContent(message: any, userInfo: Record<string, any>) {
   if (!isJsonStr(message)) {
     return { text: message };
   }
@@ -28,7 +28,7 @@ function formatMessageContent(message, userInfo) {
   };
 }
 
-function addTimeMsg(list, lastTime) {
+function addTimeMsg(list: Array<Record<string, any>>, lastTime: number) {
   if (!list.length) return;
 
   let recentTime = list[list.length - 1].timeStamp;
@@ -70,12 +70,17 @@ function addTimeMsg(list, lastTime) {
 }
 
 
-function deleteRevokedMessages(list) {
+function deleteRevokedMessages(list: Array<Record<string, any>>) {
   return list = list.filter(item => !item.isRevoked);
 }
 
 
-export function baseFormatMessageDetailList(list, myInfo, oppositeInfo, lastTimeStampTag) {
+export function baseFormatMessageDetailList(
+  list: Array<Record<string, any>>,
+  myInfo: Record<string, any>,
+  oppositeInfo: Record<string, any>,
+  lastTimeStampTag: number,
+) {
   let mList = list;
   mList = deleteRevokedMessages(mList);
 

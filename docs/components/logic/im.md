@@ -1,9 +1,3 @@
----
-url : pages/press/message-detail/message-detail
----
-
-
-
 # IM
 
 即时通信相关，包含对官方API的封装、消息数据的格式化等。

@@ -1,6 +1,5 @@
 import { canIUseGetUserProfile } from '../common/utils/version';
 export const button = {
-  // externalClasses: ['hover-class'],
   props: {
     id: { type: String, default: '' },
     lang: { type: String, default: '' },
@@ -15,6 +14,7 @@ export const button = {
     openType: { type: String, default: '' },
     getUserProfileDesc: { type: String, default: '' },
     hoverClass: { type: String, default: '' },
+    loadingClass: { type: String, default: '' },
   },
   data() {
     return {
@@ -22,28 +22,28 @@ export const button = {
     };
   },
   methods: {
-    triggerEvent(...args) {
+    triggerEvent(...args: Array<any>) {
       (this as any).$emit(...args);
     },
-    onGetUserInfo(event) {
+    onGetUserInfo(event: any) {
       this.triggerEvent('getuserinfo', event);
     },
-    onContact(event) {
+    onContact(event: any) {
       this.triggerEvent('contact', event);
     },
-    onGetPhoneNumber(event) {
+    onGetPhoneNumber(event: any) {
       this.triggerEvent('getphonenumber', event);
     },
-    onError(event) {
+    onError(event: any) {
       this.triggerEvent('error', event);
     },
-    onLaunchApp(event) {
+    onLaunchApp(event: any) {
       this.triggerEvent('launchapp', event);
     },
-    onOpenSetting(event) {
+    onOpenSetting(event: any) {
       this.triggerEvent('opensetting', event);
     },
-    onChooseAvatar(event) {
+    onChooseAvatar(event: any) {
       this.triggerEvent('chooseAvatar', event);
     },
   },

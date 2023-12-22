@@ -1,7 +1,10 @@
 <template>
   <div class="press-tabbar-item-index">
     <div
-      :class="'' + (utils.bem2('tabbar-item', { active }))+' custom-class'"
+      :class="[
+        utils.bem2('tabbar-item', { active }),
+        customClass
+      ]"
       :style="'color: '+(active ? activeColor : inactiveColor)"
       @click="onClick"
     >

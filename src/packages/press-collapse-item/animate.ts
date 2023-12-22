@@ -1,7 +1,10 @@
 import { requestAnimationFrame } from '../common/utils/system';
 import { getRect } from '../common/dom/rect';
 
-function getAnimation({ height, duration }) {
+function getAnimation({ height, duration }: {
+  height: string | number;
+  duration: string | number;
+}) {
   return [
     `height: ${height};`,
     `transition: height ${duration}ms ease-in-out 0ms, top ${duration}ms ease-in-out 0ms, -webkit-transform ${duration}ms ease-in-out 0ms, transform ${duration}ms ease-in-out 0ms;`,
@@ -9,7 +12,7 @@ function getAnimation({ height, duration }) {
   ].join('');
 }
 
-function useAnimation(context, expanded, mounted, height) {
+function useAnimation(context: any, expanded?: boolean, mounted?: boolean, height?: string | number) {
   if (expanded) {
     if (height === 0) {
       const duration = 0;
@@ -34,10 +37,10 @@ function useAnimation(context, expanded, mounted, height) {
 }
 
 
-export function setContentAnimate(context, expanded, mounted) {
+export function setContentAnimate(context: any, expanded?: boolean, mounted?: boolean) {
   getRect(context, '.press-collapse-item__content')
     .then((rect: any) => rect.height)
-    .then((height) => {
+    .then((height: string | number) => {
       useAnimation(context, expanded, mounted, height);
     });
 }

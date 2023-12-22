@@ -100,18 +100,21 @@ export default {
 ### Props
 
 
-| 参数            | 说明                                           | 类型      | 默认值      |
-| --------------- | ---------------------------------------------- | --------- | ----------- |
-| v-model         | 是否处于加载状态，加载过程中不触发`load`事件   | _boolean_ | `false`     |
-| finished        | 是否已加载完成，加载完成后不再触发`load`事件   | _boolean_ | `false`     |
-| offset          | 滚动条与底部距离小于 `offset` 时触发`load`事件 | _number_  | `300`       |
-| loading-text    | 加载过程中的提示文案                           | _string_  | `加载中...` |
-| finished-text   | 加载完成后的提示文案                           | _string_  | -           |
-| immediate-check | 是否在初始化时立即执行滚动位置检查             | _boolean_ | `true`      |
-| vertical        | 是否竖向滚动                                   | _boolean_ | `true`      |
-| finished-style  | 已完成自定义样式                               | _string_  | -           |
-| loading-style   | 加载中自定义样式                               | _string_  | -           |
-| loading-size    | 加载中图标尺寸                                 | _string_  | `20px`      |
+| 参数                | 说明                                           | 类型               | 默认值      |
+| ------------------- | ---------------------------------------------- | ------------------ | ----------- |
+| v-model             | 是否处于加载状态，加载过程中不触发`load`事件   | _boolean_          | `false`     |
+| finished            | 是否已加载完成，加载完成后不再触发`load`事件   | _boolean_          | `false`     |
+| offset              | 滚动条与底部距离小于 `offset` 时触发`load`事件 | _number_           | `300`       |
+| loading-text        | 加载过程中的提示文案                           | _string_           | `加载中...` |
+| finished-text       | 加载完成后的提示文案                           | _string_           | -           |
+| immediate-check     | 是否在初始化时立即执行滚动位置检查             | _boolean_          | `true`      |
+| vertical            | 是否竖向滚动                                   | _boolean_          | `true`      |
+| finished-style      | 已完成自定义样式                               | _string_           | -           |
+| loading-style       | 加载中自定义样式                               | _string_           | -           |
+| loading-size        | 加载中图标尺寸                                 | _string_           | `20px`      |
+| auto-check-scroller | 是否自动检测滚动元素                           | _boolean_          | `false`     |
+| scroll-top          | 设置竖向滚动条位置                             | _number \| string_ | `0`         |
+| scroll-left         | 设置横向滚动条位置                             | _number \| string_ | `0`         |
 
 ### Event
 

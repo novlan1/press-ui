@@ -25,7 +25,7 @@ export function getHideHeaderMixin() {
 
         this.setHeaderStyle(style);
       },
-      setHeaderStyle(this: any, style) {
+      setHeaderStyle(this: any, style: string) {
         // #ifdef H5
         const header = document.querySelector('uni-page-head')
          || document.querySelector('.uni-page-head-wrap');

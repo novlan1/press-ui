@@ -12,6 +12,10 @@
   @return #{math.div($px * 100,812)}vw;
 }
 
+@function mathDiv($a, $b) {
+  @return math.div($a, $b);
+}
+
 /* 字号 */
 $font-xxXl: .48rem; // 24px
 $font-xxl: .4rem; // 20px

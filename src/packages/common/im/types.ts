@@ -23,3 +23,5 @@ export interface IChatSDK {
   setLogLevel: Function;
   getMessageList: Function;
 }
+
+export type EventCallback = (event: Event, tim: IChatSDK) => void;

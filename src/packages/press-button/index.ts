@@ -4,7 +4,7 @@ export const DEFAULT_SIZE_LIST = [
   'normal', 'large', 'small', 'mini',
 ];
 
-function getSizeStyle(data) {
+function getSizeStyle(data: Record<string, any>) {
   const properties: Record<string, any> = {};
   const { size } = data;
 
@@ -24,7 +24,7 @@ function getSizeStyle(data) {
   return properties;
 }
 
-export function rootStyle(data) {
+export function rootStyle(data: Record<string, any>) {
   const sizeStyle = getSizeStyle(data);
   if (!data.color) {
     return style([sizeStyle, data.customStyle]);
@@ -47,7 +47,7 @@ export function rootStyle(data) {
   return style([properties, data.customStyle]);
 }
 
-export function loadingColor(data) {
+export function loadingColor(data: Record<string, any>) {
   if (data.plain) {
     return data.color ? data.color : '#c9c9c9';
   }

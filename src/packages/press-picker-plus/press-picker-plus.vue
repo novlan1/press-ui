@@ -10,6 +10,7 @@
         :show-toolbar="showToolbar"
         :cancel-button-text="cancelButtonText"
         :confirm-button-text="confirmButtonText"
+        :custom-class="toolbarClass"
         @emit="emit"
       />
 
@@ -31,13 +32,13 @@
           :key="index"
           class="press-picker__column"
           :data-index="index"
-          :custom-class="customClass"
+          :custom-class="columnClass"
           :value-key="valueKey"
           :initial-options="item.values"
           :default-index="item.defaultIndex || defaultIndex"
           :item-height="itemHeight"
           :visible-item-count="visibleItemCount"
-          active-class="active-class"
+          :active-class="activeClass"
           @change="value=>onChange(value, index)"
         />
         <div
@@ -52,6 +53,7 @@
 
       <ToolBar
         v-if="toolbarPosition === 'bottom'"
+        :custom-class="toolbarClass"
       />
     </div>
   </div>
@@ -67,6 +69,7 @@ import { toProvideThis } from '../common/vue3/adapter';
 import { t } from '../locale';
 import computed from './index';
 
+
 export default {
   name: 'PressPickerPlus',
   options: {
@@ -80,7 +83,6 @@ export default {
   ...toProvideThis(PARENT),
 
 
-  classes: ['active-class', 'toolbar-class', 'column-class'],
   props: {
     ...defaultProps,
     title: { type: String, default: '' },
@@ -117,6 +119,18 @@ export default {
     columns: {
       type: Array,
       default: () => [],
+    },
+    activeClass: {
+      type: String,
+      default: '',
+    },
+    toolbarClass: {
+      type: String,
+      default: '',
+    },
+    columnClass: {
+      type: String,
+      default: '',
     },
   },
   emits: ['change', 'confirm', 'cancel'],

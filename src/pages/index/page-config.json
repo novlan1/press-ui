@@ -16,19 +16,11 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/icon/icon",
-          "navigationStyle": ""
-        },
-        {
           "url": "/press/icon-plus/icon-plus",
           "navigationStyle": ""
         },
         {
           "url": "/press/image/image",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/popup/popup",
           "navigationStyle": ""
         },
         {
@@ -66,10 +58,6 @@
         },
         {
           "url": "/press/field/field",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/picker/picker",
           "navigationStyle": ""
         },
         {
@@ -114,19 +102,11 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/dialog/dialog",
-          "navigationStyle": ""
-        },
-        {
           "url": "/press/dialog-plus/dialog-plus",
           "navigationStyle": ""
         },
         {
           "url": "/press/dropdown-menu/dropdown-menu",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/loading/loading",
           "navigationStyle": ""
         },
         {
@@ -139,10 +119,6 @@
         },
         {
           "url": "/press/overlay/overlay",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/popover/popover",
           "navigationStyle": ""
         },
         {
@@ -219,10 +195,6 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/pagination/pagination",
-          "navigationStyle": ""
-        },
-        {
           "url": "/press/progress/progress",
           "navigationStyle": ""
         },
@@ -240,6 +212,10 @@
         },
         {
           "url": "/press/sticky/sticky",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/swiper/swiper",
           "navigationStyle": ""
         },
         {
@@ -282,223 +258,34 @@
       ]
     },
     {
-      "name": "Business Components",
+      "name": "ESport Components",
       "list": [
         {
-          "url": "/press/area/area",
+          "url": "/press/dialog/dialog",
           "navigationStyle": ""
         },
         {
-          "url": "/press/area-index-bar/area-index-bar",
+          "url": "/press/icon/icon",
           "navigationStyle": ""
         },
         {
-          "url": "/press/award-popup/award-popup",
+          "url": "/press/loading/loading",
           "navigationStyle": ""
         },
         {
-          "url": "/press/live-player/live-player",
+          "url": "/press/pagination/pagination",
           "navigationStyle": ""
         },
         {
-          "url": "/press/popup-cell/popup-cell",
+          "url": "/press/picker/picker",
           "navigationStyle": ""
         },
         {
-          "url": "/press/protocol/protocol",
+          "url": "/press/popover/popover",
           "navigationStyle": ""
         },
         {
-          "url": "/press/q-r-code-popup/q-r-code-popup",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/team-search/team-search",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/turntable/turntable",
-          "navigationStyle": ""
-        }
-      ]
-    },
-    {
-      "name": "Message Components",
-      "list": [
-        {
-          "url": "/press/message-board/message-board",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/message-detail/message-detail",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/message-list/message-list",
-          "navigationStyle": ""
-        }
-      ]
-    },
-    {
-      "name": "Schedule Components",
-      "list": [
-        {
-          "url": "/press/schedule-card/schedule-card",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/schedule-list/schedule-list",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/schedule-match-mode/schedule-match-mode",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/schedule-tab/schedule-tab",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/schedule-tree/schedule-tree",
-          "navigationStyle": ""
-        }
-      ]
-    },
-    {
-      "name": "Hor Components",
-      "list": [
-        {
-          "url": "/press/hor-award-explain/hor-award-explain",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/hor-dialog/hor-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/hor-match-header/hor-match-header",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/hor-match-index/hor-match-index",
-          "navigationStyle": "custom"
-        },
-        {
-          "url": "/press/hor-owner-index/hor-owner-index",
-          "navigationStyle": "custom"
-        },
-        {
-          "url": "/press/hor-owner-theme/hor-owner-theme",
-          "navigationStyle": "custom"
-        },
-        {
-          "url": "/press/hor-rule/hor-rule",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/hor-schedule-manage/hor-schedule-manage",
-          "navigationStyle": "custom"
-        },
-        {
-          "url": "/press/hor-swiper-light/hor-swiper-light",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/hor-task/hor-task",
-          "navigationStyle": "custom"
-        }
-      ]
-    },
-    {
-      "name": "Login Components",
-      "list": [
-        {
-          "url": "/press/auth-login/auth-login",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/bind-login/bind-login",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/mobile-login/mobile-login",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/p-c-login/p-c-login",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/p-c-scan-login/p-c-scan-login",
-          "navigationStyle": ""
-        }
-      ]
-    },
-    {
-      "name": "Act Components",
-      "list": [
-        {
-          "url": "/act/act-award-dialog/act-award-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-barcode-dialog/act-barcode-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act-detail/act-benefit-item/act-benefit-item",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-explain-dialog/act-explain-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-get-award-dialog/act-get-award-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-input-address-dialog/act-input-address-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-input-phone-dialog/act-input-phone-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act-detail/act-input-q-q/act-input-q-q",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-launch-dialog/act-launch-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-modify-phone-dialog/act-modify-phone-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-not-achieved-dialog/act-not-achieved-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-prompt-dialog/act-prompt-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-q-r-code-dialog/act-q-r-code-dialog",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act-detail/act-select-award/act-select-award",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act-detail/act-store-item/act-store-item",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/act/act-tip-dialog/act-tip-dialog",
+          "url": "/press/popup/popup",
           "navigationStyle": ""
         }
       ]

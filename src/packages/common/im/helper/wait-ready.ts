@@ -1,6 +1,6 @@
 import { TIM } from './tim';
 
-export async function waitReady(tim) {
+export async function waitReady(tim: any) {
   if (tim.isReady) {
     return Promise.resolve(1);
   }

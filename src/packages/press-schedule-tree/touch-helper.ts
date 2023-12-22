@@ -11,11 +11,11 @@ export const SCROLL_SELECTOR = getScrollSelector(REF_MAP.TREE_ID);
 const TOUCH_THRESHOLD = 60; // 滑动阈值
 const SCROLL_DURATION = 500;
 
-function backToTopMp(context) {
+function backToTopMp(context: any) {
   context?.createSelectorQuery?.()
     ?.select?.(SCROLL_SELECTOR)
     ?.node?.()
-    ?.exec?.((res) => {
+    ?.exec?.((res: Record<string, any>) => {
       const scrollView = res[0]?.node;
       if (!scrollView) return;
       scrollView.scrollTo({
@@ -25,7 +25,7 @@ function backToTopMp(context) {
     });
 }
 
-function log(info, needLog = false) {
+function log(info: Record<string, any> | string, needLog = false) {
   if (!needLog) return;
   const list = Array.isArray(info) ? info : [info];
   console.log(list.join(' '));
@@ -39,7 +39,7 @@ export function endTouch({
   autoBackToTop = true,
   setScrollParams,
   needLog = false,
-}) {
+}: Record<string, any>) {
   // 通过x轴移动的距离判断是左滑右滑
   if (endX < - TOUCH_THRESHOLD && scrollTime < (column - 1)) {
     // scrollTime < (column - 1) 左滑的边界值
@@ -70,7 +70,7 @@ export function endTouch({
 }
 
 
-export function backToTop(context) {
+export function backToTop(context: any) {
   // #ifdef H5
   scrollToH5(0, {
     animation: true,

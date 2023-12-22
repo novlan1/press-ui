@@ -6,7 +6,7 @@ import {
 
 export const getStepList = ({
   length = 9,
-  playingIndex,
+  playingIndex = 0,
   curIndex = 2,
   isStage = false,
 }) => Array.from({
@@ -84,11 +84,11 @@ function getPickerOptions({
   current,
   callback,
   paramKey,
-}) {
+}: any) {
   return {
     label,
     value,
-    click: ({ context: popupContext }) => {
+    click: ({ context: popupContext }: any) => {
       popupContext.closeDialog();
 
       showPicker({
@@ -121,7 +121,7 @@ export function showCustomPopup({
   resultTypeMap,
   resultType,
   isNotSignUp,
-}) {
+}: Record<string, any>) {
   const statusList = Object.keys(cardStateMap).map(item => ({
     label: item,
     value: item,
@@ -141,7 +141,7 @@ export function showCustomPopup({
         label: '是否未报名',
         type: 'switch',
         open: isNotSignUp,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
           context.onGTip('设置成功');
 

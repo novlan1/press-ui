@@ -53,7 +53,7 @@
 
 <script>
 // #ifdef H5
-import PressQRCodeWeb from 'vue-qrcode';
+import PressQRCodeWeb from '../common/vue3/q-r-code';
 // #endif
 // #ifndef H5
 import PressQRCodeMp from '../press-q-r-code/press-q-r-code.vue';

@@ -1,5 +1,5 @@
 
-function get(index, active) {
+function get(index: number, active: number) {
   if (index < active) {
     return 'finish';
   }

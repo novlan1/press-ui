@@ -10,7 +10,7 @@ export function getHideBaseStyleMixin() {
     },
     watch: {
       hideBaseStyle: {
-        handler(value) {
+        handler(value: boolean) {
           // @ts-ignore
           const { name } = this.$options;
           if (!name) return;

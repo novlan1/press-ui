@@ -5,6 +5,10 @@ export function sendMessage({
   tim,
   to,
   text = '',
+}: {
+  tim: any;
+  to: string;
+  text?: string;
 }) {
   const message = tim.createTextMessage({
     to,

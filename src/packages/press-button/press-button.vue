@@ -3,7 +3,7 @@
     :id="id"
     :data-detail="dataset"
     :class="buttonClass"
-    hover-class="press-button--active hover-class"
+    :hover-class="['press-button--active', hoverClass]"
     :lang="lang"
     :form-type="formType"
     :style="buttonStyle"
@@ -32,7 +32,7 @@
     </template>
     <template v-else-if="loading">
       <press-loading-plus
-        custom-class="loading-class"
+        :custom-class="loadingClass"
         :size="loadingSize"
         :type="loadingType"
         :color="loadingColor"
@@ -97,7 +97,6 @@ export default {
     PressLoading,
   },
   mixins,
-  classes: ['hover-class', 'loading-class'],
   props: {
     formType: { type: String, default: '' },
     icon: { type: String, default: '' },

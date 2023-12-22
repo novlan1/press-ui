@@ -17,3 +17,4 @@ export const DEFAULT_HELPER_CONFIG = {
   groupQRCode: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_16e1b3ddcfd83bdb58.png',
 };
 
+export const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';

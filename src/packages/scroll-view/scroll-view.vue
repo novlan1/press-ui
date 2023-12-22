@@ -90,6 +90,13 @@ import { passive, PASSIVE_OPTIONS } from '../common/utils/support-passive';
 
 // const PULLING = 'pulling'
 // const REFRESHING = 'refreshing'
+import { setCustomElements } from '../common/vue3/adapter';
+
+
+setCustomElements([
+  'uni-scroll-view',
+]);
+
 
 export default {
   name: 'ScrollView',

@@ -2,7 +2,7 @@ import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-
 
 const ANIMATION_TIME = 300;
 
-export const functionalMixin = (allProps, {
+export const functionalMixin = (allProps: Record<string, any>, {
   showProp,
   propsKeyMap,
 } = {
@@ -18,7 +18,7 @@ export const functionalMixin = (allProps, {
       default: true,
     };
     watch.show = {
-      handler(val) {
+      handler(val: boolean) {
         if ((this as any).isFunctionMode) return;
         if (!val) {
           setTimeout(() => {
@@ -59,7 +59,7 @@ export const functionalMixin = (allProps, {
       closeDialog() {
         (this as any).innerShow = false;
       },
-      showDialog(options) {
+      showDialog(options?: Record<string, any>) {
         if (options) {
           (this as any).functionModeData = {
             ...getDefaultProps(allProps),
@@ -68,7 +68,7 @@ export const functionalMixin = (allProps, {
         }
         (this as any).innerShow = true;
       },
-      getPropOrData(key) {
+      getPropOrData(key: string) {
         const { isFunctionMode, functionModeData } = this as any;
         const res = getPropOrData({
           allProps,

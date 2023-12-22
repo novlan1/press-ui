@@ -1,7 +1,8 @@
 <script>
 import touchTrack from '../mixins/touch-track/index';
 import { baseMixin } from '../mixins/base/index';
-import { deepClone } from './utils';
+import { deepClone, SWIPER_PROPS } from './utils';
+
 
 const __PLATFORM__ = 'h5';
 
@@ -9,78 +10,7 @@ export default {
   name: 'Swiper',
   mixins: [touchTrack, baseMixin],
   props: {
-    indicatorDots: {
-      type: [Boolean, String],
-      default: false,
-    },
-    vertical: {
-      type: [Boolean, String],
-      default: false,
-    },
-    autoplay: {
-      type: [Boolean, String],
-      default: false,
-    },
-    circular: {
-      type: [Boolean, String],
-      default: false,
-    },
-    interval: {
-      type: [Number, String],
-      default: 5e3,
-    },
-    duration: {
-      type: [Number, String],
-      default: 500,
-    },
-    current: {
-      type: [Number, String],
-      default: 0,
-    },
-    indicatorColor: {
-      type: String,
-      default: '',
-    },
-    indicatorActiveColor: {
-      type: String,
-      default: '',
-    },
-    previousMargin: {
-      type: String,
-      default: '',
-    },
-    nextMargin: {
-      type: String,
-      default: '',
-    },
-    currentItemId: {
-      type: String,
-      default: '',
-    },
-    skipHiddenItemLayout: {
-      type: [Boolean, String],
-      default: false,
-    },
-    displayMultipleItems: {
-      type: [Number, String],
-      default: 1,
-    },
-    disableTouch: {
-      type: [Boolean, String],
-      default: false,
-    },
-    navigation: {
-      type: [Boolean, String],
-      default: false,
-    },
-    navigationColor: {
-      type: String,
-      default: '#fff',
-    },
-    navigationActiveColor: {
-      type: String,
-      default: 'rgba(53, 53, 53, 0.6)',
-    },
+    ...SWIPER_PROPS,
   },
   emits: [
     'update:current',

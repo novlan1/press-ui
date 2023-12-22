@@ -26,7 +26,7 @@ export const link = {
         ) {
           uni.redirectTo({ url });
         } else {
-          uni[linkType]({ url });
+          uni[linkType as 'navigateTo']({ url });
         }
       }
     },

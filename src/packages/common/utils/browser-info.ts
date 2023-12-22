@@ -1,5 +1,4 @@
-// const isStr = arg => typeof arg === 'string';
-
+/* eslint-disable @typescript-eslint/prefer-for-of */
 function IEVersion() {
   const { userAgent } = navigator;
   const isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;
@@ -24,7 +23,6 @@ function IEVersion() {
 }
 
 export function getTheme() {
-  // if (__uniConfig.darkmode !== true) return isStr(__uniConfig.darkmode) ? __uniConfig.darkmode : 'light';
   try {
     return window.matchMedia('(prefers-color-scheme: light)').matches
       ? 'light'
@@ -59,11 +57,116 @@ const isLinux = /Linux|X11/i.test(ua);
  * 是否是iPadOS
  */
 const isIPadOS = isMac && navigator.maxTouchPoints > 0;
-/**
- * 获取系统信息-同步
- */
-export function getBrowserInfo() {
-  const { language } = navigator;
+
+
+function getAndroidOSInfo() {
+  const osname = 'Android';
+  let osversion;
+  let model;
+
+  const osversionFind = ua.match(/Android[\s/]([\w.]+)[;\s]/);
+  if (osversionFind) {
+    osversion = osversionFind[1];
+  }
+  const infoFind = ua.match(/\((.+?)\)/);
+  const infos = infoFind ? infoFind[1].split(';') : ua.split(' ');
+  const otherInfo = [/\bAndroid\b/i, /\bLinux\b/i, /\bU\b/i, /^\s?[a-z][a-z]$/i, /^\s?[a-z][a-z]-[a-z][a-z]$/i, /\bwv\b/i, /\/[\d.,]+$/, /^\s?[\d.,]+$/, /\bBrowser\b/i, /\bMobile\b/i];
+  for (let i = 0; i < infos.length; i++) {
+    const info = infos[i];
+    if (info.indexOf('Build') > 0) {
+      model = info.split('Build')[0].trim();
+      break;
+    }
+    let other;
+    for (let o = 0; o < otherInfo.length; o++) {
+      if (otherInfo[o].test(info)) {
+        other = true;
+        break;
+      }
+    }
+    if (!other) {
+      model = info.trim();
+      break;
+    }
+  }
+
+  return {
+    osname,
+    osversion,
+    model,
+  };
+}
+
+
+function getPCOSInfo() {
+  let osversion;
+  const model = 'PC';
+  let osname = 'PC';
+  const deviceType = 'pc';
+
+  const osversionFind = ua.match(/\((.+?)\)/)?.[1] || '';
+
+  if (isWindows) {
+    osname = 'Windows';
+    osversion = '';
+    switch (isWindows[1]) {
+      case '5.1':
+        osversion = 'XP';
+        break;
+      case '6.0':
+        osversion = 'Vista';
+        break;
+      case '6.1':
+        osversion = '7';
+        break;
+      case '6.2':
+        osversion = '8';
+        break;
+      case '6.3':
+        osversion = '8.1';
+        break;
+      case '10.0':
+        osversion = '10';
+        break;
+    }
+
+    const framework = osversionFind.match(/[Win|WOW]([\d]+)/);
+    if (framework) {
+      osversion += ` x${framework[1]}`;
+    }
+  } else if (isMac) {
+    osname = 'macOS';
+    osversion = osversionFind.match(/Mac OS X (.+)/) || '';
+
+    if (osversion) {
+      osversion = osversion[1].replace(/_/g, '.');
+      // '10_15_7' or '10.16; rv:86.0'
+      if (osversion.indexOf(';') !== -1) {
+        osversion = osversion.split(';')[0];
+      }
+    }
+  } else if (isLinux) {
+    osname = 'Linux';
+    osversion = osversionFind.match(/Linux (.*)/) || '';
+
+    if (osversion) {
+      osversion = osversion[1];
+      // 'x86_64' or 'x86_64; rv:79.0'
+      if (osversion.indexOf(';') !== -1) {
+        osversion = osversion.split(';')[0];
+      }
+    }
+  }
+
+  return {
+    osname,
+    osversion,
+    model,
+    deviceType,
+  };
+}
+
+function getOSInfo() {
   let osname;
   let osversion;
   let model;
@@ -80,101 +183,59 @@ export function getBrowserInfo() {
       model = modelFind[1];
     }
   } else if (isAndroid) {
-    osname = 'Android';
-    // eslint-disable-next-line no-useless-escape
-    const osversionFind = ua.match(/Android[\s/]([\w\.]+)[;\s]/);
-    if (osversionFind) {
-      osversion = osversionFind[1];
-    }
-    const infoFind = ua.match(/\((.+?)\)/);
-    const infos = infoFind ? infoFind[1].split(';') : ua.split(' ');
-    // eslint-disable-next-line no-useless-escape
-    const otherInfo = [/\bAndroid\b/i, /\bLinux\b/i, /\bU\b/i, /^\s?[a-z][a-z]$/i, /^\s?[a-z][a-z]-[a-z][a-z]$/i, /\bwv\b/i, /\/[\d\.,]+$/, /^\s?[\d\.,]+$/, /\bBrowser\b/i, /\bMobile\b/i];
-    for (let i = 0; i < infos.length; i++) {
-      const info = infos[i];
-      if (info.indexOf('Build') > 0) {
-        model = info.split('Build')[0].trim();
-        break;
-      }
-      let other;
-      for (let o = 0; o < otherInfo.length; o++) {
-        if (otherInfo[o].test(info)) {
-          other = true;
-          break;
-        }
-      }
-      if (!other) {
-        model = info.trim();
-        break;
-      }
-    }
+    const {
+      osname: androidOSName,
+      osversion: androidOSVersion,
+      model: androidModel,
+    } = getAndroidOSInfo();
+
+    osname = androidOSName;
+    osversion = androidOSVersion;
+    model = androidModel;
   } else if (isIPadOS) {
     model = 'iPad';
     osname = 'iOS';
     osversion = typeof window.BigInt === 'function' ? '14.0' : '13.0';
     deviceType = 'pad';
   } else if (isWindows || isMac || isLinux) {
-    model = 'PC';
-    osname = 'PC';
-    deviceType = 'pc';
-    const osversionFind = ua.match(/\((.+?)\)/)?.[1] || '';
+    const {
+      osname: pcOSName,
+      osversion: pcOSVersion,
+      model: pcModel,
+      deviceType: pcDeviceType,
+    } = getPCOSInfo();
 
-    if (isWindows) {
-      osname = 'Windows';
-      osversion = '';
-      switch (isWindows[1]) {
-        case '5.1':
-          osversion = 'XP';
-          break;
-        case '6.0':
-          osversion = 'Vista';
-          break;
-        case '6.1':
-          osversion = '7';
-          break;
-        case '6.2':
-          osversion = '8';
-          break;
-        case '6.3':
-          osversion = '8.1';
-          break;
-        case '10.0':
-          osversion = '10';
-          break;
-      }
-
-      const framework = osversionFind.match(/[Win|WOW]([\d]+)/);
-      if (framework) {
-        osversion += ` x${framework[1]}`;
-      }
-    } else if (isMac) {
-      osname = 'macOS';
-      osversion = osversionFind.match(/Mac OS X (.+)/) || '';
-
-      if (osversion) {
-        osversion = osversion[1].replace(/_/g, '.');
-        // '10_15_7' or '10.16; rv:86.0'
-        if (osversion.indexOf(';') !== -1) {
-          osversion = osversion.split(';')[0];
-        }
-      }
-    } else if (isLinux) {
-      osname = 'Linux';
-      osversion = osversionFind.match(/Linux (.*)/) || '';
-
-      if (osversion) {
-        osversion = osversion[1];
-        // 'x86_64' or 'x86_64; rv:79.0'
-        if (osversion.indexOf(';') !== -1) {
-          osversion = osversion.split(';')[0];
-        }
-      }
-    }
+    osname = pcOSName;
+    osversion = pcOSVersion;
+    model = pcModel;
+    deviceType = pcDeviceType;
   } else {
     osname = 'Other';
     osversion = '0';
     deviceType = 'unknown';
   }
+
+  return {
+    osname,
+    osversion,
+    model,
+    deviceType,
+  };
+}
+
+
+/**
+ * 获取系统信息-同步
+ */
+export function getBrowserInfo() {
+  const { language } = navigator;
+  const {
+    osname,
+    osversion,
+    model,
+    deviceType,
+  } = getOSInfo();
+
 
   const system = `${osname} ${osversion}`;
   const platform = osname.toLocaleLowerCase();

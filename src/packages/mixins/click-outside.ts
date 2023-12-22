@@ -1,5 +1,5 @@
 
-export const ClickOutsideMixin = config => ({
+export const ClickOutsideMixin = (config: any) => ({
   props: {
     closeOnClickOutside: {
       type: Boolean,
@@ -8,9 +8,10 @@ export const ClickOutsideMixin = config => ({
   },
 
   data() {
-    const clickOutsideHandler = (event) => {
+    const clickOutsideHandler = (event: any) => {
       // @ts-ignore
       if (this.closeOnClickOutside && !this.$el.contains(event.target)) {
+      // @ts-ignore
         this[config.method]();
       }
     };

@@ -13,7 +13,7 @@ import { uniChooseFile, uniChooseImage, uniChooseVideo } from '../common/media/a
 //   }, {});
 // }
 
-function formatImage(res) {
+function formatImage(res: any) {
   return res.tempFiles;
   // return res.tempFiles.map(item => ({
   //   ...pickExclude(item, ['path']),
@@ -27,7 +27,7 @@ function formatImage(res) {
   // }));
 }
 
-function formatVideo(res) {
+function formatVideo(res: any) {
   return res;
   // return [
   //   {
@@ -43,7 +43,7 @@ function formatVideo(res) {
   // ];
 }
 
-function formatMedia(res) {
+function formatMedia(res: any) {
   return res.tempFiles;
   // return res.tempFiles.map(item => ({
   //   ...pickExclude(item, ['fileType', 'thumbTempFilePath', 'tempFilePath']),
@@ -54,7 +54,7 @@ function formatMedia(res) {
   // }));
 }
 
-function formatFile(res) {
+function formatFile(res: any) {
   return res.tempFiles;
   // return res.tempFiles.map(item => ({
   //   ...pickExclude(item, ['path']),
@@ -77,7 +77,7 @@ export function chooseFile({
   sizeType,
   camera,
   maxCount,
-}) {
+}: any) {
   return new Promise((resolve, reject) => {
     switch (accept) {
       case 'image':
@@ -85,7 +85,7 @@ export function chooseFile({
           count: multiple ? Math.min(maxCount, 9) : 1,
           sourceType: capture,
           sizeType,
-          success: res => resolve(formatImage(res)),
+          success: (res: any) => resolve(formatImage(res)),
           fail: reject,
         });
         break;
@@ -109,7 +109,7 @@ export function chooseFile({
           compressed,
           maxDuration,
           camera,
-          success: res => resolve(formatVideo(res)),
+          success: (res: any) => resolve(formatVideo(res)),
           fail: reject,
         });
         break;
@@ -129,7 +129,7 @@ export function chooseFile({
         uniChooseFile({
           count: multiple ? maxCount : 1,
           type: accept,
-          success: res => resolve(formatFile(res)),
+          success: (res: any) => resolve(formatFile(res)),
           fail: reject,
         });
         // #endif
@@ -150,7 +150,7 @@ export function chooseFile({
         uniChooseFile({
           count: multiple ? maxCount : 1,
           type: 'all',
-          success: res => resolve(formatFile(res)),
+          success: (res: any) => resolve(formatFile(res)),
           fail: reject,
         });
 			// #endif

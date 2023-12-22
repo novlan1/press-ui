@@ -13,7 +13,7 @@ export const PRESS_POPUP_CELL_PROPS = [
   'closeOnClickOverlay',
   'customStyle',
 ]
-  .reduce((acc, key) => {
-    acc[key] = newProps[key];
+  .reduce((acc: Record<string, any>, key) => {
+    acc[key] = newProps[key as keyof typeof newProps];
     return acc;
   }, {});

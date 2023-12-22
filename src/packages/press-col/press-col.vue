@@ -1,6 +1,10 @@
 <template>
   <div
-    :class="''+customClass+' '+(utils.bem2('col', [span]))+' '+(offset ? 'press-col--offset-' + offset : '')"
+    :class="[
+      customClass,
+      utils.bem2('col', [span]),
+      offset ? `press-col--offset-${offset}` : ''
+    ]"
     :style="true ? computed.rootStyle({ gutter }) : ''"
   >
     <slot />
@@ -41,6 +45,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../common/style/smoba/layout.scss";
+
 .press-col {
   box-sizing: border-box;
   float: left;
@@ -48,10 +54,10 @@ export default {
 
 @for $i from 1 through 24 {
   .press-col--#{$i} {
-    width: $i * (100% / 24);
+    width: $i * mathDiv(100%, 24);
   }
   .press-col--offset-#{$i} {
-    margin-left: $i * (100% / 24);
+    margin-left: $i * mathDiv(100%, 24);
   }
 }
 </style>

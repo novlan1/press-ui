@@ -1,5 +1,5 @@
-import PressNotifyHandler from 'src/packages/press-notify/';
-import { setClipboardData } from 'src/utils/clipboard/clipboard';
+import PressNotifyHandler from 'src/packages/press-notify';
+import { setClipboardData } from 'src/packages/common/clipboard/clipboard';
 
 
 export const CLIPBOARD_MIXIN = {
@@ -15,7 +15,7 @@ export const CLIPBOARD_MIXIN = {
     };
   },
   methods: {
-    copyIconTag(tag) {
+    copyIconTag(tag: any) {
       const that = this as any;
 
       setClipboardData(tag).then(() => {

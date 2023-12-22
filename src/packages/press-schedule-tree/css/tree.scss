@@ -241,12 +241,10 @@
   $base: 2;
 
   @while $tmp < $n {
-    $marginBottom: (
-      $pow - 1) * 116 + 16;
-    $translateY: (
-      $pow - 1) * 116 / 2;
-    $ChampionTranslateY: (
-      ($pow / $base) - 1) * 116 / 2 + 20;
+    $marginBottom: 16 + ($pow - 1) * 116;
+    $translateY: 58 * ($pow - 1);
+    $ChampionTranslateY: 20 + (mathDiv($pow, $base) - 1) * 58;
+
 
     .press-schedule-tree-column {
       &--scroll-#{$tmp} {
@@ -267,8 +265,7 @@
   }
 }
 
-@include sch-item-margin-bottom(10
-);
+@include sch-item-margin-bottom(10);
 
 @mixin sche-tab-highlight($n) {
   $max: 1;

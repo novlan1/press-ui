@@ -15,9 +15,9 @@
         <press-sidebar-item
           v-for="(item, index) in (items)"
           :key="index"
-          custom-class="main-item-class"
-          active-class="main-active-class"
-          disabled-class="main-disabled-class"
+          :custom-class="mainItemClass"
+          :active-class="mainActiveClass"
+          :disabled-class="mainDisabledClass"
           :badge="item.badge"
           :dot="item.dot"
           :title="item.text"
@@ -33,7 +33,7 @@
       <div
         v-for="(item) in (subItems)"
         :key="item.id"
-        :class="'' + treeSelectItemClass(item)"
+        :class="[treeSelectItemClass(item)]"
         @click="onSelectItem(item)"
       >
         {{ item.text }}
@@ -56,6 +56,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 import utils from '../common/utils/utils';
 import { isActive } from './computed';
 
+
 export default {
   name: 'PressTreeSelect',
   options: {
@@ -67,14 +68,6 @@ export default {
     PressSidebar,
     PressSidebarItem,
   },
-  classes: [
-    'main-item-class',
-    'content-item-class',
-    'main-active-class',
-    'content-active-class',
-    'main-disabled-class',
-    'content-disabled-class',
-  ],
   props: {
     items: {
       type: Array,
@@ -99,6 +92,30 @@ export default {
     selectedIcon: {
       type: String,
       default: 'success',
+    },
+    mainItemClass: {
+      type: String,
+      default: '',
+    },
+    mainActiveClass: {
+      type: String,
+      default: '',
+    },
+    mainDisabledClass: {
+      type: String,
+      default: '',
+    },
+    contentItemClass: {
+      type: String,
+      default: '',
+    },
+    contentActiveClass: {
+      type: String,
+      default: '',
+    },
+    contentDisabledClass: {
+      type: String,
+      default: '',
     },
     ...defaultProps,
   },
@@ -131,8 +148,12 @@ export default {
   },
   methods: {
     treeSelectItemClass(item) {
-      const { activeId } = this;
-      return `press-ellipsis content-item-class ${utils.bem2('tree-select__item', { active: isActive(activeId, item.id), disabled: item.disabled })} ${isActive(activeId, item.id) ? 'content-active-class' : ''} ${item.disabled ? 'content-disabled-class' : ''}`;
+      const { activeId, contentItemClass, contentActiveClass, contentDisabledClass } = this;
+
+      return `press-ellipsis ${contentItemClass} ${utils.bem2('tree-select__item', {
+        active: isActive(activeId, item.id),
+        disabled: item.disabled,
+      })} ${isActive(activeId, item.id) ? contentActiveClass : ''} ${item.disabled ? contentDisabledClass : ''}`;
     },
     // 当一个子项被选择时
     onSelectItem(item) {

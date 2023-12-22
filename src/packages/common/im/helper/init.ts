@@ -1,9 +1,9 @@
 import { IChatSDK } from '../types';
 import { TIM } from './tim';
 
-const timMap = {};
+const timMap: Record<string, any> = {};
 
-export function init(appId, logLevel = 0) {
+export function init(appId: string, logLevel = 0) {
   if (timMap[appId]) return timMap[appId];
   const options = {
     SDKAppID: appId,

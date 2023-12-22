@@ -10,6 +10,6 @@ export const TIP_CLASS_MAP = {
   close: 'tip-match-close',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

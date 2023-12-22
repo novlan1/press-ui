@@ -1,10 +1,10 @@
 import { getRect } from './rect';
 
-function getScrollInfo(id, event, key = 'scrollTop') {
-  let result = 0;
+function getScrollInfo(id: string, event: any, key = 'scrollTop') {
+  let result: Element[keyof Element] = 0;
   // #ifdef H5
   const wrap = document.querySelector(`#${id}`);
-  result = wrap?.[key];
+  result = wrap?.[key as keyof Element] || 0;
   // #endif
 
   // #ifndef H5
@@ -13,11 +13,11 @@ function getScrollInfo(id, event, key = 'scrollTop') {
   return result;
 }
 
-export function getScrollTop(id, event) {
+export function getScrollTop(id: string, event: Event) {
   return getScrollInfo(id, event, 'scrollTop');
 }
 
-export function getScrollHeight(id, event) {
+export function getScrollHeight(id: string, event: Event) {
   return getScrollInfo(id, event, 'scrollHeight');
 }
 
@@ -27,7 +27,7 @@ export function holdWhenScroll({
   targetId,
   scrollHeight,
   scrollTopThreshold,
-}) {
+}: any) {
 // #ifdef H5
   const wrap = document.querySelector(`#${eleId}`);
   if (wrap) {
@@ -57,7 +57,7 @@ export function holdWhenScroll({
 }
 
 
-export function scrollToBottom(context, eleId, targetId) {
+export function scrollToBottom(context: any, eleId: string, targetId: string) {
   // #ifndef H5
   // const view = this.createSelectorQuery().select(`#${eleId}`);
   const view = uni.createSelectorQuery()
@@ -93,15 +93,15 @@ export function mpScrollInto({
   element,
   context,
   target,
-}) {
-  getRect(context, target).then((rect) => {
+}: any) {
+  getRect(context, target).then((rect: any) => {
     const { top } = rect || {};
 
     const view = context.createSelectorQuery().select(element);
     view
     // @ts-ignore
       .node()
-      .exec((res) => {
+      .exec((res: any) => {
         const scrollView = res[0]?.node;
         if (!scrollView) return;
         scrollView.scrollTo({ top });

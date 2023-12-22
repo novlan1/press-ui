@@ -3,9 +3,9 @@
     <press-picker
       ref="pressPicker"
       class="press-datetime-picker"
-      active-class="active-class"
-      toolbar-class="toolbar-class"
-      column-class="column-class"
+      :active-class="activeClass"
+      :toolbar-class="toolbarClass"
+      :column-class="columnClass"
       :title="title"
       :columns="columns"
       :item-height="itemHeight"
@@ -68,7 +68,6 @@ export default {
   options: {
     ...defaultOptions,
   },
-  classes: ['active-class', 'toolbar-class', 'column-class'],
   components: {
     PressPicker,
   },
@@ -120,6 +119,18 @@ export default {
     immediateCheck: {
       type: Boolean,
       default: false,
+    },
+    activeClass: {
+      type: String,
+      default: '',
+    },
+    toolbarClass: {
+      type: String,
+      default: '',
+    },
+    columnClass: {
+      type: String,
+      default: '',
     },
   }),
   emits: ['input', 'input', 'cancel', 'confirm', 'input', 'change'],

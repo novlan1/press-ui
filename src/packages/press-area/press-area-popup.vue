@@ -39,6 +39,7 @@ import PressPopup from '../press-popup/press-popup';
 import PressPopupPlus from '../press-popup-plus/press-popup-plus';
 import PressArea from './press-area';
 
+
 export default {
   name: 'PressAreaPopup',
   components: {

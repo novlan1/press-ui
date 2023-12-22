@@ -35,7 +35,13 @@
             name="left"
           />
         </div>
-        <div class="press-nav-bar__title title-class press-ellipsis">
+        <div
+          :class="[
+            'press-nav-bar__title',
+            titleClass,
+            'press-ellipsis'
+          ]"
+        >
           <template v-if="title">
             {{ title }}
           </template>
@@ -74,7 +80,6 @@ import computed from './computed';
 
 export default {
   name: 'PressNavBar',
-  classes: ['title-class'],
   components: {
     PressIconPlus,
   },
@@ -101,6 +106,10 @@ export default {
     safeAreaInsetTop: {
       type: Boolean,
       default: true,
+    },
+    titleClass: {
+      type: String,
+      default: '',
     },
   },
   emits: ['click-left', 'click-right'],

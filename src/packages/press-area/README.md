@@ -242,19 +242,23 @@ export default {
 
 ### Area Props
 
-| 参数                  | 说明                                   | 类型               | 默认值  |
-| --------------------- | -------------------------------------- | ------------------ | ------- |
-| value                 | 当前选中的省市区`code`                 | _string_           | -       |
-| title                 | 顶部栏标题                             | _string_           | -       |
-| area-list             | 省市区数据，格式见下方                 | _object_           | -       |
-| columns-num           | 省市区显示列数，3-省市区，2-省市，1-省 | _string \| number_ | `3`     |
-| columns-placeholder   | 列占位提示文字                         | _string[]_         | `[]`    |
-| loading               | 是否显示加载状态                       | _boolean_          | `false` |
-| item-height           | 选项高度                               | _number_           | `44`    |
-| visible-item-count    | 可见的选项个数                         | _number_           | `6`     |
-| confirm-button-text   | 确认按钮文字                           | _string_           | `确认`  |
-| cancel-button-text    | 取消按钮文字                           | _string_           | `取消`  |
-| show-toolbar `1.10.3` | 是否显示顶部栏                         | _boolean_          | `true`  |
+| 参数                | 说明                                   | 类型               | 默认值  |
+| ------------------- | -------------------------------------- | ------------------ | ------- |
+| value               | 当前选中的省市区`code`                 | _string_           | -       |
+| title               | 顶部栏标题                             | _string_           | -       |
+| area-list           | 省市区数据，格式见下方                 | _object_           | -       |
+| columns-num         | 省市区显示列数，3-省市区，2-省市，1-省 | _string \| number_ | `3`     |
+| columns-placeholder | 列占位提示文字                         | _string[]_         | `[]`    |
+| loading             | 是否显示加载状态                       | _boolean_          | `false` |
+| item-height         | 选项高度                               | _number_           | `44`    |
+| visible-item-count  | 可见的选项个数                         | _number_           | `6`     |
+| confirm-button-text | 确认按钮文字                           | _string_           | `确认`  |
+| cancel-button-text  | 取消按钮文字                           | _string_           | `取消`  |
+| show-toolbar        | 是否显示顶部栏                         | _boolean_          | `true`  |
+| custom-class        | 根节点样式类                           | _string_           | -       |
+| active-class        | 选中项样式类                           | _string_           | -       |
+| toolbar-class       | 顶部栏样式类                           | _string_           | -       |
+| column-class        | 列样式类                               | _string_           | -       |
 
 ### Area Events
 

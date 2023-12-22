@@ -35,15 +35,15 @@ const EVENT_LIST = [
 ];
 
 
-function onReady(event, tim) {
+function onReady(event: Event, tim: any) {
   tim.updateReadyStatus(true);
 }
 
-function onNotReady(event, tim) {
+function onNotReady(event: Event, tim: any) {
   tim.updateReadyStatus(false);
 }
 
-function onKickOut(event, tim) {
+function onKickOut(event: Event, tim: any) {
   tim.updateOnlineStatus(false);
 }
 
@@ -61,6 +61,10 @@ function executeCallbacks({
   type,
   event,
   tim,
+}: {
+  type: string;
+  event: Event;
+  tim: any;
 }) {
   if (!eventListenerMap[type]) return;
   for (const cb of eventListenerMap[type]) {
@@ -70,9 +74,9 @@ function executeCallbacks({
   }
 }
 
-export function watchIMEvent({ tim }) {
+export function watchIMEvent({ tim }: any) {
   EVENT_LIST.forEach((type) => {
-    const callbackFunc = function (event) {
+    const callbackFunc = function (event: Event) {
       executeCallbacks({
         type,
         event,
@@ -83,7 +87,7 @@ export function watchIMEvent({ tim }) {
   });
 }
 
-export function setEventListener(type, cb) {
+export function setEventListener(type: string, cb: (event: Event, tim: IChatSDK) => void) {
   if (eventListenerMap[type]) {
     if (eventListenerMap[type].indexOf(cb) === -1) {
       eventListenerMap[type].push(cb);

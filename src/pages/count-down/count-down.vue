@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-wrap">
     <template v-if="list.length">
       <press-cell
         v-for="(item, index) of list"
@@ -81,13 +81,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep {
-  .uni-fab__plus {
+.demo-wrap ::v-deep {
+  .press-fab__plus {
     width: 38px;
     height: 38px;
     transform: rotate(45deg);
   }
-  .fab-circle-icon {
+  .press-fab-circle-icon {
     font-size: 20px;
   }
 }

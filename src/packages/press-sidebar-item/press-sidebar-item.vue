@@ -43,7 +43,6 @@ export default {
   mixins: [
     ChildrenMixin(PARENT),
   ],
-  classes: ['active-class', 'disabled-class'],
   props: {
     dot: Boolean,
     badge: { type: [String, Number], default: '' },

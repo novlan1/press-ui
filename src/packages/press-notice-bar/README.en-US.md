@@ -121,7 +121,7 @@ Use the `speed` property to control the scrolling rate.
 
 ### Style variables
 
-The component provides the following CSS variables, which can be used to customize the style. For usage, please refer to [ConfigProvider component](#/config-provider).
+The component provides the following CSS variables, which can be used to customize the style.
 
 | Name                          | Default                                           | Description |
 | ----------------------------- | ------------------------------------------------- | ----------- |

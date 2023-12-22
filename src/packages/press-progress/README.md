@@ -77,9 +77,5 @@ export default {
 | track-color  | 轨道颜色                   | _string_           | `#e5e5e5`        |
 | pivot-text   | 文字显示                   | _string_           | 百分比文字       |
 | pivot-color  | 文字背景色                 | _string_           | 与进度条颜色一致 |
+| custom-class | 根节点样式类               | _string_           | -                |
 
-### 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |

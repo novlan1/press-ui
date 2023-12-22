@@ -1,5 +1,6 @@
 import {
   showPopupCellAndClose,
+  type IPopupCellClick,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 
 
@@ -9,7 +10,7 @@ export const local = {
   isGamePrize: true,
 };
 
-export function showCustomPopup({ context, callback }) {
+export function showCustomPopup({ context, callback }: { context: any; callback: Record<string, Function> }) {
   showPopupCellAndClose({
     context,
     title: '自定义设置',
@@ -19,7 +20,7 @@ export function showCustomPopup({ context, callback }) {
         label: '是否为空',
         type: 'switch',
         open: local.empty,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           local.empty = !local.empty;
           context.onGTip('设置成功');
@@ -33,7 +34,7 @@ export function showCustomPopup({ context, callback }) {
         label: '是否为横版',
         type: 'switch',
         open: local.isHor,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           local.isHor = !local.isHor;
           context.onGTip('设置成功');
@@ -47,7 +48,7 @@ export function showCustomPopup({ context, callback }) {
         label: '是否为游戏礼包',
         type: 'switch',
         open: local.isGamePrize,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           local.isGamePrize = !local.isGamePrize;
           context.onGTip('设置成功');

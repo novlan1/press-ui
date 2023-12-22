@@ -151,24 +151,18 @@ export default {
 | reverse `v1.7.0` | 是否调换图标和文本的位置                  | _boolean_          | `false`    |
 | use-slot         | 是否使用自定义内容的插槽                  | _boolean_          | `false`    |
 
-### Grid 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
-
 ### GridItem Props
 
-| 参数        | 说明                                                       | 类型               | 默认值       |
-| ----------- | ---------------------------------------------------------- | ------------------ | ------------ |
-| text        | 文字                                                       | _string_           | -            |
-| icon        | 图标名称或图片链接，可选值见 [Icon 组件](#/icon)           | _string_           | -            |
-| icon-color  | 图标颜色                                                   | _string_           | -            |
-| icon-prefix | 第三方图标前缀                                             | _string_           | `press-icon` |
-| dot         | 是否显示图标右上角小红点                                   | _boolean_          | `false`      |
-| badge       | 图标右上角徽标的内容                                       | _string \| number_ | -            |
-| url         | 点击后跳转的链接地址                                       | _string_           | -            |
-| link-type   | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_           | `navigateTo` |
+| 参数        | 说明                                                        | 类型               | 默认值       |
+| ----------- | ----------------------------------------------------------- | ------------------ | ------------ |
+| text        | 文字                                                        | _string_           | -            |
+| icon        | 图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus) | _string_           | -            |
+| icon-color  | 图标颜色                                                    | _string_           | -            |
+| icon-prefix | 第三方图标前缀                                              | _string_           | `press-icon` |
+| dot         | 是否显示图标右上角小红点                                    | _boolean_          | `false`      |
+| badge       | 图标右上角徽标的内容                                        | _string \| number_ | -            |
+| url         | 点击后跳转的链接地址                                        | _string_           | -            |
+| link-type   | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch`  | _string_           | `navigateTo` |
 
 ### GridItem Events
 
@@ -183,12 +177,3 @@ export default {
 | -    | 自定义宫格的所有内容，需要设置`use-slot`属性           |
 | icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
 | text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
-
-### GridItem 外部样式类
-
-| 类名          | 说明         |
-| ------------- | ------------ |
-| custom-class  | 根节点样式类 |
-| content-class | 内容样式类   |
-| icon-class    | 图标样式类   |
-| text-class    | 文本样式类   |

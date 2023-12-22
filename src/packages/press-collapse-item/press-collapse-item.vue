@@ -1,10 +1,10 @@
 <template>
-  <div :class="'press-collapse-item custom-class '+(index !== 0 ? 'press-hairline--top' : '')">
+  <div :class="customClass + ' press-collapse-item ' + (index !== 0 ? 'press-hairline--top' : '')">
     <!-- 【修改点】cell增加center，垂直居中 -->
     <press-cell
       :size="size"
       :title="title"
-      title-class="title-class"
+      :title-class="titleClass"
       :icon="icon"
       :value="value"
       :label="label"
@@ -36,7 +36,7 @@
       :class="wrapperClass"
       :style="animationStyle"
     >
-      <div class="press-collapse-item__content content-class">
+      <div :class="['press-collapse-item__content', contentClass]">
         <slot />
       </div>
     </div>
@@ -63,8 +63,6 @@ export default {
   mixins: [
     ChildrenMixin(PARENT),
   ],
-
-  classes: ['title-class', 'content-class'],
   props: {
     size: { type: String, default: '' },
     name: { type: String, default: '' },
@@ -81,6 +79,14 @@ export default {
     isLink: {
       type: Boolean,
       default: true,
+    },
+    titleClass: {
+      type: String,
+      default: '',
+    },
+    contentClass: {
+      type: String,
+      default: '',
     },
     ...defaultProps,
   },

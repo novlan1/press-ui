@@ -202,8 +202,8 @@ export default {
 | error-message-align     | 底部错误提示文案对齐方式，可选值为 `center` `right`                                                         | _string_            | `''`    |
 | input-align             | 输入框内容对齐方式，可选值为 `center` `right`                                                               | _string_            | `left`  |
 | autosize                | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
-| left-icon               | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon)                                                        | _string_            | -       |
-| right-icon              | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/icon)                                                        | _string_            | -       |
+| left-icon               | 左侧图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus)                                             | _string_            | -       |
+| right-icon              | 右侧图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus)                                             | _string_            | -       |
 | confirm-type            | 设置键盘右下角按钮的文字，仅在 type='text' 时生效                                                           | _string_            | `done`  |
 | confirm-hold            | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效                                           | _boolean_           | `false` |
 | hold-keyboard           | focus 时，点击页面的时候不收起键盘                                                                          | _boolean_           | `false` |
@@ -242,14 +242,6 @@ export default {
 | right-icon | 自定义输入框尾部图标                                       |
 | button     | 自定义输入框尾部按钮                                       |
 | input      | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-
-### 外部样式类
-
-| 类名             | 说明           |
-| ---------------- | -------------- |
-| label-class      | 左侧文本样式类 |
-| input-class      | 输入框样式类   |
-| right-icon-class | 右侧图标样式类 |
 
 ## 主题定制
 

@@ -21,6 +21,6 @@ export const TIP_CLASS_MAP = {
   tip: 'tip-match-code-tip',
 };
 
-export function getActClass(useTipClass, args) {
+export function getActClass(useTipClass: boolean, args: any) {
   return commonGetActClass(useTipClass, TIP_CLASS_MAP, args);
 }

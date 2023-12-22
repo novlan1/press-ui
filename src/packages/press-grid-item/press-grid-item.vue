@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`${customClass} `+(utils.bem2('grid-item', { square }))"
+    :class="`${customClass} `+ (utils.bem2('grid-item', { square }))"
     :style="true ? computed.wrapperStyle({ square, gutter, columnNum, index }) : ''"
     @click="onClick"
   >
@@ -12,7 +12,7 @@
         <slot />
       </template>
       <template v-else>
-        <div class="press-grid-item__icon icon-class">
+        <div class="press-grid-item__icon">
           <press-icon-plus
             v-if="icon"
             :name="icon"
@@ -28,7 +28,7 @@
           />
         </div>
 
-        <div class="press-grid-item__text text-class">
+        <div class="press-grid-item__text">
           <span v-if="text">
             {{ text }}
           </span>
@@ -60,7 +60,6 @@ export default {
     styleIsolation: 'shared',
     virtualHost: true,
   },
-  classes: ['content-class', 'icon-class', 'text-class'],
   components: {
     PressIconPlus,
   },
@@ -108,7 +107,7 @@ export default {
         border,
         gutter,
       } = this;
-      return `content-class ${utils.bem2('grid-item__content', [direction, { center, square, reverse, clickable, surround: border && gutter }])} ${border ? 'press-hairline--surround' : ''}`;
+      return `${utils.bem2('grid-item__content', [direction, { center, square, reverse, clickable, surround: border && gutter }])} ${border ? 'press-hairline--surround' : ''}`;
     },
   },
   mounted() {

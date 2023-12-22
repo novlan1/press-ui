@@ -22,7 +22,7 @@ function compareVersion(v1 = '', v2 = '') {
   }
   return 0;
 }
-function gte(version) {
+function gte(version: string) {
   const system = getSystemInfoSync();
   return compareVersion(system.SDKVersion, version) >= 0;
 }

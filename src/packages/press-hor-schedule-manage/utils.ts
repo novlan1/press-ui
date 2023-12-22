@@ -103,6 +103,6 @@ export const TIP_CLASS_MAP = {
   'personal-rank-name': 'personal-rank-name',
 };
 
-export function getActClass(...args) {
+export function getActClass(...args: Array<any>) {
   return commonGetActClass(false, TIP_CLASS_MAP, args);
 }

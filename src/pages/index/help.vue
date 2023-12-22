@@ -3,7 +3,7 @@
     <div class="about__header">
       <image
         class="about__banner"
-        :src="helpConfig.banner"
+        :src="banner"
         mode="aspectFill"
       />
       <div class="about__slogan">
@@ -46,8 +46,6 @@
       id="tip-match-comm-tips-dialog"
       ref="tip-match-comm-tips-dialog"
     />
-
-    <!-- <Tabbar :active="1" /> -->
   </div>
 </template>
 
@@ -55,21 +53,17 @@
 import PressDialog from 'src/packages/press-dialog';
 import PressDialogComp from 'src/packages/press-dialog/press-dialog.vue';
 import { fetchData, routerPush } from 'src/utils/index';
-// import Tabbar from './tabbar.vue';
-import { DEFAULT_HELPER_CONFIG } from './help-config';
-
-
-const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';
+import { DEFAULT_HELPER_CONFIG, HELP_DATA_URL } from './help-config';
 
 
 export default {
   components: {
     PressDialogComp,
-    // Tabbar,
   },
   data() {
     return {
       helpConfig: DEFAULT_HELPER_CONFIG,
+      banner: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/12/own_mike_b13775d107c0b0a6b5.jpg',
     };
   },
   mounted() {

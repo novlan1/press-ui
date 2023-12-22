@@ -1,4 +1,6 @@
 const { execCommand } = require('t-comm');
+const { DEPLOY_CONFIG } = require('../../config/deploy-config');
+
 const ENV_FILE = '.env.local';
 
 function tExecCommand(command, root, stdio) {
@@ -11,7 +13,7 @@ function main() {
   require('dotenv').config({ path: ENV_FILE });
 
   const sourceDir = 'docs/.vuepress/dist';
-  const targetDir = '/root/html/press-ui';
+  const targetDir = `/root/html/${DEPLOY_CONFIG.DOCS_REPO}`;
   const hostName = process.env.HOST_NAME;
   const hostPwd =  process.env.HOST_PWD;
 

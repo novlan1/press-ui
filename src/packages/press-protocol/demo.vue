@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gap">
+  <div class="demo-wrap">
     <PressProtocol
       :list="list"
       @click="onClickProtocol"
@@ -10,7 +10,7 @@
 import PressProtocol from 'src/packages/press-protocol/press-protocol.vue';
 import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'src/packages/press-protocol/demo-helper/data';
 import { parseProtocol } from 'src/packages/common/protocol/parse-protocol';
-import { setClipboardData } from 'src/utils/clipboard/clipboard';
+import { setClipboardData } from 'src/packages/common/clipboard/clipboard';
 
 
 export default {

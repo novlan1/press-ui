@@ -1,14 +1,14 @@
 import { timeStampFormat } from '../../format/time';
 
 
-const isToday = (time) => {
+const isToday = (time: number) => {
   const aDay = timeStampFormat(time, 'yyyyMMdd');
   const bDay = timeStampFormat(Date.now(), 'yyyyMMdd');
   return aDay === bDay;
 };
 
 
-function isYesterday(time) {
+function isYesterday(time: number) {
   let gap = 24 * 60 * 60;
   if (time.toString().length >= 11) {
     gap = gap * 1000;
@@ -19,7 +19,7 @@ function isYesterday(time) {
 }
 
 
-export function formatTime(time) {
+export function formatTime(time: number) {
   if (!time) return '';
 
   if (isToday(time)) {
@@ -32,6 +32,6 @@ export function formatTime(time) {
 }
 
 
-export function isJsonStr(content) {
+export function isJsonStr(content: string) {
   return content.startsWith('{') && content.endsWith('}');
 }

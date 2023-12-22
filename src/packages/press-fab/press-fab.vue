@@ -1,13 +1,13 @@
 <template>
-  <div class="uni-cursor-point">
+  <div class="press-cursor-point">
     <div
       v-if="popMenu && (leftBottom || rightBottom || leftTop || rightTop) && content.length > 0"
-      class="uni-fab"
+      class="press-fab"
       :class="{
-        'uni-fab--leftBottom': leftBottom,
-        'uni-fab--rightBottom': rightBottom,
-        'uni-fab--leftTop': leftTop,
-        'uni-fab--rightTop': rightTop,
+        'press-fab--leftBottom': leftBottom,
+        'press-fab--rightBottom': rightBottom,
+        'press-fab--leftTop': leftTop,
+        'press-fab--rightTop': rightTop,
       }"
       :style="{
         right: `${btnSwitchPos.x}px`,
@@ -16,35 +16,35 @@
     >
       <div
         :class="{
-          'uni-fab__content--left': horizontal === 'left',
-          'uni-fab__content--right': horizontal === 'right',
-          'uni-fab__content--flexDirection': direction === 'vertical',
-          'uni-fab__content--flexDirectionStart': flexDirectionStart,
-          'uni-fab__content--flexDirectionEnd': flexDirectionEnd,
-          'uni-fab__content--other-platform': !isAndroidNvue
+          'press-fab__content--left': horizontal === 'left',
+          'press-fab__content--right': horizontal === 'right',
+          'press-fab__content--flexDirection': direction === 'vertical',
+          'press-fab__content--flexDirectionStart': flexDirectionStart,
+          'press-fab__content--flexDirectionEnd': flexDirectionEnd,
+          'press-fab__content--other-platform': !isAndroidNvue
         }"
         :style="{ width: boxWidth, height: boxHeight, backgroundColor: styles.backgroundColor }"
-        class="uni-fab__content"
+        class="press-fab__content"
         elevation="5"
       >
         <div
           v-if="flexDirectionStart || horizontalLeft"
-          class="uni-fab__item uni-fab__item--first"
+          class="press-fab__item press-fab__item--first"
         />
         <div
           v-for="(item, index) in content"
           :key="index"
-          :class="{ 'uni-fab__item--active': isShow }"
-          class="uni-fab__item"
+          :class="{ 'press-fab__item--active': isShow }"
+          class="press-fab__item"
           @click="onItemClick(index, item)"
         >
           <img
             :src="item.active ? item.selectedIconPath : item.iconPath"
-            class="uni-fab__item-image"
+            class="press-fab__item-image"
             mode="aspectFit"
           >
           <span
-            class="uni-fab__item-text"
+            class="press-fab__item-text"
             :style="{ color: item.active ? styles.selectedColor : styles.color }"
           >
             {{ item.text }}
@@ -52,15 +52,15 @@
         </div>
         <div
           v-if="flexDirectionEnd || horizontalRight"
-          class="uni-fab__item uni-fab__item--first"
+          class="press-fab__item press-fab__item--first"
         />
       </div>
     </div>
     <div
       :class="{
-        'uni-fab__content--other-platform': !isAndroidNvue
+        'press-fab__content--other-platform': !isAndroidNvue
       }"
-      class="uni-fab__circle uni-fab__plus"
+      class="press-fab__circle press-fab__plus"
       :style="{ 'background-color': styles.buttonColor,
                 right: `${btnSwitchPos.x}px`,
                 bottom: `${btnSwitchPos.y}px`
@@ -74,8 +74,8 @@
         name="cross"
         :color="styles.iconColor"
         :size="styles.iconFontSize"
-        class="fab-circle-icon"
-        :class="{'uni-fab__plus--active': isShow && content.length > 0}"
+        class="press-fab-circle-icon"
+        :class="{'press-fab__plus--active': isShow && content.length > 0}"
       />
     </div>
   </div>
@@ -251,7 +251,7 @@ export default {
     // }
   },
   mounted() {
-    getRect(this, '.uni-fab__plus').then((rect) => {
+    getRect(this, '.press-fab__plus').then((rect) => {
       this.fabSize.width = rect.width;
       this.fabSize.height = rect.height;
     });
@@ -360,14 +360,20 @@ export default {
 };
 </script>
 
-<style lang="scss">
-$uni-shadow-base: 0 1px 5px 2px
+<style lang="scss" scoped>
+$press-shadow-base: 0 1px 5px 2px
   rgba(
     $color: #000000,
     $alpha: 0.3,
   ) !default;
 
-.uni-fab {
+.press-cursor-point {
+  /* #ifdef H5 */
+  cursor: pointer;
+  /* #endif */
+}
+
+.press-fab {
   position: fixed;
   /* #ifndef APP-NVUE */
   display: flex;
@@ -376,247 +382,209 @@ $uni-shadow-base: 0 1px 5px 2px
   align-items: center;
   z-index: 10;
   border-radius: 45px;
-  box-shadow: $uni-shadow-base;
-}
+  box-shadow: $press-shadow-base;
 
-.uni-cursor-point {
-  /* #ifdef H5 */
-  cursor: pointer;
-  /* #endif */
-}
+  &--active {
+    opacity: 1;
+  }
 
-.uni-fab--active {
-  opacity: 1;
-}
+  &--leftBottom {
+    left: 15px;
+    bottom: 30px;
+    /* #ifdef H5 */
+    left: calc(15px + var(--window-left));
+    bottom: calc(30px + var(--window-bottom));
+    /* #endif */
+    // padding: 10px;
+  }
 
-.uni-fab--leftBottom {
-  left: 15px;
-  bottom: 30px;
-  /* #ifdef H5 */
-  left: calc(15px + var(--window-left));
-  bottom: calc(30px + var(--window-bottom));
-  /* #endif */
-  // padding: 10px;
-}
+  &--leftTop {
+    left: 15px;
+    top: 30px;
+    /* #ifdef H5 */
+    left: calc(15px + var(--window-left));
+    top: calc(30px + var(--window-top));
+    /* #endif */
+    // padding: 10px;
+  }
 
-.uni-fab--leftTop {
-  left: 15px;
-  top: 30px;
-  /* #ifdef H5 */
-  left: calc(15px + var(--window-left));
-  top: calc(30px + var(--window-top));
-  /* #endif */
-  // padding: 10px;
-}
+  &--rightBottom {
+    right: 15px;
+    bottom: 30px;
+    /* #ifdef H5 */
+    right: calc(15px + var(--window-right));
+    bottom: calc(30px + var(--window-bottom));
+    /* #endif */
+    // padding: 10px;
+  }
 
-.uni-fab--rightBottom {
-  right: 15px;
-  bottom: 30px;
-  /* #ifdef H5 */
-  right: calc(15px + var(--window-right));
-  bottom: calc(30px + var(--window-bottom));
-  /* #endif */
-  // padding: 10px;
-}
+  &--rightTop {
+    right: 15px;
+    top: 30px;
+    /* #ifdef H5 */
+    right: calc(15px + var(--window-right));
+    top: calc(30px + var(--window-top));
+    /* #endif */
+    // padding: 10px;
+  }
 
-.uni-fab--rightTop {
-  right: 15px;
-  top: 30px;
-  /* #ifdef H5 */
-  right: calc(15px + var(--window-right));
-  top: calc(30px + var(--window-top));
-  /* #endif */
-  // padding: 10px;
-}
+  &__circle {
+    position: fixed;
+    /* #ifndef APP-NVUE */
+    display: flex;
+    /* #endif */
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: #3c3e49;
+    border-radius: 45px;
+    z-index: 11;
+    // box-shadow: $press-shadow-base;
 
-.uni-fab__circle {
-  position: fixed;
-  /* #ifndef APP-NVUE */
-  display: flex;
-  /* #endif */
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 55px;
-  background-color: #3c3e49;
-  border-radius: 45px;
-  z-index: 11;
-  // box-shadow: $uni-shadow-base;
-}
+    &--leftBottom {
+      left: 15px;
+      bottom: 30px;
+      /* #ifdef H5 */
+      left: calc(15px + var(--window-left));
+      bottom: calc(30px + var(--window-bottom));
+      /* #endif */
+    }
 
-.uni-fab__circle--leftBottom {
-  left: 15px;
-  bottom: 30px;
-  /* #ifdef H5 */
-  left: calc(15px + var(--window-left));
-  bottom: calc(30px + var(--window-bottom));
-  /* #endif */
-}
+    &--leftTop {
+      left: 15px;
+      top: 30px;
+      /* #ifdef H5 */
+      left: calc(15px + var(--window-left));
+      top: calc(30px + var(--window-top));
+      /* #endif */
+    }
 
-.uni-fab__circle--leftTop {
-  left: 15px;
-  top: 30px;
-  /* #ifdef H5 */
-  left: calc(15px + var(--window-left));
-  top: calc(30px + var(--window-top));
-  /* #endif */
-}
+    &--rightBottom {
+      right: 15px;
+      bottom: 30px;
+      /* #ifdef H5 */
+      right: calc(15px + var(--window-right));
+      bottom: calc(30px + var(--window-bottom));
+      /* #endif */
+    }
 
-.uni-fab__circle--rightBottom {
-  right: 15px;
-  bottom: 30px;
-  /* #ifdef H5 */
-  right: calc(15px + var(--window-right));
-  bottom: calc(30px + var(--window-bottom));
-  /* #endif */
-}
+    &--rightTop {
+      right: 15px;
+      top: 30px;
+      /* #ifdef H5 */
+      right: calc(15px + var(--window-right));
+      top: calc(30px + var(--window-top));
+      /* #endif */
+    }
 
-.uni-fab__circle--rightTop {
-  right: 15px;
-  top: 30px;
-  /* #ifdef H5 */
-  right: calc(15px + var(--window-right));
-  top: calc(30px + var(--window-top));
-  /* #endif */
-}
+    &--left {
+      left: 0;
+    }
 
-.uni-fab__circle--left {
-  left: 0;
-}
+    &--right {
+      right: 0;
+    }
 
-.uni-fab__circle--right {
-  right: 0;
-}
+    &--top {
+      top: 0;
+    }
 
-.uni-fab__circle--top {
-  top: 0;
-}
+    &--bottom {
+      bottom: 0;
+    }
+  }
 
-.uni-fab__circle--bottom {
-  bottom: 0;
-}
+  &__plus {
+    font-weight: bold;
 
-.uni-fab__plus {
-  font-weight: bold;
-}
+    &--active {
+      transform: rotate(135deg);
+    }
+  }
 
-// .fab-circle-v {
-// 	position: absolute;
-// 	width: 2px;
-// 	height: 24px;
-// 	left: 0;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	/* #ifndef APP-NVUE */
-// 	margin: auto;
-// 	/* #endif */
-// 	background-color: white;
-// 	transform: rotate(0deg);
-// 	transition: transform 0.3s;
-// }
+  .press-fab-circle-icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    font-weight: 200;
+  }
 
-// .fab-circle-h {
-// 	position: absolute;
-// 	width: 24px;
-// 	height: 2px;
-// 	left: 0;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	/* #ifndef APP-NVUE */
-// 	margin: auto;
-// 	/* #endif */
-// 	background-color: white;
-// 	transform: rotate(0deg);
-// 	transition: transform 0.3s;
-// }
+  &__content {
+    /* #ifndef APP-NVUE */
+    box-sizing: border-box;
+    display: flex;
+    /* #endif */
+    flex-direction: row;
+    border-radius: 55px;
+    overflow: hidden;
+    transition-property: width, height;
+    transition-duration: 0.2s;
+    width: 55px;
+    border-color: #dddddd;
+    border-width: 1rpx;
+    border-style: solid;
 
-.fab-circle-icon {
-  transform: rotate(0deg);
-  transition: transform 0.3s;
-  font-weight: 200;
-}
+    &--other-platform {
+      border-width: 0px;
+      box-shadow: $press-shadow-base;
+    }
 
-.uni-fab__plus--active {
-  transform: rotate(135deg);
-}
+    &--left {
+      justify-content: flex-start;
+    }
 
-.uni-fab__content {
-  /* #ifndef APP-NVUE */
-  box-sizing: border-box;
-  display: flex;
-  /* #endif */
-  flex-direction: row;
-  border-radius: 55px;
-  overflow: hidden;
-  transition-property: width, height;
-  transition-duration: 0.2s;
-  width: 55px;
-  border-color: #dddddd;
-  border-width: 1rpx;
-  border-style: solid;
-}
+    &--right {
+      justify-content: flex-end;
+    }
 
-.uni-fab__content--other-platform {
-  border-width: 0px;
-  box-shadow: $uni-shadow-base;
-}
+    &--flexDirection {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
 
-.uni-fab__content--left {
-  justify-content: flex-start;
-}
+    &--flexDirectionStart {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
 
-.uni-fab__content--right {
-  justify-content: flex-end;
-}
+    &--flexDirectionEnd {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
 
-.uni-fab__content--flexDirection {
-  flex-direction: column;
-  justify-content: flex-end;
-}
+  &__item {
+    /* #ifndef APP-NVUE */
+    display: flex;
+    /* #endif */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    opacity: 0;
+    transition: opacity 0.2s;
 
-.uni-fab__content--flexDirectionStart {
-  flex-direction: column;
-  justify-content: flex-start;
-}
+    &--active {
+      opacity: 1;
+    }
 
-.uni-fab__content--flexDirectionEnd {
-  flex-direction: column;
-  justify-content: flex-end;
-}
+    &-image {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 4px;
+    }
 
-.uni-fab__item {
-  /* #ifndef APP-NVUE */
-  display: flex;
-  /* #endif */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 55px;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
+    &-text {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 2px;
+    }
 
-.uni-fab__item--active {
-  opacity: 1;
-}
-
-.uni-fab__item-image {
-  width: 20px;
-  height: 20px;
-  margin-bottom: 4px;
-}
-
-.uni-fab__item-text {
-  color: #ffffff;
-  font-size: 12px;
-  line-height: 12px;
-  margin-top: 2px;
-}
-
-.uni-fab__item--first {
-  width: 55px;
+    &--first {
+      width: 55px;
+    }
+  }
 }
 </style>

@@ -2,14 +2,17 @@ import { t } from '../locale';
 
 export const ROW_HEIGHT = 64;
 
-export function formatMonthTitle(date) {
+type IDate = string | number | Date;
+
+
+export function formatMonthTitle(date: IDate) {
   if (!(date instanceof Date)) {
     date = new Date(date);
   }
   return t('calendar.monthTitle', date.getFullYear(), date.getMonth() + 1);
 }
 
-export function compareMonth(date1, date2) {
+export function compareMonth(date1: IDate, date2: IDate) {
   if (!(date1 instanceof Date)) {
     date1 = new Date(date1);
   }
@@ -26,7 +29,7 @@ export function compareMonth(date1, date2) {
   return year1 > year2 ? 1 : -1;
 }
 
-export function compareDay(day1, day2) {
+export function compareDay(day1: IDate, day2: IDate) {
   if (!(day1 instanceof Date)) {
     day1 = new Date(day1);
   }
@@ -42,16 +45,16 @@ export function compareDay(day1, day2) {
   return compareMonthResult;
 }
 
-export function getDayByOffset(date, offset) {
+export function getDayByOffset(date: IDate, offset: number) {
   date = new Date(date);
   date.setDate(date.getDate() + offset);
   return date;
 }
-export function getPrevDay(date) {
+export function getPrevDay(date: IDate) {
   return getDayByOffset(date, -1);
 }
 
-export function getNextDay(date) {
+export function getNextDay(date: IDate) {
   return getDayByOffset(date, 1);
 }
 
@@ -61,13 +64,13 @@ export function getToday() {
   return today;
 }
 
-export function calcDateNum(date) {
+export function calcDateNum(date: Array<IDate>) {
   const day1 = new Date(date[0]).getTime();
   const day2 = new Date(date[1]).getTime();
   return (day2 - day1) / (1000 * 60 * 60 * 24) + 1;
 }
 
-export function copyDates(dates) {
+export function copyDates(dates: Array<IDate> | IDate) {
   if (Array.isArray(dates)) {
     return dates.map((date) => {
       if (date === null) {
@@ -79,11 +82,11 @@ export function copyDates(dates) {
   return new Date(dates);
 }
 
-export function getMonthEndDay(year, month) {
+export function getMonthEndDay(year: number, month: number) {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
 
-export function getMonths(minDate, maxDate) {
+export function getMonths(minDate: IDate, maxDate: IDate) {
   const months: Array<number> = [];
   const cursor = new Date(minDate);
   cursor.setDate(1);

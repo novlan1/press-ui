@@ -3,13 +3,13 @@
  * @param scheList 赛程列表
  * @returns 新的赛程列表
  */
-export function formatMatchAllScheList(scheList) {
+export function formatMatchAllScheList(scheList: any) {
   const anotherLine: Array<any> = [];
   const firstLine: Array<any> = [];
 
   if (!scheList.length) return [];
 
-  scheList[0].forEach((item, index) => {
+  scheList[0].forEach((item: any, index: number) => {
     if (index % 2 === 1) {
       anotherLine.push(item);
     } else {

@@ -105,22 +105,22 @@ export default {
 
 ### Props
 
-| Parameter      | Description                                                                                 | Type               | Default   |
-| -------------- | ------------------------------------------------------------------------------------------- | ------------------ | --------- |
-| name           | Identifier when submitted within the form                                                   | _string_           | -         |
-| value          | current score                                                                               | _number_           | -         |
-| count          | total number of icons                                                                       | _number_           | `5`       |
-| size           | icon size, the default unit is `px`                                                         | _string \| number_ | `20px`    |
-| gutter         | icon spacing, the default unit is `px`                                                      | _string \| number_ | `4px`     |
-| color          | color when selected                                                                         | _string_           | `#ffd21e` |
-| void-color     | unselected color                                                                            | _string_           | `#c7c7c7` |
-| icon           | The icon name or image link when selected, see [Icon Component](#/icon) for optional values | _string_           | `star`    |
-| void-icon      | Icon name or image link when not selected, see [Icon Component](#/icon) for optional values | _string_           | `star-o`  |
-| allow-half     | Whether to allow half selection                                                             | _boolean_          | `false`   |
-| readonly       | Whether it is read-only                                                                     | _boolean_          | `false`   |
-| disabled       | whether to disable scoring                                                                  | _boolean_          | `false`   |
-| disabled-color | disabled color                                                                              | _string_           | `#bdbdbd` |
-| touchable      | Whether rating can be selected by swiping gesture                                           | _boolean_          | `true`    |
+| Parameter      | Description                                                                                            | Type               | Default   |
+| -------------- | ------------------------------------------------------------------------------------------------------ | ------------------ | --------- |
+| name           | Identifier when submitted within the form                                                              | _string_           | -         |
+| value          | current score                                                                                          | _number_           | -         |
+| count          | total number of icons                                                                                  | _number_           | `5`       |
+| size           | icon size, the default unit is `px`                                                                    | _string \| number_ | `20px`    |
+| gutter         | icon spacing, the default unit is `px`                                                                 | _string \| number_ | `4px`     |
+| color          | color when selected                                                                                    | _string_           | `#ffd21e` |
+| void-color     | unselected color                                                                                       | _string_           | `#c7c7c7` |
+| icon           | The icon name or image link when selected, see [Icon Component](./press-icon-plus) for optional values | _string_           | `star`    |
+| void-icon      | Icon name or image link when not selected, see [Icon Component](./press-icon-plus) for optional values | _string_           | `star-o`  |
+| allow-half     | Whether to allow half selection                                                                        | _boolean_          | `false`   |
+| readonly       | Whether it is read-only                                                                                | _boolean_          | `false`   |
+| disabled       | whether to disable scoring                                                                             | _boolean_          | `false`   |
+| disabled-color | disabled color                                                                                         | _string_           | `#bdbdbd` |
+| touchable      | Whether rating can be selected by swiping gesture                                                      | _boolean_          | `true`    |
 
 ### Events
 

@@ -1,7 +1,7 @@
 import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
-function tabClass(active, ellipsis) {
+function tabClass(active?: boolean, ellipsis?: boolean) {
   const classes = ['tab-class'];
 
   if (active) {
@@ -15,7 +15,7 @@ function tabClass(active, ellipsis) {
   return classes.join(' ');
 }
 
-function tabStyle(data) {
+function tabStyle(data: Record<string, any>) {
   const titleColor = data.active
     ? data.titleActiveColor
     : data.titleInactiveColor;
@@ -38,13 +38,13 @@ function tabStyle(data) {
   });
 }
 
-function navStyle(color, type) {
+function navStyle(color: string, type?: string) {
   return style({
     'border-color': type === 'card' && color ? color : null,
   });
 }
 
-function trackStyle(data) {
+function trackStyle(data: Record<string, any>) {
   if (!data.animated) {
     return '';
   }
@@ -56,7 +56,7 @@ function trackStyle(data) {
   });
 }
 
-function lineStyle(data) {
+function lineStyle(data: Record<string, any>) {
   const width = utils.addUnit(data.lineWidth);
   return style({
     width,

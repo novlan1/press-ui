@@ -21,7 +21,7 @@ function trimExtraChar(value: string, _char: string, regExp: RegExp) {
   return prefix + value.slice(0, index + 1) + value.slice(index).replace(regExp, '');
 }
 
-export function formatNumber(value, allowDot, allowMinus) {
+export function formatNumber(value: any, allowDot?: boolean, allowMinus?: boolean) {
   if (allowDot === void 0) {
     allowDot = true;
   }
@@ -46,7 +46,7 @@ export function formatNumber(value, allowDot, allowMinus) {
   return value.replace(regExp, '');
 } // add num and avoid float number
 
-export function addNumber(num1, num2) {
+export function addNumber(num1: number, num2: number) {
   const cardinal = Math.pow(10, 10);
   return Math.round((num1 + num2) * cardinal) / cardinal;
 }

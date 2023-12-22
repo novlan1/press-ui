@@ -5,3 +5,13 @@ export const GREEN = '#07c160';
 export const ORANGE = '#ff976a';
 export const GRAY = '#323233';
 export const GRAY_DARK = '#969799';
+
+export const COLOR_MAP = {
+  RED,
+  BLUE,
+  WHITE,
+  GREEN,
+  ORANGE,
+  GRAY,
+  GRAY_DARK,
+};

@@ -2,10 +2,11 @@
 <div align="center">
   <img alt="logo" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style="margin-bottom: -25px;">
 </div>
-<h3 align="center">易用、灵活、基于uni-app的跨端组件库</h3>
+<h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
 
 ---
 
+[查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui-demo/)
 
 ### 1. 介绍
 
@@ -22,10 +23,7 @@
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_13f3281f0a188e0fbd.png" width="600">
 
-文档地址在[这里](https://novlan1.github.io/press-ui/)。
-
 ### 2. 解决痛点
-
 
 `Press UI`作为基础组件库，解决了以下痛点：
 
@@ -47,8 +45,6 @@
     - 通过示例中的自定义变量，可定位性能瓶颈，并解决性能问题
 6. 提高可复用性，可应用到其他项目
 7. 技术沉淀，技术积累，不断打磨组件细节
-
-
 
 ### 3. 应用场景
 
@@ -74,30 +70,28 @@
 
 1. 安装`npm`包
 
-
 ```bash
 npm i press-ui
 ```
 
-
 2. 在页面中正常引入并使用
 
-比如 `message-detail` 组件：
+比如 `button` 组件：
 
 ```html
 <template>
-  <PressMessageDetail />
+  <PressButton />
 </template>
 ```
 
 ```ts
 <script>
-import PressMessageDetail from 'press-ui/press-message-detail/press-message-detail.vue'
+import PressButton from 'press-ui/press-button/press-button.vue'
 
 export default {
   components: {
-    PressMessageDetail, 
-  }
+    PressButton, 
+  },
 }
 </script>
 ```
@@ -111,6 +105,7 @@ module.exports = {
   transpileDependencies: ['press-ui'],
 }
 ```
+
 ### 5. 立即体验
 
 下图是示例二维码，分别为H5、微信小程序、QQ小程序，以及非`uni-app`环境的普通H5项目。
@@ -123,5 +118,5 @@ module.exports = {
 
 ### 6. 贡献指南
 
-请查看[这里](https://github.com/novlan1/press-ui/blob/release/CONTRIBUTING.md)。
+请查看[这里](./CONTRIBUTING.md)。
 

@@ -60,7 +60,7 @@ const filterFiveMinutes = (list: Array<number>) => {
 /**
  * datetimePicker 的 filter，5分钟间隔
  */
-export function fiveMinutesDateTimeFilter(type, options) {
+export function fiveMinutesDateTimeFilter(type: string, options: Array<number>) {
   if (type === 'minute') {
     const res = filterFiveMinutes(options);
     if (!res.length && options?.[0]) {
@@ -79,6 +79,11 @@ export function otherOptionDateTimePickerFilter({
   options,
   currentDate,
   delaySeconds = QUARTER_BUFFER,
+}: {
+  type: string;
+  options: Array<number>;
+  currentDate: number;
+  delaySeconds?: number;
 }) {
   const thisYear = new Date().getFullYear();
 

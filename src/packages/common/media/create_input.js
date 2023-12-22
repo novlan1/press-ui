@@ -1,8 +1,6 @@
 import { updateElementStyle } from '../utils/utils';
 import MIMEType from './MIMEType';
-// import { interact } from 'uni-mixins';
 
-// interact.addInteractListener();
 
 const ALL = '*';
 

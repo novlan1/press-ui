@@ -1,5 +1,5 @@
 <template>
-  <div :class="'' + bem3('tab__pane-wrapper')">
+  <div :class="[bem3('tab__pane-wrapper')]">
     <div
       :class="tabClass"
       :style="shouldShow ? '' : 'display: none;'"

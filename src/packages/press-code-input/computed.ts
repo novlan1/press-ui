@@ -87,13 +87,13 @@ export default {
  * @param {boolean} unit
  * @returns {number|string}
  */
-export function getPx(value, unit = false) {
-  if (test.number(value)) {
+export function getPx(value: string | number, unit = false) {
+  if (test.number(`${value}`)) {
     return unit ? `${value}px` : Number(value);
   }
   // 如果带有rpx，先取出其数值部分，再转为px值
-  if (/(rpx|upx)$/.test(value)) {
-    return unit ? `${uni.upx2px(parseInt(value))}px` : Number(uni.upx2px(parseInt(value)));
+  if (/(rpx|upx)$/.test(`${value}`)) {
+    return unit ? `${uni.upx2px(parseInt(`${value}`))}px` : Number(uni.upx2px(parseInt(`${value}`)));
   }
-  return unit ? `${parseInt(value)}px` : parseInt(value);
+  return unit ? `${parseInt(`${value}`)}px` : parseInt(`${value}`);
 }

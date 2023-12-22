@@ -12,6 +12,8 @@
     :lower-threshold="offset"
     :scroll-into-view="scrollToElementById"
     :class="scrollViewClass"
+    :scroll-top="scrollTop"
+    :scroll-left="scrollLeft"
     @scrolltolower="scrollToLower"
     @scroll="scroll"
   >
@@ -60,12 +62,27 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { getRect } from '../common/dom/rect';
-import { getScrollSelector } from '../common/dom/scroll';
+import { getScrollSelector, getScroller } from '../common/dom/scroll';
 import {  SCROLL_VIEW_ID } from './config';
 import { vModelMixin } from '../common/vue3/adapter';
+import { isNotInUni } from '../common/utils/utils';
+import { BindEventMixin } from '../mixins/bind-event';
+
+// #ifdef H5
+import ScrollView from '../scroll-view/scroll-view';
+// #endif
 
 
 const scrollSelector = getScrollSelector(SCROLL_VIEW_ID);
+let componentConfig = {};
+
+// #ifdef H5
+if (isNotInUni()) {
+  componentConfig = {
+    ScrollView,
+  };
+}
+// #endif
 
 
 export default {
@@ -75,8 +92,23 @@ export default {
   },
   components: {
     PressLoadingPlus,
+    ...componentConfig,
   },
-  mixins: [vModelMixin],
+  mixins: [
+    vModelMixin,
+    // #ifdef H5
+    BindEventMixin(function (bind) {
+      if (!this.autoCheckScroller) return;
+      if (!this.scroller) {
+        this.scroller = getScroller(this.$el);
+      }
+
+      bind(this.scroller, 'scroll', this.onScroll, true);
+      bind(this.scroller, 'touchmove', this.onScroll, true);
+      this.onScroll();
+    }),
+    // #endif
+  ],
   props: {
     offset: {
       type: [Number, String],
@@ -150,6 +182,18 @@ export default {
       type: String,
       default: '',
     },
+    autoCheckScroller: {
+      type: Boolean,
+      default: false,
+    },
+    scrollLeft: {
+      type: [Number, String],
+      default: 0,
+    },
+    scrollTop: {
+      type: [Number, String],
+      default: 0,
+    },
     ...defaultProps,
   },
   emits: [
@@ -216,17 +260,32 @@ export default {
       });
     },
     innerCheck() {
+      // #ifndef H5
+      this.commonCheck();
+      // #endif
+
+      // #ifdef H5
+      if (!this.autoCheckScroller) {
+        this.commonCheck();
+        return;
+      }
+      // #endif
+    },
+    commonCheck(scrollerRect) {
+      const { offset } = this;
+
       if (this.innerLoading || this.finished) {
         return;
       }
-
-      const { offset }  = this;
 
       Promise.all([
         getRect(this, '.press-list__placeholder'),
         getRect(this, scrollSelector),
       ]).then((res) => {
-        const { 0: placeholderRect, 1: scrollerRect } = res;
+        const { 0: placeholderRect, 1: innerScrollerRect } = res;
+        if (scrollerRect === undefined) {
+          scrollerRect = innerScrollerRect;
+        }
         if (this.innerLoading || this.finished) {
           return;
         }
@@ -251,6 +310,16 @@ export default {
         .catch(() => {})
         .finally(() => {});
     },
+    onScroll() {
+      const { scroller, autoCheckScroller } = this;
+      if (!autoCheckScroller) return;
+      let scrollerRect;
+
+      if (scroller?.getBoundingClientRect) {
+        scrollerRect = scroller.getBoundingClientRect();
+      }
+      this.commonCheck(scrollerRect);
+    },
   },
 };
 </script>
@@ -272,7 +341,7 @@ export default {
 }
 
 .press-list__loading,
-.press-list__finished  {
+.press-list__finished {
   width: 100%;
   height: 50px;
   display: flex;

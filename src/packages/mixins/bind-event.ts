@@ -5,7 +5,7 @@ import { on, off } from '../common/dom/event';
 
 let uid = 0;
 
-export function BindEventMixin(handler) {
+export function BindEventMixin(handler: Function) {
   const key = `binded_${uid}`;
   uid += 1;
   function bind() {

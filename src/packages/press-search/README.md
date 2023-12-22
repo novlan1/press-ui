@@ -112,7 +112,7 @@ export default {
 | readonly             | 是否只读                                                                                         | _boolean_          | `false`   |
 | clearable            | 是否启用清除控件                                                                                 | _boolean_          | `true`    |
 | clear-trigger        | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示    | _string_           | `focus`   |
-| clear-icon           | 清除[图标名称](#/icon)或图片链接                                                                 | _string_           | `clear`   |
+| clear-icon           | 清除[图标名称](./press-icon-plus)或图片链接                                                      | _string_           | `clear`   |
 | maxlength            | 最大输入长度，设置为 -1 的时候不限制最大长度                                                     | _number_           | `-1`      |
 | use-action-slot      | 是否使用 action slot                                                                             | _boolean_          | `false`   |
 | placeholder          | 输入框为空时占位符                                                                               | _string_           | -         |
@@ -122,18 +122,22 @@ export default {
 | use-right-icon-slot  | 是否使用输入框右侧图标 slot                                                                      | _boolean_          | `false`   |
 | left-icon            | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-left-icon-slot，则该属性无效）  | _string_           | `search`  |
 | right-icon           | 输入框右侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-right-icon-slot，则该属性无效） | _string_           | -         |
+| custom-class         | 根节点样式类                                                                                     | _string_           | -         |
+| field-class          | 搜索框样式类                                                                                     | _string_           | -         |
+| input-class          | 输入框样式类                                                                                     | _string_           | -         |
+| cancel-class         | 取消按钮样式类                                                                                   | _string_           | -         |
 
 ### Events
 
-| 事件名       | 说明               | 参数                     |
-| ------------ | ------------------ | ------------------------ |
-| @search      | 确定搜索时触发     | event.detail: 当前输入值 |
-| @change      | 输入内容变化时触发 | event.detail: 当前输入值 |
-| @cancel      | 取消搜索搜索时触发 | -                        |
-| @focus       | 输入框聚焦时触发   | -                        |
-| @blur        | 输入框失焦时触发   | -                        |
-| @clear       | 点击清空控件时触发 | -                        |
-| @click-input | 点击搜索区域时触发 | -                        |
+| 事件名      | 说明               | 参数                       |
+| ----------- | ------------------ | -------------------------- |
+| search      | 确定搜索时触发     | `event.detail`: 当前输入值 |
+| change      | 输入内容变化时触发 | `event.detail`: 当前输入值 |
+| cancel      | 取消搜索搜索时触发 | -                          |
+| focus       | 输入框聚焦时触发   | -                          |
+| blur        | 输入框失焦时触发   | -                          |
+| clear       | 点击清空控件时触发 | -                          |
+| click-input | 点击搜索区域时触发 | -                          |
 
 ### Slot
 
@@ -143,15 +147,6 @@ export default {
 | label      | 自定义搜索框左侧文本                                                |
 | left-icon  | 自定义输入框左侧图标，需要在`use-left-icon-slot`为 true 时才会显示  |
 | right-icon | 自定义输入框右侧图标，需要在`use-right-icon-slot`为 true 时才会显示 |
-
-### 外部样式类
-
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| field-class  | 搜索框样式类   |
-| input-class  | 输入框样式类   |
-| cancel-class | 取消按钮样式类 |
 
 ## 主题定制
 

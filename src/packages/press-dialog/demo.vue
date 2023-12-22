@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gap">
+  <div class="demo-wrap">
     <demo-block
       v-for="(item, index) of dialogTypeList"
       :key="index"

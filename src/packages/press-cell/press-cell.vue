@@ -1,7 +1,7 @@
 <template>
   <div
     :class="cellClass"
-    hover-class="press-cell--hover hover-class"
+    :hover-class="['press-cell--hover', hoverClass]"
     hover-stay-time="70"
     :style="customStyle"
     @click.stop="onClick"
@@ -92,13 +92,6 @@ export default {
     ...defaultOptions,
     styleIsolation: 'shared',
   },
-  // classes: [
-  //   'title-class',
-  //   'label-class',
-  //   'value-class',
-  //   'right-icon-class',
-  //   'hover-class',
-  // ],
   mixins: [link],
   props: {
     titleClass: { type: String, default: '' },
@@ -279,7 +272,8 @@ export default {
   }
 
   // 【修改点】 &--clickable&--hover不能用
-  &--clickable.press-cell--hover {
+  &--clickable.press-cell--hover,
+  &--clickable:active {
     background-color: var(--cell-active-color, $cell-active-color);
   }
 

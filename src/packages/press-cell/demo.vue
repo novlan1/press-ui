@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gap demo-wrap--gray">
+  <div class="demo-wrap demo-wrap--gray">
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"

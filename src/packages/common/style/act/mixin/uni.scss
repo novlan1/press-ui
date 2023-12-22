@@ -9,11 +9,6 @@
     color: $placeholderColor;
   }
 
-  /* #ifndef H5 */
-  ::v-deep input,
-  ::v-deep textarea,
-  /* #endif */
-
   ::v-deep .uni-input-placeholder,
   ::v-deep .uni-input-input,
   ::v-deep .uni-textarea-textarea,
@@ -21,4 +16,13 @@
     text-align: left;
     font-size: $fontSize;
   }
+
+  /* #ifndef H5 */
+  ::v-deep input,
+  ::v-deep textarea {
+    text-align: left;
+    font-size: $fontSize;
+  }
+
+  /* #endif */
 }

@@ -190,18 +190,18 @@ export default {
 
 ### CollapseItem Props
 
-| 参数      | 说明                                                       | 类型               | 默认值  |
-| --------- | ---------------------------------------------------------- | ------------------ | ------- |
-| name      | 唯一标识符，默认为索引值                                   | _string \| number_ | `index` |
-| title     | 标题栏左侧内容                                             | _string \| number_ | -       |
-| size      | 标题栏大小，可选值为`large`                                | _string_           | -       |
-| icon      | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_           | -       |
-| value     | 标题栏右侧内容                                             | _string \| number_ | -       |
-| label     | 标题栏描述信息                                             | _string_           | -       |
-| border    | 是否显示内边框                                             | _boolean_          | `true`  |
-| is-link   | 是否展示标题栏右侧箭头并开启点击反馈                       | _boolean_          | `true`  |
-| clickable | 是否开启点击反馈                                           | _boolean_          | `false` |
-| disabled  | 是否禁用面板                                               | _boolean_          | `false` |
+| 参数      | 说明                                                                  | 类型               | 默认值  |
+| --------- | --------------------------------------------------------------------- | ------------------ | ------- |
+| name      | 唯一标识符，默认为索引值                                              | _string \| number_ | `index` |
+| title     | 标题栏左侧内容                                                        | _string \| number_ | -       |
+| size      | 标题栏大小，可选值为`large`                                           | _string_           | -       |
+| icon      | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus) | _string_           | -       |
+| value     | 标题栏右侧内容                                                        | _string \| number_ | -       |
+| label     | 标题栏描述信息                                                        | _string_           | -       |
+| border    | 是否显示内边框                                                        | _boolean_          | `true`  |
+| is-link   | 是否展示标题栏右侧箭头并开启点击反馈                                  | _boolean_          | `true`  |
+| clickable | 是否开启点击反馈                                                      | _boolean_          | `false` |
+| disabled  | 是否禁用面板                                                          | _boolean_          | `false` |
 
 ### CollapseItem Slot
 
@@ -212,20 +212,6 @@ export default {
 | icon       | 自定义`icon`                  |
 | title      | 自定义`title`                 |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
-
-### Collapse 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
-
-### CollapseItem 外部样式类
-
-| 类名          | 说明         |
-| ------------- | ------------ |
-| custom-class  | 根节点样式类 |
-| content-class | 内容样式类   |
-
 
 ## 主题定制
 

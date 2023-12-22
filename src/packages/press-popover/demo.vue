@@ -1,6 +1,6 @@
 <template>
   <div
-    class="demo-wrap demo-wrap--gap"
+    class="demo-wrap"
     @click.stop="onClickPage"
   >
     <demo-block

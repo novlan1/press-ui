@@ -167,7 +167,7 @@ export function getH5ComponentHandler({
   return Dialog;
 }
 
-export function initH5Instance(vueDialog, id, options = {}) {
+export function initH5Instance(vueDialog: any, id: string, options = {}) {
   const dialogId = id; // 'press-dialog';
   const oldDialog = document.getElementById(dialogId);
   if (oldDialog?.parentNode) {

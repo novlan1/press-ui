@@ -1,4 +1,4 @@
-import { IChatSDK } from './types';
+import type { IChatSDK, EventCallback } from './types';
 import {
   login,
   init,
@@ -45,7 +45,7 @@ export class IM {
     this.tim.updateOnlineStatus(!!value);
   }
 
-  init(appId, logLevel) {
+  init(appId: string, logLevel: number) {
     const tim = init(appId, logLevel);
     watchIMEvent({
       tim,
@@ -57,33 +57,36 @@ export class IM {
     return waitReady(this.tim);
   }
 
-  setEventListener(type, cb) {
+  setEventListener(type: string, cb: EventCallback) {
     setEventListener(type, cb);
   }
 
-  setReceivedMessagesListener(cb) {
+  setReceivedMessagesListener(cb: EventCallback) {
     this.setEventListener(this.TIM.EVENT.MESSAGE_RECEIVED, cb);
   }
 
-  setKickedOutListener(cb) {
+  setKickedOutListener(cb: EventCallback) {
     this.setEventListener(this.TIM.EVENT.KICKED_OUT, cb);
   }
 
-  setReadyListener(cb) {
+  setReadyListener(cb: EventCallback) {
     this.setEventListener(this.TIM.EVENT.SDK_READY, cb);
   }
 
-  setConversationUpdateListener(cb) {
+  setConversationUpdateListener(cb: EventCallback) {
     this.setEventListener(this.TIM.EVENT.CONVERSATION_LIST_UPDATED, cb);
   }
 
-  setUnreadMsgCountUpdatedListener(cb) {
+  setUnreadMsgCountUpdatedListener(cb: EventCallback) {
     this.setEventListener(this.TIM.EVENT.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED, cb);
   }
 
   innerLogin({
     userId,
     userSig,
+  }: {
+    userId: string;
+    userSig: string;
   }) {
     this.tim.updateUserId(userId);
     this.tim.updateUserSig(userSig);
@@ -99,7 +102,7 @@ export class IM {
     return this.tim.logout();
   }
 
-  async sendMessage({ to, text = '' }) {
+  async sendMessage({ to, text = '' }: { to: string; text?: string; }) {
     const { tim } = this;
     const { isOnline, userId, userSig } = tim;
 
@@ -119,6 +122,9 @@ export class IM {
     id,
     // count = 15,
     nextMsgId,
+  }: {
+    id: string;
+    nextMsgId: string;
   }) {
     return getMessageList({
       conversationId: id,
@@ -128,7 +134,7 @@ export class IM {
     });
   }
 
-  deleteConversation(id) {
+  deleteConversation(id: string) {
     return this.tim.deleteConversation(id);
   }
 
@@ -140,12 +146,12 @@ export class IM {
   }
 
   // 将某会话下所有未读消息已读上报
-  setMessageRead(id) {
+  setMessageRead(id: string) {
     return this.tim.setMessageRead({ conversationID: id });
   }
 
   // 修改个人标配资料
-  async updateMyProfile(profile) {
+  async updateMyProfile(profile: Record<string, any>) {
     await waitReady(this.tim);
     return this.tim.updateMyProfile(profile);
   }

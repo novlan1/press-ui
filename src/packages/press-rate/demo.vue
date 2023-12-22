@@ -3,6 +3,7 @@
     <demo-block :title="t('basicUsage')">
       <press-rate
         :value="3"
+        custom-class="press-rate--demo-class"
         @change="onChange"
       />
     </demo-block>

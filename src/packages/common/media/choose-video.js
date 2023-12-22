@@ -1,11 +1,6 @@
 import { fileToUrl, revokeObjectURL } from '../utils/file';
-// import { t } from 'uni-core/helpers/i18n';
-import _createInput from './create_input';
-// import { interact } from 'uni-mixins';
+import innerCreateInput from './create_input';
 
-// const {
-//   invokeCallbackHandler: invoke,
-// } = UniServiceJSBridge;
 
 let videoInput = null;
 
@@ -19,7 +14,7 @@ export function chooseVideo({
     videoInput = null;
   }
 
-  videoInput = _createInput({
+  videoInput = innerCreateInput({
     sourceType,
     extension,
     type: 'video',
@@ -67,12 +62,7 @@ export function chooseVideo({
     } else {
       success(callbackResult);
     }
-    // TODO 用户取消选择时，触发 fail，目前尚未找到合适的方法。
   });
 
   videoInput.click();
-
-  // if (!interact.getStatus()) {
-  //   console.warn(`${t('uni.chooseFile.notUserActivation')}`);
-  // }
 }

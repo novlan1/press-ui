@@ -1,4 +1,4 @@
-export function setData(dialog, data, func = 'setData') {
+export function setData(dialog: any, data: any, func = 'setData') {
   if (!dialog) return;
 
   const setData = dialog.$vm?.[func] || dialog[func];
@@ -7,7 +7,7 @@ export function setData(dialog, data, func = 'setData') {
   }
 }
 
-export function vmSet(dialog, ...args) {
+export function vmSet(dialog: any, ...args: Array<any>) {
   const vm = dialog.$vm || dialog;
   vm.$set(vm, ...args);
 }

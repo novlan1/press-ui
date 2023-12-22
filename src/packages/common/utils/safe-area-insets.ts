@@ -1,7 +1,7 @@
 import { PASSIVE_OPTIONS } from './support-passive';
 
 const attrs: string[] = ['top', 'left', 'right', 'bottom'];
-const elementComputedStyle = {};
+const elementComputedStyle: Record<string, any> = {};
 const callbacks: Function[] = [];
 
 let inited: boolean;
@@ -22,9 +22,9 @@ function getSupport() {
 }
 
 
-function setStyle(el: HTMLElement, style) {
+function setStyle(el: HTMLElement, style: Record<string, any>) {
   const elStyle: CSSStyleDeclaration = el.style;
-  Object.keys(style).forEach((key) => {
+  Object.keys(style).forEach((key: any) => {
     const val: string = style[key];
     elStyle[key] = val;
   });
@@ -144,7 +144,7 @@ const changeAttrs: string[] = [];
 function attrChange(attr: string) {
   if (!changeAttrs.length) {
     setTimeout(() => {
-      const style = {};
+      const style: Record<string, any> = {};
       changeAttrs.forEach((attr) => {
         style[attr] = elementComputedStyle[attr];
       });

@@ -1,9 +1,9 @@
 import { getEventDetail } from 'src/packages/common/dom/event';
 
 const ITEM_HEIGHT = 50;
-const VIRTUAL_LIST_THRESHOLD = 100;
+const DEFAULT_VIRTUAL_LIST_THRESHOLD = 500;
 
-export const virtualListMixin = {
+export const virtualListMixin = (virtualListThreshold = DEFAULT_VIRTUAL_LIST_THRESHOLD) =>  ({
   data() {
     return {
       currentIndex: 0,
@@ -13,14 +13,15 @@ export const virtualListMixin = {
   computed: {
     upMissed() {
       const { currentIndex } = this as any;
-      return Math.max(0, currentIndex - VIRTUAL_LIST_THRESHOLD);
+      return Math.max(0, currentIndex - virtualListThreshold);
     },
     showingData() {
       const { currentIndex, upMissed, list, useVirtualList } = this as any;
       if (!useVirtualList) return list;
 
       return list
-        .slice(upMissed, currentIndex + VIRTUAL_LIST_THRESHOLD).map((item, index) => ({
+        .slice(upMissed, currentIndex + virtualListThreshold)
+        .map((item: any, index: number) => ({
           ...item,
           uniqueKey: index + upMissed,
         }));
@@ -41,14 +42,14 @@ export const virtualListMixin = {
     },
   },
   methods: {
-    updateCurrentIndex(event, scrollerHeight) {
+    updateCurrentIndex(event: any, scrollerHeight: number) {
       const { scrollTop, scrollHeight } = getEventDetail(event);
       if (scrollTop < 0) return;
       if (scrollerHeight + scrollTop >  scrollHeight) return;
 
       const currentIndex = Math.round((scrollTop) / ITEM_HEIGHT);
-      console.log('[currentIndex]', currentIndex);
+      // console.log('[currentIndex]', currentIndex);
       (this as any).currentIndex = currentIndex;
     },
   },
-};
+});

@@ -1,7 +1,7 @@
 import { MOCK_USER_META } from 'src/packages/press-message-detail/demo-helper/data';
 const ROUND_TOTAL = 5;
 
-export const getTeamList = (length, start = 0) => Array.from({ length }).map((_, index) => ({
+export const getTeamList = (length: number, start = 0) => Array.from({ length }).map((_, index) => ({
   teamavatar: MOCK_USER_META.avatar,
   teamname: `name-${index + 1 + start}`,
   memnum: 2,
@@ -16,7 +16,7 @@ export const getTeamList = (length, start = 0) => Array.from({ length }).map((_,
 }));
 
 
-const getGroupTeamList = len => Array.from({ length: len }).map(() => ({
+const getGroupTeamList = (len: number) => Array.from({ length: len }).map(() => ({
   teamAvatar: MOCK_USER_META.avatar,
 }));
 

@@ -15,7 +15,7 @@
             :style="index === active ? 'color: ' + activeColor : ''"
           >
             <div>{{ item.text }}</div>
-            <div class="desc-class">
+            <div :class="['press-step__desc', descClass]">
               {{ item.desc }}
             </div>
           </div>
@@ -67,7 +67,6 @@ export default {
   components: {
     PressIconPlus,
   },
-  classes: ['desc-class'],
   props: {
     icon: { type: String, default: '' },
     steps: { type: Array, default: () => [] },
@@ -89,6 +88,10 @@ export default {
       default: 'checked',
     },
     inactiveIcon: { type: String, default: '' },
+    descClass: {
+      type: String,
+      default: '',
+    },
     ...defaultProps,
   },
   emits: ['click-step'],

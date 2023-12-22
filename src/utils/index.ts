@@ -30,7 +30,7 @@ export const storageUtil = {
 };
 
 
-export function fetchData(url) {
+export function fetchData(url: string) {
   return new Promise((resolve, reject) => {
     // #ifdef H5
     if (isNotInUni()) {
@@ -78,7 +78,7 @@ export function routerBack() {
 }
 
 
-export function routerPush(url, notUniUrl) {
+export function routerPush(url: string, notUniUrl?: string) {
   // #ifdef H5
   if (isNotInUni()) {
     // @ts-ignore

@@ -25,7 +25,7 @@ function getScheStateDesc({
   isNotStart,
   isEnd,
   isPlaying,
-}) {
+}: Record<string, any>) {
   let scheStateDesc = '';
   let playingDesc = '';
 
@@ -77,7 +77,7 @@ function getMiddleButtonStatus({
   isEnd,
   isPlaying,
 
-}) {
+}: Record<string, any>) {
   if (isAdmin) {
     if (!isOneTeamLunKong && !isOneTeamDaiDing) {
       return MIDDLE_BUTTON_STATUS_MAP.manage;
@@ -108,13 +108,13 @@ function getMiddleButtonStatus({
 }
 
 
-function getMiddleButtonClass(middleButtonStatus) {
+function getMiddleButtonClass(middleButtonStatus: any) {
   const obj = {
     'primary-btn': [
       MIDDLE_BUTTON_STATUS_MAP.watch,
       MIDDLE_BUTTON_STATUS_MAP.play,
     ]
-      .indexOf(middleButtonStatus) > -1,
+      .indexOf(middleButtonStatus as any) > -1,
     'secondary-btn': [
       MIDDLE_BUTTON_STATUS_MAP.hasOrdered,
     ]
@@ -133,7 +133,7 @@ function getMiddleButtonClass(middleButtonStatus) {
 
   const list: Array<string> = [];
   Object.keys(obj).forEach((key) => {
-    obj[key] && list.push(key);
+    obj[key as unknown as keyof typeof obj] && list.push(key);
   });
   return list.join(' ');
 }
@@ -147,7 +147,7 @@ export function parseScheItemData({
   myTeamId,
   canShowOrderButton,
   scheSubStatusMap,
-}) {
+}: Record<string, any>) {
   const { finals } = scheInfo || {};
   const scheGroup = scheInfo?.battleList?.[0] || {};
   const { realStatus } = scheGroup;
@@ -239,7 +239,7 @@ export function parseScheItemData({
     middleButtonStatus,
     middleButtonTitle: isPreview
       ? ''
-      : (MIDDLE_BUTTON_TITLE_MAP[middleButtonStatus as any] || ''),
+      : (MIDDLE_BUTTON_TITLE_MAP[middleButtonStatus as keyof typeof MIDDLE_BUTTON_TITLE_MAP] || ''),
     middleButtonClass,
 
     latestReadyTimeDesc,

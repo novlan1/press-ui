@@ -32,7 +32,7 @@ function getLocalList() {
   return list;
 }
 
-function setLocalList(list) {
+function setLocalList(list: Array<any>) {
   storageUtil.set(
     STORAGE_EKY.PRESS_COUNT_DOWN_LIST,
     JSON.stringify(list),
@@ -42,6 +42,9 @@ function setLocalList(list) {
 export function addCountDown({
   name,
   time,
+}: {
+  name: string;
+  time: any;
 }) {
   const list = getLocalList();
 
@@ -55,9 +58,9 @@ export function addCountDown({
   return Promise.resolve();
 }
 
-const getZeroTimeStamp = timeStamp => new Date(timeStampFormat(timeStamp, 'yyyy-MM-dd')).getTime();
+const getZeroTimeStamp = (timeStamp: number) => new Date(timeStampFormat(timeStamp, 'yyyy-MM-dd')).getTime();
 
-function getLeftDay(timeStamp) {
+function getLeftDay(timeStamp: number) {
   const res = (getZeroTimeStamp(timeStamp) - getZeroTimeStamp(Date.now()))
    / (24 * 60 * 60 * 1000);
   return Math.floor(res);
@@ -65,7 +68,7 @@ function getLeftDay(timeStamp) {
 
 export function getCountDownList() {
   const list = getLocalList();
-  const parsed = list.map((item) => {
+  const parsed = list.map((item: {name: string; time: number}) => {
     const { name, time } = item;
 
     const value = getLeftDay(time);
@@ -81,26 +84,26 @@ export function getCountDownList() {
   return parsed;
 }
 
-export function deleteCountDown(id) {
+export function deleteCountDown(id: string) {
   const list = getLocalList();
-  const newList = list.filter(item => item.id != id);
+  const newList = list.filter((item: { id: string }) => item.id != id);
 
   setLocalList(newList);
   return Promise.resolve();
 }
 
-export function getCountDownDetail(id) {
+export function getCountDownDetail(id: string) {
   const list = getLocalList();
 
-  const found = list.find(item => item.id == id) || {};
+  const found = list.find((item: { id: string }) => item.id == id) || {};
 
   return Promise.resolve(found);
 }
 
-export function modifyCountDown(id, form) {
+export function modifyCountDown(id: string, form: Record<string, any>) {
   const list = getLocalList();
 
-  const newList = list.map((item) => {
+  const newList = list.map((item: {id: string}) => {
     if (item.id == id) {
       return {
         ...item,

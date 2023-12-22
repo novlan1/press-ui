@@ -145,16 +145,16 @@ After setting the `dot` attribute, a small red dot will be displayed in the uppe
 
 ### GridItem Props
 
-| Parameter   | Description                                                                | Type               | Default      |
-| ----------- | -------------------------------------------------------------------------- | ------------------ | ------------ |
-| text        | text                                                                       | _string_           | -            |
-| icon        | icon name or image link, see [Icon Component](#/icon) for optional values  | _string_           | -            |
-| icon-color  | icon color                                                                 | _string_           | -            |
-| icon-prefix | Third-party icon prefix                                                    | _string_           | `press-icon` |
-| dot         | Whether to display the small red dot in the upper right corner of the icon | _boolean_          | `false`      |
-| badge       | The content of the logo in the upper right corner of the icon              | _string \| number_ | -            |
-| url         | Link address to jump after clicking                                        | _string_           | -            |
-| link-type   | link jump type, optional values are `redirectTo` `switchTab` `reLaunch`    | _string_           | `navigateTo` |
+| Parameter   | Description                                                                          | Type               | Default      |
+| ----------- | ------------------------------------------------------------------------------------ | ------------------ | ------------ |
+| text        | text                                                                                 | _string_           | -            |
+| icon        | icon name or image link, see [Icon Component](./press-icon-plus) for optional values | _string_           | -            |
+| icon-color  | icon color                                                                           | _string_           | -            |
+| icon-prefix | Third-party icon prefix                                                              | _string_           | `press-icon` |
+| dot         | Whether to display the small red dot in the upper right corner of the icon           | _boolean_          | `false`      |
+| badge       | The content of the logo in the upper right corner of the icon                        | _string \| number_ | -            |
+| url         | Link address to jump after clicking                                                  | _string_           | -            |
+| link-type   | link jump type, optional values are `redirectTo` `switchTab` `reLaunch`              | _string_           | `navigateTo` |
 
 ### GridItem Events
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gap">
+  <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
       <press-radio-group
         :value="valueMap.basic"

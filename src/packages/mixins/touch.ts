@@ -1,5 +1,5 @@
 const MIN_DISTANCE = 10;
-function getDirection(x, y) {
+function getDirection(x: number, y: number) {
   if (x > y && x > MIN_DISTANCE) {
     return 'horizontal';
   }
@@ -18,7 +18,7 @@ export const touch = {
       that.offsetX = 0;
       that.offsetY = 0;
     },
-    touchStart(event) {
+    touchStart(event: any) {
       const that = this as any;
       that.resetTouchStatus();
       const touch = event.touches[0];
@@ -26,7 +26,7 @@ export const touch = {
       that.startX = touch.clientX;
       that.startY = touch.clientY;
     },
-    touchMove(event) {
+    touchMove(event: any) {
       const touch = event.touches[0];
       const that = this as any;
       if (!touch) return;

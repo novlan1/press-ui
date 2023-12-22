@@ -214,11 +214,11 @@ Accessible via selectComponent(id).
 
 ### Option Data Structure
 
-| key name | description                            | type               |
-| -------- | -------------------------------------- | ------------------ |
-| text     | text                                   | _string_           |
-| value    | identifier                             | _number \| string_ |
-| icon     | Left [icon name](#/icon) or image link | _string_           |
+| key name | description                                       | type               |
+| -------- | ------------------------------------------------- | ------------------ |
+| text     | text                                              | _string_           |
+| value    | identifier                                        | _number \| string_ |
+| icon     | Left [icon name](./press-icon-plus) or image link | _string_           |
 
 ### External style classes
 

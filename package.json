@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "1.2.52",
+  "version": "1.3.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -106,7 +106,8 @@
     "add:name": "node script/utils/add-name-for-component",
     "add:emits": "node script/utils/add-emits-for-component",
     "act:replace:class": "node script/utils/act-replace-class",
-    "act:hide:tip": "node script/utils/act-add-hide-style"
+    "act:hide:tip": "node script/utils/act-add-hide-style",
+    "docs:sync": "node script/utils/docs-sync"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.1-alpha-36420220922001",
@@ -128,7 +129,8 @@
     "@dcloudio/uni-quickapp-webview": "^2.0.1-alpha-36420220922001",
     "@dcloudio/uni-stacktracey": "^2.0.1-alpha-36420220922001",
     "@dcloudio/uni-stat": "^2.0.1-alpha-36420220922001",
-    "t-comm": "^1.3.36",
+    "plugin-light": "^1.1.36",
+    "t-comm": "^1.3.44",
     "@vue/shared": "^3.0.0",
     "@zebra-ui/swiper": "^2.2.7",
     "aegis-mp-sdk": "^1.37.1",
@@ -136,6 +138,7 @@
     "flyio": "^0.6.2",
     "lint-staged": "^13.0.4",
     "qrcode": "^1.5.3",
+    "qrcode.vue": "^3.4.1",
     "regenerator-runtime": "^0.12.1",
     "safe-area-insets": "^1.4.1",
     "tim-wx-sdk": "^2.26.6",
@@ -143,6 +146,7 @@
     "vue": "^2.6.11",
     "vue-barcode": "^1.3.0",
     "vue-qrcode": "^0.4.0",
+    "vue3-barcode": "^1.0.1",
     "vuex": "^3.2.0",
     "weapp-qrcode-canvas-2d": "^1.1.2"
   },
@@ -164,7 +168,6 @@
     "@dcloudio/webpack-uni-mp-loader": "^2.0.1-alpha-36420220922001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-alpha-36420220922001",
     "stylelint-config-common": "^0.0.3",
-    "uni-plugin-light": "1.1.23",
     "@types/jest": "^29.2.3",
     "@types/webpack-env": "^1.18.1",
     "@vue/babel-preset-app": "^5.0.8",
@@ -191,6 +194,7 @@
     "jest": "^25.5.4",
     "jest-environment-jsdom": "^25.5.0",
     "jimp": "0.10.1",
+    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^0.4.5",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
@@ -201,7 +205,7 @@
     "postcss-scss": "^3.0.5",
     "progress-bar-webpack-plugin": "^1.11.0",
     "puppeteer": "3.0.1",
-    "sass": "^1.39.2",
+    "sass": "^1.69.5",
     "sass-loader": "7.3",
     "standard-version": "^9.5.0",
     "style-loader": "~1.2.1",

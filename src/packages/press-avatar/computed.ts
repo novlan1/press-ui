@@ -63,7 +63,7 @@ export default {
     colorIndex: {
       type: [String, Number],
       // 校验参数规则，索引在0-19之间
-      validator(n) {
+      validator(n: any) {
         return n <= 19;
       },
       default: -1,

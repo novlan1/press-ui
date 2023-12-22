@@ -1,8 +1,11 @@
 <template>
   <div>
     <div
-      :class="(border ? 'press-hairline--top-bottom' : '')+
-        ' '+(utils.bem2('tabbar', { fixed, safe: safeAreaInsetBottom }))+' custom-class'"
+      :class="[
+        border ? 'press-hairline--top-bottom' : '',
+        utils.bem2('tabbar', { fixed, safe: safeAreaInsetBottom }),
+        customClass
+      ]"
       :style="zIndex ? 'z-index: ' + zIndex : ''"
     >
       <slot />

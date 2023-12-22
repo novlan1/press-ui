@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const { mkDirsSync } = require('t-comm');
+const { DEPLOY_CONFIG } = require('../../config/deploy-config');
 
-const componentConfig = require('./component-config.json');
-const { getActPageDir, ACT_DETAIL_COMPONENTS } = require('../utils/utils');
+const componentConfig = require('../../config/component-config.json');
+const { getActPageDir } = require('../utils/utils');
 const {
   hyphenate,
   getComponentPath,
@@ -18,7 +19,7 @@ const PATH_MAP = {
   DEMO_INDEX_CONFIG: 'src/pages/index/page-config.json',
   DEMO_PAGES_JSON: './src/pages.json',
   DEMO_I18N: 'src/utils/i18n/title-i18n.json',
-  BUILD_CONFIG: 'script/build/components.json',
+  BUILD_CONFIG: 'config/components.json',
   SRC_INDEX: 'src/index.js',
 };
 
@@ -60,7 +61,16 @@ function getCompDemoPages() {
 
 
 function getSidebarConfig(isEn) {
-  const list = Object.keys(componentConfig)
+  const BASE_KEYS = [
+    'basic',
+    'form',
+    'action',
+    'display',
+    'navigation',
+    'e-sport',
+  ];
+  const keys = DEPLOY_CONFIG.ONLY_BASE_COMPONENTS ? BASE_KEYS : Object.keys(componentConfig);
+  const list = keys
     .map((key) => {
       const value = componentConfig[key];
       const { title, name, list } = value;
@@ -87,8 +97,8 @@ function getSidebarConfig(isEn) {
 function getPagesJsonPages(config, keys) {
   const list = keys
     .map((key) => {
-      const value = config[key];
-      const { list } = value;
+      const value = config[key] || {};
+      const { list = [] } = value;
       const newList = list.map((item) => {
         const hyphenatedName = hyphenate(item.name);
 
@@ -108,34 +118,34 @@ function getPagesJsonPages(config, keys) {
   return list;
 }
 
-const getComponentNameFromPath = item => item.path.split('/')[0];
+// const getComponentNameFromPath = item => item.path.split('/')[0];
 
-function getActDetailPages(pages) {
-  return pages.filter(item => ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
-}
+// function getActDetailPages(pages) {
+//   return pages.filter(item => ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
+// }
 
-function getNotActDetailPages(pages) {
-  return pages.filter(item => !ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
-}
+// function getNotActDetailPages(pages) {
+//   return pages.filter(item => !ACT_DETAIL_COMPONENTS.includes(getComponentNameFromPath(item)));
+// }
 
 function getPagesJsonConfig() {
   const keys = Object.keys(componentConfig);
   const pressSubPackages = getPagesJsonPages(componentConfig, keys.filter(item => item !== 'act'));
-  const actSubPackages = getPagesJsonPages(componentConfig, ['act']);
+  // const actSubPackages = getPagesJsonPages(componentConfig, ['act']);
 
   const pressPages = [
     {
       root: 'pages/press',
       pages: pressSubPackages,
     },
-    {
-      root: 'pages/act',
-      pages: getNotActDetailPages(actSubPackages),
-    },
-    {
-      root: 'pages/act-detail',
-      pages: getActDetailPages(actSubPackages),
-    },
+    // {
+    //   root: 'pages/act',
+    //   pages: getNotActDetailPages(actSubPackages),
+    // },
+    // {
+    //   root: 'pages/act-detail',
+    //   pages: getActDetailPages(actSubPackages),
+    // },
   ];
   return pressPages;
 }

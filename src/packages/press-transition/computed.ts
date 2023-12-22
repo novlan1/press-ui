@@ -1,6 +1,6 @@
 import { style } from '../common/utils/style';
 
-function rootStyle(data) {
+function rootStyle(data: Record<string, any>) {
   return style([
     {
       '-webkit-transition-duration': `${data.currentDuration}ms`,

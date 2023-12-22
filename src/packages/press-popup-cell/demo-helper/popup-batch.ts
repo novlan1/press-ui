@@ -16,6 +16,7 @@ import {
   BATCH_SET_MAP,
   onTimeStartTimeFormat,
   latestReadyTimeFormat,
+  type IPopupCellClick,
 } from './helper';
 
 const local = {
@@ -25,7 +26,10 @@ const local = {
 };
 
 
-function getPickerRoundList(batchRoundList) {
+function getPickerRoundList(batchRoundList: Array<{
+  round_name: string;
+  round_id: string | number;
+}>) {
   return batchRoundList.map(item => ({
     label: item.round_name,
     value: item.round_id,
@@ -33,7 +37,7 @@ function getPickerRoundList(batchRoundList) {
 }
 
 
-function getBatchRoundList(curRoundType) {
+function getBatchRoundList(curRoundType: string) {
   const length = 10;
   return Array.from({ length }).map((_, index) => ({
     round_id: index + 1,
@@ -52,7 +56,7 @@ function showBatchSetInnerPopup({
   context,
   success,
   meta,
-}) {
+}: Record<string, any>) {
   function showInnerPopupAgain(options = {}) {
     showBatchSetInnerPopup({
       valueList,
@@ -68,7 +72,7 @@ function showBatchSetInnerPopup({
     {
       label: '开始轮次',
       value: valueList[0].label,
-      click: ({ context: popupContext }) => {
+      click: ({ context: popupContext }: IPopupCellClick) => {
         popupContext.closeDialog();
         showPicker({
           context,
@@ -94,7 +98,7 @@ function showBatchSetInnerPopup({
     {
       label: meta.timeLabel,
       value: valueList[1].label,
-      click: ({ context: popupContext }) => {
+      click: ({ context: popupContext }: IPopupCellClick) => {
         popupContext.closeDialog();
         showDateTimePicker({
           context,
@@ -145,7 +149,7 @@ function showBatchSetInnerPopup({
       label: '分组',
       active: local.curRoundType,
       tabList,
-      click: (args) => {
+      click: (args: any) => {
         const { tabItem, item } = args;
         if (!tabItem) return;
         if (tabItem.value === item.active) return;
@@ -177,7 +181,7 @@ function showBatchSetInnerPopup({
     cellList.push({
       label: '后续轮次间隔时间',
       value: valueList[2].label,
-      click: ({ context: popupContext }) => {
+      click: ({ context: popupContext }: IPopupCellClick) => {
         popupContext.closeDialog();
         showPicker({
           context,
@@ -222,7 +226,7 @@ function showBatchSetInnerPopup({
     });
 }
 
-export function batchSet(context) {
+export function batchSet(context: any) {
   const batchRoundList = getBatchRoundList(local.curRoundType);
   const roundList = getPickerRoundList(batchRoundList);
   const round: Record<string, any> = batchRoundList[0];
@@ -239,7 +243,7 @@ export function batchSet(context) {
       {
         label: '批量设置定时开赛',
         type: 'button',
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
 
           const time = local.fixStartTime;
@@ -256,7 +260,7 @@ export function batchSet(context) {
               maxDate: DATE_TIME_PICKER_MAX_MIN_DATE.ON_TIME_START.MAX,
               timePickerFormatter: addPostfixDateTimeFormatter,
               timePickerFilter: fiveMinutesDateTimeFilter,
-              timerPickerParser: value => parseInt(`${value / 1000}`, 10),
+              timerPickerParser: (value: number) => parseInt(`${value / 1000}`, 10),
               type: BATCH_SET_MAP.ON_TIME_START,
             },
             success,
@@ -284,7 +288,7 @@ export function batchSet(context) {
       {
         label: '批量设置截止上场时间',
         type: 'button',
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           const time = local.fixLatestReadyTime || getDefaultLatestReadyTime();
 
@@ -298,18 +302,20 @@ export function batchSet(context) {
 
               minDate: DATE_TIME_PICKER_MAX_MIN_DATE.LATEST_READY.MIN,
               maxDate: DATE_TIME_PICKER_MAX_MIN_DATE.LATEST_READY.MAX,
-              timePickerFormatter: (type, value, currentDate) => otherOptionDateTimeFormatter({
+              timePickerFormatter:
+              (type: string, value: any, currentDate: number) => otherOptionDateTimeFormatter({
                 type,
                 value,
                 minDate: DATE_TIME_PICKER_MAX_MIN_DATE.LATEST_READY.MIN,
                 currentDate,
               }),
-              timePickerFilter: (type, options, currentDate) => otherOptionDateTimePickerFilter({
+              timePickerFilter:
+              (type: string, options: Array<number>, currentDate: number) => otherOptionDateTimePickerFilter({
                 type,
                 options,
                 currentDate,
               }),
-              timerPickerParser: (value) => {
+              timerPickerParser: (value: number) => {
                 const firstDate = timeStampFormat(DATE_TIME_PICKER_MAX_MIN_DATE.LATEST_READY.MIN, 'yyyy');
                 const formattedDate = timeStampFormat(value, 'yyyy');
                 const isZero = formattedDate === firstDate;

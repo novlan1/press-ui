@@ -27,22 +27,22 @@ function call(fn: Function, args: any) {
   return fn();
 }
 
-function serializer(args) {
+function serializer(args: Array<any>) {
   if (args.length === 1 && isPrimitive(args[0])) {
     return args[0];
   }
-  const obj = {};
+  const obj: Record<string, any> = {};
   for (let i = 0; i < args.length; i++) {
     obj[`key${i}`] = args[i];
   }
   return JSON.stringify(obj);
 }
 
-export function memoize(fn) {
-  const cache = {};
+export function memoize(fn: Function) {
+  const cache: Record<string, any> = {};
 
   return function () {
-    const key = serializer(arguments);
+    const key = serializer(arguments as any);
     if (cache[key] === undefined) {
       cache[key] = call(fn, arguments);
     }

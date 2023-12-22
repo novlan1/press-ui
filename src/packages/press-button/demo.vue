@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-wrap demo-wrap--gap">
+  <div class="demo-wrap">
     <demo-block :title="t('type')">
       <div class="demo-button-row">
         <press-button
@@ -307,7 +307,7 @@
 <script>
 import PressButton from 'src/packages/press-button/press-button.vue';
 import { isNotInUni } from 'src/packages/common/utils/utils';
-import { launchMiniProgram } from 't-comm/lib/msdk/mini-program';
+import { launchMiniProgramInGame } from 't-comm/lib/msdk/mini-program';
 
 
 export default {
@@ -386,9 +386,9 @@ export default {
   },
   methods: {
     onLaunchMp(isQQ) {
-      console.log('[launchMiniProgram]');
+      console.log('[launchMiniProgramInGame]');
       // #ifdef H5
-      launchMiniProgram({
+      launchMiniProgramInGame({
         appId: 'wx99c1c10a389e7433',
         isWxMp: !isQQ,
       });

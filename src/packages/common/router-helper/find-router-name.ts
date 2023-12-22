@@ -1,23 +1,25 @@
 import pathToRegexp from './path-to-regexp';
 
+import type { IRoute, IMeta } from './types';
 
 export function getQueryBaseStr(str = '') {
   if (!str) {
     return {};
   }
-  return str.split('&').reduce((acc, item) => {
+  return str.split('&').reduce((acc: Record<string, any>, item: string) => {
     const list = item.split('=');
     acc[list[0]] = list[1];
     return acc;
   }, {});
 }
 
-export function isMatchPath(meta, path) {
+export function isMatchPath(meta: IMeta, path: string) {
   const { rawPath = [] } = meta;
   if (!rawPath?.length) return;
+
   for (const item of rawPath) {
     // eslint-disable-next-line prefer-const
-    let keys = [];
+    let keys: Array<any> = [];
     const regexp = pathToRegexp(item, keys);
     const match = path.match(regexp);
 
@@ -33,8 +35,20 @@ export function isMatchPath(meta, path) {
   return;
 }
 
-
-export function findRouteName(path, routes) {
+/**
+ * 根据路由表，找到 path 对应的 路由名称
+ * @param {string} path 路由路径
+ * @param {array} routes 路由表
+ * @returns {object} 匹配到的路由信息
+ *
+ * @example
+ * ```ts
+ * const { name, params, meta, path } = findRouteName(rawPath, ALL_ROUTES) || {};
+ *
+ * console.log('name', name);
+ * ```
+ */
+export function findRouteName(path: string, routes: Array<IRoute>) {
   // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let i = 0;i < routes.length;i++) {
     const item = routes[i];
@@ -73,5 +87,3 @@ export function findRouteName(path, routes) {
     }
   }
 }
-
-// export { findRouteName } from 't-comm/lib/router/find-route-name';

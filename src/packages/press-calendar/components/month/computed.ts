@@ -1,17 +1,27 @@
 /* eslint-disable no-nested-ternary */
 import { getMonthEndDay } from '../../utils';
 
-function getDate(date) {
+type IDate = string | number | Date;
+
+
+function getDate(date: IDate) {
   return new Date(date);
 }
 
-function getMark(date) {
+function getMark(date: IDate) {
   return getDate(date).getMonth() + 1;
 }
 
 const ROW_HEIGHT = 64;
 
-function getDayStyle(type, index, date, rowHeight, color, firstDayOfWeek) {
+function getDayStyle(
+  type: string,
+  index: null,
+  date: IDate,
+  rowHeight: string | number,
+  color: string,
+  firstDayOfWeek: number,
+) {
   const style: Array<Array<string>> = [];
   const current = getDate(date).getDay() || 7;
 
@@ -48,12 +58,12 @@ function getDayStyle(type, index, date, rowHeight, color, firstDayOfWeek) {
     .join(';');
 }
 
-function formatMonthTitle(date) {
+function formatMonthTitle(date: IDate) {
   date = getDate(date);
   return `${date.getFullYear()}年${date.getMonth() + 1}月`;
 }
 
-function getMonthStyle(visible, date, rowHeight) {
+function getMonthStyle(visible: boolean, date: IDate, rowHeight: number) {
   if (!visible) {
     date = getDate(date);
 

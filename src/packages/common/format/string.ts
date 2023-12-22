@@ -1,14 +1,10 @@
 const camelizeRE = /-(\w)/g;
 
-export function camelize(str) {
+export function camelize(str: string) {
   return str.replace(camelizeRE, (_, c) => c.toUpperCase());
 }
 
-export function padZero(num, targetLength) {
-  if (targetLength === void 0) {
-    targetLength = 2;
-  }
-
+export function padZero(num: number | string, targetLength = 2) {
   let str = `${num}`;
 
   while (str.length < targetLength) {
@@ -19,7 +15,7 @@ export function padZero(num, targetLength) {
 }
 
 
-export function hyphenate(str) {
+export function hyphenate(str: string) {
   const hyphenateRE = /\B([A-Z])/g;
   return str.replace(hyphenateRE, '-$1').toLowerCase();
 }

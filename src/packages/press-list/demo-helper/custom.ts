@@ -9,6 +9,7 @@ export const local = {
   total: 300,
   delay: 200,
   vertical: true,
+  autoCheckScroller: true,
 };
 
 const PICKER_NUMBER_LIST = Array.from({ length: 5 })
@@ -25,23 +26,25 @@ const PICKER_NUMBER_LIST = Array.from({ length: 5 })
     value: item,
   }));
 
-const PICKER_NUMBER_MAP = PICKER_NUMBER_LIST.reduce((acc, item) => {
-  acc[item.value] = item.label;
-  return acc;
-}, {});
+const PICKER_NUMBER_MAP = PICKER_NUMBER_LIST
+  .reduce((acc: Record<string, any>, item) => {
+    acc[item.value] = item.label;
+    return acc;
+  }, {});
 
 const PICKER_DELAY_LIST = Array.from({ length: 1000 }).map((_, i) => ({
   label: `${(i + 1) * 100}ms`,
   value: (i + 1) * 100,
 }));
 
-const PICKER_DELAY_MAP = PICKER_DELAY_LIST.reduce((acc, item) => {
-  acc[item.value] = item.label;
-  return acc;
-}, {});
+const PICKER_DELAY_MAP = PICKER_DELAY_LIST
+  .reduce((acc: Record<string, any>, item) => {
+    acc[item.value] = item.label;
+    return acc;
+  }, {});
 
 
-export function showCustomPopup({ context, callback }) {
+export function showCustomPopup({ context, callback }: any) {
   showPopupCellAndClose({
     context,
     title: '自定义设置',
@@ -50,7 +53,7 @@ export function showCustomPopup({ context, callback }) {
       {
         label: '每次加载数量',
         value: PICKER_NUMBER_MAP[local.pageSize],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -76,7 +79,7 @@ export function showCustomPopup({ context, callback }) {
       {
         label: '列表总数',
         value: PICKER_NUMBER_MAP[local.total],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -102,7 +105,7 @@ export function showCustomPopup({ context, callback }) {
       {
         label: '数据请求时间',
         value: PICKER_DELAY_MAP[local.delay],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
 
           showPicker({
@@ -129,13 +132,27 @@ export function showCustomPopup({ context, callback }) {
         label: '是否竖向滚动',
         type: 'switch',
         open: local.vertical,
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: any) => {
           popupContext.closeDialog();
           local.vertical = !local.vertical;
           context.onGTip('设置成功');
 
           if (typeof callback.changeDirection === 'function') {
             callback.changeDirection.call(context, local.vertical);
+          }
+        },
+      },
+      {
+        label: '自动检测 Scroller',
+        type: 'switch',
+        open: local.autoCheckScroller,
+        click: ({ context: popupContext }: any) => {
+          popupContext.closeDialog();
+          local.autoCheckScroller = !local.autoCheckScroller;
+          // context.onGTip('设置成功');
+
+          if (typeof callback.changeAutoCheckScroller === 'function') {
+            callback.changeAutoCheckScroller.call(context, local.autoCheckScroller);
           }
         },
       },

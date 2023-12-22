@@ -1,11 +1,11 @@
 const path = require('path');
 // const fs = require('fs');
 const nodeExternals = require('webpack-node-externals');
-const Components = require('./components.json');
+const Components = require('../../config/components.json');
 const POSTCSS_CONFIG_FILE = path.resolve(__dirname, 'postcss.config.js');
 
-const CROSS_GAME_STYLE_LOADER = 'uni-plugin-light/lib/loader/cross-game-style';
-const IF_DEF_LOADER = 'uni-plugin-light/lib/loader/ifdef-loader';
+const CROSS_GAME_STYLE_LOADER = 'plugin-light/lib/loader/cross-game-style';
+const IF_DEF_LOADER = 'plugin-light/lib/loader/ifdef-loader';
 // const utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
 // const mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
 // const transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'));

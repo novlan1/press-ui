@@ -3,7 +3,7 @@ import { isNotInUni } from '../utils/utils';
 import { SUPPORT_PASSIVE } from '../utils/support-passive';
 
 
-export function on(target, event, handler, passive = false) {
+export function on(target: Element, event: string, handler: EventListenerOrEventListenerObject, passive = false) {
   if (!IS_SERVER) {
     target.addEventListener(event, handler, SUPPORT_PASSIVE ? {
       capture: false,
@@ -12,18 +12,18 @@ export function on(target, event, handler, passive = false) {
   }
 }
 
-export function off(target, event, handler) {
+export function off(target: Element, event: string, handler: EventListenerOrEventListenerObject) {
   if (!IS_SERVER) {
     target.removeEventListener(event, handler);
   }
 }
 
-export function stopPropagation(event) {
+export function stopPropagation(event: Event) {
   event.stopPropagation();
 }
 
 
-export function preventDefault(event, isStopPropagation) {
+export function preventDefault(event: Event, isStopPropagation = false) {
   /* istanbul ignore else */
   if (typeof event.cancelable !== 'boolean' || event.cancelable) {
     event.preventDefault();
@@ -35,12 +35,12 @@ export function preventDefault(event, isStopPropagation) {
 }
 
 
-export function getEventValue(event) {
+export function getEventValue(event: Event) {
   return getEventDetail(event).value || '';
 }
 
 
-export function getEventDetail(event) {
+export function getEventDetail(event: Event & any) {
   if (isNotInUni()) {
     return {
       value: event?.target?.value || '',

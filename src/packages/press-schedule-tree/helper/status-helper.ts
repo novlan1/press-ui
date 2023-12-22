@@ -8,7 +8,7 @@ import {
 import { t } from '../../locale';
 
 
-export function isSchEnd(scheGroup) {
+export function isSchEnd(scheGroup: Record<string, any>) {
   const { rawState } = scheGroup.nodeItem || {};
   if (rawState === SCHEDULE_STATUS_MAP.ENDED) {
     return true;
@@ -19,21 +19,21 @@ export function isSchEnd(scheGroup) {
   ].includes(scheGroup.realStatus);
 }
 
-export function isSchPlaying(realStatus, isNotStart) {
-  return [SCHEDULE_STATUS_MAP.PLAYING].includes(realStatus) && !isNotStart;
+export function isSchPlaying(realStatus: number, isNotStart: boolean) {
+  return [SCHEDULE_STATUS_MAP.PLAYING].includes(realStatus as 100) && !isNotStart;
 }
 
-export function isScheNotStart(realStatus) {
+export function isScheNotStart(realStatus: number) {
   return realJudgeScheNotStart(realStatus);
 }
 
-function realJudgeScheNotStart(realStatus) {
+function realJudgeScheNotStart(realStatus: number) {
   return [
     undefined,
     SCHEDULE_STATUS_MAP.NOT_START,
     SCHEDULE_STATUS_MAP.STARTED,
     SCHEDULE_CUSTOM_STATUS_MAP.PENDING,
-  ].includes(realStatus);
+  ].includes(realStatus as any);
 }
 
 
@@ -82,7 +82,7 @@ export function getReadyInfoDesc({
 /**
  * 获取开赛方式描述
  */
-export function getStartBattleTypeDesc(roundInfo) {
+export function getStartBattleTypeDesc(roundInfo: Record<string, any>) {
   const {
     show_stime: startTime,
     start_battle_type: startBattleType,
@@ -91,7 +91,7 @@ export function getStartBattleTypeDesc(roundInfo) {
     return timeStampFormat(startTime, t('scheduleTree.startMatchOnTime'));
   }
 
-  return START_BATTLE_TITLE_MAP[startBattleType];
+  return START_BATTLE_TITLE_MAP[startBattleType as keyof typeof START_BATTLE_TITLE_MAP];
 }
 
 

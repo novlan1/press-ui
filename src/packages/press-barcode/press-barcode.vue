@@ -30,7 +30,7 @@
 
 <script>
 // #ifdef H5
-import VueBarcode from 'vue-barcode';
+import VueBarcode from '../common/vue3/bar-code';
 // #endif
 // #ifndef H5
 import Barcode from './barcode.js';

@@ -19,7 +19,7 @@
       <press-icon-plus
         v-if="closeable"
         :name="closeIcon"
-        :class="cCloseIconClass"
+        :class="innerCloseIconClass"
         @click="onClickCloseIcon"
       />
     </div>
@@ -43,15 +43,6 @@ export default {
     PressIconPlus,
     PressOverlay,
   },
-  // classes: [
-  //   'enter-class',
-  //   'enter-active-class',
-  //   'enter-to-class',
-  //   'leave-class',
-  //   'leave-active-class',
-  //   'leave-to-class',
-  //   'close-icon-class',
-  // ],
   mixins: [transition(false)],
   props: {
     enterClass: {
@@ -163,7 +154,7 @@ export default {
       const { zIndex, currentDuration, display, customStyle } = this;
       return computed.popupStyle({ zIndex, currentDuration, display, customStyle });
     },
-    cCloseIconClass() {
+    innerCloseIconClass() {
       const { closeIconClass, closeIconPosition } = this;
       return `${closeIconClass} press-popup__close-icon press-popup__close-icon--${closeIconPosition}`;
     },

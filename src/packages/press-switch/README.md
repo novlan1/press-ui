@@ -140,13 +140,6 @@ export default {
 | change | 开关状态切换回调                                       | event.detail: 是否选中开关 |
 | click  | 点击组件，任意状态都会触发，包括 `disabled`、`loading` | -                          |
 
-### 外部样式类
-
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
-| node-class   | 圆点样式类   |
-
 ## 主题定制
 
 <theme-config />

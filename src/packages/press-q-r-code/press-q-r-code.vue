@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="press-q-r-code">
     <!-- #ifdef H5 -->
     <PressQRCodeWeb
       v-if="value"
@@ -35,8 +35,9 @@
 </template>
 
 <script>
+/* eslint-disable import/no-unresolved */
 // #ifdef H5
-import PressQRCodeWeb from 'vue-qrcode';
+import PressQRCodeWeb from '../common/vue3/q-r-code';
 // #endif
 
 // #ifdef MP-WEIXIN
@@ -192,4 +193,11 @@ export default {
 </script>
 
 <style scoped>
+.press-q-r-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 </style>

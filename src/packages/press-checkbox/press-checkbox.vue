@@ -5,7 +5,7 @@
   >
     <div
       v-if="labelPosition === 'left'"
-      :class="labelClass"
+      :class="innerLabelClass"
       @click="onClickLabel"
     >
       <slot />
@@ -22,15 +22,15 @@
         v-else
         name="success"
         size="0.8em"
-        :class="cIconClass"
         :style="iconStyle"
+        :class="innerIconClass"
         :custom-class="iconClass"
         custom-style="line-height: 1.25em;"
       />
     </div>
     <div
       v-if="labelPosition === 'right'"
-      :class="cLabelClass"
+      :class="innerLabelClass"
       @click="onClickLabel"
     >
       <slot />
@@ -63,7 +63,6 @@ export default {
     ChildrenMixin(PARENT),
   ],
   field: true,
-  classes: ['icon-class', 'label-class'],
   props: {
     name: {
       type: String,
@@ -112,7 +111,7 @@ export default {
     };
   },
   computed: {
-    cLabelClass() {
+    innerLabelClass() {
       const { labelClass, labelPosition, disabled, parentDisabled } = this;
       return `${labelClass} ${utils.bem2('checkbox__label', [labelPosition, { disabled: disabled || parentDisabled }])}`;
     },
@@ -124,7 +123,7 @@ export default {
       const { checkedColor, value, disabled, parentDisabled, iconSize } = this;
       return computed.iconStyle(checkedColor, value, disabled, parentDisabled, iconSize);
     },
-    cIconClass() {
+    innerIconClass() {
       const { shape, disabled, parentDisabled, dataValue } = this;
       return `${utils.bem2('checkbox__icon', [shape, { disabled: disabled || parentDisabled, checked: dataValue }])}`;
     },

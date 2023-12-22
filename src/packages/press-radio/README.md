@@ -213,20 +213,15 @@ export default {
 | icon-size      | 图标大小，默认单位为`px`  | _string \| number_ | `20px`    |
 | checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
 | use-icon-slot  | 是否使用 icon 插槽        | _boolean_          | `false`   |
+| custom-class   | 根节点样式类              | _string_           | -         |
+| icon-class     | 图标样式类                | _string_           | -         |
+| label-class    | 描述信息样式类            | _string_           | -         |
 
 ### Radio Event
 
 | 事件名  | 说明                     | 回调参数          |
 | ------- | ------------------------ | ----------------- |
 | @change | 当绑定值变化时触发的事件 | 当前选中项的 name |
-
-### Radio 外部样式类
-
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| icon-class   | 图标样式类     |
-| label-class  | 描述信息样式类 |
 
 ### RadioGroup Event
 

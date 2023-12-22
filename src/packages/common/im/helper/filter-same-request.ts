@@ -11,6 +11,10 @@ export function filterSameRequest({
   url,
   reqData,
   handle,
+}: {
+  url: string;
+  reqData: Record<string, any>;
+  handle: Function;
 }) {
   const sameHandle = handleList.find(item => item.url === url
    && JSON.stringify(item.reqData) === JSON.stringify(reqData));

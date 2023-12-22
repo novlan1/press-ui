@@ -58,8 +58,8 @@
 
 <script>
 // #ifdef H5
-import PressQRCodeWeb from 'vue-qrcode';
-import PressBarcodeWeb from 'vue-barcode';
+import PressQRCodeWeb from '../common/vue3/q-r-code';
+import PressBarcodeWeb from '../common/vue3/bar-code';
 // #endif
 // #ifndef H5
 import PressQRCodeMp from '../press-q-r-code/press-q-r-code.vue';

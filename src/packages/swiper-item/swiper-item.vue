@@ -4,13 +4,13 @@
   </uni-swiper-item>
 </template>
 <script>
+import { SWIPER_ITEM_PROPS } from './utils';
+
+
 export default {
   name: 'SwiperItem',
   props: {
-    itemId: {
-      type: String,
-      default: '',
-    },
+    ...SWIPER_ITEM_PROPS,
   },
   mounted() {
     const { $el } = this;

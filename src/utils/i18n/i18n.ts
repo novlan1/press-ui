@@ -24,11 +24,11 @@ const LOCALE_DEMO_AMP = {
 };
 
 let curLang = DEFAULT_LANG;
-if (LOCALE_MAP[curLang]) {
-  locale.use(LOCALE_MAP[curLang]);
+if (LOCALE_MAP[curLang as keyof typeof LOCALE_MAP]) {
+  locale.use(LOCALE_MAP[curLang as keyof typeof LOCALE_MAP]);
 }
-if (LOCALE_DEMO_AMP[curLang]) {
-  locale.add(LOCALE_DEMO_AMP[curLang]);
+if (LOCALE_DEMO_AMP[curLang as keyof typeof LOCALE_DEMO_AMP]) {
+  locale.add(LOCALE_DEMO_AMP[curLang as keyof typeof LOCALE_DEMO_AMP]);
 }
 
 
@@ -40,7 +40,7 @@ function getLocaleFromLocation() {
   const map: {
     locale?: string
     lang?: string
-  } = search.split('&').reduce((acc, value) => {
+  } = search.split('&').reduce((acc: Record<string, any>, value) => {
     const temp = value.split('=');
     acc[temp[0]] = temp[1];
     return acc;
@@ -61,7 +61,7 @@ function getLocale() {
 
   const locale = storageUtil.get(LOCALE_STORAGE_KEY);
   console.log('[locale] ', locale);
-  return LOCALE_NUMBER_MAP[locale || DEFAULT_LOCALE_NUMBER];
+  return LOCALE_NUMBER_MAP[(locale || DEFAULT_LOCALE_NUMBER) as keyof typeof LOCALE_NUMBER_MAP];
 }
 
 let set = false;
@@ -72,11 +72,11 @@ export function setLang() {
   curLang = getLocale() || DEFAULT_LANG;
   console.log('[curLang] ', curLang);
 
-  if (LOCALE_MAP[curLang]) {
-    locale.use(LOCALE_MAP[curLang]);
+  if (LOCALE_MAP[curLang as keyof typeof LOCALE_MAP]) {
+    locale.use(LOCALE_MAP[curLang as keyof typeof LOCALE_MAP]);
   }
-  if (LOCALE_DEMO_AMP[curLang]) {
-    locale.add(LOCALE_DEMO_AMP[curLang]);
+  if (LOCALE_DEMO_AMP[curLang as keyof typeof LOCALE_DEMO_AMP]) {
+    locale.add(LOCALE_DEMO_AMP[curLang as keyof typeof LOCALE_DEMO_AMP]);
   }
 }
 
@@ -95,7 +95,7 @@ function getPage() {
   return name;
 }
 
-export function initDemoI18n(app) {
+export function initDemoI18n(app?: any) {
   const mixin = {
     // @ts-ignore
     onReady() {
@@ -110,11 +110,11 @@ export function initDemoI18n(app) {
       });
     },
     methods: {
-      t(key, ...args) {
+      t(key: string, ...args: Array<any>) {
         // @ts-ignore
         const { i18n } = this.$options;
         if (i18n?.[curLang]?.[key]) {
-          const value = i18n[curLang][key];
+          const value: any = i18n[curLang][key];
           if (typeof value === 'function') {
             return value(...args);
           }

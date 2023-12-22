@@ -17,20 +17,12 @@
           "path": "/en/components/press/press-col.md"
         },
         {
-          "title": "Icon",
-          "path": "/en/components/press/press-icon.md"
-        },
-        {
           "title": "IconPlus",
           "path": "/en/components/press/press-icon-plus.md"
         },
         {
           "title": "Image",
           "path": "/en/components/press/press-image.md"
-        },
-        {
-          "title": "Popup",
-          "path": "/en/components/press/press-popup.md"
         },
         {
           "title": "PopupPlus",
@@ -69,10 +61,6 @@
         {
           "title": "Field",
           "path": "/en/components/press/press-field.md"
-        },
-        {
-          "title": "Picker",
-          "path": "/en/components/press/press-picker.md"
         },
         {
           "title": "PickerPlus",
@@ -117,20 +105,12 @@
           "path": "/en/components/press/press-action-sheet.md"
         },
         {
-          "title": "Dialog",
-          "path": "/en/components/press/press-dialog.md"
-        },
-        {
           "title": "DialogPlus",
           "path": "/en/components/press/press-dialog-plus.md"
         },
         {
           "title": "DropdownMenu",
           "path": "/en/components/press/press-dropdown-menu.md"
-        },
-        {
-          "title": "Loading",
-          "path": "/en/components/press/press-loading.md"
         },
         {
           "title": "LoadingPlus",
@@ -143,10 +123,6 @@
         {
           "title": "Overlay",
           "path": "/en/components/press/press-overlay.md"
-        },
-        {
-          "title": "Popover",
-          "path": "/en/components/press/press-popover.md"
         },
         {
           "title": "PopoverPlus",
@@ -223,10 +199,6 @@
           "path": "/en/components/press/press-notice-bar.md"
         },
         {
-          "title": "Pagination",
-          "path": "/en/components/press/press-pagination.md"
-        },
-        {
           "title": "Progress",
           "path": "/en/components/press/press-progress.md"
         },
@@ -245,6 +217,10 @@
         {
           "title": "Sticky",
           "path": "/en/components/press/press-sticky.md"
+        },
+        {
+          "title": "Swiper",
+          "path": "/en/components/press/press-swiper.md"
         },
         {
           "title": "Tag",
@@ -287,230 +263,36 @@
       ]
     },
     {
-      "title": "Business Components",
+      "title": "ESport Components",
       "collapsable": false,
       "children": [
         {
-          "title": "Area",
-          "path": "/en/components/press/press-area.md"
+          "title": "Dialog",
+          "path": "/en/components/press/press-dialog.md"
         },
         {
-          "title": "AreaIndexBar",
-          "path": "/en/components/press/press-area-index-bar.md"
+          "title": "Icon",
+          "path": "/en/components/press/press-icon.md"
         },
         {
-          "title": "AwardPopup",
-          "path": "/en/components/press/press-award-popup.md"
+          "title": "Loading",
+          "path": "/en/components/press/press-loading.md"
         },
         {
-          "title": "LivePlayer",
-          "path": "/en/components/press/press-live-player.md"
+          "title": "Pagination",
+          "path": "/en/components/press/press-pagination.md"
         },
         {
-          "title": "PopupCell",
-          "path": "/en/components/press/press-popup-cell.md"
+          "title": "Picker",
+          "path": "/en/components/press/press-picker.md"
         },
         {
-          "title": "Protocol",
-          "path": "/en/components/press/press-protocol.md"
+          "title": "Popover",
+          "path": "/en/components/press/press-popover.md"
         },
         {
-          "title": "QRCodePopup",
-          "path": "/en/components/press/press-q-r-code-popup.md"
-        },
-        {
-          "title": "TeamSearch",
-          "path": "/en/components/press/press-team-search.md"
-        },
-        {
-          "title": "Turntable",
-          "path": "/en/components/press/press-turntable.md"
-        }
-      ]
-    },
-    {
-      "title": "Message Components",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "MessageBoard",
-          "path": "/en/components/press/press-message-board.md"
-        },
-        {
-          "title": "MessageDetail",
-          "path": "/en/components/press/press-message-detail.md"
-        },
-        {
-          "title": "MessageList",
-          "path": "/en/components/press/press-message-list.md"
-        }
-      ]
-    },
-    {
-      "title": "Schedule Components",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "ScheduleCard",
-          "path": "/en/components/press/press-schedule-card.md"
-        },
-        {
-          "title": "ScheduleList",
-          "path": "/en/components/press/press-schedule-list.md"
-        },
-        {
-          "title": "ScheduleMatchMode",
-          "path": "/en/components/press/press-schedule-match-mode.md"
-        },
-        {
-          "title": "ScheduleTab",
-          "path": "/en/components/press/press-schedule-tab.md"
-        },
-        {
-          "title": "ScheduleTree",
-          "path": "/en/components/press/press-schedule-tree.md"
-        }
-      ]
-    },
-    {
-      "title": "Hor Components",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "HorAwardExplain",
-          "path": "/en/components/press/press-hor-award-explain.md"
-        },
-        {
-          "title": "HorDialog",
-          "path": "/en/components/press/press-hor-dialog.md"
-        },
-        {
-          "title": "HorMatchHeader",
-          "path": "/en/components/press/press-hor-match-header.md"
-        },
-        {
-          "title": "HorMatchIndex",
-          "path": "/en/components/press/press-hor-match-index.md"
-        },
-        {
-          "title": "HorOwnerIndex",
-          "path": "/en/components/press/press-hor-owner-index.md"
-        },
-        {
-          "title": "HorOwnerTheme",
-          "path": "/en/components/press/press-hor-owner-theme.md"
-        },
-        {
-          "title": "HorRule",
-          "path": "/en/components/press/press-hor-rule.md"
-        },
-        {
-          "title": "HorScheduleManage",
-          "path": "/en/components/press/press-hor-schedule-manage.md"
-        },
-        {
-          "title": "HorSwiperLight",
-          "path": "/en/components/press/press-hor-swiper-light.md"
-        },
-        {
-          "title": "HorTask",
-          "path": "/en/components/press/press-hor-task.md"
-        }
-      ]
-    },
-    {
-      "title": "Login Components",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "AuthLogin",
-          "path": "/en/components/press/press-auth-login.md"
-        },
-        {
-          "title": "BindLogin",
-          "path": "/en/components/press/press-bind-login.md"
-        },
-        {
-          "title": "MobileLogin",
-          "path": "/en/components/press/press-mobile-login.md"
-        },
-        {
-          "title": "PCLogin",
-          "path": "/en/components/press/press-p-c-login.md"
-        },
-        {
-          "title": "PCScanLogin",
-          "path": "/en/components/press/press-p-c-scan-login.md"
-        }
-      ]
-    },
-    {
-      "title": "Act Components",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "ActAwardDialog",
-          "path": "/en/components/press/press-act-award-dialog.md"
-        },
-        {
-          "title": "ActBarcodeDialog",
-          "path": "/en/components/press/press-act-barcode-dialog.md"
-        },
-        {
-          "title": "ActBenefitItem",
-          "path": "/en/components/press/press-act-benefit-item.md"
-        },
-        {
-          "title": "ActExplainDialog",
-          "path": "/en/components/press/press-act-explain-dialog.md"
-        },
-        {
-          "title": "ActGetAwardDialog",
-          "path": "/en/components/press/press-act-get-award-dialog.md"
-        },
-        {
-          "title": "ActInputAddressDialog",
-          "path": "/en/components/press/press-act-input-address-dialog.md"
-        },
-        {
-          "title": "ActInputPhoneDialog",
-          "path": "/en/components/press/press-act-input-phone-dialog.md"
-        },
-        {
-          "title": "ActInputQQ",
-          "path": "/en/components/press/press-act-input-q-q.md"
-        },
-        {
-          "title": "ActLaunchDialog",
-          "path": "/en/components/press/press-act-launch-dialog.md"
-        },
-        {
-          "title": "ActModifyPhoneDialog",
-          "path": "/en/components/press/press-act-modify-phone-dialog.md"
-        },
-        {
-          "title": "ActNotAchievedDialog",
-          "path": "/en/components/press/press-act-not-achieved-dialog.md"
-        },
-        {
-          "title": "ActPromptDialog",
-          "path": "/en/components/press/press-act-prompt-dialog.md"
-        },
-        {
-          "title": "ActQRCodeDialog",
-          "path": "/en/components/press/press-act-q-r-code-dialog.md"
-        },
-        {
-          "title": "ActSelectAward",
-          "path": "/en/components/press/press-act-select-award.md"
-        },
-        {
-          "title": "ActStoreItem",
-          "path": "/en/components/press/press-act-store-item.md"
-        },
-        {
-          "title": "ActTipDialog",
-          "path": "/en/components/press/press-act-tip-dialog.md"
+          "title": "Popup",
+          "path": "/en/components/press/press-popup.md"
         }
       ]
     }

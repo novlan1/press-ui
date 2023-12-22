@@ -233,7 +233,10 @@ export function usePlugin(plugin, app) {
 
 export function setCustomElements(customElements, app) {
   // #ifndef VUE3
-  Vue.config.ignoredElements = customElements;
+  Vue.config.ignoredElements = [
+    ...(Vue.config.ignoredElements || []),
+    ...customElements,
+  ];
   // #endif
 
   // #ifdef VUE3

@@ -14,6 +14,7 @@
 <script>
 import utils from '../common/utils/utils';
 
+
 export default {
   name: 'PressCellGroup',
   props: {
@@ -26,6 +27,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    customClass: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     titleClass() {
@@ -33,8 +38,8 @@ export default {
       return utils.bem2('cell-group__title', { inset });
     },
     groupClass() {
-      const { inset, border } = this;
-      return `custom-class ${utils.bem2('cell-group', { inset })} ${border ? 'press-hairline--top-bottom' : ''}`;
+      const { inset, border, customClass } = this;
+      return `${customClass} ${utils.bem2('cell-group', { inset })} ${border ? 'press-hairline--top-bottom' : ''}`;
     },
   },
 };

@@ -22,6 +22,7 @@
         :immediate-check="immediateCheck"
         :vertical="listLocal.vertical"
         finished-text="没有更多了"
+        :auto-check-scroller="listLocal.autoCheckScroller"
         @load="load"
         @scroll="scroll"
       >
@@ -100,7 +101,7 @@ export default {
     PressPicker,
     PressCell,
   },
-  mixins: [virtualListMixin],
+  mixins: [virtualListMixin()],
   data() {
     const listLocal = {
       ...local,
@@ -137,7 +138,7 @@ export default {
   },
   methods: {
     load() {
-      // console.log('[load]');
+      console.log('[load]');
       this.onFetchData();
     },
     scroll(event, scrollerHeight) {
@@ -176,6 +177,7 @@ export default {
           changePageSize: this.changePageSize,
           changeDelay: this.changeDelay,
           changeDirection: this.changeDirection,
+          changeAutoCheckScroller: this.changeAutoCheckScroller,
         },
       });
     },
@@ -207,6 +209,14 @@ export default {
       };
       this.generateData();
     },
+    changeAutoCheckScroller(autoCheckScroller) {
+      this.listLocal = {
+        ...this.listLocal,
+        autoCheckScroller,
+      };
+      this.list = [];
+      this.generateData();
+    },
     generateData() {
       this.loading = true;
       this.onFetchData(true);
@@ -217,8 +227,10 @@ export default {
 <style scoped lang="scss">
 .demo-container {
   flex: 1;
-  overflow: auto;
   margin-top: 6px;
+
+  // try use list auto get scroller
+  overflow: auto;
 }
 
 .demo-wrap--hor {

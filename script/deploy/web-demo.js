@@ -1,7 +1,8 @@
 const { execSync } = require('child_process');
+const { DEPLOY_CONFIG } = require('../../config/deploy-config');
 
 const ENV_FILE = '.env.local';
-const REPO = 'press-ui-demo';
+const REPO = DEPLOY_CONFIG.DEMO_REPO;
 const TARGET_DIR = 'dist/build/h5';
 
 

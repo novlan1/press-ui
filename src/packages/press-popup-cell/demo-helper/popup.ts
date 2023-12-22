@@ -18,6 +18,7 @@ import {
   PICKER_BO_LIST,
   PICKER_BAN_LIST,
   SELECT_BAN_LIST,
+  type IPopupCellClick,
 } from './helper';
 
 const local = {
@@ -29,13 +30,13 @@ const local = {
 };
 
 
-const clickStartBattleType = ({ context, type }) => {
+const clickStartBattleType = ({ context, type }: any) => {
   local.startBattleType = type;
   context.onGTip('设置成功');
 };
 
 
-export function startMatchSet(context) {
+export function startMatchSet(context: any) {
   showPopupCell({
     context,
     title: '开赛设置',
@@ -44,7 +45,7 @@ export function startMatchSet(context) {
       {
         label: '开赛方式',
         value: getStartWayDesc(local.startBattleType, local.fixStartTime),
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
 
 
@@ -58,7 +59,7 @@ export function startMatchSet(context) {
                 description: '参赛双方满10人准备就绪即可比赛。',
                 type: 'checkbox',
                 checked: local.startBattleType === 1,
-                click: ({ context: popupContext }) => {
+                click: ({ context: popupContext }: IPopupCellClick) => {
                   popupContext.closeDialog();
                   clickStartBattleType({ type: 1, context });
                 },
@@ -68,7 +69,7 @@ export function startMatchSet(context) {
                 description: '管理员手动点击开赛，选手才能进行比赛。',
                 type: 'checkbox',
                 checked: local.startBattleType === 2,
-                click: ({ context: popupContext }) => {
+                click: ({ context: popupContext }: IPopupCellClick) => {
                   popupContext.closeDialog();
                   clickStartBattleType({ type: 2, context });
                 },
@@ -81,7 +82,7 @@ export function startMatchSet(context) {
                   }, {
                     content: timeStampFormat(local.fixStartTime, 'M月d日 hh:mm'),
                     light: true,
-                    click: (err) => {
+                    click: (err: IPopupCellClick) => {
                       const { context: popupContext } = err;
                       console.log('err', err);
                       popupContext.closeDialog();
@@ -122,7 +123,7 @@ export function startMatchSet(context) {
                 ],
                 type: 'checkbox',
                 checked: local.startBattleType === 3,
-                click: ({ context: popupContext }) => {
+                click: ({ context: popupContext }: IPopupCellClick) => {
                   popupContext.closeDialog();
                   clickStartBattleType({ type: 3, context });
                 },
@@ -140,7 +141,7 @@ export function startMatchSet(context) {
       {
         label: '选手截止上场时间',
         value: getAutoQuitDesc(local.fixLatestReadyTime),
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           const currentDate = local.fixLatestReadyTime === 0
             ? new Date() : new Date(local.fixLatestReadyTime * 1000);
@@ -158,12 +159,13 @@ export function startMatchSet(context) {
               value: currentDate.getTime(),
               immediateCheck: true,
 
-              filter: (type, options, currentDate) => otherOptionDateTimePickerFilter({
+              filter:
+              (type: string, options: Array<number>, currentDate: number) => otherOptionDateTimePickerFilter({
                 type,
                 options,
                 currentDate,
               }),
-              formatter: (type, value, currentDate) => otherOptionDateTimeFormatter({
+              formatter: (type: string, value: any, currentDate: number) => otherOptionDateTimeFormatter({
                 type,
                 value,
                 currentDate,
@@ -201,7 +203,7 @@ export function startMatchSet(context) {
     });
 }
 
-export function battleSet(context) {
+export function battleSet(context: any) {
   showPopupCell({
     context,
     title: '对局设置',
@@ -210,7 +212,7 @@ export function battleSet(context) {
       {
         label: '决胜方式',
         value: BO_STR_LIST[local.boType],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
           showPicker({
             context,
@@ -233,7 +235,7 @@ export function battleSet(context) {
       {
         label: 'Ban位',
         value: PICKER_BAN_LIST[local.bpType],
-        click: ({ context: popupContext }) => {
+        click: ({ context: popupContext }: IPopupCellClick) => {
           popupContext.closeDialog();
 
           showPicker({

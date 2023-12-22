@@ -37,9 +37,9 @@
         />
       </template>
 
-      <div :class="'' + utils.bem2('field__body', [type])">
+      <div :class="[utils.bem2('field__body', [type])]">
         <div
-          :class="'' + utils.bem2('field__control', [inputAlign, 'custom'])"
+          :class="[utils.bem2('field__control', [inputAlign, 'custom'])]"
           @click="onClickInput"
         >
           <slot name="input" />
@@ -47,7 +47,10 @@
         <textarea
           v-if="type === 'textarea'"
           ref="input"
-          :class="'' + (utils.bem2('field__control', [inputAlign, type, { disabled, error }]))+' ' + inputClass"
+          :class="[
+            utils.bem2('field__control', [inputAlign, type, { disabled, error }]),
+            inputClass
+          ]"
           :fixed="fixed"
           :focus="focus"
           :cursor="cursor"
@@ -79,7 +82,10 @@
         <input
           v-else
           ref="input"
-          :class="'' + (utils.bem2('field__control', [inputAlign, { disabled, error }]))+' ' + inputClass"
+          :class="[
+            utils.bem2('field__control', [inputAlign, { disabled, error }]),
+            inputClass
+          ]"
           :type="type"
           :focus="focus"
           :cursor="cursor"
@@ -135,14 +141,14 @@
         v-if="showWordLimit && maxlength"
         class="press-field__word-limit"
       >
-        <div :class="'' + utils.bem2('field__word-num', { full: innerValue.length >= maxlength })">
+        <div :class="[utils.bem2('field__word-num', { full: innerValue.length >= maxlength })]">
           {{ innerValue.length >= maxlength ? maxlength : innerValue.length }}
         </div>/{{ maxlength }}
       </div>
 
       <div
         v-if="errorMessage"
-        :class="'' + utils.bem2('field__error-message', [errorMessageAlign, { disabled, error }])"
+        :class="[utils.bem2('field__error-message', [errorMessageAlign, { disabled, error }])]"
       >
         {{ errorMessage }}
       </div>
