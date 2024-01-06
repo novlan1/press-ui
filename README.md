@@ -108,15 +108,14 @@ module.exports = {
 
 ### 5. 立即体验
 
-下图是示例二维码，分别为H5、微信小程序、QQ小程序，以及非`uni-app`环境的普通H5项目。
+下图是示例二维码，第一行分别为基于 `uni-app` 的 `Vue2.x` 版本的 H5、微信小程序、QQ小程序，以及非 `uni-app` 环境的 `Vue2.x` 项目。
+
+第二行分别为基于 `uni-app` 的 `Vue3.x` 版本的H5、微信小程序，及 `Vue2.x` 版本的安卓项目。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster.gif" width="700">
 
-下面是 Vue3 版本的H5、微信小程序，及 Vue2 版本的安卓项目。
-
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_dd8154ddb53764c3d0.png" width="510">
 
 ### 6. 贡献指南
 
-请查看[这里](./CONTRIBUTING.md)。
+请查看[这里](./packages/press-ui/CONTRIBUTING.md)。
 

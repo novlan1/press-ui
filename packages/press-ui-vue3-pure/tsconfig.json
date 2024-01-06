@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -11,12 +11,13 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "allowJs": true,
-    "noEmit": true,
-    "noImplicitAny": true,
+    "allowJs": false,
+    "noEmit": false,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
+    "outDir": "dist",
     "types": [
       "webpack-env",
       "@dcloudio/types",
@@ -43,6 +44,7 @@
     "unpackage",
     "dist/",
     "src/**/*.nvue",
+    "./**/*.spec.ts",
     "log/",
     "lib/"
   ]

@@ -22,20 +22,20 @@ yarn-error.log*
 *.sln
 *.sw*
 
-/log/
+**/log/
 package-lock.json 
 
 # 文档地址
-docs/components/press/
-docs/en/components/press/
+**/docs/components/press/
+**/docs/en/components/press/
 
 # 文档sidebar配置
 # docs/.vuepress/sidebar/
 
 # demo地址
-src/pages/press/
-src/pages/act/
-src/pages/act-detail/
+**/src/pages/press/
+**/src/pages/act/
+**/src/pages/act-detail/
 
 # demo首页配置
 # src/pages/index/page-config.json
@@ -43,7 +43,7 @@ src/pages/act-detail/
 # title i18n
 # src/utils/i18n/title-i18n.json
 
-tests/coverage
+**/tests/coverage
 
 
 /b-*.log
@@ -52,4 +52,7 @@ private.key
 mp_ci_preview_destination.png
 sm.zip
 lib/
-pnpm-lock.yaml
+
+packages/press-ui-vue3-pure/src/packages
+packages/press-ui-vue3-pure/src/utils
+packages/press-ui-vue3-pure/src/pages
