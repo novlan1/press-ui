@@ -12,7 +12,7 @@ const INNER_PATH_MAP = {
   TARGET_PACKAGES: 'log/packages',
   PACKAGE_JSON: './src/packages/package.json',
   ROOT_PACKAGE_JSON: './package.json',
-  SOURCE_README: './README.md',
+  SOURCE_README: '../../README.md',
   TARGET_README: './log/packages/README.md',
 };
 const PROJECT_ROOT = path.resolve(__dirname, '../../../../');
@@ -107,7 +107,6 @@ function main() {
   release(version);
 }
 
-genPureReleaseDir();
-copyReadme();
-// main();
+
+main();
 
