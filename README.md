@@ -110,7 +110,7 @@ module.exports = {
 
 下图是示例二维码，分别为H5、微信小程序、QQ小程序，以及非`uni-app`环境的普通H5项目。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_4fb4574312ab01757e.png" width="700">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/1/own_mike_b190c7043b95902f33.gif" width="700">
 
 下面是 Vue3 版本的H5、微信小程序，及 Vue2 版本的安卓项目。
 
