@@ -21,7 +21,7 @@
 - 🍭 支持主题定制，内置 600+ 个主题变量
 - 🌍 支持国际化，内置 16+ 种语言包
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_0de976ebb69937cf70.gif" width="600">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_13f3281f0a188e0fbd-1.gif" width="600">
 
 ### 2. 解决痛点
 
@@ -54,7 +54,7 @@
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/hok-club-screenshot.png" width="300">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fhok-club-screenshot.gif" width="300">
 
 <br/>
 
@@ -64,7 +64,7 @@
 
 <!-- <br/> -->
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_2bfb54a9ad6b9bc0ff.jpg" width="600">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_2bfb54a9ad6b9bc0ff.gif" width="600">
 
 ### 4. 如何使用
 
