@@ -21,7 +21,7 @@
 - 🍭 支持主题定制，内置 600+ 个主题变量
 - 🌍 支持国际化，内置 16+ 种语言包
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/1/own_mike_0de976ebb69937cf70.png" width="600">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_0de976ebb69937cf70.gif" width="600">
 
 ### 2. 解决痛点
 
