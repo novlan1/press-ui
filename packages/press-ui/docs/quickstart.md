@@ -61,13 +61,13 @@ module.exports = {
 1. 安装 npm 包：
 
 ```bash
-npm i uniplugin-light -D
+npm i uni-plugin-light -D
 ```
 
 2. 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const IF_DEF_LOADER = 'uniplugin-light/lib/loader/ifdef-loader';
+const IF_DEF_LOADER = 'uni-plugin-light/lib/loader/ifdef-loader';
 
 module.export = {
   chainWebpack(config) {

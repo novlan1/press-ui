@@ -1,6 +1,6 @@
 let reported = false;
 const AEGIS_LINK = 'https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js';
-const AEGIS_ID = 'OVeYwxAqgtnIXMHutM';
+const AEGIS_ID = 'KJdZ8CqDv3JjZoaPV8';
 const AEGIS_REPORT_URL = 'https://rumt-zh.com';
 
 function initReport() {

@@ -24,6 +24,7 @@ yarn-error.log*
 
 **/log/
 package-lock.json 
+pnpm-lock.yaml
 
 # 文档地址
 **/docs/components/press/
