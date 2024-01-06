@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       autosize: { maxHeight: 600, minHeight: 50 },
-      value: 'https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui/',
+      value: 'https://novlan1.github.io/press-ui/',
       size: 200,
     };
   },

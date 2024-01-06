@@ -34,7 +34,7 @@ export default {
 export default {
   data() {
     return {
-      value: 'https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui/',
+      value: 'https://novlan1.github.io/press-ui/',
       size: 200,
     }
   }

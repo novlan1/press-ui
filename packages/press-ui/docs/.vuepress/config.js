@@ -90,7 +90,7 @@ module.exports = {
     nav: [
       {
         text: 'Press Plus',
-        link: 'https://h5.igame.qq.com/pmd-mobile.support.press-plus.press-ui',
+        link: 'https://novlan1.github.io/press-plus',
       },
       {
         text: '源码地址',

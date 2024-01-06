@@ -38,7 +38,7 @@ export default {
     // #ifdef H5
     currentUrl = document.location.href;
     if (currentUrl.indexOf('http://localhost') > -1) {
-      currentUrl = 'https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui-demo/';
+      currentUrl = 'https://novlan1.github.io/press-ui-demo/';
     }
     showChooseDialog = true;
     // #endif

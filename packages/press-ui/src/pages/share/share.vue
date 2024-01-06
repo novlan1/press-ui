@@ -76,7 +76,7 @@ export default {
         icon: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fshare-sheet-wechat.png',
         mpImageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
 
-        link: 'https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui-demo/#/pages/launch-app/launch-app?show=true',
+        link: 'https://novlan1.github.io/press-ui-demo/#/pages/launch-app/launch-app?show=true',
         mpPath: '/pages/press/protocol/protocol?a=1&b=2&c=3&d=china&e=dd123ff',
         getWxSignaturePromise,
         getMiniProgramOpenLink,

@@ -107,6 +107,7 @@ function main() {
   release(version);
 }
 
-
-main();
+genPureReleaseDir();
+copyReadme();
+// main();
 

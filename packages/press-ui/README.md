@@ -6,4 +6,4 @@
 
 ---
 
-[查看文档](https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui/) | [查看示例](https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui-demo/)
+[查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui-demo/)

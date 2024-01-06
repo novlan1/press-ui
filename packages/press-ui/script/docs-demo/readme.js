@@ -9,7 +9,7 @@ function copyReadme() {
     encoding: 'utf-8',
   });
 
-  const newContent = content.replace('文档地址在[这里](https://h5.igame.qq.com/pmd-mobile.support.press-ui.press-ui/)。\n', '');
+  const newContent = content.replace('文档地址在[这里](https://novlan1.github.io/press-ui/)。\n', '');
 
   fs.writeFileSync(PATH_MAP.TARGET, newContent, { encoding: 'utf-8' });
 }
