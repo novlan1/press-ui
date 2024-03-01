@@ -22,6 +22,8 @@ declare interface Window {
   WebViewJavascriptBridge?: any;
   msdkNativeCallback?: any;
   msdkShareDelegate?: any
+
+  getCurrentPages?: any;
 }
 
 declare interface Document {

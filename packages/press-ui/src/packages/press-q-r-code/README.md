@@ -60,3 +60,22 @@ export default {
 | result | 生成成功 | `img` |
 
 
+## 常见问题
+
+### 尺寸单位
+
+由于使用了三方库，`size` 仅支持 `px` 单位，如果业务使用了 `rpx/rem` 等单位，可以自行转换成 `px` 后传入。
+
+下面是一个例子：
+
+```ts
+const windowInfo = uni.getWindowInfo();
+const cliWidth = systemInfo.windowWidth || 375;
+
+if (this.isMPQQ) {
+  this.qrSize = 4.76 * cliWidth / 10;
+} else {
+  // 目标是 238
+  this.qrSize = 4.76 * 50 * (cliWidth / 375);
+}
+```

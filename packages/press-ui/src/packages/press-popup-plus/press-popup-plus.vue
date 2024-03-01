@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="press-popup-plus">
     <press-overlay
       v-if="overlay"
       :show="show"

@@ -5,7 +5,7 @@ Press UI uses Chinese as the default language. If you want to use other language
 
 ## Usage
 
-### Switch languages
+### 1. Switch languages
 
 Use the `locale.use` method to switch the currently used language. The following takes English as an example:
 
@@ -19,7 +19,7 @@ locale.use(enUS);
 ```
 
 
-### Override default configs
+### 2. Override default configs
 
 
 Use `locale.add` method to modify the default configs.
@@ -38,7 +38,7 @@ const messages = {
 locale.add(messages);
 ```
 
-### Config files
+### 3. Config files
 
 Current supported languages:
 

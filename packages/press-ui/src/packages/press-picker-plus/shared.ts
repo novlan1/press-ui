@@ -1,9 +1,10 @@
 import { t } from '../locale';
 
 export const pickerProps = {
-  title: String,
-  loading: Boolean,
-  showToolbar: Boolean,
+  title: { type: String, default: '' },
+  showToolbar: { type: Boolean, default: false },
+  loading: { type: Boolean, default: false },
+
   cancelButtonText: {
     type: String,
     default: t('picker.cancel'),

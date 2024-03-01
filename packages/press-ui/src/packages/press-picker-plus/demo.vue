@@ -48,10 +48,30 @@
         @change="onChange"
       />
     </demo-block>
+
+    <demo-block
+      :title="t('withPopupPlus')"
+    >
+      <press-cell
+        :title="t('check')"
+        is-link
+        @click="onShowPopupPlus"
+      />
+    </demo-block>
+
+
+    <PressPickerPlusPopupPlus
+      :show="showPopupPlus"
+      :columns="columns"
+      @change="onChange"
+      @cancel="showPopupPlus = false"
+      @confirm="confirmPopupPlus"
+    />
   </div>
 </template>
 <script>
 import PressPickerPlus from 'src/packages/press-picker-plus/press-picker-plus.vue';
+import PressPickerPlusPopupPlus from 'src/packages/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
 
 
 const dateColumns = {
@@ -171,6 +191,7 @@ export default {
         福建: ['福州', '厦门', '莆田', '三明', '泉州'],
       },
       toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
+      withPopupPlus: '结合 PopupPlus',
     },
     'en-US': {
       city: 'City',
@@ -195,13 +216,16 @@ export default {
         Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
       },
       toastContent: (value, index) => `Value: ${value}, Index：${index}`,
+      withPopupPlus: 'With PopupPlus',
     },
   },
   components: {
     PressPickerPlus,
+    PressPickerPlusPopupPlus,
   },
   data() {
     return {
+      showPopupPlus: false,
     };
   },
   computed: {
@@ -250,6 +274,13 @@ export default {
       const { value, index } = val;
       const title = `${prefix}value: ${value.text || value}, index: ${index}`;
       this.onGTip(title);
+    },
+    onShowPopupPlus() {
+      this.showPopupPlus = true;
+    },
+    confirmPopupPlus(...args) {
+      console.log('[confirmPopupPlus]', ...args);
+      this.showPopupPlus = false;
     },
   },
 };

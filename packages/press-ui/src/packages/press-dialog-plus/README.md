@@ -9,6 +9,12 @@ url : pages/press/dialog-plus/dialog-plus
 
 ## 引入
 
+注意，`press-dialog-plus` 节点需要埋在页面下，否则小程序中找不到。H5 环境可以不预埋，找不到节点时，会动态创建。
+
+```html
+<PressDialogPlus id="press-dialog" />
+```
+
 ```ts
 import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus';
 

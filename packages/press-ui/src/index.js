@@ -29,6 +29,7 @@ import Overlay from './packages/press-overlay/press-overlay.vue';
 import PopoverPlus from './packages/press-popover-plus/press-popover-plus.vue';
 import ShareSheet from './packages/press-share-sheet/press-share-sheet.vue';
 import SwipeCell from './packages/press-swipe-cell/press-swipe-cell.vue';
+import Teleport from './packages/press-teleport/press-teleport.vue';
 import Avatar from './packages/press-avatar/press-avatar.vue';
 import Badge from './packages/press-badge/press-badge.vue';
 import Barcode from './packages/press-barcode/press-barcode.vue';
@@ -96,6 +97,7 @@ const components = [
   PopoverPlus,
   ShareSheet,
   SwipeCell,
+  Teleport,
   Avatar,
   Badge,
   Barcode,

@@ -223,8 +223,9 @@ export default {
     tabsClass() {
       const { type, customClass, mode } = this;
       const isHor = mode === 'hor';
+      const isESport = mode === 'e-sport';
 
-      return `${this.bem3('tabs', [type, { hor: isHor }])} ${customClass}`;
+      return `${this.bem3('tabs', [type, { hor: isHor, 'e-sport': isESport }])} ${customClass}`;
     },
     tabsWrapClass() {
       const { scrollable, type, border } = this;
@@ -714,92 +715,6 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
-@import "../common/style/smoba/layout.scss";
-@import "../common/style/smoba/mixin.scss";
-
-.press-tabs--hor {
-  height: 100%;
-
-  /* tab */
-  ::v-deep {
-    .press-tabs {
-      height: 100%;
-      z-index: 2;
-    }
-
-    .press-tabs__content {
-      height: calc(100% - 0.54rem);
-      padding-top: 0.12rem;
-    }
-
-    .press-tabs__scroll {
-      height: 100%;
-      background: transparent;
-      box-sizing: border-box;
-    }
-
-    .press-tabs__wrap {
-      position: relative;
-      height: 0.54rem;
-      &::before {
-        position: absolute;
-        bottom: 0.06rem;
-        left: 0;
-        right: 0;
-        content: "";
-        height: 0.02rem;
-        background: rgba(123, 197, 255, 0.15);
-      }
-    }
-
-    .press-tabs__nav,
-    .press-tabs__scroll--line {
-      height: 100%;
-    }
-
-    .press-tab {
-      font-family: "GAMEFONT";
-      flex: none;
-      color: #84b0eb;
-      font-size: $font-s;
-      padding: 0 0.32rem 0.06rem;
-      z-index: 2;
-    }
-
-    .press-tabs__line {
-      height: 27px;
-      background: transparent
-        url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/tab-act.png)
-        no-repeat center;
-      background-size: contain;
-      border-radius: 0;
-    }
-
-    .press-tab__pane {
-      height: 100%;
-    }
-
-    .press-tab--active {
-      color: $color-white;
-      text-shadow: 0 0 8px rgba(95, 147, 234, 0.69);
-    }
-
-    .press-ellipsis {
-      overflow: visible;
-    }
-
-    .press-info--dot {
-      top: -0.08rem !important;
-      right: -0.02rem !important;
-      width: 0.28rem;
-      height: 0.28rem;
-      padding: 0;
-      border-radius: 0;
-      border: none;
-      background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/red-dot.png)
-        no-repeat center;
-      background-size: contain;
-    }
-  }
-}
+@import "./css/hor.scss";
+@import "./css/e-sport.scss";
 </style>

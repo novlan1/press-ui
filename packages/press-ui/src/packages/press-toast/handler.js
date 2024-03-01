@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-let Toast: any;
+let Toast;
 
 // #ifndef H5
 import ToastMp from './toast-mp';

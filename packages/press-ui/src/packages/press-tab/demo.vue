@@ -239,6 +239,27 @@
         </press-tab>
       </press-tabs>
     </demo-block>
+
+    <demo-block
+      title="E-SPORT"
+    >
+      <press-tabs
+        :active="active"
+        mode="e-sport"
+        @change="onChange"
+        @input="onInput"
+      >
+        <press-tab
+          v-for="(item,index) of tabs4"
+          :key="index"
+          :title="`${t('tab')} ${index+1}`"
+        >
+          <div class="content">
+            {{ t('content') }} {{ index+1 }}
+          </div>
+        </press-tab>
+      </press-tabs>
+    </demo-block>
   </div>
 </template>
 <script>

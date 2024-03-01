@@ -137,16 +137,16 @@ export default {
 ## 常见问题
 
 
-### `List` 的运行机制是什么？
+### 1. `List` 的运行机制是什么？
 
 `List` 会监听浏览器的滚动事件并计算列表的位置，当列表底部与可视区域的距离小于`offset`时，`List` 会触发一次 `load` 事件。
 
-### 为什么 `List` 初始化后会立即触发 `load` 事件？
+### 2. 为什么 `List` 初始化后会立即触发 `load` 事件？
 
 `List` 初始化后会触发一次 `load` 事件，用于加载第一屏的数据，这个特性可以通过`immediate-check`属性关闭。
 
 
-### 非`load`事件触发的请求要将`loading`设置为`true`
+### 3. 非`load`事件触发的请求要将`loading`设置为`true`
 
 如果想在页面一进入就加载数据，需要将`loading`手动设置为`true`，否则请求数据不满一屏的话，组件无法监听数据变化，不会自动加载下一页。
 
@@ -172,11 +172,11 @@ export default {
 if (this.loading) return;
 ```
 
-### 为什么会连续触发 `load` 事件？
+### 4. 为什么会连续触发 `load` 事件？
 
 如果一次请求加载的数据条数较少，导致列表内容无法铺满当前屏幕，`List` 会继续触发 `load` 事件，直到内容铺满屏幕或数据全部加载完成。因此你需要调整每次获取的数据条数，理想情况下每次请求获取的数据条数应能够填满一屏高度。
 
-### `loading` 和 `finished` 分别是什么含义？
+### 5. `loading` 和 `finished` 分别是什么含义？
 
 `List`有以下三种状态，理解这些状态有助于你正确地使用`List`组件：
 
@@ -189,12 +189,12 @@ if (this.loading) return;
 - 加载中，`loading`的值传递方向，组件内 => 组件外，变为`true`。
 - 加载结束，`loading`的值传递方向，组件外 => 组件内，变为`false`。
 
-### 虚拟列表
+### 6. 虚拟列表
 
 
 由于列表数据在父组件控制，`press-list`内部只有`slot`占位，并且不同列表的结构和样式千差万别，所以虚拟列表只能在父组件实现。
 
-`press-list`提供了虚拟列表的[简单示例](https://github.com/novlan1/press-ui/blob/release/src/packages/press-list/demo.vue)，可以参考使用。
+`press-list`提供了虚拟列表的[简单示例](https://github.com/novlan1/press-ui/blob/release/packages/press-ui/src/packages/press-list/demo.vue)，可以参考使用。
 
 
 虚拟列表的实现原理如下：
@@ -208,7 +208,7 @@ if (this.loading) return;
 `press-picker`和`press-list`的示例都是用的第三种方法。
 
 
-### loading传递
+### 7. `loading` 传递
 
 如果`press-list`在子组件，`loading`的值由父组件控制，可以这样传递：
 
@@ -249,3 +249,7 @@ export default {
   }
 }
 ```
+
+### 8. 滑动到底部，加载更多不触发
+
+检查内部元素是否够长，或设置了 `overflow` 为 `hidden/scroll`。

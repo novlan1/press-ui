@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="wrap">
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate press-rate--demo-class">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-like press-rate__icon press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-like press-rate__icon press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-like press-rate__icon press-rate__icon--full" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-like-o press-rate__icon" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-like-o press-rate__icon" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="0">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="1">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="2">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus--image press-rate__icon" data-score="3">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon-plus__image">
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus--image press-rate__icon" data-score="4">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon-plus__image">
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--half press-rate__icon--full" data-score="-0.5">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--half press-rate__icon--full" data-score="0.5">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon" style="color: rgb(238, 238, 238);" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--half press-rate__icon--full" data-score="1.5">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon" style="color: rgb(238, 238, 238);" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--half" style="color: rgb(238, 238, 238);" data-score="2.5">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon" style="color: rgb(238, 238, 238);" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--half" style="color: rgb(238, 238, 238);" data-score="3.5">
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="5">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--disabled press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--disabled press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--disabled press-rate__icon--full" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon press-rate__icon--disabled" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon press-rate__icon--disabled" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-rate-index">
+      <div class="press-rate">
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="0">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="1">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star press-rate__icon press-rate__icon--full" data-score="2">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="3">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="press-rate__item">
+          <div class=" press-icon-plus press-icon-plus-star-o press-rate__icon" data-score="4">
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

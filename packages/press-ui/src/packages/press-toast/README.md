@@ -7,8 +7,9 @@ url : pages/press/toast/toast
 
 在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。
 
-
 ## 引入
+
+注意，`press-toast` 节点需要埋在页面下，否则小程序中找不到。H5 环境可以不预埋，找不到节点时，会动态创建。
 
 ```html
 <press-toast id="press-toast" />

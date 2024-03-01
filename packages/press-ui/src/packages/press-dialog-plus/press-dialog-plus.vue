@@ -125,8 +125,6 @@
 <script>
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 import PressButton from '../press-button/press-button.vue';
-// import VanGoodsAction from '../goods-action/index.vue';
-// import VanGoodsActionButton from '../goods-action-button/index.vue';
 
 import { button } from '../mixins/button';
 import { GRAY, RED } from '../common/constant/color';
@@ -134,7 +132,8 @@ import { toPromise } from '../common/format/function';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import { t } from '../locale';
-import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+import { getDialogMixin } from '../press-dialog/dialog-mixin';
+
 
 const props = {
   show: {
@@ -196,6 +195,7 @@ const props = {
   },
   ...defaultProps,
 };
+
 export default {
   name: 'PressDialogPlus',
   options: {
@@ -206,12 +206,12 @@ export default {
     PressPopup,
     PressButton,
   },
-  mixins: [button],
+  mixins: [button, getDialogMixin(props)],
   props,
   emits: ['close', 'confirm', 'cancel'],
   data() {
     return {
-      ...getPropsData(this, props),
+      // ...getPropsData(this, props),
 
       utils,
       loading: {
@@ -222,7 +222,7 @@ export default {
     };
   },
   watch: {
-    ...getPropsWatch(props),
+    // ...getPropsWatch(props),
     dataShow: {
       handler(val) {
         if (!val) {
@@ -232,9 +232,9 @@ export default {
     },
   },
   methods: {
-    setData(data) {
-      setPropsToData.call(this, data);
-    },
+    // setData(data) {
+    //   setPropsToData.call(this, data);
+    // },
     onConfirm() {
       this.handleAction('confirm');
     },

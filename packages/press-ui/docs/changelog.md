@@ -1,5 +1,179 @@
 # 更新日志
 
+### [1.3.16](https://github.com/novlan1/press-ui/compare/v1.3.15...v1.3.16) (2024-02-26)
+
+
+### Features 🎉
+
+* **ts:** add toast ts defination ([a605b4d](https://github.com/novlan1/press-ui/commit/a605b4d06f86358658b77ddc0489ea0b3cc6dd66))
+
+### [1.3.15](https://github.com/novlan1/press-ui/compare/v1.3.14...v1.3.15) (2024-02-23)
+
+
+### Bug Fixes 🐞
+
+* **handler:** update toast notify handler to js ([baf586a](https://github.com/novlan1/press-ui/commit/baf586a3498ce795cddaf9e1b9f707854cbf458a))
+
+### [1.3.14](https://github.com/novlan1/press-ui/compare/v1.3.13...v1.3.14) (2024-02-23)
+
+
+### Documentation 📖
+
+* **dialog-plus:** update dialog plus dialog ([16b086e](https://github.com/novlan1/press-ui/commit/16b086e24737972bfcdbe5e65e6fdce1f8d0dd52))
+* **dialog:** update esport dialog demo pic ([d24946b](https://github.com/novlan1/press-ui/commit/d24946b2a89cb42d9b8f5bde78b6208841831314))
+* **press:** update toast docs ([c48fa48](https://github.com/novlan1/press-ui/commit/c48fa48ac9ac71b28007cf7c83f8574779d318c8))
+
+
+### Chore 🚀 
+
+* add lib version ([60f2ba7](https://github.com/novlan1/press-ui/commit/60f2ba79cb53853d0330c6ee77e78484fa1b6947))
+* update eslint-config-light ([5c0cc82](https://github.com/novlan1/press-ui/commit/5c0cc8277c7a381342b244e4083acd0e5eb92f64))
+
+
+### Code Refactoring ♻️
+
+* **dialog:** extract dialog mixin ([0dbbf64](https://github.com/novlan1/press-ui/commit/0dbbf64fd3329a4f091b78ca845e3d873012f8b7))
+* **dialog:** extract init functional dialog method ([9433bf9](https://github.com/novlan1/press-ui/commit/9433bf98e458ce38d64180e810b59cfd31c896f5))
+* **dialog:** update dialog handler ([956a365](https://github.com/novlan1/press-ui/commit/956a36593cdf08232a7c3097a0e34bdb581066ff))
+* **dialog:** update functional dialog in mp ([44cb2a3](https://github.com/novlan1/press-ui/commit/44cb2a3bde0903f02e4bc7f5c4b66e6052550599))
+* **functional:** toast notify dialog dialog-plus use same dialog mixin ([abb339e](https://github.com/novlan1/press-ui/commit/abb339e3dc46402a8ea418665609cc66f8e6a1f7))
+* **pagination:** update inner data name ([4dfa249](https://github.com/novlan1/press-ui/commit/4dfa249e7e03e67f83eb8794a572cb44b7788541))
+
+### [1.3.13](https://github.com/novlan1/press-ui/compare/v1.3.12...v1.3.13) (2024-01-18)
+
+
+### Documentation 📖
+
+* **qrcode:** update docs ([24d0988](https://github.com/novlan1/press-ui/commit/24d0988c37ada88c60231ddad73ff05cdf59233d))
+* **teleport:** update demo style ([d0845d0](https://github.com/novlan1/press-ui/commit/d0845d09d495c52bc0d70e70c8aaa495a2c01a20))
+* **teleport:** update docs ([5ed9094](https://github.com/novlan1/press-ui/commit/5ed909433c037da057aa1da6780b7fef73fea8f5))
+* **teleport:** update docs ([fad51c9](https://github.com/novlan1/press-ui/commit/fad51c92c9a24ef4c474d34fe4d3f5650541bc9a))
+
+
+### Bug Fixes 🐞
+
+* **press-q-r-code:** add width and height ([272ee76](https://github.com/novlan1/press-ui/commit/272ee76522c8359085ad40066139969ebe7d9bd0))
+
+### [1.3.12](https://github.com/novlan1/press-ui/compare/v1.3.11...v1.3.12) (2024-01-17)
+
+
+### Documentation 📖
+
+* **teleport:** update teleport docs ([10e85f4](https://github.com/novlan1/press-ui/commit/10e85f44ac331cb27ab79d800223db35412d1c39))
+
+
+### Styles 💄
+
+* **teleport:** update teleport styles ([c282381](https://github.com/novlan1/press-ui/commit/c2823815df0c9e873a21e658fcdff62e01bca82e))
+
+
+### Code Refactoring ♻️
+
+* **teleport:** update teleport in web ([d54ef47](https://github.com/novlan1/press-ui/commit/d54ef472e00e3cba4b4285634236691e92680224))
+
+### [1.3.11](https://github.com/novlan1/press-ui/compare/v1.3.10...v1.3.11) (2024-01-17)
+
+
+### Documentation 📖
+
+* update docs ([b7dd2c1](https://github.com/novlan1/press-ui/commit/b7dd2c131e55bc3ac170f6b6c3e7d268703e1b1c))
+
+
+### Tests ✅
+
+* add uni tests ([9a784dc](https://github.com/novlan1/press-ui/commit/9a784dc8a01770a8bd04e15f8348ee5a8b20944a))
+* add unit tests ([f4c1a4d](https://github.com/novlan1/press-ui/commit/f4c1a4d746feb4c996dc9f1540ed80bf8570c95b))
+* update test cases ([7a9ecda](https://github.com/novlan1/press-ui/commit/7a9ecda9de8d6266dd8cce74b75a911f1b634fcc))
+* update tests ([d0e5381](https://github.com/novlan1/press-ui/commit/d0e5381701806284e3428bc3e2ebd386355b8e91))
+
+
+### Chore 🚀 
+
+* update ts ([3de2c66](https://github.com/novlan1/press-ui/commit/3de2c6606c72b58ba6e9b5fa2db45ae501fbca36))
+
+
+### Features 🎉
+
+* **teleport:** add teleport ([93fd4d4](https://github.com/novlan1/press-ui/commit/93fd4d449baa115e76426e420fa96c09c9f532e9))
+
+### [1.3.10](https://github.com/novlan1/press-ui/compare/v1.3.9...v1.3.10) (2024-01-16)
+
+
+### Chore 🚀 
+
+* update eslint-config-light ([4ed0fe4](https://github.com/novlan1/press-ui/commit/4ed0fe43c7d381e55d83d537ee265d058b16523d))
+
+
+### Features 🎉
+
+* **picker-plus-popup-plus:** add picker plus in popup plus ([260b42c](https://github.com/novlan1/press-ui/commit/260b42c8b093d0dba6c5625f7c6261b4b025c44d))
+
+### [1.3.9](https://github.com/novlan1/press-ui/compare/v1.3.8...v1.3.9) (2024-01-15)
+
+
+### Tests ✅
+
+* add unit test ([113bb3b](https://github.com/novlan1/press-ui/commit/113bb3b85e932b816e7daf5c6fa84fb09715a72b))
+
+
+### Documentation 📖
+
+* add adapter docs ([96770cd](https://github.com/novlan1/press-ui/commit/96770cd11c051a503c9b476044b0a69c8c6547d4))
+* **list:** update list ([d82452b](https://github.com/novlan1/press-ui/commit/d82452b110ffa87c11be75d0c0e5b143ff776983))
+* update demo link ([18a594d](https://github.com/novlan1/press-ui/commit/18a594d0ec456dd32ef8132761e44ccb814f4eaa))
+* update docs ([d79a7c1](https://github.com/novlan1/press-ui/commit/d79a7c175793e158c14054d924752c8bb63e0024))
+* update docs ([23252e4](https://github.com/novlan1/press-ui/commit/23252e4dacaa8af532d9213ae20219414c97cb11))
+* update logic docs ([b2915a1](https://github.com/novlan1/press-ui/commit/b2915a1c3c09770a6c9bc1d30a8f8f98e92f2fb9))
+
+
+### Chore 🚀 
+
+* **adapter:** update ts types of extendComponent ([e8ecd75](https://github.com/novlan1/press-ui/commit/e8ecd7511bb5552b0f49c293f42e1f08af5377a2))
+
+### [1.3.8](https://github.com/novlan1/press-ui/compare/v1.3.7...v1.3.8) (2024-01-12)
+
+
+### Documentation 📖
+
+* **datetime-picker-popup-plus:** add docs ([81026d8](https://github.com/novlan1/press-ui/commit/81026d86805dacd804225f68d80201e26c671126))
+* **datetime-picker:** add popup docs ([91f96f4](https://github.com/novlan1/press-ui/commit/91f96f430a1af57c3fe0c802f0366afb90f57d63))
+* **pagination:** update docs ([30cdd8b](https://github.com/novlan1/press-ui/commit/30cdd8b7906e4a76c5b5164bda42c6ea12c4671d))
+
+
+### Features 🎉
+
+* **datetime-picker-popup-plus:** add popup plus of datetime picker ([d87d427](https://github.com/novlan1/press-ui/commit/d87d4275d8e7fbd406e92e1ca2c3ccc40956b9bb))
+* **datetime-picker-popup-plus:** support close-on-click-overlay ([9e91927](https://github.com/novlan1/press-ui/commit/9e91927c00da6f79eb5d94233b96f6a874eab55a))
+* **datetime-picker-popup-plus:** support mp ([9cd78c7](https://github.com/novlan1/press-ui/commit/9cd78c7ab2583143fc25bda127cbb1902699d9b2))
+* **datetime-picker-popup-plus:** support title ([ede9751](https://github.com/novlan1/press-ui/commit/ede9751fcf1b177024f87d918e25a8898b441d77))
+
+### [1.3.7](https://github.com/novlan1/press-ui/compare/v1.3.6...v1.3.7) (2024-01-10)
+
+
+### Documentation 📖
+
+* **toast:** update toast docs ([814f6e6](https://github.com/novlan1/press-ui/commit/814f6e6b90c77f6efbfbc2b76363b7eb0c2eba94))
+* update readmd ([3252b0c](https://github.com/novlan1/press-ui/commit/3252b0cf5d74dc0bc5b316d4152b7d744ce2ea74))
+* update readme img ([6573991](https://github.com/novlan1/press-ui/commit/65739918f24d23f933f30e0ec00ff850c2200cd5))
+
+
+### Chore 🚀 
+
+* update publish script ([3aff0d0](https://github.com/novlan1/press-ui/commit/3aff0d090fe872be0921324d8ee40863c4379a65))
+* update script ([2c88778](https://github.com/novlan1/press-ui/commit/2c88778a2a6c416c934a1fca30bc9fe676e135f3))
+* update t-comm ([74760a1](https://github.com/novlan1/press-ui/commit/74760a1fa14bac5b1ed86ea42b9c6cc1057c217e))
+
+
+### Code Refactoring ♻️
+
+* **tab:** update scss file ([854d9b3](https://github.com/novlan1/press-ui/commit/854d9b3407038ca4e5da6c2be44170f84bf36fa8))
+* **toast:** use v-html ([54fafb1](https://github.com/novlan1/press-ui/commit/54fafb1cfd1434573bd434e832b68e3dde1be1dd))
+
+
+### Features 🎉
+
+* **tab:** add e-sport mode ([0319bd6](https://github.com/novlan1/press-ui/commit/0319bd659e3ed906b4bdf3ca99a449e5a17aba80))
+
 ### [1.3.6](https://github.com/novlan1/press-ui/compare/v1.3.5...v1.3.6) (2024-01-04)
 
 

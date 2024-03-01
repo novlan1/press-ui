@@ -2,7 +2,7 @@
 url : pages/press/protocol/protocol
 ---
 
-# Protocol
+# Protocol 协议
 
 解析协议，解析后的数据可以传给 [press-protocol](../press/press-protocol) 组件。
 

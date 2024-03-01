@@ -108,4 +108,4 @@ The following figure is an example QR code with three terminals:
 
 ### 6. Contribution Guidelines
 
-Check it out [here](https://github.com/novlan1/press-ui/blob/release/CONTRIBUTING.md).
+Check it out [here](https://github.com/novlan1/press-ui/blob/release/packages/press-ui/CONTRIBUTING.md).

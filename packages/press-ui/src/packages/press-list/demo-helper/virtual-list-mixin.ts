@@ -1,4 +1,4 @@
-import { getEventDetail } from 'src/packages/common/dom/event';
+import { getEventDetail } from '../../common/dom/event';
 
 const ITEM_HEIGHT = 50;
 const DEFAULT_VIRTUAL_LIST_THRESHOLD = 500;

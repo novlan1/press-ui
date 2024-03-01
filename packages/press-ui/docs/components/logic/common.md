@@ -1,10 +1,10 @@
-# Common
+# Common 公共方法
 
 Press UI 内部有一些公共方法，外部用户也可以使用。
 
 由于 Press UI 提供的是未编译的包，所以可以包含条件编译，这是其他库不能提供的。
 
-## setClipboardData
+## 1. setClipboardData
 
 设置粘贴板内容，内部通过条件编译区分 H5 平台和其他平台。
 
@@ -19,7 +19,7 @@ setClipboardData('123')
   })
 ```
 
-## getActClass
+## 2. getActClass
 
 获取活动组件的类名。
 
@@ -36,7 +36,7 @@ function main(useTipClass, args) {
 }
 ```
 
-### COLOR_MAP
+## 3. COLOR_MAP
 
 一些常用的颜色变量。
 
@@ -59,7 +59,7 @@ export const GRAY = '#323233';
 export const GRAY_DARK = '#969799';
 ```
 
-### timeStampFormat
+## 4. timeStampFormat
 
 同 [T Comm](https://novlan1.github.io/t-comm/zh/time.html) 的同名方法。
 

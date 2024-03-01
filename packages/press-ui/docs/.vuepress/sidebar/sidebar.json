@@ -165,6 +165,11 @@
           "title": "SwipeCell",
           "subTitle": "滑动单元格",
           "path": "/components/press/press-swipe-cell.md"
+        },
+        {
+          "title": "Teleport",
+          "subTitle": "传送门",
+          "path": "/components/press/press-teleport.md"
         }
       ]
     },

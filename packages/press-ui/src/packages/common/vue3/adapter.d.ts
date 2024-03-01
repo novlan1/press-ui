@@ -4,7 +4,7 @@ export function initGlobalProps(list: any, app?: any): void;
 export function nextTick(cb: any): void;
 export function extendComponent(el: any, component: any, propsData?: {}): any;
 export function extendComponentMore({ el, component, propsData, initApp }: {
-  el: string;
+  el: Element | string;
   component: any;
   propsData?: {};
   initApp?: any;

@@ -126,7 +126,7 @@ export default {
 - `scheGroup`包含`teamList`、`nodeItem`、`schid`、`realStatus`、`bracketIdDesc`、`curBo`、`boType`等信息
 
 
-示例数据可以[参考这里](https://github.com/novlan1/press-ui/blob/release/src/packages/press-schedule-tree/demo-helper/data.ts)。
+示例数据可以[参考这里](https://github.com/novlan1/press-ui/blob/release/packages/press-ui/src/packages/press-schedule-tree/demo-helper/data.ts)。
 
 
 ```ts

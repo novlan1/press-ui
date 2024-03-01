@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  " style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg" style="width: 100%; height: 90px;"></div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg" style="width: 100%; height: 90px;"></div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg" style="width: 100%; height: 90px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  " style="padding-left: 10px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px; margin-top: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-photo-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-home-o">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          Navigate 跳转
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-search">
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          ReLaunch 跳转
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-home-o">
+              <div class="press-info press-info press-info--dot press-icon-plus__info">
+
+              </div>
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+      <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+        <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+          <div class="press-grid-item__icon">
+            <div class=" press-icon-plus press-icon-plus-search">
+              <div class="press-info press-info press-icon-plus__info">
+                99+
+              </div>
+              <!---->
+            </div>
+          </div>
+          <div class="press-grid-item__text"><span>
+          文字
+        </span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

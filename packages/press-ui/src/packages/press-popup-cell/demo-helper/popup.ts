@@ -4,8 +4,8 @@ import {
   otherOptionDateTimeFormatter,
   fiveMinutesDateTimeFilter,
   otherOptionDateTimePickerFilter,
-} from 'src/packages/press-datetime-picker/utils';
-import { timeStampFormat } from 'src/packages/common/format/time';
+} from '../../press-datetime-picker/utils';
+import { timeStampFormat } from '../../common/format/time';
 import {
   showPopupCell,
   getStartWayDesc,

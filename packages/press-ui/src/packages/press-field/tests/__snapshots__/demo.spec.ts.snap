@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap demo-wrap--gray">
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 0px; min-width: 0px; display: none;">
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入文本" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--required">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            文本
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入文本" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <div class=" press-icon-plus press-icon-plus-question-o press-field__icon-root ">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--required press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            号码
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--tel">
+            <div class="press-field__control press-field__control--custom"></div> <input type="tel" cursor="-1" maxlength="-1" placeholder="请输入号码" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--required press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            整数
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--digit">
+            <div class="press-field__control press-field__control--custom"></div> <input type="digit" cursor="-1" maxlength="-1" placeholder="请输入整数" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--required press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            数字
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--digit">
+            <div class="press-field__control press-field__control--custom"></div> <input type="digit" cursor="-1" maxlength="-1" placeholder="请输入数字（支持小数）" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--required press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; display: none;">
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--password">
+            <div class="press-field__control press-field__control--custom"></div> <input type="password" cursor="-1" maxlength="-1" placeholder="" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" password="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__left-icon-wrap press-cell__left-icon press-icon-plus press-icon-plus-contact">
+          <!---->
+          <!---->
+        </div>
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label press-field__label--disabled">
+            文本
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" disabled="disabled" maxlength="-1" placeholder="输入框已禁用" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control press-field__control--disabled">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            名称
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入名称" placeholder-style="" placeholder-class="press-field__placeholder press-field__placeholder--error" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control press-field__control--error">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            号码
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入号码" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <div class="press-field__error-message">
+            号码格式错误
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            名称
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--right press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入名称" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control press-field__control--right">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            留言
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--textarea">
+            <div class="press-field__control press-field__control--custom"></div> <textarea cursor="-1" maxlength="-1" placeholder="请输入留言" placeholder-style="" placeholder-class="press-field__placeholder" auto-height="true" cursor-spacing="50" adjust-position="true" show-confirm-bar="true" selection-end="-1" selection-start="-1" disable-default-padding="true" class="press-field__control press-field__control--textarea"></textarea>
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            名称
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="20" placeholder="请输入名称" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <div class="press-field__word-limit">
+            <div class="press-field__word-num">
+              0
+            </div>/20
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            留言
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--textarea">
+            <div class="press-field__control press-field__control--custom"></div> <textarea cursor="-1" maxlength="100" placeholder="请输入留言" placeholder-style="" placeholder-class="press-field__placeholder" auto-height="true" cursor-spacing="50" adjust-position="true" show-confirm-bar="true" selection-end="-1" selection-start="-1" disable-default-padding="true" class="press-field__control press-field__control--textarea"></textarea>
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"></div>
+          </div>
+          <div class="press-field__word-limit">
+            <div class="press-field__word-num">
+              0
+            </div>/100
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-field-index">
+      <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--center press-cell--borderless">
+        <div class="press-cell__title" style="max-width: 6.2em; min-width: 6.2em; margin-right: 12px;">
+          <div class=" press-field__label">
+            号码
+          </div>
+          <!---->
+        </div>
+        <div class="press-cell__value">
+          <div class="press-field__body press-field__body--text">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" maxlength="-1" placeholder="请输入号码" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control">
+            <!---->
+            <div class="press-field__icon-container">
+              <!---->
+            </div>
+            <div class="press-field__button"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small ">
+                <!---->
+                <div class="press-button__text">
+                  发送号码
+                </div>
+              </button></div>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

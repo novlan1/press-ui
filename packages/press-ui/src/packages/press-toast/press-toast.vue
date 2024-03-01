@@ -58,7 +58,8 @@ import PressLoading from '../press-loading-plus/press-loading-plus.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressTransition from '../press-transition/press-transition.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+// import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+import { getDialogMixin } from '../press-dialog/dialog-mixin';
 
 import { isNotInUni } from '../common/utils/utils';
 
@@ -101,11 +102,12 @@ export default {
     PressOverlay,
     PressTransition,
   },
+  mixins: [getDialogMixin(props)],
   props,
   emits: [],
   data() {
     return {
-      ...getPropsData(this, props),
+      // ...getPropsData(this, props),
       notInUni: isNotInUni(),
     };
   },
@@ -129,12 +131,12 @@ export default {
     },
   },
   watch: {
-    ...getPropsWatch(props),
+    // ...getPropsWatch(props),
   },
   methods: {
-    setData(data) {
-      setPropsToData.call(this, data);
-    },
+    // setData(data) {
+    //   setPropsToData.call(this, data);
+    // },
     // for prevent touchmove
     noop() { },
   },

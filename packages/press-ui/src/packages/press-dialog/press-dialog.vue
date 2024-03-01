@@ -96,9 +96,11 @@
 import PressButton from '../press-button/press-button.vue';
 import PressField from '../press-field/press-field.vue';
 
-import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+// import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
 import { dialogProps } from './computed';
 import { toPromise } from '../common/format/function';
+import { getDialogMixin } from './dialog-mixin';
+
 
 export default {
   name: 'PressDialog',
@@ -106,6 +108,7 @@ export default {
     PressButton,
     PressField,
   },
+  mixins: [getDialogMixin(dialogProps)],
   props: {
     ...dialogProps,
   },
@@ -121,13 +124,13 @@ export default {
       promise: '',
       mShowButtonLoading: false,
 
-      ...getPropsData(this, dialogProps),
+      // ...getPropsData(this, dialogProps),
 
       inputValue: '',
     };
   },
   watch: {
-    ...getPropsWatch(dialogProps),
+    // ...getPropsWatch(dialogProps),
     dataFieldValue: {
       handler(value) {
         this.inputValue = value;
@@ -138,9 +141,9 @@ export default {
   mounted() {
   },
   methods: {
-    setData(data) {
-      setPropsToData.call(this, data);
-    },
+    // setData(data) {
+    //   setPropsToData.call(this, data);
+    // },
     preventTouchMove() {
       return;
     },

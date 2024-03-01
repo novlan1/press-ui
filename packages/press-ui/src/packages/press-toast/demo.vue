@@ -18,6 +18,11 @@
         is-link
         @click="onShowToastLoading('spinner')"
       />
+      <press-cell
+        :title="t('noDestroy')"
+        is-link
+        @click="onShowToastLoading('normal', 0)"
+      />
     </demo-block>
     <demo-block :title="t('customTip')">
       <press-cell
@@ -74,6 +79,7 @@ export default {
       failTip: '失败文案',
       htmlTip: '我是提示文案，建议不超过<span style="color: #07A872">十五字</span>~',
       dynamicTip: second =>  `倒计时 ${second} 秒`,
+      noDestroy: '不消失',
     },
     'en-US': {
       customTip: 'Custom Tip',
@@ -91,6 +97,7 @@ export default {
       failTip: 'Fail',
       htmlTip: 'Some <span style="color: #07A872">messages</span>',
       dynamicTip: second => `${second} seconds`,
+      noDestroy: 'Not Destroy',
     },
   },
   components: {
@@ -107,22 +114,22 @@ export default {
     onShowToast() {
       Toast(this.t('toastTip'));
     },
-    onShowToastLoading(type) {
-      setTimeout(() => {
-        Toast.clear();
-      }, 5000);
+    onShowToastLoading(type, duration = 3000) {
+      Toast.clear();
       if (type === 'normal') {
         Toast.loading({
           message: this.t('loadingTip'),
-          forbidClick: true,
+          forbidClick: !!duration,
+          duration,
         });
         return;
       }
       // 自定义加载图标
       Toast.loading({
         message: this.t('loadingTip'),
-        forbidClick: true,
+        forbidClick: !!duration,
         loadingType: 'spinner',
+        duration,
       });
     },
     onShowToastSuccess(type) {

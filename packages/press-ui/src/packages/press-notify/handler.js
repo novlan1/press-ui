@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-let Notify: any;
+let Notify;
 
 // #ifndef H5
 import NotifyMp from './handler-mp';

@@ -26,6 +26,7 @@ import { isDef } from '../common/utils/validator';
 import { pickerProps } from '../press-picker-plus/shared';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { forceUpdate, nextTick } from '../common/vue3/adapter';
+import { defaultFormatter } from './helper';
 
 
 const currentYear = new Date().getFullYear();
@@ -60,7 +61,6 @@ function getTrueValue(formattedValue) {
 function getMonthEndDay(year, month) {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
-const defaultFormatter = (type, value) => value;
 
 
 export default {

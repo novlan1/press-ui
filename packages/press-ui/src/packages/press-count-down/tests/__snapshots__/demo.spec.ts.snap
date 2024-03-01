@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div class="press-count-down">
+      30:00:00
+    </div>
+  </div>
+  <div>
+    <div class="press-count-down">
+      01 天 06 时 00 分 00 秒
+    </div>
+  </div>
+  <div>
+    <div class="press-count-down">
+      30:00:00:000
+    </div>
+  </div>
+  <div>
+    <div class="press-count-down"><span class="item">
+
+      </span> <span class="item">
+
+      </span> <span class="item">
+
+      </span></div>
+  </div>
+  <div>
+    <div class="press-count-down" id="controlCountDown">
+      03:000
+    </div>
+  </div>
+  <div class="press-grid  press-hairline--top" style="padding-left: 0px;">
+    <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+      <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+        <div class="press-grid-item__icon">
+          <div class=" press-icon-plus press-icon-plus-play-circle-o">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-grid-item__text"><span>
+          开始
+        </span></div>
+      </div>
+    </div>
+    <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+      <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+        <div class="press-grid-item__icon">
+          <div class=" press-icon-plus press-icon-plus-pause-circle-o">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-grid-item__text"><span>
+          暂停
+        </span></div>
+      </div>
+    </div>
+    <div class=" press-grid-item" style="width: 25%; padding-right: 0px;">
+      <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
+        <div class="press-grid-item__icon">
+          <div class=" press-icon-plus press-icon-plus-replay">
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="press-grid-item__text"><span>
+          重置
+        </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

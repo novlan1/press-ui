@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        顶部弹出
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        底部弹出
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        左侧弹出
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        右侧弹出
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        关闭图标
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        自定义图标
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        图标位置
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        右侧弹出关闭图标
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+      <div class="press-cell__title">
+        圆角弹窗
+        <!---->
+      </div>
+      <!---->
+      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-overlay-index">
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+`;

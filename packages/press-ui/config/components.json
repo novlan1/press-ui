@@ -29,6 +29,7 @@
   "popover-plus": "./src/packages/press-popover-plus/press-popover-plus.vue",
   "share-sheet": "./src/packages/press-share-sheet/press-share-sheet.vue",
   "swipe-cell": "./src/packages/press-swipe-cell/press-swipe-cell.vue",
+  "teleport": "./src/packages/press-teleport/press-teleport.vue",
   "avatar": "./src/packages/press-avatar/press-avatar.vue",
   "badge": "./src/packages/press-badge/press-badge.vue",
   "barcode": "./src/packages/press-barcode/press-barcode.vue",

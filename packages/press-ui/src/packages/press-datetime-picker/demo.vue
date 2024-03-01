@@ -51,6 +51,16 @@
     </demo-block>
 
     <demo-block
+      :title="t('withPopupPlus')"
+    >
+      <press-cell
+        :title="t('check')"
+        is-link
+        @click="onShowPopupPlus"
+      />
+    </demo-block>
+
+    <demo-block
       :title="t('withPopup')"
     >
       <press-cell
@@ -65,12 +75,26 @@
       :ref="DATE_TIME_PICKER_ID"
       mode="functional"
     />
+
+    <PressDatetimePickerPopupPlus
+      :show="popupPlus.show"
+      :datetime-picker="popupPlus.datetimePicker"
+      :formatter="formatter"
+      :filter="filter"
+      :closeOnClickOverlay="popupPlus.closeOnClickOverlay"
+      @cancel="popupPlus.show = false"
+      @confirm="onConfirm"
+      @input="onInput"
+    />
   </div>
 </template>
 <script>
 import PressDatetimePicker from 'src/packages/press-datetime-picker/press-datetime-picker.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressDatetimePickerPopupPlus from 'src/packages/press-datetime-picker/press-datetime-picker-popup-plus.vue';
+
+
 import { timeStampFormat } from 'src/packages/common/format/time';
 import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
 
@@ -90,12 +114,13 @@ export default {
       timeType: '选择时间',
       dateType: '选择年月日',
       datetimeType: '选择完整时间',
-      datehourType: '选择年月日小时',
+      dateHourType: '选择年月日小时',
       monthDayType: '选择月日',
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
       sortColumns: '自定义列排序',
       withPopup: '结合Popup',
+      withPopupPlus: '结合 PopupPlus',
       functional: '函数式调用',
     },
     'en-US': {
@@ -107,12 +132,13 @@ export default {
       timeType: 'Choose Time',
       dateType: 'Choose Date',
       datetimeType: 'Choose DateTime',
-      datehourType: 'Choose DateHour',
+      dateHourType: 'Choose DateHour',
       monthDayType: 'Choose Month-Day',
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
       sortColumns: 'Columns Order',
       withPopup: 'With Popup',
+      withPopupPlus: 'With PopupPlus',
       functional: 'Functional Mode',
     },
   },
@@ -120,14 +146,18 @@ export default {
     PressDatetimePicker,
     PressDatetimePickerPopup,
     PressCell,
+    PressDatetimePickerPopupPlus,
   },
   data() {
     that = this;
+    const minDate = new Date().getTime();
+    const maxDate = new Date(2099, 10, 1).getTime();
+
     return {
       minHour: 10,
       maxHour: 20,
-      minDate: new Date().getTime(),
-      maxDate: new Date(2099, 10, 1).getTime(),
+      minDate,
+      maxDate,
       currentDate: new Date().getTime(),
       currentTime: '12:00',
 
@@ -144,6 +174,16 @@ export default {
         maxDate: new Date().getTime() + ONE_YEAR_MIL_SECONDS,
         input(event) {
           that.onInput(event);
+        },
+      },
+      popupPlus: {
+        show: false,
+        closeOnClickOverlay: true,
+        datetimePicker: {
+          showToolbar: true,
+          minDate,
+          maxDate,
+          title: '选择时间',
         },
       },
     };
@@ -218,6 +258,14 @@ export default {
     },
     onTip(title) {
       this.onGTip(`${title}`, 1500);
+    },
+    onShowPopupPlus() {
+      this.popupPlus.show = true;
+    },
+    onConfirm(value) {
+      this.popupPlus.show = false;
+      console.log('[confirm]', value);
+      this.onInput(value);
     },
   },
 };

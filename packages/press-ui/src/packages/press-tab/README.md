@@ -171,17 +171,30 @@ export default {
 
 如果将 press-tabs 嵌套在 press-popup 等会隐藏内容的组件或节点内，当 press-tabs 显示时下划线将不会正常显示。
 
-此时可以通过使用 `wx:if` 手动控制 press-tabs 的渲染来规避这种场景。
+此时可以通过使用 `v-if` 手动控制 press-tabs 的渲染来规避这种场景。
 
 ```html
-<press-popup show="{{ show }}">
-  <press-tabs wx:if="{{ show }}">
+<press-popup v-if="show">
+  <press-tabs  v-if="show">
     <press-tab title="标签 1">内容 1</press-tab>
     <press-tab title="标签 2">内容 2</press-tab>
     <press-tab title="标签 3">内容 3</press-tab>
     <press-tab title="标签 4">内容 4</press-tab>
   </press-tabs>
 </press-popup>
+```
+
+### 其他模式
+
+支持 `hor/e-sport` 模式。
+
+```html
+<press-tabs mode="hor">
+  <press-tab title="标签 1">内容 1</press-tab>
+  <press-tab title="标签 2">内容 2</press-tab>
+  <press-tab title="标签 3">内容 3</press-tab>
+  <press-tab title="标签 4">内容 4</press-tab>
+</press-tabs>
 ```
 
 ## API
@@ -208,7 +221,7 @@ export default {
 | title-inactive-color | 标题默认态颜色                                                 | _string_           | -         |
 | z-index              | z-index 层级                                                   | _number_           | `1`       |
 | extra-class-prefix   | 兼容旧的`class`，可传入`van-`，不推荐使用                      | _string_           | -         |
-| mode                 | 模式，可传入`hor`                                              | _string_           | -         |
+| mode                 | 模式，可传入 `hor`, `e-sport`                                  | _string_           | -         |
 
 ### Tab Props
 

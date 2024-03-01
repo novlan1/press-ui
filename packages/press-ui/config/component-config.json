@@ -134,6 +134,10 @@
       {
         "name": "SwipeCell",
         "title": "滑动单元格"
+      },
+      {
+        "name": "Teleport",
+        "title": "传送门"
       }
     ]
   },

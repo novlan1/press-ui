@@ -8,7 +8,7 @@
     ]"
   >
     <div
-      v-if="zones.length > 1"
+      v-if="pageList.length > 1"
       class="press-pagination__wrap"
     >
       <scroll-view
@@ -21,12 +21,12 @@
         @scroll="scroll"
       >
         <div
-          v-for="(item,index) in zones"
+          v-for="(item, index) in pageList"
           :id="'seq-' + item"
           :key="index"
           class="press-scrollbar__scale"
           :class="[{
-            'press-scrollbar__scale--selected': currSelItem === item,
+            'press-scrollbar__scale--selected': innerCurrent === item,
           }, `press-scrollbar__scale--total-${total}`]"
           @click="handleSelect(item,index)"
         >
@@ -97,7 +97,7 @@ export default {
   emits: ['change'],
   data() {
     return {
-      currSelItem: 0, // 当前选中索引
+      innerCurrent: 0, // 当前选中索引
       scrollToView: '',
       tipOffset: 0, // popover Y轴 offset
       selectedEvent: false, // popover提示
@@ -109,21 +109,22 @@ export default {
     };
   },
   computed: {
-    zones() {
+    pageList() {
       return Array.from({ length: this.total }).map((_, index) => index + 1);
     },
     tipStyle() {
       return `top: ${this.tipOffset}px;bottom: unset;right: 50px;width: max-content;left: auto;transform: translateY(-50%);line-height: 16px;min-width: 42px;`;
     },
     pageTip() {
-      return this.tipTemplate.replace('{{0}}', this.currSelItem);
+      return this.tipTemplate.replace('{{0}}', this.innerCurrent);
     },
   },
   watch: {
     current: {
       handler(value) {
-        const index = this.zones.findIndex(elem => elem === value);
-        this.currSelItem = index > -1 ? this.zones[index] : this.zones[0];
+        const index = this.pageList.findIndex(elem => elem === value);
+        this.innerCurrent = index > -1 ? this.pageList[index] : this.pageList[0];
+
         this.$nextTick(() => {
           this.scrollTo();
         });
@@ -176,7 +177,7 @@ export default {
       });
     },
     updatePopoverTipPosition() {
-      getRect(this, `#seq-${this.currSelItem}`).then((res) => {
+      getRect(this, `#seq-${this.innerCurrent}`).then((res) => {
         if (res) {
           this.tipOffset = res.top - this.zonesBox.top + res.height / 2;
         }
@@ -192,12 +193,12 @@ export default {
     },
     scrollTo() {
       const { autoScroll } = this;
-      this.scrollToView = `seq-${this.currSelItem}`;
+      this.scrollToView = `seq-${this.innerCurrent}`;
       this.scrollTop = this.old.scrollTop;
 
       Promise.all([
         getScrollHeight(this, '#zoneBox'),
-        getRect(this, `#seq-${this.currSelItem}`),
+        getRect(this, `#seq-${this.innerCurrent}`),
       ])
         .then(([box, data]) => {
           if (!data) return;
@@ -206,11 +207,11 @@ export default {
           if (height > 0) {
             if (data.top - top < autoScroll * data.height) {
               // 顶部不足
-              this.scrollTop = Math.max(1, (this.currSelItem - 1 - autoScroll) * data.height);
+              this.scrollTop = Math.max(1, (this.innerCurrent - 1 - autoScroll) * data.height);
             } else if (bottom - data.bottom < autoScroll * data.height) {
               // 底部不足
               // scrollTop + box.height = current * item.height
-              const target = (this.currSelItem + autoScroll) * data.height - height;
+              const target = (this.innerCurrent + autoScroll) * data.height - height;
               // #ifdef MP-QQ
               // qq小程序上没有 box.scrollHeight
               this.scrollTop = target;
@@ -237,8 +238,8 @@ export default {
       this.selectedEvent = true;
 
       // 发送换页
-      if (this.currSelItem !== item) {
-        this.currSelItem = item;
+      if (this.innerCurrent !== item) {
+        this.innerCurrent = item;
         this.$emit('change', item);
       }
       this.scrollTo();

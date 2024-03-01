@@ -21,7 +21,7 @@
           'press-fab__content--flexDirection': direction === 'vertical',
           'press-fab__content--flexDirectionStart': flexDirectionStart,
           'press-fab__content--flexDirectionEnd': flexDirectionEnd,
-          'press-fab__content--other-platform': !isAndroidNvue
+          'press-fab__content--other-platform': !isAndroidNVue
         }"
         :style="{ width: boxWidth, height: boxHeight, backgroundColor: styles.backgroundColor }"
         class="press-fab__content"
@@ -58,7 +58,7 @@
     </div>
     <div
       :class="{
-        'press-fab__content--other-platform': !isAndroidNvue
+        'press-fab__content--other-platform': !isAndroidNVue
       }"
       class="press-fab__circle press-fab__plus"
       :style="{ 'background-color': styles.buttonColor,
@@ -85,10 +85,6 @@
 import { getRect, getWindowWidth } from '../common/dom/rect';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
-let platform = 'other';
-// #ifdef APP-NVUE
-platform = uni.getSystemInfoSync().platform;
-// #endif
 
 const switchPos = {
   hasMoved: false, // exclude click event
@@ -158,10 +154,15 @@ export default {
   },
   emits: ['fabClick', 'trigger'],
   data() {
+    let platform = 'other';
+    // #ifdef APP-NVUE
+    platform = uni.getSystemInfoSync().platform;
+    // #endif
+
     return {
       fabShow: false,
       isShow: false,
-      isAndroidNvue: platform === 'android',
+      isAndroidNVue: platform === 'android',
       styles: {
         color: '#3c3e49',
         selectedColor: '#007AFF',

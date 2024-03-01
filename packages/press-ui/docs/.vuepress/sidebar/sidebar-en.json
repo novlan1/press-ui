@@ -135,6 +135,10 @@
         {
           "title": "SwipeCell",
           "path": "/en/components/press/press-swipe-cell.md"
+        },
+        {
+          "title": "Teleport",
+          "path": "/en/components/press/press-teleport.md"
         }
       ]
     },

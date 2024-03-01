@@ -195,6 +195,139 @@ Page({
 });
 ```
 
+### 结合 PopupPlus
+
+提供了 `datetime-picker-popup-plus`。本质上是对 `popup-plus` 组件和 `datetime-picker` 的封装。
+
+`popup-plus` 的参数展平传入，`datetime-picker` 的参数除 `filter/formatter` 展平传入外，其他属性通过 `datetimePicker` 对象控制。
+
+```html
+<PressDatetimePickerPopupPlus
+  :show="popupPlus.show"
+  :datetime-picker="popupPlus.datetimePicker"
+  :formatter="formatter"
+  :filter="filter"
+  @cancel="popupPlus.show = false"
+  @confirm="onConfirm"
+  @input="onInput"
+/>
+```
+
+```ts
+import PressDatetimePickerPopupPlus from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
+
+export default {
+  data() {
+    return {
+      popupPlus: {
+        show: false,
+        datetimePicker: {
+          showToolbar: true,
+          minDate,
+          maxDate,
+        },
+      },
+    };
+  },
+  methods: {
+    onInput(event) {
+      this.currentDate = event;
+      this.onTip(`${timeStampFormat(event, 'yyyy-MM-dd hh:mm')}`);
+    },
+    onConfirm(value) {
+      this.popupPlus.show = false;
+      console.log('[confirm]', value);
+      this.onInput(value);
+    }
+  },
+}
+```
+
+支持属性包括：
+
+```ts
+type IProps = {
+  show?: boolean;
+  closeOnClickOverlay?: boolean;
+  datetimePicker: {
+    value?: number;
+    showToolbar?: boolean;
+    itemHeight?: number;
+    type?: string;
+    maxDate?: number;
+    minDate?: number;
+    immediateCheck?: boolean;
+    title?: string;
+  };
+  formatter?: Function;
+  filter?: Function;
+}
+```
+
+
+### 结合 Popup
+
+提供了 `datetime-picker-popup`，并支持函数式调用。本质上是对 `popup` 组件和 `datetime-picker` 的封装。
+
+`popup` 的参数展平传入，`datetime-picker` 的参数可传入 `datetimePicker` 对象。
+
+
+```html
+<PressDatetimePickerPopup
+  :id="DATE_TIME_PICKER_ID"
+  :ref="DATE_TIME_PICKER_ID"
+  mode="functional"
+/>
+```
+
+```ts
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
+
+
+export default {
+  components: {
+    PressDatetimePickerPopup
+  },
+  methods: {
+    onShowFunctionalPicker() {
+      let inputValue = '';
+      showFunctionalComponent.call(this, {
+        context: this,
+        selector: `#${DATE_TIME_PICKER_ID}`,
+        title: this.t('timeType'),
+        button: this.t('confirm'),
+        horizontal: false,
+        closeIcon: false,
+        arrowIcon: false,
+        borderButton: false,
+        customStyle: '',
+        datetimePicker: {
+          value: new Date().getTime(),
+          minDate: new Date().getTime() - ONE_YEAR_MIL_SECONDS,
+          maxDate: new Date().getTime() + ONE_YEAR_MIL_SECONDS,
+          input(event) {
+            that.onInput(event);
+            inputValue = event;
+            console.log('inputValue', inputValue);
+          },
+        },
+      }).then((resp = {}) => {
+        const { context } = resp;
+        console.log('inputValue', inputValue);
+        this.onTip('confirm');
+        context.innerShow = false;
+      })
+        .catch((err = {}) => {
+          const { context } = err;
+          this.onTip('cancel');
+          context.innerShow = false;
+        });
+    },
+  }
+}
+```
+
 ## API
 
 ### Props

@@ -65,8 +65,8 @@ import ToolBar from './toolbar.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { toProvideThis } from '../common/vue3/adapter';
+import { pickerProps } from './shared';
 
-import { t } from '../locale';
 import computed from './index';
 
 
@@ -85,29 +85,12 @@ export default {
 
   props: {
     ...defaultProps,
-    title: { type: String, default: '' },
-    showToolbar: { type: Boolean, default: false },
-    cancelButtonText: {
-      type: String,
-      default: t('picker.cancel'),
-    },
-    confirmButtonText: {
-      type: String,
-      default: t('picker.confirm'),
-    },
+    ...pickerProps,
+
     valueKey: {
       type: String,
       default: 'text',
     },
-    visibleItemCount: {
-      type: Number,
-      default: 6,
-    },
-    itemHeight: {
-      type: Number,
-      default: 44,
-    },
-    loading: Boolean,
     toolbarPosition: {
       type: String,
       default: 'top',

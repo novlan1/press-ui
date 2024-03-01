@@ -26,8 +26,9 @@ import { WHITE } from '../common/constant/color';
 import { getStatusBarHeight } from '../common/dom/rect';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import computed from './computed';
-import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+// import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
 import { getEventDetail } from '../common/dom/event';
+import { getDialogMixin } from '../press-dialog/dialog-mixin';
 
 
 const props = {
@@ -71,11 +72,12 @@ export default {
   components: {
     PressTransition,
   },
+  mixins: [getDialogMixin(props)],
   props,
   emits: [],
   data() {
     return {
-      ...getPropsData(this, props),
+      // ...getPropsData(this, props),
 
       onOpened: null,
       onClose: null,
@@ -84,7 +86,7 @@ export default {
     };
   },
   watch: {
-    ...getPropsWatch(props),
+    // ...getPropsWatch(props),
   },
   created() {
     const statusBarHeight = getStatusBarHeight();
@@ -92,9 +94,9 @@ export default {
     this.statusBarHeight = statusBarHeight;
   },
   methods: {
-    setData(data) {
-      setPropsToData.call(this, data);
-    },
+    // setData(data) {
+    //   setPropsToData.call(this, data);
+    // },
     onTap(event) {
       const { onClick } = this;
       if (onClick) {

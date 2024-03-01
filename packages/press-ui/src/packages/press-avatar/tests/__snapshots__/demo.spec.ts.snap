@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent; margin-right: 20px;">
+      <!---->
+      <!---->
+    </div>
+    <div class="press-avatar press-avatar--square" style="width: 40px; height: 40px; background: transparent;">
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 30px; height: 30px; background: transparent; margin-right: 20px;">
+      <!---->
+      <!---->
+    </div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent; margin-right: 20px;">
+      <!---->
+      <!---->
+    </div>
+    <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(192, 196, 204); margin-right: 20px;">
+      <!---->
+      <div class=" press-icon-plus press-icon-plus-star-o" style="color: rgb(255, 255, 255); font-size: 18px;">
+        <!---->
+        <!---->
+      </div>
+    </div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(192, 196, 204);">
+      <!---->
+      <div class=" press-icon-plus press-icon-plus-like-o" style="color: rgb(255, 255, 255); font-size: 18px;">
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(192, 196, 204); margin-right: 20px;">
+      <!----> <span style="color: rgb(255, 255, 255); text-align: center;">Y</span>
+    </div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(255, 179, 75); margin-right: 20px;">
+      <!----> <span style="color: rgb(255, 255, 255); text-align: center;">G</span>
+    </div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(241, 158, 194);">
+      <!----> <span style="color: rgb(255, 255, 255); text-align: center;">杨</span>
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="press-avatar-group" style="margin-bottom: 16px;">
+      <div class="press-avatar-group__item" style="margin-left: 0px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -20px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -20px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -20px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -20px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <div class="press-avatar-group__item__show-more"><span style="color: rgb(255, 255, 255); text-align: center;">
+        2
+      </span></div>
+      </div>
+    </div>
+    <div class="press-avatar-group" style="margin-bottom: 16px;">
+      <div class="press-avatar-group__item" style="margin-left: 0px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -24px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -24px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -24px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -24px; width: 40px; height: 40px;">
+        <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <div class="press-avatar-group__item__show-more"><span style="color: rgb(255, 255, 255); text-align: center;">
+        2
+      </span></div>
+      </div>
+    </div>
+    <div class="press-avatar-group" style="margin-bottom: 16px;">
+      <div class="press-avatar-group__item" style="margin-left: 0px; width: 50px; height: 50px;">
+        <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -25px; width: 50px; height: 50px;">
+        <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -25px; width: 50px; height: 50px;">
+        <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -25px; width: 50px; height: 50px;">
+        <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="press-avatar-group__item" style="margin-left: -25px; width: 50px; height: 50px;">
+        <div class="press-avatar press-avatar--circle" style="width: 50px; height: 50px; background: transparent;">
+          <!---->
+          <!---->
+        </div>
+        <div class="press-avatar-group__item__show-more"><span style="color: rgb(255, 255, 255); text-align: center;">
+        2
+      </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

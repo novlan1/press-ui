@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group press-radio-group--horizontal">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--square" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--square" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 24px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 24px; line-height: 24px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 24px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 24px; line-height: 24px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fuser-active.png" class="img"></div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fuser-inactive.png" class="img"></div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 1
+            </div>
+          </div>
+        </div>
+        <div class="press-radio-index">
+          <div class="press-radio">
+            <!---->
+            <div class="press-radio__icon-wrap" style="font-size: 20px;">
+              <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div class="press-radio__label press-radio__label--right ">
+              单选框 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-radio-group-index">
+      <div class="press-radio-group">
+        <div class="press-cell-group-index">
+          <!---->
+          <div class=" press-cell-group press-hairline--top-bottom">
+            <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable" data-name="1">
+              <div class="press-cell__title">
+                单选框 1
+                <!---->
+              </div>
+              <!---->
+              <div class="press-radio-index">
+                <div class="press-radio">
+                  <!---->
+                  <div class="press-radio__icon-wrap" style="font-size: 20px;">
+                    <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                      <!---->
+                      <!---->
+                    </div>
+                  </div>
+                  <div class="press-radio__label press-radio__label--right "></div>
+                </div>
+              </div>
+            </div>
+            <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable" data-name="2">
+              <div class="press-cell__title">
+                单选框 2
+                <!---->
+              </div>
+              <!---->
+              <div class="press-radio-index">
+                <div class="press-radio">
+                  <!---->
+                  <div class="press-radio__icon-wrap" style="font-size: 20px;">
+                    <div class=" press-icon-plus press-icon-plus-success press-radio__icon press-radio__icon--round" style="font-size: 20px; line-height: 20px; display: block;">
+                      <!---->
+                      <!---->
+                    </div>
+                  </div>
+                  <div class="press-radio__label press-radio__label--right "></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

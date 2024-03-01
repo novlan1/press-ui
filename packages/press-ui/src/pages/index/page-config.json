@@ -132,6 +132,10 @@
         {
           "url": "/press/swipe-cell/swipe-cell",
           "navigationStyle": ""
+        },
+        {
+          "url": "/press/teleport/teleport",
+          "navigationStyle": ""
         }
       ]
     },

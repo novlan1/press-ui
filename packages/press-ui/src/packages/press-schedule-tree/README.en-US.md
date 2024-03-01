@@ -58,8 +58,8 @@ export default {
 | resume-position          | When the schedule data becomes less, the auto-scroll position when the right display is blank, can be `left/right/number` | _[String, Number]_ | `right` |
 | show-round-tab `v0.8.32` | Whether to display the round tab                                                                                          | _Boolean_          | true    |
 | max-columns `v0.8.32`    | The number of columns displayed at the same time, the excess will be hidden to improve performance                        | _Number_           | `3`     |
-| tabScrollWidth           | tab width                                                                                                                 |  _String_            | `164`     |
-| scheduleScrollWidth      | The width of each column of the schedule tree                                                                             |  _String_            | `164`     |
+| tabScrollWidth           | tab width                                                                                                                 | _String_           | `164`   |
+| scheduleScrollWidth      | The width of each column of the schedule tree                                                                             | _String_           | `164`   |
 
 
 
@@ -86,4 +86,4 @@ export default {
 - `scheGroup` contains `teamList`, `nodeItem`, `schid`, `realStatus`, `bracketIdDesc`, `curBo`, `boType` and other information
 
 
-Sample data can be [reference here](https://github.com/novlan1/press-ui/blob/release/src/packages/press-schedule-tree/demo-helper/data.ts) .
+Sample data can be [reference here](https://github.com/novlan1/press-ui/blob/release/packages/press-ui/src/packages/press-schedule-tree/demo-helper/data.ts) .

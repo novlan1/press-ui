@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      步长设置
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      限制输入范围
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      限制输入整数
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="number" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" disabled="disabled" class=" press-stepper__input press-stepper__input--disabled">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus press-stepper__plus--disabled"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      关闭长按
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      固定小数位数
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      异步变更
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled"></div> <input type="digit" class=" press-stepper__input">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
+    <div class="press-cell__title">
+      自定义大小
+      <!---->
+    </div>
+    <div class="press-cell__value">
+      <div class="press-stepper-index">
+        <div class="press-stepper">
+          <div data-type="minus" hover-class="press-stepper__minus--hover" hover-stay-time="70" class="press-stepper__minus press-stepper__minus--disabled" style="width: 32px; height: 32px;"></div> <input type="digit" class=" press-stepper__input" style="width: 40px; height: 32px;">
+          <div data-type="plus" hover-class="press-stepper__plus--hover" hover-stay-time="70" class=" press-stepper__plus" style="width: 32px; height: 32px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="press-toast-index" id="press-toast">
+    <!---->
+    <!---->
+  </div>
+</div>
+`;

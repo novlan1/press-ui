@@ -242,7 +242,7 @@ export default {
         content = '',
         htmlContent = `<div>${this.t('custom')}<span style="color: red;">${this.t('content')}</span></div>`;
       } else if (type === 'img') {
-        src = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/qrcode-wx-mp.png';
+        src = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_19f9b1ecdd9332c7c0.jpg';
         // #ifdef MP-QQ
         onLongPressImage = saveMpImage.bind(null, src);
         // #endif

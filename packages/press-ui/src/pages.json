@@ -249,6 +249,12 @@
         }
       },
       {
+        "path": "teleport/teleport",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "avatar/avatar",
         "style": {
           "navigationBarTitleText": ""

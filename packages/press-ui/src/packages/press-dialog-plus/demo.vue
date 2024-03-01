@@ -34,8 +34,9 @@
       />
     </demo-block>
 
-
+    <!-- #ifndef H5 -->
     <PressDialogPlus id="press-dialog" />
+    <!-- #endif -->
 
     <press-dialog-plus
       use-slot

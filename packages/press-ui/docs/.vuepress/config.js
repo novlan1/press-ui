@@ -23,6 +23,11 @@ const LOGIC_SIDEBAR_CONFIG = {
         subTitle: '公共方法',
         path: '/components/logic/common.md',
       },
+      {
+        title: 'Vue3',
+        subTitle: '适配器',
+        path: '/components/logic/vue3-adapter.md',
+      },
     ],
   },
   en: {

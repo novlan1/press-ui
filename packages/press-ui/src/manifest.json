@@ -47,6 +47,7 @@
 		"usingComponents": true,
 		"lazyCodeLoading": "requiredComponents",
 		"appid": "wxd593abb04ef95f3e",
+		"libVersion": "latest",
 		"setting": {
 			"urlCheck": true,
 			"ignoreUploadUnusedFiles": true,

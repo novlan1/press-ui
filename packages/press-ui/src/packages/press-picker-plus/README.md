@@ -165,6 +165,31 @@ export default {
 />
 ```
 
+### 结合 PopupPlus
+
+提供了简单的 `PopupPlus` 和 `PickerPlus` 的组合，供业务快速使用。
+
+```html
+<PressPickerPlusPopupPlus
+  :show="show"
+  :columns="columns"
+  @change="onChange"
+  @cancel="show = false"
+  @confirm="onConfirm"
+/>
+```
+
+```ts
+import PressPickerPlusPopupPlus from 'press-ui/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
+
+export default {
+  components: {
+    PressPickerPlusPopupPlus,
+  },
+}
+```
+
+
 ## API
 
 ### Props

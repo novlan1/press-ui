@@ -1,5 +1,5 @@
-import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
-import { timeStampFormat } from 'src/packages/common/format/time';
+import { showFunctionalComponent } from '../../common/functional-component/index';
+import { timeStampFormat } from '../../common/format/time';
 
 
 export const ONE_YEAR_MIL_SECONDS = 1000 * 60 * 60 * 24 * 365;

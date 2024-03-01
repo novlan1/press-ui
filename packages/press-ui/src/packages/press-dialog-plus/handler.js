@@ -60,9 +60,6 @@ const Dialog = (options) => {
     // #endif
 
     if (dialog) {
-      // dialog.callback = (action, instance) => {
-      //   action === 'confirm' ? resolve(instance) : reject(instance);
-      // };
       const newOptions = {
         callback: (action, instance) => {
           action === 'confirm' ? resolve(instance) : reject(instance);
@@ -72,26 +69,8 @@ const Dialog = (options) => {
 
       setData(dialog, newOptions);
 
-
-      // // #ifdef H5
-      // dialog.setData(newOptions);
-      // // #endif
-      // // #ifndef H5
-      // dialog.$vm.setData(newOptions);
-      // #endif
-      // dialog.setData(newOptions);
-
-
       nextTick(() => {
         setData(dialog, { show: true });
-        // // #ifdef H5
-        // dialog.setData({ show: true });
-        // // #endif
-        // // #ifndef H5
-        // dialog.$vm.setData({ show: true });
-        // // #endif
-        // dialog.innerShow = true;
-        // dialog.setData({ show: true });
       });
       queue.push(dialog);
     } else {

@@ -144,7 +144,7 @@ export function getIsServer() {
   // #endif
 
   // #ifdef VUE3
-  result = false;
+  result = typeof window === 'undefined';
   // #endif
 
   return result;
