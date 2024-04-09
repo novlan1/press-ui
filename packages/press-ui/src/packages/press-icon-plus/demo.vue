@@ -249,6 +249,8 @@ export default {
 @import "src/packages/common/style/press/var.scss";
 
 .demo-wrap {
+  min-height: 100vh;
+
   ::v-deep .press-tab__pane {
     width: auto;
     margin: 20px;

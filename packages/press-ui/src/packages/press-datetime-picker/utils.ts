@@ -1,4 +1,5 @@
 const QUARTER_BUFFER = 15 * 60 * 1000;
+const FILTER_FIVE_MINUTES_DISTANCE = 5;
 
 
 /**
@@ -51,8 +52,8 @@ export function otherOptionDateTimeFormatter({
 }
 
 
-const filterFiveMinutes = (list: Array<number>) => {
-  const res = list.filter(item => item % 5 === 0);
+const filterFiveMinutes = (list: Array<number>, distance = FILTER_FIVE_MINUTES_DISTANCE) => {
+  const res = list.filter(item => item % distance === 0);
   return res;
 };
 
@@ -60,9 +61,14 @@ const filterFiveMinutes = (list: Array<number>) => {
 /**
  * datetimePicker 的 filter，5分钟间隔
  */
-export function fiveMinutesDateTimeFilter(type: string, options: Array<number>) {
+export function fiveMinutesDateTimeFilter(
+  type: string,
+  options: Array<number>,
+  _: number,
+  distance = FILTER_FIVE_MINUTES_DISTANCE,
+) {
   if (type === 'minute') {
-    const res = filterFiveMinutes(options);
+    const res = filterFiveMinutes(options, distance);
     if (!res.length && options?.[0]) {
       return [options[0]];
     }
@@ -79,11 +85,15 @@ export function otherOptionDateTimePickerFilter({
   options,
   currentDate,
   delaySeconds = QUARTER_BUFFER,
+
+  distance = FILTER_FIVE_MINUTES_DISTANCE,
 }: {
   type: string;
   options: Array<number>;
   currentDate: number;
   delaySeconds?: number;
+
+  distance?: number;
 }) {
   const thisYear = new Date().getFullYear();
 
@@ -109,11 +119,11 @@ export function otherOptionDateTimePickerFilter({
       return options.slice(hours);
     }
     if (type === 'minute' && curMonth === month && curDate === day && curHour <= hours) {
-      return filterFiveMinutes(options.slice(minutes));
+      return filterFiveMinutes(options.slice(minutes), distance);
     }
   }
   if (type === 'minute') {
-    return filterFiveMinutes(options);
+    return filterFiveMinutes(options, distance);
   }
   return options;
 }

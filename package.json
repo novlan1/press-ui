@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "1.3.16",
+  "version": "1.3.28",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "private": true,
   "repository": {
@@ -24,10 +24,12 @@
     "env": "node env",
     "build:mp": "rm -rf dist && cd packages/press-ui && npm run build:mp && cp -r dist ../../",
     "build:mp-qq": "rm -rf dist && cd packages/press-ui && npm run build:mp-qq && cp -r dist ../../",
+    "build:mp-alipay": "rm -rf dist && cd packages/press-ui && npm run build:mp-alipay && cp -r dist ../../",
     "build:igame": "rm -rf dist && cd packages/press-ui && npm run build:igame && cp -r dist ../../",
     "dev": "cd packages/press-ui && npm run dev",
     "dev:mp": "cd packages/press-ui && npm run dev:mp",
     "dev:mp-qq": "cd packages/press-ui && npm run dev:mp-qq",
+    "dev:mp-alipay": "cd packages/press-ui && npm run dev:mp-alipay",
     "docs:dev": "cd packages/press-ui && npm run docs:dev",
     "release": "cd packages/press-ui && npm run release",
     "test": "jest --coverage --verbose -u",

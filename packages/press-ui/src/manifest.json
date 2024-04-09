@@ -59,6 +59,10 @@
 		"usingComponents": true,
 		"appid": "1112254204"
 	},
+	"mp-alipay": {
+		"usingComponents": true,
+		"appid": "2021004137607104"
+	},
 	"h5": {
 		"router": {
 			"mode": "hash",
@@ -66,7 +70,12 @@
 		},
 		"title": "Press UI",
 		"template": "template.h5.html",
-		"publicPath": "./"
+		"publicPath": "./",
+		"optimization": {
+			"treeShaking": {
+				"enable": true
+			}
+		}
 	},
 	"vueVersion": "2"
 }

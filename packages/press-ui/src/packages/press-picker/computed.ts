@@ -21,7 +21,7 @@ export const newProps = {
   // 数据列表
   list: {
     type: Array,
-    default: () => [], // 默认值不要给null，报错
+    default: () => [],
     required: false,
   },
   current: {

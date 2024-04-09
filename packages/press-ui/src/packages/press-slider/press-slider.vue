@@ -1,5 +1,8 @@
 <template>
-  <div class="press-slider-index">
+  <div
+    class="press-slider-index"
+    :style="customStyle"
+  >
     <div
       :class="customClass + ' '+(utils.bem2('slider', { disabled, vertical }))"
       :style="wrapperStyle"
@@ -111,6 +114,10 @@ export default {
       default: '',
     },
     customClass: {
+      type: String,
+      default: '',
+    },
+    customStyle: {
       type: String,
       default: '',
     },

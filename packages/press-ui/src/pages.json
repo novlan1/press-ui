@@ -531,6 +531,9 @@
     },
     "mp-qq": {
       "usingComponents": {}
+    },
+    "mp-alipay": {
+      "transparentTitle": "none"
     }
   }
 }

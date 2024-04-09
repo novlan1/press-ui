@@ -143,7 +143,7 @@ export default {
     addUnit,
     // 监听输入框的值发生变化
     inputHandler(e) {
-      const { value } = e.detail;
+      const { value } = e.detail || e.target;
       this.inputValue = value;
       // 是否允许输入“.”符号
       if (this.disabledDot) {
@@ -219,11 +219,13 @@ $press-code-input-cursor-animation-name: press-cursor-flicker;
     // 之所以需要input输入框，是因为有它才能唤起键盘
     // 这里将它设置为两倍的屏幕宽度，再将左边的一半移出屏幕，为了不让用户看到输入的内容
     position: absolute;
-    left: -750rpx;
-    width: 1500rpx;
+    left: -750px;
+    width: 1500px;
     top: 0;
     background-color: transparent;
     text-align: left;
+    border: 0;
+    outline: none;
   }
 }
 

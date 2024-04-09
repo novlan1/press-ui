@@ -1,83 +1,94 @@
 <!-- eslint-disable max-len -->
 <template>
-  <uni-scroll-view v-on="$listeners">
-    <div
-      ref="wrap"
-      class="uni-scroll-view"
-    >
+  <!-- #ifdef VUE3 -->
+  <uni-scroll-view v-bind="$attrs">
+    <!-- #endif -->
+    <!-- #ifdef VUE2 -->
+    <uni-scroll-view v-on="$listeners">
+      <!-- #endif -->
+
       <div
-        ref="main"
-        :style="{
-          'overflow-x': scrollX ? 'auto' : 'hidden',
-          'overflow-y': scrollY ? 'auto' : 'hidden',
-        }"
+        ref="wrap"
         class="uni-scroll-view"
       >
         <div
-          ref="content"
-          class="uni-scroll-view-content"
+          ref="main"
+          :style="{
+            'overflow-x': scrollX ? 'auto' : 'hidden',
+            'overflow-y': scrollY ? 'auto' : 'hidden',
+          }"
+          class="uni-scroll-view"
         >
           <div
-            v-if="refresherEnabled"
-            ref="refresherinner"
-            :style="{
-              'background-color': refresherBackground,
-              height: refresherHeight + 'px',
-            }"
-            class="uni-scroll-view-refresher"
+            ref="content"
+            class="uni-scroll-view-content"
           >
             <div
-              v-if="refresherDefaultStyle !== 'none'"
-              class="uni-scroll-view-refresh"
+              v-if="refresherEnabled"
+              ref="refresherinner"
+              :style="{
+                'background-color': refresherBackground,
+                height: refresherHeight + 'px',
+              }"
+              class="uni-scroll-view-refresher"
             >
-              <div class="uni-scroll-view-refresh-inner">
-                <svg
-                  v-if="refreshState == 'pulling'"
-                  key="refresh__icon"
-                  :style="{ transform: 'rotate(' + refreshRotate + 'deg)' }"
-                  fill="#2BD009"
-                  class="uni-scroll-view-refresh__icon"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-                  />
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
-                </svg>
-                <svg
-                  v-if="refreshState == 'refreshing'"
-                  key="refresh__spinner"
-                  class="uni-scroll-view-refresh__spinner"
-                  width="24"
-                  height="24"
-                  viewBox="25 25 50 50"
-                >
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
-                    style="color: #2bd009"
-                    stroke-width="3"
-                  />
-                </svg>
+              <div
+                v-if="refresherDefaultStyle !== 'none'"
+                class="uni-scroll-view-refresh"
+              >
+                <div class="uni-scroll-view-refresh-inner">
+                  <svg
+                    v-if="refreshState == 'pulling'"
+                    key="refresh__icon"
+                    :style="{ transform: 'rotate(' + refreshRotate + 'deg)' }"
+                    fill="#2BD009"
+                    class="uni-scroll-view-refresh__icon"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                    />
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                  </svg>
+                  <svg
+                    v-if="refreshState == 'refreshing'"
+                    key="refresh__spinner"
+                    class="uni-scroll-view-refresh__spinner"
+                    width="24"
+                    height="24"
+                    viewBox="25 25 50 50"
+                  >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="20"
+                      fill="none"
+                      style="color: #2bd009"
+                      stroke-width="3"
+                    />
+                  </svg>
+                </div>
               </div>
+              <slot
+                v-if="refresherDefaultStyle == 'none'"
+                name="refresher"
+              />
             </div>
-            <slot
-              v-if="refresherDefaultStyle == 'none'"
-              name="refresher"
-            />
+            <slot />
           </div>
-          <slot />
         </div>
       </div>
-    </div>
+      <!-- #ifdef VUE3 -->
+    </uni-scroll-view>
+  <!-- #endif -->
+  <!-- #ifdef VUE2 -->
   </uni-scroll-view>
+  <!-- #endif -->
 </template>
 <script>
 import scroller from '../mixins/scroller/index';

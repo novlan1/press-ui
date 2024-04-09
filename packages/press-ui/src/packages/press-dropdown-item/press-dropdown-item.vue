@@ -21,7 +21,8 @@
       <press-cell
         v-for="(item, index) in (options)"
         :key="index"
-        :class="true ? utils.bem2('dropdown-item__option', { active: item.value === innerValue } ) : ''"
+        :class="[getCellClass(item)]"
+        :custom-class="getCellCustomClass(item)"
         clickable
         :icon="item.icon"
         @click="onOptionTap(item)"
@@ -39,6 +40,7 @@
           v-if="item.value === innerValue"
           name="success"
           class="press-dropdown-item__icon"
+          :custom-class="iconCustomClass"
           :color="activeColor"
         />
       </press-cell>
@@ -111,6 +113,15 @@ export default {
       overlay: true,
       wrapperStyle: '',
     };
+  },
+  computed: {
+    iconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = 'press-dropdown-item__icon';
+      // #endif
+      return result;
+    },
   },
   watch: {
     value: {
@@ -201,6 +212,16 @@ export default {
         this.rerender();
       }
     },
+    getCellClass(item) {
+      return utils.bem2('dropdown-item__option', { active: item.value === this.innerValue });
+    },
+    getCellCustomClass(item) {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.getCellClass(item)}`;
+      // #endif
+      return result;
+    },
   },
 };
 </script>
@@ -214,6 +235,9 @@ export default {
   left: 0;
   overflow: hidden;
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__option,
+  /* #endif */
   &__option {
     text-align: left;
 
@@ -235,9 +259,11 @@ export default {
   &--down {
     bottom: 0;
   }
-
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__icon,
+  /* #endif */
   &__icon {
-    display: block;
+    display: block !important;
     line-height: inherit;
   }
 }

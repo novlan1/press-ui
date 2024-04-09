@@ -2,6 +2,7 @@
   <PressPopupPlus
     :show="show"
     position="bottom"
+    :z-index="zIndex"
     :close-on-click-overlay="closeOnClickOverlay"
     @click-overlay="clickOverlay"
     @close="cancel"
@@ -10,6 +11,7 @@
       ref="picker"
       show-toolbar
       :columns="columns"
+      :default-index="defaultIndex"
       @change="onChange"
       @cancel="cancel"
       @confirm="confirm"
@@ -41,6 +43,14 @@ export default {
     columns: {
       type: Array,
       default: () => [],
+    },
+    defaultIndex: {
+      type: Number,
+      default: 0,
+    },
+    zIndex: {
+      type: Number,
+      default: 100,
     },
   },
   data() {

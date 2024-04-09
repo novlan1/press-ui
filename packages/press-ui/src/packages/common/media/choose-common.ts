@@ -1,7 +1,7 @@
 import { fileToUrl } from '../utils/file';
 
 export function watchChange(event: any, count: number) {
-  const tempFiles = [];
+  const tempFiles: Array<any> = [];
   const fileCount = event.target.files.length;
 
   for (let i = 0; i < fileCount; i++) {

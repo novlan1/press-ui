@@ -23,7 +23,7 @@ export class IM {
     appId,
     logLevel = 0,
   }: {
-    appId: string;
+    appId: number;
     logLevel?: number
   }) {
     this.tim = this.init(appId, logLevel);
@@ -35,7 +35,7 @@ export class IM {
   }
 
   set isReady(value) {
-    this.tim.updateReadyStatus(!!value);
+    this.tim.updateReadyStatus?.(!!value);
   }
 
   get isOnline() {
@@ -43,10 +43,10 @@ export class IM {
   }
 
   set isOnline(value) {
-    this.tim.updateOnlineStatus(!!value);
+    this.tim.updateOnlineStatus?.(!!value);
   }
 
-  init(appId: string, logLevel: number) {
+  init(appId: number, logLevel: number) {
     const tim = init(appId, logLevel);
     watchIMEvent({
       tim,
@@ -89,8 +89,8 @@ export class IM {
     userId: string;
     userSig: string;
   }) {
-    this.tim.updateUserId(userId);
-    this.tim.updateUserSig(userSig);
+    this.tim.updateUserId?.(userId);
+    this.tim.updateUserSig?.(userSig);
 
     return login({
       userId,

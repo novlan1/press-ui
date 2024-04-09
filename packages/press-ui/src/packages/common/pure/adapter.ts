@@ -29,5 +29,6 @@ export function initPureAdapter(app?: any) {
     'uni-scroll-view',
     'uni-swiper',
     'uni-swiper-item',
+    'uni-image',
   ], app);
 }

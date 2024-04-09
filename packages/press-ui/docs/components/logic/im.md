@@ -2,11 +2,19 @@
 
 即时通信相关，包含对官方API的封装、消息数据的格式化等。
 
-## 1. IM
+## 1. TIM
+
+获取 TIM，利用条件编译区分不同平台。
+
+```ts
+import { TIM } from 'press-ui/common/im/helper/tim'
+```
+
+## 2. IM
 
 对 IM 相关 API 的封装，支持H5、微信小程序、QQ小程序。
 
-### 1.1. 初始化
+### 2.1. 初始化
 
 ```ts
 import { IM } from 'press-ui/common/im/im';
@@ -18,7 +26,7 @@ const IMHandler = new IM({
 });
 ```
 
-### 1.2. 登录
+### 2.2. 登录
 
 ```ts
 // 登录
@@ -40,7 +48,7 @@ IMHandler.updateMyProfile(profile)
 
 
 
-### 1.3. 会话相关
+### 2.3. 会话相关
 
 ```ts
 // 获取全量的会话列表
@@ -64,7 +72,7 @@ IMHandler.setMessageRead('conversationId')
 ```
 
 
-### 1.4. 消息相关
+### 2.4. 消息相关
 
 
 ```ts
@@ -85,7 +93,7 @@ IMHandler.getMessageList({
 
 
 
-### 1.5. 设置回调
+### 2.5. 设置回调
 
 ```ts
 const callback = () => {};
@@ -110,7 +118,7 @@ IMHandler.setConversationUpdateListener(callback);
 IMHandler.setUnreadMsgCountUpdatedListener(callback);
 ```
 
-### 1.6. 其他
+### 2.6. 其他
 
 `waitReady`
 
@@ -130,7 +138,7 @@ console.log(IMHandler.isReady);
 console.log(IMHandler.isOnline);
 ```
 
-## 2. 消息列表处理
+## 3. 消息列表处理
 
 对消息列表数据的处理，包括：
 
@@ -149,9 +157,9 @@ const messageList = baseFormatMessageDetailList(list, myInfo, oppositeInfo, last
 
 
 
-## 3. 常见问题
+## 4. 常见问题
 
-### 3.1. 为什么封装？
+### 4.1. 为什么封装？
 
 本工具是对[官方API](https://web.sdk.qcloud.com/im/doc/zh-cn/index.html)的封装，方便业务侧“一行代码”调用，减少使用成本。
 

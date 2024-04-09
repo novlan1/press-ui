@@ -18,8 +18,9 @@ import {
   PICKER_BO_LIST,
   PICKER_BAN_LIST,
   SELECT_BAN_LIST,
-  type IPopupCellClick,
 } from './helper';
+import type { IPopupCellClick } from './helper';
+
 
 const local = {
   startBattleType: 1,

@@ -117,7 +117,7 @@
           v-if="showClear"
           :name="clearIcon"
           class="press-field__clear-root press-field__icon-root"
-          @click.stop.prevent="onClear"
+          @click="onClear"
         />
         <div
           class="press-field__icon-container"
@@ -160,9 +160,11 @@ import PressCell from '../press-cell/press-cell.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { commonProps, inputProps, textareaProps } from './props';
 import utils from '../common/utils/utils';
+
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
+
 import { isObject } from '../common/utils/validator';
 import { getEventDetail, getEventValue } from '../common/dom/event';
 import { nextTick, vModelMixin } from '../common/vue3/adapter';
@@ -251,6 +253,7 @@ export default {
     'keyboardheightchange',
     'input',
     'change',
+    'update:modelValue',
   ],
   data() {
     return {

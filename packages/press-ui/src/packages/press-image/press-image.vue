@@ -10,6 +10,24 @@
       :style="wrapStyle"
       @click.stop="onClick"
     >
+      <!-- #ifdef H5 -->
+      <InnerImage
+        v-if="!isError && isNotInUni"
+        :src="src"
+        :mode="mode"
+        :show-menu-by-longpress="showMenuByLongpress"
+        :lazy-load="lazyLoad"
+        class="press-image__image"
+        :style="{
+          borderRadius: round ? '10000px' : addUnit(radius),
+          width: addUnit(width),
+          height: addUnit(height)
+        }"
+        @error="onErrorHandler"
+        @load="onLoadHandler"
+      />
+      <!-- #endif -->
+
       <image
         v-if="!isError"
         :src="src"
@@ -25,6 +43,7 @@
         @error="onErrorHandler"
         @load="onLoadHandler"
       />
+
 
       <div
         v-if="showLoading && loading"
@@ -69,8 +88,13 @@
 import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
 import styleUtil from '../common/utils/style';
+import { isNotInUni } from '../common/utils/utils';
+
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressTransition from '../press-transition/press-transition.vue';
+// #ifdef H5
+import InnerImage from '../image/index.vue';
+// #endif
 
 
 export default {
@@ -82,6 +106,9 @@ export default {
   components: {
     PressIconPlus,
     PressTransition,
+    // #ifdef H5
+    InnerImage,
+    // #endif
   },
   mixins: [props],
   emits: [
@@ -103,6 +130,8 @@ export default {
       backgroundStyle: {},
       // 用于fade模式的控制组件显示与否
       show: false,
+
+      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -192,7 +221,7 @@ $press-image-error-width: 100% !default;
 $press-image-error-hight: 100% !default;
 $press-image-error-background-color: #f3f4f6 !default;
 $press-image-error-color: #909193 !default;
-$press-image-error-font-size: 46rpx !default;
+$press-image-error-font-size: 23px !default;
 
 .press-image {
   position: relative;

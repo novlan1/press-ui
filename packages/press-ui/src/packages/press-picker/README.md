@@ -167,15 +167,15 @@ export default {
 
 ### Props
 
-| 参数                   | 说明                       | 类型      | 默认值  |
-| ---------------------- | -------------------------- | --------- | ------- |
-| title                  | 标题                       | _string_  | -       |
-| arrow-icon             | 左上角是否显示为返回箭头   | _boolean_ | `false` |
-| list                   | 数据列表                   | _array_   | `[]`    |
-| current                | 当前选中项                 | _object_  | `null`  |
-| tip                    | 提示                       | _string_  | -       |
-| mode                   | 函数式调用时传`functional` | _string_  | -       |
-| virtual-list-threshold | 触发虚拟列表的最小数量     | _number_  | `50`    |
+| 参数                   | 说明                                           | 类型      | 默认值  |
+| ---------------------- | ---------------------------------------------- | --------- | ------- |
+| title                  | 标题                                           | _string_  | -       |
+| arrow-icon             | 左上角是否显示为返回箭头                       | _boolean_ | `false` |
+| list                   | 数据列表，每一项为对象，需包含`label`、`value` | _array_   | `[]`    |
+| current                | 当前选中项                                     | _object_  | `null`  |
+| tip                    | 提示                                           | _string_  | -       |
+| mode                   | 函数式调用时传`functional`                     | _string_  | -       |
+| virtual-list-threshold | 触发虚拟列表的最小数量                         | _number_  | `50`    |
 
 
 

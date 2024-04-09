@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-notice-bar-index">
       <div class=" press-notice-bar">
-        <div class="press-notice-bar__left-icon  press-icon-plus press-icon-plus-volume-o">
+        <div class=" press-notice-bar__left-icon press-icon-plus press-icon-plus-volume-o press-notice-bar__left-icon">
           <!---->
           <!---->
         </div>
@@ -61,7 +61,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </div>
         </div>
-        <div class="press-notice-bar__right-icon  press-icon-plus press-icon-plus-cross">
+        <div class=" press-notice-bar__right-icon press-icon-plus press-icon-plus-cross press-notice-bar__right-icon">
           <!---->
           <!---->
         </div>
@@ -76,7 +76,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
         <navigator url="" open-type="navigate">
-          <div class="press-notice-bar__right-icon  press-icon-plus press-icon-plus-arrow">
+          <div class=" press-notice-bar__right-icon press-icon-plus press-icon-plus-arrow press-notice-bar__right-icon">
             <!---->
             <!---->
           </div>
@@ -87,7 +87,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-notice-bar-index">
       <div class=" press-notice-bar" style="color: rgb(25, 137, 250); background: rgb(236, 249, 255);">
-        <div class="press-notice-bar__left-icon  press-icon-plus press-icon-plus-info-o">
+        <div class=" press-notice-bar__left-icon press-icon-plus press-icon-plus-info-o press-notice-bar__left-icon">
           <!---->
           <!---->
         </div>
@@ -103,7 +103,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-notice-bar-index">
       <div class=" press-notice-bar">
-        <div class="press-notice-bar__left-icon  press-icon-plus press-icon-plus--image">
+        <div class=" press-notice-bar__left-icon press-icon-plus press-icon-plus--image press-notice-bar__left-icon">
           <!----> <img src="https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png" mode="aspectFit" class="press-icon-plus__image">
         </div>
         <div class="press-notice-bar__wrap">

@@ -1,6 +1,6 @@
 import Vue, { CreateElement } from 'vue';
 import { mount } from '@vue/test-utils';
-import { t } from '../../packages/press-ui/src/packages/locale';
+import { t } from '../../src/packages/locale';
 
 // @ts-ignore
 global.wx = {};

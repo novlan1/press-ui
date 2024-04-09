@@ -3,7 +3,7 @@ import { TIM } from './tim';
 
 const timMap: Record<string, any> = {};
 
-export function init(appId: string, logLevel = 0) {
+export function init(appId: number, logLevel = 0) {
   if (timMap[appId]) return timMap[appId];
   const options = {
     SDKAppID: appId,
@@ -17,7 +17,7 @@ export function init(appId: string, logLevel = 0) {
   // tim.setLogLevel(1); // release 级别，SDK 输出关键信息，生产环境时建议使用
 
   const watchReadyCallback = function () {
-    tim.updateReadyStatus(true);
+    tim.updateReadyStatus?.(true);
   };
 
   tim.on(TIM.EVENT.SDK_READY, watchReadyCallback);

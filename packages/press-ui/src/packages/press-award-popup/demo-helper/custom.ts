@@ -1,8 +1,8 @@
 import {
   showPopupCellAndClose,
-  type IPopupCellClick,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 
+import type { IPopupCellClick } from 'src/packages/press-popup-cell/demo-helper/helper';
 
 export const local = {
   empty: false,

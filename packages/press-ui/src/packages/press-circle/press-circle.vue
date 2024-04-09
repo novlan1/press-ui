@@ -1,7 +1,7 @@
 <template>
   <div class="press-circle-index">
     <div class="press-circle">
-      <!-- #ifdef H5 || APP-PLUS -->
+      <!-- #ifdef H5 || APP-PLUS || MP-ALIPAY-->
       <canvas
         :id="canvasId"
         class="press-circle__canvas"
@@ -11,7 +11,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifdef MP -->
+      <!-- #ifdef MP-QQ || MP-WEIXIN -->
       <!-- 小程序中动态canvasId不生效，相同问题: https://ask.dcloud.net.cn/question/67534 -->
       <canvas
         :id="canvasId"
@@ -122,7 +122,7 @@ export default {
     },
     canvasId() {
       let result =  `press-circle-${this.id}`;
-      // #ifdef MP
+      // #ifdef MP-QQ || MP-WEIXIN
       result = 'press-circle';
       // #endif
 
@@ -315,6 +315,7 @@ export default {
     width: 100%;
     transform: translateY(-50%);
     color: var(--circle-text-color, $circle-text-color);
+    background: transparent;
   }
 }
 </style>

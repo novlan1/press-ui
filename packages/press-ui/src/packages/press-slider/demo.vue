@@ -101,7 +101,7 @@
           :value="valueMap.range"
           range
           vertical
-          style="margin-left: 100px;"
+          custom-style="margin-left: 100px;"
           @change="onChange"
         />
       </div>

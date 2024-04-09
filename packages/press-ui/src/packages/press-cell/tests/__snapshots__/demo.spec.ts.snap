@@ -11,14 +11,14 @@ exports[`renders demo correctly 1`] = `
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
         <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--borderless">
           <div class="press-cell__title">
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
       </div>
     </div>
@@ -32,14 +32,14 @@ exports[`renders demo correctly 1`] = `
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
         <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
           <div class="press-cell__title">
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
       </div>
     </div>
@@ -50,19 +50,19 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
+      <div class="press-cell__value"></div>
     </div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--large">
       <div class="press-cell__title">
         单元格
         <!---->
       </div>
-      <!---->
+      <div class="press-cell__value"></div>
     </div>
   </div>
   <div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
-      <div class="press-cell__left-icon-wrap press-cell__left-icon press-icon-plus press-icon-plus-location-o">
+      <div class=" press-cell__left-icon press-icon-plus press-icon-plus-location-o press-cell__left-icon">
         <!---->
         <!---->
       </div>
@@ -70,7 +70,7 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
+      <div class="press-cell__value"></div>
     </div>
   </div>
   <div>
@@ -79,8 +79,8 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -90,8 +90,8 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -101,8 +101,8 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow-down">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow-down press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -114,8 +114,8 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -132,7 +132,7 @@ exports[`renders demo correctly 1`] = `
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@ exports[`renders demo correctly 1`] = `
             单元格
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
         </div>
       </div>
     </div>
@@ -162,14 +162,14 @@ exports[`renders demo correctly 1`] = `
         </div>
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
     </div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell">
-      <div class="press-cell__left-icon-wrap press-cell__left-icon press-icon-plus press-icon-plus-shop-o">
+      <div class=" press-cell__left-icon press-icon-plus press-icon-plus-shop-o press-cell__left-icon">
         <!---->
         <!---->
       </div>
@@ -177,7 +177,7 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
+      <div class="press-cell__value"></div>
       <div class="custom-icon  press-icon-plus press-icon-plus-search">
         <!---->
         <!---->
@@ -190,7 +190,7 @@ exports[`renders demo correctly 1`] = `
         单元格
         <!---->
       </div>
-      <!---->
+      <div class="press-cell__value"></div>
     </div>
   </div>
   <div>
@@ -203,7 +203,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-cell__value">
           淘汰赛
         </div>
-        <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
           <!---->
           <!---->
         </div>
@@ -215,7 +215,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-cell__value">
           默认一局胜负
         </div>
-        <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
           <!---->
           <!---->
         </div>
@@ -225,7 +225,7 @@ exports[`renders demo correctly 1`] = `
           允许比赛中修改队名队徽
           <!---->
         </div>
-        <!---->
+        <div class="press-cell__value"></div>
         <div class="press-switch press-switch--e-sport" style="font-size: 30px;">
           <div class="press-switch__node">
             <!---->
@@ -239,7 +239,7 @@ exports[`renders demo correctly 1`] = `
             便于发放奖励和联系参赛者，可在队员信息中查看
           </div>
         </div>
-        <!---->
+        <div class="press-cell__value"></div>
         <div class="press-switch press-switch--e-sport" style="font-size: 30px;">
           <div class="press-switch__node">
             <!---->

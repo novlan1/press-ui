@@ -10,8 +10,8 @@ exports[`renders demo correctly 1`] = `
       <div class="press-cell__title">
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -23,8 +23,8 @@ exports[`renders demo correctly 1`] = `
         主要通知
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -34,8 +34,8 @@ exports[`renders demo correctly 1`] = `
         成功通知
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -45,8 +45,8 @@ exports[`renders demo correctly 1`] = `
         危险通知
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -56,8 +56,8 @@ exports[`renders demo correctly 1`] = `
         警告通知
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -69,8 +69,8 @@ exports[`renders demo correctly 1`] = `
         自定义颜色
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -80,8 +80,8 @@ exports[`renders demo correctly 1`] = `
         自定义时长
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>

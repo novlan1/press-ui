@@ -15,9 +15,10 @@
       >
         <press-icon-plus
           :name="index + 1 <= innerValue ? icon : voidIcon"
-          :class="[utils.bem2('rate__icon', [{ disabled, full: index + 1 <= innerValue }])]"
-          :style="'' + style({ fontSize: utils.addUnit(size) })"
-          :custom-class="iconClass"
+          :class="[getIconBaseClass(index)]"
+          :style="'' + iconStyle"
+          :custom-class="getIconBaseCustomClass(index)"
+          :custom-style="iconCustomStyle"
           :data-score="index"
           :color="disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor"
           @click="onSelect(index)"
@@ -26,9 +27,10 @@
         <press-icon-plus
           v-if="allowHalf"
           :name="index + 0.5 <= innerValue ? icon : voidIcon"
-          :class="[utils.bem2('rate__icon', ['half', { disabled, full: index + 0.5 <= innerValue }])]"
-          :style="'' + style({ fontSize: utils.addUnit(size) })"
-          :custom-class="iconClass"
+          :class="[getIconHalfClass(index)]"
+          :style="'' + iconStyle"
+          :custom-class="getIconHalfCustomClass(index)"
+          :custom-style="iconCustomStyle"
           :data-score="index - 0.5"
           :color="disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor"
           @click="onSelect(index - 0.5)"
@@ -97,6 +99,18 @@ export default {
       style,
     };
   },
+  computed: {
+    iconStyle() {
+      return style({ fontSize: utils.addUnit(this.size) });
+    },
+    iconCustomStyle() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = this.iconStyle;
+      // #endif
+      return result;
+    },
+  },
   watch: {
     value: {
       handler(val) {
@@ -139,6 +153,28 @@ export default {
         }
       });
     },
+    getIconBaseClass(index) {
+      const { disabled, innerValue } = this;
+      return utils.bem2('rate__icon', [{ disabled, full: index + 1 <= innerValue }]);
+    },
+    getIconHalfClass(index) {
+      const { disabled, innerValue } = this;
+      return utils.bem2('rate__icon', ['half', { disabled, full: index + 0.5 <= innerValue }]);
+    },
+    getIconBaseCustomClass(index) {
+      let result = this.iconClass;
+      // #ifdef MP-ALIPAY
+      result += ` ${this.getIconBaseClass(index)}`;
+      // #endif
+      return result;
+    },
+    getIconHalfCustomClass(index) {
+      let result = this.iconClass;
+      // #ifdef MP-ALIPAY
+      result += ` ${this.getIconHalfClass(index)}`;
+      // #endif
+      return result;
+    },
   },
 };
 
@@ -160,6 +196,9 @@ export default {
     }
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__icon,
+  /* #endif */
   &__icon {
     display: block;
     height: 1em;

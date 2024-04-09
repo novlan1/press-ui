@@ -35,7 +35,10 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <PressDialogPlus id="press-dialog" />
+    <PressDialogPlus
+      id="press-dialog"
+      ref="press-dialog"
+    />
     <!-- #endif -->
 
     <press-dialog-plus

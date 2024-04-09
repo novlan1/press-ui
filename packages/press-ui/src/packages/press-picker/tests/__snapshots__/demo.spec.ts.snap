@@ -7,8 +7,8 @@ exports[`renders demo correctly 1`] = `
       <div class="press-cell__title">
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -18,8 +18,8 @@ exports[`renders demo correctly 1`] = `
         顶部提示
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -29,8 +29,8 @@ exports[`renders demo correctly 1`] = `
         超长列表
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -40,8 +40,8 @@ exports[`renders demo correctly 1`] = `
         横版
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -52,8 +52,8 @@ exports[`renders demo correctly 1`] = `
       <div class="press-cell__title">
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>

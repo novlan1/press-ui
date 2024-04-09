@@ -31,12 +31,13 @@
         :key="index"
         class="press-picker-view--item"
         :class="[item.uniqueKey == currentIndex ? 'press-picker-view--item__active':'']"
+        :data-unique-key="item.uniqueKey"
         @mousedown="itemDown"
         @mousemove="itemMove"
-        @mouseup="e=>itemUp(e, item.uniqueKey)"
+        @mouseup="itemUp"
         @touchstart="itemDown"
         @touchmove="itemMove"
-        @touchend="e=>itemUp(e, item.uniqueKey)"
+        @touchend="itemUp"
       >
         {{ item.label }}
       </div>
@@ -287,13 +288,15 @@ export default {
       this.upX = touch?.clientX;
       this.upY = touch?.clientY;
     },
-    itemUp(e, index) {
+    itemUp(e) {
+      const { uniqueKey } = e.currentTarget.dataset;
       const distance = this.twoPointDistance(
         { x: this.downX, y: this.downY },
         { x: this.upX, y: this.upY },
       );
+
       if (distance < 10) {
-        this.currentIndex = index; // e.currentTarget.dataset.index;
+        this.currentIndex = uniqueKey; // e.currentTarget.dataset.index;
         this.currentScroll = -this.currentIndex * this.itemHeight;
         this.hasClick = true;
       }

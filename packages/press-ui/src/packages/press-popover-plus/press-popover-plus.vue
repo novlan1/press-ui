@@ -7,8 +7,9 @@
   >
     <PressPopup
       ref="popover"
-      :show="value"
-      :class="[utils.bem2('popover', [theme, placement])]"
+      :show="realModelValue"
+      :class="[popupClass]"
+      :wrap-class="popupCustomClass"
       :overlay="overlay"
       position="null"
       transition="popover-zoom"
@@ -62,9 +63,13 @@
 <script>
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
 import utils from '../common/utils/utils';
+import { vModelMixin } from '../common/vue3/adapter';
+
 import { transition } from '../mixins/transition';
 import { ClickOutsideMixin } from '../mixins/click-outside';
+
 
 export default {
   name: 'PressPopoverPlus',
@@ -76,6 +81,8 @@ export default {
     PressIconPlus,
   },
   mixins: [
+    vModelMixin,
+
     transition(false),
     // #ifdef H5
     ClickOutsideMixin({
@@ -85,11 +92,14 @@ export default {
     // #endif
   ],
   props: {
-    value: {
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    overlay: {
       type: Boolean,
       default: false,
     },
-    overlay: Boolean,
     trigger: {
       type: String,
       default: '',
@@ -154,6 +164,17 @@ export default {
       const { customStyle } = this;
       return customStyle;
     },
+    popupClass() {
+      const { theme, placement } = this;
+      return utils.bem2('popover', [theme, placement]);
+    },
+    popupCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.popupClass}`;
+      // #endif
+      return result;
+    },
   },
   mounted() {
   },
@@ -163,13 +184,14 @@ export default {
         this[key] = data[key];
       });
     },
-    onToggle(value) {
-      this.$emit('input', value);
-    },
+    // onToggle(value) {
+    //   // this.$emit('input', value);
+    // },
 
     onClickWrapper() {
       if (this.trigger === 'click') {
-        this.onToggle(!this.value);
+        // this.onToggle(!this.value);
+        this.emitModelValue(!this.realModelValue);
       }
     },
 

@@ -41,7 +41,8 @@
           v-if="isActive(activeId, item.id)"
           :name="selectedIcon"
           size="16px"
-          class="press-tree-select__selected"
+          :class="[selectedIconClass]"
+          :custom-class="selectedIconCustomClass"
         />
       </div>
     </scroll-view>
@@ -129,7 +130,16 @@ export default {
     };
   },
   computed: {
-
+    selectedIconClass() {
+      return 'press-tree-select__selected';
+    },
+    selectedIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.selectedIconClass}`;
+      // #endif
+      return result;
+    },
   },
   watch: {
     items: {
@@ -210,7 +220,6 @@ export default {
     }
 
     --sidebar-padding: 12px 8px 12px 12px;
-    // --sidebar-padding: $tree-select-nav-item-padding;
   }
 
   ::v-deep &__content {

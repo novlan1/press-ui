@@ -8,8 +8,8 @@ exports[`renders demo correctly 1`] = `
         切换方向
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -19,8 +19,8 @@ exports[`renders demo correctly 1`] = `
         修改颜色
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>

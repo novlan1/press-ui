@@ -8,6 +8,7 @@
       enhanced
       :scroll-with-animation="false"
       scroll-y
+      :scroll-top="curScrollTop"
       @scroll="onWatchScroll"
     >
       <div class="press-index-bar">
@@ -64,8 +65,6 @@ export default {
     styleIsolation: 'shared',
   },
   mixins: [
-
-
     ParentMixin(PARENT),
   ],
   props: {
@@ -102,6 +101,8 @@ export default {
       showSidebar: false,
 
       sidebar: {},
+
+      curScrollTop: 0,
     };
   },
   created() {
@@ -347,7 +348,11 @@ export default {
       ref.scrollTop = top;
       // #endif
 
-      // #ifndef H5
+      // #ifdef MP-QQ || MP-ALIPAY
+      this.curScrollTop = top;
+      // #endif
+
+      // #ifdef MP-WEIXIN || APP-PLUS
       this?.createSelectorQuery?.()
         ?.select?.(selector)
         ?.node?.()
@@ -356,6 +361,7 @@ export default {
           const scrollView = res[0]?.node;
           if (!scrollView) return;
           console.log('[changeScrollerTop] scrollView', scrollView);
+
           scrollView.scrollTo({
             top,
             duration: 0,

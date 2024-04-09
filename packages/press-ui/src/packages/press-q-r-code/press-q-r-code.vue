@@ -16,7 +16,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifdef MP-QQ || APP-PLUS || APP -->
+      <!-- #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP -->
       <canvas
         :id="canvasId"
         :style="style"
@@ -44,7 +44,7 @@ import PressQRCodeWeb from '../common/vue3/q-r-code';
 import drawWxQRcode from 'weapp-qrcode-canvas-2d';
 // #endif
 
-// #ifdef MP-QQ || APP-PLUS || APP
+// #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP
 import UQRCode from 'uqrcodejs';
 // #endif
 
@@ -106,7 +106,7 @@ export default {
       this.codeMpWx();
       // #endif
 
-      // #ifdef MP-QQ || APP-PLUS || APP
+      // #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP
       this.codeMpQQ();
       // #endif
     },

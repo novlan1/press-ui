@@ -18,12 +18,12 @@
         @closed="onClosed"
       >
         <template #reference>
-          <press-button
+          <PressButton
             type="primary"
-            @click.stop="show.lightTheme = !show.lightTheme"
+            @click="show.lightTheme = !show.lightTheme"
           >
             {{ t('lightTheme') }}
-          </press-button>
+          </PressButton>
         </template>
       </PressPopoverPlus>
 
@@ -37,12 +37,12 @@
         @select="onSelect"
       >
         <template #reference>
-          <press-button
+          <PressButton
             type="primary"
-            @click.stop="show.darkTheme = !show.darkTheme"
+            @click="show.darkTheme = !show.darkTheme"
           >
             {{ t('darkTheme') }}
-          </press-button>
+          </PressButton>
         </template>
       </PressPopoverPlus>
     </demo-block>
@@ -101,12 +101,12 @@
         @select="onSelect"
       >
         <template #reference>
-          <press-button
+          <PressButton
             type="primary"
-            @click.stop="show.showIcon = !show.showIcon"
+            @click="show.showIcon = !show.showIcon"
           >
             {{ t('showIcon') }}
-          </press-button>
+          </PressButton>
         </template>
       </PressPopoverPlus>
 
@@ -118,12 +118,12 @@
         @select="onSelect"
       >
         <template #reference>
-          <press-button
+          <PressButton
             type="primary"
-            @click.stop="show.disableAction = !show.disableAction"
+            @click="show.disableAction = !show.disableAction"
           >
             {{ t('disableAction') }}
-          </press-button>
+          </PressButton>
         </template>
       </PressPopoverPlus>
     </demo-block>
@@ -169,12 +169,12 @@
           </press-grid>
         </template>
         <template #reference>
-          <press-button
+          <PressButton
             type="primary"
-            @click.stop="show.customContent = !show.customContent"
+            @click="show.customContent = !show.customContent"
           >
             {{ t('customContent') }}
-          </press-button>
+          </PressButton>
         </template>
       </PressPopoverPlus>
     </demo-block>
@@ -311,6 +311,10 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "src/packages/common/style/press/var.scss";
+
+.demo-wrap {
+  min-height: 100vh;
+}
 
 .demo-popover {
   &-refer {

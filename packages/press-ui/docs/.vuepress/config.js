@@ -98,10 +98,17 @@ module.exports = {
         link: 'https://novlan1.github.io/press-plus',
       },
       {
-        text: '源码地址',
+        text: 'Plugin Light',
+        link: 'https://novlan1.github.io/uni-plugin-light',
+      },
+      {
+        text: 'T Comm',
+        link: 'https://novlan1.github.io/t-comm',
+      },
+      {
+        text: '源码',
         link: 'https://github.com/novlan1/press-ui',
       },
-
     ],
     // algolia: {
     //   apiKey: '',

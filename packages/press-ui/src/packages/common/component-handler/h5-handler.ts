@@ -41,8 +41,8 @@ export function getH5ComponentHandler({
     if (!queue.length || multiple) {
       // const dialogId = 'press-toast';
       const oldDialog = document.getElementById(dialogId);
-      if (oldDialog) {
-        document.body.removeChild(oldDialog);
+      if (oldDialog?.parentElement) {
+        oldDialog.parentElement.removeChild(oldDialog);
       }
       const dialogRootDiv = document.createElement('div');
       dialogRootDiv.id = dialogId;

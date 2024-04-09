@@ -67,7 +67,7 @@ exports[`renders demo correctly 1`] = `
             标题
             <!---->
           </div>
-          <!---->
+          <div class="press-cell__value"></div>
           <div class="press-switch press-switch--on " style="font-size: 22px;">
             <div class="press-switch__node">
               <!---->

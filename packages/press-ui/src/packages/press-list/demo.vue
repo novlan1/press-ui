@@ -23,6 +23,7 @@
         :vertical="listLocal.vertical"
         finished-text="没有更多了"
         :auto-check-scroller="listLocal.autoCheckScroller"
+        :custom-style="listStyle"
         @load="load"
         @scroll="scroll"
       >
@@ -106,6 +107,11 @@ export default {
     const listLocal = {
       ...local,
     };
+    let listStyle = '';
+    // #ifdef MP-ALIPAY
+    listStyle =  'height: calc(100vh - 100px);';
+    // #endif
+
     return {
       sectionStyle: 'margin: 0;background: #f7f8fa;',
       headerStyle: 'background: #f7f8fa;',
@@ -118,6 +124,7 @@ export default {
       FUNCTIONAL_ID_MAP,
 
       listLocal,
+      listStyle,
     };
   },
   computed: {

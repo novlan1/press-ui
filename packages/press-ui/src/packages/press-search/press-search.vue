@@ -19,7 +19,7 @@
           name="label"
         />
 
-        <press-field
+        <PressField
           type="search"
           :left-icon="(!useLeftIconSlot ? leftIcon : '')"
           :right-icon="(!useRightIconSlot ? rightIcon : '')"
@@ -27,7 +27,8 @@
           :error="error"
           :border="false"
           confirm-type="search"
-          :class="['press-search__field', fieldClass]"
+          :class="fieldBaseClass"
+          :custom-class="fieldCustomClass"
           :value="innerValue"
           :disabled="disabled"
           :readonly="readonly"
@@ -60,7 +61,7 @@
               name="right-icon"
             />
           </template>
-        </press-field>
+        </PressField>
       </div>
 
       <div
@@ -176,6 +177,18 @@ export default {
       innerValue: this.value,
     };
   },
+  computed: {
+    fieldBaseClass() {
+      return `press-search__field ${this.fieldClass}`;
+    },
+    fieldCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = this.fieldBaseClass;
+      // #endif
+      return result;
+    },
+  },
   watch: {
     value: {
       handler(val) {
@@ -251,6 +264,9 @@ export default {
     color: var(--search-label-color, $search-label-color);
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__field,
+  /* #endif */
   &__field {
     flex: 1;
 

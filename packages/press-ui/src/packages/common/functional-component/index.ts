@@ -44,6 +44,11 @@ export function selectComponent(context: any, selector: string) {
     return context.$refs[attribute];
   }
 
+  if (typeof context?.$selectComponent === 'function') {
+    const res =  context?.$selectComponent?.(selector);
+    return res;
+  }
+
   return context?.selectComponent?.(selector);
 }
 

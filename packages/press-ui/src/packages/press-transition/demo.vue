@@ -27,7 +27,7 @@
       :show="options.custom || false"
       :duration="{ enter: 1000, leave: 1000 }"
       custom-class="block"
-      name=""
+      :name="``"
       enter-class="press-enter-class"
       enter-active-class="press-enter-active-class"
       leave-active-class="press-leave-active-class"

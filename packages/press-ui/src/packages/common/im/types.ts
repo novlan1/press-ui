@@ -1,15 +1,15 @@
 export interface IChatSDK {
-  isOnline: boolean
-  isReady: boolean
+  isOnline?: boolean
+  isReady?: boolean
 
-  userId: string;
-  userSig: string;
+  userId?: string;
+  userSig?: string;
 
-  updateUserId: (userId: string) => void;
-  updateUserSig: (userSig: string) => void;
+  updateUserId?: (userId: string) => void;
+  updateUserSig?: (userSig: string) => void;
 
-  updateOnlineStatus: (status: boolean) => void;
-  updateReadyStatus: (status: boolean) => void;
+  updateOnlineStatus?: (status: boolean) => void;
+  updateReadyStatus?: (status: boolean) => void;
 
   deleteConversation: Function;
   setAllMessageRead: Function;

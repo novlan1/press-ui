@@ -275,7 +275,7 @@ exports[`renders demo correctly 1`] = `
                 单选框 1
                 <!---->
               </div>
-              <!---->
+              <div class="press-cell__value"></div>
               <div class="press-radio-index">
                 <div class="press-radio">
                   <!---->
@@ -294,7 +294,7 @@ exports[`renders demo correctly 1`] = `
                 单选框 2
                 <!---->
               </div>
-              <!---->
+              <div class="press-cell__value"></div>
               <div class="press-radio-index">
                 <div class="press-radio">
                   <!---->

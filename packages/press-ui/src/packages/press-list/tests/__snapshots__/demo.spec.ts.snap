@@ -8,15 +8,15 @@ exports[`renders demo correctly 1`] = `
         自定义
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
     </div>
   </div>
   <div class="demo-container">
-    <div id="scrollViewId" class=" " style="height: 100%;">
+    <div id="scrollViewId" class="press-list press-list--vertical " style="height: calc(100vh - 100px);">
       <div class="uni-scroll-view">
         <div class="uni-scroll-view" style="overflow-x: hidden; overflow-y: auto;">
           <div class="uni-scroll-view-content">

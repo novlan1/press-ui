@@ -1,6 +1,14 @@
 <template>
   <div class="press-count-down">
-    <slot v-if="useSlot" />
+    <slot
+      v-if="useSlot"
+      :time-data="timeData"
+    >
+      <span>
+        {{ formattedTime }}
+      </span>
+    </slot>
+
     <template v-else>
       {{ formattedTime }}
     </template>
@@ -37,9 +45,16 @@ export default {
   emits: ['change', 'finish'],
   data() {
     return {
-      timeData: parseTimeData(0),
+      // timeData: parseTimeData(0),
       formattedTime: '0',
+      remain: 0,
     };
+  },
+  computed: {
+    timeData() {
+      const res =  parseTimeData(this.remain);
+      return res;
+    },
   },
   watch: {
     time: {

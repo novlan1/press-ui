@@ -189,7 +189,7 @@ export default {
 @import "../common/style/press/index.scss";
 @import "../common/style/press/var.scss";
 
-::v-deep .press-action-sheet {
+.press-action-sheet {
   max-height: var(
     --action-sheet-max-height,
     $action-sheet-max-height
@@ -198,6 +198,9 @@ export default {
 
   &__item,
   &__cancel {
+    box-sizing: border-box;
+    height: auto;
+
     padding: 14px $padding-md;
     text-align: center;
     font-size: var(--action-sheet-item-font-size, $action-sheet-item-font-size);
@@ -296,7 +299,7 @@ export default {
     );
   }
 
-  &__close {
+  ::v-deep &__close {
     position: absolute !important;
     top: 0;
     right: 0;
@@ -312,7 +315,7 @@ export default {
     color: var(--action-sheet-close-icon-color, $action-sheet-close-icon-color);
   }
 
-  &__loading {
+  ::v-deep &__loading {
     display: flex !important;
   }
 }

@@ -47,6 +47,10 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.demo-wrap {
+  min-height: 100vh;
+}
+
 .barcode-wrap {
   display: flex;
   align-items: center;

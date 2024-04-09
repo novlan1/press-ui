@@ -16,8 +16,9 @@ import {
   BATCH_SET_MAP,
   onTimeStartTimeFormat,
   latestReadyTimeFormat,
-  type IPopupCellClick,
 } from './helper';
+
+import type { IPopupCellClick } from './helper';
 
 const local = {
   fixStartTime: parseInt(`${Date.now() / 1000}`, 10),

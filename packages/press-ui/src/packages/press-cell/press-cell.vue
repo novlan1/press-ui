@@ -6,11 +6,11 @@
     :style="customStyle"
     @click.stop="onClick"
   >
-    <press-icon-plus
+    <PressIconPlus
       v-if="icon"
       :name="icon"
-      class="press-cell__left-icon-wrap"
-      custom-class="press-cell__left-icon"
+      :class="[leftIconBaseClass]"
+      :custom-class="leftIconCustomClass"
     />
     <slot
       v-else
@@ -49,7 +49,6 @@
     </div>
 
     <div
-      v-if="value || value === 0 || $slots.default"
       class="press-cell__value"
       :class="valueClass"
     >
@@ -59,11 +58,11 @@
       <slot v-else />
     </div>
 
-    <press-icon-plus
+    <PressIconPlus
       v-if="isLink"
       :name="arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow'"
-      class="press-cell__right-icon-wrap"
-      :custom-class="`press-cell__right-icon ${rightIconClass}`"
+      :class="[rightIconBaseClass]"
+      :custom-class="rightIconCustomClass"
     />
     <slot
       v-else
@@ -152,6 +151,26 @@ export default {
     cTitleStyle() {
       const {  titleWidth, titleStyle } = this;
       return computed.titleStyle({ titleWidth, titleStyle });
+    },
+    leftIconBaseClass() {
+      return 'press-cell__left-icon';
+    },
+    leftIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.leftIconBaseClass}`;
+      // #endif
+      return result;
+    },
+    rightIconBaseClass() {
+      return 'press-cell__right-icon';
+    },
+    rightIconCustomClass() {
+      let result = this.rightIconClass;
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.rightIconBaseClass}`;
+      // #endif
+      return result;
     },
   },
   mounted() {
@@ -245,29 +264,33 @@ export default {
     }
   }
 
-  &__left-icon-wrap,
-  &__right-icon-wrap {
+  /* #ifdef MP-ALIPAY */
+  ::v-deep .press-cell__left-icon,
+  ::v-deep .press-cell__right-icon,
+  /* #endif */
+  &__left-icon,
+  &__right-icon {
     display: flex;
     align-items: center;
     height: var(--cell-line-height, $cell-line-height);
     font-size: var(--cell-icon-size, $cell-icon-size);
   }
 
-  &__left-icon-wrap {
-    margin-right: var(--padding-base, $padding-base);
-  }
-
-  &__right-icon-wrap {
-    margin-left: var(--padding-base, $padding-base);
-    color: var(--cell-right-icon-color, $cell-right-icon-color);
-  }
-
+  /* #ifdef MP-ALIPAY */
+  ::v-deep .press-cell__left-icon,
+  /* #endif */
   &__left-icon {
+    margin-right: var(--padding-base, $padding-base);
     vertical-align: middle;
     line-height: var(--cell-line-height, $cell-line-height);
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep .press-cell__right-icon,
+  /* #endif */
   &__right-icon {
+    margin-left: var(--padding-base, $padding-base);
+    color: var(--cell-right-icon-color, $cell-right-icon-color);
     line-height: var(--cell-line-height, $cell-line-height);
   }
 

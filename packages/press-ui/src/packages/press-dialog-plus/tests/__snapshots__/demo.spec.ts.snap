@@ -8,8 +8,8 @@ exports[`renders demo correctly 1`] = `
         提示弹窗
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -19,8 +19,8 @@ exports[`renders demo correctly 1`] = `
         提示弹窗（无标题）
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -30,8 +30,8 @@ exports[`renders demo correctly 1`] = `
         确认弹窗
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -43,8 +43,8 @@ exports[`renders demo correctly 1`] = `
         异步关闭
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
@@ -56,15 +56,15 @@ exports[`renders demo correctly 1`] = `
         组件调用
         <!---->
       </div>
-      <!---->
-      <div class="press-cell__right-icon-wrap press-cell__right-icon  press-icon-plus press-icon-plus-arrow">
+      <div class="press-cell__value"></div>
+      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
         <!---->
         <!---->
       </div>
     </div>
   </div>
   <div class="press-dialog-index">
-    <div>
+    <div class="press-popup-plus ">
       <div class="press-overlay-index">
         <!---->
       </div>
@@ -72,7 +72,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div class="press-dialog-index">
-    <div>
+    <div class="press-popup-plus ">
       <div class="press-overlay-index">
         <!---->
       </div>

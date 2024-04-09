@@ -24,8 +24,8 @@
         size="0.8em"
         :style="iconStyle"
         :class="innerIconClass"
-        :custom-class="iconClass"
-        custom-style="line-height: 1.25em;"
+        :custom-class="iconCustomClass"
+        :custom-style="iconCustomStyle"
       />
     </div>
     <div
@@ -127,6 +127,23 @@ export default {
       const { shape, disabled, parentDisabled, dataValue } = this;
       return `${utils.bem2('checkbox__icon', [shape, { disabled: disabled || parentDisabled, checked: dataValue }])}`;
     },
+    iconCustomClass() {
+      let result = this.iconClass;
+      // #ifdef MP-ALIPAY
+      result = `${this.innerIconClass} ${result}`;
+      // #endif
+
+      return result;
+    },
+    iconCustomStyle() {
+      let result = 'line-height: 1.25em;';
+
+      // #ifdef MP-ALIPAY
+      result = `${this.iconStyle};${result}`;
+      // #endif
+
+      return result;
+    },
   },
   watch: {
     value: {
@@ -214,6 +231,9 @@ export default {
     flex: none;
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep .press-checkbox__icon,
+  /* #endif */
   &__icon {
     display: flex;
     align-items: center;

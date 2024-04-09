@@ -573,6 +573,10 @@ export default {
   }
 
   &__scroll {
+    // 微信小程序和 uni-app 的 h5 下的 scroll-view 都是 width: 100%;
+    // 支付宝小程序并没有
+    width: 100%;
+
     background-color: var(
       --tabs-nav-background-color,
       $tabs-nav-background-color

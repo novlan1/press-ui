@@ -10,6 +10,7 @@ function iconStyle(
 ) {
   const styles: Record<string, string> = {
     'font-size': addUnit(iconSize),
+    'line-height': '1.25em',
   };
 
   if (checkedColor && value && !disabled && !parentDisabled) {

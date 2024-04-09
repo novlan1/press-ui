@@ -113,12 +113,13 @@
             width: addUnit(width),
             height: addUnit(height)
           }]"
-          @click="chooseFile"
+          @click.stop="chooseFile"
         >
           <PressIconPlus
             :name="uploadIcon"
             size="26"
             :color="uploadIconColor"
+            @click="chooseFile"
           />
           <span
             v-if="uploadText"
@@ -198,6 +199,7 @@ export default {
         lists,
         disabled,
       } = this;
+      console.log('[chooseFile]');
       if (disabled) return;
       // 如果用户传入的是字符串，需要格式化成数组
       let capture;

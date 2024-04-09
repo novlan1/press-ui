@@ -32,6 +32,7 @@
 <script>
 // #ifdef H5
 import InnerSwiper from '../swiper/swiper.vue';
+import { setCustomElements } from '../common/vue3/adapter';
 // #endif
 import { isNotInUni } from '../common/utils/utils';
 import { SWIPER_PROPS } from '../swiper/utils';
@@ -42,6 +43,14 @@ const componentConfig = isNotInUni() ? {
   Swiper: InnerSwiper,
 // #endif
 } : {};
+
+// #ifdef H5
+if (isNotInUni()) {
+  setCustomElements([
+    'uni-swiper',
+  ]);
+}
+// #endif
 
 
 export default {

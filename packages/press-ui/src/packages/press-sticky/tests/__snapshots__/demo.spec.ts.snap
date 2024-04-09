@@ -10,7 +10,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
       </div>
-      <div class="press-notice-bar__right-icon  press-icon-plus press-icon-plus-cross">
+      <div class=" press-notice-bar__right-icon press-icon-plus press-icon-plus-cross press-notice-bar__right-icon">
         <!---->
         <!---->
       </div>

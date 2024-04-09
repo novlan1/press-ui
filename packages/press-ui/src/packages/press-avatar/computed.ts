@@ -17,7 +17,7 @@ export default {
     // 裁剪模式
     mode: {
       type: String,
-      default: 'uni.$u.props.avatar.mode',
+      default: 'scaleToFill',
     },
     // 显示的文字
     text: {

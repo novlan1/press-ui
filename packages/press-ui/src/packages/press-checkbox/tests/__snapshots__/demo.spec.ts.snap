@@ -6,7 +6,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
+        <div class="press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
           <!---->
           <!---->
         </div>
@@ -20,7 +20,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--disabled press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
+        <div class="press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--disabled press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--disabled press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
           <!---->
           <!---->
         </div>
@@ -34,7 +34,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--square press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
+        <div class="press-checkbox__icon press-checkbox__icon--square press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--square press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
           <!---->
           <!---->
         </div>
@@ -48,7 +48,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em; border-color: #07c160; background-color: rgb(7, 193, 96);">
+        <div class="press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em; border-color: #07c160; background-color: rgb(7, 193, 96);">
           <!---->
           <!---->
         </div>
@@ -62,7 +62,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 25px; line-height: 1.25em;">
+        <div class="press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 25px; line-height: 1.25em;">
           <!---->
           <!---->
         </div>
@@ -76,7 +76,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-checkbox ">
       <!---->
       <div class="press-checkbox__icon-wrap">
-        <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
+        <div class="press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round press-checkbox__icon--checked" style="font-size: 20px; line-height: 1.25em;">
           <!---->
           <!---->
         </div>
@@ -92,7 +92,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>
@@ -104,7 +104,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>
@@ -116,7 +116,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>
@@ -134,7 +134,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>
@@ -146,7 +146,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>
@@ -158,7 +158,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-checkbox " style="margin-bottom: 8px;">
           <!---->
           <div class="press-checkbox__icon-wrap">
-            <div class=" press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
+            <div class="press-checkbox__icon press-checkbox__icon--round  press-icon-plus press-icon-plus-success press-checkbox__icon press-checkbox__icon--round" style="font-size: 20px; line-height: 1.25em;">
               <!---->
               <!---->
             </div>

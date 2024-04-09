@@ -12,7 +12,7 @@
       :clickable="clickable"
       :border="border && expanded"
       :class="collapseItemClass"
-      right-icon-class="press-cell__right-icon"
+      :custom-class="collapseItemCustomClass"
       hover-class="press-cell--hover"
       center
       @click="onClick"
@@ -70,8 +70,8 @@ export default {
     value: { type: String, default: '' },
     icon: { type: String, default: '' },
     label: { type: String, default: '' },
-    disabled: Boolean,
-    clickable: Boolean,
+    disabled: { type: Boolean, default: false },
+    clickable: { type: Boolean, default: false },
     border: {
       type: Boolean,
       default: true,
@@ -104,6 +104,13 @@ export default {
     collapseItemClass() {
       const { disabled, expanded } = this;
       return utils.bem2('collapse-item__title', { disabled, expanded });
+    },
+    collapseItemCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = this.collapseItemClass;
+      // #endif
+      return result;
     },
     wrapperClass() {
       return utils.bem2('collapse-item__wrapper');
@@ -150,8 +157,8 @@ export default {
 @import "../common/style/press/var.scss";
 
 .press-collapse-item {
-  &__title {
-    ::v-deep .press-cell__right-icon {
+  ::v-deep &__title {
+    .press-cell__right-icon {
       transform: rotate(90deg);
       transition: transform
         var(
@@ -159,8 +166,7 @@ export default {
           $collapse-item-transition-duration
         );
     }
-
-    ::v-deep &--expanded {
+    &--expanded {
       .press-cell__right-icon {
         transform: rotate(-90deg);
       }
@@ -168,15 +174,15 @@ export default {
 
     &--disabled {
       // 【修改点】改变disabled状态下的title颜色
-      ::v-deep .press-cell__title,
-      ::v-deep .press-cell__right-icon {
+      .press-cell__title,
+      .press-cell__right-icon {
         color: var(
           --collapse-item-title-disabled-color,
           $collapse-item-title-disabled-color
         ) !important;
       }
 
-      ::v-deep .press-cell--hover {
+      .press-cell--hover {
         background-color: $white !important;
       }
     }

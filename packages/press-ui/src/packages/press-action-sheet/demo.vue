@@ -24,6 +24,7 @@
       @close="onClose"
       @select="onSelect"
       @getuserinfo="onGetUserInfo"
+      @cancel="onClose"
     />
 
     <press-action-sheet
@@ -31,6 +32,7 @@
       :title="t('title')"
       @close="onClose"
       @select="onSelect"
+      @cancel="onClose"
     >
       <div style="padding: 16px;">
         {{ t('content') }}

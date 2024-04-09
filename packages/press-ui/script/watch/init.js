@@ -5,10 +5,10 @@ function initWithPressUI(cpList = [
   'packages',
   'utils',
 ]) {
-  execCommand('npm run init', './src/press-ui');
+  execCommand('npm run init', './src/press-ui/packages/press-ui');
 
   cpList.forEach((item) => {
-    execCommand(`rm -rf src/${item} && cp -r src/press-ui/src/${item}/ src/${item}`, process.cwd(), 'inherit');
+    execCommand(`rm -rf src/${item} && cp -r src/press-ui/packages/press-ui/src/${item}/ src/${item}`, process.cwd(), 'inherit');
     console.log(`[init] 处理完 ${item}`);
   });
 }

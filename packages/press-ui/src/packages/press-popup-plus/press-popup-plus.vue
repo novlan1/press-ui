@@ -1,5 +1,7 @@
 <template>
-  <div class="press-popup-plus">
+  <div
+    :class="innerWrapClass"
+  >
     <press-overlay
       v-if="overlay"
       :show="show"
@@ -20,6 +22,7 @@
         v-if="closeable"
         :name="closeIcon"
         :class="innerCloseIconClass"
+        :custom-class="innerCloseIconCustomClass"
         @click="onClickCloseIcon"
       />
     </div>
@@ -121,6 +124,10 @@ export default {
       default: true,
     },
     ...defaultProps,
+    wrapClass: {
+      type: String,
+      default: '',
+    },
   },
   emits: [
     'close',
@@ -138,6 +145,9 @@ export default {
     };
   },
   computed: {
+    innerWrapClass() {
+      return `press-popup-plus ${this.wrapClass}`;
+    },
     popupClass() {
       const {
         position,
@@ -148,7 +158,16 @@ export default {
 
         classes,
       } = this;
-      return `${customClass} ${classes} ${utils.bem2('popup', [position, { round, safe: safeAreaInsetBottom, safeTop: safeAreaInsetTop }])}`;
+      return `${
+        utils.bem2('popup', [
+          position,
+          {
+            round,
+            safe: safeAreaInsetBottom,
+            safeTop: safeAreaInsetTop,
+          },
+        ])
+      } ${classes} ${customClass}`;
     },
     popupStyle() {
       const { zIndex, currentDuration, display, customStyle } = this;
@@ -156,7 +175,14 @@ export default {
     },
     innerCloseIconClass() {
       const { closeIconClass, closeIconPosition } = this;
-      return `${closeIconClass} press-popup__close-icon press-popup__close-icon--${closeIconPosition}`;
+      return `press-popup__close-icon press-popup__close-icon--${closeIconPosition} ${closeIconClass} `;
+    },
+    innerCloseIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.innerCloseIconClass}`;
+      // #endif
+      return result;
     },
   },
   watch: {
@@ -314,7 +340,9 @@ export default {
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
   }
-
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__close-icon,
+  /* #endif */
   &__close-icon {
     position: absolute;
     z-index: var(--popup-close-icon-z-index, $popup-close-icon-z-index);

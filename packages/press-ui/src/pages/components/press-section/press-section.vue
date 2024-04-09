@@ -112,12 +112,15 @@ $press-primary: #2979ff !default;
 
 .press-section {
   background-color: #fff;
+
   .press-section-header {
     position: relative;
     /* #ifndef APP-NVUE */
     display: flex;
     /* #endif */
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     // 取消垂向居中，当文字多行时，并不美观
     // align-items: center;
     padding: 12px 10px;
@@ -126,11 +129,12 @@ $press-primary: #2979ff !default;
     &__decoration {
       margin-right: 6px;
       background-color: $press-primary;
+
       &.line {
         width: 4px;
         height: 12px;
         border-radius: 10px;
-        margin-top: 4px;
+        // margin-top: 4px;
       }
 
       &.circle {

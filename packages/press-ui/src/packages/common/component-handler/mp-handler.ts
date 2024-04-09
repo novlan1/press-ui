@@ -1,4 +1,5 @@
 import { parseOptions } from './component-handler';
+import { selectComponent } from '../functional-component';
 import { setData, vmSet } from './set-data';
 
 function getContext() {
@@ -28,7 +29,7 @@ export function getMPComponentHandler({
     (CompHandler as any).getOptions = () => options;
 
     const context = options.context || getContext();
-    const dialog = context.selectComponent(options.selector);
+    const dialog = selectComponent(context, options.selector);
 
     if (!dialog) {
       console.warn(`未找到 ${name} 节点，请确认 selector 及 context 是否正确`);

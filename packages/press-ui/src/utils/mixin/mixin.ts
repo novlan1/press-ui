@@ -32,6 +32,16 @@ export function initMixin(app: any) {
         showShareItems: ['qq', 'qzone', 'wechatFriends', 'wechatMoment'],
       });
       // #endif
+
+      // https://opendocs.alipay.com/mini/api/xwq8e6
+      // #ifdef MP-ALIPAY
+      // @ts-ignore
+      my?.setNavigationBar({
+        backgroundColor: '#fff',
+        // @ts-ignore
+        frontColor: '#000',
+      });
+      // #endif
     },
     data() {
       return {

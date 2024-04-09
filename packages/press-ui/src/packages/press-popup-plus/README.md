@@ -144,6 +144,7 @@ Page({
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                  | _boolean_          | `true`   |
 | safe-area-inset-top    | 是否留出顶部安全距离（状态栏高度）               | _boolean_          | `false`  |
 | custom-class           | 自定义类名                                       | _string_           | -        |
+| wrap-class             | 自定义最外层类名                                 | _string_           | -        |
 | lock-scroll `v1.7.3`   | 是否锁定背景滚动                                 | _boolean_          | `true`   |
 
 ### Events
@@ -158,4 +159,28 @@ Page({
 | before-leave  | 离开前触发       | -    |
 | leave         | 离开中触发       | -    |
 | after-leave   | 离开后触发       | -    |
+
+## 常见问题
+
+### 从 Vant 迁移
+
+`v-model(value)` 需要改成 `show` 属性，以及接收 `close` 事件。
+
+之前：
+
+```html
+<van-popup v-model="show">内容</van-popup>
+```
+
+现在
+
+```html
+<press-popup-plus :show="show" @close="onClose">内容</press-popup-plus>
+```
+
+### custom-class
+
+由于历史原因，`PressPopupPlus` 组件的`custom-class` 并不会作用在最外层，而是在中间某层。
+
+如果需要自定义最外层的 `class`，可以传入 `wrap-class`。
 

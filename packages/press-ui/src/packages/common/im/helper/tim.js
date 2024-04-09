@@ -1,3 +1,9 @@
+// @ts-check
+/**
+ * @typedef {import("tim-js-sdk").default} TIM_TYPE
+ */
+
+
 // #ifdef H5
 // @ts-ignore
 import TIM_WEB from 'tim-js-sdk';
@@ -6,8 +12,10 @@ import TIM_WEB from 'tim-js-sdk';
 // @ts-ignore
 import TIM_MP from 'tim-wx-sdk';
 // #endif
-
-let TIM: any;
+/**
+ * @type {TIM_TYPE}
+ */
+let TIM;
 
 // #ifdef H5
 TIM = TIM_WEB;

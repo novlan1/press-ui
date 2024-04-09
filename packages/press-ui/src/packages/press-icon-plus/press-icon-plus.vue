@@ -77,6 +77,11 @@ export default {
 <style scoped lang="scss">
 @import "../common/style/press/index.scss";
 
+.press-icon-plus,
+.press-icon-plus:before {
+  display: inline-block;
+}
+
 .press-icon-plus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -88,10 +93,6 @@ export default {
   align-items: center;
   display: inline-flex;
   justify-content: center;
-}
-.press-icon-plus,
-.press-icon-plus:before {
-  display: inline-block;
 }
 
 @font-face {

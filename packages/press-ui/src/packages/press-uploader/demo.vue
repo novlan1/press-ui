@@ -179,7 +179,7 @@ export default {
       });
 
       for (let i = 0; i < lists.length; i++) {
-        const result = await this.uploadFilePromise(lists[i].url);
+        const result = await this.uploadFilePromise(lists[i].path);
         const item = this[`fileList${event.name}`][fileListLen];
 
         this[`fileList${event.name}`].splice(fileListLen, 1, Object.assign(item, {

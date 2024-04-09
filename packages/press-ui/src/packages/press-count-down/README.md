@@ -178,3 +178,34 @@ export default {
 | start  | -    | -      | 开始倒计时                                                 |
 | pause  | -    | -      | 暂停倒计时                                                 |
 | reset  | -    | -      | 重设倒计时，若`auto-start`为`true`，重设后会自动开始倒计时 |
+
+## 常见问题
+
+### 多个 CountDown 组件互相影响
+
+如果出现多个 `countDown` 组件的倒计时互相影响，可以指定 `change` 事件，然后给 `timeData` 赋值，而不是直接使用插槽赋值的变量。
+
+正确用法：
+
+```html
+<press-count-down use-slot :time="time" @change="onChange">
+  <span class="item">{{ timeData.hours }}</span>
+  <span class="item">{{ timeData.minutes }}</span>
+  <span class="item">{{ timeData.seconds }}</span>
+</press-count-down>
+```
+
+错误用法：
+
+```html
+<press-count-down use-slot :time="time">
+  <template #default="{ timeData }">
+    <span class="item">{{ timeData.hours }}</span>
+    <span class="item">{{ timeData.minutes }}</span>
+    <span class="item">{{ timeData.seconds }}</span>
+  </template>
+</press-count-down>
+```
+
+推测是小程序的插槽渲染机制有问题。
+

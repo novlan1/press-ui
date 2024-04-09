@@ -4,7 +4,7 @@
       ref="content"
       :style="style"
     />
-    <v-uni-resize-sensor
+    <div
       v-if="mode === 'widthFix' || mode === 'heightFix'"
       ref="sensor"
       @resize="_fixSize()"
@@ -168,7 +168,7 @@ export default {
       this.contentPath = '';
     },
     _loadImage() {
-      const realImagePath = this.$getRealPath(this.src);
+      const realImagePath = this.src; // this.$getRealPath(this.src);
       if (realImagePath) {
         this._img = this._img || new Image();
         const img = this._img;
@@ -190,7 +190,7 @@ export default {
           this.__img = img;
           this.$el.appendChild(img);
 
-          this.$trigger('load', $event, {
+          this.$emit('load', $event, {
             width,
             height,
           });
@@ -200,7 +200,7 @@ export default {
           this._resetData();
           // 与微信小程序保持一致，保留之前样式
           // this._resetSize()
-          this.$trigger('error', $event, {
+          this.$emit('error', $event, {
             errMsg: `GET ${this.src} 404 (Not Found)`,
           });
         };

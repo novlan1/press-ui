@@ -1,5 +1,188 @@
 # 更新日志
 
+### [1.3.28](https://github.com/novlan1/press-ui/compare/v1.3.27...v1.3.28) (2024-04-09)
+
+
+### Features 🎉
+
+* **scroll-view:** 兼容vue3的废弃 ([692f718](https://github.com/novlan1/press-ui/commit/692f718a1969d67bfd8757f3aa8827e8edc9ffd5))
+
+### [1.3.27](https://github.com/novlan1/press-ui/compare/v1.3.26...v1.3.27) (2024-04-09)
+
+
+### Code Refactoring ♻️
+
+* update ts type ([3e7fadb](https://github.com/novlan1/press-ui/commit/3e7fadba86a73de69eaeadbb4caedea6e7894305))
+
+
+### Features 🎉
+
+* **image:** image codeInput stepper 兼容非uni-app ([347c96c](https://github.com/novlan1/press-ui/commit/347c96c699ceaccabb4e32614a36509d17810a98))
+* **picker-plus-popup-plus:** support z-index ([35ea8d5](https://github.com/novlan1/press-ui/commit/35ea8d5e178526c555a6aea2e790b22dd2c09cfa))
+
+### [1.3.26](https://github.com/novlan1/press-ui/compare/v1.3.25...v1.3.26) (2024-04-07)
+
+
+### Documentation 📖
+
+* add vue3 adapter docs ([584a8e4](https://github.com/novlan1/press-ui/commit/584a8e43055c958f85e53c998472a72e7d4c90ae))
+
+
+### Features 🎉
+
+* add ipa bash ([9585b26](https://github.com/novlan1/press-ui/commit/9585b26a41deba9fde99ae15f4a6a9315a6e3803))
+* **datetime-picker-popup-plus:** support z-index prop ([d0f9013](https://github.com/novlan1/press-ui/commit/d0f9013d1da9f07a8cea320cf663b75a9e0522ad))
+* **popover-plus:** support vue3 ([2a4bc03](https://github.com/novlan1/press-ui/commit/2a4bc0366eed6f6b05c80906c66222a86215d944))
+
+### [1.3.25](https://github.com/novlan1/press-ui/compare/v1.3.24...v1.3.25) (2024-04-07)
+
+
+### Chore 🚀 
+
+* update plugin light ([dce4368](https://github.com/novlan1/press-ui/commit/dce43687a4297d28de415466dfecc08dbb9b2bda))
+
+
+### Bug Fixes 🐞
+
+* **avatar:** fix avatar default mode ([87b012d](https://github.com/novlan1/press-ui/commit/87b012d5f527acf5fa951895aa8795e3b8e1b507))
+
+
+### Features 🎉
+
+* **action-sheet:** support mp-alipay ([dc98add](https://github.com/novlan1/press-ui/commit/dc98adda4b567651cbaa3db2ba7d1fd2caa544c9))
+* **cell:** support mp-alipay ([19b20f8](https://github.com/novlan1/press-ui/commit/19b20f869abc183fbdce7b495399c2a68a2f4b99))
+* **checkbox:** support mp-alipay ([a24560f](https://github.com/novlan1/press-ui/commit/a24560f02e9cea0823e39c99904ec34286270b63))
+* **checkbox:** support mp-alipay ([1249aa8](https://github.com/novlan1/press-ui/commit/1249aa84e57ccaa67ae1d7ef9b21f3b33439b488))
+* **circle:** support mp-alipay ([028124d](https://github.com/novlan1/press-ui/commit/028124d0ae88ae21407c78f0d038079552c1cce1))
+* **collapse-item:** support mp-alipay ([5f5a8af](https://github.com/novlan1/press-ui/commit/5f5a8afde07b8cb5007de39efd0afe7d20accb3e))
+* **dropdown-menu:** support mp-alipay ([a3c0f62](https://github.com/novlan1/press-ui/commit/a3c0f62b2b2321bfd40eaf1d7ceb95e10ebb1cdd))
+* **field:** support mp-alipay ([cfccf34](https://github.com/novlan1/press-ui/commit/cfccf34356c0f51527c30def8c78f56a7122abb9))
+* **icon-plus:** 图标组件不使用click.stop ([efb062d](https://github.com/novlan1/press-ui/commit/efb062d01a22f91a56b4c42283f682f6f08d745e))
+* **image-preview:** 支付宝小程序swiper-item高度只能由子元素高度，不能自主设置style ([8b6e57e](https://github.com/novlan1/press-ui/commit/8b6e57e53bf1169f13d293a9ce4f0c25ca82bb4f))
+* **index-bar:** support mp-alipay and mp-qq ([28176cf](https://github.com/novlan1/press-ui/commit/28176cf65378c535d5561096fba1268aa0a796e0))
+* **list:** add custom-style prop ([a6657a9](https://github.com/novlan1/press-ui/commit/a6657a92dfb1afa6ed8d4c1ff444de7bbfa74de0))
+* **notice-bar:** support mp-alipay ([2fb8420](https://github.com/novlan1/press-ui/commit/2fb84203a0f4471a2407d6bfcd25f43c3881d71a))
+* **picker-plus:** support mp-alipay ([fff2817](https://github.com/novlan1/press-ui/commit/fff28172011d14ac03c7fa3299c1f04df8efb559))
+* **popover-plus:** support mp-alipay ([b65c5fc](https://github.com/novlan1/press-ui/commit/b65c5fc5802e2e610095cfd1a4d05af5aac4b40f))
+* **popup-plus:** 使用统一方式适配支付宝小程序 ([1ba2508](https://github.com/novlan1/press-ui/commit/1ba2508cf7a34ab4d465a726bf7798baaab2dbe9))
+* **qrcode:** support mp-alipay ([8ba5841](https://github.com/novlan1/press-ui/commit/8ba5841f6b95d8e640201be3d9a484ad04f44181))
+* **rate:** support mp-alipay ([27b1004](https://github.com/novlan1/press-ui/commit/27b10040e3d16188d4a4eabc60f2a58d9c20e523))
+* **search:** support mp-alipay ([e8ad288](https://github.com/novlan1/press-ui/commit/e8ad288ab7b0e1691c37399f1366defcf7be3b05))
+* **slider:** add custom-style prop ([5590aca](https://github.com/novlan1/press-ui/commit/5590acaa75cdecda8dc3daf58093463a2c1938e2))
+* **tab:** tab/cell支持支付宝小程序 ([85b159d](https://github.com/novlan1/press-ui/commit/85b159d2f3418af68ad240b14906c68534a905c6))
+* **tree-select:** support mp-alipay ([de3c92d](https://github.com/novlan1/press-ui/commit/de3c92de81ef355e271c1211622ec543c82c9599))
+
+
+### Documentation 📖
+
+* **dialog-plus:** support mp-alipay ([19cee5d](https://github.com/novlan1/press-ui/commit/19cee5db11837f13ab65c959d5f26a006ee26673))
+* **mp-alipay:** update demo style ([e3f5659](https://github.com/novlan1/press-ui/commit/e3f56597040cedd4c856ade10a6a755c6dec2c2b))
+* **mp-alipay:** update demo style ([399a254](https://github.com/novlan1/press-ui/commit/399a25463eea64cc56f66047f4da3df2a1c49029))
+
+
+### Tests ✅
+
+* update test cases ([4724d31](https://github.com/novlan1/press-ui/commit/4724d31a4fb9182b96ef54e38ba90ba0a1efac15))
+
+
+### Code Refactoring ♻️
+
+* 类型优化 ([732c86a](https://github.com/novlan1/press-ui/commit/732c86ae7410da1a3813d0362bed161bae588e5e))
+* **cell:** 收缩icon类名，防止污染其他组件 ([e555f3d](https://github.com/novlan1/press-ui/commit/e555f3d5d2ebc39bcb54b784276a5f1599bb6cf1))
+* **popover-plus:** 优化样式 ([6df3e22](https://github.com/novlan1/press-ui/commit/6df3e22c54a87cc2f8b9f9b276d8db79c53f6592))
+
+### [1.3.24](https://github.com/novlan1/press-ui/compare/v1.3.23...v1.3.24) (2024-04-02)
+
+
+### Bug Fixes 🐞
+
+* **datetime-picker:** filter five minutes ([5939eaa](https://github.com/novlan1/press-ui/commit/5939eaa17f64b78b3bbc228119e5b31da0567e53))
+
+### [1.3.23](https://github.com/novlan1/press-ui/compare/v1.3.22...v1.3.23) (2024-04-02)
+
+
+### Bug Fixes 🐞
+
+* **datatime-picker:** filter distance ([c80e023](https://github.com/novlan1/press-ui/commit/c80e02343f6bb8fcf90d3b95f34b6c0aedf43496))
+
+### [1.3.22](https://github.com/novlan1/press-ui/compare/v1.3.21...v1.3.22) (2024-04-02)
+
+
+### Features 🎉
+
+* **datetime-picker:** 支持filter传入任意distance ([c0ae85f](https://github.com/novlan1/press-ui/commit/c0ae85f02692d9629e744dbd784df85d89f35b0e))
+
+### [1.3.21](https://github.com/novlan1/press-ui/compare/v1.3.20...v1.3.21) (2024-04-02)
+
+
+### Documentation 📖
+
+* **navigation:** 支付宝小程序单独设置 ([eda3fce](https://github.com/novlan1/press-ui/commit/eda3fcef0a424e44414194e81c02c3ebf12fd9ab))
+* **picker:** 增加从vant迁移指引 ([3afb027](https://github.com/novlan1/press-ui/commit/3afb0274733de3867fae3a1136b73572a741056c))
+
+
+### Features 🎉
+
+* **datetime-picker:** 支持filter传入任意distance ([a9d5639](https://github.com/novlan1/press-ui/commit/a9d56397ef8490cb0752bbd85e9b66a49f5f1a93))
+* **picker-view:** support alipay ([a4138cb](https://github.com/novlan1/press-ui/commit/a4138cb26e0cbafc874bc648bf0afa735d58d542))
+* **popup-plus:** 支持支付宝小程序 ([dda2803](https://github.com/novlan1/press-ui/commit/dda28039bbe5efbcaf37769e7ba49cc41ee4f320))
+* **select-component:** select component 支持支付宝小程序 ([9c4b5b4](https://github.com/novlan1/press-ui/commit/9c4b5b4153faaffdc46a0ce47092475d26be3e2c))
+* **toast:** 支持支付宝小程序 ([48abe62](https://github.com/novlan1/press-ui/commit/48abe62d54d7faab062fe65b9c8fe23658c0629c))
+
+### [1.3.20](https://github.com/novlan1/press-ui/compare/v1.3.19...v1.3.20) (2024-03-25)
+
+
+### Documentation 📖
+
+* update docs ([20cbdb1](https://github.com/novlan1/press-ui/commit/20cbdb191450c13ba71560f13865ff478fc05d5d))
+
+
+### Features 🎉
+
+* **count-down:** add props from default slot ([08b2c41](https://github.com/novlan1/press-ui/commit/08b2c4154e37d7cee396aecf59d82da30eeda258))
+
+### [1.3.19](https://github.com/novlan1/press-ui/compare/v1.3.18...v1.3.19) (2024-03-18)
+
+
+### Chore 🚀 
+
+* add tree shaking ([039c5a1](https://github.com/novlan1/press-ui/commit/039c5a15adcb91ed74ed4b9641d88ea981fa5f68))
+
+
+### Features 🎉
+
+* **tim:** use js tim ([229c66d](https://github.com/novlan1/press-ui/commit/229c66d1054a62b919ff99451de84fda3fb86381))
+
+### [1.3.18](https://github.com/novlan1/press-ui/compare/v1.3.17...v1.3.18) (2024-03-18)
+
+
+### Bug Fixes 🐞
+
+* **h5-handler:** dialog.parentElement.removeChild ([dd1025a](https://github.com/novlan1/press-ui/commit/dd1025a58861ad00ae2b022b23d3f9ab05ec0d62))
+
+
+### Chore 🚀 
+
+* add extra deps ([d23ff08](https://github.com/novlan1/press-ui/commit/d23ff08b0cd1e396249f64376d0620fb3d73bd0f))
+
+### [1.3.17](https://github.com/novlan1/press-ui/compare/v1.3.16...v1.3.17) (2024-03-11)
+
+
+### Documentation 📖
+
+* update docs ([82e3799](https://github.com/novlan1/press-ui/commit/82e37995508fcaffb58530e12d2d3b0a42645de4))
+
+
+### Chore 🚀 
+
+* add deps ([6ed4254](https://github.com/novlan1/press-ui/commit/6ed425410d58f831364c20d25bb82d3506f8aae9))
+* **alipay:** add mp-alipay script ([ebd7823](https://github.com/novlan1/press-ui/commit/ebd7823a2d90c0b2eca2ef1341cb646617dc29ef))
+
+
+### Features 🎉
+
+* **swiper:** add swiper custom element defination ([2408274](https://github.com/novlan1/press-ui/commit/240827481e72adf523c291e1d97d6679554159f3))
+
 ### [1.3.16](https://github.com/novlan1/press-ui/compare/v1.3.15...v1.3.16) (2024-02-26)
 
 

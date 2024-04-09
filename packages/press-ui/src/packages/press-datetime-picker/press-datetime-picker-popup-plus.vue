@@ -1,6 +1,7 @@
 <template>
   <PressPopupPlus
     :show="show"
+    :z-index="zIndex"
     position="bottom"
     :close-on-click-overlay="closeOnClickOverlay"
     @click-overlay="clickOverlay"
@@ -56,6 +57,10 @@ export default {
     filter: {
       type: [Function, null],
       default: null,
+    },
+    zIndex: {
+      type: Number,
+      default: 100,
     },
   },
   data() {

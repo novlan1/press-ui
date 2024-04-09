@@ -40,11 +40,15 @@
           class="press-image-preview__swipe-item"
           @click="onClickSwiperItem"
         >
-          <img
-            class="press-image-preview__image"
-            :src="image"
-            fit="contain"
+          <div
+            class="press-image-preview__image-wrap"
           >
+            <img
+              class="press-image-preview__image"
+              :src="image"
+              fit="contain"
+            >
+          </div>
         </swiper-item>
       </swiper>
       <div />
@@ -200,10 +204,6 @@ export default {
     height: 100%;
 
     &-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
     }
   }
 
@@ -211,6 +211,16 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  &__image-wrap {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   &__image {

@@ -452,6 +452,7 @@ export default {
     width: var(--stepper-input-width, $stepper-input-width);
     height: var(--stepper-input-height, $stepper-input-height);
     user-select: auto;
+    outline: none;
 
     &--disabled {
       color: var(

@@ -122,8 +122,8 @@ export default {
       if (this.destroyedWhenClosed) {
         const dialogId = 'tip-dialog-login';
         const oldDialog = document.getElementById(dialogId);
-        if (oldDialog) {
-          document.body.removeChild(oldDialog);
+        if (oldDialog?.parentElement) {
+          oldDialog.parentElement.removeChild(oldDialog);
         }
       }
     },

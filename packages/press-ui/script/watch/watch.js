@@ -3,9 +3,9 @@ const gulp = require('gulp');
 const { execCommand } = require('t-comm');
 
 const watchTarget = [
-  './src/press-ui/src/packages/**/*',
-  './src/press-ui/src/pages/**/*',
-  './src/press-ui/src/utils/**/*',
+  './src/press-ui/packages/press-ui/src/packages/**/*',
+  './src/press-ui/packages/press-ui/src/pages/**/*',
+  './src/press-ui/packages/press-ui/src/utils/**/*',
 ];
 
 function watchPackages(cb) {
@@ -18,7 +18,7 @@ const EVENT_MAP = {
   REMOVE: 'REMOVE',
 };
 function getTargetFilePath(filePath) {
-  return filePath.replace(/^src\/press-ui\//, '');
+  return filePath.replace(/^src\/press-ui\/packages\/press-ui\//, '');
 }
 
 function handleTargetFile(filePath, type, handlePagesPress) {
@@ -28,7 +28,7 @@ function handleTargetFile(filePath, type, handlePagesPress) {
 
   if (type === EVENT_MAP.COPY) {
     execCommand(`mkdir -p ${targetDir} && cat ${from} > ${to}`);
-    const reg = /src\/press-ui\/src\/packages\/press-([^/]+)\/demo.vue/;
+    const reg = /src\/press-ui\/packages\/press-ui\/src\/packages\/press-([^/]+)\/demo.vue/;
 
     if (handlePagesPress && from.match(reg)) {
       const demoTarget = from.replace(reg, (a, b) => `src/pages/press/${b}/${b}.vue`);

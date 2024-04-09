@@ -271,6 +271,9 @@ export default {
     display: flex;
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep .press-picker-column-index,
+  /* #endif */
   &__column {
     flex: 1 1;
     width: 0;

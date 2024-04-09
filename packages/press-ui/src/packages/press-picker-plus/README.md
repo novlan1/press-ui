@@ -248,3 +248,37 @@ Picker 组件的事件会根据 `columns` 是单列或多列返回不同的参�
 | setColumnIndex  | columnIndex, optionIndex | -           | 设置对应列选中项的索引     |
 | getColumnValues | columnIndex              | values      | 获取对应列中所有选项       |
 | setColumnValues | columnIndex, values      | -           | 设置对应列中所有选项       |
+
+
+## 常见问题
+
+### 从 Vant 迁移
+
+`confirm` 回调参数之前是 `value, index`，现在返回一个对象，即 `{ value, index }`
+
+之前：
+
+```html
+<van-picker
+  :columns="options"
+  @confirm="onConfirm"
+/>
+```
+
+```ts
+onConfirm(option) {
+  console.log('option.code', option.code);
+  console.log('option.text', option.text);
+},
+```
+
+现在
+
+```ts
+ handleOptionChange(option) {
+  option = option.value;
+  
+  console.log('option.code', option.code);
+  console.log('option.text', option.text);
+},
+```

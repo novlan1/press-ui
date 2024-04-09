@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <!-- #ifdef H5 -->
   <PressTeleportWeb

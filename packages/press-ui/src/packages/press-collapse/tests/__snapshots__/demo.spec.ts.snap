@@ -5,13 +5,13 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class=" press-collapse press-hairline--top-bottom">
       <div class=" press-collapse-item ">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             1
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -23,13 +23,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             2
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -41,13 +41,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             3
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -63,13 +63,13 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class=" press-collapse press-hairline--top-bottom">
       <div class=" press-collapse-item ">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             A
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -81,13 +81,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             B
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -99,13 +99,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             C
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -121,13 +121,13 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class=" press-collapse press-hairline--top-bottom">
       <div class=" press-collapse-item ">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             X
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -139,13 +139,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title press-collapse-item__title--disabled">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-collapse-item__title--disabled press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title press-collapse-item__title--disabled">
           <div class="press-cell__title">
             Y
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -157,13 +157,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title press-collapse-item__title--disabled">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-collapse-item__title--disabled press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title press-collapse-item__title--disabled">
           <div class="press-cell__title">
             Z
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -179,7 +179,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class=" press-collapse press-hairline--top-bottom">
       <div class=" press-collapse-item ">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
           <div class="press-cell__title">
             <div>
               1
@@ -190,8 +190,8 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>
@@ -203,8 +203,8 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class=" press-collapse-item press-hairline--top">
-        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class=" press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
-          <div class="press-cell__left-icon-wrap press-cell__left-icon press-icon-plus press-icon-plus-shop-o">
+        <div hover-class="press-cell--hover,press-cell--hover" hover-stay-time="70" class="press-collapse-item__title press-cell press-cell--center press-cell--borderless press-cell--clickable press-collapse-item__title">
+          <div class=" press-cell__left-icon press-icon-plus press-icon-plus-shop-o press-cell__left-icon">
             <!---->
             <!---->
           </div>
@@ -212,8 +212,8 @@ exports[`renders demo correctly 1`] = `
             2
             <!---->
           </div>
-          <!---->
-          <div class="press-cell__right-icon-wrap press-cell__right-icon press-cell__right-icon press-icon-plus press-icon-plus-arrow">
+          <div class="press-cell__value"></div>
+          <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
             <!---->
             <!---->
           </div>

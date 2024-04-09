@@ -15,6 +15,7 @@
 
     <!-- #ifndef H5 -->
     <canvas
+      :id="cid"
       class="press-barcode-canvas"
       :canvas-id="cid"
       :style="{width:canvasWidth+'px',height:canvasHeight+'px'}"

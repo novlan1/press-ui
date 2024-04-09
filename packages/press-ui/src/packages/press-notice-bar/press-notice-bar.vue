@@ -6,10 +6,11 @@
       :style="noticeBarStyle"
       @click="onClick"
     >
-      <press-icon-plus
+      <PressIconPlus
         v-if="leftIcon"
         :name="leftIcon"
-        class="press-notice-bar__left-icon"
+        :class="[leftIconClass]"
+        :custom-class="leftIconCustomClass"
       />
       <slot
         v-else
@@ -26,9 +27,10 @@
         </div>
       </div>
 
-      <press-icon-plus
+      <PressIconPlus
         v-if="mode === 'closeable'"
-        class="press-notice-bar__right-icon"
+        :class="[rightIconClass]"
+        :custom-class="rightIconCustomClass"
         name="cross"
         @click="onClickIcon"
       />
@@ -36,9 +38,10 @@
       <template
         v-else-if="mode === 'link'"
       >
-        <press-icon-plus
+        <PressIconPlus
           v-if="isNotInUni"
-          class="press-notice-bar__right-icon"
+          :class="[rightIconClass]"
+          :custom-class="rightIconCustomClass"
           name="arrow"
         />
         <navigator
@@ -46,8 +49,9 @@
           :url="url"
           :open-type="openType"
         >
-          <press-icon-plus
-            class="press-notice-bar__right-icon"
+          <PressIconPlus
+            :class="[rightIconClass]"
+            :custom-class="rightIconCustomClass"
             name="arrow"
           />
         </navigator>
@@ -74,6 +78,7 @@ export default {
   name: 'PressNoticeBar',
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   components: {
     PressIconPlus,
@@ -148,6 +153,26 @@ export default {
 
       return res;
     },
+    leftIconClass() {
+      return 'press-notice-bar__left-icon';
+    },
+    leftIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.leftIconClass}`;
+      // #endif
+      return result;
+    },
+    rightIconClass() {
+      return 'press-notice-bar__right-icon';
+    },
+    rightIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.rightIconClass}`;
+      // #endif
+      return result;
+    },
   },
   watch: {
     text: {
@@ -162,10 +187,6 @@ export default {
     },
   },
   created() {
-    // this.resetAnimation = uni.createAnimation({
-    // duration: 0,
-    // timingFunction: 'linear',
-    // });
   },
   mounted() {
     this.init();
@@ -282,7 +303,10 @@ export default {
     }
   }
 
-  &__left-icon {
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__left-icon,
+/* #endif */
+   &__left-icon {
     display: flex;
     align-items: center;
     margin-right: 4px;
@@ -291,6 +315,9 @@ export default {
     min-width: var(--notice-bar-icon-min-width, $notice-bar-icon-min-width);
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__right-icon,
+  /* #endif */
   &__right-icon {
     position: absolute;
     top: 10px;

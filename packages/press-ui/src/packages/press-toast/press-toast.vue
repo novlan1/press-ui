@@ -12,6 +12,7 @@
       :custom-style="transitionStyle"
     >
       <div
+        v-if="dataShow"
         :class="toastClass"
         @touchmove.stop.prevent="noop"
       >
@@ -186,6 +187,7 @@ export default {
     min-height: var(--toast-default-min-height, $toast-default-min-height);
     padding: var(--toast-default-padding, $toast-default-padding);
 
+    ::v-deep .press-icon-plus,
     ::v-deep .press-toast__icon {
       font-size: var(--toast-icon-size, $toast-icon-size);
       white-space: normal;

@@ -195,7 +195,7 @@ export default {
       check: '查看',
       closeIcon: '关闭图标',
       customStyle: '自定义样式',
-      buttonSlot: '使用slot',
+      buttonSlot: '使用插槽',
       cancelIcon: '取消图标',
       noCloseOrCancel: '没有关闭/取消',
       plainButtonConfirm: '线框按钮',

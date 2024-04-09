@@ -138,7 +138,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-field-index">
       <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">
-        <div class="press-cell__left-icon-wrap press-cell__left-icon press-icon-plus press-icon-plus-contact">
+        <div class=" press-cell__left-icon press-icon-plus press-icon-plus-contact press-cell__left-icon">
           <!---->
           <!---->
         </div>

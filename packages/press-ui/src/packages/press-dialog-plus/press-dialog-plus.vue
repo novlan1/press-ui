@@ -34,49 +34,6 @@
         </span>
       </div>
 
-      <!-- <press-goods-action
-        v-if="theme === 'round-button'"
-        custom-class="press-dialog__footer--round-button"
-      >
-        <press-goods-action-button
-          v-if="dataShowCancelButton"
-          size="large"
-          :loading="loading.cancel"
-          class="press-dialog__button press-hairline--right"
-          custom-class="press-dialog__cancel"
-          :custom-style="'color: '+(dataCancelButtonColor)"
-          @click="onCancel"
-        >
-          {{ dataCancelButtonText }}
-        </press-goods-action-button>
-        <press-goods-action-button
-          v-if="dataShowConfirmButton"
-          size="large"
-          class="press-dialog__button"
-          :loading="loading.confirm"
-          custom-class="press-dialog__confirm"
-          :custom-style="'color: '+(dataConfirmButtonColor)"
-          :open-type="dataConfirmButtonOpenType"
-          :lang="lang"
-          :business-id="businessId"
-          :session-from="sessionFrom"
-          :send-message-title="sendMessageTitle"
-          :send-message-path="sendMessagePath"
-          :send-message-img="sendMessageImg"
-          :show-message-card="showMessageCard"
-          :app-parameter="appParameter"
-          @click="onConfirm"
-          @getuserinfo="onGetUserInfo"
-          @contact="onContact"
-          @getphonenumber="onGetPhoneNumber"
-          @error="onError"
-          @launchapp="onLaunchApp"
-          @opensetting="onOpenSetting"
-        >
-          {{ dataConfirmButtonText }}
-        </press-goods-action-button>
-      </press-goods-action> -->
-
       <div
         v-if="true"
         class="press-hairline--top press-dialog__footer"

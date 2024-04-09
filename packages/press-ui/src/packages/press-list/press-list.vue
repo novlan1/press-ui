@@ -1,7 +1,7 @@
 <template>
   <scroll-view
     :id="SCROLL_VIEW_ID"
-    style="height: 100%"
+    :style="scrollViewStyle"
     :scroll-y="vertical"
     :scroll-x="!vertical"
     :scroll-with-animation="scrollWithAnimation"
@@ -62,8 +62,10 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { getRect } from '../common/dom/rect';
+
 import { getScrollSelector, getScroller } from '../common/dom/scroll';
 import {  SCROLL_VIEW_ID } from './config';
+
 import { vModelMixin } from '../common/vue3/adapter';
 import { isNotInUni } from '../common/utils/utils';
 import { BindEventMixin } from '../mixins/bind-event';
@@ -195,6 +197,10 @@ export default {
       default: 0,
     },
     ...defaultProps,
+    customStyle: {
+      type: String,
+      default: '',
+    },
   },
   emits: [
     'scroll',
@@ -212,7 +218,10 @@ export default {
   },
   computed: {
     scrollViewClass() {
-      return [this.vertical ? '' : 'press-list--hor', this.customClass].join(' ');
+      return ['press-list', this.vertical ? 'press-list--vertical' : 'press-list--hor', this.customClass].join(' ');
+    },
+    scrollViewStyle() {
+      return `height: 100%; ${this.customStyle};`;
     },
   },
   watch: {

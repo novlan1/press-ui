@@ -1,3 +1,7 @@
+
+/* #ifdef MP-ALIPAY */
+::v-deep .press-popover,
+/* #endif */
 .press-popover {
 
   &--bottom,

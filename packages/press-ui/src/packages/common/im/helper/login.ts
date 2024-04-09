@@ -46,8 +46,8 @@ export async function login({
   }
   // const url = 'LOGIN';
 
-  tim.updateUserId(userId);
-  tim.updateUserSig(userSig);
+  tim.updateUserId?.(userId);
+  tim.updateUserSig?.(userSig);
 
   // const reqData = { userId, userSig };
 

@@ -37,15 +37,17 @@
         :time="time"
         @change="onChange"
       >
-        <span class="item">
-          {{ timeData.hours }}
-        </span>
-        <span class="item">
-          {{ timeData.minutes }}
-        </span>
-        <span class="item">
-          {{ timeData.seconds }}
-        </span>
+        <template #default="{ timeData }">
+          <span class="item">
+            {{ timeData.hours }}
+          </span>
+          <span class="item">
+            {{ timeData.minutes }}
+          </span>
+          <span class="item">
+            {{ timeData.seconds }}
+          </span>
+        </template>
       </press-count-down>
     </demo-block>
 
@@ -128,13 +130,13 @@ export default {
   data() {
     return {
       time: 30 * 60 * 60 * 1000,
-      timeData: {},
+      // timeData: {},
       sectionStyle: 'margin: 0 12px 20px;',
     };
   },
   methods: {
-    onChange(val) {
-      this.timeData = val;
+    onChange() {
+      // this.timeData = val;
     },
     start() {
       const countDown = selectComponent(this, '#controlCountDown');

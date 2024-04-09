@@ -27,3 +27,12 @@ module.exports = {
 可以参考 [Press Plus](https://github.com/novlan1/press-plus/blob/release/tsconfig.json) 项目的 `tsconfig.json` 的配置。
 
 
+## 4. Vue3 兼容
+
+对于 `v-model`，Press UI 内部使用了一个 `adapter`，`Vue2` 会接收 `value`，`Vue3` 会接收 `modelValue`，同时 `Vue2` 会触发 `input` 事件，而 `Vue3` 会触发 `update:modelValue` 事件。
+
+Press UI 中使用了此 `adapter` 的组件有：
+
+- press-field
+- press-list
+- press-popover-plus

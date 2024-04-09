@@ -66,7 +66,7 @@
               v-if="getPropOrData('button')"
               :type="buttonType"
               custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
-              @click.stop="clickConfirm"
+              @click="clickConfirm"
             >
               {{ getPropOrData('button') }}
             </PressButton>

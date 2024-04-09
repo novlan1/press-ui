@@ -163,6 +163,9 @@ export default {
     border-radius: var(--tag-round-border-radius, $tag-round-border-radius);
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__close,
+  /* #endif */
   &__close {
     min-width: 1em;
     margin-left: 2px;

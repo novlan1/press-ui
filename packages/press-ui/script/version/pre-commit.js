@@ -6,7 +6,7 @@ const { traverseFolder, writeFileSync, readFileSync } = require('t-comm');
 const { insertDocChangeLog } = require('./change-log');
 const PRE_RELEASE_VERSION = /\d+\.\d+\.\d+-(\w+).\d+/;
 
-const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/'];
+const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/', 'tests'];
 const INNER_PATH_MAP = {
   SOURCE_PACKAGES: 'src/packages',
   TARGET_PACKAGES: 'log/packages',

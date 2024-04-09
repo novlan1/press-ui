@@ -81,7 +81,7 @@
       :datetime-picker="popupPlus.datetimePicker"
       :formatter="formatter"
       :filter="filter"
-      :closeOnClickOverlay="popupPlus.closeOnClickOverlay"
+      :close-on-click-overlay="popupPlus.closeOnClickOverlay"
       @cancel="popupPlus.show = false"
       @confirm="onConfirm"
       @input="onInput"
@@ -272,5 +272,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.demo-wrap {
+  height: 100vh;
+}
 </style>
 
