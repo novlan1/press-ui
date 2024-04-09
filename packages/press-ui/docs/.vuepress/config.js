@@ -94,10 +94,6 @@ module.exports = {
     },
     nav: [
       {
-        text: 'Press Plus',
-        link: 'https://novlan1.github.io/press-plus',
-      },
-      {
         text: 'Plugin Light',
         link: 'https://novlan1.github.io/uni-plugin-light',
       },

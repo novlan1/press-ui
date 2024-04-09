@@ -23,6 +23,19 @@ import computed from './index';
 import PressInfo from '../press-info/press-info.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
+
+// #ifdef APP-NVUE
+// nvue通过weex的dom模块引入字体，相关文档地址如下：
+// https://weex.apache.org/zh/docs/modules/dom.html#addrule
+const fontUrl = 'https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811';
+const domModule = weex.requireModule('dom');
+domModule.addRule('fontFace', {
+  fontFamily: 'press-icon-plus',
+  src: `url('${fontUrl}')`,
+});
+// #endif
+
+
 export default {
   name: 'PressIconPlus',
   options: {
@@ -95,9 +108,10 @@ export default {
   justify-content: center;
 }
 
+/* #ifndef APP-NVUE */
 @font-face {
   font-display: auto;
-  font-family: press-icon-plus;
+  font-family: "press-icon-plus";
   font-style: normal;
   font-weight: 400;
   src: url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff2?t=1640074908811")
@@ -107,6 +121,7 @@ export default {
     url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811")
       format("truetype");
 }
+/* #endif */
 
 .press-icon-plus {
   &--image {

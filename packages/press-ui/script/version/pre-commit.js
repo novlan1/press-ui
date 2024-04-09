@@ -70,7 +70,10 @@ function changeRootVersion(version) {
 
 function genPureReleaseDir() {
   const dir = path.dirname(PATH_MAP.TARGET_PACKAGES);
-  execSync(`rm -rf ${PATH_MAP.TARGET_PACKAGES} && cp -r ${PATH_MAP.SOURCE_PACKAGES} ${dir}`);
+  execSync(`rm -rf ${PATH_MAP.TARGET_PACKAGES} \
+  && cp -r ${PATH_MAP.SOURCE_PACKAGES} ${dir} \
+  && rm -rf ${PATH_MAP.TARGET_PACKAGES}/node_modules`);
+
 
   traverseFolder((file) => {
     // const name = path.basename(file);
