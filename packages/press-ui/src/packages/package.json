@@ -26,6 +26,6 @@
   "scripts": {},
   "license": "MIT",
   "dependencies": {
-    "t-comm": "^1.3.55"
+    "t-comm": "latest"
   }
 }
