@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.30](https://github.com/novlan1/press-ui/compare/v1.3.29...v1.3.30) (2024-04-19)
+
+
+### ✨ Features | 新功能
+
+* **calendar:** 支持支付宝小程序的监听滚动 ([30f25c4](https://github.com/novlan1/press-ui/commit/30f25c4a0d1b44bd98299138e6229ec4bb862197))
+* **calendar:** support customClass ([e9cf997](https://github.com/novlan1/press-ui/commit/e9cf997dce1260f333ee82691cb07cc9c6882242))
+* **overlay:** 增加touchmove.stop.prevent=noop ([7f88d7e](https://github.com/novlan1/press-ui/commit/7f88d7ed166aeefab45e087c88968bb889da8e22))
+* **picker-plus:** 支持mp-alipay ([c87a875](https://github.com/novlan1/press-ui/commit/c87a8759e190eeea1e6f16624314c88c1b86b5a4))
+* **radio:** 样式优化，支持支付宝小程序 ([a94d0fc](https://github.com/novlan1/press-ui/commit/a94d0fc83e1e68a12cfe03dba4162358ad289122))
+* **touch-action:** dialog-plus, popup-plus, transition, dialog, popup 组件增加touch-action ([8963c38](https://github.com/novlan1/press-ui/commit/8963c3886d08867f55189f358a14184da7f650e1))
+
+
+### ✏️ Documentation | 文档
+
+* 示例上云 ([dc55ef4](https://github.com/novlan1/press-ui/commit/dc55ef425a932f3f7a31bb68d6812312bf155030))
+* demo height: 100vh in mp-alipay ([a42f844](https://github.com/novlan1/press-ui/commit/a42f84458a489c43bb46829d2784c7d7d26f0cae))
+* **picker:** update docs ([1de4489](https://github.com/novlan1/press-ui/commit/1de44895c449e7773a4fd77c82eb4f95c0bb5b4f))
+* **sticky:** update docs ([7651653](https://github.com/novlan1/press-ui/commit/76516538f265fa93d7393bc31fdbea8633421d88))
+* update dialog docs ([765788b](https://github.com/novlan1/press-ui/commit/765788bfbd130bdb15f5b632be0d3ccfa5a92806))
+* update docs build config ([3d62a7e](https://github.com/novlan1/press-ui/commit/3d62a7e6da55b245a02fc5c24dc098617267ffc3))
+* update docs build config ([bcd7ced](https://github.com/novlan1/press-ui/commit/bcd7ced9fcf58c3b35eb3aefd03e876df20dc8ca))
+* update docs build:igame config ([a9a8466](https://github.com/novlan1/press-ui/commit/a9a84662a0411056a9c885451f0871fdb1e7b322))
+* update docs build:igame config ([280c2ba](https://github.com/novlan1/press-ui/commit/280c2ba5513c9496c623273c7dc341189068584a))
+* update docs publish config ([cae9317](https://github.com/novlan1/press-ui/commit/cae9317b4d78dbaa6b91f97faa9922e10583d1f9))
+* update introduce ([24bf1ab](https://github.com/novlan1/press-ui/commit/24bf1ab93fd5d3c8f924ef15d708d162be3243e3))
+* update publish config ([75a53b8](https://github.com/novlan1/press-ui/commit/75a53b86af236a051910bf0d7ff617fd87d66436))
+* update readme ([fa4463e](https://github.com/novlan1/press-ui/commit/fa4463ef4a1c6ecf7fdcafe58677953617e3d9d3))
+* update readme ([7d88945](https://github.com/novlan1/press-ui/commit/7d889458154a1077d1e7ade88828d5025d47a1c1))
+
 ### [1.3.29](https://github.com/novlan1/press-ui/compare/v1.3.28...v1.3.29) (2024-04-10)
 
 
