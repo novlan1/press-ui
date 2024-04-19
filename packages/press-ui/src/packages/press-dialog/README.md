@@ -125,7 +125,7 @@ export default {
 
 press-dialog支持组件调用，可以嵌入额外内容。
 
-多例模式可以用组件调用方式。
+多例模式可以用组件调用方式，以及动态改变按钮文案，比如实现倒计时，也可以用组件模式。
 
 ```html
 <PressDialogComp

@@ -113,7 +113,4 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.demo-wrap {
-  min-height: 100vh;
-}
 </style>

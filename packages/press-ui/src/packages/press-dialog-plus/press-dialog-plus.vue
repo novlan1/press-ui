@@ -242,6 +242,12 @@ export default {
 @import "../common/style/press/index.scss";
 @import "../common/style/press/var.scss";
 
+/* #ifdef MP-ALIPAY */
+.press-dialog-index {
+  touch-action: none;
+}
+/* #endif */
+
 ::v-deep .press-dialog {
   top: 45% !important;
   overflow: hidden;

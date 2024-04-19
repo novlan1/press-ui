@@ -135,9 +135,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.demo-wrap {
-  min-height: 100vh;
-}
 .demo-part {
   margin: 0 12px 12px 0;
   display: inline-block;

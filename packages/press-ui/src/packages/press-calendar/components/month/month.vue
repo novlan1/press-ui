@@ -2,6 +2,7 @@
   <div
     class="press-calendar__month"
     :style="true ? computed.getMonthStyle(visible, date, rowHeight) : ''"
+    :data-date="date"
   >
     <div
       v-if="showMonthTitle"

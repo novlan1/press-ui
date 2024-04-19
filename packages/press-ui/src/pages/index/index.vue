@@ -16,8 +16,6 @@
           class="index-page__header-logo"
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
           mode="aspectFit"
-          @longpress.stop="onMorsePwdLongPress"
-          @click.stop="onMorsePwdClick"
         >
         <div class="index-page__header-content">
           <div class="index-page__header-title">
@@ -75,12 +73,6 @@
             :title="t('toggleVConsole')"
             @click="onOpenVConsole"
           />
-          <PressCell
-            v-if="showLaunchApp"
-            is-link
-            :title="t('launchApp')"
-            @click="onJumpToLaunchApp"
-          />
           <!-- #endif -->
 
           <PressCell
@@ -115,11 +107,11 @@
 import PressSection from '../components/press-section/press-section.vue';
 import PressCell from '../../packages/press-cell/press-cell.vue';
 
-import { LAUNCH_APP_STORAGE } from '../launch-app/config';
-import { isInIFrame, fetchData, routerPush } from '../../utils/index';
 import { toggleVConsole } from 't-comm/lib/v-console/toggle';
-import { morsePwdMixin } from 't-comm/lib/mixin/morse-password-mixin';
+
+import { fetchData, routerPush } from '../../utils/index';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
+
 import { isNotInUni } from '../../packages/common/utils/utils';
 import { setClipboardData } from '../../packages/common/clipboard/clipboard';
 
@@ -188,14 +180,6 @@ function getAllPages() {
 }
 
 
-function getShowLaunchApp() {
-  let showLaunchApp = false;
-  // #ifdef H5
-  showLaunchApp = sessionStorage.getItem(LAUNCH_APP_STORAGE.kEY) === LAUNCH_APP_STORAGE.VALUE;
-  // #endif
-  return showLaunchApp;
-}
-
 export default {
   i18n: {
     'zh-CN': {
@@ -228,23 +212,15 @@ export default {
   components: {
     PressSection,
     PressCell,
-    // Tabbar,
   },
   mixins: [
-    morsePwdMixin([1, 1, 1, 1, 1], function () {
-      // #ifdef H5
-      if (isInIFrame()) return;
-      this.onShowLaunchApp();
-      // #endif
-    }),
   ],
   data() {
     return {
       scrollTop: 0,
       pages: getAllPages(),
-      // showMoreList: true,
-      showLaunchApp: getShowLaunchApp(),
       isNotInUni: isNotInUni(),
+
       showOtherDemoMap: getShowDemoMap(),
       sectionStyle: {
         header: 'font-weight: 500;margin-bottom: 6px;',
@@ -284,13 +260,6 @@ export default {
     init() {
       // #ifdef H5
       this.scrollTop = +localStorage.getItem(SCROLL_TOP_KEY) || 0;
-      // this.showMoreList = true;
-      // #endif
-
-      // #ifndef H5
-      // setTimeout(() => {
-      //   this.showMoreList = true;
-      // }, 2000);
       // #endif
     },
     onBeforeDestroy() {
@@ -319,18 +288,6 @@ export default {
     },
     onOpenVConsole() {
       toggleVConsole();
-    },
-    onJumpToLaunchApp() {
-      routerPush.call(
-        this,
-        '/pages/launch-app/launch-app',
-        '/pages/press/launch-app/launch-app',
-      );
-    },
-    onShowLaunchApp() {
-      this.showLaunchApp = true;
-      sessionStorage.setItem(LAUNCH_APP_STORAGE.kEY, LAUNCH_APP_STORAGE.VALUE);
-      this.onGTip('展示成功');
     },
     onJumpToSharePage() {
       routerPush.call(

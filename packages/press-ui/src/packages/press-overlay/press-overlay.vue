@@ -9,6 +9,7 @@
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
       @click="onClick"
+      @touchmove.stop.prevent="noop"
     >
       <slot />
     </press-transition>

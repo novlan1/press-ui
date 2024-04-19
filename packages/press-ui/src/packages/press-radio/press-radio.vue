@@ -26,7 +26,7 @@
           v-else
           name="success"
           :class="radioIconClass"
-          :custom-class="iconClass"
+          :custom-class="radioIconCustomClass"
           :custom-style="'' +
             computed.iconCustomStyle({ iconSize, checkedColor, disabled, parentDisabled, value: dataValue, name })"
         />
@@ -115,6 +115,13 @@ export default {
       } = this;
       return `${utils.bem2('radio__icon', [shape, { disabled: disabled || parentDisabled, checked: value === name }])}`;
     },
+    radioIconCustomClass() {
+      let result = this.iconClass;
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.radioIconClass}`;
+      // #endif
+      return result;
+    },
     radioLabelClass() {
       const {
         labelPosition,
@@ -181,6 +188,9 @@ export default {
     margin-right: var(--padding-sm, $padding-sm);
   }
 
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__icon,
+  /* #endif */
   &__icon {
     display: flex;
     align-items: center;

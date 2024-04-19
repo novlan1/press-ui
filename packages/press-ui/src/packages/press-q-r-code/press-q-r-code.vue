@@ -30,6 +30,7 @@
       :src="codeImg"
       :style="style"
       :show-menu-by-longpress="true"
+      @longpress="onLongPressImage"
     >
   </div>
 </template>
@@ -187,6 +188,9 @@ export default {
           this, // 组件内使用必传当前实例
         );
       }, 300);
+    },
+    onLongPressImage() {
+      this.$emit('longPressImage', this.codeImg);
     },
   },
 };

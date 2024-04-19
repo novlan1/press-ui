@@ -1,6 +1,10 @@
 <template>
-  <div class="press-picker-column-index">
-    <div
+  <div
+    class="press-picker-column-index"
+  >
+    <!-- #ifdef MP-ALIPAY -->
+    <scroll-view
+      scroll-y
       class="press-picker-column"
       :class="customClass"
       :style="columnStyle"
@@ -9,27 +13,46 @@
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
     >
-      <div :style="wrapperStyle">
-        <div
-          v-for="(option,index) in (options)"
-          :key="option.index"
-          :data-index="index"
-          :style="{height: `${itemHeight}px`, lineHeight: `${itemHeight}px`}"
-          :class="[
-            'press-ellipsis',
-            'press-picker-column__item',
-            {
-              'press-picker-column__item--disabled':option && option.disabled,
-              'press-picker-column__item--selected':index === currentIndex,
-              activeClass: index === currentIndex
-            }
-          ]"
-          @click="onClickItem"
-        >
-          {{ computed.optionText(option, valueKey) }}
+      <!-- #endif -->
+
+      <!-- #ifndef MP-ALIPAY -->
+      <div
+        class="press-picker-column"
+        :class="customClass"
+        :style="columnStyle"
+        @touchstart="onTouchStart"
+        @touchmove.stop.prevent="onTouchMove"
+        @touchend="onTouchEnd"
+        @touchcancel="onTouchEnd"
+      >
+        <!-- #endif -->
+        <div :style="wrapperStyle">
+          <div
+            v-for="(option,index) in (options)"
+            :key="option.index"
+            :data-index="index"
+            :style="{height: `${itemHeight}px`, lineHeight: `${itemHeight}px`}"
+            :class="[
+              'press-ellipsis',
+              'press-picker-column__item',
+              {
+                'press-picker-column__item--disabled':option && option.disabled,
+                'press-picker-column__item--selected':index === currentIndex,
+                activeClass: index === currentIndex
+              }
+            ]"
+            @click="onClickItem"
+          >
+            {{ computed.optionText(option, valueKey) }}
+          </div>
         </div>
+      <!-- #ifndef MP-ALIPAY -->
       </div>
-    </div>
+      <!-- #endif -->
+
+      <!-- #ifdef MP-ALIPAY -->
+    </scroll-view>
+    <!-- #endif -->
   </div>
 </template>
 <script>

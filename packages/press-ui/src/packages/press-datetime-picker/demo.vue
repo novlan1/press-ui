@@ -272,8 +272,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.demo-wrap {
-  height: 100vh;
-}
 </style>
 

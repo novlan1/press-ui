@@ -1,5 +1,30 @@
 # 更新日志
 
+### [1.3.29](https://github.com/novlan1/press-ui/compare/v1.3.28...v1.3.29) (2024-04-10)
+
+
+### Chore 🚀 
+
+* update deps ([acb6777](https://github.com/novlan1/press-ui/commit/acb6777e8af3d11af08ef6fa8b9e1c1d4017173b))
+
+
+### Build System 📦‍
+
+* 优化发布脚本 ([ce068cf](https://github.com/novlan1/press-ui/commit/ce068cf1a1282d1c59111f170c337635a569d11c))
+
+
+### Documentation 📖
+
+* update docs ([1522d27](https://github.com/novlan1/press-ui/commit/1522d271443e2713d2e444d136ab4666729e61ce))
+* update docs nav ([70e2259](https://github.com/novlan1/press-ui/commit/70e22599abeded4bc244a1ed50a9a0865573bf8d))
+
+
+### Features 🎉
+
+* **icon-plus:** support nvue ([84f7c44](https://github.com/novlan1/press-ui/commit/84f7c44f1166a21b537c325dbf24bd5de66f2612))
+* **qrcode:** add long press event ([e906854](https://github.com/novlan1/press-ui/commit/e90685437e5a29f174f571e196fba164e66d429a))
+* remove other pages ([d3299c4](https://github.com/novlan1/press-ui/commit/d3299c47e5206e3a96c3c97e5c4434fdbd43e8aa))
+
 ### [1.3.28](https://github.com/novlan1/press-ui/compare/v1.3.27...v1.3.28) (2024-04-09)
 
 

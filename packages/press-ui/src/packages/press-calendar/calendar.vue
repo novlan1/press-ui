@@ -140,8 +140,13 @@ export default {
       if (this.contentObserver != null) {
         this.contentObserver.disconnect();
       }
+
       const rootSelector = '.press-calendar__body';
-      const selector = '.month';
+      let selector = '.month';
+      // #ifdef MP-ALIPAY
+      selector = '.press-calendar__month';
+      // #endif
+
       const threshold = [0, 0.1, 0.9, 1];
       const observeAll = true;
 
@@ -169,6 +174,7 @@ export default {
       const contentObserver = uni.createIntersectionObserver(this, {
         thresholds: threshold,
         observeAll,
+        dataset: true,
       });
 
       this.contentObserver = contentObserver;

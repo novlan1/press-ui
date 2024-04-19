@@ -23,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    this.onFetchData();
+    // this.onFetchData();
   },
   methods: {
     onFetchData() {

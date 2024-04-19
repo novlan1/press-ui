@@ -312,10 +312,6 @@ export default {
 <style scoped lang="scss">
 @import "src/packages/common/style/press/var.scss";
 
-.demo-wrap {
-  min-height: 100vh;
-}
-
 .demo-popover {
   &-refer {
     width: 60px;

@@ -12,7 +12,7 @@
 `Press UI`是一套易用的、灵活的，基于`uni-app`的跨端组件库。
 
 - 🚀 70+ 基础组件，覆盖移动端主流场景
-- 🚀 支持基于`uni-app`的H5、微信小程序、QQ小程序
+- 🚀 支持基于`uni-app`的H5、微信小程序、QQ小程序、APP、支付宝小程序、抖音小程序等
 - 💪 支持普通H5项目
 - 💪 支持 Vue2 和 Vue3
 - 💪 零外部依赖，不依赖三方 npm 包
@@ -20,7 +20,7 @@
 - 🍭 支持主题定制，内置 600+ 个主题变量
 - 🌍 支持国际化，内置 16+ 种语言包
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_13f3281f0a188e0fbd.png" width="600">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/services.gif" width="600">
 
 ### 2. 解决痛点
 
@@ -107,13 +107,11 @@ module.exports = {
 
 ### 5. 立即体验
 
-下图是示例二维码，分别为H5、微信小程序、QQ小程序，以及非`uni-app`环境的普通H5项目。
+下图是示例二维码，第一行分别为基于 `uni-app` 的 `Vue2.x` 版本的 H5、微信小程序、QQ小程序、支付宝小程序。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_4fb4574312ab01757e.png" width="700">
+第二行分别为非 `uni-app` 环境的 `Vue2.x` 项目、基于 `uni-app` 的 `Vue3.x` 版本的H5、微信小程序，及 `Vue2.x` 版本的安卓项目。
 
-下面是 Vue3 版本的H5、微信小程序，及 Vue2 版本的安卓项目。
-
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_dd8154ddb53764c3d0.png" width="510">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster.gif" width="700">
 
 ### 6. 贡献指南
 

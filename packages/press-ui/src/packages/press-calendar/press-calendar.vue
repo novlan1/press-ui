@@ -1,5 +1,8 @@
 <template>
-  <div class="press-calendar-index">
+  <div
+    class="press-calendar-index"
+    :class="customClass"
+  >
     <press-popup
       v-if="poppable"
       :custom-class="'press-calendar__popup--'+(position)"

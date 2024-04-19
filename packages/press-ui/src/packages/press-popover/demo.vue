@@ -77,9 +77,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.demo-wrap {
-  min-height: 100vh;
-}
 .demo-block-wrap {
   display: flex;
   align-items: center;

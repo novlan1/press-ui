@@ -103,6 +103,10 @@ export default {
 
 .press-transition {
   transition-timing-function: ease;
+
+  /* #ifdef MP-ALIPAY */
+  touch-action: none;
+  /* #endif */
 }
 .press-fade-enter-active,
 .press-fade-leave-active {

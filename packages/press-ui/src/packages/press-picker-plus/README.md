@@ -282,3 +282,21 @@ onConfirm(option) {
   console.log('option.text', option.text);
 },
 ```
+
+### 从 PressPicker 迁移
+
+
+1. 引入路径修改，改成 
+   
+```ts
+import PressPickerPlusPopupPlus from 'press-ui/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
+```
+
+2. 控制显隐修改，`v-if="show"` 改成 `:show="show"`
+
+3. 列表属性修改，`:list` 改成 `:columns`，值从 `label`、`value`改成 `code`、`text`
+
+4. 当前属性修改，`:current="currentOption"` 改成 `:default-index="currentOption.index"`
+
+5. 确认事件回调修改，`@confirm` 的参数，增加 `option = option.value`
+

@@ -120,7 +120,7 @@
       <press-calendar
         :poppable="false"
         :show-confirm="false"
-        class="calendar"
+        custom-class="calendar"
       />
     </demo-block>
   </div>
@@ -284,7 +284,9 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.calendar {
-  --calendar-height: 500px;
+::v-deep {
+  .calendar {
+    --calendar-height: 500px;
+  }
 }
 </style>

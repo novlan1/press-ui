@@ -12,6 +12,11 @@
   justify-content: center;
   z-index: 99;
 
+  /* #ifdef MP-ALIPAY */
+  touch-action: none;
+  /* #endif */
+
+
   &__vert {
     .press-popup__left {
       left: 0;

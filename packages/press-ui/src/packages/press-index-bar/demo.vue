@@ -82,11 +82,5 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.demo-wrap {
-  height: 100%;
-  /* #ifdef MP-ALIPAY */
-  height: 100vh;
-  /* #endif */
-}
 </style>
 

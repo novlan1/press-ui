@@ -66,7 +66,7 @@ module.exports = {
   base: process.env.PUBLISH_PATH || '/press-ui/',
   head: [
     [
-      'link', { rel: 'icon', href: '/images/favicon.ico' },
+      'link', { rel: 'icon', href: '/images/press-ui-favicon-888.ico' },
     ],
   ],
   locales: {
@@ -184,4 +184,18 @@ module.exports = {
     ['vuepress-plugin-code-copy', true],
     require('./plugins/mdstyles'),
   ],
+  configureWebpack: {
+    output: {
+      publicPath: getPublicPath() || './', // 部署应用包时的基本URL
+    },
+  },
 };
+
+function getPublicPath() {
+  let result = process.env.VUE_APP_PUBLICPATH;
+  if (result && !result.endsWith('/')) {
+    result = `${result}/`;
+  }
+  return result;
+}
+

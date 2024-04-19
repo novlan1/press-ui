@@ -245,6 +245,10 @@ export default {
   -webkit-overflow-scrolling: touch;
   background-color: var(--popup-background-color, $popup-background-color);
 
+  /* #ifdef MP-ALIPAY */
+  touch-action: none;
+  /* #endif */
+
   &--center {
     top: 50%;
     left: 50%;

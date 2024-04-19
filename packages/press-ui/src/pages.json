@@ -16,18 +16,6 @@
       }
     },
     {
-      "path": "pages/count-down/count-down",
-      "style": {
-        "navigationBarTitleText": "纪念日"
-      }
-    },
-    {
-      "path": "pages/count-down/new",
-      "style": {
-        "navigationBarTitleText": "纪念日"
-      }
-    },
-    {
       "path": "pages/index/help",
       "style": {
         "navigationStyle": "custom"
@@ -37,18 +25,6 @@
       "path": "pages/index/introduce",
       "style": {
         "navigationBarTitleText": "Press UI"
-      }
-    },
-    {
-      "path": "pages/launch-app/launch-app",
-      "style": {
-        "navigationBarTitleText": "Launch App"
-      }
-    },
-    {
-      "path": "pages/launch-game/launch-game",
-      "style": {
-        "navigationBarTitleText": "Launch Game"
       }
     },
     {
@@ -480,18 +456,6 @@
     "selectedColor": "#465CFF",
     "backgroundColor": "#FFFFFF",
     "list": [
-      {
-        "pagePath": "pages/count-down/count-down",
-        "text": "纪念日",
-        // #ifdef H5
-        "iconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/11/own_mike_8d658c18f01b32a2a1.png",
-        "selectedIconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/11/own_mike_0b39f35c695c272a1f.png"
-        // #endif
-        // #ifndef H5
-        "iconPath": "static/tabbar/mod_default_3x.png",
-        "selectedIconPath": "static/tabbar/mod_selected_3x.png"
-        // #endif
-      },
       {
         "pagePath": "pages/index/index",
         "text": "组件",

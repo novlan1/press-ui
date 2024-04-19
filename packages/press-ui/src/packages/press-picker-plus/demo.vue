@@ -1,5 +1,7 @@
 <template>
-  <div class="demo-wrap">
+  <div
+    class="demo-wrap"
+  >
     <demo-block :title="t('basicUsage')">
       <press-picker-plus
         :columns="columns"
