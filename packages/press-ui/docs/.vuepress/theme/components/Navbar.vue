@@ -23,6 +23,7 @@
         class="logo"
         :src="$withBase($site.themeConfig.logo.img)"
         :alt="$siteTitle"
+        @click.stop="goHome"
       >
       <span
         v-if="$siteTitle"
@@ -98,6 +99,14 @@ export default {
     handleLinksWrapWidth();
     window.addEventListener('resize', handleLinksWrapWidth, false);
   },
+  methods: {
+    goHome() {
+      if (this.$route.path === '/') {
+        return;
+      }
+      this.$router.push('/');
+    },
+  },
 };
 
 function css(el, property) {
@@ -145,6 +154,7 @@ $navbar-horizontal-padding = 1.5rem;
     min-width: $navbarHeight - 1.4rem;
     margin-right: 0.8rem;
     vertical-align: center;
+    cursor: pointer;
   }
 
   .site-name {

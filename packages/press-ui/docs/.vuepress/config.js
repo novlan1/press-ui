@@ -55,6 +55,11 @@ function getSidebarConfig(isEn) {
   return JSON.parse(data);
 }
 
+
+const outputConfig = getPublicPath() ? {
+  publicPath: getPublicPath(), // 部署应用包时的基本URL
+} : {};
+
 module.exports = {
   title: '',
   description: 'press-ui',
@@ -185,9 +190,7 @@ module.exports = {
     require('./plugins/mdstyles'),
   ],
   configureWebpack: {
-    output: {
-      publicPath: getPublicPath() || './', // 部署应用包时的基本URL
-    },
+    output: outputConfig,
   },
 };
 

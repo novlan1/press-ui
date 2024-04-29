@@ -15,7 +15,7 @@
       />
     </demo-block>
 
-    <press-fab
+    <PressFab
       ref="fabRef"
       :pattern="pattern"
       :content="content"
@@ -26,6 +26,12 @@
       @trigger="trigger"
       @fabClick="fabClick"
     />
+    <PressFab
+      :init-x="slotInitX"
+      @fabClick="fabClickSlot"
+    >
+      <span class="debug">OK</span>
+    </PressFab>
   </div>
 </template>
 
@@ -34,6 +40,7 @@ import PressFab from 'src/packages/press-fab/press-fab.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 import { isNotInUni } from 'src/packages/common/utils/utils';
 import { forceUpdate } from 'src/packages/common/vue3/adapter';
+import { getWindowWidth } from 'src/packages/common/dom/rect';
 
 
 export default {
@@ -99,6 +106,8 @@ export default {
       },
       ],
       top: isNotInUni() ? 44 : 0,
+
+      slotInitX: Math.max(getWindowWidth()?.windowWidth - 66, 0),
     };
   },
   onBackPress() {
@@ -131,6 +140,11 @@ export default {
     },
     fabClick() {
       console.log('[fabClick]');
+      this.onGTip('[click]');
+    },
+    fabClickSlot() {
+      console.log('[fabClickSlot]');
+      this.onGTip('[click]');
     },
     switchBtn(hor, ver) {
       const { onClick, isShow } = this.$refs.fabRef;
@@ -159,9 +173,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
   margin-bottom: 10px;
+}
+.debug {
+  color: #fff;
 }
 </style>
 

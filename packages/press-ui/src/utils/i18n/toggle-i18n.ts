@@ -1,5 +1,6 @@
 import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
 import { isInIFrame, storageUtil } from '../index';
+import { setLang } from './i18n';
 
 
 export function toggleI18n(onGTip: Function) {
@@ -25,7 +26,12 @@ export function toggleI18n(onGTip: Function) {
     showCancel: false,
     success(res) {
       if (res.confirm) {
-        uni?.exitMiniProgram?.({});
+        // uni?.exitMiniProgram?.({});
+        console.log('[reLaunch]');
+        setLang(true);
+        uni?.reLaunch({
+          url: '/pages/index/index',
+        });
       }
     },
   });

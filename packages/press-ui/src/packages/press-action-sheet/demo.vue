@@ -44,6 +44,20 @@
 import PressActionSheet from 'src/packages/press-action-sheet/press-action-sheet.vue';
 import PressCell from 'src/packages/press-cell/press-cell.vue';
 
+function getWxOpenTitle() {
+  let openTitle = ''
+  // #ifdef MP-WEIXIN
+  openTitle = 'wxOpen'
+  // #endif
+   // #ifdef MP-QQ
+   openTitle = 'qqOpen'
+  // #endif
+   // #ifdef MP-ALIPAY
+   openTitle = 'alipayOpen'
+  // #endif
+
+  return openTitle
+}
 
 export default {
   i18n: {
@@ -62,6 +76,9 @@ export default {
       disabledOption: '禁用选项',
       showDescription: '展示描述信息',
       wxOpen: '微信开放能力',
+      qqOpen: 'QQ开放能力',
+      alipayOpen: '支付宝开放能力',
+      mpOpen: '小程序开放能力',
       getUserInfo: '获取用户信息',
     },
     'en-US': {
@@ -79,6 +96,9 @@ export default {
       disabledOption: 'Disabled Option',
       showDescription: 'Show Description',
       wxOpen: 'Wechat Open API',
+      qqOpen: 'QQ Open API',
+      alipayOpen: 'Alipay Open API',
+      mpOpen: 'Mini Program Open API',
       getUserInfo: 'Get User Info',
     },
   },
@@ -121,9 +141,9 @@ export default {
       },
     ];
 
-    // #ifndef H5
+    // #ifdef MP
     demoList.push({
-      title: this.t('wxOpen'),
+      title: this.t(getWxOpenTitle() || 'mpOpen'),
       list: [
         {
           title: this.t('check'),

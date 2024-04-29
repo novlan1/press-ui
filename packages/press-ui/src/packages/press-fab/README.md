@@ -73,6 +73,35 @@ export default {
 }
 ```
 
+
+### 使用插槽
+
+支持使用插槽嵌入任意内容。
+
+```html
+<PressFab
+  :init-x="initX"
+  @fabClick="click"
+>
+  <span class="debug">OK</span>
+</PressFab>
+```
+
+```js
+export default {
+  data() {
+    return {
+      initX: 300, 
+    }
+  },
+  methods: {
+    click() {
+      console.log('click');
+    },
+  }
+}
+```
+
 ## API
 
 ### Props

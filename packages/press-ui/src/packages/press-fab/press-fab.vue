@@ -70,13 +70,15 @@
       @touchend="onTouchEnd"
       @touchmove.stop.prevent="onTouchMove"
     >
-      <press-icon-plus
-        name="cross"
-        :color="styles.iconColor"
-        :size="styles.iconFontSize"
-        class="press-fab-circle-icon"
-        :class="{'press-fab__plus--active': isShow && content.length > 0}"
-      />
+      <slot>
+        <press-icon-plus
+          name="cross"
+          :color="styles.iconColor"
+          :size="styles.iconFontSize"
+          class="press-fab-circle-icon"
+          :class="{'press-fab__plus--active': isShow && content.length > 0}"
+        />
+      </slot>
     </div>
   </div>
 </template>
@@ -84,17 +86,6 @@
 <script>
 import { getRect, getWindowWidth } from '../common/dom/rect';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-
-
-const switchPos = {
-  hasMoved: false, // exclude click event
-  x: 0, // right
-  y: 0, // bottom
-  startX: 0,
-  startY: 0,
-  endX: 0,
-  endY: 0,
-};
 
 
 export default {
@@ -111,7 +102,7 @@ export default {
     },
     horizontal: {
       type: String,
-      default: 'right',
+      default: 'left',
     },
     vertical: {
       type: String,
@@ -159,6 +150,16 @@ export default {
     platform = uni.getSystemInfoSync().platform;
     // #endif
 
+    const switchPos = {
+      hasMoved: false, // exclude click event
+      x: 0, // right
+      y: 0, // bottom
+      startX: 0,
+      startY: 0,
+      endX: 0,
+      endY: 0,
+    };
+
     return {
       fabShow: false,
       isShow: false,
@@ -174,6 +175,8 @@ export default {
 
       btnSwitchPos: { x: 0, y: 0 },
       fabSize: { width: 55, height: 55 },
+
+      switchPos,
     };
   },
   computed: {
@@ -247,8 +250,8 @@ export default {
       x: this.initX,
       y: this.initY,
     };
-    switchPos.x = this.btnSwitchPos.x;
-    switchPos.y = this.btnSwitchPos.y;
+    this.switchPos.x = this.btnSwitchPos.x;
+    this.switchPos.y = this.btnSwitchPos.y;
     // }
   },
   mounted() {
@@ -321,39 +324,39 @@ export default {
     },
 
     onTouchStart(e) {
-      switchPos.startX = e.touches[0].pageX;
-      switchPos.startY = e.touches[0].pageY;
+      this.switchPos.startX = e.touches[0].pageX;
+      this.switchPos.startY = e.touches[0].pageY;
     },
     onTouchEnd() {
-      if (!switchPos.hasMoved) {
+      if (!this.switchPos.hasMoved) {
         return;
       }
-      switchPos.startX = 0;
-      switchPos.startY = 0;
-      switchPos.hasMoved = false;
-      this.setSwitchPosition(switchPos.endX, switchPos.endY);
+      this.switchPos.startX = 0;
+      this.switchPos.startY = 0;
+      this.switchPos.hasMoved = false;
+      this.setSwitchPosition(this.switchPos.endX, this.switchPos.endY);
     },
     onTouchMove(e) {
       if (e.touches.length <= 0) {
         return;
       }
-      const offsetX = e.touches[0].pageX - switchPos.startX;
-      const offsetY = e.touches[0].pageY - switchPos.startY;
-      let x = Math.floor(switchPos.x - offsetX);
-      let y = Math.floor(switchPos.y - offsetY);
+      const offsetX = e.touches[0].pageX - this.switchPos.startX;
+      const offsetY = e.touches[0].pageY - this.switchPos.startY;
+      let x = Math.floor(this.switchPos.x - offsetX);
+      let y = Math.floor(this.switchPos.y - offsetY);
       [x, y] = this.getSwitchButtonSafeAreaXY(x, y);
       this.btnSwitchPos.x = x;
       this.btnSwitchPos.y = y;
-      switchPos.endX = x;
-      switchPos.endY = y;
-      switchPos.hasMoved = true;
+      this.switchPos.endX = x;
+      this.switchPos.endY = y;
+      this.switchPos.hasMoved = true;
       e.preventDefault();
       e.stopPropagation();
     },
     setSwitchPosition(switchX, switchY) {
       [switchX, switchY] = this.getSwitchButtonSafeAreaXY(switchX, switchY);
-      switchPos.x = switchX;
-      switchPos.y = switchY;
+      this.switchPos.x = switchX;
+      this.switchPos.y = switchY;
       this.btnSwitchPos.x = switchX;
       this.btnSwitchPos.y = switchY;
     },

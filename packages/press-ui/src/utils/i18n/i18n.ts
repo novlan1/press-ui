@@ -66,8 +66,8 @@ function getLocale() {
 
 let set = false;
 
-export function setLang() {
-  if (set) return ;
+export function setLang(force = false) {
+  if (set && !force) return ;
   set = true;
   curLang = getLocale() || DEFAULT_LANG;
   console.log('[curLang] ', curLang);

@@ -123,6 +123,11 @@ import {
 } from './index-config';
 import { HELP_DATA_URL } from './help-config';
 
+function getEnvVersion() {
+  const info = uni.getAccountInfoSync();
+  return info?.miniProgram?.envVersion || '';
+}
+
 
 function getShowDemoMap() {
   let showOtherDemoMap = {
@@ -176,16 +181,35 @@ function getAllPages() {
     }),
   }));
 
+
+  // #ifdef VUE3 && MP-QQ
+  if (['develop', 'trial'].includes(getEnvVersion())) {
+    pages = pages.slice(2);
+    let list = pages.reduce((acc, item) => [
+      ...acc,
+      ...item.list,
+    ], []);
+    list = list.slice(list.length - 6);
+    pages = [{
+      name: 'Vue3 组件',
+      list,
+    }];
+  }
+  // #endif
+
   return pages;
 }
-
+let detail = 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库'
+// #ifdef VUE3 && MP-QQ
+detail = '本小程序是 Press UI 在 Vue3 项目的适配，与 Press UI 小程序的底层实现完全不同'
+// #endif
 
 export default {
   i18n: {
     'zh-CN': {
       share: '分享',
       name: '全端兼容 高性能',
-      detail: 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库',
+      detail,
       otherAbility: '其他功能',
       toggleLanguage: '切换语言',
       toggleVConsole: '切换VConsole',
@@ -243,6 +267,10 @@ export default {
       if (!showOtherDemoMap.vue3Uni) {
         list = list.filter(item => item.name !== 'vue3-uni');
       }
+
+      // #ifdef MP-QQ
+      list = [];
+      // #endif
       return list;
     },
   },
@@ -277,7 +305,7 @@ export default {
       return this.t(`titleMap.${list[list.length - 1]}`);
     },
     getComponentTypeTitle(item) {
-      return this.t(`titleMap.${item.name}`);
+      return this.t(`titleMap.${item.name}`) || item.name;
     },
     onToggleLanguage() {
       console.log('[onToggleLanguage]');
