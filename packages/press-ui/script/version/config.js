@@ -2,6 +2,7 @@ const path = require('path');
 
 const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/', 'tests'];
 const INNER_PATH_MAP = {
+  TARGET_ROOT: 'log',
   SOURCE_PACKAGES: 'src/packages',
   TARGET_PACKAGES: 'log/components/press-ui',
   PACKAGE_JSON: './src/packages/package.json',

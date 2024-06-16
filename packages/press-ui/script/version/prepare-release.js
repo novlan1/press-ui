@@ -8,7 +8,8 @@ const {
 } = require('./config');
 
 function genPureReleaseDir() {
-  execSync(`rm -rf ${PATH_MAP.TARGET_PACKAGES} \
+  execSync(`rm -rf ${PATH_MAP.TARGET_ROOT} \
+  rm -rf ${PATH_MAP.TARGET_PACKAGES} \
   && mkdir -p ${PATH_MAP.TARGET_PACKAGES} \
   && cp -r ${PATH_MAP.SOURCE_PACKAGES}/* ${PATH_MAP.TARGET_PACKAGES} \
   && rm -rf ${PATH_MAP.TARGET_PACKAGES}/node_modules`, {
