@@ -75,7 +75,9 @@ export default {
     move() {
       this.waiting = false;
 
-      this.parent = document.querySelector(this.to);
+      if (this.to) {
+        this.parent = document.querySelector(this.to);
+      }
 
       if (!this.parent) {
         this.disable();

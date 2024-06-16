@@ -32,6 +32,12 @@ module.exports = {
   //     },
   //   ],
   // },
+  globals: {
+    uni: true,
+    getCurrentPages: true,
+    ROUTES: '',
+    weex: { requireModule: () => {} },
+  },
   testMatch: [
     '**/tests/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
   ],

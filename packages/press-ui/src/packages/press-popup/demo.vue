@@ -142,9 +142,20 @@
       :ref="PRESS_PICKER_ID"
       mode="functional"
     >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
+      <scroll-view
+        scroll-y
+        :style="{maxHeight: '200px', padding: '0 20px'}"
+      >
+        <div class="content__inner">
+          {{ t('SomeScrollContent') }}
+        </div>
+        <div class="content__inner">
+          {{ t('SomeScrollContent') }}
+        </div>
+        <div class="content__inner">
+          {{ t('SomeScrollContent') }}
+        </div>
+      </scroll-view>
     </press-popup>
   </div>
 </template>
@@ -190,6 +201,7 @@ export default {
     'zh-CN': {
       wayToWin: '决胜方式',
       SomeContent: '一些内容',
+      SomeScrollContent: '一些可以滚动的内容',
       controlledPopup: '受控组件',
       functional: '函数式调用',
       check: '查看',
@@ -401,8 +413,17 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.demo-wrap {
+  // height: calc(100vh + 80px);
+  padding-bottom: 400px;
+}
+
 .content {
   font-size: 16px;
   padding: 20px;
+
+  &__inner {
+    height: 200px;
+  }
 }
 </style>

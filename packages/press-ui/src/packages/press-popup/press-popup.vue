@@ -12,10 +12,19 @@
   >
     <!-- 透明遮罩 -->
     <div
+      v-if="lockScroll"
+      :class="['press-popup--mask',
+               isEnter ? 'press--animation__fade-in':'press--animation__fade-out']"
+      @click.stop="onClickTouch"
+      @touchmove.stop.prevent="preventTouchMove"
+    />
+    <div
+      v-else
       :class="['press-popup--mask',
                isEnter ? 'press--animation__fade-in':'press--animation__fade-out']"
       @click.stop="onClickTouch"
     />
+
     <div
       :class="['press-popup--content',
                isEnter ?

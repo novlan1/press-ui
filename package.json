@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "1.3.30",
+  "version": "1.3.35",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "private": true,
   "repository": {
@@ -33,6 +33,7 @@
     "docs:dev": "cd packages/press-ui && npm run docs:dev",
     "release": "cd packages/press-ui && npm run release",
     "test": "jest --coverage --verbose -u",
+    "test:pure": "jest --coverage --verbose",
     "prepare": "husky install && cd packages/press-ui && pnpm i || npm i || true"
   },
   "dependencies": {

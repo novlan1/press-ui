@@ -305,9 +305,20 @@ export default {
   :id="PRESS_PICKER_ID"
   mode="functional"
 >
-  <div class="content">
-    {{ t('SomeContent') }}
-  </div>
+  <scroll-view
+    scroll-y
+    :style="{maxHeight: '200px', padding: '0 20px'}"
+  >
+    <div class="content__inner">
+      {{ t('SomeScrollContent') }}
+    </div>
+    <div class="content__inner">
+      {{ t('SomeScrollContent') }}
+    </div>
+    <div class="content__inner">
+      {{ t('SomeScrollContent') }}
+    </div>
+  </scroll-view>
 </press-popup>
 ```
 
@@ -335,6 +346,12 @@ export default {
 }
 ```
 
+```scss
+.content__inner {
+    height: 200px;
+}
+```
+
 
 ## API
 
@@ -357,6 +374,7 @@ export default {
 | async-confirm          | 异步`confirm`方法，可为`Promise`或普通方法 | _function_ | -       |
 | async-cancel           | 异步`cancel`方法，可为`Promise`或普通方法  | _function_ | -       |
 | disabled-button        | 按钮置灰                                   | _boolean_  | `false` |
+| lock-scroll            | 是否锁定背景滚动                           | _boolean_  | `true`  |
 
 
 
@@ -397,6 +415,8 @@ export default {
 
 ## 常见问题
 
+1. input 高度
+
 `transform`后的`position: fixed`失效，对于`popup`中包含`input`输入框，且需要调整高度的场景，可以使用`customStyle`:
 
 ```html
@@ -406,3 +426,6 @@ export default {
 </press-popup>
 ```
 
+2. 内部元素滚动
+
+`press-popup` 为了防止滚动穿透，在外层以及蒙层使用了 `@touch.stop="noop"`。如果内部元素需要滚动，可以使用 `scroll-view`，单纯设置元素 `overflow: scroll` 可能会在小程序下无效。可以参考上面“函数式调用”示例部分。

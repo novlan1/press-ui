@@ -248,22 +248,23 @@ export default {
 
 ### Popup Props
 
-| property name          | type       | default value | description                                                                                 |
-| ---------------------- | ---------- | ------------- | :------------------------------------------------------------------------------------------ |
-| show-title             | _boolean_  | `true`        | Whether to show the title                                                                   |
-| title                  | _string_   | -             | popup window title                                                                          |
-| button                 | _string_   | -             | popup title button                                                                          |
-| border-button          | _boolean_  | `false`       | header button style                                                                         |
-| z-index                | _string_   | `99`          | popup level                                                                                 |
-| popup-class            | _string_   | -             | class name                                                                                  |
-| close-on-click-overlay | _boolean_  | `true`        | Whether to click the overlay to close                                                       |
-| close-icon             | _boolean_  | `false`       | Whether to display the close icon                                                           |
-| arrow-icon             | _boolean_  | `false`       | Whether to display as a back arrow                                                          |
-| horizontal             | _boolean_  | `false`       | Whether to switch the horizontal panel style                                                |
-| width-number           | _number_   | `100`         | Horizontal popup window width percentage                                                    |
-| validate-confirm       | _Function_ | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
-| mode                   | _string_   | -             | pass `functional` when calling a function                                                   |
-| disabledButton         | _boolean_  | `false`       | button disabled                                                                             |
+| property name          | type                                 | default value | description                                                                                 |
+| ---------------------- | ------------------------------------ | ------------- | :------------------------------------------------------------------------------------------ |
+| show-title             | _boolean_                            | `true`        | Whether to show the title                                                                   |
+| title                  | _string_                             | -             | popup window title                                                                          |
+| button                 | _string_                             | -             | popup title button                                                                          |
+| border-button          | _boolean_                            | `false`       | header button style                                                                         |
+| z-index                | _string_                             | `99`          | popup level                                                                                 |
+| popup-class            | _string_                             | -             | class name                                                                                  |
+| close-on-click-overlay | _boolean_                            | `true`        | Whether to click the overlay to close                                                       |
+| close-icon             | _boolean_                            | `false`       | Whether to display the close icon                                                           |
+| arrow-icon             | _boolean_                            | `false`       | Whether to display as a back arrow                                                          |
+| horizontal             | _boolean_                            | `false`       | Whether to switch the horizontal panel style                                                |
+| width-number           | _number_                             | `100`         | Horizontal popup window width percentage                                                    |
+| validate-confirm       | _Function_                           | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
+| mode                   | _string_                             | -             | pass `functional` when calling a function                                                   |
+| disabledButton         | _boolean_                            | `false`       | button disabled                                                                             |
+| lock-scroll            | Whether to lock background scrolling | _boolean_     | `true`                                                                                      |
 
 
 

@@ -120,9 +120,15 @@ export default {
   },
   methods: {
     onChangePicker(val) {
-      console.log('onChangePicker.val', val);
+      const cities = this.t('column3');
       const { value } = val;
-      this.$refs.picker.setColumnValues(1, citys[value[0]]);
+      this.$refs.picker.setColumnValues(1, cities[value[0]]);
+      const values = this.$refs.picker.getValues();
+      const indexes = this.$refs.picker.getIndexes();
+      this.onTip({
+        value: values,
+        index: indexes,
+      });
     },
   },
 };

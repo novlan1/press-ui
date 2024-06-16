@@ -145,7 +145,7 @@ Page({
 | safe-area-inset-top    | 是否留出顶部安全距离（状态栏高度）               | _boolean_          | `false`  |
 | custom-class           | 自定义类名                                       | _string_           | -        |
 | wrap-class             | 自定义最外层类名                                 | _string_           | -        |
-| lock-scroll `v1.7.3`   | 是否锁定背景滚动                                 | _boolean_          | `true`   |
+| lock-scroll            | 是否锁定背景滚动                                 | _boolean_          | `true`   |
 
 ### Events
 

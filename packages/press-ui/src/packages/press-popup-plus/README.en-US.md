@@ -131,7 +131,7 @@ When the minimum version of the Mini Program base library is above 2.9.0, you ca
 | close-icon             | close icon name or image link                                     | _string_           | `cross`  |
 | safe-area-inset-bottom | Whether to set a bottom safety distance for iPhoneX               | _boolean_          | `true`   |
 | safe-area-inset-top    | Whether to leave a top safe distance (status bar height)          | _boolean_          | `false`  |
-| lock-scroll `v1.7.3`   | Whether to lock background scrolling                              | _boolean_          | `true`   |
+| lock-scroll            | Whether to lock background scrolling                              | _boolean_          | `true`   |
 
 ### Events
 

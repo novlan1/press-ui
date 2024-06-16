@@ -67,6 +67,8 @@
 
 ### 4. 如何使用
 
+#### 4.1. npm 方式
+
 1. 安装`npm`包
 
 ```bash
@@ -104,6 +106,12 @@ module.exports = {
   transpileDependencies: ['press-ui'],
 }
 ```
+
+#### 4.2. uni_modules 方式
+
+[插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
+
+
 
 ### 5. 立即体验
 

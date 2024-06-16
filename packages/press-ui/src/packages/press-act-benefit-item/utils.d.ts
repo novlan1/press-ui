@@ -1,0 +1,21 @@
+export declare const TIP_CLASS_MAP: {
+  benefit: string;
+  top: string;
+  'shop-icon': string;
+  'shop-name': string;
+  'shop-desc': string;
+  main: string;
+  'goods-img': string;
+  info: string;
+  'goods-name': string;
+  'goods-desc': string;
+  'tip-line': string;
+  'tip-wrap': string;
+  tip: string;
+  buttons: string;
+  process: string;
+  'benefit-btn': string;
+  'benefit-btn--use': string;
+  'benefit-btn--out': string;
+};
+export declare function getActClass(useTipClass: boolean, args: any): any;

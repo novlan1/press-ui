@@ -1,5 +1,84 @@
 # 更新日志
 
+### [1.3.35](https://github.com/novlan1/press-ui/compare/v1.3.34...v1.3.35) (2024-06-16)
+
+
+### Features 🎉
+
+* **popup:** add no lockScroll ([6924f37](https://github.com/novlan1/press-ui/commit/6924f3721feb6409920dfc63d4f9f3ed500b340f))
+
+### [1.3.34](https://github.com/novlan1/press-ui/compare/v1.3.32...v1.3.34) (2024-06-16)
+
+
+### Features 🎉
+
+* **popup:** 优化lockScroll ([98e212c](https://github.com/novlan1/press-ui/commit/98e212c3ab45603aca037168f2085cbf1535d5f4))
+* **popup:** add lockScroll ([4a8b757](https://github.com/novlan1/press-ui/commit/4a8b7577871c55316f2dda81957c0d4c8bb23323))
+* **popup:** add lockScroll ([2c94835](https://github.com/novlan1/press-ui/commit/2c94835bc51a0507cfe1bf962269fd483ae3a8de))
+
+
+### Documentation 📖
+
+* update docs ([8a77ff7](https://github.com/novlan1/press-ui/commit/8a77ff74b45f5280fe1a102c77c140cee442bd8e))
+* update popup demo ([71ce0be](https://github.com/novlan1/press-ui/commit/71ce0bea7ad2ba91bf98bd0121193ec757a99fca))
+
+
+### Code Refactoring ♻️
+
+* ts to js ([bbdfb9f](https://github.com/novlan1/press-ui/commit/bbdfb9f1bb2f4b7b65947e54e66557bd97f66cc8))
+* ts to js ([db2153c](https://github.com/novlan1/press-ui/commit/db2153c2973973df61d9b754e3aa991fb7817d73))
+* ts to js ([435f894](https://github.com/novlan1/press-ui/commit/435f8948f70d49badbc2527a2c66ca057b194956))
+* ts to js ([a4fa941](https://github.com/novlan1/press-ui/commit/a4fa94112b9fd75b1cd65889ec7b18bff0ea3db9))
+* ts to js ([bc14d06](https://github.com/novlan1/press-ui/commit/bc14d06e9a70a0c3dda448c47ca2bc36c319fd00))
+
+
+### Tests ✅
+
+* update test config ([7931e88](https://github.com/novlan1/press-ui/commit/7931e88658965ea7f289029fc45fdc2352902cf2))
+
+
+### Chore 🚀 
+
+* gen dts ([cf656d7](https://github.com/novlan1/press-ui/commit/cf656d772de2cf81d593ece9c668da7e6c64d697))
+* lint ([86ba6cc](https://github.com/novlan1/press-ui/commit/86ba6cc9d7a53b483b47d219d78c838683a6041e))
+
+### [1.3.32](https://github.com/novlan1/press-ui/compare/v1.3.31...v1.3.32) (2024-05-31)
+
+
+### Features 🎉
+
+* **selectComponent:** 防止context为空 ([0e4cccc](https://github.com/novlan1/press-ui/commit/0e4ccccbe6a77548ebbe8ec321a8caae04ce10a2))
+
+### [1.3.31](https://github.com/novlan1/press-ui/compare/v1.3.30...v1.3.31) (2024-05-27)
+
+
+### Documentation 📖
+
+* 优化配置 ([7eb66a6](https://github.com/novlan1/press-ui/commit/7eb66a6bbb1b086da7bfa8fa23e072771e9bc68a))
+* 优化i18n ([b4a3a7d](https://github.com/novlan1/press-ui/commit/b4a3a7d5c663c50447793aec56d30cf9306f81e0))
+* **action-sheet:** update open title ([e517bda](https://github.com/novlan1/press-ui/commit/e517bdab41ce5a4f0296b48231cf1ed022ce62b4))
+* add logo click event ([7cf0145](https://github.com/novlan1/press-ui/commit/7cf01452c454a4e61f261ce5537b9f89c87800f9))
+* mp-qq page 优化 ([0867a59](https://github.com/novlan1/press-ui/commit/0867a59753815841617c266263db0adbb99e5b77))
+* update mp-qq pages ([d7a181f](https://github.com/novlan1/press-ui/commit/d7a181f2a2a42bf5aa484fb340c32b6c508e4774))
+* update vue3 mp-qq pages ([8b5e9ab](https://github.com/novlan1/press-ui/commit/8b5e9ab5d29b589e362ee7927615c6faa25191ca))
+* **vue3:** vue3 mp-qq 特殊demo ([969af68](https://github.com/novlan1/press-ui/commit/969af68abc803cb20e1e6d3d0eea3ce388d96c75))
+* **vue3:** vue3 mp-qq 特殊demo ([9aae26f](https://github.com/novlan1/press-ui/commit/9aae26f04dfd40bacde799844ee1d6909933a384))
+
+
+### Chore 🚀 
+
+* add update version ([9f8b5ef](https://github.com/novlan1/press-ui/commit/9f8b5efa468a6e5ec8b6655502b95383c67e5940))
+* update deps ([b47d265](https://github.com/novlan1/press-ui/commit/b47d265f6aec2dc546e9d04f6eadd7f80e324ac6))
+* update plugin config ([6d7e856](https://github.com/novlan1/press-ui/commit/6d7e8565f72b96ad9e881c6c21bc1fb3245df548))
+* update pnpm-lock ([427c766](https://github.com/novlan1/press-ui/commit/427c766223643d8eab058588d716db7ebb033904))
+* update t-comm ([3bf5ee3](https://github.com/novlan1/press-ui/commit/3bf5ee36efab2bcfd19569a07588f8e6afcce592))
+
+
+### Features 🎉
+
+* **fab:** support slot ([737b6fb](https://github.com/novlan1/press-ui/commit/737b6fbee33078dd4b29efc59a1c9ac2abaeb98e))
+* update picker demo ([91c9543](https://github.com/novlan1/press-ui/commit/91c9543e7d1a7395310416f37d0c3edf8162beed))
+
 ### [1.3.30](https://github.com/novlan1/press-ui/compare/v1.3.29...v1.3.30) (2024-04-19)
 
 

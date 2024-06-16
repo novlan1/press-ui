@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "noEmit": false,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "types": [
+      "webpack-env",
+      "@dcloudio/types",
+      "miniprogram-api-typings",
+      "jest"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "src/*": [
+        "./packages/press-ui/src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+  },
+  "include": [
+    "./packages/press-ui/src/packages/**/*.ts",
+    "./shime-vue.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "unpackage",
+    "dist/",
+    "src/**/*.nvue",
+    "log/",
+    "lib/",
+    "./**/*.spec.ts"
+  ]
+}

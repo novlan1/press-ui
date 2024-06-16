@@ -1,0 +1,23 @@
+export declare const TIP_CLASS_MAP: {
+  cover: string;
+  dialog: string;
+  'dialog--address': string;
+  close: string;
+  title: string;
+  'title--address': string;
+  info: string;
+  'info-list': string;
+  'info-item': string;
+  'input-wrap': string;
+  'input-area': string;
+  'input-area--placeholder': string;
+  'address-detail': string;
+  tip: string;
+  'button-wrap': string;
+  'btn--cancel': string;
+  'btn--medium-secondary': string;
+  'btn--disabled': string;
+  'btn--sure': string;
+  'btn--medium-primary': string;
+};
+export declare function getActClass(useTipClass: boolean, args: any): any;

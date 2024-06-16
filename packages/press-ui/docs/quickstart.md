@@ -6,6 +6,8 @@
 
 对于 Vue2 的 `uni-app` 项目，`Press UI` 的使用方法如下。
 
+### 1.1. npm 模式
+
 1. 安装`npm`包
 
 
@@ -44,6 +46,12 @@ module.exports = {
   transpileDependencies: ['press-ui'],
 }
 ```
+
+
+### 1.2. uni_modules 方式
+
+[插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
+
 
 
 ## 2. 普通 Vue2 项目

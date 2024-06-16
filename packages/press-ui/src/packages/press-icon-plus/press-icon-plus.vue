@@ -28,11 +28,16 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 // nvue通过weex的dom模块引入字体，相关文档地址如下：
 // https://weex.apache.org/zh/docs/modules/dom.html#addrule
 const fontUrl = 'https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811';
-const domModule = weex.requireModule('dom');
-domModule.addRule('fontFace', {
-  fontFamily: 'press-icon-plus',
-  src: `url('${fontUrl}')`,
-});
+try {
+  const domModule = weex.requireModule('dom');
+  domModule.addRule('fontFace', {
+    fontFamily: 'press-icon-plus',
+    src: `url('${fontUrl}')`,
+  });
+} catch (err) {
+
+}
+
 // #endif
 
 
