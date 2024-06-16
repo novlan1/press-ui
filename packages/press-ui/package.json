@@ -89,6 +89,7 @@
     "new:comp": "node script/new/generate-new-component/generate-new-component",
     "release": "sh script/version/release.sh && node script/version/post-release",
     "release:mine": "node script/version/pre-commit",
+    "release:prepare": "node script/version/prepare-release-script",
     "version:tip": "node script/deploy/version-tip",
     "test": "jest --coverage --verbose -u",
     "cp:readme": "node script/docs-demo/readme",
