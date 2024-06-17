@@ -60,8 +60,8 @@
 <br />
 
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_fa5d34c18c86ae412c.jpg" width="300">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_fb1530d4d6e351383c.jpg" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_b0eb6091b6559d4a0e.gif" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_5f18fe9ffb82583da3.gif" width="300">
 </div>
 
 <br />

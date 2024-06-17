@@ -38,7 +38,7 @@
 上面的组织结构并不能直接用，还需要把`README.md`移动到`docs`中，把`demo.vue`移动到`src/pages`中。开发时会监听这些文件变动，发生变动后就把它们拷贝到需要的位置上。
 
 <img 
-  src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_2de0d5cb1567b66aa7.png" width="700"
+  src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_160511d777e5015f01.gif" width="700"
 />
 
 ## 2. 开发
@@ -189,20 +189,20 @@ npm run act:replace:class
 
 Press UI 底层依赖 `t-comm`、`uni-plugin-light` 等库。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/11/own_mike_531f563c0322f19dc1.png" width="500" />
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_bbf5d09066a8980616.gif" width="500" />
 
 
 ### 4.5. 适配多平台、多场景
 
 Press UI 在兼容 Vue3 项目、非 `uni-app` 环境、APP 环境时，采用的实现方式为，新建工程，并将 Press UI 组件库作为子仓库。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_889e9d727ea8d8b63e.png" width="500" />
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_ea7bcae60b32baedd8.gif" width="500" />
 
 ### 4.6. 通用 & 灵活
 
 下图是 H5、小程序、APP语法灵活度的对比。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_76f35297c8da15ecea.png" width="300" />
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_fa30be46a942e03072.gif" width="300" />
 
 Press UI 在编写跨端代码的时候，采用以下原则：
 
