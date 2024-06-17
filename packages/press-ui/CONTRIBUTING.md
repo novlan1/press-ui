@@ -212,5 +212,5 @@ Press UI 在编写跨端代码的时候，采用以下原则：
 这里举一些 H5 环境下渐进式增强的例子：
 
 1. 函数式调用组件的时候，可以动态创建 Dom，无需预埋组件
-2. Popover Plus 点击空白处会收起，即 clickOutSide
-3. List 支持自动检测外层 scroller，即支持任意父级的滚动
+2. `popover-plus` 点击空白处会收起，即 `clickOutSide`
+3. `list` 支持自动检测外层 `scroller`，即支持任意父级的滚动

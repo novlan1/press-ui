@@ -15,7 +15,7 @@ export function getScrollStartY() {
     ?.querySelector(SCROLL_SELECTOR)?.scrollTop || 0;
 }
 
-export function scrollRelative(moveY, animation: boolean) {
+export function scrollRelative(moveY, animation) {
   const ref = document
     ?.querySelector(SCROLL_SELECTOR);
   if (!ref) return;
@@ -24,7 +24,7 @@ export function scrollRelative(moveY, animation: boolean) {
     const distance = -moveY;
     const beginTime = Date.now();
     cancelAnimationFrame(rAF);
-    rAF = window.requestAnimationFrame || ((func: Function) => setTimeout(func, 16));
+    rAF = window.requestAnimationFrame || (func => setTimeout(func, 16));
     const frameFunc = () => {
     // 进度，500ms 内将页面滚动到顶部
       const progress = (Date.now() - beginTime) / 300;

@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.37](https://github.com/novlan1/press-ui/compare/v1.3.36...v1.3.37) (2024-06-17)
+
+
+### ✏️ Documentation | 文档
+
+* 去掉贡献指南 ([8827868](https://github.com/novlan1/press-ui/commit/882786814e66b32e59b8ab8a72fb6450c35bb117))
+* **teleport:** update teleport docs ([050189a](https://github.com/novlan1/press-ui/commit/050189aef8e300431a87995a9aa4bac20786cd68))
+* update docs ([3ec47ac](https://github.com/novlan1/press-ui/commit/3ec47accc5432f9113a6cdd77371b5d9dd4728dc))
+* update docs ([3486634](https://github.com/novlan1/press-ui/commit/3486634400f12452b8fe5e1f81f7bb519fc7d12f))
+* update docs ([974e908](https://github.com/novlan1/press-ui/commit/974e908deb2851ff53ee7302bdbe140ea0c6d273))
+* update readme ([c22ff1c](https://github.com/novlan1/press-ui/commit/c22ff1ca39e45537cc83e66263a8042841ab2343))
+* update readme ([85f16a6](https://github.com/novlan1/press-ui/commit/85f16a6a0109ff3c988e0882f2057089522454e2))
+
+
+### ♻️ Code Refactoring | 代码重构
+
+* 修复类型错误 ([3d1c9ae](https://github.com/novlan1/press-ui/commit/3d1c9aed15540dcda73d37bf5df62d5e9d97ded4))
+
 ### [1.3.36](https://github.com/novlan1/press-ui/compare/v1.3.35...v1.3.36) (2024-06-16)
 
 
