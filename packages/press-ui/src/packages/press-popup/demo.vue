@@ -424,6 +424,7 @@ export default {
 
   &__inner {
     height: 200px;
+    font-size: 14px;
   }
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="press-overlay-index">
-    <!-- @touchmove.stop.prevent="noop" -->
     <press-transition
       v-if="lockScroll"
       :show="show"

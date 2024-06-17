@@ -191,4 +191,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.demo-wrap {
+  padding-bottom: 400px;
+}
 </style>

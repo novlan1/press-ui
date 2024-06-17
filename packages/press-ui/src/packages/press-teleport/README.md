@@ -22,6 +22,8 @@ export default {
 
 ### 基础用法
 
+下面是一个示例， `demo-text` 如果使用了 `teleport`，会放到 `body` 下，所以会铺满页面下半部分。如果不使用 `teleport` 的话，则只会放到 `demo-inner` 下，而 `demo-inner` 高度只有 `300px`，所以不会铺满页面下半部分。
+
 ```html
 <div class="demo-inner">
   <PressTeleport

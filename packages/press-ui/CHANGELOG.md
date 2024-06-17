@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.36](https://github.com/novlan1/press-ui/compare/v1.3.35...v1.3.36) (2024-06-16)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化脚本 ([2866a82](https://github.com/novlan1/press-ui/commit/2866a82c9db436558828af0542c147fb9c013c62))
+* add prepare-release script ([2af0978](https://github.com/novlan1/press-ui/commit/2af09788f4e88d03a7ae2706181485b97b5c25be))
+
+
+### ✨ Features | 新功能
+
+* **popup:** 禁用滚动穿透优化 ([9e14bd6](https://github.com/novlan1/press-ui/commit/9e14bd674e701137cf2079e40f7774964f7289d1))
+
+
+### ✏️ Documentation | 文档
+
+* **popup:** update popup font-size ([4a41ff7](https://github.com/novlan1/press-ui/commit/4a41ff7517f811d5e856fb71ac31a2ac14f049af))
+
 ### [1.3.35](https://github.com/novlan1/press-ui/compare/v1.3.34...v1.3.35) (2024-06-16)
 
 
