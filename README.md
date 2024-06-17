@@ -122,8 +122,3 @@ module.exports = {
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-2.gif" width="700">
 
-
-### 6. 贡献指南
-
-请查看[这里](./packages/press-ui/CONTRIBUTING.md)。
-

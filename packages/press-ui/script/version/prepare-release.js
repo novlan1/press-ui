@@ -12,6 +12,7 @@ function genPureReleaseDir() {
   rm -rf ${PATH_MAP.TARGET_PACKAGES} \
   && mkdir -p ${PATH_MAP.TARGET_PACKAGES} \
   && cp -r ${PATH_MAP.SOURCE_PACKAGES}/* ${PATH_MAP.TARGET_PACKAGES} \
+  && cp -r ${PATH_MAP.SOURCE_PACKAGES}/.npmrc ${PATH_MAP.TARGET_PACKAGES} \
   && rm -rf ${PATH_MAP.TARGET_PACKAGES}/node_modules`, {
     stdio: 'inherit',
   });
