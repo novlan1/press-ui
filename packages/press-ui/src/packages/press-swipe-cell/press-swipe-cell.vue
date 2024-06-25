@@ -10,7 +10,10 @@
     @touchend="endDrag"
     @touchcancel="endDrag"
   >
-    <div :style="wrapperStyle">
+    <div
+      :style="wrapperStyle"
+      :class="['press-swipe-cell__content', offset ? 'press-swipe-cell__content--moved':'']"
+    >
       <div
         v-if="leftWidth"
         class="press-swipe-cell__left"

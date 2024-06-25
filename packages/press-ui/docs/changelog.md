@@ -1,5 +1,29 @@
 # 更新日志
 
+### [1.3.39](https://github.com/novlan1/press-ui/compare/v1.3.38...v1.3.39) (2024-06-24)
+
+
+### Chore 🚀 
+
+* demo 首页增加小程序相关项目 ([b28f31d](https://github.com/novlan1/press-ui/commit/b28f31db76820dfb67da80bcd3b465c5ef087dbb))
+* update navigationAppIdList ([09a3410](https://github.com/novlan1/press-ui/commit/09a341079dfedbc745c52f937a604ca59bf115d7))
+* update plugin-light ([a69d35c](https://github.com/novlan1/press-ui/commit/a69d35c5b11b4280abc1a7a014510a4d64e66d0a))
+* update plugin-light ([47c15e6](https://github.com/novlan1/press-ui/commit/47c15e6745a6aacccdc1c4d3629ee668076a3794))
+* update plugin-light ([b169439](https://github.com/novlan1/press-ui/commit/b16943927c87b7afe723f80d38458d95d7276636))
+* use dispatch script ([9e6269d](https://github.com/novlan1/press-ui/commit/9e6269d3685ad19eff4b3c6e8112e0168e1cfbe3))
+
+
+### Features 🎉
+
+* **swipe-cell:** 增加类名 ([1fe1cb5](https://github.com/novlan1/press-ui/commit/1fe1cb5908abe0bd24e8bee1e5b2d2d20025ce57))
+
+### [1.3.38](https://github.com/novlan1/press-ui/compare/v1.3.37...v1.3.38) (2024-06-18)
+
+
+### Features 🎉
+
+* **popup:** revert lockScroll ([887d221](https://github.com/novlan1/press-ui/commit/887d2214b8d6bc4529ec9bafb999b7d40bcc48e1))
+
 ### [1.3.37](https://github.com/novlan1/press-ui/compare/v1.3.36...v1.3.37) (2024-06-17)
 
 

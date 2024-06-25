@@ -119,7 +119,7 @@ export const newProps = {
   },
   lockScroll: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 };
 

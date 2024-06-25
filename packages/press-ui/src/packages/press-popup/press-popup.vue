@@ -8,7 +8,7 @@
       mode === 'white' ? 'press-popup--white' : ''
     ]"
     :style="popupStyle"
-    @touchmove.stop.prevent="preventTouchMove"
+    @touchmove.stop="preventTouchMove"
   >
     <!-- 透明遮罩 -->
     <div

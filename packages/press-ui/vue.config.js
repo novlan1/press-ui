@@ -5,7 +5,8 @@ const {
   GenVersionWebPlugin,
   DispatchVuePlugin,
   ReplaceContentPlugin,
-  //  DispatchScriptPlugin
+  DispatchScriptPlugin,
+  FixNpmPackagePlugin,
 } = require('plugin-light/lib/plugin');
 const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
 const { LOADER_MAP } = require('plugin-light/lib/loader');
@@ -27,13 +28,17 @@ if (process.env.UNI_PLATFORM !== 'h5') {
   }));
 
   if (process.env.NODE_ENV === 'production') {
-    // plugins.push(new DispatchScriptPlugin());
     plugins.push(new DispatchVuePlugin({
       insertRequireVendor: true,
       moveComponents: {
         disableList: ['@zebra-ui'],
       },
     }));
+    plugins.push(new DispatchScriptPlugin({
+      addCommonVendorRequire: true,
+      whiteList: [],
+    }));
+    plugins.push(new FixNpmPackagePlugin());
   }
 } else {
   plugins.push(new GenVersionWebPlugin({

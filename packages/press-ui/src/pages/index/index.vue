@@ -199,10 +199,8 @@ function getAllPages() {
 
   return pages;
 }
-let detail = 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库'
-// #ifdef VUE3 && MP-QQ
-detail = '本小程序是 Press UI 在 Vue3 项目的适配，与 Press UI 小程序的底层实现完全不同'
-// #endif
+const detail = 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库';
+
 
 export default {
   i18n: {
@@ -214,7 +212,7 @@ export default {
       toggleLanguage: '切换语言',
       toggleVConsole: '切换VConsole',
       launchApp: '拉起APP',
-      otherProject: '其他项目',
+      otherProject: '相关项目',
       checkNormal: '基础',
       checkPure: '非 Uni App',
       checkVue3: 'Vue3',
@@ -269,7 +267,7 @@ export default {
       }
 
       // #ifdef MP-QQ
-      list = [];
+      list = list.filter(item => !!item.mpQQ);
       // #endif
       return list;
     },
@@ -329,7 +327,7 @@ export default {
       // });
     },
     onJumpToOtherDemo(item) {
-      const { link } = item;
+      const { link, mpWeixin, mpQQ } = item;
       if (!link) return;
 
       // #ifdef H5
@@ -347,6 +345,28 @@ export default {
       // #endif
 
       // #ifndef H5
+      // #ifdef MP-WEIXIN
+      if (mpWeixin && mpWeixin.appId) {
+        uni.navigateToMiniProgram({
+          appId: mpWeixin.appId,
+          path: mpWeixin.path || undefined,
+          envVersion: 'release',
+        });
+        return;
+      }
+      // #endif
+
+      // #ifdef MP-QQ
+      if (mpQQ && mpQQ.appId) {
+        uni.navigateToMiniProgram({
+          appId: mpQQ.appId,
+          path: mpQQ.path || undefined,
+          envVersion: 'release',
+        });
+        return;
+      }
+      // #endif
+
       setClipboardData(link).then(() => {
         this.onGTip('🎉 复制成功，请到浏览器中查看');
       });

@@ -7,6 +7,7 @@
       <press-swipe-cell
         :right-width="65"
         :left-width="65"
+        :async-close="asyncClose"
         @click="onClick"
         @close="onClose"
         @open="onOpen"
@@ -66,6 +67,7 @@ export default {
   },
   data() {
     return {
+      asyncClose: false,
     };
   },
   methods: {
