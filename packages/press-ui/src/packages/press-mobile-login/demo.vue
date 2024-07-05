@@ -38,7 +38,7 @@ export default {
     // #ifdef H5
     currentUrl = document.location.href;
     if (currentUrl.indexOf('http://localhost') > -1) {
-      currentUrl = 'https://novlan1.github.io/press-ui-demo/';
+      currentUrl = 'https://novlan1.github.io/press-ui-demo-vue2/';
     }
     showChooseDialog = true;
     // #endif
