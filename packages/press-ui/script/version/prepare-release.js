@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 const { traverseFolder } = require('t-comm');
 
@@ -12,6 +13,7 @@ function genPureReleaseDir() {
   rm -rf ${PATH_MAP.TARGET_PACKAGES} \
   && mkdir -p ${PATH_MAP.TARGET_PACKAGES} \
   && cp -r ${PATH_MAP.SOURCE_PACKAGES}/* ${PATH_MAP.TARGET_PACKAGES} \
+  && cp -r ${PATH_MAP.SOURCE_PACKAGES}/package.json ${path.dirname(PATH_MAP.TARGET_PACKAGES)} \
   && cp -r ${PATH_MAP.SOURCE_PACKAGES}/.npmrc ${PATH_MAP.TARGET_PACKAGES} \
   && rm -rf ${PATH_MAP.TARGET_PACKAGES}/node_modules`, {
     stdio: 'inherit',

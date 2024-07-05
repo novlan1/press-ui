@@ -219,11 +219,11 @@
   </div>
 </template>
 <script>
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
-import PressTag from 'src/packages/press-tag/press-tag.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
+import PressTag from 'press-ui/press-tag/press-tag.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 
 export default {

@@ -118,8 +118,9 @@ export default {
     ARRAY.push(this);
   },
   created() {
-    const { windowHeight } = getWindowWidth();
+    const { windowHeight, windowTop } = getWindowWidth();
     this.windowHeight = windowHeight;
+    this.windowTop = windowTop || 0;
     this.children = [];
   },
   destroyed() {
@@ -164,7 +165,7 @@ export default {
       const { zIndex, direction } = this;
       return getRect(this, '.press-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
-        const offset = direction === 'down' ? bottom : this.windowHeight - top;
+        const offset = direction === 'down' ? bottom : this.windowHeight - top + this.windowTop;
         let wrapperStyle = `z-index: ${zIndex};`;
         if (direction === 'down') {
           wrapperStyle += `top: ${addUnit(offset)};`;

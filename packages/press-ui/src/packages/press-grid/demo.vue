@@ -153,8 +153,8 @@
   </div>
 </template>
 <script>
-import PressGrid from 'src/packages/press-grid/press-grid.vue';
-import PressGridItem from 'src/packages/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
+import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
 
 
 export default {

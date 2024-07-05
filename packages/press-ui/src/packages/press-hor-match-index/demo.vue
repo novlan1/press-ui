@@ -31,8 +31,8 @@
   </div>
 </template>
 <script>
-import PressHorMatchIndex from 'src/packages/press-hor-match-index/press-hor-match-index.vue';
-import PressEmpty from 'src/packages/press-empty/press-empty.vue';
+import PressHorMatchIndex from 'press-ui/press-hor-match-index/press-hor-match-index.vue';
+import PressEmpty from 'press-ui/press-empty/press-empty.vue';
 import {
   BANNER_LIST,
   BRAND_LIST,

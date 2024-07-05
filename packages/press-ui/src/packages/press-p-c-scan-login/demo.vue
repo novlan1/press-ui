@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import PressPCScanLogin from 'src/packages/press-p-c-scan-login/press-p-c-scan-login.vue';
+import PressPCScanLogin from 'press-ui/press-p-c-scan-login/press-p-c-scan-login.vue';
 import { loaderUnity } from 't-comm/lib/loader/loader-unity';
 
 

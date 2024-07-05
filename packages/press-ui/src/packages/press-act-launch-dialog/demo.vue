@@ -32,7 +32,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActLaunchDialog from 'src/packages/press-act-launch-dialog/press-act-launch-dialog.vue';
+import PressActLaunchDialog from 'press-ui/press-act-launch-dialog/press-act-launch-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-launch-dialog/demo-helper/style-list';
 

@@ -73,7 +73,7 @@
   </div>
 </template>
 <script>
-import PressRate from 'src/packages/press-rate/press-rate.vue';
+import PressRate from 'press-ui/press-rate/press-rate.vue';
 
 export default {
   i18n: {
@@ -118,5 +118,5 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/common/style/smoba/mixin.scss";
+@import "press-ui/common/style/smoba/mixin.scss";
 </style>

@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import PressHorMatchHeader from 'src/packages/press-hor-match-header/press-hor-match-header.vue';
+import PressHorMatchHeader from 'press-ui/press-hor-match-header/press-hor-match-header.vue';
 
 export default {
   components: {

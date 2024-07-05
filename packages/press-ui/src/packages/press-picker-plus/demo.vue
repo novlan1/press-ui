@@ -72,8 +72,8 @@
   </div>
 </template>
 <script>
-import PressPickerPlus from 'src/packages/press-picker-plus/press-picker-plus.vue';
-import PressPickerPlusPopupPlus from 'src/packages/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
+import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
+import PressPickerPlusPopupPlus from 'press-ui/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
 
 
 const dateColumns = {

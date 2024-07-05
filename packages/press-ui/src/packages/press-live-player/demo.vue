@@ -44,9 +44,9 @@
   </div>
 </template>
 <script>
-import PressLivePlayer from 'src/packages/press-live-player/press-live-player.vue';
-import PressField from 'src/packages/press-field/press-field.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import PressLivePlayer from 'press-ui/press-live-player/press-live-player.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 const MOCK_VIDEO_SRC = 'https://1500005692.vod2.myqcloud.com/43843706vodtranscq1500005692/62656d94387702300542496289/v.f100240.m3u8';
 

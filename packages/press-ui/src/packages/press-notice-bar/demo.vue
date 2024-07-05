@@ -83,7 +83,7 @@
   </div>
 </template>
 <script>
-import PressNoticeBar from 'src/packages/press-notice-bar/press-notice-bar.vue';
+import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar.vue';
 
 
 export default {

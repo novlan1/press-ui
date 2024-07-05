@@ -35,7 +35,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActModifyPhoneDialog from 'src/packages/press-act-modify-phone-dialog/press-act-modify-phone-dialog.vue';
+import PressActModifyPhoneDialog from 'press-ui/press-act-modify-phone-dialog/press-act-modify-phone-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-modify-phone-dialog/demo-helper/style-list';
 

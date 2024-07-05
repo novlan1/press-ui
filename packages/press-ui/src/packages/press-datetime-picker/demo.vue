@@ -89,14 +89,14 @@
   </div>
 </template>
 <script>
-import PressDatetimePicker from 'src/packages/press-datetime-picker/press-datetime-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
-import PressDatetimePickerPopupPlus from 'src/packages/press-datetime-picker/press-datetime-picker-popup-plus.vue';
+import PressDatetimePicker from 'press-ui/press-datetime-picker/press-datetime-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressDatetimePickerPopupPlus from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
 
 
-import { timeStampFormat } from 'src/packages/common/format/time';
-import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+import { timeStampFormat } from 'press-ui/common/format/time';
+import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
 
 
 let that;

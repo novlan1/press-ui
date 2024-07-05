@@ -36,8 +36,8 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressTransition from 'src/packages/press-transition/press-transition.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressTransition from 'press-ui/press-transition/press-transition.vue';
 
 let timer = null;
 const formatTransitionName = name => name.toLowerCase().replace(/\s+/, '-');

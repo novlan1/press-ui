@@ -58,13 +58,13 @@
   </div>
 </template>
 <script>
-import PressScheduleCard from 'src/packages/press-schedule-card/press-schedule-card.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
+import PressScheduleCard from 'press-ui/press-schedule-card/press-schedule-card.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
 import DemoInput from 'src/pages/components/demo-input/demo-input.vue';
 
-import { SCHEDULE_CARD_STATE_MAP, RESULT_TYPE_MAP } from 'src/packages/press-schedule-card/config';
+import { SCHEDULE_CARD_STATE_MAP, RESULT_TYPE_MAP } from 'press-ui/press-schedule-card/config';
 import {
   showCustomPopup,
   getStepList,
@@ -74,7 +74,7 @@ import {
 } from 'src/packages/press-schedule-card/demo-helper/custom';
 import { MOCK_SCHEDULE_DATA } from 'src/packages/press-schedule-card/demo-helper/data';
 import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
-import { parseScheduleData } from 'src/packages/press-schedule-card/utils';
+import { parseScheduleData } from 'press-ui/press-schedule-card/utils';
 
 const MOCK_PLAYING_INDEX = 1;
 const MOCK_COUNT_DOWN = 1000 * 60 * 60 * 26;

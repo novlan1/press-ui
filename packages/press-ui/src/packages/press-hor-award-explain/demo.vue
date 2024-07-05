@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import PressHorAwardExplain from 'src/packages/press-hor-award-explain/press-hor-award-explain.vue';
+import PressHorAwardExplain from 'press-ui/press-hor-award-explain/press-hor-award-explain.vue';
 
 const AWARD_LIST = Array.from({ length: 5 }).map(() => ({
   title: '1-20名',

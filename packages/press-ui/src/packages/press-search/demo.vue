@@ -69,7 +69,7 @@
   </div>
 </template>
 <script>
-import PressSearch from 'src/packages/press-search/press-search.vue';
+import PressSearch from 'press-ui/press-search/press-search.vue';
 
 export default {
   i18n: {

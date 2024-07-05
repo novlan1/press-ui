@@ -81,21 +81,8 @@
             @click="onJumpToSharePage"
           />
 
-          <press-section
-            v-if="quickLinkList.length"
-            key="other-project-section"
-            :title="t('otherProject')"
-            :color="sectionStyle.color"
-            type="line"
-            :header-style="sectionStyle.header"
-          />
-
-          <PressCell
-            v-for="(quickLink) of quickLinkList"
-            :key="quickLink.link"
-            is-link
-            :title="quickLink.label"
-            @click="onJumpToOtherDemo(quickLink)"
+          <QuickListComp
+            @onBeforeDestroy="onBeforeDestroy"
           />
         </div>
       </div>
@@ -105,15 +92,15 @@
 <script>
 
 import PressSection from '../components/press-section/press-section.vue';
+import QuickListComp from '../components/quick-list/quick-list.vue';
 import PressCell from '../../packages/press-cell/press-cell.vue';
 
 import { toggleVConsole } from 't-comm/lib/v-console/toggle';
 
-import { fetchData, routerPush } from '../../utils/index';
+import { routerPush } from '../../utils/index';
 import { toggleI18n } from '../../utils/i18n/toggle-i18n';
 
 import { isNotInUni } from '../../packages/common/utils/utils';
-import { setClipboardData } from '../../packages/common/clipboard/clipboard';
 
 import pagesConfig from './page-config.json';
 import {
@@ -121,42 +108,12 @@ import {
   NOT_SHOW_IN_MP_COMPONENTS,
   NOT_SHOW_IN_PURE_PROJECT,
 } from './index-config';
-import { HELP_DATA_URL } from './help-config';
 
 function getEnvVersion() {
   const info = uni.getAccountInfoSync();
   return info?.miniProgram?.envVersion || '';
 }
 
-
-function getShowDemoMap() {
-  let showOtherDemoMap = {
-    vue2Uni: false,
-    vue2NotUni: false,
-    vue3Uni: false,
-  };
-  showOtherDemoMap = {
-    vue2Uni: true,
-    vue2NotUni: true,
-    vue3Uni: true,
-  };
-
-  // #ifdef VUE3
-  showOtherDemoMap.vue3Uni = false;
-  // #endif
-
-  if (isNotInUni()) {
-    showOtherDemoMap.vue2NotUni = false;
-  }
-
-  // #ifndef VUE3
-  if (!isNotInUni()) {
-    showOtherDemoMap.vue2Uni = false;
-  }
-  // #endif
-
-  return showOtherDemoMap;
-}
 
 function getAllPages() {
   let pages = pagesConfig.pages.filter(item => item.list && item.list.length);
@@ -233,6 +190,7 @@ export default {
   },
   components: {
     PressSection,
+    QuickListComp,
     PressCell,
   },
   mixins: [
@@ -243,38 +201,15 @@ export default {
       pages: getAllPages(),
       isNotInUni: isNotInUni(),
 
-      showOtherDemoMap: getShowDemoMap(),
       sectionStyle: {
         header: 'font-weight: 500;margin-bottom: 6px;',
         color: '#007aff',
       },
-      helpConfig: {},
     };
   },
-  computed: {
-    quickLinkList() {
-      const { showOtherDemoMap, helpConfig = {} } = this;
-      let list = helpConfig.quickLinkList || [];
 
-      if (!showOtherDemoMap.vue2Uni) {
-        list = list.filter(item => item.name !== 'vue2-uni');
-      }
-      if (!showOtherDemoMap.vue2NotUni) {
-        list = list.filter(item => item.name !== 'vue2-not-uni');
-      }
-      if (!showOtherDemoMap.vue3Uni) {
-        list = list.filter(item => item.name !== 'vue3-uni');
-      }
-
-      // #ifdef MP-QQ
-      list = list.filter(item => !!item.mpQQ);
-      // #endif
-      return list;
-    },
-  },
   mounted() {
     this.init();
-    this.getHelpData();
   },
   beforeDestroy() {
     this.onBeforeDestroy();
@@ -326,57 +261,7 @@ export default {
       //   url: `/pages/webview/webview?url=${url}`,
       // });
     },
-    onJumpToOtherDemo(item) {
-      const { link, mpWeixin, mpQQ } = item;
-      if (!link) return;
 
-      // #ifdef H5
-      this.$toast.loading({
-        message: '正在跳转...',
-        forbidClick: true,
-        duration: 300,
-        loadingType: 'spinner',
-      });
-
-      this.onBeforeDestroy();
-      setTimeout(() => {
-        window.location.href = link;
-      }, 300);
-      // #endif
-
-      // #ifndef H5
-      // #ifdef MP-WEIXIN
-      if (mpWeixin && mpWeixin.appId) {
-        uni.navigateToMiniProgram({
-          appId: mpWeixin.appId,
-          path: mpWeixin.path || undefined,
-          envVersion: 'release',
-        });
-        return;
-      }
-      // #endif
-
-      // #ifdef MP-QQ
-      if (mpQQ && mpQQ.appId) {
-        uni.navigateToMiniProgram({
-          appId: mpQQ.appId,
-          path: mpQQ.path || undefined,
-          envVersion: 'release',
-        });
-        return;
-      }
-      // #endif
-
-      setClipboardData(link).then(() => {
-        this.onGTip('🎉 复制成功，请到浏览器中查看');
-      });
-      // #endif
-    },
-    getHelpData() {
-      fetchData(HELP_DATA_URL).then((data) => {
-        this.helpConfig = data;
-      });
-    },
   },
 
 };

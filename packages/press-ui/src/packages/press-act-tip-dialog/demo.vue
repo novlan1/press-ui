@@ -28,8 +28,8 @@
   </div>
 </template>
 <script>
-import PressActTipDialog from 'src/packages/press-act-tip-dialog/press-act-tip-dialog.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressActTipDialog from 'press-ui/press-act-tip-dialog/press-act-tip-dialog.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
 export default {

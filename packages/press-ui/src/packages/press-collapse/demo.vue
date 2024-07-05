@@ -125,9 +125,9 @@
   </div>
 </template>
 <script>
-import PressCollapseItem from 'src/packages/press-collapse-item/press-collapse-item.vue';
-import PressCollapse from 'src/packages/press-collapse/press-collapse.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item.vue';
+import PressCollapse from 'press-ui/press-collapse/press-collapse.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 
 export default {

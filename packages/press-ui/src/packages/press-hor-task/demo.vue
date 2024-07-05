@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import PressHorTask from 'src/packages/press-hor-task/press-hor-task.vue';
+import PressHorTask from 'press-ui/press-hor-task/press-hor-task.vue';
 import { routerBack } from 'src/utils/index';
 
 

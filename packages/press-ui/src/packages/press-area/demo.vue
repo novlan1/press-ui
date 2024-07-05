@@ -94,12 +94,12 @@
   </div>
 </template>
 <script>
-import PressArea from 'src/packages/press-area/press-area.vue';
-import PressAreaPopup from 'src/packages/press-area/press-area-popup.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-// import PressPopup from 'src/packages/press-popup/press-popup.vue';
+import PressArea from 'press-ui/press-area/press-area.vue';
+import PressAreaPopup from 'press-ui/press-area/press-area-popup.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+// import PressPopup from 'press-ui/press-popup/press-popup.vue';
 import { fetchData } from 'src/utils/index';
-import { parseData } from 'src/packages/press-area/helper/parse.ts';
+import { parseData } from 'press-ui/press-area/helper/parse';
 
 const AREA_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json';
 

@@ -51,6 +51,10 @@ export function initMixin(app: any) {
     methods: {
       onGTip(title: string, duration = 1000) {
         uni.hideToast();
+        if (!title) {
+          return;
+        }
+        
         uni.showToast({
           title,
           icon: 'none',

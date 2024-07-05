@@ -46,7 +46,7 @@ export default {
 ```
 
 ```ts
-import { MOCK_USER_META } from 'src/packages/press-message-detail/demo-helper/data';
+import { MOCK_USER_META } from 'press-ui/press-message-detail/demo-helper/data';
 const ROUND_TOTAL = 5;
 
 export const getTeamList = (length, start = 0) => Array.from({ length }).map((_, index) => ({

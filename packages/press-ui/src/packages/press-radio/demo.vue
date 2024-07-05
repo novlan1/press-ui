@@ -195,10 +195,10 @@
   </div>
 </template>
 <script>
-import PressRadio from 'src/packages/press-radio/press-radio.vue';
-import PressRadioGroup from 'src/packages/press-radio-group/press-radio-group.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
+import PressRadio from 'press-ui/press-radio/press-radio.vue';
+import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 
 
 export default {

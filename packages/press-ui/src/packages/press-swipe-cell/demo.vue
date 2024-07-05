@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import PressSwipeCell from 'src/packages/press-swipe-cell/press-swipe-cell.vue';
+import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
 
 
 export default {

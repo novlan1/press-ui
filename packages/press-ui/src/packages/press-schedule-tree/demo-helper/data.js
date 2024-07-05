@@ -1,4 +1,4 @@
-import { MOCK_DATA_META } from 'src/packages/press-schedule-tree/demo-helper/helper';
+import { MOCK_DATA_META } from '../../press-schedule-tree/demo-helper/helper';
 
 const { DEFAULT_NAME, DEFAULT_AVATAR } = MOCK_DATA_META;
 

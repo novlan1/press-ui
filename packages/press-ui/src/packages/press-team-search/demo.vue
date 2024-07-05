@@ -16,8 +16,8 @@
   </div>
 </template>
 <script>
-import PressTeamSearch from 'src/packages/press-team-search/press-team-search.vue';
-import { getHighLightHtml } from 'src/packages/press-team-search/utils';
+import PressTeamSearch from 'press-ui/press-team-search/press-team-search.vue';
+import { getHighLightHtml } from 'press-ui/press-team-search/utils';
 import { justWait } from 't-comm/lib/e2e-test/element';
 
 const MOCK_TEAM_LIST = Array.from({ length: 200 }).map((_, index) => {

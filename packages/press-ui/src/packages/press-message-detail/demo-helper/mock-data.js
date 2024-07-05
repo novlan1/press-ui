@@ -1,4 +1,4 @@
-import { MOCK_MESSAGE_DETAIL_LIST } from 'src/packages/press-message-detail/demo-helper/data';
+import { MOCK_MESSAGE_DETAIL_LIST } from '../../press-message-detail/demo-helper/data';
 export function genMockData(index = 0) {
   return [
     MOCK_MESSAGE_DETAIL_LIST[0],

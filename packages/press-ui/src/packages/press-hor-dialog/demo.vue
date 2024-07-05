@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import PressHorPopup from 'src/packages/press-hor-dialog/press-hor-dialog.vue';
+import PressHorPopup from 'press-ui/press-hor-dialog/press-hor-dialog.vue';
 
 export default {
   components: {

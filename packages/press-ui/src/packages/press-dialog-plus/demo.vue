@@ -59,9 +59,9 @@
   </div>
 </template>
 <script>
-import PressDialogPlus from 'src/packages/press-dialog-plus/press-dialog-plus.vue';
-import Dialog from 'src/packages/press-dialog-plus/handler';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import Dialog from 'press-ui/press-dialog-plus/handler';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
 const gBeforeClose = action => new Promise((resolve) => {

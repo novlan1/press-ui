@@ -107,7 +107,7 @@
   </div>
 </template>
 <script>
-import PressTag from 'src/packages/press-tag/press-tag.vue';
+import PressTag from 'press-ui/press-tag/press-tag.vue';
 
 
 export default {

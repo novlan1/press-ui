@@ -39,7 +39,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActInputPhoneDialog from 'src/packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue';
+import PressActInputPhoneDialog from 'press-ui/press-act-input-phone-dialog/press-act-input-phone-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-input-phone-dialog/demo-helper/style-list';
 

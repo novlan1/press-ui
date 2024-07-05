@@ -38,10 +38,10 @@
   </div>
 </template>
 <script>
-import PressDialog from 'src/packages/press-dialog';
-import PressDialogComp from 'src/packages/press-dialog/press-dialog.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import { saveMpImage } from 'src/packages/common/utils/save-mp-image';
+import PressDialog from 'press-ui/press-dialog';
+import PressDialogComp from 'press-ui/press-dialog/press-dialog.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import { saveMpImage } from 'press-ui/common/utils/save-mp-image';
 
 
 const loadingConfirm = function () {

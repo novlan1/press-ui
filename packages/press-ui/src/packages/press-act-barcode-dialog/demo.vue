@@ -33,7 +33,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActBarcodeDialog from 'src/packages/press-act-barcode-dialog/press-act-barcode-dialog.vue';
+import PressActBarcodeDialog from 'press-ui/press-act-barcode-dialog/press-act-barcode-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-barcode-dialog/demo-helper/style-list';
 

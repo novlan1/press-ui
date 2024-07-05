@@ -57,8 +57,8 @@
   </div>
 </template>
 <script>
-import PressSkeleton from 'src/packages/press-skeleton/press-skeleton.vue';
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
+import PressSkeleton from 'press-ui/press-skeleton/press-skeleton.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 export default {
   i18n: {
@@ -95,7 +95,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/common/style/smoba/mixin.scss";
+@import "press-ui/common/style/smoba/mixin.scss";
 
 .demo-switch-wrap {
   margin: 0 16px 8px;

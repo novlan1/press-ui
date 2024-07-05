@@ -56,9 +56,9 @@
   </div>
 </template>
 <script>
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
 
 
 const PRESS_PICKER_ID = 'press-picker-functional';

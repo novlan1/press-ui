@@ -1,5 +1,8 @@
 <template>
-  <div class="demo-wrap demo-wrap--gray">
+  <scroll-view
+    scroll-y
+    class="wrap"
+  >
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"
@@ -212,11 +215,11 @@
         </template>
       </press-field>
     </demo-block>
-  </div>
+  </scroll-view>
 </template>
 <script>
-import PressField from 'src/packages/press-field/press-field.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 export default {
   i18n: {
@@ -344,5 +347,8 @@ export default {
     font-size: 14px;
     color: #09134e;
   }
+}
+.wrap {
+  height: calc(100% - 1px);
 }
 </style>

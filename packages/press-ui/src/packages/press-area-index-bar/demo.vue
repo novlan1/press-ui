@@ -24,8 +24,8 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressAreaIndexBar from 'src/packages/press-area-index-bar/press-area-index-bar.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressAreaIndexBar from 'press-ui/press-area-index-bar/press-area-index-bar.vue';
 import { fetchData } from 'src/utils/index';
 
 

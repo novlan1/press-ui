@@ -2,7 +2,7 @@ import {
   // FUNCTIONAL_ID_MAP,
   showPopupCellAndClose,
   showPicker,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
+} from '../../press-popup-cell/demo-helper/helper';
 import {
   DEFAULT_TEAM_NUMBER,
   TEAM_LIST,

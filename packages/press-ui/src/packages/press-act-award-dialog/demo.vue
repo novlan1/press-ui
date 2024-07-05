@@ -36,7 +36,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActAwardDialog from 'src/packages/press-act-award-dialog/press-act-award-dialog.vue';
+import PressActAwardDialog from 'press-ui/press-act-award-dialog/press-act-award-dialog.vue';
 // import PressActAwardDialog from 'src/lib/act-award-dialog';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-award-dialog/demo-helper/style-list';

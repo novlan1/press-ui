@@ -24,9 +24,9 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressHorSwiperLight from 'src/packages/press-hor-swiper-light/press-hor-swiper-light.vue';
-import { MOCK_LIST } from 'src/packages/press-hor-swiper-light/demo-helper/data.ts';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressHorSwiperLight from 'press-ui/press-hor-swiper-light/press-hor-swiper-light.vue';
+import { MOCK_LIST } from 'src/packages/press-hor-swiper-light/demo-helper/data';
 
 
 export default {

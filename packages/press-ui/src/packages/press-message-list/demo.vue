@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import PressMessageList from 'src/packages/press-message-list/press-message-list.vue';
+import PressMessageList from 'press-ui/press-message-list/press-message-list.vue';
 import { MOCK_MESSAGE_LIST } from 'src/packages/press-message-list/demo-helper/data';
 
 

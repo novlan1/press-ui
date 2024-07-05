@@ -51,8 +51,8 @@
   </div>
 </template>
 <script>
-import PressCol from 'src/packages/press-col/press-col.vue';
-import PressRow from 'src/packages/press-row/press-row.vue';
+import PressCol from 'press-ui/press-col/press-col.vue';
+import PressRow from 'press-ui/press-row/press-row.vue';
 
 export default {
   i18n: {

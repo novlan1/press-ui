@@ -36,11 +36,11 @@
 </template>
 
 <script>
-import PressFab from 'src/packages/press-fab/press-fab.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import { isNotInUni } from 'src/packages/common/utils/utils';
-import { forceUpdate } from 'src/packages/common/vue3/adapter';
-import { getWindowWidth } from 'src/packages/common/dom/rect';
+import PressFab from 'press-ui/press-fab/press-fab.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
+import { forceUpdate } from 'press-ui/common/vue3/adapter';
+import { getWindowWidth } from 'press-ui/common/dom/rect';
 
 
 export default {

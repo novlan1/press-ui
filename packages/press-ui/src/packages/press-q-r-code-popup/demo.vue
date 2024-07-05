@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import PressQRCodePopup from 'src/packages/press-q-r-code-popup/press-q-r-code-popup.vue';
+import PressQRCodePopup from 'press-ui/press-q-r-code-popup/press-q-r-code-popup.vue';
 
 
 export default {

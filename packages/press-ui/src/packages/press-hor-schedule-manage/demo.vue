@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import PressHorScheduleManage from 'src/packages/press-hor-schedule-manage/press-hor-schedule-manage.vue';
+import PressHorScheduleManage from 'press-ui/press-hor-schedule-manage/press-hor-schedule-manage.vue';
 import { routerBack } from 'src/utils/index';
 import { getDemoData, getTeamList, getGroupList, getTeamScoreList } from 'src/packages/press-hor-schedule-manage/demo-helper/data';
 

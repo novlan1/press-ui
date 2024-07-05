@@ -33,7 +33,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActQRCodeDialog from 'src/packages/press-act-q-r-code-dialog/press-act-q-r-code-dialog.vue';
+import PressActQRCodeDialog from 'press-ui/press-act-q-r-code-dialog/press-act-q-r-code-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-q-r-code-dialog/demo-helper/style-list';
 

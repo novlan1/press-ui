@@ -35,8 +35,8 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressOverlay from 'src/packages/press-overlay/press-overlay.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressOverlay from 'press-ui/press-overlay/press-overlay.vue';
 
 
 export default {

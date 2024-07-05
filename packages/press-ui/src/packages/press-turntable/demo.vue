@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import PressTurnTable from 'src/packages/press-turntable/press-turntable.vue';
+import PressTurnTable from 'press-ui/press-turntable/press-turntable.vue';
 
 const PRIZE_LIST = [
   {

@@ -27,9 +27,9 @@
   </div>
 </template>
 <script>
-import PressMessageBoardInput from 'src/packages/press-message-board/press-message-board-input.vue';
-import PressMessageBoardList from 'src/packages/press-message-board/press-message-board-list.vue';
-import PressMessageBoardItem from 'src/packages/press-message-board/press-message-board-item.vue';
+import PressMessageBoardInput from 'press-ui/press-message-board/press-message-board-input.vue';
+import PressMessageBoardList from 'press-ui/press-message-board/press-message-board-list.vue';
+import PressMessageBoardItem from 'press-ui/press-message-board/press-message-board-item.vue';
 import { MOCK_MESSAGE_BOARD_LIST } from 'src/packages/press-message-board/demo-helper/data';
 
 

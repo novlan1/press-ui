@@ -82,10 +82,10 @@
   </div>
 </template>
 <script>
-import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 import {
   FUNCTIONAL_ID_MAP,

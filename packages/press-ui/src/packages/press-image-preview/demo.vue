@@ -59,9 +59,9 @@
   </div>
 </template>
 <script>
-import ImagePreviewComp from 'src/packages/press-image-preview/press-image-preview.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import { imagePreview } from 'src/packages/press-image-preview/index';
+import ImagePreviewComp from 'press-ui/press-image-preview/press-image-preview.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import { imagePreview } from 'press-ui/press-image-preview/index';
 
 
 const FUNCTIONAL_ID_MAP = {

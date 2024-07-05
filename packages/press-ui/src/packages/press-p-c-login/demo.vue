@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import PressPCLogin from 'src/packages/press-p-c-login/press-p-c-login.vue';
+import PressPCLogin from 'press-ui/press-p-c-login/press-p-c-login.vue';
 
 
 export default {

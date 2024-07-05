@@ -44,7 +44,7 @@
   </div>
 </template>
 <script>
-import PressLoading from 'src/packages/press-loading/press-loading.vue';
+import PressLoading from 'press-ui/press-loading/press-loading.vue';
 
 
 export default {
@@ -93,7 +93,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/packages/common/style/smoba/mixin.scss";
+@import "press-ui/common/style/smoba/mixin.scss";
 .section-content {
   margin: 0 10px;
 }

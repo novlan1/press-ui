@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import PressBarcode from 'src/packages/press-barcode/press-barcode.vue';
+import PressBarcode from 'press-ui/press-barcode/press-barcode.vue';
 import DemoInput from 'src/pages/components/demo-input/demo-input.vue';
 
 

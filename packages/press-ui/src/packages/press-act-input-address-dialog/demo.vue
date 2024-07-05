@@ -34,7 +34,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActInputAddressDialog from 'src/packages/press-act-input-address-dialog/press-act-input-address-dialog.vue';
+import PressActInputAddressDialog from 'press-ui/press-act-input-address-dialog/press-act-input-address-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-input-address-dialog/demo-helper/style-list';
 

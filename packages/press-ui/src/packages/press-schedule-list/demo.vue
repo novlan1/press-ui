@@ -36,12 +36,12 @@
   </div>
 </template>
 <script>
-import ScheduleItem from 'src/packages/press-schedule-list/press-schedule-item.vue';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import ScheduleItem from 'press-ui/press-schedule-list/press-schedule-item.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
-import { formatScheItemData } from 'src/packages/press-schedule-list/helper/sche-item';
+import { formatScheItemData } from 'press-ui/press-schedule-list/helper/sche-item';
 
 import {
   FUNCTIONAL_ID_MAP,

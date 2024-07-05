@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import PressMobileLogin from 'src/packages/press-mobile-login/press-mobile-login.vue';
+import PressMobileLogin from 'press-ui/press-mobile-login/press-mobile-login.vue';
 import { loaderUnity } from 't-comm/lib/loader/loader-unity';
 
 

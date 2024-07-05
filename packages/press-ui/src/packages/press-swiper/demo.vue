@@ -80,11 +80,11 @@
 </template>
 <script>
 // #ifdef H5
-import PressSwiper from 'src/packages/press-swiper/press-swiper.vue';
-import PressSwiperItem from 'src/packages/press-swiper-item/press-swiper-item.vue';
+import PressSwiper from 'press-ui/press-swiper/press-swiper.vue';
+import PressSwiperItem from 'press-ui/press-swiper-item/press-swiper-item.vue';
 // #endif
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
-import PressSlider from 'src/packages/press-slider/press-slider.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
+import PressSlider from 'press-ui/press-slider/press-slider.vue';
 
 
 export default {

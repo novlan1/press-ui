@@ -54,9 +54,9 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressToast from 'src/packages/press-toast/press-toast.vue';
-import Toast from 'src/packages/press-toast';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressToast from 'press-ui/press-toast/press-toast.vue';
+import Toast from 'press-ui/press-toast';
 
 
 export default {

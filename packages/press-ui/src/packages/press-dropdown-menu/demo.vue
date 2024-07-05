@@ -9,6 +9,7 @@
         <press-dropdown-item
           :value="value1"
           :options="option1"
+          title-class="demo-title"
         />
         <press-dropdown-item
           :value="value2"
@@ -123,11 +124,11 @@
   </div>
 </template>
 <script>
-import PressDropdownMenu from 'src/packages/press-dropdown-menu/press-dropdown-menu.vue';
-import PressDropdownItem from 'src/packages/press-dropdown-item/press-dropdown-item.vue';
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu.vue';
+import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 
 export default {
@@ -171,7 +172,9 @@ export default {
       ],
     },
   },
-
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     PressDropdownMenu,
     PressDropdownItem,

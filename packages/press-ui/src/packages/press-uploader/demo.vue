@@ -98,7 +98,7 @@
   </div>
 </template>
 <script>
-import PressUploader from 'src/packages/press-uploader/press-uploader.vue';
+import PressUploader from 'press-ui/press-uploader/press-uploader.vue';
 const IMG_URL = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg';
 
 let that;

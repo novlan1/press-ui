@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.40](https://github.com/novlan1/press-ui/compare/v1.3.39...v1.3.40) (2024-07-01)
+
+
+### ✏️ Documentation | 文档
+
+* update readme ([d0cefdc](https://github.com/novlan1/press-ui/commit/d0cefdc9576112c0c7d8fc355da2edd212ca7ae3))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 更新uni_modulues发布配置 ([2b30de0](https://github.com/novlan1/press-ui/commit/2b30de02bac557e3e3b7a537553f84d255a63289))
+* 优化demo ([aa8530c](https://github.com/novlan1/press-ui/commit/aa8530c9159e822244ece767b625ccf9a6b84991))
+* **field:** update field demo ([aab8a4a](https://github.com/novlan1/press-ui/commit/aab8a4a420b06304d23e6b2f2742479922b1bc6b))
+
+
+### ✨ Features | 新功能
+
+* **swipe-cell:** add default offset ([c45d460](https://github.com/novlan1/press-ui/commit/c45d460505aca8ba56d00d16520c5c4c61441703))
+
 ### [1.3.39](https://github.com/novlan1/press-ui/compare/v1.3.38...v1.3.39) (2024-06-24)
 
 

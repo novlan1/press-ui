@@ -1,4 +1,4 @@
-import { parseProtocol } from 'src/packages/common/protocol/parse-protocol';
+import { parseProtocol } from '../../common/protocol/parse-protocol';
 import { fetchData } from 'src/utils/index';
 
 const INTRODUCE_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_introduce_config.json';

@@ -76,10 +76,10 @@
   </div>
 </template>
 <script>
-import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
-import PressTab from 'src/packages/press-tab/press-tab.vue';
-import PressEmpty from 'src/packages/press-empty/press-empty.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressEmpty from 'press-ui/press-empty/press-empty.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 
 export default {

@@ -37,12 +37,12 @@
   </div>
 </template>
 <script>
-import PressAwardPopup from 'src/packages/press-award-popup/press-award-popup.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressAwardPopup from 'press-ui/press-award-popup/press-award-popup.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 import { showCustomPopup, local } from 'src/packages/press-award-popup/demo-helper/custom';
 import { MOCK_AWARD_LIST } from 'src/packages/press-award-popup/demo-helper/data';
 import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 
 export default {

@@ -150,16 +150,16 @@
 </template>
 
 <script>
-import PressNotify from 'src/packages/press-notify/press-notify.vue';
+import PressNotify from 'press-ui/press-notify/press-notify.vue';
 import DemoBlockPlus from 'src/pages/demo-block/demo-block-plus.vue';
 
-import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
-import PressTab from 'src/packages/press-tab/press-tab.vue';
-import PressCol from 'src/packages/press-col/press-col.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressCol from 'press-ui/press-col/press-col.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
-import icons from 'src/packages/press-icon-plus/config';
-import { RED } from 'src/packages/common/constant/color';
+import icons from 'press-ui/press-icon-plus/config';
+import { RED } from 'press-ui/common/constant/color';
 import { CLIPBOARD_MIXIN } from 'src/packages/press-icon-plus/demo-helper/clipboard-mixin';
 
 
@@ -246,7 +246,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "src/packages/common/style/press/var.scss";
+@import "press-ui/common/style/press/var.scss";
 
 .demo-wrap {
   ::v-deep .press-tab__pane {

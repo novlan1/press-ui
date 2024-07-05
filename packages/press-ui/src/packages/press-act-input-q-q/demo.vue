@@ -34,7 +34,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActInputQQ from 'src/packages/press-act-input-q-q/press-act-input-q-q.vue';
+import PressActInputQQ from 'press-ui/press-act-input-q-q/press-act-input-q-q.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-input-q-q/demo-helper/style-list';
 

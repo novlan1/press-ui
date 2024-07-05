@@ -263,8 +263,8 @@
   </div>
 </template>
 <script>
-import PressTabs from 'src/packages/press-tabs/press-tabs.vue';
-import PressTab from 'src/packages/press-tab/press-tab.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
 
 
 export default {

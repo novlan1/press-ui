@@ -56,7 +56,7 @@
   </div>
 </template>
 <script>
-import PressDivider from 'src/packages/press-divider/press-divider.vue';
+import PressDivider from 'press-ui/press-divider/press-divider.vue';
 
 
 export default {

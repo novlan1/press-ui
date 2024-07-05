@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import PressScheMatchMode from 'src/packages/press-schedule-match-mode/press-schedule-match-mode.vue';
+import PressScheMatchMode from 'press-ui/press-schedule-match-mode/press-schedule-match-mode.vue';
 import { MOCK_ALL_SCHE_LIST, MOCK_MY_SCHE_LIST } from 'src/packages/press-schedule-match-mode/demo-helper/data';
 
 

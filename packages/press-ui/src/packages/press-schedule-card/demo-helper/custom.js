@@ -1,7 +1,7 @@
 import {
   showPopupCellAndClose,
   showPicker,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
+} from '../../press-popup-cell/demo-helper/helper';
 
 
 export const getStepList = ({

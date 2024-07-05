@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import PressActStoreItem from 'src/packages/press-act-store-item/press-act-store-item.vue';
+import PressActStoreItem from 'press-ui/press-act-store-item/press-act-store-item.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-store-item/demo-helper/style-list';
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';

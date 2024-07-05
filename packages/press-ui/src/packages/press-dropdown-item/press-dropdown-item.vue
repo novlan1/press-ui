@@ -12,6 +12,7 @@
       :position="direction === 'down' ? 'top' : 'bottom'"
       :duration="transition ? duration : 0"
       :close-on-click-overlay="closeOnClickOverlay"
+      :safe-area-inset-bottom="direction === 'down'"
       @enter="onOpen"
       @leave="onClose"
       @close="toggle"

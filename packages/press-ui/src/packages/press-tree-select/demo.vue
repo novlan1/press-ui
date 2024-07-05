@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import PressTreeSelect from 'src/packages/press-tree-select/press-tree-select.vue';
+import PressTreeSelect from 'press-ui/press-tree-select/press-tree-select.vue';
 
 
 const zhCNData = [

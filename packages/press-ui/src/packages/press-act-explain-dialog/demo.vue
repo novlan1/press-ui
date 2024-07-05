@@ -35,7 +35,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActExplainDialog from 'src/packages/press-act-explain-dialog/press-act-explain-dialog.vue';
+import PressActExplainDialog from 'press-ui/press-act-explain-dialog/press-act-explain-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-explain-dialog/demo-helper/style-list';
 

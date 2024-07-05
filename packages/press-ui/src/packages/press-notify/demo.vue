@@ -61,9 +61,9 @@
   </div>
 </template>
 <script>
-import PressNotify from 'src/packages/press-notify/press-notify.vue';
-import PressNotifyHandler from 'src/packages/press-notify/';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressNotify from 'press-ui/press-notify/press-notify.vue';
+import PressNotifyHandler from 'press-ui/press-notify/';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
 export default {

@@ -32,7 +32,7 @@
 </template>
 <script>
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';
-import PressActNotAchievedDialog from 'src/packages/press-act-not-achieved-dialog/press-act-not-achieved-dialog.vue';
+import PressActNotAchievedDialog from 'press-ui/press-act-not-achieved-dialog/press-act-not-achieved-dialog.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-not-achieved-dialog/demo-helper/style-list';
 

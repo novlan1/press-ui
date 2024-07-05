@@ -80,8 +80,8 @@
   </div>
 </template>
 <script>
-import PressCircle from 'src/packages/press-circle/press-circle.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
+import PressCircle from 'press-ui/press-circle/press-circle.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 
 export default {

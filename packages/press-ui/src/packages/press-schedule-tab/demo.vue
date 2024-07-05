@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import PressScheduleTab from 'src/packages/press-schedule-tab/press-schedule-tab.vue';
+import PressScheduleTab from 'press-ui/press-schedule-tab/press-schedule-tab.vue';
 
 
 export default {

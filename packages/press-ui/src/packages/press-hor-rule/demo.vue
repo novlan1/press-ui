@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import PressHorRule from 'src/packages/press-hor-rule/press-hor-rule.vue';
+import PressHorRule from 'press-ui/press-hor-rule/press-hor-rule.vue';
 
 
 export default {

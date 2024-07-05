@@ -113,8 +113,8 @@
   </div>
 </template>
 <script>
-import PressSlider from 'src/packages/press-slider/press-slider.vue';
-import PressToast from 'src/packages/press-toast/press-toast.vue';
+import PressSlider from 'press-ui/press-slider/press-slider.vue';
+import PressToast from 'press-ui/press-toast/press-toast.vue';
 
 
 export default {

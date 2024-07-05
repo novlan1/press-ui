@@ -55,7 +55,7 @@
   </div>
 </template>
 <script>
-import PressLoadingPlus from 'src/packages/press-loading-plus/press-loading-plus.vue';
+import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 
 export default {

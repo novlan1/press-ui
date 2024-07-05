@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-import PressActBenefitItem from 'src/packages/press-act-benefit-item/press-act-benefit-item.vue';
+import PressActBenefitItem from 'press-ui/press-act-benefit-item/press-act-benefit-item.vue';
 import { getActCustomStyleMixin } from 'src/utils/mixin/act-custom-style.ts';
 import { STYLE_LIST } from 'src/packages/press-act-benefit-item/demo-helper/style-list';
 import ActDemo from 'src/pages/components/act-demo/act-demo.vue';

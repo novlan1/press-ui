@@ -71,7 +71,7 @@
   </div>
 </template>
 <script>
-import PressCodeInput from 'src/packages/press-code-input/press-code-input.vue';
+import PressCodeInput from 'press-ui/press-code-input/press-code-input.vue';
 
 export default {
   i18n: {

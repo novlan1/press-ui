@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import PressTeleport from 'src/packages/press-teleport/press-teleport.vue';
+import PressTeleport from 'press-ui/press-teleport/press-teleport.vue';
 
 
 export default {

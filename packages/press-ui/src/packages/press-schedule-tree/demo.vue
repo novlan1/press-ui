@@ -45,20 +45,19 @@
   </div>
 </template>
 <script>
-import ScheduleTree from 'src/packages/press-schedule-tree/press-schedule-tree.vue';
+import ScheduleTree from 'press-ui/press-schedule-tree/press-schedule-tree.vue';
 import { genScheList } from 'src/packages/press-schedule-tree/demo-helper/mock-data';
-import { formatScheTreeData } from 'src/packages/press-schedule-tree/helper/sche-list';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import { formatScheTreeData } from 'press-ui/press-schedule-tree/helper/sche-list';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 import { FUNCTIONAL_ID_MAP } from 'src/packages/press-popup-cell/demo-helper/helper';
-import { showCustomPopup, local } from 'src/packages/press-schedule-tree/demo-helper/custom';
+import { showCustomPopup, local } from 'src/packages//press-schedule-tree/demo-helper/custom';
 import {
   STATUS_SCHE_MAP,
   GROUP_TYPE_MAP,
 } from 'src/packages/press-schedule-tree/demo-helper/helper';
-// import { MOCK_DATA } from 'src/packages/press-schedule-tree/demo-helper/mock-data-pure'
 
 
 export default {

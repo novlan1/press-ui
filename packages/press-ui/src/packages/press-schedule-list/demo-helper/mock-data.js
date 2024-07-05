@@ -1,4 +1,4 @@
-import { SCHEDULE_INFO } from 'src/packages/press-schedule-list/demo-helper/data';
+import { SCHEDULE_INFO } from '../../press-schedule-list/demo-helper/data';
 
 export function genMockScheduleItemData({
   info,

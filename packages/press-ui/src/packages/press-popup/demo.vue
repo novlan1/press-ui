@@ -160,10 +160,10 @@
   </div>
 </template>
 <script>
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressPopup from 'src/packages/press-popup/press-popup.vue';
-import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressPopup from 'press-ui/press-popup/press-popup.vue';
+import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 
 const PRESS_PICKER_ID = 'press-picker-functional';

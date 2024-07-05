@@ -121,8 +121,8 @@
   </div>
 </template>
 <script>
-import PressBadge from 'src/packages/press-badge/press-badge.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressBadge from 'press-ui/press-badge/press-badge.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 
 export default {

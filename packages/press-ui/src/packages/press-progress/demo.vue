@@ -53,7 +53,7 @@
   </div>
 </template>
 <script>
-import PressProgress from 'src/packages/press-progress/press-progress.vue';
+import PressProgress from 'press-ui/press-progress/press-progress.vue';
 
 
 export default {

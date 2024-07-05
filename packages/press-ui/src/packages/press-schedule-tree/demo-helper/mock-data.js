@@ -1,5 +1,5 @@
-import { MOCK_DATA_META, GROUP_TYPE_MAP } from 'src/packages/press-schedule-tree/demo-helper/helper';
-import { MOCK_DATA } from 'src/packages/press-schedule-tree/demo-helper/data';
+import { MOCK_DATA_META, GROUP_TYPE_MAP } from '../../press-schedule-tree/demo-helper/helper';
+import { MOCK_DATA } from '../../press-schedule-tree/demo-helper/data';
 
 const MOCK_ROUND_LIST = [
   {

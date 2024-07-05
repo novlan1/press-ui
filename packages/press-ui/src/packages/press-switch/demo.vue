@@ -84,11 +84,11 @@
   </div>
 </template>
 <script>
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
-import PressDialog from 'src/packages/press-dialog/press-dialog.vue';
-import PressDialogHandler from 'src/packages/press-dialog';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressCellGroup from 'src/packages/press-cell-group/press-cell-group.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
+import PressDialogHandler from 'press-ui/press-dialog';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 
 
 export default {

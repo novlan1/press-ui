@@ -162,8 +162,8 @@
   </div>
 </template>
 <script>
-import PressTabbar from 'src/packages/press-tabbar/press-tabbar.vue';
-import PressTabbarItem from 'src/packages/press-tabbar-item/press-tabbar-item.vue';
+import PressTabbar from 'press-ui/press-tabbar/press-tabbar.vue';
+import PressTabbarItem from 'press-ui/press-tabbar-item/press-tabbar-item.vue';
 
 
 export default {

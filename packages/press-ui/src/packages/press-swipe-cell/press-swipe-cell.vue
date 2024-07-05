@@ -79,6 +79,7 @@ export default {
     return {
       catchMove: false,
       wrapperStyle: '',
+      offset: 0,
     };
   },
   watch: {

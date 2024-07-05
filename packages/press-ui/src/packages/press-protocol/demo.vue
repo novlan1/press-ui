@@ -7,10 +7,10 @@
   </div>
 </template>
 <script>
-import PressProtocol from 'src/packages/press-protocol/press-protocol.vue';
+import PressProtocol from 'press-ui/press-protocol/press-protocol.vue';
 import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'src/packages/press-protocol/demo-helper/data';
-import { parseProtocol } from 'src/packages/common/protocol/parse-protocol';
-import { setClipboardData } from 'src/packages/common/clipboard/clipboard';
+import { parseProtocol } from 'press-ui/common/protocol/parse-protocol';
+import { setClipboardData } from 'press-ui/common/clipboard/clipboard';
 
 
 export default {

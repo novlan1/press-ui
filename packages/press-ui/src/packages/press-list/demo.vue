@@ -56,10 +56,10 @@
   </div>
 </template>
 <script>
-import PressList from 'src/packages/press-list/press-list.vue';
-import PressPopupCell from 'src/packages/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'src/packages/press-picker/press-picker.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressList from 'press-ui/press-list/press-list.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 import {
   FUNCTIONAL_ID_MAP,

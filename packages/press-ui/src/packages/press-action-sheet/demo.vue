@@ -41,22 +41,22 @@
   </div>
 </template>
 <script>
-import PressActionSheet from 'src/packages/press-action-sheet/press-action-sheet.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
+import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 function getWxOpenTitle() {
-  let openTitle = ''
+  let openTitle = '';
   // #ifdef MP-WEIXIN
-  openTitle = 'wxOpen'
+  openTitle = 'wxOpen';
   // #endif
-   // #ifdef MP-QQ
-   openTitle = 'qqOpen'
+  // #ifdef MP-QQ
+  openTitle = 'qqOpen';
   // #endif
-   // #ifdef MP-ALIPAY
-   openTitle = 'alipayOpen'
+  // #ifdef MP-ALIPAY
+  openTitle = 'alipayOpen';
   // #endif
 
-  return openTitle
+  return openTitle;
 }
 
 export default {

@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import PressBindLogin from 'src/packages/press-bind-login/press-bind-login.vue';
+import PressBindLogin from 'press-ui/press-bind-login/press-bind-login.vue';
 
 export default {
   components: {

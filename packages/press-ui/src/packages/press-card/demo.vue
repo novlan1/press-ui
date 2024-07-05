@@ -140,10 +140,10 @@
   </div>
 </template>
 <script>
-import PressCard from 'src/packages/press-card/press-card.vue';
-import PressCell from 'src/packages/press-cell/press-cell.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
-import PressSwitch from 'src/packages/press-switch/press-switch.vue';
+import PressCard from 'press-ui/press-card/press-card.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
 export default {

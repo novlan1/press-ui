@@ -62,10 +62,10 @@
   </div>
 </template>
 <script>
-import PressSticky from 'src/packages/press-sticky/press-sticky.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
-import PressNoticeBar from 'src/packages/press-notice-bar/press-notice-bar.vue';
-import { requestAnimationFrame } from 'src/packages/common/utils/system';
+import PressSticky from 'press-ui/press-sticky/press-sticky.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
+import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar.vue';
+import { requestAnimationFrame } from 'press-ui/common/utils/system';
 import { getHideHeaderMixin } from 'src/utils/mixin/hide-header';
 
 

@@ -24,8 +24,8 @@
   </div>
 </template>
 <script>
-import PressAuthLogin from 'src/packages/press-auth-login/press-auth-login.vue';
-import { initH5Instance } from 'src/packages/common/component-handler/h5-handler';
+import PressAuthLogin from 'press-ui/press-auth-login/press-auth-login.vue';
+import { initH5Instance } from 'press-ui/common/component-handler/h5-handler';
 
 let that;
 
