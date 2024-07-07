@@ -29,6 +29,7 @@ import Overlay from './packages/press-overlay/press-overlay.vue';
 import PopoverPlus from './packages/press-popover-plus/press-popover-plus.vue';
 import ShareSheet from './packages/press-share-sheet/press-share-sheet.vue';
 import SwipeCell from './packages/press-swipe-cell/press-swipe-cell.vue';
+import Teleport from './packages/press-teleport/press-teleport.vue';
 import Avatar from './packages/press-avatar/press-avatar.vue';
 import Badge from './packages/press-badge/press-badge.vue';
 import Barcode from './packages/press-barcode/press-barcode.vue';
@@ -65,7 +66,7 @@ import Picker from './packages/press-picker/press-picker.vue';
 import Popover from './packages/press-popover/press-popover.vue';
 import Popup from './packages/press-popup/press-popup.vue';
 
-const components = [
+const components = {
   Button,
   Cell,
   Col,
@@ -96,6 +97,7 @@ const components = [
   PopoverPlus,
   ShareSheet,
   SwipeCell,
+  Teleport,
   Avatar,
   Badge,
   Barcode,
@@ -131,17 +133,13 @@ const components = [
   Picker,
   Popover,
   Popup,
-];
+};
 
-const install = function (Vue, opts = {}) {
-  components.forEach((component) => {
+const install = function (Vue) {
+  Object.values(components).forEach((component) => {
     Vue.component(component.name, component);
   });
 
-  Vue.prototype.$PRESS = {
-    size: opts.size || '',
-    zIndex: opts.zIndex || 2000,
-  };
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

@@ -160,6 +160,10 @@ Page({
 | leave         | 离开中触发       | -    |
 | after-leave   | 离开后触发       | -    |
 
+## 在线调试
+
+<debug-online />
+
 ## 常见问题
 
 ### 从 Vant 迁移

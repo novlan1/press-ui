@@ -119,3 +119,7 @@ export default {
 | click  | 点击图片时触发     | -    |
 | error  | 图片加载失败时触发 | -    |
 | load   | 图片加载成功时触发 | -    |
+
+## 在线调试
+
+<debug-online />

@@ -70,7 +70,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: '点击此处',
           light: true,
-          link: 'https://novlan1.github.io/press-ui-pure/',
+          link: 'https://novlan1.github.io/press-ui-demo-vue2-pure/',
         },
       ],
     ],
@@ -92,7 +92,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: '点击此处',
           light: true,
-          link: 'https://novlan1.github.io/press-ui-v3/',
+          link: 'https://novlan1.github.io/press-ui-demo-vue3/',
         },
       ],
     ],

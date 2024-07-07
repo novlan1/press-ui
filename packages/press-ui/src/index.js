@@ -66,7 +66,7 @@ import Picker from './packages/press-picker/press-picker.vue';
 import Popover from './packages/press-popover/press-popover.vue';
 import Popup from './packages/press-popup/press-popup.vue';
 
-const components = [
+const components = {
   Button,
   Cell,
   Col,
@@ -133,17 +133,13 @@ const components = [
   Picker,
   Popover,
   Popup,
-];
+};
 
-const install = function (Vue, opts = {}) {
-  components.forEach((component) => {
+const install = function (Vue) {
+  Object.values(components).forEach((component) => {
     Vue.component(component.name, component);
   });
 
-  Vue.prototype.$PRESS = {
-    size: opts.size || '',
-    zIndex: opts.zIndex || 2000,
-  };
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

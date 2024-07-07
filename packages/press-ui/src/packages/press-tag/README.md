@@ -153,3 +153,7 @@ export default {
 ## 主题定制
 
 <theme-config />
+
+## 在线调试
+
+<debug-online />
