@@ -412,6 +412,10 @@ export default {
 | icon   | 左侧图标位置内容 |
 | button | 右侧按钮位置内容 |
 
+## 在线调试
+
+<debug-online />
+
 
 ## 常见问题
 

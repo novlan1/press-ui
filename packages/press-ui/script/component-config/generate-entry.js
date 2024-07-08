@@ -29,7 +29,6 @@ export default {
   ...components,
 };
 export * from './packages/common/public/public';
-
 `;
 const CSS_BASE = `@import "./packages/common/style/press/index.scss";
 @import "./packages/common/style/press/var.scss";

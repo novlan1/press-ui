@@ -107,3 +107,6 @@ export default {
 | open   | position: `left \| right` | -      | 打开单元格侧边栏 |
 | close  | -                         | -      | 收起单元格侧边栏 |
 
+## 在线调试
+
+<debug-online />

@@ -77,6 +77,10 @@ export default {
 | where    | 插入在目标之前，还是之后，可选值为 `after`, `before`，仅 H5 下生效 | _string_  | `after` |
 | disabled | 是否禁用                                                           | _boolean_ | `false` |
 
+## 在线调试
+
+<debug-online />
+
 ## 常见问题
 
 ### 兼容 v-if

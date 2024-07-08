@@ -247,6 +247,6 @@ export default {
 
 `value` 字段 在 Vue3 中使用的是 `model-value`。
 
-## 主题定制
+## 在线调试
 
-<theme-config type="field"/>
+<debug-online />

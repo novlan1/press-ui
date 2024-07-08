@@ -13,14 +13,12 @@
       Vue3
     </button>
     <button
-      v-if="false"
       class="press-button press-button--default press-button--small"
       @click.stop="clickVue2Pure"
     >
       Vue2 非 uni-app
     </button>
     <button
-      v-if="false"
       class="press-button press-button--default press-button--small"
       @click.stop="clickVue3Pure"
     >
@@ -32,6 +30,8 @@
 const STACKBLITZ_MAP = {
   VUE3: 'https://stackblitz.com/~/github.com/novlan1/press-ui-demo-vue3?file=src/',
   VUE2: 'https://stackblitz.com/~/github.com/novlan1/press-ui-demo-vue2?file=src/',
+  VUE2_PURE: 'https://stackblitz.com/~/github.com/novlan1/press-ui-demo-vue2-pure?file=src/',
+  VUE3_PURE: 'https://stackblitz.com/~/github.com/novlan1/press-ui-demo-vue3-pure?file=src/',
 };
 
 export default {
@@ -56,10 +56,10 @@ export default {
       window.open(`${STACKBLITZ_MAP.VUE2}${this.currentComponent}.vue`);
     },
     clickVue2Pure() {
-
+      window.open(`${STACKBLITZ_MAP.VUE2_PURE}${this.currentComponent}.vue`);
     },
     clickVue3Pure() {
-
+      window.open(`${STACKBLITZ_MAP.VUE3_PURE}${this.currentComponent}.vue`);
     },
   },
 

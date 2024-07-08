@@ -160,3 +160,7 @@ export default {
 | change | 输入内容发生改变时触发              | `value` |
 | input  | 输入内容发生改变时触发              | `value` |
 | finish | 输入字符个数达到`maxlength`值时触发 | `value` |
+
+## 在线调试
+
+<debug-online />

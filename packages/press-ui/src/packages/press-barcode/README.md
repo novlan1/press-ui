@@ -96,3 +96,7 @@ const DEFAULT_OPTIONS = {
   marginRight: undefined, // 设置条形码周围的右边距
 };
 ```
+
+## 在线调试
+
+<debug-online />

@@ -58,9 +58,9 @@ export default {
 | loading-bg     | `loading`背景色                     | _string_ | -      |
 | loading-scenes | `loading`的场景，可选项：`page/btn` | _string_ | `page` |
 
+## 在线调试
 
-
-
+<debug-online />
 
 ## 常见问题
 

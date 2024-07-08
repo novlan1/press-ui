@@ -84,6 +84,6 @@ export default {
 | ---- | -------------- |
 | 默认 | 自定义文本内容 |
 
-## 主题定制
+## 在线调试
 
-<theme-config type="divider"/>
+<debug-online />

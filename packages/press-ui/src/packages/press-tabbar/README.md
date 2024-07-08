@@ -216,9 +216,6 @@ export default {
 | icon        | 未选中时的图标 |
 | icon-active | 选中时的图标   |
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

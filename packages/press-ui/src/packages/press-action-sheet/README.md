@@ -216,9 +216,6 @@ export default {
 | appParameter     | 打开 APP 时，向 APP 传递的参数，openType=launchApp 时有效                                                                                                     | _string_  | -            |
 
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

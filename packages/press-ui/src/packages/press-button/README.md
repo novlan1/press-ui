@@ -232,9 +232,6 @@ export default {
 - e-sport-border
 
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

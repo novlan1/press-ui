@@ -177,3 +177,7 @@ export default {
 | -    | 自定义宫格的所有内容，需要设置`use-slot`属性           |
 | icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
 | text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
+
+## 在线调试
+
+<debug-online />

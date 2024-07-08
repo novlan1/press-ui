@@ -374,3 +374,7 @@ export default {
 | getValues()                    | 获取所有列中被选中的值，返回一个数组       |
 | setValues(values)              | `values`为一个数组，设置所有列中被选中的值 |
 
+## 在线调试
+
+<debug-online />
+

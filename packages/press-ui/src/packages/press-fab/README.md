@@ -113,3 +113,7 @@ export default {
 | direction | 展开菜单显示方式。horizontal:水平显示，vertical：垂直显示 | _string_ | horizontal |
 | content   | 展开菜单内容配置项                                        | _Array_  | -          |
 | top       | 顶部高度                                                  | _number_ | -          |
+
+## 在线调试
+
+<debug-online />

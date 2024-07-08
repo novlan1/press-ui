@@ -60,6 +60,9 @@ export default {
 | result         | 生成成功 | `img` |
 | longPressImage | 长按图片 | `img` |
 
+## 在线调试
+
+<debug-online />
 
 ## 常见问题
 

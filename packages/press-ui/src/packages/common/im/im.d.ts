@@ -2,6 +2,7 @@ import type { IChatSDK, EventCallback } from './types';
 import type TIM_TYPE from 'tim-js-sdk/tim-js';
 export declare class IM {
   tim: IChatSDK;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   TIM: typeof TIM_TYPE;
   constructor({ appId, logLevel }: {
     appId: number;

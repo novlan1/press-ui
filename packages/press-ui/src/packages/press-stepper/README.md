@@ -167,9 +167,6 @@ export default {
 | plus  | 加号按钮 |
 | minus | 减号按钮 |
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

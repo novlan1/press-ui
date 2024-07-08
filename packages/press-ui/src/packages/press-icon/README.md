@@ -99,3 +99,7 @@ export default {
 | color  | 图标颜色            | _string_ | `#2979ff` |
 | width  | 图标整体高度        | _string_ | `40px`    |
 | height | 图标整体宽度        | _string_ | `50px`    |
+
+## 在线调试
+
+<debug-online />

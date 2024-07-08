@@ -65,3 +65,7 @@ export default {
 | 事件   | 说明       | 返回值 |
 | ------ | ---------- | ------ |
 | change | 切换当前页 | page   |
+
+## 在线调试
+
+<debug-online />

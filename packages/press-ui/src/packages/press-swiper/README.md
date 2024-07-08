@@ -107,6 +107,9 @@ export default {
 | change          | `current` 改变时会触发 `change` 事件，`event.detail = {current: current, source: source}`                                  | `EventHandle` |
 | transition      | `swiper-item` 的位置发生改变时会触发 `transition` 事件，`event.detail = {dx: dx, dy: dy}`，支付宝小程序暂不支持 `dx`, `dy` | `EventHandle` |
 | animationfinish | 动画结束时会触发 `animationfinish` 事件，`event.detail = {current: current, source: source}`                               | `EventHandle` |
+## 在线调试
+
+<debug-online />
 
 
 ## 常见问题

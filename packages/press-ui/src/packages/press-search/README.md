@@ -148,9 +148,6 @@ export default {
 | left-icon  | 自定义输入框左侧图标，需要在`use-left-icon-slot`为 true 时才会显示  |
 | right-icon | 自定义输入框右侧图标，需要在`use-right-icon-slot`为 true 时才会显示 |
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

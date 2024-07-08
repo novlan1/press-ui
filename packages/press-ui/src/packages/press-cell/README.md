@@ -231,9 +231,6 @@ export default {
 | icon       | 自定义`icon`显示内容，如果设置了`icon`属性则不生效             |
 | right-icon | 自定义右侧按钮，默认是`arrow`，如果设置了`is-link`属性则不生效 |
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

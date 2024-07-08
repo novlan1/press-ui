@@ -77,3 +77,7 @@ export default {
 | avatar-shape | 头像占位图形状，可选值为`square`            | _string_             | `round` |
 | loading      | 是否显示占位图，传`false`时会展示子组件内容 | _boolean_            | `true`  |
 | animate      | 是否开启动画                                | _boolean_            | `true`  |
+
+## 在线调试
+
+<debug-online />

@@ -179,6 +179,10 @@ export default {
 | pause  | -    | -      | 暂停倒计时                                                 |
 | reset  | -    | -      | 重设倒计时，若`auto-start`为`true`，重设后会自动开始倒计时 |
 
+## 在线调试
+
+<debug-online />
+
 ## 常见问题
 
 ### 多个 CountDown 组件互相影响

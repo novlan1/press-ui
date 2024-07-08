@@ -88,9 +88,6 @@ export default {
 | click-left  | 点击左侧按钮时触发 | -    |
 | click-right | 点击右侧按钮时触发 | -    |
 
-## 主题定制
-
-<theme-config />
 
 ## 在线调试
 

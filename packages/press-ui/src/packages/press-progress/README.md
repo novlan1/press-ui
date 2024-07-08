@@ -79,3 +79,6 @@ export default {
 | pivot-color  | 文字背景色                 | _string_           | 与进度条颜色一致 |
 | custom-class | 根节点样式类               | _string_           | -                |
 
+## 在线调试
+
+<debug-online />

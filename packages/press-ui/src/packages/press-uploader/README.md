@@ -322,6 +322,9 @@ export default {
 | ------- | -------------- |
 | default | 自定义上传样式 |
 
+## 在线调试
+
+<debug-online />
 
 ## 常见问题
 
