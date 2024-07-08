@@ -1,0 +1,226 @@
+$press-shadow-base: 0 1px 5px 2px
+  rgba(
+    $color: #000000,
+    $alpha: 0.3,
+  ) !default;
+
+.press-cursor-point {
+  /* #ifdef H5 */
+  cursor: pointer;
+  /* #endif */
+}
+
+.press-fab {
+  position: fixed;
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 45px;
+  box-shadow: $press-shadow-base;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &--leftBottom {
+    left: 15px;
+    bottom: 30px;
+    /* #ifdef H5 */
+    left: calc(15px + var(--window-left));
+    bottom: calc(30px + var(--window-bottom));
+    /* #endif */
+    // padding: 10px;
+  }
+
+  &--leftTop {
+    left: 15px;
+    top: 30px;
+    /* #ifdef H5 */
+    left: calc(15px + var(--window-left));
+    top: calc(30px + var(--window-top));
+    /* #endif */
+    // padding: 10px;
+  }
+
+  &--rightBottom {
+    right: 15px;
+    bottom: 30px;
+    /* #ifdef H5 */
+    right: calc(15px + var(--window-right));
+    bottom: calc(30px + var(--window-bottom));
+    /* #endif */
+    // padding: 10px;
+  }
+
+  &--rightTop {
+    right: 15px;
+    top: 30px;
+    /* #ifdef H5 */
+    right: calc(15px + var(--window-right));
+    top: calc(30px + var(--window-top));
+    /* #endif */
+    // padding: 10px;
+  }
+
+  &__circle {
+    position: fixed;
+    /* #ifndef APP-NVUE */
+    display: flex;
+    /* #endif */
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: #3c3e49;
+    border-radius: 45px;
+    z-index: 11;
+    // box-shadow: $press-shadow-base;
+
+    &--leftBottom {
+      left: 15px;
+      bottom: 30px;
+      /* #ifdef H5 */
+      left: calc(15px + var(--window-left));
+      bottom: calc(30px + var(--window-bottom));
+      /* #endif */
+    }
+
+    &--leftTop {
+      left: 15px;
+      top: 30px;
+      /* #ifdef H5 */
+      left: calc(15px + var(--window-left));
+      top: calc(30px + var(--window-top));
+      /* #endif */
+    }
+
+    &--rightBottom {
+      right: 15px;
+      bottom: 30px;
+      /* #ifdef H5 */
+      right: calc(15px + var(--window-right));
+      bottom: calc(30px + var(--window-bottom));
+      /* #endif */
+    }
+
+    &--rightTop {
+      right: 15px;
+      top: 30px;
+      /* #ifdef H5 */
+      right: calc(15px + var(--window-right));
+      top: calc(30px + var(--window-top));
+      /* #endif */
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &--top {
+      top: 0;
+    }
+
+    &--bottom {
+      bottom: 0;
+    }
+  }
+
+  &__plus {
+    font-weight: bold;
+
+    &--active {
+      transform: rotate(135deg);
+    }
+  }
+
+  .press-fab-circle-icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+    font-weight: 200;
+  }
+
+  &__content {
+    /* #ifndef APP-NVUE */
+    box-sizing: border-box;
+    display: flex;
+    /* #endif */
+    flex-direction: row;
+    border-radius: 55px;
+    overflow: hidden;
+    transition-property: width, height;
+    transition-duration: 0.2s;
+    width: 55px;
+    border-color: #dddddd;
+    border-width: 1rpx;
+    border-style: solid;
+
+    &--other-platform {
+      border-width: 0px;
+      box-shadow: $press-shadow-base;
+    }
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    &--flexDirection {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    &--flexDirectionStart {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &--flexDirectionEnd {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    /* #ifndef APP-NVUE */
+    display: flex;
+    /* #endif */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &--active {
+      opacity: 1;
+    }
+
+    &-image {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 4px;
+    }
+
+    &-text {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 2px;
+    }
+
+    &--first {
+      width: 55px;
+    }
+  }
+}

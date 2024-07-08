@@ -92,98 +92,11 @@ export default {
     onClick() {
       this.$emit('click');
     },
-    onTouchmove() {
-      this.$emit('touchmove');
+    onTouchmove(e) {
+      this.$emit('touchmove', e);
     },
   },
 };
 </script>
-<style lang="scss" scoped>
-@import "../common/style/press/index.scss";
-
-.press-transition {
-  transition-timing-function: ease;
-
-  /* #ifdef MP-ALIPAY */
-  touch-action: none;
-  /* #endif */
-}
-.press-fade-enter-active,
-.press-fade-leave-active {
-  transition-property: opacity;
-}
-.press-fade-enter,
-.press-fade-leave-to {
-  opacity: 0;
-}
-.press-fade-down-enter-active,
-.press-fade-down-leave-active,
-.press-fade-left-enter-active,
-.press-fade-left-leave-active,
-.press-fade-right-enter-active,
-.press-fade-right-leave-active,
-.press-fade-up-enter-active,
-.press-fade-up-leave-active {
-  transition-property: opacity, transform;
-}
-.press-fade-up-enter,
-.press-fade-up-leave-to {
-  opacity: 0;
-  transform: translate3d(0, 100%, 0);
-}
-.press-fade-down-enter,
-.press-fade-down-leave-to {
-  opacity: 0;
-  transform: translate3d(0, -100%, 0);
-}
-.press-fade-left-enter,
-.press-fade-left-leave-to {
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
-}
-.press-fade-right-enter,
-.press-fade-right-leave-to {
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
-}
-
-.press-slide-down-enter-active,
-.press-slide-down-leave-active,
-.press-slide-left-enter-active,
-.press-slide-left-leave-active,
-.press-slide-right-enter-active,
-.press-slide-right-leave-active,
-.press-slide-up-enter-active,
-.press-slide-up-leave-active {
-  transition-property: transform;
-}
-
-.press-slide-up-enter,
-.press-slide-up-leave-to {
-  transform: translate3d(0, 100%, 0);
-}
-
-.press-slide-down-enter,
-.press-slide-down-leave-to {
-  transform: translate3d(0, -100%, 0);
-}
-
-.press-slide-left-enter,
-.press-slide-left-leave-to {
-  transform: translate3d(-100%, 0, 0);
-}
-
-.press-slide-right-enter,
-.press-slide-right-leave-to {
-  transform: translate3d(100%, 0, 0);
-}
-
-.press-overlay {
-  background-color: var(--overlay-background-color, rgba(0, 0, 0, 0.7));
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

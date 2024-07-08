@@ -107,51 +107,5 @@ export default {
 };
 
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-notify {
-  text-align: center;
-  word-wrap: break-word;
-  padding: var(--notify-padding, $notify-padding);
-  font-size: var(--notify-font-size, $notify-font-size);
-  line-height: var(--notify-line-height, $notify-line-height);
-
-  ::v-deep &__container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  &--primary {
-    background-color: var(
-      --notify-primary-background-color,
-      $notify-primary-background-color
-    );
-  }
-
-  &--success {
-    background-color: var(
-      --notify-success-background-color,
-      $notify-success-background-color
-    );
-  }
-
-  &--danger {
-    background-color: var(
-      --notify-danger-background-color,
-      $notify-danger-background-color
-    );
-  }
-
-  &--warning {
-    background-color: var(
-      --notify-warning-background-color,
-      $notify-warning-background-color
-    );
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

@@ -33,7 +33,7 @@
 <script>
 import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
-import PressAvatar from '../press-avatar/press-avatar';
+import PressAvatar from '../press-avatar/press-avatar.vue';
 import styleUtil from '../common/utils/style';
 
 
@@ -111,31 +111,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.press-avatar-group {
-  display: flex;
-
-  &__item {
-    margin-left: -10px;
-    position: relative;
-
-    &--no-indent {
-      // 如果你想质疑作者不会使用:first-child，说明你太年轻，因为nvue不支持
-      margin-left: 0;
-    }
-
-    &__show-more {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 100px;
-    }
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

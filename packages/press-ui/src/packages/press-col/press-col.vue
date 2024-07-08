@@ -44,20 +44,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../common/style/smoba/layout.scss";
-
-.press-col {
-  box-sizing: border-box;
-  float: left;
-}
-
-@for $i from 1 through 24 {
-  .press-col--#{$i} {
-    width: $i * mathDiv(100%, 24);
-  }
-  .press-col--offset-#{$i} {
-    margin-left: $i * mathDiv(100%, 24);
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

@@ -226,46 +226,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-dropdown-item {
-  position: fixed;
-  right: 0;
-  left: 0;
-  overflow: hidden;
-
-  /* #ifdef MP-ALIPAY */
-  ::v-deep &__option,
-  /* #endif */
-  &__option {
-    text-align: left;
-
-    &--active {
-      .press-dropdown-item__title,
-      .press-dropdown-item__icon {
-        color: var(
-          --dropdown-menu-option-active-color,
-          $dropdown-menu-option-active-color
-        );
-      }
-    }
-  }
-
-  &--up {
-    top: 0;
-  }
-
-  &--down {
-    bottom: 0;
-  }
-  /* #ifdef MP-ALIPAY */
-  ::v-deep &__icon,
-  /* #endif */
-  &__icon {
-    display: block !important;
-    line-height: inherit;
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

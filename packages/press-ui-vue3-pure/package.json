@@ -1,6 +1,6 @@
 {
   "name": "press-ui-vue3",
-  "version": "1.2.7",
+  "version": "1.2.14",
   "description": "Vue Component Library",
   "repository": {
     "type": "git",
@@ -22,8 +22,9 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "init": "rm -rf src/* && cp -r ../press-ui/src/packages ../press-ui/src/pages ../press-ui/src/utils  ../press-ui/src/index.js src/ ",
-    "build:vue3": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js"
+    "init": "rm -rf src/* && cp -r ../press-ui/src/packages ../press-ui/src/pages ../press-ui/src/utils  ../press-ui/src/index.js ../press-ui/src/index.scss src/ ",
+    "build:vue3": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js && npm run build:scss",
+    "build:scss": "node script/build/gulp-scss"
   },
   "license": "ISC",
   "dependencies": {
@@ -35,7 +36,6 @@
   "devDependencies": {
     "@dcloudio/types": "^3.0.4",
     "plugin-light": "^1.2.0",
-    "commander": "^11.1.0",
     "@types/node": "^20.10.5",
     "@types/webpack-env": "^1.18.4",
     "@vue/babel-preset-app": "^5.0.8",
@@ -43,8 +43,12 @@
     "autoprefixer": "9.8.8",
     "babel-loader": "^8.3.0",
     "babel-plugin-import": "^1.13.8",
+    "commander": "^11.1.0",
     "css-loader": "2",
     "dotenv": "^16.3.1",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^5.1.0",
     "jest": "^29.7.0",
     "mini-css-extract-plugin": "^0.4.5",
     "miniprogram-api-typings": "^3.12.2",

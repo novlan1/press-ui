@@ -1,5 +1,5 @@
 declare function titleStyle(data: Record<string, any>): string;
-declare const _default: {
+declare const innerDefault: {
   titleStyle: typeof titleStyle;
 };
-export default _default;
+export default innerDefault;

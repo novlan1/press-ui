@@ -1,5 +1,9 @@
 const { replaceAllPolyfill } = require('t-comm');
 const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const GLOB_MATCH = path.resolve(__dirname, '../../src/packages/press-*/press-*.vue');
+const SCSS_PATH = path.resolve(__dirname, '../../src/index.scss');
 
 replaceAllPolyfill();
 
@@ -14,7 +18,6 @@ const install = function (Vue) {
   Object.values(components).forEach((component) => {
     Vue.component(component.name, component);
   });
-
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -25,11 +28,67 @@ export default {
   install,
   ...components,
 };
+export * from './packages/common/public/public';
+
 `;
+const CSS_BASE = `@import "./packages/common/style/press/index.scss";
+@import "./packages/common/style/press/var.scss";
+
+`;
+
+
+function getAllPressComponents() {
+  const list = glob.sync(GLOB_MATCH);
+  const filterReg = /^(act|schedule|hor|message-|datetime-picker-popup|ui|award-popup-hor|area-popup|teleport-web|icon-music)/;
+  const compList = list.map((item) => {
+    const list = item.split('/');
+    const file = list[list.length - 1];
+    const componentName = file.replace(/^press-/, '').replace(/\.vue$/, '');
+
+    return {
+      dir: path.dirname(item),
+      name: componentName,
+      componentName: componentName.replace(/(?:^|-)(\w)/g,  (_, c) => (c ? c.toUpperCase() : '')),
+    };
+  }).filter(item => !filterReg.test(item.name));
+
+  const componentNameList = compList.map(item => item.componentName);
+  const importList = compList.map(item => `import ${item.componentName} from './packages/press-${item.name}/press-${item.name}.vue';`);
+
+  return {
+    compList,
+    importList,
+    componentNameList,
+  };
+}
+
 
 function hyphenate(str) {
   const hyphenateRE = /\B([A-Z])/g;
   return str.replace(hyphenateRE, '-$1').toLowerCase();
+}
+
+function generateIndexScss() {
+  const { compList } = getAllPressComponents();
+  const result = [];
+  const targetDir = path.resolve(__dirname, '../../src');
+
+  for (const comp of compList) {
+    const globMatch = `${comp.dir}/css/*`;
+    const list = glob.sync(globMatch);
+
+    result.push(...list.map((item) => {
+      const relativePath = path.relative(targetDir, item);
+      const str = `@import "./${relativePath}";`;
+      return str;
+    }));
+  }
+
+  const resultStr = `${CSS_BASE}${result.join('\n')}`;
+
+  fs.writeFileSync(SCSS_PATH, resultStr, {
+    encoding: 'utf-8',
+  });
 }
 
 
@@ -65,11 +124,17 @@ function getCompList(componentConfig) {
   };
 }
 
-function getSrcIndexJs(componentConfig) {
-  const {
+function getSrcIndexJs(componentConfig, allComponent = false) {
+  let {
     importList,
     componentNameList,
   } = getCompList(componentConfig);
+
+  if (allComponent) {
+    const info = getAllPressComponents();
+    importList = info.importList;
+    componentNameList = info.componentNameList;
+  }
 
   const res = MAIN_TEMPLATE
     .replace('{{install}}', importList.join('\n'))
@@ -79,11 +144,12 @@ function getSrcIndexJs(componentConfig) {
 }
 
 
-function writeSrcIndexJs(componentConfig, filePath) {
-  const js = getSrcIndexJs(componentConfig);
+function writeSrcIndexJs(componentConfig, filePath, allComponent = false) {
+  const js = getSrcIndexJs(componentConfig, allComponent);
   fs.writeFileSync(filePath, js, {
     encoding: 'utf-8',
   });
+  generateIndexScss();
 }
 
 

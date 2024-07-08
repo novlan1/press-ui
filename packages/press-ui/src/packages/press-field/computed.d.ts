@@ -1,5 +1,5 @@
 declare function inputStyle(autosize: any): string;
-declare const _default: {
+declare const innerDefault: {
   inputStyle: typeof inputStyle;
 };
-export default _default;
+export default innerDefault;

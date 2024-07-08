@@ -47,12 +47,6 @@ export default {
     },
   },
   watch: {
-    $page: {
-      handler(value) {
-        console.log('$page', value);
-      },
-      immediate: true,
-    },
   },
   methods: {
     clickVue3() {
@@ -77,6 +71,7 @@ export default {
 .wrap {
   padding: 20px 0;
 }
+
 .press-button--small {
   padding: 9px 15px;
   margin-right: 16px;

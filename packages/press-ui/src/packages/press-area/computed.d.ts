@@ -1,5 +1,5 @@
 declare function displayColumns(columns: Array<any>, columnsNum: number | string): any[];
-declare const _default: {
+declare const innerDefault: {
   displayColumns: typeof displayColumns;
 };
-export default _default;
+export default innerDefault;

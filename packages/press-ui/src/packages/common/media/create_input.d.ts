@@ -1,4 +1,4 @@
-export default function _default({ count, sourceType, type, extension }: {
+export default function innerDefault({ count, sourceType, type, extension }: {
   count: any;
   sourceType: any;
   type: any;

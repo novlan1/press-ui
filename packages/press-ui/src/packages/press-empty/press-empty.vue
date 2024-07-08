@@ -167,58 +167,5 @@ export default {
   }
 }
 </style>
-<style scoped lang="scss">
-@import "../common/style/smoba/layout.scss";
-@import "../common/style/smoba/mixin.scss";
-
-.press-empty {
-  &--e-sport {
-    height: tovmin(200);
-    padding: 0;
-
-    .press-empty__description {
-      font-size: tovmin(28);
-      color: $color-gray-5;
-      margin-top: 0;
-    }
-  }
-
-  &--hor {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-
-    .press-empty__description {
-      max-width: 4rem;
-      font-size: $font-xxs;
-      color: #6297dd;
-      text-align: center;
-      line-height: 0.44rem;
-      margin-top: 0;
-      // padding-bottom: 0.6rem;
-    }
-
-    .press-empty__bottom {
-      margin-top: 0;
-    }
-  }
-
-  &__icon--hor {
-    width: 1.62rem;
-    height: 2.02rem;
-    font-size: 0;
-    background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/empty.png)
-      no-repeat center center;
-    background-size: contain;
-    min-height: auto;
-    margin-bottom: -0.32rem;
-  }
-}
-
-::v-deep .press-icon--e-sport {
-  margin-bottom: tovmin(8);
-  font-size: tovmin(80);
-  color: $color-gray-4;
-  min-height: tovmin(84);
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

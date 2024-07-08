@@ -110,9 +110,9 @@
 </template>
 
 <script>
-import PressPopup from '../press-popup/press-popup';
-import PressIndexAnchor  from '../press-index-anchor/press-index-anchor';
-import PressIndexBar from '../press-index-bar/press-index-bar';
+import PressPopup from '../press-popup/press-popup.vue';
+import PressIndexAnchor  from '../press-index-anchor/press-index-anchor.vue';
+import PressIndexBar from '../press-index-bar/press-index-bar.vue';
 
 
 export default {

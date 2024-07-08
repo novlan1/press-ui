@@ -1,5 +1,5 @@
 declare function imageUrl(image: string): string;
-declare const _default: {
+declare const innerDefault: {
   imageUrl: typeof imageUrl;
 };
-export default _default;
+export default innerDefault;

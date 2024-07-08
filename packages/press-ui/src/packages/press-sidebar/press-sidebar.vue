@@ -68,9 +68,5 @@ export default {
 };
 
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-.press-sidebar {
-  width: var(--sidebar-width, 80px);
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

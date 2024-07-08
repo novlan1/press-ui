@@ -1,0 +1,13 @@
+// 【修改点】适配e-sport
+.press-switch--e-sport {
+  --switch-width: 0.88rem;
+  --switch-height: 0.48rem;
+  --switch-border: none;
+
+  --switch-on-background-color: #5bbdfa;
+  --switch-background-color: #dfe2ea;
+
+  --switch-node-size: 0.4rem;
+  --switch-node-top: 0.04rem;
+  --switch-node-left: 0.04rem;
+}

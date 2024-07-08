@@ -373,36 +373,5 @@ export default {
 };
 
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/var.scss";
-
-.press-index-bar-container,
-.press-index-bar-wrapper {
-  height: 100%;
-}
-.press-index-bar {
-  position: relative;
-
-  &__sidebar {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    transform: translateY(-50%);
-    user-select: none;
-  }
-
-  &__index {
-    font-weight: 500;
-    padding: 0 var(--padding-base, $padding-base) 0
-      var(--padding-md, $padding-md);
-    font-size: var(--index-bar-index-font-size, $index-bar-index-font-size);
-    line-height: var(
-      --index-bar-index-line-height,
-      $index-bar-index-line-height
-    );
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

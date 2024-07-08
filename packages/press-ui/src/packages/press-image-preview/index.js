@@ -22,3 +22,5 @@ export function imagePreview(options) {
     showFunction: 'showImagePreview',
   });
 }
+
+export const imagePreviewHandler = imagePreview;

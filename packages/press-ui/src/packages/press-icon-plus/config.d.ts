@@ -1,7 +1,7 @@
-declare const _default: {
+declare const innerDefault: {
   name: string;
   basic: string[];
   outline: string[];
   filled: string[];
 };
-export default _default;
+export default innerDefault;

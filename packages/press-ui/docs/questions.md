@@ -43,3 +43,30 @@ Press UI 中使用了此 `adapter` 的组件有：
 | picker    | [picker-plus](./components/press/press-picker-plus.html)   |
 | popover   | [popover-plus](./components/press/press-popover-plus.html) |
 | popup     | [popup-plus](./components/press/press-popup-plus.html)     |
+
+## 5. Vue3 非 uni-app 项目
+
+如果报警告 `Failed to resolve component: Button`，可以在 main.ts 中设置
+
+```ts
+app.component('Button', 'button');
+```
+
+如果报 `Failed to resolve component: uni-scroll-view`，可以在 vite.config.ts 中设置如下：
+
+```ts
+const customElements = [
+  'uni-scroll-view'
+]
+
+export default defineConfig({
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag: string) => customElements.includes(tag),
+        },
+      },
+    }),
+})
+```

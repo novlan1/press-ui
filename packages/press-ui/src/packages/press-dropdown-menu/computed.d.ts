@@ -1,5 +1,5 @@
 declare function displayTitle(item: any): any;
-declare const _default: {
+declare const innerDefault: {
   displayTitle: typeof displayTitle;
 };
-export default _default;
+export default innerDefault;

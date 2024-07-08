@@ -246,7 +246,7 @@ function main() {
   writeDemoPagesJson();
   writeDemoTitleI18n();
   writeBuildConfig();
-  writeSrcIndexJs(componentConfig, PATH_MAP.SRC_INDEX);
+  writeSrcIndexJs(componentConfig, PATH_MAP.SRC_INDEX, true);
 }
 
 main();

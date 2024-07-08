@@ -1,0 +1,170 @@
+@import "../../common/style/press/index.scss";
+@import "../../common/style/press/var.scss";
+
+.press-stepper {
+  font-size: 0;
+
+  &__minus,
+  &__plus {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 1px;
+    vertical-align: middle;
+    border: 0;
+    background-color: var(
+      --stepper-background-color,
+      $stepper-background-color
+    );
+    color: var(--stepper-button-icon-color, $stepper-button-icon-color);
+    width: var(--stepper-input-height, $stepper-input-height);
+    height: var(--stepper-input-height, $stepper-input-height);
+    padding: var(--padding-base, $padding-base);
+
+    &::before {
+      width: 9px;
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: 9px;
+    }
+
+    &:empty.press-stepper__minus::before,
+    &:empty.press-stepper__plus::before,
+    &:empty.press-stepper__minus::after,
+    &:empty.press-stepper__plus::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background-color: currentColor;
+      content: "";
+    }
+
+    &--hover {
+      background-color: var(--stepper-active-color, $stepper-active-color);
+    }
+
+    &--disabled {
+      color: var(
+        --stepper-button-disabled-icon-color,
+        $stepper-button-disabled-icon-color
+      );
+      background-color: var(
+        --stepper-button-disabled-color,
+        $stepper-button-disabled-color
+      );
+    }
+
+    &--disabled.press-stepper__minus--hover,
+    &--disabled.press-stepper__plus--hover {
+      background-color: var(
+        --stepper-button-disabled-color,
+        $stepper-button-disabled-color
+      );
+    }
+  }
+
+  &__minus {
+    border-radius: var(
+        --stepper-border-radius,
+        var(--stepper-border-radius, $stepper-border-radius)
+      )
+      0 0
+      var(
+        --stepper-border-radius,
+        var(--stepper-border-radius, $stepper-border-radius)
+      );
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__plus {
+    border-radius: 0
+      var(
+        --stepper-border-radius,
+        var(--stepper-border-radius, $stepper-border-radius)
+      )
+      var(
+        --stepper-border-radius,
+        var(--stepper-border-radius, $stepper-border-radius)
+      )
+      0;
+  }
+
+  &--round {
+    .press-stepper__input {
+      background-color: transparent !important;
+    }
+
+    .press-stepper__plus,
+    .press-stepper__minus {
+      border-radius: 100%;
+
+      &:active {
+        opacity: $active-opacity;
+      }
+
+      &--disabled {
+        &,
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    .press-stepper__plus {
+      color: $white;
+      background-color: $stepper-button-round-theme-color;
+    }
+
+    .press-stepper__minus {
+      color: $stepper-button-round-theme-color;
+      background-color: $white;
+      border: 1px solid $stepper-button-round-theme-color;
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    box-sizing: border-box;
+    // 覆盖 common style 中 input 的 min-height: 1.4rem;
+    // 避免 button-size 对 input 设置的 height 不生效
+    min-height: 0;
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    font-size: var(--stepper-input-font-size, $stepper-input-font-size);
+    color: var(--stepper-input-text-color, $stepper-input-text-color);
+    background-color: var(
+      --stepper-background-color,
+      $stepper-background-color
+    );
+    width: var(--stepper-input-width, $stepper-input-width);
+    height: var(--stepper-input-height, $stepper-input-height);
+    user-select: auto;
+    outline: none;
+
+    &--disabled {
+      color: var(
+        --stepper-input-disabled-text-color,
+        $stepper-input-disabled-text-color
+      );
+      background-color: var(
+        --stepper-input-disabled-background-color,
+        $stepper-input-disabled-background-color
+      );
+    }
+  }
+}

@@ -41,23 +41,5 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-@import "../press-badge/common.scss";
-
-.press-info {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  transform: translate(50%, -50%);
-  transform-origin: 100%;
-
-  @include pressBadgeInfo();
-
-  &--dot {
-    @include pressBadgeInfoDot();
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

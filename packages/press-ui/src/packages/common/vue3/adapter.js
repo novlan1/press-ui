@@ -49,7 +49,7 @@ export function initGlobalComponent(list, app) {
     // #endif
 
     // #ifdef VUE3
-    if (app) {
+    if (app && !app.component(name)) {
       app.component(name, component);
     }
   // #endif

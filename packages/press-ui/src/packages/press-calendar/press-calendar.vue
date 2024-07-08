@@ -376,25 +376,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-calendar {
-  &__close-icon {
-    top: 11px;
-  }
-
-  ::v-deep &__popup--top,
-  ::v-deep &__popup--bottom {
-    height: var(--calendar-popup-height, $calendar-popup-height);
-  }
-
-  ::v-deep &__popup--left,
-  ::v-deep &__popup--right {
-    height: calc(100% - var(--window-top, 0px));
-    bottom: 0;
-    top: calc(50% + var(--window-top, 0px) / 2);
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

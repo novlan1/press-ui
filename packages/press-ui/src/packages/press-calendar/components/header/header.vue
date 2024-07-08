@@ -79,50 +79,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../../../common/style/press/index.scss";
-@import "../../../common/style/press/var.scss";
-
-.press-calendar {
-  &__header {
-    flex-shrink: 0;
-    box-shadow: var(--calendar-header-box-shadow, $calendar-header-box-shadow);
-  }
-
-  &__header-title,
-  &__header-subtitle {
-    text-align: center;
-    font-size: var(
-      --calendar-header-title-font-size,
-      $calendar-header-title-font-size
-    );
-    height: var(--calendar-header-title-height, $calendar-header-title-height);
-    font-weight: var(--font-weight-bold, $font-weight-bold);
-    line-height: var(
-      --calendar-header-title-height,
-      $calendar-header-title-height
-    );
-  }
-
-  // 【修改点】去掉empty样式
-  // &__header-title:empty,
-  // &__header-title + &__header-title {
-  //   display: none;
-  // }
-
-  // &__header-title:empty + &__header-title {
-  //   display: block !important;
-  // }
-
-  &__weekdays {
-    display: flex;
-  }
-
-  &__weekday {
-    flex: 1;
-    text-align: center;
-    font-size: var(--calendar-weekdays-font-size, $calendar-weekdays-font-size);
-    line-height: var(--calendar-weekdays-height, $calendar-weekdays-height);
-  }
-}
+<style scoped lang="scss" src="../../css/header.scss">
 </style>

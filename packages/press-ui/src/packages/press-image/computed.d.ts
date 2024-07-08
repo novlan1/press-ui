@@ -1,4 +1,4 @@
-declare const _default: {
+declare const innerDefault: {
   props: {
     src: {
       type: StringConstructor;
@@ -70,4 +70,4 @@ declare const _default: {
     };
   };
 };
-export default _default;
+export default innerDefault;

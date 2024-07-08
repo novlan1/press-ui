@@ -44,35 +44,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-cell-group {
-  &--inset {
-    margin: var(--cell-group-inset-padding, $cell-group-inset-padding);
-    border-radius: var(
-      --cell-group-inset-border-radius,
-      $cell-group-inset-border-radius
-    );
-    overflow: hidden;
-  }
-
-  &__title {
-    padding: var(--cell-group-title-padding, $cell-group-title-padding);
-    font-size: var(--cell-group-title-font-size, $cell-group-title-font-size);
-    line-height: var(
-      --cell-group-title-line-height,
-      $cell-group-title-line-height
-    );
-    color: var(--cell-group-title-color, $cell-group-title-color);
-
-    &--inset {
-      padding: var(
-        --cell-group-inset-title-padding,
-        $cell-group-inset-title-padding
-      );
-    }
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

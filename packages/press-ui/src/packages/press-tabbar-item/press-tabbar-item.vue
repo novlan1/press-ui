@@ -125,42 +125,5 @@ export default {
 };
 
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-tabbar-item-index {
-  flex: 1;
-  height: 100%;
-}
-
-.press-tabbar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: var(--tabbar-item-text-color, $tabbar-item-text-color);
-  font-size: var(--tabbar-item-font-size, $tabbar-item-font-size);
-  line-height: var(--tabbar-item-line-height, $tabbar-item-line-height);
-
-  &__icon {
-    position: relative;
-    margin-bottom: var(--tabbar-item-margin-bottom, $tabbar-item-margin-bottom);
-    font-size: var(--tabbar-item-icon-size, $tabbar-item-icon-size);
-
-    &__inner {
-      display: block;
-      min-width: 1em;
-    }
-  }
-
-  &--active {
-    color: var(--tabbar-item-active-color, $tabbar-item-active-color);
-  }
-
-  &__info {
-    margin-top: 2px;
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

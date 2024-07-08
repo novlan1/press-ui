@@ -35,9 +35,9 @@
   </div>
 </template>
 <script>
-import PressPopup from '../press-popup/press-popup';
-import PressPopupPlus from '../press-popup-plus/press-popup-plus';
-import PressArea from './press-area';
+import PressPopup from '../press-popup/press-popup.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+import PressArea from './press-area.vue';
 
 
 export default {

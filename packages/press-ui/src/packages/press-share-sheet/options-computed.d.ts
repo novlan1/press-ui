@@ -1,5 +1,5 @@
 declare function getIconURL(icon: string): string;
-declare const _default: {
+declare const innerDefault: {
   getIconURL: typeof getIconURL;
 };
-export default _default;
+export default innerDefault;

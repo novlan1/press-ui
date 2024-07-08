@@ -61,12 +61,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-.press-row {
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

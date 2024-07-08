@@ -56,36 +56,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
-/* #ifndef APP-NVUE */
-@import "./uniicons.css";
-@font-face {
-  font-family: "iconfont";
-  src: url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e");
-  /* IE9 */
-  src: url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.woff?t=13a02cbb9e9c634e54e36069099a2d1e")
-      format("woff2"),
-    url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.woff?t=13a02cbb9e9c634e54e36069099a2d1e")
-      format("woff"),
-    /* chrome、firefox */
-      url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.ttf?t=13a02cbb9e9c634e54e36069099a2d1e")
-      format("truetype"),
-    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.svg?t=13a02cbb9e9c634e54e36069099a2d1e#iconfont")
-      format("svg");
-  /* iOS 4.1- */
-}
-/* #endif */
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #5e6d82;
-  display: inline-block;
-}
+<style lang="scss" src="./css/index.scss" scoped>
 </style>

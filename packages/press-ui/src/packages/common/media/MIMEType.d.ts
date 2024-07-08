@@ -1,4 +1,4 @@
-declare namespace _default {
+declare namespace innerDefault {
   namespace image {
     const jpg: string;
     const jpe: string;
@@ -45,4 +45,4 @@ declare namespace _default {
     wvx: string;
   };
 }
-export default _default;
+export default innerDefault;

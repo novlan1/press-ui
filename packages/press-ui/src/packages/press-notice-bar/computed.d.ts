@@ -1,5 +1,5 @@
 declare function rootStyle(data: Record<string, any>): string;
-declare const _default: {
+declare const innerDefault: {
   rootStyle: typeof rootStyle;
 };
-export default _default;
+export default innerDefault;

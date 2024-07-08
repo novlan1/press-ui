@@ -1,7 +1,7 @@
 declare function buttonStyle(data: Record<string, any>): string;
 declare function inputStyle(data: Record<string, any>): string;
-declare const _default: {
+declare const innerDefault: {
   buttonStyle: typeof buttonStyle;
   inputStyle: typeof inputStyle;
 };
-export default _default;
+export default innerDefault;

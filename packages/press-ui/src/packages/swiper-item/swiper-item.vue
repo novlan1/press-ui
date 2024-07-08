@@ -26,18 +26,5 @@ export default {
   },
 };
 </script>
-<style>
-uni-swiper-item {
-  display: block;
-  overflow: hidden;
-  will-change: transform;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  cursor: grab;
-}
-
-uni-swiper-item[hidden] {
-  display: none;
-}
+<style lang="scss" src="./css/index.scss" scoped>
 </style>

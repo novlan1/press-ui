@@ -1,0 +1,50 @@
+@import "../../common/style/press/index.scss";
+
+.press-icon-plus,
+.press-icon-plus:before {
+  display: inline-block;
+}
+
+.press-icon-plus {
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: normal normal normal 14px/1 press-icon-plus;
+  font-size: inherit;
+  position: relative;
+
+  // 【修改点】增加垂直水平居中
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* #ifndef APP-NVUE */
+@font-face {
+  font-display: auto;
+  font-family: "press-icon-plus";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff2?t=1640074908811")
+      format("woff2"),
+    url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff?t=1640074908811")
+      format("woff"),
+    url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811")
+      format("truetype");
+}
+/* #endif */
+
+.press-icon-plus {
+  &--image {
+    width: 1em;
+    height: 1em;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info {
+    z-index: 1;
+  }
+}

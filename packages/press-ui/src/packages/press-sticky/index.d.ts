@@ -1,7 +1,7 @@
 declare function containerStyle(data: Record<string, any>): string;
 declare function wrapStyle(data: Record<string, any>): string;
-declare const _default: {
+declare const innerDefault: {
   containerStyle: typeof containerStyle;
   wrapStyle: typeof wrapStyle;
 };
-export default _default;
+export default innerDefault;

@@ -221,33 +221,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-picker-column {
-  overflow: hidden;
-  text-align: center;
-  color: var(--picker-option-text-color, $picker-option-text-color);
-  font-size: var(--picker-option-font-size, $picker-option-font-size);
-
-  &__item {
-    padding: 0 5px;
-
-    &--selected {
-      font-weight: var(--font-weight-bold, $font-weight-bold);
-      color: var(
-        --picker-option-selected-text-color,
-        $picker-option-selected-text-color
-      );
-    }
-
-    &--disabled {
-      opacity: var(
-        --picker-option-disabled-opacity,
-        $picker-option-disabled-opacity
-      );
-    }
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

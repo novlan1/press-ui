@@ -239,18 +239,5 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-@import "../common/style/press/index.scss";
-
-.press-sticky {
-  position: relative;
-
-  &-wrap {
-    &--fixed {
-      position: fixed;
-      right: 0;
-      left: 0;
-    }
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

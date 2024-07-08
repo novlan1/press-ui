@@ -333,34 +333,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.press-list--hor {
-  ::v-deep {
-    .press-list__layout {
-      height: 100%;
-      display: flex;
-    }
-  }
-
-  .press-list__loading,
-  .press-list__finished {
-    min-width: 100px;
-    height: 100%;
-  }
-}
-
-.press-list__loading,
-.press-list__finished {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #969799;
-  font-size: 14px;
-}
-.press-list__placeholder {
-  height: 0;
-  pointer-events: none;
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

@@ -67,6 +67,5 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "../common/style/press/index.scss";
+<style lang="scss" scoped src="./css/index.scss">
 </style>

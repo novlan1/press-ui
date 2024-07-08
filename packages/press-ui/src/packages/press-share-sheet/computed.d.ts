@@ -1,5 +1,5 @@
 declare function isMulti(options: any): boolean;
-declare const _default: {
+declare const innerDefault: {
   isMulti: typeof isMulti;
 };
-export default _default;
+export default innerDefault;

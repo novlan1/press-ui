@@ -220,14 +220,5 @@ export default {
   },
 };
 </script>
-<style scoped>
-.press-barcode {
-  position: relative;
-}
-.press-barcode-canvas {
-  position: fixed;
-  top: -99999upx;
-  left: -99999upx;
-  z-index: -99999;
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

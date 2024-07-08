@@ -1,4 +1,4 @@
-declare const _default: {
+declare const innerDefault: {
   props: {
     startValue: {
       type: (NumberConstructor | StringConstructor)[];
@@ -54,4 +54,4 @@ declare const _default: {
     };
   };
 };
-export default _default;
+export default innerDefault;

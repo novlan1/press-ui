@@ -1,5 +1,5 @@
 declare function barStyle(data: Record<string, any>): string;
-declare const _default: {
+declare const innerDefault: {
   barStyle: typeof barStyle;
 };
-export default _default;
+export default innerDefault;

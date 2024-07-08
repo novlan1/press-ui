@@ -299,23 +299,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-circle {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-
-  &__text {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    color: var(--circle-text-color, $circle-text-color);
-    background: transparent;
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

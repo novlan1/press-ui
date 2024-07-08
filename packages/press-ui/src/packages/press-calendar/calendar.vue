@@ -189,57 +189,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-calendar {
-  display: flex;
-  flex-direction: column;
-  height: var(--calendar-height, $calendar-height);
-  background-color: var(
-    --calendar-background-color,
-    $calendar-background-color
-  );
-
-  &__body {
-    flex: 1;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  &__footer {
-    flex-shrink: 0;
-    padding: 0 var(--padding-md, $padding-md);
-
-    &--safe-area-inset-bottom {
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-  }
-
-  &__footer:empty,
-  &__footer + &__footer {
-    display: none;
-  }
-
-  &__footer:empty + &__footer {
-    display: block !important;
-  }
-}
-
-::v-deep .press-calendar__confirm {
-  height: var(
-    --calendar-confirm-button-height,
-    $calendar-confirm-button-height
-  ) !important;
-  margin: var(
-    --calendar-confirm-button-margin,
-    $calendar-confirm-button-margin
-  ) !important;
-  line-height: var(
-    --calendar-confirm-button-line-height,
-    $calendar-confirm-button-line-height
-  ) !important;
-}
+<style scoped lang="scss" src="./css/calendar.scss">
 </style>

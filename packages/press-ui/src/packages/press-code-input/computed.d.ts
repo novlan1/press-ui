@@ -1,4 +1,4 @@
-declare const _default: {
+declare const innerDefault: {
   props: {
     adjustPosition: {
       type: BooleanConstructor;
@@ -62,7 +62,7 @@ declare const _default: {
     };
   };
 };
-export default _default;
+export default innerDefault;
 /**
  * @description 用于获取用户传递值的px值  如果用户传递了"xxpx"或者"xxrpx"，取出其数值部分，如果是"xxxrpx"还需要用过uni.upx2px进行转换
  * @param {number|string} value 用户传递值的px值

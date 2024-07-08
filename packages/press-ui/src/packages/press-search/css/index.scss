@@ -1,0 +1,54 @@
+@import "../../common/style/press/index.scss";
+@import "../../common/style/press/var.scss";
+
+.press-search {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: var(--search-padding, $search-padding);
+
+  &__content {
+    display: flex;
+    flex: 1;
+    padding-left: var(--padding-sm, $padding-sm);
+    border-radius: $border-radius-sm;
+    background-color: var(--search-background-color, $search-background-color);
+
+    &--round {
+      border-radius: $border-radius-max;
+    }
+  }
+
+  &__label {
+    padding: var(--search-label-padding, $search-label-padding);
+    font-size: var(--search-label-font-size, $search-label-font-size);
+    line-height: var(--search-input-height, $search-input-height);
+    color: var(--search-label-color, $search-label-color);
+  }
+
+  /* #ifdef MP-ALIPAY */
+  ::v-deep &__field,
+  /* #endif */
+  &__field {
+    flex: 1;
+
+    &__left-icon {
+      color: var(--search-left-icon-color, $search-left-icon-color);
+    }
+  }
+
+  &--withaction {
+    padding-right: 0;
+  }
+
+  &__action {
+    padding: var(--search-action-padding, $search-action-padding);
+    font-size: var(--search-action-font-size, $search-action-font-size);
+    line-height: var(--search-input-height, $search-input-height);
+    color: var(--search-action-text-color, $search-action-text-color);
+
+    &--hover {
+      background-color: $active-color;
+    }
+  }
+}

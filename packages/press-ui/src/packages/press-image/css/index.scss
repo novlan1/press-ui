@@ -1,0 +1,32 @@
+$press-image-error-top: 0px !default;
+$press-image-error-left: 0px !default;
+$press-image-error-width: 100% !default;
+$press-image-error-hight: 100% !default;
+$press-image-error-background-color: #f3f4f6 !default;
+$press-image-error-color: #909193 !default;
+$press-image-error-font-size: 23px !default;
+
+.press-image {
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__loading,
+  &__error {
+    position: absolute;
+    top: $press-image-error-top;
+    left: $press-image-error-left;
+    width: $press-image-error-width;
+    height: $press-image-error-hight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $press-image-error-background-color;
+    color: $press-image-error-color;
+    font-size: $press-image-error-font-size;
+  }
+}

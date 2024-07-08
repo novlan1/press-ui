@@ -159,7 +159,7 @@ import PressCol from 'press-ui/press-col/press-col.vue';
 import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 import PressRow from 'press-ui/press-row/press-row.vue';
 import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
-import { imagePreview } from 'press-ui/press-image-preview/index';
+import { imagePreviewHandler } from 'press-ui/press-image-preview/index';
 
 
 const MODE_LIST = [
@@ -230,7 +230,7 @@ export default {
   methods: {
     click() {
       console.log('[click]');
-      imagePreview({
+      imagePreviewHandler({
         selector: '#imagePreviewRef',
         images: [this.src],
       }).then(() => {

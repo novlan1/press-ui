@@ -3,10 +3,10 @@ declare function getMark(date: IDate): number;
 declare function getDayStyle(type: string, index: null, date: IDate, rowHeight: string | number, color: string, firstDayOfWeek: number): string;
 declare function formatMonthTitle(date: IDate): string;
 declare function getMonthStyle(visible: boolean, date: IDate, rowHeight: number): string | undefined;
-declare const _default: {
+declare const innerDefault: {
   getMark: typeof getMark;
   getDayStyle: typeof getDayStyle;
   formatMonthTitle: typeof formatMonthTitle;
   getMonthStyle: typeof getMonthStyle;
 };
-export default _default;
+export default innerDefault;

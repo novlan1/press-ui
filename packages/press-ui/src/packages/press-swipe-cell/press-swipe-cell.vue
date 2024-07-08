@@ -202,36 +202,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-
-.press-swipe-cell {
-  position: relative;
-  overflow: hidden;
-
-  &__left,
-  &__right {
-    position: absolute;
-    top: 0;
-    height: 100%;
-
-    // 【修改点】增加一些h5的样式
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 65px;
-    font-size: 15px;
-    color: #fff;
-  }
-
-  &__left {
-    left: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  &__right {
-    right: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

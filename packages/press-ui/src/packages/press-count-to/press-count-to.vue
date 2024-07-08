@@ -199,13 +199,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.press-count-to {
-  &__number {
-    /* #ifndef APP-NVUE */
-    display: inline-flex;
-    /* #endif */
-    text-align: center;
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

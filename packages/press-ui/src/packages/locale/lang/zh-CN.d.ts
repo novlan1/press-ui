@@ -1,4 +1,5 @@
-declare namespace _default {
+/* eslint-disable @typescript-eslint/naming-convention */
+declare namespace innerDefault {
   export const name: string;
   export const tel: string;
   export const save: string;
@@ -68,4 +69,4 @@ declare namespace _default {
     const prompt: string;
   }
 }
-export default _default;
+export default innerDefault;

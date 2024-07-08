@@ -1,4 +1,4 @@
-declare const _default: {
+declare const innerDefault: {
   watch: {
     accept: {
       immediate: boolean;
@@ -6,4 +6,4 @@ declare const _default: {
     };
   };
 };
-export default _default;
+export default innerDefault;

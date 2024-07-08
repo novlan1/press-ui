@@ -1,0 +1,8 @@
+.press-count-to {
+  &__number {
+    /* #ifndef APP-NVUE */
+    display: inline-flex;
+    /* #endif */
+    text-align: center;
+  }
+}

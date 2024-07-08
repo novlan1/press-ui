@@ -144,26 +144,5 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "../common/style/press/index.scss";
-.press-tab__pane-wrapper {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 100%;
-}
-
-.press-tab__pane {
-  box-sizing: border-box;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-
-  &--active {
-    height: auto;
-  }
-
-  &--inactive {
-    height: 0;
-    overflow: visible;
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

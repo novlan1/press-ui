@@ -1,4 +1,4 @@
-declare const _default: {
+declare const innerDefault: {
   props: {
     urls: {
       type: ArrayConstructor;
@@ -43,4 +43,4 @@ declare const _default: {
     };
   };
 };
-export default _default;
+export default innerDefault;
