@@ -41,7 +41,7 @@ jobs:
 
       # 生成静态文件
       - name: Build
-        run: cd packages/press-ui && npm run init && npm run docs:build && npm run build && cp dist/build/h5 docs/.vuepress/dist
+        run: cd packages/press-ui && npm run init && npm run docs:build && npm run build && cp -r dist/build/h5 docs/.vuepress/dist
 
       # 部署到 GitHub Pages
       - name: Deploy
