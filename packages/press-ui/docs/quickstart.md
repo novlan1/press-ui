@@ -69,13 +69,13 @@ module.exports = {
 1. 安装 npm 包：
 
 ```bash
-npm i uni-plugin-light -D
+npm i plugin-light -D
 ```
 
 2. 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const IF_DEF_LOADER = 'uni-plugin-light/lib/loader/ifdef-loader';
+const IF_DEF_LOADER = 'plugin-light/lib/loader/ifdef-loader';
 
 module.export = {
   chainWebpack(config) {
@@ -163,13 +163,11 @@ export default {
 
 ## 4. 普通 Vue3 项目
 
-Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了两种方案：
+Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了使用方案：
 
-1. 直接使用编译后的包 `press-ui-vue3`
-2. 拷贝 `node_modules/press-ui` 的代码到 `src` 某目录下， 并配置 `alias` 指向该目录
+1. 脚本拷贝 `node_modules/press-ui` 的代码到 `src` 某目录下
+2. 配置 `alias` 指向该目录
 
-第1种方式的好处是，对于只用于 `Vue3` 项目的开发者来说，使用成本低，心智负担小。缺点是使用了 `Press UI` 的组件（比如 `Press Plus` 中的组件），如果也想兼容 `Vue2` 和 `Vue3` 的话，需要添加条件编译，另外，组件库更新频繁的也比较麻烦。
-
-第2种方式符合 `transpileDependencies` 的本意，即然作为源码来编译，那就直接放到源码位置即可。这种处理方式的好处是，不用处理之前的组件，比如 `Press Plus` 组件。
+这种方式符合 `transpileDependencies` 的本意，既然作为源码来编译，那就直接放到源码位置即可。
 
 这里提供了一个 [Vite 插件](https://novlan1.github.io/uni-plugin-light/zh/vite/alias-for-library.html)，可以自动化的进行拷贝。

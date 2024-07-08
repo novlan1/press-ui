@@ -185,7 +185,7 @@ npm run act:replace:class
 
 ### 4.4. 项目依赖关系
 
-Press UI 底层依赖 `t-comm`、`uni-plugin-light` 等库。
+Press UI 底层依赖 `t-comm`、`plugin-light` 等库。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_bbf5d09066a8980616.gif" width="500" />
 
