@@ -330,6 +330,11 @@
       "collapsable": false,
       "children": [
         {
+          "title": "Area",
+          "subTitle": "省市区选择",
+          "path": "/components/press/press-area.md"
+        },
+        {
           "title": "Dialog",
           "subTitle": "弹出框",
           "path": "/components/press/press-dialog.md"

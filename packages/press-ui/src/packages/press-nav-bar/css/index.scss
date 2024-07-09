@@ -31,11 +31,23 @@
     }
   }
 
-  &__arrow {
-    vertical-align: middle;
-    font-size: var(--nav-bar-arrow-size, $nav-bar-arrow-size) !important;
-    color: var(--nav-bar-icon-color, $nav-bar-icon-color) !important;
+  press-icon-plus {
+    display: flex;
+    align-items: center;
 
+    + .press-nav-bar__text {
+      margin-left: -20px;
+      padding-left: 25px;
+    }
+  }
+
+  ::v-deep &__arrow {
+    vertical-align: middle;
+    font-size: var(--nav-bar-arrow-size, $nav-bar-arrow-size);
+    color: var(--nav-bar-icon-color, $nav-bar-icon-color);
+  }
+  ::v-deep &__arrow,
+  press-icon-plus {
     + .press-nav-bar__text {
       margin-left: -20px;
       padding-left: 25px;

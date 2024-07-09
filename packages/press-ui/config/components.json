@@ -58,6 +58,7 @@
   "tab": "./src/packages/press-tab/press-tab.vue",
   "tabbar": "./src/packages/press-tabbar/press-tabbar.vue",
   "tree-select": "./src/packages/press-tree-select/press-tree-select.vue",
+  "area": "./src/packages/press-area/press-area.vue",
   "dialog": "./src/packages/press-dialog/press-dialog.vue",
   "icon": "./src/packages/press-icon/press-icon.vue",
   "loading": "./src/packages/press-loading/press-loading.vue",

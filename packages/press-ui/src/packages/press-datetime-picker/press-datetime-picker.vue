@@ -67,6 +67,7 @@ export default {
   name: 'PressDatetimePicker',
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   components: {
     PressPicker,

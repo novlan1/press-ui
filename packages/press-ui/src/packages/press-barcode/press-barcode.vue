@@ -59,6 +59,9 @@ const DEFAULT_OPTIONS = {
 
 export default {
   name: 'PressBarcode',
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     // #ifdef H5
     VueBarcode,

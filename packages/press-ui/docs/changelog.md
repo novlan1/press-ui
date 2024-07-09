@@ -1,5 +1,47 @@
 # 更新日志
 
+## [2.0.0](https://github.com/novlan1/press-ui/compare/v1.3.40...v2.0.0) (2024-07-09)
+
+
+### Code Refactoring ♻️
+
+* 更新image ([52fbba1](https://github.com/novlan1/press-ui/commit/52fbba1cfe2f228f9d631f2257be9973f91e4a87))
+* 更新scss ([7a297a2](https://github.com/novlan1/press-ui/commit/7a297a23e700c38fff1b791ff155504933740bc4))
+* css单独文件 ([b950a5b](https://github.com/novlan1/press-ui/commit/b950a5b3e184afad2489b6926242b02c5327b9dc))
+
+
+### Documentation 📖
+
+* update docs ([14eb1f9](https://github.com/novlan1/press-ui/commit/14eb1f9f500756e346acfb782a181f7575628dba))
+* update docs ([c640a87](https://github.com/novlan1/press-ui/commit/c640a87be19f79616bd38b5491dac0d621b5afd2))
+* update docs ([9088e24](https://github.com/novlan1/press-ui/commit/9088e2454cb4866780dfab684d4045d5f8141aec))
+* update docs ([84eb41c](https://github.com/novlan1/press-ui/commit/84eb41c998215519fd5d2febb8cff7fe806c5ee8))
+* update readme ([a52b2e8](https://github.com/novlan1/press-ui/commit/a52b2e82f0ea72ca28bc03896ff2e428bc79a42a))
+* update readme ([2c9416c](https://github.com/novlan1/press-ui/commit/2c9416c8169caa635d67153cda980a837e1f60c1))
+* update readme ([19b7fb1](https://github.com/novlan1/press-ui/commit/19b7fb131a9a07a28741be91f5a70e11c61ab099))
+
+
+### Chore 🚀 
+
+* add online-debug ([053edcb](https://github.com/novlan1/press-ui/commit/053edcbf54ab16cf0661d3185a7872c5161c6b3c))
+* add quick list demo ([52b1e06](https://github.com/novlan1/press-ui/commit/52b1e06411dcc73e053c7b27b413ab6827a50c21))
+* add replace-to-plus script ([0805f25](https://github.com/novlan1/press-ui/commit/0805f254d3a83b4f90123271e44b8886bf415c17))
+* add workflow ([b8addc8](https://github.com/novlan1/press-ui/commit/b8addc8c28a98eada1c6d657a76e97c340cc6eaa))
+* lint ([af0744a](https://github.com/novlan1/press-ui/commit/af0744ae6f8f38faa51cca517aec55f0a95a7e9f))
+* lint ([810de63](https://github.com/novlan1/press-ui/commit/810de6360bcdf032af0a6c421d729271096323ee))
+* lint ([e3c7a17](https://github.com/novlan1/press-ui/commit/e3c7a170b18154a0f204a673afecb14a9cef7979))
+* lint ([b2776d3](https://github.com/novlan1/press-ui/commit/b2776d3bed521946e579b28def3ec15c06149512))
+* lint ([710f277](https://github.com/novlan1/press-ui/commit/710f2775f6b9a06ab1d9fe677a477ba68a0b137c))
+* remove business components ([9a1d259](https://github.com/novlan1/press-ui/commit/9a1d259282f95ab2e5a4e1ef8e08e6e380f726e9))
+* update component config, add area ([4b9b4e6](https://github.com/novlan1/press-ui/commit/4b9b4e6463435bc1bc85dc12699f870e9c4b9dff))
+* update demo ([738c6ff](https://github.com/novlan1/press-ui/commit/738c6ff42eabf63505f297ec5b40db69d9663822))
+* update demo ([376d363](https://github.com/novlan1/press-ui/commit/376d363d38a3676a818480044387579d244c56bd))
+* update demo page ([7c973f6](https://github.com/novlan1/press-ui/commit/7c973f64555c8151081956f15248cc40397c2ecd))
+* update generate entry ([238ab52](https://github.com/novlan1/press-ui/commit/238ab52198e109186f52dad87ff6ecda24b968cd))
+* update press-ui-vue index.scss ([9fc1a1d](https://github.com/novlan1/press-ui/commit/9fc1a1d2277b34365657e3bf68e8f3c34ff1ea46))
+* update press-ui-vue3 ([4c41151](https://github.com/novlan1/press-ui/commit/4c411512a63a3afd408968bf9704b6c786c9e912))
+* use press-ui alias ([09a1a64](https://github.com/novlan1/press-ui/commit/09a1a6499e6ea716b9d84d6c8deba11194434e43))
+
 ### [1.3.40](https://github.com/novlan1/press-ui/compare/v1.3.39...v1.3.40) (2024-07-01)
 
 

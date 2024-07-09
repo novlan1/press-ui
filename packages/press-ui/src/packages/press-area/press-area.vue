@@ -34,6 +34,7 @@ export default {
   name: 'PressArea',
   options: {
     ...defaultOptions,
+    styleIsolation: 'shared',
   },
   components: {
     PressPicker,

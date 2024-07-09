@@ -24,6 +24,9 @@ export default {
   name: 'PressBadge',
   components: {
   },
+  options: {
+    styleIsolation: 'shared',
+  },
   props: {
     dot: {
       type: Boolean,

@@ -265,6 +265,10 @@
       "name": "ESport Components",
       "list": [
         {
+          "url": "/press/area/area",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/dialog/dialog",
           "navigationStyle": ""
         },

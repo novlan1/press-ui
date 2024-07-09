@@ -270,6 +270,10 @@
     "title": "ESport 组件",
     "list": [
       {
+        "name": "Area",
+        "title": "省市区选择"
+      },
+      {
         "name": "Dialog",
         "title": "弹出框"
       },

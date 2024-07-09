@@ -75,12 +75,6 @@
           />
           <!-- #endif -->
 
-          <PressCell
-            is-link
-            :title="t('share')"
-            @click="onJumpToSharePage"
-          />
-
           <QuickListComp
             @onBeforeDestroy="onBeforeDestroy"
           />

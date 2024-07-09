@@ -193,5 +193,6 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   padding-bottom: 400px;
+  font-size: 16px;
 }
 </style>

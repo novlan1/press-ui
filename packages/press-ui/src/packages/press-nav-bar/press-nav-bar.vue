@@ -74,16 +74,22 @@
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { getRect, getStatusBarHeight } from '../common/dom/rect';
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import computed from './computed';
 
 
 export default {
   name: 'PressNavBar',
+  options: {
+    ...defaultOptions,
+    styleIsolation: 'shared',
+  },
   components: {
     PressIconPlus,
   },
   props: {
+    ...defaultProps,
     title: { type: String, default: '' },
     fixed: {
       type: Boolean,
