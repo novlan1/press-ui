@@ -50,6 +50,7 @@ export function showCustomPopup({
             current: {
               value: pageTotal,
             },
+            context,
           }).then(({ item }) => {
             local.pageTotal = item.value;
             context.onGTip('设置成功');
@@ -76,6 +77,7 @@ export function showCustomPopup({
             current: {
               value: current,
             },
+            context,
           }).then(({ item }) => {
             local.current = item.value;
             context.onGTip('设置成功');

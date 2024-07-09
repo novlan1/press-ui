@@ -63,6 +63,7 @@ export function showCustomPopup({ context, callback }) {
             current: {
               value: local.pageSize,
             },
+            context,
           }).then(({ item }) => {
             local.pageSize = item.value;
             context.onGTip('设置成功');
@@ -89,6 +90,7 @@ export function showCustomPopup({ context, callback }) {
             current: {
               value: local.total,
             },
+            context,
           }).then(({ item }) => {
             local.total = item.value;
             context.onGTip('设置成功');
@@ -115,6 +117,7 @@ export function showCustomPopup({ context, callback }) {
             current: {
               value: local.delay,
             },
+            context,
           }).then(({ item }) => {
             local.delay = item.value;
             context.onGTip('设置成功');

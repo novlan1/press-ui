@@ -11,11 +11,16 @@ function getContext() {
 
 function traverseChildren(context, key, target) {
   const children = context.$children;
+  if (!children) {
+    return;
+  }
+
   for (const child of children) {
     if (child.$attrs[key] === target) {
       return child;
     }
   }
+  
   for (const child of children) {
     const result = traverseChildren(child, key, target);
     if (result) {
@@ -31,18 +36,21 @@ export function selectComponent(context, selector) {
   if (attribute.match(/^[^\w]/)) {
     attribute = attribute.slice(1);
   }
-
-  // #ifdef H5
-  if (isNotInUni()) {
-    const key = selector.startsWith('#') ? 'id' : 'class';
-    return traverseChildren(context, key, attribute);
-  }
-  // #endif
-
+  
   if (
     context.$refs?.[attribute]) {
     return context.$refs[attribute];
   }
+
+  // #ifdef H5
+  if (isNotInUni()) {
+    const key = selector.startsWith('#') ? 'id' : 'class';
+    const res = traverseChildren(context, key, attribute);
+    if (res) {
+      return res;
+    }
+  }
+  // #endif
 
   if (typeof context?.$selectComponent === 'function') {
     const res =  context?.$selectComponent?.(selector);

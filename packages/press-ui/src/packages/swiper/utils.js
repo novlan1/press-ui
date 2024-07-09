@@ -13,7 +13,10 @@ export function deepClone(vnodes, createElement) {
     return cloned;
   }
 
-  return vnodes.map(cloneVNode);
+  if (typeof vnodes.map === 'function') {
+    return vnodes.map(cloneVNode);
+  }
+  return vnodes;
 }
 
 export const SWIPER_PROPS = {
