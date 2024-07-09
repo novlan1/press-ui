@@ -47,6 +47,7 @@ module.exports = {
 }
 ```
 
+[点此查看](https://github.com/novlan1/press-ui-demo-vue2) Vue2 的 uni-app 示例项目。
 
 ### 1.2. uni_modules 方式
 
@@ -132,6 +133,7 @@ export default {
 - [image-view](./components/press/press-image-view.html)
 - [popup-cell](./components/press/press-popup-cell.html)
 
+[点此查看](https://github.com/novlan1/press-ui-demo-vue2-pure) Vue2 非 uni-app 的示例项目。
 
 ## 3. Vue3 的 uni-app 项目
 
@@ -161,6 +163,8 @@ export default {
 </press-popup>
 ```
 
+[点此查看](https://github.com/novlan1/press-ui-demo-vue3) Vue3 的 uni-app 示例项目。
+
 ## 4. 普通 Vue3 项目
 
 Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了使用方案：
@@ -171,3 +175,5 @@ Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了使用方
 这种方式符合 `transpileDependencies` 的本意，既然作为源码来编译，那就直接放到源码位置即可。
 
 这里提供了一个 [Vite 插件](https://novlan1.github.io/uni-plugin-light/zh/vite/alias-for-library.html)，可以自动化的进行拷贝。
+
+[点此查看](https://github.com/novlan1/press-ui-demo-vue3-pure) Vue3 非 uni-app 的示例项目。

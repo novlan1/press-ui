@@ -112,3 +112,11 @@ module.exports = {
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-3.gif" width="800">
 
+### 6. 示例项目
+
+点击下方链接查看示例项目。
+
+1. [Vue2](https://github.com/novlan1/press-ui-demo-vue2)
+2. [Vue3](https://github.com/novlan1/press-ui-demo-vue3)
+3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure)
+4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure)
