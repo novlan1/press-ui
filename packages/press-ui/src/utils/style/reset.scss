@@ -17,6 +17,10 @@
   height: 100vh;
   /* #endif */
 
+  /* #ifdef MP-QQ */
+  font-size: 15px;
+  /* #endif */
+
   &--gray {
     background: #f5f6fa;
   }

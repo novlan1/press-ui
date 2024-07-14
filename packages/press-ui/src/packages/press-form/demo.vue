@@ -31,6 +31,7 @@
           disabled-color="#ffffff"
           placeholder="请选择性别"
           :border="false"
+          readonly="isMp"
           @click-input="showSex = true; hideKeyboard()"
         />
         <PressIconPlus
@@ -128,7 +129,7 @@
               <template v-if="!Object.keys(timeData).length">获取信息</template>
               <template v-else-if="timeData.seconds <= 0">重新获取</template>
               <template v-else>
-                <span class="item">{{ timeData.seconds }}</span>秒重新获取
+                <span class="item">{{ timeData.seconds }}</span><span>秒重新获取</span>
               </template>
             </span>
           </press-count-down>
@@ -320,6 +321,15 @@ export default {
       ],
     };
   },
+  computed: {
+    isMp() {
+      let mp = false;
+      // #ifdef MP
+      mp = true;
+      // #endif
+      return mp;
+    },
+  },
   methods: {
     onChange(value) {
       console.log('value', value);
@@ -435,9 +445,13 @@ export default {
   color: #fff;
   padding: 0 6px;
   font-size: 12px;
+  display: flex;
+  align-items: center;
 }
 .submit-wrap {
   margin: 20px auto;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 </style>

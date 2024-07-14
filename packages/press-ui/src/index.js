@@ -60,6 +60,7 @@ import PopupPlus from './packages/press-popup-plus/press-popup-plus.vue';
 import Popup from './packages/press-popup/press-popup.vue';
 import Progress from './packages/press-progress/press-progress.vue';
 import Protocol from './packages/press-protocol/press-protocol.vue';
+import PullRefresh from './packages/press-pull-refresh/press-pull-refresh.vue';
 import QRCodePopup from './packages/press-q-r-code-popup/press-q-r-code-popup.vue';
 import QRCode from './packages/press-q-r-code/press-q-r-code.vue';
 import RadioGroup from './packages/press-radio-group/press-radio-group.vue';
@@ -154,6 +155,7 @@ const components = {
   Popup,
   Progress,
   Protocol,
+  PullRefresh,
   QRCodePopup,
   QRCode,
   RadioGroup,
