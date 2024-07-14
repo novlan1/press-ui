@@ -45,6 +45,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { ChildrenMixin } from '../mixins/relation';
 import computed from './index';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
+import { formValidate } from '../common/utils/parent';
 
 function emit(target, value) {
   target.$emit('input', value);
@@ -172,6 +173,10 @@ export default {
       } else {
         emit(this, value);
       }
+
+      this.$nextTick(() => {
+        formValidate(this, 'change');
+      });
     },
     toggle() {
       const { parentDisabled, disabled, dataValue } = this;

@@ -124,3 +124,32 @@ export function isIOS() {
 export function isH5() {
   return process.env.UNI_PLATFORM === 'h5';
 }
+/**
+ * 验证URL格式
+ */
+export function isUrl(value) {
+  return /^((https|http|ftp|rtsp|mms):\/\/)(([0-9a-zA-Z_!~*'().&=+$%-]+: )?[0-9a-zA-Z_!~*'().&=+$%-]+@)?(([0-9]{1,3}.){3}[0-9]{1,3}|([0-9a-zA-Z_!~*'()-]+.)*([0-9a-zA-Z][0-9a-zA-Z-]{0,61})?[0-9a-zA-Z].[a-zA-Z]{2,6})(:[0-9]{1,4})?((\/?)|(\/[0-9a-zA-Z_!~*'().;?:@&=+$,%#-]+)+\/?)$/
+    .test(value);
+}
+
+
+/**
+ * @description error提示
+ * @param {*} err 错误内容
+ */
+export function errorTip(err) {
+  // 开发环境才提示，生产环境不会提示
+  if (process.env.NODE_ENV === 'development') {
+    console.error(`PressUI提示：${err}`);
+  }
+}
+
+/**
+ * 是否为中文
+ * @param {*} value
+ * @returns boolean
+ */
+export function isChinese(value) {
+  const reg = /^[\u4e00-\u9fa5]+$/gi;
+  return reg.test(value);
+}

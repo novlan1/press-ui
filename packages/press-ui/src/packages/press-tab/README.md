@@ -169,7 +169,7 @@ export default {
 
 ### 嵌套 popup
 
-如果将 press-tabs 嵌套在 press-popup 等会隐藏内容的组件或节点内，当 press-tabs 显示时下划线将不会正常显示。
+如果将 `press-tabs` 嵌套在 `press-popup` 等会隐藏内容的组件或节点内，当 `press-tabs` 显示时下划线将不会正常显示。
 
 此时可以通过使用 `v-if` 手动控制 press-tabs 的渲染来规避这种场景。
 
@@ -182,6 +182,52 @@ export default {
     <press-tab title="标签 4">内容 4</press-tab>
   </press-tabs>
 </press-popup>
+```
+
+### 自定义标题
+
+通过 `use-title-slot` 属性以及 `title-{index}` 的插槽，实现自定义标题。
+
+```html
+<press-tabs use-title-slot>
+  <template #title-0>
+    <span class="title">Title</span>
+    <press-icon-plus name="like-o" />
+  </template>
+  <template #title-1>
+    <span class="title">Title 1</span>
+    <press-icon-plus name="friends-o" />
+  </template>
+  <template #title-2>
+    <span class="title">Title 2</span>
+  </template>
+
+  <press-tab title="标签 1">内容 1</press-tab>
+  <press-tab title="标签 2">内容 2</press-tab>
+  <press-tab title="标签 3">内容 3</press-tab>
+  <press-tab title="标签 4">内容 4</press-tab>
+</press-tabs>
+```
+
+也可以使用 `v-for`。
+
+
+```html
+<press-tabs use-title-slot>
+  <div
+    v-for="(item, index) of Array(4)"
+    :key="index"
+    :slot="`title-${index}`"
+  >
+    <span class="title">Title {{ index }}</span>
+    <press-icon-plus name="like-o" />
+  </div>
+
+  <press-tab title="标签 1">内容 1</press-tab>
+  <press-tab title="标签 2">内容 2</press-tab>
+  <press-tab title="标签 3">内容 3</press-tab>
+  <press-tab title="标签 4">内容 4</press-tab>
+</press-tabs>
 ```
 
 ### 其他模式
@@ -222,6 +268,7 @@ export default {
 | z-index              | z-index 层级                                                   | _number_           | `1`       |
 | extra-class-prefix   | 兼容旧的`class`，可传入`van-`，不推荐使用                      | _string_           | -         |
 | mode                 | 模式，可传入 `hor`, `e-sport`                                  | _string_           | -         |
+| use-title-slot       | 是否使用自定义标题插槽                                         | _boolean_          | `false`   |
 
 ### Tab Props
 

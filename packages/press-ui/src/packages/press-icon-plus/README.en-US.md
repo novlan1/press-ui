@@ -68,15 +68,15 @@ If you need to use more icons based on the existing Icon, you can import the fon
 
 ### Props
 
-| Parameter | Description | Type | Default |
-| --------- | ----------- |------ | ------------------ | ----------------- |
-| name | icon name or image link | _string_ | - |
-| dot | Whether to display the small red dot in the upper right corner of the icon | _boolean_ | `false` |
-| info | text prompt in the upper right corner of the icon | _string \| number_ | - |
-| color | icon color | _string_ | `inherit` |
-| size | Icon size, such as `20px`, `2em`, the default unit is `px` | _string \| number_ | `inherit` |
-| custom-style | custom style | _string_ | - |
-| class-prefix | class name prefix | _string_ | `press-icon-plus` |
+| Parameter    | Description                                                                | Type               | Default           |
+| ------------ | -------------------------------------------------------------------------- | ------------------ | ----------------- |  |
+| name         | icon name or image link                                                    | _string_           | -                 |
+| dot          | Whether to display the small red dot in the upper right corner of the icon | _boolean_          | `false`           |
+| info         | text prompt in the upper right corner of the icon                          | _string \| number_ | -                 |
+| color        | icon color                                                                 | _string_           | `inherit`         |
+| size         | Icon size, such as `20px`, `2em`, the default unit is `px`                 | _string \| number_ | `inherit`         |
+| custom-style | custom style                                                               | _string_           | -                 |
+| class-prefix | class name prefix                                                          | _string_           | `press-icon-plus` |
 
 ### Events
 
@@ -94,4 +94,4 @@ If you need to use more icons based on the existing Icon, you can import the fon
 
 ### What happens when the developer tool prompts Failed to load font?
 
-This is a problem with the developer tool itself, which can be ignored. For details, please refer to [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html) - Notice No. 5.
+This is a problem with the developer tool itself, which can be ignored. For details, please refer to [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html) - Notice No. 4.

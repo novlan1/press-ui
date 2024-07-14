@@ -41,4 +41,5 @@ export default {
   titleMap: {
     ...TITLE_I18N['zh-CN'],
   },
+  longText: 'Press UI 组件库是基于 uni-app 的跨端组件库，旨在提升开发效率、沉淀基础组件，兼容 Vue2 和 Vue3，支持非 uni-app 项目，零外部依赖。',
 };

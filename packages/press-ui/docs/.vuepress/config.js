@@ -9,16 +9,6 @@ const LOGIC_SIDEBAR_CONFIG = {
     collapsable: false,
     children: [
       {
-        title: 'IM',
-        subTitle: '即时通信',
-        path: '/components/logic/im.md',
-      },
-      {
-        title: 'Router',
-        subTitle: '路由',
-        path: '/components/logic/router.md',
-      },
-      {
         title: 'Common',
         subTitle: '公共方法',
         path: '/components/logic/common.md',

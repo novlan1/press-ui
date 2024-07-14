@@ -3,7 +3,7 @@
 </template>
 
 <template>
-	<view></view>
+  <view></view>
 </template>
 
 <script>

@@ -70,6 +70,10 @@ import { vModelMixin } from '../common/vue3/adapter';
 import { transition } from '../mixins/transition';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
+// #ifdef H5
+import { popoverMixin } from '../mixins/popover/index';
+// #endif
+
 
 export default {
   name: 'PressPopoverPlus',
@@ -89,6 +93,7 @@ export default {
       event: 'touchstart',
       method: 'onClickOutside',
     }),
+    popoverMixin,
     // #endif
   ],
   props: {
@@ -122,7 +127,7 @@ export default {
     },
     getContainer: {
       type: [String, Function],
-      default: 'body',
+      default: '',
     },
     closeOnClickAction: {
       type: Boolean,
@@ -165,8 +170,8 @@ export default {
       return customStyle;
     },
     popupClass() {
-      const { theme, placement } = this;
-      return utils.bem2('popover', [theme, placement]);
+      const { theme, placement, getContainer } = this;
+      return utils.bem2('popover', [theme, placement, { 'custom-container': !!getContainer }]);
     },
     popupCustomClass() {
       let result = '';

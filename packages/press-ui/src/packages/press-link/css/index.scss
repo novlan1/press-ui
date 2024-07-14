@@ -1,0 +1,12 @@
+@import "../../common/style/press/mixins/flex.scss";
+
+$press-link-line-height:1 !default;
+
+.press-link {
+  /* #ifndef APP-NVUE */
+  line-height: $press-link-line-height;
+  /* #endif */
+  @include flex;
+  flex-wrap: wrap;
+  flex: 1;
+}

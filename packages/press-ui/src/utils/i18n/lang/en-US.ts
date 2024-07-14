@@ -41,4 +41,5 @@ export default {
   titleMap: {
     ...TITLE_I18N['en-US'],
   },
+  longText: 'When I was young I\'d listen to the radio. Waiting for my favorite songs.When they played I\'d sing along. It make me smile. Those were such happy times and not so long ago.',
 };

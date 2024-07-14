@@ -39,3 +39,7 @@ export default {
 | ------- | -------- | ---- |
 | confirm | 点击确认 | show |
 | cancel  | 点击取消 | show |
+
+## 在线调试
+
+<debug-online />

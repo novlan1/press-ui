@@ -6,3 +6,4 @@ export declare function deepAssign(to: Record<string, any>, from: Record<string,
 export declare function pickExclude(obj: Record<string, any>, keys: Array<string>): Record<string, any>;
 export declare function isEmpty(object: any): boolean;
 export declare const isObjectEqual: (obj1: any, obj2: any) => boolean;
+export declare const deepClone: (obj: any, cache?: WeakMap) => any;

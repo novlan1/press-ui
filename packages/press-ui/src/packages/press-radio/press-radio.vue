@@ -49,6 +49,7 @@ import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_RADIO_GROUP as PARENT } from '../common/constant/parent-map';
+import { formValidate } from '../common/utils/parent';
 
 
 export default {
@@ -150,6 +151,9 @@ export default {
       const instance = this[PARENT] || this;
       instance.$emit('input', value);
       instance.$emit('change', value);
+
+      formValidate(this, 'change');
+
       if (canIUseModel()) {
         instance.value = value;
         // instance.setData({ value });

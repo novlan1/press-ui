@@ -1,5 +1,6 @@
 const { execCommand, readFileSync, writeFileSync } = require('t-comm');
-const TARGET_DIR = '/Users/yang/Documents/git-woa/web/src';
+// const TARGET_DIR = '/Users/yang/Documents/git-woa/web/src';
+const TARGET_DIR = '/Users/yang/Documents/git-woa/dzs-match/src';
 const reg = /@tencent\/press-ui\/press-([\w-]+)/g;
 
 const LOG_FILE = 'packages/press-ui/log/replace-to-plus.json';

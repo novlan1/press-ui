@@ -29,6 +29,10 @@
           "path": "/en/components/press/press-popup-plus.md"
         },
         {
+          "title": "Text",
+          "path": "/en/components/press/press-text.md"
+        },
+        {
           "title": "Toast",
           "path": "/en/components/press/press-toast.md"
         },
@@ -61,6 +65,10 @@
         {
           "title": "Field",
           "path": "/en/components/press/press-field.md"
+        },
+        {
+          "title": "Form",
+          "path": "/en/components/press/press-form.md"
         },
         {
           "title": "PickerPlus",
@@ -129,6 +137,10 @@
           "path": "/en/components/press/press-popover-plus.md"
         },
         {
+          "title": "PullRefresh",
+          "path": "/en/components/press/press-pull-refresh.md"
+        },
+        {
           "title": "ShareSheet",
           "path": "/en/components/press/press-share-sheet.md"
         },
@@ -195,6 +207,10 @@
           "path": "/en/components/press/press-image-preview.md"
         },
         {
+          "title": "Link",
+          "path": "/en/components/press/press-link.md"
+        },
+        {
           "title": "List",
           "path": "/en/components/press/press-list.md"
         },
@@ -236,6 +252,10 @@
       "title": "Navigation Components",
       "collapsable": false,
       "children": [
+        {
+          "title": "BackTop",
+          "path": "/en/components/press/press-back-top.md"
+        },
         {
           "title": "Grid",
           "path": "/en/components/press/press-grid.md"

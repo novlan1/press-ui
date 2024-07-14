@@ -2,6 +2,7 @@
 import Area from './packages/press-area/press-area.vue';
 import AvatarGroup from './packages/press-avatar-group/press-avatar-group.vue';
 import Avatar from './packages/press-avatar/press-avatar.vue';
+import BackTop from './packages/press-back-top/press-back-top.vue';
 import Badge from './packages/press-badge/press-badge.vue';
 import Barcode from './packages/press-barcode/press-barcode.vue';
 import Button from './packages/press-button/press-button.vue';
@@ -27,6 +28,8 @@ import DropdownMenu from './packages/press-dropdown-menu/press-dropdown-menu.vue
 import Empty from './packages/press-empty/press-empty.vue';
 import Fab from './packages/press-fab/press-fab.vue';
 import Field from './packages/press-field/press-field.vue';
+import FormItem from './packages/press-form-item/press-form-item.vue';
+import Form from './packages/press-form/press-form.vue';
 import GridItem from './packages/press-grid-item/press-grid-item.vue';
 import Grid from './packages/press-grid/press-grid.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
@@ -36,6 +39,7 @@ import Image from './packages/press-image/press-image.vue';
 import IndexAnchor from './packages/press-index-anchor/press-index-anchor.vue';
 import IndexBar from './packages/press-index-bar/press-index-bar.vue';
 import Info from './packages/press-info/press-info.vue';
+import Link from './packages/press-link/press-link.vue';
 import List from './packages/press-list/press-list.vue';
 import LoadingPlus from './packages/press-loading-plus/press-loading-plus.vue';
 import Loading from './packages/press-loading/press-loading.vue';
@@ -82,6 +86,7 @@ import Tabbar from './packages/press-tabbar/press-tabbar.vue';
 import Tabs from './packages/press-tabs/press-tabs.vue';
 import Tag from './packages/press-tag/press-tag.vue';
 import Teleport from './packages/press-teleport/press-teleport.vue';
+import Text from './packages/press-text/press-text.vue';
 import Toast from './packages/press-toast/press-toast.vue';
 import Transition from './packages/press-transition/press-transition.vue';
 import TreeSelect from './packages/press-tree-select/press-tree-select.vue';
@@ -91,6 +96,7 @@ const components = {
   Area,
   AvatarGroup,
   Avatar,
+  BackTop,
   Badge,
   Barcode,
   Button,
@@ -116,6 +122,8 @@ const components = {
   Empty,
   Fab,
   Field,
+  FormItem,
+  Form,
   GridItem,
   Grid,
   IconPlus,
@@ -125,6 +133,7 @@ const components = {
   IndexAnchor,
   IndexBar,
   Info,
+  Link,
   List,
   LoadingPlus,
   Loading,
@@ -171,6 +180,7 @@ const components = {
   Tabs,
   Tag,
   Teleport,
+  Text,
   Toast,
   Transition,
   TreeSelect,

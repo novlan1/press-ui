@@ -144,5 +144,5 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped src="./css/index.scss">
+<style lang="scss" src="./css/index.scss">
 </style>

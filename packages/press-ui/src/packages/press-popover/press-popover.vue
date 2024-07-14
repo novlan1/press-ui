@@ -78,5 +78,6 @@ export default {
 };
 
 </script>
-<style lang="scss" scoped src="./css/index.scss">
+<!-- 业务改造成本大，不能使用 scoped -->
+<style lang="scss" src="./css/index.scss">
 </style>

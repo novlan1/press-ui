@@ -54,7 +54,7 @@ export function initMixin(app: any) {
         if (!title) {
           return;
         }
-        
+
         uni.showToast({
           title,
           icon: 'none',

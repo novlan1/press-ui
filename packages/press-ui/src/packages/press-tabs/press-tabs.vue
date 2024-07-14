@@ -29,27 +29,120 @@
               :class="[`${bem3('tabs__line')} ${lineClass}`]"
               :style="lineStyle"
             />
-            <div
-              v-for="(item, index) in (tabs)"
-              :key="getTabKey(item, index)"
-              :data-index="index"
-              :class="[`${getTabClass(item, index)}`]"
-              :style="[`${getTabStyle(item, index)}`]"
-              @click="onTap"
-            >
+            <template v-if="useTitleSlot">
               <div
-                :class="[`${bem3('tab__text')}`, ellipsis ? 'press-ellipsis' : '']"
-                :style="item.titleStyle"
+                v-if="tabs.length > 0"
+                :class="[`${getSlotTabClass(0)}`]"
+                :data-index="0"
+                @click="onTap"
               >
-                {{ item.title }}
-                <press-info
-                  v-if="item.info !== null || item.dot"
-                  :info="item.info"
-                  :dot="item.dot"
-                  custom-class="press-tab__title__info"
-                />
+                <slot name="title-0" />
               </div>
-            </div>
+              <div
+                v-if="tabs.length > 1"
+                :class="[`${getSlotTabClass(1)}`]"
+                :data-index="1"
+                @click="onTap"
+              >
+                <slot name="title-1" />
+              </div>
+              <div
+                v-if="tabs.length > 2"
+                :class="[`${getSlotTabClass(2)}`]"
+                :data-index="2"
+                @click="onTap"
+              >
+                <slot name="title-2" />
+              </div>
+              <div
+                v-if="tabs.length > 3"
+                :class="[`${getSlotTabClass(3)}`]"
+                :data-index="3"
+                @click="onTap"
+              >
+                <slot name="title-3" />
+              </div>
+              <div
+                v-if="tabs.length > 4"
+                :class="[`${getSlotTabClass(4)}`]"
+                :data-index="4"
+                @click="onTap"
+              >
+                <slot name="title-4" />
+              </div>
+              <div
+                v-if="tabs.length > 5"
+                :class="[`${getSlotTabClass(5)}`]"
+                :data-index="5"
+                @click="onTap"
+              >
+                <slot name="title-5" />
+              </div>
+              <div
+                v-if="tabs.length > 6"
+                :class="[`${getSlotTabClass(6)}`]"
+                :data-index="6"
+                @click="onTap"
+              >
+                <slot name="title-6" />
+              </div>
+              <div
+                v-if="tabs.length > 7"
+                :class="[`${getSlotTabClass(7)}`]"
+                :data-index="7"
+                @click="onTap"
+              >
+                <slot name="title-7" />
+              </div>
+              <div
+                v-if="tabs.length > 8"
+                :class="[`${getSlotTabClass(8)}`]"
+                :data-index="8"
+                @click="onTap"
+              >
+                <slot name="title-8" />
+              </div>
+              <div
+                v-if="tabs.length > 9"
+                :class="[`${getSlotTabClass(9)}`]"
+                :data-index="9"
+                @click="onTap"
+              >
+                <slot name="title-9" />
+              </div>
+              <div
+                v-if="tabs.length > 10"
+                :class="[`${getSlotTabClass(10)}`]"
+                :data-index="10"
+                @click="onTap"
+              >
+                <slot name="title-10" />
+              </div>
+            </template>
+
+            <template v-else>
+              <div
+                v-for="(item, index) in (tabs)"
+                :key="getTabKey(item, index)"
+                :data-index="index"
+                :class="[`${getTabClass(item, index)}`]"
+                :style="[`${getTabStyle(item, index)}`]"
+                @click="onTap"
+              >
+                <div
+                  :class="[`${bem3('tab__text')}`, ellipsis ? 'press-ellipsis' : '']"
+                  :style="item.titleStyle"
+                >
+                  {{ item.title }}
+                  <press-info
+                    v-if="item.info !== null || item.dot"
+                    :info="item.info"
+                    :dot="item.dot"
+                    custom-class="press-tab__title__info"
+                  />
+                </div>
+              </div>
+            </template>
           </div>
         </scroll-view>
 
@@ -202,6 +295,10 @@ export default {
       type: String,
       default: '',
     },
+    useTitleSlot: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['scroll', 'disabled', 'click', 'input', 'change'],
   data() {
@@ -315,9 +412,12 @@ export default {
 
       return `${this.bem3('tab', {
         active: index === currentIndex,
-        disabled: item.disabled,
+        disabled: item.disabled || false,
         complete: !ellipsis,
       })} ${this.bem3('ellipsis')} ${realTabClass} ${index === currentIndex ? realActiveClass : ''}`;
+    },
+    getSlotTabClass(index) {
+      return this.getTabClass(this.tabs[index] || {}, index);
     },
     getTabStyle(item, index) {
       const {
@@ -541,6 +641,6 @@ export default {
 // });
 };
 </script>
-<style lang="scss" scoped src="./css/index.scss"></style>
+<style lang="scss" src="./css/index.scss"></style>
 <style lang="scss" scoped src="./css/e-sport.scss"></style>
 <style lang="scss" scoped src="./css/hor.scss"></style>

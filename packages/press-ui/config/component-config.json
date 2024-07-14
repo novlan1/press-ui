@@ -28,6 +28,10 @@
         "title": "弹出层"
       },
       {
+        "name": "Text",
+        "title": "文本"
+      },
+      {
         "name": "Toast",
         "title": "轻提示"
       },
@@ -60,6 +64,10 @@
       {
         "name": "Field",
         "title": "输入框"
+      },
+      {
+        "name": "Form",
+        "title": "表单"
       },
       {
         "name": "PickerPlus",
@@ -128,6 +136,10 @@
         "title": "弹出框"
       },
       {
+        "name": "PullRefresh",
+        "title": "下拉刷新"
+      },
+      {
         "name": "ShareSheet",
         "title": "分享面板"
       },
@@ -194,6 +206,10 @@
         "title": "图片预览"
       },
       {
+        "name": "Link",
+        "title": "链接"
+      },
+      {
         "name": "List",
         "title": "列表"
       },
@@ -235,6 +251,10 @@
     "name": "Navigation Components",
     "title": "导航组件",
     "list": [
+      {
+        "name": "BackTop",
+        "title": "返回顶部"
+      },
       {
         "name": "Grid",
         "title": "宫格"

@@ -8,6 +8,9 @@ export function kebabCase(word) {
 }
 
 export function style(styles) {
+  if (styles === undefined) {
+    return '';
+  }
   if (Array.isArray(styles)) {
     return styles
       .filter(item => item != null && item !== '')
@@ -17,7 +20,6 @@ export function style(styles) {
   if (typeof styles === 'string') {
     return styles;
   }
-  // if ('Object' === styles.constructor) {
   return Object
     .keys(styles)
     .filter(key => styles[key] != null && styles[key] !== '')

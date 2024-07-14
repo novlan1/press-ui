@@ -177,6 +177,65 @@
     </demo-block>
 
     <demo-block
+      :title="t('slot')"
+      header-style="background: #f7f8fa;"
+    >
+      <press-tabs
+        swipeable
+        use-title-slot
+      >
+        <template #title-0>
+          <span class="title">{{ t('tab') }}</span>
+          <press-icon-plus name="like-o" />
+        </template>
+        <template #title-1>
+          <span class="title">{{ t('tab') }} 1</span>
+          <press-icon-plus name="friends-o" />
+        </template>
+        <template #title-2>
+          <span class="title">{{ t('tab') }} 2</span>
+        </template>
+        <template #title-3>
+          <span class="title">Custom Title</span>
+        </template>
+
+        <press-tab
+          v-for="(item,index) of tabs4"
+          :key="index"
+          :title="`${t('tab')} ${index+1}`"
+        >
+          <div class="content">
+            {{ t('content') }} {{ index+1 }}
+          </div>
+        </press-tab>
+      </press-tabs>
+
+      <press-tabs
+        swipeable
+        use-title-slot
+      >
+        <div
+          v-for="(item, index) of Array(4)"
+          :key="index"
+          :slot="`title-${index}`"
+        >
+          <span class="title">{{ t('tab') }} {{ index }}</span>
+          <press-icon-plus name="like-o" />
+        </div>
+
+        <press-tab
+          v-for="(item,index) of tabs4"
+          :key="index"
+          :title="`${t('tab')} ${index+1}`"
+        >
+          <div class="content">
+            {{ t('content') }} {{ index+1 }}
+          </div>
+        </press-tab>
+      </press-tabs>
+    </demo-block>
+
+    <demo-block
       :title="t('lazyTab')"
       header-style="background: #f7f8fa;"
     >
@@ -265,7 +324,7 @@
 <script>
 import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
 import PressTab from 'press-ui/press-tab/press-tab.vue';
-
+import pressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   i18n: {
@@ -285,6 +344,7 @@ export default {
       matchByName: '通过名称匹配',
       beforeChange: '异步切换',
       lazyTab: '延迟加载',
+      slot: '插槽',
     },
     'en-US': {
       tab: 'Tab ',
@@ -303,11 +363,13 @@ export default {
       matchByName: 'Match By Name',
       beforeChange: 'Before Change',
       lazyTab: 'LAZY TAB',
+      slot: 'Slot',
     },
   },
   components: {
     PressTabs,
     PressTab,
+    pressIconPlus,
   },
   data() {
     return {
@@ -351,6 +413,8 @@ export default {
     },
     onClick(val) {
       console.log('[onClick] val: ', val);
+      const { index, name, title } = val;
+      this.onGTip(`index: ${index}, name: ${name}, tile: ${title}`);
     },
     onScroll(val) {
       console.log('[onScroll] val: ', val);
@@ -367,6 +431,9 @@ export default {
   .content {
     padding: 20px;
   }
+}
+.title {
+  margin-right: 4px;
 }
 </style>
 

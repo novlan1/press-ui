@@ -147,11 +147,11 @@ export default {
       // 如果设置圆角，必须要有hidden，否则可能圆角无效
       style.overflow = this.radius > 0 ? 'hidden' : 'visible';
       // if (this.fade) {
-      // 	style.opacity = this.opacity
-      // 	// nvue下，这几个属性必须要分开写
-      // 	style.transitionDuration = `${this.durationTime}ms`
-      // 	style.transitionTimingFunction = 'ease-in-out'
-      // 	style.transitionProperty = 'opacity'
+      //   style.opacity = this.opacity
+      //   // nvue下，这几个属性必须要分开写
+      //   style.transitionDuration = `${this.durationTime}ms`
+      //   style.transitionTimingFunction = 'ease-in-out'
+      //   style.transitionProperty = 'opacity'
       // }
 
       const res =  styleUtil([

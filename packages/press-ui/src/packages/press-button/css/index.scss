@@ -17,6 +17,7 @@
   font-size: var(--button-default-font-size, $button-default-font-size);
   transition: opacity $animation-duration-fast;
   border-radius: var(--button-border-radius, $button-border-radius);
+  cursor: pointer;
 
   &::before {
     position: absolute;
@@ -182,6 +183,7 @@
 
   &--disabled {
     opacity: var(--button-disabled-opacity, $button-disabled-opacity);
+    cursor: not-allowed;
   }
 
   &__text {
@@ -383,5 +385,6 @@
 
   &--e-sport-disabled {
     opacity: var(--button-disabled-opacity, $button-disabled-opacity);
+    cursor: not-allowed;
   }
 }

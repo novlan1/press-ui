@@ -35,6 +35,11 @@
           "path": "/components/press/press-popup-plus.md"
         },
         {
+          "title": "Text",
+          "subTitle": "文本",
+          "path": "/components/press/press-text.md"
+        },
+        {
           "title": "Toast",
           "subTitle": "轻提示",
           "path": "/components/press/press-toast.md"
@@ -74,6 +79,11 @@
           "title": "Field",
           "subTitle": "输入框",
           "path": "/components/press/press-field.md"
+        },
+        {
+          "title": "Form",
+          "subTitle": "表单",
+          "path": "/components/press/press-form.md"
         },
         {
           "title": "PickerPlus",
@@ -157,6 +167,11 @@
           "path": "/components/press/press-popover-plus.md"
         },
         {
+          "title": "PullRefresh",
+          "subTitle": "下拉刷新",
+          "path": "/components/press/press-pull-refresh.md"
+        },
+        {
           "title": "ShareSheet",
           "subTitle": "分享面板",
           "path": "/components/press/press-share-sheet.md"
@@ -238,6 +253,11 @@
           "path": "/components/press/press-image-preview.md"
         },
         {
+          "title": "Link",
+          "subTitle": "链接",
+          "path": "/components/press/press-link.md"
+        },
+        {
           "title": "List",
           "subTitle": "列表",
           "path": "/components/press/press-list.md"
@@ -288,6 +308,11 @@
       "title": "导航组件",
       "collapsable": false,
       "children": [
+        {
+          "title": "BackTop",
+          "subTitle": "返回顶部",
+          "path": "/components/press/press-back-top.md"
+        },
         {
           "title": "Grid",
           "subTitle": "宫格",

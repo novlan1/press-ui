@@ -222,16 +222,17 @@ export default {
 ### Props
 
 
-| 参数                   | 说明                         | 类型               | 默认值   |
-| ---------------------- | ---------------------------- | ------------------ | -------- |
-| v-model                | 是否展示气泡弹出层           | _boolean_          | `false`  |
-| actions                | 选项列表                     | _Action[]_         | `[]`     |
-| placement              | 弹出位置                     | _string_           | `bottom` |
-| theme                  | 主题风格，可选值为 `dark`    | _string_           | `light`  |
-| offset                 | 出现位置的偏移量             | _[number, number]_ | `[0, 8]` |
-| overlay                | 是否显示遮罩层               | _boolean_          | `false`  |
-| close-on-click-action  | 是否在点击选项后关闭         | _boolean_          | `true`   |
-| close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_          | `true`   |
+| 参数                   | 说明                           | 类型                 | 默认值   |
+| ---------------------- | ------------------------------ | -------------------- | -------- |
+| v-model                | 是否展示气泡弹出层             | _boolean_            | `false`  |
+| actions                | 选项列表                       | _Action[]_           | `[]`     |
+| placement              | 弹出位置                       | _string_             | `bottom` |
+| theme                  | 主题风格，可选值为 `dark`      | _string_             | `light`  |
+| offset                 | 出现位置的偏移量               | _[number, number]_   | `[0, 8]` |
+| overlay                | 是否显示遮罩层                 | _boolean_            | `false`  |
+| close-on-click-action  | 是否在点击选项后关闭           | _boolean_            | `true`   |
+| close-on-click-outside | 是否在点击外部元素后关闭菜单   | _boolean_            | `true`   |
+| get-container          | 指定挂载的节点，仅 `H5` 下生效 | _string \| function_ | -        |
 
 ### Action 数据结构
 

@@ -12,4 +12,9 @@
  *
  * // 2020-11-27 08:23:24
  */
-export declare function timeStampFormat(timestamp: number, fmt: string, defaultVal?: string, whitePrefix?: string): string;
+export declare function timeStampFormat(
+  timestamp: number,
+  fmt: string,
+  defaultVal?: string,
+  whitePrefix?: string
+): string;

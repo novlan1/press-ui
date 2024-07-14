@@ -1,5 +1,21 @@
 <template>
   <div class="demo-wrap demo-wrap--gray">
+    <!-- #ifdef H5 -->
+    <press-cell
+      :title="t('useGetContainer')"
+      clickable
+      @click="() => useGetContainer = !useGetContainer"
+    >
+      <template #right-icon>
+        <press-switch
+          size="22px"
+          :checked="useGetContainer"
+          @change="() => useGetContainer = !useGetContainer"
+        />
+      </template>
+    </press-cell>
+    <!-- #endif -->
+
     <demo-block
       :title="t('basicUsage')"
       :header-style="headerStyle"
@@ -11,6 +27,7 @@
         :actions="t('actions')"
         placement="bottom-start"
         custom-style="margin-left: 16px;"
+        :get-container="getContainer"
         @select="onSelect"
         @open="onOpen"
         @opened="onOpened"
@@ -32,6 +49,7 @@
         trigger="click"
         theme="dark"
         :actions="t('actions')"
+        :get-container="getContainer"
         placement="bottom"
         custom-style="z-index: 1;margin-left: 16px;"
         @select="onSelect"
@@ -71,6 +89,8 @@
             v-model="show.placement"
             theme="dark"
             trigger="click"
+            :z-index="1000"
+            :get-container="getContainer"
             :actions="t('shortActions')"
             :placement="currentPlacement"
             @select="onSelect"
@@ -96,8 +116,10 @@
         v-model="show.showIcon"
         trigger="click"
         :actions="t('actionsWithIcon')"
+        :get-container="getContainer"
         placement="bottom-start"
         custom-style="z-index: 2;margin-left: 16px;"
+        :z-index="1000"
         @select="onSelect"
       >
         <template #reference>
@@ -113,6 +135,7 @@
       <PressPopoverPlus
         v-model="show.disableAction"
         trigger="click"
+        :get-container="getContainer"
         :actions="t('actionsDisabled')"
         custom-style="z-index: 2;margin-left: 16px;"
         @select="onSelect"
@@ -137,6 +160,7 @@
         v-model="show.customContent"
         trigger="click"
         placement="bottom-start"
+        :get-container="getContainer"
         custom-style="z-index: 1;margin-left: 16px;"
         @select="onSelect"
       >
@@ -188,6 +212,7 @@ import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressGrid from 'press-ui/press-grid/press-grid.vue';
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
 export default {
@@ -214,6 +239,7 @@ export default {
       customContent: '自定义内容',
       disableAction: '禁用选项',
       choosePlacement: '选择弹出位置',
+      useGetContainer: '是否使用 getContainer',
     },
     'en-US': {
       actions: [
@@ -241,6 +267,7 @@ export default {
       customContent: 'Custom Content',
       disableAction: 'Disable Action',
       choosePlacement: 'Placement',
+      useGetContainer: 'Use GetContainer',
     },
   },
   components: {
@@ -251,6 +278,7 @@ export default {
     PressCell,
     PressGridItem,
     PressGrid,
+    PressSwitch,
   },
   data() {
     return {
@@ -280,7 +308,14 @@ export default {
       ],
       headerStyle: 'background: #f7f8fa;',
       sectionStyle: 'background: #f7f8fa;margin: 0 0 6px;padding: 0;',
+
+      useGetContainer: false,
     };
+  },
+  computed: {
+    getContainer() {
+      return this.useGetContainer ? 'body' : '';
+    },
   },
   methods: {
     onPickerChange({ value, index }) {

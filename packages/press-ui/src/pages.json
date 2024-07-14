@@ -35,414 +35,444 @@
     }
   ],
   "subPackages": [
-    {
-      "root": "pages/press",
-      "pages": [
-        {
-          "path": "button/button",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "cell/cell",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "col/col",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "icon-plus/icon-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "image/image",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "popup-plus/popup-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "toast/toast",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "transition/transition",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "calendar/calendar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "checkbox/checkbox",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "code-input/code-input",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "datetime-picker/datetime-picker",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "field/field",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "picker-plus/picker-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "radio/radio",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "rate/rate",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "search/search",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "slider/slider",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "stepper/stepper",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "switch/switch",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "uploader/uploader",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "action-sheet/action-sheet",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "dialog-plus/dialog-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "dropdown-menu/dropdown-menu",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "loading-plus/loading-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "notify/notify",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "overlay/overlay",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "popover-plus/popover-plus",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "share-sheet/share-sheet",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "swipe-cell/swipe-cell",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "teleport/teleport",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "avatar/avatar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "badge/badge",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "barcode/barcode",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "card/card",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "circle/circle",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "collapse/collapse",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "count-down/count-down",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "count-to/count-to",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "divider/divider",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "empty/empty",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "fab/fab",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "image-preview/image-preview",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "list/list",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "notice-bar/notice-bar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "progress/progress",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "q-r-code/q-r-code",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "skeleton/skeleton",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "steps/steps",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "sticky/sticky",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "swiper/swiper",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "tag/tag",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "grid/grid",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "index-bar/index-bar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "nav-bar/nav-bar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "sidebar/sidebar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "tab/tab",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "tabbar/tabbar",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "tree-select/tree-select",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "area/area",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "dialog/dialog",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "icon/icon",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "loading/loading",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "pagination/pagination",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "picker/picker",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "popover/popover",
-          "style": {
-            "navigationBarTitleText": ""
-          }
-        },
-        {
-          "path": "popup/popup",
-          "style": {
-            "navigationBarTitleText": ""
-          }
+  {
+    "root": "pages/press",
+    "pages": [
+      {
+        "path": "button/button",
+        "style": {
+          "navigationBarTitleText": ""
         }
-      ]
-    }
-  ],
+      },
+      {
+        "path": "cell/cell",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "col/col",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "icon-plus/icon-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "image/image",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "popup-plus/popup-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "text/text",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "toast/toast",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "transition/transition",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "calendar/calendar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "checkbox/checkbox",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "code-input/code-input",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "datetime-picker/datetime-picker",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "field/field",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "form/form",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "picker-plus/picker-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "radio/radio",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "rate/rate",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "search/search",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "slider/slider",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "stepper/stepper",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "switch/switch",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "uploader/uploader",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "action-sheet/action-sheet",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "dialog-plus/dialog-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "dropdown-menu/dropdown-menu",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "loading-plus/loading-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "notify/notify",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "overlay/overlay",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "popover-plus/popover-plus",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "pull-refresh/pull-refresh",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "share-sheet/share-sheet",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "swipe-cell/swipe-cell",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "teleport/teleport",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "avatar/avatar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "badge/badge",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "barcode/barcode",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "card/card",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "circle/circle",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "collapse/collapse",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "count-down/count-down",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "count-to/count-to",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "divider/divider",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "empty/empty",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "fab/fab",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "image-preview/image-preview",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "link/link",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "list/list",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "notice-bar/notice-bar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "progress/progress",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "q-r-code/q-r-code",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "skeleton/skeleton",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "steps/steps",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "sticky/sticky",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "swiper/swiper",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "tag/tag",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "back-top/back-top",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "grid/grid",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "index-bar/index-bar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "nav-bar/nav-bar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "sidebar/sidebar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "tab/tab",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "tabbar/tabbar",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "tree-select/tree-select",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "area/area",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "dialog/dialog",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "icon/icon",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "loading/loading",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "pagination/pagination",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "picker/picker",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "popover/popover",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
+        "path": "popup/popup",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      }
+    ]
+  }
+],
   "preloadRule": {
     "pages/index/index": {
       "network": "all",

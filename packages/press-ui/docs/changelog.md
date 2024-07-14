@@ -1,5 +1,97 @@
 # 更新日志
 
+### [2.0.7](https://github.com/novlan1/press-ui/compare/v2.0.6...v2.0.7) (2024-07-12)
+
+
+### Features 🎉
+
+* **pull-refresh:** 增加trackStyle ([862a4fc](https://github.com/novlan1/press-ui/commit/862a4fcdacbd9a05d30bc9a21f3543b697a066de))
+
+### [2.0.6](https://github.com/novlan1/press-ui/compare/v2.0.5...v2.0.6) (2024-07-12)
+
+
+### Chore 🚀 
+
+* **form:** 补充demo ([af6f9da](https://github.com/novlan1/press-ui/commit/af6f9da02cb12ea8768d59e3f2f2dabb3280a593))
+
+
+### Features 🎉
+
+* **pull-refresh:** add pull refresh ([947e0ea](https://github.com/novlan1/press-ui/commit/947e0ea3f84debfff3450b72066cbfb56e8623b1))
+
+### [2.0.5](https://github.com/novlan1/press-ui/compare/v2.0.4...v2.0.5) (2024-07-12)
+
+
+### Chore 🚀 
+
+* 补充ts类型 ([5b879ef](https://github.com/novlan1/press-ui/commit/5b879effb23457d9992835f0c664cea1c17121af))
+
+
+### Features 🎉
+
+* **form:** 增加validate ([41a5c94](https://github.com/novlan1/press-ui/commit/41a5c94630112790628b5aee0d9504641362b836))
+* **popover:** 支持getContainer ([dd1c7bb](https://github.com/novlan1/press-ui/commit/dd1c7bb2341db413b5a8607d7f1b1e48a6a0039b))
+* **popup:** 增加条件编译，防止小程序打包报错 ([405fc21](https://github.com/novlan1/press-ui/commit/405fc21453731d59e6fd0c106c1a3a99c762da4b))
+
+### [2.0.4](https://github.com/novlan1/press-ui/compare/v2.0.3...v2.0.4) (2024-07-11)
+
+
+### Chore 🚀 
+
+* **text:** update demo ([3ab23cd](https://github.com/novlan1/press-ui/commit/3ab23cdee7c3c095836b8e4b9f1ea0d09a613532))
+* update tab demo ([e37c6f0](https://github.com/novlan1/press-ui/commit/e37c6f02e3b19b6995b12bd08e1a890d82457f9e))
+
+
+### Documentation 📖
+
+* update docs ([26126f0](https://github.com/novlan1/press-ui/commit/26126f01db38db8a61b8a1da7c071ab62280353c))
+
+
+### Features 🎉
+
+* **back-top:** 使用props中的zIndex，增加 size 属性 ([9d01f0f](https://github.com/novlan1/press-ui/commit/9d01f0f37e37684af2f93a53405098b5ba762b3b))
+* **back-top:** 优化back-top ([d985119](https://github.com/novlan1/press-ui/commit/d985119be7241d7c5f1e4e4d4a796aacbf5dae19))
+* **back-top:** add back-top component ([24ce183](https://github.com/novlan1/press-ui/commit/24ce183727777398b2efac9f91ef8d18afc4ed47))
+* **button:** 增加cursor: pointer ([a5af404](https://github.com/novlan1/press-ui/commit/a5af404b9d9427468df55a8bd95932dfdf71d4cd))
+* **form:** add form component ([c734de1](https://github.com/novlan1/press-ui/commit/c734de1e1d11405127ae3a497b32030a31f77164))
+* **link:** add link component ([f79e3c6](https://github.com/novlan1/press-ui/commit/f79e3c666d8676400a05e1371e436a0b3810e041))
+* **link:** underLine => underline ([9dfd3c8](https://github.com/novlan1/press-ui/commit/9dfd3c8eab648d926382337df96620bac2356e91))
+* **tab:** 取消scoped，业务改动太多 ([f105441](https://github.com/novlan1/press-ui/commit/f105441c14c15cc00b54d752932ddb2d7dfb0fef))
+* **text:** add text component ([12465b0](https://github.com/novlan1/press-ui/commit/12465b00f07add55080f0a4fbd2b863172769d01))
+
+### [2.0.3](https://github.com/novlan1/press-ui/compare/v2.0.2...v2.0.3) (2024-07-10)
+
+
+### Features 🎉
+
+* **tab:** 低版本uni-app不支持动态slot ([1ff5a4f](https://github.com/novlan1/press-ui/commit/1ff5a4fcef3329f8d943258936abcd51bd9479a0))
+
+### [2.0.2](https://github.com/novlan1/press-ui/compare/v2.0.1...v2.0.2) (2024-07-10)
+
+
+### Chore 🚀 
+
+* update demo page ([48bc2d5](https://github.com/novlan1/press-ui/commit/48bc2d518f977b3014c94e0bedeaa0d0a64639dd))
+
+
+### Features 🎉
+
+* **popover:** 取消slot，业务改造成本大 ([dfa17aa](https://github.com/novlan1/press-ui/commit/dfa17aa874eefe48d00bd127e614544b6e8a6f2b))
+
+### [2.0.1](https://github.com/novlan1/press-ui/compare/v2.0.0...v2.0.1) (2024-07-09)
+
+
+### Chore 🚀 
+
+* remove share page ([c82a79c](https://github.com/novlan1/press-ui/commit/c82a79cf42c05af6af9b8c3343665c9d0c965268))
+* update demo ([886aba6](https://github.com/novlan1/press-ui/commit/886aba674def6109157280f74eb7a10ec1524726))
+
+
+### Features 🎉
+
+* **nav-bar:** 优化样式 ([2c63e8f](https://github.com/novlan1/press-ui/commit/2c63e8f6c7d6a94db4406ed0564e33a0b357159e))
+* **tab:** add title slot ([32d648e](https://github.com/novlan1/press-ui/commit/32d648e2282d9a4a7da77c973e89517d58ffb238))
+
 ## [2.0.0](https://github.com/novlan1/press-ui/compare/v1.3.40...v2.0.0) (2024-07-09)
 
 

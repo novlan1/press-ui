@@ -153,7 +153,7 @@ export function chooseFile({
           success: res => resolve(formatFile(res)),
           fail: reject,
         });
-			// #endif
+      // #endif
     }
   });
 }

@@ -49,3 +49,6 @@ export declare function isNaN(val: any): boolean;
 export declare function isAndroid(): boolean;
 export declare function isIOS(): boolean;
 export declare function isH5(): boolean;
+export declare function isUrl(url: any): boolean;
+export declare function isChinese(error: any): boolean;
+export declare function errorTip(error: string): void;

@@ -2,6 +2,7 @@
   <div
     class="press-field-index"
     :class="customClass"
+    :style="wrapperStyle"
   >
     <press-cell
       :size="size"
@@ -168,6 +169,8 @@ import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
 import { isObject } from '../common/utils/validator';
 import { getEventDetail, getEventValue } from '../common/dom/event';
 import { nextTick, vModelMixin } from '../common/vue3/adapter';
+import { formValidate } from '../common/utils/parent';
+
 
 export default {
   name: 'PressField',
@@ -199,6 +202,7 @@ export default {
     clickable: Boolean,
     inputAlign: { type: String, default: '' },
     customStyle: { type: String, default: '' },
+    wrapperStyle: { type: String, default: '' },
     errorMessage: { type: String, default: '' },
     arrowDirection: { type: String, default: '' },
     showWordLimit: Boolean,
@@ -296,6 +300,8 @@ export default {
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', getEventDetail(event));
+      formValidate(this, 'blur');
+
       nextTick(this.adjustSize);
 
       setTimeout(() => {
@@ -344,6 +350,8 @@ export default {
         // this.$emit('input', this.innerValue);
         this.emitModelValue(this.innerValue);
         this.$emit('change', this.innerValue);
+
+        formValidate(this, 'change');
       });
     },
     setShowClear() {

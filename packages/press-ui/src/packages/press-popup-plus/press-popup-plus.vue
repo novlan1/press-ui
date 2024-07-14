@@ -36,6 +36,10 @@ import utils from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
+// #ifdef H5
+import { PortalMixin } from '../mixins/portal/index';
+// #endif
+
 export default {
   name: 'PressPopupPlus',
   options: {
@@ -46,7 +50,17 @@ export default {
     PressIconPlus,
     PressOverlay,
   },
-  mixins: [transition(false)],
+  mixins: [
+    transition(false),
+
+    // #ifdef H5
+    PortalMixin({
+      afterPortal() {
+
+      },
+    }),
+    // #endif
+  ],
   props: {
     enterClass: {
       type: String,

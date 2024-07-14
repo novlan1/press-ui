@@ -16,6 +16,10 @@
 import PressSection from '../components/press-section/press-section.vue';
 
 export default {
+  name: 'DemoBlock',
+  options: {
+    styleIsolation: 'shared',
+  },
   components: {
     PressSection,
   },

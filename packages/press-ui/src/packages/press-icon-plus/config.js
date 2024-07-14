@@ -234,7 +234,7 @@ export default {
     'audio',
     'graphic',
     'column',
-    'invition',
+    // 'invition',
     'play',
     'pause',
     'stop',

@@ -28,6 +28,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/text/text",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/toast/toast",
           "navigationStyle": ""
         },
@@ -58,6 +62,10 @@
         },
         {
           "url": "/press/field/field",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/form/form",
           "navigationStyle": ""
         },
         {
@@ -126,6 +134,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/pull-refresh/pull-refresh",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/share-sheet/share-sheet",
           "navigationStyle": ""
         },
@@ -191,6 +203,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/link/link",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/list/list",
           "navigationStyle": ""
         },
@@ -231,6 +247,10 @@
     {
       "name": "Navigation Components",
       "list": [
+        {
+          "url": "/press/back-top/back-top",
+          "navigationStyle": ""
+        },
         {
           "url": "/press/grid/grid",
           "navigationStyle": ""
