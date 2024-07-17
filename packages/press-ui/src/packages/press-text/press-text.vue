@@ -114,6 +114,9 @@ export default {
     PressLink,
   },
   mixins,
+  emits: [
+    'click',
+  ],
   data() {
     return {};
   },

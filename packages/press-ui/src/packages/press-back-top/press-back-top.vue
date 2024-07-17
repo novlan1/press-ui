@@ -50,6 +50,9 @@ export default {
     PressTransition,
   },
   mixins: [props],
+  emits: [
+    'click',
+  ],
   computed: {
     backTopStyle() {
       // 动画组件样式

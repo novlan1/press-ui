@@ -57,6 +57,7 @@ import { getScrollTop, getScroller } from '../common/dom/scroll';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { t } from '../locale';
 import { TouchMixin } from '../mixins/touch/index';
+import { vModelMixin } from '../common/vue3/adapter';
 
 
 export function preventDefault(event) {
@@ -78,7 +79,7 @@ export default {
   components: {
     PressLoadingPlus,
   },
-  mixins: [TouchMixin],
+  mixins: [TouchMixin, vModelMixin],
   props: {
     disabled: Boolean,
     successText: {
@@ -101,10 +102,6 @@ export default {
       type: [Number, String],
       default: '',
     },
-    value: {
-      type: Boolean,
-      required: true,
-    },
     successDuration: {
       type: [Number, String],
       default: 500,
@@ -126,6 +123,10 @@ export default {
       default: '',
     },
   },
+  emits: [
+    'change',
+    'update:modelValue',
+  ],
   data() {
     return {
       status: 'normal',
@@ -162,7 +163,7 @@ export default {
     },
   },
   watch: {
-    value(loading) {
+    realModelValue(loading) {
       this.duration = this.animationDuration;
 
       if (loading) {
@@ -225,7 +226,8 @@ export default {
 
         if (this.status === 'loosing') {
           this.setStatus(+this.headHeight, true);
-          this.$emit('input', true);
+          this.emitModelValue(true);
+          this.$emit('change', true);
 
           // ensure value change can be watched
           this.$nextTick(() => {

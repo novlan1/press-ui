@@ -1,5 +1,9 @@
 export default {
   props: {
+    customStyle: {
+      type: String,
+      default: '',
+    },
     // input的label提示语
     label: {
       type: String,

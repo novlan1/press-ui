@@ -17,6 +17,9 @@ import { style as styleUtil } from '../common/utils/style';
 export default {
   name: 'PressLink',
   mixins: [props],
+  emits: [
+    'click',
+  ],
   computed: {
     linkStyle() {
       const style = {

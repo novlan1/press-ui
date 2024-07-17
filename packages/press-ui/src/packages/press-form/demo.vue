@@ -14,6 +14,7 @@
       >
         <PressField
           :value="model1.userInfo.name"
+          :model-value="model1.userInfo.name"
           :border="false"
           @change="onChange"
         />
@@ -31,7 +32,7 @@
           disabled-color="#ffffff"
           placeholder="请选择性别"
           :border="false"
-          readonly="isMp"
+          :readonly="isMp"
           @click-input="showSex = true; hideKeyboard()"
         />
         <PressIconPlus
@@ -46,8 +47,9 @@
         border-bottom
       >
         <PressRadioGroup
-          v-model="model1.radiovalue1"
+          :value="model1.radiovalue1"
           direction="horizontal"
+          @change="val => model1.radiovalue1 = val"
         >
           <PressRadio
             v-for="(item, index) in radiolist1"
@@ -68,7 +70,7 @@
         label-width="80"
       >
         <PressCheckboxGroup
-          v-model="model1.checkboxValue1"
+          :value="model1.checkboxValue1"
           shape="square"
           direction="horizontal"
           @change="change"
@@ -355,7 +357,8 @@ export default {
       this.model1.userInfo.sex = e.name;
       this.$refs.form1.validateField('userInfo.sex');
     },
-    change() {
+    change(value) {
+      this.model1.checkboxValue1 = value;
       // console.log(e);
     },
     formatter(day) {

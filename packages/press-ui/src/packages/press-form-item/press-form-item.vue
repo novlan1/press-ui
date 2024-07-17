@@ -29,7 +29,7 @@
               v-if="leftIcon"
               class="press-form-item__body__left__content__icon"
             >
-              <press-icon
+              <PressIconPlus
                 :name="leftIcon"
                 :custom-style="leftIconStyle"
               />
@@ -87,11 +87,18 @@ import { errorTip } from '../common/utils/validator';
 import { addUnit } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
 import { getProperty, setProperty } from '../common/utils/property';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
 
 export default {
   name: 'PressFormItem',
+  components: {
+    PressIconPlus,
+  },
   mixins: [props],
+  emits: [
+    'click',
+  ],
   data() {
     return {
       // 错误提示语
