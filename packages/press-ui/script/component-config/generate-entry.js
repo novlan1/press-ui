@@ -77,7 +77,11 @@ function generateIndexScss() {
     const list = glob.sync(globMatch);
 
     result.push(...list.map((item) => {
-      const relativePath = path.relative(targetDir, item);
+      let relativePath = path.relative(targetDir, item);
+      if (process.platform === 'win32') {
+        relativePath = relativePath.replace(/\\/g, '/');
+      }
+
       const str = `@import "./${relativePath}";`;
       return str;
     }));

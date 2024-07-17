@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.8](https://github.com/novlan1/press-ui/compare/v2.0.7...v2.0.8) (2024-07-15)
+
+
+### ✏️ Documentation | 文档
+
+* **form:** add form docs ([0f03845](https://github.com/novlan1/press-ui/commit/0f03845399ef293c7768a712fb29170c3cb2c27e))
+* **pull-refresh:** update docs ([20ebb3a](https://github.com/novlan1/press-ui/commit/20ebb3a97a92e1d33cbca14b3439fc5aa70a3855))
+
+
+### ✨ Features | 新功能
+
+* **form:** 优化form ([9434ed8](https://github.com/novlan1/press-ui/commit/9434ed8f54be3ddd7d6eb3dcea295fe8bfaf44c9))
+* **form:** update form line ([6fe785d](https://github.com/novlan1/press-ui/commit/6fe785dbad00dc8f95c14e9c03e0ac5b4fc4a2a9))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* **form:** chore: lint ([347837a](https://github.com/novlan1/press-ui/commit/347837ac0ee2644345696fba8c0c33dc13e25604))
+* **form:** update demo ([d96358d](https://github.com/novlan1/press-ui/commit/d96358dcf7006f2308b1a8ffe0026b56b29bdd78))
+* **form:** update demo ([b339629](https://github.com/novlan1/press-ui/commit/b339629e349b78d9dfc5276b0240b3ff723ffb6f))
+* **pull-refresh:** update demo ([611c804](https://github.com/novlan1/press-ui/commit/611c804a4956dfdb8752d9ddd25833a1fed73d4d))
+* update manifestAppIdList ([98f85e3](https://github.com/novlan1/press-ui/commit/98f85e306e0c3188f9f75c85b1d09431d8fea8ed))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **scripts:** 修复 windows 环境兼容性问题 ([c9f79ad](https://github.com/novlan1/press-ui/commit/c9f79ad332f2a60fa5c2283e6690d6d32781eb3e))
+
 ### [2.0.7](https://github.com/novlan1/press-ui/compare/v2.0.6...v2.0.7) (2024-07-12)
 
 

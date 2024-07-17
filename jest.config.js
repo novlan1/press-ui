@@ -2,7 +2,6 @@ const path = require('path');
 const JEST_STYLE_MOCK_FILE = path.resolve(__dirname, 'jest.style-mock.ts');
 const JEST_FILE_MOCK_FILE = path.resolve(__dirname, 'jest.file-mock.ts');
 
-
 module.exports = {
   preset: 'ts-jest',
   rootDir: path.resolve(__dirname, './'),
@@ -13,6 +12,7 @@ module.exports = {
     '^src/packages/(.*)$': '<rootDir>/packages/press-ui/src/packages/$1',
     '^src/pages/(.*)$': '<rootDir>/packages/press-ui/src/pages/$1',
     '^src/utils/(.*)$': '<rootDir>/packages/press-ui/src/utils/$1',
+    '^press-ui/(.*)$': '<rootDir>packages/press-ui/src/packages/$1',
   },
   transform: {
     '\\.(vue)$': 'vue-jest',
@@ -46,4 +46,5 @@ module.exports = {
   collectCoverage: true,
   coverageReporters: ['lcov', 'text-summary'],
   coverageDirectory: '<rootDir>/tests/coverage',
+  transformIgnorePatterns: ['<rootDir>/packages/press-ui/node_modules/.pnpm/(?!(@popperjs\\+core)@)'],
 };

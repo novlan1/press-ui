@@ -1,10 +1,17 @@
 <template>
-  <div>
+  <press-collapse-item
+    v-if="quickLinkList.length"
+    name="quickList"
+    :is-link="false"
+    :active="activeNames.indexOf(`quickList`) > -1"
+  >
     <press-section
-      v-if="quickLinkList.length"
+      slot="title"
       key="other-project-section"
       :title="t('otherProject')"
+      :active="activeNames.indexOf(`quickList`) > -1"
       :color="sectionStyle.color"
+      :clickable="true"
       type="line"
       :header-style="sectionStyle.header"
     />
@@ -14,12 +21,14 @@
       :key="quickLink.link"
       is-link
       :title="quickLink.label"
+      custom-class="component-cell"
       @click="onJumpToOtherDemo(quickLink)"
     />
-  </div>
+  </press-collapse-item>
 </template>
 <script>
 import PressSection from '../press-section/press-section.vue';
+import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item';
 
 import { isNotInUni } from '../../../packages/common/utils/utils';
 import { setClipboardData } from '../../../packages/common/clipboard/clipboard';
@@ -72,6 +81,7 @@ export default {
   name: 'QuickListComp',
   components: {
     PressSection,
+    PressCollapseItem,
   },
   props: {
     helpDataUrl: {
@@ -81,9 +91,13 @@ export default {
     sectionStyle: {
       type: Object,
       default: () => ({
-        header: 'font-weight: 500;margin-bottom: 6px;',
+        header: 'font-weight: 500;margin-bottom: 0px;',
         color: '#007aff',
       }),
+    },
+    activeNames: {
+      type: Array,
+      default: () => (['quickList']),
     },
   },
   data() {

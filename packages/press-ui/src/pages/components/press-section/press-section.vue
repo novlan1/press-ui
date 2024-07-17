@@ -1,5 +1,11 @@
 <template>
-  <div class="press-section">
+  <div
+    class="press-section"
+    :class="[
+      {'press-section--active': active},
+      {'press-section--clickable': clickable},
+    ]"
+  >
     <div
       class="press-section-header"
       :style="headerStyle"
@@ -8,7 +14,9 @@
       <div
         v-if="type"
         class="press-section-header__decoration"
-        :class="type"
+        :class="[type, {
+          ['press-section-header__decoration--active']: active
+        }]"
       />
       <slot
         v-else
@@ -89,6 +97,14 @@ export default {
       type: String,
       default: '',
     },
+    active: {
+      type: Boolean,
+      default: true,
+    },
+    clickable: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['click'],
   computed: {
@@ -112,6 +128,18 @@ $press-primary: #2979ff !default;
 
 .press-section {
   background-color: #fff;
+  opacity: .8;
+  transition: all 300ms ease-in-out;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &--clickable {
+    /* #ifdef H5 */
+    cursor: pointer;
+    /* #endif */
+  }
 
   .press-section-header {
     position: relative;

@@ -8,6 +8,8 @@
       <press-collapse
         :value="activeNames"
         @change="onChange"
+        @open="onOpen"
+        @close="onClose"
       >
         <press-collapse-item
           :title="`${t('title')} 1`"
@@ -163,6 +165,14 @@ export default {
     onChange(value) {
       console.log('onChange.value: ', value);
       this.activeNames = value;
+    },
+    onOpen(value) {
+      this.onGTip(`open: ${value}`);
+      console.log('onOpen.value: ', value);
+    },
+    onClose(value) {
+      this.onGTip(`close: ${value}`);
+      console.log('onClose.value: ', value);
     },
     onChangeAccordion(value) {
       this.activeNames2 = value;

@@ -3,34 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap">
   <div class="swiper-wrap">
-    <div class="swiper">
-      <div class="uni-swiper-wrapper">
-        <div class="uni-swiper-slides">
-          <div class="uni-swiper-slide-frame" style="width: 100%; height: 100%; transform: translate(0%, 0) translateZ(0);">
-            <div style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0) translateZ(0);">
-              <div class="swiper-item swiper-item--big-red">
-                A
-              </div>
-            </div>
-            <div style="position: absolute; width: 100%; height: 100%; transform: translate(100%, 0) translateZ(0);">
-              <div class="swiper-item swiper-item--big-green">
-                B
-              </div>
-            </div>
-            <div style="position: absolute; width: 100%; height: 100%; transform: translate(-100%, 0) translateZ(0);">
-              <div class="swiper-item swiper-item--big-blue">
-                C
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="uni-swiper-dots uni-swiper-dots-horizontal">
-          <div class="uni-swiper-dot uni-swiper-dot-active"></div>
-          <div class="uni-swiper-dot"></div>
-          <div class="uni-swiper-dot"></div>
-        </div>
-      </div>
-    </div>
+    <swiper indicator-dots="true" autoplay="autoplay" circular="true" interval="2000" duration="500" current="0" indicator-color="" indicator-active-color="" previous-margin="" next-margin="" current-item-id="" display-multiple-items="1" navigation-color="#fff" navigation-active-color="rgba(53, 53, 53, 0.6)" class="swiper"></swiper>
   </div>
   <div class="swiper-list">
     <div class="swiper-list-cell swiper-list-cell--pd">

@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div class="demo-wrap">
   <div>
     <div data-key="cell" class="press-swipe-cell">
-      <div>
+      <div class="press-swipe-cell__content">
         <div data-key="left" class="press-swipe-cell__left">
           <div class="left">
             选择

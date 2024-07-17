@@ -1,6 +1,6 @@
 <template>
   <div :class="customClass + ' press-collapse-item ' + (index !== 0 ? 'press-hairline--top' : '')">
-    <!-- 【修改点】cell增加center，垂直居中 -->
+    <!-- 【修改点】cell 增加 center，垂直居中 -->
     <press-cell
       :size="size"
       :title="title"
@@ -11,7 +11,6 @@
       :is-link="isLink"
       :clickable="clickable"
       :border="border && expanded"
-      :class="collapseItemClass"
       :custom-class="collapseItemCustomClass"
       hover-class="press-cell--hover"
       center
@@ -92,12 +91,13 @@ export default {
   },
   emits: [],
   data() {
+    const { defaultExpandAll } = this[PARENT];
     return {
-      expanded: false,
+      expanded: !!defaultExpandAll,
       animation: {},
       mounted: false,
 
-      animationStyle: 'height: 0;',
+      animationStyle: defaultExpandAll ? 'height: auto;' : 'height: 0;',
     };
   },
   computed: {
@@ -107,9 +107,7 @@ export default {
     },
     collapseItemCustomClass() {
       let result = '';
-      // #ifdef MP-ALIPAY
       result = this.collapseItemClass;
-      // #endif
       return result;
     },
     wrapperClass() {

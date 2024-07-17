@@ -6,13 +6,13 @@
     <div
       v-if="labelPosition === 'left'"
       :class="innerLabelClass"
-      @click="onClickLabel"
+      @click.stop="onClickLabel"
     >
       <slot />
     </div>
     <div
       class="press-checkbox__icon-wrap"
-      @click="toggle"
+      @click.stop="toggle"
     >
       <slot
         v-if="useIconSlot"
@@ -31,7 +31,7 @@
     <div
       v-if="labelPosition === 'right'"
       :class="innerLabelClass"
-      @click="onClickLabel"
+      @click.stop="onClickLabel"
     >
       <slot />
     </div>

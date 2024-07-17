@@ -10,12 +10,12 @@ export declare function ChildrenMixin(parent: string, options?: Record<string, a
   watch: {
     disableBindRelation(val: any): void;
   };
-  created(): void;
-  mounted(): void;
-  beforeDestroy(): void;
   methods: {
     bindRelation(this: any): void;
   };
+  created(): void;
+  mounted(): void;
+  beforeDestroy(): void;
 };
 export declare function ParentMixin(parent: string): {
   provide(): {

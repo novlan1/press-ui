@@ -107,6 +107,12 @@
     line-height: var(--cell-line-height, $cell-line-height);
   }
 
+  &--clickable {
+    /* #ifdef H5 */
+    cursor: pointer;
+    /* #endif */
+  }
+  
   // 【修改点】 &--clickable&--hover不能用
   &--clickable.press-cell--hover,
   &--clickable:active {

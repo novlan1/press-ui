@@ -451,7 +451,5 @@ export default {
 .submit-wrap {
   margin: 20px auto;
   text-align: center;
-  display: flex;
-  align-items: center;
 }
 </style>

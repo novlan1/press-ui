@@ -2,9 +2,21 @@
 
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap demo-wrap--gray">
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+    <div class="press-cell__title">
+      是否使用 getContainer
+      <!---->
+    </div>
+    <div class="press-cell__value"></div>
+    <div class="press-switch " style="font-size: 22px;">
+      <div class="press-switch__node">
+        <!---->
+      </div>
+    </div>
+  </div>
   <div>
     <div class="press-popover__wrapper" style="margin-left: 16px;">
-      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start" get-container="body">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
         <!---->
         <!---->
       </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
@@ -15,7 +27,7 @@ exports[`renders demo correctly 1`] = `
       </button>
     </div>
     <div class="press-popover__wrapper" style="z-index: 1; margin-left: 16px;">
-      <div class="press-popup-plus  press-popover press-popover--dark press-popover--bottom press-popover press-popover--dark press-popover--bottom" get-container="body">
+      <div class="press-popup-plus  press-popover press-popover--dark press-popover--bottom press-popover press-popover--dark press-popover--bottom">
         <!---->
         <!---->
       </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
@@ -38,16 +50,10 @@ exports[`renders demo correctly 1`] = `
         <!---->
       </div>
     </div>
-    <div class="press-popup-plus " get-container="body">
-      <div class="press-overlay-index">
-        <!---->
-      </div>
-      <!---->
-    </div>
   </div>
   <div>
     <div class="press-popover__wrapper" style="z-index: 2; margin-left: 16px;">
-      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start" get-container="body">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
         <!---->
         <!---->
       </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
@@ -58,7 +64,7 @@ exports[`renders demo correctly 1`] = `
       </button>
     </div>
     <div class="press-popover__wrapper" style="z-index: 2; margin-left: 16px;">
-      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom press-popover press-popover--light press-popover--bottom" get-container="body">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom press-popover press-popover--light press-popover--bottom">
         <!---->
         <!---->
       </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
@@ -71,7 +77,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="press-popover__wrapper" style="z-index: 1; margin-left: 16px;">
-      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start" get-container="body">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
         <!---->
         <!---->
       </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">

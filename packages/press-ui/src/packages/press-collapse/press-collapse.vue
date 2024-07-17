@@ -31,6 +31,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    defaultExpandAll: {
+      type: Boolean,
+      default: false,
+    },
     ...defaultProps,
   },
   watch: {

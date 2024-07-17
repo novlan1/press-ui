@@ -49,9 +49,9 @@ export default {
     }
   },
   methods: {
-    onChange(event) {
+    onChange(value) {
       this.setData({
-        activeNames: event.detail,
+        activeNames: value,
       });
     },
   }
@@ -84,9 +84,9 @@ export default {
     }
   },
   methods: {
-    onChange(event) {
+    onChange(value) {
       this.setData({
-        activeName: event.detail,
+        activeName: value,
       });
     },
   }
@@ -124,16 +124,16 @@ export default {
     }
   },
   methods: {
-    onChange(event) {
+    onChange(value) {
       this.setData({
-        activeNames: event.detail,
+        activeNames: value,
       });
     },
-    onOpen(event) {
-      Toast(`展开: ${event.detail}`);
+    onOpen(value) {
+      Toast(`展开: ${value}`);
     },
-    onClose(event) {
-      Toast(`关闭: ${event.detail}`);
+    onClose(value) {
+      Toast(`关闭: ${value}`);
     },
   }
 };
@@ -161,9 +161,9 @@ export default {
     }
   },
   methods: {
-    onChange(event) {
+    onChange(value) {
       this.setData({
-        activeNames: event.detail,
+        activeNames: value,
       });
     },
   }
@@ -174,11 +174,12 @@ export default {
 
 ### Collapse Props
 
-| 参数      | 说明                | 类型                                                                   | 默认值  |
-| --------- | ------------------- | ---------------------------------------------------------------------- | ------- |
-| value     | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | -       |
-| accordion | 是否开启手风琴模式  | _boolean_                                                              | `false` |
-| border    | 是否显示外边框      | _boolean_                                                              | `true`  |
+| 参数               | 说明                | 类型                                                                   | 默认值  |
+| ------------------ | ------------------- | ---------------------------------------------------------------------- | ------- |
+| value              | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | -       |
+| accordion          | 是否开启手风琴模式  | _boolean_                                                              | `false` |
+| border             | 是否显示外边框      | _boolean_                                                              | `true`  |
+| default-expand-all | 是否默认展开全部    | _boolean_                                                              | `false` |
 
 ### Collapse Event
 

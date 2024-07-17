@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders demo correctly 1`] = `
-<div class="demo-wrap demo-wrap--gray">
+<div class="wrap">
   <div>
     <div class="press-field-index">
       <div hover-class="press-cell--hover," hover-stay-time="70" class="press-field press-cell press-cell--borderless">

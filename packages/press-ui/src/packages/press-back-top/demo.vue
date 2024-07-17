@@ -10,15 +10,21 @@
       @scroll="onScroll"
     >
       <div class="demo-inner">
-        <PressCheckbox
+        <press-cell
           v-for="(item) of Object.keys(valueMap)"
           :key="item"
-          :value="valueMap[item]"
-          shape="square"
-          @change="e => onChange(e, item)"
+          :title="t(item)"
+          clickable
+          @click="valueMap[item] = !valueMap[item]"
         >
-          {{ t(item) }}
-        </PressCheckbox>
+          <template #right-icon>
+            <PressCheckbox
+              :value="valueMap[item]"
+              shape="square"
+              @change="e => onChange(e, item)"
+            />
+          </template>
+        </press-cell>
       </div>
     </scroll-view>
 
@@ -117,15 +123,15 @@ export default {
 }
 .demo-inner {
   height: calc(100% + 300px);
-  padding: 10px 20px;
+  padding: 10px 0px;
 
-  ::v-deep {
-    /* #ifdef MP-QQ */
-    press-checkbox,
-    /* #endif */
-    .press-checkbox {
-      margin-bottom: 12px;
-    }
-  }
+  // ::v-deep {
+  //   /* #ifdef MP-QQ */
+  //   press-checkbox,
+  //   /* #endif */
+  //   .press-checkbox {
+  //     margin-bottom: 12px;
+  //   }
+  // }
 }
 </style>
