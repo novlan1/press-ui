@@ -211,6 +211,7 @@
         </press-tab>
       </press-tabs>
 
+      <!-- #ifdef VUE2 || H5 -->
       <press-tabs
         swipeable
         use-title-slot
@@ -221,9 +222,8 @@
           #[`title-${index}`]
           :key="index"
         >
-          <div
-            :key="index"
-          >
+          <!-- 为了兼容 Vue3，不能在 div 上加 key -->
+          <div>
             <span class="title">{{ t('tab') }} {{ index }}</span>
             <press-icon-plus name="like-o" />
           </div>
@@ -251,6 +251,7 @@
           </div>
         </press-tab>
       </press-tabs>
+      <!-- #endif -->
     </demo-block>
 
     <demo-block

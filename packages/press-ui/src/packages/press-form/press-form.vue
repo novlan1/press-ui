@@ -1,7 +1,7 @@
 <template>
-  <view class="press-form">
+  <div class="press-form">
     <slot />
-  </view>
+  </div>
 </template>
 
 <script>
@@ -165,7 +165,7 @@ export default {
                     errorsRes.push(...errors);
                     childErrors.push(...errors);
                   }
-                  child.message =                      childErrors[0]?.message ?? null;
+                  child.message = childErrors[0]?.message ?? null;
                 },
               );
             }

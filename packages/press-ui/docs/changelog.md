@@ -1,5 +1,18 @@
 # 更新日志
 
+### [2.0.10](https://github.com/novlan1/press-ui/compare/v2.0.9...v2.0.10) (2024-07-18)
+
+
+### Chore 🚀 
+
+* **tab:** 支持vue3 mp ([01d9f33](https://github.com/novlan1/press-ui/commit/01d9f33a75d194439f70d406e526cf6e7f55aedc))
+* update back-top demo to support vue3 ([c50c2f3](https://github.com/novlan1/press-ui/commit/c50c2f3e844931ff79258a49775aee3745720511))
+
+
+### Code Refactoring ♻️
+
+* **form:** form, form-item, back-top 支持 pure 项目 ([9e4a22d](https://github.com/novlan1/press-ui/commit/9e4a22d0bfe4181e80b1449809c46680490ba00b))
+
 ### [2.0.9](https://github.com/novlan1/press-ui/compare/v2.0.8...v2.0.9) (2024-07-18)
 
 

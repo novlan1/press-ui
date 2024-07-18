@@ -4,7 +4,7 @@
     :custom-style="backTopStyle"
     :show="show"
   >
-    <view
+    <div
       v-if="!$slots.default && !$slots.$default"
       class="press-back-top"
       :style="contentStyle"
@@ -14,13 +14,13 @@
         :name="icon"
         :custom-style="innerIconStyle"
       />
-      <text
+      <span
         v-if="text"
         class="press-back-top__text"
       >
         {{ text }}
-      </text>
-    </view>
+      </span>
+    </div>
     <slot v-else />
   </PressTransition>
 </template>

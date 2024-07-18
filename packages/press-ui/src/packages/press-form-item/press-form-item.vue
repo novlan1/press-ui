@@ -1,6 +1,6 @@
 <template>
-  <view class="press-form-item">
-    <view
+  <div class="press-form-item">
+    <div
       class="press-form-item__body"
       :style="bodyStyle"
       @click="clickHandler"
@@ -8,7 +8,7 @@
       <!-- 微信小程序中，将一个参数设置空字符串，结果会变成字符串"true" -->
       <slot name="label">
         <!-- {{required}} -->
-        <view
+        <div
           v-if="required || leftIcon || label"
           class="press-form-item__body__left"
           :style="{
@@ -17,15 +17,15 @@
           }"
         >
           <!-- 为了块对齐 -->
-          <view class="press-form-item__body__left__content">
+          <div class="press-form-item__body__left__content">
             <!-- nvue不支持伪元素before -->
-            <text
+            <span
               v-if="required"
               class="press-form-item__body__left__content__required"
             >
               *
-            </text>
-            <view
+            </span>
+            <div
               v-if="leftIcon"
               class="press-form-item__body__left__content__icon"
             >
@@ -33,8 +33,8 @@
                 :name="leftIcon"
                 :custom-style="leftIconStyle"
               />
-            </view>
-            <text
+            </div>
+            <span
               class="press-form-item__body__left__content__label"
               :style="[parentData.labelStyle, {
                 justifyContent: parentData.labelAlign === 'left'
@@ -43,26 +43,26 @@
               }]"
             >
               {{ label }}
-            </text>
-          </view>
-        </view>
+            </span>
+          </div>
+        </div>
       </slot>
-      <view class="press-form-item__body__right">
-        <view class="press-form-item__body__right__content">
-          <view class="press-form-item__body__right__content__slot">
+      <div class="press-form-item__body__right">
+        <div class="press-form-item__body__right__content">
+          <div class="press-form-item__body__right__content__slot">
             <slot />
-          </view>
-          <view
+          </div>
+          <div
             v-if="$slots.right"
             class="item__body__right__content__icon"
           >
             <slot name="right" />
-          </view>
-        </view>
-      </view>
-    </view>
+          </div>
+        </div>
+      </div>
+    </div>
     <slot name="error">
-      <text
+      <span
         v-if="!!message && parentData.errorType === 'message'"
         class="press-form-item__body__right__message"
         :style="{
@@ -70,14 +70,14 @@
         }"
       >
         {{ message }}
-      </text>
+      </span>
     </slot>
     <div
       v-if="borderBottom"
       :style="lineStyle"
       class="press-form-item__line"
     />
-  </view>
+  </div>
 </template>
 
 <script>
