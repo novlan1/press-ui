@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-for-template-key -->
 <template>
   <div class="demo-wrap">
     <demo-block
@@ -214,6 +215,21 @@
         swipeable
         use-title-slot
       >
+        <!-- #ifdef VUE3 -->
+        <template
+          v-for="(item, index) of Array(4)"
+          #[`title-${index}`]
+          :key="index"
+        >
+          <div
+            :key="index"
+          >
+            <span class="title">{{ t('tab') }} {{ index }}</span>
+            <press-icon-plus name="like-o" />
+          </div>
+        </template>
+        <!-- #endif -->
+        <!-- #ifdef VUE2 -->
         <div
           v-for="(item, index) of Array(4)"
           :key="index"
@@ -222,6 +238,8 @@
           <span class="title">{{ t('tab') }} {{ index }}</span>
           <press-icon-plus name="like-o" />
         </div>
+        <!-- #endif -->
+
 
         <press-tab
           v-for="(item,index) of tabs4"

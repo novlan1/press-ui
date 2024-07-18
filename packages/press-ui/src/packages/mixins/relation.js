@@ -60,14 +60,18 @@ export function ChildrenMixin(parent, options = {}) {
       // #endif
     },
 
+    // #ifdef VUE2
     beforeDestroy() {
       const that = this;
-      if (that[parent]) {
-        that[parent].children = that[parent].children.filter(item => item !== that);
-
-        that?.destroyCallback?.();
-      }
+      that.onBeforeMount();
     },
+    // #endif
+    // #ifdef VUE3
+    beforeUnmount() {
+      const that = this;
+      that.onBeforeMount();
+    },
+    // #endif
 
     methods: {
       bindRelation() {
@@ -90,6 +94,14 @@ export function ChildrenMixin(parent, options = {}) {
         // #endif
 
         this[parent].children = children;
+      },
+      onBeforeMount() {
+        const that = this;
+        if (that[parent]) {
+          that[parent].children = that[parent].children.filter(item => item !== that);
+
+          that?.destroyCallback?.();
+        }
       },
     },
   };

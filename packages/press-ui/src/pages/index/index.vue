@@ -44,15 +44,16 @@
               :name="`${index}`"
               :is-link="false"
             >
-              <press-section
-                slot="title"
-                :title="item.title"
-                :color="sectionStyle.color"
-                type="line"
-                :clickable="true"
-                :header-style="sectionStyle.header"
-                :active="activeNames.indexOf(`${index}`) > -1"
-              />
+              <template #title>
+                <press-section
+                  :title="item.title"
+                  :color="sectionStyle.color"
+                  type="line"
+                  :clickable="true"
+                  :header-style="sectionStyle.header"
+                  :active="activeNames.indexOf(`${index}`) > -1"
+                />
+              </template>
 
               <PressCell
                 v-for="(nav, idx) in item.list"
@@ -73,8 +74,8 @@
 
 import PressSection from '../components/press-section/press-section.vue';
 import PressCell from '../../packages/press-cell/press-cell.vue';
-import PressCollapse from 'press-ui/press-collapse/press-collapse';
-import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item';
+import PressCollapse from '../../packages/press-collapse/press-collapse.vue';
+import PressCollapseItem from '../../packages/press-collapse-item/press-collapse-item.vue';
 
 import { toggleVConsole } from 't-comm/lib/v-console/toggle';
 

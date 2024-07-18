@@ -1,5 +1,35 @@
 # 更新日志
 
+### [2.0.9](https://github.com/novlan1/press-ui/compare/v2.0.8...v2.0.9) (2024-07-18)
+
+
+### Tests ✅
+
+* update snapshot ([3f7c629](https://github.com/novlan1/press-ui/commit/3f7c629b3fa62ce5054f782f6d6b324fa647cec6))
+
+
+### Chore 🚀 
+
+* 优化demo ([792c8c5](https://github.com/novlan1/press-ui/commit/792c8c54d677ec0b6e281430dd88aecd802fb4fd))
+* eslint disable async-validator ([319dd5a](https://github.com/novlan1/press-ui/commit/319dd5a901bec12b83c1f8c1c924397add967fd3))
+* remove useless comment ([ac08e9b](https://github.com/novlan1/press-ui/commit/ac08e9b2346790e3da6f157ec6027f52eb23b5f3))
+* update index page ([ba9d930](https://github.com/novlan1/press-ui/commit/ba9d930560d942edccca2f494c8af0af95cd8b85))
+
+
+### Code Refactoring ♻️
+
+* **cell:** 兼容vue3打包 ([2519724](https://github.com/novlan1/press-ui/commit/2519724a0cc265fe367d28863e0c4a01f9f77f22))
+* **popover-plus:** 兼容vue3打包 ([1f18775](https://github.com/novlan1/press-ui/commit/1f18775dfb1c1ceb8c1c25dc53f9fe9a000f2437))
+
+
+### Features 🎉
+
+* **cell:** h5下增加cursor: pointer, 优化collapse ([524d341](https://github.com/novlan1/press-ui/commit/524d34184575bdfa336792daec3369986e1a6bb7))
+* **checkbox:** 点击事件阻止冒泡 ([061e732](https://github.com/novlan1/press-ui/commit/061e73213644de1f8974502027168c1ee5123c30))
+* **collapse:** 增加 default-expand-all 属性 ([56409c5](https://github.com/novlan1/press-ui/commit/56409c55d41e79ae2ecd29e8fdc81ca44c38b159))
+* **pull-refresh:** 支持vue3 ([99f811d](https://github.com/novlan1/press-ui/commit/99f811ddeebc891efaf5a201d1dd041102b85794))
+* **relation:** 支持vue3，组件销毁时更新 ([11bb0ae](https://github.com/novlan1/press-ui/commit/11bb0aeb037dc3c08851add13e190c7f2e8111f2))
+
 ### [2.0.8](https://github.com/novlan1/press-ui/compare/v2.0.7...v2.0.8) (2024-07-15)
 
 

@@ -35,11 +35,13 @@
           :readonly="isMp"
           @click-input="showSex = true; hideKeyboard()"
         />
-        <PressIconPlus
-          slot="right"
-          name="arrow"
-        />
+        <template #right>
+          <PressIconPlus
+            name="arrow"
+          />
+        </template>
       </PressFormItem>
+
       <PressFormItem
         ref="item2"
         label="水果"
@@ -115,27 +117,28 @@
           :border="false"
           placeholder="请填写验证码"
         />
-        <PressButton
-          slot="right"
-          type="primary"
-          size="mini"
-          :disabled="disabled1"
-          @click="getCode"
-        >
-          <press-count-down
-            use-slot
-            :time="time"
-            @change="onChangeTime"
+        <template #right>
+          <PressButton
+            type="primary"
+            size="mini"
+            :disabled="disabled1"
+            @click="getCode"
           >
-            <span class="countdown-wrap">
-              <template v-if="!Object.keys(timeData).length">获取信息</template>
-              <template v-else-if="timeData.seconds <= 0">重新获取</template>
-              <template v-else>
-                <span class="item">{{ timeData.seconds }}</span><span>秒重新获取</span>
-              </template>
-            </span>
-          </press-count-down>
-        </PressButton>
+            <press-count-down
+              use-slot
+              :time="time"
+              @change="onChangeTime"
+            >
+              <span class="countdown-wrap">
+                <template v-if="!Object.keys(timeData).length">获取信息</template>
+                <template v-else-if="timeData.seconds <= 0">重新获取</template>
+                <template v-else>
+                  <span class="item">{{ timeData.seconds }}</span><span>秒重新获取</span>
+                </template>
+              </span>
+            </press-count-down>
+          </PressButton>
+        </template>
       </PressFormItem>
     </PressForm>
 
