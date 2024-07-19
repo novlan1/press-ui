@@ -27,18 +27,22 @@ function getClassList(args) {
 }
 
 export function getActClass(useTipClass, tipClassMap, args) {
+  return getActClassWithPrefix(useTipClass, tipClassMap, PREFIX, args);
+}
+
+export function getActClassWithPrefix(useTipClass, tipClassMap, prefix, args) {
   const list = getClassList(args);
 
   const tipClasses = list.map(item => (item ? tipClassMap[item] || '' : ''));
   const pressClasses = list.map((item) => {
-    const reg = new RegExp(`^${PREFIX}`);
+    const reg = new RegExp(`^${prefix}`);
     if (!item) {
       return '';
     }
     if (reg.test(item)) {
       return item;
     }
-    return `${PREFIX}${item}`;
+    return `${prefix}${item}`;
   });
 
   if (!useTipClass) {

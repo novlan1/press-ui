@@ -1,5 +1,24 @@
 # 更新日志
 
+### [2.0.12](https://github.com/novlan1/press-ui/compare/v2.0.11...v2.0.12) (2024-07-19)
+
+
+### Features 🎉
+
+* **act-bem:** 支持传入prefix ([5da8c97](https://github.com/novlan1/press-ui/commit/5da8c97ba4d5b53aef0c3278a404ac2ad603e78c))
+
+### [2.0.11](https://github.com/novlan1/press-ui/compare/v2.0.10...v2.0.11) (2024-07-19)
+
+
+### Chore 🚀 
+
+* update index.scss ([5fee007](https://github.com/novlan1/press-ui/commit/5fee0078afa01af90d758d4fb70ddcb43cd0526f))
+
+
+### Features 🎉
+
+* **teleport:** vue3 H5下用原生teleport ([d6ff400](https://github.com/novlan1/press-ui/commit/d6ff4006b3cc31cfbf31d1d4f6523f2a448ab57a))
+
 ### [2.0.10](https://github.com/novlan1/press-ui/compare/v2.0.9...v2.0.10) (2024-07-18)
 
 

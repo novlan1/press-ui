@@ -1,6 +1,15 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <!-- #ifdef H5 -->
+  <!-- #ifdef VUE3 -->
+  <Teleport
+    :to="to"
+    :disabled="disabled"
+  >
+    <slot />
+  </Teleport>
+  <!-- #endif -->
+  <!-- #ifdef VUE2 -->
   <PressTeleportWeb
     :to="to"
     :where="where"
@@ -10,6 +19,7 @@
       <slot />
     </template>
   </PressTeleportWeb>
+  <!-- #endif -->
   <!-- #endif -->
 
   <!-- #ifdef MP-WEIXIN -->

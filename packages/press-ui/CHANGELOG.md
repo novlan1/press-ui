@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.12](https://github.com/novlan1/press-ui/compare/v2.0.11...v2.0.12) (2024-07-19)
+
+
+### ✨ Features | 新功能
+
+* **act-bem:** 支持传入prefix ([5da8c97](https://github.com/novlan1/press-ui/commit/5da8c97ba4d5b53aef0c3278a404ac2ad603e78c))
+
+### [2.0.11](https://github.com/novlan1/press-ui/compare/v2.0.10...v2.0.11) (2024-07-19)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update index.scss ([5fee007](https://github.com/novlan1/press-ui/commit/5fee0078afa01af90d758d4fb70ddcb43cd0526f))
+
+
+### ✨ Features | 新功能
+
+* **teleport:** vue3 H5下用原生teleport ([d6ff400](https://github.com/novlan1/press-ui/commit/d6ff4006b3cc31cfbf31d1d4f6523f2a448ab57a))
+
 ### [2.0.10](https://github.com/novlan1/press-ui/compare/v2.0.9...v2.0.10) (2024-07-18)
 
 
