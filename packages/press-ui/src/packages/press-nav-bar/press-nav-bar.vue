@@ -77,6 +77,7 @@ import { getRect, getStatusBarHeight } from '../common/dom/rect';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import computed from './computed';
+import { nextTick } from '../common/utils/system';
 
 
 export default {
@@ -165,7 +166,7 @@ export default {
       if (!this.fixed || !this.placeholder) {
         return;
       }
-      this.$nextTick(() => {
+      nextTick(() => {
         getRect(this, '.press-nav-bar').then((res) => {
           if (res && 'height' in res) {
             this.height = res.height;

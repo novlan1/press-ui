@@ -2,6 +2,8 @@
 @import "../../common/style/press/var.scss";
 
 .press-tree-select {
+    --sidebar-padding: 12px 8px 12px 12px;
+
   position: relative;
   display: flex;
   user-select: none;
@@ -18,8 +20,6 @@
       width: 100% !important;
       height: 100%;
     }
-
-    --sidebar-padding: 12px 8px 12px 12px;
   }
 
   ::v-deep &__content {

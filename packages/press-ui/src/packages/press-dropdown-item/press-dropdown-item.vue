@@ -59,6 +59,7 @@ import utils from '../common/utils/utils';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_DROPDOWN_MENU as PARENT } from '../common/constant/parent-map';
+import { nextTick } from '../common/utils/system';
 
 
 export default {
@@ -153,7 +154,7 @@ export default {
   },
   methods: {
     rerender() {
-      this.$nextTick(() => {
+      nextTick(() => {
         this[PARENT]?.updateItemListData();
       });
     },

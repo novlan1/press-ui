@@ -22,10 +22,13 @@ import utils from '../common/utils/utils';
 import computed from './index';
 
 import { getRect } from '../common/dom/rect';
+import { nextTick } from '../common/utils/system';
 import { isDef } from '../common/utils/validator';
+
 import { pageScrollMixin } from '../mixins/page-scroll';
 import { BindEventMixin } from '../mixins/bind-event';
 import { getScroller } from '../common/dom/scroll';
+
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 const ROOT_ELEMENT = '.press-sticky';
@@ -200,7 +203,7 @@ export default {
       });
     },
     setDataAfterDiff(data) {
-      this.$nextTick(() => {
+      nextTick(() => {
         const diff = Object.keys(data).reduce((prev, key) => {
           if (data[key] !== this[key]) {
             prev[key] = data[key];

@@ -71,7 +71,7 @@ export default {
   },
   mounted() {
     if (this.$el.id) this.identifier = this.$el.id;
-    // this.$nextTick(() => {
+    // nextTick(() => {
     // document.getElementById(this.identifier)?.addEventListener('scroll', this.onScroll);
     // });
   },

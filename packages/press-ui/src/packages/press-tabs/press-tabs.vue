@@ -396,7 +396,7 @@ export default {
       this.resize();
       this.scrollIntoView();
     });
-    this.$nextTick(() => {
+    nextTick(() => {
       // this.updateTabs();
       this.resize();
     });

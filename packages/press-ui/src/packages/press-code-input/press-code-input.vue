@@ -54,6 +54,7 @@
 <script>
 import { addUnit } from '../common/utils/add-unit';
 import props, { getPx } from './computed';
+import { nextTick } from '../common/utils/system';
 
 
 export default {
@@ -147,7 +148,7 @@ export default {
       this.inputValue = value;
       // 是否允许输入“.”符号
       if (this.disabledDot) {
-        this.$nextTick(() => {
+        nextTick(() => {
           this.inputValue = value.replace('.', '');
         });
       }

@@ -46,6 +46,7 @@ import { ChildrenMixin } from '../mixins/relation';
 import computed from './index';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 import { formValidate } from '../common/utils/parent';
+import { nextTick } from '../common/utils/system';
 
 function emit(target, value) {
   target.$emit('input', value);
@@ -174,7 +175,7 @@ export default {
         emit(this, value);
       }
 
-      this.$nextTick(() => {
+      nextTick(() => {
         formValidate(this, 'change');
       });
     },

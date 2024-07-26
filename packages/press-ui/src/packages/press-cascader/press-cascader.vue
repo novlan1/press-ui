@@ -65,7 +65,9 @@
 import PressIcon from '../press-icon-plus/press-icon-plus.vue';
 import PressTab from '../press-tab/press-tab.vue';
 import PressTabs from '../press-tabs/press-tabs.vue';
+
 import utils from './computed';
+import { nextTick } from '../common/utils/system';
 
 
 let FieldName;
@@ -236,7 +238,7 @@ export default ({
             });
           }
           this.tabs = tabs;
-          wx.nextTick(() => {
+          nextTick(() => {
             this.activeTab = tabs.length - 1;
           });
           return;
@@ -279,7 +281,7 @@ export default ({
         } else {
           tabs.push(nextTab);
         }
-        wx.nextTick(() => {
+        nextTick(() => {
           this.activeTab = tabIndex + 1;
         });
       }

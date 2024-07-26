@@ -12,6 +12,7 @@
 import props from './props.js';
 import { addUnit, getPx } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
+import { nextTick } from '../common/utils/system';
 
 
 export default {
@@ -47,7 +48,7 @@ export default {
         data: this.href,
         success: () => {
           uni.hideToast();
-          this.$nextTick(() => {
+          nextTick(() => {
             uni.showToast({
               title: this.mpTips,
               icon: 'none',

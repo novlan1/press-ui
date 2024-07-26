@@ -21,6 +21,7 @@
 
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { nextTick } from '../common/utils/system';
 
 
 export default {
@@ -86,7 +87,7 @@ export default {
     scrollOffset: {
       handler(newVal) {
         this.scrollTop = this.old.scrollTop;
-        this.$nextTick(function () {
+        nextTick(function () {
           this.scrollTop = newVal;
         });
       },

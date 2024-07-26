@@ -407,10 +407,6 @@ export default {
     };
   },
   mounted() {
-    this.$nextTick(() => {
-      // this.$refs.pressTabs.resize();
-    });
-
     setTimeout(() => {
       this.tabs4 = [1, 2, 3];
       this.active = 2;

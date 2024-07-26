@@ -80,6 +80,7 @@
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
+import { nextTick } from 'press-ui/common/utils/system';
 
 const DEFAULT_POSITION = 'center';
 const DEFAULT_CLOSE_ICON = 'cross';
@@ -182,7 +183,7 @@ export default {
       this.customStyle = customStyle;
 
       // 去除上一次遗留动画方向影响
-      this.$nextTick(() => {
+      nextTick(() => {
         this.show = true;
       });
     },

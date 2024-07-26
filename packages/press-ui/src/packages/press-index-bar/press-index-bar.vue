@@ -46,6 +46,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 import { ParentMixin } from '../mixins/relation';
 import { PARENT_INDEX_BAR  as PARENT } from '../common/constant/parent-map';
 import { getScrollSelector } from '../common/dom/scroll';
+import { nextTick } from '../common/utils/system';
 
 
 const indexList = () => {
@@ -119,13 +120,13 @@ export default {
       });
     },
     updateData() {
-      this.$nextTick(() => {
+      nextTick(() => {
         if (this.timer != null) {
           clearTimeout(this.timer);
         }
         this.timer = setTimeout(() => {
           this.showSidebar = !!this.children.length;
-          this.$nextTick(() => {
+          nextTick(() => {
             this.setRect().then(() => {
               this.onScroll();
             });

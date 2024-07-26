@@ -90,6 +90,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 import utils from '../common/utils/utils';
 import { t } from '../locale';
 import { getDialogMixin } from '../press-dialog/dialog-mixin';
+import { nextTick } from '../common/utils/system';
 
 
 const props = {
@@ -203,7 +204,7 @@ export default {
     },
     close(action) {
       this.dataShow = false;
-      this.$nextTick(() => {
+      nextTick(() => {
         this.$emit('close', action);
         const { callback } = this;
         if (callback) {

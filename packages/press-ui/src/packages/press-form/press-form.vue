@@ -10,6 +10,7 @@ import Schema from '../common/async-validator/index';
 import { errorTip } from '../common/utils/validator';
 import { getProperty, setProperty } from '../common/utils/property';
 import { deepClone } from '../common/utils/object';
+import { nextTick } from '../common/utils/system';
 
 
 // 去除警告信息
@@ -119,8 +120,8 @@ export default {
     },
     // 对部分表单字段进行校验
     async validateField(value, callback, event = null) {
-      // $nextTick是必须的，否则model的变更，可能会延后于此方法的执行
-      this.$nextTick(() => {
+      // nextTick 是必须的，否则 model 的变更，可能会延后于此方法的执行
+      nextTick(() => {
         // 校验错误信息，返回给回调方法，用于存放所有 form-item 的错误信息
         const errorsRes = [];
         // 如果为字符串，转为数组
@@ -183,8 +184,8 @@ export default {
         return;
       }
       return new Promise((resolve, reject) => {
-        // $nextTick是必须的，否则model的变更，可能会延后于validate方法
-        this.$nextTick(() => {
+        // nextTick 是必须的，否则 model 的变更，可能会延后于 validate 方法
+        nextTick(() => {
           // 获取所有form-item的prop，交给validateField方法进行校验
           const formItemProps = this.children.map(item => item.prop);
           this.validateField(formItemProps, (errors) => {

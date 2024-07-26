@@ -1,5 +1,12 @@
 # 更新日志
 
+### [2.0.15](https://github.com/novlan1/press-ui/compare/v2.0.14...v2.0.15) (2024-07-26)
+
+
+### Features 🎉
+
+* **hidekeyboard:** 抽离hidekeyboard ([4a0d4e3](https://github.com/novlan1/press-ui/commit/4a0d4e3591d3a4fa32079e614626c58700e84cdb))
+
 ### [2.0.14](https://github.com/novlan1/press-ui/compare/v2.0.13...v2.0.14) (2024-07-26)
 
 

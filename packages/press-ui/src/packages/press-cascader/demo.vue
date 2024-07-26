@@ -3,6 +3,7 @@
     <demo-block :title="t('basicUsage')">
       <press-field
         :value="fieldValue.basic"
+        :model-value="fieldValue.basic"
         is-link
         :readonly="isMp"
         :label="t('area')"
@@ -30,6 +31,7 @@
     <demo-block :title="t('chinaAreaData')">
       <press-field
         :value="fieldValue.chinaArea"
+        :model-value="fieldValue.chinaArea"
         is-link
         :readonly="isMp"
         :label="t('area')"
@@ -57,6 +59,7 @@
     <demo-block :title="t('customColor')">
       <press-field
         :value="fieldValue.customColor"
+        :model-value="fieldValue.customColor"
         is-link
         :readonly="isMp"
         :label="t('area')"
@@ -85,6 +88,7 @@
     <demo-block :title="t('asyncOptions')">
       <press-field
         :value="fieldValue.asyncOptions"
+        :model-value="fieldValue.asyncOptions"
         is-link
         :readonly="isMp"
         :label="t('area')"
@@ -113,6 +117,7 @@
     <demo-block :title="t('customFieldNames')">
       <press-field
         :value="fieldValue.customFieldNames"
+        :model-value="fieldValue.customFieldNames"
         is-link
         :readonly="isMp"
         :label="t('area')"
@@ -144,10 +149,13 @@
 import PressCascader from 'press-ui/press-cascader/press-cascader';
 import PressField from 'press-ui/press-field/press-field';
 import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus';
+
 import enUSOptions from 'src/packages/press-cascader/demo-helper/area-en-US.js';
 import zhCNOptions from 'src/packages/press-cascader/demo-helper/area-zh-CN.js';
+
 import { deepClone } from 'press-ui/common/utils/object';
 import { fetchCascaderAreaData } from 'press-ui/press-cascader/helper';
+import { hideKeyboard } from 'press-ui/common/pure/hide-keyboard';
 
 
 const options = [
@@ -295,7 +303,7 @@ export default {
   },
   methods: {
     onClick(key) {
-      this.hideKeyboard();
+      hideKeyboard();
       this.curDemo = key;
 
       this.show[key] = true;
@@ -315,9 +323,6 @@ export default {
       this.cascaderValue[this.curDemo] = value;
 
       this.onClose();
-    },
-    hideKeyboard() {
-      uni.hideKeyboard();
     },
     loadDynamicOptions(detail) {
       const { value } = detail;

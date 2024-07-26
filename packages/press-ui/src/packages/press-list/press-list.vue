@@ -68,6 +68,8 @@ import {  SCROLL_VIEW_ID } from './config';
 
 import { vModelMixin } from '../common/vue3/adapter';
 import { isNotInUni } from '../common/utils/utils';
+import { nextTick } from '../common/utils/system';
+
 import { BindEventMixin } from '../mixins/bind-event';
 
 // #ifdef H5
@@ -264,7 +266,7 @@ export default {
       this.$emit('load');
     },
     check() {
-      this.$nextTick(() => {
+      nextTick(() => {
         this.innerCheck();
       });
     },

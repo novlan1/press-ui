@@ -42,8 +42,10 @@
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { getAllRect } from '../common/dom/rect';
+
 import utils from '../common/utils/utils';
 import { style } from '../common/utils/style';
+import { nextTick } from '../common/utils/system';
 
 export default {
   name: 'PressRate',
@@ -131,7 +133,7 @@ export default {
     onSelect(score) {
       if (!this.disabled && !this.readonly) {
         this.innerValue = score + 1;
-        this.$nextTick(() => {
+        nextTick(() => {
           this.$emit('input', score + 1);
           this.$emit('change', score + 1);
         });

@@ -59,6 +59,7 @@
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { functionalMixin } from '../mixins/functional';
+import { nextTick } from '../common/utils/system';
 
 
 const imagePreviewProps = {
@@ -134,7 +135,7 @@ export default {
     show(val) {
       if (val) {
         this.setActive(+this.getPropOrData('startPosition'));
-        this.$nextTick(() => {
+        nextTick(() => {
           // this.resize();
           // this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
         });

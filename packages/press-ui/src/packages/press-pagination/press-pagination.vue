@@ -48,6 +48,7 @@
 import PressPopover from '../press-popover/press-popover';
 import { getRect, getScrollHeight } from '../common/dom/rect';
 import { isNotInUni } from '../common/utils/utils';
+import { nextTick } from '../common/utils/system';
 
 let popOverTimer = null;
 
@@ -125,7 +126,7 @@ export default {
         const index = this.pageList.findIndex(elem => elem === value);
         this.innerCurrent = index > -1 ? this.pageList[index] : this.pageList[0];
 
-        this.$nextTick(() => {
+        nextTick(() => {
           this.scrollTo();
         });
       },
@@ -133,14 +134,14 @@ export default {
     },
     total: {
       handler() {
-        this.$nextTick(() => {
+        nextTick(() => {
           this.getScrollBarSize();
         });
       },
     },
     mode: {
       handler() {
-        this.$nextTick(() => {
+        nextTick(() => {
           this.getScrollBarSize();
         });
       },
@@ -157,7 +158,7 @@ export default {
     this.onDestroyed();
   },
   updated() {
-    this.$nextTick().then(() => {
+    nextTick().then(() => {
       this.updatePopoverTipPosition();
     });
   },

@@ -58,6 +58,7 @@ import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { t } from '../locale';
 import { TouchMixin } from '../mixins/touch/index';
 import { vModelMixin } from '../common/vue3/adapter';
+import { nextTick } from '../common/utils/system';
 
 
 export function preventDefault(event) {
@@ -230,7 +231,7 @@ export default {
           this.$emit('change', true);
 
           // ensure value change can be watched
-          this.$nextTick(() => {
+          nextTick(() => {
             this.$emit('refresh');
           });
         } else {

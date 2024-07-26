@@ -12,9 +12,10 @@
 import utils from '../common/utils/utils';
 
 import { ChildrenMixin } from '../mixins/relation';
+
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
-import { requestAnimationFrame } from '../common/utils/system';
+import { requestAnimationFrame, nextTick } from '../common/utils/system';
 
 
 export default {
@@ -137,7 +138,7 @@ export default {
     },
     destroyCallback() {
       this[PARENT].updateTabs();
-      this.$nextTick(() => {
+      nextTick(() => {
         this[PARENT].resize();
       });
     },
