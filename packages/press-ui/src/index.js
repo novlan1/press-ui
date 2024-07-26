@@ -9,6 +9,7 @@ import Barcode from './packages/press-barcode/press-barcode.vue';
 import Button from './packages/press-button/press-button.vue';
 import Calendar from './packages/press-calendar/press-calendar.vue';
 import Card from './packages/press-card/press-card.vue';
+import Cascader from './packages/press-cascader/press-cascader.vue';
 import CellGroup from './packages/press-cell-group/press-cell-group.vue';
 import Cell from './packages/press-cell/press-cell.vue';
 import CheckboxGroup from './packages/press-checkbox-group/press-checkbox-group.vue';
@@ -112,6 +113,7 @@ const components = {
   Button,
   Calendar,
   Card,
+  Cascader,
   CellGroup,
   Cell,
   CheckboxGroup,
