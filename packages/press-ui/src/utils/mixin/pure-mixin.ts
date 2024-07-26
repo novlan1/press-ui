@@ -1,16 +1,16 @@
 // 适配示例项目的mixin
-// 包括 uni-app 下的 Vue3、非 uni-ap p的 Vue2 项目
+// 包括 uni-app 下的 Vue3、非 uni-app 的 Vue2 项目
 
 import Toast from '../../packages/press-toast/index';
 import PressCell from '../../packages/press-cell/press-cell.vue';
-import DemoBlock from '../../pages/demo-block/demo-block.vue';
-import ToggleHeader from '../../pages/components/toggle-header/toggle-header.vue';
+import DemoBlock from '../../packages/press-demo-block/press-demo-block.vue';
+import ToggleHeader from '../../packages/press-toggle-header/press-toggle-header.vue';
 
 import { initGlobalComponent, initGlobalMixin } from '../../packages/common/vue3/adapter';
 
 
 /**
- * 普通Vue项目示例的mixin
+ * 普通 Vue 项目示例的 mixin
  */
 export function initPureDemoMixin(app?: any) {
   initGlobalComponent({

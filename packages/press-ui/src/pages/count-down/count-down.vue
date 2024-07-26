@@ -30,7 +30,7 @@
 <script>
 import PressFab from '../../packages/press-fab/press-fab.vue';
 import PressEmpty from '../../packages/press-empty/press-empty.vue';
-import { routerPush } from '../../utils/index';
+import { routerPush } from '../../packages/common/utils/router';
 import { getCountDownList } from './count-down-logic';
 
 

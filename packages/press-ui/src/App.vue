@@ -2,11 +2,9 @@
 import { updateManager } from 't-comm/lib/mp/update-manager';
 import { setLang } from './utils/i18n/i18n';
 import { watchMessageFromTop } from './utils/post-message/post-message';
-import { getAutoLaunchGameMixin } from './utils/mixin/auto-launch-game';
 
 export default {
   mixins: [
-    getAutoLaunchGameMixin(),
   ],
   onLaunch() {
     watchMessageFromTop();

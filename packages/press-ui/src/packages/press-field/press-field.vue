@@ -18,6 +18,7 @@
       :custom-style="customStyle"
       :arrow-direction="arrowDirection"
       custom-class="press-field"
+      @click="clickWrap"
     >
       <template #icon>
         <slot
@@ -258,6 +259,7 @@ export default {
     'input',
     'change',
     'update:modelValue',
+    'click',
   ],
   data() {
     return {
@@ -399,13 +401,15 @@ export default {
       }
     },
     noop() { },
+    clickWrap() {
+      this.$emit('click');
+    },
   },
 };
 </script>
 <style scoped lang="scss" src="./css/index.scss">
 </style>
 <style>
-/* TODO:to check*/
 /* ::-webkit-scrollbar {
   display: none;
 } */

@@ -19,7 +19,7 @@
 </template>
 <script>
 import PressBarcode from 'press-ui/press-barcode/press-barcode.vue';
-import DemoInput from 'src/pages/components/demo-input/demo-input.vue';
+import DemoInput from 'press-ui/press-demo-input/press-demo-input.vue';
 
 
 export default {

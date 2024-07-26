@@ -151,7 +151,7 @@
 
 <script>
 import PressNotify from 'press-ui/press-notify/press-notify.vue';
-import DemoBlockPlus from 'src/pages/demo-block/demo-block-plus.vue';
+import DemoBlockPlus from 'press-ui/press-demo-block-plus/press-demo-block-plus.vue';
 
 import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
 import PressTab from 'press-ui/press-tab/press-tab.vue';

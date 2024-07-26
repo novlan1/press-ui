@@ -35,6 +35,11 @@
           "path": "/components/press/press-popup-plus.md"
         },
         {
+          "title": "Style",
+          "subTitle": "内置样式",
+          "path": "/components/press/press-style.md"
+        },
+        {
           "title": "Text",
           "subTitle": "文本",
           "path": "/components/press/press-text.md"
@@ -59,6 +64,11 @@
           "title": "Calendar",
           "subTitle": "日历",
           "path": "/components/press/press-calendar.md"
+        },
+        {
+          "title": "Cascader",
+          "subTitle": "级联选择",
+          "path": "/components/press/press-cascader.md"
         },
         {
           "title": "Checkbox",

@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'DemoBlock',
+  name: 'PressDemoBlockPlus',
 
   props: {
     card: { type: Boolean, default: false },
@@ -27,8 +27,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "src/utils/style/var";
+<style lang="scss" scoped>
+$press-doc-text-light-blue: rgba(69, 90, 100, 0.6);
 
 .press-doc-demo-block {
   &__title {

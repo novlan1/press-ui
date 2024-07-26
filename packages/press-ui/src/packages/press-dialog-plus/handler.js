@@ -60,14 +60,15 @@ const Dialog = (options) => {
     // #endif
 
     if (dialog) {
+      const callback = (action, instance) => {
+        action === 'confirm' ? resolve(instance) : reject(instance);
+      };
       const newOptions = {
-        callback: (action, instance) => {
-          action === 'confirm' ? resolve(instance) : reject(instance);
-        },
         ...options,
       };
 
       setData(dialog, newOptions);
+      dialog.callback = callback;
 
       nextTick(() => {
         setData(dialog, { show: true });

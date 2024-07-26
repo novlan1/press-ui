@@ -66,7 +66,7 @@ import PressSticky from 'press-ui/press-sticky/press-sticky.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
 import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar.vue';
 import { requestAnimationFrame } from 'press-ui/common/utils/system';
-import { getHideHeaderMixin } from 'src/utils/mixin/hide-header';
+import { getHideHeaderMixin } from 'press-ui/mixins/hide-header/index';
 
 
 export default {

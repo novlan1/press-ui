@@ -29,6 +29,10 @@
           "path": "/en/components/press/press-popup-plus.md"
         },
         {
+          "title": "Style",
+          "path": "/en/components/press/press-style.md"
+        },
+        {
           "title": "Text",
           "path": "/en/components/press/press-text.md"
         },
@@ -49,6 +53,10 @@
         {
           "title": "Calendar",
           "path": "/en/components/press/press-calendar.md"
+        },
+        {
+          "title": "Cascader",
+          "path": "/en/components/press/press-cascader.md"
         },
         {
           "title": "Checkbox",

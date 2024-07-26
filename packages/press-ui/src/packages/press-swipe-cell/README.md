@@ -63,16 +63,92 @@ export default {
 };
 ```
 
+### 异步关闭
+
+当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容点击时的关闭行为。
+
+```html
+<press-swipe-cell
+  right-width="65"
+  left-width="65"
+  async-close
+  @close="onClose"
+>
+  <div slot="left">选择</div>
+  <press-cell-group>
+    <press-cell title="单元格" value="内容" />
+  </press-cell-group>
+  <div slot="right">删除</div>
+</press-swipe-cell>
+```
+
+```js
+onClose(detail) {
+  const { position, instance } = detail;
+  switch (position) {
+    case 'left':
+    case 'cell':
+      instance.close();
+      break;
+    case 'right':
+      Dialog.confirm({
+        message: '确定删除吗？',
+      }).then(() => {
+        instance.close();
+      });
+      break;
+  }
+},
+```
+
+### 主动打开
+
+```html
+<press-swipe-cell
+  right-width="65"
+  left-width="65"
+  name="示例"
+  @open="onOpen"
+>
+  <div slot="left" class="press-swipe-cell__left">选择</div>
+  <press-cell-group>
+    <press-cell title="单元格" value="内容" />
+  </press-cell-group>
+  <div slot="right" class="press-swipe-cell__right">删除</div>
+</press-swipe-cell>
+```
+
+```js
+onOpen(detail) {
+  const { position, name } = detail;
+  switch (position) {
+    case 'left':
+      Notify({
+        type: 'primary',
+        message: `${name}${position}部分展示open事件被触发`,
+      });
+      break;
+    case 'right':
+      Notify({
+        type: 'primary',
+        message: `${name}${position}部分展示open事件被触发`,
+      });
+      break;
+  }
+},
+```
+
 ## API
+
 ### Props
 
-| 参数              | 说明                                    | 类型               | 默认值  |
-| ----------------- | --------------------------------------- | ------------------ | ------- |
-| name              | 标识符，可以在 close 事件的参数中获取到 | _string \| number_ | -       |
-| left-width        | 左侧滑动区域宽度                        | _number_           | `0`     |
-| right-width       | 右侧滑动区域宽度                        | _number_           | `0`     |
-| async-close       | 是否异步关闭                            | _boolean_          | `false` |
-| disabled `v1.3.4` | 是否禁用滑动                            | _boolean_          | `false` |
+| 参数        | 说明                                    | 类型               | 默认值  |
+| ----------- | --------------------------------------- | ------------------ | ------- |
+| name        | 标识符，可以在 close 事件的参数中获取到 | _string \| number_ | -       |
+| left-width  | 左侧滑动区域宽度                        | _number_           | `0`     |
+| right-width | 右侧滑动区域宽度                        | _number_           | `0`     |
+| async-close | 是否异步关闭                            | _boolean_          | `false` |
+| disabled    | 是否禁用滑动                            | _boolean_          | `false` |
 
 ### Slot
 

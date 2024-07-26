@@ -69,7 +69,7 @@ export default {
       default: false,
     },
     name: {
-      type: [String, null],
+      type: String,
       default: '',
     },
     ...defaultProps,

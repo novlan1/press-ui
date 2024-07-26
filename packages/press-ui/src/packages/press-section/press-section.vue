@@ -128,7 +128,7 @@ $press-primary: #2979ff !default;
 
 .press-section {
   background-color: #fff;
-  opacity: .8;
+  opacity: 0.8;
   transition: all 300ms ease-in-out;
 
   &--active {

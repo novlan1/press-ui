@@ -1,9 +1,11 @@
 import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
-import { isInIFrame, storageUtil } from '../index';
-import { setLang } from './i18n';
+import { storageUtil } from '../common/utils/storage';
+import { isInIFrame } from '../common/utils/iframe';
+
+import { setLang } from './demo-lang';
 
 
-export function toggleI18n(onGTip: Function) {
+export function toggleI18n(onGTip) {
   // #ifdef H5
   if (isInIFrame()) return;
   // #endif
@@ -22,7 +24,7 @@ export function toggleI18n(onGTip: Function) {
   // #ifndef H5
   uni.showModal({
     title: '重新打开后生效',
-    content: `语言即将切换为 ${LOCALE_NUMBER_MAP[newNumber as keyof typeof LOCALE_NUMBER_MAP]}`,
+    content: `语言即将切换为 ${LOCALE_NUMBER_MAP[newNumber]}`,
     showCancel: false,
     success(res) {
       if (res.confirm) {

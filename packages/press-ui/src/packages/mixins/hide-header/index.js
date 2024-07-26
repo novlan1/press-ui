@@ -10,13 +10,13 @@ export function getHideHeaderMixin() {
         showHeader: !horizontal,
       };
     },
-    mounted(this: any) {
+    mounted() {
       if (!this.showHeader) {
         this.setHeaderStyle('none');
       }
     },
     methods: {
-      onToggleShowHeader(this: any) {
+      onToggleShowHeader() {
         this.showHeader = !this.showHeader;
         let style = 'none';
         if (this.showHeader) {
@@ -25,12 +25,11 @@ export function getHideHeaderMixin() {
 
         this.setHeaderStyle(style);
       },
-      setHeaderStyle(this: any, style: string) {
+      setHeaderStyle(style) {
         // #ifdef H5
         const header = document.querySelector('uni-page-head')
          || document.querySelector('.uni-page-head-wrap');
         if (header) {
-          // @ts-ignore
           header.style.display = style;
         }
         // #endif

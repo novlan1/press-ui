@@ -54,7 +54,7 @@ import {
   modifyCountDown,
   deleteCountDown,
 } from './count-down-logic';
-import { routerBack } from '../../utils/index';
+import { routerBack } from '../../packages/common/utils/router';
 import Dialog from '../../packages/press-dialog';
 import PressDialog from '../../packages/press-dialog/press-dialog.vue';
 

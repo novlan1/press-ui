@@ -132,9 +132,13 @@ export default {
         showCancelButton,
         message: this.t('content'),
         beforeClose,
-      }).then(() => {
-        // on close
-      });
+      })
+        .then(() => {
+          console.log('dialog resolve');
+        })
+        .catch(() => {
+          console.log('dialog reject');
+        });
     },
     getUserInfo(res) {
       console.log('getUserInfo.res', res);

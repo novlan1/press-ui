@@ -11,7 +11,7 @@ const SHARE_INFO = {
   imageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
 };
 
-// Vue2 和 Vue3 的 uni-app 工程，共用的mixin
+// Vue2 和 Vue3 的 uni-app 工程，共用的 mixin
 export function initMixin(app: any) {
   const mixin = {
     // @ts-ignore
@@ -76,7 +76,7 @@ export function initMixin(app: any) {
 
   initGlobalMixin(mixin, app);
 
-  // 注册$toast
+  // 注册 $toast
   initGlobalProps({
     name: '$toast',
     prop: Toast,

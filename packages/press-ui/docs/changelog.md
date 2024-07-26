@@ -1,5 +1,54 @@
 # 更新日志
 
+### [2.0.14](https://github.com/novlan1/press-ui/compare/v2.0.13...v2.0.14) (2024-07-26)
+
+
+### Chore 🚀 
+
+* **tree-select:** update demo ([b9a5d38](https://github.com/novlan1/press-ui/commit/b9a5d3806da9eb017916261444bf243d137ed4de))
+
+
+### Bug Fixes 🐞
+
+* **dialog-plus:** 修复dialog-plus回调异常 ([923442c](https://github.com/novlan1/press-ui/commit/923442cfff96f47368eef880eb00891d261bbdf6))
+
+
+### Documentation 📖
+
+* **cascader:** update docs ([8d97328](https://github.com/novlan1/press-ui/commit/8d97328ed935019ffd5372852862209b7fef5afd))
+
+
+### Features 🎉
+
+* **cascader:** 新增 cascader ([17d44b9](https://github.com/novlan1/press-ui/commit/17d44b9afa8e441794c52e57da60d6bc1669c81c))
+* **field:** 增加click事件 ([184c4f7](https://github.com/novlan1/press-ui/commit/184c4f7a6658e019eaa730949c8b107e3a0a54d3))
+* **style:** add press-style ([039991b](https://github.com/novlan1/press-ui/commit/039991b8d2a8c6c3f61ceec9373a7e81a5bd99e2))
+
+### [2.0.13](https://github.com/novlan1/press-ui/compare/v2.0.12...v2.0.13) (2024-07-24)
+
+
+### Code Refactoring ♻️
+
+* **image:** remove vant css ([60227b2](https://github.com/novlan1/press-ui/commit/60227b2e2d02cbb77b1353920c990627774d9afe))
+
+
+### Features 🎉
+
+* 新增press-about ([c506818](https://github.com/novlan1/press-ui/commit/c5068182377b029ef5e1ef0cbc5eb5db4e45fa26))
+* **section:** add section component ([d81e2ba](https://github.com/novlan1/press-ui/commit/d81e2ba491fb68781d10f0081b6bbcada4d24dc1))
+* **utils:** 沉淀utils和locale ([26a462d](https://github.com/novlan1/press-ui/commit/26a462d80d794b5cdb2d8b7222fecfa1bd7134aa))
+
+
+### Chore 🚀 
+
+* 删除无用组件 ([e3e0bef](https://github.com/novlan1/press-ui/commit/e3e0befb0c691cc1d3f7f1ab71230f0892f712bc))
+* remove useless comment ([7fbc758](https://github.com/novlan1/press-ui/commit/7fbc7580b224dcb8c4b6feed6ae094a0d6379790))
+* remove useless file ([5f23906](https://github.com/novlan1/press-ui/commit/5f2390674465389553fc0b043b1aa4cb91ce62a4))
+* remove useless file ([ef72370](https://github.com/novlan1/press-ui/commit/ef7237080329b66a7a761c6e07f2a52ff827798d))
+* remove useless file ([626bb89](https://github.com/novlan1/press-ui/commit/626bb894ae6edd7d6f85f220f68cc494a7e481e8))
+* update demo ([feb4add](https://github.com/novlan1/press-ui/commit/feb4add58f2cb89327b4d352a95630cb55d4e6bc))
+* update demo ([856d469](https://github.com/novlan1/press-ui/commit/856d469dca1cf7a98a6ca150933df7d0dc2db166))
+
 ### [2.0.12](https://github.com/novlan1/press-ui/compare/v2.0.11...v2.0.12) (2024-07-19)
 
 

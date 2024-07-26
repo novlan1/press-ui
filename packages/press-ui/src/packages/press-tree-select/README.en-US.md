@@ -37,7 +37,7 @@ export default {
      },
 
      onClickItem(detail) {
-       const activeId = this.data.activeId === detail.id ? null : detail.id;
+       const activeId = this.activeId === detail.id ? null : detail.id;
        this.activeId = activeId;
      }
    },
@@ -48,10 +48,10 @@ export default {
 
 ```html
 <press-tree-select
-   items="{{ items }}"
-   main-active-index="{{ mainActiveIndex }}"
-   active-id="{{ activeId }}"
-   max="{{ max }}"
+  :items="items"
+  :main-active-index="mainActiveIndex"
+  :active-id="activeId"
+  :max="2"
    @click-nav="onClickNav"
    @click-item="onClickItem"
 />
@@ -92,10 +92,10 @@ export default {
 
 ```html
 <press-tree-select
-   items="{{ items }}"
-   height="55vw"
-   main-active-index="{{ mainActiveIndex }}"
-   active-id="{{ activeId }}"
+  :items="items"
+  height="55vw"
+  :main-active-index="mainActiveIndex"
+  :active-id="activeId"
    @click-nav="onClickNav"
    @click-item="onClickItem"
 >
@@ -118,10 +118,10 @@ export default {
 
 ### Events
 
-| Event Name  | Description                                                               | Callback Parameters                                     |
-| ----------- | ------------------------------------------------------------------------- | ------------------------------------------------------- |
-| @click-nav  | The event triggered when the left navigation is clicked                   | event.detail.index: the index of the clicked navigation |
-| @click-item | The event that will be triggered when the right selection item is clicked | event.detail: the data of the clicked item              |
+| Event Name  | Description                                                               | Callback Parameters                        |
+| ----------- | ------------------------------------------------------------------------- | ------------------------------------------ |
+| @click-nav  | The event triggered when the left navigation is clicked                   | index: the index of the clicked navigation |
+| @click-item | The event that will be triggered when the right selection item is clicked | item: the data of the clicked item         |
 
 ### Slots
 

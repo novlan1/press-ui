@@ -84,5 +84,9 @@ export default {
       type: String,
       default: '',
     },
+    transitionStyle: {
+      type: String,
+      default: '',
+    },
   },
 };

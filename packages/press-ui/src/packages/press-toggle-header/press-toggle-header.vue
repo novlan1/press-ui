@@ -14,13 +14,16 @@
   </press-cell>
 </template>
 <script>
-import PressSwitch from '../../../packages/press-switch/press-switch.vue';
-import { getHideHeaderMixin } from '../../../utils/mixin/hide-header';
+import PressSwitch from '../press-switch/press-switch.vue';
+import PressCell from '../press-cell/press-cell.vue';
+import { getHideHeaderMixin } from '../mixins/hide-header/index';
 
 
 export default {
+  name: 'PressToggleHeader',
   components: {
     PressSwitch,
+    PressCell,
   },
   mixins: [
     getHideHeaderMixin(),

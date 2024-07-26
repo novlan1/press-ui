@@ -16,7 +16,7 @@
 </template>
 <script>
 import PressQRCode from 'press-ui/press-q-r-code/press-q-r-code.vue';
-import DemoInput from 'src/pages/components/demo-input/demo-input.vue';
+import DemoInput from 'press-ui/press-demo-input/press-demo-input.vue';
 
 
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <demo-block
+  <PressDemoBlock
     :title="t('mockData')"
     :section-style="sectionStyle"
     :header-style="headerStyle"
@@ -29,14 +29,16 @@
         </PressButton>
       </div>
     </div>
-  </demo-block>
+  </PressDemoBlock>
 </template>
 <script>
-import PressButton from 'src/packages/press-button/press-button.vue';
-import PressField from 'src/packages/press-field/press-field.vue';
+import PressButton from '../press-button/press-button.vue';
+import PressField from '../press-field/press-field.vue';
+import PressDemoBlock from '../press-demo-block/press-demo-block.vue';
 
 
 export default {
+  name: 'PressDemoInput',
   i18n: {
     'zh-CN': {
       custom: '自定义',
@@ -50,6 +52,7 @@ export default {
   components: {
     PressField,
     PressButton,
+    PressDemoBlock,
   },
   props: {
     value: {

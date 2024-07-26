@@ -46,7 +46,7 @@
           </template>
           <template #loading>
             <img
-              src="https://b.yzcdn.cn/vant/doge-fire.jpg"
+              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
               class="doge"
             >
           </template>

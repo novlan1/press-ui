@@ -28,6 +28,10 @@
         "title": "弹出层"
       },
       {
+        "name": "Style",
+        "title": "内置样式"
+      },
+      {
         "name": "Text",
         "title": "文本"
       },
@@ -48,6 +52,10 @@
       {
         "name": "Calendar",
         "title": "日历"
+      },
+      {
+        "name": "Cascader",
+        "title": "级联选择"
       },
       {
         "name": "Checkbox",

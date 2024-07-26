@@ -75,11 +75,11 @@ export default {
       default: () => [],
     },
     activeId: {
-      type: [Number, String, null, Array],
+      type: [Number, String, Array],
       default: '',
     },
     mainActiveIndex: {
-      type: [Number, String, Array, null],
+      type: [Number, String, Array],
       default: 0,
     },
     height: {
@@ -87,7 +87,7 @@ export default {
       default: 300,
     },
     max: {
-      type: Number,
+      type: [Number, String],
       default: Infinity,
     },
     selectedIcon: {

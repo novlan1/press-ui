@@ -28,6 +28,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/style/style",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/text/text",
           "navigationStyle": ""
         },
@@ -46,6 +50,10 @@
       "list": [
         {
           "url": "/press/calendar/calendar",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/cascader/cascader",
           "navigationStyle": ""
         },
         {

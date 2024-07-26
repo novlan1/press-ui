@@ -13,10 +13,10 @@
   </PressSection>
 </template>
 <script>
-import PressSection from '../components/press-section/press-section.vue';
+import PressSection from '../press-section/press-section.vue';
 
 export default {
-  name: 'DemoBlock',
+  name: 'PressDemoBlock',
   options: {
     styleIsolation: 'shared',
   },

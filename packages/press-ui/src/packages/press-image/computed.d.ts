@@ -68,6 +68,10 @@ declare const innerDefault: {
       type: StringConstructor;
       default: string;
     };
+    transitionStyle: {
+      type: StringConstructor;
+      default: string;
+    };
   };
 };
 export default innerDefault;

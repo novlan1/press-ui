@@ -23,7 +23,7 @@ export default {
 
 ### 单选模式
 
-可以在任意位置上使用 press-tree-select 标签。传入对应的数据即可。此组件支持单选或多选，具体行为完全基于事件 click-item 的实现逻辑如何为属性 active-id 赋值，当 active-id 为数组时即为多选状态。
+可以在任意位置上使用 `press-tree-select` 标签。传入对应的数据即可。此组件支持单选或多选，具体行为完全基于事件 `click-item` 的实现逻辑如何为属性 `active-id` 赋值，当 `active-id` 为数组时即为多选状态。
 
 ```html
 <press-tree-select
@@ -49,7 +49,7 @@ export default {
     },
 
     onClickItem(detail) {
-      const activeId = this.data.activeId === detail.id ? null : detail.id;
+      const activeId = this.activeId === detail.id ? null : detail.id;
       this.activeId = activeId;
     }
   },
@@ -60,10 +60,10 @@ export default {
 
 ```html
 <press-tree-select
-  items="{{ items }}"
-  main-active-index="{{ mainActiveIndex }}"
-  active-id="{{ activeId }}"
-  max="{{ max }}"
+  :items="items"
+  :main-active-index="mainActiveIndex"
+  :active-id="activeId"
+  :max="2"
   @click-nav="onClickNav"
   @click-item="onClickItem"
 />
@@ -93,7 +93,6 @@ export default {
         activeId.push(detail.id);
       }
 
-
       this.activeId = activeId;
     }
   },
@@ -104,10 +103,10 @@ export default {
 
 ```html
 <press-tree-select
-  items="{{ items }}"
+  :items="items"
   height="55vw"
-  main-active-index="{{ mainActiveIndex }}"
-  active-id="{{ activeId }}"
+  :main-active-index="mainActiveIndex"
+  :active-id="activeId"
   @click-nav="onClickNav"
   @click-item="onClickItem"
 >
@@ -136,10 +135,10 @@ export default {
 
 ### Events
 
-| 事件名      | 说明                             | 回调参数                               |
-| ----------- | -------------------------------- | -------------------------------------- |
-| @click-nav  | 左侧导航点击时，触发的事件       | event.detail.index：被点击的导航的索引 |
-| @click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据           |
+| 事件名      | 说明                             | 回调参数                  |
+| ----------- | -------------------------------- | ------------------------- |
+| @click-nav  | 左侧导航点击时，触发的事件       | index: 被点击的导航的索引 |
+| @click-item | 右侧选择项被点击时，会触发的事件 | item: 该点击项的数据      |
 
 ### Slots
 
@@ -149,7 +148,7 @@ export default {
 
 ### items 数据结构
 
-`items` 整体为一个数组，数组内包含一系列描述分类的对象。每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项。
+`items` 整体为一个数组，数组内包含一系列描述分类的对象。每个分类里，`text` 表示当前分类的名称。`children` 表示分类里的可选项，为数组结构，`id` 被用来唯一标识每个选项。
 
 ```javascript
 [

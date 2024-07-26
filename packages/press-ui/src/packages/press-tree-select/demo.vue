@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block
-      :title="t('basicUsage')"
+      :title="t('radioMode')"
       :section-style="sectionStyle"
     >
       <press-tree-select
@@ -12,11 +12,72 @@
         @click-item="onClickItem"
       />
     </demo-block>
+
+    <demo-block
+      :title="t('multipleMode')"
+      :section-style="sectionStyle"
+    >
+      <press-tree-select
+        :max="2"
+        :items="items"
+        :main-active-index="mainActiveIndexMulti"
+        :active-id="activeIdMulti"
+        @click-nav="onClickNavMulti"
+        @click-item="onClickItemMulti"
+      />
+    </demo-block>
+
+    <demo-block
+      :title="t('customContent')"
+      :section-style="sectionStyle"
+    >
+      <press-tree-select
+        :items="t('dataSimple')"
+        :main-active-index="mainActiveIndex"
+        height="55vw"
+        :active-id="activeId"
+        @click-nav="onClickNav"
+        @click-item="onClickItem"
+      >
+        <div
+          slot="content"
+          style="width: 100%;height: 100%"
+        >
+          <press-image
+            v-if="mainActiveIndex == 0"
+            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+            width="100%"
+            height="100%"
+            transition-style="width: 100%;height: 100%;"
+          />
+          <press-image
+            v-else-if="mainActiveIndex == 1"
+            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg"
+            width="100%"
+            height="100%"
+            transition-style="width: 100%;height: 100%;"
+          />
+        </div>
+      </press-tree-select>
+    </demo-block>
+
+    <demo-block
+      :title="t('showBadge')"
+      :section-style="sectionStyle"
+    >
+      <press-tree-select
+        :items="badgeItems"
+        :main-active-index="mainActiveIndex"
+        :active-id="activeId"
+        @click-nav="onClickNav"
+        @click-item="onClickItem"
+      />
+    </demo-block>
   </div>
 </template>
 <script>
 import PressTreeSelect from 'press-ui/press-tree-select/press-tree-select.vue';
-
+import PressImage from 'press-ui/press-image/press-image.vue';
 
 const zhCNData = [
   {
@@ -161,17 +222,33 @@ export default {
 
   components: {
     PressTreeSelect,
+    PressImage,
   },
   data() {
     return {
       mainActiveIndex: 1,
+      mainActiveIndexMulti: 0,
       activeId: null,
+      activeIdMulti: [],
+
       sectionStyle: 'margin: 0;',
     };
   },
   computed: {
     items() {
       return this.t('data');
+    },
+    badgeItems() {
+      return this.items.slice(0, 2).map((item, index) => {
+        if (index === 0) {
+          return { ...item, dot: true };
+        }
+        if (index === 1) {
+          return { ...item, badge: 5 };
+        }
+
+        return item;
+      });
     },
   },
   methods: {
@@ -183,6 +260,20 @@ export default {
       console.log('[detail]', detail);
       const activeId = this.activeId === detail.id ? null : detail.id;
       this.activeId = activeId;
+    },
+    onClickItemMulti(detail) {
+      const { activeIdMulti } = this;
+      const idx = activeIdMulti.indexOf(detail.id);
+      if (idx > -1) {
+        activeIdMulti.splice(idx, 1);
+      } else {
+        activeIdMulti.push(detail.id);
+      }
+
+      this.activeIdMulti = activeIdMulti;
+    },
+    onClickNavMulti(index) {
+      this.mainActiveIndexMulti = index || 0;
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <demo-block
+  <div class="press-act-demo">
+    <PressDemoBlock
       v-if="showBasicUsage"
       :title="t('basicUsage')"
     >
@@ -9,9 +9,9 @@
         is-link
         @click="onShowDialog"
       />
-    </demo-block>
+    </PressDemoBlock>
 
-    <demo-block
+    <PressDemoBlock
       :title="t('custom')"
     >
       <press-cell
@@ -22,7 +22,7 @@
       />
 
       <!-- #ifdef H5 -->
-      <ToggleHeader />
+      <PressToggleHeader />
       <!-- #endif -->
 
       <press-cell
@@ -52,17 +52,23 @@
           />
         </template>
       </press-cell>
-    </demo-block>
+
+      <slot name="custom" />
+    </PressDemoBlock>
 
     <slot />
   </div>
 </template>
 <script>
-import PressSwitch from '../../../packages/press-switch/press-switch.vue';
-import { getHideHeaderMixin } from '../../../utils/mixin/hide-header';
+import PressSwitch from '../press-switch/press-switch.vue';
+import PressCell from '../press-cell/press-cell.vue';
+import PressToggleHeader from '../press-toggle-header/press-toggle-header.vue';
+import PressDemoBlock from '../press-demo-block/press-demo-block.vue';
+import { getHideHeaderMixin } from '../mixins/hide-header/index';
 
 
 export default {
+  name: 'PressActDemo',
   i18n: {
     'zh-CN': {
       show: '显示',
@@ -77,6 +83,9 @@ export default {
   },
   components: {
     PressSwitch,
+    PressCell,
+    PressToggleHeader,
+    PressDemoBlock,
   },
   mixins: [
     getHideHeaderMixin(),

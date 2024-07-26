@@ -1,4 +1,4 @@
-import { storageUtil } from '../../utils/index';
+import { storageUtil } from '../../packages/common/utils/storage';
 import { timeStampFormat } from '../../packages/common/format/time';
 
 function getId() {

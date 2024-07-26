@@ -33,11 +33,53 @@
         </template>
       </press-swipe-cell>
     </demo-block>
+
+    <demo-block
+      :title="t('beforeClose')"
+      section-style="margin:0;"
+    >
+      <press-swipe-cell
+        :right-width="65"
+        :left-width="65"
+        :async-close="true"
+        @click="onClick"
+        @close="onAsyncClose"
+        @open="onOpen"
+      >
+        <template #left>
+          <div
+            class="left"
+          >
+            {{ t('select' ) }}
+          </div>
+        </template>
+
+        <div class="content">
+          {{ t('content') }}
+        </div>
+
+        <template #right>
+          <div
+            class="right"
+          >
+            {{ t('delete') }}
+          </div>
+        </template>
+      </press-swipe-cell>
+    </demo-block>
+
+    <!-- #ifndef H5 -->
+    <PressDialogPlus
+      id="press-dialog"
+      ref="press-dialog"
+    />
+    <!-- #endif -->
   </div>
 </template>
 <script>
 import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
-
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import Dialog from 'press-ui/press-dialog-plus/handler';
 
 export default {
   i18n: {
@@ -64,6 +106,7 @@ export default {
   },
   components: {
     PressSwipeCell,
+    PressDialogPlus,
   },
   data() {
     return {
@@ -79,9 +122,32 @@ export default {
       console.log('onClose.args', args);
       this.onGTip('close');
     },
-    onOpen(...args) {
-      console.log('onOpen.args', args);
-      this.onGTip('open');
+    onOpen(detail) {
+      console.log('onOpen.detail', detail);
+      this.onGTip(`[open] position: ${detail.position}`);
+    },
+    onAsyncClose(detail) {
+      console.log('onAsyncClose.detail', detail);
+      const { position, instance } = detail;
+      switch (position) {
+        case 'left':
+        case 'cell':
+          instance.close();
+          break;
+        case 'right':
+          Dialog.confirm({
+            context: this,
+            title: '确定删除吗？',
+          })
+            .then(() => {
+              console.log('1111');
+              instance.close();
+            })
+            .catch((err) => {
+              console.log('err', err);
+            });
+          break;
+      }
     },
   },
 };
