@@ -1,5 +1,17 @@
 # 更新日志
 
+### [2.0.16](https://github.com/novlan1/press-ui/compare/v2.0.15...v2.0.16) (2024-07-26)
+
+
+### Code Refactoring ♻️
+
+* **cascader:** 优化cascader ([4b25513](https://github.com/novlan1/press-ui/commit/4b25513dcecfdf3a9bf968b5d8e0e49693d603a7))
+
+
+### Features 🎉
+
+* **popover-plus:** 支持 vue3 pure ([4216297](https://github.com/novlan1/press-ui/commit/4216297282be9837c80f83b6fdfea4c6e80a01cf))
+
 ### [2.0.15](https://github.com/novlan1/press-ui/compare/v2.0.14...v2.0.15) (2024-07-26)
 
 

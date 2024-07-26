@@ -121,7 +121,7 @@
         is-link
         :readonly="isMp"
         :label="t('area')"
-        :placeholder="t('customFieldNames')"
+        :placeholder="t('selectArea')"
         @click="onClick('customFieldNames')"
         @click-input="onClick('customFieldNames')"
       />
@@ -328,8 +328,12 @@ export default {
       const { value } = detail;
       if (value === '330000') {
         setTimeout(() => {
-          // this.asyncStateOptions[0].children = this.t('asyncOptions2');
+          // #ifdef VUE2
           this.$set(this.asyncStateOptions[0], 'children', this.t('asyncOptions2'));
+          // #endif
+          // #ifdef VUE3
+          this.asyncStateOptions[0].children = this.t('asyncOptions2');
+          // #endif
         }, 500);
       }
     },

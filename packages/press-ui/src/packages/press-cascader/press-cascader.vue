@@ -81,7 +81,7 @@ const defaultFieldNames = {
   value: FieldName.VALUE,
   children: FieldName.CHILDREN,
 };
-export default ({
+export default {
   name: 'PressCascader',
   options: {
     styleIsolation: 'shared',
@@ -310,7 +310,7 @@ export default ({
       return `${a}-${b}`;
     },
   },
-});
+};
 </script>
 <style scoped lang="scss" src="./css/index.scss">
 </style>

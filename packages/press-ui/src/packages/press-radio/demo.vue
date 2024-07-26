@@ -257,7 +257,13 @@ export default {
   methods: {
     onChange(val, type) {
       console.log('onChange.val', val);
+      // #ifdef Vue2
       this.$set(this.valueMap, type, val);
+      // #endif
+
+      // #ifdef VUE3
+      this.valueMap[type] = val;
+      // #endif
     },
   },
 };

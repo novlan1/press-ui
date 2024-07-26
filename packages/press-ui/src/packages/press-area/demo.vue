@@ -68,10 +68,11 @@
     </demo-block>
 
     <PressAreaPopup
-      :show.sync="showPopup"
+      :show="showPopup"
       :area-list="areaList"
       :value="selectArea"
       :type="areaType"
+      @update:show="value => showPopup = value"
       @confirm="onConfirmArea"
       @cancel="onCancelPopup"
     />

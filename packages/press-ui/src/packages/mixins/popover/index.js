@@ -5,6 +5,7 @@ export const popoverMixin = {
   // #ifdef H5
   watch: {
     value: 'updateLocation',
+    modelValue: 'updateLocation',
     placement: 'updateLocation',
     getContainer: 'updateLocation',
   },
@@ -56,7 +57,7 @@ export const popoverMixin = {
       }
 
       setTimeout(() => {
-        if (!this.value) {
+        if (!this.value && !this.modelValue) {
           return;
         }
 
