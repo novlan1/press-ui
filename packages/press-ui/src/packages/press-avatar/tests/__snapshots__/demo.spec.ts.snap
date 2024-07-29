@@ -52,10 +52,10 @@ exports[`renders demo correctly 1`] = `
     <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(192, 196, 204); margin-right: 20px;">
       <!----> <span style="color: rgb(255, 255, 255); text-align: center;">Y</span>
     </div>
-    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(134, 206, 250); margin-right: 20px;">
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(154, 205, 203); margin-right: 20px;">
       <!----> <span style="color: rgb(255, 255, 255); text-align: center;">G</span>
     </div>
-    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(119, 177, 204);">
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(148, 213, 84);">
       <!----> <span style="color: rgb(255, 255, 255); text-align: center;">杨</span>
     </div>
   </div>

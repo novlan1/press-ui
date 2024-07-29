@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": [
+    "eslint-config-light-vue3"
+  ],
+  "globals": {
+    "$t": "readonly",
+    "Recordable": "readonly",
+    "__PLATFORM__": true,
+    "__DEV__": true,
+    "__NODE_JS__": true,
+    "__X__": true
+  },
+  "parserOptions": {
+    "project": "tsconfig.eslint.json",
+    "extraFileExtensions": [
+      ".vue"
+    ]
+  },
+  "rules": {
+    "vue/prefer-import-from-vue": 0
+  }
+}

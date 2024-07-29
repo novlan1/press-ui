@@ -57,3 +57,8 @@ lib/
 packages/press-ui-vue3-pure/src/packages
 packages/press-ui-vue3-pure/src/utils
 packages/press-ui-vue3-pure/src/pages
+
+
+packages/swiper-next/es
+packages/swiper-next/lib
+packages/swiper-next/dist

@@ -1,0 +1,57 @@
+{
+  "name": "swiper-next",
+  "version": "0.1.1",
+  "description": "Vue3 的 Swiper 组件",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "style": "dist/index.css",
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "author": "guowangyang",
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "keywords": [
+    "press-ui",
+    "swiper",
+    "swiper-item",
+    "component",
+    "component library"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf es lib dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.7",
+    "@vitejs/plugin-vue": "^5.1.1",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.4",
+    "eslint": "^8.57.0",
+    "eslint-config-light-vue3": "^0.0.4",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "standard-version": "^9.5.0",
+    "vite": "^5.3.5",
+    "vite-plugin-dts": "4.0.0-beta.1",
+    "vue": "^3.4.34"
+  },
+  "dependencies": {
+    "@vue/shared": "^3.4.34"
+  }
+}

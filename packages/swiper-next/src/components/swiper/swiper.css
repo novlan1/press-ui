@@ -1,0 +1,151 @@
+.swiper-next {
+  display: block;
+  height: 150px;
+}
+
+.swiper-next[hidden] {
+  display: none;
+}
+
+.swiper-next__wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+}
+
+.swiper-next__slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.swiper-next__slide-frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.swiper-next__dots {
+  position: absolute;
+  font-size: 0;
+}
+
+.swiper-next__dots-horizontal {
+  left: 50%;
+  bottom: 10px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+}
+
+.swiper-next__dots-horizontal .swiper-next__dot {
+  margin-right: 8px;
+}
+
+.swiper-next__dots-horizontal .swiper-next__dot:last-child {
+  margin-right: 0;
+}
+
+.swiper-next__dots-vertical {
+  right: 10px;
+  top: 50%;
+  text-align: right;
+  transform: translate(0, -50%);
+}
+
+.swiper-next__dots-vertical .swiper-next__dot {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.swiper-next__dots-vertical .swiper-next__dot:last-child {
+  margin-bottom: 0;
+}
+
+.swiper-next__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-timing-function: ease;
+  background: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+}
+
+.swiper-next__dot-active {
+  background-color: #000;
+}
+
+.swiper-next__navigation {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -13px;
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.swiper-next__navigation-disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.swiper-next__navigation-hide {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.swiper-next__navigation-prev {
+  left: 10px;
+}
+
+.swiper-next__navigation-prev svg {
+  margin-left: -1px;
+  left: 10px;
+}
+
+.swiper-next__navigation-prev.swiper-next__navigation-vertical {
+  top: 18px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.swiper-next__navigation-prev.swiper-next__navigation-vertical svg {
+  transform: rotate(90deg);
+  margin-left: auto;
+  margin-top: -2px;
+}
+
+.swiper-next__navigation-next {
+  right: 10px;
+}
+
+.swiper-next__navigation-next svg {
+  transform: rotate(180deg);
+}
+
+.swiper-next__navigation-next.swiper-next__navigation-vertical {
+  top: auto;
+  bottom: 5px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.swiper-next__navigation-next.swiper-next__navigation-vertical svg {
+  margin-top: 2px;
+  transform: rotate(270deg);
+}

@@ -59,9 +59,12 @@
 import computed from './index';
 import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';
+
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { toInject, nextTick, forceUpdate } from '../common/vue3/adapter';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+
 
 const DEFAULT_DURATION = 200;
 
@@ -70,6 +73,7 @@ export default {
   options: {
     ...defaultOptions,
   },
+  mixins: [ScrollViewPureMixin],
   ...toInject(PARENT),
 
   props: {

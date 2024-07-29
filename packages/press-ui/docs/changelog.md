@@ -1,5 +1,13 @@
 # 更新日志
 
+### [2.0.17](https://github.com/novlan1/press-ui/compare/v0.1.0...v2.0.17) (2024-07-29)
+
+
+### Chore 🚀 
+
+* **release:** 0.1.1 ([71dff80](https://github.com/novlan1/press-ui/commit/71dff806ae7433156ad4e4f5868c1d159d0480c9))
+* update snapshot ([388be1d](https://github.com/novlan1/press-ui/commit/388be1d1bac300040acf2b1d5166564450f4a296))
+
 ### [2.0.16](https://github.com/novlan1/press-ui/compare/v2.0.15...v2.0.16) (2024-07-26)
 
 

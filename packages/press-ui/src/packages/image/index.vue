@@ -12,6 +12,9 @@
   </uni-image>
 </template>
 <script>
+import '../mixins/pure/image';
+
+
 function fixNumber(number) {
   // fix: 解决 Chrome 浏览器上某些情况下导致 1px 缝隙的问题
   if (typeof navigator && navigator.vendor === 'Google Inc.' && number > 10) {

@@ -245,7 +245,6 @@ export default {
 };
 
 </script>
-<style scoped lang="scss" src="./css/index.scss">
-</style>
-<style scoped lang="scss" src="./css/h5.scss">
-</style>
+<style scoped lang="scss" src="./css/index.scss"></style>
+<style scoped lang="scss" src="./css/h5.scss"></style>
+<style scoped lang="scss" src="./css/mp-alipay.scss"></style>

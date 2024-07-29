@@ -56,6 +56,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 
 import utils from '../common/utils/utils';
 import { isActive } from './computed';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 export default {
@@ -69,6 +70,7 @@ export default {
     PressSidebar,
     PressSidebarItem,
   },
+  mixins: [ScrollViewPureMixin],
   props: {
     items: {
       type: Array,

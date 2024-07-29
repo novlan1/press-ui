@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.17](https://github.com/novlan1/press-ui/compare/v0.1.0...v2.0.17) (2024-07-29)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* **release:** 0.1.1 ([71dff80](https://github.com/novlan1/press-ui/commit/71dff806ae7433156ad4e4f5868c1d159d0480c9))
+* update snapshot ([388be1d](https://github.com/novlan1/press-ui/commit/388be1d1bac300040acf2b1d5166564450f4a296))
+
 ### [2.0.16](https://github.com/novlan1/press-ui/compare/v2.0.15...v2.0.16) (2024-07-26)
 
 

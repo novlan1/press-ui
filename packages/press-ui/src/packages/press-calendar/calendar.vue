@@ -76,9 +76,11 @@ import { intersectionObserverPloyFill } from '../common/utils/system';
 import CalendarHeader from './components/header/header.vue';
 import Month from './components/month/month.vue';
 import PressButton from '../press-button/press-button.vue';
+
 import computed from './computed';
 import utils from '../common/utils/utils';
 import { SHARE_PROPS } from './share-props';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 import {
   formatMonthTitle,
@@ -86,6 +88,7 @@ import {
 
 
 export default {
+  name: 'Calendar',
   options: {
     styleIsolation: 'shared',
   },
@@ -94,6 +97,7 @@ export default {
     Month,
     PressButton,
   },
+  mixins: [ScrollViewPureMixin],
   props: {
     ...SHARE_PROPS,
     scrollIntoViewData: {

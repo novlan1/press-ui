@@ -100,6 +100,7 @@ import PressField from '../press-field/press-field.vue';
 import { dialogProps } from './computed';
 import { toPromise } from '../common/format/function';
 import { getDialogMixin } from './dialog-mixin';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 export default {
@@ -108,7 +109,7 @@ export default {
     PressButton,
     PressField,
   },
-  mixins: [getDialogMixin(dialogProps)],
+  mixins: [getDialogMixin(dialogProps), ScrollViewPureMixin],
   props: {
     ...dialogProps,
   },

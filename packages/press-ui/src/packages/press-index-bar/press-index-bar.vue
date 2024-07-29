@@ -41,12 +41,16 @@
 
 import { GREEN } from '../common/constant/color';
 import { getRect } from '../common/dom/rect';
+
 import { isDef } from '../common/utils/validator';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ParentMixin } from '../mixins/relation';
+
 import { PARENT_INDEX_BAR  as PARENT } from '../common/constant/parent-map';
 import { getScrollSelector } from '../common/dom/scroll';
 import { nextTick } from '../common/utils/system';
+
+import { ParentMixin } from '../mixins/relation';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 const indexList = () => {
@@ -67,6 +71,7 @@ export default {
   },
   mixins: [
     ParentMixin(PARENT),
+    ScrollViewPureMixin,
   ],
   props: {
     sticky: {

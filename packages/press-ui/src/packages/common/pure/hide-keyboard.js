@@ -12,6 +12,8 @@ export function hideKeyboard() {
   // #ifdef H5
   if (isNotInUni()) {
     innerHideKeyboard();
+  } else {
+    uni.hideKeyboard();
   }
   // #endif
 

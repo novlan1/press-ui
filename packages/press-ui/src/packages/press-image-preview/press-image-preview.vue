@@ -60,6 +60,7 @@ import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { functionalMixin } from '../mixins/functional';
 import { nextTick } from '../common/utils/system';
+import { SwiperPureMixin } from '../mixins/pure/swiper';
 
 
 const imagePreviewProps = {
@@ -115,7 +116,7 @@ export default {
     PressOverlay,
     PressIconPlus,
   },
-  mixins: [functionalMixin(imagePreviewProps)],
+  mixins: [functionalMixin(imagePreviewProps), SwiperPureMixin],
   props: {
     ...imagePreviewProps,
   },

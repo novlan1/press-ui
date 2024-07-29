@@ -49,14 +49,17 @@ import PressPopover from '../press-popover/press-popover';
 import { getRect, getScrollHeight } from '../common/dom/rect';
 import { isNotInUni } from '../common/utils/utils';
 import { nextTick } from '../common/utils/system';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 let popOverTimer = null;
+
 
 export default {
   name: 'PressPagination',
   components: {
     PressPopover,
   },
+  mixins: [ScrollViewPureMixin],
   props: {
     total: {
       type: Number,

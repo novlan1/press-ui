@@ -166,7 +166,7 @@ export default {
                     errorsRes.push(...errors);
                     childErrors.push(...errors);
                   }
-                  child.message = childErrors[0]?.message ?? null;
+                  child.message = childErrors[0]?.message || null;
                 },
               );
             }

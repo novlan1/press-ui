@@ -1,9 +1,6 @@
 @import "../../common/style/press/var.scss";
 @import './popover-placement.scss';
 
-/* #ifdef MP-ALIPAY */
-::v-deep .press-popover,
-/* #endif */
 .press-popover {
   position: absolute;
   overflow: visible;
@@ -16,25 +13,13 @@
     // z-index: 1;
   }
 
-  /* #ifdef MP-ALIPAY */
-  .press-popup
-  /* #endif */
-  /* #ifndef MP-ALIPAY */
-  ::v-deep .press-popup 
-  /* #endif */
-  {
+  ::v-deep .press-popup {
     overflow-y: visible;
     position: relative;
     background-color: transparent;
   }
 
-  /* #ifdef MP-ALIPAY */
-  .press-popover-action-icon
-  /* #endif */
-  /* #ifndef MP-ALIPAY */
-  ::v-deep .press-popover-action-icon
-  /* #endif */
-  {
+  ::v-deep .press-popover-action-icon {
     margin-right: $padding-xs;
     font-size: $popover-action-icon-size;
   }

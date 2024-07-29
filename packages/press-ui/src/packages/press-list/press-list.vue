@@ -67,26 +67,13 @@ import { getScrollSelector, getScroller } from '../common/dom/scroll';
 import {  SCROLL_VIEW_ID } from './config';
 
 import { vModelMixin } from '../common/vue3/adapter';
-import { isNotInUni } from '../common/utils/utils';
 import { nextTick } from '../common/utils/system';
 
 import { BindEventMixin } from '../mixins/bind-event';
-
-// #ifdef H5
-import ScrollView from '../scroll-view/scroll-view';
-// #endif
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 const scrollSelector = getScrollSelector(SCROLL_VIEW_ID);
-let componentConfig = {};
-
-// #ifdef H5
-if (isNotInUni()) {
-  componentConfig = {
-    ScrollView,
-  };
-}
-// #endif
 
 
 export default {
@@ -96,7 +83,6 @@ export default {
   },
   components: {
     PressLoadingPlus,
-    ...componentConfig,
   },
   mixins: [
     vModelMixin,
@@ -111,6 +97,7 @@ export default {
       bind(this.scroller, 'touchmove', this.onScroll, true);
       this.onScroll();
     }),
+    ScrollViewPureMixin,
     // #endif
   ],
   props: {

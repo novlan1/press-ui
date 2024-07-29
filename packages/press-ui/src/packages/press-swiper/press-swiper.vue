@@ -30,34 +30,15 @@
   </swiper>
 </template>
 <script>
-// #ifdef H5
-import InnerSwiper from '../swiper/swiper.vue';
-import { setCustomElements } from '../common/vue3/adapter';
-// #endif
-import { isNotInUni } from '../common/utils/utils';
 import { SWIPER_PROPS } from '../swiper/utils';
-
-
-const componentConfig = isNotInUni() ? {
-// #ifdef H5
-  Swiper: InnerSwiper,
-// #endif
-} : {};
-
-// #ifdef H5
-if (isNotInUni()) {
-  setCustomElements([
-    'uni-swiper',
-  ]);
-}
-// #endif
+import { SwiperPureMixin } from '../mixins/pure/swiper';
 
 
 export default {
   name: 'PressSwiper',
   components: {
-    ...componentConfig,
   },
+  mixins: [SwiperPureMixin],
   props: {
     ...SWIPER_PROPS,
   },
