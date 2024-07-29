@@ -1,9 +1,9 @@
 // #ifdef H5
+import { isNotInUni } from '../../common/utils/utils';
 // #ifdef VUE2
 import InnerSwiper from '../../swiper/swiper.vue';
 import InnerSwiperItem from '../../swiper-item/swiper-item.vue';
 import { setCustomElements } from '../../common/vue3/adapter';
-import { isNotInUni } from '../../common/utils/utils';
 // #endif
 // #ifdef VUE3
 import { Swiper as SwiperNext } from 'swiper-next/es/src/components/swiper';

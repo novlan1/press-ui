@@ -14,7 +14,7 @@ main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
 import SwiperNext from 'swiper-next';
-import 'swiper-next/es/style.css';
+import 'swiper-next/dist/index.css';
 
 createApp(App)
   .use(SwiperNext)
