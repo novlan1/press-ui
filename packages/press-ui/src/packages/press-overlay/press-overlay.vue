@@ -54,6 +54,7 @@ export default {
     },
     ...defaultProps,
   },
+  emits: ['click'],
   options: {
     // virtualHost: true,
     ...defaultOptions,

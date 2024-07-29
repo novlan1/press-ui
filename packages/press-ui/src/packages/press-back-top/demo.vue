@@ -104,7 +104,7 @@ export default {
       this.valueMap[key] = value;
     },
     onScroll(e) {
-      this.scrollTop = e.target.scrollTop || e.detail.scrollTop;
+      this.scrollTop = e.target.scrollTop || e.detail?.scrollTop || 0;
       console.log('[scrollTop]', e, this.scrollTop);
     },
     scrollToTop() {

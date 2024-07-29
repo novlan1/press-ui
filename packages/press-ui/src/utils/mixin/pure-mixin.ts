@@ -6,7 +6,7 @@ import PressCell from '../../packages/press-cell/press-cell.vue';
 import DemoBlock from '../../packages/press-demo-block/press-demo-block.vue';
 import ToggleHeader from '../../packages/press-toggle-header/press-toggle-header.vue';
 
-import { initGlobalComponent, initGlobalMixin } from '../../packages/common/vue3/adapter';
+import { initGlobalComponent, initGlobalMixin, initGlobalProps } from '../../packages/common/vue3/adapter';
 
 
 /**
@@ -51,4 +51,10 @@ export function initPureDemoMixin(app?: any) {
   };
 
   initGlobalMixin(mixin, app);
+
+  // 注册 $toast
+  initGlobalProps({
+    name: '$toast',
+    prop: Toast,
+  }, app);
 }

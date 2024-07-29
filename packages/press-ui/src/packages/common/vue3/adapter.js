@@ -261,7 +261,7 @@ export function usePlugin(plugin, app) {
 }
 
 
-export function setCustomElements(customElements, app) {
+export function setCustomElements(customElements) {
   // #ifndef VUE3
   Vue.config.ignoredElements = [
     ...(Vue.config.ignoredElements || []),
@@ -270,8 +270,9 @@ export function setCustomElements(customElements, app) {
   // #endif
 
   // #ifdef VUE3
-  if (app?.config?.compilerOptions) {
-    app.config.compilerOptions.isCustomElement = tag => customElements.indexOf(tag) > -1;
-  }
+  // 在 vite.config.ts 中配置
+  // if (app?.config?.compilerOptions) {
+  //   app.config.compilerOptions.isCustomElement = tag => customElements.indexOf(tag) > -1;
+  // }
   // #endif
 }

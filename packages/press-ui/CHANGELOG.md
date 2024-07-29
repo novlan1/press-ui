@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.19](https://github.com/novlan1/press-ui/compare/v2.0.17...v2.0.19) (2024-07-29)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update pure mixin ([b20c568](https://github.com/novlan1/press-ui/commit/b20c5685f7897bb21cacb284a762082727264b11))
+
+
+### ✏️ Documentation | 文档
+
+* **swiper-next:** update docs ([5639ab9](https://github.com/novlan1/press-ui/commit/5639ab9c0528299ccd0fc58e6667eac5d6b7045e))
+
+
+### ✨ Features | 新功能
+
+* **vue3:** emit more events ([19d8612](https://github.com/novlan1/press-ui/commit/19d8612d90a6806769fbeb8187ff575fa4b37c98))
+
 ### [2.0.17](https://github.com/novlan1/press-ui/compare/v0.1.0...v2.0.17) (2024-07-29)
 
 

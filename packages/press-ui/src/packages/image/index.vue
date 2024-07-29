@@ -1,5 +1,18 @@
+<!-- eslint-disable vue/no-deprecated-dollar-listeners-api -->
 <template>
-  <uni-image v-on="$listeners">
+  <uni-image v-on="$listeners" v-if="isVue2">
+    <div
+      ref="content"
+      :style="style"
+    />
+    <div
+      v-if="mode === 'widthFix' || mode === 'heightFix'"
+      ref="sensor"
+      @resize="_fixSize()"
+    />
+  </uni-image>
+
+   <uni-image v-bind="$attrs" v-else>
     <div
       ref="content"
       :style="style"
@@ -54,6 +67,13 @@ export default {
     };
   },
   computed: {
+    isVue2() {
+      let result = true;
+      // #ifdef VUE3
+      result = false;
+      // #endif
+      return result;
+    },
     ratio() {
       return this.originalWidth && this.originalHeight ? this.originalWidth / this.originalHeight : 0;
     },

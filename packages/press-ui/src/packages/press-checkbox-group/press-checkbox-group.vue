@@ -30,7 +30,7 @@ export default {
       default: 'vertical',
     },
   },
-  emits: [],
+  emits: ['input', 'change'],
   data() {
     return {};
   },

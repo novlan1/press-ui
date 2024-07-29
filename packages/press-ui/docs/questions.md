@@ -52,11 +52,19 @@ Press UI 中使用了此 `adapter` 的组件有：
 app.component('Button', 'button');
 ```
 
-如果报 `Failed to resolve component: uni-scroll-view`，可以在 vite.config.ts 中设置如下：
+如果报 `Failed to resolve component: uni-scroll-view` 等，可以在 `vite.config.ts` 中按需设置：
 
 ```ts
 const customElements = [
-  'uni-scroll-view'
+  'uni-scroll-view',
+  // image
+  'uni-image',
+  // dialog
+  'Button',
+  // circle
+  'cover-view',
+  // notice-bar
+  'navigator'
 ]
 
 export default defineConfig({
@@ -70,3 +78,21 @@ export default defineConfig({
     }),
 })
 ```
+
+## 6. 一些不做的组件
+
+### Space
+
+评估了下 `Space` 组件的实现，用了 `$slots.default`，然后给每个子元素都包裹了 `space-item` 类名。由于小程序的 `$slots.default` 为 布尔值，所以小程序无法实现。
+
+当前也可以提供 `Space` 和 `SpaceItem` 两个组件，就像 `Collapse` 和 `CollapseItem` 一样，不过感觉意义不大，自己写成本也不高。
+
+
+### TextEllipsis
+
+原理是在文档下生成了一个不可见的元素，通过它获取真实内容的宽高。同样由于小程序不支持动态创建元素，所以 Press UI 暂不考虑实现。
+
+
+
+
+

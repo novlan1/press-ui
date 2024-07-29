@@ -193,7 +193,7 @@ export default {
       const { min } = this;
       getRect(this, '.press-slider').then((rect) => {
         const { vertical } = this;
-        const touch = event.touches[0];
+        const touch = event.touches ? event.touches[0] : event;
         const delta = vertical
           ? touch.clientY - rect.top
           : touch.clientX - rect.left;
