@@ -10,17 +10,31 @@
           :key="index"
           class="press-upload__wrap__preview"
         >
-          <image
-            v-if="item.isImage || (item.type && item.type === 'image')"
-            :src="item.thumb || item.url"
-            :mode="imageMode"
-            class="press-upload__wrap__preview__image"
-            :style="[{
-              width: addUnit(width),
-              height: addUnit(height)
-            }]"
-            @click="onPreviewImage(item)"
-          />
+          <template v-if="item.isImage || (item.type && item.type === 'image')">
+            <img
+              v-if="isNotInUni"
+              :src="item.thumb || item.url"
+              :mode="imageMode"
+              class="press-upload__wrap__preview__image"
+              :style="[{
+                width: addUnit(width),
+                height: addUnit(height)
+              }]"
+              @click="onPreviewImage(item)"
+            >
+            <image
+              v-else
+              :src="item.thumb || item.url"
+              :mode="imageMode"
+              class="press-upload__wrap__preview__image"
+              :style="[{
+                width: addUnit(width),
+                height: addUnit(height)
+              }]"
+              @click="onPreviewImage(item)"
+            />
+          </template>
+
           <div
             v-else
             class="press-upload__wrap__preview__other"
@@ -141,6 +155,7 @@ import { addUnit } from '../common/utils/add-unit';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import * as test from './test';
+import { isNotInUni } from '../common/utils/utils';
 
 
 export default {
@@ -166,6 +181,7 @@ export default {
       // #endif
       lists: [],
       isInCount: true,
+      isNotInUni: isNotInUni(),
     };
   },
   watch: {

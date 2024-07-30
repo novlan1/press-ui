@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/no-deprecated-dollar-listeners-api -->
 <template>
-  <uni-image v-on="$listeners" v-if="isVue2">
+  <uni-image
+    v-if="isVue2"
+    v-on="$listeners"
+  >
     <div
       ref="content"
       :style="style"
@@ -12,7 +15,10 @@
     />
   </uni-image>
 
-   <uni-image v-bind="$attrs" v-else>
+  <uni-image
+    v-else
+    v-bind="$attrs"
+  >
     <div
       ref="content"
       :style="style"

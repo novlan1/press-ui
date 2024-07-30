@@ -1,5 +1,12 @@
 # 更新日志
 
+### [2.0.20](https://github.com/novlan1/press-ui/compare/v2.0.19...v2.0.20) (2024-07-30)
+
+
+### Features 🎉
+
+* **uploader:** 支持pure项目 ([0f82d29](https://github.com/novlan1/press-ui/commit/0f82d298cbda01b793da119fdd75fd1c2d9cb835))
+
 ### [2.0.19](https://github.com/novlan1/press-ui/compare/v2.0.17...v2.0.19) (2024-07-29)
 
 

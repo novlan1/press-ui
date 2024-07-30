@@ -80,10 +80,12 @@
         @afterRead="afterRead"
         @delete="deletePic"
       >
-        <image
+        <PressImage
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_799718017ac81b11c0.png"
           mode="widthFix"
           style="width: 250px;height: 150px;"
+          width="250px"
+          height="150px"
         />
       </PressUploader>
     </demo-block>
@@ -99,7 +101,10 @@
 </template>
 <script>
 import PressUploader from 'press-ui/press-uploader/press-uploader.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
+
 const IMG_URL = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg';
+
 
 let that;
 export default {
@@ -125,6 +130,7 @@ export default {
   },
   components: {
     PressUploader,
+    PressImage,
   },
   data() {
     return {
