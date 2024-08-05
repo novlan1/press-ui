@@ -6,17 +6,19 @@
 
   <br>
 
-![Node Current](https://img.shields.io/node/v/press-ui)
-![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
-![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
-![NPM License](https://img.shields.io/npm/l/press-ui)
-![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
-![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)
+  ![Node Current](https://img.shields.io/node/v/press-ui)
+  ![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
+  ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
+  ![NPM License](https://img.shields.io/npm/l/press-ui)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
+  ![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)
 
+  <h1>Press UI</h1>
+  <p>
+    易用、灵活、基于 uni-app 的跨端组件库
+  </p>
 </div>
-<h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
 
----
 
 [查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui-demo-vue2/)
 
