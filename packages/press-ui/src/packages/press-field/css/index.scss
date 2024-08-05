@@ -75,6 +75,14 @@
         --field-input-disabled-text-color,
         $field-input-disabled-text-color
       );
+      pointer-events: none;
+    }
+
+    &--readonly {
+      // 防止 readonly 时，H5 下的点击事件不触发
+      // press-code-input 也是相同的处理
+      // 参考：https://blog.csdn.net/weixin_43743175/article/details/133697230
+      pointer-events: none;
     }
 
     &--center {

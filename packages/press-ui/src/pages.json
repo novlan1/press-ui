@@ -141,6 +141,12 @@
         }
       },
       {
+        "path": "number-keyboard/number-keyboard",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "picker-plus/picker-plus",
         "style": {
           "navigationBarTitleText": ""

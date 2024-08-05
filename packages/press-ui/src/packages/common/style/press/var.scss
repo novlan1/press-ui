@@ -385,6 +385,23 @@ $info-dot-color: $red;
 $info-dot-size: 8px;
 $info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
+// Keyboard
+$keyboard-toolbar-height: 44px;
+$keyboard-toolbar-margin-bottom: -1 * $padding-sm;
+$keyboard-action-padding: 0 $padding-md;
+$keyboard-action-font-size: $font-size-md;
+$keyboard-confirm-action-color: $text-link-color;
+$keyboard-cancel-action-color: $gray-6;
+$keyboard-title-font-size: $font-size-lg;
+$keyboard-title-color: $gray-7;
+$keyboard-background-color: $gray-2;
+$keyboard-padding: $padding-sm $padding-xs;
+$keyboard-button-gap: $padding-xs;
+$keyboard-button-height: 48px;
+$keyboard-button-font-size: 22px;
+$keyboard-button-background-color: $white;
+$keyboard-button-active-color: $gray-3;
+
 // Loading
 $loading-text-color: $gray-6;
 $loading-text-font-size: $font-size-md;

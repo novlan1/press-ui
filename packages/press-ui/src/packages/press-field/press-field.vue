@@ -50,7 +50,7 @@
           v-if="type === 'textarea'"
           ref="input"
           :class="[
-            utils.bem2('field__control', [inputAlign, type, { disabled, error }]),
+            utils.bem2('field__control', [inputAlign, type, { disabled, error, readonly }]),
             inputClass
           ]"
           :fixed="fixed"
@@ -62,7 +62,7 @@
           :maxlength="maxlength"
           :placeholder="placeholder"
           :placeholder-style="placeholderStyle"
-          :placeholder-class="'' + utils.bem2('field__placeholder', { error, disabled })"
+          :placeholder-class="'' + utils.bem2('field__placeholder', { error, disabled, readonly})"
           :auto-height="(!!autosize)"
           :style="'' + computed.inputStyle(autosize)"
           :cursor-spacing="cursorSpacing"
@@ -85,7 +85,7 @@
           v-else
           ref="input"
           :class="[
-            utils.bem2('field__control', [inputAlign, { disabled, error }]),
+            utils.bem2('field__control', [inputAlign, { disabled, error, readonly }]),
             inputClass
           ]"
           :type="type"
@@ -97,7 +97,7 @@
           :maxlength="maxlength"
           :placeholder="placeholder"
           :placeholder-style="placeholderStyle"
-          :placeholder-class="'' + utils.bem2('field__placeholder', { error })"
+          :placeholder-class="'' + utils.bem2('field__placeholder', { error, disabled, readonly })"
           :confirm-type="confirmType"
           :confirm-hold="confirmHold"
           :hold-keyboard="holdKeyboard"

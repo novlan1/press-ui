@@ -32,8 +32,8 @@
           disabled-color="#ffffff"
           placeholder="请选择性别"
           :border="false"
-          :readonly="isMp"
-          @click-input="showSex = true; hideKeyboard()"
+          :readonly="true"
+          @click="showSex = true; hideKeyboard()"
         />
         <template #right>
           <PressIconPlus

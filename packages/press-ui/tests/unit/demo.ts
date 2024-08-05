@@ -38,6 +38,8 @@ Vue.component('demo-block', Empty);
 Vue.component('uni-swiper-item', Empty);
 Vue.component('uni-swiper', Empty);
 Vue.component('uni-scroll-view', Empty);
+Vue.component('swiper-item', Empty);
+Vue.component('swiper', Empty);
 Vue.component('scroll-view', Empty);
 Vue.mixin({
   methods: {

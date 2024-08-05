@@ -5,7 +5,7 @@ import { addUnit } from './add-unit';
 
 const memoizeBem = memoize(bem);
 
-export const isNotInUni = () => typeof uni === 'undefined';
+export const isNotInUni = () => typeof uni === 'undefined' || process.env.VUE_APP_NOT_UNI;
 
 export default {
   bem: memoizeBem,

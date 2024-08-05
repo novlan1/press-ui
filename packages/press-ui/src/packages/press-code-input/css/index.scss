@@ -59,6 +59,10 @@ $press-code-input-cursor-animation-name: press-cursor-flicker;
     text-align: left;
     border: 0;
     outline: none;
+
+    &--disabled {
+      pointer-events: none;
+    }
   }
 }
 

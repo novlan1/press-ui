@@ -54,7 +54,6 @@ export default {
       type: String,
       default: 'scaleToFill',
     },
-    // TODO 懒加载
     lazyLoad: {
       type: [Boolean, String],
       default: false,

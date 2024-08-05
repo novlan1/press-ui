@@ -79,6 +79,10 @@
           "path": "/en/components/press/press-form.md"
         },
         {
+          "title": "NumberKeyboard",
+          "path": "/en/components/press/press-number-keyboard.md"
+        },
+        {
           "title": "PickerPlus",
           "path": "/en/components/press/press-picker-plus.md"
         },

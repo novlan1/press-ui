@@ -3,7 +3,23 @@
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap">
   <div class="swiper-wrap">
-    <swiper indicator-dots="true" autoplay="autoplay" circular="true" interval="2000" duration="500" current="0" indicator-color="" indicator-active-color="" previous-margin="" next-margin="" current-item-id="" display-multiple-items="1" navigation-color="#fff" navigation-active-color="rgba(53, 53, 53, 0.6)" class="swiper"></swiper>
+    <div class="swiper">
+      <div>
+        <div class="swiper-item swiper-item--big-red">
+          A
+        </div>
+      </div>
+      <div>
+        <div class="swiper-item swiper-item--big-green">
+          B
+        </div>
+      </div>
+      <div>
+        <div class="swiper-item swiper-item--big-blue">
+          C
+        </div>
+      </div>
+    </div>
   </div>
   <div class="swiper-list">
     <div class="swiper-list-cell swiper-list-cell--pd">

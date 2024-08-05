@@ -1,5 +1,8 @@
 <template>
-  <div class="press-code-input">
+  <div
+    class="press-code-input"
+    @click="clickWrap"
+  >
     <div
       v-for="(item, index) in codeLength"
       :key="index"
@@ -40,13 +43,16 @@
       :value="inputValue"
       :maxlength="maxLength"
       :adjustPosition="adjustPosition"
-      class="press-code-input__input"
+      :class="['press-code-input__input', {
+        'press-code-input__input--disabled': disabledKeyboard
+      }]"
       :style="{
         height: addUnit(size)
       }"
       @input="inputHandler"
       @focus="isFocus = true"
       @blur="isFocus = false"
+      @click="clickInput"
     >
   </div>
 </template>
@@ -64,6 +70,8 @@ export default {
     'change',
     'finish',
     'input',
+    'click',
+    'click-input',
   ],
   data() {
     return {
@@ -160,6 +168,12 @@ export default {
       if (String(value).length >= Number(this.maxLength)) {
         this.$emit('finish', value);
       }
+    },
+    clickWrap() {
+      this.$emit('click');
+    },
+    clickInput() {
+      this.$emit('click-input');
     },
   },
 };

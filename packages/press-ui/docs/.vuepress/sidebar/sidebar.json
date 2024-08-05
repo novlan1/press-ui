@@ -96,6 +96,11 @@
           "path": "/components/press/press-form.md"
         },
         {
+          "title": "NumberKeyboard",
+          "subTitle": "键盘",
+          "path": "/components/press/press-number-keyboard.md"
+        },
+        {
           "title": "PickerPlus",
           "subTitle": "选择器",
           "path": "/components/press/press-picker-plus.md"

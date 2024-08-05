@@ -10,39 +10,41 @@
       :style="wrapStyle"
       @click.stop="onClick"
     >
-      <!-- #ifdef H5 -->
-      <InnerImage
-        v-if="!isError && isNotInUni"
-        :src="src"
-        :mode="mode"
-        :show-menu-by-longpress="showMenuByLongpress"
-        :lazy-load="lazyLoad"
-        class="press-image__image"
-        :style="{
-          borderRadius: round ? '10000px' : addUnit(radius),
-          width: addUnit(width),
-          height: addUnit(height)
-        }"
-        @error="onErrorHandler"
-        @load="onLoadHandler"
-      />
-      <!-- #endif -->
+      <template v-if="!isError">
+        <!-- #ifdef H5 -->
+        <InnerImage
+          v-if="isNotInUni"
+          :src="src"
+          :mode="mode"
+          :show-menu-by-longpress="showMenuByLongpress"
+          :lazy-load="lazyLoad"
+          class="press-image__image"
+          :style="{
+            borderRadius: round ? '10000px' : addUnit(radius),
+            width: addUnit(width),
+            height: addUnit(height)
+          }"
+          @error="onErrorHandler"
+          @load="onLoadHandler"
+        />
+        <!-- #endif -->
 
-      <image
-        v-if="!isError"
-        :src="src"
-        :mode="mode"
-        :show-menu-by-longpress="showMenuByLongpress"
-        :lazy-load="lazyLoad"
-        class="press-image__image"
-        :style="{
-          borderRadius: round ? '10000px' : addUnit(radius),
-          width: addUnit(width),
-          height: addUnit(height)
-        }"
-        @error="onErrorHandler"
-        @load="onLoadHandler"
-      />
+        <image
+          v-if="!isNotInUni"
+          :src="src"
+          :mode="mode"
+          :show-menu-by-longpress="showMenuByLongpress"
+          :lazy-load="lazyLoad"
+          class="press-image__image"
+          :style="{
+            borderRadius: round ? '10000px' : addUnit(radius),
+            width: addUnit(width),
+            height: addUnit(height)
+          }"
+          @error="onErrorHandler"
+          @load="onLoadHandler"
+        />
+      </template>
 
 
       <div

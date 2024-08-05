@@ -16,6 +16,7 @@
   "datetime-picker": "./src/packages/press-datetime-picker/press-datetime-picker.vue",
   "field": "./src/packages/press-field/press-field.vue",
   "form": "./src/packages/press-form/press-form.vue",
+  "number-keyboard": "./src/packages/press-number-keyboard/press-number-keyboard.vue",
   "picker-plus": "./src/packages/press-picker-plus/press-picker-plus.vue",
   "radio": "./src/packages/press-radio/press-radio.vue",
   "rate": "./src/packages/press-rate/press-rate.vue",

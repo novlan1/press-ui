@@ -78,6 +78,10 @@
         "title": "表单"
       },
       {
+        "name": "NumberKeyboard",
+        "title": "键盘"
+      },
+      {
         "name": "PickerPlus",
         "title": "选择器"
       },

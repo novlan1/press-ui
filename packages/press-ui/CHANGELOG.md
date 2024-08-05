@@ -2,6 +2,77 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/novlan1/press-ui/compare/v2.0.22...v2.1.0) (2024-08-02)
+
+
+### ✅ Tests | 测试
+
+* 更新 snapshot ([18164bc](https://github.com/novlan1/press-ui/commit/18164bc6cb3a146da99e06df73efe8254b8d4d01))
+* **checkbox:** add test cases for events ([4b7fc4a](https://github.com/novlan1/press-ui/commit/4b7fc4a49b81096493bc842a522b1456dd973e14))
+* **code-input:** add test cases for events ([68f970a](https://github.com/novlan1/press-ui/commit/68f970ac12351be9ba06a391700d9bbb8be5d32e))
+* **picker-plus:** add unit tests ([90c8ef0](https://github.com/novlan1/press-ui/commit/90c8ef0c0e8443774c635d4a4e8b797387d8359c))
+* **picker-plus:** update ts type ([cad4c22](https://github.com/novlan1/press-ui/commit/cad4c22fef97e529d7fbb9e1d36b1e7e1b99549e))
+* **radio:** add test cases for events ([a201b17](https://github.com/novlan1/press-ui/commit/a201b17ba4e7842ffbe64a87111492f5121c8099))
+* **rate:** add test cases for events ([b756804](https://github.com/novlan1/press-ui/commit/b756804f37001f39cf1f5416d62fcc47f98aeb84))
+* **stepper:** add test cases ([af3408c](https://github.com/novlan1/press-ui/commit/af3408c11fe16be705a03f426768b41899f5621d))
+* **stepper:** add test cases for events ([fe50a11](https://github.com/novlan1/press-ui/commit/fe50a112d02b09f9511f902626143af02c92e3a9))
+* **switch:** add test cases for events ([bad9ee4](https://github.com/novlan1/press-ui/commit/bad9ee4b4ad8436bc3c8671ba936ad5970ce6448))
+
+
+### ✏️ Documentation | 文档
+
+* **keyboard:** update docs ([1ff543d](https://github.com/novlan1/press-ui/commit/1ff543d7bc31c9a15cb40eaa279d6a970a093f28))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* keyboard 按键 active 样式 ([7ef9de5](https://github.com/novlan1/press-ui/commit/7ef9de532ced9552bb4294ac506e1106b14dc2f4))
+* **keyboard:** 不缓存随机按键顺序 ([f7fb5c9](https://github.com/novlan1/press-ui/commit/f7fb5c9b3e772c9beecd16fd79e0436c6a196c6f))
+* **keyboard:** 配合验证码输入使用时限制最大长度 ([2e84192](https://github.com/novlan1/press-ui/commit/2e84192d0d66b77059caf099ec624f4d252b3f3f))
+* **keyboard:** 小程序样式 ([1c8ca1e](https://github.com/novlan1/press-ui/commit/1c8ca1e72db0d765524f50631a464e44bfa3922a))
+* **keyboard:** 样式整理 ([b65aaa0](https://github.com/novlan1/press-ui/commit/b65aaa0a87caa6d5868b560f5c24f6262e4d3ff3))
+* **keyboard:** close 事件重复触发 ([2661872](https://github.com/novlan1/press-ui/commit/26618727b47760892e6c32c829f2327ad102b54b))
+* **keyboard:** input 事件触发 ([560416a](https://github.com/novlan1/press-ui/commit/560416a93ea9d60c90e3d2b86020d5b0f4943a79))
+
+
+### ✨ Features | 新功能
+
+* **code-input:** 增加 click、click-input 事件，disabled 下增加 pointer-events:none ([0519fa0](https://github.com/novlan1/press-ui/commit/0519fa0e1307b7ca13c6ba503c1ef0969995b7de))
+* **field:** disabled 和 readonly 下增加 pointer-events:none ([81aa53f](https://github.com/novlan1/press-ui/commit/81aa53f63e923ad311592529153d6d0611c9f14e))
+* **keyboard:** 更换 backspace 图标 ([ad62be0](https://github.com/novlan1/press-ui/commit/ad62be0b109c1a00757b7371998987faf0cab757))
+* **keyboard:** 双向绑定 ([05570c6](https://github.com/novlan1/press-ui/commit/05570c6a03622ddcb447e77bb36373c64454d9ce))
+* **keyboard:** 优化 props 命名 ([de33e1b](https://github.com/novlan1/press-ui/commit/de33e1b190836d51c18552d11096d0f5ecfe1da2))
+* **keyboard:** 增加 keyboard 组件 ([22811a9](https://github.com/novlan1/press-ui/commit/22811a960b884e27a975507a036e9e3b4baa024e))
+* **keyboard:** 增加update:modelValue emits ([1fb0f0d](https://github.com/novlan1/press-ui/commit/1fb0f0d2477b45106e79c98796f649ba1e92587d))
+* **keyboard:** 支持maxlength ([47c243e](https://github.com/novlan1/press-ui/commit/47c243e8d0ca9dc67242a4434abd4b1aafc19d4b))
+* **keyboard:** rename prop and update docs ([4e97892](https://github.com/novlan1/press-ui/commit/4e97892c18101110ab45f5434a162487a06868dc))
+
+
+### ♻️ Code Refactoring | 代码重构
+
+* **image:** 优化image ([e8b1505](https://github.com/novlan1/press-ui/commit/e8b1505ee9082ac1444fc3b580322064734e6ea9))
+* **number-keyboard:** rename keyboard ([63c448b](https://github.com/novlan1/press-ui/commit/63c448b762cf2cf998a2c53c967799d6bdd6fc57))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update demo ([3867bf1](https://github.com/novlan1/press-ui/commit/3867bf10bb681e631dd5f3c35571b83db466793c))
+* update deps ([6244c4e](https://github.com/novlan1/press-ui/commit/6244c4e8d0343b7da5d15145319e94aa9428ca5e))
+
+### [2.0.22](https://github.com/novlan1/press-ui/compare/v2.0.21...v2.0.22) (2024-07-31)
+
+
+### ✨ Features | 新功能
+
+* **image:** 去掉默认宽高 ([c7f3d6a](https://github.com/novlan1/press-ui/commit/c7f3d6ac9a6515bfafddd71677dad6ce1867bb83))
+
+### [2.0.21](https://github.com/novlan1/press-ui/compare/v2.0.20...v2.0.21) (2024-07-31)
+
+
+### ✨ Features | 新功能
+
+* **not-uni:** 补充not-uni判断 ([cce46e4](https://github.com/novlan1/press-ui/commit/cce46e43a7c8f7a462cfcc609c8f8aea9a952f12))
+
 ### [2.0.20](https://github.com/novlan1/press-ui/compare/v2.0.19...v2.0.20) (2024-07-30)
 
 
