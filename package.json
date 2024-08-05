@@ -182,5 +182,8 @@
     "scripts": {
       "postchangelog": "node script/version/pre-commit"
     }
+  },
+  "engines": {
+    "node": ">=14.21.3"
   }
 }

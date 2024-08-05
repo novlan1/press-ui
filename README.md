@@ -1,6 +1,17 @@
 
 <div align="center">
-  <img alt="logo" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style="margin-bottom: -25px;">
+ <a href="https://github.com/webpack/webpack">
+    <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
+  </a>
+
+  <br>
+
+![Node Current](https://img.shields.io/node/v/press-ui)
+![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
+![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)
+![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
+![NPM License](https://img.shields.io/npm/l/press-ui)
+
 </div>
 <h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
 
@@ -120,3 +131,18 @@ module.exports = {
 2. [Vue3](https://github.com/novlan1/press-ui-demo-vue3)
 3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure)
 4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure)
+
+[npm]: https://img.shields.io/npm/v/webpack.svg
+[npm-url]: https://npmjs.com/package/webpack
+[node]: https://img.shields.io/node/v/webpack.svg
+[node-url]: https://nodejs.org
+[prs]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[prs-url]: https://webpack.js.org/contribute/
+[builds1]: https://github.com/webpack/webpack/actions/workflows/test.yml/badge.svg
+[builds1-url]: https://github.com/webpack/webpack/actions/workflows/test.yml
+[builds2]: https://dev.azure.com/webpack/webpack/_apis/build/status%2Fwebpack.webpack?branchName=main
+[builds2-url]: https://dev.azure.com/webpack/webpack/_build/latest?definitionId=3&branchName=main
+[dependency-review-url]: https://github.com/webpack/webpack/actions/workflows/dependency-review.yml
+[dependency-review]: https://github.com/webpack/webpack/actions/workflows/dependency-review.yml/badge.svg
+[cover]: https://codecov.io/gh/webpack/webpack/branch/master/graph/badge.svg?token=mDP3mQJNnn
+[cover-url]: https://codecov.io/gh/webpack/webpack
