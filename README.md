@@ -1,13 +1,13 @@
 
 <div align="center">
- <a href="https://github.com/webpack/webpack">
+  <a href="https://github.com/novlan1/press-ui">
     <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
   </a>
 
   <br>
 
-   [![node][node]][node-url]
-   [![downloads][downloads]][downloads-url]
+  [![node][node]][node-url]
+  [![downloads][downloads]][downloads-url]
   ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
   ![NPM License](https://img.shields.io/npm/l/press-ui)
   ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
@@ -18,7 +18,6 @@
     易用、灵活、基于 uni-app 的跨端组件库
   </p>
 </div>
-
 
 [查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui-demo-vue2/)
 

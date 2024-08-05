@@ -1,10 +1,23 @@
 
 <div align="center">
-  <img alt="logo" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style="margin-bottom: -25px;">
-</div>
-<h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
+  <a href="https://github.com/novlan1/press-ui">
+    <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
+  </a>
 
----
+  <br>
+
+  [![node][node]][node-url]
+  [![downloads][downloads]][downloads-url]
+  ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
+  ![NPM License](https://img.shields.io/npm/l/press-ui)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
+  ![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)
+
+  <h1>Press UI</h1>
+  <p>
+    易用、灵活、基于 uni-app 的跨端组件库
+  </p>
+</div>
 
 
 ### 1. 介绍
@@ -119,3 +132,8 @@ module.exports = {
 2. [Vue3](https://github.com/novlan1/press-ui-demo-vue3)
 3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure)
 4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure)
+
+[node]: https://img.shields.io/node/v/press-ui
+[node-url]: https://nodejs.org
+[downloads]: https://img.shields.io/npm/dm/press-ui
+[downloads-url]: https://npmcharts.com/compare/press-ui?minimal=true
