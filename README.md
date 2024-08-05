@@ -6,8 +6,8 @@
 
   <br>
 
-  ![Node Current](https://img.shields.io/node/v/press-ui)
-  ![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
+   [![node][node]][node-url]
+   [![downloads][downloads]][downloads-url]
   ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
   ![NPM License](https://img.shields.io/npm/l/press-ui)
   ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
@@ -135,17 +135,7 @@ module.exports = {
 3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure)
 4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure)
 
-[npm]: https://img.shields.io/npm/v/webpack.svg
-[npm-url]: https://npmjs.com/package/webpack
-[node]: https://img.shields.io/node/v/webpack.svg
+[node]: https://img.shields.io/node/v/press-ui
 [node-url]: https://nodejs.org
-[prs]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
-[prs-url]: https://webpack.js.org/contribute/
-[builds1]: https://github.com/webpack/webpack/actions/workflows/test.yml/badge.svg
-[builds1-url]: https://github.com/webpack/webpack/actions/workflows/test.yml
-[builds2]: https://dev.azure.com/webpack/webpack/_apis/build/status%2Fwebpack.webpack?branchName=main
-[builds2-url]: https://dev.azure.com/webpack/webpack/_build/latest?definitionId=3&branchName=main
-[dependency-review-url]: https://github.com/webpack/webpack/actions/workflows/dependency-review.yml
-[dependency-review]: https://github.com/webpack/webpack/actions/workflows/dependency-review.yml/badge.svg
-[cover]: https://codecov.io/gh/webpack/webpack/branch/master/graph/badge.svg?token=mDP3mQJNnn
-[cover-url]: https://codecov.io/gh/webpack/webpack
+[downloads]: https://img.shields.io/npm/dm/press-ui
+[downloads-url]: https://npmcharts.com/compare/press-ui?minimal=true
