@@ -7,10 +7,11 @@
   <br>
 
 ![Node Current](https://img.shields.io/node/v/press-ui)
+![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
+![NPM License](https://img.shields.io/npm/l/press-ui)
 ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
 ![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)
-![NPM Downloads](https://img.shields.io/npm/dm/press-ui)
-![NPM License](https://img.shields.io/npm/l/press-ui)
 
 </div>
 <h3 align="center">易用、灵活、基于 uni-app 的跨端组件库</h3>
