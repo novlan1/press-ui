@@ -49,7 +49,7 @@ import PageEdit from '@theme/components/PageEdit.vue';
 import PageNav from '@theme/components/PageNav.vue';
 import { watchMessageFromIFrame, IFRAME_MESSAGE_TYPE_MAP, DEMO_PAGE_DIRECTION } from '../../utils/message';
 
-const WEB_DEMO_BASE_LINK_PROD = 'https://novlan1.github.io/press-ui-dmeo-vue2/#/';
+const WEB_DEMO_BASE_LINK_PROD = 'https://novlan1.github.io/press-ui-demo-vue2/#/';
 const WEB_DEMO_BASE_LINK_DEV = 'http://localhost:9999/#/';
 
 const WEB_DEMO_BASE_LINK = process.env.NODE_ENV === 'production' ? WEB_DEMO_BASE_LINK_PROD : WEB_DEMO_BASE_LINK_DEV;
