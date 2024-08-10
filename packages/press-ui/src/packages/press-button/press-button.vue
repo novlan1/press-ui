@@ -17,6 +17,7 @@
     :app-parameter="appParameter"
     :aria-label="ariaLabel"
     @click.stop="onFakeClick"
+    @tap.stop="onFakeTap"
     @getuserinfo="onGetUserInfo"
     @contact="onContact"
     @getphonenumber="onGetPhoneNumber"
@@ -65,7 +66,7 @@ import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import PressLoading from '../press-loading/press-loading.vue';
 import { button } from '../mixins/button';
 import { canIUseFormFieldButton } from '../common/utils/version';
-import utils from '../common/utils/utils';
+import utils, { isNotInUni } from '../common/utils/utils';
 import { DEFAULT_SIZE_LIST, rootStyle, loadingColor } from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
@@ -187,9 +188,19 @@ export default {
   },
   methods: {
     onFakeClick(event) {
+      if (isNotInUni()) {
+        this.realFakeClick(event);
+      }
+    },
+    realFakeClick(event) {
       const { disabled,  loading } = this;
       if (disabled || loading) return;
       this.onClick(event);
+    },
+    onFakeTap(event) {
+      if (!isNotInUni()) {
+        this.realFakeClick(event);
+      }
     },
     onClick(event) {
       this.$emit('click', event);

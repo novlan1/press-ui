@@ -5,7 +5,20 @@ import { addUnit } from './add-unit';
 
 const memoizeBem = memoize(bem);
 
-export const isNotInUni = () => typeof uni === 'undefined' || process.env.VUE_APP_NOT_UNI;
+export const isNotInUni = () => {
+  if (typeof uni === 'undefined') {
+    return true;
+  }
+
+  let result = false;
+  try {
+    // 一些项目 mock 了 uni，用额外的变量判断
+    result = process.env.VUE_APP_NOT_UNI;
+  } catch (err) {
+    result = false;
+  }
+  return result;
+};
 
 export default {
   bem: memoizeBem,

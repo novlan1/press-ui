@@ -24,20 +24,6 @@ export function requestAnimationFrame(cb) {
   return setTimeout(() => {
     cb();
   }, 1000 / 30);
-
-  // const systemInfo = getSystemInfoSync();
-  // if (systemInfo.platform === 'devtools') {
-  //   return setTimeout(() => {
-  //     cb();
-  //   }, 1000 / 30);
-  // }
-  // return wx
-  //   .createSelectorQuery()
-  //   .selectViewport()
-  //   .boundingClientRect()
-  //   .exec(() => {
-  //     cb();
-  //   });
 }
 
 
@@ -54,6 +40,7 @@ export function intersectionObserverPloyFill({
   callback,
   options,
 }) {
+  // #ifdef H5
   if (isNotInUni()) {
     const io = new IntersectionObserver(callback, options);
     const target = document.querySelectorAll(selector);
@@ -62,5 +49,6 @@ export function intersectionObserverPloyFill({
     });
     return true;
   }
+  // #endif
   return false;
 }

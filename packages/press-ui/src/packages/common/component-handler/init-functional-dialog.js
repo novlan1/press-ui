@@ -1,7 +1,10 @@
 
 import { selectComponent } from '../functional-component';
-import { initH5Instance } from './h5-handler';
 import { setData } from './set-data';
+// #ifdef H5
+import { initH5Instance } from './h5-handler';
+// #endif
+
 
 function getContext() {
   const pages = getCurrentPages();

@@ -1,7 +1,7 @@
 <script>
 import touchTrack from '../mixins/touch-track/index';
 import { baseMixin } from '../mixins/base/index';
-import { deepClone, SWIPER_PROPS } from './utils';
+import { deepCloneVNodes, SWIPER_PROPS } from './utils';
 
 
 const __PLATFORM__ = 'h5';
@@ -669,7 +669,7 @@ export default {
     const slidesDots = [];
     const swiperItems = [];
     if (this.$slots.default) {
-      deepClone(this.$slots.default, createElement).forEach((vnode) => {
+      deepCloneVNodes(this.$slots.default, createElement).forEach((vnode) => {
         // 修改点 v-uni-swiper-item => swiper-item
         if (vnode.componentOptions && vnode.componentOptions.tag === 'swiper-item') {
           swiperItems.push(vnode);

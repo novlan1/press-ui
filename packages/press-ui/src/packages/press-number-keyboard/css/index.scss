@@ -25,12 +25,14 @@
     font-size: var(--keyboard-action-font-size, $keyboard-action-font-size);
     line-height: var(--keyboard-toolbar-height, $keyboard-toolbar-height);
     background-color: var(--keyboard-background-color, $keyboard-background-color);
+    border: 0;
 
     &::after {
       border-style: none;
     }
 
-    &--hover {
+    &--hover,
+    &:active {
       opacity: $active-opacity;
     }
   }
@@ -79,12 +81,14 @@
     font-size: var(--keyboard-button-font-size, $keyboard-button-font-size);
     line-height: var(--keyboard-button-font-size, $keyboard-button-font-size);
     background-color: var(--keyboard-button-background-color, $keyboard-button-background-color);
+    border: 0;
 
     &::after {
       border-style: none;
     }
 
-    &--hover {
+    &--hover,
+    &:active {
       background-color: var(--keyboard-button-active-color, $keyboard-button-active-color);
     }
 
@@ -95,8 +99,10 @@
     &--confirm {
       color: $white;
       background-color: $blue;
+      border: 0;
 
-      &-hover {
+      &-hover,
+      &:active {
         opacity: $active-opacity;
       }
     }

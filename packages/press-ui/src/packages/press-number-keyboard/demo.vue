@@ -45,6 +45,7 @@
       <press-field
         :label="t('bindLabel')"
         :value="bindValue"
+        :model-value="bindValue"
         readonly
         :clickable="true"
         :placeholder="t('input')"

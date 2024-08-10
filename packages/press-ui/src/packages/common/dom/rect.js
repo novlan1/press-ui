@@ -3,6 +3,7 @@ import { isNotInUni } from '../utils/utils';
 import { getSystemInfoSync } from '../utils/system';
 
 export function getWindowWidth() {
+  // #ifdef H5
   if (isNotInUni()) {
     const windowWidth = Math.min(window.innerWidth, document.documentElement.clientWidth, screen.width);
     const windowHeight = Math.min(window.innerHeight, document.documentElement.clientHeight, screen.height);
@@ -14,6 +15,7 @@ export function getWindowWidth() {
       windowBottom: 0,
     };
   }
+  // #endif
 
   const { windowWidth, windowHeight, windowTop, windowBottom } = uni.getSystemInfoSync();
 
@@ -27,9 +29,11 @@ export function getWindowWidth() {
 
 
 export function getStatusBarHeight() {
+  // #ifdef H5
   if (isNotInUni()) {
     return 0;
   }
+  // #endif
 
   const { statusBarHeight } = getSystemInfoSync();
   return statusBarHeight;

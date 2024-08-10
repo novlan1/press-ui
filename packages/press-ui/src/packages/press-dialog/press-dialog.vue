@@ -96,7 +96,6 @@
 import PressButton from '../press-button/press-button.vue';
 import PressField from '../press-field/press-field.vue';
 
-// import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
 import { dialogProps } from './computed';
 import { toPromise } from '../common/format/function';
 import { getDialogMixin } from './dialog-mixin';

@@ -4,12 +4,13 @@ import { setData } from '../component-handler/set-data';
 const DEFAULT_SHOW_FUNCTION = 'showDialog';
 
 function getContext() {
-  // @ts-ignore
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
 
+
 function traverseChildren(context, key, target) {
+  // #ifdef H5
   const children = context.$children;
   if (!children) {
     return;
@@ -20,14 +21,16 @@ function traverseChildren(context, key, target) {
       return child;
     }
   }
-  
+
   for (const child of children) {
     const result = traverseChildren(child, key, target);
     if (result) {
       return result;
     }
   }
+  // #endif
 }
+
 
 export function selectComponent(context, selector) {
   if (!selector || !context) return;
@@ -36,7 +39,7 @@ export function selectComponent(context, selector) {
   if (attribute.match(/^[^\w]/)) {
     attribute = attribute.slice(1);
   }
-  
+
   if (
     context.$refs?.[attribute]) {
     return context.$refs[attribute];
@@ -59,6 +62,7 @@ export function selectComponent(context, selector) {
 
   return context?.selectComponent?.(selector);
 }
+
 
 export function showFunctionalComponent(options) {
   return new Promise((resolve, reject) => {

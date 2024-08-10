@@ -9,7 +9,7 @@ import props from './props.js';
 import Schema from '../common/async-validator/index';
 import { errorTip } from '../common/utils/validator';
 import { getProperty, setProperty } from '../common/utils/property';
-import { deepClone } from '../common/utils/object';
+import { deepClone } from '../common/utils/deep-clone';
 import { nextTick } from '../common/utils/system';
 
 

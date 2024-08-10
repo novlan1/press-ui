@@ -9,7 +9,6 @@ export function BindEventMixin(handler) {
   const key = `binded_${uid}`;
   uid += 1;
   function bind() {
-    // @ts-ignore
     const that = this;
     if (!that[key]) {
       handler.call(that, on, true);
@@ -18,7 +17,6 @@ export function BindEventMixin(handler) {
   }
 
   function unbind() {
-    // @ts-ignore
     const that = this;
     if (that[key]) {
       handler.call(that, off, false);

@@ -1,6 +1,6 @@
 import { showFunctionalComponent } from '../common/functional-component/index';
-import { initH5Instance } from '../common/component-handler/h5-handler';
 // #ifdef H5
+import { initH5Instance } from '../common/component-handler/h5-handler';
 import PressImageView from './press-image-preview.vue';
 // #endif
 const DIALOG_ID = 'pressImagePreview';

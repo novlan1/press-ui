@@ -1,5 +1,38 @@
 # 更新日志
 
+### [2.1.5](https://github.com/novlan1/press-ui/compare/v2.1.1...v2.1.5) (2024-08-10)
+
+
+### Documentation 📖
+
+* update docs ([40be704](https://github.com/novlan1/press-ui/commit/40be7046178637656840583a8b30a4f40f7cbbed))
+
+
+### Code Refactoring ♻️
+
+* 按需引用h5-handler ([8262320](https://github.com/novlan1/press-ui/commit/8262320cf58ef21d90c7f93892046e762ee14822))
+* 补充一些条件编译 ([5b34f6a](https://github.com/novlan1/press-ui/commit/5b34f6aeefb6afaf38e5e3d0c2cc372627f53f7c))
+* 区分vnodes ([a6a1b7c](https://github.com/novlan1/press-ui/commit/a6a1b7c1ef8cbceef7d03171da09697dc63fad68))
+* 移动 isObjectEqual ([07d6213](https://github.com/novlan1/press-ui/commit/07d6213de9bb9ec30d7afc96db3b812c4a48e3c5))
+* 移动isObjectEqual ([e92fa7f](https://github.com/novlan1/press-ui/commit/e92fa7f993a4d73095962a3e01e2b1c7a532bf40))
+* 增加条件编译 ([a8e0a88](https://github.com/novlan1/press-ui/commit/a8e0a88a19e9e5adc52d686d714fb726f5cf590a))
+* **deep-assign:** 移动deepAssign ([3fcde8c](https://github.com/novlan1/press-ui/commit/3fcde8c8b481617c807d14e55903928575d88e18))
+* **deep-clone:** 移动deepClone ([895f384](https://github.com/novlan1/press-ui/commit/895f384e1558ce477fb1ebfb25e8c4f030aa2fe4))
+* **hasOwn:** 移动hasOwn ([13b0cb9](https://github.com/novlan1/press-ui/commit/13b0cb96135e9c3deab6c9d3d84356e6baf47323))
+
+### [2.1.1](https://github.com/novlan1/press-ui/compare/v2.1.0...v2.1.1) (2024-08-07)
+
+
+### Documentation 📖
+
+* update docs ([7ef6098](https://github.com/novlan1/press-ui/commit/7ef6098429b5914601a5b0c5dffdeb83f26bd471))
+
+
+### Features 🎉
+
+* **button:** support vue3 ([073e528](https://github.com/novlan1/press-ui/commit/073e528428047cb11329f7dea041a6ce2db81a6f))
+* **keyboard:** 兼容非uni-app及vue3 ([9c384ee](https://github.com/novlan1/press-ui/commit/9c384ee0917073ea801cb4613641615115204462))
+
 ## [2.1.0](https://github.com/novlan1/press-ui/compare/v2.0.22...v2.1.0) (2024-08-02)
 
 

@@ -72,7 +72,9 @@
 </template>
 
 <script>
+// #ifdef H5
 import { intersectionObserverPloyFill } from '../common/utils/system';
+// #endif
 import CalendarHeader from './components/header/header.vue';
 import Month from './components/month/month.vue';
 import PressButton from '../press-button/press-button.vue';

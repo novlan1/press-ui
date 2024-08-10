@@ -45,6 +45,7 @@ import Image from './packages/press-image/press-image.vue';
 import IndexAnchor from './packages/press-index-anchor/press-index-anchor.vue';
 import IndexBar from './packages/press-index-bar/press-index-bar.vue';
 import Info from './packages/press-info/press-info.vue';
+import Keyboard from './packages/press-number-keyboard/press-number-keyboard.vue';
 import Link from './packages/press-link/press-link.vue';
 import List from './packages/press-list/press-list.vue';
 import LoadingPlus from './packages/press-loading-plus/press-loading-plus.vue';
@@ -52,7 +53,6 @@ import Loading from './packages/press-loading/press-loading.vue';
 import NavBar from './packages/press-nav-bar/press-nav-bar.vue';
 import NoticeBar from './packages/press-notice-bar/press-notice-bar.vue';
 import Notify from './packages/press-notify/press-notify.vue';
-import NumberKeyboard from './packages/press-number-keyboard/press-number-keyboard.vue';
 import Overlay from './packages/press-overlay/press-overlay.vue';
 import Pagination from './packages/press-pagination/press-pagination.vue';
 import PickerColumn from './packages/press-picker-column/press-picker-column.vue';
@@ -150,6 +150,7 @@ const components = {
   IndexAnchor,
   IndexBar,
   Info,
+  Keyboard,
   Link,
   List,
   LoadingPlus,
@@ -157,7 +158,6 @@ const components = {
   NavBar,
   NoticeBar,
   Notify,
-  NumberKeyboard,
   Overlay,
   Pagination,
   PickerColumn,

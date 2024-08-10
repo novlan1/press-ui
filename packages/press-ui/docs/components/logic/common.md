@@ -68,7 +68,36 @@ import { timeStampFormat } from 'press-ui/common/format/time';
 
 const stamp = new Date('2020-11-27 8:23:24').getTime();
 
-const res = timeStampFormat(stamp, 'yyyy-MM-dd hh:mm:ss')
+const res = timeStampFormat(stamp, 'yyyy-MM-dd hh:mm:ss');
 
 // 2020-11-27 08:23:24
 ```
+
+## 5. deepClone
+
+深度克隆
+
+```ts
+import { deepClone } from 'press-ui/common/utils/deep-clone';
+
+deepClone({ a: { b: [1, 2] } });
+
+deepClone(/\d/)
+
+deepClone(['a', 'b'])
+
+deepClone(new Map())
+```
+
+## 6. hasOwn
+
+判断对象是否有某属性。
+
+```ts
+import { hasOwn } from 'press-ui/common/utils/object-base';
+
+const obj = {a: 1}
+hashOwn(obj, a)
+```
+
+

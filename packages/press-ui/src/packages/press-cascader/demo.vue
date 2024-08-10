@@ -153,7 +153,7 @@ import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus';
 import enUSOptions from 'src/packages/press-cascader/demo-helper/area-en-US.js';
 import zhCNOptions from 'src/packages/press-cascader/demo-helper/area-zh-CN.js';
 
-import { deepClone } from 'press-ui/common/utils/object';
+import { deepClone } from 'press-ui/common/utils/deep-clone';
 import { fetchCascaderAreaData } from 'press-ui/press-cascader/helper';
 import { hideKeyboard } from 'press-ui/common/pure/hide-keyboard';
 

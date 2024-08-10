@@ -1,4 +1,4 @@
-import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
+import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler/component-handler';
 
 
 export function getDialogMixin(dialogProps) {

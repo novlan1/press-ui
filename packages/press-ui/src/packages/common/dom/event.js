@@ -24,7 +24,6 @@ export function stopPropagation(event) {
 
 
 export function preventDefault(event, isStopPropagation = false) {
-  /* istanbul ignore else */
   if (typeof event.cancelable !== 'boolean' || event.cancelable) {
     event.preventDefault();
   }
@@ -41,6 +40,7 @@ export function getEventValue(event) {
 
 
 export function getEventDetail(event) {
+  // #ifdef H5
   if (isNotInUni()) {
     return {
       value: event?.target?.value || '',
@@ -48,5 +48,7 @@ export function getEventDetail(event) {
       scrollHeight: event?.target?.scrollHeight,
     };
   }
+  // #endif
+
   return event.detail;
 }

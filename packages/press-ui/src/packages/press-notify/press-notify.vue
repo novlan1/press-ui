@@ -26,7 +26,6 @@ import { WHITE } from '../common/constant/color';
 import { getStatusBarHeight } from '../common/dom/rect';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import computed from './computed';
-// import { getPropsWatch,  getPropsData, setPropsToData } from '../common/component-handler';
 import { getEventDetail } from '../common/dom/event';
 import { getDialogMixin } from '../press-dialog/dialog-mixin';
 

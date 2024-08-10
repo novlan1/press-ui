@@ -1,5 +1,3 @@
-// import { on } from '../../common/dom/event';
-
 function getDirection(x, y) {
   if (x > y) {
     return 'horizontal';

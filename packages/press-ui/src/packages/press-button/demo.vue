@@ -395,7 +395,7 @@ export default {
       // #endif
     },
     onClick(event) {
-      console.log(event);
+      console.log('[CLICK]', event);
     },
     onVibrateLong() {
       if (isNotInUni()) return;

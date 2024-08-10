@@ -3,9 +3,9 @@ import { addFunctionForDialog } from './handler-helper';
 import { selectComponent } from '../common/functional-component';
 import { nextTick } from '../common/vue3/adapter';
 import { setData } from '../common/component-handler/set-data';
-import { initH5Instance } from '../common/component-handler/h5-handler';
 
 // #ifdef H5
+import { initH5Instance } from '../common/component-handler/h5-handler';
 import VueDialog from './press-dialog-plus.vue';
 // #endif
 

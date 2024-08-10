@@ -48,12 +48,12 @@
         >
           {{ item }}
         </button>
+        <!-- 去掉 .prevent 否则非 uni-app 下无法触发 active 状态，即没有灰色背景 -->
         <button
           :class="true ? getButtonClass('backspace'): ''"
           hover-class="press-number-keyboard__button--hover"
-          @touchstart.stop.prevent="onBackspaceStart"
+          @touchstart.stop="onBackspaceStart"
           @touchend="onBackspaceEnd"
-          @click="onBackspaceClick"
         >
           <delete-icon class="press-number-keyboard__delete-icon" />
         </button>
@@ -111,7 +111,7 @@ export default {
     random: { type: Boolean, default: false },
     maxLength: { type: Number, default: -1 },
     zIndex: { type: Number, default: 100 },
-    round: { type: Boolean, default: null },
+    round: { type: Boolean, default: false },
     safeAreaInsetBottom: { type: Boolean, default: true },
   },
   emits: [
@@ -130,7 +130,7 @@ export default {
   },
   computed: {
     roundComputed() {
-      return this.round ?? this.toolbar;
+      return this.round || this.toolbar;
     },
     keys() {
       let keys;

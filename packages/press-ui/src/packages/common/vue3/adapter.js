@@ -136,21 +136,6 @@ export function extendComponentMore({
 }
 
 
-export function getIsServer() {
-  let result;
-
-  // #ifndef VUE3
-  result = Vue.prototype.$isServer;
-  // #endif
-
-  // #ifdef VUE3
-  result = typeof window === 'undefined';
-  // #endif
-
-  return result;
-}
-
-
 export function toProvideThis(key) {
   return {
     // #ifndef VUE3

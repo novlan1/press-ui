@@ -10,7 +10,6 @@ export function extendComponentMore({ el, component, propsData, initApp }: {
   initApp?: any;
 }): [any, any];
 
-export function getIsServer(): boolean;
 export function toProvideThis(key: any): {
   provide(): {
     [x: number]: any;

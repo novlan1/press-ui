@@ -1,4 +1,4 @@
-import { isObjectEqual } from '../utils/object';
+import { isObjectEqual } from '../utils/object-equal';
 
 
 export const FUNCTIONAL = 'functional';

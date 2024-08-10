@@ -1,4 +1,4 @@
-export declare function deepClone(vnodes: Array<any>, createElement: Function): any[];
+export declare function deepCloneVNodes(vnodes: Array<any>, createElement: Function): any[];
 export declare const SWIPER_PROPS: {
   indicatorDots: {
     type: (StringConstructor | BooleanConstructor)[];

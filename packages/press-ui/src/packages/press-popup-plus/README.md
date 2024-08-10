@@ -124,6 +124,12 @@ Page({
 <press-popup-plus :show="show" catch:touchstart />
 ```
 
+注意，使用 `catch:touchstart` 后可能会导致组件内点击事件无效，可以尝试改成：
+
+```html
+<press-popup-plus :show="show" bind:touchstart catch:touchmove bind:touchend />
+```
+
 ## API
 
 ### Props

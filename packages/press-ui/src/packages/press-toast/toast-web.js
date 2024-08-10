@@ -1,4 +1,6 @@
-import { getH5ComponentHandler, makeExtraMethods } from '../common/component-handler';
+import { getH5ComponentHandler } from '../common/component-handler/h5-handler';
+import { makeExtraMethods } from '../common/component-handler/component-handler';
+
 import { initGlobalProps } from '../common/vue3/adapter';
 import VueToast from './press-toast.vue';
 import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';

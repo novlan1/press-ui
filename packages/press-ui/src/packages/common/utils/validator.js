@@ -1,4 +1,4 @@
-import { getIsServer } from '../vue3/adapter';
+import { getIsServer } from '../vue3/adapter-server';
 
 export const IN_BROWSER = typeof window !== 'undefined';
 

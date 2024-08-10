@@ -1,4 +1,4 @@
-import { hasOwn } from '../common/utils/object';
+import { hasOwn } from '../common/utils/object-base';
 
 const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 /**

@@ -1,4 +1,9 @@
-import { sortChildren, sortMPChildren } from '../common/dom/vnodes';
+// #ifdef H5
+import { sortChildren } from '../common/dom/vnodes-h5';
+// #endif
+// #ifndef H5
+import { sortMPChildren } from '../common/dom/vnodes-mp';
+// #endif
 
 
 export function ChildrenMixin(parent, options = {}) {

@@ -1,4 +1,4 @@
-import { hasOwn } from './object';
+import { hasOwn } from './object-base';
 
 /**
  * 暂存的文件对象
