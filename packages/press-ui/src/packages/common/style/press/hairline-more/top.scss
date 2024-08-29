@@ -1,0 +1,10 @@
+@import "./mixin.scss";
+
+.press-hairline--top {
+  @include hairline-common;
+
+  &:after {
+    @include hairline-after-common;
+    border-top-width: 1px;
+  }
+}

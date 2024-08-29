@@ -2,6 +2,83 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.12](https://github.com/novlan1/press-ui/compare/v2.1.11...v2.1.12) (2024-08-28)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* support pc ([4cbc9bb](https://github.com/novlan1/press-ui/commit/4cbc9bb6e39ab09e285aa0c707b4cba4869c625f))
+
+
+### ✏️ Documentation | 文档
+
+* update questions ([cfb0515](https://github.com/novlan1/press-ui/commit/cfb0515cf51cfff526b0484524391c050a5cedd8))
+
+### [2.1.11](https://github.com/novlan1/press-ui/compare/v2.1.10...v2.1.11) (2024-08-28)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* revert picker ([e98a112](https://github.com/novlan1/press-ui/commit/e98a112bf9d934c228663283b6ae995f032fcc28))
+
+### [2.1.10](https://github.com/novlan1/press-ui/compare/v2.1.9...v2.1.10) (2024-08-28)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update demo ([219d239](https://github.com/novlan1/press-ui/commit/219d2393970da39812230802234dd40758605fe5))
+
+
+### ✨ Features | 新功能
+
+* **button:** 兼容vue3小程序 ([fd97ac1](https://github.com/novlan1/press-ui/commit/fd97ac12ed363e4e0bc702bee6d5f619796cb230))
+* **q-r-code:** watch size ([1da0d15](https://github.com/novlan1/press-ui/commit/1da0d15db8be59d5473f89bb31c3c04d0905ad3b))
+
+### [2.1.9](https://github.com/novlan1/press-ui/compare/v2.1.8...v2.1.9) (2024-08-26)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update docs ([1b1d82a](https://github.com/novlan1/press-ui/commit/1b1d82adc8030f7c114a2d1df82a62a237fa710f))
+
+
+### ✨ Features | 新功能
+
+* vue3 getRouteQuery 防止 page 为空 ([9378ccf](https://github.com/novlan1/press-ui/commit/9378ccfeb63e331e3dc8335cb693758720b4641d))
+
+### [2.1.8](https://github.com/novlan1/press-ui/compare/v2.1.7...v2.1.8) (2024-08-19)
+
+
+### ✨ Features | 新功能
+
+* add vue3 routes ([a587940](https://github.com/novlan1/press-ui/commit/a587940f27d785b8bdb249f064ded745af36cb76))
+
+### [2.1.7](https://github.com/novlan1/press-ui/compare/v2.1.6...v2.1.7) (2024-08-17)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化发布脚本 ([0dd1d5e](https://github.com/novlan1/press-ui/commit/0dd1d5ec58c38b4692c10717abdb8d16dce6b354))
+
+
+### ✨ Features | 新功能
+
+* **setAdapter:** add set adapter ([4f4d1a5](https://github.com/novlan1/press-ui/commit/4f4d1a5e888c903cc5fb061bb50310f9a527a2a6))
+
+### [2.1.6](https://github.com/novlan1/press-ui/compare/v2.1.5...v2.1.6) (2024-08-13)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update index.js ([ff0e1a3](https://github.com/novlan1/press-ui/commit/ff0e1a308af668269e17b39a9b416151978e94f9))
+
+
+### ♻️ Code Refactoring | 代码重构
+
+* 拆分hairline scss ([0cd79d4](https://github.com/novlan1/press-ui/commit/0cd79d492f301342f9e52f7bd781b37a128a5976))
+* 优化样式 ([cb88b8b](https://github.com/novlan1/press-ui/commit/cb88b8b6132eed6c3fa036acd4de1579ff4f72f8))
+* 优化样式 ([5517c73](https://github.com/novlan1/press-ui/commit/5517c7395ce4aed7016cf697b2e6eb074ff52f74))
+
 ### [2.1.5](https://github.com/novlan1/press-ui/compare/v2.1.1...v2.1.5) (2024-08-10)
 
 

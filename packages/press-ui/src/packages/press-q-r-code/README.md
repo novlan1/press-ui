@@ -83,3 +83,5 @@ if (this.isMPQQ) {
   this.qrSize = 4.76 * 50 * (cliWidth / 375);
 }
 ```
+
+另外，`size` 不能为`0`，否则二维码将不能显示。

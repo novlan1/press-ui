@@ -1,5 +1,68 @@
 <template>
+  <button
+    v-if="isVue3Mp"
+    :id="id"
+    :data-detail="dataset"
+    :class="buttonClass"
+    :hover-class="['press-button--active', hoverClass]"
+    :lang="lang"
+    :form-type="formType"
+    :style="buttonStyle"
+    :open-type="disabled || loading || (canIUseGetUserProfile && openType === 'getUserInfo') ? '' : openType"
+    :business-id="businessId"
+    :session-from="sessionFrom"
+    :send-message-title="sendMessageTitle"
+    :send-message-path="sendMessagePath"
+    :send-message-img="sendMessageImg"
+    :show-message-card="showMessageCard"
+    :app-parameter="appParameter"
+    :aria-label="ariaLabel"
+    @click.stop="onFakeClick"
+    @tap.stop="onFakeTap"
+    @getuserinfo="onGetUserInfo"
+    @contact="onContact"
+    @getphonenumber="onGetPhoneNumber"
+    @error="onError"
+    @launchapp="onLaunchApp"
+    @opensetting="onOpenSetting"
+    @chooseavatar="onChooseAvatar"
+  >
+    <template v-if="isESportLoading">
+      <PressLoading
+        loading-scenes="btn"
+      />
+    </template>
+    <template v-else-if="loading">
+      <press-loading-plus
+        :custom-class="loadingClass"
+        :size="loadingSize"
+        :type="loadingType"
+        :color="loadingColor"
+      />
+      <div
+        v-if="loadingText"
+        class="press-button__loading-text"
+      >
+        {{ loadingText }}
+      </div>
+    </template>
+    <template v-else>
+      <press-icon-plus
+        v-if="icon"
+        size="1.2em"
+        :name="icon"
+        :class-prefix="classPrefix"
+        class="press-button__icon"
+        custom-style="line-height: inherit;"
+      />
+      <div class="press-button__text">
+        <slot />
+      </div>
+    </template>
+  </button>
+
   <Button
+    v-else
     :id="id"
     :data-detail="dataset"
     :class="buttonClass"
@@ -144,6 +207,15 @@ export default {
     };
   },
   computed: {
+    isVue3Mp() {
+      let result = false;
+      // #ifdef VUE3
+      // #ifdef MP
+      result = true;
+      // #endif
+      // #endif
+      return result;
+    },
     isESportLoading() {
       return this.loading && eSportTypeClassMap[this.type];
     },

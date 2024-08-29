@@ -1,4 +1,3 @@
-@import "../../common/style/press/index.scss";
 @import "../../common/style/press/var.scss";
 
 .press-toast {
@@ -18,7 +17,7 @@
   background-color: var(--toast-background-color, $toast-background-color);
   border-radius: var(--toast-border-radius, $toast-border-radius);
 
-  // 【修改点】此处的custom-class在小程序中无效，改为customStyle
+  // 【修改点】此处的 custom-class 在小程序中无效，改为 customStyle
   // &__container {
   //   position: fixed;
   //   top: 50%;

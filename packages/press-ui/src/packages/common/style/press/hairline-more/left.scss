@@ -1,0 +1,10 @@
+@import "./mixin.scss";
+
+.press-hairline--left {
+  @include hairline-common;
+
+  &:after {
+    @include hairline-after-common;
+    border-left-width: 1px;
+  }
+}

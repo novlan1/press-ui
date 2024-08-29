@@ -13,10 +13,8 @@ import PressPicker from './packages/press-picker/press-picker.vue';
 import PressPopupCell from './packages/press-popup-cell/press-popup-cell.vue';
 
 import Toast from './packages/press-toast/index';
-// import PressUI from 'src/lib/index';
+import './packages/common/touch-emulator';
 
-
-// Vue.use(PressUI);
 
 Vue.component('DemoBlock', DemoBlock);
 Vue.component('ToggleHeader', ToggleHeader);

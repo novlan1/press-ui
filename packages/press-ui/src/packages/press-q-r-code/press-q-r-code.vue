@@ -97,6 +97,14 @@ export default {
         });
       },
     },
+    size: {
+      handler() {
+        this.codeImg = '';
+        setTimeout(() => {
+          this.genQRCode();
+        });
+      },
+    },
   },
   mounted() {
     this.genQRCode();

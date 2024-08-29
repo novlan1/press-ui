@@ -34,7 +34,7 @@ export default {
     :close-icon="true"
     :arrow-icon="false"
     :title="title"
-    title-btn="确定"
+    button="确定"
     @confirm="confirm"
     @cancel="cancel"
   >
@@ -76,7 +76,7 @@ export default {
   :close-icon="false"
   :arrow-icon="true"
   :title="title"
-  title-btn="确定"
+  button="确定"
   @confirm="confirm"
   @cancel="cancel"
 >
@@ -97,7 +97,7 @@ export default {
   :close-icon="false"
   :arrow-icon="false"
   :title="title"
-  title-btn="确定"
+  button="确定"
   @confirm="confirm"
   @cancel="cancel"
 >
@@ -121,7 +121,7 @@ export default {
   :arrow-icon="false"
   :border-button="true"
   :title="title"
-  title-btn="确定"
+  button="确定"
   @confirm="confirm"
   @cancel="cancel"
 >
@@ -202,7 +202,7 @@ export default {
  <PressPopup
   :close-icon="false"
   :arrow-icon="false"
-  :title-btn="t('confirm')"
+  :button="t('confirm')"
   :async-confirm="asyncConfirm"
   :async-close="asyncCancel"
 >

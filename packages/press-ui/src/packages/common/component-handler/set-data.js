@@ -9,5 +9,9 @@ export function setData(dialog, data, func = 'setData') {
 
 export function vmSet(dialog, ...args) {
   const vm = dialog.$vm || dialog;
-  vm.$set(vm, ...args);
+  if (typeof vm.$set === 'function') {
+    vm.$set(vm, ...args);
+  } else {
+    vm[args[0]] = args[1];
+  }
 }

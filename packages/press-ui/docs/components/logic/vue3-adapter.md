@@ -194,3 +194,16 @@ nextTick(cb);
 // instance 为 Vue2 中的组件实例，即 this
 forceUpdate(instance);
 ```
+
+### 11. setAdapter
+
+封装了 Vue2.x 的 $set，和 Vue3.x 的直接赋值。
+
+```ts
+import { setAdapter } from 'press-ui/common/vue3/set';
+
+
+setAdapter(this.info, 'key', [])
+// 对应 Vue2.x 的 this.$set(this.info, 'key', [])
+// 对应 Vue3.x 的 this.info['key'] = []
+```

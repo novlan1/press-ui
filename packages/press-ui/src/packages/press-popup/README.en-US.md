@@ -20,7 +20,7 @@ Set `close-icon` to `true`.
      :close-icon="true"
      :arrow-icon="false"
      :title="title"
-     title-btn="OK"
+     button="OK"
      @confirm="confirm"
      @cancel="cancel"
    >
@@ -63,7 +63,7 @@ Set `close-icon` to `true` and `arrow-icon` to `true`.
      :close-icon="true"
      :arrow-icon="true"
      :title="title"
-     title-btn="OK"
+     button="OK"
      @confirm="confirm"
      @cancel="cancel"
    >
@@ -86,7 +86,7 @@ Set `close-icon` to `false` and `arrow-icon` to `false`.
      :close-icon="false"
      :arrow-icon="false"
      :title="title"
-     title-btn="OK"
+     button="OK"
      @confirm="confirm"
      @cancel="cancel"
    >
@@ -112,7 +112,7 @@ Set `border-button` to `true`.
      :arrow-icon="false"
      :border-button="true"
      :title="title"
-     title-btn="OK"
+     button="OK"
      @confirm="confirm"
      @cancel="cancel"
    >
@@ -156,7 +156,7 @@ An asynchronous shutdown will be triggered when there is `validateConfirm` in th
    :close-icon="false"
    :arrow-icon="false"
    :title="popupOptions.noClose.title"
-   :title-btn="t('confirm')"
+   :button="t('confirm')"
    @confirm="popupOptions.noClose.confirm"
    @cancel="popupOptions.noClose.cancel"
 >

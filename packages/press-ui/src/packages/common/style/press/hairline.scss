@@ -1,3 +1,5 @@
+@import "./hairline-more/mixin.scss";
+
 .press-hairline,
 .press-hairline--bottom,
 .press-hairline--left,
@@ -5,7 +7,7 @@
 .press-hairline--surround,
 .press-hairline--top,
 .press-hairline--top-bottom {
-  position: relative
+  @include hairline-common;
 }
 
 .press-hairline--bottom:after,
@@ -15,17 +17,7 @@
 .press-hairline--top-bottom:after,
 .press-hairline--top:after,
 .press-hairline:after {
-  border: 0 solid #ebedf0;
-  bottom: -50%;
-  box-sizing: border-box;
-  content: ' ';
-  left: -50%;
-  pointer-events: none;
-  position: absolute;
-  right: -50%;
-  top: -50%;
-  transform: scale(.5);
-  transform-origin: center
+  @include hairline-after-common;
 }
 
 .press-hairline--top:after {

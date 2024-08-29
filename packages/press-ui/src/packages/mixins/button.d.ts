@@ -57,9 +57,6 @@ export declare const button: {
       default: string;
     };
   };
-  data(): {
-    canIUseGetUserProfile: boolean;
-  };
   methods: {
     triggerEvent(...args: Array<any>): void;
     onGetUserInfo(event: any): void;
@@ -69,5 +66,8 @@ export declare const button: {
     onLaunchApp(event: any): void;
     onOpenSetting(event: any): void;
     onChooseAvatar(event: any): void;
+  };
+  data(): {
+    canIUseGetUserProfile: boolean;
   };
 };

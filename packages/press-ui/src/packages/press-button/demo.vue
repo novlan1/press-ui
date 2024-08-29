@@ -214,6 +214,7 @@
       <press-button
         color="#7232dd"
         :custom-style="customStyle"
+        open-type="openSetting"
       >
         {{ t('pure') }}
       </press-button>
@@ -221,11 +222,13 @@
         color="#7232dd"
         plain
         :custom-style="customStyle"
+        open-type="feedback"
       >
         {{ t('pure') }}
       </press-button>
       <press-button
         color="linear-gradient(to right, #4bb0ff, #6149f6)"
+        open-type="share"
       >
         {{ t('gradient') }}
       </press-button>
