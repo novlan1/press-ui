@@ -1,5 +1,12 @@
 # 更新日志
 
+### [2.1.13](https://github.com/novlan1/press-ui/compare/v2.1.12...v2.1.13) (2024-08-29)
+
+
+### Features 🎉
+
+* **button:** update vue3 button ([43ece7c](https://github.com/novlan1/press-ui/commit/43ece7c8490bb898b9b9cd6a400425661d171be7))
+
 ### [2.1.12](https://github.com/novlan1/press-ui/compare/v2.1.11...v2.1.12) (2024-08-28)
 
 

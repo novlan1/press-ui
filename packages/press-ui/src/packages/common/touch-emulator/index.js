@@ -1,8 +1,12 @@
 /* eslint-disable */
+
+
 /**
  * Emulate touch event
  * Source：https://github.com/hammerjs/touchemulator
  */
+
+// #ifdef H5
 
 (function () {
   if (typeof window === 'undefined') {
@@ -221,3 +225,5 @@
     new TouchEmulator();
   }
 })();
+
+// #endif
