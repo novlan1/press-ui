@@ -158,7 +158,13 @@ $press-shadow-base: 0 1px 5px 2px
     transition-duration: 0.2s;
     width: 55px;
     border-color: #dddddd;
+    /* #ifdef MP */
     border-width: 1rpx;
+    /* #endif */
+    /* #ifndef MP */
+    border-width: 1px;
+    border-width: .5px;
+    /* #endif */
     border-style: solid;
 
     &--other-platform {

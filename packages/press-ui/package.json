@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "2.1.13",
+  "version": "2.1.16",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "private": true,
   "repository": {
@@ -133,7 +133,7 @@
     "@dcloudio/uni-stat": "^2.0.1-alpha-36420220922001",
     "@popperjs/core": "~2.11.8",
     "plugin-light": "^1.3.6",
-    "t-comm": "latest",
+    "t-comm": "^1.3.101",
     "@vue/shared": "^3.0.0",
     "@zebra-ui/swiper": "^2.2.7",
     "aegis-mp-sdk": "^1.37.1",

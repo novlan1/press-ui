@@ -28,11 +28,11 @@ $press-light-color: #c0c4cc;
         position: relative;
         @include flex;
         align-items: center;
-        padding-right: 10rpx;
+        padding-right: 5px;
         flex: 1;
 
         &__icon {
-          margin-right: 8rpx;
+          margin-right: 4px;
         }
 
         &__required {
@@ -72,9 +72,9 @@ $press-light-color: #c0c4cc;
         }
 
         &__icon {
-          margin-left: 10rpx;
+          margin-left: 5px;
           color: $press-light-color;
-          font-size: 30rpx;
+          font-size: 15px;
         }
       }
 

@@ -71,7 +71,7 @@
   </div>
 </template>
 <script>
-import { toggleVConsole } from 't-comm/lib/v-console/toggle';
+import { toggleVConsole } from 't-comm/es/v-console/toggle';
 
 import PressSection from '../press-section/press-section.vue';
 import PressCell from '../press-cell/press-cell.vue';

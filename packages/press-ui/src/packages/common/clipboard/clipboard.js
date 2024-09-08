@@ -1,4 +1,4 @@
-import { clipboardMp, clipboardWeb } from 't-comm/lib/clipboard/index';
+import { clipboardMp, clipboardWeb } from 't-comm/es/clipboard/index';
 
 // 注意组件本身不要引用，示例可以使用
 export function setClipboardData(text) {

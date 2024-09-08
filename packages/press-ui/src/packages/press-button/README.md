@@ -231,7 +231,18 @@ export default {
 - e-sport-secondary 
 - e-sport-border
 
+### 条件编译
 
+如果是非 `uni-app` 的 `Vue` 项目，需要配置相应的条件编译的 `Webpack Loader` 或者 `Vite Plugin`。
+
+以下几个变量需要定义（`true` 或者 `false`）：
+
+- VUE2
+- VUE3
+- MP
+- H5
+- APP
+- APP-PLUS
 
 ## 在线调试
 

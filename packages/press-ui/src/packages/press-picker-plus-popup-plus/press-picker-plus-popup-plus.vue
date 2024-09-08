@@ -12,6 +12,7 @@
       show-toolbar
       :columns="columns"
       :default-index="defaultIndex"
+      :title="title"
       @change="onChange"
       @cancel="cancel"
       @confirm="confirm"
@@ -51,6 +52,10 @@ export default {
     zIndex: {
       type: Number,
       default: 100,
+    },
+    title: {
+      type: String,
+      default: '',
     },
   },
   data() {

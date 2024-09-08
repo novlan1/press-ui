@@ -99,41 +99,41 @@ export default {
 <style scoped lang="scss">
 .press-about {
   &__header {
-    height: 500rpx;
+    height: 250px;
     position: relative;
   }
 
   &__banner {
     display: block;
     width: 100%;
-    height: 500rpx;
+    height: 250px;
   }
 
   &__slogan {
     position: absolute;
     left: 0;
     width: 100%;
-    bottom: 40rpx;
+    bottom: 20px;
     color: #fff;
-    padding: 0 50rpx;
+    padding: 0 25px;
     text-align: center;
     box-sizing: border-box;
   }
 
   &__title {
-    font-size: 42rpx;
+    font-size: 21px;
     font-weight: bold;
-    margin-bottom: 10rpx;
+    margin-bottom: 5px;
   }
 
   &__subtitle {
-    font-size: 30rpx;
+    font-size: 15px;
   }
 
   &__main {
-    padding: 36rpx 0;
-    border-top-left-radius: 32rpx;
-    border-top-right-radius: 32rpx;
+    padding: 18px 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     box-sizing: border-box;
   }
 

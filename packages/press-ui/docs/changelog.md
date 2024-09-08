@@ -1,5 +1,31 @@
 # 更新日志
 
+### [2.1.16](https://github.com/novlan1/press-ui/compare/v2.1.15...v2.1.16) (2024-09-03)
+
+
+### Features 🎉
+
+* **dialog-plus:** support vue3 mp ([1f6c254](https://github.com/novlan1/press-ui/commit/1f6c254acd001e83d448250e841cf072b3f08a69))
+
+### [2.1.15](https://github.com/novlan1/press-ui/compare/v2.1.14...v2.1.15) (2024-09-02)
+
+
+### Features 🎉
+
+* **picker-plus-popup-plus:** add title props ([f0ee1af](https://github.com/novlan1/press-ui/commit/f0ee1af92e8589b21da380b8e6125f83a6f18ea6))
+
+### [2.1.14](https://github.com/novlan1/press-ui/compare/v2.1.13...v2.1.14) (2024-08-30)
+
+
+### Documentation 📖
+
+* update docs ([504adb8](https://github.com/novlan1/press-ui/commit/504adb843125a9efa9dc789d93ba8ffdab39aa0b))
+
+
+### Bug Fixes 🐞
+
+* **press-q-r-code:** press-q-r-code-web 按需初始化参数 {size,margin} ([2c92686](https://github.com/novlan1/press-ui/commit/2c926868728e42b0430fd1a166ca166a4fcd0c78))
+
 ### [2.1.13](https://github.com/novlan1/press-ui/compare/v2.1.12...v2.1.13) (2024-08-29)
 
 

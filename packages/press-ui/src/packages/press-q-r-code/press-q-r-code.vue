@@ -4,6 +4,7 @@
     <PressQRCodeWeb
       v-if="value"
       :value="value"
+      v-bind="h5Attr"
     />
     <!-- #endif -->
 
@@ -72,6 +73,10 @@ export default {
       type: Number,
       default: 0,
     },
+    initH5Attr: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: [
     'result',
@@ -84,6 +89,17 @@ export default {
     };
   },
   computed: {
+    h5Attr() {
+      return this.initH5Attr ? {
+        // #ifdef VUE2
+        width: this.size, // vue-qrcode 二维码尺寸，单位px
+        // #endif
+        // #ifdef VUE3
+        size: this.size, // qrcode.vue 二维码尺寸，单位px
+        // #endif
+        margin: this.margin, // 空白边距，单位px
+      } : {};
+    },
     style() {
       return `width: ${this.size}px; height: ${this.size}px;`;
     },

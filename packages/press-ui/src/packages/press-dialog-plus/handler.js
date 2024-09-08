@@ -69,6 +69,10 @@ const Dialog = (options) => {
 
       setData(dialog, newOptions);
       dialog.callback = callback;
+      // Vue3 小程序下挂载 callback
+      if (dialog.$vm) {
+        dialog.$vm.callback = callback;
+      }
 
       nextTick(() => {
         setData(dialog, { show: true });
