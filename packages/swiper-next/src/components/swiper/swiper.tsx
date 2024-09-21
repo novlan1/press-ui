@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   type Ref,
   ref,
@@ -155,7 +159,7 @@ function useLayout(
   swiperContexts: Ref<SwiperContext[]>,
   slideFrameRef: Ref<HTMLElement | null>,
   emit: SetupContext['emit'],
-  trigger: CustomEventTrigger
+  trigger: CustomEventTrigger,
 ) {
   function cancelSchedule() {
     if (timer) {
@@ -178,12 +182,8 @@ function useLayout(
   let transitionStart: number | null;
   let currentChangeSource = '';
   let animationFrame: number;
-  const swiperEnabled: ComputedRef<boolean> = computed(
-    () => swiperContexts.value.length > state.displayMultipleItems
-  );
-  const circularEnabled: ComputedRef<boolean> = computed(
-    () => props.circular && swiperEnabled.value
-  );
+  const swiperEnabled: ComputedRef<boolean> = computed(() => swiperContexts.value.length > state.displayMultipleItems);
+  const circularEnabled: ComputedRef<boolean> = computed(() => props.circular && swiperEnabled.value);
   function checkCircularLayout(index: number) {
     if (!invalid) {
       for (
@@ -210,8 +210,8 @@ function useLayout(
   function updateViewport(index: number) {
     if (
       !(
-        Math.floor(2 * viewportPosition) === Math.floor(2 * index) &&
-        Math.ceil(2 * viewportPosition) === Math.ceil(2 * index)
+        Math.floor(2 * viewportPosition) === Math.floor(2 * index)
+        && Math.ceil(2 * viewportPosition) === Math.ceil(2 * index)
       )
     ) {
       if (circularEnabled.value) {
@@ -240,8 +240,7 @@ function useLayout(
     } else if (index >= items.length) {
       index -= items.length;
     }
-    index =
-      transitionStart % 1 > 0.5 || transitionStart < 0 ? index - 1 : index;
+    index =      transitionStart % 1 > 0.5 || transitionStart < 0 ? index - 1 : index;
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     trigger('transition', {} as Event, {
       dx: props.vertical ? 0 : index * slideFrame.offsetWidth,
@@ -308,7 +307,7 @@ function useLayout(
   function animateViewport(
     current: number,
     source: CurrentChangeSource,
-    n: number
+    n: number,
   ) {
     cancelViewportAnimation();
     const { duration } = state;
@@ -316,27 +315,27 @@ function useLayout(
     let position = viewportPosition;
     if (circularEnabled.value) {
       if (n < 0) {
-        for (; position < current; ) {
+        for (; position < current;) {
           position += length;
         }
-        for (; position - length > current; ) {
+        for (; position - length > current;) {
           position -= length;
         }
       } else if (n > 0) {
-        for (; position > current; ) {
+        for (; position > current;) {
           position -= length;
         }
-        for (; position + length < current; ) {
+        for (; position + length < current;) {
           position += length;
         }
         if (position + length - current < current - position) {
           position += length;
         }
       } else {
-        for (; position + length < current; ) {
+        for (; position + length < current;) {
           position += length;
         }
-        for (; position - length > current; ) {
+        for (; position - length > current;) {
           position -= length;
         }
         if (position + length - current < current - position) {
@@ -367,10 +366,9 @@ function useLayout(
       if (circularEnabled.value) {
         state.current = normalizeCurrentValue(state.current + 1);
       } else {
-        state.current =
-          state.current + state.displayMultipleItems < items.length
-            ? state.current + 1
-            : 0;
+        state.current =          state.current + state.displayMultipleItems < items.length
+          ? state.current + 1
+          : 0;
       }
       animateViewport(state.current, 'autoplay', circularEnabled.value ? 1 : 0);
       // @ts-ignore setTimeout -> NodeJS.Timeout
@@ -442,7 +440,7 @@ function useLayout(
         currentChangeSource = '';
         state.current = current;
       }
-    }
+    },
   );
   watch(
     [
@@ -451,7 +449,7 @@ function useLayout(
       () => state.displayMultipleItems,
       () => [...swiperContexts.value],
     ],
-    resetLayout
+    resetLayout,
   );
   watch(
     () => state.interval,
@@ -460,7 +458,7 @@ function useLayout(
         cancelSchedule();
         scheduleAutoplay();
       }
-    }
+    },
   );
   function currentChanged(current: number, history: number) {
     const source = currentChangeSource;
@@ -471,10 +469,10 @@ function useLayout(
       animateViewport(
         current,
         '',
-        circularEnabled.value &&
-          history + ((length - current) % length) > length / 2
+        circularEnabled.value
+          && history + ((length - current) % length) > length / 2
           ? 1
-          : 0
+          : 0,
       );
     }
     const item = items[current];
@@ -494,13 +492,13 @@ function useLayout(
     (val, oldVal) => {
       currentChanged(val, oldVal);
       emit('update:current', val);
-    }
+    },
   );
   watch(
     () => state.currentItemId,
     (val) => {
       emit('update:currentItemId', val);
-    }
+    },
   );
   function inintAutoplay(enable: boolean) {
     if (enable) {
@@ -581,8 +579,8 @@ function useLayout(
           n !== 0
             ? n
             : current === 0 && circularEnabled.value && viewportPosition >= 1
-            ? 1
-            : 0
+              ? 1
+              : 0,
         );
       }
     }
@@ -636,7 +634,7 @@ function useLayout(
     animateViewport(
       (state.current = index),
       (currentChangeSource = 'click'),
-      circularEnabled.value ? 1 : 0
+      circularEnabled.value ? 1 : 0,
     );
   }
   return {
@@ -674,17 +672,17 @@ export default /* #__PURE__*/ defineBuiltInComponent({
       if (props.nextMargin || props.previousMargin) {
         style = props.vertical
           ? {
-              left: 0,
-              right: 0,
-              top: rpx2px(props.previousMargin, true),
-              bottom: rpx2px(props.nextMargin, true),
-            }
+            left: 0,
+            right: 0,
+            top: rpx2px(props.previousMargin, true),
+            bottom: rpx2px(props.nextMargin, true),
+          }
           : {
-              top: 0,
-              bottom: 0,
-              left: rpx2px(props.previousMargin, true),
-              right: rpx2px(props.nextMargin, true),
-            };
+            top: 0,
+            bottom: 0,
+            left: rpx2px(props.previousMargin, true),
+            right: rpx2px(props.nextMargin, true),
+          };
       }
       return style;
     });
@@ -705,9 +703,7 @@ export default /* #__PURE__*/ defineBuiltInComponent({
         if (!(swiperItem instanceof Element)) {
           swiperItem = swiperItem.el as HTMLElement;
         }
-        const swiperContext = originSwiperContexts.find(
-          (context) => swiperItem === context.rootRef.value
-        );
+        const swiperContext = originSwiperContexts.find(context => swiperItem === context.rootRef.value);
         if (swiperContext) {
           contexts.push(markRaw(swiperContext));
         }
@@ -740,7 +736,7 @@ export default /* #__PURE__*/ defineBuiltInComponent({
       swiperContexts,
       slideFrameRef,
       emit as SetupContext['emit'],
-      trigger
+      trigger,
     );
 
     let createNavigationTsx: () => any = () => null;
@@ -752,7 +748,7 @@ export default /* #__PURE__*/ defineBuiltInComponent({
         onSwiperDotClick,
         swiperContexts,
         circularEnabled,
-        swiperEnabled
+        swiperEnabled,
       );
     }
 
@@ -763,16 +759,16 @@ export default /* #__PURE__*/ defineBuiltInComponent({
     // });
     // #endif
     return () => {
-      const defaultSlots = slots.default && slots.default();
+      const defaultSlots = slots?.default?.();
       // TODO filter
       swiperItems = flatVNode(defaultSlots);
       return (
-        <div ref={rootRef} class="swiper-next">
-          <div ref={slidesWrapperRef} class="swiper-next__wrapper">
-            <div class="swiper-next__slides" style={slidesStyle.value}>
+        <div ref={rootRef} className="swiper-next">
+          <div ref={slidesWrapperRef} className="swiper-next__wrapper">
+            <div className="swiper-next__slides" style={slidesStyle.value}>
               <div
                 ref={slideFrameRef}
-                class="swiper-next__slide-frame"
+                className="swiper-next__slide-frame"
                 style={slideFrameStyle.value}
               >
                 {defaultSlots}
@@ -780,7 +776,7 @@ export default /* #__PURE__*/ defineBuiltInComponent({
             </div>
             {props.indicatorDots && (
               <div
-                class={[
+                className={[
                   'swiper-next__dots',
                   props.vertical
                     ? 'swiper-next__dots-vertical'
@@ -790,15 +786,15 @@ export default /* #__PURE__*/ defineBuiltInComponent({
                 {swiperContexts.value.map((_, index, array) => (
                   <div
                     onClick={() => onSwiperDotClick(index)}
-                    class={{
+                    className={{
                       'swiper-next__dot': true,
                       'swiper-next__dot-active':
-                        (index < state.current + state.displayMultipleItems &&
-                          index >= state.current) ||
-                        index <
-                          state.current +
-                            state.displayMultipleItems -
-                            array.length,
+                        (index < state.current + state.displayMultipleItems
+                          && index >= state.current)
+                        || index
+                          < state.current
+                            + state.displayMultipleItems
+                            - array.length,
                     }}
                     style={{
                       background:
@@ -828,7 +824,7 @@ const useSwiperNavigation = /* #__PURE__*/ (
   onSwiperDotClick: ReturnType<typeof useLayout>['onSwiperDotClick'],
   swiperContext: Ref<SwiperContext[]>,
   circularEnabled: ComputedRef<boolean>,
-  swiperEnabled: ComputedRef<boolean>
+  swiperEnabled: ComputedRef<boolean>,
 ) => {
   let isNavigationAuto = false;
   let prevDisabled = false;
@@ -846,10 +842,9 @@ const useSwiperNavigation = /* #__PURE__*/ (
     const notCircular = !circularEnabled.value;
 
     prevDisabled = state.current === 0 && notCircular;
-    nextDisabled =
-      (state.current === swiperItemLength - 1 && notCircular) ||
-      (notCircular &&
-        state.current + state.displayMultipleItems >= swiperItemLength);
+    nextDisabled =      (state.current === swiperItemLength - 1 && notCircular)
+      || (notCircular
+        && state.current + state.displayMultipleItems >= swiperItemLength);
 
     if (!swiperEnabled.value) {
       prevDisabled = true;
@@ -861,8 +856,7 @@ const useSwiperNavigation = /* #__PURE__*/ (
   function navigationHover(event: MouseEvent, type: NavigationHoverType) {
     const target = event.currentTarget;
     if (!target) return;
-    (target as HTMLDivElement).style.backgroundColor =
-      type === 'over' ? props.navigationActiveColor : '';
+    (target as HTMLDivElement).style.backgroundColor =      type === 'over' ? props.navigationActiveColor : '';
   }
   const navigationAttr = {
     onMouseover: (event: MouseEvent) => navigationHover(event, 'over'),
@@ -872,7 +866,7 @@ const useSwiperNavigation = /* #__PURE__*/ (
   function navigationClick(
     $event: MouseEvent,
     type: NavigationClickType,
-    disabled: boolean
+    disabled: boolean,
   ) {
     $event.stopPropagation();
 
@@ -883,13 +877,13 @@ const useSwiperNavigation = /* #__PURE__*/ (
 
     switch (type) {
       case 'prev':
-        innerCurrent--;
+        innerCurrent -= 1;
         if (innerCurrent < 0 && circularEnabled.value) {
           innerCurrent = swiperItemLength - 1;
         }
         break;
       case 'next':
-        innerCurrent++;
+        innerCurrent += 1;
         if (innerCurrent >= swiperItemLength && circularEnabled.value) {
           innerCurrent = 0;
         }
@@ -899,16 +893,14 @@ const useSwiperNavigation = /* #__PURE__*/ (
     onSwiperDotClick(innerCurrent);
   }
 
-  const createNavigationSVG = () =>
-    createSvgIconVNode(ICON_PATH_BACK, props.navigationColor, 26);
+  const createNavigationSVG = () => createSvgIconVNode(ICON_PATH_BACK, props.navigationColor, 26);
 
   let setHideNavigationTimer: number | undefined;
   const innerMousemove = (e: MouseEvent) => {
     clearTimeout(setHideNavigationTimer);
 
     const { clientX, clientY } = e;
-    const { left, right, top, bottom, width, height } =
-      rootRef.value!.getBoundingClientRect();
+    const { left, right, top, bottom, width, height } =      rootRef.value!.getBoundingClientRect();
 
     let hide = false;
     if (props.vertical) {
@@ -953,29 +945,30 @@ const useSwiperNavigation = /* #__PURE__*/ (
       return (
         <>
           <div
-            class="swiper-next__navigation swiper-next__navigation-prev"
+            className="swiper-next__navigation swiper-next__navigation-prev"
             // @ts-expect-error
-            class={extend(
+            // eslint-disable-next-line react/jsx-no-duplicate-props
+            className={extend(
               {
                 'swiper-next__navigation-disabled': prevDisabled,
               },
-              navigationClass
+              navigationClass,
             )}
-            onClick={(e) => navigationClick(e, 'prev', prevDisabled)}
+            onClick={e => navigationClick(e, 'prev', prevDisabled)}
             {...navigationAttr}
           >
             {createNavigationSVG()}
           </div>
           <div
-            class="swiper-next__navigation swiper-next__navigation-next"
+            className="swiper-next__navigation swiper-next__navigation-next"
             // @ts-expect-error
-            class={extend(
+            className={extend(
               {
                 'swiper-next__navigation-disabled': nextDisabled,
               },
-              navigationClass
+              navigationClass,
             )}
-            onClick={(e) => navigationClick(e, 'next', nextDisabled)}
+            onClick={e => navigationClick(e, 'next', nextDisabled)}
             {...navigationAttr}
           >
             {createNavigationSVG()}

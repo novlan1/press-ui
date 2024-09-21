@@ -18,7 +18,7 @@ export const defineBuiltInComponent = ((options: any) => {
   // TODO 可能会补充特殊标记
   const { props, mixins } = options;
   // 补充内置组件animation
-  if (!props || !props.animation) {
+  if (!props?.animation) {
     (mixins || (options.mixins = [])).push(animation);
   }
 
@@ -44,14 +44,12 @@ export const defineSystemComponent = ((options: any) => {
  * @param name
  * @returns
  */
-export const defineUnsupportedComponent = (name: string) => {
-  return defineBuiltInComponent({
-    name: capitalize(camelize(name)),
-    setup() {
-      return () => (
-        openBlock(),
-        createElementBlock('uni-' + name, null, name + ' is unsupported')
-      );
-    },
-  });
-};
+export const defineUnsupportedComponent = (name: string) => defineBuiltInComponent({
+  name: capitalize(camelize(name)),
+  setup() {
+    return () => (
+      openBlock(),
+      createElementBlock(`uni-${name}`, null, `${name} is unsupported`)
+    );
+  },
+});

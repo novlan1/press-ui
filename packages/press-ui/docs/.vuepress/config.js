@@ -90,7 +90,7 @@ module.exports = {
     nav: [
       {
         text: 'Plugin Light',
-        link: 'https://novlan1.github.io/uni-plugin-light',
+        link: 'https://novlan1.github.io/plugin-light',
       },
       {
         text: 'T Comm',

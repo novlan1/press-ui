@@ -42,7 +42,7 @@
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.4",
     "eslint": "^8.57.0",
-    "eslint-config-light-vue3": "^0.0.4",
+    "eslint-config-light-vue3": "^0.1.6",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.2",

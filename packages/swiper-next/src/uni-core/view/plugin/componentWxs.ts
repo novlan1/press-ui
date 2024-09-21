@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 import type { ComponentInternalInstance, ComponentPublicInstance } from 'vue';
 import {
@@ -8,7 +9,7 @@ import {
   stringifyStyle,
 } from '@vue/shared';
 import {
-  ON_WXS_INVOKE_CALL_METHOD,
+  // ON_WXS_INVOKE_CALL_METHOD,
   resolveOwnerEl,
   resolveOwnerVm,
 } from '../../../shared';
@@ -128,8 +129,7 @@ export class ComponentDescriptor {
     if (!this.$el || !clazz) {
       return this;
     }
-    const __wxsAddClass =
-      this.$el.__wxsAddClass || (this.$el.__wxsAddClass = []);
+    const __wxsAddClass =      this.$el.__wxsAddClass || (this.$el.__wxsAddClass = []);
     if (__wxsAddClass.indexOf(clazz) === -1) {
       __wxsAddClass.push(clazz);
       this.forceUpdate('class');
@@ -148,8 +148,7 @@ export class ComponentDescriptor {
         __wxsAddClass.splice(index, 1);
       }
     }
-    const __wxsRemoveClass =
-      this.$el.__wxsRemoveClass || (this.$el.__wxsRemoveClass = []);
+    const __wxsRemoveClass =      this.$el.__wxsRemoveClass || (this.$el.__wxsRemoveClass = []);
     if (__wxsRemoveClass.indexOf(clazz) === -1) {
       __wxsRemoveClass.push(clazz);
       this.forceUpdate('class');
@@ -158,11 +157,11 @@ export class ComponentDescriptor {
   }
 
   hasClass(cls: string) {
-    return this.$el && this.$el.classList.contains(cls);
+    return this.$el?.classList.contains(cls);
   }
 
   getDataset() {
-    return this.$el && this.$el.dataset;
+    return this.$el?.dataset;
   }
 
   callMethod(funcName: string, args = {}) {
@@ -195,7 +194,7 @@ export class ComponentDescriptor {
   getComputedStyle(names?: string[]) {
     if (this.$el) {
       const styles = window.getComputedStyle(this.$el);
-      if (names && names.length) {
+      if (names?.length) {
         return names.reduce<Record<string, any>>((res, n) => {
           res[n] = styles[n as keyof CSSStyleDeclaration];
           return res;
@@ -221,14 +220,14 @@ export class ComponentDescriptor {
 
 function createComponentDescriptor(
   vm: ComponentDescriptorVm,
-  isOwnerInstance = true
+  isOwnerInstance = true,
 ) {
   if (__PLATFORM__ === 'h5') {
     if (isOwnerInstance && vm) {
       vm = resolveOwnerVm((vm as ComponentPublicInstance).$)!;
     }
   }
-  if (vm && vm.$el) {
+  if (vm?.$el) {
     if (!vm.$el.__wxsComponentDescriptor) {
       vm.$el.__wxsComponentDescriptor = new ComponentDescriptor(vm);
     }
@@ -238,7 +237,7 @@ function createComponentDescriptor(
 
 export function getComponentDescriptor(
   instance: ComponentDescriptorVm | ComponentPublicInstance,
-  isOwnerInstance: boolean
+  isOwnerInstance: boolean,
 ) {
   return createComponentDescriptor(instance, isOwnerInstance);
 }
@@ -246,7 +245,7 @@ export function getComponentDescriptor(
 function resolveOwnerComponentPublicInstance(
   eventValue: Function,
   instance: ComponentInternalInstance | null,
-  checkArgsLength = true
+  checkArgsLength = true,
 ) {
   if (!instance) {
     return false;
@@ -258,7 +257,7 @@ function resolveOwnerComponentPublicInstance(
   if (!ownerVm) {
     return false;
   }
-  const type = ownerVm.$.type;
+  const { type } = ownerVm.$;
   if (!(type as any).$wxs && !(type as any).$renderjs) {
     return false;
   }
@@ -269,7 +268,7 @@ export function wrapperH5WxsEvent(
   event: Record<string, any>,
   eventValue?: Function,
   instance?: ComponentInternalInstance | null,
-  checkArgsLength = true
+  checkArgsLength = true,
 ) {
   if (eventValue) {
     if (!event.__instance) {
@@ -283,7 +282,7 @@ export function wrapperH5WxsEvent(
     const ownerVm = resolveOwnerComponentPublicInstance(
       eventValue,
       instance!,
-      checkArgsLength
+      checkArgsLength,
     );
     if (ownerVm) {
       return [event, getComponentDescriptor(ownerVm, false)];
@@ -297,17 +296,15 @@ function getWxsVm(el: WxsElement) {
   }
   if (__PLATFORM__ === 'app') {
     return createComponentDescriptorVm(el);
-  } else if (__PLATFORM__ === 'h5') {
+  } if (__PLATFORM__ === 'h5') {
     return el.__vueParentComponent && el.__vueParentComponent.proxy!;
   }
 }
 
-export function createComponentDescriptorVm(
-  el: WxsElement
-): ComponentDescriptorVm {
+export function createComponentDescriptorVm(el: WxsElement): ComponentDescriptorVm {
   return (
-    el.__wxsVm ||
-    (el.__wxsVm = {
+    el.__wxsVm
+    || (el.__wxsVm = {
       ownerId: el.__ownerId,
       $el: el,
       $emit() {},
@@ -323,8 +320,8 @@ export function createComponentDescriptorVm(
         let updateStyle: () => void;
         if (__wxsStyleChanged) {
           el.__wxsStyleChanged = false;
-          __wxsStyle &&
-            (updateStyle = () => {
+          __wxsStyle
+            && (updateStyle = () => {
               Object.keys(__wxsStyle).forEach((n) => {
                 el.style[n as any] = __wxsStyle[n] as string;
               });
@@ -333,19 +330,17 @@ export function createComponentDescriptorVm(
         if (__wxsClassChanged) {
           el.__wxsClassChanged = false;
           updateClass = () => {
-            __wxsRemoveClass &&
-              __wxsRemoveClass.forEach((clazz) => {
-                el.classList.remove(clazz);
-              });
-            __wxsAddClass &&
-              __wxsAddClass.forEach((clazz) => {
-                el.classList.add(clazz);
-              });
+            __wxsRemoveClass?.forEach((clazz) => {
+              el.classList.remove(clazz);
+            });
+            __wxsAddClass?.forEach((clazz) => {
+              el.classList.add(clazz);
+            });
           };
         }
         requestAnimationFrame(() => {
-          updateClass && updateClass();
-          updateStyle && updateStyle();
+          updateClass?.();
+          updateStyle?.();
         });
       },
     } as unknown as ComponentDescriptorVm)

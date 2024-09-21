@@ -61,7 +61,7 @@ module.exports = {
 
 `Press UI` 组件比普通的组件多了以下内容：
 
-1. 条件编译，跨平台的核心，普通 Vue 项目中可以用这个 [loader](https://novlan1.github.io/uni-plugin-light/zh/loader/ifdef-loader.html) 实现
+1. 条件编译，跨平台的核心，普通 Vue 项目中可以用这个 [loader](https://novlan1.github.io/plugin-light/zh/webpack-loader-ifdef.html) 实现
 2. `scroll-view`、`swiper`、`swiper-item` 等全局组件
 
 
@@ -174,6 +174,6 @@ Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了使用方
 
 这种方式符合 `transpileDependencies` 的本意，既然作为源码来编译，那就直接放到源码位置即可。
 
-这里提供了一个 [Vite 插件](https://novlan1.github.io/uni-plugin-light/zh/vite/alias-for-library.html)，可以自动化的进行拷贝。
+这里提供了一个 [Vite 插件](https://novlan1.github.io/plugin-light/zh/vite-plugin-alias-for-library.html)，可以自动化的进行拷贝。
 
 [点此查看](https://github.com/novlan1/press-ui-demo-vue3-pure) Vue3 非 uni-app 的示例项目。

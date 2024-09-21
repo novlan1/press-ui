@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import { isFunction, isPlainObject, isString, hyphenate, extend } from '@vue/shared';
 import type {
   ComponentInternalInstance,
@@ -38,7 +39,8 @@ export function cacheStringFunction(fn: (string: string) => string) {
 }
 
 export function getLen(str = '') {
-  return ('' + str).replace(/[^\x00-\xff]/g, '**').length;
+  // eslint-disable-next-line no-control-regex
+  return (`${str}`).replace(/[^\x00-\xff]/g, '**').length;
 }
 
 function hasLeadingSlash(str: string) {
@@ -46,7 +48,7 @@ function hasLeadingSlash(str: string) {
 }
 
 export function addLeadingSlash(str: string) {
-  return hasLeadingSlash(str) ? str : '/' + str;
+  return hasLeadingSlash(str) ? str : `/${str}`;
 }
 
 export function removeLeadingSlash(str: string) {
@@ -63,16 +65,17 @@ export const invokeArrayFns = (fns: Function[], arg?: any) => {
 
 export function updateElementStyle(
   element: HTMLElement,
-  styles: Partial<CSSStyleDeclaration>
+  styles: Partial<CSSStyleDeclaration>,
 ) {
   for (const attrName in styles) {
     element.style[attrName] = styles[attrName]!;
   }
 }
 
-export function once<T extends (...args: any[]) => any>(
+export function once<T extends (
+  ...args: any[]) => any>(
   fn: T,
-  ctx: unknown = null
+  ctx: unknown = null,
 ): T {
   let res: any;
   return ((...args: any[]) => {
@@ -84,25 +87,23 @@ export function once<T extends (...args: any[]) => any>(
   }) as T;
 }
 
-export const sanitise = (val: unknown) =>
-  (val && JSON.parse(JSON.stringify(val))) || val;
+export const sanitise = (val: unknown) => (val && JSON.parse(JSON.stringify(val))) || val;
 
-const innerCompleteValue = (value: number) => (value > 9 ? value : '0' + value);
+const innerCompleteValue = (value: number) => (value > 9 ? value : `0${value}`);
 
 export function formatDateTime({ date = new Date(), mode = 'date' }) {
   if (mode === 'time') {
     return (
-      innerCompleteValue(date.getHours()) + ':' + innerCompleteValue(date.getMinutes())
-    );
-  } else {
-    return (
-      date.getFullYear() +
-      '-' +
-      innerCompleteValue(date.getMonth() + 1) +
-      '-' +
-      innerCompleteValue(date.getDate())
+      `${innerCompleteValue(date.getHours())}:${innerCompleteValue(date.getMinutes())}`
     );
   }
+  return (
+    `${date.getFullYear()
+    }-${
+      innerCompleteValue(date.getMonth() + 1)
+    }-${
+      innerCompleteValue(date.getDate())}`
+  );
 }
 
 interface Options {
@@ -113,11 +114,7 @@ interface Options {
 export function callOptions(options: Options, errMsg: string): void;
 export function callOptions(
   options: Options,
-  data: { [key: string]: any; errMsg: string }
-): void;
-export function callOptions(
-  options: Options,
-  data: { [key: string]: any; errMsg: string } | string
+  data: string | { [key: string]: any; errMsg: string },
 ): void {
   options = options || {};
   if (isString(data)) {
@@ -156,6 +153,7 @@ export function getValueByDataPath(obj: any, path: string): unknown {
 }
 
 export function sortObject<T extends Object>(obj: T) {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   const sortObj: T = {} as T;
   if (isPlainObject(obj)) {
     Object.keys(obj)
@@ -184,7 +182,7 @@ export function resolveOwnerEl(
 ): RendererNode | null;
 export function resolveOwnerEl(
   instance: ComponentInternalInstance,
-  multi = false
+  multi = false,
 ): RendererNode | null {
   const { vnode } = instance;
   if (isElement(vnode.el as Element)) {
@@ -193,12 +191,10 @@ export function resolveOwnerEl(
   const { subTree } = instance;
   // ShapeFlags.ARRAY_CHILDREN = 1<<4
   if (subTree.shapeFlag & 16) {
-    const elemVNodes = (subTree.children as VNode[]).filter(
-      (vnode) => vnode.el && isElement(vnode.el as Element)
-    );
+    const elemVNodes = (subTree.children as VNode[]).filter(vnode => vnode.el && isElement(vnode.el as Element));
     if (elemVNodes.length > 0) {
       if (multi) {
-        return elemVNodes.map((node) => node.el);
+        return elemVNodes.map(node => node.el);
       }
       return elemVNodes[0].el;
     }
@@ -206,7 +202,7 @@ export function resolveOwnerEl(
   return multi ? (vnode.el ? [vnode.el] : []) : vnode.el;
 }
 
-export function isBuiltInComponent(tag: string) {
+export function isBuiltInComponent(_tag: string) {
   return false;
   // if (UNI_UI_CONFLICT_TAGS.indexOf(tag) !== -1) {
   //   return false

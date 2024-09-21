@@ -1,24 +1,25 @@
+/* eslint-disable no-redeclare */
 import { isString } from '@vue/shared';
 import { upx2px } from '../../shared';
 
 
 export function PolySymbol(name: string) {
-  return Symbol(__DEV__ ? '[uni-app]: ' + name : name);
+  return Symbol(__DEV__ ? `[uni-app]: ${name}` : name);
 }
 
 function hasRpx(str: string) {
-  str = str + '';
+  str = `${str}`;
   return str.indexOf('rpx') !== -1 || str.indexOf('upx') !== -1;
 }
 
-export function rpx2px(str: string | number): number
-export function rpx2px(str: string, replace: true): string
+export function rpx2px(str: string | number): number;
+export function rpx2px(str: string, replace: true): string;
 export function rpx2px(str: string | number, replace = false) {
   if (replace) {
     return rpx2pxWithReplace(str as string);
   }
   if (__NODE_JS__) {
-    return parseInt(str + '');
+    return parseInt(`${str}`);
   }
   if (isString(str)) {
     const res = parseInt(str) || 0;
@@ -37,7 +38,5 @@ function rpx2pxWithReplace(str: string) {
   if (!hasRpx(str)) {
     return str;
   }
-  return str.replace(/(\d+(\.\d+)?)[ru]px/g, (_a, b) => {
-    return upx2px(parseFloat(b)) + 'px';
-  });
+  return str.replace(/(\d+(\.\d+)?)[ru]px/g, (_a, b) => `${upx2px(parseFloat(b))}px`);
 }

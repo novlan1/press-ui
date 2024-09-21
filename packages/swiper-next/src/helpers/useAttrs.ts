@@ -2,7 +2,7 @@ import { getCurrentInstance, reactive, shallowRef, watchEffect } from 'vue';
 
 type Hash<T> = {
   [key: string]: T
-}
+};
 
 function entries<T>(obj: Hash<T>): [string, T][] {
   return Object.keys(obj).map((key: string) => [key, obj[key]]);
@@ -47,7 +47,7 @@ export const useAttrs = (params: Params = {}) => {
         exclude: {},
         attrs: {},
         listeners: {},
-      }
+      },
     );
 
     attrs.value = res.attrs;

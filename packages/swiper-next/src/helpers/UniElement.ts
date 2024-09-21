@@ -1,19 +1,18 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 import { camelize } from 'vue';
 import { upx2px } from '../shared';
 
 function transformRpx(value: string) {
   if (/(-?(?:\d+\.)?\d+)[ur]px/gi.test(value)) {
-    return value.replace(/(-?(?:\d+\.)?\d+)[ur]px/gi, (text, num) => {
-      return `${upx2px(parseFloat(num))}px`;
-    });
+    return value.replace(/(-?(?:\d+\.)?\d+)[ur]px/gi, (text, num) => `${upx2px(parseFloat(num))}px`);
   }
   return value;
 }
 
 export class UniElement extends HTMLElement {
-  private _props: Record<string, any> = {};
   public __isUniElement: boolean;
+  private _props: Record<string, any> = {};
   constructor() {
     super();
     this.__isUniElement = true;
@@ -26,7 +25,7 @@ export class UniElement extends HTMLElement {
   getAttribute(qualifiedName: string): string | null {
     const name = camelize(qualifiedName);
     return name in this._props
-      ? this._props[name] + ''
+      ? `${this._props[name]}`
       : super.getAttribute(qualifiedName) || null;
   }
 
@@ -42,12 +41,12 @@ export class UniElement extends HTMLElement {
     super.style.setProperty = function (
       property: string,
       value: string | null,
-      priority?: string
+      priority?: string,
     ) {
       return originalSetProperty(
         property,
-        value ? transformRpx(value + '') : value,
-        priority || undefined
+        value ? transformRpx(`${value}`) : value,
+        priority || undefined,
       );
     };
     return super.style;

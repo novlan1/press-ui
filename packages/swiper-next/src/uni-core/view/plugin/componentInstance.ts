@@ -5,20 +5,17 @@ import { normalizeTarget } from '../../../shared/index';
 import { getWindowTop } from '../../helpers/dom';
 import { wrapperH5WxsEvent } from './componentWxs';
 
-const isKeyboardEvent = (val: Event): val is KeyboardEvent =>
-  !val.type.indexOf('key') && val instanceof KeyboardEvent;
+const isKeyboardEvent = (val: Event): val is KeyboardEvent => !val.type.indexOf('key') && val instanceof KeyboardEvent;
 const isClickEvent = (val: Event): val is MouseEvent => val.type === 'click';
-const isMouseEvent = (val: Event): val is MouseEvent =>
-  val.type.indexOf('mouse') === 0 || ['contextmenu'].includes(val.type);
-const isTouchEvent = (val: Event): val is TouchEvent =>
-  (typeof TouchEvent !== 'undefined' && val instanceof TouchEvent) ||
-  val.type.indexOf('touch') === 0 ||
-  ['longpress'].indexOf(val.type) >= 0;
+const isMouseEvent = (val: Event): val is MouseEvent => val.type.indexOf('mouse') === 0 || ['contextmenu'].includes(val.type);
+const isTouchEvent = (val: Event): val is TouchEvent => (typeof TouchEvent !== 'undefined' && val instanceof TouchEvent)
+  || val.type.indexOf('touch') === 0
+  || ['longpress'].indexOf(val.type) >= 0;
 // normalizeNativeEvent
 export function $nne(
   evt: Event,
   eventValue?: Function,
-  instance?: ComponentInternalInstance | HTMLElement | null
+  instance?: ComponentInternalInstance | HTMLElement | null,
 ) {
   // 目前内置组件底层实现，当需要访问原始event时，请使用withWebEvent包裹
   // 用法参考：uni-h5/src/framework/components/page/page-refresh/index.ts
@@ -35,7 +32,7 @@ export function $nne(
           evt,
           eventValue,
           instance as ComponentInternalInstance,
-          false // 原生标签事件可能被cache，参数长度不准确，故默认不校验
+          false, // 原生标签事件可能被cache，参数长度不准确，故默认不校验
         ) || [evt]
       );
     }
@@ -66,7 +63,7 @@ export function $nne(
       wrapperH5WxsEvent(
         res,
         eventValue,
-        instance as ComponentInternalInstance
+        instance as ComponentInternalInstance,
       ) || [res]
     );
   }
@@ -82,22 +79,20 @@ function findUniTarget(target: HTMLElement): HTMLElement {
 
 export function createNativeEvent(
   evt: Event | TouchEvent,
-  htmlElement = false
+  htmlElement = false,
 ) {
   const { type, timeStamp, target, currentTarget } = evt;
-  let realTarget, realCurrentTarget;
-  //#if _X_ && !_NODE_JS_
+  let realTarget; let realCurrentTarget;
+  // #if _X_ && !_NODE_JS_
   realTarget = htmlElement
     ? (target as HTMLElement)
     : findUniTarget(target as HTMLElement);
   realCurrentTarget = currentTarget;
-  //#endif
-  //#if !_X_ || _NODE_JS_
-  realTarget = normalizeTarget(
-    htmlElement ? (target as HTMLElement) : findUniTarget(target as HTMLElement)
-  );
+  // #endif
+  // #if !_X_ || _NODE_JS_
+  realTarget = normalizeTarget(htmlElement ? (target as HTMLElement) : findUniTarget(target as HTMLElement));
   realCurrentTarget = normalizeTarget(currentTarget as HTMLElement);
-  //#endif
+  // #endif
   const event = {
     type,
     timeStamp,
@@ -134,12 +129,13 @@ function wrapperEvent(event: Record<string, any>, evt: Event | TouchEvent) {
 
 function normalizeClickEvent(
   evt: any,
-  mouseEvt: MouseEvent
+  mouseEvt: MouseEvent,
 ) {
   const { x, y } = mouseEvt;
   const top = getWindowTop();
   evt.detail = { x, y: y - top };
-  evt.touches = evt.changedTouches = [createTouchEvent(mouseEvt, top)];
+  evt.changedTouches = [createTouchEvent(mouseEvt, top)];
+  evt.touches = evt.changedTouches;
 }
 
 function normalizeMouseEvent(evt: Record<string, any>, mouseEvt: MouseEvent) {
@@ -148,7 +144,8 @@ function normalizeMouseEvent(evt: Record<string, any>, mouseEvt: MouseEvent) {
   evt.pageY = mouseEvt.pageY - top;
   evt.clientX = mouseEvt.clientX;
   evt.clientY = mouseEvt.clientY - top;
-  evt.touches = evt.changedTouches = [createTouchEvent(mouseEvt, top)];
+  evt.changedTouches = [createTouchEvent(mouseEvt, top)];
+  evt.touches = evt.changedTouches;
 }
 
 function createTouchEvent(evt: MouseEvent, top: number) {
@@ -172,21 +169,21 @@ function normalizeTouchEvent(touches: TouchList, top: number) {
       clientX,
       clientY,
       force,
-      //#if _X_ && !_NODE_JS_
+      // #if _X_ && !_NODE_JS_
       screenX,
       screenY,
-      //#endif
+      // #endif
     } = touches[i];
     res.push({
       identifier,
       pageX,
       pageY: pageY - top,
-      clientX: clientX,
+      clientX,
       clientY: clientY - top,
-      //#if _X_ && !_NODE_JS_
+      // #if _X_ && !_NODE_JS_
       screenX,
       screenY,
-      //#endif
+      // #endif
       force: force || 0,
     });
   }

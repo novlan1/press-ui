@@ -47,16 +47,13 @@ export default /* #__PURE__*/ defineBuiltInComponent({
       },
     };
     onMounted(() => {
-      const addSwiperContext: AddSwiperContext | undefined =
-        inject('addSwiperContext');
+      const addSwiperContext: AddSwiperContext | undefined =        inject('addSwiperContext');
       if (addSwiperContext) {
         addSwiperContext(context);
       }
     });
     onUnmounted(() => {
-      const removeSwiperContext: RemoveSwiperContext | undefined = inject(
-        'removeSwiperContext'
-      );
+      const removeSwiperContext: RemoveSwiperContext | undefined = inject('removeSwiperContext');
       if (removeSwiperContext) {
         removeSwiperContext(context);
       }
@@ -69,6 +66,7 @@ export default /* #__PURE__*/ defineBuiltInComponent({
     // });
     // #endif
     return () => (
+      // eslint-disable-next-line react/react-in-jsx-scope
       <div
         ref={rootRef}
         style={{
@@ -76,9 +74,9 @@ export default /* #__PURE__*/ defineBuiltInComponent({
           width: '100%',
           height: '100%',
         }}
-        class="swiper-next-item"
+        className="swiper-next-item"
       >
-        {slots.default && slots.default()}
+        {slots.default?.()}
       </div>
     );
   },

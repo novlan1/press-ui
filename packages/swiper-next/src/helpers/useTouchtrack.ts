@@ -5,7 +5,7 @@ const addListenerToElement = function (
   element: HTMLElement,
   type: string,
   callback: Function,
-  capture?: boolean
+  _capture?: boolean,
 ) {
   // 暂时忽略 capture
   element.addEventListener(
@@ -24,11 +24,11 @@ const addListenerToElement = function (
     },
     {
       passive: false,
-    }
+    },
   );
 };
-type State = 'start' | 'move' | 'end' | 'cancel'
-type TouchOrMouseEvent = TouchEvent | MouseEvent
+type State = 'start' | 'move' | 'end' | 'cancel';
+type TouchOrMouseEvent = TouchEvent | MouseEvent;
 type Detail = {
   state: State
   x: number
@@ -38,7 +38,7 @@ type Detail = {
   ddx: number
   ddy: number
   timeStamp: Event['timeStamp']
-}
+};
 export interface TouchtrackEvent {
   target: Event['target']
   currentTarget: Event['currentTarget']
@@ -55,7 +55,7 @@ let innerMouseUpEventListener: (this: Document, ev: MouseEvent) => any;
 export function useTouchtrack(
   element: HTMLElement,
   method: (event: TouchtrackEvent) => boolean | void,
-  useCancel?: boolean
+  useCancel?: boolean,
 ) {
   onBeforeUnmount(() => {
     document.removeEventListener('mousemove', innerMouseMoveEventListener);
@@ -70,7 +70,7 @@ export function useTouchtrack(
     $event: TouchOrMouseEvent,
     state: State,
     x: number,
-    y: number
+    y: number,
   ) {
     if (
       method({
@@ -84,8 +84,8 @@ export function useTouchtrack(
         changedTouches: ($event as TouchEvent).changedTouches,
         detail: {
           state,
-          x: x,
-          y: y,
+          x,
+          y,
           dx: x - x0,
           dy: y - y0,
           ddx: x - x1,
@@ -101,39 +101,43 @@ export function useTouchtrack(
   let $eventOld: TouchOrMouseEvent | null = null;
   let hasTouchStart: boolean;
   let hasMouseDown: boolean;
-  addListenerToElement(element, 'touchstart', function ($event: TouchEvent) {
+  addListenerToElement(element, 'touchstart', ($event: TouchEvent) => {
     hasTouchStart = true;
     if ($event.touches.length === 1 && !$eventOld) {
       $eventOld = $event;
-      x0 = x1 = $event.touches[0].pageX;
-      y0 = y1 = $event.touches[0].pageY;
+      x1 = $event.touches[0].pageX;
+      x0 = x1;
+      y1 = $event.touches[0].pageY;
+      y0 = y1;
       return fn($event, 'start', x0, y0);
     }
   });
-  addListenerToElement(element, 'mousedown', function ($event: MouseEvent) {
+  addListenerToElement(element, 'mousedown', ($event: MouseEvent) => {
     hasMouseDown = true;
     if (!hasTouchStart && !$eventOld) {
       // TODO touches changedTouches
       $eventOld = $event;
-      x0 = x1 = $event.pageX;
-      y0 = y1 = $event.pageY;
+      x1 = $event.pageX;
+      x0 = x1;
+      y1 = $event.pageY;
+      y0 = y1;
       return fn($event, 'start', x0, y0);
     }
   });
-  addListenerToElement(element, 'touchmove', function ($event: TouchEvent) {
+  addListenerToElement(element, 'touchmove', ($event: TouchEvent) => {
     if ($event.touches.length === 1 && $eventOld) {
       const res = fn(
         $event,
         'move',
         $event.touches[0].pageX,
-        $event.touches[0].pageY
+        $event.touches[0].pageY,
       );
       x1 = $event.touches[0].pageX;
       y1 = $event.touches[0].pageY;
       return res;
     }
   });
-  const mouseMoveEventListener = (innerMouseMoveEventListener = function ($event) {
+  innerMouseMoveEventListener = function ($event) {
     if (!hasTouchStart && hasMouseDown && $eventOld) {
       // TODO target currentTarget touches changedTouches
       const res = fn($event, 'move', $event.pageX, $event.pageY);
@@ -141,9 +145,10 @@ export function useTouchtrack(
       y1 = $event.pageY;
       return res;
     }
-  });
+  };
+  const mouseMoveEventListener = innerMouseMoveEventListener;
   document.addEventListener('mousemove', mouseMoveEventListener);
-  addListenerToElement(element, 'touchend', function ($event: TouchEvent) {
+  addListenerToElement(element, 'touchend', ($event: TouchEvent) => {
     if ($event.touches.length === 0 && $eventOld) {
       hasTouchStart = false;
       $eventOld = null;
@@ -151,20 +156,21 @@ export function useTouchtrack(
         $event,
         'end',
         $event.changedTouches[0].pageX,
-        $event.changedTouches[0].pageY
+        $event.changedTouches[0].pageY,
       );
     }
   });
-  const mouseUpEventListener = (innerMouseUpEventListener = function ($event) {
+  innerMouseUpEventListener = function ($event) {
     hasMouseDown = false;
     if (!hasTouchStart && $eventOld) {
       // TODO target currentTarget touches changedTouches
       $eventOld = null;
       return fn($event, 'end', $event.pageX, $event.pageY);
     }
-  });
+  };
+  const mouseUpEventListener = innerMouseUpEventListener;
   document.addEventListener('mouseup', mouseUpEventListener);
-  addListenerToElement(element, 'touchcancel', function ($event: TouchEvent) {
+  addListenerToElement(element, 'touchcancel', ($event: TouchEvent) => {
     if ($eventOld) {
       hasTouchStart = false;
       const $eventTemp = $eventOld;
@@ -173,7 +179,7 @@ export function useTouchtrack(
         $event,
         useCancel ? 'cancel' : 'end',
         ($eventTemp as TouchEvent).touches[0].pageX,
-        ($eventTemp as TouchEvent).touches[0].pageY
+        ($eventTemp as TouchEvent).touches[0].pageY,
       );
     }
   });

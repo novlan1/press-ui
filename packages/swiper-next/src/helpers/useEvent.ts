@@ -2,10 +2,10 @@ import type { EmitsOptions, Ref, SetupContext } from 'vue';
 import { normalizeTarget } from '../shared/index';
 import { createNativeEvent } from '../uni-core/view/plugin/componentInstance';
 
-type EventDetail = Record<string, any>
-export type CustomEventTrigger = ReturnType<typeof useCustomEvent>
-export type NativeEventTrigger = ReturnType<typeof useNativeEvent>
-export type EmitEvent<E extends (...args: any) => any> = [Parameters<E>[0]]
+type EventDetail = Record<string, any>;
+export type CustomEventTrigger = ReturnType<typeof useCustomEvent>;
+export type NativeEventTrigger = ReturnType<typeof useNativeEvent>;
+export type EmitEvent<E extends (...args: any) => any> = [Parameters<E>[0]];
 
 export function withWebEvent(fn: (...args: any[]) => any) {
   // eslint-disable-next-line no-underscore-dangle
@@ -14,7 +14,7 @@ export function withWebEvent(fn: (...args: any[]) => any) {
 
 export function useCustomEvent<E extends EmitsOptions>(
   ref: Ref<HTMLElement | null>,
-  emit: SetupContext<E>['emit']
+  emit: SetupContext<E>['emit'],
 ) {
   return (name: string, evt: Event, detail?: EventDetail) => {
     if (ref.value) {
@@ -23,9 +23,7 @@ export function useCustomEvent<E extends EmitsOptions>(
   };
 }
 
-export function useNativeEvent<E extends EmitsOptions>(
-  emit: SetupContext<E>['emit']
-) {
+export function useNativeEvent<E extends EmitsOptions>(emit: SetupContext<E>['emit']) {
   return (name: string, evt: Event) => {
     emit(name, createNativeEvent(evt));
   };
@@ -35,15 +33,15 @@ function normalizeCustomEvent(
   name: string,
   domEvt: Event,
   el: HTMLElement,
-  detail: EventDetail
+  detail: EventDetail,
 ): any {
   let target;
-  //#if _X_ && !_NODE_JS_
+  // #if _X_ && !_NODE_JS_
   target = el;
-  //#endif
-  //#if !_X_ || _NODE_JS_
+  // #endif
+  // #if !_X_ || _NODE_JS_
   target = normalizeTarget(el);
-  //#endif
+  // #endif
   return {
     type: detail.type || name,
     timeStamp: domEvt.timeStamp || 0,

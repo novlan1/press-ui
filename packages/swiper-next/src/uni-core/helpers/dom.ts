@@ -1,10 +1,10 @@
 import { withModifiers } from 'vue';
 import safeAreaInsets from 'safe-area-insets';
 
-export const onEventPrevent = /*#__PURE__*/ withModifiers(() => {}, ['prevent']);
-export const onEventStop = /*#__PURE__*/ withModifiers(
+export const onEventPrevent = /* #__PURE__*/ withModifiers(() => {}, ['prevent']);
+export const onEventStop = /* #__PURE__*/ withModifiers(
   (_event: Event) => {},
-  ['stop']
+  ['stop'],
 );
 
 function getWindowOffsetCssVar(style: CSSStyleDeclaration, name: string) {
@@ -12,13 +12,13 @@ function getWindowOffsetCssVar(style: CSSStyleDeclaration, name: string) {
 }
 
 export function getWindowTop() {
-  const style = document.documentElement.style;
+  const { style } = document.documentElement;
   const top = getWindowOffsetCssVar(style, '--window-top');
   return top ? top + safeAreaInsets.top : 0;
 }
 
 export function getWindowOffset() {
-  const style = document.documentElement.style;
+  const { style } = document.documentElement;
   const top = getWindowTop();
   const bottom = getWindowOffsetCssVar(style, '--window-bottom');
   const left = getWindowOffsetCssVar(style, '--window-left');
@@ -43,7 +43,7 @@ interface PageCssVars {
 }
 
 export function updateCssVar(cssVars: Record<string, any>) {
-  const style = document.documentElement.style;
+  const { style } = document.documentElement;
   Object.keys(cssVars).forEach((name) => {
     style.setProperty(name, cssVars[name]);
   });
@@ -85,9 +85,7 @@ export function removeStyle(id: string) {
   const style = sheetsMap.get(id);
   if (style) {
     if (style instanceof CSSStyleSheet) {
-      document.adoptedStyleSheets = document.adoptedStyleSheets.filter(
-        (s: CSSStyleSheet) => s !== style
-      );
+      document.adoptedStyleSheets = document.adoptedStyleSheets.filter((s: CSSStyleSheet) => s !== style);
     } else {
       document.head.removeChild(style);
     }
