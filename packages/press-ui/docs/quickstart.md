@@ -70,7 +70,7 @@ module.exports = {
 1. 安装 npm 包：
 
 ```bash
-npm i plugin-light -D
+npm i @plugin-light/webpack-loader-ifdef -D
 ```
 
 2. 在 `vue.config.js` 中添加如下设置：
