@@ -1,4 +1,4 @@
-import { getViteBaseConfig } from '@tencent/project-config-vite';
+import { getViteBaseConfig } from '@plugin-light/project-config-vite';
 
 import { defineConfig } from 'vite';
 import type { UserConfig } from 'vite';

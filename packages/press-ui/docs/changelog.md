@@ -1,5 +1,21 @@
 # 更新日志
 
+### [2.1.22](https://github.com/novlan1/press-ui/compare/v2.1.21...v2.1.22) (2024-09-21)
+
+
+### Chore 🚀 
+
+* lint ([4b627a7](https://github.com/novlan1/press-ui/commit/4b627a7ffad16a83bea7e03281cea17c2c0924c8))
+* lint ([e1d9a5c](https://github.com/novlan1/press-ui/commit/e1d9a5c93387ecf1dfd2cbe09042257878d4c282))
+* lint ([4769ad4](https://github.com/novlan1/press-ui/commit/4769ad4f070818f41d67e0fe8ed8bfe6c9a25e70))
+* update deps ([831e97e](https://github.com/novlan1/press-ui/commit/831e97ee8d3458c50de47effea1f17a767f14312))
+* update plugin-light link ([7136def](https://github.com/novlan1/press-ui/commit/7136def763548499e338b85ea11f9a374db108e3))
+
+
+### Features 🎉
+
+* **button:** vue3 ([84d9e4d](https://github.com/novlan1/press-ui/commit/84d9e4d523775b83a713b07ebcdf8b727c8cd3b1))
+
 ### [2.1.21](https://github.com/novlan1/press-ui/compare/v2.1.20...v2.1.21) (2024-09-12)
 
 

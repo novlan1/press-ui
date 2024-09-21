@@ -76,7 +76,7 @@ npm i plugin-light -D
 2. 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const IF_DEF_LOADER = '@tencent/webpack-loader-ifdef';
+const IF_DEF_LOADER = '@plugin-light/webpack-loader-ifdef';
 
 module.export = {
   chainWebpack(config) {

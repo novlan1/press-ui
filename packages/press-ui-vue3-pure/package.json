@@ -36,9 +36,9 @@
   "devDependencies": {
     "@dcloudio/types": "^3.0.4",
     "plugin-light-shared": "^0.0.11",
-    "@tencent/project-config-vite": "^0.0.6",
-    "@tencent/webpack-loader-cross-game-style": "^0.0.7",
-    "@tencent/webpack-loader-ifdef": "^0.0.9",
+    "@plugin-light/project-config-vite": "^0.0.6",
+    "@plugin-light/webpack-loader-cross-game-style": "^0.0.7",
+    "@plugin-light/webpack-loader-ifdef": "^0.0.9",
     "@types/node": "^20.10.5",
     "@types/webpack-env": "^1.18.4",
     "@vue/babel-preset-app": "^5.0.8",

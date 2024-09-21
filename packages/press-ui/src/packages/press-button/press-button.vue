@@ -1,6 +1,5 @@
 <template>
   <!-- #ifdef VUE3 -->
-  <!-- #ifdef MP -->
   <button
     :id="id"
     :data-detail="dataset"
@@ -29,9 +28,8 @@
     @chooseavatar="onChooseAvatar"
   >
     <!-- #endif -->
-    <!-- #endif -->
 
-    <!-- #ifdef VUE2 || H5 || APP || APP-PLUS -->
+    <!-- #ifdef VUE2 -->
     <Button
       :id="id"
       :data-detail="dataset"
@@ -92,13 +90,11 @@
           <slot />
         </div>
       </template>
-    <!-- #ifdef VUE2 || H5 || APP || APP-PLUS -->
+    <!-- #ifdef VUE2 -->
     </Button>
     <!-- #endif -->
     <!-- #ifdef VUE3 -->
-    <!-- #ifdef MP -->
   </button>
-  <!-- #endif -->
   <!-- #endif -->
 </template>
 <script>

@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "2.1.21",
+  "version": "2.1.22",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "main": "index.js",
   "repository": {

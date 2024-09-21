@@ -1,19 +1,19 @@
 const path = require('path');
 
-const { DispatchScriptPlugin } = require('@tencent/webpack-plugin-dispatch-script')
-const { DispatchVuePlugin } = require('@tencent/webpack-plugin-dispatch-vue')
-const { ReplaceContentPlugin } = require('@tencent/webpack-plugin-replace-content')
+const { DispatchScriptPlugin } = require('@plugin-light/webpack-plugin-dispatch-script')
+const { DispatchVuePlugin } = require('@plugin-light/webpack-plugin-dispatch-vue')
+const { ReplaceContentPlugin } = require('@plugin-light/webpack-plugin-replace-content')
 
-const { RemToRpxPlugin } = require('@tencent/webpack-plugin-rem-to-rpx')
-const { FixNpmPackagePlugin } = require('@tencent/webpack-plugin-fix-npm-package')
-const { GenVersionMpPlugin, GenVersionWebPlugin } = require('@tencent/webpack-plugin-gen-version')
+const { RemToRpxPlugin } = require('@plugin-light/webpack-plugin-rem-to-rpx')
+const { FixNpmPackagePlugin } = require('@plugin-light/webpack-plugin-fix-npm-package')
+const { GenVersionMpPlugin, GenVersionWebPlugin } = require('@plugin-light/webpack-plugin-gen-version')
 
 const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
-const { LOADER: crossGameStyle } = require('@tencent/webpack-loader-cross-game-style')
-const { LOADER: injectDynamicStyleMp } = require('@tencent/webpack-loader-inject-dynamic-style-mp')
-const { LOADER: injectDynamicStyleWeb } = require('@tencent/webpack-loader-inject-dynamic-style-web')
-const { LOADER: vLazy } = require('@tencent/webpack-loader-v-lazy')
-const { LOADER: vueDirective } = require('@tencent/webpack-loader-vue-directive')
+const { LOADER: crossGameStyle } = require('@plugin-light/webpack-loader-cross-game-style')
+const { LOADER: injectDynamicStyleMp } = require('@plugin-light/webpack-loader-inject-dynamic-style-mp')
+const { LOADER: injectDynamicStyleWeb } = require('@plugin-light/webpack-loader-inject-dynamic-style-web')
+const { LOADER: vLazy } = require('@plugin-light/webpack-loader-v-lazy')
+const { LOADER: vueDirective } = require('@plugin-light/webpack-loader-vue-directive')
 
 
 const LOADER_MAP = {
