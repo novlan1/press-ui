@@ -90,7 +90,7 @@ function generateIndexScss() {
       return str;
     }));
   }
-
+  
   const resultStr = `${CSS_BASE}${result.join('\n')}`;
 
   fs.writeFileSync(SCSS_PATH, resultStr, {
@@ -110,13 +110,16 @@ function sortByStr(list, key) {
   list.sort((a, b) => {
     const valueA = key ? a[key] : a;
     const valueB = key ? b[key] : b;
-    if (valueA > valueB) {
-      return 1;
-    }
-    if (valueA < valueB) {
-      return -1;
-    }
-    return 0;
+    return valueA.localeCompare(valueB);
+
+
+    // if (valueA - valueB > 0) {
+    //   return 1;
+    // }
+    // if (valueA - valueB < 0) {
+    //   return -1;
+    // }
+    // return 0;
   });
 }
 
