@@ -11,7 +11,16 @@ export function getRouteQuery() {
 export const $route = Object.defineProperties({}, {
   query: {
     get() {
-      return getRouteQuery();
+      const result = getRouteQuery() || {};
+
+      return Object.keys(result).reduce((acc ,item) => {
+        const newVal = decodeURIComponent(result[item])
+
+        return {
+          ...acc,
+          [item]: newVal,
+        }
+      }, {})
     },
   },
   params: {

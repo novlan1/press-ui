@@ -1,5 +1,46 @@
 # 更新日志
 
+### [2.1.21](https://github.com/novlan1/press-ui/compare/v2.1.20...v2.1.21) (2024-09-12)
+
+
+### Features 🎉
+
+* **picker-plus:** resetColumn增加value参数 ([6846e3a](https://github.com/novlan1/press-ui/commit/6846e3ad471e68e01f6c1241897e5fc086e8e870))
+
+### [2.1.20](https://github.com/novlan1/press-ui/compare/v2.1.19...v2.1.20) (2024-09-12)
+
+
+### Features 🎉
+
+* **picker-plus:** 增加reset方法 ([44759f8](https://github.com/novlan1/press-ui/commit/44759f8c8c8757a395a250a23ed670129ec75bc4))
+
+### [2.1.19](https://github.com/novlan1/press-ui/compare/v2.1.18...v2.1.19) (2024-09-11)
+
+
+### Chore 🚀 
+
+* update dialog plus types ([8b0c274](https://github.com/novlan1/press-ui/commit/8b0c274f6aaeb37b863e8f71cd5a976798576661))
+
+### [2.1.18](https://github.com/novlan1/press-ui/compare/v2.1.17...v2.1.18) (2024-09-09)
+
+
+### Features 🎉
+
+* update vue3 route query ([8309d7f](https://github.com/novlan1/press-ui/commit/8309d7fc63c31e57db5916cde0b3f6f225506640))
+
+### [2.1.17](https://github.com/novlan1/press-ui/compare/v2.1.16...v2.1.17) (2024-09-08)
+
+
+### Code Refactoring ♻️
+
+* **rpx:** use px replace rpx ([0f46f6b](https://github.com/novlan1/press-ui/commit/0f46f6ba6f102488db38a69474d002718fd930bf))
+* use es module of t-comm ([143b2bc](https://github.com/novlan1/press-ui/commit/143b2bc022e38e5c739cc892880006ed5489b293))
+
+
+### Chore 🚀 
+
+* update demo ([9b627b3](https://github.com/novlan1/press-ui/commit/9b627b34e1d13404ce996122452f7b924b72f5e2))
+
 ### [2.1.16](https://github.com/novlan1/press-ui/compare/v2.1.15...v2.1.16) (2024-09-03)
 
 

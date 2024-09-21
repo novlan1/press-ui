@@ -251,6 +251,16 @@ export default {
       const stack = indexes.map((optionIndex, columnIndex) => this.setColumnIndex(columnIndex, optionIndex));
       return Promise.all(stack);
     },
+    /**
+     * 给外部暴露重置方法
+     */
+    resetColumn(index, value = 0) {
+      const column = this.getColumn(index);
+      if (column == null) {
+        return Promise.reject(new Error('setColumnValue: 对应列不存在'));
+      }
+      column.setIndex(value);
+    },
   },
 };
 </script>
