@@ -1,4 +1,4 @@
-const { getStyleList } = require('plugin-light-shared');
+const { getStyleList } = require('@plugin-light/shared');
 
 const fs = require('fs');
 const path = require('path');
