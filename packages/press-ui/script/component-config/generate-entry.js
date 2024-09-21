@@ -80,6 +80,8 @@ function generateIndexScss() {
     const globMatch = `${comp.dir}/css/*`;
     const list = glob.sync(globMatch);
 
+    sortByStr(list);
+
     result.push(...list.map((item) => {
       let relativePath = path.relative(targetDir, item);
       if (process.platform === 'win32') {
@@ -90,7 +92,7 @@ function generateIndexScss() {
       return str;
     }));
   }
-  
+
   const resultStr = `${CSS_BASE}${result.join('\n')}`;
 
   fs.writeFileSync(SCSS_PATH, resultStr, {
