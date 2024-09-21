@@ -54,6 +54,10 @@ function getAllPressComponents() {
   const componentNameList = compList.map(item => item.componentName);
   const importList = compList.map(item => `import ${item.componentName} from './packages/press-${item.name}/press-${item.name}.vue';`);
 
+  sortByStr(compList, 'name');
+  sortByStr(importList);
+  sortByStr(componentNameList);
+
   return {
     compList,
     importList,
@@ -102,18 +106,19 @@ function getComponentPath(component) {
   return SPECIAL_COMPONENT_MAP[component] || component;
 }
 
-function sortByStr(list) {
+function sortByStr(list, key) {
   list.sort((a, b) => {
-    if (a > b) {
+    const valueA = key ? a[key] : a;
+    const valueB = key ? b[key] : b;
+    if (valueA > valueB) {
       return 1;
     }
-    if (a < b) {
+    if (valueA < valueB) {
       return -1;
     }
     return 0;
   });
 }
-
 
 function getCompList(componentConfig) {
   const importList = [];
