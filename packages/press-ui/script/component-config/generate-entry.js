@@ -102,6 +102,19 @@ function getComponentPath(component) {
   return SPECIAL_COMPONENT_MAP[component] || component;
 }
 
+function sortByStr(list) {
+  list.sort((a, b) => {
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
+    return 0;
+  });
+}
+
+
 function getCompList(componentConfig) {
   const importList = [];
   const componentNameList = [];
@@ -121,6 +134,9 @@ function getCompList(componentConfig) {
         componentNameList.push(shortName);
       });
     });
+  sortByStr(importList);
+  sortByStr(componentNameList);
+
   return {
     importList,
     componentNameList,
