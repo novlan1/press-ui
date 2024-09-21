@@ -1,17 +1,28 @@
 const path = require('path');
-const {
-  RemToRpxPlugin,
-  GenVersionMpPlugin,
-  GenVersionWebPlugin,
-  DispatchVuePlugin,
-  ReplaceContentPlugin,
-  DispatchScriptPlugin,
-  FixNpmPackagePlugin,
-} = require('plugin-light/lib/plugin');
+
+const { DispatchScriptPlugin } = require('@tencent/webpack-plugin-dispatch-script')
+const { DispatchVuePlugin } = require('@tencent/webpack-plugin-dispatch-vue')
+const { ReplaceContentPlugin } = require('@tencent/webpack-plugin-replace-content')
+
+const { RemToRpxPlugin } = require('@tencent/webpack-plugin-rem-to-rpx')
+const { FixNpmPackagePlugin } = require('@tencent/webpack-plugin-fix-npm-package')
+const { GenVersionMpPlugin, GenVersionWebPlugin } = require('@tencent/webpack-plugin-gen-version')
+
 const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
-const { LOADER_MAP } = require('plugin-light/lib/loader');
+const { LOADER: crossGameStyle } = require('@tencent/webpack-loader-cross-game-style')
+const { LOADER: injectDynamicStyleMp } = require('@tencent/webpack-loader-inject-dynamic-style-mp')
+const { LOADER: injectDynamicStyleWeb } = require('@tencent/webpack-loader-inject-dynamic-style-web')
+const { LOADER: vLazy } = require('@tencent/webpack-loader-v-lazy')
+const { LOADER: vueDirective } = require('@tencent/webpack-loader-vue-directive')
 
 
+const LOADER_MAP = {
+  crossGameStyle,
+  injectDynamicStyleMp,
+  injectDynamicStyleWeb,
+  vLazy,
+  vueDirective,
+}
 const plugins = [];
 
 if (process.env.UNI_PLATFORM !== 'h5') {
