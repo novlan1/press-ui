@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { requestAnimationFrame } from '../common/utils/system';
 import { isObj } from '../common/utils/validator';
 const getClassNames = (name, _this) => {
@@ -73,12 +72,19 @@ export function transition(showDefaultValue) {
         }
         value ? this.enter() : this.leave();
       },
+      callback(status) {
+        if (typeof this[`${status}Callback`] === 'function') {
+          this[`${status}Callback`]();
+        }
+      },
       enter() {
         const { duration, dataName } = this;
         const classNames = getClassNames(dataName, this);
         const currentDuration = isObj(duration) ? duration.enter : duration;
         this.status = 'enter';
         this.$emit('before-enter');
+        this.callback('beforeEnter');
+
 
         requestAnimationFrame(() => {
           if (this.status !== 'enter') {
@@ -92,6 +98,7 @@ export function transition(showDefaultValue) {
             classes: classNames.enter,
             currentDuration,
           });
+          this.callback('enter');
 
           requestAnimationFrame(() => {
             if (this.status !== 'enter') {
@@ -111,6 +118,7 @@ export function transition(showDefaultValue) {
         const currentDuration = isObj(duration) ? duration.leave : duration;
         this.status = 'leave';
         this.$emit('before-leave');
+        this.callback('beforeLeave');
 
         requestAnimationFrame(() => {
           if (this.status !== 'leave') {
@@ -121,6 +129,9 @@ export function transition(showDefaultValue) {
             classes: classNames.leave,
             currentDuration,
           });
+          this.callback('leave');
+
+
           requestAnimationFrame(() => {
             if (this.status !== 'leave') {
               return;
@@ -135,8 +146,11 @@ export function transition(showDefaultValue) {
         if (this.transitionEnded) {
           return;
         }
+
         this.transitionEnded = true;
         this.$emit(`after-${this.status}`);
+        this.callback(this.status === 'enter' ? 'afterEnter' : 'afterLeave');
+
         const { show, display } = this;
         if (!show && display) {
           this.setData({ display: false });

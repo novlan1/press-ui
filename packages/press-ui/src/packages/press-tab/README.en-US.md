@@ -78,7 +78,7 @@ When there are more than 5 tabs, Tab can scroll horizontally.
 Labels can be disabled by setting the `disabled` property. If you need to listen to the click event of the disabled tab, you can listen to the `disabled` event on `press-tabs`.
 
 ```html
-<press-tabs bind:disabled="onClickDisabled">
+<press-tabs @disabled="onClickDisabled">
    <press-tab title="Label 1">Content 1</press-tab>
    <press-tab title="Label 2" disabled>Content 2</press-tab>
    <press-tab title="Label 3">Content 3</press-tab>
@@ -103,7 +103,7 @@ Labels can be disabled by setting the `disabled` property. If you need to listen
 The `click` event can be bound to `press-tabs`, and the title and identifier of the clicked tab can be obtained in `event.detail` of the callback parameter.
 
 ```html
-<press-tabs bind:click="onClick">
+<press-tabs @click="onClick">
    <press-tab title="Label 1">Content 1</press-tab>
    <press-tab title="Label 2">Content 2</press-tab>
 </press-tabs>
@@ -217,12 +217,12 @@ This scenario can be circumvented by using `wx:if` to manually control the rende
 
 ### Tabs Event
 
-| Event Name    | Description                                     | Parameters                                                                                 |
-| ------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| bind:click    | Triggered when a label is clicked               | name: label identifier, title: title                                                       |
-| bind:change   | Triggered when the currently active tab changes | name: tab identifier, title: title                                                         |
-| bind:disabled | Triggered when a disabled label is clicked      | name: label identifier, title: title                                                       |
-| bind:scroll   | Triggered when scrolling                        | { scrollTop: the distance from the top position, isFixed: whether it is fixed to the top } |
+| Event Name | Description                                     | Parameters                                                                                 |
+| ---------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| click      | Triggered when a label is clicked               | name: label identifier, title: title                                                       |
+| change     | Triggered when the currently active tab changes | name: tab identifier, title: title                                                         |
+| disabled   | Triggered when a disabled label is clicked      | name: label identifier, title: title                                                       |
+| scroll     | Triggered when scrolling                        | { scrollTop: the distance from the top position, isFixed: whether it is fixed to the top } |
 
 ### External style classes
 

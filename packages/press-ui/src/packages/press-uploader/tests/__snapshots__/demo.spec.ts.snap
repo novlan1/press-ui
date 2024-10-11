@@ -150,7 +150,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-upload">
       <div class="press-upload__wrap">
         <div>
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_799718017ac81b11c0.png" mode="widthFix" style="width: 250px; height: 150px;"></image>
+          <!---->
         </div>
       </div>
     </div>

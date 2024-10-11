@@ -121,7 +121,7 @@ export default {
 
 | Event Name | Description            | Callback Parameters |
 | ---------- | ---------------------- | ------------------- |
-| bind:click | Triggered when clicked | -                   |
+| click      | Triggered when clicked | -                   |
 
 ### Slots
 

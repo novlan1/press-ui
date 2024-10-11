@@ -43,7 +43,14 @@
             ]"
             @click="onClickItem"
           >
-            {{ computed.optionText(option, valueKey) }}
+            <div
+              v-if="computed.optionTextHtml(option)"
+              class="press-picker-column__item-html"
+              v-html="computed.optionTextHtml(option)"
+            />
+            <template v-else>
+              {{ computed.optionText(option, valueKey) }}
+            </template>
           </div>
         </div>
       <!-- #ifndef MP-ALIPAY -->

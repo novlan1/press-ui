@@ -68,12 +68,12 @@ exports[`renders demo correctly 1`] = `
       <div class="press-empty__description">
         描述文字
       </div>
-      <div class="press-empty__bottom"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class="bottom-button press-button press-button--danger press-button--normal press-button--round ">
-          <!---->
-          <div class="press-button__text">
+      <div class="press-empty__bottom"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class="bottom-button press-button press-button--danger press-button--normal press-button--round "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class="bottom-button press-button press-button--danger press-button--normal press-button--round ">
+            <!---->
+            <div class="press-button__text">
 
-          </div>
-        </button></div>
+            </div>
+          </button></button></div>
     </div>
   </div>
   <div>

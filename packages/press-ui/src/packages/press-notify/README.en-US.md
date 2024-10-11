@@ -92,9 +92,9 @@ Notify({
 | top              | top distance                                                                                         | _number_   | `0`              |
 | background       | background color                                                                                     | _string_   | -                |
 | context          | the selection range of the selector, you can pass in the this of the custom component as the context | _object_   | the current page |
-| onClick          | Callback function when clicked                                                                       | _Function_ | -                |
-| onOpened         | callback function after full display                                                                 | _Function_ | -                |
-| onClose          | Callback function when closing                                                                       | _Function_ | -                |
+| onClick          | Callback function when clicked                                                                       | _function_ | -                |
+| onOpened         | callback function after full display                                                                 | _function_ | -                |
+| onClose          | Callback function when closing                                                                       | _function_ | -                |
 | safeAreaInsetTop | Whether to leave a top safe distance (status bar height)                                             | _boolean_  | `false`          |
 
 ## Theme customization

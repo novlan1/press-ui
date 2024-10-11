@@ -70,7 +70,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: 'Press UI',
-      description: '易用、灵活、基于uni-app的跨端组件库',
+      description: '易用、灵活、基于 uni-app 的跨端组件库',
     },
     '/en/': {
       lang: 'en-US',

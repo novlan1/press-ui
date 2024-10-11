@@ -1,3 +1,4 @@
+// press-ui-vue3 的文档提花，目前已不用
 const glob = require('glob');
 const { readFileSync, writeFileSync } = require('t-comm');
 

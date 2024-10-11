@@ -81,6 +81,11 @@
           "path": "/components/press/press-code-input.md"
         },
         {
+          "title": "ColorPicker",
+          "subTitle": "颜色选择器",
+          "path": "/components/press/press-color-picker.md"
+        },
+        {
           "title": "DatetimePicker",
           "subTitle": "时间选择",
           "path": "/components/press/press-datetime-picker.md"
@@ -160,6 +165,11 @@
           "title": "DropdownMenu",
           "subTitle": "下拉菜单",
           "path": "/components/press/press-dropdown-menu.md"
+        },
+        {
+          "title": "Guide",
+          "subTitle": "引导",
+          "path": "/components/press/press-guide.md"
         },
         {
           "title": "LoadingPlus",

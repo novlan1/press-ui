@@ -167,3 +167,6 @@ const messageList = baseFormatMessageDetailList(list, myInfo, oppositeInfo, last
 
 另外，很多API需`ready`后才可执行，比如`getMessageList`、`sendMessage`、`updateMyProfile`，使用本工具后，会自动等待`ready`。
 
+### 4.2. Message Detail
+
+`Message Detail` 模块已迁移至 `Press Plus` 中，可批量替换 `press-ui/common/im/message-detail/*` 至  `press-plus/common/im/message-detail/*`。

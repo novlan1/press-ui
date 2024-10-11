@@ -104,9 +104,9 @@ Notify({
 | top              | 顶部距离                                               | _number_   | `0`            |
 | background       | 背景颜色                                               | _string_   | -              |
 | context          | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_   | 当前页面       |
-| onClick          | 点击时的回调函数                                       | _Function_ | -              |
-| onOpened         | 完全展示后的回调函数                                   | _Function_ | -              |
-| onClose          | 关闭时的回调函数                                       | _Function_ | -              |
+| onClick          | 点击时的回调函数                                       | _function_ | -              |
+| onOpened         | 完全展示后的回调函数                                   | _function_ | -              |
+| onClose          | 关闭时的回调函数                                       | _function_ | -              |
 | safeAreaInsetTop | 是否留出顶部安全距离（状态栏高度）                     | _boolean_  | `false`        |
 
 

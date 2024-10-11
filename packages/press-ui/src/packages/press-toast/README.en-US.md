@@ -115,7 +115,7 @@ Toast({
 | duration    | display duration (ms), when the value is 0, the toast will not disappear                             | _number_   | `2000`           |
 | selector    | custom selector                                                                                      | _string_   | `press-toast`    |
 | context     | the selection range of the selector, you can pass in the this of the custom component as the context | _object_   | the current page |
-| onClose     | Callback function when closing                                                                       | _Function_ | -                |
+| onClose     | Callback function when closing                                                                       | _function_ | -                |
 
 ### Slot
 

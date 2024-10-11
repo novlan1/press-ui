@@ -193,7 +193,9 @@ export default {
 | maxlength               | 最大输入长度，设置为 -1 的时候不限制最大长度                                                                | _number_            | `-1`    |
 | placeholder             | 输入框为空时占位符                                                                                          | _string_            | -       |
 | placeholder-style       | 指定 placeholder 的样式                                                                                     | _string_            | -       |
-| custom-style            | 自定义样式                                                                                                  | _string_            | -       |
+| custom-class            | 自定义类名，会加在组件最外层                                                                                | _string_            | -       |
+| custom-style            | 自定义样式，作用于 cell                                                                                     | _string_            | -       |
+| wrapper-style           | 自定义样式，作用于组件最外层                                                                                | _string_            | -       |
 | is-link                 | 是否展示右侧箭头并开启点击反馈                                                                              | _boolean_           | `false` |
 | arrow-direction         | 箭头方向，可选值为 `left` `up` `down`                                                                       | _string_            | -       |
 | show-word-limit         | 是否显示字数统计，需要设置`maxlength`属性                                                                   | _boolean_           | `false` |

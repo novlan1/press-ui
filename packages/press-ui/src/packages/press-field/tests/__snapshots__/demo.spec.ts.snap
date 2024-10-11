@@ -150,7 +150,7 @@ exports[`renders demo correctly 1`] = `
         </div>
         <div class="press-cell__value">
           <div class="press-field__body press-field__body--text">
-            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" disabled="disabled" maxlength="-1" placeholder="输入框已禁用" placeholder-style="" placeholder-class="press-field__placeholder" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control press-field__control--disabled">
+            <div class="press-field__control press-field__control--custom"></div> <input type="text" cursor="-1" disabled="disabled" maxlength="-1" placeholder="输入框已禁用" placeholder-style="" placeholder-class="press-field__placeholder press-field__placeholder--disabled" confirm-type="" cursor-spacing="50" adjust-position="true" selection-end="-1" selection-start="-1" always-embed="true" class="press-field__control press-field__control--disabled">
             <!---->
             <div class="press-field__icon-container">
               <!---->
@@ -329,12 +329,12 @@ exports[`renders demo correctly 1`] = `
             <div class="press-field__icon-container">
               <!---->
             </div>
-            <div class="press-field__button"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small ">
-                <!---->
-                <div class="press-button__text">
-                  发送号码
-                </div>
-              </button></div>
+            <div class="press-field__button"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small ">
+                  <!---->
+                  <div class="press-button__text">
+                    发送号码
+                  </div>
+                </button></button></div>
           </div>
           <!---->
           <!---->

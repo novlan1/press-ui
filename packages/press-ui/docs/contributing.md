@@ -1,4 +1,5 @@
 # 贡献指南
+<!-- 复制到 docs 时，去掉 [TOC] 即可 -->
 
 ## 1. 目录结构
 
@@ -179,9 +180,9 @@ npm run act:replace:class
 
 一开始就尽量把组件设计好，坚持高标准，避免后面返工。
 
-### 4.3. Javascript 优先
+### 4.3. 脚本 优先
 
-`js`比`html`灵活，能写在`js`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js`都能够很方便的复用，但是组件就不行。
+`js/ts`比`html`灵活，能写在`js/ts`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js/ts`都能够很方便的复用，但是组件就不行。
 
 ### 4.4. 项目依赖关系
 
@@ -212,3 +213,14 @@ Press UI 在编写跨端代码的时候，采用以下原则：
 1. 函数式调用组件的时候，可以动态创建 Dom，无需预埋组件
 2. `popover-plus` 点击空白处会收起，即 `clickOutSide`
 3. `list` 支持自动检测外层 `scroller`，即支持任意父级的滚动
+
+### 4.7. i18n 实现
+
+有几个核心函数：
+
+- `setLang`，设置语言，包括初次设置和切换语言。如果携带了额外的语言包，则会调用 `local.use` 或者 `local.add` 进行注入
+- `initDemoI18n`，示例工程混入。包括 `onReady` 时，根据当前组件名称设置 `navigationBarTitle`，以及提供 `t` 方法，`t` 方法会优先从 `this.$options.i18n` 中取词汇表，否则调用 `locale/index` 中的 `t` 方法
+- `getLocale`，获取当前语言。如果是 `iframe` 内，则从 `location.href` 中获取，否则从 `storage` 中获取
+- `toggleI18n`，切换语言。会先通过 `storage` 注入新的语言标识。H5下会执行 `location.reload`，非 H5 下，会调用 `setLang` 和 `uni.reLaunch`
+
+`App.vue` 中会执行 `setLang`，进行示例工程所有语言包的注入，并进行缓存。切换语言时，也会调用 `setLang` 无需传入语言包。

@@ -7,8 +7,8 @@ export declare function getHideBaseStyleMixin(): {
   };
   watch: {
     hideBaseStyle: {
-      handler(value: boolean): void;
       immediate: boolean;
+      handler(value: boolean): void;
     };
   };
 };

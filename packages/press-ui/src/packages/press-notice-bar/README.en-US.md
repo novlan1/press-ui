@@ -102,8 +102,8 @@ Use the `speed` property to control the scrolling rate.
 
 | Event Name | Description                                    | Parameters     |
 | ---------- | ---------------------------------------------- | -------------- |
-| bind:click | triggered when the notification bar is clicked | _event: Event_ |
-| bind:close | Triggered when the notification bar is closed  | _event: Event_ |
+| click      | triggered when the notification bar is clicked | _event: Event_ |
+| close      | Triggered when the notification bar is closed  | _event: Event_ |
 
 ### Slot
 

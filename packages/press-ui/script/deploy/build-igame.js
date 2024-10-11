@@ -32,10 +32,6 @@ function main() {
       stdio: 'inherit',
     });
   } else if (appDir === 'project/press-ui-demo') {
-    // execSync(' echo VUE_APP_DIR = project/press-ui-demo > .env.local', {
-    //   stdio: 'inherit',
-    // });
-
     updateManifest(PUBLIC_PATH_MAP.IGAME);
     execSync('npm run init && npm run build', {
       stdio: 'inherit',

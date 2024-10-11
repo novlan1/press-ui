@@ -261,7 +261,7 @@ export default {
 | arrow-icon             | _boolean_                            | `false`       | Whether to display as a back arrow                                                          |
 | horizontal             | _boolean_                            | `false`       | Whether to switch the horizontal panel style                                                |
 | width-number           | _number_                             | `100`         | Horizontal popup window width percentage                                                    |
-| validate-confirm       | _Function_                           | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
+| validate-confirm       | _function_                           | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
 | mode                   | _string_                             | -             | pass `functional` when calling a function                                                   |
 | disabledButton         | _boolean_                            | `false`       | button disabled                                                                             |
 | lock-scroll            | Whether to lock background scrolling | _boolean_     | `true`                                                                                      |

@@ -59,12 +59,12 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-    </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin: 8px 0px 8px 0px;">
-      <!---->
-      <div class="press-button__text">
-        下一步
-      </div>
-    </button>
+    </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin: 8px 0px 8px 0px;"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin: 8px 0px 8px 0px;">
+        <!---->
+        <div class="press-button__text">
+          下一步
+        </div>
+      </button></button>
   </div>
   <div>
     <div class="press-steps-index">

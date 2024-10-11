@@ -8,12 +8,6 @@ export declare const functionalMixin: (allProps: Record<string, any>, { showProp
       default: string;
     };
   };
-  data(): {
-    innerShow: boolean;
-    functionModeData: {
-      [x: string]: any;
-    };
-  };
   computed: {
     isFunctionMode(): boolean;
   };
@@ -25,5 +19,11 @@ export declare const functionalMixin: (allProps: Record<string, any>, { showProp
     showDialog(options?: Record<string, any>): void;
     getPropOrData(key: string): Record<string, any> | undefined;
     promiseCallback(type: 'confirm' | 'cancel', options?: {}): void;
+  };
+  data(): {
+    innerShow: boolean;
+    functionModeData: {
+      [x: string]: any;
+    };
   };
 };

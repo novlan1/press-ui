@@ -9,7 +9,6 @@ import {
   LOCALE_STORAGE_KEY,
   DEFAULT_LOCALE_NUMBER,
   LOCALE_NUMBER_MAP,
-  NO_I18N_TITLE_LIST,
 } from './config';
 
 const DEFAULT_LANG = 'zh-CN';
@@ -77,10 +76,6 @@ export function setLang(force = false, localeMap = {}) {
 function getPage() {
   const pages = getCurrentPages();
   const path = pages[pages.length - 1].route || '';
-
-  if (NO_I18N_TITLE_LIST.includes(path)) {
-    return;
-  }
 
   // const { path } = this.$route;
   const list = path.split('/');

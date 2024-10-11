@@ -67,6 +67,10 @@
           "path": "/en/components/press/press-code-input.md"
         },
         {
+          "title": "ColorPicker",
+          "path": "/en/components/press/press-color-picker.md"
+        },
+        {
           "title": "DatetimePicker",
           "path": "/en/components/press/press-datetime-picker.md"
         },
@@ -131,6 +135,10 @@
         {
           "title": "DropdownMenu",
           "path": "/en/components/press/press-dropdown-menu.md"
+        },
+        {
+          "title": "Guide",
+          "path": "/en/components/press/press-guide.md"
         },
         {
           "title": "LoadingPlus",

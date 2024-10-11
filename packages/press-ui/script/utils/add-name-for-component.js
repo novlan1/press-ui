@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { traverseFolder, camelize, capitalize, addNameForComponent } = require('t-comm');
+const { traverseFolder, pascalCase, addNameForComponent } = require('t-comm');
 
 const dir = 'src/packages';
 
@@ -24,7 +24,7 @@ function main() {
 
 function addName(file, basename) {
   const fileName = basename.replace('.vue', '');
-  const compName = capitalize(camelize(fileName));
+  const compName = pascalCase(fileName);
 
   addNameForComponent(file, compName);
 }

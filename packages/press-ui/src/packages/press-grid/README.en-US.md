@@ -160,7 +160,7 @@ After setting the `dot` attribute, a small red dot will be displayed in the uppe
 
 | Event Name | Description                        | Callback Parameters |
 | ---------- | ---------------------------------- | ------------------- |
-| bind:click | Triggered when the grid is clicked | -                   |
+| click      | Triggered when the grid is clicked | -                   |
 
 ### GridItem Slots
 

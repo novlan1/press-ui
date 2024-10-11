@@ -128,7 +128,7 @@ Toast({
 | duration    | 展示时长(ms)，值为 0 时，toast 不会消失                | _number_   | `2000`        |
 | selector    | 自定义选择器                                           | _string_   | `press-toast` |
 | context     | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_   | 当前页面      |
-| onClose     | 关闭时的回调函数                                       | _Function_ | -             |
+| onClose     | 关闭时的回调函数                                       | _function_ | -             |
 
 ### Slot
 

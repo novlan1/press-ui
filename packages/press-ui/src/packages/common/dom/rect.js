@@ -71,26 +71,38 @@ export function getScrollHeight(context, id) {
   });
 }
 
-export function getRect(context, selector) {
+export function getRect(context, selector, searchBody = false) {
   return new Promise((resolve) => {
     // #ifdef H5
-    const el = context.$el;
-    if (el) {
-      const child =  el.querySelector(selector);
-      if (!child) {
-        resolve({});
-      }
+    const el = context?.$el;
+    let child = el?.querySelector(selector);
+
+    if (!child && searchBody) {
+      child = document.querySelector(selector);
+    }
+
+    if (child) {
       const rect = child.getBoundingClientRect();
       resolve(rect);
-      return;
+    } else {
+      resolve({});
     }
     // #endif
 
-    uni.createSelectorQuery()
-      .in(context)
-      .select(selector)
-      .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
+    // #ifndef H5
+    if (context) {
+      uni.createSelectorQuery()
+        .in(context)
+        .select(selector)
+        .boundingClientRect()
+        .exec((rect = []) => resolve(rect[0]));
+    } else {
+      uni.createSelectorQuery()
+        .select(selector)
+        .boundingClientRect()
+        .exec((rect = []) => resolve(rect[0]));
+    }
+    // #endif
   });
 }
 

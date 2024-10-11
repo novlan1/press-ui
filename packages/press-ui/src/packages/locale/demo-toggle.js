@@ -17,13 +17,14 @@ export function toggleI18n(onGTip) {
 
   // #ifdef H5
   onGTip('正在切换语言');
-
-  window.location.reload();
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
   // #endif
 
   // #ifndef H5
   uni.showModal({
-    title: '重新打开后生效',
+    title: '提示',
     content: `语言即将切换为 ${LOCALE_NUMBER_MAP[newNumber]}`,
     showCancel: false,
     success(res) {

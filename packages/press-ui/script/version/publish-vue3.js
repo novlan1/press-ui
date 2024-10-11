@@ -1,3 +1,4 @@
+// press-ui-vue3 发布，目前已不用
 const path = require('path');
 const { writeFileSync, readFileSync, execCommand } = require('t-comm');
 

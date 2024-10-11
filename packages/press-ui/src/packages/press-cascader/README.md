@@ -4,6 +4,9 @@ url : pages/press/cascader/cascader
 
 ## Cascader 级联选择
 
+级联选择器适用于有清晰层级结构的数据集合，用户可以通过逐级查看并选择。
+
+组件实现参考了 [TDesign](https://tdesign.tencent.com/miniprogram/components/cascader)。
 
 ## 引入
 

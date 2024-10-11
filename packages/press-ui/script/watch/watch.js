@@ -1,3 +1,4 @@
+// 用于 press-ui-demo-vue2 等工程的开发监听
 const path = require('path');
 const gulp = require('gulp');
 const { execCommand } = require('t-comm');

@@ -10,6 +10,11 @@ function optionText(option, valueKey) {
   return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
 }
 
+
+function optionTextHtml(option) {
+  return isObj(option) && option.html;
+}
+
 function rootStyle(data) {
   return style({
     height: addUnit(data.itemHeight * data.visibleItemCount),
@@ -28,6 +33,7 @@ function wrapperStyle(data) {
 
 export default {
   optionText,
+  optionTextHtml,
   rootStyle,
   wrapperStyle,
 };

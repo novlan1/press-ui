@@ -66,7 +66,7 @@ function getAllPages() {
 
   return pages;
 }
-const detail = 'Press UI 是一套易用的、灵活的、基于 uni-app 的组件库';
+const detail = 'Press UI 是一套易用、灵活、基于 uni-app 的组件库';
 
 
 export default {

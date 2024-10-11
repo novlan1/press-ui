@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap demo-wrap--gray">
   <div class="barcode-wrap">
-    <div class="press-q-r-code"><img src=""> <canvas id="pressWxQRcode" type="2d" style="width: 200px; height: 200px;"></canvas> <canvas id="pressQRcode" canvas-id="pressQRcode" style="width: 200px; height: 200px;"></canvas>
+    <div class="press-q-r-code"><img src=""> <canvas id="pressWxQRcode" type="2d" style="width: 50px; height: 50px;"></canvas> <canvas id="pressQRcode" canvas-id="pressQRcode" style="width: 50px; height: 50px;"></canvas>
       <!---->
     </div>
   </div>
@@ -39,17 +39,17 @@ exports[`renders demo correctly 1`] = `
               </div>
             </div>
           </div>
-          <div class="input__buttons"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--small " style="margin-left: 0px; margin-right: 8px;">
-              <!---->
-              <div class="press-button__text">
-                清空
-              </div>
-            </button> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small " style="margin: 0px;">
-              <!---->
-              <div class="press-button__text">
-                确定
-              </div>
-            </button></div>
+          <div class="input__buttons"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--small " style="margin-left: 0px; margin-right: 8px;"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--small " style="margin-left: 0px; margin-right: 8px;">
+                <!---->
+                <div class="press-button__text">
+                  清空
+                </div>
+              </button></button> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small " style="margin: 0px;"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--small " style="margin: 0px;">
+                <!---->
+                <div class="press-button__text">
+                  确定
+                </div>
+              </button></button></div>
         </div>
       </div>
     </div>

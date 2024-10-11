@@ -23,11 +23,7 @@
       "miniprogram-api-typings",
       "jest"
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
+    "paths": {},
     "lib": [
       "esnext",
       "dom",

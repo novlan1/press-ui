@@ -5,7 +5,7 @@ const JEST_FILE_MOCK_FILE = path.resolve(__dirname, 'jest.file-mock.ts');
 module.exports = {
   preset: 'ts-jest',
   rootDir: path.resolve(__dirname, './'),
-  moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx'],
+  moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx', 'mjs'],
   moduleNameMapper: {
     '\\.(css|less|scss)$': JEST_STYLE_MOCK_FILE,
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': JEST_FILE_MOCK_FILE,

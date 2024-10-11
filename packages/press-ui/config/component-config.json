@@ -66,6 +66,10 @@
         "title": "验证码输入"
       },
       {
+        "name": "ColorPicker",
+        "title": "颜色选择器"
+      },
+      {
         "name": "DatetimePicker",
         "title": "时间选择"
       },
@@ -130,6 +134,10 @@
       {
         "name": "DropdownMenu",
         "title": "下拉菜单"
+      },
+      {
+        "name": "Guide",
+        "title": "引导"
       },
       {
         "name": "LoadingPlus",

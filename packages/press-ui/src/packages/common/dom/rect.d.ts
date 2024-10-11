@@ -6,5 +6,5 @@ export declare function getWindowWidth(): {
 };
 export declare function getStatusBarHeight(): any;
 export declare function getScrollHeight(context: any, id: string): any;
-export declare function getRect(context: any, selector: string): any;
+export declare function getRect(context: any, selector: string, searchBody?: boolean): any;
 export declare function getAllRect(context: any, selector: string): Promise<unknown>;

@@ -65,6 +65,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/color-picker/color-picker",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/datetime-picker/datetime-picker",
           "navigationStyle": ""
         },
@@ -127,6 +131,10 @@
         },
         {
           "url": "/press/dropdown-menu/dropdown-menu",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/guide/guide",
           "navigationStyle": ""
         },
         {

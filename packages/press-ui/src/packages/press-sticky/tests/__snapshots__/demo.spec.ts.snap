@@ -50,11 +50,11 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
     </div>
-  </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="position: relative; margin: 10px; padding: 0px;">
-    <!---->
-    <div class="press-button__text">
-      隐藏头部
-    </div>
-  </button>
+  </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="position: relative; margin: 10px; padding: 0px;"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="position: relative; margin: 10px; padding: 0px;">
+      <!---->
+      <div class="press-button__text">
+        隐藏头部
+      </div>
+    </button></button>
 </div>
 `;

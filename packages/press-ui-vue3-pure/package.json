@@ -55,7 +55,6 @@
     "jest": "^29.7.0",
     "mini-css-extract-plugin": "^0.4.5",
     "miniprogram-api-typings": "^3.12.2",
-    "plugin-light": "^1.2.0",
     "postcss-comment": "^2.0.0",
     "postcss-loader": "~3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",

@@ -171,6 +171,28 @@ export default {
 />
 ```
 
+### 支持 v-html
+
+如果 `option.html` 不为空，则会渲染 `option.html`。
+
+```js
+const tagHtml = `
+<div style="position: relative;width: 100%;height: 100%;display:flex; align-items:center;justify-content: center;">杭州
+ <span style="position: absolute; top: 0; left: calc(50% + 19px);color: #fff;font-size: 10px;background: rgba(83, 0, 195, 0.75);width: 26px; height: 13px;line-height: 13px;">常用</span>
+</div>
+`;
+
+const column3 = {
+  浙江: [
+    {
+      html: tagHtml,
+    },
+    '宁波', '温州', '嘉兴', '湖州',
+  ],
+  福建: ['福州', '厦门', '莆田', '三明', '泉州'],
+};
+```
+
 ### 结合 PopupPlus
 
 提供了简单的 `PopupPlus` 和 `PickerPlus` 的组合，供业务快速使用。

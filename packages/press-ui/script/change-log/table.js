@@ -1,27 +1,10 @@
+// 一次性任务，用于整理文档中 table 格式
 const fs = require('fs');
-// const { hyphenate } = require('t-comm/lib/base/string/string');
 
 const reg = /\|([^|]+)\|([^|]+)\|([^|]+)\|([^|]+)\|/g;
 
 
 const filePathList = [
-  // 'src/packages/press-dialog/README.md',
-  // 'src/packages/press-hor-match-index/README.md',
-  // 'src/packages/press-message-board/README.md',
-  // 'src/packages/press-message-detail/README.md',
-  // 'src/packages/press-message-list/README.md',
-  // 'src/packages/press-popup-cell/README.md',
-  // 'src/packages/press-schedule-tree/README.md',
-  // 'src/packages/press-schedule-list/README.md',
-  // 'src/packages/press-turntable/README.md',
-
-  // 'src/packages/press-act-tip-dialog/README.md',
-  // 'src/packages/press-icon/README.md',
-  // 'src/packages/press-loading/README.md',
-  // 'src/packages/press-pagination/README.md',
-  // 'src/packages/press-picker/README.md',
-  // 'src/packages/press-popover/README.md',
-  // 'src/packages/press-popup/README.md',
   'src/packages/press-swiper/README.md',
 ];
 

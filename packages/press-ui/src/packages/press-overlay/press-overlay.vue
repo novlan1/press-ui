@@ -7,8 +7,20 @@
       :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
+      :after-enter-callback="afterEnterCallback"
+      :after-leave-callback="afterLeaveCallback"
+      :enter-callback="enterCallback"
+      :leave-callback="leaveCallback"
+      :before-enter-callback="beforeEnterCallback"
+      :before-leave-callback="beforeLeaveCallback"
       @click="onClick"
       @touchmove.stop.prevent="noop"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
+      @enter="enter"
+      @leave="leave"
+      @before-enter="beforeEnter"
+      @before-leave="beforeLeave"
     >
       <slot />
     </press-transition>
@@ -20,7 +32,19 @@
       :custom-class="customClass"
       :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
       :duration="duration"
+      :after-enter-callback="afterEnterCallback"
+      :after-leave-callback="afterLeaveCallback"
+      :enter-callback="enterCallback"
+      :leave-callback="leaveCallback"
+      :before-enter-callback="beforeEnterCallback"
+      :before-leave-callback="beforeLeaveCallback"
       @click="onClick"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
+      @enter="enter"
+      @leave="leave"
+      @before-enter="beforeEnter"
+      @before-leave="beforeLeave"
     >
       <slot />
     </press-transition>
@@ -52,19 +76,67 @@ export default {
       type: Boolean,
       value: true,
     },
+    afterEnterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    afterLeaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    enterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    leaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    beforeEnterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    beforeLeaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
     ...defaultProps,
   },
-  emits: ['click'],
+  emits: [
+    'click',
+    'before-enter',
+    'enter',
+    'after-enter',
+    'before-leave',
+    'leave',
+    'after-leave',
+  ],
   options: {
-    // virtualHost: true,
     ...defaultOptions,
   },
   methods: {
     onClick() {
       this.$emit('click');
     },
-    // for prevent touchmove
     noop() { },
+    afterEnter() {
+      this.$emit('after-enter');
+    },
+    afterLeave() {
+      this.$emit('after-leave');
+    },
+    enter() {
+      this.$emit('enter');
+    },
+    leave() {
+      this.$emit('leave');
+    },
+    beforeEnter() {
+      this.$emit('before-enter');
+    },
+    beforeLeave() {
+      this.$emit('before-leave');
+    },
   },
 };
 </script>

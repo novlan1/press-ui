@@ -178,7 +178,11 @@ exports[`renders demo correctly 1`] = `
               <div class="press-picker-column" style="height: 264px;">
                 <div style="transition: transform 0ms; line-height: 44px; transform: translate3d(0, 110px, 0);">
                   <div data-index="0" class="press-ellipsis press-picker-column__item" style="height: 44px; line-height: 44px;">
-                    杭州
+                    <div class="press-picker-column__item-html">
+                      <div style="position: relative;width: 100%;height: 100%;display:flex; align-items:center;justify-content: center;">杭州
+                        <span style="position: absolute; top: 0; left: calc(50% + 19px);color: #fff;font-size: 10px;background: rgba(83, 0, 195, 0.75);width: 26px; height: 13px;line-height: 13px;">常用</span>
+                      </div>
+                    </div>
                   </div>
                   <div data-index="1" class="press-ellipsis press-picker-column__item" style="height: 44px; line-height: 44px;">
                     宁波

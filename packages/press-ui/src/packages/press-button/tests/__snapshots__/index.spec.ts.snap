@@ -1,49 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`icon-position prop 1`] = `
-<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal " iconposition="right">
-  <div class="press-button__icon  press-icon-plus press-icon-plus-plus" style="font-size: 1.2em; line-height: inherit;">
-    <!---->
-    <!---->
-  </div>
-  <div class="press-button__text"></div>
-</button>
+<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal " iconposition="right"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal ">
+    <div class="press-button__icon  press-icon-plus press-icon-plus-plus" style="font-size: 1.2em; line-height: inherit;">
+      <!---->
+      <!---->
+    </div>
+    <div class="press-button__text"></div>
+  </button></button>
 `;
 
 exports[`icon-prefix prop 1`] = `
-<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal " iconprefix="my-icon">
-  <div class="press-button__icon  press-icon-plus press-icon-plus-success" style="font-size: 1.2em; line-height: inherit;">
-    <!---->
-    <!---->
-  </div>
-  <div class="press-button__text"></div>
-</button>
+<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal " iconprefix="my-icon"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal ">
+    <div class="press-button__icon  press-icon-plus press-icon-plus-success" style="font-size: 1.2em; line-height: inherit;">
+      <!---->
+      <!---->
+    </div>
+    <div class="press-button__text"></div>
+  </button></button>
 `;
 
 exports[`loading slot 1`] = `
-<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable ">
-  <div class="press-loading-index">
-    <div class=" press-loading">
-      <div class="press-loading__spinner press-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 20px; height: 20px;">
-        <!---->
+<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable ">
+    <div class="press-loading-index">
+      <div class=" press-loading">
+        <div class="press-loading__spinner press-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 20px; height: 20px;">
+          <!---->
+        </div>
+        <div class="press-loading__text"></div>
       </div>
-      <div class="press-loading__text"></div>
     </div>
-  </div>
-  <!---->
-</button>
+    <!---->
+  </button></button>
 `;
 
 exports[`loading-size prop 1`] = `
-<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable ">
-  <div class="press-loading-index">
-    <div class=" press-loading">
-      <div class="press-loading__spinner press-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 10px; height: 10px;">
-        <!---->
+<button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal press-button--loading press-button--unclickable ">
+    <div class="press-loading-index">
+      <div class=" press-loading">
+        <div class="press-loading__spinner press-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 10px; height: 10px;">
+          <!---->
+        </div>
+        <div class="press-loading__text"></div>
       </div>
-      <div class="press-loading__text"></div>
     </div>
-  </div>
-  <!---->
-</button>
+    <!---->
+  </button></button>
 `;

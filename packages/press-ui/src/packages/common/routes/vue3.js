@@ -13,14 +13,14 @@ export const $route = Object.defineProperties({}, {
     get() {
       const result = getRouteQuery() || {};
 
-      return Object.keys(result).reduce((acc ,item) => {
-        const newVal = decodeURIComponent(result[item])
+      return Object.keys(result).reduce((acc, item) => {
+        const newVal = decodeURIComponent(result[item]);
 
         return {
           ...acc,
           [item]: newVal,
-        }
-      }, {})
+        };
+      }, {});
     },
   },
   params: {

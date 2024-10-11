@@ -57,17 +57,17 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
     </div>
-    <div><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin-right: 8px;">
-        <!---->
-        <div class="press-button__text">
+    <div><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin-right: 8px;"><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary " style="margin-right: 8px;">
+          <!---->
+          <div class="press-button__text">
 
-        </div>
-      </button> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary ">
-        <!---->
-        <div class="press-button__text">
+          </div>
+        </button></button> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--normal press-button--e-sport-primary ">
+          <!---->
+          <div class="press-button__text">
 
-        </div>
-      </button></div>
+          </div>
+        </button></button></div>
   </div>
 </div>
 `;

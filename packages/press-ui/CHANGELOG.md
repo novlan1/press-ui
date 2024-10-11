@@ -2,6 +2,137 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.31](https://github.com/novlan1/press-ui/compare/v2.1.30...v2.1.31) (2024-10-11)
+
+
+### ✏️ Documentation | 文档
+
+* update docs ([efd4fca](https://github.com/novlan1/press-ui/commit/efd4fca6722953cbcc1f5179648279fd852b5ebe))
+
+
+### ✨ Features | 新功能
+
+* 优化guide ([6ef3c77](https://github.com/novlan1/press-ui/commit/6ef3c775f18abb458a59026af8d178f39cddc9f0))
+* **guide:** add guide ([c5faa0c](https://github.com/novlan1/press-ui/commit/c5faa0cd79a6acb7020f02cde74b715ff6025ed4))
+* **guide:** support mp ([768a7b1](https://github.com/novlan1/press-ui/commit/768a7b1e81a667faeee802ea4a41efc676adcd3d))
+* **guide:** support mp-qq ([09f263c](https://github.com/novlan1/press-ui/commit/09f263c3e0559f1b2d047fc4b3b2452e27dcbbb2))
+
+### [2.1.30](https://github.com/novlan1/press-ui/compare/v2.1.29...v2.1.30) (2024-10-08)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 删除无用脚本 ([28aca17](https://github.com/novlan1/press-ui/commit/28aca17f4dc27243dd2b04cbcbf0750c98782f3f))
+
+
+### ✨ Features | 新功能
+
+* **script:** 适配press-next ([5d0b9d9](https://github.com/novlan1/press-ui/commit/5d0b9d938075281c9bbb7c551c58a1185bfeef44))
+
+### [2.1.29](https://github.com/novlan1/press-ui/compare/v2.1.28...v2.1.29) (2024-10-08)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update changelog ([ca4a5e4](https://github.com/novlan1/press-ui/commit/ca4a5e4efd59f8cb2628b9058a59789c064d72a5))
+
+
+### ✨ Features | 新功能
+
+* **script:** 沉淀 docs/demo dispatch 脚本 ([dc2d3ae](https://github.com/novlan1/press-ui/commit/dc2d3aeefb40d4178a4082e357b8515ea5c7fdb6))
+* **script:** 沉淀 generate-new-component 逻辑 ([73b2e64](https://github.com/novlan1/press-ui/commit/73b2e64ba92a05eacb6ab5f41204d1c0d9d38530))
+* **script:** 优化component-config生成脚本 ([1ed63aa](https://github.com/novlan1/press-ui/commit/1ed63aac5a23b6e3024286809a1cacee571e3e9c))
+* update generate component config script ([c244100](https://github.com/novlan1/press-ui/commit/c244100e7073cec112d22e30683f4239c21b5987))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **script:** 脚本引入位置修复 ([a3008ca](https://github.com/novlan1/press-ui/commit/a3008cabc99b97a95688ba9f82f83e1610ca1780))
+
+### [2.1.28](https://github.com/novlan1/press-ui/compare/v2.1.27...v2.1.28) (2024-10-08)
+
+
+### ✏️ Documentation | 文档
+
+* 统一文案 ([5047967](https://github.com/novlan1/press-ui/commit/5047967282eb17053171bdafd2f62275e852839a))
+* **color-picker:** update docs ([8b66229](https://github.com/novlan1/press-ui/commit/8b66229143e523a0c7915d55603e025a7e93e5a0))
+
+
+### ✨ Features | 新功能
+
+* **color-picker:** 优化swatch ([b05216a](https://github.com/novlan1/press-ui/commit/b05216adf15cfd9bd4617062b203bda82c94328a))
+* **color-picker:** add color-picker ([9716e02](https://github.com/novlan1/press-ui/commit/9716e025a33e0177c1370fd6bf7e7b8d17ab58d1))
+* **color-picker:** use px ([11a41b4](https://github.com/novlan1/press-ui/commit/11a41b4a0de224d06306def9ec1b0571ba59ff51))
+* **demo-index:** update config ([5f75816](https://github.com/novlan1/press-ui/commit/5f75816df9675d22415d4cb6840e44d683a12632))
+* **generate-component-config:** 沉淀核心方法 ([471b37e](https://github.com/novlan1/press-ui/commit/471b37e6fbd31caeb85b697c47122c54d7a47c71))
+* update demo-index style ([8f42cc5](https://github.com/novlan1/press-ui/commit/8f42cc578170ddb5ef9f70b74cbead5a8444a111))
+
+### [2.1.27](https://github.com/novlan1/press-ui/compare/v2.1.26...v2.1.27) (2024-09-30)
+
+
+### ♻️ Code Refactoring | 代码重构
+
+* 补充工具函数类型 ([b72c3c6](https://github.com/novlan1/press-ui/commit/b72c3c62db9baff8f980f6f7d64a142708be3ee4))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 删除冗余文件 ([5dff25d](https://github.com/novlan1/press-ui/commit/5dff25deab9a359e2dae2a22abbb958aca7380d3))
+* lint ([7282bb8](https://github.com/novlan1/press-ui/commit/7282bb8d2fc66fadaccb92ef92256b4c228198ec))
+
+
+### ✅ Tests | 测试
+
+* update tests ([67f5652](https://github.com/novlan1/press-ui/commit/67f5652400bcb59ea17bfc33a955f8954fdd91bc))
+
+### [2.1.26](https://github.com/novlan1/press-ui/compare/v2.1.25...v2.1.26) (2024-09-30)
+
+
+### ✨ Features | 新功能
+
+* add demo-base-mixin ([1ae99da](https://github.com/novlan1/press-ui/commit/1ae99da51a45181e58440ef2ee41942fd89c20f7))
+
+### [2.1.25](https://github.com/novlan1/press-ui/compare/v2.1.23...v2.1.25) (2024-09-30)
+
+
+### ✨ Features | 新功能
+
+* update demo-index style ([a24ce52](https://github.com/novlan1/press-ui/commit/a24ce52f458b37125866856414631128bbff5520))
+* update i18n ([a03bfe9](https://github.com/novlan1/press-ui/commit/a03bfe90e2762039bd28041b0f2f4f5f035d20d2))
+* use t-comm component utils ([a23e3b7](https://github.com/novlan1/press-ui/commit/a23e3b7fe0f5938a0fef73e32e07750d75e787e5))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化demo，删除无用mixin ([e7460a6](https://github.com/novlan1/press-ui/commit/e7460a655c701f0d2f569f14c5b91db77ed2f9df))
+* **picker-plus:** update demo ([181213f](https://github.com/novlan1/press-ui/commit/181213fa079ee319b80788675994b453585d82cc))
+* update deps ([c1b98a7](https://github.com/novlan1/press-ui/commit/c1b98a7d1eaecaadd2334ffd6685006c7bbe2f91))
+
+
+### ✏️ Documentation | 文档
+
+* update questions ([5c2fe58](https://github.com/novlan1/press-ui/commit/5c2fe58825e882e90b962a9654dc69066e7b0711))
+
+### [2.1.23](https://github.com/novlan1/press-ui/compare/v2.1.22...v2.1.23) (2024-09-23)
+
+
+### ✏️ Documentation | 文档
+
+* update quickstart ([5a65045](https://github.com/novlan1/press-ui/commit/5a650452c174e846438fb25b761e2e11060447af))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* add index.js/css sort ([24cda1d](https://github.com/novlan1/press-ui/commit/24cda1dba5850a7c45bc03e2ef8c1967fb74a111))
+* lint ([6c9f7a7](https://github.com/novlan1/press-ui/commit/6c9f7a7f26f0aa97400261180978ebd01265bdb8))
+* update deps ([840017a](https://github.com/novlan1/press-ui/commit/840017ab89b3316f82c46aea1e835f9976c561f2))
+
+
+### ✨ Features | 新功能
+
+* **picker-plus:** 支持option为v-html ([ddf9dec](https://github.com/novlan1/press-ui/commit/ddf9decfa9181773e6348d446c757ff95258bfd8))
+* update init script ([41625ca](https://github.com/novlan1/press-ui/commit/41625cac66550fdec3240370335988209d06543a))
+
 ### [2.1.22](https://github.com/novlan1/press-ui/compare/v2.1.21...v2.1.22) (2024-09-21)
 
 

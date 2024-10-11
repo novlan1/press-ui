@@ -47,6 +47,30 @@ export default {
       type: String,
       default: '',
     },
+    afterEnterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    afterLeaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    enterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    leaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    beforeEnterCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
+    beforeLeaveCallback: {
+      type: Function,
+      default: () => (() => {}),
+    },
     ...defaultProps,
   },
   emits: [

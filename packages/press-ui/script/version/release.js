@@ -1,3 +1,4 @@
+// 流水线发布时执行的脚本
 const { execCommand, getPreReleaseVersion } = require('t-comm');
 const { MANUAL_REVIEW_RESULT, versionType, repo, branch } = process.env;
 

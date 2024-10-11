@@ -55,7 +55,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(154, 205, 203); margin-right: 20px;">
       <!----> <span style="color: rgb(255, 255, 255); text-align: center;">G</span>
     </div>
-    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(148, 213, 84);">
+    <div class="press-avatar press-avatar--circle" style="width: 40px; height: 40px; background: rgb(137, 193, 82);">
       <!----> <span style="color: rgb(255, 255, 255); text-align: center;">杨</span>
     </div>
   </div>
