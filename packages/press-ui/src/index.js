@@ -44,6 +44,7 @@ import Form from './packages/press-form/press-form.vue';
 import FormItem from './packages/press-form-item/press-form-item.vue';
 import Grid from './packages/press-grid/press-grid.vue';
 import GridItem from './packages/press-grid-item/press-grid-item.vue';
+import Guide from './packages/press-guide/press-guide.vue';
 import Icon from './packages/press-icon/press-icon.vue';
 import IconMusic from './packages/press-icon/press-icon-music.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
@@ -158,6 +159,7 @@ const components = {
   FormItem,
   Grid,
   GridItem,
+  Guide,
   Icon,
   IconMusic,
   IconPlus,
