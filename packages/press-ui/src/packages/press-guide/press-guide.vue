@@ -165,6 +165,7 @@ import { getPx as unitConvert } from '../common/utils/add-unit';
 import { rpx2px } from '../common/utils/rpx';
 import { nextTick } from '../common/utils/system';
 
+
 const classPrefix = 'press-guide';
 const prefix = 'press';
 
@@ -186,10 +187,9 @@ export default {
     return {
       prefix,
       classPrefix,
-      // visible: false,
+
       innerCurrent: -1,
       innerSteps: [],
-      // buttonProps: {},
       referenceStyle: '',
       referenceRawStyle: {},
 
@@ -261,7 +261,7 @@ export default {
     },
     async init() {
       const { currentStep: step, modeType } = this;
-      const { windowHeight, windowWidth, windowTop = 0 } = getWindowWidth();
+      const { windowHeight, windowWidth } = getWindowWidth();
 
       if (!step) {
         return;
@@ -274,9 +274,10 @@ export default {
         if (!rect) return;
 
         const highlightPadding = rpx2px(step.highlightPadding ?? this.highlightPadding);
+        // rect.top 和 windowHeight 都处理了 windowTop，这里不用单独处理
         const referenceTop = rect.top - highlightPadding;
         const referenceRight = windowWidth - rect.right - highlightPadding;
-        const referenceBottom = windowHeight - rect.bottom - highlightPadding + windowTop;
+        const referenceBottom = windowHeight - rect.bottom - highlightPadding;
         const referenceLeft = rect.left - highlightPadding;
 
         const style = {
@@ -398,16 +399,18 @@ export default {
       this.$emit('change', { current: this.innerCurrent });
     },
     getPlacement() {
-      const { windowHeight, windowWidth, windowTop = 0 } = getWindowWidth();
+      const { windowHeight, windowWidth } = getWindowWidth();
 
       const space = rpx2px(32);
       const offsetLeft = offset => unitConvert(isNumber(offset?.[0]) ? `${offset?.[0]}rpx` : offset?.[0] || 0);
-      const offsetTop = offset => unitConvert(isNumber(offset?.[1]) ? `${offset?.[1]}rpx` : offset?.[1] || 0) + windowTop;
+      const offsetTop = offset => unitConvert(isNumber(offset?.[1]) ? `${offset?.[1]}rpx` : offset?.[1] || 0);
 
       const bottom = place => parseFloat(place.bottom);
       const left = place => parseFloat(place.left);
       const right = place => parseFloat(place.right);
       const top = place => parseFloat(place.top);
+
+      // 指示器的高度、宽度
       const height = place => windowHeight - bottom(place) - top(place);
       const width = place => windowWidth - left(place) - right(place);
 
@@ -471,9 +474,4 @@ export default {
 
 </script>
 <style scoped lang="scss" src="./css/index.scss">
-</style>
-<style lang="scss">
-::v-deep .press-guide___overlay.press-overlay {
-  background-color: transparent;
-}
 </style>

@@ -147,7 +147,7 @@ import {
 } from './constants';
 import { getFormatList, genSwatchList, getCoordinate } from './helper';
 import { getColorObject, Color } from '../common/color-picker';
-import { getRect, getWindowWidth } from '../common/dom/rect';
+import { getRect } from '../common/dom/rect';
 import utils from '../common/utils/utils';
 import styleUtil from '../common/utils/style';
 
@@ -253,18 +253,17 @@ export default {
           getRect(this, `.${COMPONENT_NAME}__slider`),
         ])
           .then(([saturationRect, sliderRect]) => {
-            const { windowTop = 0 } = getWindowWidth();
             this.setData(
               {
                 panelRect: {
                   width: saturationRect.width || SATURATION_PANEL_DEFAULT_WIDTH,
                   height: saturationRect.height || SATURATION_PANEL_DEFAULT_HEIGHT,
-                  top: saturationRect.top - windowTop,
+                  top: saturationRect.top,
                   left: saturationRect.left,
                 },
                 sliderRect: {
                   width: sliderRect.width || SLIDER_DEFAULT_WIDTH,
-                  top: sliderRect.top - windowTop,
+                  top: sliderRect.top,
                   left: sliderRect.left,
                 },
               },
@@ -410,7 +409,7 @@ export default {
       this.onChangeSlider({ value, isAlpha });
     },
     handleDiffDrag(e) {
-      const dragType = e.target.dataset.type || e.currentTarget.dataset.type;
+      const dragType = e.target.dataset.type || e.currentTarget?.dataset?.type;
       switch (dragType) {
         case 'saturation':
           this.handleSaturationDrag(e);

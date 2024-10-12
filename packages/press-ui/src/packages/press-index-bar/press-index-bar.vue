@@ -94,10 +94,6 @@ export default {
       type: Array,
       default: () => indexList(),
     },
-    windowTop: {
-      type: Number,
-      default: 0,
-    },
     ...defaultProps,
   },
   emits: ['select'],
@@ -210,7 +206,6 @@ export default {
       if (event && (event.target || event.detail)) {
         this.scrollTop = event.target.scrollTop || event.detail.scrollTop;
       }
-      // console.log('[scrollTop]', this.scrollTop);
 
       const { children = [], scrollTop } = this;
       if (!children.length) {
@@ -218,7 +213,6 @@ export default {
       }
       const { sticky, stickyOffsetTop, zIndex, highlightColor } = this;
       const active = this.getActiveAnchorIndex();
-      // console.log('[active]', active);
 
       this.setDiffData({
         target: this,
@@ -298,15 +292,13 @@ export default {
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
       let index;
-      console.log('[onTouchMove]',  touch.clientY, this.sidebar.top, this.top);
       // #ifdef H5
-      index = Math.floor((touch.clientY + this.windowTop - this.sidebar.top) / itemHeight);
-
+      // 不再 + windowTop， 因为 sidebar.top (getRect) 已经减去过了
+      index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
       // #endif
       // #ifndef H5
       index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
       // #endif
-      console.log('[onTouchMove]', index);
 
       if (index < 0) {
         index = 0;
@@ -326,7 +318,6 @@ export default {
       this.scrollToAnchorIndex = index;
       const anchor = this.children.find(item => item.index === this.indexList[index]);
       if (anchor !== undefined) {
-        console.log('[scrollTop]', this.scrollTop);
         anchor.scrollIntoView(this.scrollTop, this.changeScrollerTop);
 
 
@@ -336,7 +327,6 @@ export default {
     onClickInner(event) {
       const index = event.currentTarget?.dataset?.index;
       if (index === undefined) return;
-      console.log('[index]', index, this.indexList);
 
       this.scrollToAnchor(+index);
     },
@@ -345,7 +335,6 @@ export default {
     },
     changeScrollerTop(top) {
       const selector = getScrollSelector('pressIndexBarWrapper');
-      console.log('[changeScrollerTop] top', top);
 
       // #ifdef H5
       const ref = document
@@ -363,10 +352,8 @@ export default {
         ?.select?.(selector)
         ?.node?.()
         ?.exec?.((res) => {
-          console.log('[changeScrollerTop] node', res);
           const scrollView = res[0]?.node;
           if (!scrollView) return;
-          console.log('[changeScrollerTop] scrollView', scrollView);
 
           scrollView.scrollTo({
             top,

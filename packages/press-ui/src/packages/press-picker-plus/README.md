@@ -222,23 +222,25 @@ export default {
 
 ### Props
 
-| 参数                | 说明                                                                  | 类型      | 默认值  |
-| ------------------- | --------------------------------------------------------------------- | --------- | ------- |
-| columns             | 对象数组，配置每一列显示的数据                                        | _Array_   | `[]`    |
-| show-toolbar        | 是否显示顶部栏                                                        | _boolean_ | `false` |
-| toolbar-position    | 顶部栏位置，可选值为`bottom`                                          | _string_  | `top`   |
-| title               | 顶部栏标题                                                            | _string_  | `''`    |
-| loading             | 是否显示加载状态                                                      | _boolean_ | `false` |
-| value-key           | 选项对象中，文字对应的 key                                            | _string_  | `text`  |
-| item-height         | 选项高度                                                              | _number_  | `44`    |
-| confirm-button-text | 确认按钮文字                                                          | _string_  | `确认`  |
-| cancel-button-text  | 取消按钮文字                                                          | _string_  | `取消`  |
-| visible-item-count  | 可见的选项个数                                                        | _number_  | `6`     |
-| default-index       | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 `Columns` 配置 | _number_  | `0`     |
-| custom-class        | 根节点样式类                                                          | _string_  | -       |
-| active-class        | 选中项样式类                                                          | _string_  | -       |
-| toolbar-class       | 顶部栏样式类                                                          | _string_  | -       |
-| column-class        | 列样式类                                                              | _string_  | -       |
+| 参数                | 说明                                                                  | 类型               | 默认值  |
+| ------------------- | --------------------------------------------------------------------- | ------------------ | ------- |
+| columns             | 对象数组，配置每一列显示的数据                                        | _Array_            | `[]`    |
+| show-toolbar        | 是否显示顶部栏                                                        | _boolean_          | `false` |
+| toolbar-position    | 顶部栏位置，可选值为`bottom`                                          | _string_           | `top`   |
+| title               | 顶部栏标题                                                            | _string_           | `''`    |
+| loading             | 是否显示加载状态                                                      | _boolean_          | `false` |
+| value-key           | 选项对象中，文字对应的 key                                            | _string_           | `text`  |
+| item-height         | 选项高度                                                              | _number_           | `44`    |
+| confirm-button-text | 确认按钮文字                                                          | _string_           | `确认`  |
+| cancel-button-text  | 取消按钮文字                                                          | _string_           | `取消`  |
+| visible-item-count  | 可见的选项个数                                                        | _number_           | `6`     |
+| default-index       | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 `Columns` 配置 | _number_           | `0`     |
+| custom-class        | 根节点样式类                                                          | _string_           | -       |
+| active-class        | 选中项样式类                                                          | _string_           | -       |
+| toolbar-class       | 顶部栏样式类                                                          | _string_           | -       |
+| column-class        | 列样式类                                                              | _string_           | -       |
+| use-momentum        | 是否使用惯性滚动                                                      | _boolean_          | `false` |
+| swipe-duration      | 快速滑动时惯性滚动的时长，单位 `ms`                                   | _number \| string_ | `1000`  |
 
 ### Events
 

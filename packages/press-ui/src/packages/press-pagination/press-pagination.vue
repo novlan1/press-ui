@@ -161,7 +161,7 @@ export default {
     this.onDestroyed();
   },
   updated() {
-    nextTick().then(() => {
+    nextTick(() => {
       this.updatePopoverTipPosition();
     });
   },

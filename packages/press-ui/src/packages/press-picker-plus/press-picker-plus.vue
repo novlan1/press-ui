@@ -39,6 +39,8 @@
           :item-height="itemHeight"
           :visible-item-count="visibleItemCount"
           :active-class="activeClass"
+          :use-momentum="useMomentum"
+          :swipe-duration="swipeDuration"
           @change="value=>onChange(value, index)"
         />
         <div
@@ -114,6 +116,14 @@ export default {
     columnClass: {
       type: String,
       default: '',
+    },
+    useMomentum: {
+      type: Boolean,
+      default: false,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000,
     },
   },
   emits: ['change', 'confirm', 'cancel'],

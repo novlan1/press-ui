@@ -13,6 +13,8 @@
       :columns="columns"
       :default-index="defaultIndex"
       :title="title"
+      :use-momentum="useMomentum"
+      :swipe-duration="swipeDuration"
       @change="onChange"
       @cancel="cancel"
       @confirm="confirm"
@@ -56,6 +58,14 @@ export default {
     title: {
       type: String,
       default: '',
+    },
+    useMomentum: {
+      type: Boolean,
+      default: false,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000,
     },
   },
   data() {

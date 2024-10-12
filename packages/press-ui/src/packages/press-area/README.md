@@ -259,6 +259,8 @@ export default {
 | active-class        | 选中项样式类                           | _string_           | -       |
 | toolbar-class       | 顶部栏样式类                           | _string_           | -       |
 | column-class        | 列样式类                               | _string_           | -       |
+| use-momentum        | 是否使用惯性滚动                       | _boolean_          | `false` |
+| swipe-duration      | 快速滑动时惯性滚动的时长，单位 `ms`    | _number \| string_ | `1000`  |
 
 ### Area Events
 

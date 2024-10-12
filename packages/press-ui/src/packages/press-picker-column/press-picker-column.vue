@@ -26,7 +26,10 @@
         @touchcancel="onTouchEnd"
       >
         <!-- #endif -->
-        <div :style="wrapperStyle">
+        <div
+          :style="wrapperStyle"
+          class="press-picker-column__wrapper"
+        >
           <div
             v-for="(option,index) in (options)"
             :key="option.index"
@@ -75,6 +78,13 @@ import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 const DEFAULT_DURATION = 200;
 
+// 惯性滑动思路:
+// 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_TIME` 且 move
+// 距离大于 `MOMENTUM_DISTANCE` 时，执行惯性滑动
+const MOMENTUM_TIME = 300;
+const MOMENTUM_DISTANCE = 15;
+
+
 export default {
   name: 'PressPickerColumn',
   options: {
@@ -98,6 +108,14 @@ export default {
       type: Number,
       default: 0,
     },
+    useMomentum: {
+      type: Boolean,
+      default: false,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000,
+    },
   },
   emits: ['change'],
   data() {
@@ -110,6 +128,9 @@ export default {
       currentIndex: 0,
 
       computed,
+
+      touchStartTime: 0,
+      momentumOffset: 0,
     };
   },
   computed: {
@@ -169,21 +190,51 @@ export default {
         startY: event.touches[0].clientY,
         startOffset: this.offset,
         duration: 0,
+
+        touchStartTime: Date.now(),
+        momentumOffset: this.offset,
       });
     },
     onTouchMove(event) {
       if (!event.touches[0]) return;
       const deltaY = event.touches[0].clientY - this.startY;
+      const newOffset = range(this.startOffset + deltaY, -(this.getCount() * this.itemHeight), this.itemHeight);
       this.setData({
-        offset: range(this.startOffset + deltaY, -(this.getCount() * this.itemHeight), this.itemHeight),
+        offset: newOffset,
       });
+
+      const now = Date.now();
+      if (now - this.touchStartTime > MOMENTUM_TIME) {
+        this.touchStartTime = now;
+        this.momentumOffset = newOffset;
+      }
+    },
+    getIndexByOffset(offset) {
+      return range(Math.round(-offset / this.itemHeight), 0, this.getCount() - 1);
+    },
+    momentum(distance, duration) {
+      const speed = Math.abs(distance / duration);
+      const newDistance = this.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
+      const index = this.getIndexByOffset(newDistance);
+
+      this.setData({ duration: +this.swipeDuration });
+      this.setIndex(index, true);
     },
     onTouchEnd() {
-      if (this.offset !== this.startOffset) {
-        this.setData({ duration: DEFAULT_DURATION });
-        const index = range(Math.round(-this.offset / this.itemHeight), 0, this.getCount() - 1);
-        this.setIndex(index, true);
+      if (this.offset === this.startOffset) return;
+
+      const distance = this.offset - this.momentumOffset;
+      const duration = Date.now() - this.touchStartTime;
+      const startMomentum = duration < MOMENTUM_TIME && Math.abs(distance) > MOMENTUM_DISTANCE;
+
+      if (startMomentum && this.useMomentum) {
+        this.momentum(distance, duration);
+        return;
       }
+
+      this.setData({ duration: DEFAULT_DURATION });
+      const index = this.getIndexByOffset(this.offset);
+      this.setIndex(index, true);
     },
     onClickItem(event) {
       const { index } = event.currentTarget.dataset;

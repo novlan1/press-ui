@@ -131,7 +131,7 @@
         >
           <PressIconPlus
             name="arrow-up"
-            size="64rpx"
+            size="32px"
             color="#fff"
             class="icon"
           />
@@ -185,7 +185,7 @@
         >
           <PressIconPlus
             name="arrow-up"
-            size="64rpx"
+            size="32px"
             color="#fff"
             class="icon"
           />
@@ -241,7 +241,7 @@
         >
           <PressIconPlus
             name="arrow-up"
-            size="64rpx"
+            size="32px"
             color="#fff"
             class="icon"
           />
@@ -473,7 +473,7 @@ export default {
 }
 
 .title-sub {
-  font-size: 32rpx;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   margin-top: 4px;
@@ -496,20 +496,20 @@ export default {
 }
 
 .dialog-slot-body {
-  margin-top: 8rpx;
+  margin-top: 4px;
   text-align: center;
   color: var(--td-text-color-secondary);
-  font-size: 32rpx;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 48rpx;
+  line-height: 24px;
 }
 
 .dialog-slot-body .guide-demo-image {
-  margin-top: 48rpx;
+  margin-top: 24px;
 }
 
 .content {
-  width: 480rpx;
+  width: 240px;
 }
 
 .content .icon {
@@ -518,20 +518,20 @@ export default {
 }
 
 .content .text {
-  margin-top: 32rpx;
+  margin-top: 16px;
   color: #fff;
-  font-size: 32rpx;
+  font-size: 16px;
   font-weight: 600;
   text-align: left;
-  line-height: 48rpx;
+  line-height: 24px;
 }
 
 .content .footer {
   text-align: right;
-  margin-top: 32rpx;
+  margin-top: 16px;
 }
 
 .content .footer .guide-demo-button + .guide-demo-button {
-  margin-left: 24rpx;
+  margin-left: 12px;
 }
 </style>

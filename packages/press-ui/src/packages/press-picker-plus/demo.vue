@@ -64,7 +64,8 @@
 
     <PressPickerPlusPopupPlus
       :show="showPopupPlus"
-      :columns="columns"
+      :columns="momentumColumns"
+      :use-momentum="true"
       @change="onChange"
       @cancel="showPopupPlus = false"
       @confirm="confirmPopupPlus"
@@ -239,6 +240,7 @@ export default {
   data() {
     return {
       showPopupPlus: false,
+      momentumColumns: Array.from({ length: 500 }).map((item, index) => `Momentum ${index + 1}`),
     };
   },
   computed: {

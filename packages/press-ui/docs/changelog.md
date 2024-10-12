@@ -1,5 +1,19 @@
 # 更新日志
 
+## [2.2.0-alpha.0](https://github.com/novlan1/press-ui/compare/v2.1.31...v2.2.0-alpha.0) (2024-10-12)
+
+
+### Code Refactoring ♻️
+
+* **color-picker:** 兼容非uni-app ([d47c80f](https://github.com/novlan1/press-ui/commit/d47c80f2e4acb7e51b888daeb853eb1e57540d43))
+
+
+### Features 🎉
+
+* **picker-plus:** set useMementum false ([6f6a6cc](https://github.com/novlan1/press-ui/commit/6f6a6cceb9bb0ba650b6600da34b4abfffba7345))
+* **picker-plus:** support momentum ([2350275](https://github.com/novlan1/press-ui/commit/23502755e392f04466702cc93fb1283600f37344))
+* **rect:** windowTop全局处理 ([1ec21d0](https://github.com/novlan1/press-ui/commit/1ec21d0a01b8178c607ea2999edc6cdeb9d89a64))
+
 ### [2.1.31](https://github.com/novlan1/press-ui/compare/v2.1.30...v2.1.31) (2024-10-11)
 
 

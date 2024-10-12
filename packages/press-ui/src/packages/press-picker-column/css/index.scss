@@ -1,11 +1,15 @@
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-picker-column {
   overflow: hidden;
   text-align: center;
   color: var(--picker-option-text-color, $picker-option-text-color);
   font-size: var(--picker-option-font-size, $picker-option-font-size);
+
+  &__wrapper {
+    transition-timing-function: cubic-bezier(.23, 1, .68, 1);
+  }
 
   &__item {
     padding: 0 5px;

@@ -57,6 +57,7 @@ export function setLang(force = false, localeMap = {}) {
   set = true;
   curLang = getLocale() || DEFAULT_LANG;
   console.log('[curLang] ', curLang);
+  console.log('[localeMap] ', localeMap);
 
   if (localeMap && Object.keys(localeMap).length) {
     globalLocaleMap = localeMap;

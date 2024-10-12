@@ -102,3 +102,31 @@ Press UI 是一个面向移动端的组件库，因此默认只适配了移动�
 ```ts
 import 'press-ui/common/touch-emulator';
 ```
+
+
+## 8. windowTop
+
+`windowTop` 表示页面距离顶部的距离，是 `uni-app` 仿微信小程序中 `navigationBar` 的高度，在 H5 中一般是 `44px`。
+
+非 `uni-app` 项目可以这样模拟 `windowTop`
+
+设置：
+
+```ts
+document.documentElement.style.setProperty('--window-top', '44px'); 
+```
+
+取值：
+
+```ts
+const style = document.documentElement.style
+const windowTop = parseInt((style.getPropertyValue('--window-top').match(/\d+/) || ['0'])[0])
+```
+
+Press UI 兼容非 `uni-app` 项目时，在以下地方对 `windowTop` 进行了处理：
+
+- `getBoundingClient()` 中的 `top` 和 `bottom`
+- `touch` 事件中的 `pageY` 和 `clientY`
+- `getWindowInfo` 中的 `windowHeight`
+
+上面列举的这些属性值都减去了 `windowTop`。

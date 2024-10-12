@@ -263,16 +263,17 @@ export default {
   methods: {
     getSwitchButtonSafeAreaXY(x, y) {
       const { fabSize, top, bottomThreshold } = this;
-      const { windowWidth, windowHeight, windowTop, windowBottom } = getWindowWidth();
+      const { windowWidth, windowHeight, windowBottom } = getWindowWidth();
       const docWidth = windowWidth;
       const docHeight = windowHeight - top;
 
       // check edge
-      if (x + fabSize.width > docWidth) {
+      if (x > docWidth - fabSize.width) {
         x = docWidth - fabSize.width;
       }
-      if (y + fabSize.height - windowTop > docHeight) {
-        y = docHeight - fabSize.height + windowTop;
+      // 无需处理 windowTop，因为 windowHeight 已经减去过了
+      if (y > docHeight - fabSize.height) {
+        y = docHeight - fabSize.height;
       }
 
       if (x < 0) {

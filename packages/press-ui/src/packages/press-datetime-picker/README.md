@@ -351,6 +351,8 @@ export default {
 | confirm-button-text | 确认按钮文字                                                                   | _string_                   | `确认`     |
 | cancel-button-text  | 取消按钮文字                                                                   | _string_                   | `取消`     |
 | visible-item-count  | 可见的选项个数                                                                 | _number_                   | `6`        |
+| use-momentum        | 是否使用惯性滚动                                                               | _boolean_                  | `false`    |
+| swipe-duration      | 快速滑动时惯性滚动的时长，单位 `ms`                                            | _number \| string_         | `1000`     |
 
 ### Events
 

@@ -165,8 +165,12 @@ export default {
       const { zIndex, direction } = this;
       return getRect(this, '.press-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
-        const offset = direction === 'down' ? bottom : this.windowHeight - top + this.windowTop;
+
+        // 是 fixed 元素，top 需要加上 windowTop
+        const offset = direction === 'down' ? bottom + this.windowTop : this.windowHeight - top;
+
         let wrapperStyle = `z-index: ${zIndex};`;
+
         if (direction === 'down') {
           wrapperStyle += `top: ${addUnit(offset)};`;
         } else {

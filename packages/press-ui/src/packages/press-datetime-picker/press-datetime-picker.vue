@@ -13,6 +13,8 @@
       :visible-item-count="visibleItemCount"
       :confirm-button-text="confirmButtonText"
       :cancel-button-text="cancelButtonText"
+      :use-momentum="useMomentum"
+      :swipe-duration="swipeDuration"
       @change="onChange"
       @confirm="onConfirm"
       @cancel="onCancel"
@@ -132,6 +134,14 @@ export default {
     columnClass: {
       type: String,
       default: '',
+    },
+    useMomentum: {
+      type: Boolean,
+      default: false,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000,
     },
   }),
   emits: ['input', 'input', 'cancel', 'confirm', 'input', 'change'],

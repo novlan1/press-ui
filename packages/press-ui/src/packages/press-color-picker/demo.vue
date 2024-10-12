@@ -69,6 +69,7 @@
         type="multiple"
         show-preview
         enable-alpha
+        value="#70de2f"
         @change="onChange"
         @palette-bar-change="onPaletteBarChange"
       />

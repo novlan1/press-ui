@@ -1,8 +1,9 @@
 import { DEFAULT_SYSTEM_SWATCH_COLORS } from './constants';
+import { getRealPageYOrClientY } from '../common/dom/rect';
 
 export const getCoordinate = (e, top, left) => {
   const { pageX, pageY } = e.changedTouches[0] || {};
-  let { offsetLeft, offsetTop } = e.currentTarget;
+  let { offsetLeft = 0, offsetTop = 0 } = e.currentTarget || e.target || {};
   if (top !== undefined) {
     offsetTop = top;
   }
@@ -12,7 +13,7 @@ export const getCoordinate = (e, top, left) => {
 
   return {
     x: pageX - offsetLeft,
-    y: pageY - offsetTop,
+    y: getRealPageYOrClientY(pageY) - offsetTop,
   };
 };
 

@@ -28,7 +28,7 @@ export default {
     return {
       autosize: { maxHeight: 600, minHeight: 50 },
       value: 'https://novlan1.github.io/press-ui/',
-      size: 50,
+      size: 200,
     };
   },
   methods: {
@@ -47,8 +47,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
 }
 </style>
