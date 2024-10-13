@@ -409,6 +409,7 @@ export default {
       this.onChangeSlider({ value, isAlpha });
     },
     handleDiffDrag(e) {
+      // 非 uni-app 不一定有 event.currentTarget
       const dragType = e.target.dataset.type || e.currentTarget?.dataset?.type;
       switch (dragType) {
         case 'saturation':

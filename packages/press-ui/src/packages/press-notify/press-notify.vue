@@ -42,10 +42,6 @@ const props = {
     type: String,
     default: WHITE,
   },
-  // duration: {
-  //   type: Number,
-  //   default: 3000,
-  // },
   zIndex: {
     type: Number,
     default: 110,
@@ -54,6 +50,8 @@ const props = {
     type: Boolean,
     default: false,
   },
+  // 由于是 fixed 元素，所以 windowTop 需要手动指定
+  // 同 dropdown-menu
   top: {
     type: [null, String, Number],
     default: null,

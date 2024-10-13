@@ -58,9 +58,9 @@ export default {
     },
     scrollIntoView(scrollTop, callback) {
       getRect(this, '.press-index-anchor-wrapper').then((rect) => {
-        const newScrollTop = scrollTop + rect.top - this[PARENT].stickyOffsetTop;
-
-
+        const newScrollTop = scrollTop + rect.top;// - this[PARENT].stickyOffsetTop;
+        // touchMove sidebar 时会调用
+        // 让 pressIndexBarWrapper，即 scroll-view 包裹层 滚动到新的位置
         callback?.(newScrollTop);
       });
     },

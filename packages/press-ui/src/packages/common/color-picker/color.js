@@ -6,11 +6,10 @@ import {
 } from './gradient';
 
 
-
 const mathRound = Math.round;
-const hsv2rgba = (states) => tinyColor(states).toRgb();
-const hsv2hsva = (states) => tinyColor(states).toHsv();
-const hsv2hsla = (states) => tinyColor(states).toHsl();
+const hsv2rgba = states => tinyColor(states).toRgb();
+const hsv2hsva = states => tinyColor(states).toHsv();
+const hsv2hsla = states => tinyColor(states).toHsl();
 
 /**
  * 将渐变对象转换成字符串
@@ -31,7 +30,7 @@ export const gradientColors2string = (object) => {
  * @param color
  * @returns
  */
-export const getColorWithoutAlpha = (color) => tinyColor(color).setAlpha(1)
+export const getColorWithoutAlpha = color => tinyColor(color).setAlpha(1)
   .toHexString();
 
 // 生成一个随机ID
@@ -402,7 +401,7 @@ export class Color {
    * @param input
    * @returns
    */
-  static isGradientColor = (input) => !!isGradientColor(input);
+  static isGradientColor = input => !!isGradientColor(input);
 
   /**
    * 比较两个颜色是否相同

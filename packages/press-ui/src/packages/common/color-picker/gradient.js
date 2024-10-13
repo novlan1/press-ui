@@ -1,5 +1,3 @@
-import isString from 'lodash/isString';
-import isNull from 'lodash/isNull';
 /* eslint-disable no-param-reassign */
 /**
  * 用于反解析渐变字符串为对象
@@ -17,7 +15,7 @@ import tinyColor from 'tinycolor2';
 const combineRegExp = (regexpList, flags) => {
   let source = '';
   for (let i = 0; i < regexpList.length; i++) {
-    if (isString(regexpList[i])) {
+    if (typeof regexpList[i] === 'string') {
       source += regexpList[i];
     } else {
       source += (regexpList[i]).source;
@@ -92,7 +90,7 @@ const parseGradient = (regExpLib, input) => {
   regExpLib.gradientSearch.lastIndex = 0;
 
   const matchGradient = regExpLib.gradientSearch.exec(input);
-  if (!isNull(matchGradient)) {
+  if (matchGradient) {
     result = {
       original: matchGradient[0],
       colorStopList: [],
@@ -119,7 +117,7 @@ const parseGradient = (regExpLib, input) => {
 
     // Loop though all the color-stops.
     matchColorStop = regExpLib.colorStopSearch.exec(matchGradient[4]);
-    while (!isNull(matchColorStop)) {
+    while (matchColorStop) {
       stopResult = {
         color: matchColorStop[1],
       };

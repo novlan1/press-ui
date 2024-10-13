@@ -1,5 +1,24 @@
 # 更新日志
 
+## [2.2.0-alpha.1](https://github.com/novlan1/press-ui/compare/v2.2.0-alpha.0...v2.2.0-alpha.1) (2024-10-13)
+
+
+### Documentation 📖
+
+* update questions.md ([82c8153](https://github.com/novlan1/press-ui/commit/82c8153d1496542db25a0a62a7b0b62096e8ab58))
+
+
+### Features 🎉
+
+* **index-bar:** 支持getRect新模式 ([5d974de](https://github.com/novlan1/press-ui/commit/5d974de7138cfa982e8eae79414f5fcaae45a8e2))
+* **rect:** getReact 中 top 减去 windowTop ([c81a33d](https://github.com/novlan1/press-ui/commit/c81a33d30a8d7c28c478e386373ea45751b573f1))
+
+
+### Chore 🚀 
+
+* **guide:** guide demo 支持 vue3 ([f9b8a03](https://github.com/novlan1/press-ui/commit/f9b8a03b7c511d2a1883a1e7d8dad8eafefd8606))
+* init ([e2495d3](https://github.com/novlan1/press-ui/commit/e2495d37a05bc3175092f19b659c0315dfe78e9c))
+
 ## [2.2.0-alpha.0](https://github.com/novlan1/press-ui/compare/v2.1.31...v2.2.0-alpha.0) (2024-10-12)
 
 

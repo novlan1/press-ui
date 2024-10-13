@@ -22,7 +22,6 @@
       :horizontal="horizontal"
       :vertical="vertical"
       :direction="direction"
-      :top="top"
       @trigger="trigger"
       @fabClick="fabClick"
     />
@@ -105,7 +104,6 @@ export default {
         active: false,
       },
       ],
-      top: isNotInUni() ? 44 : 0,
 
       slotInitX: Math.max(getWindowWidth()?.windowWidth - 66, 0),
     };

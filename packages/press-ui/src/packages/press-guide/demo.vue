@@ -85,36 +85,45 @@
         @skip="close"
         @finish="close"
       >
-        <div
-          slot="content-0"
-          class="dialog-slot-body"
+        <template
+          #content-0
         >
-          <p>用户引导的说明文案 1</p>
-          <PressImage
-            class="guide-demo-image"
-            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
-          />
-        </div>
-        <div
-          slot="content-1"
-          class="dialog-slot-body"
+          <div
+            class="dialog-slot-body"
+          >
+            <p>用户引导的说明文案 1</p>
+            <PressImage
+              class="guide-demo-image"
+              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+            />
+          </div>
+        </template>
+        <template
+          #content-1
         >
-          <p>用户引导的说明文案 2</p>
-          <PressImage
-            class="guide-demo-image"
-            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
-          />
-        </div>
-        <div
-          slot="content-2"
-          class="dialog-slot-body"
+          <div
+            class="dialog-slot-body"
+          >
+            <p>用户引导的说明文案 2</p>
+            <PressImage
+              class="guide-demo-image"
+              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+            />
+          </div>
+        </template>
+        <template
+          #content-2
         >
-          <p>用户引导的说明文案 3</p>
-          <PressImage
-            class="guide-demo-image"
-            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
-          />
-        </div>
+          <div
+            class="dialog-slot-body"
+          >
+            <p>用户引导的说明文案 3</p>
+            <PressImage
+              class="guide-demo-image"
+              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+            />
+          </div>
+        </template>
       </PressGuide>
 
       <PressGuide
@@ -125,172 +134,181 @@
         @skip="close"
         @finish="close"
       >
-        <div
-          slot="content-0"
-          class="content"
+        <template
+          #content-0
         >
-          <PressIconPlus
-            name="arrow-up"
-            size="32px"
-            color="#fff"
-            class="icon"
-          />
-          <p class="text">
-            1、自定义的图形或说明文案，用来解释或指导该功能使用。
-          </p>
-          <div class="footer">
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="light"
-              size="small"
-              class="guide-demo-button"
-              @click="skip"
-            >
-              跳过
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="light"
-              size="small"
-              @click="back"
-            >
-              返回
-            </PressButton>
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="primary"
-              content="下一步"
-              size="small"
-              class="guide-demo-button"
-              @click="next"
-            >
-              下一步
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="primary"
-              content="完成"
-              size="small"
-              @click="finish"
-            >
-              完成
-            </PressButton>
+          <div
+            class="content"
+          >
+            <PressIconPlus
+              name="arrow-up"
+              size="32px"
+              color="#fff"
+              class="icon"
+            />
+            <p class="text">
+              1、自定义的图形或说明文案，用来解释或指导该功能使用。
+            </p>
+            <div class="footer">
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="light"
+                size="small"
+                class="guide-demo-button"
+                @click="skip"
+              >
+                跳过
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="light"
+                size="small"
+                @click="back"
+              >
+                返回
+              </PressButton>
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="primary"
+                content="下一步"
+                size="small"
+                class="guide-demo-button"
+                @click="next"
+              >
+                下一步
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="primary"
+                content="完成"
+                size="small"
+                @click="finish"
+              >
+                完成
+              </PressButton>
+            </div>
           </div>
-        </div>
-        <div
-          slot="content-1"
-          class="content"
+        </template>
+        <template
+          #content-1
         >
-          <PressIconPlus
-            name="arrow-up"
-            size="32px"
-            color="#fff"
-            class="icon"
-          />
-          <p class="text">
-            2、自定义的图形或说明文案，用来解释或指导该功能使用。
-          </p>
-          <div class="footer">
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="light"
-              content="跳过"
-              size="small"
-              class="guide-demo-button"
-              @click="skip"
-            >
-              跳过
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="light"
-              content="返回"
-              size="small"
-              @click="back"
-            >
-              返回
-            </PressButton>
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="primary"
-              content="下一步"
-              size="small"
-              class="guide-demo-button"
-              @click="next"
-            >
-              下一步
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="primary"
-              content="完成"
-              size="small"
-              @click="finish"
-            >
-              完成
-            </PressButton>
+          <div
+            class="content"
+          >
+            <PressIconPlus
+              name="arrow-up"
+              size="32px"
+              color="#fff"
+              class="icon"
+            />
+            <p class="text">
+              2、自定义的图形或说明文案，用来解释或指导该功能使用。
+            </p>
+            <div class="footer">
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="light"
+                content="跳过"
+                size="small"
+                class="guide-demo-button"
+                @click="skip"
+              >
+                跳过
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="light"
+                content="返回"
+                size="small"
+                @click="back"
+              >
+                返回
+              </PressButton>
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="primary"
+                content="下一步"
+                size="small"
+                class="guide-demo-button"
+                @click="next"
+              >
+                下一步
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="primary"
+                content="完成"
+                size="small"
+                @click="finish"
+              >
+                完成
+              </PressButton>
+            </div>
           </div>
-        </div>
-        <div
-          slot="content-2"
-          class="content"
+        </template>
+        <template
+          #content-2
         >
-          <PressIconPlus
-            name="arrow-up"
-            size="32px"
-            color="#fff"
-            class="icon"
-          />
-          <p class="text">
-            3、自定义的图形或说明文案，用来解释或指导该功能使用。
-          </p>
-          <div class="footer">
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="light"
-              content="跳过"
-              size="small"
-              class="guide-demo-button"
-              @click="skip"
-            >
-              跳过
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="light"
-              content="返回"
-              size="small"
-              @click="back"
-            >
-              返回
-            </PressButton>
-            <PressButton
-              v-if="current < steps.length - 1"
-              theme="primary"
-              content="下一步"
-              size="small"
-              class="guide-demo-button"
-              @click="next"
-            >
-              下一步
-            </PressButton>
-            <PressButton
-              v-else
-              class="guide-demo-button"
-              theme="primary"
-              content="完成"
-              size="small"
-              @click="finish"
-            >
-              完成
-            </PressButton>
+          <div
+            class="content"
+          >
+            <PressIconPlus
+              name="arrow-up"
+              size="32px"
+              color="#fff"
+              class="icon"
+            />
+            <p class="text">
+              3、自定义的图形或说明文案，用来解释或指导该功能使用。
+            </p>
+            <div class="footer">
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="light"
+                content="跳过"
+                size="small"
+                class="guide-demo-button"
+                @click="skip"
+              >
+                跳过
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="light"
+                content="返回"
+                size="small"
+                @click="back"
+              >
+                返回
+              </PressButton>
+              <PressButton
+                v-if="current < steps.length - 1"
+                theme="primary"
+                content="下一步"
+                size="small"
+                class="guide-demo-button"
+                @click="next"
+              >
+                下一步
+              </PressButton>
+              <PressButton
+                v-else
+                class="guide-demo-button"
+                theme="primary"
+                content="完成"
+                size="small"
+                @click="finish"
+              >
+                完成
+              </PressButton>
+            </div>
           </div>
-        </div>
+        </template>
       </PressGuide>
 
 
@@ -306,15 +324,15 @@
   </div>
 </template>
 <script>
-import PressGuide from 'src/packages/press-guide/press-guide.vue';
-import PressButton from 'src/packages/press-button/press-button.vue';
-import PressField from 'src/packages/press-field/press-field.vue';
+import PressGuide from 'press-ui/press-guide/press-guide.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
 
-import PressImage from 'src/packages/press-image/press-image.vue';
-import PressPopupPlus from 'src/packages/press-popup-plus/press-popup-plus.vue';
-import PressIconPlus from 'src/packages/press-icon-plus/press-icon-plus.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
-import { getWindowWidth } from 'src/packages/common/dom/rect';
+import { getWindowWidth } from 'press-ui/common/dom/rect';
 
 
 export default {

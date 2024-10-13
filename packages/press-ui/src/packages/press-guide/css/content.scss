@@ -52,7 +52,7 @@
       display: flex;
       padding: $guide-dialog-footer-button-padding;
       ::v-deep .#{$prefix}-guide__button:last-child,
-    // QQ 小程序
+      // QQ 小程序
       ::v-deep #{$prefix}-button:last-child {
         width: 100%;
         flex-grow: 1;

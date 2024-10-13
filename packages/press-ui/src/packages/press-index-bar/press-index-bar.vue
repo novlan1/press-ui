@@ -40,7 +40,7 @@
 <script>
 
 import { GREEN } from '../common/constant/color';
-import { getRect } from '../common/dom/rect';
+import { getRect, getRealPageYOrClientY } from '../common/dom/rect';
 
 import { isDef } from '../common/utils/validator';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
@@ -192,10 +192,12 @@ export default {
     },
     getActiveAnchorIndex() {
       const { children, scrollTop } = this;
-      const { sticky, stickyOffsetTop } = this;
+      const { sticky } = this;
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
-        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : this.stickyOffsetTop;
+        const reachTop = sticky ? preAnchorHeight : 0;
+        // 是否到顶，当前 index 以上的高度 + scrollTop，大于 当前 index 的 top
+        // 均不包含 windowTop
         if (reachTop + scrollTop >= children[i].top) {
           return i;
         }
@@ -204,7 +206,7 @@ export default {
     },
     onScroll(event) {
       if (event && (event.target || event.detail)) {
-        this.scrollTop = event.target.scrollTop || event.detail.scrollTop;
+        this.scrollTop = event.target?.scrollTop || event.detail?.scrollTop || 0;
       }
 
       const { children = [], scrollTop } = this;
@@ -223,7 +225,8 @@ export default {
       if (sticky) {
         let isActiveAnchorSticky = false;
         if (active !== -1) {
-          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
+          // 当前 active 的 top，小于 scrollTop，即表示要 sticky 样式了
+          isActiveAnchorSticky = children[active].top <= + scrollTop;
         }
         children.forEach((item, index) => {
           if (index === active) {
@@ -294,7 +297,7 @@ export default {
       let index;
       // #ifdef H5
       // 不再 + windowTop， 因为 sidebar.top (getRect) 已经减去过了
-      index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
+      index = Math.floor((getRealPageYOrClientY(touch.clientY) - this.sidebar.top) / itemHeight);
       // #endif
       // #ifndef H5
       index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
