@@ -3,6 +3,7 @@ import { isNotInUni } from '../utils/utils';
 import { getSystemInfoSync } from '../utils/system';
 // #ifdef H5
 import getWindowOffset from '../utils/get-window-offset';
+import { isVue3 } from '../vue3/vue'
 // #endif
 
 
@@ -13,7 +14,8 @@ export function getRealPageYOrClientY(value) {
     top = 0,
   } = getWindowOffset();
 
-  if (isNotInUni()) {
+  if (isNotInUni() || isVue3()) {
+    // Vue3 项目获取到的 touch.pageY 和 touch.clientY 都是包含 windowTop 的
     return value - top;
   }
   // #endif

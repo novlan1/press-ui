@@ -1,5 +1,12 @@
 # 更新日志
 
+## [2.2.0-alpha.2](https://github.com/novlan1/press-ui/compare/v2.2.0-alpha.1...v2.2.0-alpha.2) (2024-10-13)
+
+
+### Features 🎉
+
+* **pageY:** 支持vue3 ([01143fa](https://github.com/novlan1/press-ui/commit/01143fa2a169527d5db5467eb478fe1bd8919fa2))
+
 ## [2.2.0-alpha.1](https://github.com/novlan1/press-ui/compare/v2.2.0-alpha.0...v2.2.0-alpha.1) (2024-10-13)
 
 

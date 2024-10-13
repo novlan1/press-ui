@@ -24,3 +24,13 @@ export {
   getCurrentInstance,
   // #endif
 };
+
+
+export const isVue3 = () => {
+  let result = false;
+  // #ifdef VUE3
+  result = true
+  // #endif
+  return result;
+}
+
