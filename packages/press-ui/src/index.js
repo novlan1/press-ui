@@ -25,6 +25,7 @@ import CollapseItem from './packages/press-collapse-item/press-collapse-item.vue
 import ColorPicker from './packages/press-color-picker/press-color-picker.vue';
 import CountDown from './packages/press-count-down/press-count-down.vue';
 import CountTo from './packages/press-count-to/press-count-to.vue';
+import Cropper from './packages/press-cropper/press-cropper.vue';
 import DatetimePicker from './packages/press-datetime-picker/press-datetime-picker.vue';
 import DatetimePickerPopup from './packages/press-datetime-picker/press-datetime-picker-popup.vue';
 import DatetimePickerPopupPlus from './packages/press-datetime-picker/press-datetime-picker-popup-plus.vue';
@@ -140,6 +141,7 @@ const components = {
   ColorPicker,
   CountDown,
   CountTo,
+  Cropper,
   DatetimePicker,
   DatetimePickerPopup,
   DatetimePickerPopupPlus,
