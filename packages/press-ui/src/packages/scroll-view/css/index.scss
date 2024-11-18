@@ -11,6 +11,7 @@ uni-scroll-view[hidden] {
   position: relative;
   -webkit-overflow-scrolling: touch;
   width: 100%;
+
   /* display: flex; 时在安卓下会导致scrollWidth和offsetWidth一样 */
   height: 100%;
   max-height: inherit;
@@ -47,8 +48,8 @@ uni-scroll-view[hidden] {
   height: 40px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.117647),
-    0 1px 4px rgba(0, 0, 0, 0.117647);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .117647),
+    0 1px 4px rgba(0, 0, 0, .117647);
 }
 
 .uni-scroll-view-refresh__spinner {

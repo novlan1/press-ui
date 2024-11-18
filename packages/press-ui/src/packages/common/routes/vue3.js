@@ -1,6 +1,11 @@
-export function getRouteQuery() {
+function getCurrentPage() {
   const pages = getCurrentPages();
   const page = pages[pages.length - 1];
+  return page || {};
+}
+
+export function getRouteQuery() {
+  const page = getCurrentPage();
   if (!page) {
     return {};
   }
@@ -26,6 +31,18 @@ export const $route = Object.defineProperties({}, {
   params: {
     get() {
       return getRouteQuery();
+    },
+  },
+  fullPath: {
+    get() {
+      const page = getCurrentPage();
+      return page.$page?.fullPath || '';
+    },
+  },
+  route: {
+    get() {
+      const page = getCurrentPage();
+      return page.route || '';
     },
   },
 });

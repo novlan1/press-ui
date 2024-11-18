@@ -34,10 +34,10 @@ $press-upload-status-right: 0 !default;
 $press-upload-status-left: 0 !default;
 $press-upload-status-bottom: 0 !default;
 $press-upload-status-top: 0 !default;
-$press-upload-status-bgColor: rgba(0, 0, 0, 0.5) !default;
+$press-upload-status-bgColor: rgba(0, 0, 0, .5) !default;
 $press-upload-status-icon-Zindex: 1 !default;
 $press-upload-message-font-size: 12px !default;
-$press-upload-message-color: #ffffff !default;
+$press-upload-message-color: #fff !default;
 $press-upload-message-margin-top: 5px !default;
 $press-upload-button-width: 80px !default;
 $press-upload-button-height: $press-upload-button-width;
@@ -48,7 +48,7 @@ $press-upload-text-font-size: 11px !default;
 $press-upload-text-color: #909193 !default;
 $press-upload-text-margin-top: 2px !default;
 $press-upload-hover-bgColor: rgb(230, 231, 233) !default;
-$press-upload-disabled-opacity: 0.5 !default;
+$press-upload-disabled-opacity: .5 !default;
 
 .press-upload {
   display: flex;
@@ -111,15 +111,17 @@ $press-upload-disabled-opacity: 0.5 !default;
     ::v-deep .press-upload__deletable__icon,
     &__icon {
       position: absolute;
-      transform: scale(0.5);
+      transform: scale(.5);
       top: -2px;
       right: -2px;
       font-size: 16px;
       // top: $press-upload-icon-top;
       // right: $press-upload-icon-right;
+
       /* #ifdef H5 */
       // top: $press-upload-icon-h5-top;
       // right: $press-upload-icon-h5-right;
+
       /* #endif */
     }
   }
@@ -131,6 +133,7 @@ $press-upload-disabled-opacity: 0.5 !default;
     display: flex;
     // 由于weex(nvue)为阿里巴巴的KPI(部门业绩考核)的laji产物，不支持css绘制三角形
     // 所以在nvue下使用图片，非nvue下使用css实现
+
     /* #ifndef APP-NVUE */
     border-style: $press-upload-success-border-style;
     border-top-color: $press-upload-success-border-top-color;
@@ -140,18 +143,22 @@ $press-upload-disabled-opacity: 0.5 !default;
     border-width: $press-upload-success-border-width;
     align-items: center;
     justify-content: center;
+
     /* #endif */
 
     &__icon {
       /* #ifndef APP-NVUE */
       position: absolute;
-      transform: scale(0.7);
+      transform: scale(.7);
       bottom: $press-upload-success-icon-bottom;
       right: $press-upload-success-icon-right;
+
       /* #endif */
+
       /* #ifdef APP-NVUE */
       width: $press-upload-icon-width;
       height: $press-upload-icon-height;
+
       /* #endif */
     }
   }
@@ -190,8 +197,10 @@ $press-upload-disabled-opacity: 0.5 !default;
     background-color: $press-upload-button-bgColor;
     border-radius: $press-upload-button-border-radius;
     margin: $press-upload-botton-margin;
+
     /* #ifndef APP-NVUE */
     box-sizing: border-box;
+
     /* #endif */
 
     &__text {

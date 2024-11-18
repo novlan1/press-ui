@@ -1,5 +1,5 @@
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-dropdown-menu {
   display: flex;
@@ -19,7 +19,7 @@
     min-width: 0; // hack for flex ellipsis
 
     &:active {
-      opacity: 0.7;
+      opacity: .7;
     }
 
     &--disabled {
@@ -62,8 +62,8 @@
       border: 3px solid;
       border-color: transparent transparent currentColor currentColor;
       transform: rotate(-45deg);
-      opacity: 0.8;
-      content: "";
+      opacity: .8;
+      content: '';
     }
 
     &--active {

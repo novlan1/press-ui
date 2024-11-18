@@ -1,6 +1,6 @@
-@import "../../common/style/press/mixins/flex.scss";
-@import "../../common/style/press/mixins/button-reset.scss";
-@import "../../common/style/press/mixins/ellipsis.scss";
+@import '../../common/style/press/mixins/flex.scss';
+@import '../../common/style/press/mixins/button-reset.scss';
+@import '../../common/style/press/mixins/ellipsis.scss';
 
 $press-main-color: #151719;
 $press-primary: #3c9cff;
@@ -18,8 +18,10 @@ $press-light-color: #c0c4cc;
   align-items: center;
   flex-wrap: nowrap;
   flex: 1;
+
   /* #ifndef APP-NVUE */
   width: 100%;
+
   /* #endif */
 
   &__price {
@@ -41,7 +43,7 @@ $press-light-color: #c0c4cc;
 
     &--warning {
       color: $press-warning;
-   }
+    }
 
     &--success {
       color: $press-success;

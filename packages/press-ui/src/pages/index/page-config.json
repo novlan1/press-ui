@@ -69,6 +69,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/cropper/cropper",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/datetime-picker/datetime-picker",
           "navigationStyle": ""
         },

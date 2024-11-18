@@ -1,4 +1,4 @@
-@import "./layout";
+@import './layout';
 
 /* 主按钮 */
 @mixin primary-btn($width, $height, $fontSize: $font-l, $color: $color-white, $borderRadius: .08rem, $bgColor: $color-primary-btn, $bgActive: $color-blue) {

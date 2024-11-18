@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-skeleton {
   display: flex;
@@ -58,6 +58,6 @@
 
 @keyframes press-skeleton-blink {
   50% {
-    opacity: 0.6;
+    opacity: .6;
   }
 }

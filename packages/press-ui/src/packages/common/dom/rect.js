@@ -3,7 +3,7 @@ import { isNotInUni } from '../utils/utils';
 import { getSystemInfoSync } from '../utils/system';
 // #ifdef H5
 import getWindowOffset from '../utils/get-window-offset';
-import { isVue3 } from '../vue3/vue'
+import { isVue3 } from '../vue3/vue';
 // #endif
 
 

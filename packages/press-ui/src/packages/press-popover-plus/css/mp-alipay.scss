@@ -1,11 +1,11 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 /* #ifdef MP-ALIPAY */
 ::v-deep .press-popover {
   position: absolute;
   overflow: visible;
   background-color: transparent;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity .15s, transform .15s;
 
   .press-popup {
     overflow-y: visible;
@@ -18,4 +18,5 @@
     font-size: $popover-action-icon-size;
   }
 }
+
 /* #endif */

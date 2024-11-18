@@ -71,6 +71,10 @@
           "path": "/en/components/press/press-color-picker.md"
         },
         {
+          "title": "Cropper",
+          "path": "/en/components/press/press-cropper.md"
+        },
+        {
           "title": "DatetimePicker",
           "path": "/en/components/press/press-datetime-picker.md"
         },

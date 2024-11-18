@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-divider {
   display: flex;
@@ -23,13 +23,13 @@
   }
 
   &::before {
-    content: "";
+    content: '';
   }
 
   &--hairline {
     &::before,
     &::after {
-      transform: scaleY(0.5);
+      transform: scaleY(.5);
     }
   }
 
@@ -45,7 +45,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       margin-left: var(--divider-content-padding, $divider-content-padding);
     }
   }

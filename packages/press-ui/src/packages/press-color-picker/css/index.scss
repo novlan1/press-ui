@@ -1,24 +1,4 @@
-$font-white-1: var(--press-font-white-1, rgba(255, 255, 255, 1));
-$brand-color: var(--press-brand-color, #0052d9);
-
-$shadow-1: var(
-  --press-shadow-1,
-  0 1px 10px rgba(0, 0, 0, 5%),
-  0 4px 5px rgba(0, 0, 0, 8%),
-  0 2px 4px -1px rgba(0, 0, 0, 12%)
-);
-
-$text-color-brand: var(--press-text-color-brand, $brand-color);
-$text-color-anti: var(--press-text-color-anti, $font-white-1);
-
-
-$anim-time-fn-easing: var(--press-anim-time-fn-easing, cubic-bezier(0.38, 0, 0.24, 1));
-$anim-time-fn-ease-out: var(--press-anim-time-fn-ease-out, cubic-bezier(0, 0, 0.15, 1));
-$anim-time-fn-ease-in: var(--press-anim-time-fn-ease-in, cubic-bezier(0.82, 0, 1, 0.9));
-$anim-duration-base: var(--press-anim-duration-base, 0.2s);
-$anim-duration-moderate: var(--press-anim-duration-moderate, 0.24s);
-$anim-duration-slow: var(--press-anim-duration-slow, 0.28s);
-
+@import '../../common/style/tdesign/index.scss';
 
 
 @mixin transparentBgImage () {
@@ -34,14 +14,13 @@ $color-picker-panel-padding: 16px;
 $color-picker-panel-radius: 6px;
 $color-picker-saturation-height: 144px;
 $color-picker-saturation-radius: 6px;
-$color-picker-saturation-thumb-size: 18px;
+$color-picker-saturation-thumb-size: 24px;
 $color-picker-margin: 12px;
 $color-picker-slider-height: 8px;
 $color-picker-slider-wrapper-radius: calc($color-picker-slider-height / 2);
 $color-picker-slider-wrapper-padding: 0 9px;
-$color-picker-slider-thumb-size: 18px;
-$color-picker-slider-thumb-transform-x: -9px;
-$color-picker-slider-thumb-padding: 2px;
+$color-picker-slider-thumb-size: 24px;
+$color-picker-slider-thumb-padding: 3px;
 $color-picker-input-format-margin-left: 24px;
 $color-picker-swatches-title-font: 16px;
 $color-picker-gradient-preview-width: 28px;
@@ -53,6 +32,7 @@ $color-picker-swatch-padding: 0;
 $color-picker-swatch-border-radius: 3px;
 $color-picker-thumbs-shadow: $shadow-1;
 $color-picker-border-radius-circle: 50%;
+$color-picker-format-background-color: var(--press-color-picker-format-background-color, $gray-color-1);
 
 $color-picker: 'press-color-picker';
 
@@ -75,23 +55,39 @@ $color-picker: 'press-color-picker';
     position: absolute;
     z-index: 1;
     outline: none;
-    border-color: currentcolor;
     width: $color-picker-slider-thumb-size;
     height: $color-picker-slider-thumb-size;
+
     border-radius: $color-picker-border-radius-circle;
     box-shadow: $color-picker-thumbs-shadow;
-    background: $text-color-anti;
     color: $text-color-brand;
-    padding: $color-picker-slider-thumb-padding;
     box-sizing: border-box;
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
+      position: absolute;
+      border-radius: $color-picker-border-radius-circle;
+      box-sizing: border-box;
+      display: block;
+      border: 1px solid #dcdcdc;
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
+      background-color: #fff;
+    }
+
+    &::after {
+      left: 3px;
+      top: 3px;
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+      padding: $color-picker-slider-thumb-padding;
       background: currentcolor;
-      border-radius: $color-picker-border-radius-circle;
-      display: block;
     }
   }
 
@@ -219,7 +215,7 @@ $color-picker: 'press-color-picker';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, .4);
     font-size: 14px;
     text-align: center;
     line-height: 28px;
@@ -228,12 +224,15 @@ $color-picker: 'press-color-picker';
   }
 
   &__format-item {
+    background: $color-picker-format-background-color;
+
     &--first {
       flex-shrink: 0;
       width: 68px;
       border: 1px solid #dcdcdc;
       border-radius: 6px;
       margin-right: 24px;
+      margin-right: 12px;
     }
 
     &--second {
@@ -289,7 +288,7 @@ $color-picker: 'press-color-picker';
   &__swatches-title {
     font: $color-picker-swatches-title-font;
     padding: 0;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, .9);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -302,9 +301,16 @@ $color-picker: 'press-color-picker';
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    overflow-x: hidden;
+
+    overflow-x: auto;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+      color: transparent;
+    }
   }
 
   &__swatches-item {
@@ -314,22 +320,37 @@ $color-picker: 'press-color-picker';
     border-radius: 3px;
     padding: $color-picker-swatch-padding;
     overflow: hidden;
+
     cursor: pointer;
+
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     transform-origin: center;
     transition: all $anim-duration-base $anim-time-fn-easing;
     box-sizing: border-box;
-  }
 
-  &__swatches-color {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 12px;
     border-radius: $color-picker-swatch-border-radius;
-    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      background: rgba(0, 0, 0, .2);
+    }
+
+    &:active {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
   &__swatches-inner {
@@ -337,6 +358,7 @@ $color-picker: 'press-color-picker';
     height: 100%;
     display: block;
     border-radius: $color-picker-swatch-border-radius;
+    position: relative;
   }
 }
 

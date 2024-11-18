@@ -1,8 +1,8 @@
-@import "../../common/style/press/mixins/flex.scss";
+@import '../../common/style/press/mixins/flex.scss';
 
 $press-back-top-flex:1 !default;
 $press-back-top-height:100% !default;
-$press-back-top-background-color:#E1E1E1 !default;
+$press-back-top-background-color:#e1e1e1 !default;
 $press-back-top-tips-font-size:12px !default;
 
 .press-back-top {
@@ -16,7 +16,7 @@ $press-back-top-tips-font-size:12px !default;
 
   &__tips {
     font-size: $press-back-top-tips-font-size;
-    transform: scale(0.8);
+    transform: scale(.8);
   }
 
   ::v-deep press-icon-plus {

@@ -1,6 +1,6 @@
-@import "../../common/style/press/hairline-more/top-bottom.scss";
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline-more/top-bottom.scss';
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-tabs {
   position: relative;
@@ -80,7 +80,7 @@
           var(--tabs-default-color, $tabs-default-color);
 
         &:last-child {
-          border-right: none;
+          border-right: 0;
         }
 
         &.press-tab--active {

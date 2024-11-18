@@ -1,5 +1,4 @@
 // import { filterSameRequest } from './filter-same-request';
-import { IChatSDK } from '../types';
 import { Scheduler } from '../../scheduler/scheduler';
 
 

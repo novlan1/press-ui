@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-tag {
   position: relative;
@@ -64,7 +64,7 @@
       left: 0;
       border: 1px solid currentColor;
       border-radius: inherit;
-      content: "";
+      content: '';
       pointer-events: none;
     }
   }
@@ -94,7 +94,7 @@
     &::after {
       display: block;
       width: 2px;
-      content: "";
+      content: '';
     }
   }
 

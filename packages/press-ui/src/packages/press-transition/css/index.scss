@@ -3,16 +3,20 @@
 
   /* #ifdef MP-ALIPAY */
   touch-action: none;
+
   /* #endif */
 }
+
 .press-fade-enter-active,
 .press-fade-leave-active {
   transition-property: opacity;
 }
+
 .press-fade-enter,
 .press-fade-leave-to {
   opacity: 0;
 }
+
 .press-fade-down-enter-active,
 .press-fade-down-leave-active,
 .press-fade-left-enter-active,
@@ -23,21 +27,25 @@
 .press-fade-up-leave-active {
   transition-property: opacity, transform;
 }
+
 .press-fade-up-enter,
 .press-fade-up-leave-to {
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
+
 .press-fade-down-enter,
 .press-fade-down-leave-to {
   opacity: 0;
   transform: translate3d(0, -100%, 0);
 }
+
 .press-fade-left-enter,
 .press-fade-left-leave-to {
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
 }
+
 .press-fade-right-enter,
 .press-fade-right-leave-to {
   opacity: 0;
@@ -76,7 +84,7 @@
 }
 
 .press-overlay {
-  background-color: var(--overlay-background-color, rgba(0, 0, 0, 0.7));
+  background-color: var(--overlay-background-color, rgba(0, 0, 0, .7));
   height: 100%;
   left: 0;
   position: fixed;

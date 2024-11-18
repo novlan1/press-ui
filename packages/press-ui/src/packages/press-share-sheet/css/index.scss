@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-share-sheet {
   &__header {
@@ -48,13 +48,13 @@
     line-height: $share-sheet-cancel-button-height;
     text-align: center;
     background: $share-sheet-cancel-button-background;
-    border: none;
+    border: 0;
 
     &::before {
       display: block;
       height: $padding-xs;
       background-color: $background-color;
-      content: " ";
+      content: ' ';
     }
 
     &::after {

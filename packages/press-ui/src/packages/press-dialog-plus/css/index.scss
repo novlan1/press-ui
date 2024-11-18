@@ -1,11 +1,12 @@
-@import "../../common/style/press/hairline-more/top.scss";
-@import "../../common/style/press/hairline-more/right.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline-more/top.scss';
+@import '../../common/style/press/hairline-more/right.scss';
+@import '../../common/style/press/var.scss';
 
 /* #ifdef MP-ALIPAY */
 .press-dialog-index {
   touch-action: none;
 }
+
 /* #endif */
 
 ::v-deep .press-dialog {
@@ -91,12 +92,12 @@
   }
 
   &-bounce-enter {
-    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    transform: translate3d(-50%, -50%, 0) scale(.7);
     opacity: 0;
   }
 
   &-bounce-leave-active {
-    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    transform: translate3d(-50%, -50%, 0) scale(.9);
     opacity: 0;
   }
 }

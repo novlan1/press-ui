@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-loading-index {
   font-size: 0;
@@ -71,7 +71,7 @@
       margin: 0 auto;
       background-color: currentColor;
       border-radius: 40%;
-      content: " ";
+      content: ' ';
     }
   }
 }
@@ -81,7 +81,7 @@
     transform: rotate($i * 30deg);
 
     // 一些项目不支持某些写法，可能是sass-loader版本问题
-    opacity: calc(1 - calc((0.75 / 12) * (#{$i} - 1)));
+    opacity: calc(1 - calc((.75 / 12) * (#{$i} - 1)));
   }
 }
 
@@ -89,6 +89,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(1turn);
   }

@@ -1,5 +1,5 @@
 import { waitReady } from './wait-ready';
-import { IChatSDK } from '../types';
+
 
 export async function getMessageList({
   conversationId,

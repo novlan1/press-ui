@@ -14,6 +14,7 @@
   "checkbox": "./src/packages/press-checkbox/press-checkbox.vue",
   "code-input": "./src/packages/press-code-input/press-code-input.vue",
   "color-picker": "./src/packages/press-color-picker/press-color-picker.vue",
+  "cropper": "./src/packages/press-cropper/press-cropper.vue",
   "datetime-picker": "./src/packages/press-datetime-picker/press-datetime-picker.vue",
   "field": "./src/packages/press-field/press-field.vue",
   "form": "./src/packages/press-form/press-form.vue",

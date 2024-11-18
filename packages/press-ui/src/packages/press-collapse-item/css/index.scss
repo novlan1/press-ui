@@ -1,5 +1,5 @@
-@import "../../common/style/press/hairline-more/top.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline-more/top.scss';
+@import '../../common/style/press/var.scss';
 
 .press-collapse-item {
   ::v-deep &__title {
@@ -11,6 +11,7 @@
           $collapse-item-transition-duration
         );
     }
+
     &--expanded {
       .press-cell__right-icon {
         transform: rotate(-90deg);

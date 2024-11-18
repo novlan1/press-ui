@@ -1,5 +1,5 @@
-@import "../../common/style/smoba/layout.scss";
-@import "../../common/style/smoba/mixin.scss";
+@import '../../common/style/smoba/layout.scss';
+@import '../../common/style/smoba/mixin.scss';
 
 .press-empty {
   &--e-sport {
@@ -23,7 +23,7 @@
       font-size: $font-xxs;
       color: #6297dd;
       text-align: center;
-      line-height: 0.44rem;
+      line-height: .44rem;
       margin-top: 0;
       // padding-bottom: 0.6rem;
     }
@@ -41,7 +41,7 @@
       no-repeat center center;
     background-size: contain;
     min-height: auto;
-    margin-bottom: -0.32rem;
+    margin-bottom: -.32rem;
   }
 }
 

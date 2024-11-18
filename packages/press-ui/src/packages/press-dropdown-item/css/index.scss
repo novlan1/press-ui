@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-dropdown-item {
   position: fixed;
@@ -30,6 +30,7 @@
   &--down {
     bottom: 0;
   }
+
   /* #ifdef MP-ALIPAY */
   ::v-deep &__icon,
   /* #endif */

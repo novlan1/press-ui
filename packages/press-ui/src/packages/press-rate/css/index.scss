@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-rate {
   display: inline-flex;
@@ -25,7 +25,7 @@
     &--half {
       position: absolute;
       top: 0;
-      width: 0.5em;
+      width: .5em;
       overflow: hidden;
       left: var(--rate-horizontal-padding, $rate-horizontal-padding);
       color: var(--rate-icon-full-color, $rate-icon-full-color);

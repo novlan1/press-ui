@@ -122,12 +122,10 @@
               data-value="swatch"
               @click.stop="() => clickSwatch(swatch)"
             >
-              <div class="press-color-picker__swatches-color">
-                <div
-                  class="press-color-picker__swatches-inner"
-                  :style="{backgroundColor: swatch}"
-                />
-              </div>
+              <div
+                class="press-color-picker__swatches-inner"
+                :style="{backgroundColor: swatch}"
+              />
             </div>
           </div>
         </div>

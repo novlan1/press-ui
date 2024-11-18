@@ -1,5 +1,5 @@
-@import "../../common/style/smoba/layout.scss";
-@import "../../common/style/smoba/mixin.scss";
+@import '../../common/style/smoba/layout.scss';
+@import '../../common/style/smoba/mixin.scss';
 
 .press-tabs--hor {
   height: 100%;
@@ -12,8 +12,8 @@
     }
 
     .press-tabs__content {
-      height: calc(100% - 0.54rem);
-      padding-top: 0.12rem;
+      height: calc(100% - .54rem);
+      padding-top: .12rem;
     }
 
     .press-tabs__scroll {
@@ -24,16 +24,16 @@
 
     .press-tabs__wrap {
       position: relative;
-      height: 0.54rem;
+      height: .54rem;
 
       &::before {
         position: absolute;
-        bottom: 0.06rem;
+        bottom: .06rem;
         left: 0;
         right: 0;
-        content: "";
-        height: 0.02rem;
-        background: rgba(123, 197, 255, 0.15);
+        content: '';
+        height: .02rem;
+        background: rgba(123, 197, 255, .15);
       }
     }
 
@@ -43,11 +43,11 @@
     }
 
     .press-tab {
-      font-family: "GAMEFONT";
+      font-family: 'GAMEFONT';
       flex: none;
       color: #84b0eb;
       font-size: $font-s;
-      padding: 0 0.32rem 0.06rem;
+      padding: 0 .32rem .06rem;
       z-index: 2;
     }
 
@@ -64,7 +64,7 @@
 
     .press-tab--active {
       color: $color-white;
-      text-shadow: 0 0 8px rgba(95, 147, 234, 0.69);
+      text-shadow: 0 0 8px rgba(95, 147, 234, .69);
     }
 
     .press-ellipsis {
@@ -72,13 +72,13 @@
     }
 
     .press-info--dot {
-      top: -0.08rem !important;
-      right: -0.02rem !important;
-      width: 0.28rem;
-      height: 0.28rem;
+      top: -.08rem !important;
+      right: -.02rem !important;
+      width: .28rem;
+      height: .28rem;
       padding: 0;
       border-radius: 0;
-      border: none;
+      border: 0;
       background: url(https://image-1251917893.file.myqcloud.com/Esports/hor/sche/red-dot.png) no-repeat center;
       background-size: contain;
     }

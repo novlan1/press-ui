@@ -1,6 +1,7 @@
 <template>
   <div class="press-q-r-code">
     <!-- #ifdef H5 -->
+    <!-- #ifdef VUE2 -->
     <PressQRCodeWeb
       v-if="value"
       :value="value"
@@ -8,7 +9,28 @@
     />
     <!-- #endif -->
 
+    <!-- #ifdef VUE3 -->
+    <PressQRCodeWeb
+      v-if="value && !vue3Image"
+      :value="value"
+      v-bind="h5Attr"
+    />
+    <!-- #endif -->
+    <!-- #endif -->
+
+
     <template v-if="!codeImg">
+      <!-- #ifdef H5 -->
+      <!-- #ifdef VUE3 -->
+      <PressQRCodeWeb
+        v-if="value && vue3Image"
+        :id="canvasId"
+        :value="value"
+      />
+      <!-- #endif -->
+      <!-- #endif -->
+
+
       <!-- #ifdef MP-WEIXIN -->
       <canvas
         :id="wxCanvasId"
@@ -77,6 +99,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // Vue3 时，是否使用 image 模式，即转为 image，这时会将 width/height 设为父元素的宽高
+    vue3Image: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: [
     'result',
@@ -101,6 +128,9 @@ export default {
       } : {};
     },
     style() {
+      if (this.size === -1) {
+        return '';
+      }
       return `width: ${this.size}px; height: ${this.size}px;`;
     },
   },
@@ -133,6 +163,14 @@ export default {
 
       // #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP
       this.codeMpQQ();
+      // #endif
+
+      // #ifdef H5
+      // #ifdef VUE3
+      if (this.vue3Image) {
+        this.codeH5Vue3();
+      }
+      // #endif
       // #endif
     },
     codeMpWx() {
@@ -212,6 +250,11 @@ export default {
           this, // 组件内使用必传当前实例
         );
       }, 300);
+    },
+    codeH5Vue3() {
+      const canvas = document.getElementById(this.canvasId);
+      const domImage = canvas.toDataURL('image/png');
+      this.codeImg = domImage;
     },
     onLongPressImage() {
       this.$emit('longPressImage', this.codeImg);

@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-radio {
   display: flex;
@@ -36,6 +36,7 @@
 
     &--round {
       border-radius: 100%;
+
       .press-icon {
         // 【修改点】
         border-radius: 100%;

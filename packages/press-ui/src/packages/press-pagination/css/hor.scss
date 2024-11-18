@@ -1,11 +1,11 @@
-@import "../../common/style/smoba/layout.scss";
-@import "../../common/style/smoba/mixin.scss";
+@import '../../common/style/smoba/layout.scss';
+@import '../../common/style/smoba/mixin.scss';
 
 .press-pagination--hor {
   ::v-deep {
     .press-scrollbar {
       width: 16px;
-      background: rgba(9, 37, 69, 0.9);
+      background: rgba(9, 37, 69, .9);
     }
 
     .press-pagination__wrap {
@@ -26,7 +26,7 @@
       color: $color-white;
       opacity: 1;
       background: linear-gradient(91.77deg, #53c3f7 -1.92%, #1181d7 98.64%);
-      box-shadow: 0px 0px 8px 0px rgba(99, 153, 253, 0.8);
+      box-shadow: 0px 0px 8px 0px rgba(99, 153, 253, .8);
     }
 
     .press-popover {

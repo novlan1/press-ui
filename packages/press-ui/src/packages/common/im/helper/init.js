@@ -1,4 +1,3 @@
-import { IChatSDK } from '../types';
 import { TIM } from './tim';
 
 const timMap = {};

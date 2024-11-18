@@ -46,7 +46,8 @@ function replaceContent(content) {
 }
 
 function main() {
-  const list = glob.sync('packages/press-ui/src/packages/**/*.?(vue|scss)');
+  // const list = glob.sync('packages/press-ui/src/packages/**/*.?(vue|scss)');
+  const list = glob.sync('packages/press-ui/src/packages/press-color-picker/**/*.vue');
   console.log('list', list);
 
 

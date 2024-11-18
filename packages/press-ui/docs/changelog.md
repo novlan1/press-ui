@@ -1,5 +1,70 @@
 # 更新日志
 
+### [2.2.6](https://github.com/novlan1/press-ui/compare/v2.2.5...v2.2.6) (2024-11-18)
+
+
+### Features 🎉
+
+* **cropper:** 优化cropper ([71076dc](https://github.com/novlan1/press-ui/commit/71076dc5730de728a724d1ce1183277be46fd076))
+
+### [2.2.5](https://github.com/novlan1/press-ui/compare/v2.2.4...v2.2.5) (2024-11-18)
+
+
+### Features 🎉
+
+* **cropper:** 优化属性 ([6b3e670](https://github.com/novlan1/press-ui/commit/6b3e670299743b534f5e2e8ffe93f5de29628650))
+
+### [2.2.4](https://github.com/novlan1/press-ui/compare/v2.2.3...v2.2.4) (2024-11-18)
+
+
+### Features 🎉
+
+* add cropper ([e6b2f47](https://github.com/novlan1/press-ui/commit/e6b2f47c70a902512854ff05b7eddfade1f04d0b))
+* **cropper:** 支持footer ([e8286e5](https://github.com/novlan1/press-ui/commit/e8286e53819f81326eb2ebcfc96e8fde5008680a))
+* **cropper:** H5下使用vue-cropper ([1b14d81](https://github.com/novlan1/press-ui/commit/1b14d81042893a5f42362465c6378265330fd5fe))
+
+### [2.2.3](https://github.com/novlan1/press-ui/compare/v2.2.2...v2.2.3) (2024-11-13)
+
+
+### Code Refactoring ♻️
+
+* stylelint ([1555ecf](https://github.com/novlan1/press-ui/commit/1555ecfdb3cd91668c886dd00e6ffb16d07b6608))
+* stylelint ([e105ccc](https://github.com/novlan1/press-ui/commit/e105ccc59f317ab0f007445b893f2a1168cea72b))
+
+
+### Chore 🚀 
+
+* remove useless type ([728b142](https://github.com/novlan1/press-ui/commit/728b14225b9fbf0483e048b185a1c38ff7655f3f))
+
+### [2.2.2](https://github.com/novlan1/press-ui/compare/v2.2.1...v2.2.2) (2024-11-07)
+
+
+### Features 🎉
+
+* **vue3-:** 给增加fullPath/route参数 ([07f7eeb](https://github.com/novlan1/press-ui/commit/07f7eebae66e204860afd88f40886db8d0827738))
+
+### [2.2.1](https://github.com/novlan1/press-ui/compare/v2.2.0...v2.2.1) (2024-10-23)
+
+
+### Features 🎉
+
+* **switch:** emit必要事件，支持vue3 ([61ed10a](https://github.com/novlan1/press-ui/commit/61ed10a32d2680257ad253c06c7ae027d8faae8a))
+
+## [2.2.0](https://github.com/novlan1/press-ui/compare/v2.2.0-alpha.2...v2.2.0) (2024-10-23)
+
+
+### Chore 🚀 
+
+* lint ([8077718](https://github.com/novlan1/press-ui/commit/80777180e28d7629b46b4fcb1fe6277ff93b8198))
+* vue3 qq小程序不再隐藏 pages ([4eb385a](https://github.com/novlan1/press-ui/commit/4eb385a4cfa10e06c5b737f89b51903595fea3d1))
+
+
+### Features 🎉
+
+* **color-picker:** 体验优化 ([2106aea](https://github.com/novlan1/press-ui/commit/2106aeac2ee0cef24b73173e549d5366c4f78995))
+* **color-picker:** 体验优化 ([af13413](https://github.com/novlan1/press-ui/commit/af134131e46e40a70d24e34d534b85b49280a4d0))
+* **qrcode:** 支持vue3下转成image ([86c06b4](https://github.com/novlan1/press-ui/commit/86c06b44fac42b40ada55598440b5249b7b49c42))
+
 ## [2.2.0-alpha.2](https://github.com/novlan1/press-ui/compare/v2.2.0-alpha.1...v2.2.0-alpha.2) (2024-10-13)
 
 

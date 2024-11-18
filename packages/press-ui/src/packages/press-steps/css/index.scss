@@ -1,5 +1,5 @@
-@import "../../common/style/press/hairline.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline.scss';
+@import '../../common/style/press/var.scss';
 
 .press-steps {
   overflow: hidden;
@@ -120,7 +120,7 @@
     }
 
     &:last-child::after {
-      border-bottom-width: none;
+      border-bottom-width: 0;
     }
 
     &:first-child {
@@ -131,7 +131,7 @@
         z-index: 1;
         width: 1px;
         height: 20px;
-        content: "";
+        content: '';
         background-color: $white;
       }
     }

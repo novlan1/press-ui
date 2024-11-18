@@ -1,11 +1,11 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 @import './popover-placement.scss';
 
 .press-popover {
   position: absolute;
   overflow: visible;
   background-color: transparent;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity .15s, transform .15s;
   
   &__wrapper {
     display: inline-block;
@@ -79,7 +79,7 @@
 
     .press-popover__content {
       background-color: $popover-light-background-color;
-      box-shadow: 0 2px 12px rgba(50, 50, 51, 0.12);
+      box-shadow: 0 2px 12px rgba(50, 50, 51, .12);
     }
 
     .press-popover__arrow {
@@ -115,7 +115,7 @@
 
     .press-popover__action {
       &:active {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, .2);
       }
 
       &--disabled {
@@ -136,10 +136,9 @@
 
   ::v-deep {
     .press-popover {
-
       &-zoom-enter,
       &-zoom-leave-active {
-        transform: scale(0.8);
+        transform: scale(.8);
         opacity: 0;
       }
 

@@ -1,5 +1,5 @@
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-notice-bar {
   display: flex;
@@ -37,8 +37,9 @@
 
   /* #ifdef MP-ALIPAY */
   ::v-deep &__left-icon,
-/* #endif */
-   &__left-icon {
+
+  /* #endif */
+  &__left-icon {
     display: flex;
     align-items: center;
     margin-right: 4px;

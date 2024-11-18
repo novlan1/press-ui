@@ -1,8 +1,8 @@
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-tree-select {
-    --sidebar-padding: 12px 8px 12px 12px;
+  --sidebar-padding: 12px 8px 12px 12px;
 
   position: relative;
   display: flex;

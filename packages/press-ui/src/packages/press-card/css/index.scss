@@ -2,7 +2,7 @@ $press-border-3: #ebeef5 !default;
 $press-shadow-base: 0 0px 6px 1px
   rgba(
     $color: #a5a5a5,
-    $alpha: 0.2,
+    $alpha: .2,
   ) !default;
 $press-main-color: #3a3a3a !default;
 $press-base-color: #6a6a6a !default;
@@ -33,11 +33,14 @@ $press-card-content-color: $press-base-color;
     flex-direction: row;
     overflow: hidden;
     border-radius: 4px;
+
     .press-card__cover-image {
       flex: 1;
       // width: 100%;
+
       /* #ifndef APP-PLUS */
       vertical-align: middle;
+
       /* #endif */
     }
   }
@@ -53,6 +56,7 @@ $press-card-content-color: $press-base-color;
     .press-card__header-box {
       /* #ifndef APP-NVUE */
       display: flex;
+
       /* #endif */
       flex: 1;
       flex-direction: row;
@@ -66,6 +70,7 @@ $press-card-content-color: $press-base-color;
       overflow: hidden;
       border-radius: 5px;
       margin-right: $press-card-spacing;
+
       .press-card__header-avatar-image {
         flex: 1;
         width: 40px;
@@ -76,6 +81,7 @@ $press-card-content-color: $press-base-color;
     .press-card__header-content {
       /* #ifndef APP-NVUE */
       display: flex;
+
       /* #endif */
       flex-direction: column;
       justify-content: center;
@@ -124,8 +130,10 @@ $press-card-content-color: $press-base-color;
 
 .press-card--shadow {
   position: relative;
+
   /* #ifndef APP-NVUE */
   box-shadow: $press-shadow;
+
   /* #endif */
 }
 
@@ -147,8 +155,11 @@ $press-card-content-color: $press-base-color;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
   /* #endif */
+
   /* #ifdef APP-NVUE */
   lines: 1;
+
   /* #endif */
 }

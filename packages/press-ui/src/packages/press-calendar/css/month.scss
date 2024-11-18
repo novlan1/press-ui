@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-calendar {
   display: flex;
@@ -93,7 +93,7 @@
         bottom: 0;
         left: 0;
         background-color: currentColor;
-        content: "";
+        content: '';
         opacity: var(
           --calendar-range-middle-background-opacity,
           $calendar-range-middle-background-opacity

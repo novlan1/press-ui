@@ -19,16 +19,17 @@
 /* #ifndef APP-NVUE */
 @font-face {
   font-display: auto;
-  font-family: "press-icon-plus";
+  font-family: 'press-icon-plus';
   font-style: normal;
   font-weight: 400;
-  src: url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff2?t=1640074908811")
-      format("woff2"),
-    url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff?t=1640074908811")
-      format("woff"),
-    url("https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811")
-      format("truetype");
+  src: url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff2?t=1640074908811')
+    format('woff2'),
+    url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff?t=1640074908811')
+    format('woff'),
+    url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811')
+    format('truetype');
 }
+
 /* #endif */
 
 .press-icon-plus {

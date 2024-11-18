@@ -1,6 +1,6 @@
-@import "../../common/style/press/hairline-more/bottom.scss";
-@import "../../common/style/press/ellipsis.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline-more/bottom.scss';
+@import '../../common/style/press/ellipsis.scss';
+@import '../../common/style/press/var.scss';
 
 .press-nav-bar {
   position: relative;
@@ -47,6 +47,7 @@
     font-size: var(--nav-bar-arrow-size, $nav-bar-arrow-size);
     color: var(--nav-bar-icon-color, $nav-bar-icon-color);
   }
+
   ::v-deep &__arrow,
   press-icon-plus {
     + .press-nav-bar__text {

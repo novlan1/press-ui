@@ -129,6 +129,12 @@
         }
       },
       {
+        "path": "cropper/cropper",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "datetime-picker/datetime-picker",
         "style": {
           "navigationBarTitleText": ""

@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-stepper {
   font-size: 0;
@@ -41,7 +41,7 @@
       left: 0;
       margin: auto;
       background-color: currentColor;
-      content: "";
+      content: '';
     }
 
     &--hover {
@@ -70,14 +70,14 @@
 
   &__minus {
     border-radius: var(
-        --stepper-border-radius,
-        var(--stepper-border-radius, $stepper-border-radius)
-      )
+      --stepper-border-radius,
+      var(--stepper-border-radius, $stepper-border-radius)
+    )
       0 0
       var(
-        --stepper-border-radius,
-        var(--stepper-border-radius, $stepper-border-radius)
-      );
+      --stepper-border-radius,
+      var(--stepper-border-radius, $stepper-border-radius)
+    );
 
     &::after {
       display: none;
@@ -113,7 +113,7 @@
       &--disabled {
         &,
         &:active {
-          opacity: 0.3;
+          opacity: .3;
         }
       }
     }

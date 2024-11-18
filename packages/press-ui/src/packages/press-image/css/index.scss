@@ -8,7 +8,7 @@ $press-image-error-font-size: 23px !default;
 
 .press-image {
   position: relative;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity .5s ease-in-out;
 
   &__image {
     width: 100%;

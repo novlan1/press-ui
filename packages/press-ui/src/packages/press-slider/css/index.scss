@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-slider-index {
   display: inline;
@@ -18,7 +18,7 @@
     position: absolute;
     right: 0;
     left: 0;
-    content: "";
+    content: '';
     top: calc(-1 * var(--padding-xs, $padding-xs));
     bottom: calc(-1 * var(--padding-xs, $padding-xs));
   }

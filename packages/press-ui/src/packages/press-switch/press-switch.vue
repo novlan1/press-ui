@@ -55,6 +55,7 @@ export default {
     nodeClass: { type: String, default: '' },
     ...defaultProps,
   },
+  emits: ['click', 'input', 'change', 'onSwitchChange'],
   computed: {
     realChecked() {
       const { open, checked } = this;

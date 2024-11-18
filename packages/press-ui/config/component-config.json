@@ -70,6 +70,10 @@
         "title": "颜色选择器"
       },
       {
+        "name": "Cropper",
+        "title": "图片裁剪"
+      },
+      {
         "name": "DatetimePicker",
         "title": "时间选择"
       },

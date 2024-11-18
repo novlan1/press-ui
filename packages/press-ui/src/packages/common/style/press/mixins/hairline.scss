@@ -4,6 +4,7 @@
   position: absolute;
   box-sizing: border-box;
   transform-origin: center;
+
   /* cover wechat button:after default transforn-origin */
   content: ' ';
   pointer-events: none;
@@ -17,7 +18,7 @@
   bottom: -50%;
   left: -50%;
   border: 0 solid $color;
-  transform: scale(0.5);
+  transform: scale(.5);
 }
 
 
@@ -28,7 +29,7 @@
   right: $right;
   left: $left;
   border-top: 1px solid $color;
-  transform: scaleY(0.5);
+  transform: scaleY(.5);
 }
 
 @mixin hairline-bottom($color: $border-color, $left: 0, $right: 0) {
@@ -38,5 +39,5 @@
   bottom: 0;
   left: $left;
   border-bottom: 1px solid $color;
-  transform: scaleY(0.5);
+  transform: scaleY(.5);
 }

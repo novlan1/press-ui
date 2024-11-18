@@ -1,4 +1,4 @@
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/var.scss';
 
 .press-number-keyboard {
   background-color: var(--keyboard-background-color, $keyboard-background-color);
@@ -28,7 +28,7 @@
     border: 0;
 
     &::after {
-      border-style: none;
+      border: 0;
     }
 
     &--hover,
@@ -84,7 +84,7 @@
     border: 0;
 
     &::after {
-      border-style: none;
+      border: 0;
     }
 
     &--hover,

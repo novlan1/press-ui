@@ -1,5 +1,5 @@
-@import "../../common/style/press/hairline-more/surround.scss";
-@import "../../common/style/press/var.scss";
+@import '../../common/style/press/hairline-more/surround.scss';
+@import '../../common/style/press/var.scss';
 
 .press-button {
   position: relative;
@@ -29,7 +29,7 @@
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
     opacity: 0;
-    content: " ";
+    content: ' ';
     background-color: $black;
     border-color: $black;
   }
@@ -41,12 +41,12 @@
 
   // 【修改点】unclickable状态下不用有active样式
   &--active:not(&--unclickable)::before {
-    opacity: 0.15;
+    opacity: .15;
   }
 
   // 【修改点】unclickable状态下不用有active样式
   &:active:not(&--unclickable)::before {
-    opacity: 0.15;
+    opacity: .15;
   }
 
   // 【修改点】unclickable状态下不隐藏after
@@ -251,7 +251,7 @@
     position: absolute;
     bottom: $beforeBottom;
     left: 0;
-    content: "";
+    content: '';
     width: $beforeWidth;
     height: $beforeHeight;
     background: url($beforeBg) no-repeat center;
@@ -263,11 +263,12 @@
     right: unset;
     opacity: 1;
   }
+
   &::after {
     position: absolute;
     top: $afterTop;
     right: 0;
-    content: "";
+    content: '';
     width: $afterWidth;
     height: $afterHeight;
     background: url($afterBg) no-repeat center;
@@ -286,7 +287,7 @@
   color: $color-white;
   border-radius: $border-radius-md;
   background-image: $color-primary-btn;
-  border: none; // 没有border
+  border: 0; // 没有 border
   &:not(.press-button--unclickable):active {
     background: $color-blue;
   }
@@ -295,30 +296,31 @@
 .press-button {
   &--e-sport-primary {
     width: 1.76rem;
-    height: 0.72rem;
+    height: .72rem;
     @include primaryMixin();
   }
 
   &--e-sport-secondary {
     width: 2rem;
-    height: 0.72rem;
+    height: .72rem;
     font-size: $font-size-lg;
     color: $color-black;
     border-radius: $border-radius-md;
     background: $color-secondary-btn;
-    border: none; // 没有border
+    border: 0; // 没有 border
     &:not(.press-button--unclickable):active {
       background: $color-gray-3;
     }
+
     &::before {
       background-color: transparent;
-      border: none;
+      border: 0;
     }
   }
 
   &--e-sport-border {
     width: 2rem;
-    height: 0.72rem;
+    height: .72rem;
     font-size: $font-size-lg;
     color: $color-primary;
     border-width: $border-width-base;
@@ -326,33 +328,36 @@
     border-color: $color-primary;
     border-radius: $border-radius-md;
     background: transparent;
+
     &:not(.press-button--unclickable):active {
       background: $color-bg;
       border-color: $color-blue;
       color: $color-blue;
     }
+
     &::before {
       background-color: transparent;
-      border: none;
+      border: 0;
     }
   }
 
   &--e-sport-bg {
     width: 2.72rem;
-    height: 0.72rem;
+    height: .72rem;
     @include bgMixin();
 
     &-lg {
       width: 5.34rem;
-      height: 0.88rem;
+      height: .88rem;
 
       &::before {
         width: $button-e-sport-bg-before-lg-width;
         height: $button-e-sport-bg-before-lg-height;
         background-image: url($button-e-sport-bg-before-lg-img);
         background-color: transparent;
-        border: none;
+        border: 0;
       }
+
       &::after {
         top: $button-e-sport-bg-after-lg-top;
         width: $button-e-sport-bg-after-lg-width;
@@ -363,22 +368,23 @@
 
     &-xl {
       width: 6rem;
-      height: 0.88rem;
+      height: .88rem;
 
       &::before {
         width: $button-e-sport-bg-before-xl-width;
         height: $button-e-sport-bg-before-xl-height;
         background-image: url($button-e-sport-bg-before-xl-img);
         background-color: transparent;
-        border: none;
+        border: 0;
       }
+
       &::after {
         top: $button-e-sport-bg-after-xl-top;
         width: $button-e-sport-bg-after-xl-width;
         height: $button-e-sport-bg-after-xl-height;
         background-image: url($button-e-sport-bg-after-xl-img);
         background-color: transparent;
-        border: none;
+        border: 0;
       }
     }
   }

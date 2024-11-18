@@ -41,6 +41,9 @@
 import { t } from '../locale';
 
 export default {
+  options: {
+    styleIsolation: 'shared',
+  },
   props: {
     title: { type: String, default: '' },
     showToolbar: Boolean,

@@ -4,6 +4,7 @@
   height: var(--progress-height, 4px);
   position: relative;
 }
+
 .press-progress__portion {
   background: var(--progress-color, #1989fa);
   border-radius: inherit;
@@ -11,6 +12,7 @@
   left: 0;
   position: absolute;
 }
+
 .press-progress__pivot {
   background-color: var(--progress-pivot-background-color, #1989fa);
   border-radius: 1em;

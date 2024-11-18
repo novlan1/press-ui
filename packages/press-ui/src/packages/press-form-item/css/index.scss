@@ -1,4 +1,4 @@
-@import "../../common/style/press/mixins/flex.scss";
+@import '../../common/style/press/mixins/flex.scss';
 
 $press-main-color: #151719;
 $press-primary: #3c9cff;
@@ -65,9 +65,11 @@ $press-light-color: #c0c4cc;
 
         &__slot {
           flex: 1;
+
           /* #ifndef MP */
           @include flex;
           align-items: center;
+
           /* #endif */
         }
 
@@ -90,7 +92,7 @@ $press-light-color: #c0c4cc;
     margin: 0px;
     border-bottom: 1px solid rgb(214, 215, 217);
     width: 100%;
-    transform: scaleY(0.5);
+    transform: scaleY(.5);
     border-top-color: rgb(214, 215, 217);
     border-right-color: rgb(214, 215, 217);
     border-left-color: rgb(214, 215, 217);

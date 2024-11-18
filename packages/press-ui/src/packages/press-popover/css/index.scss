@@ -1,5 +1,5 @@
-@import "../../common/style/smoba/layout.scss";
-@import "../../common/style/smoba/animate.scss";
+@import '../../common/style/smoba/layout.scss';
+@import '../../common/style/smoba/animate.scss';
 
 .press-popover {
   position: absolute;
@@ -12,7 +12,7 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-left: tovmin(12) solid transparent;

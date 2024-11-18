@@ -1,4 +1,4 @@
-@import "../../common/style/smoba/layout.scss";
+@import '../../common/style/smoba/layout.scss';
 @import '../../common/style/smoba/animate.scss';
 
 .press-popup {
@@ -14,6 +14,7 @@
 
   /* #ifdef MP-ALIPAY */
   touch-action: none;
+
   /* #endif */
 
 
@@ -35,7 +36,7 @@
 
   &__hor:not(.press-popup--white) {
     .press-popup--content {
-      background: rgba(18, 18, 31, 0.95);
+      background: rgba(18, 18, 31, .95);
     }
 
     .press-popup--title {

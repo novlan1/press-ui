@@ -29,6 +29,27 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
+      <div
+        v-for="(line, lineIndex) of lineList"
+        :key="lineIndex"
+        class="format-line"
+      >
+        <div
+          v-for="item of line"
+          :key="item"
+          class="format-item"
+          :class="curFormat === item ? 'active' : ''"
+          @click.stop="clickFormat(item)"
+        >
+          <PressIconPlus
+            v-if="curFormat === item"
+            name="success"
+            size="12"
+            custom-style="position: absolute;left: 2.5px;top: 2.1px;z-index: 1;color: #fff"
+          />
+          {{ item }}
+        </div>
+      </div>
       <PressColorPicker
         type="multiple"
         enable-alpha
@@ -36,28 +57,6 @@
         @change="onChange"
         @palette-bar-change="onPaletteBarChange"
       />
-
-      <press-radio-group
-        :value="curFormat"
-        @change="val => changeFormat(val)"
-      >
-        <press-cell-group>
-          <press-cell
-            v-for="(format) of formatList"
-            :key="format.value"
-            :title="`${t('mode', format.value)}`"
-            clickable
-            data-name="1"
-            @click="() => changeFormat(format.value)"
-          >
-            <template #right-icon>
-              <press-radio
-                :name="format.value"
-              />
-            </template>
-          </press-cell>
-        </press-cell-group>
-      </press-radio-group>
     </demo-block>
 
     <demo-block
@@ -78,54 +77,48 @@
 </template>
 <script>
 import PressColorPicker from 'press-ui/press-color-picker/press-color-picker.vue';
-import PressRadio from 'press-ui/press-radio/press-radio.vue';
-import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+
 
 export default {
   i18n: {
     'zh-CN': {
       multiple: '带色板',
       format: '自定义格式',
-      mode: a => `${a} 模式`,
+      mode: '组件模式选择',
       preview: '显示预览',
     },
     'en-US': {
       multiple: 'Multiple',
       format: 'Format',
-      mode: a => `Mode ${a}`,
+      mode: 'Mode',
       preview: 'Preview',
     },
   },
   components: {
     PressColorPicker,
-    PressRadio,
-    PressRadioGroup,
-    PressCell,
-    PressCellGroup,
+    PressIconPlus,
   },
   data() {
     return {
       sectionStyle: 'margin: 0;background: #f7f8fa;',
       headerStyle: 'background: #f7f8fa;',
       curFormat: 'CSS',
-      formatList: ['CSS', 'HEX', 'RGB', 'HSL', 'HSV', 'CMYK'].map(item => ({
-        label: `${item} 模式`,
-        value: item,
-      })),
+      lineList: [
+        ['CSS', 'HEX', 'RGB'],
+        ['HSL', 'HSV', 'CMYK'],
+      ],
     };
   },
   methods: {
-    changeFormat(value) {
-      console.log('>>> changeFormat.value ', value);
-      this.curFormat = value;
-    },
     onChange(value) {
       console.log('>>> change.value ', value);
     },
     onPaletteBarChange(value) {
       console.log('>>> paletteBarChange.value ', value);
+    },
+    clickFormat(value) {
+      this.curFormat = value;
     },
 
   },
@@ -134,5 +127,49 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   --press-color-picker-panel-width: 100%;
+}
+
+.format-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  margin: 0 16px 20px;
+}
+
+.format-item {
+  border-radius: 6px;
+  height: 100%;
+  background-color: #fff;
+  padding: 16px;
+  line-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.format-item.active {
+  border: 1px solid #0052d9;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 6px;
+    border-top: 28px solid #0052d9;
+    border-right: 28px solid transparent;
+    border-radius: 0;
+  }
+}
+
+.format-item:not(:last-child) {
+  margin-right: 12px;
 }
 </style>

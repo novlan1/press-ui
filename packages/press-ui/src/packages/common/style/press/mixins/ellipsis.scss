@@ -7,6 +7,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     flex: 1;
+
     /* #endif */
 
     /* #ifndef APP-NVUE */
@@ -23,6 +24,7 @@
       -webkit-line-clamp: $i;
       -webkit-box-orient: vertical!important;
     }
+
     /* #endif */
   }
 }
