@@ -132,6 +132,47 @@ export default {
 }
 ```
 
+### H5 动态上传
+
+非 uni-app 环境下，可以通过动态生成 `input` 的方式上传。
+
+```ts
+import { chooseImageInH5 } from 'press-ui/press-cropper/helper';
+
+
+export default {
+  methods: {
+     selectImg() {
+      // #ifdef H5
+      chooseImageInH5().then((res) => {
+        this.src = res;
+        this.h5Option.img = this.src;
+
+        console.log('[src]', this.src);
+        this.show = true;
+      });
+      // #endif
+      // #ifdef H5
+      uni.chooseImage({
+        count: 1,
+        sizeType: ['original'],
+        sourceType: ['album', 'camera'],
+        success: (res) => {
+          const { tempFilePaths } = res;
+          this.src = tempFilePaths[0];
+          this.h5Option.img = this.src;
+
+          console.log('[src]', this.src);
+          this.show = true;
+        },
+      });
+      // #endif
+    },
+  }
+}
+```
+
+
 ## API
 
 ### Props

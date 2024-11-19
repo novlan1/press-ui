@@ -33,6 +33,19 @@ const generateCanvasId = () => { // generate a random string
   return arr.slice(0, 16).join('');
 };
 
+const getImageInfoAsync = ({ src }) => new Promise((resolve) => {
+  uni.getImageInfo({
+    src,
+    success(res) {
+      resolve([null, res]);
+    },
+    fail(err) {
+      resolve([err, null]);
+    },
+  });
+});
+
+
 export default {
   options: {
     styleIsolation: 'shared',
@@ -153,7 +166,7 @@ export default {
     async initImage() {
       if (!this.src) return;
 
-      const [err, res] = await uni.getImageInfo({
+      const [err, res] = await getImageInfoAsync({
         src: this.src,
       });
 

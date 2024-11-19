@@ -27,17 +27,28 @@
       @cancel="cancel"
       @confirm="confirm"
     />
+
+    <PressImage
+      v-if="parsedImage"
+      :src="parsedImage"
+      mode="aspectFit"
+      transition-style="margin: 20px auto;display: flex;justify-content: center;"
+      custom-style="border: 1px solid #eee;"
+    />
   </div>
 </template>
 <script>
 import PressCropper from 'press-ui/press-cropper/press-cropper.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
+import { chooseImageInH5 } from 'press-ui/press-cropper/helper';
 
 
 export default {
   components: {
     PressCropper,
     PressButton,
+    PressImage,
   },
   data() {
     return {
@@ -59,6 +70,7 @@ export default {
         outputSize: 1,
         outputType: 'jpg',
       },
+      parsedImage: '',
     };
   },
   mounted() {
@@ -82,6 +94,16 @@ export default {
       // #endif
     },
     selectImg() {
+      // #ifdef H5
+      chooseImageInH5().then((res) => {
+        this.src = res;
+        this.h5Option.img = this.src;
+
+        console.log('[src]', this.src);
+        this.show = true;
+      });
+      // #endif
+      // #ifndef H5
       uni.chooseImage({
         count: 1,
         sizeType: ['original'],
@@ -95,6 +117,7 @@ export default {
           this.show = true;
         },
       });
+      // #endif
     },
     beforeDraw(context, transform) {
       context.setFillStyle('yellow');
@@ -110,6 +133,7 @@ export default {
     confirm(...args) {
       console.log('[confirm]', args);
       this.show = false;
+      this.parsedImage = args[0];
     },
     cancel() {
       this.show = false;

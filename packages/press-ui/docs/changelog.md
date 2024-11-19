@@ -1,5 +1,24 @@
 # 更新日志
 
+### [2.2.7](https://github.com/novlan1/press-ui/compare/v2.2.6...v2.2.7) (2024-11-18)
+
+
+### Chore 🚀 
+
+* **cropper:** init index.js/scss ([7b235ef](https://github.com/novlan1/press-ui/commit/7b235efd756e48dfe07cfd38aa3f3db5389b1458))
+* **cropper:** update demo ([e04b4b3](https://github.com/novlan1/press-ui/commit/e04b4b3952abfb4868f401450a424e488e1eff02))
+
+
+### Features 🎉
+
+* **cropper:** 避免vue3时getImageInfo报错 ([df80c00](https://github.com/novlan1/press-ui/commit/df80c005c2b701ce07ad80f437007321177847b0))
+* **cropper:** 支持vue3样式 ([b94ecb9](https://github.com/novlan1/press-ui/commit/b94ecb967be6ef0718683a474e6ad6ef35bd0e1e))
+
+
+### Documentation 📖
+
+* **cropper:** h5下使用input动态上传 ([2a03e7d](https://github.com/novlan1/press-ui/commit/2a03e7d638d5421da95d99f09c9fd16361d40a75))
+
 ### [2.2.6](https://github.com/novlan1/press-ui/compare/v2.2.5...v2.2.6) (2024-11-18)
 
 

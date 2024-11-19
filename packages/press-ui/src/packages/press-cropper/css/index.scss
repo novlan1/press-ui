@@ -1,41 +1,44 @@
 @import '../../common/style/press/var.scss';
 
 /* #ifdef VUE3 */
+
+/* #ifdef H5 */
 @import 'vue-cropper/dist/index.css';
 
 /* #endif */
 
+/* #endif */
 
-/* #ifdef H5 */
-.press-cropper ::v-deep {
-  /* #endif */
-
-  /* #ifndef H5 */
-  ::v-deep  .press-cropper {
-    /* #endif */
-    .press-popup {
-      width: 100% !important;
-    }
-  
-    .press-picker__toolbar {
-      height: 40px;
-      line-height: 40px;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .press-picker__title {
-      font-size: 14px;
-    }
-
-    /* #ifdef H5 */
+@mixin base() {
+  .press-popup {
+    width: 100% !important;
   }
 
-  /* #endif */
+  .press-picker__toolbar {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+  }
 
-  /* #ifndef H5 */
+  .press-picker__title {
+    font-size: 14px;
+  }
+}
+
+/* #ifndef H5 */
+::v-deep  .press-cropper {
+  @include base();
 }
 
 /* #endif */
+
+/* #ifdef H5 */
+.press-cropper ::v-deep {
+  @include base();
+}
+
+/* #endif */
+
 
 .press-cropper {
   &__popup {
