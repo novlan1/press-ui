@@ -41,7 +41,9 @@ jobs:
 
       # 生成静态文件
       - name: Build
-        run: cd packages/press-ui && npm run init && npm run docs:build && npm run build && cp -r dist/build/h5 docs/.vuepress/dist
+        # error:0308010C:digital envelope routines::unsupported
+        # https://blog.csdn.net/zch981964/article/details/131689132
+        run: cd packages/press-ui && npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && npm run build && cp -r dist/build/h5 docs/.vuepress/dist
 
       # 部署到 GitHub Pages
       - name: Deploy
