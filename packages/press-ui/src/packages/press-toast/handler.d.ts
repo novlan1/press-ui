@@ -4,6 +4,9 @@ interface IToast {
   success: (options: any) => any;
   fail: (options: any) => any;
   clear: () => any;
+
+  setDefaultOptions: (options: any) => void;
+  resetDefaultOptions: () => void;
 }
 const Toast: IToast;
 

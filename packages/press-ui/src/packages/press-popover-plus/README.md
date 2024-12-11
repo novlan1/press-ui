@@ -282,6 +282,10 @@ export default {
 | $popover-dark-background-color            | `#4a4a4a`           | -    |
 | $popover-dark-action-disabled-text-color  | `$gray-6`           | -    |
 
+### Vue3 兼容
+
+`value` 字段 在 Vue3 中使用的是 `model-value`，`input` 事件是 Vue3 中使用的是 `update:modelValue`，支持 `v-model`。
+
 ## 在线调试
 
 <debug-online />

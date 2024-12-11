@@ -35,6 +35,10 @@ function traverseChildren(context, key, target) {
 export function selectComponent(context, selector) {
   if (!selector || !context) return;
 
+  if (typeof selector === 'function') {
+    return selector(context);
+  }
+
   let attribute = selector;
   if (attribute.match(/^[^\w]/)) {
     attribute = attribute.slice(1);

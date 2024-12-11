@@ -187,3 +187,7 @@ export default {
 | close     | 点击键盘外区域时触发 | -                     |
 | cancel    | 点击取消按钮时触发   | -                     |
 | confirm   | 点击确认按钮时触发   | -                     |
+
+### Vue3 兼容
+
+`value` 字段 在 Vue3 中使用的是 `model-value`，`input` 事件是 Vue3 中使用的是 `update:modelValue`，支持 `v-model`。

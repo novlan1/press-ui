@@ -19,10 +19,10 @@ import {
 } from '../../packages/press-demo-index/config';
 const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';
 
-function getEnvVersion() {
-  const info = uni.getAccountInfoSync();
-  return info?.miniProgram?.envVersion || '';
-}
+// function getEnvVersion() {
+//   const info = uni.getAccountInfoSync();
+//   return info?.miniProgram?.envVersion || '';
+// }
 
 
 function getAllPages() {

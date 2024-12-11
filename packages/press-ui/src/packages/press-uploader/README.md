@@ -315,6 +315,7 @@ export default {
 | clickPreview | 全屏预览图片时触发       | `{url, lists, name}`  |
 | delete       | 删除图片                 | `{file，index, name}` |
 | error        | 选择文件出错             | `error`               |
+| chooseFile   | 点击选择文件             | `disabled`            |
 
 ### Slot
 

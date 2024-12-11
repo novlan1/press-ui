@@ -48,9 +48,8 @@
 <script>
 
 import { BLUE, WHITE } from '../common/constant/color';
-import { getSystemInfoSync } from '../common/utils/system';
 import { isObj } from '../common/utils/validator';
-import { canIUseCanvas2d } from '../common/utils/version';
+import { canIUseCanvas2d, getWindowInfo } from '../common/utils/version';
 import { adaptor } from './canvas';
 import utils, { isNotInUni } from '../common/utils/utils';
 
@@ -188,7 +187,7 @@ export default {
         return Promise.resolve(ctx);
       }
 
-      const dpr = getSystemInfoSync().pixelRatio;
+      const dpr = getWindowInfo().pixelRatio;
       return new Promise((resolve) => {
         uni.createSelectorQuery()
           .in(this)

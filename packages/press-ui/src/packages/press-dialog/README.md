@@ -151,9 +151,40 @@ export default {
 };
 ```
 
+### 全局设置
+
+可以通过 `setDefaultOptions` 进行全局默认选项的配置，比如设置通用的 `selector`。
+
+```ts
+// #ifdef MP
+PressDialog.setDefaultOptions({
+  selector: (context) => {
+    if (!context) return;
+
+    const globalComponent = context.selectComponent('#global-component');
+    const dialog = globalComponent?.$vm?.$refs?.pressDialog;
+    if (dialog) return dialog;
+
+    const instance = globalComponent?.selectComponent('#press-dialog');
+    return instance;
+  },
+});
+// #endif
+```
 
 
 ## API
+
+### 方法
+
+| 方法名                     | 参数      | 返回值    | 介绍                             |
+| -------------------------- | --------- | --------- | -------------------------------- |
+| Dialog                     | `options` | `Promise` | 展示弹窗                         |
+| Dialog.show                | `options` | `Promise` | 展示消息确认弹窗                 |
+| Dialog.setDefaultOptions   | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
+| Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
+| Dialog.clear               | -         | `void`    | 关闭弹窗                         |
+
 
 ### Props
 

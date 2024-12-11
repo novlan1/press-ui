@@ -163,6 +163,14 @@ export default {
 </press-popup>
 ```
 
+另外，对于以下组件，在 Vue3 下做了 `v-model` 相关的适配，具体使用变化为： `value` 属性改为 `modelValue`，`input` 事件改为 `update:modelValue`。如果是使用的 `v-model`，则无需改变。
+
+- [field](./components/press/press-field.html)
+- [list](./components/press/press-list.html)
+- [number-keyboard](./components/press/press-number-keyboard.html)
+- [popover-plus](./components/press/press-popover-plus.html)
+- [pull-refresh](./components/press/press-pull-refresh.html)
+
 [点此查看](https://github.com/novlan1/press-ui-demo-vue3) Vue3 的 uni-app 示例项目。
 
 ## 4. 普通 Vue3 项目

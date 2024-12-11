@@ -15,3 +15,17 @@ export function vmSet(dialog, ...args) {
     vm[args[0]] = args[1];
   }
 }
+
+
+export function getVMInVue3(context) {
+  if (!context) return;
+
+  let result;
+  // #ifdef H5
+  result = context;
+  // #endif
+  // #ifndef H5
+  result = context.$vm;
+  // #endif
+  return result;
+}

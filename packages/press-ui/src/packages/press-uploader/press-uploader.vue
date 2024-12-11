@@ -170,9 +170,13 @@ export default {
   },
   mixins: [mixin, props],
   emits: [
+    'chooseFile',
+    'beforeRead',
     'afterRead',
-    'error',
     'oversize',
+    'clickPreview',
+    'delete',
+    'error',
   ],
   data() {
     return {
@@ -215,7 +219,8 @@ export default {
         lists,
         disabled,
       } = this;
-      console.log('[chooseFile]');
+      this.$emit('chooseFile', disabled);
+
       if (disabled) return;
       // 如果用户传入的是字符串，需要格式化成数组
       let capture;

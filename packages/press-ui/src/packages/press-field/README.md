@@ -247,7 +247,7 @@ export default {
 
 ### Vue3 兼容
 
-`value` 字段 在 Vue3 中使用的是 `model-value`。
+`value` 字段 在 Vue3 中使用的是 `model-value`，`input` 事件是 Vue3 中使用的是 `update:modelValue`，支持 `v-model`。
 
 ## 在线调试
 

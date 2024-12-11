@@ -131,7 +131,6 @@ export default {
     getPicker() {
       if (this.picker == null) {
         this.picker = this.$refs.pressPicker;
-        // this.picker = this.selectComponent('.press-area__picker');
       }
       return this.picker;
     },

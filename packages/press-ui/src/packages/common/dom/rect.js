@@ -1,6 +1,6 @@
 import { getScrollSelector } from './scroll';
 import { isNotInUni } from '../utils/utils';
-import { getSystemInfoSync } from '../utils/system';
+import { getWindowInfo } from '../utils/version';
 // #ifdef H5
 import getWindowOffset from '../utils/get-window-offset';
 import { isVue3 } from '../vue3/vue';
@@ -46,7 +46,7 @@ export function getWindowWidth() {
   }
   // #endif
 
-  const { windowWidth, windowHeight, windowTop, windowBottom } = uni.getSystemInfoSync();
+  const { windowWidth, windowHeight, windowTop, windowBottom } = getWindowInfo();
 
   return {
     windowWidth,
@@ -64,7 +64,7 @@ export function getStatusBarHeight() {
   }
   // #endif
 
-  const { statusBarHeight } = getSystemInfoSync();
+  const { statusBarHeight } = getWindowInfo();
   return statusBarHeight;
 }
 

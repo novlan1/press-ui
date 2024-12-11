@@ -130,45 +130,25 @@ export default {
   data() {
     return {
       time: 30 * 60 * 60 * 1000,
-      // timeData: {},
       sectionStyle: 'margin: 0 12px 20px;',
     };
   },
   methods: {
     onChange() {
-      // this.timeData = val;
     },
     start() {
       const countDown = selectComponent(this, '#controlCountDown');
       setData(countDown, null, 'start');
-      // // #ifdef H5
-      // countDown.start();
-      // // #endif
-      // // #ifndef H5
-      // countDown.$vm.start();
-      // // #endif
     },
 
     pause() {
       const countDown = selectComponent(this, '#controlCountDown');
       setData(countDown, null, 'pause');
-      // // #ifdef H5
-      // countDown.pause();
-      // // #endif
-      // // #ifndef H5
-      // countDown.$vm.pause();
-      // // #endif
     },
 
     reset() {
       const countDown = selectComponent(this, '#controlCountDown');
       setData(countDown, null, 'reset');
-      // // #ifdef H5
-      // countDown.reset();
-      // // #endif
-      // // #ifndef H5
-      // countDown.$vm.reset();
-      // // #endif
     },
     finished() {
 

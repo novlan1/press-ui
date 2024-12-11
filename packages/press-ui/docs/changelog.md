@@ -1,5 +1,54 @@
 # 更新日志
 
+### [2.2.11](https://github.com/novlan1/press-ui/compare/v2.2.10...v2.2.11) (2024-12-05)
+
+
+### Documentation 📖
+
+* update docs ([abc684f](https://github.com/novlan1/press-ui/commit/abc684fa0f6df7a9271f5ad454e2412f6c424c82))
+
+
+### Chore 🚀 
+
+* lint ([4984334](https://github.com/novlan1/press-ui/commit/49843344d0fd1572c7310e8642a25ff5d1696ea7))
+
+
+### Features 🎉
+
+* add getVMInVue3 ([e28f15a](https://github.com/novlan1/press-ui/commit/e28f15a6c57f21a61a59dc5befe3db92b2b62756))
+
+### [2.2.10](https://github.com/novlan1/press-ui/compare/v2.2.9...v2.2.10) (2024-12-02)
+
+
+### Code Refactoring ♻️
+
+* 不使用wx.getSystemInfoSync ([0abefc0](https://github.com/novlan1/press-ui/commit/0abefc0fc92193955b70497d7bcfc66ec318a285))
+
+
+### Chore 🚀 
+
+* lint ([a6717a5](https://github.com/novlan1/press-ui/commit/a6717a5a6d9862dc4304a050e7c1cdb3c14443e5))
+
+### [2.2.9](https://github.com/novlan1/press-ui/compare/v2.2.8...v2.2.9) (2024-11-28)
+
+
+### Features 🎉
+
+* **functional-component:** 支持selector为函数 ([27d3dbb](https://github.com/novlan1/press-ui/commit/27d3dbb6f28f77178b6dbd1f7d0e2ecc5a6e7f50))
+
+### [2.2.8](https://github.com/novlan1/press-ui/compare/v2.2.7...v2.2.8) (2024-11-26)
+
+
+### Chore 🚀 
+
+* update github workflow ([bc13c15](https://github.com/novlan1/press-ui/commit/bc13c159cfb1df7253cbdabb0108f838d881f23f))
+* update github workflow ([3ddeadb](https://github.com/novlan1/press-ui/commit/3ddeadba8e7c652653f73060da35c4deda37b1e2))
+
+
+### Features 🎉
+
+* **uploader:** emit chooseFile ([a085f4b](https://github.com/novlan1/press-ui/commit/a085f4b74a3f1517b29d9296b5248559d9023be3))
+
 ### [2.2.7](https://github.com/novlan1/press-ui/compare/v2.2.6...v2.2.7) (2024-11-18)
 
 

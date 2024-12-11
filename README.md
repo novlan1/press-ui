@@ -1,4 +1,5 @@
 
+<!-- 复制到 docs 下的时候，去掉“查看文档”和“查看示例” -->
 <div align="center">
   <a href="https://github.com/novlan1/press-ui">
     <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
@@ -19,7 +20,7 @@
   </p>
 </div>
 
-[查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui-demo-vue2/)
+[查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui/h5/)
 
 ### 1. 介绍
 

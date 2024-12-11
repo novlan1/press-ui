@@ -44,5 +44,5 @@ export function initFunctionalDialog({
     return promise.then(val => Promise.resolve(val))
       .catch(err => Promise.reject(err));
   }
-  console.warn('The press-dialog node is not found, please confirm whether the selector and context are correct');
+  console.warn(`The ${options.selector} node is not found, please confirm whether the selector and context are correct`);
 }

@@ -1,4 +1,5 @@
 
+<!-- 复制到 docs 下的时候，去掉“查看文档”和“查看示例” -->
 <div align="center">
   <a href="https://github.com/novlan1/press-ui">
     <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
@@ -18,7 +19,6 @@
     易用、灵活、基于 uni-app 的跨端组件库
   </p>
 </div>
-
 
 ### 1. 介绍
 
@@ -110,10 +110,10 @@ module.exports = {
 }
 ```
 
+
 #### 4.2. uni_modules 方式
 
 [插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
-
 
 
 ### 5. 立即体验
