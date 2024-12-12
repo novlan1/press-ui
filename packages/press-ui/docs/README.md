@@ -143,4 +143,4 @@ module.exports = {
 
 欢迎加入QQ群沟通。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/12/own_mike_897ca98718c772420d.png" width="180"/>
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="180"/>
