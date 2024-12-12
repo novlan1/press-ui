@@ -53,21 +53,21 @@
 目前已应用在王者赛宝、HoK Club、赛宝Pro、和平赛事、高能赛事、商户赛等项目中。
 
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fhok-club-screenshot.gif" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="180">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fhok-club-screenshot.gif" width="180">
 </div>
 
 <br />
 
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_b0eb6091b6559d4a0e.gif" width="300">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_5f18fe9ffb82583da3.gif" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_b0eb6091b6559d4a0e.gif" width="180">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_5f18fe9ffb82583da3.gif" width="180">
 </div>
 
 <br />
 
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_2bfb54a9ad6b9bc0ff.gif" width="600">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_2bfb54a9ad6b9bc0ff.gif" width="360">
 </div>
 
 ### 4. 如何使用
