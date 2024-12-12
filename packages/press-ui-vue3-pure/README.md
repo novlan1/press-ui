@@ -46,8 +46,8 @@
 <br />
 
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_b0eb6091b6559d4a0e.gif" width="300">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_5f18fe9ffb82583da3.gif" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-example-gp-match.gif" width="300">
+  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-example-gn-match.gif" width="300">
 </div>
 
 <br />
