@@ -16,7 +16,7 @@ export const DEFAULT_HELPER_CONFIG = {
       callback: 'GROUP_QRCODE',
     },
   ],
-  groupQRCode: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/12/own_mike_96d578f9a53dd01239.jpg',
+  groupQRCode: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/12/own_mike_bf36bb1d6c8856224a.gif',
 };
 
 export const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';
