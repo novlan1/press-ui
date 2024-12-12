@@ -3,10 +3,9 @@
   "version": "2.2.11",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
+  "id": "press-ui",
+  "displayName": "Press UI 组件库",
+  "repository": "https://github.com/novlan1/press-ui",
   "author": "guowangyang",
   "homepage": "https://novlan1.github.io/press-ui",
   "bugs": {
@@ -15,13 +14,9 @@
   "keywords": [
     "press-ui",
     "uni-app",
-    "uniapp",
-    "component lib",
-    "press-plus",
+    "component-lib",
     "vue3",
-    "vue2",
-    "vue",
-    "vant"
+    "vue2"
   ],
   "scripts": {},
   "license": "MIT",
@@ -31,6 +26,7 @@
     "t-comm": "latest"
   },
   "dcloudext": {
+    "type": "component-vue",
     "sale": {
       "regular": {
         "price": "0.00"
@@ -39,13 +35,15 @@
         "price": "0.00"
       }
     },
+    "contact": {
+      "qq": ""
+    },
     "declaration": {
       "ads": "无",
-      "data": "无",
+      "data": "插件不采集任何数据",
       "permissions": "无"
     },
-    "npmurl": "https://www.npmjs.com/package/press-ui",
-    "type": "component-vue"
+    "npmurl": "https://www.npmjs.com/package/press-ui"
   },
   "uni_modules": {
     "dependencies": [],
@@ -59,11 +57,13 @@
       "client": {
         "Vue": {
           "vue2": "y",
-          "vue3": "n"
+          "vue3": "y"
         },
         "App": {
           "app-vue": "y",
-          "app-nvue": "y"
+          "app-nvue": "y",
+          "app-uvue": "u",
+          "app-harmony": "u"
         },
         "H5-mobile": {
           "Safari": "y",
@@ -83,7 +83,11 @@
           "阿里": "y",
           "百度": "y",
           "字节跳动": "y",
-          "QQ": "y"
+          "QQ": "y",
+          "钉钉": "y",
+          "快手": "y",
+          "飞书": "y",
+          "京东": "y"
         },
         "快应用": {
           "华为": "y",

@@ -20,6 +20,7 @@
   </p>
 </div>
 
+
 ### 1. 介绍
 
 `Press UI`是一套易用、灵活，基于`uni-app`的跨端组件库。
@@ -137,3 +138,9 @@ module.exports = {
 [node-url]: https://nodejs.org
 [downloads]: https://img.shields.io/npm/dm/press-ui
 [downloads-url]: https://npmcharts.com/compare/press-ui?minimal=true
+
+### 7. 加群交流
+
+欢迎加入QQ群沟通。
+
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/12/own_mike_96d578f9a53dd01239.jpg" width="180"/>
