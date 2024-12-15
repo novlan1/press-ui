@@ -10,8 +10,15 @@
     <!-- #endif -->
 
     <!-- #ifdef VUE3 -->
+    <!-- 使用 vue-qrcode -->
+    <VueQRCode
+      v-if="value && (useVueQrcodeInVue3 || globalUseVueQrcodeInVue3)"
+      :value="value"
+      v-bind="h5Attr"
+    />
+    <!-- 使用 qrcode.vue，不使用 vueImage -->
     <PressQRCodeWeb
-      v-if="value && !vue3Image"
+      v-else-if="value && !innerVue3Image"
       :value="value"
       v-bind="h5Attr"
     />
@@ -23,7 +30,7 @@
       <!-- #ifdef H5 -->
       <!-- #ifdef VUE3 -->
       <PressQRCodeWeb
-        v-if="value && vue3Image"
+        v-if="value && innerVue3Image"
         :id="canvasId"
         :value="value"
       />
@@ -62,6 +69,7 @@
 /* eslint-disable import/no-unresolved */
 // #ifdef H5
 import PressQRCodeWeb from '../common/vue3/q-r-code';
+import VueQRCode from 'vue-qrcode';
 // #endif
 
 // #ifdef MP-WEIXIN
@@ -78,7 +86,13 @@ export default {
   components: {
     // #ifdef H5
     PressQRCodeWeb,
+    VueQRCode,
     // #endif
+  },
+  inject: {
+    globalUseVueQrcodeInVue3: {
+      default: false,
+    },
   },
   props: {
     value: { // 二维码url
@@ -99,8 +113,17 @@ export default {
       type: Boolean,
       default: false,
     },
-    // Vue3 时，是否使用 image 模式，即转为 image，这时会将 width/height 设为父元素的宽高
+    /**
+     * Vue3 时，是否使用 image 模式，即转为 image，这时会将 width/height 设为父元素的宽高
+     */
     vue3Image: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * 是否在 vue3 时也使用 `vue-qrcode` 三方库
+     */
+    useVueQrcodeInVue3: {
       type: Boolean,
       default: false,
     },
@@ -118,12 +141,8 @@ export default {
   computed: {
     h5Attr() {
       return this.initH5Attr ? {
-        // #ifdef VUE2
         width: this.size, // vue-qrcode 二维码尺寸，单位px
-        // #endif
-        // #ifdef VUE3
         size: this.size, // qrcode.vue 二维码尺寸，单位px
-        // #endif
         margin: this.margin, // 空白边距，单位px
       } : {};
     },
@@ -132,6 +151,11 @@ export default {
         return '';
       }
       return `width: ${this.size}px; height: ${this.size}px;`;
+    },
+    innerVue3Image() {
+      const { vue3Image, useVueQrcodeInVue3, globalUseVueQrcodeInVue3 } = this;
+
+      return vue3Image && !(useVueQrcodeInVue3 || globalUseVueQrcodeInVue3);
     },
   },
   watch: {
@@ -167,7 +191,7 @@ export default {
 
       // #ifdef H5
       // #ifdef VUE3
-      if (this.vue3Image) {
+      if (this.innerVue3Image) {
         this.codeH5Vue3();
       }
       // #endif

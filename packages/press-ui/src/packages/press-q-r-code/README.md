@@ -17,7 +17,11 @@ export default {
 }
 ```
 
-`PressQRCode` 在微信小程序使用了 `weapp-qrcode-canvas-2d` 库，其他端使用了 `uqrcodejs`，请自行下载。
+`PressQRCode` 使用了第三方库：
+
+- H5 下 Vue2 使用 `vue-qrcode`，Vue3 使用 `qrcode.vue` 或者 `vue-qrcode`
+- 微信小程序下，Vue2 和 Vue3 都使用 `weapp-qrcode-canvas-2d`
+- 其他小程序及 APP 下都使用 `uqrcodejs`
 
 ## 代码演示
 
@@ -45,13 +49,14 @@ export default {
 
 ### Props
 
-| 参数         | 说明                                                                                     | 类型      | 默认值  |
-| ------------ | ---------------------------------------------------------------------------------------- | --------- | ------- |
-| value        | 二维码值                                                                                 | _string_  | -       |
-| size         | 二维码尺寸，单位 `px`                                                                    | _number_  | `287`   |
-| margin       | 边框距离                                                                                 | _number_  | `0`     |
-| init-h5-attr | H5 下，是否将 `size/margin` 传给原始组件                                                 | _boolean_ | `false` |
-| vue3-image   | Vue3 时，是否使用 `image` 模式，即转为 `image`，这时会将 `width/height` 设为父元素的宽高 | _boolean_ | `false` |
+| 参数                   | 说明                                                                                     | 类型      | 默认值  |
+| ---------------------- | ---------------------------------------------------------------------------------------- | --------- | ------- |
+| value                  | 二维码值                                                                                 | _string_  | -       |
+| size                   | 二维码尺寸，单位 `px`                                                                    | _number_  | `287`   |
+| margin                 | 边框距离                                                                                 | _number_  | `0`     |
+| init-h5-attr           | H5 下，是否将 `size/margin` 传给三方库 `vue-qrcode` 或 `qrcode.vue`                      | _boolean_ | `false` |
+| vue3-image             | Vue3 时，是否使用 `image` 模式，即转为 `image`，这时会将 `width/height` 设为父元素的宽高 | _boolean_ | `false` |
+| use-vue-qrcode-in-vue3 | 是否在 vue3 时也使用 `vue-qrcode` 三方库                                                 | _boolean_ | `false` |
 
 
 ### Events
@@ -60,6 +65,12 @@ export default {
 | -------------- | -------- | ----- |
 | result         | 生成成功 | `img` |
 | longPressImage | 长按图片 | `img` |
+
+### Inject
+
+| 参数                     | 说明                                                                               | 类型      | 默认值  |
+| ------------------------ | ---------------------------------------------------------------------------------- | --------- | ------- |
+| globalUseVueQrcodeInVue3 | 同 `props` 中的 `use-vue-qrcode-in-vue3`，任意一个不为 `false` 时使用 `vue-qrcode` | _boolean_ | `false` |
 
 ## 在线调试
 

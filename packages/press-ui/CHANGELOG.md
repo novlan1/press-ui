@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.12](https://github.com/novlan1/press-ui/compare/v2.2.11...v2.2.12) (2024-12-12)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update meta ([0deed25](https://github.com/novlan1/press-ui/commit/0deed25dbb26e4e5cc2214c10d7de59fb30c4e4c))
+* update package.json meta ([99d29a5](https://github.com/novlan1/press-ui/commit/99d29a5ed23ffa9e83354ae8314d48ddcbb7d295))
+* update script ([2838c8c](https://github.com/novlan1/press-ui/commit/2838c8c07a945cfc59b7837aa53e189e4edbc515))
+
+
+### ✏️ Documentation | 文档
+
+* update demo link ([6fe3cf1](https://github.com/novlan1/press-ui/commit/6fe3cf1a309310f2ab268c07b91df40131ffd92b))
+* update docs ([5b3e643](https://github.com/novlan1/press-ui/commit/5b3e643d41b18673005e603b2fa9237865e43527))
+* update docs ([d85acc3](https://github.com/novlan1/press-ui/commit/d85acc39443404fea4c70e775e0522471b1b6c71))
+* update docs ([0e3774c](https://github.com/novlan1/press-ui/commit/0e3774c72c029905be0cd156c1220f67053a38ce))
+* update docs ([d4c2aa2](https://github.com/novlan1/press-ui/commit/d4c2aa27fd4b7b3d34c17383038bce8796ab9ae3))
+* update docs ([8ef8a27](https://github.com/novlan1/press-ui/commit/8ef8a27964d4c5248aea986ec6f3251e47b7d8f9))
+* update docs ([63a480f](https://github.com/novlan1/press-ui/commit/63a480fabd7a60c9230e2afd392f3e9724eb0f59))
+* update docs ([3ce7276](https://github.com/novlan1/press-ui/commit/3ce72767e3ba3deee99062a6db3dcac58f697765))
+* update docs ([247ce40](https://github.com/novlan1/press-ui/commit/247ce40abb81307863fa4e5c479f8f5816b3ae49))
+* update docs ([ae28420](https://github.com/novlan1/press-ui/commit/ae2842010f46450f03b81ce282e80c7578af9c07))
+* update docs ([04179af](https://github.com/novlan1/press-ui/commit/04179afe31316795fe5f54a9c28643093ebf4129))
+
+
+### ✨ Features | 新功能
+
+* **qrcode:** 支持vue3下h5也使用vue-qrcode ([a7b9be2](https://github.com/novlan1/press-ui/commit/a7b9be273c34d0a7fa29542bf7d0720dc1ec57bb))
+
 ### [2.2.11](https://github.com/novlan1/press-ui/compare/v2.2.10...v2.2.11) (2024-12-05)
 
 

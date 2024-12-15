@@ -69,6 +69,7 @@
 <div style="display:flex;flex-wrap:wrap;margin-top:10px;">
   <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_2bfb54a9ad6b9bc0ff.gif" width="400">
 </div>
+
 ### 4. 如何使用
 
 #### 4.1. npm 方式
