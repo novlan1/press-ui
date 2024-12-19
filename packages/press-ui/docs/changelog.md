@@ -1,5 +1,35 @@
 # 更新日志
 
+### [2.2.14](https://github.com/novlan1/press-ui/compare/v2.2.13...v2.2.14) (2024-12-19)
+
+
+### Features 🎉
+
+* add change event ([b675a5f](https://github.com/novlan1/press-ui/commit/b675a5fb6793644b3b2caeb8569d8b0d0c22ce20))
+
+### [2.2.13](https://github.com/novlan1/press-ui/compare/v2.2.12...v2.2.13) (2024-12-17)
+
+
+### Documentation 📖
+
+* update docs ([8c42f9e](https://github.com/novlan1/press-ui/commit/8c42f9e5733c0e420fb0530bfdc1fc40af7e9ce6))
+
+
+### Code Refactoring ♻️
+
+* **button:** 消除hoverClass的警告 ([ee9724e](https://github.com/novlan1/press-ui/commit/ee9724ebce183910c873a50089939e50da47d5ca))
+
+
+### Chore 🚀 
+
+* hide sass warning ([673bd15](https://github.com/novlan1/press-ui/commit/673bd1515f8713a030162d8b83bb846bd0c521b4))
+* lint ([c64d598](https://github.com/novlan1/press-ui/commit/c64d598b2671ea73f6c73f2654bc362784f93c3d))
+
+
+### Features 🎉
+
+* **dialog:** add customClass ([5ee6193](https://github.com/novlan1/press-ui/commit/5ee61930fb7d606e5ab6d03a51b1c3018ee5fb9a))
+
 ### [2.2.12](https://github.com/novlan1/press-ui/compare/v2.2.11...v2.2.12) (2024-12-12)
 
 

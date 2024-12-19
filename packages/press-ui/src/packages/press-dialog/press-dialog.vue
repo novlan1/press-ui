@@ -3,6 +3,7 @@
   <div
     v-if="dataShow"
     class="press-dialog"
+    :class="dataCustomClass"
     :style="{zIndex: `${dataZIndex}`}"
     @click.stop="touchRemove"
     @touchmove.stop="preventTouchMove"

@@ -73,4 +73,8 @@ export const dialogProps = {
     type: String,
     default: '',
   },
+  customClass: {
+    type: String,
+    default: '',
+  },
 };

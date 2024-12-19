@@ -4,8 +4,8 @@ const nodeExternals = require('webpack-node-externals');
 const Components = require('../../config/components.json');
 const POSTCSS_CONFIG_FILE = path.resolve(__dirname, 'postcss.config.js');
 
-const { LOADER: CROSS_GAME_STYLE_LOADER} = '@plugin-light/webpack-loader-cross-game-style';
-const { LOADER: IF_DEF_LOADER} = '@plugin-light/webpack-loader-ifdef';
+const { LOADER: CROSS_GAME_STYLE_LOADER } = '@plugin-light/webpack-loader-cross-game-style';
+const { LOADER: IF_DEF_LOADER } = '@plugin-light/webpack-loader-ifdef';
 // const utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
 // const mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
 // const transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'));

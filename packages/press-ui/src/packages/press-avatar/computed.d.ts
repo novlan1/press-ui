@@ -50,8 +50,8 @@ declare const innerDefault: {
     };
     colorIndex: {
       type: (NumberConstructor | StringConstructor)[];
-      validator(n: any): boolean;
       default: number;
+      validator(n: any): boolean;
     };
     name: {
       type: StringConstructor;

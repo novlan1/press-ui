@@ -4,7 +4,7 @@
     :id="id"
     :data-detail="dataset"
     :class="buttonClass"
-    :hover-class="['press-button--active', hoverClass]"
+    :hover-class="innerHoverClass"
     :lang="lang"
     :form-type="formType"
     :style="buttonStyle"
@@ -34,7 +34,7 @@
       :id="id"
       :data-detail="dataset"
       :class="buttonClass"
-      :hover-class="['press-button--active', hoverClass]"
+      :hover-class="innerHoverClass"
       :lang="lang"
       :form-type="formType"
       :style="buttonStyle"
@@ -221,6 +221,9 @@ export default {
     loadingColor() {
       const { type, color, plain } = this;
       return loadingColor({ type, color, plain });
+    },
+    innerHoverClass() {
+      return `press-button--active ${this.hoverClass || ''}`;
     },
   },
   methods: {

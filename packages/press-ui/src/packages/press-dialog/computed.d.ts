@@ -71,4 +71,8 @@ export declare const dialogProps: {
     type: StringConstructor;
     default: string;
   };
+  customClass: {
+    type: StringConstructor;
+    default: string;
+  },
 };

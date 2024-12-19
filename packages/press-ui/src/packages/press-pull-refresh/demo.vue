@@ -2,12 +2,13 @@
   <div class="demo-wrap demo-pull-refresh">
     <press-tabs
       :active="active"
-      @change="onChange"
+      @change="onChangeTab"
     >
       <press-tab :title="t('basicUsage')">
         <PressPullRefresh
           v-model="isLoading"
           @refresh="onRefresh"
+          @change="onChange"
         >
           <p class="demo-button">
             {{ tips }}
@@ -112,7 +113,10 @@ export default {
       }, 1000);
     },
     onChange(value) {
-      console.log('value', value);
+      console.log('[onChange]', value);
+    },
+    onChangeTab(value) {
+      console.log('[onChangeTab]', value);
     },
   },
 };

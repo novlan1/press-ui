@@ -31,8 +31,8 @@ declare class Scheduler {
      * }
      * ```
      */
-  constructor(maxConcurrency?: number);
   add: (promiseCreator: any) => Promise<unknown>;
   doJob: () => void;
+  constructor(maxConcurrency?: number);
 }
 export { Scheduler };

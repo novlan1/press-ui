@@ -272,6 +272,11 @@ export default {
       if (status !== this.status) {
         this.status = status;
       }
+
+      this.$emit('change', {
+        status: this.status,
+        distance,
+      });
     },
 
     showSuccessTip() {

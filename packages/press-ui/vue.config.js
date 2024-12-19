@@ -77,6 +77,16 @@ module.exports = {
     plugins,
   },
   transpileDependencies: ['@zebra-ui/swiper'],
+  css: {
+    loaderOptions: {
+      scss: {
+        sassOptions: {
+          silenceDeprecations: ['import', 'legacy-js-api'],
+          quietDeps: true,
+        },
+      },
+    },
+  },
 
   chainWebpack(config) {
     config.module

@@ -89,7 +89,6 @@ export default {
         width: addUnit(size),
         height: addUnit(size),
       });
-      console.log('res', res);
       return res;
     },
   },

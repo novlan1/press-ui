@@ -29,8 +29,8 @@ export {
 export const isVue3 = () => {
   let result = false;
   // #ifdef VUE3
-  result = true
+  result = true;
   // #endif
   return result;
-}
+};
 
