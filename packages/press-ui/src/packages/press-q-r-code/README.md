@@ -57,6 +57,7 @@ export default {
 | init-h5-attr           | H5 下，是否将 `size/margin` 传给三方库 `vue-qrcode` 或 `qrcode.vue`                      | _boolean_ | `false` |
 | vue3-image             | Vue3 时，是否使用 `image` 模式，即转为 `image`，这时会将 `width/height` 设为父元素的宽高 | _boolean_ | `false` |
 | use-vue-qrcode-in-vue3 | 是否在 vue3 时也使用 `vue-qrcode` 三方库                                                 | _boolean_ | `false` |
+| wx-mp-padding          | 微信小程序下 `padding`，`-1`时会传递 `undefined`，表示用三方库默认值                     | _number_  | `-1`    |
 
 
 ### Events

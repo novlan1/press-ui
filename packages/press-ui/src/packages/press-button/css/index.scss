@@ -306,7 +306,7 @@
     font-size: $font-size-lg;
     color: $color-black;
     border-radius: $border-radius-md;
-    background: $color-secondary-btn;
+    background: #eef0f6;
     border: 0; // 没有 border
     &:not(.press-button--unclickable):active {
       background: $color-gray-3;

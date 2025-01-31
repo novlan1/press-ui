@@ -2,6 +2,94 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.23](https://github.com/novlan1/press-ui/compare/v2.2.22...v2.2.23) (2025-01-27)
+
+
+### ✨ Features | 新功能
+
+* 优化generate-component-config ([d4cbc05](https://github.com/novlan1/press-ui/commit/d4cbc059771f68f343312a6be3f8b1eea044ac26))
+
+### [2.2.22](https://github.com/novlan1/press-ui/compare/v2.2.21...v2.2.22) (2025-01-25)
+
+
+### ✏️ Documentation | 文档
+
+* 优化示例 ([05bb756](https://github.com/novlan1/press-ui/commit/05bb756282840ba9faa921dc0b1c7c98e672f05a))
+* update docs ([1c446e8](https://github.com/novlan1/press-ui/commit/1c446e8fbdda6eb2c5a8886955efdfe18a861b5c))
+
+
+### ✨ Features | 新功能
+
+* 优化generate-component-config ([07f936e](https://github.com/novlan1/press-ui/commit/07f936eb5de97f171b2dcc52d0d725adf6b16634))
+* **act-demo:** 优化act-demo ([45d3adb](https://github.com/novlan1/press-ui/commit/45d3adb97f2e150efbeae33e487aace640ea582f))
+* **generate-component-config:** 支持多demo合并 ([6b47e44](https://github.com/novlan1/press-ui/commit/6b47e44b92efc6fd7ed59231f8a71bb25e9f2e23))
+
+### [2.2.21](https://github.com/novlan1/press-ui/compare/v2.2.20...v2.2.21) (2025-01-21)
+
+
+### ✨ Features | 新功能
+
+* **datetime-picker:** 支持年月合并 ([ecccc9e](https://github.com/novlan1/press-ui/commit/ecccc9efbcbd39bf0cdfc2aa5aba7ab9f0447f4c))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化示例 ([930c8fd](https://github.com/novlan1/press-ui/commit/930c8fd799768a913a78fd52155540d2679e417d))
+
+### [2.2.20](https://github.com/novlan1/press-ui/compare/v2.2.19...v2.2.20) (2025-01-08)
+
+
+### ✏️ Documentation | 文档
+
+* update docs ([0a30065](https://github.com/novlan1/press-ui/commit/0a30065788309cb68ae581affe082737a9bf5876))
+* update docs ([564ecd3](https://github.com/novlan1/press-ui/commit/564ecd338d6c23669192bf76afe6a340d241d0c8))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* lint ([a6a6eab](https://github.com/novlan1/press-ui/commit/a6a6eabea27957793a193bd0726d3aa121f17957))
+
+
+### ✨ Features | 新功能
+
+* **q-r-code:** add wx-mp-padding ([6c13f53](https://github.com/novlan1/press-ui/commit/6c13f53c1def110a08bfcf83ed7f0db502ade89a))
+
+### [2.2.19](https://github.com/novlan1/press-ui/compare/v2.2.18...v2.2.19) (2024-12-29)
+
+
+### ✨ Features | 新功能
+
+* **notice-bar:** 分离 getScrollDurationAndWidth ([c5b4f82](https://github.com/novlan1/press-ui/commit/c5b4f8266ec677ab4ac74bfb0dfe798f25ebe046))
+
+### [2.2.18](https://github.com/novlan1/press-ui/compare/v2.2.17...v2.2.18) (2024-12-26)
+
+
+### ✨ Features | 新功能
+
+* **button:** update press-button--e-sport-secondary background ([84e64ee](https://github.com/novlan1/press-ui/commit/84e64eea75ec91e5a6feeb2f3eb55de89c6550bc))
+* **component-config:** 兼容边界情况 ([2e78872](https://github.com/novlan1/press-ui/commit/2e78872faac6f1cac96d70953cf94704e35eb129))
+
+### [2.2.17](https://github.com/novlan1/press-ui/compare/v2.2.16...v2.2.17) (2024-12-20)
+
+
+### ✨ Features | 新功能
+
+* 优化demo-lang，支持query ([67a6ab7](https://github.com/novlan1/press-ui/commit/67a6ab71600c718db1a9fea49321ca322c25d9ad))
+
+### [2.2.16](https://github.com/novlan1/press-ui/compare/v2.2.15...v2.2.16) (2024-12-20)
+
+
+### ✨ Features | 新功能
+
+* **generate-component-config:** 不重复显示demo page ([9b6fe3d](https://github.com/novlan1/press-ui/commit/9b6fe3dc77bf6f45cf47b6be606b59c958c76c23))
+
+### [2.2.15](https://github.com/novlan1/press-ui/compare/v2.2.14...v2.2.15) (2024-12-19)
+
+
+### ✨ Features | 新功能
+
+* **generate-component-config:** 支持非组件名称的示例地址 ([67035ae](https://github.com/novlan1/press-ui/commit/67035ae7d1d6e1333508e3b2656d9e4aadb35639))
+
 ### [2.2.14](https://github.com/novlan1/press-ui/compare/v2.2.13...v2.2.14) (2024-12-19)
 
 

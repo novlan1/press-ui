@@ -328,31 +328,114 @@ export default {
 }
 ```
 
+### 年月合并
+
+支持年月合并展示，`type` 为 `yearMonth-day-hour-minute`。
+
+```html
+<press-datetime-picker
+  type="yearMonth-day-hour-minute"
+  :value="currentDate"
+  :min-date="minDate"
+  :max-date="yearMonthMaxDate"
+  :formatter="yearMonthFormatter"
+  @input="onInput"
+/>
+```
+
+```ts
+import { getYearAndMonth } from 'press-ui/press-datetime-picker/helper';
+
+const getDayDesc = (val, day, innerValue) => {
+  const curDate = new Date(innerValue);
+  const selectedYear = curDate.getFullYear();
+  const selectedMonth = curDate.getMonth() + 1;
+
+  const selected = `${selectedYear}/${selectedMonth}/${val}`;
+  const selectedTime = new Date(selected);
+
+  const selectedDay = selectedTime.getDay();
+  const selectedDate = selectedTime.getDate();
+
+  const now = new Date();
+  const nowYear = now.getFullYear();
+  const nowMonth = now.getMonth() + 1;
+  const nowDate = now.getDate();
+
+  const isToday = selectedYear === nowYear && selectedMonth === nowMonth && selectedDate === nowDate;
+  if (isToday) {
+    return '今日';
+  }
+
+  const map = {
+    1: '周一',
+    2: '周二',
+    3: '周三',
+    4: '周四',
+    5: '周五',
+    6: '周六',
+    0: '周日',
+  };
+
+  return `${val}${day} ${map[selectedDay]}`;
+};
+
+export default {
+  methods: {
+    yearMonthFormatter(type, val, innerValue) {
+      const yearDesc = that.t('year');
+      const monthDesc = that.t('month');
+      const dayDesc = that.t('day');
+      const hourDesc = that.t('hour');
+      const minuteDesc = that.t('minute');
+
+      const { year, month } = getYearAndMonth(val);
+
+     // 年月合并类型
+      if (type === 'yearMonth') {
+        return `${`${year}`.slice(2, 4)}${yearDesc}${month}${monthDesc}`;
+      }
+
+      if (type === 'day') {
+        return getDayDesc(val, dayDesc, innerValue);
+      }
+      if (type === 'hour') {
+        return `${val}${hourDesc}`;
+      }
+      if (type === 'minute') {
+        return `${val}${minuteDesc}`;
+      }
+    },
+  }
+}
+```
+
+
 ## API
 
 ### Props
 
-| 参数                | 说明                                                                           | 类型                       | 默认值     |
-| ------------------- | ------------------------------------------------------------------------------ | -------------------------- | ---------- |
-| value               | 当前选中值                                                                     | _string \| number_         | -          |
-| type                | 类型，可选值为 `date` `time` `year-month` <br> <strong>不建议动态修改</strong> | _string_                   | `datetime` |
-| min-date            | 可选的最小时间，精确到分钟                                                     | _number_                   | 十年前     |
-| max-date            | 可选的最大时间，精确到分钟                                                     | _number_                   | 十年后     |
-| min-hour            | 可选的最小小时，针对 time 类型                                                 | _number_                   | `0`        |
-| max-hour            | 可选的最大小时，针对 time 类型                                                 | _number_                   | `23`       |
-| min-minute          | 可选的最小分钟，针对 time 类型                                                 | _number_                   | `0`        |
-| max-minute          | 可选的最大分钟，针对 time 类型                                                 | _number_                   | `59`       |
-| filter              | 选项过滤函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`)         | _(type, values) => values_ | -          |
-| formatter           | 选项格式化函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`)       | _(type, value) => value_   | -          |
-| title               | 顶部栏标题                                                                     | _string_                   | `''`       |
-| show-toolbar        | 是否显示顶部栏                                                                 | _boolean_                  | `true`     |
-| loading             | 是否显示加载状态                                                               | _boolean_                  | `false`    |
-| item-height         | 选项高度                                                                       | _number_                   | `44`       |
-| confirm-button-text | 确认按钮文字                                                                   | _string_                   | `确认`     |
-| cancel-button-text  | 取消按钮文字                                                                   | _string_                   | `取消`     |
-| visible-item-count  | 可见的选项个数                                                                 | _number_                   | `6`        |
-| use-momentum        | 是否使用惯性滚动                                                               | _boolean_                  | `false`    |
-| swipe-duration      | 快速滑动时惯性滚动的时长，单位 `ms`                                            | _number \| string_         | `1000`     |
+| 参数                | 说明                                                                             | 类型                       | 默认值     |
+| ------------------- | -------------------------------------------------------------------------------- | -------------------------- | ---------- |
+| value               | 当前选中值                                                                       | _string \| number_         | -          |
+| type                | 类型，可选值为 `date` `time` `year-month`等 <br> <strong>不建议动态修改</strong> | _string_                   | `datetime` |
+| min-date            | 可选的最小时间，精确到分钟                                                       | _number_                   | 十年前     |
+| max-date            | 可选的最大时间，精确到分钟                                                       | _number_                   | 十年后     |
+| min-hour            | 可选的最小小时，针对 time 类型                                                   | _number_                   | `0`        |
+| max-hour            | 可选的最大小时，针对 time 类型                                                   | _number_                   | `23`       |
+| min-minute          | 可选的最小分钟，针对 time 类型                                                   | _number_                   | `0`        |
+| max-minute          | 可选的最大分钟，针对 time 类型                                                   | _number_                   | `59`       |
+| filter              | 选项过滤函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`)           | _(type, values) => values_ | -          |
+| formatter           | 选项格式化函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`)         | _(type, value) => value_   | -          |
+| title               | 顶部栏标题                                                                       | _string_                   | `''`       |
+| show-toolbar        | 是否显示顶部栏                                                                   | _boolean_                  | `true`     |
+| loading             | 是否显示加载状态                                                                 | _boolean_                  | `false`    |
+| item-height         | 选项高度                                                                         | _number_                   | `44`       |
+| confirm-button-text | 确认按钮文字                                                                     | _string_                   | `确认`     |
+| cancel-button-text  | 取消按钮文字                                                                     | _string_                   | `取消`     |
+| visible-item-count  | 可见的选项个数                                                                   | _number_                   | `6`        |
+| use-momentum        | 是否使用惯性滚动                                                                 | _boolean_                  | `false`    |
+| swipe-duration      | 快速滑动时惯性滚动的时长，单位 `ms`                                              | _number \| string_         | `1000`     |
 
 ### Events
 

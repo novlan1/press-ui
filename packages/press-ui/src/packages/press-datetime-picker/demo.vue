@@ -50,6 +50,17 @@
       />
     </demo-block>
 
+    <demo-block :title="t('yearMonth')">
+      <press-datetime-picker
+        type="yearMonth-day-hour-minute"
+        :value="currentDate"
+        :min-date="minDate"
+        :max-date="yearMonthMaxDate"
+        :formatter="yearMonthFormatter"
+        @input="onInput"
+      />
+    </demo-block>
+
     <demo-block
       :title="t('withPopupPlus')"
     >
@@ -97,11 +108,49 @@ import PressDatetimePickerPopupPlus from 'press-ui/press-datetime-picker/press-d
 
 import { timeStampFormat } from 'press-ui/common/format/time';
 import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
+import { getYearAndMonth } from 'press-ui/press-datetime-picker/helper';
 
 
 let that;
 const DATE_TIME_PICKER_ID = 'press-picker-functional';
 const ONE_YEAR_MIL_SECONDS = 1000 * 60 * 60 * 24 * 365;
+
+
+const getDayDesc = (val, day, innerValue) => {
+  const curDate = new Date(innerValue);
+  const selectedYear = curDate.getFullYear();
+  const selectedMonth = curDate.getMonth() + 1;
+
+  // ios 对时间 a.b.c 的时间处理不兼容 导致 undefined 问题
+  const selected = `${selectedYear}/${selectedMonth}/${val}`;
+  const selectedTime = new Date(selected);
+
+  const selectedDay = selectedTime.getDay();
+  const selectedDate = selectedTime.getDate();
+
+  const now = new Date();
+  const nowYear = now.getFullYear();
+  const nowMonth = now.getMonth() + 1;
+  const nowDate = now.getDate();
+
+  const isToday = selectedYear === nowYear && selectedMonth === nowMonth && selectedDate === nowDate;
+  if (isToday) {
+    return '今日';
+  }
+
+  const map = {
+    1: '周一',
+    2: '周二',
+    3: '周三',
+    4: '周四',
+    5: '周五',
+    6: '周六',
+    0: '周日',
+  };
+
+  return `${val}${day} ${map[selectedDay]}`;
+};
+
 
 export default {
   i18n: {
@@ -118,6 +167,7 @@ export default {
       monthDayType: '选择月日',
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
+      yearMonth: '年月合并',
       sortColumns: '自定义列排序',
       withPopup: '结合Popup',
       withPopupPlus: '结合 PopupPlus',
@@ -136,6 +186,7 @@ export default {
       monthDayType: 'Choose Month-Day',
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
+      yearMonth: 'Year With Month',
       sortColumns: 'Columns Order',
       withPopup: 'With Popup',
       withPopupPlus: 'With PopupPlus',
@@ -151,13 +202,15 @@ export default {
   data() {
     that = this;
     const minDate = new Date().getTime();
-    const maxDate = new Date(2099, 10, 1).getTime();
+    const maxDate = new Date(2036, 10, 1).getTime();
+    const yearMonthMaxDate = new Date(2036, 10, 1).getTime();
 
     return {
       minHour: 10,
       maxHour: 20,
       minDate,
       maxDate,
+      yearMonthMaxDate,
       currentDate: new Date().getTime(),
       currentTime: '12:00',
 
@@ -206,6 +259,30 @@ export default {
         return `${val}${hour}`;
       } if (type === 'minute') {
         return `${val}${minute}`;
+      }
+    },
+    yearMonthFormatter(type, val, innerValue) {
+      const yearDesc = that.t('year');
+      const monthDesc = that.t('month');
+      const dayDesc = that.t('day');
+      const hourDesc = that.t('hour');
+      const minuteDesc = that.t('minute');
+
+      const { year, month } = getYearAndMonth(val);
+
+
+      if (type === 'yearMonth') {
+        return `${`${year}`.slice(2, 4)}${yearDesc}${month}${monthDesc}`;
+      }
+
+      if (type === 'day') {
+        return getDayDesc(val, dayDesc, innerValue);
+      }
+      if (type === 'hour') {
+        return `${val}${hourDesc}`;
+      }
+      if (type === 'minute') {
+        return `${val}${minuteDesc}`;
       }
     },
     onInput(event) {

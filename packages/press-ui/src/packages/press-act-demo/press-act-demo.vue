@@ -4,17 +4,19 @@
       v-if="showBasicUsage"
       :title="t('basicUsage')"
     >
-      <press-cell
-        :title="t('show')"
+      <PressCell
+        v-for="(item, index) of innerDemoList"
+        :key="index"
+        :title="item.title"
         is-link
-        @click="onShowDialog"
+        @click="onShowDialog(item)"
       />
     </PressDemoBlock>
 
     <PressDemoBlock
       :title="t('custom')"
     >
-      <press-cell
+      <PressCell
         title="样式类型"
         is-link
         :value="customStyleStr"
@@ -25,33 +27,33 @@
       <PressToggleHeader />
       <!-- #endif -->
 
-      <press-cell
+      <PressCell
         title="隐藏Tip样式"
         center
         :border="false"
       >
         <template #right-icon>
-          <press-switch
+          <PressSwitch
             custom-class="press-switch--e-sport"
             :checked="hideTipStyle"
             @change="$emit('update:hideTipStyle', !hideTipStyle)"
           />
         </template>
-      </press-cell>
+      </PressCell>
 
-      <press-cell
+      <PressCell
         title="使用Tip类名"
         center
         :border="false"
       >
         <template #right-icon>
-          <press-switch
+          <PressSwitch
             custom-class="press-switch--e-sport"
             :checked="useTipClass"
             @change="$emit('update:useTipClass', !useTipClass)"
           />
         </template>
-      </press-cell>
+      </PressCell>
 
       <slot name="custom" />
     </PressDemoBlock>
@@ -111,17 +113,28 @@ export default {
       type: Boolean,
       default: false,
     },
+    demoList: {
+      type: Array,
+      default: () => ([]),
+    },
   },
   data() {
     return {
     };
   },
+  computed: {
+    innerDemoList() {
+      const { demoList } = this;
+      const list = demoList.length ? demoList : [{ title: this.t('show') }];
+      return list;
+    },
+  },
   methods: {
     onCustom() {
       this.$emit('onCustom');
     },
-    onShowDialog() {
-      this.$emit('update:show', true);
+    onShowDialog(item) {
+      this.$emit('update:show', true, item);
     },
   },
 };

@@ -67,11 +67,13 @@
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { requestAnimationFrame } from '../common/utils/system';
-import { getRect } from '../common/dom/rect';
+
 import utils, { isNotInUni } from '../common/utils/utils';
 import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+
 import { getEventDetail } from '../common/dom/event';
+import { getScrollDurationAndWidth } from './core';
 
 
 export default {
@@ -202,38 +204,29 @@ export default {
       this.timer && clearTimeout(this.timer);
     },
     init() {
-      requestAnimationFrame(() => {
-        Promise.all([
-          getRect(this, '.press-notice-bar__content'),
-          getRect(this, '.press-notice-bar__wrap'),
-        ]).then((rects) => {
-          const [contentRect, wrapRect] = rects;
-          const {
-            speed,
-            scrollable,
-            // delay,
-          } = this;
-          if (contentRect == null
-                        || wrapRect == null
-                        || !contentRect.width
-                        || !wrapRect.width
-                        || scrollable === false) {
-            return;
-          }
-          if (scrollable || wrapRect.width < contentRect.width) {
-            const duration = ((wrapRect.width + contentRect.width) / speed) * 1000;
-            this.wrapWidth = wrapRect.width;
-            this.contentWidth = contentRect.width;
-            this.duration = duration;
-            // this.animation = uni.createAnimation({
-            //   duration,
-            //   timingFunction: 'linear',
-            //   delay,
-            // });
-            this.scroll(true);
-          }
-        });
-      });
+      const {
+        speed,
+        scrollable,
+        // delay,
+      } = this;
+
+      getScrollDurationAndWidth({
+        contentSelect: '.press-notice-bar__content',
+        wrapSelector: '.press-notice-bar__wrap',
+        context: this,
+        speed,
+        scrollable,
+      }).then(({
+        wrapWidth,
+        contentWidth,
+        duration,
+      }) => {
+        this.wrapWidth = wrapWidth;
+        this.contentWidth = contentWidth;
+        this.duration = duration;
+        this.scroll(true);
+      })
+        .catch(() => {});
     },
     scroll(isInit = false) {
       this.timer && clearTimeout(this.timer);

@@ -1,4 +1,4 @@
-const { replaceAllPolyfill } = require('t-comm');
+const { replaceAllPolyfill, hyphenate } = require('t-comm');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
@@ -65,11 +65,6 @@ function getAllPressComponents(globMatch) {
   };
 }
 
-
-function hyphenate(str) {
-  const hyphenateRE = /\B([A-Z])/g;
-  return str.replace(hyphenateRE, '-$1').toLowerCase();
-}
 
 function generateIndexScss({ scssPath, globMatch, targetDir }) {
   const { compList } = getAllPressComponents(globMatch);

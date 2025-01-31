@@ -3,6 +3,7 @@ const path = require('path');
 const { mkDirsSync, getPureCompName } = require('t-comm');
 const { getActPageDir, COMP_PREFIX, IS_INNER_DOCS } = require('../utils/utils');
 
+let gComponentConfig;
 
 const PATH_MAP = {
   DOC_PATH: `./${IS_INNER_DOCS ? 'docs/' : ''}docs/components/press`,
@@ -110,8 +111,7 @@ function writeCompDoc(data, name, docPath) {
  */
 function writeCompDemo(data, name) {
   const pureName = getPureCompName(name, COMP_PREFIX);
-  // const isAct = isActComponent(pureName);
-  const demoPath = `${PATH_MAP.DEMO_PATH}${getActPageDir(pureName)}`;
+  const demoPath = `${PATH_MAP.DEMO_PATH}${getActPageDir(pureName, gComponentConfig)}`;
 
   console.log(`>> 正在写入 ${pureName} demo...`);
   if (!fs.existsSync(demoPath)) {
@@ -131,10 +131,13 @@ function writeCompDemo(data, name) {
 }
 
 
-function moveDemo(cb) {
+function moveDemo(cb, config) {
   const comps = getComps();
   const demos = getLocalDocOrDemo(comps, FILENAME_MAP.LOCAL_DEMO_NAME);
   console.log(`>> 共有${demos.length}个组件demo\n`);
+  if (config) {
+    gComponentConfig = config;
+  }
 
   for (const doc of demos) {
     const { path: dir, name } = doc;

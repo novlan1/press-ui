@@ -127,6 +127,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    wxMpPadding: {
+      type: Number,
+      default: -1,
+    },
   },
   emits: [
     'result',
@@ -214,6 +218,7 @@ export default {
             background: '#ffffff',
             foreground: '#000000',
             text: this.value,
+            padding: this.wxMpPadding === -1 ? undefined : this.wxMpPadding,
           });
 
           wx.canvasToTempFilePath({

@@ -1,7 +1,8 @@
-import { canIUseGroupSetData } from './version';
+import { canIUseGroupSetData, getSystemInfoSync } from './version';
 import { isNotInUni } from './utils';
+
 export { nextTick } from '../vue3/adapter';
-export { getSystemInfoSync } from './version';
+export { getSystemInfoSync };
 
 
 export function requestAnimationFrame(cb) {

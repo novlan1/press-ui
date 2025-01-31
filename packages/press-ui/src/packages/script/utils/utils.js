@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { hyphenate } = require('t-comm');
+const { hyphenate, getPureCompName, getFullCompName } = require('t-comm');
 
 const COMP_PREFIX = 'press-';
 
@@ -13,11 +13,15 @@ const ACT_GOODS_LIST_COMPONENTS = [
   'act-goods-tab',
   'act-merchant-item',
 ];
+
+
 const DEMO_DIR_MAP = {
   PRESS: 'press',
+  GP: 'gp',
   ACT: 'act',
   ACT_DETAIL: 'act-detail',
   ACT_LIST: 'act-list',
+  ACT_EXCHANGE: 'act-exchange',
 };
 
 const ACT_TYPES = [
@@ -27,24 +31,26 @@ const ACT_TYPES = [
   'goods-list',
 ];
 
-// function getFullCompName(name) {
-//   name = hyphenate(name);
-//   if (!name.startsWith(COMP_PREFIX)) {
-//     return `${COMP_PREFIX}${name}`;
-//   }
-//   return name;
-// }
-
-
-// function getPureCompName(name) {
-//   name = hyphenate(name);
-//   return name.replace(new RegExp(`^${COMP_PREFIX}`), '');
-// }
 
 const isActComponent = component => component.startsWith('press-act-') || component.startsWith('act-');
 
 
-function getActPageDir(component) {
+function getActPageDir(component, config) {
+  if (config) {
+    const componentMap = Object.values(config).reduce((acc, item) => {
+      const { list } = item;
+      list.forEach((item) => {
+        acc[hyphenate(item.name)] = item;
+      });
+      return acc;
+    }, {});
+
+    const cur = componentMap[component];
+    const { subPackage = DEMO_DIR_MAP.PRESS } = cur || {};
+
+    return subPackage;
+  }
+
   if (!isActComponent(component)) {
     return DEMO_DIR_MAP.PRESS;
   }
@@ -91,14 +97,17 @@ const IS_INNER_DOCS = fs.existsSync('./docs/docs/.vuepress/config.js');
 
 module.exports = {
   hyphenate,
-  // getFullCompName,
-  // getPureCompName,
+  getFullCompName,
+  getPureCompName,
+
   isActComponent,
   isActDetailComponent,
   isActGoodsListComponent,
+
   getActPageDir,
   COMP_PREFIX,
   ACT_TYPES,
+
   DEMO_DIR_MAP,
   IS_INNER_DOCS,
 };

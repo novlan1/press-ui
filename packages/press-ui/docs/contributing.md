@@ -24,12 +24,10 @@
 
 ```bash
 - press-button
-  - demo-helper/        # 非必需，组件示例相关数据、方法
-  - helper/             # 非必需，业务层处理数据的相关方法，可能引入 t-comm 第三方模块
-  - demo.vue            # 组件示例
   - press-button.vue    # 组件
   - README.md           # 组件中文文档
   - README.en-US.md     # 组件英文文档
+  - demo.vue            # 组件示例
 ```
 
 `src/packages`下就是由这些组件文件夹和一些公共文件构成。
@@ -37,7 +35,7 @@
 上面的组织结构并不能直接用，还需要把`README.md`移动到`docs`中，把`demo.vue`移动到`src/pages`中。开发时会监听这些文件变动，发生变动后就把它们拷贝到需要的位置上。
 
 <img 
-  src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_160511d777e5015f01.gif" width="700"
+  src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/inner-architecture.png" width="700"
 />
 
 ## 2. 开发
@@ -54,14 +52,14 @@ npm run init
 对于H5、微信小程序、QQ小程序有不同的启动命令：
 
 ```bash
+# H5
 npm run dev
-# h5
 
-npm run dev:mp-weixin
 # 微信小程序
+npm run dev:mp-weixin
 
-npm run dev:mp-qq
 # qq小程序
+npm run dev:mp-qq
 ```
 
 ### 2.2. 新增组件
@@ -87,52 +85,6 @@ npm run docs:dev
 ### 2.4. 文档、示例部署
 
 `Press UI`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
-
-
-### 2.5. 辅助方法
-
-Press UI 内部提供了一些提效工具，包括：
-
-- 提取 `props`，可用于文档
-- 提取 `event`，可用于文档
-- 提取 `class`，可用于 BEM 改造中的映射表
-- CSS 单位转化，`rem` => `px`
-- 自动添加、修正组件的 `name` 属性
-- 自动添加组件的 `emits` 属性，Vue3 需要
-- 活动组件增加隐藏 @TIP_STYLE_NAME 样式
-- 活动组件进行 CSS 替换
-
-使用方法如下：
-
-```bash
-# 提取 props
-# npm run extract:props [componentPath]
-npm run extract:props src/packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue
-
-# 提取 event
-# npm run extract:event [componentPath]
-npm run extract:event src/packages/press-act-input-phone-dialog/press-act-input-phone-dialog.vue
-
-# 提取 class
-# npm run extract:class [componentPath]
-npm run extract:class src/packages/press-hor-owner-index/press-hor-owner-index.vue
-
-# rem 转 px
-# npm run rem:px [componentPath]
-npm run rem:px src/packages/press-message-board/press-message-board-input.vue
-
-# 添加、修正 name 属性
-npm run add:name
-
-# 添加 emits 属性
-npm run add:emits
-
-# 活动组件增加隐藏 TIP_STYLE_NAME 样式
-npm run act:hide:tip
-
-# 活动组件进行 CSS 替换
-npm run act:replace:class
-```
 
 ## 3. 开发规范
 
@@ -180,7 +132,7 @@ npm run act:replace:class
 
 一开始就尽量把组件设计好，坚持高标准，避免后面返工。
 
-### 4.3. 脚本 优先
+### 4.3. 脚本优先
 
 `js/ts`比`html`灵活，能写在`js/ts`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js/ts`都能够很方便的复用，但是组件就不行。
 

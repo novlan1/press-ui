@@ -85,7 +85,7 @@ export default defineConfig({
 
 评估了下 `Space` 组件的实现，用了 `$slots.default`，然后给每个子元素都包裹了 `space-item` 类名。由于小程序的 `$slots.default` 为 布尔值，所以小程序无法实现。
 
-当前也可以提供 `Space` 和 `SpaceItem` 两个组件，就像 `Collapse` 和 `CollapseItem` 一样，不过感觉意义不大，自己写成本也不高。
+当然也可以提供 `Space` 和 `SpaceItem` 两个组件，就像 `Collapse` 和 `CollapseItem` 一样，不过感觉意义不大，自己写成本也不高。
 
 
 ### 6.2. TextEllipsis

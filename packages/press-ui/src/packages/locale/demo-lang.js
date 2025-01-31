@@ -10,6 +10,8 @@ import {
   DEFAULT_LOCALE_NUMBER,
   LOCALE_NUMBER_MAP,
 } from './config';
+import { getComponentNameFromUrl } from './demo-component-name';
+
 
 const DEFAULT_LANG = 'zh-CN';
 
@@ -74,22 +76,18 @@ export function setLang(force = false, localeMap = {}) {
   }
 }
 
-function getPage() {
+function getPageName() {
   const pages = getCurrentPages();
-  const path = pages[pages.length - 1].route || '';
+  const path = pages[pages.length - 1]?.$page?.fullPath || '';
 
-  // const { path } = this.$route;
-  const list = path.split('/');
-  const name = list[list.length - 1];
-
-  return name;
+  return getComponentNameFromUrl(path);
 }
 
 export function initDemoI18n(app) {
   const mixin = {
     // @ts-ignore
     onReady() {
-      const name = getPage();
+      const name = getPageName();
       if (!name) return;
 
       const newTitle = (this).t(`titleMap.${name}`);

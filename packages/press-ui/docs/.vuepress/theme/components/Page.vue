@@ -73,7 +73,10 @@ export default {
   },
   computed: {
     path() {
-      return `${WEB_DEMO_BASE_LINK + this.url}?v=${new Date().getTime()}&lang=${this.lang}`;
+      const pre = WEB_DEMO_BASE_LINK + this.url;
+      const symbol = pre.indexOf('?') > -1 ? '&' : '?';
+
+      return `${pre}${symbol}v=${new Date().getTime()}&lang=${this.lang}`;
     },
     simulatorBoxStyle() {
       const { horWidth, horHeight, marginRight } = this.$page.frontmatter;
