@@ -144,7 +144,7 @@ module.exports = {
 
 欢迎加入QQ群沟通。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="180"/>
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="300"/>
 
 ### 8. Star History
 
