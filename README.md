@@ -146,11 +146,28 @@ module.exports = {
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="180"/>
 
+### 8. Star History
 
-<div align="center">
-<picture >
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date" width="500" />
+
+<img src="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date" width="500">
+
+1
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://api.star-history.com/svg?repos=star-history/star-history&type=Date&theme=dark
+    "
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="
+      https://api.star-history.com/svg?repos=star-history/star-history&type=Date
+    "
+  />
+  <img
+    alt="Star History Chart"
+    src="https://api.star-history.com/svg?repos=star-history/star-history&type=Date"
+  />
 </picture>
-</div>
