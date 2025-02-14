@@ -169,5 +169,6 @@ module.exports = {
   <img
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date"
+    width="400"
   />
 </picture>
