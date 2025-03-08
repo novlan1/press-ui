@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.38](https://github.com/novlan1/press-ui/compare/v2.2.37...v2.2.38) (2025-03-08)
+
+
+### ✨ Features | 新功能
+
+* **text-ellipsis:** 防止意外空格 ([0b6c088](https://github.com/novlan1/press-ui/commit/0b6c08838a0788d1dee23c86bfefc36eee9afa4c))
+
 ### [2.2.37](https://github.com/novlan1/press-ui/compare/v2.2.36...v2.2.37) (2025-03-08)
 
 

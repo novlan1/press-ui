@@ -2,9 +2,7 @@
   <div
     ref="root"
     class="press-text-ellipsis"
-  >
-    {{ expanded ? content : text }}
-    <span
+  >{{ expanded ? content : text }}<span
       v-if="hasAction"
       ref="actionRef"
       class="press-text-ellipsis__action"
@@ -13,24 +11,15 @@
       <slot
         name="action"
         :expanded="expanded"
-      >
-        {{ actionText }}
-      </slot>
-      <!-- <template v-if="useActionSlot">
-        <slot
-          name="action"
-          :expanded="expanded"
-        />
-      </template>
-      <template v-else>{{ actionText }}</template> -->
+      >{{ actionText }}</slot>
     </span>
+    <!-- #ifndef H5 -->
     <div
       :id="id"
       :style="hideStyle"
       class="press-text-ellipsis"
-    >
-      {{ hideText }}
-    </div>
+    >{{ hideText }}</div>
+    <!-- #endif -->
   </div>
 </template>
 <script>
