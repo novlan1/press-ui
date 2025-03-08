@@ -3,12 +3,12 @@
     <demo-block
       :title="t('basicUsage')"
     >
-      <press-cell
+      <PressCell
         :title="t('toggleDirection')"
         is-link
         @click="switchBtn(0)"
       />
-      <press-cell
+      <PressCell
         :title="t('changeColor')"
         is-link
         @click="switchColor"

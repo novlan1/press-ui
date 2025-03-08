@@ -5,7 +5,7 @@
       :key="index"
       :title="item.title"
     >
-      <press-cell
+      <PressCell
         v-for="(info) of item.list"
         :key="info.title"
         :title="info.title"
@@ -15,7 +15,7 @@
     </demo-block>
 
 
-    <press-action-sheet
+    <PressActionSheet
       :show="show"
       :actions="curActions"
       :cancel-text="cancelText"
@@ -27,7 +27,7 @@
       @cancel="onClose"
     />
 
-    <press-action-sheet
+    <PressActionSheet
       :show="showCustom"
       :title="t('title')"
       @close="onClose"
@@ -37,7 +37,7 @@
       <div style="padding: 16px;">
         {{ t('content') }}
       </div>
-    </press-action-sheet>
+    </PressActionSheet>
   </div>
 </template>
 <script>

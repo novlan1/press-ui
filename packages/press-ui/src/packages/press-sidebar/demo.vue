@@ -1,52 +1,52 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-sidebar :active-key="activeKey">
-        <press-sidebar-item :title="t('title')" />
-        <press-sidebar-item :title="t('title')" />
-        <press-sidebar-item :title="t('title')" />
-      </press-sidebar>
+      <PressSidebar :active-key="activeKey">
+        <PressSidebarItem :title="t('title')" />
+        <PressSidebarItem :title="t('title')" />
+        <PressSidebarItem :title="t('title')" />
+      </PressSidebar>
     </demo-block>
 
     <demo-block :title="t('showBadge')">
-      <press-sidebar :active-key="activeKey">
-        <press-sidebar-item
+      <PressSidebar :active-key="activeKey">
+        <PressSidebarItem
           :title="t('title')"
           dot
         />
-        <press-sidebar-item
+        <PressSidebarItem
           :title="t('title')"
           badge="5"
         />
-        <press-sidebar-item
+        <PressSidebarItem
           :title="t('title')"
           badge="99+"
         />
-      </press-sidebar>
+      </PressSidebar>
     </demo-block>
 
     <demo-block :title="t('disabled')">
-      <press-sidebar :active-key="activeKey">
-        <press-sidebar-item :title="t('title')" />
-        <press-sidebar-item
+      <PressSidebar :active-key="activeKey">
+        <PressSidebarItem :title="t('title')" />
+        <PressSidebarItem
           :title="t('title')"
           disabled
         />
-        <press-sidebar-item :title="t('title')" />
-      </press-sidebar>
+        <PressSidebarItem :title="t('title')" />
+      </PressSidebar>
     </demo-block>
 
     <demo-block :title="t('changeEvent')">
-      <press-sidebar
+      <PressSidebar
         :active-key="activeKey"
         @change="onChange"
       >
-        <press-sidebar-item :title="`${t('title')} 1`" />
-        <press-sidebar-item
+        <PressSidebarItem :title="`${t('title')} 1`" />
+        <PressSidebarItem
           :title="`${t('title')} 2`"
         />
-        <press-sidebar-item :title="`${t('title')} 3`" />
-      </press-sidebar>
+        <PressSidebarItem :title="`${t('title')} 3`" />
+      </PressSidebar>
     </demo-block>
 
     <!-- #ifndef H5 -->

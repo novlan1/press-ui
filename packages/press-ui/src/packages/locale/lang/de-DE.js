@@ -17,6 +17,7 @@ export default {
   confirmDelete: 'Bist du sicher, dass du löschen möchtest?',
   telInvalid: 'Ungültige Telefonnummer',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Ende',
     start: 'Start',

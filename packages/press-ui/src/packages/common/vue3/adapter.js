@@ -188,24 +188,28 @@ export function forceUpdate(instance) {
   // #endif
 }
 
-export const vModelMixin = {
+
+export const getVModelMixin = ({
+  type = String,
+  defaultValue = '',
+}) => ({
   props: {
     // #ifndef VUE3
     value: {
-      type: [String, Boolean],
-      default: '',
+      type,
+      default: defaultValue,
     },
     // #endif
     // #ifdef VUE3
     modelValue: {
-      type: [String, Boolean],
-      default: '',
+      type,
+      default: defaultValue,
     },
     // #endif
   },
   computed: {
     realModelValue() {
-      let result = '';
+      let result = typeof defaultValue === 'function' ? defaultValue() : defaultValue;
 
       // #ifndef VUE3
       // @ts-ignore
@@ -231,7 +235,12 @@ export const vModelMixin = {
     },
   },
 
-};
+});
+
+export const vModelMixin = getVModelMixin({
+  type: [String, Boolean],
+  defaultValue: '',
+});
 
 export function usePlugin(plugin, app) {
   // #ifndef VUE3

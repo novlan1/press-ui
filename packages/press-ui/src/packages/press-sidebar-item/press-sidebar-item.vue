@@ -7,7 +7,7 @@
       @click="onClick"
     >
       <div class="press-sidebar-item__text">
-        <press-info
+        <PressInfo
           v-if="badge != null || info !== null || dot"
           :dot="dot"
           :info="badge != null ? badge : info"

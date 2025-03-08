@@ -18,16 +18,16 @@ Used to prompt some messages, only contains a confirmation button.
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.alert({
+showDialog({
    title: 'Title',
    message: 'Pop-up window content',
 }).then(() => {
    // on close
 });
 
-Dialog.alert({
+showDialog({
    message: 'Pop-up window content',
 }).then(() => {
    // on close
@@ -43,9 +43,9 @@ Used for confirmation messages, containing cancel and confirm buttons.
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showConfirmDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.confirm({
+showConfirmDialog({
    title: 'Title',
    message: 'Pop-up window content',
 })
@@ -66,9 +66,9 @@ Set the theme option to `round-button` to display rounded button style popups.
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.alert({
+showDialog({
    title: 'Title',
    message: 'Pop-up window content',
    theme: 'round-button',
@@ -76,7 +76,7 @@ Dialog.alert({
    // on close
 });
 
-Dialog.alert({
+showDialog({
    message: 'Pop-up window content',
    theme: 'round-button',
 }).then(() => {
@@ -93,7 +93,7 @@ Through the `beforeClose` attribute, a callback function can be passed in to per
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showConfirmDialog } from 'press-ui/press-dialog-plus/handler';
 
 const beforeClose = (action) => new Promise((resolve) => {
    setTimeout(() => {
@@ -106,7 +106,7 @@ const beforeClose = (action) => new Promise((resolve) => {
    }, 1000);
 });
 
-Dialog.confirm({
+showConfirmDialog({
    title: 'Title',
    message: 'popup content'
    beforeClose
@@ -154,15 +154,14 @@ export default {
 
 ### method
 
-| method name                | parameters | return value | description                                                 |
-| -------------------------- | ---------- | ------------ | ----------------------------------------------------------- |
-| Dialog                     | `options`  | `Promise`    | Show popup                                                  |
-| Dialog.alert               | `options`  | `Promise`    | Show message alert popup                                    |
-| Dialog.confirm             | `options`  | `Promise`    | Show message confirmation popup                             |
-| Dialog.setDefaultOptions   | `options`  | `void`       | Modify the default configuration, effective for all Dialogs |
-| Dialog.resetDefaultOptions | -          | `void`       | Reset the default configuration, effective for all Dialogs  |
-| Dialog.close               | -          | `void`       | close the popup                                             |
-| Dialog.stopLoading         | -          | `void`       | The loading state of the stop button                        |
+| method name                                           | parameters | return value | description                                                 |
+| ----------------------------------------------------- | ---------- | ------------ | ----------------------------------------------------------- |
+| showDialog, Dialog, Dialog.alert                      | `options`  | `Promise`    | Show message alert popup                                    |
+| showConfirmDialog, Dialog.confirm                     | `options`  | `Promise`    | Show message confirmation popup                             |
+| setDialogDefaultOptions, Dialog.setDefaultOptions     | `options`  | `void`       | Modify the default configuration, effective for all Dialogs |
+| resetDialogDefaultOptions, Dialog.resetDefaultOptions | -          | `void`       | Reset the default configuration, effective for all Dialogs  |
+| closeDialog, Dialog.close                             | -          | `void`       | close the popup                                             |
+| stopDialogLoading, Dialog.stopLoading                 | -          | `void`       | The loading state of the stop button                        |
 
 ### Options
 

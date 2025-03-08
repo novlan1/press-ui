@@ -9,8 +9,12 @@ import AvatarGroup from './packages/press-avatar-group/press-avatar-group.vue';
 import BackTop from './packages/press-back-top/press-back-top.vue';
 import Badge from './packages/press-badge/press-badge.vue';
 import Barcode from './packages/press-barcode/press-barcode.vue';
+import Barrage from './packages/press-barrage/press-barrage.vue';
 import Button from './packages/press-button/press-button.vue';
 import Calendar from './packages/press-calendar/press-calendar.vue';
+import CalendarHeader from './packages/press-calendar-header/press-calendar-header.vue';
+import CalendarInner from './packages/press-calendar-inner/press-calendar-inner.vue';
+import CalendarMonth from './packages/press-calendar-month/press-calendar-month.vue';
 import Card from './packages/press-card/press-card.vue';
 import Cascader from './packages/press-cascader/press-cascader.vue';
 import Cell from './packages/press-cell/press-cell.vue';
@@ -46,7 +50,10 @@ import FormItem from './packages/press-form-item/press-form-item.vue';
 import Grid from './packages/press-grid/press-grid.vue';
 import GridItem from './packages/press-grid-item/press-grid-item.vue';
 import Guide from './packages/press-guide/press-guide.vue';
+import GuideContent from './packages/press-guide-content/press-guide-content.vue';
 import Icon from './packages/press-icon/press-icon.vue';
+import IconDelete from './packages/press-icon-delete/press-icon-delete.vue';
+import IconMusic from './packages/press-icon-music/press-icon-music.vue';
 import IconMusic from './packages/press-icon/press-icon-music.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
 import Image from './packages/press-image/press-image.vue';
@@ -68,6 +75,7 @@ import Picker from './packages/press-picker/press-picker.vue';
 import PickerColumn from './packages/press-picker-column/press-picker-column.vue';
 import PickerPlus from './packages/press-picker-plus/press-picker-plus.vue';
 import PickerPlusPopupPlus from './packages/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
+import PickerToolbar from './packages/press-picker-toolbar/press-picker-toolbar.vue';
 import PickerView from './packages/press-picker-view/press-picker-view.vue';
 import Popover from './packages/press-popover/press-popover.vue';
 import PopoverPlus from './packages/press-popover-plus/press-popover-plus.vue';
@@ -82,13 +90,17 @@ import QRCodePopup from './packages/press-q-r-code-popup/press-q-r-code-popup.vu
 import Radio from './packages/press-radio/press-radio.vue';
 import RadioGroup from './packages/press-radio-group/press-radio-group.vue';
 import Rate from './packages/press-rate/press-rate.vue';
+import RollingText from './packages/press-rolling-text/press-rolling-text.vue';
+import RollingTextItem from './packages/press-rolling-text-item/press-rolling-text-item.vue';
 import Row from './packages/press-row/press-row.vue';
 import ScrollView from './packages/press-scroll-view/press-scroll-view.vue';
 import Search from './packages/press-search/press-search.vue';
 import Section from './packages/press-section/press-section.vue';
+import ShareOptions from './packages/press-share-options/press-share-options.vue';
 import ShareSheet from './packages/press-share-sheet/press-share-sheet.vue';
 import Sidebar from './packages/press-sidebar/press-sidebar.vue';
 import SidebarItem from './packages/press-sidebar-item/press-sidebar-item.vue';
+import Signature from './packages/press-signature/press-signature.vue';
 import Skeleton from './packages/press-skeleton/press-skeleton.vue';
 import Slider from './packages/press-slider/press-slider.vue';
 import Stepper from './packages/press-stepper/press-stepper.vue';
@@ -105,8 +117,9 @@ import TabbarItem from './packages/press-tabbar-item/press-tabbar-item.vue';
 import Tabs from './packages/press-tabs/press-tabs.vue';
 import Tag from './packages/press-tag/press-tag.vue';
 import Teleport from './packages/press-teleport/press-teleport.vue';
-import TeleportWeb from './packages/press-teleport/press-teleport-web.vue';
+import TeleportWeb from './packages/press-teleport-web/press-teleport-web.vue';
 import Text from './packages/press-text/press-text.vue';
+import TextEllipsis from './packages/press-text-ellipsis/press-text-ellipsis.vue';
 import Toast from './packages/press-toast/press-toast.vue';
 import ToggleHeader from './packages/press-toggle-header/press-toggle-header.vue';
 import Transition from './packages/press-transition/press-transition.vue';
@@ -125,8 +138,12 @@ const components = {
   BackTop,
   Badge,
   Barcode,
+  Barrage,
   Button,
   Calendar,
+  CalendarHeader,
+  CalendarInner,
+  CalendarMonth,
   Card,
   Cascader,
   Cell,
@@ -162,7 +179,10 @@ const components = {
   Grid,
   GridItem,
   Guide,
+  GuideContent,
   Icon,
+  IconDelete,
+  IconMusic,
   IconMusic,
   IconPlus,
   Image,
@@ -184,6 +204,7 @@ const components = {
   PickerColumn,
   PickerPlus,
   PickerPlusPopupPlus,
+  PickerToolbar,
   PickerView,
   Popover,
   PopoverPlus,
@@ -198,13 +219,17 @@ const components = {
   Radio,
   RadioGroup,
   Rate,
+  RollingText,
+  RollingTextItem,
   Row,
   ScrollView,
   Search,
   Section,
+  ShareOptions,
   ShareSheet,
   Sidebar,
   SidebarItem,
+  Signature,
   Skeleton,
   Slider,
   Stepper,
@@ -223,6 +248,7 @@ const components = {
   Teleport,
   TeleportWeb,
   Text,
+  TextEllipsis,
   Toast,
   ToggleHeader,
   Transition,

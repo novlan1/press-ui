@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('check')"
         is-link
         @click="onClickShow('normal')"
@@ -9,19 +9,19 @@
     </demo-block>
 
     <demo-block :title="t('embeddedContent')">
-      <press-cell
+      <PressCell
         :title="t('check')"
         is-link
         @click="onClickShow('content')"
       />
     </demo-block>
 
-    <press-overlay
+    <PressOverlay
       :show="options.normal"
       @click="onClickHide('normal')"
     />
 
-    <press-overlay
+    <PressOverlay
       :show="options.content"
       @click="onClickHide('content')"
     >
@@ -31,7 +31,7 @@
           catch:tap="noop"
         />
       </div>
-    </press-overlay>
+    </PressOverlay>
   </div>
 </template>
 <script>

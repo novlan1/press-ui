@@ -4,25 +4,25 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         :value="checkedMap.basic"
         @change="v=>onChange(v, 'basic')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
     <demo-block
       :title="t('disabled')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         :value="checkedMap.disabled"
         disabled
         @change="v=>onChange(v, 'disabled')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
 
@@ -30,111 +30,111 @@
       :title="t('customShape')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         shape="square"
         :value="checkedMap.shape"
         @change="v=>onChange(v, 'shape')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
     <demo-block
       :title="t('customColor')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         :value="checkedMap.color"
         checked-color="#07c160"
         @change="v=>onChange(v, 'color')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
     <demo-block
       :title="t('customIconSize')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         :value="checkedMap.size"
         :icon-size="25"
         @change="v=>onChange(v, 'size')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
     <demo-block
       :title="t('disableLabel')"
       :section-style="sectionStyle"
     >
-      <press-checkbox
+      <PressCheckbox
         :value="checkedMap.noLabel"
         label-disabled
         @change="v=>onChange(v, 'noLabel')"
       >
         {{ t('checkbox') }}
-      </press-checkbox>
+      </PressCheckbox>
     </demo-block>
 
     <demo-block
       :title="t('title3')"
       :section-style="sectionStyle"
     >
-      <press-checkbox-group
+      <PressCheckboxGroup
         :value="checkedMap.group"
         @change="v=>onChange(v, 'group')"
       >
-        <press-checkbox
+        <PressCheckbox
           name="a"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} a
-        </press-checkbox>
-        <press-checkbox
+        </PressCheckbox>
+        <PressCheckbox
           name="b"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} b
-        </press-checkbox>
-        <press-checkbox
+        </PressCheckbox>
+        <PressCheckbox
           name="c"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} c
-        </press-checkbox>
-      </press-checkbox-group>
+        </PressCheckbox>
+      </PressCheckboxGroup>
     </demo-block>
 
     <demo-block
       :title="t('title4')"
       :section-style="sectionStyle"
     >
-      <press-checkbox-group
+      <PressCheckboxGroup
         :value="checkedMap.groupMax"
         :max="2"
         @change="v=>onChange(v, 'groupMax')"
       >
-        <press-checkbox
+        <PressCheckbox
           name="a"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} A
-        </press-checkbox>
-        <press-checkbox
+        </PressCheckbox>
+        <PressCheckbox
           name="b"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} B
-        </press-checkbox>
-        <press-checkbox
+        </PressCheckbox>
+        <PressCheckbox
           name="c"
           :custom-style="customStyle"
         >
           {{ t('checkbox') }} C
-        </press-checkbox>
-      </press-checkbox-group>
+        </PressCheckbox>
+      </PressCheckboxGroup>
     </demo-block>
   </div>
 </template>

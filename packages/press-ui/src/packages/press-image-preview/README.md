@@ -23,7 +23,7 @@ export default {
 
 ### 基础用法
 
-先在页面中埋入组件，然后函数式调用`imagePreview`即可。
+先在页面中埋入组件，然后函数式调用`showImagePreview`即可。
 
 
 ```html
@@ -35,7 +35,7 @@ export default {
 
 ```ts
 import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
-import { imagePreview } from 'press-ui/press-image-preview/index';
+import { showImagePreview } from 'press-ui/press-image-preview/index';
 
 
 export default {
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     show() {
-      imagePreview({
+      showImagePreview({
         selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
         images: this.images,
       }).then(() => {
@@ -59,7 +59,7 @@ export default {
 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
 
 ```ts
-imagePreview({
+showImagePreview({
   selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
   images: this.images,
   startPosition: 1,
@@ -72,7 +72,7 @@ imagePreview({
 
 
 ```ts
-imagePreview({
+showImagePreview({
   selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
   images: this.images,
   closeable: true,
@@ -82,10 +82,10 @@ imagePreview({
 
 ### 监听关闭事件
 
-`imagePreview`方法返回的是`promise`，关闭时状态会变成`resolved`，可以在`then`方法中监听。
+`showImagePreview`方法返回的是`promise`，关闭时状态会变成`resolved`，可以在`then`方法中监听。
 
 ```ts
-imagePreview({
+showImagePreview({
   selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
   images: this.images,
   closeable: true,
@@ -101,7 +101,7 @@ imagePreview({
 
 
 ```ts
-imagePreview({
+showImagePreview({
   selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
   images: this.images,
   asyncClose: true,

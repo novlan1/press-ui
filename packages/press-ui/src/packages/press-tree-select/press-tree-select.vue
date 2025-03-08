@@ -7,12 +7,12 @@
       scroll-y
       class="press-tree-select__nav"
     >
-      <press-sidebar
+      <PressSidebar
         :active-key="mainActiveIndex"
         custom-class="press-tree-select__nav__inner"
         @change="onClickNav"
       >
-        <press-sidebar-item
+        <PressSidebarItem
           v-for="(item, index) in (items)"
           :key="index"
           :custom-class="mainItemClass"
@@ -23,7 +23,7 @@
           :title="item.text"
           :disabled="item.disabled"
         />
-      </press-sidebar>
+      </PressSidebar>
     </scroll-view>
     <scroll-view
       scroll-y
@@ -37,7 +37,7 @@
         @click="onSelectItem(item)"
       >
         {{ item.text }}
-        <press-icon-plus
+        <PressIconPlus
           v-if="isActive(activeId, item.id)"
           :name="selectedIcon"
           size="16px"

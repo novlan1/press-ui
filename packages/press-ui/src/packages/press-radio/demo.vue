@@ -1,115 +1,115 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.basic"
         @change="(val) => onChange(val, 'basic')"
       >
-        <press-radio name="a">
+        <PressRadio name="a">
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio name="b">
+        </PressRadio>
+        <PressRadio name="b">
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('horizontal')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.horizontal"
         direction="horizontal"
         @change="(val) => onChange(val, 'horizontal')"
       >
-        <press-radio name="a">
+        <PressRadio name="a">
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio name="b">
+        </PressRadio>
+        <PressRadio name="b">
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('disabled')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.disabled"
         disabled
         @change="(val) => onChange(val, 'disabled')"
       >
-        <press-radio name="a">
+        <PressRadio name="a">
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio name="b">
+        </PressRadio>
+        <PressRadio name="b">
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('customShape')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.square"
         @change="(val) => onChange(val, 'square')"
       >
-        <press-radio
+        <PressRadio
           name="a"
           shape="square"
         >
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio
+        </PressRadio>
+        <PressRadio
           name="b"
           shape="square"
         >
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.customStyle"
         @change="(val) => onChange(val, 'customStyle')"
       >
-        <press-radio
+        <PressRadio
           name="a"
           checked-color="#07c160"
         >
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio
+        </PressRadio>
+        <PressRadio
           name="b"
           checked-color="#07c160"
         >
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('customIconSize')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.customSize"
         @change="(val) => onChange(val, 'customSize')"
       >
-        <press-radio
+        <PressRadio
           name="a"
           icon-size="24px"
         >
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio
+        </PressRadio>
+        <PressRadio
           name="b"
           icon-size="24px"
         >
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('customIcon')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.customIcon"
         @change="(val) => onChange(val, 'customIcon')"
       >
-        <press-radio
+        <PressRadio
           name="a"
           use-icon-slot
         >
@@ -120,8 +120,8 @@
               :src="valueMap.customIcon === 'a' ? icon.active : icon.normal"
             >
           </template>
-        </press-radio>
-        <press-radio
+        </PressRadio>
+        <PressRadio
           name="b"
           use-icon-slot
         >
@@ -132,65 +132,65 @@
               :src="valueMap.customIcon === 'b' ? icon.active : icon.normal"
             >
           </template>
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block :title="t('disableLabel')">
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.labelDisabled"
         @change="(val) => onChange(val, 'labelDisabled')"
       >
-        <press-radio
+        <PressRadio
           name="a"
           label-disabled
         >
           {{ t('radio') }} 1
-        </press-radio>
-        <press-radio
+        </PressRadio>
+        <PressRadio
           name="b"
           label-disabled
         >
           {{ t('radio') }} 2
-        </press-radio>
-      </press-radio-group>
+        </PressRadio>
+      </PressRadioGroup>
     </demo-block>
 
     <demo-block
       :title="t('withCell')"
       section-style="margin: 0;"
     >
-      <press-radio-group
+      <PressRadioGroup
         :value="valueMap.cell"
         @change="val => onChange(val, 'cell')"
       >
-        <press-cell-group>
-          <press-cell
+        <PressCellGroup>
+          <PressCell
             :title="`${t('radio')} 1`"
             clickable
             data-name="1"
             @click="valueMap.cell = '1'"
           >
             <template #right-icon>
-              <press-radio
+              <PressRadio
                 name="1"
               />
             </template>
-          </press-cell>
-          <press-cell
+          </PressCell>
+          <PressCell
             :title="`${t('radio')} 2`"
             clickable
             data-name="2"
             @click="valueMap.cell = '2'"
           >
             <template #right-icon>
-              <press-radio
+              <PressRadio
                 name="2"
               />
             </template>
-          </press-cell>
-        </press-cell-group>
-      </press-radio-group>
+          </PressCell>
+        </PressCellGroup>
+      </PressRadioGroup>
     </demo-block>
   </div>
 </template>

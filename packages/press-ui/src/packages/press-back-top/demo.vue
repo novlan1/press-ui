@@ -1,6 +1,6 @@
 <template>
   <div class="demo-wrap">
-    <press-notice-bar text="向下滑动即可展示组件。" />
+    <PressNoticeBar text="向下滑动即可展示组件。" />
     <scroll-view
       scroll-y
       enhanced

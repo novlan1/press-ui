@@ -4,7 +4,7 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-notice-bar
+      <PressNoticeBar
         scrollable
         left-icon="volume-o"
         :text="t('text')"
@@ -16,13 +16,13 @@
       :section-style="sectionStyle"
     >
       <!-- 文字较短时，通过设置 scrollable 属性开启滚动播放 -->
-      <press-notice-bar
+      <PressNoticeBar
         scrollable
         :text="t('shortText')"
       />
 
       <!-- 文字较长时，通过禁用 scrollable 属性关闭滚动播放 -->
-      <press-notice-bar
+      <PressNoticeBar
         :scrollable="false"
         :text="t('text')"
       />
@@ -32,7 +32,7 @@
       :title="t('wrapable')"
       :section-style="sectionStyle"
     >
-      <press-notice-bar
+      <PressNoticeBar
         wrapable
         :scrollable="false"
         :text="t('text')"
@@ -44,14 +44,14 @@
       :section-style="sectionStyle"
     >
       <!-- closeable 模式，在右侧显示关闭按钮 -->
-      <press-notice-bar
+      <PressNoticeBar
         mode="closeable"
         :text="t('shortText')"
         @close="onClose"
       />
 
       <!-- link 模式，在右侧显示链接箭头 -->
-      <press-notice-bar
+      <PressNoticeBar
         mode="link"
         :text="t('shortText')"
       />
@@ -61,7 +61,7 @@
       :title="t('customStyle')"
       :section-style="sectionStyle"
     >
-      <press-notice-bar
+      <PressNoticeBar
         color="#1989fa"
         background="#ecf9ff"
         left-icon="info-o"
@@ -73,7 +73,7 @@
       :title="t('customSpeed')"
       :section-style="sectionStyle"
     >
-      <press-notice-bar
+      <PressNoticeBar
         :text="t('shortText')"
         :speed="100"
         scrollable

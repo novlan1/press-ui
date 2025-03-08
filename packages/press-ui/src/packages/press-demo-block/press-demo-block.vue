@@ -2,6 +2,7 @@
   <PressSection
     :title="title"
     :header-style="headerStyle"
+    :custom-style="customStyle"
     type="line"
   >
     <div
@@ -36,12 +37,13 @@ export default {
       type: String,
       default: '',
     },
+    customStyle: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
-<style scoped lang="scss">
-.section-content {
-  margin: 0 12px;
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>
 

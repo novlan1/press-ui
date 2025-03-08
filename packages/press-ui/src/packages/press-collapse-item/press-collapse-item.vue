@@ -1,7 +1,7 @@
 <template>
   <div :class="customClass + ' press-collapse-item ' + (index !== 0 ? 'press-hairline--top' : '')">
     <!-- 【修改点】cell 增加 center，垂直居中 -->
-    <press-cell
+    <PressCell
       :size="size"
       :title="title"
       :title-class="titleClass"
@@ -29,7 +29,7 @@
           name="right-icon"
         />
       </template>
-    </press-cell>
+    </PressCell>
 
     <div
       :class="wrapperClass"

@@ -33,19 +33,19 @@
         class="index-page__main"
       >
         <div class="index-page__card">
-          <press-collapse
+          <PressCollapse
             :value="activeNames"
             default-expand-all
             @change="onChange"
           >
-            <press-collapse-item
+            <PressCollapseItem
               v-for="(item, index) of showPages"
               :key="item.key"
               :name="`${index}`"
               :is-link="false"
             >
               <template #title>
-                <press-section
+                <PressSection
                   :title="item.title"
                   :color="sectionStyle.color"
                   type="line"
@@ -63,8 +63,8 @@
                 custom-class="component-cell"
                 @click="() => clickComponent(nav, item)"
               />
-            </press-collapse-item>
-          </press-collapse>
+            </PressCollapseItem>
+          </PressCollapse>
         </div>
       </div>
     </scroll-view>

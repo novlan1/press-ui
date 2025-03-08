@@ -22,7 +22,7 @@
           v-if="useIconSlot"
           name="icon"
         />
-        <press-icon-plus
+        <PressIconPlus
           v-else
           name="success"
           :class="radioIconClass"

@@ -3,7 +3,7 @@
     class="demo-wrap"
     :style="wrapStyle"
   >
-    <press-index-bar
+    <PressIndexBar
       :sticky-offset-top="stickyOffsetTop"
       @select="onSelect"
     >
@@ -11,12 +11,12 @@
         v-for="(item,index) of anchorList"
         :key="index"
       >
-        <press-index-anchor :index="item" />
-        <press-cell :title="t('text')" />
-        <press-cell :title="t('text')" />
-        <press-cell :title="t('text')" />
+        <PressIndexAnchor :index="item" />
+        <PressCell :title="t('text')" />
+        <PressCell :title="t('text')" />
+        <PressCell :title="t('text')" />
       </div>
-    </press-index-bar>
+    </PressIndexBar>
   </div>
 </template>
 <script>

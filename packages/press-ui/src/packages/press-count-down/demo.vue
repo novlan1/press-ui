@@ -4,14 +4,14 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-count-down :time="time" />
+      <PressCountDown :time="time" />
     </demo-block>
 
     <demo-block
       :title="t('customFormat')"
       :section-style="sectionStyle"
     >
-      <press-count-down
+      <PressCountDown
         :time="time"
         :format="t('formatWithDay')"
       />
@@ -21,7 +21,7 @@
       :title="t('millisecond')"
       :section-style="sectionStyle"
     >
-      <press-count-down
+      <PressCountDown
         :time="time"
         millisecond
         format="HH:mm:ss:SSS"
@@ -32,7 +32,7 @@
       :title="t('customStyle')"
       :section-style="sectionStyle"
     >
-      <press-count-down
+      <PressCountDown
         use-slot
         :time="time"
         @change="onChange"
@@ -48,14 +48,14 @@
             {{ timeData.seconds }}
           </span>
         </template>
-      </press-count-down>
+      </PressCountDown>
     </demo-block>
 
     <demo-block
       :title="t('manualControl')"
       :section-style="sectionStyle"
     >
-      <press-count-down
+      <PressCountDown
         id="controlCountDown"
         ref="controlCountDown"
         millisecond
@@ -66,26 +66,26 @@
       />
     </demo-block>
 
-    <press-grid
+    <PressGrid
       clickable
       :column-num="3"
     >
-      <press-grid-item
+      <PressGridItem
         :text="t('start')"
         icon="play-circle-o"
         @click="start"
       />
-      <press-grid-item
+      <PressGridItem
         :text="t('pause')"
         icon="pause-circle-o"
         @click="pause"
       />
-      <press-grid-item
+      <PressGridItem
         :text="t('reset')"
         icon="replay"
         @click="reset"
       />
-    </press-grid>
+    </PressGrid>
   </div>
 </template>
 <script>

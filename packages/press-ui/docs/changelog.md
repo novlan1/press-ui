@@ -1,5 +1,129 @@
 # 更新日志
 
+### [2.2.36](https://github.com/novlan1/press-ui/compare/v2.2.34...v2.2.36) (2025-03-08)
+
+
+### Features 🎉
+
+* add condition for pages.json ([5c815f0](https://github.com/novlan1/press-ui/commit/5c815f0a5f620abe8c0da2e6f270078dfae4db56))
+* **image-preview/notify:** add types ([c544d90](https://github.com/novlan1/press-ui/commit/c544d90d4719f4d527bfc2bf88bcfd1a19a8678f))
+* **text-ellipsis:** add text-ellipsis ([faa5854](https://github.com/novlan1/press-ui/commit/faa5854c17dc7e2958a80723d26cd7c25a972c50))
+
+### [2.2.35](https://github.com/novlan1/press-ui/compare/v2.2.34...v2.2.35) (2025-03-08)
+
+
+### Features 🎉
+
+* add condition for pages.json ([5c815f0](https://github.com/novlan1/press-ui/commit/5c815f0a5f620abe8c0da2e6f270078dfae4db56))
+* **image-preview/notify:** add types ([c544d90](https://github.com/novlan1/press-ui/commit/c544d90d4719f4d527bfc2bf88bcfd1a19a8678f))
+* **text-ellipsis:** add text-ellipsis ([faa5854](https://github.com/novlan1/press-ui/commit/faa5854c17dc7e2958a80723d26cd7c25a972c50))
+
+### [2.2.34](https://github.com/novlan1/press-ui/compare/v2.2.33...v2.2.34) (2025-03-05)
+
+
+### Chore 🚀 
+
+* **types:** update types ([171fedb](https://github.com/novlan1/press-ui/commit/171fedb6acc96da3b551da710398ad6a12f8b3ea))
+
+### [2.2.33](https://github.com/novlan1/press-ui/compare/v2.2.32...v2.2.33) (2025-03-05)
+
+
+### Features 🎉
+
+* **barrage:** add barrage ([732e526](https://github.com/novlan1/press-ui/commit/732e5268db5dd40066b868736e8b53f66f097b67))
+* **dialog/toast:** optimize exposed methods ([2cd3581](https://github.com/novlan1/press-ui/commit/2cd3581769264b44d946a3b3dbf538f78209ed81))
+* **dialog:** add showDialog ([2b61924](https://github.com/novlan1/press-ui/commit/2b61924f09032c81521cf39429ba55b7ba1fe75d))
+* **signature:** add signature component ([76cb853](https://github.com/novlan1/press-ui/commit/76cb853ab19f1510fa3ac7facb194af807cb081b))
+* **signature:** prevent default when touchmove ([3c1cf76](https://github.com/novlan1/press-ui/commit/3c1cf766e87b6a7d00959466d883844ce253c899))
+
+### [2.2.32](https://github.com/novlan1/press-ui/compare/v2.2.31...v2.2.32) (2025-03-03)
+
+
+### Features 🎉
+
+* **rolling-text:**  add item-custom-class props ([789b624](https://github.com/novlan1/press-ui/commit/789b624ae4b0862b7fe8b232c9336efa90e3ddcd))
+* **search:** add model-value ([5640c7c](https://github.com/novlan1/press-ui/commit/5640c7c5fe7cb1ccf30e350489bd1e1e9f7a24d0))
+
+### [2.2.31](https://github.com/novlan1/press-ui/compare/v2.2.30...v2.2.31) (2025-03-01)
+
+
+### Chore 🚀 
+
+* update build script ([deea055](https://github.com/novlan1/press-ui/commit/deea055515ec579fa8763a90d71b8302c0159204))
+* update deps ([ecf680e](https://github.com/novlan1/press-ui/commit/ecf680e82eeff8e56e74333e0f307120ea9e44f3))
+
+
+### Features 🎉
+
+* **rolling-text:** add rolling text ([621092c](https://github.com/novlan1/press-ui/commit/621092c3a46dbac64b2c458c57986f46430622ae))
+
+### [2.2.30](https://github.com/novlan1/press-ui/compare/v2.2.29...v2.2.30) (2025-02-27)
+
+
+### Chore 🚀 
+
+* lint ([7507279](https://github.com/novlan1/press-ui/commit/750727985e18c4363743c0cc5985b3225499d39f))
+
+
+### Features 🎉
+
+* **generate-config:** update generate-config ([49fe6fd](https://github.com/novlan1/press-ui/commit/49fe6fd4a0e104c1d5c989417459ccbda3eed82d))
+* **press-ui-next:** add build config ([aebf705](https://github.com/novlan1/press-ui/commit/aebf705fd1446608a019c836da64707753cb7f35))
+
+### [2.2.29](https://github.com/novlan1/press-ui/compare/v2.2.28...v2.2.29) (2025-02-25)
+
+
+### Code Refactoring ♻️
+
+* 优化组件结构 ([f9556cf](https://github.com/novlan1/press-ui/commit/f9556cf5a8001bda91315aa8c7bce5579a58ad5f))
+
+### [2.2.28](https://github.com/novlan1/press-ui/compare/v2.2.27...v2.2.28) (2025-02-25)
+
+
+### Features 🎉
+
+* optimize components ([b85c04f](https://github.com/novlan1/press-ui/commit/b85c04f543c004b9795aca0652a54baaa8e9fab7))
+
+### [2.2.27](https://github.com/novlan1/press-ui/compare/v2.2.26...v2.2.27) (2025-02-25)
+
+
+### Code Refactoring ♻️
+
+* optimize components ([88991e8](https://github.com/novlan1/press-ui/commit/88991e827f716ae22956705738af238febdc3222))
+
+### [2.2.26](https://github.com/novlan1/press-ui/compare/v2.2.25...v2.2.26) (2025-02-24)
+
+
+### Features 🎉
+
+* **area-popup:** 透传全部属性 ([ebc34f4](https://github.com/novlan1/press-ui/commit/ebc34f4d0cf8ccfb9bf3588f126d4795971e1aba))
+
+### [2.2.25](https://github.com/novlan1/press-ui/compare/v2.2.24...v2.2.25) (2025-02-24)
+
+
+### Features 🎉
+
+* **area-popup:** 透传全部属性 ([f0b6d05](https://github.com/novlan1/press-ui/commit/f0b6d059c42b4bb80061ec20b28ab0d9d4826819))
+
+### [2.2.24](https://github.com/novlan1/press-ui/compare/v2.2.23...v2.2.24) (2025-02-20)
+
+
+### Documentation 📖
+
+* update readme ([c72b930](https://github.com/novlan1/press-ui/commit/c72b930f92efd4af946ff7822162e3ebfac4de44))
+
+
+### Chore 🚀 
+
+* lint ([eeaae69](https://github.com/novlan1/press-ui/commit/eeaae69c9e67818afaf2f4b672dbec9fbfbff1fa))
+* lint ([171ea85](https://github.com/novlan1/press-ui/commit/171ea859b124fb42e57f42506259cb8a2f862393))
+
+
+### Features 🎉
+
+* **q-r-code:** add type and color for vue-qrcode ([f50d892](https://github.com/novlan1/press-ui/commit/f50d8928548e77136f490eafddc336f7e91d6868))
+* **tabs:** add scroll-view raw props ([0c6ff14](https://github.com/novlan1/press-ui/commit/0c6ff14aeeaf16944677cb33ad2c22f06d16f480))
+
 ### [2.2.23](https://github.com/novlan1/press-ui/compare/v2.2.22...v2.2.23) (2025-01-27)
 
 

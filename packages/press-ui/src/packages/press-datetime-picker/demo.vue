@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('datetimeType')">
-      <press-datetime-picker
+      <PressDatetimePicker
         type="datetime"
         :value="currentDate"
         :min-date="minDate"
@@ -13,7 +13,7 @@
     <demo-block
       :title="t('dateType')"
     >
-      <press-datetime-picker
+      <PressDatetimePicker
         type="date"
         :value="currentDate"
         :min-date="minDate"
@@ -23,7 +23,7 @@
     </demo-block>
 
     <demo-block :title="t('yearMonthType')">
-      <press-datetime-picker
+      <PressDatetimePicker
         type="year-month"
         :value="currentDate"
         :min-date="minDate"
@@ -32,7 +32,7 @@
     </demo-block>
 
     <demo-block :title="t('timeType')">
-      <press-datetime-picker
+      <PressDatetimePicker
         type="time"
         :value="currentTime"
         :min-hour="minHour"
@@ -42,7 +42,7 @@
     </demo-block>
 
     <demo-block :title="t('optionFilter')">
-      <press-datetime-picker
+      <PressDatetimePicker
         type="time"
         :value="currentTime"
         :filter="filter"
@@ -51,7 +51,7 @@
     </demo-block>
 
     <demo-block :title="t('yearMonth')">
-      <press-datetime-picker
+      <PressDatetimePicker
         type="yearMonth-day-hour-minute"
         :value="currentDate"
         :min-date="minDate"
@@ -64,7 +64,7 @@
     <demo-block
       :title="t('withPopupPlus')"
     >
-      <press-cell
+      <PressCell
         :title="t('check')"
         is-link
         @click="onShowPopupPlus"
@@ -74,7 +74,7 @@
     <demo-block
       :title="t('withPopup')"
     >
-      <press-cell
+      <PressCell
         :title="t('functional')"
         is-link
         @click="onShowFunctionalPicker"

@@ -97,13 +97,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-.input__wrap {
-  padding: 0 10px 20px;
-}
-.input__buttons {
-  padding-top: 12px;
-  display: flex;
-  justify-content: flex-end;
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

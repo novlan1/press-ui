@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'Er du sikker på at du vil slette?',
   telInvalid: 'Ugyldig telefonnummer',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Slutt',
     start: 'Start',

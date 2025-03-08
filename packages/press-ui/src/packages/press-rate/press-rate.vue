@@ -13,7 +13,7 @@
         :class="[utils.bem2('rate__item')]"
         :style="'' + style({ paddingRight: index !== count - 1 ? utils.addUnit(gutter) : null })"
       >
-        <press-icon-plus
+        <PressIconPlus
           :name="index + 1 <= innerValue ? icon : voidIcon"
           :class="[getIconBaseClass(index)]"
           :style="'' + iconStyle"
@@ -24,7 +24,7 @@
           @click="onSelect(index)"
         />
 
-        <press-icon-plus
+        <PressIconPlus
           v-if="allowHalf"
           :name="index + 0.5 <= innerValue ? icon : voidIcon"
           :class="[getIconHalfClass(index)]"

@@ -16,8 +16,11 @@ function writeDemoPagesJson(componentConfig, needAct = false) {
   const data = fs.readFileSync(configPath, {
     encoding: 'utf-8',
   });
-  const newData = data.replace(/"subPackages":\s*\[[\s\S]+(?="preloadRule)/m, `"subPackages": ${JSON.stringify(pagesJsonConfig, null, 2)},
-  `);
+  const condition = getPagesJsonCondition(componentConfig);
+  const newData = data
+    .replace(/"subPackages":\s*\[[\s\S]+(?="preloadRule)/m, `"subPackages": ${JSON.stringify(pagesJsonConfig, null, 2)},
+  `)
+    .replace(/"condition":\s*\{[\s\S]+\]\s*\}/, `"condition": ${JSON.stringify(condition, null, 4)}`);
 
 
   fs.writeFileSync(configPath, newData, {
@@ -37,6 +40,28 @@ function getPagesJsonConfig(componentConfig) {
 
 
   return list;
+}
+
+
+function getPagesJsonCondition(componentConfig) {
+  const allList = Object.values(componentConfig).reduce((acc, item) => [
+    ...acc,
+    ...(item.list || []),
+  ], [])
+    .filter(item => !item.demoRedirect)
+    .map(item => ({
+      name: item.name,
+      path: [
+        'pages',
+        item.subPackage || 'press',
+        hyphenate(item.name),
+        hyphenate(item.name),
+      ].join('/'),
+    }));
+  return {
+    current: 0,
+    list: allList,
+  };
 }
 
 

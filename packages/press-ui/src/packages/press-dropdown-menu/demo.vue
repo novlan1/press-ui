@@ -5,17 +5,17 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-dropdown-menu>
-        <press-dropdown-item
+      <PressDropdownMenu>
+        <PressDropdownItem
           :value="value1"
           :options="option1"
           title-class="demo-title"
         />
-        <press-dropdown-item
+        <PressDropdownItem
           :value="value2"
           :options="option2"
         />
-      </press-dropdown-menu>
+      </PressDropdownMenu>
     </demo-block>
 
     <demo-block
@@ -23,19 +23,19 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-dropdown-menu>
-        <press-dropdown-item
+      <PressDropdownMenu>
+        <PressDropdownItem
           :value="value1"
           :options="option1"
         />
-        <press-dropdown-item
+        <PressDropdownItem
           id="item"
           ref="item"
           :title="itemTitle"
         >
-          <press-cell :title="switchTitle1">
+          <PressCell :title="switchTitle1">
             <template #right-icon>
-              <press-switch
+              <PressSwitch
                 size="24px"
                 style="height: 26px"
                 :checked="switch1"
@@ -43,10 +43,10 @@
                 @change="onSwitch1Change"
               />
             </template>
-          </press-cell>
-          <press-cell :title="switchTitle2">
+          </PressCell>
+          <PressCell :title="switchTitle2">
             <template #right-icon>
-              <press-switch
+              <PressSwitch
                 size="24px"
                 style="height: 26px"
                 :checked="switch2"
@@ -54,19 +54,19 @@
                 @change="onSwitch2Change"
               />
             </template>
-          </press-cell>
+          </PressCell>
           <div style="padding: 5px 16px;">
-            <press-button
+            <PressButton
               type="danger"
               block
               round
               @click="onConfirm"
             >
               {{ t('confirm') }}
-            </press-button>
+            </PressButton>
           </div>
-        </press-dropdown-item>
-      </press-dropdown-menu>
+        </PressDropdownItem>
+      </PressDropdownMenu>
     </demo-block>
 
     <demo-block
@@ -74,16 +74,16 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-dropdown-menu active-color="#1989fa">
-        <press-dropdown-item
+      <PressDropdownMenu active-color="#1989fa">
+        <PressDropdownItem
           :value="value1"
           :options="option1"
         />
-        <press-dropdown-item
+        <PressDropdownItem
           :value="value2"
           :options="option2"
         />
-      </press-dropdown-menu>
+      </PressDropdownMenu>
     </demo-block>
 
     <demo-block
@@ -91,16 +91,16 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-dropdown-menu direction="up">
-        <press-dropdown-item
+      <PressDropdownMenu direction="up">
+        <PressDropdownItem
           :value="value1"
           :options="option1"
         />
-        <press-dropdown-item
+        <PressDropdownItem
           :value="value2"
           :options="option2"
         />
-      </press-dropdown-menu>
+      </PressDropdownMenu>
     </demo-block>
 
     <demo-block
@@ -108,18 +108,18 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-dropdown-menu>
-        <press-dropdown-item
+      <PressDropdownMenu>
+        <PressDropdownItem
           :value="value1"
           disabled
           :options="option1"
         />
-        <press-dropdown-item
+        <PressDropdownItem
           :value="value2"
           disabled
           :options="option2"
         />
-      </press-dropdown-menu>
+      </PressDropdownMenu>
     </demo-block>
   </div>
 </template>

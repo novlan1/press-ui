@@ -1,0 +1,14 @@
+.press-text-ellipsis {
+  line-height: var(--press-text-ellipsis-line-height, 1.6);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+
+  &__action {
+    cursor: pointer;
+    color: var(--press-text-ellipsis-action-color, var(--press-blue, #1989fa));
+
+    &:active {
+      opacity: var(--press-active-opacity);
+    }
+  }
+}

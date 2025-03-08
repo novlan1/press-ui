@@ -1,0 +1,14 @@
+node_modules/
+
+# build files
+es/
+esm/
+lib/
+cjs/
+dist/
+typings/
+site/public/
+results/
+
+# source
+src/

@@ -77,26 +77,26 @@
       />
     </demo-block>
 
-    <press-grid
+    <PressGrid
       clickable
       :column-num="3"
     >
-      <press-grid-item
+      <PressGridItem
         :text="t('start')"
         icon="play-circle-o"
         @click="start"
       />
-      <press-grid-item
+      <PressGridItem
         :text="t('pause')"
         icon="pause-circle-o"
         @click="pause"
       />
-      <press-grid-item
+      <PressGridItem
         :text="t('resume')"
         icon="replay"
         @click="resume"
       />
-    </press-grid>
+    </PressGrid>
   </div>
 </template>
 <script>

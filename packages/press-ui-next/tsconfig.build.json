@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.js",
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/demos",
+    "src/_common",
+    "dist",
+    "es",
+    "esm",
+    "lib",
+    "cjs",
+    "site",
+    "global.d.ts",
+    "script/**/*",
+    "src/common/async-validator/index.js"
+  ]
+}

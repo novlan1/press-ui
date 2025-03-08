@@ -2,7 +2,7 @@
   <div class="demo-wrap">
     <div>
       <demo-block :title="t('basicUsage')">
-        <press-cell
+        <PressCell
           :title="t('check')"
           is-link
           @click="onShowBasicPopupCell"
@@ -10,27 +10,27 @@
       </demo-block>
 
       <demo-block :title="t('customType')">
-        <press-cell
+        <PressCell
           :title="t('checkboxType')"
           is-link
           @click="onShowCustomType('checkboxType')"
         />
-        <press-cell
+        <PressCell
           :title="t('multipleCheckboxType')"
           is-link
           @click="onShowCustomType('multipleCheckboxType')"
         />
-        <press-cell
+        <PressCell
           :title="t('tabType')"
           is-link
           @click="onShowCustomType('tabType')"
         />
-        <press-cell
+        <PressCell
           :title="t('switchType')"
           is-link
           @click="onShowCustomType('switchType')"
         />
-        <press-cell
+        <PressCell
           :title="t('buttonType')"
           is-link
           @click="onShowCustomType('buttonType')"
@@ -38,17 +38,17 @@
       </demo-block>
 
       <demo-block :title="t('examples')">
-        <press-cell
+        <PressCell
           title="开赛设置"
           is-link
           @click="onShowPopupCell(startMatchSet)"
         />
-        <press-cell
+        <PressCell
           title="对局设置"
           is-link
           @click="onShowPopupCell(battleSet)"
         />
-        <press-cell
+        <PressCell
           title="批量设置"
           is-link
           @click="onShowPopupCell(batchSet)"

@@ -1,6 +1,6 @@
 <template>
   <div class="demo-wrap">
-    <press-field
+    <PressField
       v-model="form.name"
       label="名称"
       placeholder="请输入名称"
@@ -14,7 +14,7 @@
     />
 
     <div class="button-wrap">
-      <press-button
+      <PressButton
         v-if="isModify"
         type="default"
         size="small"
@@ -22,16 +22,16 @@
         @click="onDelete"
       >
         删除
-      </press-button>
+      </PressButton>
 
-      <press-button
+      <PressButton
         type="primary"
         size="small"
         custom-style="margin: 0;width: 80px;"
         @click="onConfirm"
       >
         确认
-      </press-button>
+      </PressButton>
     </div>
 
     <PressDatetimePickerPopup
@@ -39,7 +39,7 @@
       :ref="DATE_TIME_PICKER_ID"
       mode="functional"
     />
-    <press-dialog id="tip-match-comm-tips-dialog" />
+    <PressDialog id="tip-match-comm-tips-dialog" />
   </div>
 </template>
 <script>

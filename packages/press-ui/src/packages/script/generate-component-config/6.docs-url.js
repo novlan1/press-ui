@@ -43,7 +43,7 @@ function updateDocsUrl({ targetDir, comp }) {
 function realUpdateDocsUrl({ readme, demoUrl }) {
   if (fs.existsSync(readme)) {
     const content = readFileSync(readme);
-    const newContent = content.replace(/(url\s*:\s*)pages\/[\w-]+\/[\w/\-?]+\n/, `$1${demoUrl}\n`);
+    const newContent = content.replace(/(url\s*:\s*)pages\/[\w-]+\/[\w/\-?=]+\n/, `$1${demoUrl}\n`);
     writeFileSync(readme, newContent);
   }
 }

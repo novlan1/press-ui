@@ -1,13 +1,13 @@
 <template>
   <div class="press-toast-index">
-    <press-overlay
+    <PressOverlay
       v-if="mask || dataForbidClick"
       :show="dataShow"
       :z-index="dataZIndex"
       :custom-style="dataMask ? '' : 'background-color: transparent;'"
     />
     <!-- custom-class="press-toast__container" -->
-    <press-transition
+    <PressTransition
       :show="dataShow"
       :custom-style="transitionStyle"
     >
@@ -30,13 +30,13 @@
 
         <template v-else>
           <!-- custom-class="press-toast__loading" -->
-          <press-loading
+          <PressLoading
             v-if="dataType === 'loading'"
             color="white"
             :type="dataLoadingType"
             custom-style="margin: 10px 0;"
           />
-          <press-icon-plus
+          <PressIconPlus
             v-else
             class="press-toast__icon"
             :name="dataType"
@@ -49,7 +49,7 @@
 
         <slot />
       </div>
-    </press-transition>
+    </PressTransition>
   </div>
 </template>
 

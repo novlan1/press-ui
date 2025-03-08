@@ -1,19 +1,19 @@
 <template>
   <div class="demo-wrap demo-wrap--gray">
     <!-- #ifdef H5 -->
-    <press-cell
+    <PressCell
       :title="t('useGetContainer')"
       clickable
       @click="() => useGetContainer = !useGetContainer"
     >
       <template #right-icon>
-        <press-switch
+        <PressSwitch
           size="22px"
           :checked="useGetContainer"
           @change="() => useGetContainer = !useGetContainer"
         />
       </template>
-    </press-cell>
+    </PressCell>
     <!-- #endif -->
 
     <demo-block
@@ -180,17 +180,17 @@
               @click="show.customContent = false"
             />
           </press-grid> -->
-          <press-grid
+          <PressGrid
             :column-num="3"
             custom-style="width: 240px;"
           >
-            <press-grid-item
+            <PressGridItem
               v-for="(item,index) of 6"
               :key="index"
               icon="photo-o"
               :text="t('option')"
             />
-          </press-grid>
+          </PressGrid>
         </template>
         <template #reference>
           <PressButton

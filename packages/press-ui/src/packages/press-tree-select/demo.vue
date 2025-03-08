@@ -4,7 +4,7 @@
       :title="t('radioMode')"
       :section-style="sectionStyle"
     >
-      <press-tree-select
+      <PressTreeSelect
         :items="items"
         :main-active-index="mainActiveIndex"
         :active-id="activeId"
@@ -17,7 +17,7 @@
       :title="t('multipleMode')"
       :section-style="sectionStyle"
     >
-      <press-tree-select
+      <PressTreeSelect
         :max="2"
         :items="items"
         :main-active-index="mainActiveIndexMulti"
@@ -31,7 +31,7 @@
       :title="t('customContent')"
       :section-style="sectionStyle"
     >
-      <press-tree-select
+      <PressTreeSelect
         :items="t('dataSimple')"
         :main-active-index="mainActiveIndex"
         height="55vw"
@@ -43,14 +43,14 @@
           slot="content"
           style="width: 100%;height: 100%"
         >
-          <press-image
+          <PressImage
             v-if="mainActiveIndex == 0"
             src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
             width="100%"
             height="100%"
             transition-style="width: 100%;height: 100%;"
           />
-          <press-image
+          <PressImage
             v-else-if="mainActiveIndex == 1"
             src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg"
             width="100%"
@@ -58,14 +58,14 @@
             transition-style="width: 100%;height: 100%;"
           />
         </div>
-      </press-tree-select>
+      </PressTreeSelect>
     </demo-block>
 
     <demo-block
       :title="t('showBadge')"
       :section-style="sectionStyle"
     >
-      <press-tree-select
+      <PressTreeSelect
         :items="badgeItems"
         :main-active-index="mainActiveIndex"
         :active-id="activeId"

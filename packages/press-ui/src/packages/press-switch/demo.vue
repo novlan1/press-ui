@@ -58,21 +58,21 @@
     </demo-block>
 
     <demo-block :title="t('withCell')">
-      <press-cell-group>
-        <press-cell
+      <PressCellGroup>
+        <PressCell
           :title="t('title')"
           clickable
           @click="onChange(!checkedMap.cell, 'cell')"
         >
           <template #right-icon>
-            <press-switch
+            <PressSwitch
               size="22px"
               :checked="checkedMap.cell"
               @change="onChange(!checkedMap.cell, 'cell')"
             />
           </template>
-        </press-cell>
-      </press-cell-group>
+        </PressCell>
+      </PressCellGroup>
     </demo-block>
 
     <!-- #ifndef H5 -->

@@ -5,7 +5,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-circle
+      <PressCircle
         :value="value"
         :text="`${value}%`"
       />
@@ -17,7 +17,7 @@
       :section-style="sectionStyle"
     >
       <div class="demo-part">
-        <press-circle
+        <PressCircle
           :value="value"
           :stroke-width="6"
           :text="t('customWidth')"
@@ -25,7 +25,7 @@
       </div>
 
       <div class="demo-part">
-        <press-circle
+        <PressCircle
           :value="value"
           :stroke-width="6"
           layer-color="#eeeeee"
@@ -35,7 +35,7 @@
       </div>
 
       <div class="demo-part">
-        <press-circle
+        <PressCircle
           :value="value"
           :stroke-width="6"
           :color="gradientColor"
@@ -44,7 +44,7 @@
       </div>
 
       <div class="demo-part">
-        <press-circle
+        <PressCircle
           :value="value"
           :stroke-width="6"
           color="#07c160"
@@ -54,7 +54,7 @@
       </div>
 
       <div class="demo-part">
-        <press-circle
+        <PressCircle
           :value="value"
           :size="120"
           :text="t('customSize')"
@@ -62,19 +62,19 @@
       </div>
 
       <div>
-        <press-button
+        <PressButton
           type="e-sport-primary"
           custom-style="margin-right:8px;"
           @click="onChangeCircleValue('plus')"
         >
           {{ t('add') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           type="e-sport-primary"
           @click="onChangeCircleValue('minus')"
         >
           {{ t('decrease') }}
-        </press-button>
+        </PressButton>
       </div>
     </demo-block>
   </div>

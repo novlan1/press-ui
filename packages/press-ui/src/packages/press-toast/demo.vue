@@ -1,53 +1,53 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('text')">
-      <press-cell
+      <PressCell
         :title="t('check')"
         is-link
         @click="onShowToast"
       />
     </demo-block>
     <demo-block :title="t('loading')">
-      <press-cell
+      <PressCell
         :title="t('default')"
         is-link
         @click="onShowToastLoading('normal')"
       />
-      <press-cell
+      <PressCell
         title="Spinner"
         is-link
         @click="onShowToastLoading('spinner')"
       />
-      <press-cell
+      <PressCell
         :title="t('noDestroy')"
         is-link
         @click="onShowToastLoading('normal', 0)"
       />
     </demo-block>
     <demo-block :title="t('customTip')">
-      <press-cell
+      <PressCell
         :title="t('success')"
         is-link
         @click="onShowToastSuccess('success')"
       />
-      <press-cell
+      <PressCell
         :title="t('fail')"
         is-link
         @click="onShowToastSuccess('fail')"
       />
-      <press-cell
+      <PressCell
         :title="t('dynamic')"
         is-link
         @click="onShowDynamicToast"
       />
-      <press-cell
+      <PressCell
         :title="t('html')"
         is-link
         @click="onShowHtmlToast"
       />
     </demo-block>
 
-    <press-toast
+    <PressToast
       id="press-toast"
       ref="press-toast"
     />
@@ -56,7 +56,13 @@
 <script>
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressToast from 'press-ui/press-toast/press-toast.vue';
-import Toast from 'press-ui/press-toast';
+import Toast, {
+  showToast,
+  closeToast,
+  showLoadingToast,
+  showSuccessToast,
+  showFailToast,
+} from 'press-ui/press-toast';
 
 
 export default {
@@ -113,9 +119,9 @@ export default {
       Toast(this.t('toastTip'));
     },
     onShowToastLoading(type, duration = 3000) {
-      Toast.clear();
+      closeToast();
       if (type === 'normal') {
-        Toast.loading({
+        showLoadingToast({
           message: this.t('loadingTip'),
           forbidClick: !!duration,
           duration,
@@ -123,7 +129,7 @@ export default {
         return;
       }
       // 自定义加载图标
-      Toast.loading({
+      showLoadingToast({
         message: this.t('loadingTip'),
         forbidClick: !!duration,
         loadingType: 'spinner',
@@ -132,13 +138,13 @@ export default {
     },
     onShowToastSuccess(type) {
       if (type === 'success') {
-        Toast.success(this.t('successTip'));
+        showSuccessToast(this.t('successTip'));
         return;
       }
-      Toast.fail(this.t('failTip'));
+      showFailToast(this.t('failTip'));
     },
     onShowDynamicToast() {
-      const toast = Toast.loading({
+      const toast = showLoadingToast({
         duration: 0, // 持续展示 toast
         forbidClick: true,
         message: this.t('dynamicTip', 3),
@@ -152,12 +158,12 @@ export default {
           toast.set('dataMessage', this.t('dynamicTip', second));
         } else {
           clearInterval(this.timer);
-          Toast.clear();
+          closeToast();
         }
       }, 1000);
     },
     onShowHtmlToast() {
-      Toast({
+      showToast({
         message: this.t('htmlTip'),
         duration: 3000,
         type: 'html',

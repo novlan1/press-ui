@@ -13,7 +13,7 @@
       </template>
       <template v-else>
         <div class="press-grid-item__icon">
-          <press-icon-plus
+          <PressIconPlus
             v-if="icon"
             :name="icon"
             :color="iconColor"

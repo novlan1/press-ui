@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { mkDirsSync, getPureCompName } = require('t-comm');
+const { mkDirsSync, getPureCompName, execCommand } = require('t-comm');
 const { getActPageDir, COMP_PREFIX, IS_INNER_DOCS } = require('../utils/utils');
 
 let gComponentConfig;
@@ -65,8 +65,16 @@ function moveDocs(cb) {
   const comps = getComps();
   const docs = getLocalDocOrDemo(comps, FILENAME_MAP.LOCAL_DOC_NAME);
   const docsEn = getLocalDocOrDemo(comps, FILENAME_MAP.LOCAL_DOC_EN_NAME);
+  const docsPath =  path.resolve(PATH_MAP.DOC_PATH);
+  const docsEnPath =  path.resolve(PATH_MAP.DOC_EN_PATH);
 
-  console.log(`>> 共有${docs.length}个组件文档\n`);
+  execCommand(`rm -rf ${docsPath}`, process.cwd(), 'inherit');
+  console.log(`>>> 已删除：${docsPath}`);
+  execCommand(`rm -rf ${docsEnPath}`, process.cwd(), 'inherit');
+  console.log(`>>> 已删除：${docsEnPath}\n`);
+
+
+  console.log(`>> 共有${docs.length}个组件文档`);
   console.log(`>> 共有${docsEn.length}个英文组件文档\n`);
 
   for (const doc of docs) {
@@ -131,10 +139,18 @@ function writeCompDemo(data, name) {
 }
 
 
-function moveDemo(cb, config) {
+function moveDemo(cb, config, options) {
+  if (Array.isArray(options?.toDeleteDirs)) {
+    options.toDeleteDirs.forEach((dir) => {
+      console.log(`>>> 已删除：${dir}\n`);
+      execCommand(`rm -rf ${dir}`, process.cwd(), 'inherit');
+    });
+  }
   const comps = getComps();
   const demos = getLocalDocOrDemo(comps, FILENAME_MAP.LOCAL_DEMO_NAME);
+
   console.log(`>> 共有${demos.length}个组件demo\n`);
+
   if (config) {
     gComponentConfig = config;
   }

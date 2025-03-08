@@ -30,23 +30,25 @@ export default {
 ### 文字提示
 
 ```javascript
-import Toast from 'press-ui/press-toast';
+import { showToast } from 'press-ui/press-toast';
 
-Toast('我是提示文案，建议不超过十五字~');
+showToast('我是提示文案，建议不超过十五字~');
 ```
 
 ### 加载提示
 
-使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击，通过 `loadingType` 属性可以自定义加载图标类型。
+使用 `showLoadingToast` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击，通过 `loadingType` 属性可以自定义加载图标类型。
 
 ```javascript
-Toast.loading({
+import { showLoadingToast } from 'press-ui/press-toast';
+
+showLoadingToast({
   message: '加载中...',
   forbidClick: true,
 });
 
 // 自定义加载图标
-Toast.loading({
+showLoadingToast({
   message: '加载中...',
   forbidClick: true,
   loadingType: 'spinner',
@@ -56,14 +58,18 @@ Toast.loading({
 ### 成功/失败提示
 
 ```javascript
-Toast.success('成功文案');
-Toast.fail('失败文案');
+import { showSuccessToast, showFailToast } from 'press-ui/press-toast';
+
+showSuccessToast('成功文案');
+showFailToast('失败文案');
 ```
 
 ### 动态更新提示
 
 ```javascript
-const toast = Toast.loading({
+import { showLoadingToast, closeToast } from 'press-ui/press-toast';
+
+const toast = showLoadingToast({
   duration: 0, // 持续展示 toast
   forbidClick: true,
   message: '倒计时 3 秒',
@@ -79,7 +85,7 @@ const timer = setInterval(() => {
     });
   } else {
     clearInterval(timer);
-    Toast.clear();
+    closeToast();
   }
 }, 1000);
 ```
@@ -91,7 +97,7 @@ const timer = setInterval(() => {
 ### OnClose 回调函数
 
 ```javascript
-Toast({
+showToast({
   type: 'success',
   message: '提交成功',
   onClose: () => {
@@ -104,15 +110,15 @@ Toast({
 
 ### 方法
 
-| 方法名                    | 参数       | 返回值   | 介绍                            |
-| ------------------------- | ---------- | -------- | ------------------------------- |
-| Toast                     | `options   | message` | toast 实例                      | 展示提示     |
-| Toast.loading             | `options   | message` | toast 实例                      | 展示加载提示 |
-| Toast.success             | `options   | message` | toast 实例                      | 展示成功提示 |
-| Toast.fail                | `options   | message` | toast 实例                      | 展示失败提示 |
-| Toast.clear               | `clearAll` | `void`   | 关闭提示                        |
-| Toast.setDefaultOptions   | `options`  | `void`   | 修改默认配置，对所有 Toast 生效 |
-| Toast.resetDefaultOptions | -          | `void`   | 重置默认配置，对所有 Toast 生效 |
+| 方法名                                                 | 参数                   | 返回值     | 介绍                            |
+| ------------------------------------------------------ | ---------------------- | ---------- | ------------------------------- |
+| showToast，同 Toast                                    | `options   \| message` | toast 实例 | 展示提示                        |
+| showLoadingToast，同 Toast.loading                     | `options   \| message` | toast 实例 | 展示加载提示                    |
+| showSuccessToast，同 Toast.success                     | `options   \| message` | toast 实例 | 展示成功提示                    |
+| showFailToast，同 Toast.fail                           | `options   \| message` | toast 实例 | 展示失败提示                    |
+| closeToast，同 Toast.clear                             | `clearAll`             | `void`     | 关闭提示                        |
+| setToastDefaultOptions，同 Toast.setDefaultOptions     | `options`              | `void`     | 修改默认配置，对所有 Toast 生效 |
+| resetToastDefaultOptions，同 Toast.resetDefaultOptions | -                      | `void`     | 重置默认配置，对所有 Toast 生效 |
 
 ### Options
 

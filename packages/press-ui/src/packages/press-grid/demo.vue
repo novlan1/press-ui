@@ -4,49 +4,49 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-grid>
-        <press-grid-item
+      <PressGrid>
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('columnNum')"
       :section-style="sectionStyle"
     >
-      <press-grid :column-num="3">
-        <press-grid-item
+      <PressGrid :column-num="3">
+        <PressGridItem
           v-for="(item,index) of 6"
           :key="index"
           icon="photo-o"
           :text="t('text')"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('customContent')"
       :section-style="sectionStyle"
     >
-      <press-grid
+      <PressGrid
         :column-num="3"
         :border="false"
       >
-        <press-grid-item
+        <PressGridItem
           v-for="(item,index) of 3"
           :key="index"
           use-slot
@@ -55,100 +55,100 @@
             style="width: 100%; height: 90px;"
             :src="imageList[index]"
           >
-        </press-grid-item>
-      </press-grid>
+        </PressGridItem>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('square')"
       :section-style="sectionStyle"
     >
-      <press-grid square>
-        <press-grid-item
+      <PressGrid square>
+        <PressGridItem
           v-for="(item,index) of 8"
           :key="index"
           icon="photo-o"
           :text="t('text')"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('gutter')"
       :section-style="sectionStyle"
     >
-      <press-grid :gutter="10">
-        <press-grid-item
+      <PressGrid :gutter="10">
+        <PressGridItem
           v-for="(item,index) of 8"
           :key="index"
           icon="photo-o"
           :text="t('text')"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('horizontal')"
       :section-style="sectionStyle"
     >
-      <press-grid
+      <PressGrid
         direction="horizontal"
         :column-num="2"
       >
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-        <press-grid-item
+        <PressGridItem
           icon="photo-o"
           :text="t('text')"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('pageRoute')"
       :section-style="sectionStyle"
     >
-      <press-grid
+      <PressGrid
         clickable
         :column-num="2"
       >
-        <press-grid-item
+        <PressGridItem
           icon="home-o"
           link-type="navigateTo"
           url="/pages/press/schedule-tree/schedule-tree"
           :text="`Navigate ${t('jump')}`"
         />
-        <press-grid-item
+        <PressGridItem
           icon="search"
           link-type="reLaunch"
           url="/pages/press/schedule-tree/schedule-tree"
           :text="`ReLaunch ${t('jump')}`"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
 
     <demo-block
       :title="t('showBadge')"
       :section-style="sectionStyle"
     >
-      <press-grid :column-num="2">
-        <press-grid-item
+      <PressGrid :column-num="2">
+        <PressGridItem
           icon="home-o"
           :text="t('text')"
           dot
         />
-        <press-grid-item
+        <PressGridItem
           icon="search"
           :text="t('text')"
           badge="99+"
         />
-      </press-grid>
+      </PressGrid>
     </demo-block>
   </div>
 </template>

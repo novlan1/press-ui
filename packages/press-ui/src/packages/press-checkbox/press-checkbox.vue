@@ -18,7 +18,7 @@
         v-if="useIconSlot"
         name="icon"
       />
-      <press-icon-plus
+      <PressIconPlus
         v-else
         name="success"
         size="0.8em"

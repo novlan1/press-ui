@@ -1,5 +1,5 @@
 <template>
-  <press-popup
+  <PressPopup
     :show="show"
     :z-index="zIndex"
     position="bottom"
@@ -55,7 +55,7 @@
           @touchstart.stop="onBackspaceStart"
           @touchend="onBackspaceEnd"
         >
-          <delete-icon class="press-number-keyboard__delete-icon" />
+          <DeleteIcon class="press-number-keyboard__delete-icon" />
         </button>
         <button
           v-if="mode === 'accounting'"
@@ -68,11 +68,11 @@
         </button>
       </div>
     </div>
-  </press-popup>
+  </PressPopup>
 </template>
 <script>
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import DeleteIcon from './delete-icon.vue';
+import DeleteIcon from '../press-icon-delete/press-icon-delete.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';

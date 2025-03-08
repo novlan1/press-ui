@@ -2,130 +2,130 @@
   <div class="demo-wrap">
     <demo-block :title="t('type')">
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="default"
           :custom-style="customStyle"
           @click="onClick"
         >
           {{ t('default') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           type="primary"
           :custom-style="`${customStyle}`"
           @click="onVibrateShort"
         >
           {{ t('primary') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           type="info"
           @click="onVibrateLong"
         >
           {{ t('info') }}
-        </press-button>
+        </PressButton>
       </div>
 
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="warning"
           :custom-style="customStyle"
           @click="onLaunchMp"
         >
           {{ t('warning') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           type="danger"
           @click="onLaunchMp(1)"
         >
           {{ t('danger') }}
-        </press-button>
+        </PressButton>
       </div>
     </demo-block>
 
     <demo-block :title="t('plain')">
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           plain
           type="default"
           :custom-style="customStyle"
         >
           {{ t('plain') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           plain
           type="primary"
           :custom-style="customStyle"
         >
           {{ t('plain') }}
-        </press-button>
+        </PressButton>
       </div>
 
-      <press-button
+      <PressButton
         plain
         type="info"
       >
         {{ t('plain') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
 
     <demo-block :title="t('hairline')">
-      <press-button
+      <PressButton
         plain
         hairline
         type="primary"
         :custom-style="customStyle"
       >
         {{ t('hairlineButton') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         plain
         hairline
         type="info"
       >
         {{ t('hairlineButton') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block :title="t('disabled')">
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           disabled
           type="primary"
           :custom-style="customStyle"
         >
           {{ t('disabled') }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           disabled
           type="info"
           :custom-style="customStyle"
         >
           {{ t('disabled') }}
-        </press-button>
+        </PressButton>
       </div>
 
-      <press-button
+      <PressButton
         disabled
         type="primary"
         :custom-style="customStyle"
       >
         {{ t('disabled') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block :title="t('loading')">
-      <press-button
+      <PressButton
         loading
         type="primary"
         :custom-style="customStyle"
       />
-      <press-button
+      <PressButton
         loading
         type="primary"
         loading-type="spinner"
         :custom-style="customStyle"
       />
-      <press-button
+      <PressButton
         loading
         type="info"
         :loading-text="t('loadingText')"
@@ -133,105 +133,105 @@
     </demo-block>
 
     <demo-block :title="t('shape')">
-      <press-button
+      <PressButton
         square
         type="primary"
         :custom-style="customStyle"
       >
         {{ t('square') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         round
         type="info"
       >
         {{ t('round') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
 
     <demo-block :title="t('icon')">
-      <press-button
+      <PressButton
         icon="star-o"
         type="primary"
         :custom-style="customStyle"
       />
-      <press-button
+      <PressButton
         icon="star-o"
         type="primary"
         :custom-style="customStyle"
       >
         {{ t('button') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         icon="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png"
       >
         {{ t('button') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block :title="t('size')">
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="primary"
           size="large"
         >
           {{ t('large') }}
-        </press-button>
+        </PressButton>
       </div>
 
-      <press-button
+      <PressButton
         type="primary"
         size="normal"
         :custom-style="customStyle"
       >
         {{ t('normal') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         type="primary"
         size="small"
         :custom-style="customStyle"
       >
         {{ t('small') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         type="primary"
         size="mini"
       >
         {{ t('mini') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block :title="t('blockElement')">
-      <press-button
+      <PressButton
         type="primary"
         block
       >
         {{ t('blockElement') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <press-button
+      <PressButton
         color="#7232dd"
         :custom-style="customStyle"
         open-type="openSetting"
       >
         {{ t('pure') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         color="#7232dd"
         plain
         :custom-style="customStyle"
         open-type="feedback"
       >
         {{ t('pure') }}
-      </press-button>
-      <press-button
+      </PressButton>
+      <PressButton
         color="linear-gradient(to right, #4bb0ff, #6149f6)"
         open-type="share"
       >
         {{ t('gradient') }}
-      </press-button>
+      </PressButton>
     </demo-block>
 
     <demo-block
@@ -241,48 +241,48 @@
     >
       <div class="demo-button-row">
         <!-- :size="{width: '136px', height: '36px'}" -->
-        <press-button
+        <PressButton
           type="e-sport-primary"
           :disabled="index===1"
           :loading="index===2"
           :custom-style="customStyle"
         >
           primary
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           type="e-sport-primary-bg"
           :disabled="index===1"
           :loading="index===2"
           :custom-style="customStyle"
         >
           primary-bg
-        </press-button>
+        </PressButton>
       </div>
 
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="e-sport-primary-bg-lg"
           :disabled="index===1"
           :loading="index===2"
           :custom-style="customStyle"
         >
           primary-bg-lg
-        </press-button>
+        </PressButton>
       </div>
 
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="e-sport-primary-bg-xl"
           :disabled="index===1"
           :loading="index===2"
           :custom-style="customStyle"
         >
           primary-bg-xl
-        </press-button>
+        </PressButton>
       </div>
 
       <div class="demo-button-row">
-        <press-button
+        <PressButton
           type="e-sport-secondary"
           :disabled="index===1"
           :loading="index===2"
@@ -290,10 +290,10 @@
           :size="{width: '136px', height: '36px'}"
         >
           secondary
-        </press-button>
+        </PressButton>
 
         <!-- 线框的loader图片是透明的，没效果，直接隐藏 -->
-        <press-button
+        <PressButton
           v-if="index!==2"
           type="e-sport-border"
           :disabled="index===1"
@@ -302,7 +302,7 @@
           :size="{width: '136px', height: '36px'}"
         >
           border
-        </press-button>
+        </PressButton>
       </div>
     </demo-block>
   </div>

@@ -8,7 +8,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :value="value"
         :placeholder="t('placeholder')"
         title-width="0"
@@ -27,7 +27,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :value="text"
         required
         clearable
@@ -38,7 +38,7 @@
         @click-icon="onClickIcon"
       />
 
-      <press-field
+      <PressField
         :value="tel"
         :placeholder="t('phonePlaceholder')"
         :label="t('phone')"
@@ -51,7 +51,7 @@
       />
 
 
-      <press-field
+      <PressField
         :value="digit"
         :placeholder="t('digitPlaceholder')"
         :label="t('digit')"
@@ -63,7 +63,7 @@
         @change="onChange"
       />
 
-      <press-field
+      <PressField
         :value="number"
         :placeholder="t('numberPlaceholder')"
         :label="t('number')"
@@ -75,7 +75,7 @@
         @change="onChange"
       />
 
-      <press-field
+      <PressField
         :value="password"
         :placeholder="t('passwordPlaceholder')"
         :label="t('password')"
@@ -93,7 +93,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :label="t('label')"
         left-icon="contact"
         disabled
@@ -109,7 +109,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :value="username"
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
@@ -118,7 +118,7 @@
         :border="false"
         @change="onChange"
       />
-      <press-field
+      <PressField
         :value="username"
         :label="t('phone')"
         :placeholder="t('phonePlaceholder')"
@@ -134,7 +134,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
         :always-embed="true"
@@ -149,7 +149,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :label="t('message')"
         type="textarea"
         :placeholder="t('placeholderAutoSize')"
@@ -166,7 +166,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         :value="username"
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
@@ -176,7 +176,7 @@
         :maxlength="20"
         @change="onChange"
       />
-      <press-field
+      <PressField
         :label="t('message')"
         type="textarea"
         :placeholder="t('placeholderAutoSize')"
@@ -195,7 +195,7 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-field
+      <PressField
         center
         clearable
         :label="t('sms')"
@@ -206,14 +206,14 @@
         @change="onChange"
       >
         <template #button>
-          <press-button
+          <PressButton
             size="small"
             type="primary"
           >
             {{ t('sendSMS') }}
-          </press-button>
+          </PressButton>
         </template>
-      </press-field>
+      </PressField>
     </demo-block>
   </scroll-view>
 </template>

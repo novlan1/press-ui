@@ -124,7 +124,7 @@
             :disabled="disabled1"
             @click="getCode"
           >
-            <press-count-down
+            <PressCountDown
               use-slot
               :time="time"
               @change="onChangeTime"
@@ -136,13 +136,13 @@
                   <span class="item">{{ timeData.seconds }}</span><span>秒重新获取</span>
                 </template>
               </span>
-            </press-count-down>
+            </PressCountDown>
           </PressButton>
         </template>
       </PressFormItem>
     </PressForm>
 
-    <press-action-sheet
+    <PressActionSheet
       :show="showSex"
       :actions="actions"
       @close="showSex = false"

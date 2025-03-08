@@ -4,7 +4,7 @@
     :class="customClass"
     :style="wrapperStyle"
   >
-    <press-cell
+    <PressCell
       :size="size"
       :icon="leftIcon"
       :center="center"
@@ -115,7 +115,7 @@
           @keyboardheightchange="onKeyboardHeightChange"
         >
 
-        <press-icon-plus
+        <PressIconPlus
           v-if="showClear"
           :name="clearIcon"
           class="press-field__clear-root press-field__icon-root"
@@ -125,7 +125,7 @@
           class="press-field__icon-container"
           @click="onClickIcon"
         >
-          <press-icon-plus
+          <PressIconPlus
             v-if="rightIcon || icon"
             :name="rightIcon || icon"
             :class="'press-field__icon-root '+(iconClass)"
@@ -154,7 +154,7 @@
       >
         {{ errorMessage }}
       </div>
-    </press-cell>
+    </PressCell>
   </div>
 </template>
 <script>

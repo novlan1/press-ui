@@ -16,12 +16,12 @@ Pop-up window component, support function call
 ```
 
 ```ts
-import PressDialogHandler from 'press-ui/press-dialog';
+import { showDialog } from 'press-ui/press-dialog';
 
 export default {
    methods: {
      onShowDialog() {
-       PressDialogHandler. show({
+       showDialog({
          title: 'Prompt',
          content: 'Only for the captain to sign up, send it to the captain to sign up! ',
          confirmText: 'Confirm',

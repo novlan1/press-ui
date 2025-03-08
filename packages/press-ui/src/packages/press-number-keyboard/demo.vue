@@ -42,7 +42,7 @@
     </demo-block>
 
     <demo-block :title="t('bindValue')">
-      <press-field
+      <PressField
         :label="t('bindLabel')"
         :value="bindValue"
         :model-value="bindValue"
@@ -59,7 +59,7 @@
       <press-cell
         @click="onShowKeyboard('codeValue')"
       >
-        <press-code-input
+        <PressCodeInput
           :max-length="6"
           :value="codeValue"
           :disabled-keyboard="true"
@@ -67,7 +67,7 @@
       </press-cell>
     </demo-block>
 
-    <press-number-keyboard
+    <PressNumberKeyboard
       :mode="mode"
       :show="show"
       :toolbar="toolbar"
@@ -81,7 +81,7 @@
       @close="onClose"
     />
 
-    <press-number-keyboard
+    <PressNumberKeyboard
       v-model="bindValue"
       :mode="mode"
       :show="showBindDemo"
@@ -95,7 +95,7 @@
       @close="onCloseBindDemo"
     />
 
-    <press-number-keyboard
+    <PressNumberKeyboard
       v-model="codeValue"
       :mode="mode"
       :show="showCodeDemo"

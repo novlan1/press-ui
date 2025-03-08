@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('basicUsage')"
         is-link
         @click="onShowPopup('center')"
@@ -9,22 +9,22 @@
     </demo-block>
 
     <demo-block :title="t('position')">
-      <press-cell
+      <PressCell
         :title="t('top')"
         is-link
         @click="onShowPopup('top')"
       />
-      <press-cell
+      <PressCell
         :title="t('bottom')"
         is-link
         @click="onShowPopup('bottom')"
       />
-      <press-cell
+      <PressCell
         :title="t('left')"
         is-link
         @click="onShowPopup('left')"
       />
-      <press-cell
+      <PressCell
         :title="t('right')"
         is-link
         @click="onShowPopup('right')"
@@ -32,22 +32,22 @@
     </demo-block>
 
     <demo-block :title="t('closeIcon')">
-      <press-cell
+      <PressCell
         :title="t('closeIcon')"
         is-link
         @click="onShowPopup('bottom', { closeable: true })"
       />
-      <press-cell
+      <PressCell
         :title="t('customIcon')"
         is-link
         @click="onShowPopup('bottom', { closeable: true, closeIcon: 'close' })"
       />
-      <press-cell
+      <PressCell
         :title="t('iconPosition')"
         is-link
         @click="onShowPopup('bottom', { closeable: true, closeIconPosition: 'top-left' })"
       />
-      <press-cell
+      <PressCell
         :title="t('rightCloseIcon')"
         is-link
         @click="onShowPopup('right', { closeable: true })"
@@ -55,14 +55,14 @@
     </demo-block>
 
     <demo-block :title="t('round')">
-      <press-cell
+      <PressCell
         :title="t('round')"
         is-link
         @click="onShowPopup('bottom', { round: true, })"
       />
     </demo-block>
 
-    <press-popup-plus
+    <PressPopupPlus
       :show="show"
       :position="popupPosition"
       :custom-style="customStyle"
@@ -73,7 +73,7 @@
       @close="onClose"
     >
       {{ popupPosition ==='center' ? t('content') : '' }}
-    </press-popup-plus>
+    </PressPopupPlus>
   </div>
 </template>
 <script>

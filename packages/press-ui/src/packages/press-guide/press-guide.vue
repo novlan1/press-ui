@@ -156,7 +156,7 @@
 <script>
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import GuideContent from './content.vue';
+import GuideContent from '../press-guide-content/press-guide-content.vue';
 import props from './props';
 import styles from '../common/utils/style';
 import { getRect, getWindowWidth } from '../common/dom/rect';

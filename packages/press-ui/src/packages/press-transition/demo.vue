@@ -5,7 +5,7 @@
       :key="index"
       :title="item.title"
     >
-      <press-cell
+      <PressCell
         v-for="(info) of item.list"
         :key="info"
         :title="info"
@@ -14,7 +14,7 @@
       />
     </demo-block>
 
-    <press-transition
+    <PressTransition
       v-if="curTransitionType !== 'custom'"
       :name="curTransitionType"
       :show="options[curTransitionType] || false"
@@ -22,7 +22,7 @@
       custom-class="block"
     />
 
-    <press-transition
+    <PressTransition
       v-else
       :show="options.custom || false"
       :duration="{ enter: 1000, leave: 1000 }"

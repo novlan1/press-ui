@@ -1,5 +1,5 @@
 <template>
-  <press-popup
+  <PressPopup
     :show="show"
     position="bottom"
     :round="round"
@@ -15,7 +15,7 @@
       class="press-action-sheet__header"
     >
       {{ title }}
-      <press-icon-plus
+      <PressIconPlus
         name="cross"
         custom-class="press-action-sheet__close"
         @click="onClose"
@@ -60,7 +60,7 @@
             {{ item.subname }}
           </div>
         </template>
-        <press-loading
+        <PressLoading
           v-else
           custom-class="press-action-sheet__loading"
           size="22px"
@@ -79,7 +79,7 @@
         {{ cancelText }}
       </div>
     </template>
-  </press-popup>
+  </PressPopup>
 </template>
 <script>
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
@@ -185,138 +185,5 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-action-sheet {
-  max-height: var(
-    --action-sheet-max-height,
-    $action-sheet-max-height
-  ) !important;
-  color: var(--action-sheet-item-text-color, $action-sheet-item-text-color);
-
-  &__item,
-  &__cancel {
-    box-sizing: border-box;
-    height: auto;
-
-    padding: 14px $padding-md;
-    text-align: center;
-    font-size: var(--action-sheet-item-font-size, $action-sheet-item-font-size);
-    line-height: var(
-      --action-sheet-item-line-height,
-      $action-sheet-item-line-height
-    );
-    background-color: var(
-      --action-sheet-item-background,
-      $action-sheet-item-background
-    );
-    display: block;
-    border: 0;
-    width: 100%;
-
-    &--hover {
-      background-color: $active-color;
-    }
-
-    // reset weapp default border
-    &::after {
-      border-width: 0;
-    }
-  }
-
-  &__cancel {
-    color: var(
-      --action-sheet-cancel-text-color,
-      $action-sheet-cancel-text-color
-    );
-  }
-
-  &__gap {
-    display: block;
-    height: var(
-      --action-sheet-cancel-padding-top,
-      $action-sheet-cancel-padding-top
-    );
-    background-color: var(
-      --action-sheet-cancel-padding-color,
-      $action-sheet-cancel-padding-color
-    );
-  }
-
-  &__item--disabled {
-    color: var(
-      --action-sheet-item-disabled-text-color,
-      $action-sheet-item-disabled-text-color
-    );
-  }
-
-  &__item--disabled.press-action-sheet__item--hover {
-    background-color: var(
-      --action-sheet-item-background,
-      $action-sheet-item-background
-    );
-  }
-
-  &__subname {
-    margin-top: var(--padding-xs, $padding-xs);
-    font-size: var(
-      --action-sheet-subname-font-size,
-      $action-sheet-subname-font-size
-    );
-    color: var(--action-sheet-subname-color, $action-sheet-subname-color);
-    line-height: var(
-      --action-sheet-subname-line-height,
-      $action-sheet-subname-line-height
-    );
-  }
-
-  &__header {
-    text-align: center;
-    font-weight: var(--font-weight-bold, $font-weight-bold);
-    font-size: var(
-      --action-sheet-header-font-size,
-      $action-sheet-header-font-size
-    );
-    line-height: var(--action-sheet-header-height, $action-sheet-header-height);
-  }
-
-  &__description {
-    text-align: center;
-    padding: 20px var(--padding-md, $padding-md);
-    color: var(
-      --action-sheet-description-color,
-      $action-sheet-description-color
-    );
-    font-size: var(
-      --action-sheet-description-font-size,
-      $action-sheet-description-font-size
-    );
-    line-height: var(
-      --action-sheet-description-line-height,
-      $action-sheet-description-line-height
-    );
-  }
-
-  ::v-deep &__close {
-    position: absolute !important;
-    top: 0;
-    right: 0;
-    line-height: inherit !important;
-    padding: var(
-      --action-sheet-close-icon-padding,
-      $action-sheet-close-icon-padding
-    );
-    font-size: var(
-      --action-sheet-close-icon-size,
-      $action-sheet-close-icon-size
-    ) !important;
-    color: var(--action-sheet-close-icon-color, $action-sheet-close-icon-color);
-  }
-
-  ::v-deep &__loading {
-    display: flex !important;
-  }
-}
+<style scoped lang="scss" src="./css/index.scss">
 </style>

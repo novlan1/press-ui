@@ -3,7 +3,7 @@
     ref="pressTabs"
     :class="tabsClass"
   >
-    <press-sticky
+    <PressSticky
       :disabled="(!sticky)"
       :z-index="zIndex"
       :offset-top="offsetTop"
@@ -19,6 +19,11 @@
           :scroll-left="scrollLeft"
           :class="tabScrollClass"
           :style="color ? 'border-color: ' + color : ''"
+          :upper-threshold="scrollViewProps.upperThreshold"
+          :lower-threshold="scrollViewProps.lowerThreshold"
+          @scrolltoupper="scrolltoupper"
+          @scrolltolower="scrolltolower"
+          @scroll="scrollViewScroll"
         >
           <div
             :class="theNavClass"
@@ -134,7 +139,7 @@
                   :style="item.titleStyle"
                 >
                   {{ item.title }}
-                  <press-info
+                  <PressInfo
                     v-if="item.info !== null || item.dot"
                     :info="item.info"
                     :dot="item.dot"
@@ -148,7 +153,7 @@
 
         <slot name="nav-right" />
       </div>
-    </press-sticky>
+    </PressSticky>
 
     <div
       :class="[`${bem3('tabs__content')}`]"
@@ -302,8 +307,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    scrollViewProps: {
+      type: Object,
+      default: () => ({
+        upperThreshold: 50,
+        lowerThreshold: 50,
+      }),
+    },
   },
-  emits: ['scroll', 'disabled', 'click', 'input', 'change'],
+  emits: ['scroll', 'disabled', 'click', 'input', 'change', 'scrolltoupper', 'scrolltolower', 'scrollViewScroll'],
   data() {
     return {
       tabs: [],
@@ -639,6 +651,15 @@ export default {
     },
     getTabKey(item, index) {
       return `${item.title || ''} - ${index} -${item.index}`;
+    },
+    scrolltoupper(e) {
+      this.$emit('scrolltoupper', e);
+    },
+    scrolltolower(e) {
+      this.$emit('scrolltolower', e);
+    },
+    scroll(e) {
+      this.$emit('scrollViewScroll', e);
     },
   },
 // });

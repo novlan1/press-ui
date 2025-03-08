@@ -13,6 +13,7 @@ export default {
   confirmDelete: '确定要删除吗',
   telInvalid: '请输入正确的手机号',
   reply: '回复',
+  clear: '清空',
   calendar: {
     end: '结束',
     start: '开始',

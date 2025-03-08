@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-field
+      <PressField
         :value="fieldValue.basic"
         :model-value="fieldValue.basic"
         is-link
@@ -11,13 +11,13 @@
         @click="onClick('basic')"
         @click-input="onClick('basic')"
       />
-      <press-popup-plus
+      <PressPopupPlus
         :show="show.basic"
         round
         position="bottom"
         @after-leave="afterLeave"
       >
-        <press-cascader
+        <PressCascader
           v-if="show.basic || leaving.basic"
           :value="cascaderValue.basic"
           :title="t('selectArea')"
@@ -25,11 +25,11 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </press-popup-plus>
+      </PressPopupPlus>
     </demo-block>
 
     <demo-block :title="t('chinaAreaData')">
-      <press-field
+      <PressField
         :value="fieldValue.chinaArea"
         :model-value="fieldValue.chinaArea"
         is-link
@@ -39,13 +39,13 @@
         @click="onClick('chinaArea')"
         @click-input="onClick('chinaArea')"
       />
-      <press-popup-plus
+      <PressPopupPlus
         :show="show.chinaArea"
         round
         position="bottom"
         @after-leave="afterLeave"
       >
-        <press-cascader
+        <PressCascader
           v-if="show.chinaArea || leaving.chinaArea"
           :value="cascaderValue.chinaArea"
           :title="t('selectArea')"
@@ -53,11 +53,11 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </press-popup-plus>
+      </PressPopupPlus>
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <press-field
+      <PressField
         :value="fieldValue.customColor"
         :model-value="fieldValue.customColor"
         is-link
@@ -67,13 +67,13 @@
         @click="onClick('customColor')"
         @click-input="onClick('customColor')"
       />
-      <press-popup-plus
+      <PressPopupPlus
         :show="show.customColor"
         round
         position="bottom"
         @after-leave="afterLeave"
       >
-        <press-cascader
+        <PressCascader
           v-if="show.customColor || leaving.customColor"
           :value="cascaderValue.customColor"
           :title="t('selectArea')"
@@ -82,11 +82,11 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </press-popup-plus>
+      </PressPopupPlus>
     </demo-block>
 
     <demo-block :title="t('asyncOptions')">
-      <press-field
+      <PressField
         :value="fieldValue.asyncOptions"
         :model-value="fieldValue.asyncOptions"
         is-link
@@ -96,13 +96,13 @@
         @click="onClick('asyncOptions')"
         @click-input="onClick('asyncOptions')"
       />
-      <press-popup-plus
+      <PressPopupPlus
         :show="show.asyncOptions"
         round
         position="bottom"
         @after-leave="afterLeave"
       >
-        <press-cascader
+        <PressCascader
           v-if="show.asyncOptions || leaving.asyncOptions"
           :value="cascaderValue.asyncOptions"
           :title="t('selectArea')"
@@ -111,11 +111,11 @@
           @finish="onFinish"
           @change="loadDynamicOptions"
         />
-      </press-popup-plus>
+      </PressPopupPlus>
     </demo-block>
 
     <demo-block :title="t('customFieldNames')">
-      <press-field
+      <PressField
         :value="fieldValue.customFieldNames"
         :model-value="fieldValue.customFieldNames"
         is-link
@@ -125,13 +125,13 @@
         @click="onClick('customFieldNames')"
         @click-input="onClick('customFieldNames')"
       />
-      <press-popup-plus
+      <PressPopupPlus
         :show="show.customFieldNames"
         round
         position="bottom"
         @after-leave="afterLeave"
       >
-        <press-cascader
+        <PressCascader
           v-if="show.customFieldNames || leaving.customFieldNames"
           :value="cascaderValue.customFieldNames"
           :title="t('selectArea')"
@@ -141,14 +141,14 @@
           @finish="onFinish"
           @change="loadDynamicOptions"
         />
-      </press-popup-plus>
+      </PressPopupPlus>
     </demo-block>
   </div>
 </template>
 <script>
-import PressCascader from 'press-ui/press-cascader/press-cascader';
-import PressField from 'press-ui/press-field/press-field';
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus';
+import PressCascader from 'press-ui/press-cascader/press-cascader.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
 import enUSOptions from 'src/packages/press-cascader/demo-helper/area-en-US.js';
 import zhCNOptions from 'src/packages/press-cascader/demo-helper/area-zh-CN.js';

@@ -1,6 +1,6 @@
 <template>
   <div class="press-overlay-index">
-    <press-transition
+    <PressTransition
       v-if="lockScroll"
       :show="show"
       :overlay="true"
@@ -23,9 +23,9 @@
       @before-leave="beforeLeave"
     >
       <slot />
-    </press-transition>
+    </PressTransition>
 
-    <press-transition
+    <PressTransition
       v-else
       :show="show"
       :overlay="true"
@@ -47,7 +47,7 @@
       @before-leave="beforeLeave"
     >
       <slot />
-    </press-transition>
+    </PressTransition>
   </div>
 </template>
 

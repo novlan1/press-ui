@@ -3,7 +3,7 @@
     class="press-calendar-index"
     :class="customClass"
   >
-    <press-popup
+    <PressPopup
       v-if="poppable"
       :custom-class="'press-calendar__popup--'+(position)"
       close-icon-class="press-calendar__close-icon"
@@ -43,7 +43,7 @@
         @scrollIntoView="scrollIntoView"
         @onClickDay="onClickDay"
       />
-    </press-popup>
+    </PressPopup>
 
     <Calendar
       v-else
@@ -74,7 +74,7 @@
     />
 
     <!-- #ifndef H5 -->
-    <press-toast
+    <PressToast
       id="press-toast"
       ref="press-toast"
     />
@@ -85,7 +85,7 @@
 
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 import PressToast from '../press-toast/press-toast.vue';
-import Calendar from './calendar.vue';
+import Calendar from '../press-calendar-inner/press-calendar-inner.vue';
 
 import {
   getPrevDay,

@@ -144,6 +144,7 @@ import {
   HUE_MAX,
 } from './constants';
 import { getFormatList, genSwatchList, getCoordinate } from './helper';
+// eslint-disable-next-line import/named
 import { getColorObject, Color } from '../common/color-picker';
 import { getRect } from '../common/dom/rect';
 import utils from '../common/utils/utils';

@@ -4,7 +4,7 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-skeleton
+      <PressSkeleton
         title
         :row="3"
       />
@@ -14,7 +14,7 @@
       :title="t('showAvatar')"
       :section-style="sectionStyle"
     >
-      <press-skeleton
+      <PressSkeleton
         title
         avatar
         :row="3"
@@ -26,13 +26,13 @@
       :section-style="sectionStyle"
     >
       <div class="demo-switch-wrap">
-        <press-switch
+        <PressSwitch
           size="24px"
           :checked="!loading"
           @change="onChange"
         />
       </div>
-      <press-skeleton
+      <PressSkeleton
         title
         avatar
         :row="3"
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-      </press-skeleton>
+      </PressSkeleton>
     </demo-block>
   </div>
 </template>

@@ -15,7 +15,7 @@
           @click="onClickLeft"
         >
           <template v-if="leftArrow || leftText">
-            <press-icon-plus
+            <PressIconPlus
               v-if="leftArrow"
               size="16px"
               name="arrow-left"

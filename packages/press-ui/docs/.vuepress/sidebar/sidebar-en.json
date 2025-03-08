@@ -107,6 +107,10 @@
           "path": "/en/components/press/press-search.md"
         },
         {
+          "title": "Signature",
+          "path": "/en/components/press/press-signature.md"
+        },
+        {
           "title": "Slider",
           "path": "/en/components/press/press-slider.md"
         },
@@ -131,6 +135,10 @@
         {
           "title": "ActionSheet",
           "path": "/en/components/press/press-action-sheet.md"
+        },
+        {
+          "title": "Barrage",
+          "path": "/en/components/press/press-barrage.md"
         },
         {
           "title": "DialogPlus",
@@ -251,6 +259,10 @@
           "path": "/en/components/press/press-q-r-code.md"
         },
         {
+          "title": "RollingText",
+          "path": "/en/components/press/press-rolling-text.md"
+        },
+        {
           "title": "Skeleton",
           "path": "/en/components/press/press-skeleton.md"
         },
@@ -269,6 +281,10 @@
         {
           "title": "Tag",
           "path": "/en/components/press/press-tag.md"
+        },
+        {
+          "title": "TextEllipsis",
+          "path": "/en/components/press/press-text-ellipsis.md"
         }
       ]
     },

@@ -3,22 +3,22 @@
     <demo-block
       :title="t('basicUsage')"
     >
-      <press-cell
+      <PressCell
         :title="t('basicUsage')"
         is-link
         @click="onShowPicker('normal')"
       />
-      <press-cell
+      <PressCell
         :title="t('topTip')"
         is-link
         @click="onShowPicker('tip')"
       />
-      <press-cell
+      <PressCell
         :title="t('longList')"
         is-link
         @click="onShowPicker('long')"
       />
-      <press-cell
+      <PressCell
         :title="t('horizontal')"
         is-link
         @click="onShowPicker('horizontal')"
@@ -28,14 +28,14 @@
     <demo-block
       :title="t('functional')"
     >
-      <press-cell
+      <PressCell
         :title="t('check')"
         is-link
         @click="onShowFunctionalPicker"
       />
     </demo-block>
 
-    <press-picker
+    <PressPicker
       v-if="curPicker.show"
       :title="curPicker.title"
       :show-back-arrow="curPicker.showBackArrow"
@@ -48,7 +48,7 @@
       @onRemove="curPicker.onRemove"
     />
 
-    <press-picker
+    <PressPicker
       :id="PRESS_PICKER_ID"
       :ref="PRESS_PICKER_ID"
       mode="functional"

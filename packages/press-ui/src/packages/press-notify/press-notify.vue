@@ -1,6 +1,6 @@
 <template>
   <div class="press-notify-index">
-    <press-transition
+    <PressTransition
       name="slide-down"
       :show="dataShow"
       custom-class="press-notify__container"
@@ -17,7 +17,7 @@
         />
         <span>{{ dataMessage }}</span>
       </div>
-    </press-transition>
+    </PressTransition>
   </div>
 </template>
 <script>

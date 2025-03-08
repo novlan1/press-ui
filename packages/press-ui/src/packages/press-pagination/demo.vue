@@ -5,7 +5,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         :title="t('custom')"
         is-link
         @click="onShowBasicPopupCell"

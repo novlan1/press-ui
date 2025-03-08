@@ -13,9 +13,9 @@ A black translucent prompt pops up in the middle of the page, which is used in s
 ### Text Prompt
 
 ```javascript
-import Toast from 'press-ui/press-toast/press-toast';
+import { showToast } from 'press-ui/press-toast/press-toast';
 
-Toast('I am a prompt copywriter, it is recommended not to exceed fifteen characters~');
+showToast('I am a prompt copywriter, it is recommended not to exceed fifteen characters~');
 ```
 
 ```html
@@ -24,16 +24,16 @@ Toast('I am a prompt copywriter, it is recommended not to exceed fifteen charact
 
 ### Loading Tips
 
-Use the `Toast.loading` method to display the loading prompt, use the `forbidClick` attribute to disable the background click, and use the `loadingType` attribute to customize the loading icon type.
+Use the `showLoadingToast` method to display the loading prompt, use the `forbidClick` attribute to disable the background click, and use the `loadingType` attribute to customize the loading icon type.
 
 ```javascript
-Toast.loading({
+showLoadingToast({
    message: 'Loading...',
    forbidClick: true,
 });
 
 // custom loading icon
-Toast.loading({
+showLoadingToast({
    message: 'Loading...',
    forbidClick: true,
    loadingType: 'spinner',
@@ -43,14 +43,14 @@ Toast.loading({
 ### Success/Failure Prompt
 
 ```javascript
-Toast.success('successful copywriting');
-Toast.fail('Failed copywriting');
+showSuccessToast('successful copywriting');
+showFailToast('Failed copywriting');
 ```
 
 ### Dynamic update prompt
 
 ```javascript
-const toast = Toast.loading({
+const toast = showLoadingToast({
    duration: 0, // keep displaying toast
    forbidClick: true,
    message: 'Countdown 3 seconds',
@@ -66,7 +66,7 @@ const timer = setInterval(() => {
      });
    } else {
      clearInterval(timer);
-     Toast. clear();
+     closeToast();
    }
 }, 1000);
 ```
@@ -78,7 +78,7 @@ const timer = setInterval(() => {
 ### OnClose callback function
 
 ```javascript
-Toast({
+showToast({
    type: 'success',
    message: 'Submitted successfully',
    onClose: () => {
@@ -91,15 +91,15 @@ Toast({
 
 ### method
 
-| method name               | parameters           | return value   | description                                                |
-| ------------------------- | -------------------- | -------------- | ---------------------------------------------------------- |
-| Toast                     | `options \| message` | toast instance | display hint                                               |
-| Toast.loading             | `options \| message` | toast instance | display loading prompt                                     |
-| Toast.success             | `options \| message` | toast instance | display success prompt                                     |
-| Toast.fail                | `options \| message` | toast instance | display failure prompt                                     |
-| Toast.clear               | `clearAll`           | `void`         | close the prompt                                           |
-| Toast.setDefaultOptions   | `options`            | `void`         | Modify the default configuration, effective for all Toasts |
-| Toast.resetDefaultOptions | -                    | `void`         | Reset the default configuration, effective for all Toasts  |
+| method name                                         | parameters           | return value   | description                                                |
+| --------------------------------------------------- | -------------------- | -------------- | ---------------------------------------------------------- |
+| showToast, Toast                                    | `options \| message` | toast instance | display hint                                               |
+| showLoadingToast, Toast.loading                     | `options \| message` | toast instance | display loading prompt                                     |
+| showSuccessToast, Toast.success                     | `options \| message` | toast instance | display success prompt                                     |
+| showFailToast, Toast.fail                           | `options \| message` | toast instance | display failure prompt                                     |
+| closeToast, Toast.clear                             | `clearAll`           | `void`         | close the prompt                                           |
+| setToastDefaultOptions, Toast.setDefaultOptions     | `options`            | `void`         | Modify the default configuration, effective for all Toasts |
+| resetToastDefaultOptions, Toast.resetDefaultOptions | -                    | `void`         | Reset the default configuration, effective for all Toasts  |
 
 ### Options
 

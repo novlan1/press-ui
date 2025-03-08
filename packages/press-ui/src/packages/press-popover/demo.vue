@@ -6,7 +6,7 @@
     <demo-block
       :title="t('basicUsage')"
     >
-      <press-cell
+      <PressCell
         v-for="(item,index) of list"
         :key="index"
         :title="item"

@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <demo-block :title="t('basicUsage')">
-      <press-rate
+      <PressRate
         :value="3"
         custom-class="press-rate--demo-class"
         @change="onChange"
@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="t('customIcon')">
-      <press-rate
+      <PressRate
         :value="value"
         icon="like"
         void-icon="like-o"
@@ -18,7 +18,7 @@
     </demo-block>
 
     <demo-block :title="t('customImage')">
-      <press-rate
+      <PressRate
         :value="value"
         void-icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png"
         icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png"
@@ -27,7 +27,7 @@
     </demo-block>
 
     <demo-block :title="t('customStyle')">
-      <press-rate
+      <PressRate
         :value="value"
         :size="25"
         color="#ffd21e"
@@ -38,7 +38,7 @@
     </demo-block>
 
     <demo-block :title="t('halfStar')">
-      <press-rate
+      <PressRate
         :value="half"
         allow-half
         void-icon="star"
@@ -48,7 +48,7 @@
     </demo-block>
 
     <demo-block :title="t('customCount')">
-      <press-rate
+      <PressRate
         :value="value"
         :count="6"
         @change="onChange"
@@ -56,7 +56,7 @@
     </demo-block>
 
     <demo-block :title="t('disabled')">
-      <press-rate
+      <PressRate
         :value="value"
         disabled
         @change="onChange"
@@ -64,7 +64,7 @@
     </demo-block>
 
     <demo-block :title="t('readonly')">
-      <press-rate
+      <PressRate
         :value="value"
         readonly
         @change="onChange"

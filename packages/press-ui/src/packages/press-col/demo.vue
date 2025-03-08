@@ -1,52 +1,52 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-row>
-        <press-col :span="8">
+      <PressRow>
+        <PressCol :span="8">
           span: 8
-        </press-col>
-        <press-col :span="8">
+        </PressCol>
+        <PressCol :span="8">
           span: 8
-        </press-col>
-        <press-col :span="8">
+        </PressCol>
+        <PressCol :span="8">
           span: 8
-        </press-col>
-      </press-row>
+        </PressCol>
+      </PressRow>
 
-      <press-row>
-        <press-col :span="4">
+      <PressRow>
+        <PressCol :span="4">
           span: 4
-        </press-col>
-        <press-col
+        </PressCol>
+        <PressCol
           :span="10"
           :offset="4"
         >
           offset: 4, span: 10
-        </press-col>
-      </press-row>
+        </PressCol>
+      </PressRow>
 
-      <press-row>
-        <press-col
+      <PressRow>
+        <PressCol
           :offset="12"
           :span="12"
         >
           offset: 12, span: 12
-        </press-col>
-      </press-row>
+        </PressCol>
+      </PressRow>
     </demo-block>
 
     <demo-block :title="t('title2')">
-      <press-row :gutter="20">
-        <press-col :span="8">
+      <PressRow :gutter="20">
+        <PressCol :span="8">
           span: 8
-        </press-col>
-        <press-col :span="8">
+        </PressCol>
+        <PressCol :span="8">
           span: 8
-        </press-col>
-        <press-col :span="8">
+        </PressCol>
+        <PressCol :span="8">
           span: 8
-        </press-col>
-      </press-row>
+        </PressCol>
+      </PressRow>
     </demo-block>
   </div>
 </template>

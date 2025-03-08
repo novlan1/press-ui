@@ -5,18 +5,18 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-cell-group>
-        <press-cell
+      <PressCellGroup>
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
         />
-        <press-cell
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
           :label="t('desc')"
           :border="false"
         />
-      </press-cell-group>
+      </PressCellGroup>
     </demo-block>
 
     <demo-block
@@ -24,17 +24,17 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell-group inset>
-        <press-cell
+      <PressCellGroup inset>
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
         />
-        <press-cell
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
           :label="t('desc')"
         />
-      </press-cell-group>
+      </PressCellGroup>
     </demo-block>
 
     <demo-block
@@ -42,12 +42,12 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         :title="t('cell')"
         :value="t('content')"
         size="large"
       />
-      <press-cell
+      <PressCell
         :title="t('cell')"
         :value="t('content')"
         size="large"
@@ -60,7 +60,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         :title="t('cell')"
         icon="location-o"
       />
@@ -71,16 +71,16 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         :title="t('cell')"
         is-link
       />
-      <press-cell
+      <PressCell
         :title="t('cell')"
         :value="t('content')"
         is-link
       />
-      <press-cell
+      <PressCell
         :title="t('cell')"
         :value="t('content')"
         is-link
@@ -93,7 +93,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         is-link
         :title="t('cell')"
         link-type="navigateTo"
@@ -106,18 +106,18 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell-group :title="`${t('group')}1`">
-        <press-cell
+      <PressCellGroup :title="`${t('group')}1`">
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
         />
-      </press-cell-group>
-      <press-cell-group :title="`${t('group')}2`">
-        <press-cell
+      </PressCellGroup>
+      <PressCellGroup :title="`${t('group')}2`">
+        <PressCell
           :title="t('cell')"
           :value="t('content')"
         />
-      </press-cell-group>
+      </PressCellGroup>
     </demo-block>
 
     <demo-block
@@ -125,7 +125,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         :value="t('content')"
         is-link
         :use-title-slot="true"
@@ -134,22 +134,22 @@
           <span class="press-cell-text">
             {{ t('cell') }}
           </span>
-          <press-tag type="danger">
+          <PressTag type="danger">
             {{ t('tag') }}
-          </press-tag>
+          </PressTag>
         </template>
-      </press-cell>
-      <press-cell
+      </PressCell>
+      <PressCell
         :title="t('cell')"
         icon="shop-o"
       >
         <template #right-icon>
-          <press-icon-plus
+          <PressIconPlus
             name="search"
             class="custom-icon"
           />
         </template>
-      </press-cell>
+      </PressCell>
     </demo-block>
 
     <demo-block
@@ -157,7 +157,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-cell
+      <PressCell
         center
         :title="t('cell')"
         :value="t('content')"
@@ -171,35 +171,35 @@
       :section-style="sectionStyle"
     >
       <div class="demo--e-sport-wrap">
-        <press-cell
+        <PressCell
           :title="t('matchMode')"
           :value="t('knockout')"
           type="e-sport"
           is-link
           :border="false"
         />
-        <press-cell
+        <PressCell
           :title="t('wayToWin')"
           :value="t('defaultBo1')"
           type="e-sport"
           is-link
           :border="false"
         />
-        <press-cell
+        <PressCell
           :title="t('allowModifyAvatar')"
           :border="false"
           type="e-sport"
         >
           <template #right-icon>
-            <press-switch
+            <PressSwitch
               custom-class="press-switch--e-sport"
               :checked="switchChecked[1]"
               @change="val=>onChangeSwitch(val, 1)"
             />
           </template>
-        </press-cell>
+        </PressCell>
 
-        <press-cell
+        <PressCell
           :title="t('getPhoneNumber')"
           :label="t('getPhoneNumberDesc')"
           type="e-sport"
@@ -207,13 +207,13 @@
           :border="false"
         >
           <template #right-icon>
-            <press-switch
+            <PressSwitch
               custom-class="press-switch--e-sport"
               :checked="switchChecked[2]"
               @change="val=>onChangeSwitch(val, 2)"
             />
           </template>
-        </press-cell>
+        </PressCell>
       </div>
     </demo-block>
   </div>

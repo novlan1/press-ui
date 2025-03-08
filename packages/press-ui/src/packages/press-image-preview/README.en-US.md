@@ -10,7 +10,7 @@ Image zoom preview supports two ways of function calling and component calling.
 ## Code Demo
 ### Basic Usage
 
-First embed the component in the page, and then call `imagePreview` functionally.
+First embed the component in the page, and then call `showImagePreview` functionally.
 
 
 ```html
@@ -22,7 +22,7 @@ First embed the component in the page, and then call `imagePreview` functionally
 
 ```ts
 import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
-import { imagePreview } from 'press-ui/press-image-preview/index';
+import { showImagePreview } from 'press-ui/press-image-preview/index';
 
 
 export default {
@@ -31,7 +31,7 @@ export default {
    },
    methods: {
      show() {
-       imagePreview({
+       showImagePreview({
          selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
          images: this. images,
        }).then(() => {
@@ -46,7 +46,7 @@ export default {
 Support passing in configuration objects, and specify the initial position (index value) of the image through the `startPosition` option.
 
 ```ts
-imagePreview({
+showImagePreview({
    selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
    images: this. images,
    startPosition: 1,
@@ -59,7 +59,7 @@ After setting the `closeable` attribute, a close icon will be displayed in the u
 
 
 ```ts
-imagePreview({
+showImagePreview({
    selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
    images: this. images,
    closeable: true,
@@ -69,10 +69,10 @@ imagePreview({
 
 ### Listen to close event
 
-The `imagePreview` method returns a `promise`, and when it is closed, the state will become `resolved`, which can be monitored in the `then` method.
+The `showImagePreview` method returns a `promise`, and when it is closed, the state will become `resolved`, which can be monitored in the `then` method.
 
 ```ts
-imagePreview({
+showImagePreview({
    selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
    images: this. images,
    closeable: true,
@@ -88,7 +88,7 @@ The asynchronous close can be enabled through the `asyncClose` attribute. After 
 
 
 ```ts
-imagePreview({
+showImagePreview({
    selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
    images: this. images,
    asyncClose: true,

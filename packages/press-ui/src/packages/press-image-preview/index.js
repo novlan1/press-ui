@@ -24,3 +24,4 @@ export function imagePreview(options) {
 }
 
 export const imagePreviewHandler = imagePreview;
+export const showImagePreview = imagePreview;
