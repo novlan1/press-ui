@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.37](https://github.com/novlan1/press-ui/compare/v2.2.36...v2.2.37) (2025-03-08)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update pre-commit ([3c66b4b](https://github.com/novlan1/press-ui/commit/3c66b4b27824fe57739496bd46948fa7a0c352ad))
+
+
+### ✨ Features | 新功能
+
+* **demo:** 优化demo-title ([66e9c24](https://github.com/novlan1/press-ui/commit/66e9c244c4ecce3e7a68abb7738a43f326c892d9))
+* **script-component-config:** filter redirect demo ([c4176b5](https://github.com/novlan1/press-ui/commit/c4176b5dd62bfee01e98ef78d955bc95551fda6c))
+* **signature:** 兼容非uni-app等场景 ([95be7a1](https://github.com/novlan1/press-ui/commit/95be7a1fcaf974e7d52fdd5b28d24220103f4cb7))
+
 ### [2.2.36](https://github.com/novlan1/press-ui/compare/v2.2.34...v2.2.36) (2025-03-08)
 
 

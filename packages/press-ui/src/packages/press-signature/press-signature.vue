@@ -43,13 +43,14 @@
 </template>
 <script>
 import PressButton from '../press-button/press-button.vue';
-import { getRect } from '../common/dom/rect';
 import { IN_BROWSER } from '../common/utils/validator';
 import { t } from '../locale';
 import { isNotInUni } from '../common/utils/utils';
 import { canIUseCanvas2d, getWindowInfo } from '../common/utils/version';
 import { adaptor } from '../press-circle/canvas';
 import { calcBethelLine, distance } from './utils';
+import { getRect, getRealPageYOrClientY } from '../common/dom/rect';
+
 
 const hasCanvasSupport = () => {
   const canvas = document.createElement('canvas');
@@ -124,8 +125,7 @@ export default {
       currentLine: [],
       lastPoint: {},
       currentPoint: {},
-      firstTouch: true,
-      cutArea: {},
+
       radius: 1,
       canvas: null,
     };
@@ -232,7 +232,7 @@ export default {
       if (this.useRawCanvas) {
         const touch = event.touches[0];
         const mouseX = touch.clientX  - (this.canvasRect?.left || 0);
-        const mouseY = touch.clientY  - (this.canvasRect?.top || 0);
+        const mouseY = getRealPageYOrClientY(touch.clientY)  - (this.canvasRect?.top || 0);
 
         this.ctx.setLineCap('round');
         this.ctx.setLineJoin('round');

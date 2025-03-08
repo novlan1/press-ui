@@ -60,7 +60,7 @@
 <script>
 import PressBarrage from 'press-ui/press-barrage/press-barrage.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
-
+import { setAdapter } from 'press-ui/common/vue3/set';
 
 export default {
   i18n: {
@@ -122,7 +122,7 @@ export default {
   },
   methods: {
     add() {
-      this.$set(this, 'list', [
+      setAdapter(this, 'list', [
         ...this.list,
         {
           id: Math.random(),
@@ -131,7 +131,7 @@ export default {
       ]);
     },
     videoAdd() {
-      this.$set(this, 'videoList', [
+      setAdapter(this, 'videoList', [
         ...this.videoList,
         {
           id: Math.random(),
