@@ -7,7 +7,7 @@
         @click.stop="onShowLoading('btn')"
       >
         {{ options.btn.show ? '' : t('click') }}
-        <press-loading
+        <PressLoading
           v-if="options.btn.show"
           loading-scenes="btn"
         />
@@ -34,10 +34,10 @@
       </div>
     </demo-block>
 
-    <press-loading
+    <PressLoading
       v-if="options.page.show"
     />
-    <press-loading
+    <PressLoading
       v-if="options.bg.show"
       loading-bg="#eee"
     />

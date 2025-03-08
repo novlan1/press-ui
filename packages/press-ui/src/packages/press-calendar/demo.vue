@@ -1,19 +1,19 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('selectSingle')"
         is-link
         :value="singleValue"
         @click="onDisplay('single')"
       />
-      <press-cell
+      <PressCell
         :title="t('selectMultiple')"
         is-link
         :value="multipleValue"
         @click="onDisplay('multiple')"
       />
-      <press-cell
+      <PressCell
         :title="t('selectRange')"
         is-link
         :value="rangeValue"
@@ -22,14 +22,14 @@
     </demo-block>
 
     <demo-block :title="t('quickSelect')">
-      <press-cell
+      <PressCell
         :title="t('selectSingle')"
         is-link
         :value="singleValue"
         @click="onDisplay('single', false)"
       />
 
-      <press-cell
+      <PressCell
         :title="t('selectRange')"
         is-link
         :value="rangeValue"
@@ -38,7 +38,7 @@
     </demo-block>
 
     <demo-block :title="t('customCalendar')">
-      <press-cell
+      <PressCell
         :title="t('customColor')"
         is-link
         :value="singleValue"
@@ -46,7 +46,7 @@
           color: '#07c160'
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('customRange')"
         is-link
         :value="singleValue"
@@ -55,7 +55,7 @@
           maxDate: new Date(2010, 0, 31).getTime(),
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('customConfirm')"
         is-link
         :value="rangeValue"
@@ -64,7 +64,7 @@
           confirmDisabledText: t('confirmDisabledText'),
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('customDayText')"
         is-link
         :value="rangeValue"
@@ -72,7 +72,7 @@
           useFormatter: true,
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('customPosition')"
         is-link
         :value="singleValue"
@@ -80,7 +80,7 @@
           position: 'right'
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('maxRange')"
         is-link
         :value="rangeValue"
@@ -88,7 +88,7 @@
           maxRange: 3
         })"
       />
-      <press-cell
+      <PressCell
         :title="t('firstDayOfWeek')"
         is-link
         :value="singleValue"
@@ -98,7 +98,7 @@
       />
     </demo-block>
 
-    <press-calendar
+    <PressCalendar
       v-if="ifShow"
       :show="show"
       :type="type"
@@ -117,7 +117,7 @@
     />
 
     <demo-block :title="t('tiledDisplay')">
-      <press-calendar
+      <PressCalendar
         :poppable="false"
         :show-confirm="false"
         custom-class="calendar"

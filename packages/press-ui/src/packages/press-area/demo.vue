@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-area
+      <PressArea
         :area-list="areaList"
         @change="onChange"
         @confirm="onConfirm"
@@ -10,7 +10,7 @@
     </demo-block>
 
     <demo-block :title="t('title2')">
-      <press-area
+      <PressArea
         :area-list="areaList"
         value="440304"
         @change="onChange"
@@ -20,7 +20,7 @@
     </demo-block>
 
     <demo-block :title="t('title3')">
-      <press-area
+      <PressArea
         :area-list="areaList"
         :columns-num="2"
         value="440304"
@@ -31,7 +31,7 @@
     </demo-block>
 
     <demo-block :title="t('title4')">
-      <press-area
+      <PressArea
         :area-list="areaList"
         value="440304"
         :columns-placeholder="t('columnsPlaceholder')"
@@ -42,7 +42,7 @@
     </demo-block>
 
     <demo-block :title="t('parseData')">
-      <press-area
+      <PressArea
         :area-list="parseData(areaList)"
         value="070000"
         @change="onChange"
@@ -54,13 +54,13 @@
     <demo-block
       :title="t('withPopup')"
     >
-      <press-cell
+      <PressCell
         title="Normal"
         is-link
         @click="onShowAreaPopup('')"
       />
 
-      <press-cell
+      <PressCell
         title="E-Sport"
         is-link
         @click="onShowAreaPopup('e-sport')"

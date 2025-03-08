@@ -7,8 +7,12 @@ const INNER_PATH_MAP = {
   TARGET_PACKAGES: 'log/press-ui/components',
   PACKAGE_JSON: './src/packages/package.json',
   ROOT_PACKAGE_JSON: './package.json',
+
   SOURCE_README: '../../README.md',
   TARGET_README: './log/press-ui/components/README.md',
+
+  SOURCE_CHANGELOG: './CHANGELOG.md',
+  TARGET_CHANGELOG: './log/press-ui/components/CHANGELOG.md',
 };
 const PROJECT_ROOT = path.resolve(__dirname, '../../../../');
 const PROJECT_ROOT_PKG = path.resolve(PROJECT_ROOT, './package.json');

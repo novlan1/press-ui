@@ -49,3 +49,7 @@ addFunctionForDialog({
 });
 
 export default Dialog;
+
+export const showDialog = Dialog.show;
+export const setDialogDefaultOptions = Dialog.setDefaultOptions;
+export const resetDialogDefaultOptions = Dialog.resetDefaultOptions;

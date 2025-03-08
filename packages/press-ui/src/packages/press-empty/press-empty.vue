@@ -4,7 +4,7 @@
     :class="emptyClass"
     :style="customStyle"
   >
-    <press-icon
+    <PressIcon
       v-if="isESportType"
       type="empty"
       size="10.66667vmin"
@@ -109,63 +109,5 @@ export default {
 };
 
 </script>
-<style scoped lang="scss">
-@import "../common/style/press/index.scss";
-@import "../common/style/press/var.scss";
-
-.press-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: $empty-padding;
-
-  &__image {
-    width: $empty-image-size;
-    height: $empty-image-size;
-
-    // 【修改点】增加水平垂直居中，方便用户传入自定义图片
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:empty {
-      display: none;
-    }
-
-    &__img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  &__image:not(:empty) + &__image {
-    display: none;
-  }
-
-  &__description {
-    margin-top: $empty-description-margin-top;
-    padding: $empty-description-padding;
-    color: $empty-description-color;
-    font-size: $empty-description-font-size;
-    color: $color-gray-4;
-    line-height: $empty-description-line-height;
-    text-align: center;
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  &__description:not(:empty) + &__description {
-    display: none;
-  }
-
-  &__bottom {
-    margin-top: $empty-bottom-margin-top;
-  }
-}
-</style>
 <style scoped lang="scss" src="./css/index.scss">
 </style>

@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'Estás seguro de eliminarlo?',
   telInvalid: 'Teléfono inválido',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Fin',
     start: 'Inicio',

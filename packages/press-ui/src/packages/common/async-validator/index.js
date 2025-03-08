@@ -1,24 +1,5 @@
-/* eslint-disable */
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (let i = 1; i < arguments.length; i++) {
-      const source = arguments[i];
-
-      for (const key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-/* eslint no-console:0 */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-prototype-builtins */
 const formatRegExp = /%[sdj%]/g;
 let warning = function warning() {}; // don't print warning message when in production env or node runtime
 
@@ -45,6 +26,7 @@ function convertFieldsError(errors) {
 }
 
 function format() {
+  // eslint-disable-next-line no-var
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
@@ -81,13 +63,12 @@ function format() {
             return '[Circular]';
           }
 
-          break;
-
         default:
           return x;
       }
     });
 
+    // eslint-disable-next-line no-plusplus
     for (let arg = args[i]; i < len; arg = args[++i]) {
       str += ` ${arg}`;
     }
@@ -125,7 +106,7 @@ function asyncParallelArray(arr, func, callback) {
 
   function count(errors) {
     results.push.apply(results, errors);
-    total++;
+    total += 1;
 
     if (total === arrLength) {
       callback(results);
@@ -201,7 +182,7 @@ function asyncMap(objArr, option, func, callback) {
   const pending = new Promise((resolve, reject) => {
     const next = function next(errors) {
       results.push.apply(results, errors);
-      total++;
+      total += 1;
 
       if (total === objArrLength) {
         callback(results);
@@ -248,6 +229,7 @@ function complementError(rule) {
 function deepMerge(target, source) {
   if (source) {
     for (const s in source) {
+      // eslint-disable-next-line no-prototype-builtins
       if (source.hasOwnProperty(s)) {
         const value = source[s];
 
@@ -276,6 +258,7 @@ function deepMerge(target, source) {
 */
 
 function required(rule, value, source, errors, options, type) {
+  // eslint-disable-next-line no-prototype-builtins
   if (rule.required && (!source.hasOwnProperty(rule.field) || isEmptyValue(value, type || rule.type))) {
     errors.push(format(options.messages.required, rule.fullField));
   }
@@ -303,6 +286,7 @@ function whitespace(rule, value, source, errors, options) {
 
 const pattern = {
   // http://emailregex.com/
+  // eslint-disable-next-line no-useless-escape
   email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   url: new RegExp(
     '^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$',
@@ -310,6 +294,7 @@ const pattern = {
   ),
   hex: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/i,
 };
+// eslint-disable-next-line no-var
 var types = {
   integer: function integer(value) {
     return /^(-)?\d+$/.test(value);
@@ -525,6 +510,7 @@ const rules = {
 
 function string(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -561,6 +547,7 @@ function string(rule, value, callback, source, options) {
 
 function method(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -591,6 +578,7 @@ function method(rule, value, callback, source, options) {
 
 function number(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -626,6 +614,7 @@ function number(rule, value, callback, source, options) {
 
 function _boolean(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -656,6 +645,7 @@ function _boolean(rule, value, callback, source, options) {
 
 function regexp(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -686,6 +676,7 @@ function regexp(rule, value, callback, source, options) {
 
 function integer(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -717,6 +708,7 @@ function integer(rule, value, callback, source, options) {
 
 function floatFn(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -748,6 +740,7 @@ function floatFn(rule, value, callback, source, options) {
 
 function array(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -779,6 +772,7 @@ function array(rule, value, callback, source, options) {
 
 function object(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -810,6 +804,7 @@ const ENUM$1 = 'enum';
 
 function enumerable$1(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -843,6 +838,7 @@ function enumerable$1(rule, value, callback, source, options) {
 
 function pattern$2(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -862,6 +858,7 @@ function pattern$2(rule, value, callback, source, options) {
 
 function date(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -901,6 +898,7 @@ function required$1(rule, value, callback, source, options) {
 function type$1(rule, value, callback, source, options) {
   const ruleType = rule.type;
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -931,6 +929,7 @@ function type$1(rule, value, callback, source, options) {
 
 function any(rule, value, callback, source, options) {
   const errors = [];
+  // eslint-disable-next-line no-prototype-builtins, no-mixed-operators
   const validate = rule.required || !rule.required && source.hasOwnProperty(rule.field);
 
   if (validate) {
@@ -1030,7 +1029,7 @@ const messages = newMessages();
 function Schema(descriptor) {
   this.rules = null;
   this._messages = messages;
-  this.define(descriptor);
+  this.tDefine(descriptor);
 }
 
 Schema.prototype = {
@@ -1041,7 +1040,7 @@ Schema.prototype = {
 
     return this._messages;
   },
-  define: function define(rules) {
+  tDefine: function tDefine(rules) {
     if (!rules) {
       throw new Error('Cannot configure a schema with no rules');
     }
@@ -1055,6 +1054,7 @@ Schema.prototype = {
     let item;
 
     for (z in rules) {
+      // eslint-disable-next-line no-prototype-builtins
       if (rules.hasOwnProperty(z)) {
         item = rules[z];
         this.rules[z] = Array.isArray(item) ? item : [item];
@@ -1146,7 +1146,8 @@ Schema.prototype = {
             source = { ...source };
           }
 
-          value = source[z] = rule.transform(value);
+          source[z] = rule.transform(value);
+          value = source[z];
         }
 
         if (typeof rule === 'function') {
@@ -1180,6 +1181,7 @@ Schema.prototype = {
       const { rule } = data;
       let deep = (rule.type === 'object' || rule.type === 'array') && (typeof rule.fields === 'object' || typeof rule.defaultField
       === 'object');
+      // eslint-disable-next-line no-mixed-operators
       deep = deep && (rule.required || !rule.required && data.value);
       rule.field = data.field;
 
@@ -1304,6 +1306,7 @@ Schema.prototype = {
       rule.type = 'pattern';
     }
 
+    // eslint-disable-next-line no-prototype-builtins
     if (typeof rule.validator !== 'function' && rule.type && !validators.hasOwnProperty(rule.type)) {
       throw new Error(format('Unknown rule type %s', rule.type));
     }

@@ -38,7 +38,7 @@
 </template>
 <script>
 // #ifdef H5
-import PressTeleportWeb from './press-teleport-web.vue';
+import PressTeleportWeb from '../press-teleport-web/press-teleport-web.vue';
 // #endif
 
 

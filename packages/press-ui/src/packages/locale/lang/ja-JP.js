@@ -18,6 +18,7 @@ export default {
   confirmDelete: '本当に削除しますか',
   telInvalid: '正しい電話番号を入力してください',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: '終了',
     start: '開始',

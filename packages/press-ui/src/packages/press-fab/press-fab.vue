@@ -71,7 +71,7 @@
       @touchmove.stop.prevent="onTouchMove"
     >
       <slot>
-        <press-icon-plus
+        <PressIconPlus
           name="cross"
           :color="styles.iconColor"
           :size="styles.iconFontSize"

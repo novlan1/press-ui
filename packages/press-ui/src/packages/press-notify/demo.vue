@@ -8,7 +8,7 @@
 
 
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('basicUsage')"
         is-link
         @click="showNotify(t('content'))"
@@ -16,22 +16,22 @@
     </demo-block>
 
     <demo-block :title="t('notifyType')">
-      <press-cell
+      <PressCell
         :title="t('primary')"
         is-link
         @click="showNotify({ type: 'primary', message: t('content') })"
       />
-      <press-cell
+      <PressCell
         :title="t('success')"
         is-link
         @click="showNotify({ type: 'success', message: t('content') })"
       />
-      <press-cell
+      <PressCell
         :title="t('danger')"
         is-link
         @click="showNotify({ type: 'danger', message:t('content') })"
       />
-      <press-cell
+      <PressCell
         :title="t('warning')"
         is-link
         @click="showNotify({ type: 'warning', message: t('content')})"
@@ -39,7 +39,7 @@
     </demo-block>
 
     <demo-block :title="t('customNotify')">
-      <press-cell
+      <PressCell
         :title="t('customColor')"
         is-link
         @click="showNotify({
@@ -49,7 +49,7 @@
         })"
       />
 
-      <press-cell
+      <PressCell
         :title="t('customDuration')"
         is-link
         @click="showNotify({
@@ -62,7 +62,7 @@
 </template>
 <script>
 import PressNotify from 'press-ui/press-notify/press-notify.vue';
-import PressNotifyHandler from 'press-ui/press-notify/';
+import { showNotify } from 'press-ui/press-notify/';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
@@ -109,7 +109,7 @@ export default {
     showNotify(options) {
       // #ifndef H5
       if (process.env.UNI_PLATFORM !== 'h5') {
-        PressNotifyHandler(options);
+        showNotify(options);
         return;
       }
       // #endif
@@ -118,7 +118,7 @@ export default {
       if (typeof options !== 'object') {
         cOptions = { message: options };
       }
-      PressNotifyHandler({
+      showNotify({
         ...cOptions,
         top: 44,
       });

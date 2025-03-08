@@ -4,7 +4,7 @@
       :title="t('basicUsage')"
       section-style="margin:0;"
     >
-      <press-swipe-cell
+      <PressSwipeCell
         :right-width="65"
         :left-width="65"
         :async-close="asyncClose"
@@ -31,14 +31,14 @@
             {{ t('delete') }}
           </div>
         </template>
-      </press-swipe-cell>
+      </PressSwipeCell>
     </demo-block>
 
     <demo-block
       :title="t('beforeClose')"
       section-style="margin:0;"
     >
-      <press-swipe-cell
+      <PressSwipeCell
         :right-width="65"
         :left-width="65"
         :async-close="true"
@@ -65,7 +65,7 @@
             {{ t('delete') }}
           </div>
         </template>
-      </press-swipe-cell>
+      </PressSwipeCell>
     </demo-block>
 
     <!-- #ifndef H5 -->

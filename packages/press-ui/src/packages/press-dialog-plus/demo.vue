@@ -1,17 +1,17 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('alert1')"
         is-link
         @click="onShowDialog('normal')"
       />
-      <press-cell
+      <PressCell
         :title="t('alert2')"
         is-link
         @click="onShowDialog('noTitle')"
       />
-      <press-cell
+      <PressCell
         :title="t('confirm')"
         is-link
         @click="onShowDialog('cancel')"
@@ -19,7 +19,7 @@
     </demo-block>
 
     <demo-block :title="t('asyncClose')">
-      <press-cell
+      <PressCell
         :title="t('asyncClose')"
         is-link
         @click="onShowDialog('async')"
@@ -27,7 +27,7 @@
     </demo-block>
 
     <demo-block :title="t('componentCall')">
-      <press-cell
+      <PressCell
         :title="t('componentCall')"
         is-link
         @click="onShowDialog('component')"
@@ -41,7 +41,7 @@
     />
     <!-- #endif -->
 
-    <press-dialog-plus
+    <PressDialogPlus
       use-slot
       :title="t('title')"
       :show="show"
@@ -55,12 +55,12 @@
         style="width: 100%;margin-top: 16px;"
         mode="aspectFit"
       >
-    </press-dialog-plus>
+    </PressDialogPlus>
   </div>
 </template>
 <script>
 import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showDialog, showConfirmDialog } from 'press-ui/press-dialog-plus';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
@@ -114,22 +114,26 @@ export default {
       }
 
       let title = this.t('title');
-      let showCancelButton = false;
+      // let showCancelButton = false;
       let beforeClose = null;
+      let func = showDialog;
 
       if (type === 'noTitle') {
         title = '';
       } else if (type === 'cancel') {
-        showCancelButton = true;
+        // showCancelButton = true;
+        func = showConfirmDialog;
       } else if (type === 'async') {
-        showCancelButton = true;
+        // showCancelButton = true;
         beforeClose = gBeforeClose;
+        func = showConfirmDialog;
       }
 
-      Dialog.alert({
+
+      func({
         context: this,
         title,
-        showCancelButton,
+        // showCancelButton,
         message: this.t('content'),
         beforeClose,
       })

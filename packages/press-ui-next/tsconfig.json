@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "outDir": "lib",
+    "module": "esnext",
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "removeComments": true,
+    "ignoreDeprecations": "5.0",
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "press-ui": [
+        "src"
+      ],
+      "press-ui-next": [
+        "src"
+      ],
+      "press-ui-next/es/locale/*": [
+        "src/locale/*"
+      ]
+    },
+    "types": [
+      "vitest/globals"
+    ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "rules": {
+    "trailing-comma": false
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/_common",
+    "dist",
+    "es",
+    "esm",
+    "lib",
+    "cjs",
+    "site",
+    "global.d.ts"
+  ],
+  "compileOnSave": false
+}

@@ -1,78 +1,78 @@
 <template>
   <div class="demo-wrap">
-    <press-cell :title="t('basicUsage')">
-      <press-stepper
+    <PressCell :title="t('basicUsage')">
+      <PressStepper
         :value="value"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('step')">
-      <press-stepper
+    <PressCell :title="t('step')">
+      <PressStepper
         :value="value"
         :step="2"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('range')">
-      <press-stepper
+    <PressCell :title="t('range')">
+      <PressStepper
         :value="value"
         :min="5"
         :max="8"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('integer')">
-      <press-stepper
+    <PressCell :title="t('integer')">
+      <PressStepper
         :value="value"
         integer
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('disabled')">
-      <press-stepper
+    <PressCell :title="t('disabled')">
+      <PressStepper
         disabled
         :value="value"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('closeLongPress')">
-      <press-stepper
+    <PressCell :title="t('closeLongPress')">
+      <PressStepper
         :long-press="false"
         :value="value"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('decimalLength')">
-      <press-stepper
+    <PressCell :title="t('decimalLength')">
+      <PressStepper
         :step="0.2"
         :decimal-length="1"
         :value="value"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('asyncChange')">
-      <press-stepper
+    <PressCell :title="t('asyncChange')">
+      <PressStepper
         async-change
         :value="asyncValue"
         @change="onSyncChange"
       />
-    </press-cell>
+    </PressCell>
 
-    <press-cell :title="t('customSize')">
-      <press-stepper
+    <PressCell :title="t('customSize')">
+      <PressStepper
         input-width="40px"
         button-size="32px"
         :value="value"
         @change="onChange"
       />
-    </press-cell>
+    </PressCell>
 
 
     <!-- #ifndef H5 -->

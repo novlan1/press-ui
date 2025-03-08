@@ -17,6 +17,7 @@ export default {
   confirmDelete: '確定要刪除嗎',
   telInvalid: '請填寫正確的電話',
   reply: '回复',
+  clear: '清空',
   calendar: {
     end: '結束',
     start: '開始',

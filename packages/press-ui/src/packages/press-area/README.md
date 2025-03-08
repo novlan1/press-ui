@@ -230,7 +230,7 @@ export default {
     }
   },
   methods: {
-    onConfirmArea() {
+    onConfirmArea(values, index) {
       console.log('[onConfirmArea] values index', values, index);
       this.selectArea = values[values.length - 1]?.code;
     },

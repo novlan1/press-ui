@@ -1,26 +1,26 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-card>
+      <PressCard>
         <span class="press-body">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('title')">
-      <press-card
+      <PressCard
         :title="t('title')"
         :extra="t('description')"
       >
         <span class="press-body">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('subtitle')">
-      <press-card
+      <PressCard
         :title="t('title')"
         :sub-title="t('subtitle')"
         :extra="t('description')"
@@ -30,11 +30,11 @@
         <span class="press-body">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('noMargin')">
-      <press-card
+      <PressCard
         :title="t('title')"
         :sub-title="t('subtitle')"
         :extra="t('description')"
@@ -44,22 +44,22 @@
         <span class="press-body">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('cover')">
-      <press-card
+      <PressCard
         :cover="cover"
         @click="onClick"
       >
         <span class="press-body">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('actionBar')">
-      <press-card
+      <PressCard
         @click="onClick"
       >
         <span class="press-body">
@@ -73,7 +73,7 @@
               class="card-actions-item"
               @click="actionsClick( t('share'))"
             >
-              <press-icon-plus
+              <PressIconPlus
                 name="share-o"
                 size="18"
                 color="#999"
@@ -86,7 +86,7 @@
               class="card-actions-item"
               @click="actionsClick( t('star'))"
             >
-              <press-icon-plus
+              <PressIconPlus
                 name="like-o"
                 size="18"
                 color="#999"
@@ -99,7 +99,7 @@
               class="card-actions-item"
               @click="actionsClick( t('comment'))"
             >
-              <press-icon-plus
+              <PressIconPlus
                 name="chat-o"
                 size="18"
                 color="#999"
@@ -110,32 +110,32 @@
             </div>
           </div>
         </template>
-      </press-card>
+      </PressCard>
     </demo-block>
 
     <demo-block :title="t('customTitle')">
-      <press-card
+      <PressCard
         padding="10px 0"
       >
         <template #title>
-          <press-cell
+          <PressCell
             :title="t('title')"
             clickable
             @click="checked = !checked"
           >
             <template #right-icon>
-              <press-switch
+              <PressSwitch
                 size="22px"
                 :checked="checked"
                 @change="checked = !checked"
               />
             </template>
-          </press-cell>
+          </PressCell>
         </template>
         <span class="press-body uni-mt-5">
           {{ t('content') }}
         </span>
-      </press-card>
+      </PressCard>
     </demo-block>
   </div>
 </template>

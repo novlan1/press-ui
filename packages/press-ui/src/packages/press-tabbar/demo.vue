@@ -4,109 +4,109 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-tabbar
+      <PressTabbar
         :fixed="false"
         :active="active"
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <press-tabbar-item icon="home-o">
+        <PressTabbarItem icon="home-o">
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item icon="search">
+        </PressTabbarItem>
+        <PressTabbarItem icon="search">
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item icon="friends-o">
+        </PressTabbarItem>
+        <PressTabbarItem icon="friends-o">
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item icon="setting-o">
+        </PressTabbarItem>
+        <PressTabbarItem icon="setting-o">
           {{ t('tag') }}
-        </press-tabbar-item>
-      </press-tabbar>
+        </PressTabbarItem>
+      </PressTabbar>
     </demo-block>
 
     <demo-block
       :title="t('matchByName')"
       :section-style="sectionStyle"
     >
-      <press-tabbar
+      <PressTabbar
         :active="activeName"
         :fixed="false"
         :safe-area-inset-bottom="false"
         @change="onChangeName"
       >
-        <press-tabbar-item
+        <PressTabbarItem
           icon="home-o"
           name="home"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="search"
           name="search"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="friends-o"
           name="friends"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="setting-o"
           name="setting"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-      </press-tabbar>
+        </PressTabbarItem>
+      </PressTabbar>
     </demo-block>
 
     <demo-block
       :title="t('badge')"
       :section-style="sectionStyle"
     >
-      <press-tabbar
+      <PressTabbar
         :active="active"
         :fixed="false"
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <press-tabbar-item icon="home-o">
+        <PressTabbarItem icon="home-o">
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="search"
           dot
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="friends-o"
           info="5"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item
+        </PressTabbarItem>
+        <PressTabbarItem
           icon="setting-o"
           info="20"
         >
           {{ t('tag') }}
-        </press-tabbar-item>
-      </press-tabbar>
+        </PressTabbarItem>
+      </PressTabbar>
     </demo-block>
 
     <demo-block
       :title="t('customIcon')"
       :section-style="sectionStyle"
     >
-      <press-tabbar
+      <PressTabbar
         :fixed="false"
         :active="active"
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <press-tabbar-item info="3">
+        <PressTabbarItem info="3">
           <template #icon>
             <img
               :src="icon.normal"
@@ -123,21 +123,21 @@
             >
           </template>
           {{ t('custom') }}
-        </press-tabbar-item>
-        <press-tabbar-item icon="search">
+        </PressTabbarItem>
+        <PressTabbarItem icon="search">
           {{ t('tag') }}
-        </press-tabbar-item>
-        <press-tabbar-item icon="setting-o">
+        </PressTabbarItem>
+        <PressTabbarItem icon="setting-o">
           {{ t('tag') }}
-        </press-tabbar-item>
-      </press-tabbar>
+        </PressTabbarItem>
+      </PressTabbar>
     </demo-block>
 
     <demo-block
       :title="t('customColor')"
       :section-style="sectionStyle"
     >
-      <press-tabbar
+      <PressTabbar
         :active="active"
         :fixed="false"
         active-color="#07c160"
@@ -145,19 +145,19 @@
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <press-tabbar-item icon="home-o">
+        <PressTabbarItem icon="home-o">
           {{ t('tag') }}A
-        </press-tabbar-item>
-        <press-tabbar-item icon="search">
+        </PressTabbarItem>
+        <PressTabbarItem icon="search">
           {{ t('tag') }}B
-        </press-tabbar-item>
-        <press-tabbar-item icon="friends-o">
+        </PressTabbarItem>
+        <PressTabbarItem icon="friends-o">
           {{ t('tag') }}C
-        </press-tabbar-item>
-        <press-tabbar-item icon="setting-o">
+        </PressTabbarItem>
+        <PressTabbarItem icon="setting-o">
           {{ t('tag') }}D
-        </press-tabbar-item>
-      </press-tabbar>
+        </PressTabbarItem>
+      </PressTabbar>
     </demo-block>
   </div>
 </template>

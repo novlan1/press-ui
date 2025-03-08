@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <!-- #ifdef APP-PLUS -->
-    <press-notice-bar
+    <PressNoticeBar
       mode="closeable"
       text="Sticky 组件暂不支持 App"
     />
@@ -11,18 +11,18 @@
       :title="t('basicUsage')"
       section-style="margin: 0;"
     >
-      <press-sticky>
+      <PressSticky>
         <div class="btn1">
           {{ t('basicUsage') }}
         </div>
-      </press-sticky>
+      </PressSticky>
     </demo-block>
 
     <demo-block
       :title="t('offsetTop')"
       section-style="margin: 0;"
     >
-      <press-sticky
+      <PressSticky
         :offset-top="50"
       >
         <div
@@ -30,7 +30,7 @@
         >
           {{ t('offsetTop') }}
         </div>
-      </press-sticky>
+      </PressSticky>
     </demo-block>
 
     <demo-block
@@ -42,22 +42,22 @@
         ref="container"
         style="height: 150px;background: #eee;"
       >
-        <press-sticky :container="container">
+        <PressSticky :container="container">
           <div class="btn3">
             {{ t('setContainer') }}
           </div>
-        </press-sticky>
+        </PressSticky>
       </div>
     </demo-block>
 
     <!-- #ifdef H5 -->
-    <press-button
+    <PressButton
       type="e-sport-primary"
       custom-style="position:relative;margin: 10px;padding: 0;"
       @click="onToggleShowHeader"
     >
       {{ showHeader ? t('hide') : t('show') }}
-    </press-button>
+    </PressButton>
     <!-- #endif -->
   </div>
 </template>

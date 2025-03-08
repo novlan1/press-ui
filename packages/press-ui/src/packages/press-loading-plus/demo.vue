@@ -2,10 +2,10 @@
   <div class="demo-wrap">
     <demo-block :title="t('type')">
       <div>
-        <press-loading-plus />
+        <PressLoadingPlus />
       </div>
       <div>
-        <press-loading-plus
+        <PressLoadingPlus
           type="spinner"
           :custom-style="customStyle"
         />
@@ -14,10 +14,10 @@
 
     <demo-block :title="t('color')">
       <div>
-        <press-loading-plus color="#1989fa" />
+        <PressLoadingPlus color="#1989fa" />
       </div>
       <div>
-        <press-loading-plus
+        <PressLoadingPlus
           type="spinner"
           color="#1989fa"
           :custom-style="customStyle"
@@ -27,10 +27,10 @@
 
     <demo-block :title="t('size')">
       <div>
-        <press-loading-plus size="15" />
+        <PressLoadingPlus size="15" />
       </div>
       <div>
-        <press-loading-plus
+        <PressLoadingPlus
           type="spinner"
           size="38"
           :custom-style="customStyle"
@@ -39,18 +39,18 @@
     </demo-block>
 
     <demo-block :title="t('text')">
-      <press-loading-plus size="24px">
+      <PressLoadingPlus size="24px">
         {{ t('loading') }}
-      </press-loading-plus>
+      </PressLoadingPlus>
     </demo-block>
 
     <demo-block :title="t('vertical')">
-      <press-loading-plus
+      <PressLoadingPlus
         size="24px"
         vertical
       >
         {{ t('loading') }}
-      </press-loading-plus>
+      </PressLoadingPlus>
     </demo-block>
   </div>
 </template>

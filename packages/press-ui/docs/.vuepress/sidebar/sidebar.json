@@ -131,6 +131,11 @@
           "path": "/components/press/press-search.md"
         },
         {
+          "title": "Signature",
+          "subTitle": "签名",
+          "path": "/components/press/press-signature.md"
+        },
+        {
           "title": "Slider",
           "subTitle": "滑块",
           "path": "/components/press/press-slider.md"
@@ -160,6 +165,11 @@
           "title": "ActionSheet",
           "subTitle": "动作面板",
           "path": "/components/press/press-action-sheet.md"
+        },
+        {
+          "title": "Barrage",
+          "subTitle": "弹幕",
+          "path": "/components/press/press-barrage.md"
         },
         {
           "title": "DialogPlus",
@@ -308,6 +318,11 @@
           "path": "/components/press/press-q-r-code.md"
         },
         {
+          "title": "RollingText",
+          "subTitle": "翻滚文本",
+          "path": "/components/press/press-rolling-text.md"
+        },
+        {
           "title": "Skeleton",
           "subTitle": "骨架屏",
           "path": "/components/press/press-skeleton.md"
@@ -331,6 +346,11 @@
           "title": "Tag",
           "subTitle": "标签",
           "path": "/components/press/press-tag.md"
+        },
+        {
+          "title": "TextEllipsis",
+          "subTitle": "文本省略",
+          "path": "/components/press/press-text-ellipsis.md"
         }
       ]
     },

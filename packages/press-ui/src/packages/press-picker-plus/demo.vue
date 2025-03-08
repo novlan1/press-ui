@@ -3,14 +3,14 @@
     class="demo-wrap"
   >
     <demo-block :title="t('basicUsage')">
-      <press-picker-plus
+      <PressPickerPlus
         :columns="columns"
         @change="onChange"
       />
     </demo-block>
 
     <demo-block :title="t('defaultIndex')">
-      <press-picker-plus
+      <PressPickerPlus
         :columns="columns"
         :default-index="2"
         @change="onChange"
@@ -18,7 +18,7 @@
     </demo-block>
 
     <demo-block :title="t('showToolbar')">
-      <press-picker-plus
+      <PressPickerPlus
         show-toolbar
         :title="t('title')"
         :columns="columns"
@@ -29,7 +29,7 @@
     </demo-block>
 
     <demo-block :title="t('multipleColumns')">
-      <press-picker-plus
+      <PressPickerPlus
         ref="picker"
         :columns="cColumns"
         @change="onChangePicker"
@@ -37,14 +37,14 @@
     </demo-block>
 
     <demo-block :title="t('disableOption')">
-      <press-picker-plus
+      <PressPickerPlus
         :columns="disabledColumns"
         @change="onChange"
       />
     </demo-block>
 
     <demo-block :title="t('loadingStatus')">
-      <press-picker-plus
+      <PressPickerPlus
         :columns="disabledColumns"
         loading
         @change="onChange"

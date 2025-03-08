@@ -21,7 +21,7 @@
           </div>
           <div class="press-step__circle-container">
             <template v-if="index !== active">
-              <press-icon-plus
+              <PressIconPlus
                 v-if="item.inactiveIcon || inactiveIcon"
                 :color="status(index, active) === 'inactive' ? inactiveColor: activeColor"
                 :name="item.inactiveIcon || inactiveIcon"
@@ -34,7 +34,7 @@
               />
             </template>
 
-            <press-icon-plus
+            <PressIconPlus
               v-else
               :name="item.activeIcon || activeIcon"
               :color="activeColor"

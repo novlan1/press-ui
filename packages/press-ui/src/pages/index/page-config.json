@@ -105,6 +105,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/signature/signature",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/slider/slider",
           "navigationStyle": ""
         },
@@ -127,6 +131,10 @@
       "list": [
         {
           "url": "/press/action-sheet/action-sheet",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/barrage/barrage",
           "navigationStyle": ""
         },
         {
@@ -247,6 +255,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/rolling-text/rolling-text",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/skeleton/skeleton",
           "navigationStyle": ""
         },
@@ -264,6 +276,10 @@
         },
         {
           "url": "/press/tag/tag",
+          "navigationStyle": ""
+        },
+        {
+          "url": "/press/text-ellipsis/text-ellipsis",
           "navigationStyle": ""
         }
       ]

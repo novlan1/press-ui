@@ -64,7 +64,7 @@
         />
       </template>
       <template v-else-if="loading">
-        <press-loading-plus
+        <PressLoadingPlus
           :custom-class="loadingClass"
           :size="loadingSize"
           :type="loadingType"
@@ -78,7 +78,7 @@
         </div>
       </template>
       <template v-else>
-        <press-icon-plus
+        <PressIconPlus
           v-if="icon"
           size="1.2em"
           :name="icon"

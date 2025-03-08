@@ -38,6 +38,12 @@ function copyReadme() {
   });
 
   fs.writeFileSync(PATH_MAP.TARGET_README, content, { encoding: 'utf-8' });
+
+  const changeLogContent = fs.readFileSync(PATH_MAP.SOURCE_CHANGELOG, {
+    encoding: 'utf-8',
+  });
+
+  fs.writeFileSync(PATH_MAP.TARGET_CHANGELOG, changeLogContent, { encoding: 'utf-8' });
 }
 
 

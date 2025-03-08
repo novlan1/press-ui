@@ -6,14 +6,14 @@
     />
     <!-- #endif -->
 
-    <press-card
+    <PressCard
       :is-shadow="false"
       is-full
     >
       <span class="uni-h6">
         仅保留 empty 图标，其他图标请使用 press-icon-plus。
       </span>
-    </press-card>
+    </PressCard>
     <demo-block title="图标">
       <div class="icon-content">
         <div
@@ -22,7 +22,7 @@
           class="icon-item"
           @click="switchActive(index,item)"
         >
-          <press-icon
+          <PressIcon
             :type="item.name"
             :color="activeIndex === index ? '#007aff' : '#5e6d82'"
             size="30"

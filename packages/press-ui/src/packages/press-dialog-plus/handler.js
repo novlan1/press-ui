@@ -13,25 +13,31 @@ import VueDialog from './press-dialog-plus.vue';
 let queue = [];
 
 const defaultOptions = {
+  selector: '#press-dialog',
   show: false,
   title: '',
-  width: null,
-  theme: 'default',
   message: '',
-  zIndex: 100,
-  overlay: true,
-  selector: '#press-dialog',
+
   className: '',
+  customStyle: '',
+
   asyncClose: false,
   beforeClose: null,
-  transition: 'scale',
-  customStyle: '',
+
+  theme: 'default',
   messageAlign: '',
+  width: null,
+  zIndex: 100,
+
+  overlay: true,
   overlayStyle: '',
-  confirmButtonText: t('confirm'),
-  cancelButtonText: t('cancel'),
+  transition: 'scale',
+
   showConfirmButton: true,
   showCancelButton: false,
+  confirmButtonText: t('confirm'),
+  cancelButtonText: t('cancel'),
+
   closeOnClickOverlay: false,
   confirmButtonOpenType: '',
 };
@@ -101,3 +107,11 @@ addFunctionForDialog({
   updateCurrentOptions,
 });
 export default Dialog;
+
+
+export const showDialog = Dialog.alert;
+export const showConfirmDialog = Dialog.confirm;
+export const closeDialog = Dialog.close;
+export const setDialogDefaultOptions = Dialog.setDefaultOptions;
+export const resetDialogDefaultOptions = Dialog.resetDefaultOptions;
+export const stopDialogLoading = Dialog.stopLoading;

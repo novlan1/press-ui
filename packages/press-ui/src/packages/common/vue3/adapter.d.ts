@@ -32,3 +32,7 @@ export function forceUpdate(instance: any): void;
 export function usePlugin(plugin: any, app?: any): void;
 export function setCustomElements(customElements: any, app?: any): void;
 export const vModelMixin: any;
+export function getVModelMixin(context: {
+  type?: StringConstructor;
+  defaultValue?: string | Function;
+}): any;

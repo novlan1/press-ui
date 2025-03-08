@@ -5,12 +5,12 @@
       :title="t('basicUsage')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         :active="active"
         @change="onChange"
         @input="onInput"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -18,18 +18,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('matchByName')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         :active="activeName"
       >
-        <press-tab
+        <PressTab
           v-for="(item, index) of tabsWithName"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -38,18 +38,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title6')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         sticky
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -57,18 +57,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title2')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         @scroll="onScroll"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs7"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -76,18 +76,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title3')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         @disabled="onClickDisabled"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabsDisabled"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -97,18 +97,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title4')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         type="card"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -116,18 +116,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title5')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         @click="onClick"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs2"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -135,18 +135,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title8')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         animated
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -154,18 +154,18 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('title9')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         swipeable
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -173,15 +173,15 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('slot')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         swipeable
         use-title-slot
       >
@@ -200,7 +200,7 @@
           <span class="title">Custom Title</span>
         </template>
 
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -208,11 +208,11 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
 
       <!-- #ifdef VUE2 || H5 -->
-      <press-tabs
+      <PressTabs
         swipeable
         use-title-slot
       >
@@ -241,7 +241,7 @@
         <!-- #endif -->
 
 
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -249,8 +249,8 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
       <!-- #endif -->
     </demo-block>
 
@@ -258,10 +258,10 @@
       :title="t('lazyTab')"
       header-style="background: #f7f8fa;"
     >
-      <press-tabs
+      <PressTabs
         swipeable
       >
-        <press-tab
+        <PressTab
           v-if="showLazyTab"
           key="tabA"
           :sort-index="0"
@@ -270,9 +270,9 @@
           <div class="content">
             {{ t('content') }} A
           </div>
-        </press-tab>
+        </PressTab>
 
-        <press-tab
+        <PressTab
           key="tabB"
           :sort-index="1"
           :title="`${t('tab')} B`"
@@ -280,9 +280,9 @@
           <div class="content">
             {{ t('content') }} B
           </div>
-        </press-tab>
+        </PressTab>
 
-        <press-tab
+        <PressTab
           key="tabC"
           :title="`${t('tab')} C`"
           :sort-index="2"
@@ -290,8 +290,8 @@
           <div class="content">
             {{ t('content') }} C
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
@@ -299,13 +299,13 @@
       header-style="background: #f7f8fa;"
       section-style="background: #192841;color: #fff;margin: 0;padding: 10px 0;"
     >
-      <press-tabs
+      <PressTabs
         :active="active"
         mode="hor"
         @change="onChange"
         @input="onInput"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           dot
@@ -314,20 +314,20 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       title="E-SPORT"
     >
-      <press-tabs
+      <PressTabs
         :active="active"
         mode="e-sport"
         @change="onChange"
         @input="onInput"
       >
-        <press-tab
+        <PressTab
           v-for="(item,index) of tabs4"
           :key="index"
           :title="`${t('tab')} ${index+1}`"
@@ -335,8 +335,8 @@
           <div class="content">
             {{ t('content') }} {{ index+1 }}
           </div>
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
   </div>
 </template>

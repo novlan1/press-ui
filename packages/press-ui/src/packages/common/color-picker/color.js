@@ -14,7 +14,7 @@ const hsv2hsla = states => tinyColor(states).toHsl();
 /**
  * 将渐变对象转换成字符串
  * @param object
- * @returns
+ * @returns 颜色字符串
  */
 export const gradientColors2string = (object) => {
   const { points, degree } = object;
@@ -28,7 +28,7 @@ export const gradientColors2string = (object) => {
 /**
  * 去除颜色的透明度
  * @param color
- * @returns
+ * @returns 颜色字符串
  */
 export const getColorWithoutAlpha = color => tinyColor(color).setAlpha(1)
   .toHexString();
@@ -40,7 +40,7 @@ export const genId = () => (1 + Math.random() * 4294967295).toString(16);
  * 生成一个渐变颜色
  * @param left
  * @param color
- * @returns
+ * @returns 颜色字符串
  */
 export const genGradientPoint = (left, color) => ({
   id: genId(),
@@ -335,7 +335,7 @@ export class Color {
   /**
    * 判断输入色是否与当前色相同
    * @param color
-   * @returns
+   * @returns 布尔值
    */
   equals(color) {
     return tinyColor.equals(this.rgba, color);
@@ -344,7 +344,7 @@ export class Color {
   /**
    * 校验输入色是否是一个有效颜色
    * @param color
-   * @returns
+   * @returns 布尔值
    */
   static isValid(color) {
     if (parseGradientString(color)) {
@@ -381,7 +381,7 @@ export class Color {
    * 对象转颜色字符串
    * @param object
    * @param format
-   * @returns
+   * @returns 颜色字符串
    */
   static object2color(object, format) {
     if (format === 'CMYK') {
@@ -399,7 +399,7 @@ export class Color {
   /**
    * 是否是渐变色
    * @param input
-   * @returns
+   * @returns 布尔值
    */
   static isGradientColor = input => !!isGradientColor(input);
 
@@ -407,7 +407,7 @@ export class Color {
    * 比较两个颜色是否相同
    * @param color1
    * @param color2
-   * @returns
+   * @returns 布尔值
    */
   static compare = (color1, color2) => {
     const isGradientColor1 = Color.isGradientColor(color1);
@@ -443,7 +443,7 @@ const COLOR_OBJECT_OUTPUT_KEYS = [
 /**
  * 获取对外输出的color对象
  * @param color
- * @returns
+ * @returns ColorObject
  */
 export const getColorObject = (color) => {
   if (!color) {

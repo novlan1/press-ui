@@ -30,6 +30,7 @@
           :class="fieldBaseClass"
           :custom-class="fieldCustomClass"
           :value="innerValue"
+          :model-value="innerValue"
           :disabled="disabled"
           :readonly="readonly"
           :clearable="clearable"

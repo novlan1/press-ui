@@ -13,3 +13,7 @@ Notify = NotifyWeb;
 
 
 export default Notify;
+export const showNotify = Notify;
+export const closeNotify = Notify.clear;
+export const setNotifyDefaultOptions = Notify.setDefaultOptions;
+export const resetNotifyDefaultOptions = Notify.resetDefaultOptions;

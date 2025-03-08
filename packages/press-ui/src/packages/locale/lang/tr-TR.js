@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Son',
     start: 'Başlat',

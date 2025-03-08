@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-cell
+      <PressCell
         :title="t('previewImage')"
         is-link
         @click="onShowImagePreview"
@@ -9,17 +9,17 @@
     </demo-block>
 
     <demo-block :title="t('customType')">
-      <press-cell
+      <PressCell
         :title="t('startPosition')"
         is-link
         @click="onShowCustomType('startPosition')"
       />
-      <press-cell
+      <PressCell
         :title="t('showCloseIcon')"
         is-link
         @click="onShowCustomType('showCloseIcon')"
       />
-      <press-cell
+      <PressCell
         :title="t('watchCloseEvent')"
         is-link
         @click="onShowCustomType('watchCloseEvent')"
@@ -27,7 +27,7 @@
     </demo-block>
 
     <demo-block :title="t('asyncClose')">
-      <press-cell
+      <PressCell
         :title="t('asyncClose')"
         is-link
         @click="onShowCustomType('asyncClose')"
@@ -35,7 +35,7 @@
     </demo-block>
 
     <demo-block :title="t('componentUse')">
-      <press-cell
+      <PressCell
         :title="t('componentUse')"
         is-link
         @click="onShowComponent"
@@ -61,7 +61,7 @@
 <script>
 import ImagePreviewComp from 'press-ui/press-image-preview/press-image-preview.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import { imagePreview } from 'press-ui/press-image-preview/index';
+import { showImagePreview } from 'press-ui/press-image-preview/index';
 
 
 const FUNCTIONAL_ID_MAP = {
@@ -116,7 +116,7 @@ export default {
   },
   methods: {
     onShowImagePreview() {
-      imagePreview({
+      showImagePreview({
         context: this,
         selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
         images: this.images,
@@ -140,7 +140,7 @@ export default {
         asyncClose = true;
       }
 
-      imagePreview({
+      showImagePreview({
         context: this,
         selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
         images: this.images,

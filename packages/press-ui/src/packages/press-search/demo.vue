@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-search
+      <PressSearch
         :value="value"
         :placeholder="t('placeholder')"
         @change="onChange"
@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="t('listenToEvents')">
-      <press-search
+      <PressSearch
         :value="value"
         :placeholder="t('placeholder')"
         show-action
@@ -20,7 +20,7 @@
     </demo-block>
 
     <demo-block :title="t('inputAlign')">
-      <press-search
+      <PressSearch
         :value="value"
         :placeholder="t('placeholder')"
         input-align="center"
@@ -31,7 +31,7 @@
     </demo-block>
 
     <demo-block :title="t('disabled')">
-      <press-search
+      <PressSearch
         :value="value"
         disabled
         :placeholder="t('placeholder')"
@@ -40,7 +40,7 @@
     </demo-block>
 
     <demo-block :title="t('background')">
-      <press-search
+      <PressSearch
         :value="value"
         shape="round"
         background="#4fc08d"
@@ -50,7 +50,7 @@
     </demo-block>
 
     <demo-block :title="t('customButton')">
-      <press-search
+      <PressSearch
         :value="value"
         :label="t('label')"
         use-action-slot
@@ -64,7 +64,7 @@
             {{ t('search') }}
           </div>
         </template>
-      </press-search>
+      </PressSearch>
     </demo-block>
   </div>
 </template>

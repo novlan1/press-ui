@@ -1,5 +1,5 @@
 <template>
-  <press-popup-plus
+  <PressPopupPlus
     :show="show"
     wrap-class="press-cropper"
     custom-class="press-cropper__popup"
@@ -90,11 +90,11 @@
         确认
       </PressButton>
     </div>
-  </press-popup-plus>
+  </PressPopupPlus>
 </template>
 <script>
 import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
-import ToolBar from '../press-picker-plus/toolbar.vue';
+import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
 import PressButton from '../press-button/press-button.vue';
 
 // #ifdef H5

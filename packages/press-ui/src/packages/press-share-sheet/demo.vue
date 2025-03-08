@@ -5,7 +5,7 @@
       :key="index"
       :title="item.title"
     >
-      <press-cell
+      <PressCell
         v-for="info of item.list"
         :key="info.title"
         :title="info.title"
@@ -14,7 +14,7 @@
       />
     </demo-block>
 
-    <press-share-sheet
+    <PressShareSheet
       :show="showShare"
       :title="t('title')"
       :description="description"

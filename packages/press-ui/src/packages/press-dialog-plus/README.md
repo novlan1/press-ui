@@ -36,16 +36,16 @@ export default {
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.alert({
+showDialog({
   title: '标题',
   message: '弹窗内容',
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: '弹窗内容',
 }).then(() => {
   // on close
@@ -61,9 +61,9 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showConfirmDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.confirm({
+showConfirmDialog({
   title: '标题',
   message: '弹窗内容',
 })
@@ -84,9 +84,9 @@ Dialog.confirm({
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showDialog } from 'press-ui/press-dialog-plus/handler';
 
-Dialog.alert({
+showDialog({
   title: '标题',
   message: '弹窗内容',
   theme: 'round-button',
@@ -94,7 +94,7 @@ Dialog.alert({
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: '弹窗内容',
   theme: 'round-button',
 }).then(() => {
@@ -111,7 +111,7 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'press-ui/press-dialog-plus/handler';
+import { showConfirmDialog } from 'press-ui/press-dialog-plus/handler';
 
 const beforeClose = (action) => new Promise((resolve) => {
   setTimeout(() => {
@@ -124,7 +124,7 @@ const beforeClose = (action) => new Promise((resolve) => {
   }, 1000);
 });
 
-Dialog.confirm({
+showConfirmDialog({
   title: '标题',
   message: '弹窗内容'
   beforeClose
@@ -172,15 +172,14 @@ export default {
 
 ### 方法
 
-| 方法名                     | 参数      | 返回值    | 介绍                             |
-| -------------------------- | --------- | --------- | -------------------------------- |
-| Dialog                     | `options` | `Promise` | 展示弹窗                         |
-| Dialog.alert               | `options` | `Promise` | 展示消息提示弹窗                 |
-| Dialog.confirm             | `options` | `Promise` | 展示消息确认弹窗                 |
-| Dialog.setDefaultOptions   | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
-| Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
-| Dialog.close               | -         | `void`    | 关闭弹窗                         |
-| Dialog.stopLoading         | -         | `void`    | 停止按钮的加载状态               |
+| 方法名                                                   | 参数      | 返回值    | 介绍                             |
+| -------------------------------------------------------- | --------- | --------- | -------------------------------- |
+| showDialog，同 Dialog.alert, Dialog                      | `options` | `Promise` | 展示消息提示弹窗                 |
+| showConfirmDialog，同 Dialog.confirm                     | `options` | `Promise` | 展示消息确认弹窗                 |
+| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
+| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
+| closeDialog，同 Dialog.close                             | -         | `void`    | 关闭弹窗                         |
+| stopDialogLoading，同 Dialog.stopLoading                 | -         | `void`    | 停止按钮的加载状态               |
 
 ### Options
 
@@ -204,7 +203,7 @@ export default {
 | overlay               | 是否展示遮罩层                                                                                                                | _boolean_                                   | `true`         |
 | overlayStyle          | 自定义遮罩层样式                                                                                                              | _object_                                    | -              |
 | closeOnClickOverlay   | 点击遮罩层时是否关闭弹窗                                                                                                      | _boolean_                                   | `false`        |
-| asyncClose            | 已废弃，将在 2.0.0 移除，请使用 `beforeClose` 属性代替                                                                        | _boolean_                                   | `false`        |
+| asyncClose            | 已废弃，请使用 `beforeClose` 属性代替                                                                                         | _boolean_                                   | `false`        |
 | beforeClose           | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise                                                                   | _(action) => boolean \| Promise\<boolean\>_ | -              |
 | context               | 选择器的选择范围，可以传入自定义组件的 this 作为上下文                                                                        | _object_                                    | 当前页面       |
 | transition            | 动画名称，可选值为`fade` `none`                                                                                               | _string_                                    | `scale`        |
@@ -251,7 +250,7 @@ export default {
 | close-on-click-overlay   | 点击遮罩层时是否关闭弹窗                                                                                                      | _boolean_                                   | `false`   |
 | use-slot                 | 是否使用自定义内容的插槽                                                                                                      | _boolean_                                   | `false`   |
 | use-title-slot           | 是否使用自定义标题的插槽                                                                                                      | _boolean_                                   | `false`   |
-| async-close              | 已废弃，将在 2.0.0 移除，请使用 `beforeClose` 属性代替                                                                        | _boolean_                                   | `false`   |
+| async-close              | 已废弃，请使用 `beforeClose` 属性代替                                                                                         | _boolean_                                   | `false`   |
 | before-close             | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise                                                                   | _(action) => boolean \| Promise\<boolean\>_ | -         |
 | transition               | 动画名称，可选值为`fade`                                                                                                      | _string_                                    | `scale`   |
 | confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) | _string_                                    | -         |

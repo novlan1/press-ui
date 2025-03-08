@@ -10,14 +10,14 @@
         :key="index"
         class="demo-part"
       >
-        <press-tag
+        <PressTag
           :type="item.type"
           :plain="demo.plain || false"
           :round="demo.round || false"
           :mark="demo.mark || false"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
     </demo-block>
 
@@ -25,30 +25,30 @@
       :title="t('customColor')"
     >
       <div class="demo-part">
-        <press-tag color="#f2826a">
+        <PressTag color="#f2826a">
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag color="#7232dd">
+        <PressTag color="#7232dd">
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag
+        <PressTag
           color="#7232dd"
           plain
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag
+        <PressTag
           color="#ffe1e1"
           text-color="#ad0000"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
     </demo-block>
 
@@ -56,25 +56,25 @@
       :title="t('customSize')"
     >
       <div class="demo-part">
-        <press-tag type="danger">
+        <PressTag type="danger">
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag
+        <PressTag
           type="danger"
           size="medium"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag
+        <PressTag
           type="danger"
           size="large"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
     </demo-block>
 
@@ -85,23 +85,23 @@
         v-if="show.primary"
         class="demo-part"
       >
-        <press-tag
+        <PressTag
           type="primary"
           closeable
           @close="onClose('primary')"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
       <div class="demo-part">
-        <press-tag
+        <PressTag
           v-if="show.success"
           type="success"
           closeable
           @close="onClose('success')"
         >
           {{ t('tag') }}
-        </press-tag>
+        </PressTag>
       </div>
     </demo-block>
   </div>

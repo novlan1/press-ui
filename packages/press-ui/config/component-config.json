@@ -106,6 +106,10 @@
         "title": "搜索"
       },
       {
+        "name": "Signature",
+        "title": "签名"
+      },
+      {
         "name": "Slider",
         "title": "滑块"
       },
@@ -130,6 +134,10 @@
       {
         "name": "ActionSheet",
         "title": "动作面板"
+      },
+      {
+        "name": "Barrage",
+        "title": "弹幕"
       },
       {
         "name": "DialogPlus",
@@ -250,6 +258,10 @@
         "title": "二维码"
       },
       {
+        "name": "RollingText",
+        "title": "翻滚文本"
+      },
+      {
         "name": "Skeleton",
         "title": "骨架屏"
       },
@@ -268,6 +280,10 @@
       {
         "name": "Tag",
         "title": "标签"
+      },
+      {
+        "name": "TextEllipsis",
+        "title": "文本省略"
       }
     ]
   },

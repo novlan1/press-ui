@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "2.2.23",
+  "version": "2.2.36",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "private": true,
   "repository": {
@@ -22,7 +22,7 @@
     "dev": "concurrently \"npm run demo:watch\" \"npm run serve\"",
     "dev:mp": "concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
     "serve": "npm run dev:h5",
-    "build": "npm run build:h5",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider npm run build:h5",
     "env": "node env",
     "build:mp": "npm run build:mp-weixin",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
@@ -69,8 +69,8 @@
     "demo:watch": "node script/docs-demo/watch-demo",
     "docs:watch": "node script/docs-demo/watch-docs",
     "docs:serve": "vuepress dev docs",
-    "docs:dev": "concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
-    "docs:build": "vuepress build docs",
+    "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
     "lint": "eslint --ext .js,.ts,.vue .",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
@@ -90,7 +90,7 @@
     "test": "jest --coverage --verbose -u",
     "prepare": "npm run init",
     "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
-    "docs:build:igame": "npm run init && cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
+    "docs:build:igame": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
     "build:igame": "node script/deploy/build-igame",
     "build:js": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js",
     "extract:props": "node script/utils/extract-props",
@@ -127,7 +127,7 @@
     "t-comm": "^1.3.106",
     "@vue/shared": "^3.0.0",
     "aegis-mp-sdk": "^1.37.1",
-    "core-js": "^3.6.5",
+    "core-js": "3.40.0",
     "flyio": "^0.6.2",
     "lint-staged": "^13.0.4",
     "qrcode": "^1.5.3",
@@ -288,6 +288,6 @@
     }
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=14.0.0"
   }
 }

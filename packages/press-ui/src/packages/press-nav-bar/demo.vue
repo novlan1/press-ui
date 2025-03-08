@@ -5,7 +5,7 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-nav-bar
+      <PressNavBar
         :title="t('title')"
         :left-text="t('back')"
         :right-text="t('button')"
@@ -21,18 +21,18 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-nav-bar
+      <PressNavBar
         :title="t('title')"
         :left-text="t('back')"
         left-arrow
         :safe-area-inset-top="false"
       >
         <template #right>
-          <press-icon-plus
+          <PressIconPlus
             name="search"
           />
         </template>
-      </press-nav-bar>
+      </PressNavBar>
     </demo-block>
   </div>
 </template>

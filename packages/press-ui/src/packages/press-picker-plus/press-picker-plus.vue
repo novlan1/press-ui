@@ -18,7 +18,7 @@
         v-if="loading"
         class="press-picker__loading"
       >
-        <loading color="#1989fa" />
+        <Loading color="#1989fa" />
       </div>
 
       <div
@@ -26,7 +26,7 @@
         :style="columnStyle"
         @touchmove.stop.prevent="noop"
       >
-        <picker-column
+        <PickerColumn
           v-for="(item,index) in computedColumns"
           ref="pickerColumn"
           :key="index"
@@ -63,7 +63,7 @@
 <script>
 import PickerColumn from '../press-picker-column/press-picker-column.vue';
 import Loading from '../press-loading-plus/press-loading-plus.vue';
-import ToolBar from './toolbar.vue';
+import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { toProvideThis } from '../common/vue3/adapter';

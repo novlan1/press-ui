@@ -13,6 +13,7 @@ export default {
   confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'End',
     start: 'Start',

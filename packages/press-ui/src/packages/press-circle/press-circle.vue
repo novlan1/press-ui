@@ -257,6 +257,7 @@ export default {
         if (formatValue !== 0) {
           this.renderHoverCircle(context, formatValue);
         }
+
         context.draw();
       });
     },

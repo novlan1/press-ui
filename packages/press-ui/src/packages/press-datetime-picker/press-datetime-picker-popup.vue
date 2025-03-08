@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import PressPopup from '../press-popup/press-popup';
+import PressPopup from '../press-popup/press-popup.vue';
 import PressDatetimePicker from './press-datetime-picker.vue';
 
 import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';

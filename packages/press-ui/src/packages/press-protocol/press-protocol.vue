@@ -83,56 +83,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../common/style/smoba/layout.scss";
-@import "../common/style/smoba/mixin.scss";
-
-.press-protocol {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
-  background: url("https://image-1251917893.file.myqcloud.com/Esports/new/user/fullpage-light-bg.png")
-    no-repeat;
-  background-size: 100%;
-
-  /* #ifdef H5 */
-  * {
-    user-select: auto;
-  }
-  /* #endif */
-
-  &__layout {
-    height: 100%;
-    overflow: auto;
-  }
-
-  &__item {
-    margin: 0 0.32rem 0.4rem;
-
-    &__title {
-      font-size: $font-l;
-      color: $color-black;
-      font-weight: bold;
-      margin-bottom: 0.24rem;
-    }
-  }
-
-  &__info {
-    font-size: $font-xm;
-    color: $color-gray-5;
-    margin-bottom: 0.24rem;
-    line-height: 0.44rem;
-  }
-
-  &__text {
-    &--light {
-      color: $color-primary;
-      display: inline;
-    }
-
-    &--underline {
-      text-decoration: underline;
-    }
-  }
-}
+<style lang="scss" scoped src="./css/index.scss">
 </style>

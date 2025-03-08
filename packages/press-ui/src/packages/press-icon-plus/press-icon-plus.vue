@@ -4,7 +4,7 @@
     :style="rootStyle"
     @click="onClick"
   >
-    <press-info
+    <PressInfo
       v-if="info !== null || dot"
       :dot="dot"
       :info="info"
@@ -93,4 +93,3 @@ export default {
 </script>
 
 <style scoped lang="scss" src="./css/index.scss"></style>
-<style scoped lang="scss" src="./css/icon.scss"></style>

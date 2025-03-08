@@ -1,57 +1,57 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-divider />
+      <PressDivider />
     </demo-block>
 
     <demo-block :title="t('hairline')">
-      <press-divider hairline />
+      <PressDivider hairline />
     </demo-block>
 
     <demo-block :title="t('dashed')">
-      <press-divider dashed />
+      <PressDivider dashed />
     </demo-block>
 
     <demo-block :title="t('contentPosition')">
-      <press-divider content-position="center">
+      <PressDivider content-position="center">
         {{ t('text') }}
-      </press-divider>
-      <press-divider content-position="left">
+      </PressDivider>
+      <PressDivider content-position="left">
         {{ t('text') }}
-      </press-divider>
-      <press-divider content-position="right">
+      </PressDivider>
+      <PressDivider content-position="right">
         {{ t('text') }}
-      </press-divider>
+      </PressDivider>
     </demo-block>
 
     <demo-block :title="t('customProps')">
-      <press-divider
+      <PressDivider
         content-position="center"
         text-color="#1989fa"
       >
         {{ t('textColor') }}
-      </press-divider>
-      <press-divider
+      </PressDivider>
+      <PressDivider
         content-position="center"
         border-color="#1989fa"
       >
         {{ t('borderColor') }}
-      </press-divider>
-      <press-divider
+      </PressDivider>
+      <PressDivider
         content-position="center"
         font-size="18"
       >
         {{ t('textSize') }}
-      </press-divider>
+      </PressDivider>
     </demo-block>
 
     <demo-block :title="t('customStyle')">
-      <press-divider
+      <PressDivider
         content-position="center"
         custom-style="color: #1989fa; border-color: #1989fa; font-size: 18px;"
       >
         {{ t('text') }}
-      </press-divider>
+      </PressDivider>
     </demo-block>
   </div>
 </template>

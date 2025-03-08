@@ -9,7 +9,7 @@
       @click="onClick"
     >
       <div class="press-tabbar-item__icon">
-        <press-icon-plus
+        <PressIconPlus
           v-if="icon"
           :name="icon"
           :class-prefix="iconPrefix"
@@ -25,7 +25,7 @@
             name="icon"
           />
         </template>
-        <press-info
+        <PressInfo
           :dot="dot"
           :info="info"
           custom-class="press-tabbar-item__info"

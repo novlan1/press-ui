@@ -28,12 +28,12 @@ export default {
 ```
 
 ```ts
-import PressDialog from 'press-ui/press-dialog';
+import { showDialog } from 'press-ui/press-dialog';
 
 export default {
   methods: {
     showDialog() {
-      PressDialog.show({
+      showDialog({
         title: '提示',
         content: '仅限队长报名，发给队长来报名吧！',
         confirmText: '确认',
@@ -52,7 +52,7 @@ export default {
 export default {
   methods: {
     showDialog() {
-      PressDialog.show({
+      showDialog({
         title: '提示',
         content: '仅限队长报名，发给队长来报名吧！',
         confirmText: '确认',
@@ -74,7 +74,7 @@ export default {
 export default {
   methods: {
     showDialog() {
-      PressDialog.show({
+      showDialog({
         title: '提示',
         htmlContent = '<div>自定义<span style="color: red;">内容</span></div>',
         confirmText: '确认',
@@ -97,7 +97,7 @@ export default {
 export default {
   methods: {
     showDialog() {
-      PressDialog.show({
+      showDialog({
         title: '提示',
         content: '',
         confirmText: '确认',
@@ -123,12 +123,12 @@ export default {
 
 ### 组件调用
 
-press-dialog支持组件调用，可以嵌入额外内容。
+`press-dialog` 支持组件调用，可以嵌入额外内容。
 
 多例模式可以用组件调用方式，以及动态改变按钮文案，比如实现倒计时，也可以用组件模式。
 
 ```html
-<PressDialogComp
+<PressDialog
   title="标题"
   :show="show"
   content="Some fake news"
@@ -153,11 +153,11 @@ export default {
 
 ### 全局设置
 
-可以通过 `setDefaultOptions` 进行全局默认选项的配置，比如设置通用的 `selector`。
+可以通过 `setDialogDefaultOptions` 进行全局默认选项的配置，比如设置通用的 `selector`。
 
 ```ts
 // #ifdef MP
-PressDialog.setDefaultOptions({
+setDialogDefaultOptions({
   selector: (context) => {
     if (!context) return;
 
@@ -177,13 +177,12 @@ PressDialog.setDefaultOptions({
 
 ### 方法
 
-| 方法名                     | 参数      | 返回值    | 介绍                             |
-| -------------------------- | --------- | --------- | -------------------------------- |
-| Dialog                     | `options` | `Promise` | 展示弹窗                         |
-| Dialog.show                | `options` | `Promise` | 展示消息确认弹窗                 |
-| Dialog.setDefaultOptions   | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
-| Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
-| Dialog.clear               | -         | `void`    | 关闭弹窗                         |
+| 方法名                                                   | 参数      | 返回值    | 介绍                             |
+| -------------------------------------------------------- | --------- | --------- | -------------------------------- |
+| Dialog                                                   | `options` | `Promise` | 展示弹窗                         |
+| showDialog，同 Dialog.show                               | `options` | `Promise` | 展示消息确认弹窗                 |
+| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
+| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
 
 
 ### Props

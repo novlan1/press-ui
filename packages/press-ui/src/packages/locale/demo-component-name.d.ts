@@ -1,1 +1,1 @@
-export function getComponentNameFromUrl(url: string): string;
+export function getComponentNameFromUrl(url: string, route?: string): string;

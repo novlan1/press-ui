@@ -1,5 +1,5 @@
 <template>
-  <press-popup
+  <PressPopup
     round
     class="press-share-sheet"
     :show="show"
@@ -36,7 +36,7 @@
     </div>
 
     <template v-if="computed.isMulti(options)">
-      <options
+      <Options
         v-for="(item,index) in (options)"
         :key="index"
         :show-border="index !== 0"
@@ -45,7 +45,7 @@
       />
     </template>
 
-    <options
+    <Options
       v-else
       :options="options"
       @select="onSelect"
@@ -58,11 +58,11 @@
     >
       {{ cancelText }}
     </button>
-  </press-popup>
+  </PressPopup>
 </template>
 <script>
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import Options from './options.vue';
+import Options from '../press-share-options/press-share-options.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import computed from './computed';
 

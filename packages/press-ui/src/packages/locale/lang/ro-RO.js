@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'Ești sigur ca vrei sa stergi?',
   telInvalid: 'Număr de telefon invalid',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Sfârșit',
     start: 'Început',

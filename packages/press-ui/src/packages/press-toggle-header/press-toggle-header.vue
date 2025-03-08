@@ -1,17 +1,17 @@
 <template>
-  <press-cell
+  <PressCell
     title="显示头部"
     center
     :border="false"
   >
     <template #right-icon>
-      <press-switch
+      <PressSwitch
         custom-class="press-switch--e-sport"
         :checked="showHeader"
         @change="onToggleShowHeader"
       />
     </template>
-  </press-cell>
+  </PressCell>
 </template>
 <script>
 import PressSwitch from '../press-switch/press-switch.vue';

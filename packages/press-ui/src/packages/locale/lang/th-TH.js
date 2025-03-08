@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'คุณแน่ใจว่าต้องการลบ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'จบ',
     start: 'เริ่ม',

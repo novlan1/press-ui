@@ -11,9 +11,9 @@ A message prompt is displayed at the top of the page, and two methods of functio
 ### Basic usage
 
 ```js
-import Notify from 'press-ui/press-notify';
+import { showNotify } from 'press-ui/press-notify';
 
-Notify('notification content');
+showNotify('notification content');
 ```
 
 ```html
@@ -27,16 +27,16 @@ Support `primary`, `success`, `warning`, `danger` four notification types, the d
 
 ```js
 // main notification
-Notify({ type: 'primary', message: 'notification content' });
+showNotify({ type: 'primary', message: 'notification content' });
 
 // success notification
-Notify({ type: 'success', message: 'Notification content' });
+showNotify({ type: 'success', message: 'Notification content' });
 
 // hazard notification
-Notify({ type: 'danger', message: 'notification content' });
+showNotify({ type: 'danger', message: 'notification content' });
 
 // warning notification
-Notify({ type: 'warning', message: 'notification content' });
+showNotify({ type: 'warning', message: 'notification content' });
 ```
 
 ### Custom Notifications
@@ -44,13 +44,13 @@ Notify({ type: 'warning', message: 'notification content' });
 Customize the color and display duration of message notifications.
 
 ```js
-Notify({
+showNotify({
    message: 'custom color',
    color: '#ad0000',
    background: '#ffe1e1',
 });
 
-Notify({
+showNotify({
    message: 'custom duration',
    duration: 1000,
 });
@@ -59,7 +59,7 @@ Notify({
 ### Custom selectors
 
 ```js
-Notify({
+showNotify({
    message: 'Custom node selector',
    duration: 1000,
    selector: '#custom-selector',
@@ -75,17 +75,19 @@ Notify({
 
 ### method
 
-| method name  | description        | parameters           | return value    |
-| ------------ | ------------------ | -------------------- | --------------- |
-| Notify       | Display prompt     | `options \| message` | notify instance |
-| Notify.clear | close notification | `options`            | `void`          |
+| method name                                           | description        | parameters           | return value                                               |
+| ----------------------------------------------------- | ------------------ | -------------------- | ---------------------------------------------------------- |
+| showNotify, Notify                                    | Display prompt     | `options \| message` | notify instance                                            |
+| closeNotify, Notify.clear                             | close notification | `options`            | `void`                                                     |
+| setNotifyDefaultOptions, Notify.setDefaultOptions     | `options`          | `void`               | Modify the default configuration, effective for all Notify |
+| resetNotifyDefaultOptions, Notify.resetDefaultOptions | -                  | `void`               | Reset the default configuration, effective for all Notify  |
 
 ### Options
 
 | Parameter        | Description                                                                                          | Type       | Default          |
 | ---------------- | ---------------------------------------------------------------------------------------------------- | ---------- | ---------------- |
-| type `v1.0.0`    | type, optional values are `primary` `success` `warning`                                              | _string_   | `danger`         |
-| message `v1.0.0` | display copy, support newline via `\n`                                                               | _string_   | `''`             |
+| type             | type, optional values are `primary` `success` `warning`                                              | _string_   | `danger`         |
+| message          | display copy, support newline via `\n`                                                               | _string_   | `''`             |
 | duration         | display duration (ms), when the value is 0, the notify will not disappear                            | _number_   | `3000`           |
 | selector         | custom node selector                                                                                 | _string_   | `press-notify`   |
 | color            | font color                                                                                           | _string_   | `#fff`           |

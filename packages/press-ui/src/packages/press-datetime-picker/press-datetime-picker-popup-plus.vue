@@ -25,7 +25,7 @@
   </PressPopupPlus>
 </template>
 <script>
-import PressPopupPlus from '../press-popup-plus/press-popup-plus';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 import PressDatetimePicker from './press-datetime-picker.vue';
 import { defaultFormatter } from './helper';
 

@@ -1,0 +1,42 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig,.stylelint*,.gitignore,.npmrc.versionrc*"
+  },
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "always",
+  },
+  "[scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "always"
+    }
+  },
+  "stylelint.configFile": ".stylelintrc.js",
+  "stylelint.customSyntax": "postcss-scss",
+  "cSpell.words": [
+    "backtop",
+    "cascader",
+    "codesandbox",
+    "miniprogram",
+    "nuxt",
+    "popconfirm",
+    "popperjs",
+    "precaching",
+    "tdesign",
+    "tdoc",
+    "tnode",
+    "wechat",
+    "weixin",
+    "toutiao",
+    "quickapp",
+  ]
+}

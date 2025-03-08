@@ -4,7 +4,7 @@
     :class="true ? utils.bem2('dropdown-item', direction) : ''"
     :style="wrapperStyle"
   >
-    <press-popup
+    <PressPopup
       :show="showPopup"
       :custom-style="'position: absolute;'+(popupStyle)"
       overlay-style="position: absolute;"
@@ -19,7 +19,7 @@
       @after-enter="onOpened"
       @after-leave="onClosed"
     >
-      <press-cell
+      <PressCell
         v-for="(item, index) in (options)"
         :key="index"
         :class="[getCellClass(item)]"
@@ -37,17 +37,17 @@
           </div>
         </template>
 
-        <press-icon-plus
+        <PressIconPlus
           v-if="item.value === innerValue"
           name="success"
           class="press-dropdown-item__icon"
           :custom-class="iconCustomClass"
           :color="activeColor"
         />
-      </press-cell>
+      </PressCell>
 
       <slot />
-    </press-popup>
+    </PressPopup>
   </div>
 </template>
 <script>

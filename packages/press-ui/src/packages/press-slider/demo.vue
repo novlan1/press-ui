@@ -92,12 +92,12 @@
       :section-style="sectionStyle"
     >
       <div style="height: 150px;">
-        <press-slider
+        <PressSlider
           value="50"
           vertical
           @change="onChange"
         />
-        <press-slider
+        <PressSlider
           :value="valueMap.range"
           range
           vertical

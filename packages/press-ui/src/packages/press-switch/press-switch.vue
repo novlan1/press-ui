@@ -8,7 +8,7 @@
       class="press-switch__node "
       :class="nodeClass"
     >
-      <press-loading
+      <PressLoading
         v-if="loading"
         :color="loadingColor"
         custom-class="press-switch__loading"

@@ -1,10 +1,10 @@
 <template>
   <div class="demo-wrap demo-pull-refresh">
-    <press-tabs
+    <PressTabs
       :active="active"
       @change="onChangeTab"
     >
-      <press-tab :title="t('basicUsage')">
+      <PressTab :title="t('basicUsage')">
         <PressPullRefresh
           v-model="isLoading"
           @refresh="onRefresh"
@@ -14,8 +14,8 @@
             {{ tips }}
           </p>
         </PressPullRefresh>
-      </press-tab>
-      <press-tab :title="t('successTip')">
+      </PressTab>
+      <PressTab :title="t('successTip')">
         <PressPullRefresh
           v-model="isLoading"
           :success-text="t('success')"
@@ -25,8 +25,8 @@
             {{ tips }}
           </p>
         </PressPullRefresh>
-      </press-tab>
-      <press-tab :title="t('customTips')">
+      </PressTab>
+      <PressTab :title="t('customTips')">
         <PressPullRefresh
           v-model="isLoading"
           head-height="80"
@@ -55,8 +55,8 @@
             {{ tips }}
           </p>
         </PressPullRefresh>
-      </press-tab>
-    </press-tabs>
+      </PressTab>
+    </PressTabs>
   </div>
 </template>
 <script>

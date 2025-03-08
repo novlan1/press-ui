@@ -13,6 +13,7 @@ export default {
   confirmDelete: 'Tem certeza de que deseja excluir?',
   telInvalid: 'Número de telefone incorreto',
   reply: 'Recuperação',
+  clear: 'Clear',
   calendar: {
     end: 'Fim',
     start: 'Começar',

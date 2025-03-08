@@ -1,4 +1,4 @@
-function padZero(num, targetLength = 2) {
+export function padZero(num, targetLength = 2) {
   let str = `${num}`;
   while (str.length < targetLength) {
     str = `0${str}`;

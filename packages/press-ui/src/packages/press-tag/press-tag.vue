@@ -4,7 +4,7 @@
     :style="tagStyle"
   >
     <slot />
-    <press-icon-plus
+    <PressIconPlus
       v-if="closeable"
       name="cross"
       custom-class="press-tag__close"

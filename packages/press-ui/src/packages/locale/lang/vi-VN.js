@@ -18,6 +18,7 @@ export default {
   confirmDelete: 'Bạn có chắc chắn muốn xóa',
   telInvalid: 'Vui lòng nhập số điện thoại chính xác',
   reply: 'Reply',
+  clear: 'Clear',
   calendar: {
     end: 'Chấm dứt',
     start: 'Bắt đầu',

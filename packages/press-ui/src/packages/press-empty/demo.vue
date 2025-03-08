@@ -4,32 +4,32 @@
       :title="t('basicUsage')"
       :section-style="sectionStyle"
     >
-      <press-empty :description="t('description')" />
+      <PressEmpty :description="t('description')" />
     </demo-block>
 
     <demo-block
       :title="t('imageType')"
       :section-style="sectionStyle"
     >
-      <press-tabs>
-        <press-tab
+      <PressTabs>
+        <PressTab
           v-for="(item, index) of imgTypeList"
           :key="index"
           :title="item.title"
         >
-          <press-empty
+          <PressEmpty
             :image="item.name"
             :description="t('description')"
           />
-        </press-tab>
-      </press-tabs>
+        </PressTab>
+      </PressTabs>
     </demo-block>
 
     <demo-block
       :title="t('customImage')"
       :section-style="sectionStyle"
     >
-      <press-empty
+      <PressEmpty
         custom-class="custom-image"
         image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fcustom-empty-image.png"
         image-custom-style="width:90px;height:90px"
@@ -41,22 +41,22 @@
       :title="t('bottomContent')"
       :section-style="sectionStyle"
     >
-      <press-empty :description="t('description')">
-        <press-button
+      <PressEmpty :description="t('description')">
+        <PressButton
           round
           type="danger"
           custom-class="bottom-button"
         >
           {{ t('button') }}
-        </press-button>
-      </press-empty>
+        </PressButton>
+      </PressEmpty>
     </demo-block>
 
     <demo-block
       title="E-SPORT"
       :section-style="sectionStyle"
     >
-      <press-empty
+      <PressEmpty
         type="e-sport"
         :description="t('description')"
         custom-style="height: 300px;"
@@ -68,7 +68,7 @@
       header-style="background: #f7f8fa;"
       section-style="background: #192841;color: #fff;margin: 0;padding: 10px 0;"
     >
-      <press-empty
+      <PressEmpty
         type="hor"
         :description="t('description')"
       />

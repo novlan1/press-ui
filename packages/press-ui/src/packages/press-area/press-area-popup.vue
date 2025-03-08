@@ -11,6 +11,16 @@
         title="选择地区"
         :area-list="areaList"
         :value="value"
+
+        :columns-num="columnsNum"
+        :columns-placeholder="columnsPlaceholder"
+        :use-momentum="useMomentum"
+        :swipe-duration="swipeDuration"
+
+        :active-class="activeClass"
+        :toolbar-class="toolbarClass"
+        :column-class="columnClass"
+
         @cancel="popupChanged(false)"
         @confirm="confirm"
       />
@@ -30,6 +40,15 @@
         :area-list="areaList"
         :value="value"
         :show-toolbar="false"
+
+        :columns-num="columnsNum"
+        :columns-placeholder="columnsPlaceholder"
+        :use-momentum="useMomentum"
+        :swipe-duration="swipeDuration"
+
+        :active-class="activeClass"
+        :toolbar-class="toolbarClass"
+        :column-class="columnClass"
       />
     </PressPopup>
   </div>
@@ -63,6 +82,34 @@ export default {
     type: {
       type: String,
       default: '',
+    },
+    columnsNum: {
+      type: Number,
+      default: 3,
+    },
+    columnsPlaceholder: {
+      type: Array,
+      default: () => [],
+    },
+    activeClass: {
+      type: String,
+      default: '',
+    },
+    toolbarClass: {
+      type: String,
+      default: '',
+    },
+    columnClass: {
+      type: String,
+      default: '',
+    },
+    useMomentum: {
+      type: Boolean,
+      default: false,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000,
     },
   },
   computed: {

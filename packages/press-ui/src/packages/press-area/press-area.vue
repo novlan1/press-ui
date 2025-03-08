@@ -1,5 +1,5 @@
 <template>
-  <press-picker
+  <PressPicker
     ref="pressPicker"
     :class="['press-area__picker', customClass]"
     :active-class="activeClass"

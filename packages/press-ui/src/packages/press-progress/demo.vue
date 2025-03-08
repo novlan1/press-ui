@@ -2,13 +2,13 @@
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
       <div :style="progressStyle">
-        <press-progress :percentage="50" />
+        <PressProgress :percentage="50" />
       </div>
     </demo-block>
 
     <demo-block :title="t('strokeWidth')">
       <div :style="progressStyle">
-        <press-progress
+        <PressProgress
           :percentage="50"
           :stroke-width="8"
         />
@@ -17,7 +17,7 @@
 
     <demo-block :title="t('title2')">
       <div :style="progressStyle">
-        <press-progress
+        <PressProgress
           :percentage="50"
           inactive
         />
@@ -26,7 +26,7 @@
 
     <demo-block :title="t('title3')">
       <div :style="progressStyle">
-        <press-progress
+        <PressProgress
           :pivot-text="t('orange')"
           color="#f2826a"
           :percentage="25"
@@ -34,7 +34,7 @@
       </div>
 
       <div :style="progressStyle">
-        <press-progress
+        <PressProgress
           :pivot-text="t('red')"
           color="#ee0a24"
           :percentage="50"
@@ -42,7 +42,7 @@
       </div>
 
       <div :style="progressStyle">
-        <press-progress
+        <PressProgress
           :percentage="75"
           :pivot-text="t('purple')"
           pivot-color="#7232dd"

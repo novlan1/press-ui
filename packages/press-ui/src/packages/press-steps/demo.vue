@@ -1,7 +1,7 @@
 <template>
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
-      <press-steps
+      <PressSteps
         :steps="steps"
         :active="active"
       />
@@ -16,7 +16,7 @@
     </demo-block>
 
     <demo-block :title="t('customStyle')">
-      <press-steps
+      <PressSteps
         :steps="steps"
         :active="active"
         active-icon="success"
@@ -25,14 +25,14 @@
     </demo-block>
 
     <demo-block :title="t('customIcon')">
-      <press-steps
+      <PressSteps
         :steps="stepsCustom"
         :active="active"
       />
     </demo-block>
 
     <demo-block :title="t('title3')">
-      <press-steps
+      <PressSteps
         :steps="steps"
         :active="active"
         direction="vertical"

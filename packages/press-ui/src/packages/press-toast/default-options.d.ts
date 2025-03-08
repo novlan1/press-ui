@@ -1,13 +1,15 @@
 export declare const DEFAULT_OPTIONS: {
-  type: string;
+  selector: string;
+  show: boolean;
   mask: boolean;
   message: string;
-  show: boolean;
-  zIndex: number;
-  duration: number;
-  position: string;
+
   forbidClick: boolean;
+  zIndex: number;
+  type: string;
+
   loadingType: string;
-  selector: string;
+  position: string;
+  duration: number;
 };
 export declare const DEFAULT_KEY = 'message';

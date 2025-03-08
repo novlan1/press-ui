@@ -1,6 +1,6 @@
 <template>
   <div class="press-dialog-index">
-    <press-popup
+    <PressPopup
       :show="dataShow"
       :z-index="dataZIndex"
       :overlay="dataOverlay"
@@ -38,7 +38,7 @@
         v-if="true"
         class="press-hairline--top press-dialog__footer"
       >
-        <press-button
+        <PressButton
           v-if="dataShowCancelButton"
           size="large"
           :loading="loading.cancel"
@@ -48,8 +48,8 @@
           @click="onCancel"
         >
           {{ dataCancelButtonText }}
-        </press-button>
-        <press-button
+        </PressButton>
+        <PressButton
           v-if="dataShowConfirmButton"
           size="large"
           class="press-dialog__button"
@@ -74,9 +74,9 @@
           @opensetting="onOpenSetting"
         >
           {{ dataConfirmButtonText }}
-        </press-button>
+        </PressButton>
       </div>
-    </press-popup>
+    </PressPopup>
   </div>
 </template>
 <script>
@@ -100,21 +100,21 @@ const props = {
   },
   title: { type: String, default: '' },
   message: { type: String, default: '' },
+
+  useSlot: Boolean,
+  useTitleSlot: Boolean,
+
+  className: { type: String, default: '' },
+  customStyle: { type: String, default: '' },
+
+  asyncClose: Boolean,
+  beforeClose: { type: [null, Function], default: null },
+
   theme: {
     type: String,
     default: 'default',
   },
-  useSlot: Boolean,
-  className: { type: String, default: '' },
-  customStyle: { type: String, default: '' },
-  asyncClose: Boolean,
   messageAlign: { type: String, default: '' },
-  beforeClose: { type: [null, Function], default: null },
-  overlayStyle: { type: String, default: '' },
-  useTitleSlot: Boolean,
-  showCancelButton: Boolean,
-  closeOnClickOverlay: Boolean,
-  confirmButtonOpenType: { type: String, default: '' },
   width: {
     type: [String, Number],
     default: '',
@@ -123,6 +123,23 @@ const props = {
     type: Number,
     default: 2000,
   },
+
+  overlay: {
+    type: Boolean,
+    default: true,
+  },
+  overlayStyle: { type: String, default: '' },
+  transition: {
+    type: String,
+    default: 'scale',
+  },
+
+  showConfirmButton: {
+    type: Boolean,
+    default: true,
+  },
+  showCancelButton: Boolean,
+
   confirmButtonText: {
     type: String,
     default: t('confirm'),
@@ -139,18 +156,10 @@ const props = {
     type: String,
     default: GRAY,
   },
-  showConfirmButton: {
-    type: Boolean,
-    default: true,
-  },
-  overlay: {
-    type: Boolean,
-    default: true,
-  },
-  transition: {
-    type: String,
-    default: 'scale',
-  },
+
+  closeOnClickOverlay: Boolean,
+  confirmButtonOpenType: { type: String, default: '' },
+
   ...defaultProps,
 };
 

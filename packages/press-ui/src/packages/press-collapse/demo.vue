@@ -5,31 +5,31 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-collapse
+      <PressCollapse
         :value="activeNames"
         @change="onChange"
         @open="onOpen"
         @close="onClose"
       >
-        <press-collapse-item
+        <PressCollapseItem
           :title="`${t('title')} 1`"
           name="1"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} 2`"
           name="2"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} 3`"
           name="3"
         >
           {{ t('text') }}
-        </press-collapse-item>
-      </press-collapse>
+        </PressCollapseItem>
+      </PressCollapse>
     </demo-block>
 
     <demo-block
@@ -37,30 +37,30 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-collapse
+      <PressCollapse
         :value="activeNames2"
         accordion
         @change="onChangeAccordion"
       >
-        <press-collapse-item
+        <PressCollapseItem
           :title="`${t('title')} A`"
           name="1"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} B`"
           name="2"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} C`"
           name="3"
         >
           {{ t('text') }}
-        </press-collapse-item>
-      </press-collapse>
+        </PressCollapseItem>
+      </PressCollapse>
     </demo-block>
 
     <demo-block
@@ -68,32 +68,32 @@
       :header-style="headerStyle"
       :section-style="sectionStyle"
     >
-      <press-collapse
+      <PressCollapse
         :value="activeNames3"
         accordion
         @change="onChangeDisabled"
       >
-        <press-collapse-item
+        <PressCollapseItem
           :title="`${t('title')} X`"
           name="1"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} Y`"
           disabled
           name="2"
         >
           {{ t('text') }}
-        </press-collapse-item>
-        <press-collapse-item
+        </PressCollapseItem>
+        <PressCollapseItem
           :title="`${t('title')} Z`"
           name="3"
           disabled
         >
           {{ t('text') }}
-        </press-collapse-item>
-      </press-collapse>
+        </PressCollapseItem>
+      </PressCollapse>
     </demo-block>
 
     <demo-block
@@ -101,28 +101,28 @@
       :section-style="sectionStyle"
       :header-style="headerStyle"
     >
-      <press-collapse
+      <PressCollapse
         :value="activeNamesTitle"
         @change="onChangeTitle"
       >
-        <press-collapse-item name="1">
+        <PressCollapseItem name="1">
           <template #title>
             <div>
               {{ t('title') }} 1
-              <press-icon-plus name="question-o" />
+              <PressIconPlus name="question-o" />
             </div>
           </template>
           {{ t('text') }}
-        </press-collapse-item>
+        </PressCollapseItem>
 
-        <press-collapse-item
+        <PressCollapseItem
           :title="`${t('title')} 2`"
           name="2"
           icon="shop-o"
         >
           {{ t('text') }}
-        </press-collapse-item>
-      </press-collapse>
+        </PressCollapseItem>
+      </PressCollapse>
     </demo-block>
   </div>
 </template>

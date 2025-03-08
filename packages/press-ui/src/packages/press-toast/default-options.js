@@ -1,14 +1,16 @@
 export const DEFAULT_OPTIONS = {
-  type: 'text',
+  selector: '#press-toast',
+  show: true,
   mask: false,
   message: '',
-  show: true,
-  zIndex: 1000,
-  duration: 2000,
-  position: 'middle',
+
   forbidClick: false,
+  zIndex: 1000,
+  type: 'text',
+
   loadingType: 'circular',
-  selector: '#press-toast',
+  position: 'middle',
+  duration: 2000,
 };
 
 export const DEFAULT_KEY = 'message';

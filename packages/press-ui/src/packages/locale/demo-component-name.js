@@ -1,6 +1,6 @@
-export const getComponentNameFromUrl = (url = '') => {
-  if (!url.includes('?')) {
-    const list = url.split('/');
+export const getComponentNameFromUrl = (url = '', route = '') => {
+  if (!url.includes('comp=')) {
+    const list = route.split('/');
     return list[list.length - 1];
   }
   const reg = /comp=([^&?]+)/;

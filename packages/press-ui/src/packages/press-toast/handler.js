@@ -13,3 +13,11 @@ Toast = ToastWeb;
 
 
 export default Toast;
+
+export const showToast = Toast;
+export const showFailToast = Toast.fail;
+export const showSuccessToast = Toast.success;
+export const showLoadingToast = Toast.loading;
+export const closeToast = Toast.clear;
+export const setToastDefaultOptions = Toast.setDefaultOptions;
+export const resetToastDefaultOptions = Toast.resetDefaultOptions;

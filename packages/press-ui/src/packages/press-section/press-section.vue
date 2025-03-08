@@ -5,6 +5,7 @@
       {'press-section--active': active},
       {'press-section--clickable': clickable},
     ]"
+    :style="customStyle"
   >
     <div
       class="press-section-header"
@@ -105,6 +106,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    customStyle: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['click'],
   computed: {
@@ -123,87 +128,5 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-$press-primary: #2979ff !default;
-
-.press-section {
-  background-color: #fff;
-  opacity: 0.8;
-  transition: all 300ms ease-in-out;
-
-  &--active {
-    opacity: 1;
-  }
-
-  &--clickable {
-    /* #ifdef H5 */
-    cursor: pointer;
-    /* #endif */
-  }
-
-  .press-section-header {
-    position: relative;
-    /* #ifndef APP-NVUE */
-    display: flex;
-    /* #endif */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    // 取消垂向居中，当文字多行时，并不美观
-    // align-items: center;
-    padding: 12px 10px;
-    font-weight: normal;
-
-    &__decoration {
-      margin-right: 6px;
-      background-color: $press-primary;
-
-      &.line {
-        width: 4px;
-        height: 12px;
-        border-radius: 10px;
-        // margin-top: 4px;
-      }
-
-      &.circle {
-        width: 8px;
-        height: 8px;
-        border-top-right-radius: 50px;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-      }
-
-      &.square {
-        width: 8px;
-        height: 8px;
-      }
-    }
-
-    &__content {
-      /* #ifndef APP-NVUE */
-      display: flex;
-      /* #endif */
-      flex-direction: column;
-      flex: 1;
-      color: #333;
-
-      .distraction {
-        flex-direction: row;
-        align-items: center;
-      }
-      &-sub {
-        margin-top: 2px;
-      }
-    }
-
-    &__slot-right {
-      font-size: 14px;
-    }
-  }
-
-  .press-section-content {
-    font-size: 14px;
-  }
-}
+<style lang="scss" src="./css/index.scss">
 </style>

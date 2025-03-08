@@ -14,7 +14,7 @@
       >
         {{ title }}
       </span>
-      <press-icon
+      <PressIcon
         v-if="closeable"
         :name="closeIcon"
         class="press-cascader__close-icon"
@@ -22,7 +22,7 @@
       />
     </div>
 
-    <press-tabs
+    <PressTabs
       ref="tabs"
       :active="activeTab"
       custom-class="press-cascader__tabs"
@@ -33,7 +33,7 @@
       :swipeable="swipeable"
       @click="onClickTab"
     >
-      <press-tab
+      <PressTab
         v-for="(tab, tabIndex) in (tabs)"
         :key="tab.tabIndex"
         :title="tab.selected ? tab.selected[textKey] : placeholder"
@@ -49,15 +49,15 @@
             @click="() => onSelect(tabIndex, option)"
           >
             <span>{{ option[textKey] }}</span>
-            <press-icon
+            <PressIcon
               v-if="utils.isSelected(tab, valueKey, option)"
               name="success"
               size="18"
             />
           </div>
         </div>
-      </press-tab>
-    </press-tabs>
+      </PressTab>
+    </PressTabs>
   </div>
 </template>
 

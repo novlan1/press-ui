@@ -79,8 +79,9 @@ export function setLang(force = false, localeMap = {}) {
 function getPageName() {
   const pages = getCurrentPages();
   const path = pages[pages.length - 1]?.$page?.fullPath || '';
+  const route = pages[pages.length - 1]?.route || '';
 
-  return getComponentNameFromUrl(path);
+  return getComponentNameFromUrl(path, route);
 }
 
 export function initDemoI18n(app) {

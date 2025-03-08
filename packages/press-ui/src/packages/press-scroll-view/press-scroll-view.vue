@@ -31,11 +31,11 @@
 
 <script>
 // #ifndef H5
-import ScrollViewMp from './scroll-view-mp';
+import ScrollViewMp from './scroll-view-mp.vue';
 // #endif
 
 // #ifdef H5
-import ScrollViewWeb from './scroll-view-web';
+import ScrollViewWeb from './scroll-view-web.vue';
 // #endif
 
 
@@ -128,11 +128,5 @@ export default {
 };
 </script>
 
-<style scoped>
-.loading-bottom {
-  color: #969799;
-  font-size: 14px;
-  line-height: 50px;
-  text-align: center;
-}
+<style scoped src="./css/index.scss">
 </style>

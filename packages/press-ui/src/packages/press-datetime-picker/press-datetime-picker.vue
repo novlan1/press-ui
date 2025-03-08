@@ -1,6 +1,6 @@
 <template>
   <div class="press-datetime-picker-index">
-    <press-picker
+    <PressPicker
       ref="pressPicker"
       class="press-datetime-picker"
       :active-class="activeClass"

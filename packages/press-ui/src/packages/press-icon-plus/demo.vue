@@ -6,146 +6,146 @@
     />
     <!-- #endif -->
 
-    <press-tabs
+    <PressTabs
       :offset-top="offsetTop"
       sticky
       swipeable
     >
-      <press-tab :title="t('demo')">
-        <demo-block-plus :title="t('basicUsage')">
-          <press-col
+      <PressTab :title="t('demo')">
+        <DemoBlockPlus :title="t('basicUsage')">
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               @click="copy(demoIcon)"
             />
-          </press-col>
-          <press-col
+          </PressCol>
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoImage"
               @click="copy(demoImage)"
             />
-          </press-col>
-        </demo-block-plus>
+          </PressCol>
+        </DemoBlockPlus>
 
-        <demo-block-plus :title="t('badge')">
-          <press-col
+        <DemoBlockPlus :title="t('badge')">
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               dot
               @click="copy(demoIcon, { dot: true })"
             />
-          </press-col>
-          <press-col
+          </PressCol>
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               info="9"
               @click="copy(demoIcon, { badge: '9' })"
             />
-          </press-col>
-          <press-col
+          </PressCol>
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               info="99+"
               @click="copy(demoIcon, { badge: '99+' })"
             />
-          </press-col>
-        </demo-block-plus>
+          </PressCol>
+        </DemoBlockPlus>
 
-        <demo-block-plus :title="t('color')">
-          <press-col
+        <DemoBlockPlus :title="t('color')">
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               name="cart-o"
               color="#1989fa"
               @click="copy('cart-o', { color: '#1989fa' })"
             />
-          </press-col>
-          <press-col
+          </PressCol>
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               name="fire-o"
               :color="RED"
               @click="copy('fire-o', { color: RED })"
             />
-          </press-col>
-        </demo-block-plus>
+          </PressCol>
+        </DemoBlockPlus>
 
-        <demo-block-plus :title="t('size')">
-          <press-col
+        <DemoBlockPlus :title="t('size')">
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               size="40"
               @click="copy(demoIcon, { size: '40' })"
             />
-          </press-col>
-          <press-col
+          </PressCol>
+          <PressCol
             :span="6"
           >
-            <press-icon-plus
+            <PressIconPlus
               :name="demoIcon"
               size="1rem"
               @click="copy(demoIcon, { size: '3rem' })"
             />
-          </press-col>
-        </demo-block-plus>
-      </press-tab>
+          </PressCol>
+        </DemoBlockPlus>
+      </PressTab>
 
-      <press-tab :title="t('basic')">
-        <press-col
+      <PressTab :title="t('basic')">
+        <PressCol
           v-for="(icon) in icons.basic"
           :key="icon"
           :span="6"
         >
-          <press-icon-plus
+          <PressIconPlus
             :name="icon"
             @click="copy(icon)"
           />
           <span>{{ icon }}</span>
-        </press-col>
-      </press-tab>
+        </PressCol>
+      </PressTab>
 
-      <press-tab :title="t('outline')">
-        <press-col
+      <PressTab :title="t('outline')">
+        <PressCol
           v-for="icon in icons.outline"
           :key="icon"
           :span="6"
         >
-          <press-icon-plus
+          <PressIconPlus
             :name="icon"
             @click="copy(icon)"
           />
           <span>{{ icon }}</span>
-        </press-col>
-      </press-tab>
+        </PressCol>
+      </PressTab>
 
-      <press-tab :title="t('filled')">
-        <press-col
+      <PressTab :title="t('filled')">
+        <PressCol
           v-for="icon in icons.filled"
           :key="icon"
           :span="6"
         >
-          <press-icon-plus
+          <PressIconPlus
             :name="icon"
             @click="copy(icon)"
           />
           <span>{{ icon }}</span>
-        </press-col>
-      </press-tab>
-    </press-tabs>
+        </PressCol>
+      </PressTab>
+    </PressTabs>
   </div>
 </template>
 

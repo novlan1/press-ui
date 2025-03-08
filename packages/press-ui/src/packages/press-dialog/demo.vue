@@ -6,7 +6,7 @@
       :title="item.title"
       :section-style="sectionStyle"
     >
-      <press-cell
+      <PressCell
         v-for="(info) of item.list"
         :key="info.name"
         :title="info.title"
@@ -15,12 +15,12 @@
       />
     </demo-block>
 
-    <PressDialogComp
+    <PressDialog
       id="tip-match-comm-tips-dialog"
       ref="tip-match-comm-tips-dialog"
     />
 
-    <PressDialogComp
+    <PressDialog
       :title="t('title')"
       :show="show"
       content="Some fake news"
@@ -28,7 +28,7 @@
       @cancel="onCancel('show')"
     />
 
-    <PressDialogComp
+    <PressDialog
       :title="t('title')"
       :show="show2"
       content="Some fake news 2"
@@ -38,8 +38,8 @@
   </div>
 </template>
 <script>
-import PressDialog from 'press-ui/press-dialog';
-import PressDialogComp from 'press-ui/press-dialog/press-dialog.vue';
+import { showDialog } from 'press-ui/press-dialog';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import { saveMpImage } from 'press-ui/common/utils/save-mp-image';
 
@@ -126,7 +126,7 @@ export default {
     },
   },
   components: {
-    PressDialogComp,
+    PressDialog,
     PressCell,
   },
   data() {
@@ -268,7 +268,7 @@ export default {
         };
       }
 
-      PressDialog.show({
+      showDialog({
         context: this,
         title: this.t('title'),
         content,

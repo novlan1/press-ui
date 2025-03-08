@@ -152,3 +152,11 @@
     }
   }
 }
+
+
+/* #ifdef H5 */
+.press-cell--clickable {
+  cursor: pointer;
+}
+
+/* #endif */

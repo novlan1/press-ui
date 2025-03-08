@@ -2,7 +2,7 @@
   <div
     :class="innerWrapClass"
   >
-    <press-overlay
+    <PressOverlay
       v-if="overlay"
       :show="show"
       :z-index="zIndex"
@@ -18,7 +18,7 @@
       @transitionend="onTransitionEnd"
     >
       <slot />
-      <press-icon-plus
+      <PressIconPlus
         v-if="closeable"
         :name="closeIcon"
         :class="innerCloseIconClass"

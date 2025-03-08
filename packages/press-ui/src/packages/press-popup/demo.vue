@@ -2,17 +2,17 @@
   <div class="demo-wrap">
     <div>
       <demo-block :title="t('basicUsage')">
-        <press-cell
+        <PressCell
           :title="t('closeIcon')"
           is-link
           @click="onShowPopup('normal')"
         />
-        <press-cell
+        <PressCell
           :title="t('cancelIcon')"
           is-link
           @click="onShowPopup('cancel')"
         />
-        <press-cell
+        <PressCell
           :title="t('noCloseOrCancel')"
           is-link
           @click="onShowPopup('noClose')"
@@ -20,22 +20,22 @@
       </demo-block>
 
       <demo-block :title="t('customStyle')">
-        <press-cell
+        <PressCell
           :title="t('plainButtonConfirm')"
           is-link
           @click="onShowPopup('borderBtn')"
         />
-        <press-cell
+        <PressCell
           :title="t('disabledButton')"
           is-link
           @click="onShowPopup('disabledButton')"
         />
-        <press-cell
+        <PressCell
           :title="t('horizontal')"
           is-link
           @click="onShowPopup('hor')"
         />
-        <press-cell
+        <PressCell
           :title="t('buttonSlot')"
           is-link
           @click="showSlotPopup = true"
@@ -43,12 +43,12 @@
       </demo-block>
 
       <demo-block :title="t('asyncClose')">
-        <press-cell
+        <PressCell
           :title="t('notPromiseFunction')"
           is-link
           @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_NORMAL)"
         />
-        <press-cell
+        <PressCell
           :title="t('promiseFunction')"
           is-link
           @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_PROMISE)"
@@ -56,12 +56,12 @@
       </demo-block>
 
       <demo-block :title="t('useWay')">
-        <press-cell
+        <PressCell
           :title="t('controlledPopup')"
           is-link
           @click="onShowControlledPopup"
         />
-        <press-cell
+        <PressCell
           :title="t('functional')"
           is-link
           @click="onShowFunctionalPicker"
@@ -137,7 +137,7 @@
       </div>
     </PressPopup>
 
-    <press-popup
+    <PressPopup
       :id="PRESS_PICKER_ID"
       :ref="PRESS_PICKER_ID"
       mode="functional"
@@ -156,7 +156,7 @@
           {{ t('SomeScrollContent') }}
         </div>
       </scroll-view>
-    </press-popup>
+    </PressPopup>
   </div>
 </template>
 <script>
