@@ -1,16 +1,8 @@
 {
   "name": "press-ui",
-  "version": "2.2.38",
-  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
-  "main": "index.js",
-  "id": "press-ui",
   "displayName": "Press UI 组件库",
-  "repository": "https://github.com/novlan1/press-ui",
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
+  "version": "3.0.0",
+  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
     "press-ui",
     "uni-app",
@@ -18,12 +10,18 @@
     "vue3",
     "vue2"
   ],
-  "scripts": {},
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": "https://github.com/novlan1/press-ui",
   "license": "MIT",
-  "dependencies": {
-    "@popperjs/core": "~2.11.8",
-    "swiper-next": "latest",
-    "t-comm": "latest"
+  "author": "guowangyang",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14"
   },
   "dcloudext": {
     "type": "component-vue",
@@ -45,6 +43,7 @@
     },
     "npmurl": "https://www.npmjs.com/package/press-ui"
   },
+  "id": "press-ui",
   "uni_modules": {
     "dependencies": [],
     "encrypt": [],
@@ -95,8 +94,5 @@
         }
       }
     }
-  },
-  "engines": {
-    "node": ">=14"
   }
 }

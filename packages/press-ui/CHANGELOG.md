@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/novlan1/press-ui/compare/v2.2.39...v3.0.0) (2025-03-16)
+
+
+### ✨ Features | 新功能
+
+* **popover:** support closeOnClickOutside ([a813800](https://github.com/novlan1/press-ui/commit/a813800ae6c28d025cc8440bdc427aa39498d9ed))
+
+### [2.2.39](https://github.com/novlan1/press-ui/compare/v2.2.38...v2.2.39) (2025-03-10)
+
+
+### ✨ Features | 新功能
+
+* **text-ellipsis:** 优化小程序下表现 ([0312d0d](https://github.com/novlan1/press-ui/commit/0312d0da05356d1c04218eab6b0253290fe66d7c))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update eslintrc ([4e91203](https://github.com/novlan1/press-ui/commit/4e91203d6c001d85ed0dfc7d16632b834afaadd0))
+
+
+### ✏️ Documentation | 文档
+
+* update readme ([734af9f](https://github.com/novlan1/press-ui/commit/734af9fbfbd6c034ec71d39a1819e46b500decf1))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **tabs:** 修复事件名错误 ([cce4eee](https://github.com/novlan1/press-ui/commit/cce4eee58daddf80b70c984a3abd0b74bcc5f863))
+
 ### [2.2.38](https://github.com/novlan1/press-ui/compare/v2.2.37...v2.2.38) (2025-03-08)
 
 

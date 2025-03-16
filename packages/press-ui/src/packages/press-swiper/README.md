@@ -26,6 +26,8 @@ export default {
 }
 ```
 
+Vue3 非 uni-app 下需要安装 [swiper-next](https://www.npmjs.com/package/swiper-next)。
+
 ## 代码演示
 
 ### 基础用法

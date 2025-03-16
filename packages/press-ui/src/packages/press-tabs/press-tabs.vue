@@ -658,7 +658,7 @@ export default {
     scrolltolower(e) {
       this.$emit('scrolltolower', e);
     },
-    scroll(e) {
+    scrollViewScroll(e) {
       this.$emit('scrollViewScroll', e);
     },
   },

@@ -13,6 +13,7 @@
       :header-style="headerStyle"
     >
       <PressTextEllipsis
+        adjust-string="aa"
         :content="t('text2')"
         :expand-text="t('expandText')"
         :collapse-text="t('collapseText')"
@@ -28,7 +29,7 @@
         :content="t('text3')"
         :expand-text="t('expandText')"
         :collapse-text="t('collapseText')"
-        adjust-string="aaaaa"
+        adjust-string="aaaa"
       />
     </demo-block>
 
@@ -38,6 +39,7 @@
     >
       <PressTextEllipsis
         rows="1"
+        adjust-string="aa"
         :content="t('text3')"
         :expand-text="t('expandText')"
         :collapse-text="t('collapseText')"
@@ -52,6 +54,7 @@
       <PressTextEllipsis
         rows="2"
         :content="t('text3')"
+        adjust-string="aa"
         :expand-text="t('expandText')"
         :collapse-text="t('collapseText')"
         position="middle"

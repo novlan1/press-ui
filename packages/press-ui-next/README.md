@@ -49,3 +49,8 @@ import PressButton from 'press-ui-next/es/press-dialog-plus/press-dialog-plus.vu
 // 正确
 import PressButton from 'press-ui-next/es/press-dialog-plus/press-dialog-plus';
 ```
+
+[node]: https://img.shields.io/node/v/press-ui
+[node-url]: https://nodejs.org
+[downloads]: https://img.shields.io/npm/dm/press-ui
+[downloads-url]: https://npmcharts.com/compare/press-ui?minimal=true

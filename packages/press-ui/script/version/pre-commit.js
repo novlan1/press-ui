@@ -23,18 +23,14 @@ function getPreReleaseTag(version) {
 }
 
 function getNewVersion() {
-  const pkg = JSON.parse(fs.readFileSync(PATH_MAP.ROOT_PACKAGE_JSON, {
-    encoding: 'utf-8',
-  }));
+  const pkg = readFileSync(PATH_MAP.ROOT_PACKAGE_JSON, true);
   return pkg.version;
 }
 
 function changeVersion() {
   const newVersion = getNewVersion();
 
-  const pkg = JSON.parse(fs.readFileSync(PATH_MAP.PACKAGE_JSON, {
-    encoding: 'utf-8',
-  }));
+  const pkg = readFileSync(PATH_MAP.PACKAGE_JSON, true);
   console.log(`[VERSION] The new version is ${newVersion}`);
   pkg.version = newVersion;
 

@@ -42,7 +42,12 @@ const LOGIC_SIDEBAR_CONFIG = {
 function getSidebarConfig(isEn) {
   const path = isEn ? SIDEBAR_EN_CONFIG_PATH : SIDEBAR_CONFIG_PATH;
   const data = fs.readFileSync(path);
-  return JSON.parse(data);
+  let result = {};
+  try {
+    result = JSON.parse(data);
+  } catch (err) {
+  }
+  return result;
 }
 
 

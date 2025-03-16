@@ -68,10 +68,10 @@ import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';
 
 import { transition } from '../mixins/transition';
-import { ClickOutsideMixin } from '../mixins/click-outside';
 
 // #ifdef H5
 import { popoverMixin } from '../mixins/popover/index';
+import { clickOutsideMixin } from '../mixins/click-outside';
 // #endif
 
 
@@ -89,7 +89,7 @@ export default {
 
     transition(false),
     // #ifdef H5
-    ClickOutsideMixin({
+    clickOutsideMixin({
       event: 'touchstart',
       method: 'onClickOutside',
     }),

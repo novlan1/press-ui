@@ -1,28 +1,8 @@
 {
   "name": "swiper-next",
   "version": "0.1.1",
-  "description": "Vue3 的 Swiper 组件",
-  "main": "lib/index.js",
-  "module": "es/index.mjs",
-  "types": "es/index.d.ts",
-  "style": "dist/index.css",
   "private": false,
-  "sideEffects": false,
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
-  "files": [
-    "es",
-    "lib",
-    "dist"
-  ],
+  "description": "Vue3 的 Swiper 组件",
   "keywords": [
     "press-ui",
     "swiper",
@@ -30,15 +10,38 @@
     "component",
     "component library"
   ],
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "license": "MIT",
+  "author": "guowangyang",
+  "sideEffects": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf es lib dist",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
-    "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}"
+    "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}",
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue ."
   },
-  "license": "MIT",
+  "dependencies": {
+    "@vue/shared": "^3.4.34"
+  },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.7",
     "@vitejs/plugin-vue": "^5.1.1",
@@ -54,8 +57,5 @@
     "vite": "^5.3.5",
     "vite-plugin-dts": "4.0.0-beta.1",
     "vue": "^3.4.34"
-  },
-  "dependencies": {
-    "@vue/shared": "^3.4.34"
   }
 }

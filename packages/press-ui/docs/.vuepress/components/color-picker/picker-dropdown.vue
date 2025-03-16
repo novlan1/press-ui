@@ -1,8 +1,8 @@
 <template>
   <div class="press-color-wrap">
     <div class="press-color-upper">
-      <sv-panel :color="color" />
-      <hue-slider :color="color" />
+      <SvPanel :color="color" />
+      <HueSlider :color="color" />
     </div>
     <div class="press-color-buttons">
       <div class="press-color-input">

@@ -29,3 +29,5 @@ export const ClickOutsideMixin = config => ({
     document.removeEventListener(config.event, this.clickOutsideHandler);
   },
 });
+
+export const clickOutsideMixin = ClickOutsideMixin;

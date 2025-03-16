@@ -2,24 +2,24 @@
   "name": "press-ui",
   "version": "1.2.39",
   "description": "易用的跨端组件库",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
   "keywords": [
     "press-ui",
     "uni-app",
     "uniapp",
     "component"
   ],
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
   "license": "ISC",
+  "author": "guowangyang",
+  "main": "index.js",
+  "scripts": {},
   "dependencies": {
     "@zebra-ui/swiper": "^2.2.7",
     "uqrcodejs": "^4.0.7",

@@ -21,6 +21,7 @@
           :show="show"
           :placement="direction"
           :custom-class="`demo-nav-popover demo-nav-popover--${direction}`"
+          @close="onClose"
         >
           <div
             v-for="(item,index) of dataList"
@@ -69,10 +70,15 @@ export default {
     },
     onClickPage() {
       if (this.direction) {
+        // #ifndef H5
         this.show = false;
+        // #endif
       }
     },
     noop() {},
+    onClose() {
+      this.show = false;
+    },
   },
 };
 </script>

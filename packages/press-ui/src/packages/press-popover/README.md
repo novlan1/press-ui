@@ -22,6 +22,8 @@ export default {
 
 ### 基础用法
 
+支持 `show` 和 `placement` 属性。
+
 ```html
 <div class="popover-wrap">
   <PressPopover
@@ -76,16 +78,59 @@ export default {
 }
 ```
 
+### 点击外部元素后关闭
+
+监听 `close` 事件，将 `show` 设置为 `false` 即可。
+
+```html
+<PressPopover
+  :show="show"
+  :placement="direction"
+  @close="onClose"
+>
+  <div
+    v-for="(item,index) of dataList"
+    :key="index"
+    @click.stop="noop"
+  >
+    {{ t('options', item) }}
+  </div>
+</PressPopover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: true,
+    }
+  },
+  methods: {
+    onClose() {
+      this.show = false;
+    },
+  }
+}
+```
+
 ## API
 
 ### Props
 
-| 参数         | 说明       | 类型      | 默认值 |
-| ------------ | ---------- | --------- | ------ |
-| show         | 是否显示   | _boolean_ | true   |
-| placement    | 弹出框位置 | _string_  | right  |
-| custom-class | 自定义类名 | _string_  | -      |
-| custom-style | 自定义样式 | _string_  | -      |
+| 参数                   | 说明                         | 类型      | 默认值 |
+| ---------------------- | ---------------------------- | --------- | ------ |
+| show                   | 是否显示                     | _boolean_ | true   |
+| placement              | 弹出框位置                   | _string_  | right  |
+| custom-class           | 自定义类名                   | _string_  | -      |
+| custom-style           | 自定义样式                   | _string_  | -      |
+| close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
+
+### Events
+
+| 事件名 | 说明           | 回调参数 |
+| ------ | -------------- | -------- |
+| close  | 关闭菜单时触发 | -        |
+
 
 ## 在线调试
 

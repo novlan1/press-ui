@@ -1,18 +1,18 @@
 declare module '*.md' {
-  const content: string;
-  export default content;
+  const CONTENT: string;
+  export default CONTENT;
 }
 
 declare module '*.json' {
-  const content: Record<string, any>;
-  export default content;
+  const CONTENT: Record<string, any>;
+  export default CONTENT;
 }
 
 declare module '*.vue' {
   import type { DefineComponent, Plugin } from 'vue';
 
-  const component: DefineComponent<{}, {}, any> & Plugin;
-  export default component;
+  const CONTENT: DefineComponent<{}, {}, any> & Plugin;
+  export default CONTENT;
 }
 
 

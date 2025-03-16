@@ -2,7 +2,8 @@
   <div
     ref="root"
     class="press-text-ellipsis"
-  >{{ expanded ? content : text }}<span
+  >
+    {{ expanded ? content : text }}<span
       v-if="hasAction"
       ref="actionRef"
       class="press-text-ellipsis__action"
@@ -11,14 +12,15 @@
       <slot
         name="action"
         :expanded="expanded"
-      >{{ actionText }}</slot>
-    </span>
+      >{{ actionText }}</slot></span>
     <!-- #ifndef H5 -->
     <div
       :id="id"
       :style="hideStyle"
       class="press-text-ellipsis"
-    >{{ hideText }}</div>
+    >
+      {{ hideText }}<span class="press-text-ellipsis__action">展开</span>
+    </div>
     <!-- #endif -->
   </div>
 </template>
@@ -247,7 +249,7 @@ export default {
           this.updateContainer(container, 'innerText', curText);
 
 
-          let resultHtml = curText + this.innerAdjustString + actionHTML;
+          let resultHtml = curText + this.innerAdjustString;
           // #ifdef H5
           resultHtml = container.innerHTML + actionHTML;
           // #endif
@@ -298,7 +300,7 @@ export default {
 
         this.updateContainer(container, 'innerText', curText);
 
-        let resultHtml = curText + this.innerAdjustString + actionHTML;
+        let resultHtml = curText + this.innerAdjustString;
         // #ifdef H5
         resultHtml = container.innerHTML + actionHTML;
         // #endif

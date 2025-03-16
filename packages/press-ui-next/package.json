@@ -2,27 +2,27 @@
   "name": "press-ui-next",
   "version": "0.0.17",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
   "keywords": [
     "press-ui",
     "uni-app",
     "uniapp",
     "component"
   ],
-  "title": "press-ui",
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "license": "MIT",
+  "author": "guowangyang",
   "main": "cjs/index-lib.js",
+  "jsdelivr": "dist/press-ui.min.js",
+  "unpkg": "dist/press-ui.min.js",
   "module": "es/index.mjs",
   "typings": "es/index.d.ts",
-  "unpkg": "dist/press-ui.min.js",
-  "jsdelivr": "dist/press-ui.min.js",
   "files": [
     "es",
     "esm",
@@ -38,8 +38,8 @@
   ],
   "scripts": {
     "prebuild": "rimraf es/* esm/* lib/* cjs/* dist/* node_modules/press-ui/* --glob",
-    "init": "node script/build/init",
     "build": "cross-env NODE_ENV=production rollup -c script/build/rollup.config.ts && npm run build:tsc && npm run dts:update && npm run css:update",
+    "init": "node script/build/init",
     "build:tsc": "concurrently \"npm:build:tsc-*\"",
     "build:tsc-es": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outDir es/",
     "build:tsc-esm": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outDir esm/",
@@ -52,14 +52,10 @@
     "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
     "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}"
   },
-  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.16.5",
     "press-ui": "^2.2.34",
     "tim-js-sdk": "^2.27.6"
-  },
-  "peerDependencies": {
-    "vue": "^3.2.6"
   },
   "devDependencies": {
     "@babel/core": ">=7.13.0 <8.0.0",
@@ -126,5 +122,9 @@
     "vite-plugin-vue-devtools": "^7.3.1",
     "vitest": "^3.0.7",
     "vue-tsc": "^2.0.21"
-  }
+  },
+  "peerDependencies": {
+    "vue": "^3.2.6"
+  },
+  "title": "press-ui"
 }

@@ -1,33 +1,35 @@
 {
   "name": "press-ui",
-  "version": "2.2.38",
-  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
+  "version": "3.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
+  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
     "press-ui",
     "uni-app",
     "uniapp",
     "component"
   ],
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "author": "guowangyang",
   "scripts": {
-    "dev": "concurrently \"npm run demo:watch\" \"npm run serve\"",
-    "dev:mp": "concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
-    "serve": "npm run dev:h5",
+    "act:hide:tip": "node script/utils/act-add-hide-style",
+    "act:replace:class": "node script/utils/act-replace-class",
+    "add:emits": "node script/utils/add-emits-for-component",
+    "add:name": "node script/utils/add-name-for-component",
     "build": "NODE_OPTIONS=--openssl-legacy-provider npm run build:h5",
-    "env": "node env",
-    "build:mp": "npm run build:mp-weixin",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
     "build:custom": "cross-env NODE_ENV=production uniapp-cli custom",
     "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
+    "build:igame": "node script/deploy/build-igame",
+    "build:js": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js",
+    "build:mp": "npm run build:mp-weixin",
     "build:mp-360": "cross-env NODE_ENV=production UNI_PLATFORM=mp-360 vue-cli-service uni-build",
     "build:mp-alipay": "cross-env NODE_ENV=production UNI_PLATFORM=mp-alipay vue-cli-service uni-build",
     "build:mp-baidu": "cross-env NODE_ENV=production UNI_PLATFORM=mp-baidu vue-cli-service uni-build",
@@ -42,9 +44,12 @@
     "build:quickapp-webview": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview vue-cli-service uni-build",
     "build:quickapp-webview-huawei": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview-huawei vue-cli-service uni-build",
     "build:quickapp-webview-union": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview-union vue-cli-service uni-build",
+    "demo:watch": "node script/docs-demo/watch-demo",
+    "dev": "concurrently \"npm run demo:watch\" \"npm run serve\"",
     "dev:app-plus": "cross-env NODE_ENV=development UNI_PLATFORM=app-plus vue-cli-service uni-build --watch",
     "dev:custom": "cross-env NODE_ENV=development uniapp-cli custom",
     "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
+    "dev:mp": "concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
     "dev:mp-360": "cross-env NODE_ENV=development UNI_PLATFORM=mp-360 vue-cli-service uni-build --watch",
     "dev:mp-alipay": "cross-env NODE_ENV=development UNI_PLATFORM=mp-alipay vue-cli-service uni-build --watch",
     "dev:mp-baidu": "cross-env NODE_ENV=development UNI_PLATFORM=mp-baidu vue-cli-service uni-build --watch",
@@ -59,49 +64,59 @@
     "dev:quickapp-webview": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp-webview vue-cli-service uni-build --watch",
     "dev:quickapp-webview-huawei": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp-webview-huawei vue-cli-service uni-build --watch",
     "dev:quickapp-webview-union": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp-webview-union vue-cli-service uni-build --watch",
+    "dispatch": "node script/docs-demo/dispatch",
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
+    "docs:build:igame": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
+    "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
+    "docs:serve": "vuepress dev docs",
+    "docs:sync": "node script/utils/docs-sync",
+    "docs:watch": "node script/docs-demo/watch-docs",
+    "env": "node env",
+    "extract:class": "node script/utils/extract-class",
+    "extract:event": "node script/utils/extract-event",
+    "extract:props": "node script/utils/extract-props",
+    "gen:config": "node script/component-config/generate-component-config",
+    "gen:icon:list": "node script/icon/icon-list",
+    "gen:sig": "node script/tim/user-sig",
+    "gen:theme": "node script/theme/theme",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
+    "init": "npm run dispatch && npm run gen:config",
+    "init:env": "node script/env/rainbow-env",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
+    "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}",
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
+    "new:comp": "node script/new/generate-new-component/generate-new-component",
+    "prepare": "npm run init",
+    "release": "node script/version/release && npm run version:tip && node script/version/post-release",
+    "release:mine": "node script/version/pre-commit",
+    "release:prepare": "node script/version/prepare-release-script",
+    "rem:px": "node script/utils/rem-to-px",
+    "serve": "npm run dev:h5",
     "serve:quickapp-native": "node node_modules/@dcloudio/uni-quickapp-native/bin/serve.js",
+    "test": "jest --coverage --verbose -u",
     "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
     "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
-    "demo:watch": "node script/docs-demo/watch-demo",
-    "docs:watch": "node script/docs-demo/watch-docs",
-    "docs:serve": "vuepress dev docs",
-    "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
-    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
-    "lint": "eslint --ext .js,.ts,.vue .",
-    "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
-    "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
-    "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}",
-    "dispatch": "node script/docs-demo/dispatch",
-    "init:env": "node script/env/rainbow-env",
-    "init": "npm run dispatch && npm run gen:config",
-    "gen:icon:list": "node script/icon/icon-list",
-    "gen:config": "node script/component-config/generate-component-config",
-    "gen:theme": "node script/theme/theme",
-    "gen:sig": "node script/tim/user-sig",
-    "new:comp": "node script/new/generate-new-component/generate-new-component",
-    "release": "node script/version/release && npm run version:tip && node script/version/post-release",
-    "release:mine": "node script/version/pre-commit",
-    "release:prepare": "node script/version/prepare-release-script",
-    "version:tip": "node script/deploy/version-tip",
-    "test": "jest --coverage --verbose -u",
-    "prepare": "npm run init",
-    "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
-    "docs:build:igame": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
-    "build:igame": "node script/deploy/build-igame",
-    "build:js": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js",
-    "extract:props": "node script/utils/extract-props",
-    "extract:event": "node script/utils/extract-event",
-    "extract:class": "node script/utils/extract-class",
-    "rem:px": "node script/utils/rem-to-px",
-    "add:name": "node script/utils/add-name-for-component",
-    "add:emits": "node script/utils/add-emits-for-component",
-    "act:replace:class": "node script/utils/act-replace-class",
-    "act:hide:tip": "node script/utils/act-add-hide-style",
-    "docs:sync": "node script/utils/docs-sync"
+    "version:tip": "node script/deploy/version-tip"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "eslint --fix"
+    ],
+    "*.{html,css,sass,less}": [
+      "stylelint --fix"
+    ]
+  },
+  "browserslist": [
+    "Android >= 4.4",
+    "ios >= 9"
+  ],
+  "resolutions": {
+    "@babel/runtime": "~7.17.9"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.1-alpha-36420220922001",
@@ -234,20 +249,8 @@
     "webpack-cli": "3",
     "webpack-node-externals": "^3.0.0"
   },
-  "browserslist": [
-    "Android >= 4.4",
-    "ios >= 9"
-  ],
-  "resolutions": {
-    "@babel/runtime": "~7.17.9"
-  },
-  "lint-staged": {
-    "*.{ts,js,vue}": [
-      "eslint --fix"
-    ],
-    "*.{html,css,sass,less}": [
-      "stylelint --fix"
-    ]
+  "engines": {
+    "node": ">=14.0.0"
   },
   "standard-version": {
     "scripts": {
@@ -286,8 +289,5 @@
         }
       }
     }
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }

@@ -11,3 +11,5 @@ export declare const ClickOutsideMixin: (config: any) => {
   mounted(): void;
   beforeDestroy(): void;
 };
+
+export const clickOutsideMixin: typeof ClickOutsideMixin;

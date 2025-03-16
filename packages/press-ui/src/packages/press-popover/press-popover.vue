@@ -14,6 +14,10 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+// #ifdef H5
+import { clickOutsideMixin } from '../mixins/click-outside';
+// #endif
+
 
 export default {
   name: 'PressPopover',
@@ -21,6 +25,14 @@ export default {
     ...defaultOptions,
     virtualHost: true,
   },
+  mixins: [
+    // #ifdef H5
+    clickOutsideMixin({
+      event: 'touchstart',
+      method: 'onClickOutside',
+    }),
+    // #endif
+  ],
   props: {
     show: {
       type: Boolean,
@@ -74,6 +86,9 @@ export default {
     },
   },
   methods: {
+    onClickOutside() {
+      this.$emit('close');
+    },
   },
 };
 

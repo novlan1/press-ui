@@ -1,40 +1,55 @@
 {
   "name": "press-ui",
-  "version": "2.2.38",
-  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
+  "version": "3.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/novlan1/press-ui"
-  },
-  "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/press-ui",
-  "bugs": {
-    "url": "https://github.com/novlan1/press-ui/issues"
-  },
+  "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
     "press-ui",
     "uni-app",
     "uniapp",
     "component"
   ],
+  "homepage": "https://novlan1.github.io/press-ui",
+  "bugs": {
+    "url": "https://github.com/novlan1/press-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/press-ui"
+  },
+  "author": "guowangyang",
   "scripts": {
-    "init:env": "node packages/press-ui/script/env/rainbow-env",
-    "init": "cd packages/press-ui && npm run init",
-    "env": "node env",
-    "build:mp": "rm -rf dist && cd packages/press-ui && npm run build:mp && cp -r dist ../../",
-    "build:mp-qq": "rm -rf dist && cd packages/press-ui && npm run build:mp-qq && cp -r dist ../../",
-    "build:mp-alipay": "rm -rf dist && cd packages/press-ui && npm run build:mp-alipay && cp -r dist ../../",
     "build:igame": "NODE_OPTIONS=--openssl-legacy-provider rm -rf dist && cd packages/press-ui && npm run build:igame && cp -r dist ../../",
+    "build:mp": "rm -rf dist && cd packages/press-ui && npm run build:mp && cp -r dist ../../",
+    "build:mp-alipay": "rm -rf dist && cd packages/press-ui && npm run build:mp-alipay && cp -r dist ../../",
+    "build:mp-qq": "rm -rf dist && cd packages/press-ui && npm run build:mp-qq && cp -r dist ../../",
     "dev": "cd packages/press-ui && npm run dev",
     "dev:mp": "cd packages/press-ui && npm run dev:mp",
-    "dev:mp-qq": "cd packages/press-ui && npm run dev:mp-qq",
     "dev:mp-alipay": "cd packages/press-ui && npm run dev:mp-alipay",
+    "dev:mp-qq": "cd packages/press-ui && npm run dev:mp-qq",
     "docs:dev": "cd packages/press-ui && npm run docs:dev",
+    "env": "node env",
+    "init": "cd packages/press-ui && npm run init",
+    "init:env": "node packages/press-ui/script/env/rainbow-env",
+    "prepare": "husky install && cd packages/press-ui && pnpm i || npm i || true",
     "release": "cd packages/press-ui && npm run release",
     "test": "jest --coverage --verbose -u",
-    "test:pure": "jest --coverage --verbose",
-    "prepare": "husky install && cd packages/press-ui && pnpm i || npm i || true"
+    "test:pure": "jest --coverage --verbose"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "eslint --fix"
+    ],
+    "*.{html,css,sass,less}": [
+      "stylelint --fix"
+    ]
+  },
+  "browserslist": [
+    "Android >= 4.4",
+    "ios >= 9"
+  ],
+  "resolutions": {
+    "@babel/runtime": "~7.17.9"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.1-alpha-36420220922001",
@@ -56,7 +71,7 @@
     "@dcloudio/uni-quickapp-webview": "^2.0.1-alpha-36420220922001",
     "@dcloudio/uni-stacktracey": "^2.0.1-alpha-36420220922001",
     "@dcloudio/uni-stat": "^2.0.1-alpha-36420220922001",
-    "eslint-config-light": "^1.5.3",
+    "eslint-config-light": "^1.5.5",
     "t-comm": "latest",
     "@vue/shared": "^3.0.0",
     "aegis-mp-sdk": "^1.37.1",
@@ -172,27 +187,12 @@
     "webpack-cli": "3",
     "webpack-node-externals": "^3.0.0"
   },
-  "browserslist": [
-    "Android >= 4.4",
-    "ios >= 9"
-  ],
-  "resolutions": {
-    "@babel/runtime": "~7.17.9"
-  },
-  "lint-staged": {
-    "*.{ts,js,vue}": [
-      "eslint --fix"
-    ],
-    "*.{html,css,sass,less}": [
-      "stylelint --fix"
-    ]
+  "engines": {
+    "node": ">=14.0.0"
   },
   "standard-version": {
     "scripts": {
       "postchangelog": "node script/version/pre-commit"
     }
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }

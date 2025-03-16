@@ -5,5 +5,7 @@ static/common/*
 
 dist/
 /log/
+packages/press-ui/log/
 !.vuepress
 lib/
+!.stylelintrc.js

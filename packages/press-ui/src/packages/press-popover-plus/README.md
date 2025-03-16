@@ -4,6 +4,7 @@ url : pages/press/popover-plus/popover-plus
 
 ## PopoverPlus 弹出框
 
+弹出式的气泡菜单。
 
 ## 引入
 
@@ -17,10 +18,11 @@ export default {
 }
 ```
 
+H5 下需要安装 [@popperjs/core](https://www.npmjs.com/package/@popperjs/core)。
+
 ## 代码演示
 
 ### 基础用法
-
 
 当 Popover 弹出时，会基于 `reference` 插槽的内容进行定位。
 
