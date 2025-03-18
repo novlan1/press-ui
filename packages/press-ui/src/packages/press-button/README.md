@@ -64,7 +64,7 @@ export default {
 ```html
 <press-button loading type="primary" />
 <press-button loading type="primary" loading-type="spinner" />
-<press-button loading type="info" loading-text="加载中..." />
+<press-button loading type="info" loading-text="加载中..." loading-type="circular-tdesign" />
 ```
 
 ### 按钮形状

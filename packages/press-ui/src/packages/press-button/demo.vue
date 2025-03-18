@@ -127,6 +127,7 @@
       />
       <PressButton
         loading
+        loading-type="circular-tdesign"
         type="info"
         :loading-text="t('loadingText')"
       />

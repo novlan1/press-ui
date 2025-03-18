@@ -32,6 +32,7 @@
 import utils from '../common/utils/utils';
 import computed from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { TDESIGN_BRAND_COLOR } from './config';
 
 
 export default {
@@ -58,13 +59,20 @@ export default {
     };
   },
   computed: {
+    innerColor() {
+      const { color, type } = this;
+      if (type === 'circular-tdesign' && !color) {
+        return TDESIGN_BRAND_COLOR;
+      }
+      return color;
+    },
     loadingClass() {
-      const { vertical, customClass } = this;
-      return `${customClass} ${utils.bem2('loading', { vertical })}`;
+      const { vertical, customClass, type } = this;
+      return `${customClass} ${utils.bem2('loading', [type, { vertical }])}`;
     },
     spinnerStyle() {
-      const { color, size  } = this;
-      return computed.spinnerStyle({ color, size });
+      const { size, innerColor  } = this;
+      return computed.spinnerStyle({ color: innerColor, size });
     },
     textStyle() {
       const { textSize } = this;

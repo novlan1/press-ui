@@ -4,9 +4,7 @@ url : pages/press/loading-plus/loading-plus
 
 ## LoadingPlus 加载中
 
-
-加载中，分为circular和spinner两种
-
+用于表示页面或操作的加载状态，给予用户反馈的同时减缓等待的焦虑感，由一个或一组反馈动效组成。
 
 ## 引入
 
@@ -27,8 +25,12 @@ export default {
 ```html
 <press-loading-plus /> 
 
+<press-loading-plus type="circular-tdesign" />
+
 <press-loading-plus type="spinner" />
 ```
+
+当类型为 `circular-tdesign` 时，`color` 默认值为 `#0052d9`，即 [TDesign](https://tdesign.tencent.com/design/color) 主题色。
 
 ### 自定义颜色
 
@@ -62,13 +64,13 @@ export default {
 
 ### Props
 
-| 参数      | 说明                          | 类型               | 默认值     |
-| --------- | ----------------------------- | ------------------ | ---------- |
-| color     | 颜色                          | _string_           | `#c9c9c9`  |
-| type      | 类型，可选值为 `spinner`      | _string_           | `circular` |
-| size      | 加载图标大小，默认单位为 `px` | _string \| number_ | `30px`     |
-| text-size | 文字大小，默认单位为为 `px`   | _string \| number_ | `14px`     |
-| vertical  | 是否垂直排列图标和文字内容    | _boolean_          | `false`    |
+| 参数      | 说明                                         | 类型               | 默认值     |
+| --------- | -------------------------------------------- | ------------------ | ---------- |
+| color     | 颜色                                         | _string_           | `#c9c9c9`  |
+| type      | 类型，可选值为 `spinner`, `circular-tdesign` | _string_           | `circular` |
+| size      | 加载图标大小，默认单位为 `px`                | _string \| number_ | `30px`     |
+| text-size | 文字大小，默认单位为为 `px`                  | _string \| number_ | `14px`     |
+| vertical  | 是否垂直排列图标和文字内容                   | _boolean_          | `false`    |
 
 ### Slots
 

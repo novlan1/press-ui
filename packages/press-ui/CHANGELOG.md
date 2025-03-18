@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/novlan1/press-ui/compare/v3.0.0...v2.4.0) (2025-03-18)
+
+
+### ✨ Features | 新功能
+
+* **loading-plus:** add circular-tdesign type ([1d210c7](https://github.com/novlan1/press-ui/commit/1d210c79265720615bc2692c1e3c40273ff5c926))
+
 ## [3.0.0](https://github.com/novlan1/press-ui/compare/v2.2.39...v3.0.0) (2025-03-16)
 
 

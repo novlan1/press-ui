@@ -11,6 +11,10 @@
   justify-content: center;
   color: var(--loading-spinner-color, $loading-spinner-color);
 
+  &--circular-tdesign {
+    animation: press-rotate .8s linear infinite;
+  }
+
   &__spinner {
     position: relative;
     box-sizing: border-box;
@@ -34,6 +38,22 @@
       border: 1px solid transparent;
       border-top-color: currentColor;
       border-radius: 100%;
+    }
+
+    &--circular-tdesign {
+      border-radius: 100%;
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        rgba(255, 255, 255, 0) 0deg,
+        rgba(255, 255, 255, 0) 60deg,
+        currentColor 330deg,
+        rgba(255, 255, 255, 0) 360deg
+      );
+      animation: none;
+      mask: radial-gradient(transparent calc(50% - 1rpx), #fff 50%);
+    
+      /* stylelint-disable-next-line */
+      -webkit-mask: radial-gradient(transparent calc(50% - 1rpx), #fff 50%);
     }
   }
 

@@ -6,6 +6,12 @@
       </div>
       <div>
         <PressLoadingPlus
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
+      </div>
+      <div>
+        <PressLoadingPlus
           type="spinner"
           :custom-style="customStyle"
         />
@@ -15,6 +21,13 @@
     <demo-block :title="t('color')">
       <div>
         <PressLoadingPlus color="#1989fa" />
+      </div>
+      <div>
+        <PressLoadingPlus
+          color="#07c160"
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
       </div>
       <div>
         <PressLoadingPlus
@@ -28,6 +41,13 @@
     <demo-block :title="t('size')">
       <div>
         <PressLoadingPlus size="15" />
+      </div>
+      <div>
+        <PressLoadingPlus
+          size="20"
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
       </div>
       <div>
         <PressLoadingPlus
