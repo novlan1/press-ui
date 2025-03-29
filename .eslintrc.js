@@ -40,6 +40,30 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
+    // 'import/order': [
+    //   'error',
+    //   {
+    //     groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    //     'newlines-between': 'always-and-inside-groups',
+    //     alphabetize: {
+    //       order: 'asc',
+    //       caseInsensitive: false,
+    //     },
+    //     pathGroups: [
+    //       {
+    //         pattern: 'react',
+    //         group: 'external',
+    //         position: 'before',
+    //       },
+    //       {
+    //         pattern: '@/**',
+    //         group: 'internal',
+    //         position: 'before',
+    //       },
+    //     ],
+    //     pathGroupsExcludedImportTypes: ['builtin'],
+    //   },
+    // ],
     'vue/no-v-text-v-html-on-component': 0,
     'vue/component-name-in-template-casing': ['error', 'PascalCase', {
       registeredComponentsOnly: true,

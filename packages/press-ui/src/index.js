@@ -54,7 +54,7 @@ import GuideContent from './packages/press-guide-content/press-guide-content.vue
 import Icon from './packages/press-icon/press-icon.vue';
 import IconDelete from './packages/press-icon-delete/press-icon-delete.vue';
 import IconMusic from './packages/press-icon-music/press-icon-music.vue';
-import IconMusic from './packages/press-icon/press-icon-music.vue';
+import IconMusic2 from './packages/press-icon/press-icon-music.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
 import Image from './packages/press-image/press-image.vue';
 import ImagePreview from './packages/press-image-preview/press-image-preview.vue';
@@ -183,7 +183,7 @@ const components = {
   Icon,
   IconDelete,
   IconMusic,
-  IconMusic,
+  IconMusic2,
   IconPlus,
   Image,
   ImagePreview,

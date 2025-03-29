@@ -89,6 +89,7 @@ export default {
 | tips                | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
 | clear-button-text   | 清除按钮文案                         | _string_ | `清空` |
 | confirm-button-text | 确认按钮文案                         | _string_ | `确认` |
+| file-type           | 导出图片格式，可选值为 `png`         | _string_ | `jpg`  |
 
 ### Events
 

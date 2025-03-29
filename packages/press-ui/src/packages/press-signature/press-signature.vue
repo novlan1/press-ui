@@ -8,6 +8,7 @@
       ref="wrapRef"
       class="press-signature__content"
     >
+      <!-- #ifndef MP-QQ -->
       <Canvas
         v-if="isRenderCanvas"
         :id="canvasId"
@@ -21,6 +22,17 @@
       <p v-else>
         {{ tips }}
       </p>
+      <!-- #endif -->
+
+      <!-- #ifdef MP-QQ -->
+      <canvas
+        :id="canvasId"
+        canvas-id="press-signature"
+        @touchstart="touchStart"
+        @touchmove.prevent="touchMove"
+        @touchend.prevent.stop="touchEnd"
+      />
+      <!-- #endif -->
     </div>
     <div class="press-signature__footer">
       <PressButton
@@ -100,6 +112,10 @@ export default {
     confirmButtonText: {
       type: String,
       default: t('confirm'),
+    },
+    fileType: {
+      type: String,
+      default: 'jpg',
     },
   },
   emits: [
@@ -240,7 +256,10 @@ export default {
 
         this.ctx.lineTo(mouseX, mouseY);
         this.ctx.stroke();
-        // this.ctx.draw(true);
+
+        if (!canIUseCanvas2d()) {
+          this.ctx.draw(true);
+        }
       } else {
         this.updateCurrentLine(event);
       }
@@ -289,7 +308,8 @@ export default {
         const cb = () => {
           uni.canvasToTempFilePath({
             canvas: this.canvas,
-            fileType: 'jpg',
+            canvasId: this.canvasId,
+            fileType: this.fileType,
             quality: 1, // 图片质量
             success(res) {
               const url = res.tempFilePath;
@@ -303,10 +323,10 @@ export default {
                 });
               });
             },
-            fail() {
-
+            fail(error) {
+              console.warn('[canvasToTempFilePath] error: ', error);
             },
-          });
+          }, this);
         };
 
         cb();
@@ -327,7 +347,7 @@ export default {
       });
     },
 
-    clear()  {
+    innerClear() {
       if (this.ctx) {
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
         this.ctx.closePath();
@@ -335,14 +355,16 @@ export default {
 
         this.setCanvasBgColor(this.ctx);
       }
+    },
+    clear()  {
+      this.innerClear();
       this.$emit('clear');
     },
     initialize() {
       if (this.isRenderCanvas) {
         this.getContext().then((context) => {
           this.ctx = context;
-
-          this.setCanvasBgColor(this.ctx);
+          this.innerClear();
         });
       }
     },
@@ -387,6 +409,8 @@ export default {
 
       if (!canIUseCanvas2d()) {
         const ctx = uni.createCanvasContext(this.canvasId, this);
+        this.inited = true;
+        ctx.scale(dpr, dpr);
         return Promise.resolve(ctx);
       }
 

@@ -122,19 +122,21 @@ showToast({
 
 ### Options
 
-| 参数        | 说明                                                   | 类型       | 默认值        |
-| ----------- | ------------------------------------------------------ | ---------- | ------------- |
-| type        | 提示类型，可选值为 `loading` `success` `fail` `html`   | _string_   | `text`        |
-| position    | 位置，可选值为 `top` `middle` `bottom`                 | _string_   | `middle`      |
-| message     | 内容                                                   | _string_   | `''`          |
-| mask        | 是否显示遮罩层                                         | _boolean_  | `false`       |
-| forbidClick | 是否禁止背景点击                                       | _boolean_  | `false`       |
-| loadingType | 加载图标类型, 可选值为 `spinner`                       | _string_   | `circular`    |
-| zIndex      | z-index 层级                                           | _number_   | `1000`        |
-| duration    | 展示时长(ms)，值为 0 时，toast 不会消失                | _number_   | `2000`        |
-| selector    | 自定义选择器                                           | _string_   | `press-toast` |
-| context     | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_   | 当前页面      |
-| onClose     | 关闭时的回调函数                                       | _function_ | -             |
+| 参数         | 说明                                                   | 类型       | 默认值        |
+| ------------ | ------------------------------------------------------ | ---------- | ------------- |
+| type         | 提示类型，可选值为 `loading` `success` `fail` `html`   | _string_   | `text`        |
+| position     | 位置，可选值为 `top` `middle` `bottom`                 | _string_   | `middle`      |
+| message      | 内容                                                   | _string_   | `''`          |
+| mask         | 是否显示遮罩层                                         | _boolean_  | `false`       |
+| forbidClick  | 是否禁止背景点击                                       | _boolean_  | `false`       |
+| loadingType  | 加载图标类型, 可选值为 `spinner`, `circular-tdesign`   | _string_   | `circular`    |
+| loadingSize  | 加载图标大小，默认单位为 `px`                          | _string_   | -             |
+| loadingColor | 加载图标颜色                                           | _string_   | `#fff`        |
+| zIndex       | z-index 层级                                           | _number_   | `1000`        |
+| duration     | 展示时长(ms)，值为 0 时，toast 不会消失                | _number_   | `2000`        |
+| selector     | 自定义选择器                                           | _string_   | `press-toast` |
+| context      | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_   | 当前页面      |
+| onClose      | 关闭时的回调函数                                       | _function_ | -             |
 
 ### Slot
 

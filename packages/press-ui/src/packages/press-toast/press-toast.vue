@@ -32,8 +32,9 @@
           <!-- custom-class="press-toast__loading" -->
           <PressLoading
             v-if="dataType === 'loading'"
-            color="white"
+            :color="dataLoadingColor"
             :type="dataLoadingType"
+            :size="dataLoadingSize"
             custom-style="margin: 10px 0;"
           />
           <PressIconPlus
@@ -84,6 +85,8 @@ const props = {
     type: String,
     default: 'circular',
   },
+  loadingSize: { type: String, default: '' },
+  loadingColor: { type: String, default: '#fff' },
   position: {
     type: String,
     default: 'middle',

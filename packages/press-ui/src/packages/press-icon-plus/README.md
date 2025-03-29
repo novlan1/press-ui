@@ -109,3 +109,21 @@ export default {
 
 这个是开发者工具本身的问题，可以忽略，具体可以查看[微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html) - 注意事项第 4 条。
 
+### 内部组件使用统计
+
+| 图标名称   | 使用组件                                                     |
+| ---------- | ------------------------------------------------------------ |
+| success    | tree-select, toast, radio, checkbox, cascader, dropdown-item |
+| fail       | toast                                                        |
+| cross      | tag, popup-plus, action-sheet                                |
+| clear      | field, fab, image-preview                                    |
+| photograph | upload                                                       |
+| photo      | image                                                        |
+| star       | rate                                                         |
+| star-o     | rate                                                         |
+| arrow-left | nav-bar, cell                                                |
+| arrow-up   | cell                                                         |
+| arrow-down | cell                                                         |
+| arrow      | cell                                                         |
+| back-top   | back-top                                                     |
+| checked    | steps                                                        |

@@ -38,16 +38,23 @@ const CSS_BASE = `/* 基础样式 */
 
 function getAllPressComponents(globMatch) {
   const list = glob.sync(globMatch);
+  const preNames = {};
+
   const compList = list.map((item) => {
     const list = item.split('/');
     const file = list[list.length - 1];
     const componentName = file.replace(/^press-/, '').replace(/\.vue$/, '');
 
+    const parsedComponentName = componentName.replace(/(?:^|-)(\w)/g,  (_, c) => (c ? c.toUpperCase() : ''));
+    preNames[parsedComponentName] = (preNames[parsedComponentName] || 0) + 1;
+
     return {
       dir: path.dirname(item),
       name: componentName,
       folder: list[list.length - 2],
-      componentName: componentName.replace(/(?:^|-)(\w)/g,  (_, c) => (c ? c.toUpperCase() : '')),
+      componentName: preNames[parsedComponentName] > 1
+        ? parsedComponentName + preNames[parsedComponentName]
+        : parsedComponentName,
     };
   });
 

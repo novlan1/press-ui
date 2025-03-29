@@ -2,6 +2,92 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/novlan1/press-ui/compare/v2.5.0...v3.0.1) (2025-03-19)
+
+## [2.5.0](https://github.com/novlan1/press-ui/compare/v2.4.1...v2.5.0) (2025-03-19)
+
+### [2.4.1](https://github.com/novlan1/press-ui/compare/v2.4.0...v2.4.1) (2025-03-19)
+
+
+### ✨ Features | 新功能
+
+* **signature:** 兼容qq小程序 ([1a8868d](https://github.com/novlan1/press-ui/commit/1a8868de2dd1f23d375cc2d8a9497ceeddbc8f3a))
+
+## [2.4.0](https://github.com/novlan1/press-ui/compare/v3.0.0...v2.4.0) (2025-03-18)
+
+
+### ✨ Features | 新功能
+
+* **loading-plus:** add circular-tdesign type ([1d210c7](https://github.com/novlan1/press-ui/commit/1d210c79265720615bc2692c1e3c40273ff5c926))
+
+## [3.0.0](https://github.com/novlan1/press-ui/compare/v2.2.39...v3.0.0) (2025-03-16)
+
+
+### ✨ Features | 新功能
+
+* **popover:** support closeOnClickOutside ([a813800](https://github.com/novlan1/press-ui/commit/a813800ae6c28d025cc8440bdc427aa39498d9ed))
+
+### [2.2.39](https://github.com/novlan1/press-ui/compare/v2.2.38...v2.2.39) (2025-03-10)
+
+
+### ✨ Features | 新功能
+
+* **text-ellipsis:** 优化小程序下表现 ([0312d0d](https://github.com/novlan1/press-ui/commit/0312d0da05356d1c04218eab6b0253290fe66d7c))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update eslintrc ([4e91203](https://github.com/novlan1/press-ui/commit/4e91203d6c001d85ed0dfc7d16632b834afaadd0))
+
+
+### ✏️ Documentation | 文档
+
+* update readme ([734af9f](https://github.com/novlan1/press-ui/commit/734af9fbfbd6c034ec71d39a1819e46b500decf1))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **tabs:** 修复事件名错误 ([cce4eee](https://github.com/novlan1/press-ui/commit/cce4eee58daddf80b70c984a3abd0b74bcc5f863))
+
+### [2.2.38](https://github.com/novlan1/press-ui/compare/v2.2.37...v2.2.38) (2025-03-08)
+
+
+### ✨ Features | 新功能
+
+* **text-ellipsis:** 防止意外空格 ([0b6c088](https://github.com/novlan1/press-ui/commit/0b6c08838a0788d1dee23c86bfefc36eee9afa4c))
+
+### [2.2.37](https://github.com/novlan1/press-ui/compare/v2.2.36...v2.2.37) (2025-03-08)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update pre-commit ([3c66b4b](https://github.com/novlan1/press-ui/commit/3c66b4b27824fe57739496bd46948fa7a0c352ad))
+
+
+### ✨ Features | 新功能
+
+* **demo:** 优化demo-title ([66e9c24](https://github.com/novlan1/press-ui/commit/66e9c244c4ecce3e7a68abb7738a43f326c892d9))
+* **script-component-config:** filter redirect demo ([c4176b5](https://github.com/novlan1/press-ui/commit/c4176b5dd62bfee01e98ef78d955bc95551fda6c))
+* **signature:** 兼容非uni-app等场景 ([95be7a1](https://github.com/novlan1/press-ui/commit/95be7a1fcaf974e7d52fdd5b28d24220103f4cb7))
+
+### [2.2.36](https://github.com/novlan1/press-ui/compare/v2.2.34...v2.2.36) (2025-03-08)
+
+
+### ✨ Features | 新功能
+
+* add condition for pages.json ([5c815f0](https://github.com/novlan1/press-ui/commit/5c815f0a5f620abe8c0da2e6f270078dfae4db56))
+* **image-preview/notify:** add types ([c544d90](https://github.com/novlan1/press-ui/commit/c544d90d4719f4d527bfc2bf88bcfd1a19a8678f))
+* **text-ellipsis:** add text-ellipsis ([faa5854](https://github.com/novlan1/press-ui/commit/faa5854c17dc7e2958a80723d26cd7c25a972c50))
+
+### [2.2.35](https://github.com/novlan1/press-ui/compare/v2.2.34...v2.2.35) (2025-03-08)
+
+
+### ✨ Features | 新功能
+
+* add condition for pages.json ([5c815f0](https://github.com/novlan1/press-ui/commit/5c815f0a5f620abe8c0da2e6f270078dfae4db56))
+* **image-preview/notify:** add types ([c544d90](https://github.com/novlan1/press-ui/commit/c544d90d4719f4d527bfc2bf88bcfd1a19a8678f))
+* **text-ellipsis:** add text-ellipsis ([faa5854](https://github.com/novlan1/press-ui/commit/faa5854c17dc7e2958a80723d26cd7c25a972c50))
+
 ### [2.2.34](https://github.com/novlan1/press-ui/compare/v2.2.33...v2.2.34) (2025-03-05)
 
 

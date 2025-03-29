@@ -52,6 +52,10 @@ private.key
 mp_ci_preview_destination.png
 sm.zip
 lib/
+cjs/
+es/
+esm/
+packages/press-ui-next/src/
 
 packages/press-ui-vue3-pure/src/packages
 packages/press-ui-vue3-pure/src/utils

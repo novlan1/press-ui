@@ -9,3 +9,9 @@ packages/press-ui/log/
 !.vuepress
 lib/
 !.stylelintrc.js
+
+packages/press-ui-next/src/
+esm/
+es/
+dist/
+cjs/

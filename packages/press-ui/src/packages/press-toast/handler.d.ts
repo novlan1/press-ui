@@ -1,6 +1,6 @@
 type IOptions = Partial<{
   context: any;
-  selector: string;
+  selector: string | ((context: any) => any);
 
   show: boolean;
   mask: boolean;
@@ -11,6 +11,9 @@ type IOptions = Partial<{
   type: string;
 
   loadingType: string;
+  loadingSize: string;
+  loadingColor: string;
+
   position: string;
   duration: number;
   animationDuration: number;
@@ -20,11 +23,11 @@ type IOptions = Partial<{
 
 
 interface IToast {
-  (options: IOptions | string): any;
-  loading: (options: IOptions | string) => any;
-  success: (options: IOptions | string) => any;
-  fail: (options: IOptions | string) => any;
-  clear: (all?: boolean) => any;
+  (options: IOptions | string): IToast;
+  loading: (options: IOptions | string) => IToast;
+  success: (options: IOptions | string) => IToast;
+  fail: (options: IOptions | string) => IToast;
+  clear: (all?: boolean) => IToast;
 
   setDefaultOptions: (options: IOptions) => void;
   resetDefaultOptions: () => void;

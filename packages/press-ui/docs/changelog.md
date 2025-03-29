@@ -1,5 +1,32 @@
 # 更新日志
 
+### [3.0.3](https://github.com/novlan1/press-ui/compare/v3.0.2...v3.0.3) (2025-03-29)
+
+
+### Features 🎉
+
+* **toast:** 优化类型 ([9d06235](https://github.com/novlan1/press-ui/commit/9d062357827f32f2ac245bb3c4dc42072b6e5831))
+
+### [3.0.2](https://github.com/novlan1/press-ui/compare/v3.0.1...v3.0.2) (2025-03-29)
+
+
+### Features 🎉
+
+* **generate-config:** 支持多组件重名 ([0c0bb62](https://github.com/novlan1/press-ui/commit/0c0bb62f26f108fb03ee0a682b0e3c3443405978))
+* **signature:** 优化signature ([7361e3a](https://github.com/novlan1/press-ui/commit/7361e3af4482a221f597b12e922c272a9848bf12))
+* **toast:** 透传loadingPlus的color和size属性 ([2f8b7fc](https://github.com/novlan1/press-ui/commit/2f8b7fc3be4e42ae33fda4032bbcfa4b85eac3d1))
+
+### [3.0.1](https://github.com/novlan1/press-ui/compare/v2.5.0...v3.0.1) (2025-03-19)
+
+## [2.5.0](https://github.com/novlan1/press-ui/compare/v2.4.1...v2.5.0) (2025-03-19)
+
+### [2.4.1](https://github.com/novlan1/press-ui/compare/v2.4.0...v2.4.1) (2025-03-19)
+
+
+### Features 🎉
+
+* **signature:** 兼容qq小程序 ([1a8868d](https://github.com/novlan1/press-ui/commit/1a8868de2dd1f23d375cc2d8a9497ceeddbc8f3a))
+
 ## [2.4.0](https://github.com/novlan1/press-ui/compare/v3.0.0...v2.4.0) (2025-03-18)
 
 
