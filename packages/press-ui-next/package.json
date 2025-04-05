@@ -17,7 +17,7 @@
     "url": "https://github.com/novlan1/press-ui"
   },
   "license": "MIT",
-  "author": "guowangyang",
+  "author": "novlan1",
   "main": "cjs/index-lib.js",
   "jsdelivr": "dist/press-ui.min.js",
   "unpkg": "dist/press-ui.min.js",

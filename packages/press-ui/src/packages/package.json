@@ -1,7 +1,7 @@
 {
   "name": "press-ui",
   "displayName": "Press UI 组件库",
-  "version": "3.0.3",
+  "version": "3.0.5",
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
     "press-ui",
@@ -16,7 +16,7 @@
   },
   "repository": "https://github.com/novlan1/press-ui",
   "license": "MIT",
-  "author": "guowangyang",
+  "author": "novlan1",
   "main": "index.js",
   "scripts": {},
   "dependencies": {},

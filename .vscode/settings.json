@@ -47,6 +47,8 @@
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
   },
   "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": false,
   "javascript.format.enable": false,
   "stylelint.configFile": ".stylelintrc.js",
   "stylelint.customSyntax": "postcss-scss",

@@ -10,6 +10,7 @@
   [![node][node]][node-url]
   [![downloads][downloads]][downloads-url]
   ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/press-ui)
+  ![NPM Version](https://img.shields.io/npm/v/press-ui)
   ![NPM License](https://img.shields.io/npm/l/press-ui)
   ![GitHub last commit](https://img.shields.io/github/last-commit/novlan1/press-ui)
   ![GitHub Created At](https://img.shields.io/github/created-at/novlan1/press-ui)

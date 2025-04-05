@@ -1,5 +1,14 @@
 # 更新日志
 
+### [3.0.5](https://github.com/novlan1/press-ui/compare/v3.0.4...v3.0.5) (2025-04-03)
+
+### [3.0.4](https://github.com/novlan1/press-ui/compare/v3.0.3...v3.0.4) (2025-04-03)
+
+
+### Bug Fixes 🐞
+
+* **picker-plus:** 使用that，防止小程序获取不到 ([2611b36](https://github.com/novlan1/press-ui/commit/2611b365977fbba955afaba815b0bc96d52658e2))
+
 ### [3.0.3](https://github.com/novlan1/press-ui/compare/v3.0.2...v3.0.3) (2025-03-29)
 
 

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.5](https://github.com/novlan1/press-ui/compare/v3.0.4...v3.0.5) (2025-04-03)
+
+### [3.0.4](https://github.com/novlan1/press-ui/compare/v3.0.3...v3.0.4) (2025-04-03)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **picker-plus:** 使用that，防止小程序获取不到 ([2611b36](https://github.com/novlan1/press-ui/commit/2611b365977fbba955afaba815b0bc96d52658e2))
+
 ### [3.0.3](https://github.com/novlan1/press-ui/compare/v3.0.2...v3.0.3) (2025-03-29)
 
 

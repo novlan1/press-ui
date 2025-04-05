@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "3.0.3",
+  "version": "3.0.5",
   "private": true,
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/novlan1/press-ui"
   },
-  "author": "guowangyang",
+  "author": "novlan1",
   "scripts": {
     "build:igame": "NODE_OPTIONS=--openssl-legacy-provider rm -rf dist && cd packages/press-ui && npm run build:igame && cp -r dist ../../",
     "build:mp": "rm -rf dist && cd packages/press-ui && npm run build:mp && cp -r dist ../../",
