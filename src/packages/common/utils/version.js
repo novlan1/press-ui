@@ -6,7 +6,7 @@ export function getSystemInfoSync() {
   try {
     if (!Object.keys(systemInfo).length
       && typeof uni !== 'undefined'
-      && typeof uni?.getSystemInfoSync === 'function'
+      && typeof uni.getSystemInfoSync === 'function'
     ) {
       systemInfo = uni.getSystemInfoSync();
     }

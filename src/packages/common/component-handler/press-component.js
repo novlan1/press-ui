@@ -58,7 +58,7 @@ export function genAllProps(newProps, propsMap) {
 }
 
 function getDefaultValue(allProps, key) {
-  let result = allProps[key]?.default;
+  let result = allProps[key] && allProps[key].default;
   if (typeof result === 'function') {
     result = result();
   }

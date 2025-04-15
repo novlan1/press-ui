@@ -124,7 +124,7 @@ import Toast from './packages/press-toast/press-toast.vue';
 import ToggleHeader from './packages/press-toggle-header/press-toggle-header.vue';
 import Transition from './packages/press-transition/press-transition.vue';
 import TreeSelect from './packages/press-tree-select/press-tree-select.vue';
-import Ui from './press-ui.vue';
+import Ui from './packages/press-ui/press-ui.vue';
 import Uploader from './packages/press-uploader/press-uploader.vue';
 
 const components = {

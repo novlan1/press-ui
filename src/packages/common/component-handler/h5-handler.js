@@ -19,7 +19,8 @@ export function getH5ComponentHandler({
   let currentOptions = {
     ...defaultOptions,
   };
-  const dialogId = defaultOptions.selector?.slice(1) || 'component-default-id';
+  const dialogId = (defaultOptions.selector && defaultOptions.selector.slice(1))
+    || 'component-default-id';
 
   function createInstance({
     multiple,
@@ -34,7 +35,7 @@ export function getH5ComponentHandler({
     if (!queue.length || multiple) {
       // const dialogId = 'press-toast';
       const oldDialog = document.getElementById(dialogId);
-      if (oldDialog?.parentElement) {
+      if (oldDialog && oldDialog.parentElement) {
         oldDialog.parentElement.removeChild(oldDialog);
       }
       const dialogRootDiv = document.createElement('div');
@@ -44,9 +45,11 @@ export function getH5ComponentHandler({
 
       const dialog = extendComponent(dialogRootDiv, component);
 
-      dialog?.$on?.('input', (value) => {
-        dialog.value = value;
-      });
+      if (dialog && typeof dialog.$on === 'function') {
+        dialog.$on('input', (value) => {
+          dialog.value = value;
+        });
+      }
 
       queue.push(dialog);
     }
@@ -158,7 +161,7 @@ export function getH5ComponentHandler({
 export function initH5Instance(vueDialog, id, options = {}) {
   const dialogId = id; // 'press-dialog';
   const oldDialog = document.getElementById(dialogId);
-  if (oldDialog?.parentNode) {
+  if (oldDialog && oldDialog.parentNode) {
     oldDialog.parentNode.removeChild(oldDialog);
   }
   const dialogRootDiv = document.createElement('div');

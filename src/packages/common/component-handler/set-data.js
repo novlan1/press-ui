@@ -1,7 +1,7 @@
 export function setData(dialog, data, func = 'setData') {
   if (!dialog) return;
 
-  const setData = dialog.$vm?.[func] || dialog[func];
+  const setData = (dialog.$vm && dialog.$vm[func]) || dialog[func];
   if (typeof setData === 'function') {
     return setData(data);
   }

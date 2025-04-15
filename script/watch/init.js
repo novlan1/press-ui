@@ -20,7 +20,7 @@ function initWithPressUI(cpList = [
   'packages',
   'utils',
 ]) {
-  execCommand('npm run init', './src/press-ui/packages/press-ui');
+  execCommand('npm run init', './src/press-ui');
 
   cpList.forEach((item) => {
     execCommand(`rm -rf src/${item} && cp -r src/press-ui/src/${item}/ src/${item}`, process.cwd(), 'inherit');

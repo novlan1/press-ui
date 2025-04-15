@@ -45,7 +45,7 @@ export function selectComponent(context, selector) {
   }
 
   if (
-    context.$refs?.[attribute]) {
+    context.$refs && context.$refs[attribute]) {
     return context.$refs[attribute];
   }
 
@@ -59,12 +59,12 @@ export function selectComponent(context, selector) {
   }
   // #endif
 
-  if (typeof context?.$selectComponent === 'function') {
-    const res =  context?.$selectComponent?.(selector);
+  if (context && typeof context.$selectComponent === 'function') {
+    const res =  context.$selectComponent(selector);
     return res;
   }
 
-  return context?.selectComponent?.(selector);
+  return context && context.selectComponent && context.selectComponent(selector);
 }
 
 
