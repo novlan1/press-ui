@@ -37,7 +37,7 @@ jobs:
       - name: Build
         # error:0308010C:digital envelope routines::unsupported
         # https://blog.csdn.net/zch981964/article/details/131689132
-        run: cd packages/press-ui && npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && npm run build && cp -r dist/build/h5 docs/.vuepress/dist
+        run: npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build && npm run build && cp -r dist/build/h5 docs/.vuepress/dist
 
       # 部署到 GitHub Pages
       - name: Deploy
@@ -49,4 +49,4 @@ jobs:
           # 打包后的文件部署到哪个分支上
           BRANCH: docs
           # 打包后的文件在哪里
-          FOLDER: packages/press-ui/docs/.vuepress/dist
+          FOLDER: docs/.vuepress/dist

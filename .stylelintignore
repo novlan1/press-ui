@@ -11,3 +11,5 @@
 /test/
 dist/
 tests/unit/coverage/
+tests/coverage
+log/

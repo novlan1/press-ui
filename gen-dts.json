@@ -30,7 +30,7 @@
         "./src/*"
       ],
       "src/*": [
-        "./packages/press-ui/src/*"
+        "./src/*"
       ]
     },
     "lib": [
@@ -38,10 +38,10 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ],
+    ]
   },
   "include": [
-    "./packages/press-ui/src/packages/**/*.ts",
+    "./src/packages/**/*.ts",
     "./shime-vue.d.ts"
   ],
   "exclude": [

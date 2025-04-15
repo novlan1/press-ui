@@ -5,7 +5,8 @@ static/common/*
 
 dist/
 /log/
-packages/press-ui/log/
+log/
+
 !.vuepress
 lib/
 !.stylelintrc.js
@@ -15,3 +16,5 @@ esm/
 es/
 dist/
 cjs/
+
+packages/eslint-config-*/example

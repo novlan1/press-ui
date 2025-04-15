@@ -24,6 +24,9 @@
     "weixin",
     "toutiao",
     "quickapp",
+    "msdk",
+    "wzyd",
+    "ebus"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
@@ -32,6 +35,7 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "eslint.autofixOnSave": false,
+  "eslint.nodePath": "./node_modules",
   "eslint.validate": [
     "vue",
     "html",
@@ -50,6 +54,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": false,
   "javascript.format.enable": false,
+  "stylelint.packageManager": "pnpm",
   "stylelint.configFile": ".stylelintrc.js",
   "stylelint.customSyntax": "postcss-scss",
   "stylelint.validate": [

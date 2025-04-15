@@ -21,9 +21,17 @@
       "webpack-env",
       "@dcloudio/types",
       "miniprogram-api-typings",
-      "jest"
+      "jest",
+      "@types/md5"
     ],
-    "paths": {},
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "src/*": [
+        "./src/*"
+      ],
+    },
     "lib": [
       "esnext",
       "dom",
@@ -32,7 +40,7 @@
     ],
   },
   "include": [
-    "./**/*.ts",
+    "./**/*.ts"
   ],
   "exclude": [
     "node_modules",

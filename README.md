@@ -118,6 +118,7 @@ module.exports = {
 
 [插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
 
+
 ### 5. 立即体验
 
 下图是示例二维码，第一行分别为基于 `uni-app` 的 `Vue2.x` 版本的 H5、微信小程序、QQ小程序、支付宝小程序、安卓项目。

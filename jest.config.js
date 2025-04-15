@@ -9,10 +9,10 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less|scss)$': JEST_STYLE_MOCK_FILE,
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': JEST_FILE_MOCK_FILE,
-    '^src/packages/(.*)$': '<rootDir>/packages/press-ui/src/packages/$1',
-    '^src/pages/(.*)$': '<rootDir>/packages/press-ui/src/pages/$1',
-    '^src/utils/(.*)$': '<rootDir>/packages/press-ui/src/utils/$1',
-    '^press-ui/(.*)$': '<rootDir>packages/press-ui/src/packages/$1',
+    '^src/packages/(.*)$': '<rootDir>/src/packages/$1',
+    '^src/pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^src/utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^press-ui/(.*)$': '<rootDir>src/packages/$1',
   },
   transform: {
     '\\.(vue)$': 'vue-jest',
@@ -46,5 +46,5 @@ module.exports = {
   collectCoverage: true,
   coverageReporters: ['lcov', 'text-summary'],
   coverageDirectory: '<rootDir>/tests/coverage',
-  transformIgnorePatterns: ['<rootDir>/packages/press-ui/node_modules/.pnpm/(?!(@popperjs\\+core)@)'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/.pnpm/(?!(@popperjs\\+core)@)'],
 };
