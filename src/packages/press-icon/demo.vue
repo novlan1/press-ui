@@ -80,11 +80,11 @@
 import IconMap from 'src/utils/icon/icon.json';
 
 import PressCard from 'press-ui/press-card/press-card.vue';
-import { CLIPBOARD_MIXIN } from 'press-ui/press-icon-plus/demo-helper/clipboard-mixin';
 
 import PressIconMusic from 'press-ui/press-icon/press-icon-music.vue';
 import PressIcon from 'press-ui/press-icon/press-icon.vue';
 import PressNotify from 'press-ui/press-notify/press-notify.vue';
+import { CLIPBOARD_MIXIN } from 'src/packages/press-icon-plus/demo-helper/clipboard-mixin';
 
 
 export default {
