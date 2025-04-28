@@ -71,6 +71,7 @@ export function ChildrenMixin(parent, options = {}) {
       that.onBeforeMount();
     },
     // #endif
+
     // #ifdef VUE3
     beforeUnmount() {
       const that = this;

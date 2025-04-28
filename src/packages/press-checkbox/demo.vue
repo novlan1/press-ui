@@ -139,8 +139,9 @@
   </div>
 </template>
 <script>
-import PressCheckbox from 'press-ui/press-checkbox/press-checkbox.vue';
 import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group.vue';
+import PressCheckbox from 'press-ui/press-checkbox/press-checkbox.vue';
+
 
 export default {
   i18n: {

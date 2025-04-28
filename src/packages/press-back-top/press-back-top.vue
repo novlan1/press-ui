@@ -26,13 +26,14 @@
 </template>
 
 <script>
-import props from './props.js';
 import { addUnit, getPx } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
 import { errorTip } from '../common/utils/validator';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressTransition from '../press-transition/press-transition.vue';
+
+import props from './props.js';
 
 
 // #ifdef APP-NVUE

@@ -1,6 +1,6 @@
+import { addUnit } from './add-unit';
 import { bem, bem2, bem3 } from './bem';
 import { memoize } from './memoize';
-import { addUnit } from './add-unit';
 
 
 const memoizeBem = memoize(bem);

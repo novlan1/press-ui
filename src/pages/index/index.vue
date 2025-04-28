@@ -6,23 +6,21 @@
   />
 </template>
 <script>
-import PressDemoIndex from '../../packages/press-demo-index/press-demo-index.vue';
 
 import { fetchData } from '../../packages/common/utils/fetch-data';
 import { isNotInUni } from '../../packages/common/utils/utils';
-import  { getShowDemoMap } from '../../packages/press-demo-index/helper';
-
-import pagesConfig from './page-config.json';
 import {
   NOT_SHOW_IN_MP_COMPONENTS,
   NOT_SHOW_IN_PURE_PROJECT,
 } from '../../packages/press-demo-index/config';
-const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';
+import  { getShowDemoMap } from '../../packages/press-demo-index/helper';
 
-// function getEnvVersion() {
-//   const info = uni.getAccountInfoSync();
-//   return info?.miniProgram?.envVersion || '';
-// }
+import PressDemoIndex from '../../packages/press-demo-index/press-demo-index.vue';
+
+import pagesConfig from './page-config.json';
+
+
+const HELP_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_helpe_config.json';
 
 
 function getAllPages() {

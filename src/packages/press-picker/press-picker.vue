@@ -14,9 +14,11 @@
 </template>
 
 <script>
-import PickerInner from './picker-inner.vue';
-import { allProps, propsKeyMap } from './computed';
 import { functionalMixin } from '../mixins/functional';
+
+import { allProps, propsKeyMap } from './computed';
+import PickerInner from './picker-inner.vue';
+
 
 export default {
   name: 'PressPicker',

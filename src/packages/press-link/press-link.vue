@@ -9,10 +9,11 @@
 </template>
 
 <script>
-import props from './props.js';
 import { addUnit, getPx } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
+
+import props from './props.js';
 
 
 export default {

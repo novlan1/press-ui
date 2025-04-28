@@ -61,18 +61,18 @@
   </div>
 </template>
 <script>
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-
 import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';
 
+// #ifdef H5
+import { clickOutsideMixin } from '../mixins/click-outside';
+import { popoverMixin } from '../mixins/popover/index';
+// #endif
+
 import { transition } from '../mixins/transition';
 
-// #ifdef H5
-import { popoverMixin } from '../mixins/popover/index';
-import { clickOutsideMixin } from '../mixins/click-outside';
-// #endif
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {

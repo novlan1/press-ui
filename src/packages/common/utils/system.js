@@ -1,5 +1,5 @@
-import { canIUseGroupSetData, getSystemInfoSync } from './version';
 import { isNotInUni } from './utils';
+import { canIUseGroupSetData, getSystemInfoSync } from './version';
 
 export { nextTick } from '../vue3/adapter';
 export { getSystemInfoSync };

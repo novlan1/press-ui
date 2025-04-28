@@ -7,10 +7,11 @@
   </div>
 </template>
 <script>
-import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ParentMixin } from '../mixins/relation';
 import { PARENT_GRID as PARENT } from '../common/constant/parent-map';
+import { ParentMixin } from '../mixins/relation';
+
+import computed from './computed';
 
 
 export default {

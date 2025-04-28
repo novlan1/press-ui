@@ -42,14 +42,17 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { canIUseModel } from '../common/utils/version';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_RADIO_GROUP as PARENT } from '../common/constant/parent-map';
 import { formValidate } from '../common/utils/parent';
+
+import utils from '../common/utils/utils';
+import { canIUseModel } from '../common/utils/version';
+import { ChildrenMixin } from '../mixins/relation';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import computed from './computed';
 
 
 export default {

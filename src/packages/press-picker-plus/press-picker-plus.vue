@@ -61,12 +61,14 @@
   </div>
 </template>
 <script>
-import PickerColumn from '../press-picker-column/press-picker-column.vue';
-import Loading from '../press-loading-plus/press-loading-plus.vue';
-import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { toProvideThis } from '../common/vue3/adapter';
+
+import Loading from '../press-loading-plus/press-loading-plus.vue';
+import PickerColumn from '../press-picker-column/press-picker-column.vue';
+import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
+
 import { pickerProps } from './shared';
 
 import computed from './index';

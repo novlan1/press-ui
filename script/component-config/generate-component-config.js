@@ -1,4 +1,5 @@
 const path = require('path');
+
 const componentConfig = require('../../config/component-config.json');
 const { generateComponentConfig } = require('../../src/packages/script/generate-component-config/core');
 

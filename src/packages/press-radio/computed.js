@@ -1,5 +1,5 @@
-import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
+import { style } from '../common/utils/style';
 
 function iconStyle(data) {
   const styles = {

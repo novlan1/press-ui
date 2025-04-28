@@ -59,8 +59,9 @@
 
 <script>
 import { addUnit } from '../common/utils/add-unit';
-import props, { getPx } from './computed';
 import { nextTick } from '../common/utils/system';
+
+import props, { getPx } from './computed';
 
 
 export default {

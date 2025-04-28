@@ -71,12 +71,14 @@
   </PressPopup>
 </template>
 <script>
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import DeleteIcon from '../press-icon-delete/press-icon-delete.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';
+
 import { t } from '../locale';
+
+import DeleteIcon from '../press-icon-delete/press-icon-delete.vue';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {

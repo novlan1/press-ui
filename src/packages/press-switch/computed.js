@@ -1,5 +1,5 @@
-import { style } from '../common/utils/style';
 import { addUnit } from '../common/utils/add-unit';
+import { style } from '../common/utils/style';
 
 function rootStyle(data) {
   const currentColor = data.checked === data.activeValue ? data.activeColor : data.inactiveColor;

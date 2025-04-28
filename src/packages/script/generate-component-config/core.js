@@ -1,6 +1,3 @@
-const {
-  writeSrcIndexJs,
-} = require('./generate-entry');
 
 const { writeDocSidebar } = require('./1.docs-sidebar');
 const { writeDemoIndexConfig } = require('./2.demo-index');
@@ -9,6 +6,9 @@ const { writeDemoPagesJson } = require('./3.demo-pages');
 const { writeDemoTitleI18n } = require('./4.demo-title');
 const { writeBuildConfig } = require('./5.build-config');
 const { updateDocsData } = require('./6.docs-url');
+const {
+  writeSrcIndexJs,
+} = require('./generate-entry');
 
 const { PATH_MAP } = require('./helper');
 

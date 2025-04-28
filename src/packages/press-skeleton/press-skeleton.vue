@@ -32,8 +32,9 @@
   </div>
 </template>
 <script>
-import utils from '../common/utils/utils';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
+
 
 export default {
   name: 'PressSkeleton',

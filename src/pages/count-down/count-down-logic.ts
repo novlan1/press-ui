@@ -1,5 +1,5 @@
-import { storageUtil } from '../../packages/common/utils/storage';
 import { timeStampFormat } from '../../packages/common/format/time';
+import { storageUtil } from '../../packages/common/utils/storage';
 
 function getId() {
   return `${parseInt(`${Math.random() * 10000000000}`, 10)}`;

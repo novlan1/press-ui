@@ -36,7 +36,9 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
+
 import computed from './options-computed';
+
 
 export default {
   options: {

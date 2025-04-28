@@ -1,5 +1,6 @@
 // 用于 press-ui-demo-vue2 等工程的初始化
 const path = require('path');
+
 const { execCommand, writeFileSync, readFileSync } = require('t-comm');
 
 

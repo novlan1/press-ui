@@ -59,9 +59,11 @@
   </div>
 </template>
 <script>
-import themeDefaultJson from './theme-default.json';
-import ColorPicker from './color-picker/color-picker.vue';
 import { sendMessageToIframe, IFRAME_MESSAGE_TYPE_MAP } from '../utils/message';
+
+import ColorPicker from './color-picker/color-picker.vue';
+import themeDefaultJson from './theme-default.json';
+
 
 const DEFAULT_LANG = 'zh-CN';
 const LANG_MAP = {

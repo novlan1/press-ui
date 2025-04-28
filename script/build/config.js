@@ -1,14 +1,13 @@
 const path = require('path');
-// const fs = require('fs');
+
 const nodeExternals = require('webpack-node-externals');
+
 const Components = require('../../config/components.json');
 const POSTCSS_CONFIG_FILE = path.resolve(__dirname, 'postcss.config.js');
 
 const { LOADER: CROSS_GAME_STYLE_LOADER } = '@plugin-light/webpack-loader-cross-game-style';
 const { LOADER: IF_DEF_LOADER } = '@plugin-light/webpack-loader-ifdef';
-// const utilsList = fs.readdirSync(path.resolve(__dirname, '../src/utils'));
-// const mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
-// const transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'));
+
 const COMMON_EXTERNALS = {
   '@zebra-ui/swiper/components/z-swiper/z-swiper.vue': '@zebra-ui/swiper/components/z-swiper/z-swiper.vue',
   '@zebra-ui/swiper/components/z-swiper-item/z-swiper-item.vue': '@zebra-ui/swiper/components/z-swiper-item/z-swiper-item.vue',
@@ -29,29 +28,10 @@ function addExternalsForLightAndUI(externals, key, value) {
 
 Object.keys(Components).forEach((key) => {
   addExternalsForLightAndUI(externals, `packages/${key}`, `element-light/lib/${key}`);
-  // externals[`element-ui/packages/${key}`] = `element-light/lib/${key}`;
 });
 
-// externals['element-ui/src/locale'] = 'element-light/lib/locale';
 addExternalsForLightAndUI(externals, 'src/locale', 'element-light/lib/locale');
 
-// utilsList.forEach((file) => {
-//   file = path.basename(file, '.js');
-//   // externals[`element-ui/src/utils/${file}`] = `element-light/lib/utils/${file}`;
-//   addExternalsForLightAndUI(externals, `src/utils/${file}`, `element-light/lib/utils/${file}`);
-// });
-
-// mixinsList.forEach((file) => {
-//   file = path.basename(file, '.js');
-//   // externals[`element-ui/src/mixins/${file}`] = `element-light/lib/mixins/${file}`;
-//   addExternalsForLightAndUI(externals, `src/mixins/${file}`, `element-light/lib/mixins/${file}`);
-// });
-
-// transitionList.forEach((file) => {
-//   file = path.basename(file, '.js');
-//   // externals[`element-ui/src/transitions/${file}`] = `element-light/lib/transitions/${file}`;
-//   addExternalsForLightAndUI(externals, `src/transitions/${file}`, `element-light/lib/transitions/${file}`);
-// });
 
 externals = [Object.assign({
   vue: 'vue',
@@ -132,8 +112,6 @@ exports.imgWebpackRule = {
 };
 
 exports.cssWebpackLoaderList = [
-  // MiniCssExtractPlugin.loader,
-  // 'style-loader',
   'css-loader',
   {
     loader: 'postcss-loader',

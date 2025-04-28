@@ -1,5 +1,21 @@
 # 更新日志
 
+### [3.0.9](https://github.com/novlan1/press-ui/compare/v3.0.8...v3.0.9) (2025-04-28)
+
+
+### Features 🎉
+
+* **vue3:** Vue.set 等兼容不支持条件编译的环境 ([7caee92](https://github.com/novlan1/press-ui/commit/7caee9251033f5258598b21ef994a42a35508440))
+
+### [3.0.8](https://github.com/novlan1/press-ui/compare/v3.0.7...v3.0.8) (2025-04-27)
+
+### [3.0.7](https://github.com/novlan1/press-ui/compare/v3.0.6...v3.0.7) (2025-04-24)
+
+
+### Features 🎉
+
+* **adapter:** 先判断Vue.extend是否存在 ([5ce9822](https://github.com/novlan1/press-ui/commit/5ce982202b637214911db790059fdb534597d295))
+
 ### [3.0.6](https://github.com/novlan1/press-ui/compare/v3.0.5...v3.0.6) (2025-04-15)
 
 

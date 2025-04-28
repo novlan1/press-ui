@@ -77,9 +77,10 @@
   </div>
 </template>
 <script>
-import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
-import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 import Dialog from 'press-ui/press-dialog-plus/handler';
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
+
 
 export default {
   i18n: {

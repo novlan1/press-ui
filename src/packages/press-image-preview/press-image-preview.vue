@@ -56,11 +56,12 @@
   </PressOverlay>
 </template>
 <script>
-import PressOverlay from '../press-overlay/press-overlay.vue';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { functionalMixin } from '../mixins/functional';
 import { nextTick } from '../common/utils/system';
+import { functionalMixin } from '../mixins/functional';
 import { SwiperPureMixin } from '../mixins/pure/swiper';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressOverlay from '../press-overlay/press-overlay.vue';
 
 
 const imagePreviewProps = {

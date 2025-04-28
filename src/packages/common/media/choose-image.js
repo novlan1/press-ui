@@ -1,5 +1,5 @@
-import innerCreateInput from './create_input';
 import { watchChange } from './choose-common';
+import innerCreateInput from './create_input';
 
 
 let imageInput = null;

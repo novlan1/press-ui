@@ -1,5 +1,6 @@
-import CodeInput from '../press-code-input.vue';
 import { mount } from '@vue/test-utils';
+
+import CodeInput from '../press-code-input.vue';
 
 describe('CodeInput', () => {
   it('should emit change and input event on input', async () => {

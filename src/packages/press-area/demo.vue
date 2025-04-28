@@ -76,31 +76,16 @@
       @confirm="onConfirmArea"
       @cancel="onCancelPopup"
     />
-
-    <!-- <PressPopup
-      :is-show="showPopup"
-      :button="t('confirm')"
-      :close-icon="true"
-      :title="t('popupTitle')"
-      @confirm="onConfirmPopup"
-      @cancel="onCancelPopup"
-    >
-      <press-area
-        ref="pressArea"
-        :show-toolbar="false"
-        :area-list="areaList"
-        @change="onChange"
-      />
-    </PressPopup> -->
   </div>
 </template>
 <script>
-import PressArea from 'press-ui/press-area/press-area.vue';
-import PressAreaPopup from 'press-ui/press-area/press-area-popup.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
-// import PressPopup from 'press-ui/press-popup/press-popup.vue';
-import { parseData } from 'press-ui/press-area/helper/parse';
 import { getAreaData } from 'press-ui/press-area/computed';
+import { parseData } from 'press-ui/press-area/helper/parse';
+
+import PressAreaPopup from 'press-ui/press-area/press-area-popup.vue';
+import PressArea from 'press-ui/press-area/press-area.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+
 
 const AreaListEn = {
   province_list: {

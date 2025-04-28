@@ -38,10 +38,10 @@
   </div>
 </template>
 <script>
-import PressCropper from 'press-ui/press-cropper/press-cropper.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
-import PressImage from 'press-ui/press-image/press-image.vue';
 import { chooseImageInH5 } from 'press-ui/press-cropper/helper';
+import PressCropper from 'press-ui/press-cropper/press-cropper.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
 
 
 export default {

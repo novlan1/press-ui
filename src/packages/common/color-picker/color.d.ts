@@ -1,4 +1,5 @@
 import tinyColor from 'tinycolor2';
+
 import type { GradientColors, GradientColorPoint } from './gradient';
 export interface ColorObject {
   alpha: number;

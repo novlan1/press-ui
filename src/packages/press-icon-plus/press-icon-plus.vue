@@ -19,9 +19,10 @@
   </div>
 </template>
 <script>
-import computed from './index';
-import PressInfo from '../press-info/press-info.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import PressInfo from '../press-info/press-info.vue';
+
+import computed from './index';
 
 
 // #ifdef APP-NVUE

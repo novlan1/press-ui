@@ -49,14 +49,15 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressSidebar from '../press-sidebar/press-sidebar.vue';
-import PressSidebarItem from '../press-sidebar-item/press-sidebar-item.vue';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-
 import utils from '../common/utils/utils';
-import { isActive } from './computed';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressSidebarItem from '../press-sidebar-item/press-sidebar-item.vue';
+import PressSidebar from '../press-sidebar/press-sidebar.vue';
+
+
+import { isActive } from './computed';
 
 
 export default {

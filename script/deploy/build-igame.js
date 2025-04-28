@@ -1,6 +1,8 @@
 const { execSync } = require('child_process');
-const { readFileSync, writeFileSync } = require('t-comm');
+
 const path = require('path');
+
+const { readFileSync, writeFileSync } = require('t-comm');
 
 
 const ENV_FILE = require('../env/env-file')();

@@ -35,12 +35,13 @@
 <script>
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressPagination from 'press-ui/press-pagination/press-pagination.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import { showCustomPopup, local } from 'src/packages/press-pagination/demo-helper/custom';
 import {
   FUNCTIONAL_ID_MAP,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
-import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'press-ui/press-picker/press-picker.vue';
-import { showCustomPopup, local } from 'src/packages/press-pagination/demo-helper/custom';
 
 
 export default {

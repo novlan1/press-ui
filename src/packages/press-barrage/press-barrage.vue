@@ -22,9 +22,9 @@
   </div>
 </template>
 <script>
-import { getVModelMixin } from '../common/vue3/adapter';
-import styles from '../common/utils/style';
 import { getRect } from '../common/dom/rect';
+import styles from '../common/utils/style';
+import { getVModelMixin } from '../common/vue3/adapter';
 
 
 const className = 'press-barrage__item';

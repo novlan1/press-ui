@@ -24,6 +24,7 @@ module.exports = {
         map: [
           // 这里参照webpack的别名配置映射
           ['src', './src'],
+          ['press-ui', './src/packages'],
         ],
         // 告诉resolver-alias有哪些后缀的文件要解析
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.vue'],
@@ -51,12 +52,33 @@ module.exports = {
       {
         ignore: [
           'node_modules',
-          // '^src/component/*',
-          // '^src/logic/*',
-          // '^src/page/*',
           '@TIP_PLATFORM_NAME',
           '^@/*',
         ],
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+        'newlines-between': 'always-and-inside-groups',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        pathGroups: [
+          {
+            pattern: 'vue',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'vite',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
       },
     ],
   },

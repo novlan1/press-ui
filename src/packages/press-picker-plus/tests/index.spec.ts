@@ -1,5 +1,6 @@
-import PickerPlus from '../press-picker-plus.vue';
 import { mount } from '@vue/test-utils';
+
+import PickerPlus from '../press-picker-plus.vue';
 
 
 describe('PickerPlus', () => {

@@ -40,8 +40,10 @@
 
 <script>
 import DropdownLink from '@theme/components/DropdownLink.vue';
-import { resolveNavLinkItem } from '../util';
 import NavLink from '@theme/components/NavLink.vue';
+
+import { resolveNavLinkItem } from '../util';
+
 
 export default {
   name: 'NavLinks',

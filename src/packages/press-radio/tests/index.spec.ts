@@ -1,7 +1,9 @@
-import Radio from '../press-radio.vue';
-import RadioGroup from '../../press-radio-group/press-radio-group.vue';
-import { mount } from '@vue/test-utils';
 import { h } from 'vue';
+
+import { mount } from '@vue/test-utils';
+
+import RadioGroup from '../../press-radio-group/press-radio-group.vue';
+import Radio from '../press-radio.vue';
 
 
 describe('Radio', () => {

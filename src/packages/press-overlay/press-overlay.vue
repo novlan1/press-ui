@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import PressTransition from '../press-transition/press-transition.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import PressTransition from '../press-transition/press-transition.vue';
 
 
 export default {

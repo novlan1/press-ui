@@ -8,12 +8,10 @@
     </div>
   </div>
 </template>
-
 <script>
-
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ParentMixin } from '../mixins/relation';
 import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
+import { ParentMixin } from '../mixins/relation';
 
 
 export default {

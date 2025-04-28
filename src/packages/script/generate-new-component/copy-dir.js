@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+
 const { copyDir, execCommand, getPureCompName, getFullCompName } = require('t-comm');
+
 const { isActComponent, COMP_PREFIX } = require('../utils/utils');
 
 const TEMPLATE_PATH = './script/new/template';

@@ -1,7 +1,8 @@
-import { getMPComponentHandler } from '../common/component-handler/mp-handler';
 import { makeExtraMethods } from '../common/component-handler/component-handler';
+import { getMPComponentHandler } from '../common/component-handler/mp-handler';
 
 import { initGlobalProps } from '../common/vue3/adapter';
+
 import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
 
 

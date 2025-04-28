@@ -1,5 +1,6 @@
-import Switch from '../press-switch.vue';
 import { mount } from '@vue/test-utils';
+
+import Switch from '../press-switch.vue';
 
 describe('Switch', () => {
   it('should emit change event when clicked', async () => {

@@ -1,4 +1,5 @@
 import { updateElementStyle } from '../utils/utils';
+
 import MIMEType from './MIMEType';
 
 

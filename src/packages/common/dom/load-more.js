@@ -77,7 +77,6 @@ export function scrollToBottom(context, eleId, targetId) {
   // #ifdef H5
   const dom = document.querySelector(`#${eleId}`);
   if (!dom) return;
-  console.log('dom.scrollHeight', dom.scrollHeight, dom.clientHeight);
   dom.scrollTop = dom.scrollHeight - dom.clientHeight;
   // #endif
 }

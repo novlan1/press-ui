@@ -1,8 +1,9 @@
 // 此文件不能改为ts，否则条件编译有问题
 
-import { dialogProps } from './computed';
-import { addFunctionForDialog } from '../press-dialog-plus/handler-helper';
 import { initFunctionalDialog } from '../common/component-handler/init-functional-dialog';
+import { addFunctionForDialog } from '../press-dialog-plus/handler-helper';
+
+import { dialogProps } from './computed';
 
 
 // #ifdef H5

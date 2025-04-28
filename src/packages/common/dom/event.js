@@ -1,6 +1,6 @@
-import { IS_SERVER } from '../utils/validator';
-import { isNotInUni } from '../utils/utils';
 import { SUPPORT_PASSIVE } from '../utils/support-passive';
+import { isNotInUni } from '../utils/utils';
+import { IS_SERVER } from '../utils/validator';
 
 
 export function on(target, event, handler, passive = false) {

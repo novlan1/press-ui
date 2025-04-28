@@ -39,14 +39,18 @@
 </template>
 
 <script>
-import utils from '../common/utils/utils';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
-import computed from './index';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 import { formValidate } from '../common/utils/parent';
+
 import { nextTick } from '../common/utils/system';
+import utils from '../common/utils/utils';
+import { ChildrenMixin } from '../mixins/relation';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import computed from './index';
+
 
 function emit(target, value) {
   target.$emit('input', value);

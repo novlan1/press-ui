@@ -91,17 +91,9 @@
   <!-- #endif -->
 </template>
 <script>
-import scroller from '../mixins/scroller/index';
 import { passive, PASSIVE_OPTIONS } from '../common/utils/support-passive';
-// import {
-//   initScrollBounce,
-//   disableScrollBounce,
-// } from 'uni-platform/helpers/scroll';
-
-
-// const PULLING = 'pulling'
-// const REFRESHING = 'refreshing'
 import { setCustomElements } from '../common/vue3/adapter';
+import scroller from '../mixins/scroller/index';
 
 
 setCustomElements([

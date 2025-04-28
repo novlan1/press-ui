@@ -324,15 +324,15 @@
   </div>
 </template>
 <script>
-import PressGuide from 'press-ui/press-guide/press-guide.vue';
+import { getWindowWidth } from 'press-ui/common/dom/rect';
 import PressButton from 'press-ui/press-button/press-button.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
 
-import PressImage from 'press-ui/press-image/press-image.vue';
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
+import PressGuide from 'press-ui/press-guide/press-guide.vue';
 import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
-import { getWindowWidth } from 'press-ui/common/dom/rect';
+import PressImage from 'press-ui/press-image/press-image.vue';
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
 
 export default {

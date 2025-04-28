@@ -1,9 +1,7 @@
-import localeEn from './lang/en-US';
-import locale, { t } from './index';
 
-import { initGlobalMixin } from '../common/vue3/adapter';
-import { storageUtil } from '../common/utils/storage';
 import { isInIFrame } from '../common/utils/iframe';
+import { storageUtil } from '../common/utils/storage';
+import { initGlobalMixin } from '../common/vue3/adapter';
 
 import {
   LOCALE_STORAGE_KEY,
@@ -11,6 +9,9 @@ import {
   LOCALE_NUMBER_MAP,
 } from './config';
 import { getComponentNameFromUrl } from './demo-component-name';
+import localeEn from './lang/en-US';
+
+import locale, { t } from './index';
 
 
 const DEFAULT_LANG = 'zh-CN';

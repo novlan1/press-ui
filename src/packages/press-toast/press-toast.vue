@@ -55,14 +55,15 @@
 </template>
 
 <script>
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { isNotInUni } from '../common/utils/utils';
+
+import { getDialogMixin } from '../press-dialog/dialog-mixin';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
 import PressLoading from '../press-loading-plus/press-loading-plus.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressTransition from '../press-transition/press-transition.vue';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { getDialogMixin } from '../press-dialog/dialog-mixin';
-
-import { isNotInUni } from '../common/utils/utils';
 
 
 const props = {

@@ -19,8 +19,8 @@
 </template>
 <script>
 import { addUnit } from '../common/utils/add-unit';
-import utils from '../common/utils/utils';
 import styles from '../common/utils/style';
+import utils from '../common/utils/utils';
 
 
 export default {

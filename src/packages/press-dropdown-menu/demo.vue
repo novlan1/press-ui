@@ -124,11 +124,12 @@
   </div>
 </template>
 <script>
-import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu.vue';
-import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item.vue';
-import PressSwitch from 'press-ui/press-switch/press-switch.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+
+import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item.vue';
+import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu.vue';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
 export default {

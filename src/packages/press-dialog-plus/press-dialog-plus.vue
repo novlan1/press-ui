@@ -80,17 +80,19 @@
   </div>
 </template>
 <script>
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import PressButton from '../press-button/press-button.vue';
-
-import { button } from '../mixins/button';
+import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { GRAY, RED } from '../common/constant/color';
 import { toPromise } from '../common/format/function';
-import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
+
+import { nextTick } from '../common/utils/system';
 import utils from '../common/utils/utils';
 import { t } from '../locale';
+
+import { button } from '../mixins/button';
+
+import PressButton from '../press-button/press-button.vue';
 import { getDialogMixin } from '../press-dialog/dialog-mixin';
-import { nextTick } from '../common/utils/system';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 
 
 const props = {

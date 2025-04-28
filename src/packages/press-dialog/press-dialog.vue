@@ -94,13 +94,13 @@
   </div>
 </template>
 <script>
+import { toPromise } from '../common/format/function';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressButton from '../press-button/press-button.vue';
 import PressField from '../press-field/press-field.vue';
 
 import { dialogProps } from './computed';
-import { toPromise } from '../common/format/function';
 import { getDialogMixin } from './dialog-mixin';
-import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 export default {

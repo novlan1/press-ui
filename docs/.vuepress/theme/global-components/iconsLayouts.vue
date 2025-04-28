@@ -18,8 +18,9 @@
 </template>
 
 <script>
-import uniicons from './icons.js';
 import Clipboard from 'clipboard';
+
+import uniicons from './icons.js';
 export default {
   name: 'IconsLayouts',
   functional: false,

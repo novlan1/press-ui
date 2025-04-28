@@ -195,10 +195,10 @@
   </div>
 </template>
 <script>
-import PressRadio from 'press-ui/press-radio/press-radio.vue';
-import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
+import PressRadio from 'press-ui/press-radio/press-radio.vue';
 
 
 export default {
@@ -256,8 +256,8 @@ export default {
   },
   methods: {
     onChange(val, type) {
-      console.log('onChange.val', val);
-      // #ifdef Vue2
+      console.log('onChange.val & type: ', val, type);
+      // #ifdef VUE2
       this.$set(this.valueMap, type, val);
       // #endif
 

@@ -1,6 +1,8 @@
 import getWindowOffset from '../../common/utils/get-window-offset';
-import { wrapperMPEvent } from './patch';
+
 import { getTargetDataset } from './helper';
+import { wrapperMPEvent } from './patch';
+
 
 function processTarget(target, detail) {
   const res = {

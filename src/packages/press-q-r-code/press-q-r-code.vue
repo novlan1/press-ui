@@ -69,8 +69,11 @@
 
 <script>
 /* eslint-disable import/no-unresolved */
+// #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP
+import UQRCode from 'uqrcodejs';
+// #endif
+
 // #ifdef H5
-import PressQRCodeWeb from '../common/vue3/q-r-code';
 import VueQRCode from 'vue-qrcode';
 // #endif
 
@@ -78,8 +81,8 @@ import VueQRCode from 'vue-qrcode';
 import drawWxQRcode from 'weapp-qrcode-canvas-2d';
 // #endif
 
-// #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP
-import UQRCode from 'uqrcodejs';
+// #ifdef H5
+import PressQRCodeWeb from '../common/vue3/q-r-code';
 // #endif
 
 

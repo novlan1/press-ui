@@ -24,11 +24,11 @@
   </div>
 </template>
 <script>
-import PressInfo from '../press-info/press-info.vue';
-import utils from '../common/utils/utils';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
+import utils from '../common/utils/utils';
+import { ChildrenMixin } from '../mixins/relation';
+import PressInfo from '../press-info/press-info.vue';
 
 
 export default {

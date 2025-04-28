@@ -4,8 +4,9 @@
   </div>
 </template>
 <script>
-import indexPage from '@/pages/index/index';
 import { setLang } from '../utils/i18n/i18n';
+
+import indexPage from '@/pages/index/index';
 
 export default {
   components: { indexPage },

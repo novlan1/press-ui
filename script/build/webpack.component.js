@@ -1,10 +1,12 @@
 const path = require('path');
-const sass = require('sass');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader/dist');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const sass = require('sass');
+const { VueLoaderPlugin } = require('vue-loader/dist');
 
 const Components = require('../../config/components.json');
+
 const config = require('./config');
 
 const newComponents = Object.keys(Components).reduce((acc, key) => {

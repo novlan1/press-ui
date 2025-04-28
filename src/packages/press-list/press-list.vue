@@ -60,17 +60,18 @@
 
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import { getRect } from '../common/dom/rect';
-
 import { getScrollSelector, getScroller } from '../common/dom/scroll';
-import {  SCROLL_VIEW_ID } from './config';
 
-import { vModelMixin } from '../common/vue3/adapter';
 import { nextTick } from '../common/utils/system';
+import { vModelMixin } from '../common/vue3/adapter';
 
 import { BindEventMixin } from '../mixins/bind-event';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+
+import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+
+import {  SCROLL_VIEW_ID } from './config';
 
 
 const scrollSelector = getScrollSelector(SCROLL_VIEW_ID);

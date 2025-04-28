@@ -1,9 +1,11 @@
+import { t } from '../locale';
+
 import {
   ROW_HEIGHT,
   INITIAL_MIX_DATE,
   INITIAL_MAX_DATE,
 } from './utils';
-import { t } from '../locale';
+
 
 export const SHARE_PROPS = {
   title: {

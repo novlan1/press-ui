@@ -77,10 +77,10 @@
   </div>
 </template>
 <script>
+import { nextTick } from 'press-ui/common/utils/system';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
-import { nextTick } from 'press-ui/common/utils/system';
 
 const DEFAULT_POSITION = 'center';
 const DEFAULT_CLOSE_ICON = 'cross';

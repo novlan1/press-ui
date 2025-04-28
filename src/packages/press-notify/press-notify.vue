@@ -21,13 +21,15 @@
   </div>
 </template>
 <script>
-import PressTransition from '../press-transition/press-transition.vue';
-import { WHITE } from '../common/constant/color';
-import { getStatusBarHeight } from '../common/dom/rect';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import computed from './computed';
+import { WHITE } from '../common/constant/color';
 import { getEventDetail } from '../common/dom/event';
+
+import { getStatusBarHeight } from '../common/dom/rect';
 import { getDialogMixin } from '../press-dialog/dialog-mixin';
+import PressTransition from '../press-transition/press-transition.vue';
+
+import computed from './computed';
 
 
 const props = {

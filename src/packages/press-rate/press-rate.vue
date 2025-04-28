@@ -40,12 +40,13 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import { getAllRect } from '../common/dom/rect';
-
-import utils from '../common/utils/utils';
 import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
+
+import utils from '../common/utils/utils';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
 
 export default {
   name: 'PressRate',

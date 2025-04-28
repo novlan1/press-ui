@@ -1,7 +1,7 @@
-import { getWindowInfo } from './window-info';
-// import deviceId from 'uni-platform/helpers/uuid'
 import { getBrowserInfo } from './browser-info';
-// import { sortObject } from 'uni-shared';
+import { getWindowInfo } from './window-info';
+
+
 const { toString } = Object.prototype;
 
 export function isPlainObject(obj) {

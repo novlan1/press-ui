@@ -89,9 +89,12 @@
   </div>
 </template>
 <script>
-import PressAvatar from 'press-ui/press-avatar/press-avatar.vue';
 import PressAvatarGroup from 'press-ui/press-avatar-group/press-avatar-group.vue';
+import PressAvatar from 'press-ui/press-avatar/press-avatar.vue';
+
+
 const src = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_0ab8e66284a3617ed9.jpeg';
+
 
 export default {
   i18n: {

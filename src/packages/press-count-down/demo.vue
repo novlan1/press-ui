@@ -89,11 +89,12 @@
   </div>
 </template>
 <script>
-import PressCountDown from 'press-ui/press-count-down/press-count-down.vue';
-import PressGrid from 'press-ui/press-grid/press-grid.vue';
-import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
-import { selectComponent } from 'press-ui/common/functional-component';
 import { setData } from 'press-ui/common/component-handler/set-data';
+import { selectComponent } from 'press-ui/common/functional-component';
+
+import PressCountDown from 'press-ui/press-count-down/press-count-down.vue';
+import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
 
 
 export default {

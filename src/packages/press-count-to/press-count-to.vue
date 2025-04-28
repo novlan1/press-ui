@@ -15,9 +15,10 @@
 </template>
 
 <script>
-import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
 import style from '../common/utils/style';
+
+import props from './computed';
 
 
 export default {

@@ -1,5 +1,6 @@
-import { parseOptions } from './component-handler';
 import { selectComponent } from '../functional-component';
+
+import { parseOptions } from './component-handler';
 import { setData, vmSet } from './set-data';
 
 function getContext() {
@@ -90,9 +91,7 @@ export function getMPComponentHandler({
     }
   };
 
-  CompHandler.install = () => {
-    // Vue.use(CompHandler);
-  };
+  CompHandler.install = () => {};
 
   return CompHandler;
 }

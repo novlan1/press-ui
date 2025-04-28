@@ -61,10 +61,12 @@
   </PressPopup>
 </template>
 <script>
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 import Options from '../press-share-options/press-share-options.vue';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+
 import computed from './computed';
+
 
 export default {
   name: 'PressShareSheet',

@@ -55,7 +55,6 @@
 </template>
 <script>
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressToast from 'press-ui/press-toast/press-toast.vue';
 import Toast, {
   showToast,
   closeToast,
@@ -63,6 +62,7 @@ import Toast, {
   showSuccessToast,
   showFailToast,
 } from 'press-ui/press-toast';
+import PressToast from 'press-ui/press-toast/press-toast.vue';
 
 
 export default {

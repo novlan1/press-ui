@@ -341,9 +341,10 @@
   </div>
 </template>
 <script>
-import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
-import PressTab from 'press-ui/press-tab/press-tab.vue';
 import pressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+
 
 export default {
   i18n: {

@@ -48,8 +48,9 @@
   </div>
 </template>
 <script>
-import { getActClass } from './utils';
 import PressQRCode from '../press-q-r-code/press-q-r-code.vue';
+
+import { getActClass } from './utils';
 
 
 export default {

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const { traverseFolder, pascalCase, addNameForComponent } = require('t-comm');
 
 const dir = 'src/packages';

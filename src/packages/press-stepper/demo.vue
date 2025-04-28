@@ -84,9 +84,9 @@
   </div>
 </template>
 <script>
+import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressStepper from 'press-ui/press-stepper/press-stepper.vue';
 import PressToast from 'press-ui/press-toast/press-toast.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
 
 
 export default {

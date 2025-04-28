@@ -1,9 +1,9 @@
+import { deepAssign } from '../common/utils/object-assign';
 // #ifndef VUE3
 import { Vue } from '../common/vue3/vue';
 // #endif
 
 import defaultLang from './lang/zh-CN';
-import { deepAssign } from '../common/utils/object-assign';
 
 let lang = defaultLang;
 let merged = false;

@@ -1,12 +1,14 @@
+const { execSync } = require('child_process');
 const fs = require('fs');
+
+const { pascalCase, getPureCompName } = require('t-comm');
 const inquirer = require('inquirer');
 
-const { execSync } = require('child_process');
-const { pascalCase, getPureCompName } = require('t-comm');
+
+const { COMP_PREFIX } = require('../utils/utils');
 
 const { copyComponentDir } = require('./copy-dir');
 const { sortComponentConfig } = require('./sort');
-const { COMP_PREFIX } = require('../utils/utils');
 
 
 function getTypeMap(componentConfigPath) {

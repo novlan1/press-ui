@@ -18,18 +18,20 @@
   </div>
 </template>
 <script>
-import utils from '../common/utils/utils';
-import computed from './index';
-
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getRect } from '../common/dom/rect';
+import { getScroller } from '../common/dom/scroll';
 import { nextTick } from '../common/utils/system';
+import utils from '../common/utils/utils';
+
+
 import { isDef } from '../common/utils/validator';
 
-import { pageScrollMixin } from '../mixins/page-scroll';
 import { BindEventMixin } from '../mixins/bind-event';
-import { getScroller } from '../common/dom/scroll';
+import { pageScrollMixin } from '../mixins/page-scroll';
 
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import computed from './index';
+
 
 const ROOT_ELEMENT = '.press-sticky';
 

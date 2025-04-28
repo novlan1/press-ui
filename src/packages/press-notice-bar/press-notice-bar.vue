@@ -65,14 +65,15 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getEventDetail } from '../common/dom/event';
 import { requestAnimationFrame } from '../common/utils/system';
 
-import utils, { isNotInUni } from '../common/utils/utils';
-import computed from './computed';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
-import { getEventDetail } from '../common/dom/event';
+import utils, { isNotInUni } from '../common/utils/utils';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import computed from './computed';
 import { getScrollDurationAndWidth } from './core';
 
 

@@ -167,23 +167,23 @@
   </div>
 </template>
 <script>
-import PressForm from 'press-ui/press-form/press-form.vue';
-import PressFormItem from 'press-ui/press-form-item/press-form-item.vue';
-import PressField from 'press-ui/press-field/press-field.vue';
-
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
-import PressCheckbox from 'press-ui/press-checkbox/press-checkbox';
-import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group';
-
-import PressRadio from 'press-ui/press-radio/press-radio';
-import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group';
-import PressButton from 'press-ui/press-button/press-button';
-
-import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet';
-import PressCountDown from 'press-ui/press-count-down/press-count-down';
-
-import { isChinese } from 'press-ui/common/utils/validator';
 import { hideKeyboard } from 'press-ui/common/pure/hide-keyboard';
+import { isChinese } from 'press-ui/common/utils/validator';
+import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet';
+
+import PressButton from 'press-ui/press-button/press-button';
+import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group';
+import PressCheckbox from 'press-ui/press-checkbox/press-checkbox';
+
+import PressCountDown from 'press-ui/press-count-down/press-count-down';
+import PressField from 'press-ui/press-field/press-field.vue';
+import PressFormItem from 'press-ui/press-form-item/press-form-item.vue';
+
+import PressForm from 'press-ui/press-form/press-form.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group';
+import PressRadio from 'press-ui/press-radio/press-radio';
+
 
 const DEFAULT_COUNTDOWN = 30 * 1000;
 

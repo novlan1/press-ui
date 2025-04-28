@@ -13,10 +13,13 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import computed from './computed';
+
 
 export default {
   name: 'PressTag',

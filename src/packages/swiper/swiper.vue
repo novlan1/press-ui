@@ -1,6 +1,7 @@
 <script>
-import touchTrack from '../mixins/touch-track/index';
 import { baseMixin } from '../mixins/base/index';
+import touchTrack from '../mixins/touch-track/index';
+
 import { deepCloneVNodes, SWIPER_PROPS } from './utils';
 
 

@@ -154,12 +154,14 @@
   </div>
 </template>
 <script>
-import PressImage from 'press-ui/press-image/press-image.vue';
 import PressCol from 'press-ui/press-col/press-col.vue';
+import { imagePreviewHandler } from 'press-ui/press-image-preview/index';
+
+import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
+
 import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 import PressRow from 'press-ui/press-row/press-row.vue';
-import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
-import { imagePreviewHandler } from 'press-ui/press-image-preview/index';
 
 
 const MODE_LIST = [

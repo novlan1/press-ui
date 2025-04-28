@@ -25,7 +25,9 @@ export function getVMInVue3(context) {
   result = context;
   // #endif
   // #ifndef H5
-  result = context.$vm;
+  if (context.$vm) {
+    result = context.$vm;
+  }
   // #endif
   return result;
 }

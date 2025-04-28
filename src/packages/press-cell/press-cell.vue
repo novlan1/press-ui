@@ -74,12 +74,14 @@
 </template>
 <script>
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { link } from '../mixins/link';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getEventDetail } from '../common/dom/event';
+import utils from '../common/utils/utils';
+
+import { link } from '../mixins/link';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import computed from './computed';
 
 
 export default {

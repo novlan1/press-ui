@@ -53,10 +53,11 @@
   </div>
 </template>
 <script>
-import { isDef } from '../common/utils/validator';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { getEventDetail, getEventValue } from '../common/dom/event';
+import utils from '../common/utils/utils';
+import { isDef } from '../common/utils/validator';
+
+import computed from './computed';
 
 
 const LONG_PRESS_START_TIME = 600;

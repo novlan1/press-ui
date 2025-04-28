@@ -1,15 +1,22 @@
 // #ifdef H5
-import { isNotInUni } from '../../common/utils/utils';
-// #ifdef VUE2
-import InnerSwiper from '../../swiper/swiper.vue';
-import InnerSwiperItem from '../../swiper-item/swiper-item.vue';
-import { setCustomElements } from '../../common/vue3/adapter';
-// #endif
+
 // #ifdef VUE3
 import { Swiper as SwiperNext } from 'swiper-next/es/src/components/swiper';
 import { SwiperItem as SwiperItemNext } from 'swiper-next/es/src/components/swiper-item';
+// #endif
+
+import { isNotInUni } from '../../common/utils/utils';
+
+// #ifdef VUE2
+import { setCustomElements } from '../../common/vue3/adapter';
+import InnerSwiperItem from '../../swiper-item/swiper-item.vue';
+import InnerSwiper from '../../swiper/swiper.vue';
+// #endif
+
+// #ifdef VUE3
 import 'swiper-next/dist/index.css';
 // #endif
+
 // #endif
 
 
@@ -27,6 +34,7 @@ if (isNotInUni()) {
     'uni-swiper-item',
   ]);
   // #endif
+
   // #ifdef VUE3
   componentConfig = {
     Swiper: SwiperNext,

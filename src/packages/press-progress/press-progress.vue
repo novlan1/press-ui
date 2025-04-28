@@ -20,6 +20,7 @@
 <script>
 import { BLUE } from '../common/constant/color';
 import { getRect } from '../common/dom/rect';
+
 import computed from './computed';
 
 

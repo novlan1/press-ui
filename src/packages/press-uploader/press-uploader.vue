@@ -148,14 +148,17 @@
 </template>
 
 <script>
-import { chooseFile } from './utils';
-import mixin from './mixin';
-import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
+import { isNotInUni } from '../common/utils/utils';
+
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+
+import props from './computed';
+import mixin from './mixin';
 import * as test from './test';
-import { isNotInUni } from '../common/utils/utils';
+
+import { chooseFile } from './utils';
 
 
 export default {

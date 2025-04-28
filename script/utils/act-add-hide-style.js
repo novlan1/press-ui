@@ -1,5 +1,6 @@
-const { replaceAllPolyfill } = require('t-comm');
 const fs = require('fs');
+
+const { replaceAllPolyfill } = require('t-comm');
 const ACT_PATH = './src/packages/press-act-select-award/css';
 const TOP_CLASS = '.press__cover';
 

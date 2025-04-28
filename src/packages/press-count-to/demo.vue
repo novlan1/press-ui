@@ -101,8 +101,8 @@
 </template>
 <script>
 import PressCountTo from 'press-ui/press-count-to/press-count-to.vue';
-import PressGrid from 'press-ui/press-grid/press-grid.vue';
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
 
 
 export default {

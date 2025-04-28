@@ -58,9 +58,10 @@
   </div>
 </template>
 <script>
+import { setAdapter } from 'press-ui/common/vue3/set';
 import PressBarrage from 'press-ui/press-barrage/press-barrage.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
-import { setAdapter } from 'press-ui/common/vue3/set';
+
 
 export default {
   i18n: {

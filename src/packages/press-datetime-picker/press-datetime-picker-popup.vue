@@ -44,11 +44,12 @@
 </template>
 
 <script>
+import { functionalMixin } from '../mixins/functional';
+import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
 import PressPopup from '../press-popup/press-popup.vue';
+
 import PressDatetimePicker from './press-datetime-picker.vue';
 
-import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
-import { functionalMixin } from '../mixins/functional';
 
 let gThis;
 

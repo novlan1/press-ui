@@ -66,14 +66,15 @@
   </div>
 </template>
 <script>
-import computed from './index';
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';
 
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { toInject, nextTick, forceUpdate } from '../common/vue3/adapter';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+
+import computed from './index';
 
 
 const DEFAULT_DURATION = 200;

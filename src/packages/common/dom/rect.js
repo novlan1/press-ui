@@ -1,10 +1,15 @@
-import { getScrollSelector } from './scroll';
-import { isNotInUni } from '../utils/utils';
-import { getWindowInfo } from '../utils/version';
 // #ifdef H5
 import getWindowOffset from '../utils/get-window-offset';
+// #endif
+
+import { isNotInUni } from '../utils/utils';
+import { getWindowInfo } from '../utils/version';
+
+// #ifdef H5
 import { isVue3 } from '../vue3/vue';
 // #endif
+
+import { getScrollSelector } from './scroll';
 
 
 // 非 uni-app H5下， pageY、clientY 去除 window-top

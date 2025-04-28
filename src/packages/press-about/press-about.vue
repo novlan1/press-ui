@@ -50,9 +50,9 @@
 </template>
 
 <script>
+import { routerPush } from '../common/utils/router';
 import PressDialog from '../press-dialog';
 import PressDialogComp from '../press-dialog/press-dialog.vue';
-import { routerPush } from '../common/utils/router';
 
 
 export default {

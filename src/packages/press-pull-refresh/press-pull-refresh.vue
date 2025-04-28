@@ -50,15 +50,18 @@
   </div>
 </template>
 <script>
-import { style } from '../common/utils/style';
 // #ifdef H5
 import { getScrollTop, getScroller } from '../common/dom/scroll';
 // #endif
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+
+import { style } from '../common/utils/style';
+import { nextTick } from '../common/utils/system';
+import { vModelMixin } from '../common/vue3/adapter';
+
 import { t } from '../locale';
 import { TouchMixin } from '../mixins/touch/index';
-import { vModelMixin } from '../common/vue3/adapter';
-import { nextTick } from '../common/utils/system';
+
+import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 
 
 export function preventDefault(event) {

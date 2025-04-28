@@ -17,10 +17,12 @@
   </div>
 </template>
 <script>
-import PressLoading from '../press-loading-plus/press-loading-plus.vue';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
+
+import PressLoading from '../press-loading-plus/press-loading-plus.vue';
+
+import computed from './computed';
 
 
 export default {

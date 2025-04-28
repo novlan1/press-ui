@@ -24,7 +24,9 @@
 
 <script>
 import isNil from 'lodash/isNil';
+
 import { endingSlashRE, outboundRE } from '../util';
+
 
 export default {
   name: 'PageEdit',

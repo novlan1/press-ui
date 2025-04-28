@@ -75,18 +75,20 @@
 // #ifdef H5
 import { intersectionObserverPloyFill } from '../common/utils/system';
 // #endif
+import utils from '../common/utils/utils';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+
+import PressButton from '../press-button/press-button.vue';
 import CalendarHeader from '../press-calendar-header/press-calendar-header.vue';
 import Month from '../press-calendar-month/press-calendar-month.vue';
-import PressButton from '../press-button/press-button.vue';
 
-import computed from './computed';
-import utils from '../common/utils/utils';
 import { SHARE_PROPS } from '../press-calendar/share-props';
-import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 import {
   formatMonthTitle,
 } from '../press-calendar/utils';
+
+import computed from './computed';
 
 
 export default {

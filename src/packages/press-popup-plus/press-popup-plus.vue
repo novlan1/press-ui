@@ -29,16 +29,19 @@
   </div>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressOverlay from '../press-overlay/press-overlay.vue';
-import { transition } from '../mixins/transition';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
 
 // #ifdef H5
 import { PortalMixin } from '../mixins/portal/index';
 // #endif
+import { transition } from '../mixins/transition';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressOverlay from '../press-overlay/press-overlay.vue';
+
+import computed from './computed';
+
 
 export default {
   name: 'PressPopupPlus',

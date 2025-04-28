@@ -42,8 +42,9 @@
   </div>
 </template>
 <script>
-import PressSteps from 'press-ui/press-steps/press-steps.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
+import PressSteps from 'press-ui/press-steps/press-steps.vue';
+
 
 export default {
   i18n: {

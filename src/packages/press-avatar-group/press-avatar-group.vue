@@ -31,10 +31,11 @@
 </template>
 
 <script>
-import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
-import PressAvatar from '../press-avatar/press-avatar.vue';
 import styleUtil from '../common/utils/style';
+import PressAvatar from '../press-avatar/press-avatar.vue';
+
+import props from './computed';
 
 
 export default {

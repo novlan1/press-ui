@@ -25,41 +25,6 @@
       </div>
     </demo-block>
 
-    <!-- <demo-block
-      :title="t('penColor')"
-      :section-style="sectionStyle"
-      :custom-style="customStyle"
-    >
-      <PressSignature
-        pen-color="#ff0000"
-        @submit="onSubmit"
-        @clear="onClear"
-      />
-    </demo-block>
-
-    <demo-block
-      :title="t('lineWidth')"
-      :section-style="sectionStyle"
-      :custom-style="customStyle"
-    >
-      <PressSignature
-        :line-width="6"
-        @submit="onSubmit"
-        @clear="onClear"
-      />
-    </demo-block>
-
-    <demo-block
-      :title="t('backgroundColor')"
-      :section-style="sectionStyle"
-      :custom-style="customStyle"
-    >
-      <PressSignature
-        background-color="#eee"
-        @submit="onSubmit"
-        @clear="onClear"
-      />
-    </demo-block> -->
 
     <PressGrid
       clickable
@@ -84,10 +49,10 @@
   </div>
 </template>
 <script>
-import PressSignature from 'press-ui/press-signature/press-signature.vue';
-import PressImage from 'press-ui/press-image/press-image.vue';
-import PressGrid from 'press-ui/press-grid/press-grid.vue';
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
+import PressImage from 'press-ui/press-image/press-image.vue';
+import PressSignature from 'press-ui/press-signature/press-signature.vue';
 
 
 const DEFAULT_CONFIG = {

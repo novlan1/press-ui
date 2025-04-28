@@ -11,11 +11,13 @@
   </div>
 </template>
 <script>
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_ROW as PARENT } from '../common/constant/parent-map';
+import utils from '../common/utils/utils';
+
+import { ChildrenMixin } from '../mixins/relation';
+
+import computed from './computed';
 
 
 export default {

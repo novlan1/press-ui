@@ -55,8 +55,8 @@
   </div>
 </template>
 <script>
-import PressSidebar from 'press-ui/press-sidebar/press-sidebar.vue';
 import PressSidebarItem from 'press-ui/press-sidebar-item/press-sidebar-item.vue';
+import PressSidebar from 'press-ui/press-sidebar/press-sidebar.vue';
 import PressToast from 'press-ui/press-toast/press-toast.vue';
 
 

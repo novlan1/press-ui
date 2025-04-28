@@ -42,12 +42,14 @@
   </div>
 </template>
 <script>
-import PressCell from '../press-cell/press-cell.vue';
-import { setContentAnimate } from './animate';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import utils from '../common/utils/utils';
-import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_COLLAPSE as PARENT } from '../common/constant/parent-map';
+import utils from '../common/utils/utils';
+
+import { ChildrenMixin } from '../mixins/relation';
+import PressCell from '../press-cell/press-cell.vue';
+
+import { setContentAnimate } from './animate';
 
 
 export default {

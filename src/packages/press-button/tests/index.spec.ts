@@ -1,5 +1,6 @@
-import Button from '../press-button.vue';
 import { mount } from '@vue/test-utils';
+
+import Button from '../press-button.vue';
 
 // @ts-ignore
 global.wx = {};

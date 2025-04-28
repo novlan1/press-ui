@@ -87,9 +87,10 @@
   </div>
 </template>
 <script>
-import PressButton from '../press-button/press-button.vue';
-import { toPromise } from '../common/format/function';
 import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
+import { toPromise } from '../common/format/function';
+import PressButton from '../press-button/press-button.vue';
+
 import { allProps, propsKeyMap } from './computed';
 
 

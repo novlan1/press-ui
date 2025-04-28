@@ -17,3 +17,4 @@ dist/
 cjs/
 
 packages/eslint-config-*/example
+src/pages/press/

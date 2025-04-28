@@ -1,5 +1,6 @@
-import { DEFAULT_SYSTEM_SWATCH_COLORS } from './constants';
 import { getRealPageYOrClientY } from '../common/dom/rect';
+
+import { DEFAULT_SYSTEM_SWATCH_COLORS } from './constants';
 
 export const getCoordinate = (e, top, left) => {
   const { pageX, pageY } = e.changedTouches[0] || {};

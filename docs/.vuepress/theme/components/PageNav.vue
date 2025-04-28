@@ -54,9 +54,11 @@
 </template>
 
 <script>
-import { resolvePage } from '../util';
-import isString from 'lodash/isString';
 import isNil from 'lodash/isNil';
+import isString from 'lodash/isString';
+
+import { resolvePage } from '../util';
+
 
 export default {
   name: 'PageNav',

@@ -1,7 +1,8 @@
 // press-ui, press-plus, press-next 相同
+import { setLang as setLangUtil } from 'press-ui/locale/demo-lang';
+
 import localeEnDemo from './lang/en-US';
 import localeZhDemo from './lang/zh-CN';
-import { setLang as setLangUtil } from 'press-ui/locale/demo-lang';
 
 
 const LOCALE_DEMO_AMP = {

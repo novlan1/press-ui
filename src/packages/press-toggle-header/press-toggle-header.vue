@@ -14,9 +14,9 @@
   </PressCell>
 </template>
 <script>
-import PressSwitch from '../press-switch/press-switch.vue';
-import PressCell from '../press-cell/press-cell.vue';
 import { getHideHeaderMixin } from '../mixins/hide-header/index';
+import PressCell from '../press-cell/press-cell.vue';
+import PressSwitch from '../press-switch/press-switch.vue';
 
 
 export default {

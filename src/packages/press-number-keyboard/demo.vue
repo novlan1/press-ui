@@ -112,8 +112,8 @@
   </div>
 </template>
 <script>
-import PressField from 'press-ui/press-field/press-field';
 import PressCodeInput from 'press-ui/press-code-input/press-code-input';
+import PressField from 'press-ui/press-field/press-field';
 import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard';
 
 

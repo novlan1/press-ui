@@ -62,11 +62,12 @@
   </div>
 </template>
 <script>
-import PressSwitch from '../press-switch/press-switch.vue';
-import PressCell from '../press-cell/press-cell.vue';
-import PressToggleHeader from '../press-toggle-header/press-toggle-header.vue';
-import PressDemoBlock from '../press-demo-block/press-demo-block.vue';
 import { getHideHeaderMixin } from '../mixins/hide-header/index';
+import PressCell from '../press-cell/press-cell.vue';
+import PressDemoBlock from '../press-demo-block/press-demo-block.vue';
+
+import PressSwitch from '../press-switch/press-switch.vue';
+import PressToggleHeader from '../press-toggle-header/press-toggle-header.vue';
 
 
 export default {

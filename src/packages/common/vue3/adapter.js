@@ -26,7 +26,9 @@ export function initGlobalMixin(list, app) {
 
   tList.forEach((mixin) => {
     // #ifndef VUE3
-    Vue.mixin(mixin);
+    if (typeof Vue.mixin === 'function') {
+      Vue.mixin(mixin);
+    }
     // #endif
 
     // #ifdef VUE3
@@ -45,7 +47,9 @@ export function initGlobalComponent(list, app) {
     const { name, component } = item;
 
     // #ifndef VUE3
-    Vue.component(name, component);
+    if (typeof Vue.component === 'function') {
+      Vue.component(name, component);
+    }
     // #endif
 
     // #ifdef VUE3
@@ -78,7 +82,9 @@ export function initGlobalProps(list, app) {
 
 export function nextTick(cb) {
   // #ifndef VUE3
-  Vue.nextTick(cb);
+  if (typeof Vue.nextTick === 'function') {
+    Vue.nextTick(cb);
+  }
   // #endif
 
   // #ifdef VUE3
@@ -90,10 +96,12 @@ export function nextTick(cb) {
 export function extendComponent(el, component, propsData = {}) {
   let result;
   // #ifndef VUE3
-  result = new (Vue.extend(component))({
-    el,
-    propsData,
-  });
+  if (typeof Vue.extend === 'function') {
+    result = new (Vue.extend(component))({
+      el,
+      propsData,
+    });
+  }
   // #endif
 
   // #ifdef VUE3
@@ -115,10 +123,13 @@ export function extendComponentMore({
   let componentInstance;
 
   // #ifndef VUE3
-  app = new (Vue.extend(component))({
-    el,
-    propsData,
-  });
+  if (typeof Vue.extend === 'function') {
+    app = new (Vue.extend(component))({
+      el,
+      propsData,
+    });
+  }
+
   componentInstance = app;
   // #endif
 
@@ -244,7 +255,9 @@ export const vModelMixin = getVModelMixin({
 
 export function usePlugin(plugin, app) {
   // #ifndef VUE3
-  Vue.use(plugin);
+  if (typeof Vue.use === 'function') {
+    Vue.use(plugin);
+  }
   // #endif
 
   // #ifdef VUE3
@@ -257,10 +270,12 @@ export function usePlugin(plugin, app) {
 
 export function setCustomElements(customElements) {
   // #ifndef VUE3
-  Vue.config.ignoredElements = [
-    ...(Vue.config.ignoredElements || []),
-    ...customElements,
-  ];
+  if (Vue.config) {
+    Vue.config.ignoredElements = [
+      ...(Vue.config.ignoredElements || []),
+      ...customElements,
+    ];
+  }
   // #endif
 
   // #ifdef VUE3

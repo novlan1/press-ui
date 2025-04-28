@@ -146,16 +146,16 @@
   </div>
 </template>
 <script>
+import { hideKeyboard } from 'press-ui/common/pure/hide-keyboard';
+import { deepClone } from 'press-ui/common/utils/deep-clone';
+import { fetchCascaderAreaData } from 'press-ui/press-cascader/helper';
+
 import PressCascader from 'press-ui/press-cascader/press-cascader.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
 import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
 import enUSOptions from 'src/packages/press-cascader/demo-helper/area-en-US.js';
 import zhCNOptions from 'src/packages/press-cascader/demo-helper/area-zh-CN.js';
-
-import { deepClone } from 'press-ui/common/utils/deep-clone';
-import { fetchCascaderAreaData } from 'press-ui/press-cascader/helper';
-import { hideKeyboard } from 'press-ui/common/pure/hide-keyboard';
 
 
 const options = [

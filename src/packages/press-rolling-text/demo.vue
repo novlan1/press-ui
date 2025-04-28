@@ -116,10 +116,10 @@
   </div>
 </template>
 <script>
-import PressRollingText from 'press-ui/press-rolling-text/press-rolling-text.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
-import PressGrid from 'press-ui/press-grid/press-grid.vue';
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
+import PressRollingText from 'press-ui/press-rolling-text/press-rolling-text.vue';
 
 
 const textList = [

@@ -11,9 +11,10 @@
   </div>
 </template>
 <script>
-import computed from './computed';
-import { transition } from '../mixins/transition';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { transition } from '../mixins/transition';
+
+import computed from './computed';
 
 export default {
   name: 'PressTransition',

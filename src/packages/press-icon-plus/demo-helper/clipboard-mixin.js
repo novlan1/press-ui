@@ -1,5 +1,5 @@
-import PressNotifyHandler from '../../press-notify';
 import { setClipboardData } from '../../common/clipboard/clipboard';
+import PressNotifyHandler from '../../press-notify';
 
 
 export const CLIPBOARD_MIXIN = {

@@ -37,8 +37,9 @@
 </template>
 
 <script>
-import { SHARE_PROPS } from '../press-calendar/share-props';
 import { t } from '../locale';
+import { SHARE_PROPS } from '../press-calendar/share-props';
+
 
 export default {
   props: {

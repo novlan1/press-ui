@@ -48,10 +48,12 @@
 <script>
 
 import { BLUE, WHITE } from '../common/constant/color';
+import utils, { isNotInUni } from '../common/utils/utils';
 import { isObj } from '../common/utils/validator';
 import { canIUseCanvas2d, getWindowInfo } from '../common/utils/version';
+
 import { adaptor } from './canvas';
-import utils, { isNotInUni } from '../common/utils/utils';
+
 
 let id = 0;
 

@@ -1,6 +1,7 @@
 // 一次性脚本，用于在文档中插入组件引用路径
 
 const fs = require('fs');
+
 const { pascalCase } = require('t-comm');
 
 function main() {

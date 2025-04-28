@@ -150,16 +150,17 @@
 </template>
 
 <script>
-import PressNotify from 'press-ui/press-notify/press-notify.vue';
+import { RED } from 'press-ui/common/constant/color';
+import PressCol from 'press-ui/press-col/press-col.vue';
 import DemoBlockPlus from 'press-ui/press-demo-block-plus/press-demo-block-plus.vue';
 
-import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
-import PressTab from 'press-ui/press-tab/press-tab.vue';
-import PressCol from 'press-ui/press-col/press-col.vue';
+import icons from 'press-ui/press-icon-plus/config';
 import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
-import icons from 'press-ui/press-icon-plus/config';
-import { RED } from 'press-ui/common/constant/color';
+import PressNotify from 'press-ui/press-notify/press-notify.vue';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+
 import { CLIPBOARD_MIXIN } from 'src/packages/press-icon-plus/demo-helper/clipboard-mixin';
 
 

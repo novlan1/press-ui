@@ -172,24 +172,24 @@
   </div>
 </template>
 <script>
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
+import { getAllRect, getRect } from '../common/dom/rect';
+
+import { style } from '../common/utils/style';
+import {  groupSetData, nextTick, requestAnimationFrame } from '../common/utils/system';
+import utils from '../common/utils/utils';
+import { isDef } from '../common/utils/validator';
+
+import { forceUpdate } from '../common/vue3/adapter';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+import { ParentMixin } from '../mixins/relation';
+
+import { touch } from '../mixins/touch';
 import PressInfo from '../press-info/press-info.vue';
 import PressSticky from '../press-sticky/press-sticky.vue';
 
-import { touch } from '../mixins/touch';
-
-import {  groupSetData, nextTick, requestAnimationFrame } from '../common/utils/system';
-import { getAllRect, getRect } from '../common/dom/rect';
-import { isDef } from '../common/utils/validator';
-
-import { ParentMixin } from '../mixins/relation';
 import computed from './index';
-import utils from '../common/utils/utils';
-
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
-import { style } from '../common/utils/style';
-import { forceUpdate } from '../common/vue3/adapter';
-import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 
 export default {

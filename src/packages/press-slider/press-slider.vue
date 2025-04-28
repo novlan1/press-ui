@@ -71,13 +71,13 @@
   </div>
 </template>
 <script>
-import utils from '../common/utils/utils';
-import { style } from '../common/utils/style';
-
-import { touch } from '../mixins/touch';
-import { canIUseModel } from '../common/utils/version';
 import { getRect } from '../common/dom/rect';
 import { addUnit } from '../common/format/unit';
+import { style } from '../common/utils/style';
+import utils from '../common/utils/utils';
+
+import { canIUseModel } from '../common/utils/version';
+import { touch } from '../mixins/touch';
 
 
 export default {

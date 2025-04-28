@@ -51,15 +51,16 @@
   </div>
 </template>
 <script>
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import PressCell from '../press-cell/press-cell.vue';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import utils from '../common/utils/utils';
-
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
 import { PARENT_DROPDOWN_MENU as PARENT } from '../common/constant/parent-map';
 import { nextTick } from '../common/utils/system';
+
+import utils from '../common/utils/utils';
+import { ChildrenMixin } from '../mixins/relation';
+
+import PressCell from '../press-cell/press-cell.vue';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {

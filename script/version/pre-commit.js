@@ -1,5 +1,6 @@
-const fs = require('fs');
 const { execSync } = require('child_process');
+const fs = require('fs');
+
 const { writeFileSync, readFileSync } = require('t-comm');
 
 const { insertDocChangeLog } = require('./change-log');

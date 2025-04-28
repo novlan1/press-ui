@@ -6,9 +6,10 @@
   </div>
 </template>
 <script>
+import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
 import { ParentMixin } from '../mixins/relation';
-import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
+
 
 export default {
   name: 'PressCheckboxGroup',

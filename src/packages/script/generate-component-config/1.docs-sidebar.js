@@ -1,5 +1,7 @@
 const path = require('path');
+
 const { mkDirsSync, hyphenate } = require('t-comm');
+
 const { PATH_MAP, saveJsonToFile } = require('./helper');
 
 

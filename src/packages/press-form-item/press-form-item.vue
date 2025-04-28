@@ -81,13 +81,15 @@
 </template>
 
 <script>
-import props from './props.js';
-import { getParentData } from '../common/utils/parent';
-import { errorTip } from '../common/utils/validator';
 import { addUnit } from '../common/utils/add-unit';
-import { style as styleUtil } from '../common/utils/style';
+import { getParentData } from '../common/utils/parent';
 import { getProperty, setProperty } from '../common/utils/property';
+
+import { style as styleUtil } from '../common/utils/style';
+import { errorTip } from '../common/utils/validator';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+
+import props from './props.js';
 
 
 export default {

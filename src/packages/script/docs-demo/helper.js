@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+
 const { mkDirsSync, getPureCompName, execCommand } = require('t-comm');
+
 const { getActPageDir, COMP_PREFIX, IS_INNER_DOCS } = require('../utils/utils');
 
 let gComponentConfig;

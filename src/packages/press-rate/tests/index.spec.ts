@@ -1,5 +1,6 @@
-import Rate from '../press-rate.vue';
 import { mount } from '@vue/test-utils';
+
+import Rate from '../press-rate.vue';
 
 describe('Rate', () => {
   it('should emit change event when clicked', async () => {

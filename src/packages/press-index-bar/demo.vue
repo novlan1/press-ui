@@ -21,8 +21,8 @@
 </template>
 <script>
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressIndexBar from 'press-ui/press-index-bar/press-index-bar.vue';
 import PressIndexAnchor from 'press-ui/press-index-anchor/press-index-anchor.vue';
+import PressIndexBar from 'press-ui/press-index-bar/press-index-bar.vue';
 
 
 function getEN() {

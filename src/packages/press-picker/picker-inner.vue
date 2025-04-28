@@ -30,9 +30,10 @@
   </PressPopup>
 </template>
 <script>
-import PressPopup from '../press-popup/press-popup.vue';
-import PressPickerView from '../press-picker-view/press-picker-view.vue';
 import { t } from '../locale';
+import PressPickerView from '../press-picker-view/press-picker-view.vue';
+import PressPopup from '../press-popup/press-popup.vue';
+
 
 export default {
   components: {

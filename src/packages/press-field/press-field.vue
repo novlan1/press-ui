@@ -158,19 +158,20 @@
   </div>
 </template>
 <script>
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getEventDetail, getEventValue } from '../common/dom/event';
+import { formValidate } from '../common/utils/parent';
+
+import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
+import utils from '../common/utils/utils';
+import { isObject } from '../common/utils/validator';
+
+import { nextTick, vModelMixin } from '../common/vue3/adapter';
 import PressCell from '../press-cell/press-cell.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import { commonProps, inputProps, textareaProps } from './props';
-import utils from '../common/utils/utils';
 
 import computed from './computed';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { getRootScrollTop, setRootScrollTop } from '../common/utils/scroll';
-
-import { isObject } from '../common/utils/validator';
-import { getEventDetail, getEventValue } from '../common/dom/event';
-import { nextTick, vModelMixin } from '../common/vue3/adapter';
-import { formValidate } from '../common/utils/parent';
+import { commonProps, inputProps, textareaProps } from './props';
 
 
 export default {

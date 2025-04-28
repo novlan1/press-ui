@@ -309,9 +309,10 @@
   </div>
 </template>
 <script>
-import PressButton from 'press-ui/press-button/press-button.vue';
-import { isNotInUni } from 'press-ui/common/utils/utils';
 import { launchMiniProgramInGame } from 't-comm/lib/msdk/mini-program';
+
+import { isNotInUni } from 'press-ui/common/utils/utils';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 
 export default {

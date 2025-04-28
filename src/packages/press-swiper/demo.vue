@@ -79,12 +79,14 @@
   </div>
 </template>
 <script>
-// #ifdef H5
-import PressSwiper from 'press-ui/press-swiper/press-swiper.vue';
-import PressSwiperItem from 'press-ui/press-swiper-item/press-swiper-item.vue';
-// #endif
-import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 import PressSlider from 'press-ui/press-slider/press-slider.vue';
+
+// #ifdef H5
+import PressSwiperItem from 'press-ui/press-swiper-item/press-swiper-item.vue';
+import PressSwiper from 'press-ui/press-swiper/press-swiper.vue';
+// #endif
+
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
 export default {

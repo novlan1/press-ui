@@ -29,10 +29,12 @@
   </div>
 </template>
 <script>
-import utils from '../common/utils/utils';
-import computed from './index';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
+
 import { TDESIGN_BRAND_COLOR } from './config';
+
+import computed from './index';
 
 
 export default {

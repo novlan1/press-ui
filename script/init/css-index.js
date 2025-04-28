@@ -1,7 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+
 const { writeFileSync } = require('t-comm');
 const glob = require('glob');
-const path = require('path');
-const fs = require('fs');
 
 function main() {
   const list = glob.sync('./src/packages/press-*/css/index.scss');

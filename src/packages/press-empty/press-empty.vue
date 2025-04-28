@@ -44,9 +44,11 @@
   </div>
 </template>
 <script>
-import computed from './computed';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressIcon from '../press-icon/press-icon.vue';
+
+import computed from './computed';
+
 
 const EXTRA_TYPE_MAP = {
   E_SPORT: 'e-sport',

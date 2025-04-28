@@ -1,5 +1,6 @@
-import Checkbox from '../press-checkbox.vue';
 import { mount } from '@vue/test-utils';
+
+import Checkbox from '../press-checkbox.vue';
 
 describe('Checkbox', () => {
   it('should emit change event when clicked', async () => {

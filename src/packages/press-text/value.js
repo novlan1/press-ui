@@ -1,6 +1,6 @@
-import { isUrl, errorTip } from '../common/utils/validator';
-import { timeStampFormat } from '../common/format/time';
 import { priceFormat } from '../common/format/price';
+import { timeStampFormat } from '../common/format/time';
+import { isUrl, errorTip } from '../common/utils/validator';
 
 export default {
   computed: {

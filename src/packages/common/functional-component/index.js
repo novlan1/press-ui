@@ -1,5 +1,5 @@
-import { isNotInUni } from '../utils/utils';
 import { setData } from '../component-handler/set-data';
+import { isNotInUni } from '../utils/utils';
 
 const DEFAULT_SHOW_FUNCTION = 'showDialog';
 

@@ -87,9 +87,9 @@
   </div>
 </template>
 <script>
-import PressField from '../press-field/press-field.vue';
 import utils from '../common/utils/utils';
 import { t } from '../locale';
+import PressField from '../press-field/press-field.vue';
 
 
 export default {

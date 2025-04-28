@@ -1,6 +1,8 @@
 import { IS_SERVER } from '../utils/validator';
-import { parseOptions } from './component-handler';
+
 import { extendComponent } from '../vue3/adapter';
+
+import { parseOptions } from './component-handler';
 
 
 function isInDocument(element) {
@@ -152,7 +154,6 @@ export function getH5ComponentHandler({
   };
 
   Dialog.install = () => {
-    // Vue.use(component);
   };
 
   return Dialog;

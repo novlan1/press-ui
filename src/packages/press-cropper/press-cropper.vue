@@ -93,18 +93,17 @@
   </PressPopupPlus>
 </template>
 <script>
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
-import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
-import PressButton from '../press-button/press-button.vue';
-
 // #ifdef H5
 import { VueCropper } from '../common/vue3/vue-cropper';
 // #endif
 
+import PressButton from '../press-button/press-button.vue';
+import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+
 // #ifndef H5
 import NiceCropper from './nice-cropper/cropper.vue';
 // #endif
-
 import { CROPPER_PROPS } from './props';
 
 

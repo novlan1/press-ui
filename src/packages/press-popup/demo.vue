@@ -160,11 +160,11 @@
   </div>
 </template>
 <script>
-import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressPopup from 'press-ui/press-popup/press-popup.vue';
 import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 import { ScrollViewPureMixin } from 'press-ui/mixins/pure/scroll-view';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressPopup from 'press-ui/press-popup/press-popup.vue';
 
 
 const PRESS_PICKER_ID = 'press-picker-functional';

@@ -1,11 +1,12 @@
 const path = require('path');
-const { writeEnvFromRainbow, execCommand } = require('t-comm');
+
+const { writeEnvFromRainbow } = require('t-comm');
 
 const { DEPLOY_CONFIG } = require('../../config/deploy-config');
 
 const envPath = require('./env-file')();
 const curEnvPath = path.resolve(__dirname, '../../.env.local');
-console.log('curEnvPath', curEnvPath)
+console.log('[curEnvPath]', curEnvPath);
 
 async function main() {
   await writeEnvFromRainbow({

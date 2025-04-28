@@ -134,7 +134,12 @@
   </div>
 </template>
 <script>
-import props from './props';
+// eslint-disable-next-line import/named
+import { getColorObject, Color } from '../common/color-picker';
+import { getRect } from '../common/dom/rect';
+import styleUtil from '../common/utils/style';
+import utils from '../common/utils/utils';
+
 import {
   SATURATION_PANEL_DEFAULT_HEIGHT,
   SATURATION_PANEL_DEFAULT_WIDTH,
@@ -144,11 +149,7 @@ import {
   HUE_MAX,
 } from './constants';
 import { getFormatList, genSwatchList, getCoordinate } from './helper';
-// eslint-disable-next-line import/named
-import { getColorObject, Color } from '../common/color-picker';
-import { getRect } from '../common/dom/rect';
-import utils from '../common/utils/utils';
-import styleUtil from '../common/utils/style';
+import props from './props';
 
 
 const COMPONENT_NAME = 'press-color-picker';

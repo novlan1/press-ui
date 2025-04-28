@@ -7,8 +7,8 @@
   />
 </template>
 <script>
-import PressIconMusicRaw from '../press-icon-music/press-icon-music.vue';
 import { PROPS } from '../press-icon-music/computed';
+import PressIconMusicRaw from '../press-icon-music/press-icon-music.vue';
 
 
 export default {

@@ -56,16 +56,16 @@
   </div>
 </template>
 <script>
-import PressList from 'press-ui/press-list/press-list.vue';
-import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'press-ui/press-picker/press-picker.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressList from 'press-ui/press-list/press-list.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
+import { showCustomPopup, local } from 'src/packages/press-list/demo-helper/custom';
+import { virtualListMixin } from 'src/packages/press-list/demo-helper/virtual-list-mixin';
 import {
   FUNCTIONAL_ID_MAP,
 } from 'src/packages/press-popup-cell/demo-helper/helper';
-import { showCustomPopup, local } from 'src/packages/press-list/demo-helper/custom';
-import { virtualListMixin } from 'src/packages/press-list/demo-helper/virtual-list-mixin';
 
 
 function fetchData({ length, delay, beforeLength }) {

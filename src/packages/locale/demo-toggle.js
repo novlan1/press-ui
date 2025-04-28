@@ -1,6 +1,7 @@
-import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
-import { storageUtil } from '../common/utils/storage';
 import { isInIFrame } from '../common/utils/iframe';
+import { storageUtil } from '../common/utils/storage';
+
+import { LOCALE_STORAGE_KEY, DEFAULT_LOCALE_NUMBER, LOCALE_NUMBER_MAP } from './config';
 
 import { setLang } from './demo-lang';
 

@@ -126,11 +126,13 @@
   </div>
 </template>
 <script>
-import PressCalendar from 'press-ui/press-calendar/press-calendar.vue';
-import PressCell from 'press-ui/press-cell/press-cell.vue';
-import { INITIAL_MIX_DATE, INITIAL_MAX_DATE } from 'press-ui/press-calendar/utils';
-import { t } from 'press-ui/locale';
 import { timeStampFormat } from 'press-ui/common/format/time';
+import { t } from 'press-ui/locale';
+
+import PressCalendar from 'press-ui/press-calendar/press-calendar.vue';
+import { INITIAL_MIX_DATE, INITIAL_MAX_DATE } from 'press-ui/press-calendar/utils';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+
 
 const DEFAULT_DATA = {
   color: '',

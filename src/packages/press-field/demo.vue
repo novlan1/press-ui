@@ -218,8 +218,9 @@
   </scroll-view>
 </template>
 <script>
-import PressField from 'press-ui/press-field/press-field.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
+
 
 export default {
   i18n: {

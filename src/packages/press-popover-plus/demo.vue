@@ -205,13 +205,15 @@
   </div>
 </template>
 <script>
-import PressPopoverPlus from 'press-ui/press-popover-plus/press-popover-plus.vue';
 import PressButton from 'press-ui/press-button/press-button.vue';
-import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressGrid from 'press-ui/press-grid/press-grid.vue';
+
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
+
+import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
+import PressPopoverPlus from 'press-ui/press-popover-plus/press-popover-plus.vue';
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 

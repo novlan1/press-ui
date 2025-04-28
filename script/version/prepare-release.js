@@ -1,7 +1,8 @@
 // 发布前的准备
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+
 const { traverseFolder } = require('t-comm');
 
 const {

@@ -25,8 +25,8 @@
   </div>
 </template>
 <script>
-import PressShareSheet from 'press-ui/press-share-sheet/press-share-sheet.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressShareSheet from 'press-ui/press-share-sheet/press-share-sheet.vue';
 
 
 export default {

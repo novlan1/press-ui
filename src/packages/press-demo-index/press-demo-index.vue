@@ -73,16 +73,14 @@
 <script>
 import { toggleVConsole } from 't-comm/es/v-console/toggle';
 
-import PressSection from '../press-section/press-section.vue';
-import PressCell from '../press-cell/press-cell.vue';
-import PressCollapse from '../press-collapse/press-collapse.vue';
-import PressCollapseItem from '../press-collapse-item/press-collapse-item.vue';
-
 import { setClipboardData } from '../common/clipboard/clipboard';
 import { routerPush } from '../common/utils/router';
-
 import { toggleI18n } from '../locale/demo-toggle';
 
+import PressCell from '../press-cell/press-cell.vue';
+import PressCollapseItem from '../press-collapse-item/press-collapse-item.vue';
+import PressCollapse from '../press-collapse/press-collapse.vue';
+import PressSection from '../press-section/press-section.vue';
 
 import {
   SCROLL_TOP_KEY,

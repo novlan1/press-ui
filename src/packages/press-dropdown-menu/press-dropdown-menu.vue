@@ -27,13 +27,15 @@
   </div>
 </template>
 <script>
-import { addUnit } from '../common/format/unit';
-import { getRect, getWindowWidth } from '../common/dom/rect';
-import utils from '../common/utils/utils';
-import computed from './computed';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ParentMixin } from '../mixins/relation';
 import { PARENT_DROPDOWN_MENU as PARENT } from '../common/constant/parent-map';
+import { getRect, getWindowWidth } from '../common/dom/rect';
+
+import { addUnit } from '../common/format/unit';
+import utils from '../common/utils/utils';
+import { ParentMixin } from '../mixins/relation';
+
+import computed from './computed';
 
 
 let ARRAY = [];

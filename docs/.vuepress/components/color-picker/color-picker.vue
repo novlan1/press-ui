@@ -19,9 +19,10 @@
   </div>
 </template>
 <script>
-import PickerDropdown from './picker-dropdown.vue';
 import Color from './color';
 import Emitter from './emitter';
+import PickerDropdown from './picker-dropdown.vue';
+
 
 export default {
   components: {

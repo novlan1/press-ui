@@ -82,12 +82,13 @@
   </PressPopup>
 </template>
 <script>
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import PressLoading from '../press-loading-plus/press-loading-plus.vue';
-import { button } from '../mixins/button';
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
+import { button } from '../mixins/button';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressLoading from '../press-loading-plus/press-loading-plus.vue';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {

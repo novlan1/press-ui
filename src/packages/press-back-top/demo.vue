@@ -41,10 +41,10 @@
   </div>
 </template>
 <script>
+import { ScrollViewPureMixin } from 'press-ui/mixins/pure/scroll-view';
 import PressBackTop from 'press-ui/press-back-top/press-back-top.vue';
 import PressCheckbox from 'press-ui/press-checkbox/press-checkbox.vue';
 import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar';
-import { ScrollViewPureMixin } from 'press-ui/mixins/pure/scroll-view';
 
 
 let that;

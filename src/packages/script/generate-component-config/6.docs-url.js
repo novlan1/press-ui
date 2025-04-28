@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const { readFileSync, writeFileSync, hyphenate } = require('t-comm');
 
 const {

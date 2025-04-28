@@ -47,6 +47,7 @@
 <script>
 import PageEdit from '@theme/components/PageEdit.vue';
 import PageNav from '@theme/components/PageNav.vue';
+
 import { watchMessageFromIFrame, IFRAME_MESSAGE_TYPE_MAP, DEMO_PAGE_DIRECTION } from '../../utils/message';
 
 const WEB_DEMO_BASE_LINK_PROD = 'https://novlan1.github.io/press-ui/h5/#/';

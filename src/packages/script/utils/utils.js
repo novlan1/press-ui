@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const { hyphenate, getPureCompName, getFullCompName } = require('t-comm');
 
 const COMP_PREFIX = 'press-';

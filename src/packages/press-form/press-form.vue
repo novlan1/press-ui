@@ -5,12 +5,14 @@
 </template>
 
 <script>
-import props from './props.js';
 import Schema from '../common/async-validator/index';
-import { errorTip } from '../common/utils/validator';
-import { getProperty, setProperty } from '../common/utils/property';
 import { deepClone } from '../common/utils/deep-clone';
+import { getProperty, setProperty } from '../common/utils/property';
+
 import { nextTick } from '../common/utils/system';
+import { errorTip } from '../common/utils/validator';
+
+import props from './props.js';
 
 
 // 去除警告信息

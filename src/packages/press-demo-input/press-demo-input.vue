@@ -33,8 +33,8 @@
 </template>
 <script>
 import PressButton from '../press-button/press-button.vue';
-import PressField from '../press-field/press-field.vue';
 import PressDemoBlock from '../press-demo-block/press-demo-block.vue';
+import PressField from '../press-field/press-field.vue';
 
 
 export default {

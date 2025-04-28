@@ -8,11 +8,13 @@ import QRCodeVue2 from 'vue-qrcode';
 
 let PressQRCodeWeb;
 
-// #ifdef VUE3
-PressQRCodeWeb = QRCodeVue3;
-// #endif
+
 // #ifdef VUE2
 PressQRCodeWeb = QRCodeVue2;
+// #endif
+
+// #ifdef VUE3
+PressQRCodeWeb = QRCodeVue3;
 // #endif
 
 

@@ -1,5 +1,5 @@
-import { requestAnimationFrame } from '../common/utils/system';
 import { getRect } from '../common/dom/rect';
+import { requestAnimationFrame } from '../common/utils/system';
 
 
 export function getScrollDurationAndWidth({

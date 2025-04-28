@@ -1,8 +1,9 @@
 const path = require('path');
-const sass = require('sass');
+
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader/dist');
+const sass = require('sass');
 const TerserPlugin = require('terser-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader/dist');
 
 const config = require('./config');
 

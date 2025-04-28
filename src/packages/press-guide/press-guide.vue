@@ -154,16 +154,19 @@
   </div>
 </template>
 <script>
-import PressOverlay from '../press-overlay/press-overlay.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import GuideContent from '../press-guide-content/press-guide-content.vue';
-import props from './props';
-import styles from '../common/utils/style';
 import { getRect, getWindowWidth } from '../common/dom/rect';
-import { isNumber } from '../common/utils/validator';
 import { getPx as unitConvert } from '../common/utils/add-unit';
 import { rpx2px } from '../common/utils/rpx';
+
+import styles from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
+import { isNumber } from '../common/utils/validator';
+
+import GuideContent from '../press-guide-content/press-guide-content.vue';
+import PressOverlay from '../press-overlay/press-overlay.vue';
+import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+
+import props from './props';
 
 
 const classPrefix = 'press-guide';

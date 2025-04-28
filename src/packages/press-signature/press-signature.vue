@@ -54,14 +54,17 @@
   </div>
 </template>
 <script>
-import PressButton from '../press-button/press-button.vue';
-import { IN_BROWSER } from '../common/utils/validator';
-import { t } from '../locale';
-import { isNotInUni } from '../common/utils/utils';
-import { canIUseCanvas2d, getWindowInfo } from '../common/utils/version';
-import { adaptor } from '../press-circle/canvas';
-import { calcBethelLine, distance } from './utils';
 import { getRect, getRealPageYOrClientY } from '../common/dom/rect';
+import { isNotInUni } from '../common/utils/utils';
+import { IN_BROWSER } from '../common/utils/validator';
+
+import { canIUseCanvas2d, getWindowInfo } from '../common/utils/version';
+import { t } from '../locale';
+
+import PressButton from '../press-button/press-button.vue';
+import { adaptor } from '../press-circle/canvas';
+
+import { calcBethelLine, distance } from './utils';
 
 
 const hasCanvasSupport = () => {

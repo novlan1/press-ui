@@ -40,8 +40,9 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
-import { touch } from '../mixins/touch';
 import { range } from '../common/format/number';
+import { touch } from '../mixins/touch';
+
 
 const THRESHOLD = 0.3;
 

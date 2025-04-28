@@ -38,19 +38,17 @@
 </template>
 
 <script>
-
-import { GREEN } from '../common/constant/color';
-import { getRect, getRealPageYOrClientY } from '../common/dom/rect';
-
-import { isDef } from '../common/utils/validator';
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-
+import { GREEN } from '../common/constant/color';
 import { PARENT_INDEX_BAR  as PARENT } from '../common/constant/parent-map';
+
+import { getRect, getRealPageYOrClientY } from '../common/dom/rect';
 import { getScrollSelector } from '../common/dom/scroll';
 import { nextTick } from '../common/utils/system';
 
-import { ParentMixin } from '../mixins/relation';
+import { isDef } from '../common/utils/validator';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+import { ParentMixin } from '../mixins/relation';
 
 
 const indexList = () => {

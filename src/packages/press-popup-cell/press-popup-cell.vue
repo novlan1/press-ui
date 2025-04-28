@@ -124,10 +124,12 @@
 </template>
 
 <script>
+import { functionalMixin } from '../mixins/functional';
 import PressPopup from '../press-popup/press-popup.vue';
 import PressSwitch from '../press-switch/press-switch.vue';
+
 import { PRESS_POPUP_CELL_PROPS } from './computed';
-import { functionalMixin } from '../mixins/functional';
+
 
 const POPUP_CELL_TPE_MAP = {
   SWITCH: 'switch',

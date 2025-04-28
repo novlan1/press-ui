@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import tinyColor from 'tinycolor2';
+
 import { cmykInputToColor, rgb2cmyk } from './cmyk';
 import {
   parseGradientString, isGradientColor,

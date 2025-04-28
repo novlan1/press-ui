@@ -1,9 +1,10 @@
-
 import { selectComponent } from '../functional-component';
-import { setData } from './set-data';
+
 // #ifdef H5
 import { initH5Instance } from './h5-handler';
 // #endif
+
+import { setData } from './set-data';
 
 
 function getContext() {

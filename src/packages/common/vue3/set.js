@@ -5,7 +5,9 @@ import { Vue } from './vue';
 
 export function setAdapter(target, key, value) {
   // #ifndef VUE3
-  Vue.set(target, key, value);
+  if (typeof Vue.set === 'function') {
+    Vue.set(target, key, value);
+  }
   // #endif
 
   // #ifdef VUE3

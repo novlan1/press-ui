@@ -22,9 +22,9 @@
   </PressPopupPlus>
 </template>
 <script>
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 import PressPickerPlus from '../press-picker-plus/press-picker-plus.vue';
 import { pickerProps } from '../press-picker-plus/shared';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {

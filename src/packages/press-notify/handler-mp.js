@@ -1,5 +1,6 @@
-import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
 import { getMPComponentHandler } from '../common/component-handler/mp-handler';
+
+import { DEFAULT_OPTIONS, DEFAULT_KEY } from './default-options';
 
 
 const Notify = getMPComponentHandler({

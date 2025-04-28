@@ -1,6 +1,7 @@
-import Stepper from '../press-stepper.vue';
 import { mount } from '@vue/test-utils';
+
 import * as utils from '../../common/utils/utils';
+import Stepper from '../press-stepper.vue';
 
 
 describe('Stepper', () => {

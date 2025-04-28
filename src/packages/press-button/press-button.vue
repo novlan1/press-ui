@@ -98,14 +98,16 @@
   <!-- #endif -->
 </template>
 <script>
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils, { isNotInUni } from '../common/utils/utils';
+import { canIUseFormFieldButton } from '../common/utils/version';
+
+import { button } from '../mixins/button';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import PressLoading from '../press-loading/press-loading.vue';
-import { button } from '../mixins/button';
-import { canIUseFormFieldButton } from '../common/utils/version';
-import utils, { isNotInUni } from '../common/utils/utils';
+
 import { DEFAULT_SIZE_LIST, rootStyle, loadingColor } from './index';
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 
 
 const eSportTypeClassMap = {

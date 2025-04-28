@@ -87,16 +87,17 @@
 </template>
 
 <script>
-import props from './computed';
 import { addUnit } from '../common/utils/add-unit';
 import styleUtil from '../common/utils/style';
 import { isNotInUni } from '../common/utils/utils';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressTransition from '../press-transition/press-transition.vue';
 // #ifdef H5
 import InnerImage from '../image/index.vue';
 // #endif
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressTransition from '../press-transition/press-transition.vue';
+
+import props from './computed';
 
 
 export default {

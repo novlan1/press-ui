@@ -1,8 +1,8 @@
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-restricted-syntax */
+const { rgbToHex } = require('t-comm/lib/color/helper');
 const { parseColorToHSV } = require('t-comm/lib/color/parse');
 const { hsv2rgb } = require('t-comm/lib/color/transform');
-const { rgbToHex } = require('t-comm/lib/color/helper');
 
 const hsv2hsl = function (hue, sat, val) {
   return [

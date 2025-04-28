@@ -30,8 +30,8 @@
   </swiper>
 </template>
 <script>
-import { SWIPER_PROPS } from '../swiper/utils';
 import { SwiperPureMixin } from '../mixins/pure/swiper';
+import { SWIPER_PROPS } from '../swiper/utils';
 
 
 export default {

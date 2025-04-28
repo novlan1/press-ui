@@ -37,8 +37,8 @@
   </div>
 </template>
 <script>
-import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar.vue';
 import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar.vue';
 
 
 export default {

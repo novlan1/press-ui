@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const { replaceAllPolyfill } = require('t-comm');
 
 replaceAllPolyfill();

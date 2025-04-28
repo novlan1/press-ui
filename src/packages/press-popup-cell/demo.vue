@@ -82,10 +82,10 @@
   </div>
 </template>
 <script>
-import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
-import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
-import PressPicker from 'press-ui/press-picker/press-picker.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 import {
   FUNCTIONAL_ID_MAP,
@@ -93,6 +93,7 @@ import {
 } from 'src/packages/press-popup-cell/demo-helper/helper';
 import { battleSet,  startMatchSet } from 'src/packages/press-popup-cell/demo-helper/popup';
 import { batchSet } from 'src/packages/press-popup-cell/demo-helper/popup-batch';
+
 
 const local = {
   activeRoundType: 'winner',

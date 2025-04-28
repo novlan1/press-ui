@@ -70,11 +70,14 @@
   </div>
 </template>
 <script>
-import computed from './computed';
 import utils from '../common/utils/utils';
-import { getMonthEndDay, compareDay, getPrevDay, getNextDay } from '../press-calendar/utils';
-import { SHARE_PROPS } from '../press-calendar/share-props';
 import { t } from '../locale';
+
+import { SHARE_PROPS } from '../press-calendar/share-props';
+import { getMonthEndDay, compareDay, getPrevDay, getNextDay } from '../press-calendar/utils';
+
+import computed from './computed';
+
 
 export default {
   props: {

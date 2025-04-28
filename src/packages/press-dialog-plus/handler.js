@@ -1,11 +1,15 @@
-import { t } from '../locale';
-import { addFunctionForDialog } from './handler-helper';
-import { selectComponent } from '../common/functional-component';
-import { nextTick } from '../common/vue3/adapter';
-import { setData } from '../common/component-handler/set-data';
-
 // #ifdef H5
 import { initH5Instance } from '../common/component-handler/h5-handler';
+// #endif
+
+import { setData } from '../common/component-handler/set-data';
+import { selectComponent } from '../common/functional-component';
+import { nextTick } from '../common/vue3/adapter';
+import { t } from '../locale';
+
+import { addFunctionForDialog } from './handler-helper';
+
+// #ifdef H5
 import VueDialog from './press-dialog-plus.vue';
 // #endif
 

@@ -1,5 +1,5 @@
-const glob = require('glob');
 const { addEmitsForComponent } = require('t-comm/lib/component/add-emits');
+const glob = require('glob');
 
 function main() {
   const list = glob.sync('src/packages/**/*.vue');

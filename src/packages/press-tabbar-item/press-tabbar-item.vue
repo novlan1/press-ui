@@ -38,12 +38,14 @@
   </div>
 </template>
 <script>
+import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
+import { PARENT_TABBAR  as PARENT } from '../common/constant/parent-map';
+import utils from '../common/utils/utils';
+
+import { ChildrenMixin } from '../mixins/relation';
+
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressInfo from '../press-info/press-info.vue';
-import utils from '../common/utils/utils';
-import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { ChildrenMixin } from '../mixins/relation';
-import { PARENT_TABBAR  as PARENT } from '../common/constant/parent-map';
 
 
 export default {

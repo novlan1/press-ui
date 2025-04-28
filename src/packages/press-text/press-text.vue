@@ -82,16 +82,17 @@
 </template>
 
 <script>
-import props from './props';
-import value from './value';
+import { addUnit } from '../common/utils/add-unit';
+import { style as styleUtil } from '../common/utils/style';
+
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressLink from '../press-link/press-link.vue';
 
 import button from './mixin-button';
 import openType from './mixin-open-type';
 
-import { addUnit } from '../common/utils/add-unit';
-import { style as styleUtil } from '../common/utils/style';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressLink from '../press-link/press-link.vue';
+import props from './props';
+import value from './value';
 
 let mixins = [];
 

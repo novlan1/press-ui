@@ -1,5 +1,6 @@
 // #ifdef H5
 import { isNotInUni } from '../utils/utils';
+
 import { chooseFile } from './choose-file';
 import { chooseImage } from './choose-image';
 import { chooseVideo } from './choose-video';

@@ -45,11 +45,12 @@
 </template>
 
 <script>
-import PressPopover from '../press-popover/press-popover.vue';
 import { getRect, getScrollHeight } from '../common/dom/rect';
-import { isNotInUni } from '../common/utils/utils';
 import { nextTick } from '../common/utils/system';
+import { isNotInUni } from '../common/utils/utils';
+
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+import PressPopover from '../press-popover/press-popover.vue';
 
 let popOverTimer = null;
 
