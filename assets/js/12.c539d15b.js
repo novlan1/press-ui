@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{516:function(n,t,o){"use strict";o.r(t);var u={name:"DownloadButton"},e=o(37),l=Object(e.a)(u,(function(){return(0,this._self._c)("div",[this._v("下载")])}),[],!1,null,null,null);t.default=l.exports}}]);
