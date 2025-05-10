@@ -1,5 +1,12 @@
 # 更新日志
 
+### [3.0.10](https://github.com/novlan1/press-ui/compare/v3.0.9...v3.0.10) (2025-05-07)
+
+
+### Features 🎉
+
+* **release:** add release script ([d6b8948](https://github.com/novlan1/press-ui/commit/d6b89489479d650a02ef5a2dede660238073d44b))
+
 ### [3.0.9](https://github.com/novlan1/press-ui/compare/v3.0.8...v3.0.9) (2025-04-28)
 
 

@@ -61,8 +61,8 @@
 </template>
 <script>
 import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh.vue';
-import PressTab from 'press-ui/press-tab/press-tab';
-import PressTabs from 'press-ui/press-tabs/press-tabs';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
 
 
 export default {

@@ -1,3 +1,5 @@
+const { getESLintImportOrderRule, getESLintImportSettings } = require('t-comm');
+
 module.exports = {
   root: true,
   extends: ['eslint-config-light'],
@@ -19,18 +21,9 @@ module.exports = {
     plus: true,
   },
   settings: {
-    'import/resolver': {
-      alias: {
-        map: [
-          // 这里参照webpack的别名配置映射
-          ['src', './src'],
-          ['press-ui', './src/packages'],
-        ],
-        // 告诉resolver-alias有哪些后缀的文件要解析
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.vue'],
-      },
-    },
-    'import/ignore': ['node_modules'],
+    ...getESLintImportSettings({
+      aliasMap: [['press-ui', './src/packages']],
+    }),
   },
   ignorePatterns: ['**/wxcomponents/*'],
   parserOptions: {
@@ -57,29 +50,6 @@ module.exports = {
         ],
       },
     ],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        'newlines-between': 'always-and-inside-groups',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        pathGroups: [
-          {
-            pattern: 'vue',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: 'vite',
-            group: 'external',
-            position: 'before',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['builtin'],
-      },
-    ],
+    ...getESLintImportOrderRule(),
   },
 };

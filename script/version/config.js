@@ -13,12 +13,12 @@ const INNER_PATH_MAP = {
 
   SOURCE_CHANGELOG: './CHANGELOG.md',
   TARGET_CHANGELOG: './log/press-ui/components/CHANGELOG.md',
+  DOC_TARGET_CHANGELOG: './docs/changelog.md',
 };
 const PROJECT_ROOT = path.resolve(__dirname, '../../');
-const PROJECT_ROOT_PKG = path.resolve(PROJECT_ROOT, './package.json');
 
 const PATH_MAP = Object.keys(INNER_PATH_MAP).reduce((acc, item) => {
-  acc[item] = path.resolve(__dirname, '../../', INNER_PATH_MAP[item]);
+  acc[item] = path.resolve(PROJECT_ROOT, INNER_PATH_MAP[item]);
   return acc;
 }, {});
 
@@ -27,6 +27,5 @@ module.exports = {
   TO_DELETE_FILES,
   INNER_PATH_MAP,
   PROJECT_ROOT,
-  PROJECT_ROOT_PKG,
   PATH_MAP,
 };

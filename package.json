@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "private": true,
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
@@ -72,7 +72,6 @@
     "docs:serve": "vuepress dev docs",
     "docs:sync": "node script/utils/docs-sync",
     "docs:watch": "node script/docs-demo/watch-docs",
-    "env": "node env",
     "extract:class": "node script/utils/extract-class",
     "extract:event": "node script/utils/extract-event",
     "extract:props": "node script/utils/extract-props",
@@ -84,8 +83,8 @@
     "init": "npm run dispatch && npm run gen:config",
     "init:env": "node script/env/rainbow-env",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
-    "lint:css:fix": "stylelint --fix **/*.{html,vue,css,sass,scss,less}",
+    "lint:css": "stylelint **/*.{css,scss}",
+    "lint:css:fix": "stylelint --fix **/*.{css,scss}",
     "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "new:comp": "node script/new/generate-new-component/generate-new-component",
     "prepare": "npm run init",
@@ -107,7 +106,7 @@
     "*.{ts,js,vue}": [
       "eslint --fix"
     ],
-    "*.{html,css,sass,less}": [
+    "*.{css,sass}": [
       "stylelint --fix"
     ]
   },
@@ -155,7 +154,7 @@
     "safe-area-insets": "^1.4.1",
     "share-light": "^0.0.5",
     "swiper-next": "^0.1.1",
-    "t-comm": "^1.5.12",
+    "t-comm": "^1.5.24",
     "tim-wx-sdk": "^2.26.6",
     "uqrcodejs": "^4.0.7",
     "vue": "^2.6.11",
@@ -227,7 +226,7 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "25",
-    "eslint-plugin-light": "1.0.3",
+    "eslint-plugin-light": "1.0.4",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",

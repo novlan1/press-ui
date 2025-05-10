@@ -48,7 +48,8 @@
   "explorer.fileNesting.patterns": {
     "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig,.stylelint*,.gitignore,.npmrc.versionrc*",
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
-    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "jest.config.*": "jest.*"
   },
   "files.autoSave": "off",
   "files.insertFinalNewline": true,

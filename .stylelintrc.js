@@ -1,3 +1,5 @@
+const { getStylelintVendorPrefixRules } = require('t-comm');
+
 module.exports = {
   root: true,
   defaultSeverity: 'error',
@@ -16,11 +18,7 @@ module.exports = {
     'declaration-no-important': null,
     'selector-max-id': 10,
 
-    'selector-no-vendor-prefix': null,
-    'value-no-vendor-prefix': null,
-    'property-no-vendor-prefix': null,
-    'at-rule-no-vendor-prefix': null,
-    'media-feature-name-no-vendor-prefix': null,
+    ...getStylelintVendorPrefixRules(),
 
     // 不处理 @include
     'at-rule-empty-line-before': null,
