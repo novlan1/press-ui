@@ -1,6 +1,6 @@
 type IOptions = Partial<{
   context: any;
-  selector: string;
+  selector: string | ((context: any) => any);
 
   images: string[];
   startPosition: number | string;

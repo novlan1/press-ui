@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.12](https://github.com/novlan1/press-ui/compare/v3.0.11...v3.0.12) (2025-05-16)
+
+
+### ✨ Features | 新功能
+
+* **select-component:** 修改selector类型 ([e972eb6](https://github.com/novlan1/press-ui/commit/e972eb6db8f55f68eba76aecaa3c98170faffffd))
+* **storage:** support pure vue3 ([dfa71ce](https://github.com/novlan1/press-ui/commit/dfa71ce697ce2be04364a8d3461ca81e9b68af72))
+
+### [3.0.11](https://github.com/novlan1/press-ui/compare/v3.0.10...v3.0.11) (2025-05-14)
+
+
+### ✨ Features | 新功能
+
+* **set-data:** 优化类型 ([0263e06](https://github.com/novlan1/press-ui/commit/0263e06271913131c9c0df5e64922e5b7b9e5d1c))
+
 ### [3.0.10](https://github.com/novlan1/press-ui/compare/v3.0.9...v3.0.10) (2025-05-07)
 
 

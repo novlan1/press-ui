@@ -5,7 +5,9 @@ export const storageUtil = {
     res = localStorage.getItem(key);
     // #endif
     // #ifndef H5
-    res = uni.getStorageSync(key);
+    if (typeof uni !== 'undefined') {
+      res = uni.getStorageSync(key);
+    }
     // #endif
     return res;
   },
@@ -15,7 +17,9 @@ export const storageUtil = {
     res = localStorage.setItem(key, `${value}`);
     // #endif
     // #ifndef H5
-    res = uni.setStorageSync(key, `${value}`);
+    if (typeof uni !== 'undefined') {
+      res = uni.setStorageSync(key, `${value}`);
+    }
     // #endif
     return res;
   },

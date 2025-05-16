@@ -3,4 +3,4 @@ export declare function initFunctionalDialog({ options, currentOptions, dialogCo
   currentOptions: any;
   dialogComponent?: any;
   id: string;
-}): any;
+}): Promise<any>;

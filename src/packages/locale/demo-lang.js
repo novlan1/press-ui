@@ -95,9 +95,12 @@ export function initDemoI18n(app) {
       const newTitle = (this).t(`titleMap.${name}`);
       if (!newTitle) return;
 
-      uni.setNavigationBarTitle({
-        title: newTitle,
-      });
+
+      if (typeof uni !== 'undefined') {
+        uni.setNavigationBarTitle({
+          title: newTitle,
+        });
+      }
     },
     methods: {
       t(key, ...args) {

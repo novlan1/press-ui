@@ -1,10 +1,13 @@
 export function setData(dialog, data, func = 'setData') {
-  if (!dialog) return;
+  if (!dialog) {
+    return Promise.reject('Not Found Dialog');
+  }
 
   const setData = (dialog.$vm && dialog.$vm[func]) || dialog[func];
   if (typeof setData === 'function') {
     return setData(data);
   }
+  return Promise.reject('Not Found setData function');
 }
 
 export function vmSet(dialog, ...args) {

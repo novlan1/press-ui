@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "3.0.10",
+  "version": "3.0.12",
   "private": true,
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
@@ -106,7 +106,7 @@
     "*.{ts,js,vue}": [
       "eslint --fix"
     ],
-    "*.{css,sass}": [
+    "*.{css,scss,sass}": [
       "stylelint --fix"
     ]
   },

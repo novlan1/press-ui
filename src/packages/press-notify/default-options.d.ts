@@ -1,5 +1,5 @@
 export declare const DEFAULT_OPTIONS: {
-  selector: string;
+  selector: string | ((context: any) => any);
   type: string;
   message: string;
   background: string;
