@@ -124,6 +124,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { functionalMixin } from '../mixins/functional';
 import PressPopup from '../press-popup/press-popup.vue';
 import PressSwitch from '../press-switch/press-switch.vue';
@@ -155,7 +156,7 @@ let that;
 export default {
   name: 'PressPopupCell',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
   },
   components: {
     PressPopup,

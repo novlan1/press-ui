@@ -37,6 +37,21 @@ export const defaultOptions = {
   addGlobalClass: true,
 };
 
+
+export function getVirtualHostOptions(value = true, addDefaultOptions = true) {
+  let result = addDefaultOptions ? defaultOptions : {};
+
+  // #ifdef MP-WEIXIN
+  result = {
+    ...result,
+    virtualHost: value,
+  };
+  // #endif
+
+  return result;
+}
+
+
 export function getDefaultProps(props) {
   const defaultProps = Object.keys(props).reduce((acc, key) => {
     acc[key] = getDefaultValue(props, key);
@@ -57,6 +72,7 @@ export function genAllProps(newProps, propsMap) {
   }, newProps);
 }
 
+
 function getDefaultValue(allProps, key) {
   let result = allProps[key] && allProps[key].default;
   if (typeof result === 'function') {
@@ -64,6 +80,7 @@ function getDefaultValue(allProps, key) {
   }
   return result;
 }
+
 
 export function getPropOrData({
   isFunctionMode,

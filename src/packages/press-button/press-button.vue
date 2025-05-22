@@ -98,7 +98,7 @@
   <!-- #endif -->
 </template>
 <script>
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { defaultProps, getVirtualHostOptions } from '../common/component-handler/press-component';
 import utils, { isNotInUni } from '../common/utils/utils';
 import { canIUseFormFieldButton } from '../common/utils/version';
 
@@ -127,8 +127,7 @@ if (canIUseFormFieldButton()) {
 export default {
   name: 'PressButton',
   options: {
-    virtualHost: true,
-    ...defaultOptions,
+    ...getVirtualHostOptions(true, true),
     styleIsolation: 'shared',
   },
   components: {

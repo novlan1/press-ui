@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
+import { getVirtualHostOptions, defaultProps } from '../common/component-handler/press-component';
 import { PARENT_GRID as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
 
@@ -57,9 +57,8 @@ import computed from './computed';
 export default {
   name: 'PressGridItem',
   options: {
-    ...defaultOptions,
     styleIsolation: 'shared',
-    virtualHost: true,
+    ...getVirtualHostOptions(true, true),
   },
   components: {
     PressIconPlus,

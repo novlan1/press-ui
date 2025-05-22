@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { getRect, getScrollHeight } from '../common/dom/rect';
 import { nextTick } from '../common/utils/system';
 import { isNotInUni } from '../common/utils/utils';
@@ -57,6 +58,10 @@ let popOverTimer = null;
 
 export default {
   name: 'PressPagination',
+  options: {
+    ...getVirtualHostOptions(true, false),
+    styleIsolation: 'shared',
+  },
   components: {
     PressPopover,
   },
@@ -94,10 +99,6 @@ export default {
       type: String,
       default: '',
     },
-  },
-  options: {
-    virtualHost: true,
-    styleIsolation: 'shared',
   },
   emits: ['change'],
   data() {

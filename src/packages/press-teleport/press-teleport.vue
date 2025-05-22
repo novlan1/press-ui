@@ -37,6 +37,7 @@
   <!-- #endif -->
 </template>
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 // #ifdef H5
 import PressTeleportWeb from '../press-teleport-web/press-teleport-web.vue';
 // #endif
@@ -45,7 +46,7 @@ import PressTeleportWeb from '../press-teleport-web/press-teleport-web.vue';
 export default {
   name: 'PressTeleport',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

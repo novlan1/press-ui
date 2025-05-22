@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
 import styleUtil from '../common/utils/style';
 import PressAvatar from '../press-avatar/press-avatar.vue';
@@ -41,7 +42,7 @@ import props from './computed';
 export default {
   name: 'PressAvatarGroup',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

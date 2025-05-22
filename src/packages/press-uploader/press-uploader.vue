@@ -148,6 +148,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
 import { isNotInUni } from '../common/utils/utils';
 
@@ -164,7 +165,7 @@ import { chooseFile } from './utils';
 export default {
   name: 'PressUploader',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

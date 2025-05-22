@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { getVirtualHostOptions, defaultProps } from '../common/component-handler/press-component';
 // #ifdef H5
 import { clickOutsideMixin } from '../mixins/click-outside';
 // #endif
@@ -22,8 +22,7 @@ import { clickOutsideMixin } from '../mixins/click-outside';
 export default {
   name: 'PressPopover',
   options: {
-    ...defaultOptions,
-    virtualHost: true,
+    ...getVirtualHostOptions(true, true),
   },
   mixins: [
     // #ifdef H5

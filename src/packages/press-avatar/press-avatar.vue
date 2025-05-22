@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
 import styleUtil from '../common/utils/style';
 import { random } from '../common/utils/utils';
@@ -65,7 +66,7 @@ const base64Avatar = 'data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAA
 export default {
   name: 'PressAvatar',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

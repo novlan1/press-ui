@@ -39,3 +39,9 @@ export declare function getPropOrData({ isFunctionMode, functionModeData, allPro
   key: string;
 }): Record<string, any> | undefined;
 export {};
+
+export declare function getVirtualHostOptions(value?: boolean, addDefaultOptions?: boolean): {
+  virtualHost?: boolean;
+  multipleSlots?: boolean;
+  addGlobalClass?: boolean;
+};

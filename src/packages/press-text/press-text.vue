@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
 
@@ -107,7 +108,7 @@ mixins = [value, props];
 export default {
   name: 'PressText',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

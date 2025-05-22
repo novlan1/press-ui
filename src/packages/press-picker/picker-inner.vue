@@ -30,12 +30,18 @@
   </PressPopup>
 </template>
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { t } from '../locale';
 import PressPickerView from '../press-picker-view/press-picker-view.vue';
 import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
+  name: 'PressPickerInner',
+  options: {
+    ...getVirtualHostOptions(true, false),
+    styleIsolation: 'shared',
+  },
   components: {
     PressPopup,
     PressPickerView,
@@ -79,10 +85,7 @@ export default {
       default: false,
     },
   },
-  options: {
-    virtualHost: true,
-    styleIsolation: 'shared',
-  },
+
   emits: ['onSelect', 'onCancel'],
   data() {
     return {

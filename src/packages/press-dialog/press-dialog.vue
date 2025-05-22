@@ -94,6 +94,7 @@
   </div>
 </template>
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { toPromise } from '../common/format/function';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressButton from '../press-button/press-button.vue';
@@ -105,6 +106,10 @@ import { getDialogMixin } from './dialog-mixin';
 
 export default {
   name: 'PressDialog',
+  options: {
+    ...getVirtualHostOptions(true, false),
+    styleIsolation: 'shared',
+  },
   components: {
     PressButton,
     PressField,
@@ -112,10 +117,6 @@ export default {
   mixins: [getDialogMixin(dialogProps), ScrollViewPureMixin],
   props: {
     ...dialogProps,
-  },
-  options: {
-    virtualHost: true,
-    styleIsolation: 'shared',
   },
   emits: ['confirm', 'cancel', 'onLongPressImage', 'onClickImage'],
   data() {

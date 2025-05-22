@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
 import styleUtil from '../common/utils/style';
 import { isNotInUni } from '../common/utils/utils';
@@ -103,7 +104,7 @@ import props from './computed';
 export default {
   name: 'PressImage',
   options: {
-    virtualHost: true,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {

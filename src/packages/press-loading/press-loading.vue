@@ -10,8 +10,14 @@
   </div>
 </template>
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
+
+
 export default {
   name: 'PressLoading',
+  options: {
+    ...getVirtualHostOptions(true, false),
+  },
   props: {
     // loading背景色，默认透明
     loadingBg: {
@@ -25,9 +31,6 @@ export default {
       default: 'page',
       required: false,
     },
-  },
-  options: {
-    virtualHost: true,
   },
   emits: [],
   data() {

@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { getRect } from '../common/dom/rect';
 
 
@@ -62,6 +63,9 @@ function getTouch(e) {
 
 export default {
   name: 'PressPickerView',
+  options: {
+    ...getVirtualHostOptions(true, false),
+  },
   props: {
     // 列表数据
     // [{label: '文本', value: '值'}]
@@ -107,9 +111,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  options: {
-    virtualHost: true,
   },
   emits: ['currentIndexChanged'],
   data() {

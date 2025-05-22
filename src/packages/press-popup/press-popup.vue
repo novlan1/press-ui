@@ -87,7 +87,7 @@
   </div>
 </template>
 <script>
-import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
+import { getVirtualHostOptions, getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
 import { toPromise } from '../common/format/function';
 import PressButton from '../press-button/press-button.vue';
 
@@ -98,15 +98,15 @@ const ANIMATION_TIME = 300;
 
 export default {
   name: 'PressPopup',
+  options: {
+    ...getVirtualHostOptions(true, false),
+    styleIsolation: 'shared',
+  },
   components: {
     PressButton,
   },
   props: {
     ...allProps,
-  },
-  options: {
-    virtualHost: true,
-    styleIsolation: 'shared',
   },
   emits: ['onCancel', 'cancel', 'onConfirm', 'confirm'],
   data() {
