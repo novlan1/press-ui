@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.13](https://github.com/novlan1/press-ui/compare/v3.0.12...v3.0.13) (2025-05-22)
+
+
+### ✨ Features | 新功能
+
+* **virtualHost:** 仅对微信小程序设置vitrualHost ([8fae197](https://github.com/novlan1/press-ui/commit/8fae197e8440a028633b836dcf03de59deca6fa7))
+
 ### [3.0.12](https://github.com/novlan1/press-ui/compare/v3.0.11...v3.0.12) (2025-05-16)
 
 
