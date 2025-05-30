@@ -124,10 +124,15 @@ export default {
       immediate: true,
     },
   },
+  created() {
+  },
   mounted() {
     requestAnimationFrame(() => {
       this.setValues();
     });
+    setTimeout(() => {
+      this.setValues();
+    }, 300);
   },
   methods: {
     getPicker() {

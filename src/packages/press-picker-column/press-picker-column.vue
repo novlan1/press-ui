@@ -169,6 +169,8 @@ export default {
     });
     // this[PARENT].children.push(this);
   },
+  mounted() {
+  },
   methods: {
     setData(data) {
       Object.keys(data).forEach((key) => {

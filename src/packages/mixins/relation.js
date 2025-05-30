@@ -23,7 +23,7 @@ function findNearListParent(children = [], name) {
 
 function getParentInToutiao(name) {
   const parent = this.$parent;
-  if (!parent.$parent) {
+  if (parent && !parent.$parent) {
     const children = parent.$children;
     if (!children || !children.length) return;
     const result = findNearListParent.call(this, children, name);
