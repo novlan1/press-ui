@@ -56,7 +56,7 @@ export default {
     info: { type: String, default: '' },
     size: { type: [String, Number], default: '' },
     color: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     classPrefix: {
       type: String,
       default: 'press-icon-plus',

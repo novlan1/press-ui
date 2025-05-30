@@ -1,6 +1,6 @@
 export declare const PARENT_CHECKBOX_GROUP = 'checkboxGroup';
 export declare const PARENT_COLLAPSE = 'collapse';
-export declare const PARENT_PICKER = 'picker';
+export declare const PARENT_PICKER = 'pickerPlus';
 export declare const PARENT_RADIO_GROUP = 'radioGroup';
 export declare const PARENT_SIDEBAR = 'sidebar';
 export declare const PARENT_TABBAR = 'tabbar';

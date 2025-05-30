@@ -59,7 +59,7 @@ export default {
       default: false,
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     ...defaultProps,

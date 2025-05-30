@@ -91,6 +91,10 @@ export default {
       type: [Number, null],
       default: null,
     },
+    customStyle: {
+      type: [String, Object],
+      default: '',
+    },
   },
   emits: ['scroll'],
   data() {
@@ -109,8 +113,8 @@ export default {
       return res;
     },
     wrapStyle() {
-      const { fixed, offsetTop, transform, zIndex } = this;
-      const wrapStyle = computed.wrapStyle({ fixed, offsetTop, transform, zIndex });
+      const { fixed, offsetTop, transform, zIndex, customStyle } = this;
+      const wrapStyle = computed.wrapStyle({ fixed, offsetTop, transform, zIndex, customStyle });
       return wrapStyle;
     },
     wrapClass() {

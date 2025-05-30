@@ -1,7 +1,7 @@
 <template>
   <div
     class="press-upload"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div class="press-upload__wrap">
       <template v-if="previewImage">
@@ -150,6 +150,7 @@
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
+import { style } from '../common/utils/style';
 import { isNotInUni } from '../common/utils/utils';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
@@ -191,6 +192,11 @@ export default {
       isInCount: true,
       isNotInUni: isNotInUni(),
     };
+  },
+  computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
   },
   watch: {
     // 监听文件列表的变化，重新整理内部数据

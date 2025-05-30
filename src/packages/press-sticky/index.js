@@ -8,14 +8,23 @@ function containerStyle(data) {
   });
 }
 
-function wrapStyle(data) {
-  return style({
-    transform: data.transform
-      ? `translate3d(0, ${data.transform}px, 0)`
-      : '',
-    top: data.fixed ? addUnit(data.offsetTop) : '',
-    'z-index': data.zIndex,
-  });
+function wrapStyle({
+  fixed,
+  offsetTop,
+  transform,
+  zIndex,
+  customStyle,
+}) {
+  return style([
+    {
+      transform: transform
+        ? `translate3d(0, ${transform}px, 0)`
+        : '',
+      top: fixed ? addUnit(offsetTop) : '',
+      'z-index': zIndex,
+    },
+    customStyle,
+  ]);
 }
 
 

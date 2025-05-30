@@ -61,6 +61,7 @@
   </div>
 </template>
 <script>
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';
 
@@ -138,7 +139,7 @@ export default {
       default: 1,
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     duration: {
@@ -168,7 +169,7 @@ export default {
     },
     wrapperStyle() {
       const { customStyle } = this;
-      return customStyle;
+      return style(customStyle);
     },
     popupClass() {
       const { theme, placement, getContainer } = this;

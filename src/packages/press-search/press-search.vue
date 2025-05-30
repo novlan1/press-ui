@@ -41,7 +41,7 @@
           :input-class="inputClass"
           :placeholder="placeholder"
           :placeholder-style="placeholderStyle"
-          custom-style="padding: 5px 10px 5px 0; background-color: transparent;"
+          :custom-style="fieldCustomStyle"
           @blur="onBlur"
           @focus="onFocus"
           @change="onChange"
@@ -188,6 +188,12 @@ export default {
       result = this.fieldBaseClass;
       // #endif
       return result;
+    },
+    fieldCustomStyle() {
+      return {
+        padding: '5px 10px 5px 0',
+        backgroundColor: 'transparent',
+      };
     },
   },
   watch: {

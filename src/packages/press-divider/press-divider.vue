@@ -27,7 +27,7 @@ export default {
     fontSize: { type: String, default: '' },
     borderColor: { type: String, default: '' },
     textColor: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     ...defaultProps,
   },
   computed: {

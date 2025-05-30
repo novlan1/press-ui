@@ -3,7 +3,7 @@
     :class="cellClass"
     :hover-class="['press-cell--hover', hoverClass]"
     hover-stay-time="70"
-    :style="customStyle"
+    :style="wrapStyle"
     @click.stop="onClick"
   >
     <PressIconPlus
@@ -76,6 +76,7 @@
 
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getEventDetail } from '../common/dom/event';
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 import { link } from '../mixins/link';
@@ -111,7 +112,7 @@ export default {
     required: Boolean,
     clickable: Boolean,
     titleWidth: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     arrowDirection: { type: String, default: '' },
     useTitleSlot: Boolean, // 【修改点】新增，使用title-slot，必须同时设置为true
     useLabelSlot: Boolean,
@@ -128,6 +129,9 @@ export default {
   },
   emits: ['click'],
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     cellClass() {
       const {
         size,

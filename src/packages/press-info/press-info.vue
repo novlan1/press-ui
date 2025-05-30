@@ -2,13 +2,15 @@
   <div
     v-if="info !== null && info !== '' || dot"
     :class="infoClass"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     {{ dot ? '' : info }}
   </div>
 </template>
 <script>
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
+
 
 export default {
   name: 'PressInfo',
@@ -25,7 +27,7 @@ export default {
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     customClass: {
@@ -34,6 +36,9 @@ export default {
     },
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     infoClass() {
       const { dot, customClass } = this;
       return `press-info ${utils.bem2('info', { dot })} ${customClass}`;

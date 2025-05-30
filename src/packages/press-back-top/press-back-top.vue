@@ -27,7 +27,7 @@
 
 <script>
 import { addUnit, getPx } from '../common/utils/add-unit';
-import { style as styleUtil } from '../common/utils/style';
+import { style } from '../common/utils/style';
 import { errorTip } from '../common/utils/validator';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
@@ -57,7 +57,7 @@ export default {
   computed: {
     backTopStyle() {
       // 动画组件样式
-      const style = {
+      const result = {
         bottom: addUnit(this.bottom),
         right: addUnit(this.right),
         width: addUnit(this.size),
@@ -65,19 +65,19 @@ export default {
         position: 'fixed',
         zIndex: this.zIndex,
       };
-      return styleUtil(style);
+      return style(result);
     },
     show() {
       return getPx(this.scrollTop) > getPx(this.top);
     },
     innerIconStyle() {
-      return styleUtil([{
+      return style([{
         color: '#909399',
         fontSize: '19px',
       }, this.iconStyle]);
     },
     contentStyle() {
-      const style = {};
+      const result = {};
       let radius = 0;
       // 是否圆形
       if (this.mode === 'circle') {
@@ -86,11 +86,11 @@ export default {
         radius = '4px';
       }
       // 为了兼容安卓nvue，只能这么分开写
-      style.borderTopLeftRadius = radius;
-      style.borderTopRightRadius = radius;
-      style.borderBottomLeftRadius = radius;
-      style.borderBottomRightRadius = radius;
-      return styleUtil([style, this.customStyle]);
+      result.borderTopLeftRadius = radius;
+      result.borderTopRightRadius = radius;
+      result.borderBottomLeftRadius = radius;
+      result.borderBottomRightRadius = radius;
+      return style([result, this.customStyle]);
     },
   },
   methods: {

@@ -1,7 +1,7 @@
 <template>
   <div
     class="press-avatar-group"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div
       v-for="(item, index) in showUrl"
@@ -33,7 +33,7 @@
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
-import styleUtil from '../common/utils/style';
+import { style } from '../common/utils/style';
 import PressAvatar from '../press-avatar/press-avatar.vue';
 
 import props from './computed';
@@ -65,8 +65,11 @@ export default {
       const { extraValue, urls, showUrl } = this;
       return extraValue || urls.length - showUrl.length;
     },
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     textStyle() {
-      return styleUtil({
+      return style({
         color: '#fff',
         fontSize: this.size * 0.4,
         textAlign: 'center',
@@ -86,7 +89,7 @@ export default {
     },
     getItemStyle(index) {
       const { size, gap } = this;
-      const res =  styleUtil({
+      const res =  style({
         marginLeft: index === 0 ? 0 : addUnit(-size * gap),
         width: addUnit(size),
         height: addUnit(size),

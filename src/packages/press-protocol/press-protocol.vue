@@ -2,7 +2,7 @@
   <div
     class="press-protocol"
     :class="customClass"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div class="press-protocol__layout">
       <div
@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-
+import { style } from '../common/utils/style';
 
 export default {
   name: 'PressProtocol',
@@ -57,7 +57,7 @@ export default {
       default: () => ([]),
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     customClass: {
@@ -71,6 +71,9 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
   },
   mounted() {
   },

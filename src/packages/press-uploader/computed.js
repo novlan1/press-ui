@@ -121,7 +121,7 @@ export default {
       default: true,
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },

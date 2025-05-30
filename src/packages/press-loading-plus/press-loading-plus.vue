@@ -2,7 +2,7 @@
   <div class="press-loading-index">
     <div
       :class="loadingClass"
-      :style="customStyle"
+      :style="loadingStyle"
     >
       <div
         :class="'press-loading__spinner press-loading__spinner--'+(type)"
@@ -30,6 +30,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 import { TDESIGN_BRAND_COLOR } from './config';
@@ -44,7 +45,7 @@ export default {
   },
   props: {
     ...defaultProps,
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     color: { type: String, default: '' },
     vertical: { type: Boolean, default: false },
     type: {
@@ -61,6 +62,9 @@ export default {
     };
   },
   computed: {
+    loadingStyle() {
+      return style(this.customStyle);
+    },
     innerColor() {
       const { color, type } = this;
       if (type === 'circular-tdesign' && !color) {

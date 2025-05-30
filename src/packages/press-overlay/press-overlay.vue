@@ -5,7 +5,7 @@
       :show="show"
       :overlay="true"
       :custom-class="customClass"
-      :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
+      :custom-style="transitionCustomStyle"
       :duration="duration"
       :after-enter-callback="afterEnterCallback"
       :after-leave-callback="afterLeaveCallback"
@@ -30,7 +30,7 @@
       :show="show"
       :overlay="true"
       :custom-class="customClass"
-      :custom-style="'z-index: '+(zIndex)+'; '+(customStyle)"
+      :custom-style="transitionCustomStyle"
       :duration="duration"
       :after-enter-callback="afterEnterCallback"
       :after-leave-callback="afterLeaveCallback"
@@ -53,8 +53,8 @@
 
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
 import PressTransition from '../press-transition/press-transition.vue';
-
 
 export default {
   name: 'PressOverlay',
@@ -63,7 +63,7 @@ export default {
   },
   props: {
     show: { type: Boolean, default: false },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     duration: {
       type: null,
       default: 300,
@@ -113,6 +113,16 @@ export default {
   ],
   options: {
     ...defaultOptions,
+  },
+  computed: {
+    transitionCustomStyle() {
+      return style([
+        {
+          zIndex: this.zIndex,
+        },
+        this.customStyle,
+      ]);
+    },
   },
   methods: {
     onClick() {

@@ -5,7 +5,7 @@
       {'press-section--active': active},
       {'press-section--clickable': clickable},
     ]"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div
       class="press-section-header"
@@ -54,8 +54,8 @@
     </div>
   </div>
 </template>
-
 <script>
+import { style } from '../common/utils/style';
 
 
 export default {
@@ -107,12 +107,15 @@ export default {
       default: false,
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
   emits: ['click'],
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     innerPadding() {
       if (typeof this.padding === 'string') {
         return this.padding;

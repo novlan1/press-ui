@@ -1,7 +1,7 @@
 <template>
   <div
     class="press-barcode"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <!-- #ifdef H5 -->
     <VueBarcode
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { style } from '../common/utils/style';
+
 // #ifdef H5
 import VueBarcode from '../common/vue3/bar-code';
 // #endif
@@ -102,7 +104,7 @@ export default {
       default: () => (DEFAULT_OPTIONS),
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
@@ -120,6 +122,11 @@ export default {
         ...this.options,
       },
     };
+  },
+  computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
   },
   onUnload() {
   },

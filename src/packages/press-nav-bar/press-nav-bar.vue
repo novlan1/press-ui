@@ -102,7 +102,7 @@ export default {
     },
     leftText: { type: String, default: '' },
     rightText: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     leftArrow: Boolean,
     border: {
       type: Boolean,
@@ -134,7 +134,7 @@ export default {
     },
     navBarStyle() {
       const { zIndex, statusBarHeight, safeAreaInsetTop, customStyle } = this;
-      return `${computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop })}; ${customStyle}`;
+      return computed.barStyle({ zIndex, statusBarHeight, safeAreaInsetTop, customStyle });
     },
   },
   watch: {

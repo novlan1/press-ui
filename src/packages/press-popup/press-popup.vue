@@ -74,7 +74,7 @@
             <PressButton
               v-if="getPropOrData('button')"
               :type="buttonType"
-              custom-style="width:auto;height:100%;padding:0 10px;font-size:inherit;"
+              :custom-style="buttonCustomStyle"
               @click="clickConfirm"
             >
               {{ getPropOrData('button') }}
@@ -89,6 +89,7 @@
 <script>
 import { getVirtualHostOptions, getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
 import { toPromise } from '../common/format/function';
+import { style } from '../common/utils/style';
 import PressButton from '../press-button/press-button.vue';
 
 import { allProps, propsKeyMap } from './computed';
@@ -131,10 +132,24 @@ export default {
     popupStyle() {
       const customStyle = this.getPropOrData('customStyle');
       const zIndex = this.getPropOrData('zIndex');
-      return `z-index: ${zIndex};${customStyle};`;
+
+      return style([
+        {
+          zIndex,
+        },
+        customStyle,
+      ]);
     },
     isFunctionMode() {
       return this.mode === FUNCTIONAL;
+    },
+    buttonCustomStyle() {
+      return {
+        width: 'auto',
+        height: '100%',
+        padding: '0 10px',
+        fontSize: 'inherit',
+      };
     },
   },
   watch: {

@@ -62,6 +62,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { getRect } from '../common/dom/rect';
 import { getScrollSelector, getScroller } from '../common/dom/scroll';
+import { style } from '../common/utils/style';
 
 import { nextTick } from '../common/utils/system';
 import { vModelMixin } from '../common/vue3/adapter';
@@ -188,7 +189,7 @@ export default {
     },
     ...defaultProps,
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
@@ -211,7 +212,12 @@ export default {
       return ['press-list', this.vertical ? 'press-list--vertical' : 'press-list--hor', this.customClass].join(' ');
     },
     scrollViewStyle() {
-      return `height: 100%; ${this.customStyle};`;
+      return style([
+        {
+          height: '100%',
+        },
+        this.customStyle,
+      ]);
     },
   },
   watch: {

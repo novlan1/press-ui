@@ -17,7 +17,7 @@ export const propsKeyMap = {
 
 export const newProps = {
   customStyle: {
-    type: String,
+    type: [String, Object],
     default: '',
   },
   // 是否显示标题

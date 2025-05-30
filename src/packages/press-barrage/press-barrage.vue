@@ -23,7 +23,7 @@
 </template>
 <script>
 import { getRect } from '../common/dom/rect';
-import styles from '../common/utils/style';
+import { style } from '../common/utils/style';
 import { getVModelMixin } from '../common/vue3/adapter';
 
 
@@ -126,7 +126,7 @@ export default {
           ...item.styleObj,
           animationPlayState: 'running',
         };
-        item.customStyle = styles(item.styleObj);
+        item.customStyle = style(item.styleObj);
         // #endif
       });
     },
@@ -143,7 +143,7 @@ export default {
           ...item.styleObj,
           animationPlayState: 'paused',
         };
-        item.customStyle = styles(item.styleObj);
+        item.customStyle = style(item.styleObj);
         // #endif
       });
     },
@@ -170,7 +170,7 @@ export default {
         animationDelay: `${delay}ms`,
         animationTimingFunction: 'linear',
       };
-      item.customStyle = styles(item.styleObj);
+      item.customStyle = style(item.styleObj);
       // #endif
 
 
@@ -216,7 +216,7 @@ export default {
         ...item.styleObj,
         top: `${top}px`,
       };
-      item.customStyle = styles(item.styleObj);
+      item.customStyle = style(item.styleObj);
       // #endif
 
 

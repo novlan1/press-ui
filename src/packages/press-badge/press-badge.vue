@@ -1,7 +1,7 @@
 <template>
   <div
     :class="badgeClass"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <slot />
 
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import styleUtil from '../common/utils/style';
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 
@@ -45,7 +45,7 @@ export default {
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     customClass: {
@@ -58,6 +58,9 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     badgeClass() {
       const { hasChild, customClass } = this;
       return `${customClass} ${utils.bem2('badge', { fixed: hasChild })}`;
@@ -74,7 +77,7 @@ export default {
       return content;
     },
     infoStyle() {
-      return styleUtil({
+      return style({
         backgroundColor: this.color,
       });
     },

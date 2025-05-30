@@ -1,7 +1,7 @@
 <template>
   <div
     class="press-pull-refresh"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div
       ref="track"
@@ -123,7 +123,7 @@ export default {
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
@@ -142,6 +142,9 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     statusText() {
       const { status } = this;
       return this[`${status}Text`] || t(status);

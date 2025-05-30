@@ -132,9 +132,12 @@ export default {
       };
     },
     bodyStyle() {
-      return styleUtil([{
-        flexDirection: (this.labelPosition || this.parentData.labelPosition) === 'left' ? 'row' : 'column',
-      }, this.customStyle]);
+      return styleUtil([
+        {
+          flexDirection: (this.labelPosition || this.parentData.labelPosition) === 'left' ? 'row' : 'column',
+        },
+        this.customStyle,
+      ]);
     },
     lineStyle() {
       const { message, parentData, propsLine } = this;

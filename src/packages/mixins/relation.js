@@ -5,17 +5,72 @@ import { sortChildren } from '../common/dom/vnodes-h5';
 import { sortMPChildren } from '../common/dom/vnodes-mp';
 // #endif
 
+function findNearListParent(children = [], name) {
+  let temp;
+  for (const item of children) {
+    // console.log('__nodeId__', item, item.$options.name);
+    if (item.$options.name === name) {
+      temp = item;
+    }
+    if (item === this && temp) {
+      // console.log('item === this', item);
+      return temp;
+    }
+  }
+
+  return temp;
+}
+
+function getParentInToutiao(name) {
+  const parent = this.$parent;
+  if (!parent.$parent) {
+    const children = parent.$children;
+    if (!children || !children.length) return;
+    const result = findNearListParent.call(this, children, name);
+    // const result2 = children.find(item => item.$options.name === name);
+    // console.log('result2', result2, result2.__nodeId__);
+    // console.log('result', result, result.__nodeId__);
+    return result;
+  }
+}
+
+
+function getParent(name = '') {
+  const found = getParentInToutiao.call(this, name);
+  // console.log('found', found);
+  if (found) {
+    return found;
+  }
+
+  let parent = this.$parent;
+  let parentName = parent.$options.name;
+  while (parentName !== name) {
+    parent = parent.$parent;
+    if (!parent) return false;
+    parentName = parent.$options.name;
+  }
+  return parent;
+}
+
 
 export function ChildrenMixin(parent, options = {}) {
   const indexKey = options.indexKey || 'index';
 
   return {
     inject: {
+      // #ifndef MP-TOUTIAO
       [parent]: {
         default: null,
       },
+      // #endif
     },
-
+    data() {
+      return {
+        // #ifdef MP-TOUTIAO
+        [parent]: null,
+        // #endif
+      };
+    },
     computed: {
       // 会造成循环引用
       // parent() {
@@ -81,6 +136,11 @@ export function ChildrenMixin(parent, options = {}) {
 
     methods: {
       bindRelation() {
+        // #ifdef MP-TOUTIAO
+        const parentComponentName = `Press${parent.replace(/^\w/, a => a.toUpperCase())}`;
+        this[parent] = getParent.call(this, parentComponentName);
+        // #endif
+        // console.log('bindRelation', this[parent], this, parent);
         if (!this[parent] || this[parent].children.indexOf(this) !== -1) {
           return;
         }
@@ -100,6 +160,7 @@ export function ChildrenMixin(parent, options = {}) {
         // #endif
 
         this[parent].children = children;
+        // console.log('bindRelation.children', children);
       },
       onBeforeMount() {
         const that = this;

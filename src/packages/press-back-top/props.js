@@ -1,7 +1,7 @@
 export default {
   props: {
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     // 返回顶部的形状，circle-圆形，square-方形

@@ -1,7 +1,7 @@
 <template>
   <div
     :class="checkboxClass"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div
       v-if="labelPosition === 'left'"
@@ -42,6 +42,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_CHECKBOX_GROUP as PARENT } from '../common/constant/parent-map';
 import { formValidate } from '../common/utils/parent';
+import { style } from '../common/utils/style';
 
 import { nextTick } from '../common/utils/system';
 import utils from '../common/utils/utils';
@@ -103,7 +104,7 @@ export default {
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     ...defaultProps,
@@ -117,6 +118,9 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
     innerLabelClass() {
       const { labelClass, labelPosition, disabled, parentDisabled } = this;
       return `${labelClass} ${utils.bem2('checkbox__label', [labelPosition, { disabled: disabled || parentDisabled }])}`;

@@ -93,7 +93,7 @@ export default {
   },
   emits: [],
   data() {
-    const { defaultExpandAll } = this[PARENT];
+    const { defaultExpandAll } = this[PARENT] || {};
     return {
       expanded: !!defaultExpandAll,
       animation: {},

@@ -1,7 +1,7 @@
 export default {
   props: {
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     // 主题颜色

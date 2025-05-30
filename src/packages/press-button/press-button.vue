@@ -151,7 +151,7 @@ export default {
     hairline: Boolean,
     disabled: Boolean,
     loadingText: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     loadingType: {
       type: String,
       default: 'circular',

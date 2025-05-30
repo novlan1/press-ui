@@ -71,8 +71,9 @@ import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';
 
-import { toInject, nextTick, forceUpdate } from '../common/vue3/adapter';
+import { nextTick, forceUpdate } from '../common/vue3/adapter';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
+import { ChildrenMixin } from '../mixins/relation';
 
 import computed from './index';
 
@@ -91,8 +92,7 @@ export default {
   options: {
     ...defaultOptions,
   },
-  mixins: [ScrollViewPureMixin],
-  ...toInject(PARENT),
+  mixins: [ScrollViewPureMixin, ChildrenMixin(PARENT)],
 
   props: {
     ...defaultProps,
@@ -167,7 +167,7 @@ export default {
     }).then(() => {
       this.setIndex(defaultIndex);
     });
-    this[PARENT].children.push(this);
+    // this[PARENT].children.push(this);
   },
   methods: {
     setData(data) {

@@ -81,7 +81,7 @@ export default {
       default: '#f3f4f6',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     transitionStyle: {

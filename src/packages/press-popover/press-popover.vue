@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="innerShow"
-    :style="customStyle"
+    :style="wrapStyle"
     :class="['press-popover',
              `press-popover--${placement}`,
              popperClass,
@@ -14,6 +14,8 @@
 </template>
 <script>
 import { getVirtualHostOptions, defaultProps } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
+
 // #ifdef H5
 import { clickOutsideMixin } from '../mixins/click-outside';
 // #endif
@@ -47,7 +49,7 @@ export default {
     },
     ...defaultProps,
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
@@ -62,6 +64,9 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
   },
   watch: {
     show: {

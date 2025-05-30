@@ -74,7 +74,7 @@ export default {
       default: 'level',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },

@@ -20,7 +20,10 @@ const getClassNames = (name, _this) => {
 export function transition(showDefaultValue) {
   return {
     props: {
-      customStyle: String,
+      customStyle: {
+        type: [String, Object],
+        default: '',
+      },
       show: {
         type: Boolean,
         default: showDefaultValue,

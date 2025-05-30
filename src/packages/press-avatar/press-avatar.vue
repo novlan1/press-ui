@@ -50,7 +50,7 @@
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { addUnit } from '../common/utils/add-unit';
-import styleUtil from '../common/utils/style';
+import { style } from '../common/utils/style';
 import { random } from '../common/utils/utils';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
@@ -88,10 +88,6 @@ export default {
     shape() {
       return this.round ? 'circle' : 'square';
     },
-    imageStyle() {
-      const style = {};
-      return style;
-    },
     avatarStyle() {
       const { text, icon, colorIndex, backgroundColor, size, colors, randomBackgroundColor } = this;
       let tBackgroundColor = 'transparent';
@@ -104,7 +100,7 @@ export default {
         }
       }
 
-      const computedStyle = styleUtil([
+      const computedStyle = style([
         {
           width: addUnit(size),
           height: addUnit(size),
@@ -117,7 +113,7 @@ export default {
     },
     textStyle() {
       const { fontSize, color } = this;
-      return styleUtil({
+      return style({
         fontSize,
         color,
         textAlign: 'center',

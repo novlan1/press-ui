@@ -203,7 +203,7 @@ export default {
     iconClass: { type: String, default: '' },
     clickable: Boolean,
     inputAlign: { type: String, default: '' },
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     wrapperStyle: { type: String, default: '' },
     errorMessage: { type: String, default: '' },
     arrowDirection: { type: String, default: '' },

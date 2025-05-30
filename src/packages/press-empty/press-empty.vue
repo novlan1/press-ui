@@ -2,7 +2,7 @@
   <div
     class="press-empty"
     :class="emptyClass"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <PressIcon
       v-if="isESportType"
@@ -25,7 +25,7 @@
           v-if="image"
           class="press-empty__image__img"
           :src="computed.imageUrl(image)"
-          :style="imageCustomStyle"
+          :style="innerImageCustomStyle"
         >
       </div>
     </template>
@@ -45,6 +45,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
 import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
@@ -72,11 +73,11 @@ export default {
       default: 'default',
     },
     imageCustomStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     ...defaultProps,
@@ -88,6 +89,12 @@ export default {
     };
   },
   computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
+    innerImageCustomStyle() {
+      return style(this.imageCustomStyle);
+    },
     isESportType() {
       return this.type === EXTRA_TYPE_MAP.E_SPORT;
     },

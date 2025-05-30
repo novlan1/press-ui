@@ -1,7 +1,7 @@
 <template>
   <div
     class="press-slider-index"
-    :style="customStyle"
+    :style="wrapStyle"
   >
     <div
       :class="customClass + ' '+(utils.bem2('slider', { disabled, vertical }))"
@@ -118,7 +118,7 @@ export default {
       default: '',
     },
     customStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
   },
@@ -130,6 +130,11 @@ export default {
       barStyle: '',
       dataValue: this.value,
     };
+  },
+  computed: {
+    wrapStyle() {
+      return style(this.customStyle);
+    },
   },
   watch: {
     value: {

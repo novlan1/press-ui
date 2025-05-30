@@ -6,7 +6,7 @@
       :overlay="dataOverlay"
       :transition="dataTransition"
       :custom-class="'press-dialog press-dialog--'+(dataTheme)+' '+(dataClassName)"
-      :custom-style="'width: '+(utils.addUnit(dataWidth))+';'+(dataCustomStyle)"
+      :custom-style="popupCustomStyle"
       :overlay-style="dataOverlayStyle"
       :close-on-click-overlay="dataCloseOnClickOverlay"
       @close="onClickOverlay"
@@ -83,6 +83,7 @@
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { GRAY, RED } from '../common/constant/color';
 import { toPromise } from '../common/format/function';
+import { style } from '../common/utils/style';
 
 import { nextTick } from '../common/utils/system';
 import utils from '../common/utils/utils';
@@ -107,7 +108,7 @@ const props = {
   useTitleSlot: Boolean,
 
   className: { type: String, default: '' },
-  customStyle: { type: String, default: '' },
+  customStyle: { type: [String, Object], default: '' },
 
   asyncClose: Boolean,
   beforeClose: { type: [null, Function], default: null },
@@ -189,6 +190,16 @@ export default {
       },
       callback: (() => { }),
     };
+  },
+  computed: {
+    popupCustomStyle() {
+      return style([
+        {
+          width: utils.addUnit(this.dataWidth),
+        },
+        this.dataCustomStyle,
+      ]);
+    },
   },
   watch: {
     // ...getPropsWatch(props),

@@ -96,7 +96,7 @@ export default {
 
     round: Boolean,
     closeable: Boolean,
-    customStyle: { type: String, default: '' },
+    customStyle: { type: [String, Object], default: '' },
     overlayStyle: { type: String, default: '' },
     transition: {
       type: String,

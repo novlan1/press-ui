@@ -56,6 +56,7 @@
   </PressOverlay>
 </template>
 <script>
+import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
 import { functionalMixin } from '../mixins/functional';
 import { SwiperPureMixin } from '../mixins/pure/swiper';
@@ -86,7 +87,7 @@ const imagePreviewProps = {
     default: false,
   },
   customStyle: {
-    type: String,
+    type: [String, Object],
     default: '',
   },
   customClass: {
@@ -129,7 +130,7 @@ export default {
   },
   computed: {
     imagePreviewStyle() {
-      return this.getPropOrData('customStyle');
+      return style(this.getPropOrData('customStyle'));
     },
   },
   watch: {

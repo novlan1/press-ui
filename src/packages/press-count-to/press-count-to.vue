@@ -52,11 +52,14 @@ export default {
     countToStyle() {
       const { customStyle, fontSize, bold, color } = this;
 
-      return `${customStyle} ${style({
-        fontSize: addUnit(fontSize),
-        fontWeight: bold ? 'bold' : 'normal',
-        color,
-      })}}`;
+      return style([
+        customStyle,
+        {
+          fontSize: addUnit(fontSize),
+          fontWeight: bold ? 'bold' : 'normal',
+          color,
+        },
+      ]);
     },
     countDown() {
       return this.startValue > this.endValue;
