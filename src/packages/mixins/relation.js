@@ -21,8 +21,14 @@ function findNearListParent(children = [], name) {
   return temp;
 }
 
+
 function getParentInToutiao(name) {
-  const parent = this.$parent;
+  let parent = this.$parent;
+  if (!parent) {
+    const pages = getCurrentPages();
+    parent = pages[pages.length - 1]?.$vm;
+  }
+
   if (parent && !parent.$parent) {
     const children = parent.$children;
     if (!children || !children.length) return;
@@ -43,6 +49,11 @@ function getParent(name = '') {
   }
 
   let parent = this.$parent;
+
+  if (!parent) {
+    return;
+  }
+
   let parentName = parent.$options.name;
   while (parentName !== name) {
     parent = parent.$parent;
