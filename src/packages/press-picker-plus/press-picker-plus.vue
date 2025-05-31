@@ -30,6 +30,7 @@
           v-for="(item,index) in computedColumns"
           ref="pickerColumn"
           :key="index"
+          :relation-key="relationKey"
           class="press-picker__column"
           :data-index="index"
           :custom-class="columnClass"
@@ -132,6 +133,7 @@ export default {
   data() {
     return {
       simple: true,
+      relationKey: `${Math.random()}`,
     };
   },
   computed: {
@@ -166,7 +168,9 @@ export default {
   beforeCreate() {
   },
   created() {
-    this.children = [];
+    if (!this.children) {
+      this.children = [];
+    }
   },
   mounted() {
     if (Array.isArray(this.children) && this.children.length) {
@@ -282,5 +286,4 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss" src="./css/index.scss">
-</style>
+<style scoped lang="scss" src="./css/index.scss"></style>

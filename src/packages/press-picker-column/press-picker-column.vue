@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="press-picker-column-index"
-  >
+  <div class="press-picker-column-index">
     <!-- #ifdef MP-ALIPAY -->
     <scroll-view
       scroll-y
@@ -58,11 +56,11 @@
         </div>
       <!-- #ifndef MP-ALIPAY -->
       </div>
-      <!-- #endif -->
-
-      <!-- #ifdef MP-ALIPAY -->
-    </scroll-view>
     <!-- #endif -->
+
+    <!-- #ifdef MP-ALIPAY -->
+    </scroll-view>
+  <!-- #endif -->
   </div>
 </template>
 <script>
@@ -117,6 +115,10 @@ export default {
       type: [Number, String],
       default: 1000,
     },
+    relationKey: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['change'],
   data() {
@@ -152,8 +154,14 @@ export default {
       immediate: true,
     },
     initialOptions: {
-      handler(val) {
-        this.options = val;
+      handler(newVal, oldVal) {
+        // console.log('newVal', JSON.parse(JSON.stringify(newVal)));
+        // console.log('oldVal', JSON.parse(JSON.stringify(oldVal)));
+        // console.log('oldVal === newVal', JSON.stringify(oldVal) === JSON.stringify(newVal));
+        if (JSON.stringify(oldVal) === JSON.stringify(newVal)) {
+          return;
+        }
+        this.options = newVal;
         this.setIndex(this.defaultIndex);
       },
       deep: true,
@@ -286,5 +294,4 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss" src="./css/index.scss">
-</style>
+<style scoped lang="scss" src="./css/index.scss"></style>

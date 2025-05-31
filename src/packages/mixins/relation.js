@@ -8,8 +8,10 @@ import { sortMPChildren } from '../common/dom/vnodes-mp';
 function findNearListParent(children = [], name) {
   let temp;
   for (const item of children) {
-    // console.log('__nodeId__', item, item.$options.name);
-    if (item.$options.name === name) {
+    // console.log('__nodeId__', item, item.$options.name, parentRelationKey, thisRelationKey);
+    const parentRelationKey = item.$data && item.$data.relationKey;
+    const thisRelationKey = this.$props && this.$props.relationKey;
+    if (item.$options.name === name && parentRelationKey === thisRelationKey) {
       temp = item;
     }
     if (item === this && temp) {

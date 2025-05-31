@@ -197,13 +197,21 @@ export default {
   },
   mounted() {
     const innerValue = this.correctValue(this.value);
-    this.updateColumnValue(innerValue).then(() => {
-      if (this.immediateCheck) {
-        this.onChange();
-      } else {
-        this.$emit('input', innerValue);
-      }
-    });
+    setTimeout(() => {
+      this.updateColumnValue(innerValue, false)
+        .then(({ cb }) => {
+          setTimeout(() => {
+            cb();
+          }, 300);
+        })
+        .then(() => {
+          if (this.immediateCheck) {
+            this.onChange();
+          } else {
+            this.$emit('input', innerValue);
+          }
+        });
+    }, 0);
   },
   methods: {
     setData(data) {
@@ -245,16 +253,20 @@ export default {
     },
     getOriginColumns() {
       const { filter, innerValue } = this;
-      const results = this.getRanges().map(({ type, range }) => {
-        let values = times(range[1] - range[0] + 1, (index) => {
-          const value = range[0] + index;
-          return (type === 'year' || type === YEAR_AND_MONTH) ? `${value}` : padZero(value);
+      const results = this.getRanges()
+        .map(({ type, range }) => {
+          let values = times(range[1] - range[0] + 1, (index) => {
+            const value = range[0] + index;
+            return (type === 'year' || type === YEAR_AND_MONTH) ? `${value}` : padZero(value);
+          });
+          if (filter) {
+            values = filter(type, values, innerValue);
+          }
+          return { type, values };
         });
-        if (filter) {
-          values = filter(type, values, innerValue);
-        }
-        return { type, values };
-      });
+      // [{type: 'year', values:['1990','1991']},
+      // {type: 'month', values:['01','02']
+      // ]
       return results;
     },
     getRanges() {
@@ -442,7 +454,7 @@ export default {
         this.$emit('change', picker);
       });
     },
-    updateColumnValue(value) {
+    updateColumnValue(value, changePicker = true) {
       let values = [];
       const { type, innerValue } = this;
       const formatter = this.formatter || defaultFormatter;
@@ -480,13 +492,23 @@ export default {
         }
       }
 
+
+      // values: ['2025', '01','01','01','01']
+      const cb = () => picker.setValues(values);
+
+      if (changePicker) {
+        return this.set({ innerValue: value })
+          .then(() => this.updateColumns())
+          .then(() => cb());
+      }
       return this.set({ innerValue: value })
-        .then(() => this.updateColumns())
-        .then(() => picker.setValues(values));
+        .then(() => {
+          this.updateColumns();
+          return { values, cb };
+        });
     },
   },
 };
 
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
