@@ -77,7 +77,7 @@ import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 import { canIUseModel } from '../common/utils/version';
-import { touch } from '../mixins/touch';
+import { touch } from '../mixins/basic/touch';
 
 
 export default {

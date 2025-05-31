@@ -102,7 +102,7 @@ import { defaultProps, getVirtualHostOptions } from '../common/component-handler
 import utils, { isNotInUni } from '../common/utils/utils';
 import { canIUseFormFieldButton } from '../common/utils/version';
 
-import { button } from '../mixins/button';
+import { button } from '../mixins/basic/button';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 import PressLoading from '../press-loading/press-loading.vue';

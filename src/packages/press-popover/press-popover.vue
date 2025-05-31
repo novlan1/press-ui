@@ -17,7 +17,7 @@ import { getVirtualHostOptions, defaultProps } from '../common/component-handler
 import { style } from '../common/utils/style';
 
 // #ifdef H5
-import { clickOutsideMixin } from '../mixins/click-outside';
+import { clickOutsideMixin } from '../mixins/basic/click-outside';
 // #endif
 
 

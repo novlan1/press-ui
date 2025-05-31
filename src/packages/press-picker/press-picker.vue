@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { functionalMixin } from '../mixins/functional';
+import { functionalMixin } from '../mixins/basic/functional';
 
 import { allProps, propsKeyMap } from './computed';
 import PickerInner from './picker-inner.vue';

@@ -14,7 +14,7 @@ import { PARENT_TABS as PARENT } from '../common/constant/parent-map';
 import { requestAnimationFrame, nextTick } from '../common/utils/system';
 
 import utils from '../common/utils/utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 
 
 export default {

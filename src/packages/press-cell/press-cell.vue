@@ -79,7 +79,7 @@ import { getEventDetail } from '../common/dom/event';
 import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
-import { link } from '../mixins/link';
+import { link } from '../mixins/basic/link';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
 import computed from './computed';

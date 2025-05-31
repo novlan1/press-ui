@@ -58,7 +58,7 @@
 <script>
 import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
-import { functionalMixin } from '../mixins/functional';
+import { functionalMixin } from '../mixins/basic/functional';
 import { SwiperPureMixin } from '../mixins/pure/swiper';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';

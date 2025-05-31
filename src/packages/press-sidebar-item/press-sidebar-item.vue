@@ -27,7 +27,7 @@
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 import PressInfo from '../press-info/press-info.vue';
 
 

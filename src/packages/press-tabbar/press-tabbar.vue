@@ -25,7 +25,7 @@ import { getRect } from '../common/dom/rect';
 import { nextTick } from '../common/utils/system';
 import utils from '../common/utils/utils';
 
-import { ParentMixin } from '../mixins/relation';
+import { ParentMixin } from '../mixins/basic/relation';
 
 
 export default {

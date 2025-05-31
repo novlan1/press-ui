@@ -211,7 +211,7 @@ export default {
       return step;
     },
     modeType() {
-      const result =  (this.currentStep?.mode ?? this.mode) === 'dialog' ? 'dialog' : 'popover';
+      const result =  (this.currentStep?.mode || this.mode) === 'dialog' ? 'dialog' : 'popover';
       return result;
     },
     visible() {
@@ -269,14 +269,18 @@ export default {
       if (!step) {
         return;
       }
-      const showOverlay = step.showOverlay ?? this.showOverlay;
+      const showOverlay = step.showOverlay == null
+        ? this.showOverlay
+        : step.showOverlay;
       this.setData({ nonOverlay: !showOverlay });
 
       if (modeType === 'popover') {
         const rect = await getRect(null, step.element, true);
         if (!rect) return;
 
-        const highlightPadding = rpx2px(step.highlightPadding ?? this.highlightPadding);
+        const highlightPadding = rpx2px(step.highlightPadding == null
+          ? this.highlightPadding
+          : step.highlightPadding);
         // rect.top 和 windowHeight 都处理了 windowTop，这里不用单独处理
         const referenceTop = rect.top - highlightPadding;
         const referenceRight = windowWidth - rect.right - highlightPadding;
@@ -295,8 +299,8 @@ export default {
           referenceStyle: styles(style),
           referenceRawStyle: style,
 
-          title: step.title ?? '',
-          body: step.body ?? '',
+          title: step.title == null ? '' : step.title,
+          body: step.body == null  ? '' : step.body,
           iButtonProps: this.buttonProps(step, 'popover'),
         });
 
@@ -307,8 +311,8 @@ export default {
       } else {
         this.setData({
           innerSteps: this.steps,
-          title: step.title ?? '',
-          body: step.body ?? '',
+          title: step.title == null ? '' : step.title,
+          body: step.body == null  ? '' : step.body,
           iButtonProps: this.buttonProps(step, 'dialog'),
         });
       }
@@ -319,7 +323,7 @@ export default {
       return styles({ position: 'absolute', ...style });
     },
     buttonProps(step, mode) {
-      let skipButton = step.skipButtonProps ?? this.skipButtonProps;
+      let skipButton = step.skipButtonProps == null ? this.skipButtonProps : step.skipButtonProps;
       const size = mode === 'popover' ? 'small' : 'normal';
       skipButton = {
         type: 'default',
@@ -332,7 +336,7 @@ export default {
         iType: 'skip',
       };
 
-      let nextButton = step.nextButtonProps ?? this.nextButtonProps;
+      let nextButton = step.nextButtonProps == null ? this.nextButtonProps : step.nextButtonProps ;
       nextButton = {
         type: 'primary',
         content: '下一步',
@@ -343,7 +347,7 @@ export default {
       };
       nextButton = { ...nextButton, content: this.buttonContent(nextButton) };
 
-      let backButton = step.backButtonProps ?? this.backButtonProps;
+      let backButton = step.backButtonProps == null ? this.backButtonProps : step.backButtonProps;
       backButton = {
         type: 'default',
         content: '返回',
@@ -353,7 +357,7 @@ export default {
         iType: 'back',
       };
 
-      let finishButton = step.finishButtonProps ?? this.finishButtonProps;
+      let finishButton = step.finishButtonProps == null ? this.finishButtonProps : step.finishButtonProps;
       finishButton = {
         type: 'primary',
         content: '完成',

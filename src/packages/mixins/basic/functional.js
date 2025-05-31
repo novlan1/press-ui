@@ -1,4 +1,4 @@
-import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
+import { getDefaultProps, FUNCTIONAL, getPropOrData } from '../../common/component-handler/press-component';
 
 const ANIMATION_TIME = 300;
 

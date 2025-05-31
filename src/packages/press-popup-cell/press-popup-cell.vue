@@ -125,7 +125,7 @@
 
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
-import { functionalMixin } from '../mixins/functional';
+import { functionalMixin } from '../mixins/basic/functional';
 import PressPopup from '../press-popup/press-popup.vue';
 import PressSwitch from '../press-switch/press-switch.vue';
 

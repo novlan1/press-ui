@@ -27,8 +27,8 @@ import utils from '../common/utils/utils';
 
 import { isDef } from '../common/utils/validator';
 
-import { BindEventMixin } from '../mixins/bind-event';
-import { pageScrollMixin } from '../mixins/page-scroll';
+import { BindEventMixin } from '../mixins/basic/bind-event';
+import { pageScrollMixin } from '../mixins/basic/page-scroll';
 
 import computed from './index';
 

@@ -10,7 +10,7 @@
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { PARENT_RADIO_GROUP as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
-import { ParentMixin } from '../mixins/relation';
+import { ParentMixin } from '../mixins/basic/relation';
 
 
 export default {

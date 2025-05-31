@@ -31,11 +31,11 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
+import { transition } from '../mixins/basic/transition';
 
 // #ifdef H5
 import { PortalMixin } from '../mixins/portal/index';
 // #endif
-import { transition } from '../mixins/transition';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';

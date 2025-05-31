@@ -1,8 +1,8 @@
 // #ifdef H5
-import { sortChildren } from '../common/dom/vnodes-h5';
+import { sortChildren } from '../../common/dom/vnodes-h5';
 // #endif
 // #ifndef H5
-import { sortMPChildren } from '../common/dom/vnodes-mp';
+import { sortMPChildren } from '../../common/dom/vnodes-mp';
 // #endif
 
 function findNearListParent(children = [], name) {

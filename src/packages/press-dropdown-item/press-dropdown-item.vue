@@ -56,7 +56,7 @@ import { PARENT_DROPDOWN_MENU as PARENT } from '../common/constant/parent-map';
 import { nextTick } from '../common/utils/system';
 
 import utils from '../common/utils/utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 
 import PressCell from '../press-cell/press-cell.vue';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';

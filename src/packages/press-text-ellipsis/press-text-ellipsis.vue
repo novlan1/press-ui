@@ -221,10 +221,18 @@ export default {
       const { content, position, dots } = this;
       const end = content.length;
       const middle = (0 + end) >> 1;
-      const actionHTML = this.useActionSlot
-        ? this.$refs.actionRef?.outerHTML ?? ''
-        : this.expandText;
 
+      const getActionHtml = () => {
+        if (!this.useActionSlot) {
+          return this.expandText;
+        }
+        if (this.$refs.actionRef?.outerHTML == null) {
+          return '';
+        }
+        return this.$refs.actionRef?.outerHTML;
+      };
+
+      const actionHTML = getActionHtml();
 
       const calcEllipse = async () => {
         // calculate the former or later content

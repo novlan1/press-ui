@@ -1,7 +1,7 @@
 /**
  * Bind event when mounted or activated
  */
-import { on, off } from '../common/dom/event';
+import { on, off } from '../../common/dom/event';
 
 let uid = 0;
 

@@ -12,7 +12,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { transition } from '../mixins/transition';
+import { transition } from '../mixins/basic/transition';
 
 import computed from './computed';
 

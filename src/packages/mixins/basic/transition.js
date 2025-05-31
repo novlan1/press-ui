@@ -1,5 +1,5 @@
-import { requestAnimationFrame } from '../common/utils/system';
-import { isObj } from '../common/utils/validator';
+import { requestAnimationFrame } from '../../common/utils/system';
+import { isObj } from '../../common/utils/validator';
 const getClassNames = (name, _this) => {
   const {
     enterClass,

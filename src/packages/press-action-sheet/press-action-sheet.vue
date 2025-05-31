@@ -84,7 +84,7 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
-import { button } from '../mixins/button';
+import { button } from '../mixins/basic/button';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressLoading from '../press-loading-plus/press-loading-plus.vue';

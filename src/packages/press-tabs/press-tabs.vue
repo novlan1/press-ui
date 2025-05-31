@@ -182,10 +182,10 @@ import utils from '../common/utils/utils';
 import { isDef } from '../common/utils/validator';
 
 import { forceUpdate } from '../common/vue3/adapter';
-import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
-import { ParentMixin } from '../mixins/relation';
+import { ParentMixin } from '../mixins/basic/relation';
 
-import { touch } from '../mixins/touch';
+import { touch } from '../mixins/basic/touch';
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressInfo from '../press-info/press-info.vue';
 import PressSticky from '../press-sticky/press-sticky.vue';
 

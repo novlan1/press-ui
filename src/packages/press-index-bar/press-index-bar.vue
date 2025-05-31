@@ -47,8 +47,8 @@ import { getScrollSelector } from '../common/dom/scroll';
 import { nextTick } from '../common/utils/system';
 
 import { isDef } from '../common/utils/validator';
+import { ParentMixin } from '../mixins/basic/relation';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
-import { ParentMixin } from '../mixins/relation';
 
 
 const indexList = () => {

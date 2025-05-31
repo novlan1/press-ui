@@ -1,4 +1,4 @@
-import { canIUseGetUserProfile } from '../common/utils/version';
+import { canIUseGetUserProfile } from '../../common/utils/version';
 export const button = {
   props: {
     id: { type: String, default: '' },

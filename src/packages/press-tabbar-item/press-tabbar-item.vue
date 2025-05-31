@@ -42,7 +42,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 import { PARENT_TABBAR  as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
 
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressInfo from '../press-info/press-info.vue';

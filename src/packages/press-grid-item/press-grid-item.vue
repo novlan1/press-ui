@@ -47,8 +47,8 @@ import { getVirtualHostOptions, defaultProps } from '../common/component-handler
 import { PARENT_GRID as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
 
-import { link } from '../mixins/link';
-import { ChildrenMixin } from '../mixins/relation';
+import { link } from '../mixins/basic/link';
+import { ChildrenMixin } from '../mixins/basic/relation';
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
 import computed from './computed';

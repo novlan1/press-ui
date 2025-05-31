@@ -45,7 +45,7 @@
 
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
-import { functionalMixin } from '../mixins/functional';
+import { functionalMixin } from '../mixins/basic/functional';
 import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
 import PressPopup from '../press-popup/press-popup.vue';
 

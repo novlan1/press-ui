@@ -1,4 +1,4 @@
-import { isNotInUni } from '../common/utils/utils';
+import { isNotInUni } from '../../common/utils/utils';
 
 export const link = {
   props: {

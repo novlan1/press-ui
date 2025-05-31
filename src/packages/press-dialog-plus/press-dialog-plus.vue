@@ -89,7 +89,7 @@ import { nextTick } from '../common/utils/system';
 import utils from '../common/utils/utils';
 import { t } from '../locale';
 
-import { button } from '../mixins/button';
+import { button } from '../mixins/basic/button';
 
 import PressButton from '../press-button/press-button.vue';
 import { getDialogMixin } from '../press-dialog/dialog-mixin';

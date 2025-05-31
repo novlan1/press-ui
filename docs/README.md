@@ -103,14 +103,13 @@ export default {
 
 3. 配置
 
-需要在`vue.config.js`中配置下 `transpileDependencies`：
+Vue2 项目需要在 `vue.config.js` 中配置下 `transpileDependencies`：
 
 ```js
 module.exports = {
   transpileDependencies: ['press-ui'],
 }
 ```
-
 
 #### 4.2. uni_modules 方式
 
@@ -123,16 +122,16 @@ module.exports = {
 
 第二行分别为基于 `uni-app` 的 `Vue3.x` 版本的H5、微信小程序，及非 `uni-app` 环境的 `Vue2.x` 、`Vue3.x` 版本的H5项目。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-3.gif" width="800">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-20250601.png" width="800">
 
 ### 6. 示例项目
 
 点击下方链接查看示例项目。
 
-1. [Vue2](https://github.com/novlan1/press-ui-demo-vue2)
-2. [Vue3](https://github.com/novlan1/press-ui-demo-vue3)
-3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure)
-4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure)
+1. [Vue2 uni-app](https://github.com/novlan1/press-ui-demo-vue2-uni/)
+2. [Vue3 uni-app](https://github.com/novlan1/press-ui-demo-vue3-uni/)
+3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure/)
+4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure/)
 
 [node]: https://img.shields.io/node/v/press-ui
 [node-url]: https://nodejs.org
@@ -144,3 +143,25 @@ module.exports = {
 欢迎加入QQ群沟通。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="180"/>
+
+<!-- ### 8. Star History
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date&theme=dark
+    "
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="
+      https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date
+    "
+  />
+  <img
+    alt="Star History Chart"
+    src="https://api.star-history.com/svg?repos=novlan1/press-ui&type=Date"
+    width="500"
+  />
+</picture> -->

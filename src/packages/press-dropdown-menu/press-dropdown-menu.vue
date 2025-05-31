@@ -33,7 +33,7 @@ import { getRect, getWindowWidth } from '../common/dom/rect';
 
 import { addUnit } from '../common/format/unit';
 import utils from '../common/utils/utils';
-import { ParentMixin } from '../mixins/relation';
+import { ParentMixin } from '../mixins/basic/relation';
 
 import computed from './computed';
 

@@ -15,7 +15,7 @@ import { defaultOptions, defaultProps } from '../common/component-handler/press-
 import { PARENT_ROW as PARENT } from '../common/constant/parent-map';
 import utils from '../common/utils/utils';
 
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 
 import computed from './computed';
 

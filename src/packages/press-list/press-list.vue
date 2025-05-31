@@ -67,7 +67,7 @@ import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
 import { vModelMixin } from '../common/vue3/adapter';
 
-import { BindEventMixin } from '../mixins/bind-event';
+import { BindEventMixin } from '../mixins/basic/bind-event';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';

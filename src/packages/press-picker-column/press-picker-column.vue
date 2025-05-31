@@ -70,8 +70,8 @@ import { range } from '../common/format/number';
 import { isObj } from '../common/utils/validator';
 
 import { nextTick, forceUpdate } from '../common/vue3/adapter';
+import { ChildrenMixin } from '../mixins/basic/relation';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
-import { ChildrenMixin } from '../mixins/relation';
 
 import computed from './index';
 

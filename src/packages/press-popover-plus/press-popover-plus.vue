@@ -66,11 +66,15 @@ import utils from '../common/utils/utils';
 import { vModelMixin } from '../common/vue3/adapter';
 
 // #ifdef H5
-import { clickOutsideMixin } from '../mixins/click-outside';
+import { clickOutsideMixin } from '../mixins/basic/click-outside';
+// #endif
+
+import { transition } from '../mixins/basic/transition';
+
+// #ifdef H5
 import { popoverMixin } from '../mixins/popover/index';
 // #endif
 
-import { transition } from '../mixins/transition';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 import PressPopup from '../press-popup-plus/press-popup-plus.vue';

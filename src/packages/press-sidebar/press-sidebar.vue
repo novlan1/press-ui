@@ -11,7 +11,7 @@
 <script>
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
-import { ParentMixin } from '../mixins/relation';
+import { ParentMixin } from '../mixins/basic/relation';
 
 
 export default {

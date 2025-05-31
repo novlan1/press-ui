@@ -48,7 +48,7 @@ import { formValidate } from '../common/utils/parent';
 
 import utils from '../common/utils/utils';
 import { canIUseModel } from '../common/utils/version';
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin } from '../mixins/basic/relation';
 
 import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
