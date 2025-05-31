@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import { routerPush } from '../../packages/common/utils/router';
-import PressEmpty from '../../packages/press-empty/press-empty.vue';
-import PressFab from '../../packages/press-fab/press-fab.vue';
+import { routerPush } from 'press-ui/common/utils/router';
+import PressEmpty from 'press-ui/press-empty/press-empty.vue';
+import PressFab from 'press-ui/press-fab/press-fab.vue';
 
 import { getCountDownList } from './count-down-logic';
 

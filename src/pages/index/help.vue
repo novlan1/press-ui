@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PressAbout from '../../packages/press-about/press-about.vue';
+import PressAbout from 'press-ui/press-about/press-about.vue';
 
 import { DEFAULT_HELPER_CONFIG } from './help-config';
 

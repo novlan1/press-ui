@@ -1,5 +1,5 @@
-import { timeStampFormat } from '../../packages/common/format/time';
-import { storageUtil } from '../../packages/common/utils/storage';
+import { timeStampFormat } from 'press-ui/common/format/time';
+import { storageUtil } from 'press-ui/common/utils/storage';
 
 function getId() {
   return `${parseInt(`${Math.random() * 10000000000}`, 10)}`;

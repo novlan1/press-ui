@@ -2,7 +2,7 @@
   <PressProtocolDemo />
 </template>
 <script>
-import PressProtocolDemo from '../../packages/press-protocol/demo.vue';
+import PressProtocolDemo from 'press-ui/press-protocol/demo.vue';
 
 
 export default {

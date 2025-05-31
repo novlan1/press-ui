@@ -7,15 +7,15 @@
 </template>
 <script>
 
-import { fetchData } from '../../packages/common/utils/fetch-data';
-import { isNotInUni } from '../../packages/common/utils/utils';
+import { fetchData } from 'press-ui/common/utils/fetch-data';
+import { isNotInUni } from 'press-ui/common/utils/utils';
 import {
   NOT_SHOW_IN_MP_COMPONENTS,
   NOT_SHOW_IN_PURE_PROJECT,
-} from '../../packages/press-demo-index/config';
-import  { getShowDemoMap } from '../../packages/press-demo-index/helper';
+} from 'press-ui/press-demo-index/config';
+import  { getShowDemoMap } from 'press-ui/press-demo-index/helper';
 
-import PressDemoIndex from '../../packages/press-demo-index/press-demo-index.vue';
+import PressDemoIndex from 'press-ui/press-demo-index/press-demo-index.vue';
 
 import pagesConfig from './page-config.json';
 

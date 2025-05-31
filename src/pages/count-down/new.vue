@@ -43,15 +43,15 @@
   </div>
 </template>
 <script>
-import { timeStampFormat } from 'src/packages/common/format/time';
-import { showFunctionalComponent } from 'src/packages/common/functional-component/index';
-import PressDatetimePickerPopup from 'src/packages/press-datetime-picker/press-datetime-picker-popup.vue';
+import { timeStampFormat } from 'press-ui/common/format/time';
+import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
+import { routerBack } from 'press-ui/common/utils/router';
 
-import { routerBack } from '../../packages/common/utils/router';
-import PressButton from '../../packages/press-button/press-button.vue';
-import Dialog from '../../packages/press-dialog';
-import PressDialog from '../../packages/press-dialog/press-dialog.vue';
-import PressField from '../../packages/press-field/press-field.vue';
+import PressButton from 'press-ui/press-button/press-button.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import Dialog from 'press-ui/press-dialog';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
+import PressField from 'press-ui/press-field/press-field.vue';
 
 
 import {
