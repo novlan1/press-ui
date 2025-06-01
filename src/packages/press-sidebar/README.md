@@ -10,8 +10,8 @@ url : pages/press/sidebar/sidebar
 ## 引入
 
 ```ts
-import PressSidebar from 'press-ui/press-sidebar/press-sidebar';
-import PressSidebarItem from 'press-ui/press-sidebar-item/press-sidebar-item';
+import PressSidebar from 'press-ui/press-sidebar/press-sidebar.vue';
+import PressSidebarItem from 'press-ui/press-sidebar-item/press-sidebar-item.vue';
 
 export default {
   components: {

@@ -10,7 +10,7 @@ url : pages/press/list/list
 ## 引入
 
 ```ts
-import PressList from 'press-ui/press-list/press-list';
+import PressList from 'press-ui/press-list/press-list.vue';
 
 export default {
   components: {

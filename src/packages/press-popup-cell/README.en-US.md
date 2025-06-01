@@ -19,7 +19,7 @@ Pre-buried in the template first.
 ```
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell';
+import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 function showPopupCell(options) {
    return showFunctionalComponent({

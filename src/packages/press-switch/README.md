@@ -10,7 +10,7 @@ url : pages/press/switch/switch
 ## 引入
 
 ```ts
-import PressSwitch from 'press-ui/press-switch/press-switch';
+import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 export default {
   components: {

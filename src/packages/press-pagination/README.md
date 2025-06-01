@@ -8,7 +8,7 @@ url : pages/press/pagination/pagination
 ## 引入
 
 ```ts
-import PressPagination from 'press-ui/press-pagination/press-pagination';
+import PressPagination from 'press-ui/press-pagination/press-pagination.vue';
 
 export default {
   components: {

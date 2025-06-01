@@ -10,8 +10,8 @@ url : pages/press/form/form
 ## 引入
 
 ```ts
-import PressForm from 'press-ui/press-form/press-form';
-import PressFormItem from 'press-ui/press-form-item/press-form-item';
+import PressForm from 'press-ui/press-form/press-form.vue';
+import PressFormItem from 'press-ui/press-form-item/press-form-item.vue';
 
 export default {
   components: {

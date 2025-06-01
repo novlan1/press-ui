@@ -7,7 +7,7 @@ url : pages/press/color-picker/color-picker
 ## Import
 
 ```ts
-import PressColorPicker from 'press-ui/press-color-picker/press-color-picker';
+import PressColorPicker from 'press-ui/press-color-picker/press-color-picker.vue';
 
 export default {
   components: {

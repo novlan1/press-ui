@@ -8,7 +8,7 @@ url : pages/press/count-to/count-to
 ## 引入
 
 ```ts
-import PressCountTo from 'press-ui/press-count-to/press-count-to';
+import PressCountTo from 'press-ui/press-count-to/press-count-to.vue';
 
 export default {
   components: {

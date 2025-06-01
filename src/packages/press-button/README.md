@@ -9,7 +9,7 @@ url : pages/press/button/button
 ## 引入
 
 ```ts
-import PressButton from 'press-ui/press-button/press-button';
+import PressButton from 'press-ui/press-button/press-button.vue';
 
 export default {
   components: {

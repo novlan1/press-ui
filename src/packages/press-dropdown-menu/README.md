@@ -10,8 +10,8 @@ url : pages/press/dropdown-menu/dropdown-menu
 ## 引入
 
 ```ts
-import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu';
-import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item';
+import PressDropdownMenu from 'press-ui/press-dropdown-menu/press-dropdown-menu.vue';
+import PressDropdownItem from 'press-ui/press-dropdown-item/press-dropdown-item.vue';
 
 export default {
   components: {

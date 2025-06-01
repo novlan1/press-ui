@@ -10,8 +10,8 @@ url : pages/press/grid/grid
 ## 引入
 
 ```ts
-import PressGrid from 'press-ui/press-grid/press-grid';
-import PressGridItem from 'press-ui/press-grid-item/press-grid-item';
+import PressGrid from 'press-ui/press-grid/press-grid.vue';
+import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
 
 export default {
   components: {

@@ -10,8 +10,8 @@ url : pages/press/checkbox/checkbox
 ## 引入
 
 ```ts
-import PressCheckbox from 'press-ui/press-checkbox/press-checkbox';
-import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group';
+import PressCheckbox from 'press-ui/press-checkbox/press-checkbox.vue';
+import PressCheckboxGroup from 'press-ui/press-checkbox-group/press-checkbox-group.vue';
 
 export default {
   components: {

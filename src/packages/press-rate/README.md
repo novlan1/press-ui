@@ -10,7 +10,7 @@ url : pages/press/rate/rate
 ## 引入
 
 ```ts
-import PressRate from 'press-ui/press-rate/press-rate';
+import PressRate from 'press-ui/press-rate/press-rate.vue';
 
 export default {
   components: {

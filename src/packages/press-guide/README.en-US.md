@@ -11,7 +11,7 @@ The component implementation refers to [TDesign](https://tdesign.tencent.com/vue
 ## Import
 
 ```ts
-import PressGuide from 'press-ui/press-guide/press-guide';
+import PressGuide from 'press-ui/press-guide/press-guide.vue';
 
 export default {
   components: {

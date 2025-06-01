@@ -23,7 +23,7 @@ After setting the `dot` attribute, a small red dot will be displayed in the uppe
 <press-icon name="chat" info="99+" />
 ```
 
-### IconPlus color
+### Custom color
 
 Set the `color` property to control the icon color.
 
@@ -31,7 +31,7 @@ Set the `color` property to control the icon color.
 <press-icon name="chat" color="red" />
 ```
 
-### IconPlus size
+### Custom size
 
 Set the `size` property to control the icon size.
 
@@ -68,15 +68,15 @@ If you need to use more icons based on the existing Icon, you can import the fon
 
 ### Props
 
-| Parameter    | Description                                                                | Type               | Default           |
-| ------------ | -------------------------------------------------------------------------- | ------------------ | ----------------- |  |
+| Parameter | Description | Type | Default |
+| --------- | ----------- | ---- | ------- ||
 | name         | icon name or image link                                                    | _string_           | -                 |
 | dot          | Whether to display the small red dot in the upper right corner of the icon | _boolean_          | `false`           |
 | info         | text prompt in the upper right corner of the icon                          | _string \| number_ | -                 |
 | color        | icon color                                                                 | _string_           | `inherit`         |
 | size         | IconPlus size, such as `20px`, `2em`, the default unit is `px`                 | _string \| number_ | `inherit`         |
 | custom-style | custom style                                                               | _string_           | -                 |
-| class-prefix | class name prefix                                                          | _string_           | `press-icon-plus` |
+| class-prefix | class name prefix                                                          | _string_           | `press-icon` |
 
 ### Events
 

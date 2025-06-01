@@ -10,7 +10,7 @@ url : pages/press/steps/steps
 ## 引入
 
 ```ts
-import PressSteps from 'press-ui/press-steps/press-steps';
+import PressSteps from 'press-ui/press-steps/press-steps.vue';
 
 export default {
   components: {

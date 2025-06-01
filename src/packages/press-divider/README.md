@@ -9,7 +9,7 @@ url : pages/press/divider/divider
 ## 引入
 
 ```ts
-import PressDivider from 'press-ui/press-divider/press-divider';
+import PressDivider from 'press-ui/press-divider/press-divider.vue';
 
 export default {
   components: {

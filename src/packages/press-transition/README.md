@@ -13,7 +13,7 @@ url : pages/press/transition/transition
 ## 引入
 
 ```ts
-import PressTransition from 'press-ui/press-transition/press-transition';
+import PressTransition from 'press-ui/press-transition/press-transition.vue';
 
 export default {
   components: {

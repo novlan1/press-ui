@@ -11,7 +11,7 @@ url : pages/press/link/link
 ## 引入
 
 ```ts
-import PressLink from 'press-ui/press-link/press-link';
+import PressLink from 'press-ui/press-link/press-link.vue';
 
 export default {
   components: {

@@ -10,8 +10,8 @@ url : pages/press/radio/radio
 ## 引入
 
 ```ts
-import PressRadio from 'press-ui/press-radio/press-radio';
-import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group';
+import PressRadio from 'press-ui/press-radio/press-radio.vue';
+import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
 
 export default {
   components: {

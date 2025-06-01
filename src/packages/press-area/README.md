@@ -9,7 +9,7 @@ url : pages/press/area/area
 ## 引入
 
 ```ts
-import PressArea from 'press-ui/press-area/press-area';
+import PressArea from 'press-ui/press-area/press-area.vue';
 
 export default {
   components: {
@@ -215,7 +215,7 @@ export function parseData(data) {
 
 
 ```ts
-import PressAreaPopup from 'press-ui/press-area/press-area-popup';
+import PressAreaPopup from 'press-ui/press-area/press-area.vue';
 
 
 export default {

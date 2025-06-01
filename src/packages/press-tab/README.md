@@ -11,8 +11,8 @@ url : pages/press/tab/tab
 ## 引入
 
 ```ts
-import PressTab from 'press-ui/press-tab/press-tab';
-import PressTabs from 'press-ui/press-tabs/press-tabs';
+import PressTab from 'press-ui/press-tab/press-tab.vue';
+import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
 
 export default {
   components: {

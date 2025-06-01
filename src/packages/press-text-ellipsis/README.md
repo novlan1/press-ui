@@ -9,7 +9,7 @@ url : pages/press/text-ellipsis/text-ellipsis
 ## 引入
 
 ```ts
-import PressTextEllipsis from 'press-ui/press-text-ellipsis/press-text-ellipsis';
+import PressTextEllipsis from 'press-ui/press-text-ellipsis/press-text-ellipsis.vue';
 
 export default {
   components: {

@@ -10,7 +10,7 @@ url : pages/press/tag/tag
 ## 引入
 
 ```ts
-import PressTag from 'press-ui/press-tag/press-tag';
+import PressTag from 'press-ui/press-tag/press-tag.vue';
 
 export default {
   components: {

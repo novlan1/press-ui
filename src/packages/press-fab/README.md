@@ -9,7 +9,7 @@ url : pages/press/fab/fab
 ## 引入
 
 ```ts
-import PressFab from 'press-ui/press-fab/press-fab';
+import PressFab from 'press-ui/press-fab/press-fab.vue';
 
 export default {
   components: {

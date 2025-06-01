@@ -10,7 +10,7 @@ url : pages/press/image-preview/image-preview
 ## 引入
 
 ```ts
-import PressImagePreview from 'press-ui/press-image-preview/press-image-preview';
+import PressImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
 
 export default {
   components: {

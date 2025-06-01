@@ -11,7 +11,7 @@ url : pages/press/guide/guide
 ## 引入
 
 ```ts
-import PressGuide from 'press-ui/press-guide/press-guide';
+import PressGuide from 'press-ui/press-guide/press-guide.vue';
 
 export default {
   components: {

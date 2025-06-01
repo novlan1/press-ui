@@ -9,7 +9,7 @@ url : pages/press/popover-plus/popover-plus
 ## 引入
 
 ```ts
-import PressPopoverPlus from 'press-ui/press-popover-plus/press-popover-plus';
+import PressPopoverPlus from 'press-ui/press-popover-plus/press-popover-plus.vue';
 
 export default {
   components: {

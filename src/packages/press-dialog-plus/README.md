@@ -10,7 +10,7 @@ url : pages/press/dialog-plus/dialog-plus
 ## 引入
 
 ```ts
-import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus';
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 
 export default {
   components: {

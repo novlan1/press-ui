@@ -9,7 +9,7 @@ url : pages/press/rolling-text/rolling-text
 ## 引入
 
 ```ts
-import PressRollingText from 'press-ui/press-rolling-text/press-rolling-text';
+import PressRollingText from 'press-ui/press-rolling-text/press-rolling-text.vue';
 
 export default {
   components: {

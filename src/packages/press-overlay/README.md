@@ -8,7 +8,7 @@ url : pages/press/overlay/overlay
 ## 引入
 
 ```ts
-import PressOverlay from 'press-ui/press-overlay/press-overlay';
+import PressOverlay from 'press-ui/press-overlay/press-overlay.vue';
 
 export default {
   components: {

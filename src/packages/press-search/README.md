@@ -9,7 +9,7 @@ url : pages/press/search/search
 ## 引入
 
 ```ts
-import PressSearch from 'press-ui/press-search/press-search';
+import PressSearch from 'press-ui/press-search/press-search.vue';
 
 export default {
   components: {

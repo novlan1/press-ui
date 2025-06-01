@@ -11,8 +11,8 @@ url : pages/press/tabbar/tabbar
 ## 引入
 
 ```ts
-import PressTabbar from 'press-ui/press-tabbar/press-tabbar';
-import PressTabbarItem from 'press-ui/press-tabbar-item/press-tabbar-item';
+import PressTabbar from 'press-ui/press-tabbar/press-tabbar.vue';
+import PressTabbarItem from 'press-ui/press-tabbar-item/press-tabbar-item.vue';
 
 export default {
   components: {

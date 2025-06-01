@@ -8,7 +8,7 @@ url : pages/press/badge/badge
 ## 引入
 
 ```ts
-import PressBadge from 'press-ui/press-badge/press-badge';
+import PressBadge from 'press-ui/press-badge/press-badge.vue';
 
 export default {
   components: {

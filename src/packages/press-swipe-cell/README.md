@@ -11,7 +11,7 @@ url : pages/press/swipe-cell/swipe-cell
 ## 引入
 
 ```ts
-import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell';
+import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
 
 export default {
   components: {

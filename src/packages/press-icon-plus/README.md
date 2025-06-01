@@ -4,12 +4,12 @@ url : pages/press/icon-plus/icon-plus
 
 ## IconPlus 图标
 
-用于展示`icons`图标，目前仅保留`empty`，其他图标请使用`press-icon-plus`。
+基于字体的图标集，可以通过 `Icon` 组件使用，也可以在其他组件中通过 `icon` 属性引用。
 
 ## 引入
 
 ```ts
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus';
+import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
 ```
 
 ```ts
-import PressIconPlusMusic from 'press-ui/press-icon-plus/press-icon-music';
+import PressIconPlusMusic from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   components: {
@@ -45,7 +45,6 @@ export default {
   }
 }
 ```
-
 
 指定颜色：
 
@@ -61,7 +60,6 @@ export default {
 <press-icon-plus-music :number="5"/>
 ```
 
-
 指定图标宽高：
 
 ```html
@@ -70,8 +68,6 @@ export default {
   height="60px"
 />
 ```
-
-
 
 ## API
 
@@ -89,9 +85,7 @@ export default {
 | ------ | ------------------ | ------ |
 | @click | 点击 IconPlus 触发事件 | -      |
 
-
 ### IconPlus Music Props
-
 
 | 参数   | 说明                | 类型     | 默认值    |
 | ------ | ------------------- | -------- | --------- |

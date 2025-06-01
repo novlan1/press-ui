@@ -9,7 +9,7 @@ url : pages/press/popup/popup
 ## 引入
 
 ```ts
-import PressPopup from 'press-ui/press-popup/press-popup';
+import PressPopup from 'press-ui/press-popup/press-popup.vue';
 
 export default {
   components: {

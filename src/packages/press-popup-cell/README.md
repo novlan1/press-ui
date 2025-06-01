@@ -11,7 +11,7 @@ url : pages/press/popup-cell/popup-cell
 ## 引入
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell';
+import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 export default {
   components: {
@@ -34,7 +34,7 @@ export default {
 ```
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell';
+import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 function showPopupCell(options) {
   return showFunctionalComponent({

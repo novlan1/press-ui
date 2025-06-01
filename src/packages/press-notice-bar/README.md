@@ -9,7 +9,7 @@ url : pages/press/notice-bar/notice-bar
 ## 引入
 
 ```ts
-import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar';
+import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar.vue';
 
 export default {
   components: {

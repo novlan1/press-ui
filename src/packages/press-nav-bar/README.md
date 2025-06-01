@@ -9,7 +9,7 @@ url : pages/press/nav-bar/nav-bar
 ## 引入
 
 ```ts
-import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar';
+import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar.vue';
 
 export default {
   components: {

@@ -9,7 +9,7 @@ url : pages/press/card/card
 ## 引入
 
 ```ts
-import PressCard from 'press-ui/press-card/press-card';
+import PressCard from 'press-ui/press-card/press-card.vue';
 
 export default {
   components: {

@@ -9,7 +9,7 @@ url : pages/press/back-top/back-top
 ## 引入
 
 ```ts
-import PressBackTop from 'press-ui/press-back-top/press-back-top';
+import PressBackTop from 'press-ui/press-back-top/press-back-top.vue';
 
 export default {
   components: {

@@ -25,7 +25,7 @@ Basic usage:
 ```
 
 ```ts
-import PressIconPlusMusic from 'press-ui/press-icon-plus/press-icon/music';
+import PressIconPlusMusic from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   components: {
@@ -64,25 +64,25 @@ Specify icon width and height:
 
 ### IconPlus Props
 
-| property name |  type  | default value |            description             |
-| ----------- | ---- | ----------- | -------------------------------- |
-|     size      | Number |      24       |             IconPlus size              |
-|     type      | String |       -       | icon pattern, refer to the example |
-|     color     | String |       -       |             icon color             |
+| property name | type   | default value | description                        |
+| ------------- | ------ | ------------- | ---------------------------------- |
+| size          | Number | 24            | IconPlus size                          |
+| type          | String | -             | icon pattern, refer to the example |
+| color         | String | -             | icon color                         |
 
 ### IconPlus Events
 
-| event name |           description            | return value |
-| -------- | ------------------------------ | ---------- |
-|   @click   | Click the IconPlus to fire the event |      -       |
+| event name | description                      | return value |
+| ---------- | -------------------------------- | ------------ |
+| @click     | Click the IconPlus to fire the event | -            |
 
 
 ### IconPlus Music Props
 
 
-| property name |  type  | default value |                  description                  |
-| ----------- | ---- | ----------- | ------------------------------------------- |
-|    number     | Number |       3       | The number of vertical bars, supporting `1-5` |
-|     color     | String |   `#2979ff`   |                  icon color                   |
-|     width     | String |    `40px`     |        the overall height of the icon         |
-|    height     | String |    `50px`     |         the overall width of the icon         |
+| property name | type   | default value | description                                   |
+| ------------- | ------ | ------------- | --------------------------------------------- |
+| number        | Number | 3             | The number of vertical bars, supporting `1-5` |
+| color         | String | `#2979ff`     | icon color                                    |
+| width         | String | `40px`        | the overall height of the icon                |
+| height        | String | `50px`        | the overall width of the icon                 |

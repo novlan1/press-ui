@@ -9,7 +9,7 @@ url : pages/press/popover/popover
 ## 引入
 
 ```ts
-import PressPopover from 'press-ui/press-popover/press-popover';
+import PressPopover from 'press-ui/press-popover/press-popover.vue';
 
 export default {
   components: {
@@ -24,7 +24,7 @@ H5 下需要安装 [@popperjs/core](https://www.npmjs.com/package/@popperjs/core
 
 ### 基础用法
 
-当 PopoverPlus 弹出时，会基于 `reference` 插槽的内容进行定位。
+当 `Popover` 弹出时，会基于 `reference` 插槽的内容进行定位。
 
 ```html
 <press-popover
@@ -62,7 +62,7 @@ export default {
 
 ### 深色风格
 
-Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 属性设置为 `dark` 可切换为深色风格。
+`Popover` 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 属性设置为 `dark` 可切换为深色风格。
 
 ```html
 <press-popover
@@ -183,7 +183,7 @@ export default {
 
 ### 自定义内容
 
-通过默认插槽，可以在 PopoverPlus 内部放置任意内容。
+通过默认插槽，可以在 `Popover` 内部放置任意内容。
 
 ```html
 <press-popover v-model="showPopover" trigger="click">
@@ -223,7 +223,6 @@ export default {
 
 ### Props
 
-
 | 参数                   | 说明                           | 类型                 | 默认值   |
 | ---------------------- | ------------------------------ | -------------------- | -------- |
 | v-model                | 是否展示气泡弹出层             | _boolean_            | `false`  |
@@ -259,10 +258,10 @@ export default {
 
 ### Slots
 
-| 名称      | 说明                        |
-| --------- | --------------------------- |
-| default   | 自定义菜单内容              |
-| reference | 触发 PopoverPlus 显示的元素内容 |
+| 名称      | 说明                          |
+| --------- | ----------------------------- |
+| default   | 自定义菜单内容                |
+| reference | 触发 `Popover` 显示的元素内容 |
 
 ### 样式变量
 
@@ -291,4 +290,3 @@ export default {
 ## 在线调试
 
 <debug-online />
-

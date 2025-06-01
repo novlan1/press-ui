@@ -9,8 +9,8 @@ url : pages/press/col/col
 ## 引入
 
 ```ts
-import PressCol from 'press-ui/press-col/press-col';
-import PressRow from 'press-ui/press-row/press-row';
+import PressCol from 'press-ui/press-col/press-col.vue';
+import PressRow from 'press-ui/press-row/press-row.vue';
 
 export default {
   components: {

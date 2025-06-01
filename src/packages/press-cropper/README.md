@@ -12,7 +12,7 @@ H5 下使用的是 [vue-cropper](https://www.npmjs.com/package/vue-cropper)，�
 ## 引入
 
 ```ts
-import PressCropper from 'press-ui/press-cropper/press-cropper';
+import PressCropper from 'press-ui/press-cropper/press-cropper.vue';
 
 export default {
   components: {

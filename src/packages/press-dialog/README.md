@@ -6,17 +6,16 @@ url : pages/press/dialog/dialog
 
 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作，支持函数调用和组件调用两种方式。
 
-
 ## 引入
 
-注意，`press-dialog-plus` 节点需要埋在页面下，否则小程序中找不到。H5 环境可以不预埋，找不到节点时，会动态创建。
+注意，下面的节点需要埋在页面下，而不是在子组件中，否则小程序中找不到。H5 环境可以不预埋，找不到节点时，H5 下会动态创建。
 
 ```html
 <PressDialog id="press-dialog" />
 ```
 
 ```ts
-import PressDialog from 'press-ui/press-dialog/press-dialog';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
 
 export default {
   components: {
@@ -172,18 +171,18 @@ export default {
 
 ### 方法
 
-| 方法名                                                   | 参数      | 返回值    | 介绍                             |
-| -------------------------------------------------------- | --------- | --------- | -------------------------------- |
-| showDialog，同 Dialog.alert, DialogPlus                      | `options` | `Promise` | 展示消息提示弹窗                 |
-| showConfirmDialog，同 Dialog.confirm                     | `options` | `Promise` | 展示消息确认弹窗                 |
-| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 DialogPlus 生效 |
-| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 DialogPlus 生效 |
-| closeDialog，同 Dialog.close                             | -         | `void`    | 关闭弹窗                         |
-| stopDialogLoading，同 Dialog.stopLoading                 | -         | `void`    | 停止按钮的加载状态               |
+| 方法名                                                   | 参数      | 返回值    | 介绍                               |
+| -------------------------------------------------------- | --------- | --------- | ---------------------------------- |
+| showDialog，同 Dialog.alert                              | `options` | `Promise` | 展示消息提示弹窗                   |
+| showConfirmDialog，同 Dialog.confirm                     | `options` | `Promise` | 展示消息确认弹窗                   |
+| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 `Dialog` 生效 |
+| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 `Dialog` 生效 |
+| closeDialog，同 Dialog.close                             | -         | `void`    | 关闭弹窗                           |
+| stopDialogLoading，同 Dialog.stopLoading                 | -         | `void`    | 停止按钮的加载状态                 |
 
 ### Options
 
-通过函数调用 DialogPlus 时，支持传入以下选项：
+通过函数调用 `Dialog` 时，支持传入以下选项：
 
 | 参数                  | 说明                                                                                                                          | 类型                                        | 默认值         |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------- |
@@ -226,7 +225,7 @@ export default {
 
 ### Props
 
-通过组件调用 DialogPlus 时，支持以下 Props:
+通过组件调用 `Dialog` 时，支持以下 `Props`:
 
 | 参数                     | 说明                                                                                                                          | 类型                                        | 默认值    |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | --------- |

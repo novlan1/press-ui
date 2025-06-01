@@ -10,7 +10,7 @@ url : pages/press/empty/empty
 ## 引入
 
 ```ts
-import PressEmpty from 'press-ui/press-empty/press-empty';
+import PressEmpty from 'press-ui/press-empty/press-empty.vue';
 
 export default {
   components: {

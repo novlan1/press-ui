@@ -9,7 +9,7 @@ url : pages/press/signature/signature
 ## 引入
 
 ```ts
-import PressSignature from 'press-ui/press-signature/press-signature';
+import PressSignature from 'press-ui/press-signature/press-signature.vue';
 
 export default {
   components: {

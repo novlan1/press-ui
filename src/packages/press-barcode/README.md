@@ -8,7 +8,7 @@ url : pages/press/barcode/barcode
 ## 引入
 
 ```ts
-import PressBarcode from 'press-ui/press-barcode/press-barcode';
+import PressBarcode from 'press-ui/press-barcode/press-barcode.vue';
 
 export default {
   components: {

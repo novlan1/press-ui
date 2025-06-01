@@ -22,7 +22,7 @@ Loading, divided into picture mode and page mode
 </template>
 
 <script>
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus';
+import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
    component: {

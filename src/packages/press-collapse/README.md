@@ -10,8 +10,8 @@ url : pages/press/collapse/collapse
 ## 引入
 
 ```ts
-import PressCollapse from 'press-ui/press-collapse/press-collapse';
-import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item';
+import PressCollapse from 'press-ui/press-collapse/press-collapse.vue';
+import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item.vue';
 
 export default {
   components: {

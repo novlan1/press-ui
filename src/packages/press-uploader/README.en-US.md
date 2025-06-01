@@ -8,7 +8,7 @@ url: pages/press/uploader/uploader
 ## Introduction
 
 ```ts
-import PressUploader from 'press-ui/press-uploader/press-uploader';
+import PressUploader from 'press-ui/press-uploader/press-uploader.vue';
 
 export default {
    components: {

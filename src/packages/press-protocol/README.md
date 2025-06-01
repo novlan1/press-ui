@@ -10,7 +10,7 @@ url : pages/press/protocol/protocol
 ## 引入
 
 ```ts
-import PressProtocol from 'press-ui/press-protocol/press-protocol';
+import PressProtocol from 'press-ui/press-protocol/press-protocol.vue';
 
 export default {
   components: {

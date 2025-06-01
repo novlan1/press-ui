@@ -16,7 +16,7 @@ url : pages/press/toast/toast
 ```
 
 ```ts
-import PressToast from 'press-ui/press-toast/press-toast';
+import PressToast from 'press-ui/press-toast/press-toast.vue';
 
 export default {
   components: {

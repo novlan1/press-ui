@@ -9,7 +9,7 @@ url : pages/press/datetime-picker/datetime-picker
 ## 引入
 
 ```ts
-import PressDatetimePicker from 'press-ui/press-datetime-picker/press-datetime-picker';
+import PressDatetimePicker from 'press-ui/press-datetime-picker/press-datetime-picker.vue';
 
 export default {
   components: {

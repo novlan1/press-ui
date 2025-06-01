@@ -8,7 +8,7 @@ url : pages/press/avatar/avatar
 ## 引入
 
 ```ts
-import PressAvatar from 'press-ui/press-avatar/press-avatar';
+import PressAvatar from 'press-ui/press-avatar/press-avatar.vue';
 
 export default {
   components: {

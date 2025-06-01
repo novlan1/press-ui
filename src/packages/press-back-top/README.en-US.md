@@ -9,7 +9,7 @@ When the page is too long and you slide down, a convenient operation to return t
 ## Import
 
 ```ts
-import PressBackTop from 'press-ui/press-back-top/press-back-top';
+import PressBackTop from 'press-ui/press-back-top/press-back-top.vue';
 
 export default {
   components: {

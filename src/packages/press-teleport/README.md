@@ -9,7 +9,7 @@ Vue2 版本的 Teleport，目前仅支持 H5、微信小程序。
 ## 引入
 
 ```ts
-import PressTeleport from 'press-ui/press-teleport/press-teleport';
+import PressTeleport from 'press-ui/press-teleport/press-teleport.vue';
 
 export default {
   components: {

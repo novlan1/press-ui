@@ -9,7 +9,7 @@ url : pages/press/loading/loading
 ## 引入
 
 ```ts
-import PressLoading from 'press-ui/press-loading/press-loading';
+import PressLoading from 'press-ui/press-loading/press-loading.vue';
 
 export default {
   components: {

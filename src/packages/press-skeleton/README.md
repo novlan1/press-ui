@@ -10,7 +10,7 @@ url : pages/press/skeleton/skeleton
 ## 引入
 
 ```ts
-import PressSkeleton from 'press-ui/press-skeleton/press-skeleton';
+import PressSkeleton from 'press-ui/press-skeleton/press-skeleton.vue';
 
 export default {
   components: {

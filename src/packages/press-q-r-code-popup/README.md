@@ -8,7 +8,7 @@ url : pages/press/q-r-code-popup/q-r-code-popup
 ## 引入
 
 ```ts
-import PressQRCodePopup from 'press-ui/press-q-r-code-popup/press-q-r-code-popup';
+import PressQRCodePopup from 'press-ui/press-q-r-code-popup/press-q-r-code-popup.vue';
 
 export default {
   components: {

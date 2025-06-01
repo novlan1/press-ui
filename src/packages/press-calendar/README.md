@@ -9,7 +9,7 @@ url : pages/press/calendar/calendar
 ## 引入
 
 ```ts
-import PressCalendar from 'press-ui/press-calendar/press-calendar';
+import PressCalendar from 'press-ui/press-calendar/press-calendar.vue';
 
 export default {
   components: {

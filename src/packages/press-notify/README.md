@@ -9,7 +9,7 @@ url : pages/press/notify/notify
 ## 引入
 
 ```ts
-import PressNotify from 'press-ui/press-notify/press-notify';
+import PressNotify from 'press-ui/press-notify/press-notify.vue';
 
 export default {
   components: {

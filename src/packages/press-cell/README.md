@@ -10,8 +10,8 @@ url : pages/press/cell/cell
 ## 引入
 
 ```ts
-import PressCell from 'press-ui/press-cell/press-cell';
-import PressCellGroup from 'press-ui/press-cell-group/press-cell-group';
+import PressCell from 'press-ui/press-cell/press-cell.vue';
+import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 
 export default {
   components: {

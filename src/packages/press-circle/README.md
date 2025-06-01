@@ -11,7 +11,7 @@ url : pages/press/circle/circle
 ## 引入
 
 ```ts
-import PressCircle from 'press-ui/press-circle/press-circle';
+import PressCircle from 'press-ui/press-circle/press-circle.vue';
 
 export default {
   components: {

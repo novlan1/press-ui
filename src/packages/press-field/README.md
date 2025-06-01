@@ -12,7 +12,7 @@ url : pages/press/field/field
 ## 引入
 
 ```ts
-import PressField from 'press-ui/press-field/press-field';
+import PressField from 'press-ui/press-field/press-field.vue';
 
 export default {
   components: {

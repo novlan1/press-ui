@@ -12,7 +12,7 @@ Sticky 组件与 CSS 中position: sticky属性实现的效果一致，当组件�
 ## 引入
 
 ```ts
-import PressSticky from 'press-ui/press-sticky/press-sticky';
+import PressSticky from 'press-ui/press-sticky/press-sticky.vue';
 
 export default {
   components: {

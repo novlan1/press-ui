@@ -10,7 +10,7 @@ url : pages/press/loading-plus/loading-plus
 ## 引入
 
 ```ts
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus';
+import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
 </template>
 
 <script>
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus';
+import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
   component: {

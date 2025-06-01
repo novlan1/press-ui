@@ -10,7 +10,7 @@ url : pages/press/count-down/count-down
 ## 引入
 
 ```ts
-import PressCountDown from 'press-ui/press-count-down/press-count-down';
+import PressCountDown from 'press-ui/press-count-down/press-count-down.vue';
 
 export default {
   components: {

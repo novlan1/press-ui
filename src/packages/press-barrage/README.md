@@ -9,7 +9,7 @@ url : pages/press/barrage/barrage
 ## 引入
 
 ```ts
-import PressBarrage from 'press-ui/press-barrage/press-barrage';
+import PressBarrage from 'press-ui/press-barrage/press-barrage.vue';
 
 export default {
   components: {

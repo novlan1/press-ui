@@ -9,7 +9,7 @@ url : pages/press/number-keyboard/number-keyboard
 ## 引入
 
 ```ts
-import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard';
+import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard.vue';
 
 export default {
   components: {

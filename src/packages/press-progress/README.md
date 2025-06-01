@@ -10,7 +10,7 @@ url : pages/press/progress/progress
 ## 引入
 
 ```ts
-import PressProgress from 'press-ui/press-progress/press-progress';
+import PressProgress from 'press-ui/press-progress/press-progress.vue';
 
 export default {
   components: {

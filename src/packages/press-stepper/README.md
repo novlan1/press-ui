@@ -9,7 +9,7 @@ url : pages/press/stepper/stepper
 ## 引入
 
 ```ts
-import PressStepper from 'press-ui/press-stepper/press-stepper';
+import PressStepper from 'press-ui/press-stepper/press-stepper.vue';
 
 export default {
   components: {

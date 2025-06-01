@@ -11,7 +11,7 @@ url : pages/press/slider/slider
 ## 引入
 
 ```ts
-import PressSlider from 'press-ui/press-slider/press-slider';
+import PressSlider from 'press-ui/press-slider/press-slider.vue';
 
 export default {
   components: {

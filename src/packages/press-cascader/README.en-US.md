@@ -7,7 +7,7 @@ url : pages/press/cascader/cascader
 ## Import
 
 ```ts
-import PressCascader from 'press-ui/press-cascader/press-cascader';
+import PressCascader from 'press-ui/press-cascader/press-cascader.vue';
 
 export default {
   components: {

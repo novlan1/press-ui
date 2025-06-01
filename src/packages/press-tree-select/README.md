@@ -10,7 +10,7 @@ url : pages/press/tree-select/tree-select
 ## 引入
 
 ```ts
-import PressTreeSelect from 'press-ui/press-tree-select/press-tree-select';
+import PressTreeSelect from 'press-ui/press-tree-select/press-tree-select.vue';
 
 export default {
   components: {

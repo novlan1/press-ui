@@ -10,8 +10,8 @@ url : pages/press/index-bar/index-bar
 ## 引入
 
 ```ts
-import PressIndexBar from 'press-ui/press-index-bar/press-index-bar';
-import PressIndexAnchor from 'press-ui/press-index-anchor/press-index-anchor';
+import PressIndexBar from 'press-ui/press-index-bar/press-index-bar.vue';
+import PressIndexAnchor from 'press-ui/press-index-anchor/press-index-anchor.vue';
 
 export default {
   components: {

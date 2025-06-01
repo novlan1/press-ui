@@ -8,7 +8,7 @@ url : pages/press/pull-refresh/pull-refresh
 ## 引入
 
 ```ts
-import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh';
+import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh.vue';
 
 export default {
   components: {

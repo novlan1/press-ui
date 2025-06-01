@@ -8,7 +8,7 @@ url : pages/press/text/text
 ## 引入
 
 ```ts
-import PressText from 'press-ui/press-text/press-text';
+import PressText from 'press-ui/press-text/press-text.vue';
 
 export default {
   components: {

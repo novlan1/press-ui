@@ -11,7 +11,7 @@ url : pages/press/popup-plus/popup-plus
 ## 引入
 
 ```ts
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus';
+import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
 export default {
   components: {

@@ -13,7 +13,7 @@ A black translucent prompt pops up in the middle of the page, which is used in s
 ### Text Prompt
 
 ```javascript
-import { showToast } from 'press-ui/press-toast/press-toast';
+import { showToast } from 'press-ui/press-toast/press-toast.vue';
 
 showToast('I am a prompt copywriter, it is recommended not to exceed fifteen characters~');
 ```

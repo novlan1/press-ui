@@ -5,11 +5,10 @@ url : pages/press/picker/picker
 
 提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 弹出层 组件配合使用。
 
-
 ## 引入
 
 ```ts
-import PressPicker from 'press-ui/press-picker/press-picker';
+import PressPicker from 'press-ui/press-picker/press-picker.vue';
 
 export default {
   components: {
@@ -193,12 +192,12 @@ const column3 = {
 };
 ```
 
-### 结合 PopupPlus
+### 结合 Popup
 
-提供了简单的 `PopupPlus` 和 `PickerPlus` 的组合，供业务快速使用。
+提供了简单的 `Popup` 和 `Picker` 的组合，供业务快速使用。
 
 ```html
-<PressPickerPopupPlus
+<PressPickerPlusPopup
   :show="show"
   :columns="columns"
   @change="onChange"
@@ -208,15 +207,14 @@ const column3 = {
 ```
 
 ```ts
-import PressPickerPopupPlus from 'press-ui/press-picker-popup/press-picker-popup.vue';
+import PressPickerPlusPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
 
 export default {
   components: {
-    PressPickerPopupPlus,
+    PressPickerPlusPopup,
   },
 }
 ```
-
 
 ## API
 
@@ -260,7 +258,6 @@ Picker 组件的事件会根据 `columns` 是单列或多列返回不同的参�
 | ------------ | -------------------------- |
 | values       | 列中对应的备选值           |
 | defaultIndex | 初始选中项的索引，默认为 0 |
-
 
 ### 方法
 
@@ -319,11 +316,10 @@ onConfirm(option) {
 
 ### 从 PressPickerPlus 迁移
 
-
-1. 引入路径修改，改成 
+1. 引入路径修改，改成
    
 ```ts
-import PressPickerPopupPlus from 'press-ui/press-picker-popup/press-picker-popup.vue';
+import PressPickerPlusPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
 ```
 
 2. 控制显隐修改，`v-if="show"` 改成 `:show="show"`

@@ -9,7 +9,7 @@ url : pages/press/action-sheet/action-sheet
 ## 引入
 
 ```ts
-import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet';
+import PressActionSheet from 'press-ui/press-action-sheet/press-action-sheet.vue';
 
 export default {
   components: {

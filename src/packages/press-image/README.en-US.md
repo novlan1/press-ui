@@ -8,7 +8,7 @@ url: pages/press/image/image
 ## Introduction
 
 ```ts
-import PressImage from 'press-ui/press-image/press-image';
+import PressImage from 'press-ui/press-image/press-image.vue';
 
 export default {
    components: {

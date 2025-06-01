@@ -8,7 +8,7 @@ url: pages/press/code-input/code-input
 ## Introduction
 
 ```ts
-import PressCodeInput from 'press-ui/press-code-input/press-code-input';
+import PressCodeInput from 'press-ui/press-code-input/press-code-input.vue';
 
 export default {
    components: {

@@ -9,7 +9,7 @@ url : pages/press/share-sheet/share-sheet
 ## 引入
 
 ```ts
-import PressShareSheet from 'press-ui/press-share-sheet/press-share-sheet';
+import PressShareSheet from 'press-ui/press-share-sheet/press-share-sheet.vue';
 
 export default {
   components: {

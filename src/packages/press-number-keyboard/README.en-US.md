@@ -9,7 +9,7 @@ A virtual keyboard component that includes number mode (with or without decimal 
 ## Import
 
 ```ts
-import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard';
+import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard.vue';
 
 export default {
   components: {
