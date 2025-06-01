@@ -160,6 +160,9 @@ export default {
       if (!showOtherDemoMap.vue3Uni) {
         list = list.filter(item => item.name !== 'vue3-uni');
       }
+      if (!showOtherDemoMap.vue3NotUni) {
+        list = list.filter(item => item.name !== 'vue3-not-uni');
+      }
 
       // #ifdef MP-QQ
       list = list.filter(item => !!item.mpQQ);

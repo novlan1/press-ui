@@ -192,7 +192,7 @@ function replaceMetaConfig() {
 }
 
 function main() {
-  execCommand('git clean -df', process.cwd(), 'inherit');
+  // execCommand('git clean -df', process.cwd(), 'inherit');
   batchRenameSync(config.renameRoot, config.renameConfig);
   batchRenameSync(config.renameRoot, config.renameConfig2);
   batchRenameSync(config.renameRoot, config.renameConfig3);

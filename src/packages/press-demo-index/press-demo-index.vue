@@ -189,7 +189,7 @@ export default {
       this.activeNames = e;
     },
     clickComponent(nav, item) {
-      console.log('item', item);
+      console.log('[clickComponent] item: ', item);
       if (typeof nav.event === 'string') {
         this[nav.event](nav, item);
         return;
@@ -255,7 +255,7 @@ export default {
     onJumpToMap() {
       routerPush.call(this, MAP_PAGE_URL);
     },
-    /**
+     /**
      * 对外暴露
      */
     onJumpToLaunchApp() {

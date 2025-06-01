@@ -15,7 +15,6 @@ import { setClipboardData } from 'press-ui/common/clipboard/clipboard';
 import { parseProtocol } from 'press-ui/common/protocol/parse-protocol';
 
 import PressProtocol from 'press-ui/press-protocol/press-protocol.vue';
-
 import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'src/packages/press-protocol/demo-helper/data';
 
 
