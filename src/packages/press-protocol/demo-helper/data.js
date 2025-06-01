@@ -64,37 +64,40 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
   {
     title: '四、普通 Vue 项目',
     list: [
-      'Press UI 支持非 uni-app 环境的普通 Vue 项目，已应用于多个项目中。',
+      'Press UI 支持非 uni-app 环境的普通 Vue 项目，支持 Vue2 和 Vue3，已应用于多个业务项目中。',
       [
-        '体验地址：',
+        '1. ',
         {
-          text: '点击此处',
+          text: 'Vue3 uni-app 示例',
+          light: true,
+          link: 'https://novlan1.github.io/press-ui-demo-vue3-uni/',
+        },
+      ],
+      [
+        '2. ',
+        {
+          text: 'Vue2 uni-app 示例',
+          light: true,
+          link: 'https://novlan1.github.io/press-ui-demo-vue2-uni/',
+        },
+      ],
+      [
+        '3. ',
+        {
+          text: 'Vue3 非 uni-app 示例',
+          light: true,
+          link: 'https://novlan1.github.io/press-ui-demo-vue3-pure/',
+        },
+      ],
+      [
+        '4. ',
+        {
+          text: 'Vue2 非 uni-app 示例',
           light: true,
           link: 'https://novlan1.github.io/press-ui-demo-vue2-pure/',
         },
       ],
-    ],
-  },
-  {
-    title: '四、Vue3',
-    list: [
-      [
-        'Press UI 同时支持 Vue2 和 Vue3，具体使用方法请',
-        {
-          text: '参考文档',
-          light: true,
-          link: 'https://novlan1.github.io/press-ui/quickstart.html#vue3-%E9%A1%B9%E7%9B%AE',
-        },
-        '。',
-      ],
-      [
-        '体验地址：',
-        {
-          text: '点击此处',
-          light: true,
-          link: 'https://novlan1.github.io/press-ui-demo-vue3/',
-        },
-      ],
+
     ],
   },
 ];

@@ -1,22 +1,57 @@
 # 快速开始
 
-`Press UI` 目前支持`n+1`端，`n`为`uni-app`提供的能力，包括H5、微信小程序、QQ小程序等，`1`为普通 Vue 项目。并且同时兼容 Vue2 和 Vue3。
+`Press UI` 可看作 `Vant` 组件库的超集。
 
-## 1. Vue2 的 uni-app 项目
+`Press UI` 目前支持 `n + 1` 端，`n` 为 `uni-app` 提供的能力，包括H5、微信小程序、QQ小程序等，`1` 为普通 Vue 项目，并且同时兼容 Vue2 和 Vue3。
 
-对于 Vue2 的 `uni-app` 项目，`Press UI` 的使用方法如下。
+## 1. Vue3 的 uni-app 项目
+
+对于 Vue3 版本的 `uni-app` 项目，`Press UI` 的使用方法如下。
 
 ### 1.1. npm 模式
 
 1. 安装`npm`包
 
+```bash
+npm i press-ui
+```
+
+2. 在页面中引入并使用
+
+比如 `button` 组件：
+
+```vue
+<template>
+  <PressButton>
+    按钮
+  </PressButton>
+</template>
+
+<script lang="ts" setup>
+import PressButton from 'press-ui/press-button/press-button.vue'
+</script>
+```
+
+[点此查看](https://github.com/novlan1/press-ui-demo-vue3-uni/) Vue3 的 uni-app 示例项目。
+
+### 1.2. uni_modules 方式
+
+[插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
+
+
+## 2. Vue2 的 uni-app 项目
+
+对于 Vue2 版本的 `uni-app` 项目，`Press UI` 的使用方法如下。
+
+### 2.1. npm 模式
+
+1. 安装`npm`包
 
 ```bash
 npm i press-ui
 ```
 
-
-2. 在页面中正常引入并使用
+2. 在页面中引入并使用
 
 比如 `button` 组件：
 
@@ -47,35 +82,46 @@ module.exports = {
 }
 ```
 
-[点此查看](https://github.com/novlan1/press-ui-demo-vue2) Vue2 的 uni-app 示例项目。
+[点此查看](https://github.com/novlan1/press-ui-demo-vue2-uni/) Vue2 的 uni-app 示例项目。
 
-### 1.2. uni_modules 方式
+### 2.2. uni_modules 方式
 
 [插件市场](https://ext.dcloud.net.cn/plugin?id=18798)直接导入即可
 
+## 3. 普通 Vue3 项目
 
+与 `uni-app` & `Vue3` 项目使用方式相似，只是需要多使用一个 `Vite` 版本的[条件编译插件](https://novlan1.github.io/plugin-light/zh/vite-plugin-ifdef.html)，使用方式如下。
 
-## 2. 普通 Vue2 项目
+```bash
+npm i @plugin-light/vite-plugin-ifdef -D
+```
 
-`Press UI` 支持非 `uni-app` 的普通 Vue 项目。
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import { ifdefVitePlugin } from '@plugin-light/vite-plugin-ifdef';
 
-`Press UI` 组件比普通的组件多了以下内容：
+export default defineConfig({
+  plugins: [
+    ifdefVitePlugin({
+      context: { H5: true, VUE3: true },
+      type: ['css', 'js', 'html'],
+    })
+  ],
+});
+```
 
-1. 条件编译，跨平台的核心，普通 Vue 项目中可以用这个 [loader](https://novlan1.github.io/plugin-light/zh/webpack-loader-ifdef.html) 实现
-2. `scroll-view`、`swiper`、`swiper-item` 等全局组件
+## 4. 普通 Vue2 项目
 
-
-所以，要在普通Vue项目中使用 `Press UI`，除了执行上面的步骤外，还需要做下面几个事情。
-
-1. 安装 npm 包：
+与 `uni-app` & `Vue2` 项目使用方式相似，只是需要多使用一个 `Webpack` 版本的[条件编译工具](https://novlan1.github.io/plugin-light/zh/webpack-loader-ifdef.html)，使用方式如下。
 
 ```bash
 npm i @plugin-light/webpack-loader-ifdef -D
 ```
 
-2. 在 `vue.config.js` 中添加如下设置：
-
 ```js
+// vue.config.js
+
 const IF_DEF_LOADER = '@plugin-light/webpack-loader-ifdef';
 
 module.export = {
@@ -95,93 +141,4 @@ module.export = {
 }
 ```
 
-3. 引入全局组件，可以直接使用 `Press UI` 封装好的方法。
-
-```ts
-// main.js
-import { initPureAdapter } from 'press-ui/common/pure/adapter';
-
-initPureAdapter();
-```
-
-此外，针对非 `uni-app` 环境的 Vue 项目，在函数式调用组件时，需要传入 `context: this`，比如：
-
-```ts
-import { imagePreview } from 'press-ui/press-image-preview/index';
-
-export default {
-  methods: {
-    show() {
-      imagePreview({
-        context: this,
-        selector: `#${FUNCTIONAL_ID_MAP.IMAGE_PREVIEW}`,
-        images: this.images,
-      })
-    }
-  }
-}
-```
-
-`Press UI` 支持函数式调用的组件有：
-
-- [popup](./components/press/press-popup.html)
-- [toast](./components/press/press-toast.html)
-- [picker](./components/press/press-picker.html)
-- [datetime-picker](./components/press/press-datetime-picker.html)
-- [dialog](./components/press/press-dialog.html)
-- [dialog-plus](./components/press/press-dialog-plus.html)
-- [image-view](./components/press/press-image-view.html)
-- [popup-cell](./components/press/press-popup-cell.html)
-
 [点此查看](https://github.com/novlan1/press-ui-demo-vue2-pure) Vue2 非 uni-app 的示例项目。
-
-## 3. Vue3 的 uni-app 项目
-
-`Press UI` 支持 Vue3 项目。
-
-对于 Vue3 的 `uni-app` 项目，在函数式调用组件时，需传入`ref`，而非`id`。
-
-之前：
-
-```html
-<press-popup
-  :id="PRESS_PICKER_ID"
-  mode="functional"
->
- xxx
-</press-popup>
-```
-
-现在：
-
-```html
-<press-popup
-  :ref="PRESS_PICKER_ID"
-  mode="functional"
->
-  xxx
-</press-popup>
-```
-
-另外，对于以下组件，在 Vue3 下做了 `v-model` 相关的适配，具体使用变化为： `value` 属性改为 `modelValue`，`input` 事件改为 `update:modelValue`。如果是使用的 `v-model`，则无需改变。
-
-- [field](./components/press/press-field.html)
-- [list](./components/press/press-list.html)
-- [number-keyboard](./components/press/press-number-keyboard.html)
-- [popover-plus](./components/press/press-popover-plus.html)
-- [pull-refresh](./components/press/press-pull-refresh.html)
-
-[点此查看](https://github.com/novlan1/press-ui-demo-vue3) Vue3 的 uni-app 示例项目。
-
-## 4. 普通 Vue3 项目
-
-Vite 中不支持 `transpileDependencies` 选项，`Press UI` 提供了使用方案：
-
-1. 脚本拷贝 `node_modules/press-ui` 的代码到 `src` 某目录下
-2. 配置 `alias` 指向该目录
-
-这种方式符合 `transpileDependencies` 的本意，既然作为源码来编译，那就直接放到源码位置即可。
-
-这里提供了一个 [Vite 插件](https://novlan1.github.io/plugin-light/zh/vite-plugin-alias-for-library.html)，可以自动化的进行拷贝。
-
-[点此查看](https://github.com/novlan1/press-ui-demo-vue3-pure) Vue3 非 uni-app 的示例项目。

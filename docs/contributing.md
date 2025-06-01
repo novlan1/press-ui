@@ -84,7 +84,7 @@ npm run docs:dev
 
 ### 2.4. 文档、示例部署
 
-`Press UI`接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
+`Press UI` 接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
 
 ## 3. 开发规范
 
@@ -96,11 +96,10 @@ npm run docs:dev
 
 推荐[Angular 规范](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
 
-
 ### 3.3. 命名规范
 
-- 导出对象、类、组件，用大驼峰命名法，首字母大写
-- 导出方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等
+- 对象、类、组件，用大驼峰命名法，首字母大写
+- 变量、方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等
 - 文件名用小写+中划线，比如`message-dialog`，不能用`messageDialog`
 
 ### 3.4. 其他

@@ -92,25 +92,9 @@ npm i press-ui
 ```
 
 ```ts
-<script>
+<script lang="ts" setup>
 import PressButton from 'press-ui/press-button/press-button.vue'
-
-export default {
-  components: {
-    PressButton, 
-  },
-}
 </script>
-```
-
-3. 配置
-
-Vue2 项目需要在 `vue.config.js` 中配置下 `transpileDependencies`：
-
-```js
-module.exports = {
-  transpileDependencies: ['press-ui'],
-}
 ```
 
 #### 4.2. uni_modules 方式
@@ -130,10 +114,10 @@ module.exports = {
 
 点击下方链接查看示例项目。
 
-1. [Vue2 uni-app](https://github.com/novlan1/press-ui-demo-vue2-uni/)
-2. [Vue3 uni-app](https://github.com/novlan1/press-ui-demo-vue3-uni/)
-3. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure/)
-4. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure/)
+1. [Vue3 uni-app](https://github.com/novlan1/press-ui-demo-vue3-uni/)
+2. [Vue2 uni-app](https://github.com/novlan1/press-ui-demo-vue2-uni/)
+3. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure/)
+4. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure/)
 
 [node]: https://img.shields.io/node/v/press-ui
 [node-url]: https://nodejs.org
