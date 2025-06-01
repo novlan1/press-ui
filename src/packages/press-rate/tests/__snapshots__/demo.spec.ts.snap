@@ -88,32 +88,32 @@ exports[`renders demo correctly 1`] = `
     <div class="press-rate-index">
       <div class="press-rate">
         <div class="press-rate__item">
-          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon--image press-rate__icon press-rate__icon--full" data-score="0">
-            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon__image">
+          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="0">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
           </div>
           <!---->
         </div>
         <div class="press-rate__item">
-          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon--image press-rate__icon press-rate__icon--full" data-score="1">
-            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon__image">
+          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="1">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
           </div>
           <!---->
         </div>
         <div class="press-rate__item">
-          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon--image press-rate__icon press-rate__icon--full" data-score="2">
-            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon__image">
+          <div class=" press-rate__icon press-rate__icon--full press-icon-plus press-icon-plus--image press-rate__icon press-rate__icon--full" data-score="2">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png" mode="aspectFit" class="press-icon-plus__image">
           </div>
           <!---->
         </div>
         <div class="press-rate__item">
-          <div class=" press-rate__icon press-icon-plus press-icon--image press-rate__icon" data-score="3">
-            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon__image">
+          <div class=" press-rate__icon press-icon-plus press-icon-plus--image press-rate__icon" data-score="3">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon-plus__image">
           </div>
           <!---->
         </div>
         <div class="press-rate__item">
-          <div class=" press-rate__icon press-icon-plus press-icon--image press-rate__icon" data-score="4">
-            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon__image">
+          <div class=" press-rate__icon press-icon-plus press-icon-plus--image press-rate__icon" data-score="4">
+            <!----> <img src="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png" mode="aspectFit" class="press-icon-plus__image">
           </div>
           <!---->
         </div>

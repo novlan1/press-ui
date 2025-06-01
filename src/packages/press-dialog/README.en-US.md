@@ -14,7 +14,7 @@ The pop-up modal box is often used for message prompts, message confirmation, or
 Used to prompt some messages, only contains a confirmation button.
 
 ```html
-<press-dialog-plus id="press-dialog" />
+<press-dialog id="press-dialog" />
 ```
 
 ```javascript
@@ -39,7 +39,7 @@ showDialog({
 Used for confirmation messages, containing cancel and confirm buttons.
 
 ```html
-<press-dialog-plus id="press-dialog" />
+<press-dialog id="press-dialog" />
 ```
 
 ```javascript
@@ -62,7 +62,7 @@ showConfirmDialog({
 Set the theme option to `round-button` to display rounded button style popups.
 
 ```html
-<press-dialog-plus id="press-dialog" />
+<press-dialog id="press-dialog" />
 ```
 
 ```javascript
@@ -89,7 +89,7 @@ showDialog({
 Through the `beforeClose` attribute, a callback function can be passed in to perform specific operations before the popup window is closed.
 
 ```html
-<press-dialog-plus id="press-dialog" />
+<press-dialog id="press-dialog" />
 ```
 
 ```javascript
@@ -118,7 +118,7 @@ showConfirmDialog({
 If you need to embed components or other custom content in the pop-up window, you can use the component call method.
 
 ```html
-<press-dialog-plus
+<press-dialog
    use-slot
    title="title"
    :show="show"
@@ -128,7 +128,7 @@ If you need to embed components or other custom content in the pop-up window, yo
    @getuserinfo="getUserInfo"
 >
    <img src="https://img.yzcdn.cn/1.jpg" />
-</press-dialog-plus>
+</press-dialog>
 ```
 
 ```js
@@ -165,7 +165,7 @@ export default {
 
 ### Options
 
-When calling DialogPlus through a function, the following options are supported:
+When calling `Dialog` through a function, the following options are supported:
 
 | Parameter             | Description                                                                                                                                                                                          | Type                                        | Default          |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---------------- |
@@ -208,7 +208,7 @@ After using `confirmButtonOpenType`, the following options are supported:
 
 ### Props
 
-When calling DialogPlus through components, the following props are supported:
+When calling `Dialog` through components, the following props are supported:
 
 | Parameter                | Description                                                                                                                                                                                      | Type                                        | Default   |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- | --------- |

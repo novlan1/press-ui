@@ -2,7 +2,7 @@
 url : pages/press/loading/loading
 ---
 
-## LoadingPlus
+## Loading 
 
 
 Loading, divided into two types: circular and spinner

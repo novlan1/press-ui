@@ -15,7 +15,7 @@ Use the `show` attribute to control whether the popup layer is displayed.
 ```html
 <press-cell title="Show Popup" is-link @click="showPopup" />
 
-<press-popup-plus :show="show" @close="onClose">Content</press-popup-plus>
+<press-popup :show="show" @close="onClose">Content</press-popup>
 ```
 
 ```javascript
@@ -39,7 +39,7 @@ Page({
 Set the pop-up position through the `position` property, which is centered by default, and can be set to `top`, `bottom`, `left`, `right`.
 
 ```html
-<press-popup-plus
+<press-popup
    :show="show"
    position="top"
    custom-style="height: 20%;"
@@ -52,7 +52,7 @@ Set the pop-up position through the `position` property, which is centered by de
 After setting the `closeable` property, a close icon will be displayed in the upper right corner of the popup layer, and the icon can be customized through the `close-icon` property, and the position of the icon can be customized by using the `close-icon-position` property.
 
 ```html
-<press-popup-plus
+<press-popup
    :show="show"
    closeable
    position="bottom"
@@ -61,7 +61,7 @@ After setting the `closeable` property, a close icon will be displayed in the up
 />
 
 <!-- custom icon -->
-<press-popup-plus
+<press-popup
    :show="show"
    closeable
    close-icon="close"
@@ -71,7 +71,7 @@ After setting the `closeable` property, a close icon will be displayed in the up
 />
 
 <!-- icon location -->
-<press-popup-plus
+<press-popup
    :show="show"
    closeable
    close-icon-position="top-left"
@@ -86,7 +86,7 @@ After setting the `closeable` property, a close icon will be displayed in the up
 After setting the `round` property, the pop-up window will add different rounded corner styles according to the pop-up position.
 
 ```html
-<press-popup-plus
+<press-popup
    :show="show"
    round
    position="bottom"
@@ -109,29 +109,29 @@ When the minimum version of the Mini Program base library is above 2.9.0, you ca
 <!-- page-meta can only be the first node in the page -->
 <page-meta :page-style="show ? 'overflow: hidden;' : ''" />
 
-<press-popup-plus :show="show" catch:touchstart />
+<press-popup :show="show" catch:touchstart />
 ```
 
 ## API
 
 ### Props
 
-| Parameter              | Description                                                       | Type               | Default  |
-| ---------------------- | ----------------------------------------------------------------- | ------------------ | -------- |
-| show                   | Whether to show the popup layer                                   | _boolean_          | `false`  |
-| z-index                | z-index level                                                     | _number_           | `100`    |
-| overlay                | Whether to show the overlay                                       | _boolean_          | `true`   |
-| position               | PopupPlus position, optional values are `top` `bottom` `right` `left` | _string_           | `center` |
-| duration               | animation duration in milliseconds                                | _number \| object_ | `300`    |
-| round                  | Whether to show rounded corners                                   | _boolean_          | `false`  |
-| custom-style           | custom popup layer style                                          | _string_           | `''`     |
-| overlay-style          | custom overlay style                                              | _string_           | `''`     |
-| close-on-click-overlay | Whether to close the overlay on click                             | _boolean_          | `true`   |
-| closeable              | Whether to show the close icon                                    | _boolean_          | `false`  |
-| close-icon             | close icon name or image link                                     | _string_           | `cross`  |
-| safe-area-inset-bottom | Whether to set a bottom safety distance for iPhoneX               | _boolean_          | `true`   |
-| safe-area-inset-top    | Whether to leave a top safe distance (status bar height)          | _boolean_          | `false`  |
-| lock-scroll            | Whether to lock background scrolling                              | _boolean_          | `true`   |
+| Parameter              | Description                                                         | Type               | Default  |
+| ---------------------- | ------------------------------------------------------------------- | ------------------ | -------- |
+| show                   | Whether to show the popup layer                                     | _boolean_          | `false`  |
+| z-index                | z-index level                                                       | _number_           | `100`    |
+| overlay                | Whether to show the overlay                                         | _boolean_          | `true`   |
+| position               | `Popup` position, optional values are `top` `bottom` `right` `left` | _string_           | `center` |
+| duration               | animation duration in milliseconds                                  | _number \| object_ | `300`    |
+| round                  | Whether to show rounded corners                                     | _boolean_          | `false`  |
+| custom-style           | custom popup layer style                                            | _string_           | `''`     |
+| overlay-style          | custom overlay style                                                | _string_           | `''`     |
+| close-on-click-overlay | Whether to close the overlay on click                               | _boolean_          | `true`   |
+| closeable              | Whether to show the close icon                                      | _boolean_          | `false`  |
+| close-icon             | close icon name or image link                                       | _string_           | `cross`  |
+| safe-area-inset-bottom | Whether to set a bottom safety distance for iPhoneX                 | _boolean_          | `true`   |
+| safe-area-inset-top    | Whether to leave a top safe distance (status bar height)            | _boolean_          | `false`  |
+| lock-scroll            | Whether to lock background scrolling                                | _boolean_          | `true`   |
 
 ### Events
 

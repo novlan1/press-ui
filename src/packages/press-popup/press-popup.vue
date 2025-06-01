@@ -163,7 +163,7 @@ export default {
   },
   computed: {
     innerWrapClass() {
-      return `press-popup-plus ${this.wrapClass}`;
+      return `press-popup__wrap ${this.wrapClass}`;
     },
     popupClass() {
       const {

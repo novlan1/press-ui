@@ -1,8 +1,10 @@
-const { replaceContent, randomString, pascalCase, execCommand } = require('t-comm');
+const { replaceContentSimple } = require('@tencent/t-comm');
+const { randomString, pascalCase, execCommand } = require('t-comm');
 
 const { CONFIG } = require('./config');
 const { batchRenameSync } = require('./rename');
 
+const ALL_FILE = 'src/**/*.{js,ts,vue,md,scss}';
 const rawList = [
   'dialog',
   'icon',
@@ -72,8 +74,6 @@ function getReplaceList(rawList, dirList) {
     ['<', ''],
     ['</', '>'],
   ];
-  // const prefixList = ['/', '\'', '"'];
-  // const postfixList = ['/', '\'', '"'];
   for (const item of rawList) {
     const plusKey = `press-${item}-plus`;
     const key = `press-${item}`;
@@ -85,20 +85,15 @@ function getReplaceList(rawList, dirList) {
       list2.push([`${prefix[0]}${key}${prefix[1]}`, `${prefix[0]}${plusKey}${prefix[1]}`]);
       list3.push([`${prefix[0]}${tempKey}${prefix[1]}`, `${prefix[0]}${key}${prefix[1]}`]);
     }
-    // for (const postfix of postfixList) {
-    //   list.push([`${plusKey}${postfix}`, `${tempKey}${postfix}`]);
-    //   list2.push([`${key}${postfix}`, `${plusKey}${postfix}`]);
-    //   list3.push([`${tempKey}${postfix}`, `${key}${postfix}`]);
-    // }
     list.push([pascalCase(plusKey), tempKey2]);
     list2.push([pascalCase(key), pascalCase(plusKey)]);
     list3.push([tempKey2, pascalCase(key)]);
   }
 
   const classPrefixList = [
-    ['\\.', ' '],
-    ['\\.', ','],
-    ['\\.', '-'], // press-icon-plus-* 一堆图标的类名
+    [`.`, ' '],
+    [`.`, ','],
+    ['.', '-'], // press-icon-plus-* 一堆图标的类名
 
     ['', ';'], // press-icon font-family
 
@@ -134,14 +129,12 @@ const config = {
   ...getRenameConfig(rawList),
 
   replaceList: [
-    ...getReplaceList(rawList, ['src']),
+    ...getReplaceList(rawList, [ALL_FILE]),
     {
       list: [
         ['press-icon-plus-music', 'press-icon-music'],
       ],
-      dirList: [
-        'src/packages/press-icon-music/css/index.scss',
-      ],
+      dirList: ['src/packages/press-icon-music/css/index.scss'],
     },
     {
       list: [
@@ -150,42 +143,22 @@ const config = {
         ['abcdPickerAPopupD', 'press-picker-popup'],
         ['PressPickerPlusPopupPlus', 'PressPickerPopup'],
       ],
-      dirList: [
-        'src',
-      ],
+      dirList: [ALL_FILE],
+
     },
-    // {
-    //   list: [
-    //     ['press-icon', 'press-icon-plus'],
-    //     ['PressIcon', 'PressIconPlus'],
-    //   ],
-    //   dirList: [
-    //     'src',
-    //   ],
-    // },
-    // {
-    //   list: [
-    //     ['IIIConPlusTemp', 'press-icon'],
-    //     ['IIIPressConPlusTemp', 'PressIcon'],
-    //   ],
-    //   dirList: [
-    //     'src',
-    //   ],
-    // },
+
   ],
 };
 
 function replaceImport() {
-  replaceContent({
+  replaceContentSimple({
     replaceList: config.replaceList,
-    targetProject: config.targetProject,
   });
 }
 
 function replaceMetaConfig() {
-  replaceContent({
-    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json', 'src/']),
-    targetProject: config.targetProject,
+  replaceContentSimple({
+    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json', ALL_FILE]),
   });
 
   execCommand('npm run init', process.cwd(), 'inherit');
@@ -202,19 +175,24 @@ function main() {
   replaceImport();
   replaceMetaConfig();
 
-  replaceContent({
+  replaceContentSimple({
     replaceList: [
       {
         list: [
           ['DialogPlus', 'Dialog'],
         ],
-        dirList: [
-          'src/packages/press-dialog-plus/handler.js',
-          'src/packages/press-dialog/handler.js',
-        ],
+        dirList: 'src/packages/press-dialog*/handler.js',
+      },
+      {
+        list: [['pickerPlus', 'picker']],
+        dirList: ['src/packages/common/constant/parent-map.js'],
+      },
+       {
+        // 顶层类名
+        list: [['press-popup-plus', 'press-popup__wrap']],
+        dirList: ['src/packages/press-popup/press-popup.vue'],
       },
     ],
-    targetProject: CONFIG.targetProject,
   });
 }
 

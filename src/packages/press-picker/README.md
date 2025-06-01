@@ -160,7 +160,7 @@ export default {
 
 ### 加载状态
 
-当 PickerPlus 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示。
+当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示。
 
 ```html
  <press-picker

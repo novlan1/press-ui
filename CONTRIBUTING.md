@@ -54,13 +54,13 @@ npm run init
 对于H5、微信小程序、QQ小程序有不同的启动命令：
 
 ```bash
-# H5
+# H5，建议 node 20 下运行
 npm run dev
 
-# 微信小程序
+# 微信小程序，建议 node 16 下运行
 npm run dev:mp-weixin
 
-# qq小程序
+# qq小程序，建议 node 16 下运行
 npm run dev:mp-qq
 ```
 

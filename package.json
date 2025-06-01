@@ -234,7 +234,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-tailwindcss": "3.18.0",
     "eslint-plugin-vue": "9.14.0",
-    "glob": "^7.2.3",
+    "glob": "^11.0.2",
     "gulp": "^4.0.2",
     "husky": "^8.0.1",
     "inquirer": "^8.2.5",

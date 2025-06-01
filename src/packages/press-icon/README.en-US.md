@@ -41,7 +41,7 @@ Set the `size` property to control the icon size.
 
 ### Custom icon
 
-If you need to use more icons based on the existing Icon, you can import the font file and CSS file corresponding to the third-party iconfont, and then use it directly in the IconPlus component. For example, it can be included in the `app.wxss` file.
+If you need to use more icons based on the existing Icon, you can import the font file and CSS file corresponding to the third-party iconfont, and then use it directly in the `Icon` component. For example, it can be included in the `app.wxss` file.
 
 ```css
 /* Introduce third-party or custom font icon styles */
@@ -74,7 +74,7 @@ If you need to use more icons based on the existing Icon, you can import the fon
 | dot          | Whether to display the small red dot in the upper right corner of the icon | _boolean_          | `false`           |
 | info         | text prompt in the upper right corner of the icon                          | _string \| number_ | -                 |
 | color        | icon color                                                                 | _string_           | `inherit`         |
-| size         | IconPlus size, such as `20px`, `2em`, the default unit is `px`                 | _string \| number_ | `inherit`         |
+| size         | icon size, such as `20px`, `2em`, the default unit is `px`                 | _string \| number_ | `inherit`         |
 | custom-style | custom style                                                               | _string_           | -                 |
 | class-prefix | class name prefix                                                          | _string_           | `press-icon` |
 
