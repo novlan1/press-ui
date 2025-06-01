@@ -54,7 +54,7 @@ function getContext() {
 }
 
 
-const DialogPlus = (options) => {
+const Dialog = (options) => {
   options = Object.assign(Object.assign({}, currentOptions), options);
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();

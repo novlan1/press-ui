@@ -21,7 +21,7 @@ const defaultOptions = Object.keys(dialogProps).reduce((acc, item) => {
 
 let currentOptions = Object.assign({}, defaultOptions);
 
-const DialogPlus = options => initFunctionalDialog({
+const Dialog = options => initFunctionalDialog({
   options,
   currentOptions,
   id: 'tip-dialog-showCommTipsDialog',
