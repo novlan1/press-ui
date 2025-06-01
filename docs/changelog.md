@@ -1,5 +1,26 @@
 # 更新日志
 
+## [5.0.0](https://github.com/novlan1/press-ui/compare/v3.0.13...v5.0.0) (2025-06-01)
+
+
+### Code Refactoring ♻️
+
+* 修改导入语句，组件名称和引入路径一一对应 ([e6f90d2](https://github.com/novlan1/press-ui/commit/e6f90d2abbd27e67ddaf0d18480cdca6af280ddd))
+* 移动mixin位置 ([144800b](https://github.com/novlan1/press-ui/commit/144800ba77e0a278737f2c5e99aaf3413d8dce0f))
+* not use ?? ([ba1c76e](https://github.com/novlan1/press-ui/commit/ba1c76eeee9218458150702d13d1f5ef64547630))
+* use object-type customStyle ([7185dce](https://github.com/novlan1/press-ui/commit/7185dce5dd948d56aadacc4694ca6f87e48d37ab))
+
+
+### Features 🎉
+
+* add turn plus script ([4ef0ba7](https://github.com/novlan1/press-ui/commit/4ef0ba73861201305d766171a819b052306f297b))
+* **customStyle:** customStyle support object type ([1d500bf](https://github.com/novlan1/press-ui/commit/1d500bfe7844870cd05d77d25dacbaf9a9406c95))
+* **datetime-picker:** 优化datetime-picker在抖音小程序的表现 ([1068954](https://github.com/novlan1/press-ui/commit/1068954ea54a7d3b92e993d378c070bd8c0e15c0))
+* **datetime-picker:** datetime-picker等组件兼容头条小程序 ([4f061bd](https://github.com/novlan1/press-ui/commit/4f061bda02d210a9bb159af6e14cc8b5b3bd81bb))
+* **picker-plus:** support toutiao mp ([8864fe4](https://github.com/novlan1/press-ui/commit/8864fe40727d19875d883a8541840a0b7c70e845))
+* **relation:** 优化relation ([5b2546c](https://github.com/novlan1/press-ui/commit/5b2546c0df5c34ca38679d2f028915dfa7fce8b5))
+* **relation:** 优化relation ([bb9118f](https://github.com/novlan1/press-ui/commit/bb9118f15fa533bcc773814c3ccd6fbbf609daa2))
+
 ### [3.0.13](https://github.com/novlan1/press-ui/compare/v3.0.12...v3.0.13) (2025-05-22)
 
 
