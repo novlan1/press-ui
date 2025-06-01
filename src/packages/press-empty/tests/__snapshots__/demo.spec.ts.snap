@@ -77,7 +77,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="press-empty press-empty--e-sport  " style="height: 300px;"><span class="iconfont icon-empty press-icon--e-sport"></span>
+    <div class="press-empty press-empty--e-sport  " style="height: 300px;"><span class="iconfont icon-empty press-icon-plus--e-sport"></span>
       <div class="press-empty__description"></div>
       <div class="press-empty__description">
         描述文字

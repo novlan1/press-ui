@@ -69,7 +69,7 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <PressDialogPlus
+    <PressDialog
       id="press-dialog"
       ref="press-dialog"
     />
@@ -77,8 +77,8 @@
   </div>
 </template>
 <script>
-import Dialog from 'press-ui/press-dialog-plus/handler';
-import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import Dialog from 'press-ui/press-dialog/handler';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
 import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
 
 
@@ -107,7 +107,7 @@ export default {
   },
   components: {
     PressSwipeCell,
-    PressDialogPlus,
+    PressDialog,
   },
   data() {
     return {
@@ -136,7 +136,7 @@ export default {
           instance.close();
           break;
         case 'right':
-          Dialog.confirm({
+          DialogPlus.confirm({
             context: this,
             title: '确定删除吗？',
           })

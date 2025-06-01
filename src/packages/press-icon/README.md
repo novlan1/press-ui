@@ -4,7 +4,6 @@ url : pages/press/icon/icon
 
 ## Icon 图标
 
-用于展示`icons`图标，目前仅保留`empty`，其他图标请使用`press-icon-plus`。
 
 ## 引入
 
@@ -20,86 +19,111 @@ export default {
 
 ## 代码演示
 
-### 基本用法
+### 基础用法
 
-在 ``template`` 中使用组件
-
-```html
-<press-icon type="empty" size="30"></press-icon>
-```
-
-### 音乐播放图标
-
-基本用法：
+`Icon`的`name`属性支持传入图标名称或图片链接。
 
 ```html
-<press-icon-music />
+<press-icon name="close" />
+<press-icon name="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png" />
 ```
 
-```ts
-import PressIconMusic from 'press-ui/press-icon/press-icon-music';
+### 提示信息
 
-export default {
-  components: {
-    PressIconMusic,
-  }
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标。
+
+```html
+<press-icon name="chat" dot />
+<press-icon name="chat" info="9" />
+<press-icon name="chat" info="99+" />
+```
+
+### 图标颜色
+
+设置`color`属性来控制图标颜色。
+
+```html
+<press-icon name="chat" color="red" />
+```
+
+### 图标大小
+
+设置`size`属性来控制图标大小。
+
+```html
+<press-icon name="chat" size="50px" />
+```
+
+### 自定义图标
+
+如果需要在现有 IconPlus 的基础上使用更多图标，可以引入第三方 iconfont 对应的字体文件和 CSS 文件，之后就可以在 IconPlus 组件中直接使用。例如，可以在 `app.wxss` 文件中引入。
+
+```css
+/* 引入第三方或自定义的字体图标样式 */
+@font-face {
+  font-family: 'my-icon';
+  src: url('./my-icon.ttf') format('truetype');
+}
+
+.my-icon {
+  font-family: 'my-icon';
+}
+
+.my-icon-extra::before {
+  content: '\e626';
 }
 ```
 
-
-指定颜色：
-
 ```html
-<press-icon-music
-  color="rgb(94, 109, 130)"
-/>
+<!-- 通过 class-prefix 指定类名为 my-icon -->
+<press-icon class-prefix="my-icon" name="extra" />
 ```
-
-指定 `bar` 个数：
-
-```html
-<press-icon-music :number="5"/>
-```
-
-
-指定图标宽高：
-
-```html
-<press-icon-plus 
-  width="60px"
-  height="60px"
-/>
-```
-
-
 
 ## API
 
-### Icon Props
+### Props
 
-| 参数  | 说明               | 类型     | 默认值 |
-| ----- | ------------------ | -------- | ------ |
-| size  | 图标大小           | _number_ | `24`   |
-| type  | 图标图案，参考示例 | _string_ | -      |
-| color | 图标颜色           | _string_ | -      |
+| 参数         | 说明                                       | 类型               | 默认值            |
+| ------------ | ------------------------------------------ | ------------------ | ----------------- |
+| name         | 图标名称或图片链接                         | _string_           | -                 |
+| dot          | 是否显示图标右上角小红点                   | _boolean_          | `false`           |
+| info         | 图标右上角文字提示                         | _string \| number_ | -                 |
+| color        | 图标颜色                                   | _string_           | `inherit`         |
+| size         | 图标大小，如 `20px`，`2em`，默认单位为`px` | _string \| number_ | `inherit`         |
+| custom-style | 自定义样式                                 | _string_           | -                 |
+| class-prefix | 类名前缀                                   | _string_           | `press-icon-plus` |
 
-### Icon Events
+### Events
 
-| 事件名 | 说明               | 返回值 |
-| ------ | ------------------ | ------ |
-| @click | 点击 Icon 触发事件 | -      |
-
-
-### Icon Music Props
-
-
-| 参数   | 说明                | 类型     | 默认值    |
-| ------ | ------------------- | -------- | --------- |
-| number | 竖条个数，支持`1-5` | _number_ | `3`       |
-| color  | 图标颜色            | _string_ | `#2979ff` |
-| width  | 图标整体高度        | _string_ | `40px`    |
-| height | 图标整体宽度        | _string_ | `50px`    |
+| 事件名 | 说明           | 参数 |
+| ------ | -------------- | ---- |
+| click  | 点击图标时触发 | -    |
 
 ## 在线调试
 
 <debug-online />
+
+## 常见问题
+
+### 开发者工具上提示 Failed to load font 是什么情况？
+
+这个是开发者工具本身的问题，可以忽略，具体可以查看[微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html) - 注意事项第 4 条。
+
+### 内部组件使用统计
+
+| 图标名称   | 使用组件                                                     |
+| ---------- | ------------------------------------------------------------ |
+| success    | tree-select, toast, radio, checkbox, cascader, dropdown-item |
+| fail       | toast                                                        |
+| cross      | tag, popup-plus, action-sheet                                |
+| clear      | field, fab, image-preview                                    |
+| photograph | upload                                                       |
+| photo      | image                                                        |
+| star       | rate                                                         |
+| star-o     | rate                                                         |
+| arrow-left | nav-bar, cell                                                |
+| arrow-up   | cell                                                         |
+| arrow-down | cell                                                         |
+| arrow      | cell                                                         |
+| back-top   | back-top                                                     |
+| checked    | steps                                                        |

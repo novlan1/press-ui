@@ -2,7 +2,7 @@
   <div
     class="press-calendar"
   >
-    <CalendarHeader
+    <PressCalendarHeader
       :title="title"
       :show-title="showTitle"
       :subtitle="subtitle"
@@ -15,14 +15,14 @@
           name="title"
         />
       </template>
-    </CalendarHeader>
+    </PressCalendarHeader>
 
     <scroll-view
       class="press-calendar__body"
       scroll-y
       :scroll-into-view="scrollIntoViewData"
     >
-      <Month
+      <PressCalendarMonth
         v-for="(item, index) in (computed.getMonths(minDate, maxDate))"
         :id="'month'+(index)"
         :key="index"
@@ -79,8 +79,8 @@ import utils from '../common/utils/utils';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
 import PressButton from '../press-button/press-button.vue';
-import CalendarHeader from '../press-calendar-header/press-calendar-header.vue';
-import Month from '../press-calendar-month/press-calendar-month.vue';
+import PressCalendarHeader from '../press-calendar-header/press-calendar-header.vue';
+import PressCalendarMonth from '../press-calendar-month/press-calendar-month.vue';
 
 import { SHARE_PROPS } from '../press-calendar/share-props';
 
@@ -97,8 +97,8 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    CalendarHeader,
-    Month,
+    PressCalendarHeader,
+    PressCalendarMonth,
     PressButton,
   },
   mixins: [ScrollViewPureMixin],

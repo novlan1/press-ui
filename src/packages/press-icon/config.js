@@ -1,5 +1,5 @@
 export default {
-  name: 'press-icon-plus',
+  name: 'press-icon',
   basic: [
     'arrow',
     'arrow-left',

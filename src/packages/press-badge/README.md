@@ -88,19 +88,19 @@ export default {
 <PressBadge>
   <div class="child" />
   <template #content>
-    <PressIconPlus name="success" class="badge-icon" />
+    <PressIcon name="success" class="badge-icon" />
   </template>
 </PressBadge>
 <PressBadge>
   <div class="child" />
   <template #content>
-    <PressIconPlus name="cross" class="badge-icon" />
+    <PressIcon name="cross" class="badge-icon" />
   </template>
 </PressBadge>
 <PressBadge>
   <div class="child" />
   <template #content>
-    <PressIconPlus name="down" class="badge-icon" />
+    <PressIcon name="down" class="badge-icon" />
   </template>
 </PressBadge>
 ```

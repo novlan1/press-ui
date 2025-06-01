@@ -25,8 +25,8 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { requestAnimationFrame } from '../common/utils/system';
 
-import PressPicker from '../press-picker-plus/press-picker-plus.vue';
-import { pickerProps } from '../press-picker-plus/shared';
+import PressPicker from '../press-picker/press-picker.vue';
+import { pickerProps } from '../press-picker/shared';
 
 import computed from './computed';
 

@@ -20,7 +20,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 
-import PressLoading from '../press-loading-plus/press-loading-plus.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 
 import computed from './computed';
 

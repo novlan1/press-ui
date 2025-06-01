@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
 
-import Switch from '../press-switch.vue';
+import PressSwitch from '../press-switch.vue';
 
-describe('Switch', () => {
+describe('PressSwitch', () => {
   it('should emit change event when clicked', async () => {
-    const wrapper = mount(Switch, {
+    const wrapper = mount(PressSwitch, {
       propsData: {
         checked: false,
       },
@@ -20,7 +20,7 @@ describe('Switch', () => {
   });
 
   it('should not emit change event when loading', async () => {
-    const wrapper = mount(Switch, {
+    const wrapper = mount(PressSwitch, {
       propsData: {
         checked: false,
         loading: true,
@@ -32,7 +32,7 @@ describe('Switch', () => {
   });
 
   it('should not emit change event when disabled', async () => {
-    const wrapper = mount(Switch, {
+    const wrapper = mount(PressSwitch, {
       propsData: {
         checked: false,
         disabled: true,
@@ -44,7 +44,7 @@ describe('Switch', () => {
   });
 
   it('should emit click event when clicked', async () => {
-    const wrapper = mount(Switch, {
+    const wrapper = mount(PressSwitch, {
       propsData: {
         checked: false,
       },
@@ -59,7 +59,7 @@ describe('Switch', () => {
   });
 
   it('should set its value correctly', async () => {
-    const wrapper = mount(Switch, {
+    const wrapper = mount(PressSwitch, {
       propsData: {
         checked: false,
       },

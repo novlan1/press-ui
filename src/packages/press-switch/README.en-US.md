@@ -37,7 +37,7 @@ export default{
 <press-switch :checked="checked" disabled />
 ```
 
-### Loading Status
+### LoadingPlus Status
 
 ```html
 <press-switch :checked="checked" loading />
@@ -65,14 +65,14 @@ export default{
 <press-switch :checked="checked" @change="onChange" />
 
 <!-- #ifndef H5 -->
-<PressDialog
+<PressDialogPlus
    id="tip-match-comm-tips-dialog"
 />
 <!-- #endif -->
 ```
 
 ```js
-import PressDialogHandler from 'press-ui/press-dialog';
+import PressDialogPlusHandler from 'press-ui/press-dialog-plus';
 
 export default {
    data() {
@@ -82,7 +82,7 @@ export default {
    },
    methods: {
      onChange(value) {
-       PressDialogHandler. show({
+       PressDialogPlusHandler. show({
          title: 'Prompt',
          content: 'Whether to toggle the switch',
          confirmText: 'Confirm',

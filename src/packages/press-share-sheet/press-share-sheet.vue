@@ -36,7 +36,7 @@
     </div>
 
     <template v-if="computed.isMulti(options)">
-      <Options
+      <PressShareOptions
         v-for="(item,index) in (options)"
         :key="index"
         :show-border="index !== 0"
@@ -45,7 +45,7 @@
       />
     </template>
 
-    <Options
+    <PressShareOptions
       v-else
       :options="options"
       @select="onSelect"
@@ -62,8 +62,8 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-import Options from '../press-share-options/press-share-options.vue';
+import PressPopup from '../press-popup/press-popup.vue';
+import PressShareOptions from '../press-share-options/press-share-options.vue';
 
 import computed from './computed';
 
@@ -75,7 +75,7 @@ export default {
   },
   components: {
     PressPopup,
-    Options,
+    PressShareOptions,
   },
   props: {
     show: Boolean,

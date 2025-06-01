@@ -13,7 +13,7 @@
       </template>
       <template v-else>
         <div class="press-grid-item__icon">
-          <PressIconPlus
+          <PressIcon
             v-if="icon"
             :name="icon"
             :color="iconColor"
@@ -49,7 +49,7 @@ import utils from '../common/utils/utils';
 
 import { link } from '../mixins/basic/link';
 import { ChildrenMixin } from '../mixins/basic/relation';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 
@@ -61,7 +61,7 @@ export default {
     ...getVirtualHostOptions(true, true),
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [ChildrenMixin(PARENT), link],
   props: {
@@ -69,7 +69,7 @@ export default {
     iconColor: { type: String, default: '' },
     iconPrefix: {
       type: String,
-      default: 'press-icon-plus',
+      default: 'press-icon',
     },
     dot: Boolean,
     info: { type: String, default: '' },

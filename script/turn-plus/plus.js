@@ -42,10 +42,15 @@ function getMetaConfigReplaceList(rawList, dirList) {
     const plusKey = `${item}-plus`;
     const key = `${item}`;
     const tempKey = randomString(6);
-
-    list.push([`"${pascalCase(plusKey)}`, tempKey]);
-    list2.push([`"${pascalCase(key)}`, `"${pascalCase(plusKey)}`]);
-    list3.push([tempKey, `"${pascalCase(key)}`]);
+    const preAndPostfixList = [
+      ['"', '"'],
+      [' ', ' '],
+    ];
+    for (const prefix of preAndPostfixList) {
+      list.push([`${prefix[0]}${pascalCase(plusKey)}${prefix[1]}`, `${prefix[0]}${tempKey}${prefix[1]}`]);
+      list2.push([`${prefix[0]}${pascalCase(key)}${prefix[1]}`, `${prefix[0]}${pascalCase(plusKey)}${prefix[1]}`]);
+      list3.push([`${prefix[0]}${tempKey}${prefix[1]}`, `${prefix[0]}${pascalCase(key)}${prefix[1]}`]);
+    }
   }
   return [
     { list, dirList },
@@ -62,8 +67,9 @@ function getReplaceList(rawList, dirList) {
     ['/', '/'],
     ['/', '\''],
     ['/', '"'],
-    ['/', '.vue'],
-    ['\'', '\''], // press-icon-plus (iconPrefix)
+    ['/', '.vue'], // 文件引入
+    ['<', ''],
+    ['</', '>'],
   ];
   // const prefixList = ['/', '\'', '"'];
   // const postfixList = ['/', '\'', '"'];
@@ -89,10 +95,16 @@ function getReplaceList(rawList, dirList) {
   }
 
   const classPrefixList = [
-    ['\\.', ''],
-    ['', ';'],
-    ['', '__'],
+    ['\\.', ' '],
+    ['\\.', ','],
+    ['\\.', '-'], // press-icon-plus-* 一堆图标的类名
+
+    ['', ';'], // press-icon font-family
+
+    ['', '__'], // press-icon_info
     ['', '--'],
+
+    ['\'', '\''], // press-icon-plus (iconPrefix)
   ];
   // press-icon-plus 类名
 
@@ -122,15 +134,25 @@ const config = {
 
   replaceList: [
     ...getReplaceList(rawList, ['src']),
-    // {
-    //   list: [
-    //     ['press-icon-plus', 'IIIConPlusTemp'],
-    //     ['PressIconPlus', 'IIIPressConPlusTemp'],
-    //   ],
-    //   dirList: [
-    //     'src',
-    //   ],
-    // },
+    {
+      list: [
+        ['press-icon-plus-music', 'press-icon-music'],
+      ],
+      dirList: [
+        'src/packages/press-icon-music/css/index.scss',
+      ],
+    },
+    {
+      list: [
+        ['press-picker-plus-popup-plus', 'abcdPickerAPopupD'],
+        ['press-picker-popup', 'press-picker-plus-popup-plus'],
+        ['abcdPickerAPopupD', 'press-picker-popup'],
+        ['PressPickerPlusPopupPlus', 'PressPickerPopup'],
+      ],
+      dirList: [
+        'src',
+      ],
+    },
     // {
     //   list: [
     //     ['press-icon', 'press-icon-plus'],
@@ -161,7 +183,7 @@ function replaceImport() {
 
 function replaceMetaConfig() {
   replaceContent({
-    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json']),
+    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json', 'src/']),
     targetProject: config.targetProject,
   });
 
@@ -169,10 +191,14 @@ function replaceMetaConfig() {
 }
 
 function main() {
-  replaceImport();
+  execCommand('git clean -df', process.cwd(), 'inherit');
   batchRenameSync(config.renameRoot, config.renameConfig);
   batchRenameSync(config.renameRoot, config.renameConfig2);
   batchRenameSync(config.renameRoot, config.renameConfig3);
+  batchRenameSync(config.renameRoot, {
+    'press-picker-plus-popup-plus': 'press-picker-popup',
+  });
+  replaceImport();
   replaceMetaConfig();
 }
 

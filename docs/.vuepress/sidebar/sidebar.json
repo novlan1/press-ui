@@ -20,9 +20,9 @@
           "path": "/components/press/press-col.md"
         },
         {
-          "title": "IconPlus",
+          "title": "Icon",
           "subTitle": "图标",
-          "path": "/components/press/press-icon-plus.md"
+          "path": "/components/press/press-icon.md"
         },
         {
           "title": "Image",
@@ -30,9 +30,9 @@
           "path": "/components/press/press-image.md"
         },
         {
-          "title": "PopupPlus",
+          "title": "Popup",
           "subTitle": "弹出层",
-          "path": "/components/press/press-popup-plus.md"
+          "path": "/components/press/press-popup.md"
         },
         {
           "title": "Style",
@@ -111,9 +111,9 @@
           "path": "/components/press/press-number-keyboard.md"
         },
         {
-          "title": "PickerPlus",
+          "title": "Picker",
           "subTitle": "选择器",
-          "path": "/components/press/press-picker-plus.md"
+          "path": "/components/press/press-picker.md"
         },
         {
           "title": "Radio",
@@ -172,9 +172,9 @@
           "path": "/components/press/press-barrage.md"
         },
         {
-          "title": "DialogPlus",
+          "title": "Dialog",
           "subTitle": "弹出框",
-          "path": "/components/press/press-dialog-plus.md"
+          "path": "/components/press/press-dialog.md"
         },
         {
           "title": "DropdownMenu",
@@ -187,9 +187,9 @@
           "path": "/components/press/press-guide.md"
         },
         {
-          "title": "LoadingPlus",
+          "title": "Loading",
           "subTitle": "加载中",
-          "path": "/components/press/press-loading-plus.md"
+          "path": "/components/press/press-loading.md"
         },
         {
           "title": "Notify",
@@ -202,9 +202,9 @@
           "path": "/components/press/press-overlay.md"
         },
         {
-          "title": "PopoverPlus",
+          "title": "Popover",
           "subTitle": "弹出框",
-          "path": "/components/press/press-popover-plus.md"
+          "path": "/components/press/press-popover.md"
         },
         {
           "title": "PullRefresh",
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "title": "ESport 组件",
+      "title": "业务组件",
       "collapsable": false,
       "children": [
         {
@@ -410,19 +410,19 @@
           "path": "/components/press/press-area.md"
         },
         {
-          "title": "Dialog",
+          "title": "DialogPlus",
           "subTitle": "弹出框",
-          "path": "/components/press/press-dialog.md"
+          "path": "/components/press/press-dialog-plus.md"
         },
         {
-          "title": "Icon",
+          "title": "IconPlus",
           "subTitle": "图标",
-          "path": "/components/press/press-icon.md"
+          "path": "/components/press/press-icon-plus.md"
         },
         {
-          "title": "Loading",
+          "title": "LoadingPlus",
           "subTitle": "加载中",
-          "path": "/components/press/press-loading.md"
+          "path": "/components/press/press-loading-plus.md"
         },
         {
           "title": "Pagination",
@@ -430,19 +430,19 @@
           "path": "/components/press/press-pagination.md"
         },
         {
-          "title": "Picker",
+          "title": "PickerPlus",
           "subTitle": "选择器",
-          "path": "/components/press/press-picker.md"
+          "path": "/components/press/press-picker-plus.md"
         },
         {
-          "title": "Popover",
+          "title": "PopoverPlus",
           "subTitle": "弹出框",
-          "path": "/components/press/press-popover.md"
+          "path": "/components/press/press-popover-plus.md"
         },
         {
-          "title": "Popup",
+          "title": "PopupPlus",
           "subTitle": "弹出层",
-          "path": "/components/press/press-popup.md"
+          "path": "/components/press/press-popup-plus.md"
         }
       ]
     }

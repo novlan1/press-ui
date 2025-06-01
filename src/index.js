@@ -55,7 +55,7 @@ import GuideContent from './packages/press-guide-content/press-guide-content.vue
 import Icon from './packages/press-icon/press-icon.vue';
 import IconDelete from './packages/press-icon-delete/press-icon-delete.vue';
 import IconMusic from './packages/press-icon-music/press-icon-music.vue';
-import IconMusic2 from './packages/press-icon/press-icon-music.vue';
+import IconMusic2 from './packages/press-icon-plus/press-icon-music.vue';
 import IconPlus from './packages/press-icon-plus/press-icon-plus.vue';
 import Image from './packages/press-image/press-image.vue';
 import ImagePreview from './packages/press-image-preview/press-image-preview.vue';
@@ -75,7 +75,7 @@ import Pagination from './packages/press-pagination/press-pagination.vue';
 import Picker from './packages/press-picker/press-picker.vue';
 import PickerColumn from './packages/press-picker-column/press-picker-column.vue';
 import PickerPlus from './packages/press-picker-plus/press-picker-plus.vue';
-import PickerPlusPopupPlus from './packages/press-picker-plus-popup-plus/press-picker-plus-popup-plus.vue';
+import PickerPopup from './packages/press-picker-popup/press-picker-popup.vue';
 import PickerToolbar from './packages/press-picker-toolbar/press-picker-toolbar.vue';
 import PickerView from './packages/press-picker-view/press-picker-view.vue';
 import Popover from './packages/press-popover/press-popover.vue';
@@ -204,7 +204,7 @@ const components = {
   Picker,
   PickerColumn,
   PickerPlus,
-  PickerPlusPopupPlus,
+  PickerPopup,
   PickerToolbar,
   PickerView,
   Popover,

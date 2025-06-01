@@ -101,7 +101,7 @@ If the above usage does not meet your needs, you can use slots to customize the 
    </div>
 </press-cell>
 <press-cell title="Cell">
-   <press-icon slot="right-icon" name="search" class="custom-icon" />
+   <press-icon-plus slot="right-icon" name="search" class="custom-icon" />
 </press-cell>
 ```
 
@@ -133,7 +133,7 @@ The left and right content of the `Cell` can be vertically centered through the 
 
 | Parameter       | Description                                                             | Type               | Default      |
 | --------------- | ----------------------------------------------------------------------- | ------------------ | ------------ |
-| icon            | Left icon name or image link, see Icon component for optional values    | _string_           | -            |
+| icon            | Left icon name or image link, see IconPlus component for optional values    | _string_           | -            |
 | title           | left title                                                              | _string \| number_ | -            |
 | title-width     | Title width, must include units                                         | _string_           | -            |
 | value           | right side content                                                      | _string \| number_ | -            |

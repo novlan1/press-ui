@@ -109,7 +109,7 @@
           <template #title>
             <div>
               {{ t('title') }} 1
-              <PressIconPlus name="question-o" />
+              <PressIcon name="question-o" />
             </div>
           </template>
           {{ t('text') }}
@@ -129,7 +129,7 @@
 <script>
 import PressCollapseItem from 'press-ui/press-collapse-item/press-collapse-item.vue';
 import PressCollapse from 'press-ui/press-collapse/press-collapse.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 
 
 export default {
@@ -149,7 +149,7 @@ export default {
   components: {
     PressCollapseItem,
     PressCollapse,
-    PressIconPlus,
+    PressIcon,
   },
   data() {
     return {

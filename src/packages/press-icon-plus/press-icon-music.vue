@@ -1,5 +1,5 @@
 <template>
-  <PressIconMusicRaw
+  <PressIconPlusMusicRaw
     :width="width"
     :height="height"
     :number="number"
@@ -8,13 +8,13 @@
 </template>
 <script>
 import { PROPS } from '../press-icon-music/computed';
-import PressIconMusicRaw from '../press-icon-music/press-icon-music.vue';
+import PressIconPlusMusicRaw from '../press-icon-music/press-icon-music.vue';
 
 
 export default {
-  name: 'PressIconMusicV2',
+  name: 'PressIconPlusMusicV2',
   components: {
-    PressIconMusicRaw,
+    PressIconPlusMusicRaw,
   },
   props: {
     ...PROPS,

@@ -3,127 +3,139 @@
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap">
   <div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        <!---->
+    <div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          关闭图标
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
       </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          取消图标
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          没有关闭/取消
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          线框按钮
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          禁用状态
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          横版
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          使用插槽
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          Not Promise
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          Promise
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          受控组件
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+        <div class="press-cell__title">
+          函数式调用
+          <!---->
+        </div>
+        <div class="press-cell__value"></div>
+        <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
+          <!---->
+          <!---->
+        </div>
       </div>
     </div>
   </div>
-  <div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        顶部弹出
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        底部弹出
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        左侧弹出
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        右侧弹出
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-  </div>
-  <div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        关闭图标
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        自定义图标
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        图标位置
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        右侧弹出关闭图标
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-  </div>
-  <div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        圆角弹窗
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-  </div>
-  <div class="press-popup-plus ">
-    <div class="press-overlay-index">
-      <!---->
-    </div>
-    <!---->
-  </div>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
 </div>
 `;

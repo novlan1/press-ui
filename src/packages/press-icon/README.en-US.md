@@ -2,87 +2,96 @@
 url : pages/press/icon/icon
 ---
 
-## Icon
+## Icon 
 
-It is used to display `icons` icons, currently only `empty` is reserved, please use `press-icon-plus` for other icons.
+### Basic usage
 
-## Code Demo
-
-### Basic Usage
-
-Using components in ``template``
+The `name` property of `Icon` supports passing in icon names or image links.
 
 ```html
-<press-icon type="empty" size="30"></press-icon>
+<press-icon name="close" />
+<press-icon name="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png" />
 ```
 
-### Music player icon
+### Prompt information
 
-Basic usage:
+After setting the `dot` attribute, a small red dot will be displayed in the upper right corner of the icon. After setting the `info` attribute, the corresponding logo will be displayed in the upper right corner of the icon.
 
 ```html
-<press-icon-music />
+<press-icon name="chat" dot />
+<press-icon name="chat" info="9" />
+<press-icon name="chat" info="99+" />
 ```
 
-```ts
-import PressIconMusic from 'press-ui/press-icon/press-icon/music';
+### IconPlus color
 
-export default {
-  components: {
-    PressIconMusic,
-  }
+Set the `color` property to control the icon color.
+
+```html
+<press-icon name="chat" color="red" />
+```
+
+### IconPlus size
+
+Set the `size` property to control the icon size.
+
+```html
+<press-icon name="chat" size="50px" />
+```
+
+### Custom icon
+
+If you need to use more icons based on the existing Icon, you can import the font file and CSS file corresponding to the third-party iconfont, and then use it directly in the IconPlus component. For example, it can be included in the `app.wxss` file.
+
+```css
+/* Introduce third-party or custom font icon styles */
+@font-face {
+   font-family: 'my-icon';
+   src: url('./my-icon.ttf') format('truetype');
+}
+
+.my-icon {
+   font-family: 'my-icon';
+}
+
+.my-icon-extra::before {
+   content: '\e626';
 }
 ```
 
-Specify the color:
-
 ```html
-<press-icon-music
-   color="rgb(94, 109, 130)"
-/>
+<!-- Specify the class name as my-icon via class-prefix -->
+<press-icon class-prefix="my-icon" name="extra" />
 ```
-
-Specify the number of `bar`:
-
-```html
-<press-icon-music :number="5"/>
-```
-
-
-Specify icon width and height:
-
-```html
-<press-icon-plus
-   width="60px"
-   height="60px"
-/>
-```
-
-
 
 ## API
 
-### Icon Props
+### Props
 
-| property name |  type  | default value |            description             |
-| ----------- | ---- | ----------- | -------------------------------- |
-|     size      | Number |      24       |             Icon size              |
-|     type      | String |       -       | icon pattern, refer to the example |
-|     color     | String |       -       |             icon color             |
+| Parameter    | Description                                                                | Type               | Default           |
+| ------------ | -------------------------------------------------------------------------- | ------------------ | ----------------- |  |
+| name         | icon name or image link                                                    | _string_           | -                 |
+| dot          | Whether to display the small red dot in the upper right corner of the icon | _boolean_          | `false`           |
+| info         | text prompt in the upper right corner of the icon                          | _string \| number_ | -                 |
+| color        | icon color                                                                 | _string_           | `inherit`         |
+| size         | IconPlus size, such as `20px`, `2em`, the default unit is `px`                 | _string \| number_ | `inherit`         |
+| custom-style | custom style                                                               | _string_           | -                 |
+| class-prefix | class name prefix                                                          | _string_           | `press-icon-plus` |
 
-### Icon Events
+### Events
 
-| event name |           description            | return value |
-| -------- | ------------------------------ | ---------- |
-|   @click   | Click the Icon to fire the event |      -       |
+| Event Name | Description                        | Parameters |
+| ---------- | ---------------------------------- | ---------- |
+| click      | Triggered when the icon is clicked | -          |
 
+### External style classes
 
-### Icon Music Props
+| class name   | description           |
+| ------------ | --------------------- |
+| custom-class | root node style class |
 
+## common problem
 
-| property name |  type  | default value |                  description                  |
-| ----------- | ---- | ----------- | ------------------------------------------- |
-|    number     | Number |       3       | The number of vertical bars, supporting `1-5` |
-|     color     | String |   `#2979ff`   |                  icon color                   |
-|     width     | String |    `40px`     |        the overall height of the icon         |
-|    height     | String |    `50px`     |         the overall width of the icon         |
+### What happens when the developer tool prompts Failed to load font?
+
+This is a problem with the developer tool itself, which can be ignored. For details, please refer to [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html) - Notice No. 4.

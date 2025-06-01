@@ -67,7 +67,7 @@ export default {
       placeholder="请选择性别"
       @click-input="showSex = true; hideKeyboard()"
     />
-    <PressIconPlus
+    <PressIcon
       slot="right"
       name="arrow"
     />

@@ -191,7 +191,7 @@ export default {
 | ----------- | --------------------------------------------------------------------------------------------------- | ------------------ | -------------------------- |
 | name        | tag name, as an identifier for matching                                                             | _string \| number_ | index value of current tag |
 | icon        | icon name or image link, see [Ic for optional values]on component](./press-icon-plus)               | _string_           | -                          |
-| icon-prefix | Icon class name prefix, same as [class-prefix attribute](./press-icon-plus#props) of Icon component | _string_           | `press-icon`               |
+| icon-prefix | IconPlus class name prefix, same as [class-prefix attribute](./press-icon-plus#props) of IconPlus component | _string_           | `press-icon`               |
 | dot         | Whether to display a small red dot                                                                  | _boolean_          | -                          |
 | info        | Tip information in the upper right corner of the icon                                               | _string \| number_ | -                          |
 
@@ -199,7 +199,7 @@ export default {
 
 | Name        | Description            |
 | ----------- | ---------------------- |
-| icon        | Icon when not selected |
+| icon        | IconPlus when not selected |
 | icon-active | icon when selected     |
 
 ## Theme customization

@@ -144,7 +144,7 @@ export default {
 ```html
 <press-collapse :value="activeNames" @change="onChange">
   <press-collapse-item name="1">
-    <div slot="title">标题1<press-icon name="question-o" /></div>
+    <div slot="title">标题1<press-icon-plus name="question-o" /></div>
     代码是写出来给人看的，附带能在机器上运行
   </press-collapse-item>
   <press-collapse-item title="标题2" name="2" icon="shop-o">

@@ -55,7 +55,7 @@
           @touchstart.stop="onBackspaceStart"
           @touchend="onBackspaceEnd"
         >
-          <DeleteIcon class="press-number-keyboard__delete-icon" />
+          <PressIconPlusDelete class="press-number-keyboard__delete-icon" />
         </button>
         <button
           v-if="mode === 'accounting'"
@@ -77,8 +77,8 @@ import { vModelMixin } from '../common/vue3/adapter';
 
 import { t } from '../locale';
 
-import DeleteIcon from '../press-icon-delete/press-icon-delete.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressIconPlusDelete from '../press-icon-delete/press-icon-delete.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
@@ -89,7 +89,7 @@ export default {
   },
   components: {
     PressPopup,
-    DeleteIcon,
+    PressIconPlusDelete,
   },
   mixins: [vModelMixin],
   props: {

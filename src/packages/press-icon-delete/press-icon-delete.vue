@@ -22,7 +22,7 @@
 </template>
 <script>
 export default {
-  name: 'PressIconDelete',
+  name: 'PressIconPlusDelete',
 };
 </script>
 <style scoped lang="scss" src="./css/index.scss">

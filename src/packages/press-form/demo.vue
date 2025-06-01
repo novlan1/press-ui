@@ -36,7 +36,7 @@
           @click="showSex = true; hideKeyboard()"
         />
         <template #right>
-          <PressIconPlus
+          <PressIcon
             name="arrow"
           />
         </template>
@@ -181,7 +181,7 @@ import PressField from 'press-ui/press-field/press-field.vue';
 import PressFormItem from 'press-ui/press-form-item/press-form-item.vue';
 
 import PressForm from 'press-ui/press-form/press-form.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
 import PressRadio from 'press-ui/press-radio/press-radio.vue';
 
@@ -193,7 +193,7 @@ export default {
     PressForm,
     PressFormItem,
     PressField,
-    PressIconPlus,
+    PressIcon,
     PressCheckbox,
     PressCheckboxGroup,
     PressRadio,

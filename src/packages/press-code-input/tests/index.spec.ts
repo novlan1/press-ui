@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
 
-import CodeInput from '../press-code-input.vue';
+import PressCodeInput from '../press-code-input.vue';
 
-describe('CodeInput', () => {
+describe('PressCodeInput', () => {
   it('should emit change and input event on input', async () => {
-    const wrapper = mount(CodeInput, {
+    const wrapper = mount(PressCodeInput, {
       propsData: {
         value: '',
       },
@@ -28,7 +28,7 @@ describe('CodeInput', () => {
   });
 
   it('should emit finish event when input reaches max length', async () => {
-    const wrapper = mount(CodeInput, {
+    const wrapper = mount(PressCodeInput, {
       propsData: {
         value: '',
         maxLength: 3,
@@ -44,7 +44,7 @@ describe('CodeInput', () => {
   });
 
   it('should remove dot when dot is disabled and input contains dot', async () => {
-    const wrapper = mount(CodeInput, {
+    const wrapper = mount(PressCodeInput, {
       propsData: {
         value: '',
         disabledDot: true,

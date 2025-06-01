@@ -130,7 +130,7 @@ export default {
 ```html
 <press-collapse :value="activeNames" @change="onChange">
    <press-collapse-item name="1">
-     <div slot="title">Title 1<press-icon name="question-o" /></div>
+     <div slot="title">Title 1<press-icon-plus name="question-o" /></div>
      Code is written to be read by humans, with the added bonus of being able to run on a machine
    </press-collapse-item>
    <press-collapse-item title="Title 2" name="2" icon="shop-o">

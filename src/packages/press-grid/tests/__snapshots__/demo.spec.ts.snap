@@ -448,7 +448,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
           <div class="press-grid-item__icon">
             <div class=" press-icon-plus press-icon-plus-home-o">
-              <div class="press-info press-info press-info--dot press-icon-plus__info">
+              <div class="press-info press-info press-info--dot press-icon__info">
 
               </div>
               <!---->
@@ -463,7 +463,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-grid-item__content press-grid-item__content--center press-hairline--surround">
           <div class="press-grid-item__icon">
             <div class=" press-icon-plus press-icon-plus-search">
-              <div class="press-info press-info press-icon-plus__info">
+              <div class="press-info press-info press-icon__info">
                 99+
               </div>
               <!---->

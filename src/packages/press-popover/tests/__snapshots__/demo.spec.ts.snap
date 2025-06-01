@@ -1,44 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders demo correctly 1`] = `
-<div class="demo-wrap">
+<div class="demo-wrap demo-wrap--gray">
+  <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
+    <div class="press-cell__title">
+      是否使用 getContainer
+      <!---->
+    </div>
+    <div class="press-cell__value"></div>
+    <div class="press-switch " style="font-size: 22px;">
+      <div class="press-switch__node">
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-popover__wrapper" style="margin-left: 16px;">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
+        <!---->
+        <!---->
+      </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
+          <!---->
+          <div class="press-button__text">
+            浅色风格
+          </div>
+        </button></button>
+    </div>
+    <div class="press-popover__wrapper" style="z-index: 1; margin-left: 16px;">
+      <div class="press-popup-plus  press-popover press-popover--dark press-popover--bottom press-popover press-popover--dark press-popover--bottom">
+        <!---->
+        <!---->
+      </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
+          <!---->
+          <div class="press-button__text">
+            深色风格
+          </div>
+        </button></button>
+    </div>
+  </div>
   <div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
       <div class="press-cell__title">
-        Top
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        Bottom
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        Left
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        Right
+        选择弹出位置
         <!---->
       </div>
       <div class="press-cell__value"></div>
@@ -48,9 +51,41 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="demo-block-wrap">
-    <div class="demo-block">
-      <!---->
+  <div>
+    <div class="press-popover__wrapper" style="z-index: 2; margin-left: 16px;">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
+        <!---->
+        <!---->
+      </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
+          <!---->
+          <div class="press-button__text">
+            展示图标
+          </div>
+        </button></button>
+    </div>
+    <div class="press-popover__wrapper" style="z-index: 2; margin-left: 16px;">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom press-popover press-popover--light press-popover--bottom">
+        <!---->
+        <!---->
+      </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
+          <!---->
+          <div class="press-button__text">
+            禁用选项
+          </div>
+        </button></button>
+    </div>
+  </div>
+  <div>
+    <div class="press-popover__wrapper" style="z-index: 1; margin-left: 16px;">
+      <div class="press-popup-plus  press-popover press-popover--light press-popover--bottom-start press-popover press-popover--light press-popover--bottom-start">
+        <!---->
+        <!---->
+      </div> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--primary press-button--normal ">
+          <!---->
+          <div class="press-button__text">
+            自定义内容
+          </div>
+        </button></button>
     </div>
   </div>
 </div>

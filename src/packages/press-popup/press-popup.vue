@@ -1,309 +1,252 @@
 <template>
   <div
-    v-if="innerShow"
-    :class="[
-      'press-popup',
-      getPropOrData('popupClass'),
-      getPropOrData('horizontal') ? 'press-popup__hor' : 'press-popup__vert',
-      mode === 'white' ? 'press-popup--white' : ''
-    ]"
-    :style="popupStyle"
-    @touchmove.stop="preventTouchMove"
+    :class="innerWrapClass"
   >
-    <!-- 透明遮罩 -->
-    <div
-      v-if="lockScroll"
-      :class="['press-popup--mask',
-               isEnter ? 'press--animation__fade-in':'press--animation__fade-out']"
-      @click.stop="onClickTouch"
-      @touchmove.stop.prevent="preventTouchMove"
+    <PressOverlay
+      v-if="overlay"
+      :show="show"
+      :z-index="zIndex"
+      :custom-style="overlayStyle"
+      :duration="duration"
+      :lock-scroll="lockScroll"
+      @click="onClickOverlay"
     />
     <div
-      v-else
-      :class="['press-popup--mask',
-               isEnter ? 'press--animation__fade-in':'press--animation__fade-out']"
-      @click.stop="onClickTouch"
-    />
-
-    <div
-      :class="['press-popup--content',
-               isEnter ?
-                 getPropOrData('horizontal') ? 'press--animation__right-enter':'press--animation__bottom-enter':
-                 getPropOrData('horizontal') ? 'press--animation__right-leave':'press--animation__bottom-leave']"
-      :style="{width: getPropOrData('horizontal') ? `${getPropOrData('widthNumber')}%` : '100%'}"
+      v-if="inited"
+      :class="popupClass"
+      :style="popupStyle"
+      @transitionend="onTransitionEnd"
     >
-      <div
-        v-if="!getPropOrData('showTitle')
-          && (!getPropOrData('horizontal') || !getPropOrData('closeIcon') || !getPropOrData('arrowIcon'))"
-        class="press-popup--title-line"
-        @click.stop="clickCancel"
-      />
-      <div
-        v-if="getPropOrData('showTitle')"
-        class="press-popup--title-wrap"
-      >
-        <div class="press-popup__left">
-          <slot name="icon">
-            <div
-              v-if="getPropOrData('closeIcon')"
-              class="press-popup--close iconfont icon-close"
-              @click.stop="clickCancel"
-            />
-
-            <div
-              v-else-if="getPropOrData('arrowIcon')"
-              class="press-popup--arrow iconfont icon-back"
-              @click.stop="clickCancel"
-            />
-          </slot>
-        </div>
-
-        <p
-          v-if="getPropOrData('title')"
-          class="press-popup--title"
-        >
-          {{ getPropOrData('title') }}
-        </p>
-        <slot
-          v-else
-          name="title"
-        />
-
-        <div class="press-popup--title-btn-wrap">
-          <slot name="button">
-            <PressButton
-              v-if="getPropOrData('button')"
-              :type="buttonType"
-              :custom-style="buttonCustomStyle"
-              @click="clickConfirm"
-            >
-              {{ getPropOrData('button') }}
-            </PressButton>
-          </slot>
-        </div>
-      </div>
       <slot />
+      <PressIcon
+        v-if="closeable"
+        :name="closeIcon"
+        :class="innerCloseIconClass"
+        :custom-class="innerCloseIconCustomClass"
+        @click="onClickCloseIcon"
+      />
     </div>
   </div>
 </template>
 <script>
-import { getVirtualHostOptions, getDefaultProps, FUNCTIONAL, getPropOrData } from '../common/component-handler/press-component';
-import { toPromise } from '../common/format/function';
-import { style } from '../common/utils/style';
-import PressButton from '../press-button/press-button.vue';
+import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import utils from '../common/utils/utils';
+import { transition } from '../mixins/basic/transition';
 
-import { allProps, propsKeyMap } from './computed';
+// #ifdef H5
+import { PortalMixin } from '../mixins/portal/index';
+// #endif
 
+import PressIcon from '../press-icon/press-icon.vue';
+import PressOverlay from '../press-overlay/press-overlay.vue';
 
-const ANIMATION_TIME = 300;
+import computed from './computed';
+
 
 export default {
   name: 'PressPopup',
   options: {
-    ...getVirtualHostOptions(true, false),
+    ...defaultOptions,
     styleIsolation: 'shared',
   },
   components: {
-    PressButton,
+    PressIcon,
+    PressOverlay,
   },
+  mixins: [
+    transition(false),
+
+    // #ifdef H5
+    PortalMixin({
+      afterPortal() {
+
+      },
+    }),
+    // #endif
+  ],
   props: {
-    ...allProps,
+    enterClass: {
+      type: String,
+      default: '',
+    },
+    enterActiveClass: {
+      type: String,
+      default: '',
+    },
+    enterToClass: {
+      type: String,
+      default: '',
+    },
+    leaveClass: {
+      type: String,
+      default: '',
+    },
+    leaveActiveClass: {
+      type: String,
+      default: '',
+    },
+    leaveToClass: {
+      type: String,
+      default: '',
+    },
+    closeIconClass: {
+      type: String,
+      default: '',
+    },
+
+    round: Boolean,
+    closeable: Boolean,
+    customStyle: { type: [String, Object], default: '' },
+    overlayStyle: { type: String, default: '' },
+    transition: {
+      type: String,
+      default: '',
+      // observer: 'observeClass',
+    },
+    zIndex: {
+      type: Number,
+      default: 100,
+    },
+    overlay: {
+      type: Boolean,
+      default: true,
+    },
+    closeIcon: {
+      type: String,
+      default: 'cross',
+    },
+    closeIconPosition: {
+      type: String,
+      default: 'top-right',
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    position: {
+      type: String,
+      default: 'center',
+      // observer: 'observeClass',
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
+    safeAreaInsetTop: {
+      type: Boolean,
+      default: false,
+    },
+    lockScroll: {
+      type: Boolean,
+      default: true,
+    },
+    ...defaultProps,
+    wrapClass: {
+      type: String,
+      default: '',
+    },
   },
-  emits: ['onCancel', 'cancel', 'onConfirm', 'confirm'],
+  emits: [
+    'close',
+    'click-overlay',
+    'before-enter',
+    'enter',
+    'after-enter',
+    'before-leave',
+    'leave',
+    'after-leave',
+  ],
   data() {
     return {
-      isEnter: true,
-      innerShow: this.mode === FUNCTIONAL ? false : !!this.isShow,
-      timer: 0,
-      watchShowTimer: null,
-      functionModeData: { ...getDefaultProps(allProps) },
+      classes: '',
     };
   },
   computed: {
-    buttonType() {
-      if (this.getPropOrData('borderButton')) {
-        return 'e-sport-border';
-      }
-      if (this.getPropOrData('disabledButton')) {
-        return 'e-sport-primary-disabled';
-      }
-      return 'e-sport-primary';
+    innerWrapClass() {
+      return `press-popup-plus ${this.wrapClass}`;
+    },
+    popupClass() {
+      const {
+        position,
+        round,
+        safeAreaInsetBottom,
+        safeAreaInsetTop,
+        customClass,
+
+        classes,
+      } = this;
+      return `${
+        utils.bem2('popup', [
+          position,
+          {
+            round,
+            safe: safeAreaInsetBottom,
+            safeTop: safeAreaInsetTop,
+          },
+        ])
+      } ${classes} ${customClass}`;
     },
     popupStyle() {
-      const customStyle = this.getPropOrData('customStyle');
-      const zIndex = this.getPropOrData('zIndex');
-
-      return style([
-        {
-          zIndex,
-        },
-        customStyle,
-      ]);
+      const { zIndex, currentDuration, display, customStyle } = this;
+      return computed.popupStyle({ zIndex, currentDuration, display, customStyle });
     },
-    isFunctionMode() {
-      return this.mode === FUNCTIONAL;
+    innerCloseIconClass() {
+      const { closeIconClass, closeIconPosition } = this;
+      return `press-popup__close-icon press-popup__close-icon--${closeIconPosition} ${closeIconClass} `;
     },
-    buttonCustomStyle() {
-      return {
-        width: 'auto',
-        height: '100%',
-        padding: '0 10px',
-        fontSize: 'inherit',
-      };
+    innerCloseIconCustomClass() {
+      let result = '';
+      // #ifdef MP-ALIPAY
+      result = `${result} ${this.innerCloseIconClass}`;
+      // #endif
+      return result;
     },
   },
   watch: {
-    isShow: {
-      handler(val) {
-        if (this.isFunctionMode) return;
-        this.isEnter = val;
-
-        if (!val) {
-          clearTimeout(this.watchShowTimer);
-          this.watchShowTimer = setTimeout(() => {
-            this.innerShow = false;
-          }, ANIMATION_TIME);
-        } else {
-          clearTimeout(this.watchShowTimer);
-          this.innerShow = true;
-        }
+    transition: {
+      handler() {
+        this.observeClass();
       },
-      immediate: true,
     },
-    // #ifdef H5
-    isEnter: {
-      handler(val) {
-        if (val) {
-          document.body.style.overflowY = 'hidden';
-        } else {
-          document.body.style.overflowY = '';
-        }
+    position: {
+      handler() {
+        this.observeClass();
       },
-      immediate: true,
     },
-    // #endif
   },
-  mounted() {
-  },
-  beforeDestroy() {
-    this.onBeforeDestroy();
-  },
-  beforeUnmount() {
-    this.onBeforeDestroy();
+  created() {
+    this.observeClass();
   },
   methods: {
-    onBeforeDestroy() {
-      clearTimeout(this.timer);
-    },
-    showDialog(options) {
-      if (options) {
-        this.functionModeData = {
-          ...this.functionModeData,
-          ...options,
-        };
-      }
-      this.innerShow = true;
-      this.isEnter = true;
-    },
-    getPropOrData(key) {
-      const res = getPropOrData({
-        allProps,
-        isFunctionMode: this.isFunctionMode,
-        functionModeData: this.functionModeData,
-        propsKeyMap,
-        key,
-        context: this,
+    setData(data) {
+      Object.keys(data).forEach((key) => {
+        this[key] = data[key];
       });
-
-      return res;
     },
-    preventTouchMove() {
-      return;
+    onClickCloseIcon() {
+      this.$emit('close');
     },
-    onClickTouch() {
-      if (this.getPropOrData('closeOnClickOverlay')) {
-        this.clickCancel();
-      }
-    },
-    clickCancel() {
-      if (typeof this.asyncCancel === 'function') {
-        toPromise(this.asyncCancel()).then((value) => {
-          if (value) {
-            this.emitCancel();
-          }
-        });
-        return;
-      }
-      if (typeof this.asyncClose === 'function') {
-        toPromise(this.asyncClose()).then((value) => {
-          if (value) {
-            this.emitCancel();
-          }
-        });
-        return;
-      }
-      if (this.$parent.validateCancel) {
-        toPromise(this.$parent.validateCancel()).then((value) => {
-          if (value) {
-            this.emitCancel();
-          }
-        });
-        return;
-      }
-
-      this.emitCancel();
-    },
-    emitCancel() {
-      this.isEnter = false;
-
-      this.timer = setTimeout(() => {
-        this.$emit('onCancel');
-        this.$emit('cancel');
-        this.innerShow = false;
-      }, ANIMATION_TIME);
-
-      const { callback } = this.functionModeData;
-      if (typeof callback === 'function') {
-        callback('cancel');
+    onClickOverlay() {
+      this.$emit('click-overlay');
+      if (this.closeOnClickOverlay) {
+        this.$emit('close');
       }
     },
-    clickConfirm() {
-      if (typeof this.asyncConfirm === 'function') {
-        toPromise(this.asyncConfirm()).then((value) => {
-          if (value) {
-            this.emitConfirm();
-          }
-        });
-        return;
+    observeClass() {
+      const { transition, position, duration } = this;
+      const updateData = {
+        dataName: transition || position,
+      };
+      if (transition === 'none') {
+        updateData.duration = 0;
+        this.originDuration = duration;
+      } else if (this.originDuration != null) {
+        updateData.duration = this.originDuration;
       }
-
-      if (this.$parent.validateConfirm) {
-        toPromise(this.$parent.validateConfirm()).then((value) => {
-          if (value) {
-            this.emitConfirm();
-          }
-        });
-        return;
-      }
-
-      this.emitConfirm();
-    },
-    emitConfirm() {
-      this.isEnter = false;
-
-      this.timer = setTimeout(() => {
-        this.$emit('onConfirm');
-        this.$emit('confirm');
-        this.innerShow = false;
-      }, ANIMATION_TIME);
-
-      const { callback } = this.functionModeData;
-      if (typeof callback === 'function') {
-        callback('confirm');
-      }
+      this.setData(updateData);
     },
   },
 };
-
 </script>
-<style lang="scss" scoped src="./css/index.scss"></style>
+<style lang="scss" scoped src="./css/index.scss">
+</style>

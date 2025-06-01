@@ -17,7 +17,7 @@
       @after-enter="onOpened"
       @after-leave="onClosed"
     >
-      <Calendar
+      <PressCalendarInner
         :title="title"
         :color="color"
         :formatter="formatter"
@@ -45,7 +45,7 @@
       />
     </PressPopup>
 
-    <Calendar
+    <PressCalendarInner
       v-else
       :max-date="maxDate"
       :row-height="rowHeight"
@@ -86,8 +86,8 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { requestAnimationFrame, nextTick } from '../common/utils/system';
 import { t } from '../locale';
 
-import Calendar from '../press-calendar-inner/press-calendar-inner.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressCalendarInner from '../press-calendar-inner/press-calendar-inner.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 import Toast from '../press-toast/handler';
 import PressToast from '../press-toast/press-toast.vue';
@@ -115,7 +115,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    Calendar,
+    PressCalendarInner,
     PressPopup,
     PressToast,
   },

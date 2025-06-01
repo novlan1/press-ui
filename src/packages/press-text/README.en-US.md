@@ -153,7 +153,7 @@ export default {
 | lines       | The number of lines displayed for text. If set, ellipsis will be displayed if the number of lines exceeds this | _string \| number_           | -             |
 | color       | Text color                                                                                                     | _string_                     | `#303133`     |
 | size        | Font size                                                                                                      | _string \| number_           | -             |
-| icon-style  | Icon style                                                                                                     | _string_                     | -             |
+| icon-style  | IconPlus style                                                                                                     | _string_                     | -             |
 | decoration  | Text decoration, underline, strikethrough, etc., optional values ​​are `none                                   | underline                    | line-through` | _string_ | `none`   |
 | margin      | Margin                                                                                                         | _string \| number \| object_ | -             |
 | line-height | Text line height                                                                                               | _string_                     | -             |

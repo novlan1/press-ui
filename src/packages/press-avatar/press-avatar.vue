@@ -20,7 +20,7 @@
       <template v-if="mpAvatar && allowMp" />
       <!-- #endif -->
 
-      <PressIconPlus
+      <PressIcon
         v-else-if="icon"
         :name="icon"
         :size="fontSize"
@@ -53,7 +53,7 @@ import { addUnit } from '../common/utils/add-unit';
 import { style } from '../common/utils/style';
 import { random } from '../common/utils/utils';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressImage from '../press-image/press-image.vue';
 
 import props from './computed';
@@ -71,7 +71,7 @@ export default {
   },
   components: {
     PressImage,
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [props],
   emits: [

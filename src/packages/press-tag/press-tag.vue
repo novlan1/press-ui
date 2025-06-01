@@ -4,7 +4,7 @@
     :style="tagStyle"
   >
     <slot />
-    <PressIconPlus
+    <PressIcon
       v-if="closeable"
       name="cross"
       custom-class="press-tag__close"
@@ -16,7 +16,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 
@@ -28,7 +28,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   props: {
     size: { type: String, default: '' },

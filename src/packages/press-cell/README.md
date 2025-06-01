@@ -115,7 +115,7 @@ export default {
   </div>
 </press-cell>
 <press-cell title="单元格">
-  <press-icon slot="right-icon" name="search" class="custom-icon" />
+  <press-icon-plus slot="right-icon" name="search" class="custom-icon" />
 </press-cell>
 ```
 
@@ -193,7 +193,7 @@ export default {
 
 | 参数            | 说明                                                       | 类型               | 默认值       |
 | --------------- | ---------------------------------------------------------- | ------------------ | ------------ |
-| icon            | 左侧图标名称或图片链接，可选值见 Icon 组件                 | _string_           | -            |
+| icon            | 左侧图标名称或图片链接，可选值见 IconPlus 组件                 | _string_           | -            |
 | title           | 左侧标题                                                   | _string \| number_ | -            |
 | title-width     | 标题宽度，须包含单位                                       | _string_           | -            |
 | value           | 右侧内容                                                   | _string \| number_ | -            |

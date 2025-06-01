@@ -71,7 +71,7 @@
       @touchmove.stop.prevent="onTouchMove"
     >
       <slot>
-        <PressIconPlus
+        <PressIcon
           name="cross"
           :color="styles.iconColor"
           :size="styles.iconFontSize"
@@ -85,13 +85,13 @@
 
 <script>
 import { getRect, getWindowWidth } from '../common/dom/rect';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 
 export default {
   name: 'PressFab',
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   props: {
     pattern: {

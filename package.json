@@ -100,6 +100,7 @@
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
+    "turn:plus": "node script/turn-plus/plus",
     "version:tip": "node script/deploy/version-tip"
   },
   "lint-staged": {

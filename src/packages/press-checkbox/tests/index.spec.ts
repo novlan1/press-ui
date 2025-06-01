@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
 
-import Checkbox from '../press-checkbox.vue';
+import PressCheckbox from '../press-checkbox.vue';
 
-describe('Checkbox', () => {
+describe('PressCheckbox', () => {
   it('should emit change event when clicked', async () => {
-    const wrapper = mount(Checkbox, {
+    const wrapper = mount(PressCheckbox, {
       propsData: {
         value: false,
       },
@@ -20,7 +20,7 @@ describe('Checkbox', () => {
   });
 
   it('should emit change event when label is clicked', async () => {
-    const wrapper = mount(Checkbox, {
+    const wrapper = mount(PressCheckbox, {
       propsData: {
         value: true,
       },
@@ -36,7 +36,7 @@ describe('Checkbox', () => {
   });
 
   it('should not emit change event when disabled', async () => {
-    const wrapper = mount(Checkbox, {
+    const wrapper = mount(PressCheckbox, {
       propsData: {
         value: false,
         disabled: true,
@@ -49,7 +49,7 @@ describe('Checkbox', () => {
   });
 
   it('should not emit change event when label is disabled and clicked', async () => {
-    const wrapper = mount(Checkbox, {
+    const wrapper = mount(PressCheckbox, {
       propsData: {
         value: true,
         labelDisabled: true,
@@ -61,7 +61,7 @@ describe('Checkbox', () => {
   });
 
   it('should emit change event when label is disabled but checkbox is clicked', async () => {
-    const wrapper = mount(Checkbox, {
+    const wrapper = mount(PressCheckbox, {
       propsData: {
         value: true,
         labelDisabled: true,

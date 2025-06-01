@@ -1,254 +1,102 @@
 <template>
   <div
-    ref="wrapper"
-    :class="[utils.bem2('popover__wrapper')]"
-    :style="wrapperStyle"
-    @click.stop="onClickWrapper"
+    v-if="innerShow"
+    :style="wrapStyle"
+    :class="['press-popover',
+             `press-popover--${placement}`,
+             popperClass,
+             customClass,
+             isEnter ? 'press--animation__fade-in':'press--animation__fade-out'
+    ]"
   >
-    <PressPopup
-      ref="popover"
-      :show="realModelValue"
-      :class="[popupClass]"
-      :wrap-class="popupCustomClass"
-      :overlay="overlay"
-      position="null"
-      transition="popover-zoom"
-      :lock-scroll="false"
-      :duration="duration"
-      :get-container="getContainer"
-      :custom-style="popoverStyle"
-      @before-leave="onClose"
-      @after-leave="onClosed"
-      @before-enter="onOpen"
-      @after-enter="onOpened"
-    >
-      <div :class="[utils.bem2('popover__arrow')]" />
-      <div
-        :class="[utils.bem2('popover__content')]"
-        role="menu"
-      >
-        <slot>
-          <div
-            v-for="(action, index) of actions"
-            :key="index"
-            :class="[
-              utils.bem2('popover__action', {
-                disabled: action.disabled,
-                'with-icon': action.icon
-              }),
-              action.className
-            ]"
-            @click.stop="onClickAction(action, index)"
-          >
-            <PressIconPlus
-              v-if="action.icon"
-              :name="action.icon"
-              custom-class="press-popover-action-icon"
-            />
-            <div
-              :class="[
-                utils.bem2('popover__action-text'),
-                'press-hairline--bottom'
-              ]"
-            >
-              {{ action.text }}
-            </div>
-          </div>
-        </slot>
-      </div>
-    </PressPopup>
-    <slot name="reference" />
+    <slot />
   </div>
 </template>
 <script>
+import { getVirtualHostOptions, defaultProps } from '../common/component-handler/press-component';
 import { style } from '../common/utils/style';
-import utils from '../common/utils/utils';
-import { vModelMixin } from '../common/vue3/adapter';
 
 // #ifdef H5
 import { clickOutsideMixin } from '../mixins/basic/click-outside';
 // #endif
 
-import { transition } from '../mixins/basic/transition';
-
-// #ifdef H5
-import { popoverMixin } from '../mixins/popover/index';
-// #endif
-
-
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
-
 
 export default {
   name: 'PressPopoverPlus',
   options: {
-    styleIsolation: 'shared',
-  },
-  components: {
-    PressPopup,
-    PressIconPlus,
+    ...getVirtualHostOptions(true, true),
   },
   mixins: [
-    vModelMixin,
-
-    transition(false),
     // #ifdef H5
     clickOutsideMixin({
       event: 'touchstart',
       method: 'onClickOutside',
     }),
-    popoverMixin,
     // #endif
   ],
   props: {
-    // value: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-    overlay: {
-      type: Boolean,
-      default: false,
-    },
-    trigger: {
-      type: String,
-      default: '',
-    },
-    offset: {
-      type: Array,
-      default: () => [0, 8],
-    },
-    theme: {
-      type: String,
-      default: 'light',
-    },
-    actions: {
-      type: Array,
-      default: () => [],
-    },
-    placement: {
-      type: String,
-      default: 'bottom',
-    },
-    getContainer: {
-      type: [String, Function],
-      default: '',
-    },
-    closeOnClickAction: {
+    show: {
       type: Boolean,
       default: true,
     },
-    zIndex: {
-      type: Number,
-      default: 1,
+    placement: {
+      type: String,
+      default: 'right',
     },
+    popperClass: {
+      type: String,
+      default: '',
+    },
+    ...defaultProps,
     customStyle: {
       type: [String, Object],
       default: '',
     },
-    duration: {
-      type: Number,
-      default: 200,
-    },
   },
-  emits: [
-    'close',
-    'closed',
-    'input',
-    'open',
-    'opened',
-    'select',
-    'touchstart',
-    'update:modelValue',
-  ],
+
+  emits: [],
   data() {
     return {
-      utils,
+      innerShow: false,
+      isEnter: false,
+
+      watchShowTimer: null,
     };
   },
   computed: {
-    popoverStyle() {
-      const { zIndex } = this;
-      return `z-index: ${zIndex}`;
-    },
-    wrapperStyle() {
-      const { customStyle } = this;
-      return style(customStyle);
-    },
-    popupClass() {
-      const { theme, placement, getContainer } = this;
-      return utils.bem2('popover', [theme, placement, { 'custom-container': !!getContainer }]);
-    },
-    popupCustomClass() {
-      let result = '';
-      // #ifdef MP-ALIPAY
-      result = `${result} ${this.popupClass}`;
-      // #endif
-      return result;
+    wrapStyle() {
+      return style(this.customStyle);
     },
   },
-  mounted() {
+  watch: {
+    show: {
+      handler(value) {
+        if (value) {
+          clearTimeout(this.watchShowTimer);
+
+          this.innerShow = value;
+          this.isEnter = value;
+        } else {
+          // remove
+          this.isEnter = value;
+          clearTimeout(this.watchShowTimer);
+
+          this.watchShowTimer = setTimeout(() => {
+            this.innerShow = value;
+          }, 300);
+        }
+      },
+      immediate: true,
+    },
   },
   methods: {
-    setData(data) {
-      Object.keys(data).forEach((key) => {
-        this[key] = data[key];
-      });
-    },
-    // onToggle(value) {
-    //   // this.$emit('input', value);
-    // },
-
-    onClickWrapper() {
-      if (this.trigger === 'click') {
-        // this.onToggle(!this.value);
-        this.emitModelValue(!this.realModelValue);
-      }
-    },
-
-    onTouchstart(event) {
-      event.stopPropagation();
-      this.$emit('touchstart', event);
-    },
-
-    onClickAction(action, index) {
-      if (action.disabled) {
-        return;
-      }
-
-      this.$emit('select', action, index);
-
-      if (this.closeOnClickAction) {
-        this.$emit('input', false);
-        this.$emit('update:modelValue', false);
-      }
-    },
-
     onClickOutside() {
-      this.$emit('input', false);
-      this.$emit('update:modelValue', false);
-    },
-
-    onOpen() {
-      this.$emit('open');
-    },
-
-    /* istanbul ignore next */
-    onOpened() {
-      this.$emit('opened');
-    },
-
-    onClose() {
       this.$emit('close');
-    },
-
-    /* istanbul ignore next */
-    onClosed() {
-      this.$emit('closed');
     },
   },
 };
 
 </script>
-<style scoped lang="scss" src="./css/index.scss"></style>
-<style scoped lang="scss" src="./css/mp-alipay.scss"></style>
+<!-- 业务改造成本大，不能使用 scoped -->
+<style lang="scss" src="./css/index.scss">
+</style>

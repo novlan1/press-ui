@@ -47,7 +47,7 @@ The button is disabled through the `disabled` attribute, and the `click` event o
 <press-button disabled type="info">Disabled state</press-button>
 ```
 
-### Loading Status
+### LoadingPlus Status
 
 ```html
 <press-button loading type="primary" />
@@ -64,7 +64,7 @@ The button is disabled through the `disabled` attribute, and the `click` event o
 
 ### icon button
 
-Set the button icon through the `icon` property, which supports all icons in the Icon component, and can also pass in the icon URL.
+Set the button icon through the `icon` property, which supports all icons in the IconPlus component, and can also pass in the icon URL.
 
 ```html
 <press-button icon="star-o" type="primary" />
@@ -162,7 +162,7 @@ Adding `loading` to the `E-SPORT` type button means the loading state.
 | size               | button size, optional values are `normal` `large` `small` `mini`                                                                                                                                           | _string_  | `normal`             |
 | color `v1.0.0`     | button color, support `linear-gradient` gradient color                                                                                                                                                     | _string_  | -                    |
 | icon               | Left icon name or image link, optional values see [Icon component](./press-icon-plus)                                                                                                                      | _string_  | -                    |
-| class-prefix       | Icon class name prefix, same as [class-prefix attribute](./press-icon-plus) of Icon component                                                                                                              | _string_  | `press-icon`         |
+| class-prefix       | IconPlus class name prefix, same as [class-prefix attribute](./press-icon-plus) of IconPlus component                                                                                                              | _string_  | `press-icon`         |
 | plain              | Whether it is a plain button                                                                                                                                                                               | _boolean_ | `false`              |
 | block              | Whether it is a block level element                                                                                                                                                                        | _boolean_ | `false`              |
 | round              | Whether it is a round button                                                                                                                                                                               | _boolean_ | `false`              |

@@ -144,7 +144,7 @@
         icon="shop-o"
       >
         <template #right-icon>
-          <PressIconPlus
+          <PressIcon
             name="search"
             class="custom-icon"
           />
@@ -221,7 +221,7 @@
 <script>
 import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 import PressTag from 'press-ui/press-tag/press-tag.vue';
@@ -279,7 +279,7 @@ export default {
     PressCell,
     PressCellGroup,
     PressTag,
-    PressIconPlus,
+    PressIcon,
   },
   data() {
     return {

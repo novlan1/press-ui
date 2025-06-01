@@ -15,7 +15,7 @@
       class="press-action-sheet__header"
     >
       {{ title }}
-      <PressIconPlus
+      <PressIcon
         name="cross"
         custom-class="press-action-sheet__close"
         @click="onClose"
@@ -86,9 +86,9 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import utils from '../common/utils/utils';
 import { button } from '../mixins/basic/button';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressLoading from '../press-loading-plus/press-loading-plus.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
+import PressLoading from '../press-loading/press-loading.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
@@ -98,7 +98,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressPopup,
     PressLoading,
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PressPopupPlus
+    <PressPopup
       v-if="!isESport"
       :show="show"
       position="bottom"
@@ -24,9 +24,9 @@
         @cancel="popupChanged(false)"
         @confirm="confirm"
       />
-    </PressPopupPlus>
+    </PressPopup>
 
-    <PressPopup
+    <PressPopupPlus
       v-else
       :is-show="show"
       button="确定"
@@ -50,12 +50,12 @@
         :toolbar-class="toolbarClass"
         :column-class="columnClass"
       />
-    </PressPopup>
+    </PressPopupPlus>
   </div>
 </template>
 <script>
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 import PressPopup from '../press-popup/press-popup.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 
 import PressArea from './press-area.vue';
 
@@ -63,8 +63,8 @@ import PressArea from './press-area.vue';
 export default {
   name: 'PressAreaPopup',
   components: {
-    PressPopup,
     PressPopupPlus,
+    PressPopup,
     PressArea,
   },
   props: {

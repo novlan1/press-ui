@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <PressDialogComp
+    <PressDialogPlus
       id="tip-match-comm-tips-dialog"
       ref="tip-match-comm-tips-dialog"
     />
@@ -51,14 +51,14 @@
 
 <script>
 import { routerPush } from '../common/utils/router';
-import PressDialog from '../press-dialog';
-import PressDialogComp from '../press-dialog/press-dialog.vue';
+import DialogPlus from '../press-dialog-plus';
+import PressDialogPlus from '../press-dialog-plus/press-dialog-plus.vue';
 
 
 export default {
   name: 'PressAbout',
   components: {
-    PressDialogComp,
+    PressDialogPlus,
   },
   props: {
     helpConfig: {
@@ -78,7 +78,7 @@ export default {
       routerPush.call(this, url);
     },
     showGroupQrCode() {
-      PressDialog.show({
+      Dialog.show({
         context: this,
         title: 'Press UI 交流群',
         content: 'QQ扫码加入',

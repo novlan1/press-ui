@@ -164,7 +164,7 @@ import { isNumber } from '../common/utils/validator';
 
 import GuideContent from '../press-guide-content/press-guide-content.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 import props from './props';
 

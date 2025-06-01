@@ -11,7 +11,7 @@
         @click="onClick('basic')"
         @click-input="onClick('basic')"
       />
-      <PressPopupPlus
+      <PressPopup
         :show="show.basic"
         round
         position="bottom"
@@ -25,7 +25,7 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </PressPopupPlus>
+      </PressPopup>
     </demo-block>
 
     <demo-block :title="t('chinaAreaData')">
@@ -39,7 +39,7 @@
         @click="onClick('chinaArea')"
         @click-input="onClick('chinaArea')"
       />
-      <PressPopupPlus
+      <PressPopup
         :show="show.chinaArea"
         round
         position="bottom"
@@ -53,7 +53,7 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </PressPopupPlus>
+      </PressPopup>
     </demo-block>
 
     <demo-block :title="t('customColor')">
@@ -67,7 +67,7 @@
         @click="onClick('customColor')"
         @click-input="onClick('customColor')"
       />
-      <PressPopupPlus
+      <PressPopup
         :show="show.customColor"
         round
         position="bottom"
@@ -82,7 +82,7 @@
           @close="onClose"
           @finish="onFinish"
         />
-      </PressPopupPlus>
+      </PressPopup>
     </demo-block>
 
     <demo-block :title="t('asyncOptions')">
@@ -96,7 +96,7 @@
         @click="onClick('asyncOptions')"
         @click-input="onClick('asyncOptions')"
       />
-      <PressPopupPlus
+      <PressPopup
         :show="show.asyncOptions"
         round
         position="bottom"
@@ -111,7 +111,7 @@
           @finish="onFinish"
           @change="loadDynamicOptions"
         />
-      </PressPopupPlus>
+      </PressPopup>
     </demo-block>
 
     <demo-block :title="t('customFieldNames')">
@@ -125,7 +125,7 @@
         @click="onClick('customFieldNames')"
         @click-input="onClick('customFieldNames')"
       />
-      <PressPopupPlus
+      <PressPopup
         :show="show.customFieldNames"
         round
         position="bottom"
@@ -141,7 +141,7 @@
           @finish="onFinish"
           @change="loadDynamicOptions"
         />
-      </PressPopupPlus>
+      </PressPopup>
     </demo-block>
   </div>
 </template>
@@ -152,7 +152,7 @@ import { fetchCascaderAreaData } from 'press-ui/press-cascader/helper';
 
 import PressCascader from 'press-ui/press-cascader/press-cascader.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
+import PressPopup from 'press-ui/press-popup/press-popup.vue';
 
 import enUSOptions from 'src/packages/press-cascader/demo-helper/area-en-US.js';
 import zhCNOptions from 'src/packages/press-cascader/demo-helper/area-zh-CN.js';
@@ -241,7 +241,7 @@ export default {
   components: {
     PressCascader,
     PressField,
-    PressPopupPlus,
+    PressPopup,
   },
   data() {
     return {

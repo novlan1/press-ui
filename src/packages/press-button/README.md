@@ -76,7 +76,7 @@ export default {
 
 ### 图标按钮
 
-通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL。
+通过`icon`属性设置按钮图标，支持 IconPlus 组件里的所有图标，也可以传入图标 URL。
 
 ```html
 <press-button icon="star-o" type="primary" />
@@ -174,7 +174,7 @@ export default {
 | size               | 按钮尺寸，可选值为 `normal` `large` `small` `mini`                                                          | _string_  | `normal`          |
 | color              | 按钮颜色，支持传入`linear-gradient`渐变色                                                                   | _string_  | -                 |
 | icon               | 左侧图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus)                                             | _string_  | -                 |
-| class-prefix       | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](./press-icon-plus)                                         | _string_  | `press-icon-plus` |
+| class-prefix       | 图标类名前缀，同 IconPlus 组件的 [class-prefix 属性](./press-icon-plus)                                         | _string_  | `press-icon-plus` |
 | plain              | 是否为朴素按钮                                                                                              | _boolean_ | `false`           |
 | block              | 是否为块级元素                                                                                              | _boolean_ | `false`           |
 | round              | 是否为圆形按钮                                                                                              | _boolean_ | `false`           |

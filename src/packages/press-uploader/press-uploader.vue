@@ -39,7 +39,7 @@
             v-else
             class="press-upload__wrap__preview__other"
           >
-            <PressIconPlus
+            <PressIcon
               color="#80CBF9"
               size="26"
               :name="item.isVideo || (item.type && item.type === 'video') ? 'movie' : 'folder'"
@@ -53,13 +53,13 @@
             class="press-upload__status"
           >
             <div class="press-upload__status__icon">
-              <PressIconPlus
+              <PressIcon
                 v-if="item.status === 'failed'"
                 name="close"
                 color="#ffffff"
                 size="22"
               />
-              <PressLoadingPlus
+              <PressLoading
                 v-else
                 size="22"
                 mode="circle"
@@ -79,7 +79,7 @@
             @click.stop="deleteItem(index)"
           >
             <!-- <div class="press-upload__deletable__icon"> -->
-            <PressIconPlus
+            <PressIcon
               name="cross"
               color="#ffffff"
               size="16"
@@ -99,7 +99,7 @@
             <!-- #endif -->
             <!-- #ifndef APP-NVUE -->
             <div class="press-upload__success__icon">
-              <PressIconPlus
+              <PressIcon
                 name="passed"
                 color="#ffffff"
                 size="12"
@@ -129,7 +129,7 @@
           }]"
           @click.stop="chooseFile"
         >
-          <PressIconPlus
+          <PressIcon
             :name="uploadIcon"
             size="26"
             :color="uploadIconColor"
@@ -153,8 +153,8 @@ import { addUnit } from '../common/utils/add-unit';
 import { style } from '../common/utils/style';
 import { isNotInUni } from '../common/utils/utils';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 
 import props from './computed';
 import mixin from './mixin';
@@ -170,8 +170,8 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
-    PressLoadingPlus,
+    PressIcon,
+    PressLoading,
   },
   mixins: [mixin, props],
   emits: [

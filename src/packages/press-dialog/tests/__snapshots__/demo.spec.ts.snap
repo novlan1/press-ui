@@ -5,6 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
       <div class="press-cell__title">
+        提示弹窗
         <!---->
       </div>
       <div class="press-cell__value"></div>
@@ -15,20 +16,7 @@ exports[`renders demo correctly 1`] = `
     </div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
       <div class="press-cell__title">
-        点击蒙层不可关闭
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-  </div>
-  <div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        图片
+        提示弹窗（无标题）
         <!---->
       </div>
       <div class="press-cell__value"></div>
@@ -39,29 +27,7 @@ exports[`renders demo correctly 1`] = `
     </div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
       <div class="press-cell__title">
-        HTML内容
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        长文本
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        输入框
+        确认弹窗
         <!---->
       </div>
       <div class="press-cell__value"></div>
@@ -74,28 +40,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
       <div class="press-cell__title">
-        没有取消按钮
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        <!---->
-      </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
-    </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        没有取消+加载中
+        异步关闭
         <!---->
       </div>
       <div class="press-cell__value"></div>
@@ -117,20 +62,22 @@ exports[`renders demo correctly 1`] = `
         <!---->
       </div>
     </div>
-    <div hover-class="press-cell--hover," hover-stay-time="70" class=" press-cell press-cell--clickable">
-      <div class="press-cell__title">
-        多例
+  </div>
+  <div class="press-dialog-index">
+    <div class="press-popup-plus ">
+      <div class="press-overlay-index">
         <!---->
       </div>
-      <div class="press-cell__value"></div>
-      <div class=" press-cell__right-icon press-icon-plus press-icon-plus-arrow press-cell__right-icon">
-        <!---->
-        <!---->
-      </div>
+      <!---->
     </div>
   </div>
-  <!---->
-  <!---->
-  <!---->
+  <div class="press-dialog-index">
+    <div class="press-popup-plus ">
+      <div class="press-overlay-index">
+        <!---->
+      </div>
+      <!---->
+    </div>
+  </div>
 </div>
 `;

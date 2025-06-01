@@ -3,22 +3,127 @@
 exports[`renders demo correctly 1`] = `
 <div class="demo-wrap">
   <div>
-    <div class="primary-btn" style="position: relative; margin-left: 10px;">
-      点击加载
-      <!---->
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading">
+          <div class="press-loading__spinner press-loading__spinner--circular">
+            <!---->
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading" style="margin-left: 20px;">
+          <div class="press-loading__spinner press-loading__spinner--spinner">
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div>
-    <div class="primary-btn" style="position: relative; margin-left: 10px;">
-
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading">
+          <div class="press-loading__spinner press-loading__spinner--circular" style="color: rgb(25, 137, 250);">
+            <!---->
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading" style="margin-left: 20px;">
+          <div class="press-loading__spinner press-loading__spinner--spinner" style="color: rgb(25, 137, 250);">
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div>
-    <div class="primary-btn" style="position: relative; margin-left: 10px;">
-      三秒后消失
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading">
+          <div class="press-loading__spinner press-loading__spinner--circular" style="width: 15px; height: 15px;">
+            <!---->
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="press-loading-index">
+        <div class=" press-loading" style="margin-left: 20px;">
+          <div class="press-loading__spinner press-loading__spinner--spinner" style="width: 38px; height: 38px;">
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+            <div class="press-loading__dot"></div>
+          </div>
+          <div class="press-loading__text"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <!---->
-  <!---->
+  <div>
+    <div class="press-loading-index">
+      <div class=" press-loading">
+        <div class="press-loading__spinner press-loading__spinner--circular" style="width: 24px; height: 24px;">
+          <!---->
+        </div>
+        <div class="press-loading__text">
+          加载中...
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-loading-index">
+      <div class=" press-loading press-loading--vertical">
+        <div class="press-loading__spinner press-loading__spinner--circular" style="width: 24px; height: 24px;">
+          <!---->
+        </div>
+        <div class="press-loading__text">
+          加载中...
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

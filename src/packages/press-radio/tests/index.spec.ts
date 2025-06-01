@@ -2,13 +2,13 @@ import { h } from 'vue';
 
 import { mount } from '@vue/test-utils';
 
-import RadioGroup from '../../press-radio-group/press-radio-group.vue';
-import Radio from '../press-radio.vue';
+import PressRadioGroup from '../../press-radio-group/press-radio-group.vue';
+import PressRadio from '../press-radio.vue';
 
 
-describe('Radio', () => {
+describe('PressRadio', () => {
   it('should emit change event when clicked', async () => {
-    const wrapper = mount(Radio, {
+    const wrapper = mount(PressRadio, {
       propsData: {
         name: 'a',
       },
@@ -24,7 +24,7 @@ describe('Radio', () => {
   });
 
   it('should emit change event when label is clicked', async () => {
-    const wrapper = mount(Radio, {
+    const wrapper = mount(PressRadio, {
       propsData: {
         name: 'a',
       },
@@ -40,7 +40,7 @@ describe('Radio', () => {
   });
 
   it('should not emit change event when disabled', async () => {
-    const wrapper = mount(Radio, {
+    const wrapper = mount(PressRadio, {
       propsData: {
         name: 'a',
         disabled: true,
@@ -53,7 +53,7 @@ describe('Radio', () => {
   });
 
   it('should not emit change event when label is disabled and clicked', async () => {
-    const wrapper = mount(Radio, {
+    const wrapper = mount(PressRadio, {
       propsData: {
         name: 'a',
         labelDisabled: true,
@@ -65,7 +65,7 @@ describe('Radio', () => {
   });
 
   it('should emit change event when label is disabled but radio is clicked', async () => {
-    const wrapper = mount(Radio, {
+    const wrapper = mount(PressRadio, {
       propsData: {
         name: 'a',
         labelDisabled: true,
@@ -83,9 +83,9 @@ describe('Radio', () => {
 });
 
 
-describe('RadioGroup', () => {
+describe('PressRadioGroup', () => {
   it('should emit change event when clicked', async () => {
-    const wrapper = mount(RadioGroup, {
+    const wrapper = mount(PressRadioGroup, {
       propsData: {
         value: 'a',
       },
@@ -96,17 +96,17 @@ describe('RadioGroup', () => {
         default: [
           {
             render() {
-              return h(Radio, { props: { name: 'a' } });
+              return h(PressRadio, { props: { name: 'a' } });
             },
           },
           {
             render() {
-              return h(Radio, { props: { name: 'b' } });
+              return h(PressRadio, { props: { name: 'b' } });
             },
           },
           {
             render() {
-              return h(Radio, { props: { name: 'c', disabled: true } });
+              return h(PressRadio, { props: { name: 'c', disabled: true } });
             },
           },
         ],
@@ -129,7 +129,7 @@ describe('RadioGroup', () => {
   });
 
   it('should not emit change event when disabled', async () => {
-    const wrapper = mount(RadioGroup, {
+    const wrapper = mount(PressRadioGroup, {
       propsData: {
         value: 'c',
         disabled: true,
@@ -141,17 +141,17 @@ describe('RadioGroup', () => {
         default: [
           {
             render() {
-              return h(Radio, { props: { name: 'a' } });
+              return h(PressRadio, { props: { name: 'a' } });
             },
           },
           {
             render() {
-              return h(Radio, { props: { name: 'b' } });
+              return h(PressRadio, { props: { name: 'b' } });
             },
           },
           {
             render() {
-              return h(Radio, { props: { name: 'c' } });
+              return h(PressRadio, { props: { name: 'c' } });
             },
           },
         ],

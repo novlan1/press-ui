@@ -1,265 +1,233 @@
+<!-- eslint-disable vue/no-v-html vue/no-v-text-v-html-on-component-->
 <template>
-  <div class="press-dialog-index">
-    <PressPopup
-      :show="dataShow"
-      :z-index="dataZIndex"
-      :overlay="dataOverlay"
-      :transition="dataTransition"
-      :custom-class="'press-dialog press-dialog--'+(dataTheme)+' '+(dataClassName)"
-      :custom-style="popupCustomStyle"
-      :overlay-style="dataOverlayStyle"
-      :close-on-click-overlay="dataCloseOnClickOverlay"
-      @close="onClickOverlay"
-    >
-      <div
-        v-if="dataTitle || dataUseTitleSlot"
-        :class="true ? utils.bem2('dialog__header', { isolated: !(dataMessage || dataUseSlot) }) : ''"
+  <div
+    v-if="dataShow"
+    class="press-dialog"
+    :class="dataCustomClass"
+    :style="{zIndex: `${dataZIndex}`}"
+    @click.stop="touchRemove"
+    @touchmove.stop="preventTouchMove"
+  >
+    <div class="press-dialog__content-wrap">
+      <p class="press-dialog__title">
+        {{ dataTitle }}
+      </p>
+      <scroll-view
+        v-if="dataUseScrollView && dataHtmlContent"
+        scroll-y="true"
+        class="press-dialog__content"
+        v-html="dataHtmlContent"
+      />
+
+      <p
+        v-else-if="dataHtmlContent"
+        class="press-dialog__content"
+        v-html="dataHtmlContent"
+      />
+
+      <p
+        v-if="!dataHtmlContent"
+        class="press-dialog__content"
       >
-        <slot
-          v-if="dataUseTitleSlot"
-          name="title"
-        />
-        <template v-else-if="dataTitle">
-          {{ dataTitle }}
+        {{ dataContent }}
+      </p>
+
+      <PressField
+        v-if="dataShowField"
+        custom-class="press-dialog__field"
+        title-width="0"
+        :placeholder="dataFieldPlaceHolder"
+        :value="dataFieldValue"
+        :model-value="dataFieldValue"
+        @change="onChangeField"
+      />
+
+      <div
+        v-if="dataSrc"
+        class="press-dialog__img-wrap"
+      >
+        <img
+          v-if="dataSrc"
+          class="press-dialog__img"
+          :show-menu-by-longpress="true"
+          :src="dataSrc"
+          @click.stop="handleClickImage"
+          @longpress="handleLongPressImage"
+        >
+      </div>
+      <div class="press-dialog__btn--wrap">
+        <template v-if="dataCancelText && dataCancelText.length > 0">
+          <div
+            class="press-dialog__btn--spacing"
+          >
+            <PressButton
+              type="e-sport-secondary"
+              custom-style="width: 100px;height: 36px;"
+              @click="cancel"
+            >
+              {{ dataCancelText }}
+            </PressButton>
+          </div>
+
+          <PressButton
+            type="e-sport-primary-bg"
+            :loading="mShowButtonLoading"
+            custom-style="width: 100px;height: 36px;"
+            @click="confirm"
+          >
+            {{ mShowButtonLoading ? '' : dataConfirmText }}
+          </PressButton>
+        </template>
+
+        <template v-else-if="dataConfirmText || mShowButtonLoading">
+          <PressButton
+            type="e-sport-primary-bg"
+            :loading="mShowButtonLoading"
+            custom-style="width: 148px;height: 36px;"
+            @click="confirm"
+          >
+            {{ mShowButtonLoading ? '' : dataConfirmText }}
+          </PressButton>
         </template>
       </div>
-
-      <slot v-if="dataUseSlot" />
-      <div
-        v-else-if="dataMessage"
-        :class="true ? utils.bem2('dialog__message', [dataTheme, dataMessageAlign, { hasTitle: dataTitle }]) : ''"
-      >
-        <span class="press-dialog__message-text">
-          {{ dataMessage }}
-        </span>
-      </div>
-
-      <div
-        v-if="true"
-        class="press-hairline--top press-dialog__footer"
-      >
-        <PressButton
-          v-if="dataShowCancelButton"
-          size="large"
-          :loading="loading.cancel"
-          class="press-dialog__button press-hairline--right"
-          custom-class="press-dialog__cancel"
-          :custom-style="'color: '+(dataCancelButtonColor)"
-          @click="onCancel"
-        >
-          {{ dataCancelButtonText }}
-        </PressButton>
-        <PressButton
-          v-if="dataShowConfirmButton"
-          size="large"
-          class="press-dialog__button"
-          :loading="loading.confirm"
-          custom-class="press-dialog__confirm"
-          :custom-style="'color: '+(dataConfirmButtonColor)"
-          :open-type="dataConfirmButtonOpenType"
-          :lang="lang"
-          :business-id="businessId"
-          :session-from="sessionFrom"
-          :send-message-title="sendMessageTitle"
-          :send-message-path="sendMessagePath"
-          :send-message-img="sendMessageImg"
-          :show-message-card="showMessageCard"
-          :app-parameter="appParameter"
-          @click="onConfirm"
-          @getuserinfo="onGetUserInfo"
-          @contact="onContact"
-          @getphonenumber="onGetPhoneNumber"
-          @error="onError"
-          @launchapp="onLaunchApp"
-          @opensetting="onOpenSetting"
-        >
-          {{ dataConfirmButtonText }}
-        </PressButton>
-      </div>
-    </PressPopup>
+    </div>
   </div>
 </template>
 <script>
-import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
-import { GRAY, RED } from '../common/constant/color';
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { toPromise } from '../common/format/function';
-import { style } from '../common/utils/style';
-
-import { nextTick } from '../common/utils/system';
-import utils from '../common/utils/utils';
-import { t } from '../locale';
-
-import { button } from '../mixins/basic/button';
-
+import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressButton from '../press-button/press-button.vue';
-import { getDialogMixin } from '../press-dialog/dialog-mixin';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressField from '../press-field/press-field.vue';
 
+import { dialogProps } from './computed';
+import { getDialogMixin } from './dialog-mixin';
 
-const props = {
-  show: {
-    type: Boolean,
-    default: false,
-  },
-  title: { type: String, default: '' },
-  message: { type: String, default: '' },
-
-  useSlot: Boolean,
-  useTitleSlot: Boolean,
-
-  className: { type: String, default: '' },
-  customStyle: { type: [String, Object], default: '' },
-
-  asyncClose: Boolean,
-  beforeClose: { type: [null, Function], default: null },
-
-  theme: {
-    type: String,
-    default: 'default',
-  },
-  messageAlign: { type: String, default: '' },
-  width: {
-    type: [String, Number],
-    default: '',
-  },
-  zIndex: {
-    type: Number,
-    default: 2000,
-  },
-
-  overlay: {
-    type: Boolean,
-    default: true,
-  },
-  overlayStyle: { type: String, default: '' },
-  transition: {
-    type: String,
-    default: 'scale',
-  },
-
-  showConfirmButton: {
-    type: Boolean,
-    default: true,
-  },
-  showCancelButton: Boolean,
-
-  confirmButtonText: {
-    type: String,
-    default: t('confirm'),
-  },
-  cancelButtonText: {
-    type: String,
-    default: t('cancel'),
-  },
-  confirmButtonColor: {
-    type: String,
-    default: RED,
-  },
-  cancelButtonColor: {
-    type: String,
-    default: GRAY,
-  },
-
-  closeOnClickOverlay: Boolean,
-  confirmButtonOpenType: { type: String, default: '' },
-
-  ...defaultProps,
-};
 
 export default {
   name: 'PressDialogPlus',
   options: {
-    ...defaultOptions,
+    ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {
-    PressPopup,
     PressButton,
+    PressField,
   },
-  mixins: [button, getDialogMixin(props)],
-  props,
-  emits: ['close', 'confirm', 'cancel'],
+  mixins: [getDialogMixin(dialogProps), ScrollViewPureMixin],
+  props: {
+    ...dialogProps,
+  },
+  emits: ['confirm', 'cancel', 'onLongPressImage', 'onClickImage'],
   data() {
     return {
-      // ...getPropsData(this, props),
+      resolve: '',
+      reject: '',
+      promise: '',
+      mShowButtonLoading: false,
 
-      utils,
-      loading: {
-        confirm: false,
-        cancel: false,
-      },
-      callback: (() => { }),
+      // ...getPropsData(this, dialogProps),
+
+      inputValue: '',
     };
   },
-  computed: {
-    popupCustomStyle() {
-      return style([
-        {
-          width: utils.addUnit(this.dataWidth),
-        },
-        this.dataCustomStyle,
-      ]);
+  watch: {
+    // ...getPropsWatch(dialogProps),
+    dataFieldValue: {
+      handler(value) {
+        this.inputValue = value;
+      },
+      immediate: true,
     },
   },
-  watch: {
-    // ...getPropsWatch(props),
-    dataShow: {
-      handler(val) {
-        if (!val) {
-          this.stopLoading();
-        }
-      },
-    },
+  mounted() {
   },
   methods: {
     // setData(data) {
     //   setPropsToData.call(this, data);
     // },
-    onConfirm() {
-      this.handleAction('confirm');
+    preventTouchMove() {
+      return;
     },
-    onCancel() {
-      this.handleAction('cancel');
-    },
-    onClickOverlay() {
-      this.close('overlay');
-    },
-    close(action) {
-      this.dataShow = false;
-      nextTick(() => {
-        this.$emit('close', action);
-        const { callback } = this;
-        if (callback) {
-          callback(action, this);
+    confirm() {
+      if (this.dataDialogType === 2) {
+        if (this.mShowButtonLoading) {
+          return;
         }
+        this.mShowButtonLoading = true;
+      }
+
+      if (typeof this.dataOnConfirmClick === 'function') {
+        toPromise(this.dataOnConfirmClick(this))
+          .then((value) => {
+            if (value) {
+              this.resolveConfirm();
+            }
+          })
+          .catch(() => {});
+      } else {
+        this.resolveConfirm();
+      }
+    },
+    resolveConfirm() {
+      if (this.resolve) {
+        this.resolve('confirm');
+      }
+      this.$emit('confirm');
+      this.remove();
+    },
+    // 取消,将promise断定为reject状态
+    cancel() {
+      if (typeof this.dataOnClickCancel === 'function') {
+        this.dataOnClickCancel(this);
+      }
+      if (typeof this.reject === 'function') {
+        this.reject('cancel');
+      }
+      this.$emit('cancel');
+      this.remove();
+    },
+    // 弹出messageBox,并创建promise对象
+    showDialog() {
+      this.dataShow = true;
+
+      this.promise = new Promise((resolve, reject) => {
+        this.resolve = resolve;
+        this.reject = reject;
       });
+      // 返回promise对象
+      return this.promise;
     },
-    stopLoading() {
-      this.loading.confirm = false;
-      this.loading.cancel = false;
-    },
-    handleAction(action) {
-      this.$emit(action, { dialog: this });
-      const { dataAsyncClose, dataBeforeClose } = this;
-      if (!dataAsyncClose && !dataBeforeClose) {
-        this.close(action);
-        return;
+    touchRemove() {
+      if (this.dataCanTouchRemove) {
+        this.remove();
       }
-
-      this.loading[action] = true;
-
-      if (dataBeforeClose) {
-        toPromise(dataBeforeClose(action)).then((value) => {
-          if (value) {
-            this.close(action);
-          } else {
-            this.stopLoading();
-          }
-        });
-      }
+      this.$emit('cancel');
     },
+    remove() {
+      this.dataShow = false;
+      this.mShowButtonLoading = false;
+    },
+    destroy() {
+    },
+    handleLongPressImage() {
+      if (typeof this.dataOnLongPressImage === 'function') {
+        this.dataOnLongPressImage();
+      }
+      this.$emit('onLongPressImage');
+    },
+    handleClickImage() {
+      if (typeof this.dataOnClickImage === 'function') {
+        this.dataOnClickImage();
+      }
+      this.$emit('onClickImage');
+    },
+    onChangeField(value) {
+      this.inputValue = value;
+    },
+
   },
 };
+
 </script>
-<style scoped lang="scss" src="./css/index.scss">
-</style>
+<style lang="scss" scoped src="./css/index.scss"></style>

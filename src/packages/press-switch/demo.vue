@@ -76,7 +76,7 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <PressDialog
+    <PressDialogPlus
       id="tip-match-comm-tips-dialog"
       ref="tip-match-comm-tips-dialog"
     />
@@ -86,9 +86,9 @@
 <script>
 import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressDialogHandler from 'press-ui/press-dialog';
+import PressDialogPlusHandler from 'press-ui/press-dialog-plus';
 
-import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
@@ -116,7 +116,7 @@ export default {
 
   components: {
     PressSwitch,
-    PressDialog,
+    PressDialogPlus,
     PressCell,
     PressCellGroup,
   },
@@ -140,7 +140,7 @@ export default {
       console.log('[value]', value, type);
 
       if (type === 'async') {
-        PressDialogHandler.show({
+        PressDialogPlusHandler.show({
           context: this,
           title: this.t('title'),
           content: this.t('message'),

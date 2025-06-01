@@ -63,7 +63,7 @@
 
 <script>
 import { nextTick } from '../common/utils/system';
-import PressIcon from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressTab from '../press-tab/press-tab.vue';
 import PressTabs from '../press-tabs/press-tabs.vue';
 

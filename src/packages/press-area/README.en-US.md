@@ -135,7 +135,7 @@ The placeholder prompt text for each column can be configured through the `colum
 | ------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | confirm | Click the button on the upper right to complete | An array parameter, see the data format section below for the specific format              |
 | cancel  | When the cancel button is clicked               | -                                                                                          |
-| change  | Triggered when the option is changed            | Picker instance, selected values of all columns, index corresponding to the current column |
+| change  | Triggered when the option is changed            | PickerPlus instance, selected values of all columns, index corresponding to the current column |
 
 ### method
 

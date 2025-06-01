@@ -4,9 +4,7 @@ url : pages/press/popup/popup
 
 ## Popup 弹出层
 
-
-弹出层组件，在应用中弹出一个消息提示窗口、提示框等
-
+弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。
 
 ## 引入
 
@@ -22,414 +20,177 @@ export default {
 
 ## 代码演示
 
-### 关闭图标
+### 基础用法
 
-设置`close-icon`为`true`。
-
+通过`show`属性控制弹出层是否展示。
 
 ```html
-<template>
-  <PressPopup
-    v-if="show"
-    :close-icon="true"
-    :arrow-icon="false"
-    :title="title"
-    button="确定"
-    @confirm="confirm"
-    @cancel="cancel"
-  >
-    <div class="content">
-      一些内容
-    </div>
-  </PressPopup>
-</template>
+<press-cell title="展示弹出层" is-link @click="showPopup" />
+
+<press-popup :show="show" @close="onClose">内容</press-popup>
 ```
 
-```ts
-export default {
-  data() {
-    return {
-      title: '决胜方式',
-      show: false;
-    }
+```javascript
+Page({
+  data: {
+    show: false,
   },
-  methods: {
-    cancel() {
-      this.show = false;
-    },
-    confirm() {
-      this.show = false;
-    },
-  }
-};
-</script>
-```
 
-### 取消图标
-
-设置`arrow-icon`为`true`。
-
-
-```html
-<PressPopup
-  v-if="show"
-  :close-icon="false"
-  :arrow-icon="true"
-  :title="title"
-  button="确定"
-  @confirm="confirm"
-  @cancel="cancel"
->
-  <div class="content">
-    一些内容
-  </div>
-</PressPopup>
-```
-
-### 没有关闭/取消
-
-设置`close-icon`为`false`，`arrow-icon`为`false`。
-
-
-```html
-<PressPopup
-  v-if="show"
-  :close-icon="false"
-  :arrow-icon="false"
-  :title="title"
-  button="确定"
-  @confirm="confirm"
-  @cancel="cancel"
->
-  <div class="content">
-    一些内容
-  </div>
-</PressPopup>
-```
-
-
-
-### 线框确认图标
-
-设置`border-button`为`true`。
-
-
-```html
-<PressPopup
-  v-if="show"
-  :close-icon="true"
-  :arrow-icon="false"
-  :border-button="true"
-  :title="title"
-  button="确定"
-  @confirm="confirm"
-  @cancel="cancel"
->
-  <div class="content">
-    一些内容
-  </div>
-</PressPopup>
-```
-
-### 横版
-
-设置`horizontal`为`true`。
-
-
-```html
-<PressPopup
-  v-if="show"
-  :close-icon="true"
-  :horizontal="true"
-  :width-number="54"
-  :title="title"
-  @confirm="confirm"
-  @cancel="cancel"
->
-  <div class="content">
-    一些内容
-  </div>
-</PressPopup>
-```
-
-
-### 使用slot
-
-
-```html
-<PressPopup
-  v-if="show"
-  :close-icon="true"
-  :horizontal="true"
-  :width-number="54"
-  :title="title"
-  @confirm="confirm"
-  @cancel="cancel"
->
-  <PressIconPlus
-    slot="icon"
-    name="gem-o"
-    size="22px"
-  />
-
-  <div slot="title">
-    {{ t('wayToWin') }}
-    <PressIconPlus
-      name="like-o"
-      size="16"
-    />
-  </div>
-
-  <PressIconPlus
-    slot="button"
-    name="setting-o"
-    size="22px"
-  />
-
-  <div class="content">
-    {{ t('SomeContent') }}
-  </div>
-</PressPopup>
-```
-
-
-### 异步关闭
-
-
-可传入`asyncConfirm`、`asyncCancel`方法控制异步关闭，如果返回`false`或`Promise<false>`则不会关闭`popup`。
-
-```html
- <PressPopup
-  :close-icon="false"
-  :arrow-icon="false"
-  :button="t('confirm')"
-  :async-confirm="asyncConfirm"
-  :async-close="asyncCancel"
->
-  <div class="content">
-    {{ t('SomeContent') }}
-  </div>
-</PressPopup>
-```
-
-```ts
-export default {
-  methods: {
-    asyncConfirm() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(true);
-        }, 500);
-      });
-    },
-    asyncCancel() {
-      return false;
-    },
-  }
-}
-```
-
-注意在小程序平台，`asyncConfirm` 和 `asyncCancel` 的 `this` 执向有问题。
-
-```ts
-let that = null;
-
-export default {
-  data() {
-    that = this;
-
-    return {}
+  showPopup() {
+    this.show = true;
   },
-  methods: {
-    asyncConfirm() {
-      // 小程序中回调 this 是子组件
-      return that.isAuthenticationPopup;
-    },
-  }
-}
+
+  onClose() {
+    this.show = false;
+  },
+});
 ```
 
-### 受控组件
+### 弹出位置
 
-`press-popup-plus`与`press-popup`展示逻辑有很大不同，`press-popup-plus`为受控组件，`show` 默认为`false`。外界传 `true`时，展示进入动画，外界传`false`时，展示退出动画。
-
-- 展示：组件外=> 组件内，`show`属性： `false => true`，`enter`
-- 关闭：组件内 => 组件外 => 组件内，触发`close`事件，组件外手动处理 `show = false`，并传给组件内，才能关闭，`show`： `true => false`, `leave`
-
-这种处理方式有以下好处：
-
-- 不用在组件内声明额外关于`show`的变量
-- 不用关心异步操作，当外部不想关闭时，不设置 `show` 为 `false` 即可。
-
-
-`press-popup`由于历史原因，`isShow`属性（对应`press-popup-plus`的`show`）默认为`true`，且点击`cancel`、`confirm`时会关闭`popup`，大量业务这样使用：
-
-- `v-if`控制显示，要隐藏时再传入 `isShow = false`，或者 `this.$refs.container.clickCancel()`
-
-为什么不用`v-if`设为`false`时来退出`popup`呢，因为这样退出动画就没了。
-
-这种方式增加了开发者的心智负担，声明了额外属性，调用了内部不稳定的方法（可能更改或废弃）。
-
-
-为了使用更简单，同时兼容历史代码，`popup`内部做了一些优化，推荐用这种方式使用(`v0.7.35`之后)：
-
-```html
-<PressPopup
-  :is-show="show"
-  button="确认"
-  title="受控组件"
-  @confirm="show = false"
-  @cancel="show = false"
->
-  <div class="content">
-    {{ t('SomeContent') }}
-  </div>
-</PressPopup>
-```
-
-`show`为`true`时，`popup`才显示，要关闭时，设置 `show = false` 即可.
-
-对于异步操作，分为两种：
-
-- 点击顶部`confirm`、`cancel`按钮，可传入`asyncConfirm`、`asyncCancel`，这两种方法返回`Promise<false>`时不会关闭`popup`。
-- 其他部分，用户自行校验，根据情况设置 `show = false`。
-
-
-
-### 函数式调用
-
-支持函数式调用，需要在页面下预埋组件，并指定`mode`为`functional`。
+通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`。
 
 ```html
 <press-popup
-  :id="PRESS_PICKER_ID"
-  mode="functional"
->
-  <scroll-view
-    scroll-y
-    :style="{maxHeight: '200px', padding: '0 20px'}"
-  >
-    <div class="content__inner">
-      {{ t('SomeScrollContent') }}
-    </div>
-    <div class="content__inner">
-      {{ t('SomeScrollContent') }}
-    </div>
-    <div class="content__inner">
-      {{ t('SomeScrollContent') }}
-    </div>
-  </scroll-view>
-</press-popup>
+  :show="show"
+  position="top"
+  custom-style="height: 20%;"
+  @close="onClose"
+/>
 ```
 
-```ts
-export default {
-  methods: {
-    onShowFunctionalPicker() {
-      showFunctionalComponent.call(this, {
-      selector: `#${PRESS_PICKER_ID}`,
-      title: this.t('wayToWin'),
-      button: this.t('confirm'),
-      horizontal: false,
-      closeIcon: false,
-      arrowIcon: true,
-      borderButton: false,
-      customStyle: '',
-    }).then(() => {
-      this.onTip('confirm');
-    })
-      .catch(() => {
-        this.onTip('cancel');
-      });
-    },
-  }
-}
+### 关闭图标
+
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
+
+```html
+<press-popup
+  :show="show"
+  closeable
+  position="bottom"
+  custom-style="height: 20%"
+  @close="onClose"
+/>
+
+<!-- 自定义图标 -->
+<press-popup
+  :show="show"
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 20%"
+  @close="onClose"
+/>
+
+<!-- 图标位置 -->
+<press-popup
+  :show="show"
+  closeable
+  close-icon-position="top-left"
+  position="bottom"
+  custom-style="height: 20%"
+  @close="onClose"
+/>
 ```
 
-```scss
-.content__inner {
-    height: 200px;
-}
+### 圆角弹窗
+
+设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式。
+
+```html
+<press-popup
+  :show="show"
+  round
+  position="bottom"
+  custom-style="height: 20%"
+  @close="onClose"
+/>
 ```
 
+### 禁止滚动穿透
+
+使用组件时，会发现内容部分滚动到底时，继续划动会导致底层页面的滚动，这就是滚动穿透。
+
+目前，组件可以通过 `lock-scroll` 属性处理部分滚动穿透问题。 **但由于小程序自身原因，弹窗内容区域仍会出现滚动穿透。** 不过，我们为开发者提供了一个推荐方案以完整解决滚动穿透：
+
+#### [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
+
+当小程序基础库最低版本在 2.9.0 以上时，即可使用 [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html) 组件动态修改页面样式
+
+```html
+<!-- page-meta 只能是页面内的第一个节点 -->
+<page-meta :page-style="show ? 'overflow: hidden;' : ''" />
+
+<press-popup :show="show" catch:touchstart />
+```
+
+注意，使用 `catch:touchstart` 后可能会导致组件内点击事件无效，可以尝试改成：
+
+```html
+<press-popup :show="show" bind:touchstart catch:touchmove bind:touchend />
+```
 
 ## API
 
-### Popup Props 
+### Props
 
-| 参数                   | 说明                                       | 类型       | 默认值  |
-| ---------------------- | ------------------------------------------ | ---------- | ------- |
-| show-title             | 是否显示标题                               | _boolean_  | `true`  |
-| title                  | 弹窗标题                                   | _string_   | -       |
-| button                 | 弹窗标题按钮                               | _string_   | -       |
-| border-button          | 标题按钮是否为线型                         | _boolean_  | `false` |
-| z-index                | 弹窗层级                                   | _string_   | `99`    |
-| popup-class            | 类名                                       | _string_   | -       |
-| close-on-click-overlay | 是否可以点击蒙版关闭                       | _boolean_  | `true`  |
-| close-icon             | 是否显示关闭按钮                           | _boolean_  | `false` |
-| arrow-icon             | 是否显示为返回箭头                         | _boolean_  | `false` |
-| horizontal             | 是否切换横板样式                           | _boolean_  | `false` |
-| width-number           | 横板弹窗宽度百分比                         | _number_   | `100`   |
-| mode                   | 函数式调用时传`functional`                 | _string_   | -       |
-| async-confirm          | 异步`confirm`方法，可为`Promise`或普通方法 | _function_ | -       |
-| async-cancel           | 异步`cancel`方法，可为`Promise`或普通方法  | _function_ | -       |
-| disabled-button        | 按钮置灰                                   | _boolean_  | `false` |
-| lock-scroll            | 是否锁定背景滚动                           | _boolean_  | `true`  |
+| 参数                   | 说明                                             | 类型               | 默认值   |
+| ---------------------- | ------------------------------------------------ | ------------------ | -------- |
+| show                   | 是否显示弹出层                                   | _boolean_          | `false`  |
+| z-index                | z-index 层级                                     | _number_           | `100`    |
+| overlay                | 是否显示遮罩层                                   | _boolean_          | `true`   |
+| position               | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_           | `center` |
+| duration               | 动画时长，单位为毫秒                             | _number \| object_ | `300`    |
+| round                  | 是否显示圆角                                     | _boolean_          | `false`  |
+| custom-style           | 自定义弹出层样式                                 | _string_           | `''`     |
+| overlay-style          | 自定义遮罩层样式                                 | _string_           | `''`     |
+| close-on-click-overlay | 是否在点击遮罩层后关闭                           | _boolean_          | `true`   |
+| closeable              | 是否显示关闭图标                                 | _boolean_          | `false`  |
+| close-icon             | 关闭图标名称或图片链接                           | _string_           | `cross`  |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                  | _boolean_          | `true`   |
+| safe-area-inset-top    | 是否留出顶部安全距离（状态栏高度）               | _boolean_          | `false`  |
+| custom-class           | 自定义类名                                       | _string_           | -        |
+| wrap-class             | 自定义最外层类名                                 | _string_           | -        |
+| lock-scroll            | 是否锁定背景滚动                                 | _boolean_          | `true`   |
 
+### Events
 
-
-### Popup Events
-
-| 事件    | 说明     | 返回值 |
-| ------- | -------- | ------ |
-| cancel  | 点击取消 | -      |
-| confirm | 点击确定 | -      |
-
-以下为废弃属性（`v0.7.32`）：
-
-
-
-| 类型  | 旧                 | 新                     |
-| ----- | ------------------ | ---------------------- |
-| Prop  | show-back-arrow    | arrow-icon             |
-| Prop  | is-showpopup-close | close-icon             |
-| Prop  | is-show-title      | show-title             |
-| Prop  | is-cross-slab      | horizontal             |
-| Prop  | popup-title        | title                  |
-| Prop  | popup-title-btn    | button                 |
-| Prop  | is-border-btn      | border-button          |
-| Prop  | can-touch-remove   | close-on-click-overlay |
-| Event | onConfirm          | confirm                |
-| Event | onCancel           | cancel                 |
-
-
-
-### Popup Slot
-
-| 名称   | 说明             |
-| ------ | ---------------- |
-| title  | 顶部标题         |
-| icon   | 左侧图标位置内容 |
-| button | 右侧按钮位置内容 |
+| 事件名        | 说明             | 参数 |
+| ------------- | ---------------- | ---- |
+| close         | 关闭弹出层时触发 | -    |
+| click-overlay | 点击遮罩层时触发 | -    |
+| before-enter  | 进入前触发       | -    |
+| enter         | 进入中触发       | -    |
+| after-enter   | 进入后触发       | -    |
+| before-leave  | 离开前触发       | -    |
+| leave         | 离开中触发       | -    |
+| after-leave   | 离开后触发       | -    |
 
 ## 在线调试
 
 <debug-online />
 
-
 ## 常见问题
 
-1. input 高度
+### 从 Vant 迁移
 
-`transform`后的`position: fixed`失效，对于`popup`中包含`input`输入框，且需要调整高度的场景，可以使用`customStyle`:
+`v-model(value)` 需要改成 `show` 属性，以及接收 `close` 事件。
+
+之前：
 
 ```html
-<press-popup
-  :custom-style="`bottom: ${inputBottom}px;`"
->
-</press-popup>
+<van-popup v-model="show">内容</van-popup>
 ```
 
-2. 内部元素滚动
+现在
 
-`press-popup` 为了防止滚动穿透，在外层以及蒙层使用了 `@touch.stop="noop"`。如果内部元素需要滚动，可以使用 `scroll-view`，单纯设置元素 `overflow: scroll` 可能会在小程序下无效。可以参考上面“函数式调用”示例部分。
+```html
+<press-popup :show="show" @close="onClose">内容</press-popup>
+```
+
+### custom-class
+
+由于历史原因，`PressPopup` 组件的`custom-class` 并不会作用在最外层，而是在中间某层。
+
+如果需要自定义最外层的 `class`，可以传入 `wrap-class`。
+

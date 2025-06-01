@@ -22,7 +22,7 @@
           v-if="useIconSlot"
           name="icon"
         />
-        <PressIconPlus
+        <PressIcon
           v-else
           name="success"
           :class="radioIconClass"
@@ -50,7 +50,7 @@ import utils from '../common/utils/utils';
 import { canIUseModel } from '../common/utils/version';
 import { ChildrenMixin } from '../mixins/basic/relation';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 
@@ -62,7 +62,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [
     ChildrenMixin(PARENT),

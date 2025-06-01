@@ -115,7 +115,7 @@ export default {
 | color          | color when selected                                                                                    | _string_           | `#ffd21e` |
 | void-color     | unselected color                                                                                       | _string_           | `#c7c7c7` |
 | icon           | The icon name or image link when selected, see [Icon Component](./press-icon-plus) for optional values | _string_           | `star`    |
-| void-icon      | Icon name or image link when not selected, see [Icon Component](./press-icon-plus) for optional values | _string_           | `star-o`  |
+| void-icon      | IconPlus name or image link when not selected, see [Icon Component](./press-icon-plus) for optional values | _string_           | `star-o`  |
 | allow-half     | Whether to allow half selection                                                                        | _boolean_          | `false`   |
 | readonly       | Whether it is read-only                                                                                | _boolean_          | `false`   |
 | disabled       | whether to disable scoring                                                                             | _boolean_          | `false`   |

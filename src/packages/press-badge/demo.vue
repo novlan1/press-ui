@@ -81,7 +81,7 @@
       <PressBadge :custom-style="customStyle">
         <div class="child" />
         <template #content>
-          <PressIconPlus
+          <PressIcon
             name="success"
             class="badge-icon"
           />
@@ -90,7 +90,7 @@
       <PressBadge :custom-style="customStyle">
         <div class="child" />
         <template #content>
-          <PressIconPlus
+          <PressIcon
             name="cross"
             class="badge-icon"
           />
@@ -99,7 +99,7 @@
       <PressBadge :custom-style="customStyle">
         <div class="child" />
         <template #content>
-          <PressIconPlus
+          <PressIcon
             name="down"
             class="badge-icon"
           />
@@ -122,7 +122,7 @@
 </template>
 <script>
 import PressBadge from 'press-ui/press-badge/press-badge.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 
 
 export default {
@@ -142,7 +142,7 @@ export default {
   },
   components: {
     PressBadge,
-    PressIconPlus,
+    PressIcon,
   },
   data() {
     return {

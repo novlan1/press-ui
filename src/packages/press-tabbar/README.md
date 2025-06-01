@@ -205,7 +205,7 @@ export default {
 | ----------- | ------------------------------------------------------------------------- | ------------------ | ---------------- |
 | name        | 标签名称，作为匹配的标识符                                                | _string \| number_ | 当前标签的索引值 |
 | icon        | 图标名称或图片链接，可选值见 [Icon 组件](./press-icon-plus)               | _string_           | -                |
-| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](./press-icon-plus#props) | _string_           | `press-icon`     |
+| icon-prefix | 图标类名前缀，同 IconPlus 组件的 [class-prefix 属性](./press-icon-plus#props) | _string_           | `press-icon`     |
 | dot         | 是否显示小红点                                                            | _boolean_          | -                |
 | info        | 图标右上角提示信息                                                        | _string \| number_ | -                |
 

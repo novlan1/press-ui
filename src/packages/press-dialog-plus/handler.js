@@ -1,98 +1,35 @@
-// #ifdef H5
-import { initH5Instance } from '../common/component-handler/h5-handler';
-// #endif
+// 此文件不能改为ts，否则条件编译有问题
 
-import { setData } from '../common/component-handler/set-data';
-import { selectComponent } from '../common/functional-component';
-import { nextTick } from '../common/vue3/adapter';
-import { t } from '../locale';
+import { initFunctionalDialog } from '../common/component-handler/init-functional-dialog';
+import { addFunctionForDialog } from '../press-dialog/handler-helper';
 
-import { addFunctionForDialog } from './handler-helper';
+import { dialogProps } from './computed';
+
 
 // #ifdef H5
 import VueDialog from './press-dialog-plus.vue';
 // #endif
 
-
 let queue = [];
+const defaultOptions = Object.keys(dialogProps).reduce((acc, item) => {
+  acc[item] = dialogProps[item].default;
+  return acc;
+}, {
+  selector: '#tip-match-comm-tips-dialog',
+});
 
-const defaultOptions = {
-  selector: '#press-dialog',
-  show: false,
-  title: '',
-  message: '',
 
-  className: '',
-  customStyle: '',
-
-  asyncClose: false,
-  beforeClose: null,
-
-  theme: 'default',
-  messageAlign: '',
-  width: null,
-  zIndex: 100,
-
-  overlay: true,
-  overlayStyle: '',
-  transition: 'scale',
-
-  showConfirmButton: true,
-  showCancelButton: false,
-  confirmButtonText: t('confirm'),
-  cancelButtonText: t('cancel'),
-
-  closeOnClickOverlay: false,
-  confirmButtonOpenType: '',
-};
 let currentOptions = Object.assign({}, defaultOptions);
 
+const DialogPlus = options => initFunctionalDialog({
+  options,
+  currentOptions,
+  id: 'tip-dialog-showCommTipsDialog',
+  // #ifdef H5
+  dialogComponent: VueDialog,
+  // #endif
+});
 
-function getContext() {
-  const pages = getCurrentPages();
-  return pages[pages.length - 1];
-}
-
-
-const Dialog = (options) => {
-  options = Object.assign(Object.assign({}, currentOptions), options);
-  return new Promise((resolve, reject) => {
-    const context = options.context || getContext();
-    let dialog = selectComponent(context, options.selector);
-
-    delete options.context;
-    delete options.selector;
-
-    // #ifdef H5
-    if (!dialog) {
-      dialog = initH5Instance(VueDialog, 'press-dialog');
-    }
-    // #endif
-
-    if (dialog) {
-      const callback = (action, instance) => {
-        action === 'confirm' ? resolve(instance) : reject(instance);
-      };
-      const newOptions = {
-        ...options,
-      };
-
-      setData(dialog, newOptions);
-      dialog.callback = callback;
-      // Vue3 小程序下挂载 callback
-      if (dialog.$vm) {
-        dialog.$vm.callback = callback;
-      }
-
-      nextTick(() => {
-        setData(dialog, { show: true });
-      });
-      queue.push(dialog);
-    } else {
-      console.warn('The press-dialog node is not found, please confirm whether the selector and context are correct');
-    }
-  });
-};
 
 function updateQueue(arg) {
   queue = arg;
@@ -102,6 +39,7 @@ function updateCurrentOptions(arg) {
   currentOptions = arg;
 }
 
+Dialog.show = options => Dialog(options);
 addFunctionForDialog({
   Dialog,
   queue,
@@ -110,12 +48,9 @@ addFunctionForDialog({
   updateQueue,
   updateCurrentOptions,
 });
+
 export default Dialog;
 
-
-export const showDialog = Dialog.alert;
-export const showConfirmDialog = Dialog.confirm;
-export const closeDialog = Dialog.close;
+export const showDialog = Dialog.show;
 export const setDialogDefaultOptions = Dialog.setDefaultOptions;
 export const resetDialogDefaultOptions = Dialog.resetDefaultOptions;
-export const stopDialogLoading = Dialog.stopLoading;

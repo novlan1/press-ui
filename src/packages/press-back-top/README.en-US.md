@@ -122,7 +122,7 @@ Customize the text through the `text` parameter, which is empty by default.
 | bottom        | Distance from the back to top button to the bottom, unit `px`   | _string \| number_ | `100`         |
 | right         | The distance from the back to top button to the right, in `px`  | _string \| number_ | `20`          |
 | z-index       | Level                                                           | _string \| number_ | `9`           |
-| icon-style    | Icon style                                                      | _string_           | -             |
+| icon-style    | IconPlus style                                                      | _string_           | -             |
 | scroll-to-top | Custom scrolling method                                         | _function_         | -             |
 
 ### Events

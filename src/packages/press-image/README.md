@@ -63,7 +63,7 @@ export default {
 ```html
 <PressImage :src="src">
   <template #loading>
-    <PressLoadingPlus
+    <PressLoading
       type="spinner"
       size="20"
     />

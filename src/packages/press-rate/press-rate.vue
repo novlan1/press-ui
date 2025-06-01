@@ -13,7 +13,7 @@
         :class="[utils.bem2('rate__item')]"
         :style="'' + style({ paddingRight: index !== count - 1 ? utils.addUnit(gutter) : null })"
       >
-        <PressIconPlus
+        <PressIcon
           :name="index + 1 <= innerValue ? icon : voidIcon"
           :class="[getIconBaseClass(index)]"
           :style="'' + iconStyle"
@@ -24,7 +24,7 @@
           @click="onSelect(index)"
         />
 
-        <PressIconPlus
+        <PressIcon
           v-if="allowHalf"
           :name="index + 0.5 <= innerValue ? icon : voidIcon"
           :class="[getIconHalfClass(index)]"
@@ -45,13 +45,13 @@ import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
 
 import utils from '../common/utils/utils';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 
 export default {
   name: 'PressRate',
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   field: true,
   props: {

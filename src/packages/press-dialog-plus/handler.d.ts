@@ -3,60 +3,44 @@ type IOptions = Partial<{
   selector: string | ((context: any) => any);
 
   show: boolean;
+  src: string;
+  dialogType: number;
   title: string;
-  message: string;
+  content: string;
 
-  useSlot: boolean;
-  useTitleSlot: boolean;
+  canTouchRemove: boolean;
+  confirmText: string;
+  cancelText: string;
+  onClickCancel: null | Function;
+  onConfirmClick: null | Function;
 
-  className: string;
-  customStyle: string;
+  htmlContent: string;
+  zIndex: string | number;
+  useScrollView:  boolean;
 
-  asyncClose: boolean;
-  beforeClose: null | Function;
+  onClickImage: null | Function;
+  onLongPressImage: null | Function;
+  showField:  boolean;
 
-  theme: string;
-  messageAlign: string;
-  width: string | number;
-  zIndex: number;
-
-  overlay: boolean;
-  overlayStyle: string;
-  transition: string;
-
-  showConfirmButton: boolean;
-  showCancelButton: boolean;
-
-  confirmButtonText: string;
-  cancelButtonText: string;
-  confirmButtonColor: string;
-  cancelButtonColor: string;
-
-  closeOnClickOverlay: boolean;
-  confirmButtonOpenType: string;
+  fieldPlaceHolder: string;
+  fieldValue: string;
+  customClass: string;
 }>;
 
 interface IDialog {
   (options: IOptions): any;
   show: (options: IOptions) => Promise<any>;
-  confirm: (options: IOptions) => Promise<any>;
-  alert: (options: IOptions) => Promise<any>;
-
-  clear: () => void;
-  close: () => void;
-  stopLoading: () => void;
+  clear: () => any;
 
   setDefaultOptions: (options: IOptions) => void;
   resetDefaultOptions: () => void;
 }
 
+
 declare const Dialog: IDialog;
 
 export default Dialog;
 
-export const showDialog: typeof Dialog.alert;
-export const showConfirmDialog: typeof Dialog.confirm;
-export const closeDialog: typeof Dialog.close;
+export const showDialog: typeof Dialog.show;
 export const setDialogDefaultOptions: typeof Dialog.setDefaultOptions;
 export const resetDialogDefaultOptions: typeof Dialog.resetDefaultOptions;
-export const stopDialogLoading: typeof Dialog.stopLoading;

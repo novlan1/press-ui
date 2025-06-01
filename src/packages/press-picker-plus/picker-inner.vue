@@ -1,5 +1,5 @@
 <template>
-  <PressPopup
+  <PressPopupPlus
     :close-icon="!arrowIcon"
     :show-back-arrow="arrowIcon"
     :title="title"
@@ -18,7 +18,7 @@
     >
       {{ tip }}
     </div>
-    <PressPickerView
+    <PressPickerPlusView
       ref="picker"
       :data="data"
       :has-tip="!!tip"
@@ -27,24 +27,24 @@
       :virtual-list-threshold="virtualListThreshold"
       @currentIndexChanged="onCurrentIndexChanged"
     />
-  </PressPopup>
+  </PressPopupPlus>
 </template>
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { t } from '../locale';
-import PressPickerView from '../press-picker-view/press-picker-view.vue';
-import PressPopup from '../press-popup/press-popup.vue';
+import PressPickerPlusView from '../press-picker-view/press-picker-view.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {
-  name: 'PressPickerInner',
+  name: 'PressPickerPlusInner',
   options: {
     ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {
-    PressPopup,
-    PressPickerView,
+    PressPopupPlus,
+    PressPickerPlusView,
   },
   props: {
     // 弹窗标题

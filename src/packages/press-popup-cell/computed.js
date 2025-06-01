@@ -1,4 +1,4 @@
-import { newProps } from '../press-popup/computed';
+import { newProps } from '../press-popup-plus/computed';
 
 
 export const PRESS_POPUP_CELL_PROPS = [

@@ -59,12 +59,12 @@
     >
       <!-- #endif -->
       <template v-if="isESportLoading">
-        <PressLoading
+        <PressLoadingPlus
           loading-scenes="btn"
         />
       </template>
       <template v-else-if="loading">
-        <PressLoadingPlus
+        <PressLoading
           :custom-class="loadingClass"
           :size="loadingSize"
           :type="loadingType"
@@ -78,7 +78,7 @@
         </div>
       </template>
       <template v-else>
-        <PressIconPlus
+        <PressIcon
           v-if="icon"
           size="1.2em"
           :name="icon"
@@ -103,9 +103,9 @@ import utils, { isNotInUni } from '../common/utils/utils';
 import { canIUseFormFieldButton } from '../common/utils/version';
 
 import { button } from '../mixins/basic/button';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressLoading from '../press-loading/press-loading.vue';
+import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
 
 import { DEFAULT_SIZE_LIST, rootStyle, loadingColor } from './index';
 
@@ -131,9 +131,9 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
-    PressLoadingPlus,
+    PressIcon,
     PressLoading,
+    PressLoadingPlus,
   },
   mixins,
   props: {
@@ -141,7 +141,7 @@ export default {
     icon: { type: String, default: '' },
     classPrefix: {
       type: String,
-      default: 'press-icon-plus',
+      default: 'press-icon',
     },
     plain: Boolean,
     block: Boolean,

@@ -1,5 +1,5 @@
 <template>
-  <PressPopup
+  <PressPopupPlus
     :is-show="innerShow"
     :show-title="getPropOrData('showTitle')"
     :close-icon="getPropOrData('closeIcon')"
@@ -120,13 +120,13 @@
     >
       {{ getPropOrData('bottomButton') }}
     </div>
-  </PressPopup>
+  </PressPopupPlus>
 </template>
 
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { functionalMixin } from '../mixins/basic/functional';
-import PressPopup from '../press-popup/press-popup.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 import PressSwitch from '../press-switch/press-switch.vue';
 
 import { PRESS_POPUP_CELL_PROPS } from './computed';
@@ -154,12 +154,12 @@ const popupCellProps = {
 let that;
 
 export default {
-  name: 'PressPopupCell',
+  name: 'PressPopupPlusCell',
   options: {
     ...getVirtualHostOptions(true, false),
   },
   components: {
-    PressPopup,
+    PressPopupPlus,
     PressSwitch,
   },
   mixins: [functionalMixin(popupCellProps)],

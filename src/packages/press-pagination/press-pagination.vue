@@ -33,13 +33,13 @@
           <span>{{ item }}</span>
         </div>
       </scroll-view>
-      <PressPopover
+      <PressPopoverPlus
         :show="selectedEvent"
         placement="left"
         :custom-style="tipStyle"
       >
         <p>{{ pageTip }}</p>
-      </PressPopover>
+      </PressPopoverPlus>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ import { nextTick } from '../common/utils/system';
 import { isNotInUni } from '../common/utils/utils';
 
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
-import PressPopover from '../press-popover/press-popover.vue';
+import PressPopoverPlus from '../press-popover-plus/press-popover-plus.vue';
 
 let popOverTimer = null;
 
@@ -63,7 +63,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressPopover,
+    PressPopoverPlus,
   },
   mixins: [ScrollViewPureMixin],
   props: {

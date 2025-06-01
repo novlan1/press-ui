@@ -41,7 +41,7 @@
           :class="curFormat === item ? 'active' : ''"
           @click.stop="clickFormat(item)"
         >
-          <PressIconPlus
+          <PressIcon
             v-if="curFormat === item"
             name="success"
             size="12"
@@ -77,7 +77,7 @@
 </template>
 <script>
 import PressColorPicker from 'press-ui/press-color-picker/press-color-picker.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 
 
 export default {
@@ -97,7 +97,7 @@ export default {
   },
   components: {
     PressColorPicker,
-    PressIconPlus,
+    PressIcon,
   },
   data() {
     return {

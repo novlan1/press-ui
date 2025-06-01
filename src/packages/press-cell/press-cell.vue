@@ -6,7 +6,7 @@
     :style="wrapStyle"
     @click.stop="onClick"
   >
-    <PressIconPlus
+    <PressIcon
       v-if="icon"
       :name="icon"
       :class="[leftIconBaseClass]"
@@ -58,7 +58,7 @@
       <slot v-else />
     </div>
 
-    <PressIconPlus
+    <PressIcon
       v-if="isLink"
       :name="arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow'"
       :class="[rightIconBaseClass]"
@@ -80,7 +80,7 @@ import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 import { link } from '../mixins/basic/link';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 
@@ -88,7 +88,7 @@ import computed from './computed';
 export default {
   name: 'PressCell',
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   options: {
     ...defaultOptions,

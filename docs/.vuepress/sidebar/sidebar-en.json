@@ -17,16 +17,16 @@
           "path": "/en/components/press/press-col.md"
         },
         {
-          "title": "IconPlus",
-          "path": "/en/components/press/press-icon-plus.md"
+          "title": "Icon",
+          "path": "/en/components/press/press-icon.md"
         },
         {
           "title": "Image",
           "path": "/en/components/press/press-image.md"
         },
         {
-          "title": "PopupPlus",
-          "path": "/en/components/press/press-popup-plus.md"
+          "title": "Popup",
+          "path": "/en/components/press/press-popup.md"
         },
         {
           "title": "Style",
@@ -91,8 +91,8 @@
           "path": "/en/components/press/press-number-keyboard.md"
         },
         {
-          "title": "PickerPlus",
-          "path": "/en/components/press/press-picker-plus.md"
+          "title": "Picker",
+          "path": "/en/components/press/press-picker.md"
         },
         {
           "title": "Radio",
@@ -141,8 +141,8 @@
           "path": "/en/components/press/press-barrage.md"
         },
         {
-          "title": "DialogPlus",
-          "path": "/en/components/press/press-dialog-plus.md"
+          "title": "Dialog",
+          "path": "/en/components/press/press-dialog.md"
         },
         {
           "title": "DropdownMenu",
@@ -153,8 +153,8 @@
           "path": "/en/components/press/press-guide.md"
         },
         {
-          "title": "LoadingPlus",
-          "path": "/en/components/press/press-loading-plus.md"
+          "title": "Loading",
+          "path": "/en/components/press/press-loading.md"
         },
         {
           "title": "Notify",
@@ -165,8 +165,8 @@
           "path": "/en/components/press/press-overlay.md"
         },
         {
-          "title": "PopoverPlus",
-          "path": "/en/components/press/press-popover-plus.md"
+          "title": "Popover",
+          "path": "/en/components/press/press-popover.md"
         },
         {
           "title": "PullRefresh",
@@ -327,7 +327,7 @@
       ]
     },
     {
-      "title": "ESport Components",
+      "title": "Business Components",
       "collapsable": false,
       "children": [
         {
@@ -335,32 +335,32 @@
           "path": "/en/components/press/press-area.md"
         },
         {
-          "title": "Dialog",
-          "path": "/en/components/press/press-dialog.md"
+          "title": "DialogPlus",
+          "path": "/en/components/press/press-dialog-plus.md"
         },
         {
-          "title": "Icon",
-          "path": "/en/components/press/press-icon.md"
+          "title": "IconPlus",
+          "path": "/en/components/press/press-icon-plus.md"
         },
         {
-          "title": "Loading",
-          "path": "/en/components/press/press-loading.md"
+          "title": "LoadingPlus",
+          "path": "/en/components/press/press-loading-plus.md"
         },
         {
           "title": "Pagination",
           "path": "/en/components/press/press-pagination.md"
         },
         {
-          "title": "Picker",
-          "path": "/en/components/press/press-picker.md"
+          "title": "PickerPlus",
+          "path": "/en/components/press/press-picker-plus.md"
         },
         {
-          "title": "Popover",
-          "path": "/en/components/press/press-popover.md"
+          "title": "PopoverPlus",
+          "path": "/en/components/press/press-popover-plus.md"
         },
         {
-          "title": "Popup",
-          "path": "/en/components/press/press-popup.md"
+          "title": "PopupPlus",
+          "path": "/en/components/press/press-popup-plus.md"
         }
       ]
     }

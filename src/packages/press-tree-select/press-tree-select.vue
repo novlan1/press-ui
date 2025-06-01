@@ -37,7 +37,7 @@
         @click="onSelectItem(item)"
       >
         {{ item.text }}
-        <PressIconPlus
+        <PressIcon
           v-if="isActive(activeId, item.id)"
           :name="selectedIcon"
           size="16px"
@@ -52,7 +52,7 @@
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import utils from '../common/utils/utils';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressSidebarItem from '../press-sidebar-item/press-sidebar-item.vue';
 import PressSidebar from '../press-sidebar/press-sidebar.vue';
 
@@ -67,7 +67,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressSidebar,
     PressSidebarItem,
   },

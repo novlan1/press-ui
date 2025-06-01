@@ -148,8 +148,8 @@ exports[`renders demo correctly 1`] = `
 
         </div>
       </button></button> <button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal "><button id="" hover-class="press-button--active," lang="" form-type="" open-type="" business-id="" session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" app-parameter="" aria-label="" class=" press-button press-button--default press-button--normal ">
-        <div class="press-button__icon  press-icon-plus press-icon-plus--image" style="font-size: 1.2em; line-height: inherit;">
-          <!----> <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png" mode="aspectFit" class="press-icon-plus__image">
+        <div class="press-button__icon  press-icon-plus press-icon--image" style="font-size: 1.2em; line-height: inherit;">
+          <!----> <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png" mode="aspectFit" class="press-icon__image">
         </div>
         <div class="press-button__text">
 

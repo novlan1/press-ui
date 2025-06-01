@@ -39,7 +39,7 @@
       :ref="DATE_TIME_PICKER_ID"
       mode="functional"
     />
-    <PressDialog id="tip-match-comm-tips-dialog" />
+    <PressDialogPlus id="tip-match-comm-tips-dialog" />
   </div>
 </template>
 <script>
@@ -49,8 +49,8 @@ import { routerBack } from 'press-ui/common/utils/router';
 
 import PressButton from 'press-ui/press-button/press-button.vue';
 import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
-import Dialog from 'press-ui/press-dialog';
-import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
+import DialogPlus from 'press-ui/press-dialog-plus';
+import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
 
 
@@ -71,7 +71,7 @@ export default {
     PressField,
     PressButton,
     PressDatetimePickerPopup,
-    PressDialog,
+    PressDialogPlus,
   },
   data() {
     that = this;

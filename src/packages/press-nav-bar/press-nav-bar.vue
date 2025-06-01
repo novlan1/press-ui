@@ -15,7 +15,7 @@
           @click="onClickLeft"
         >
           <template v-if="leftArrow || leftText">
-            <PressIconPlus
+            <PressIcon
               v-if="leftArrow"
               size="16px"
               name="arrow-left"
@@ -77,7 +77,7 @@ import { getRect, getStatusBarHeight } from '../common/dom/rect';
 import { nextTick } from '../common/utils/system';
 
 import utils from '../common/utils/utils';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 
@@ -89,7 +89,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   props: {
     ...defaultProps,

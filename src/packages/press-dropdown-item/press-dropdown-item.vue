@@ -37,7 +37,7 @@
           </div>
         </template>
 
-        <PressIconPlus
+        <PressIcon
           v-if="item.value === innerValue"
           name="success"
           class="press-dropdown-item__icon"
@@ -59,8 +59,8 @@ import utils from '../common/utils/utils';
 import { ChildrenMixin } from '../mixins/basic/relation';
 
 import PressCell from '../press-cell/press-cell.vue';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
-import PressPopup from '../press-popup-plus/press-popup-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
@@ -72,7 +72,7 @@ export default {
   components: {
     PressPopup,
     PressCell,
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [
     ChildrenMixin(PARENT),

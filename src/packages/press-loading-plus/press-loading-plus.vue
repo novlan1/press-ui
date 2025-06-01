@@ -1,93 +1,47 @@
 <template>
-  <div class="press-loading-index">
-    <div
-      :class="loadingClass"
-      :style="loadingStyle"
+  <div
+    class="press-loading"
+    :style="{background: loadingBg}"
+  >
+    <img
+      :class="loadingScenes == 'btn' ? 'press-loading__img--btn' : 'press-loading__img--page'"
+      :src="`https://image-1251917893.file.myqcloud.com/Esports/user/img/${loadingScenes}-loading.gif`"
     >
-      <div
-        :class="'press-loading__spinner press-loading__spinner--'+(type)"
-        :style="spinnerStyle"
-      >
-        <template
-          v-if="type === 'spinner'"
-        >
-          <div
-            v-for="(item,index) in (array12)"
-            :key="index"
-            class="press-loading__dot"
-          />
-        </template>
-      </div>
-
-      <div
-        class="press-loading__text"
-        :style="textStyle"
-      >
-        <slot />
-      </div>
-    </div>
   </div>
 </template>
 <script>
-import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
-import { style } from '../common/utils/style';
-import utils from '../common/utils/utils';
-
-import { TDESIGN_BRAND_COLOR } from './config';
-
-import computed from './index';
+import { getVirtualHostOptions } from '../common/component-handler/press-component';
 
 
 export default {
   name: 'PressLoadingPlus',
   options: {
-    ...defaultOptions,
+    ...getVirtualHostOptions(true, false),
   },
   props: {
-    ...defaultProps,
-    customStyle: { type: [String, Object], default: '' },
-    color: { type: String, default: '' },
-    vertical: { type: Boolean, default: false },
-    type: {
+    // loading背景色，默认透明
+    loadingBg: {
       type: String,
-      default: 'circular',
+      default: '',
+      required: false,
     },
-    size: { type: String, default: '' },
-    textSize: { type: String, default: '' },
+    // loading的场景，默认是page，可选项：page/btn
+    loadingScenes: {
+      type: String,
+      default: 'page',
+      required: false,
+    },
   },
   emits: [],
   data() {
     return {
-      array12: Array.from({ length: 12 }),
     };
   },
-  computed: {
-    loadingStyle() {
-      return style(this.customStyle);
-    },
-    innerColor() {
-      const { color, type } = this;
-      if (type === 'circular-tdesign' && !color) {
-        return TDESIGN_BRAND_COLOR;
-      }
-      return color;
-    },
-    loadingClass() {
-      const { vertical, customClass, type } = this;
-      return `${customClass} ${utils.bem2('loading', [type, { vertical }])}`;
-    },
-    spinnerStyle() {
-      const { size, innerColor  } = this;
-      return computed.spinnerStyle({ color: innerColor, size });
-    },
-    textStyle() {
-      const { textSize } = this;
-      return computed.textStyle({ textSize });
-    },
+  mounted() {
+  },
+  methods: {
   },
 };
 
 </script>
-
-<style lang="scss" scoped src="./css/index.scss">
-</style>
+<style lang="scss" scoped src="./css/index.scss"></style>

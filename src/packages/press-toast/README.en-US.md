@@ -22,7 +22,7 @@ showToast('I am a prompt copywriter, it is recommended not to exceed fifteen cha
 <press-toast id="press-toast" />
 ```
 
-### Loading Tips
+### LoadingPlus Tips
 
 Use the `showLoadingToast` method to display the loading prompt, use the `forbidClick` attribute to disable the background click, and use the `loadingType` attribute to customize the loading icon type.
 

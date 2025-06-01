@@ -4,8 +4,7 @@ url : pages/press/loading/loading
 
 ## Loading 加载中
 
-加载中，分为图片模式和页面模式两种。
-
+用于表示页面或操作的加载状态，给予用户反馈的同时减缓等待的焦虑感，由一个或一组反馈动效组成。
 
 ## 引入
 
@@ -21,49 +20,65 @@ export default {
 
 ## 代码演示
 
-### 基本用法
+### 加载类型
 
-**示例**
+```html
+<press-loading /> 
 
+<press-loading type="circular-tdesign" />
 
-```vue
-<template>
-  <press-loading />
-  <press-loading loading-scenes="btn" />
-  <press-loading
-    loading-scenes="page"
-    loading-bg="#eee"
-  />
-</template>
-
-<script>
-import PressLoading from 'press-ui/press-loading/press-loading';
-
-export default {
-  component: {
-    PressLoading,
-  },
-};
-
-</script>
+<press-loading type="spinner" />
 ```
 
+当类型为 `circular-tdesign` 时，`color` 默认值为 `#0052d9`，即 [TDesign](https://tdesign.tencent.com/design/color) 主题色。
+
+### 自定义颜色
+
+```html
+<press-loading color="#1989fa" /> 
+
+<press-loading type="spinner" color="#1989fa" />
+```
+
+### 自定义大小
+
+```html
+<press-loading size="15" /> 
+
+<press-loading type="spinner" size="38" />
+```
+
+### 加载文案
+
+```html
+<press-loading size="24px">加载中...</press-loading>
+```
+
+### 垂直排列
+
+```html
+<press-loading size="24px" vertical>加载中...</press-loading>
+```
 
 ## API
 
 ### Props
 
-| 参数           | 说明                                | 类型     | 默认值 |
-| -------------- | ----------------------------------- | -------- | ------ |
-| loading-bg     | `loading`背景色                     | _string_ | -      |
-| loading-scenes | `loading`的场景，可选项：`page/btn` | _string_ | `page` |
+| 参数      | 说明                                         | 类型               | 默认值     |
+| --------- | -------------------------------------------- | ------------------ | ---------- |
+| color     | 颜色                                         | _string_           | `#c9c9c9`  |
+| type      | 类型，可选值为 `spinner`, `circular-tdesign` | _string_           | `circular` |
+| size      | 加载图标大小，默认单位为 `px`                | _string \| number_ | `30px`     |
+| text-size | 文字大小，默认单位为为 `px`                  | _string \| number_ | `14px`     |
+| vertical  | 是否垂直排列图标和文字内容                   | _boolean_          | `false`    |
+
+### Slots
+
+| 名称 | 说明     |
+| ---- | -------- |
+| -    | 加载文案 |
 
 ## 在线调试
 
 <debug-online />
 
-## 常见问题
-
-### 实现原理
-
-`press-loading` 采用的是绝对定位，`left/right/bottom/top` 均为`0`，所以要改变其高度，只需要修改最近的 `position: relative`的祖先元素（父元素）即可。

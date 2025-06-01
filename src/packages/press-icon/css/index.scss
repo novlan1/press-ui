@@ -1,34 +1,51 @@
+@import './icon.scss';
+
+.press-icon,
+.press-icon-plus-plus:before {
+  display: inline-block;
+}
+
+.press-icon {
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: normal normal normal 14px/1 press-icon;
+  font-size: inherit;
+  position: relative;
+
+  // 【修改点】增加垂直水平居中
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
 /* #ifndef APP-NVUE */
-@import './uniicons.scss';
 @font-face {
-  font-family: 'iconfont';
-  src: url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e');
-
-  /* IE9 */
-  src: url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.eot?t=13a02cbb9e9c634e54e36069099a2d1e#iefix')
-    format('embedded-opentype'),
-    
-    url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.woff?t=13a02cbb9e9c634e54e36069099a2d1e')
+  font-display: auto;
+  font-family: 'press-icon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff2?t=1640074908811')
     format('woff2'),
-    url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.woff?t=13a02cbb9e9c634e54e36069099a2d1e')
+    url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.woff?t=1640074908811')
     format('woff'),
-    
-    url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.ttf?t=13a02cbb9e9c634e54e36069099a2d1e')
-    format('truetype'),
-    
-    url('https://image-1251917893.file.myqcloud.com/Esports/iconfont/iconfont.svg?t=13a02cbb9e9c634e54e36069099a2d1e#iconfont')
-    format('svg');
-
-  /* iOS 4.1- */
+    url('https://at.alicdn.com/t/font_2553510_5imfhdc20ag.ttf?t=1640074908811')
+    format('truetype');
 }
 
 /* #endif */
-.iconfont {
-  font-family: 'iconfont' !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #5e6d82;
-  display: inline-block;
+
+.press-icon {
+  &--image {
+    width: 1em;
+    height: 1em;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info {
+    z-index: 1;
+  }
 }

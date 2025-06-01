@@ -43,12 +43,12 @@
       </PressList>
     </div>
 
-    <PressPopupCell
+    <PressPopupPlusCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
       :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
-    <PressPicker
+    <PressPickerPlus
       :id="FUNCTIONAL_ID_MAP.PICKER"
       :ref="FUNCTIONAL_ID_MAP.PICKER"
       mode="functional"
@@ -58,8 +58,8 @@
 <script>
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressList from 'press-ui/press-list/press-list.vue';
-import PressPicker from 'press-ui/press-picker/press-picker.vue';
-import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
+import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 import { showCustomPopup, local } from 'src/packages/press-list/demo-helper/custom';
 import { virtualListMixin } from 'src/packages/press-list/demo-helper/virtual-list-mixin';
@@ -98,8 +98,8 @@ export default {
   },
   components: {
     PressList,
-    PressPopupCell,
-    PressPicker,
+    PressPopupPlusCell,
+    PressPickerPlus,
     PressCell,
   },
   mixins: [virtualListMixin()],

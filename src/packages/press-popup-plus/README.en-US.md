@@ -1,153 +1,293 @@
 ---
-url : pages/press/popup-plus/popup-plus
+url: pages/press/popup-plus/popup-plus
 ---
 
-## PopupPlus 
+## Popup
 
-The pop-up layer container is used to display pop-up windows, information prompts and other content, and supports multiple pop-up layers to be superimposed and displayed.
 
-## Code Demo
+Pop-up layer component, which pops up a message prompt window, prompt box, etc. in the application
 
-### Basic usage
-
-Use the `show` attribute to control whether the popup layer is displayed.
-
-```html
-<press-cell title="Show Popup" is-link @click="showPopup" />
-
-<press-popup :show="show" @close="onClose">Content</press-popup>
-```
-
-```javascript
-Page({
-   data: {
-     show: false,
-   },
-
-   showPopup() {
-     this.setData({ show: true });
-   },
-
-   onClose() {
-     this.setData({ show: false });
-   },
-});
-```
-
-### popup location
-
-Set the pop-up position through the `position` property, which is centered by default, and can be set to `top`, `bottom`, `left`, `right`.
-
-```html
-<press-popup
-   :show="show"
-   position="top"
-   custom-style="height: 20%;"
-   @close="onClose"
-/>
-```
 
 ### close icon
 
-After setting the `closeable` property, a close icon will be displayed in the upper right corner of the popup layer, and the icon can be customized through the `close-icon` property, and the position of the icon can be customized by using the `close-icon-position` property.
+Set `close-icon` to `true`.
+
 
 ```html
-<press-popup
-   :show="show"
-   closeable
-   position="bottom"
-   custom-style="height: 20%"
-   @close="onClose"
-/>
-
-<!-- custom icon -->
-<press-popup
-   :show="show"
-   closeable
-   close-icon="close"
-   position="bottom"
-   custom-style="height: 20%"
-   @close="onClose"
-/>
-
-<!-- icon location -->
-<press-popup
-   :show="show"
-   closeable
-   close-icon-position="top-left"
-   position="bottom"
-   custom-style="height: 20%"
-   @close="onClose"
-/>
+<template>
+   <Press Popup
+     v-if="show"
+     :close-icon="true"
+     :arrow-icon="false"
+     :title="title"
+     button="OK"
+     @confirm="confirm"
+     @cancel="cancel"
+   >
+     <div class="content">
+       some content
+     </div>
+   </PressPopupPlus>
+</template>
 ```
 
-### Rounded pop-up window
+```ts
+export default {
+   data() {
+     return {
+       title: 'Decisive Way',
+       show: false;
+     }
+   },
+   methods: {
+     cancel() {
+       this. show = false;
+     },
+     confirm() {
+       this. show = false;
+     },
+   }
+};
+</script>
+```
 
-After setting the `round` property, the pop-up window will add different rounded corner styles according to the pop-up position.
+### cancel icon
+
+Set `close-icon` to `true` and `arrow-icon` to `true`.
+
 
 ```html
-<press-popup
-   :show="show"
-   round
-   position="bottom"
-   custom-style="height: 20%"
-   @close="onClose"
-/>
+<template>
+   <Press Popup
+     v-if="show"
+     :close-icon="true"
+     :arrow-icon="true"
+     :title="title"
+     button="OK"
+     @confirm="confirm"
+     @cancel="cancel"
+   >
+     <div class="content">
+       some content
+     </div>
+   </PressPopupPlus>
+</template>
 ```
 
-### Disable scrolling through
+### No close/cancel
 
-When using components, you will find that when the content part scrolls to the bottom, continuing to swipe will cause the underlying page to scroll, which is scroll penetration.
+Set `close-icon` to `false` and `arrow-icon` to `false`.
 
-Currently, components can handle partial scroll penetration through the `lock-scroll` prop. **However, due to the applet itself, there will still be scrolling penetration in the content area of the pop-up window. ** However, we provide a recommended solution for developers to completely solve scroll penetration:
-
-#### [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
-
-When the minimum version of the Mini Program base library is above 2.9.0, you can use the [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html) component to dynamically modify page style
 
 ```html
-<!-- page-meta can only be the first node in the page -->
-<page-meta :page-style="show ? 'overflow: hidden;' : ''" />
-
-<press-popup :show="show" catch:touchstart />
+<template>
+   <Press Popup
+     v-if="show"
+     :close-icon="false"
+     :arrow-icon="false"
+     :title="title"
+     button="OK"
+     @confirm="confirm"
+     @cancel="cancel"
+   >
+     <div class="content">
+       some content
+     </div>
+   </PressPopupPlus>
+</template>
 ```
+
+
+
+### Wireframe confirmation icon
+
+Set `border-button` to `true`.
+
+
+```html
+<template>
+   <Press Popup
+     v-if="show"
+     :close-icon="true"
+     :arrow-icon="false"
+     :border-button="true"
+     :title="title"
+     button="OK"
+     @confirm="confirm"
+     @cancel="cancel"
+   >
+     <div class="content">
+       some content
+     </div>
+   </PressPopupPlus>
+</template>
+```
+
+### Horizontal version
+
+Set `horizontal` to `true`.
+
+
+```html
+<template>
+   <Press Popup
+     v-if="show"
+     :close-icon="true"
+     :horizontal="true"
+     :width-number="54"
+     :title="title"
+     @confirm="confirm"
+     @cancel="cancel"
+   >
+     <div class="content">
+       some content
+     </div>
+   </PressPopupPlus>
+</template>
+```
+
+### Asynchronous shutdown
+
+An asynchronous shutdown will be triggered when there is `validateConfirm` in the parent component method.
+
+```html
+  <Press Popup
+   v-if="popupOptions.noClose.show"
+   :close-icon="false"
+   :arrow-icon="false"
+   :title="popupOptions.noClose.title"
+   :button="t('confirm')"
+   @confirm="popupOptions.noClose.confirm"
+   @cancel="popupOptions.noClose.cancel"
+>
+   <div class="content">
+     {{ t('SomeContent') }}
+   </div>
+</PressPopupPlus>
+```
+
+```ts
+export default {
+   data() {
+     return {
+       popupOptions: {
+         noClose: {
+           show: false,
+           title: this.t('wayToWin'),
+           cancel: () => {
+             this.popupOptions.noClose.show = false;
+           },
+           confirm: () => {
+             this.popupOptions.noClose.show = false;
+           },
+         },
+       }
+     }
+   },
+   methods: {
+     validateConfirm() {
+       if (['noClose', 'borderBtn']. indexOf(this. type) <= -1) return true;
+
+       return new Promise((resolve) => {
+         setTimeout(() => {
+           if (this. type === 'noClose') {
+             console.log('can be closed after asynchronous confirmation');
+             resolve(true);
+           } else {
+             resolve(false);
+             console.log('Close prohibited after asynchronous confirmation');
+           }
+         }, 2000);
+       });
+     }
+   }
+}
+```
+
+### Function call
+
+To support functional calls, you need to pre-embed components under the page, and specify `mode` as `functional`.
+
+```html
+<press-popup-plus
+   :id="PRESS_PICKER_ID"
+   mode="functional"
+>
+   <div class="content">
+     {{ t('SomeContent') }}
+   </div>
+</press-popup-plus>
+```
+
+```ts
+export default {
+   methods: {
+     onShowFunctionalPicker() {
+       showFunctionalComponent. call(this, {
+       selector: `#${PRESS_PICKER_ID}`,
+       title: this.t('wayToWin'),
+       button: this.t('confirm'),
+       horizontal: false,
+       closeIcon: false,
+       arrowIcon: true,
+       borderButton: false,
+       customStyle: '',
+     }).then(() => {
+       this.onTip('confirm');
+     })
+       .catch(() => {
+         this.onTip('cancel');
+       });
+     },
+   }
+}
+```
+
 
 ## API
 
-### Props
+### PopupPlus Props
 
-| Parameter              | Description                                                       | Type               | Default  |
-| ---------------------- | ----------------------------------------------------------------- | ------------------ | -------- |
-| show                   | Whether to show the popup layer                                   | _boolean_          | `false`  |
-| z-index                | z-index level                                                     | _number_           | `100`    |
-| overlay                | Whether to show the overlay                                       | _boolean_          | `true`   |
-| position               | Popup position, optional values are `top` `bottom` `right` `left` | _string_           | `center` |
-| duration               | animation duration in milliseconds                                | _number \| object_ | `300`    |
-| round                  | Whether to show rounded corners                                   | _boolean_          | `false`  |
-| custom-style           | custom popup layer style                                          | _string_           | `''`     |
-| overlay-style          | custom overlay style                                              | _string_           | `''`     |
-| close-on-click-overlay | Whether to close the overlay on click                             | _boolean_          | `true`   |
-| closeable              | Whether to show the close icon                                    | _boolean_          | `false`  |
-| close-icon             | close icon name or image link                                     | _string_           | `cross`  |
-| safe-area-inset-bottom | Whether to set a bottom safety distance for iPhoneX               | _boolean_          | `true`   |
-| safe-area-inset-top    | Whether to leave a top safe distance (status bar height)          | _boolean_          | `false`  |
-| lock-scroll            | Whether to lock background scrolling                              | _boolean_          | `true`   |
+| property name          | type                                 | default value | description                                                                                 |
+| ---------------------- | ------------------------------------ | ------------- | :------------------------------------------------------------------------------------------ |
+| show-title             | _boolean_                            | `true`        | Whether to show the title                                                                   |
+| title                  | _string_                             | -             | popup window title                                                                          |
+| button                 | _string_                             | -             | popup title button                                                                          |
+| border-button          | _boolean_                            | `false`       | header button style                                                                         |
+| z-index                | _string_                             | `99`          | popup level                                                                                 |
+| popup-class            | _string_                             | -             | class name                                                                                  |
+| close-on-click-overlay | _boolean_                            | `true`        | Whether to click the overlay to close                                                       |
+| close-icon             | _boolean_                            | `false`       | Whether to display the close icon                                                           |
+| arrow-icon             | _boolean_                            | `false`       | Whether to display as a back arrow                                                          |
+| horizontal             | _boolean_                            | `false`       | Whether to switch the horizontal panel style                                                |
+| width-number           | _number_                             | `100`         | Horizontal popup window width percentage                                                    |
+| validate-confirm       | _function_                           | -             | Intercept if `validate-confirm` returns `false` before executing the confirmation animation |
+| mode                   | _string_                             | -             | pass `functional` when calling a function                                                   |
+| disabledButton         | _boolean_                            | `false`       | button disabled                                                                             |
+| lock-scroll            | Whether to lock background scrolling | _boolean_     | `true`                                                                                      |
 
-### Events
 
-| Event Name    | Description                              | Parameters |
-| ------------- | ---------------------------------------- | ---------- |
-| close         | Triggered when the popup layer is closed | -          |
-| click-overlay | Triggered when the overlay is clicked    | -          |
-| before-enter  | trigger before entering                  | -          |
-| enter         | Entering trigger                         | -          |
-| after-enter   | Triggered after entering                 | -          |
-| before-leave  | Fires before leaving                     | -          |
-| leave         | fires while leaving                      | -          |
-| after-leave   | fires after leaving                      | -          |
 
-### External style classes
 
-| class name   | description           |
-| ------------ | --------------------- |
-| custom-class | root node style class |
+### PopupPlus Events
+
+| event name | description     | return value |
+| ---------- | --------------- | ------------ |
+| cancel     | Click to cancel | -            |
+| confirm    | Click OK        | -            |
+
+The following properties are deprecated (`v0.7.32`):
+
+
+| Type  | Old                 | New                    |
+| ----- | ------------------- | ---------------------- |
+| Prop  | show-back-arrow     | arrow-icon             |
+| Prop  | is-show popup-close | close-icon             |
+| Prop  | is-show-title       | show-title             |
+| Prop  | is-cross-slab       | horizontal             |
+| Prop  | popup-title         | title                  |
+| Prop  | popup-title-btn     | button                 |
+| Prop  | is-border-btn       | border-button          |
+| Prop  | can-touch-remove    | close-on-click-overlay |
+| Event | onConfirm           | confirm                |
+| Event | onCancel            | cancel                 |

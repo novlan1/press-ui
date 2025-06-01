@@ -1,5 +1,5 @@
 <template>
-  <PressPopupPlus
+  <PressPopup
     :show="show"
     :z-index="zIndex"
     position="bottom"
@@ -22,10 +22,10 @@
       @cancel="cancel"
       @confirm="confirm"
     />
-  </PressPopupPlus>
+  </PressPopup>
 </template>
 <script>
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 import { defaultFormatter } from './helper';
 import PressDatetimePicker from './press-datetime-picker.vue';
@@ -34,7 +34,7 @@ import PressDatetimePicker from './press-datetime-picker.vue';
 export default {
   name: 'PressDatetimePickerPopupPlus',
   components: {
-    PressPopupPlus,
+    PressPopup,
     PressDatetimePicker,
   },
   props: {

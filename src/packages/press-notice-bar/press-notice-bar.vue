@@ -6,7 +6,7 @@
       :style="noticeBarStyle"
       @click="onClick"
     >
-      <PressIconPlus
+      <PressIcon
         v-if="leftIcon"
         :name="leftIcon"
         :class="[leftIconClass]"
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <PressIconPlus
+      <PressIcon
         v-if="mode === 'closeable'"
         :class="[rightIconClass]"
         :custom-class="rightIconCustomClass"
@@ -38,7 +38,7 @@
       <template
         v-else-if="mode === 'link'"
       >
-        <PressIconPlus
+        <PressIcon
           v-if="isNotInUni"
           :class="[rightIconClass]"
           :custom-class="rightIconCustomClass"
@@ -49,7 +49,7 @@
           :url="url"
           :open-type="openType"
         >
-          <PressIconPlus
+          <PressIcon
             :class="[rightIconClass]"
             :custom-class="rightIconCustomClass"
             name="arrow"
@@ -71,7 +71,7 @@ import { requestAnimationFrame } from '../common/utils/system';
 
 
 import utils, { isNotInUni } from '../common/utils/utils';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 import { getScrollDurationAndWidth } from './core';
@@ -84,7 +84,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   props: {
     text: {

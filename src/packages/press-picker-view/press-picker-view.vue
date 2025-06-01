@@ -62,7 +62,7 @@ function getTouch(e) {
 }
 
 export default {
-  name: 'PressPickerView',
+  name: 'PressPickerPlusView',
   options: {
     ...getVirtualHostOptions(true, false),
   },

@@ -16,7 +16,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/icon-plus/icon-plus",
+          "url": "/press/icon/icon",
           "navigationStyle": ""
         },
         {
@@ -24,7 +24,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/popup-plus/popup-plus",
+          "url": "/press/popup/popup",
           "navigationStyle": ""
         },
         {
@@ -89,7 +89,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/picker-plus/picker-plus",
+          "url": "/press/picker/picker",
           "navigationStyle": ""
         },
         {
@@ -138,7 +138,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/dialog-plus/dialog-plus",
+          "url": "/press/dialog/dialog",
           "navigationStyle": ""
         },
         {
@@ -150,7 +150,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/loading-plus/loading-plus",
+          "url": "/press/loading/loading",
           "navigationStyle": ""
         },
         {
@@ -162,7 +162,7 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/popover-plus/popover-plus",
+          "url": "/press/popover/popover",
           "navigationStyle": ""
         },
         {
@@ -322,22 +322,22 @@
       ]
     },
     {
-      "name": "ESport Components",
+      "name": "Business Components",
       "list": [
         {
           "url": "/press/area/area",
           "navigationStyle": ""
         },
         {
-          "url": "/press/dialog/dialog",
+          "url": "/press/dialog-plus/dialog-plus",
           "navigationStyle": ""
         },
         {
-          "url": "/press/icon/icon",
+          "url": "/press/icon-plus/icon-plus",
           "navigationStyle": ""
         },
         {
-          "url": "/press/loading/loading",
+          "url": "/press/loading-plus/loading-plus",
           "navigationStyle": ""
         },
         {
@@ -345,15 +345,15 @@
           "navigationStyle": ""
         },
         {
-          "url": "/press/picker/picker",
+          "url": "/press/picker-plus/picker-plus",
           "navigationStyle": ""
         },
         {
-          "url": "/press/popover/popover",
+          "url": "/press/popover-plus/popover-plus",
           "navigationStyle": ""
         },
         {
-          "url": "/press/popup/popup",
+          "url": "/press/popup-plus/popup-plus",
           "navigationStyle": ""
         }
       ]

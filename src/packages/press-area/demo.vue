@@ -187,7 +187,7 @@ export default {
   components: {
     PressArea,
     PressCell,
-    // PressPopup,
+    // PressPopupPlus,
     PressAreaPopup,
   },
   data() {

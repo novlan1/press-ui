@@ -1,46 +1,77 @@
 <template>
   <div class="demo-wrap">
-    <demo-block :title="t('buttonMode')">
-      <div
-        class="primary-btn"
-        style="position:relative;margin-left: 10px;"
-        @click.stop="onShowLoading('btn')"
-      >
-        {{ options.btn.show ? '' : t('click') }}
+    <demo-block :title="t('type')">
+      <div>
+        <PressLoading />
+      </div>
+      <div>
         <PressLoading
-          v-if="options.btn.show"
-          loading-scenes="btn"
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
+      </div>
+      <div>
+        <PressLoading
+          type="spinner"
+          :custom-style="customStyle"
         />
       </div>
     </demo-block>
 
-    <demo-block :title="t('pageMode')">
-      <div
-        class="primary-btn"
-        style="position:relative;margin-left: 10px;"
-        @click.stop="onShowLoading('page')"
-      >
-        {{ t('check') }}
+    <demo-block :title="t('color')">
+      <div>
+        <PressLoading color="#1989fa" />
+      </div>
+      <div>
+        <PressLoading
+          color="#07c160"
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
+      </div>
+      <div>
+        <PressLoading
+          type="spinner"
+          color="#1989fa"
+          :custom-style="customStyle"
+        />
       </div>
     </demo-block>
 
-    <demo-block :title="t('customBackground')">
-      <div
-        class="primary-btn"
-        style="position:relative;margin-left: 10px;"
-        @click.stop="onShowLoading('bg')"
-      >
-        {{ t('disappear') }}
+    <demo-block :title="t('size')">
+      <div>
+        <PressLoading size="15" />
+      </div>
+      <div>
+        <PressLoading
+          size="20"
+          type="circular-tdesign"
+          :custom-style="customStyle"
+        />
+      </div>
+      <div>
+        <PressLoading
+          type="spinner"
+          size="38"
+          :custom-style="customStyle"
+        />
       </div>
     </demo-block>
 
-    <PressLoading
-      v-if="options.page.show"
-    />
-    <PressLoading
-      v-if="options.bg.show"
-      loading-bg="#eee"
-    />
+    <demo-block :title="t('text')">
+      <PressLoading size="24px">
+        {{ t('loading') }}
+      </PressLoading>
+    </demo-block>
+
+    <demo-block :title="t('vertical')">
+      <PressLoading
+        size="24px"
+        vertical
+      >
+        {{ t('loading') }}
+      </PressLoading>
+    </demo-block>
   </div>
 </template>
 <script>
@@ -50,18 +81,20 @@ import PressLoading from 'press-ui/press-loading/press-loading.vue';
 export default {
   i18n: {
     'zh-CN': {
-      buttonMode: '按钮模式',
-      pageMode: '页面模式',
-      customBackground: '指定背景色',
-      click: '点击加载',
-      disappear: '三秒后消失',
+      type: '加载类型',
+      text: '加载文案',
+      size: '自定义大小',
+      color: '自定义颜色',
+      vertical: '垂直排列',
+      textColor: '自定义文本颜色',
     },
     'en-US': {
-      buttonMode: 'Button Mode',
-      pageMode: 'Page Mode',
-      customBackground: 'Custom Background',
-      click: 'Check',
-      disappear: 'Check',
+      type: 'Type',
+      text: 'Text',
+      size: 'Size',
+      color: 'Color',
+      vertical: 'Vertical',
+      textColor: 'Text Color',
     },
   },
   components: {
@@ -69,47 +102,24 @@ export default {
   },
   data() {
     return {
-      options: {
-        btn: {
-          show: false,
-        },
-        page: {
-          show: false,
-        },
-        bg: {
-          show: false,
-        },
-      },
+      isOpen: false,
+      customStyle: 'margin-left: 20px;',
     };
   },
   methods: {
-    onShowLoading(type) {
-      this.options[type].show = true;
-      setTimeout(() => {
-        this.options[type].show = false;
-      }, 3000);
+    onSwitchChange() {
+      this.isOpen = !this.isOpen;
     },
   },
 };
 </script>
+
 <style scoped lang="scss">
-@import "press-ui/common/style/smoba/mixin.scss";
-.section-content {
-  margin: 0 10px;
-}
-
-.primary-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include primary-btn(2rem, 0.72rem, 0.32rem);
-  @include btn-default-bg;
-}
-
-.secondary-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include secondary-btn(2rem, 0.72rem, 0.32rem);
+.demo-wrap {
+  ::v-deep .section-content {
+    display: flex;
+    align-items: center;
+  }
 }
 </style>
+

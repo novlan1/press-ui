@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
 
-import Rate from '../press-rate.vue';
+import PressRate from '../press-rate.vue';
 
-describe('Rate', () => {
+describe('PressRate', () => {
   it('should emit change event when clicked', async () => {
-    const wrapper = mount(Rate, {
+    const wrapper = mount(PressRate, {
       propsData: {
         value: 3,
       },
@@ -21,7 +21,7 @@ describe('Rate', () => {
   });
 
   it('should not emit change event when disabled', async () => {
-    const wrapper = mount(Rate, {
+    const wrapper = mount(PressRate, {
       propsData: {
         value: 3,
         count: 7,
@@ -36,7 +36,7 @@ describe('Rate', () => {
   });
 
   it('should not emit change event when readonly', async () => {
-    const wrapper = mount(Rate, {
+    const wrapper = mount(PressRate, {
       propsData: {
         value: 3,
         count: 3,
@@ -51,7 +51,7 @@ describe('Rate', () => {
   });
 
   it('should correctly emit change event when allow-half is on', async () => {
-    const wrapper = mount(Rate, {
+    const wrapper = mount(PressRate, {
       propsData: {
         value: 3,
         allowHalf: true,

@@ -174,14 +174,14 @@ export default {
 此时可以通过使用 `v-if` 手动控制 press-tabs 的渲染来规避这种场景。
 
 ```html
-<press-popup v-if="show">
+<press-popup-plus v-if="show">
   <press-tabs  v-if="show">
     <press-tab title="标签 1">内容 1</press-tab>
     <press-tab title="标签 2">内容 2</press-tab>
     <press-tab title="标签 3">内容 3</press-tab>
     <press-tab title="标签 4">内容 4</press-tab>
   </press-tabs>
-</press-popup>
+</press-popup-plus>
 ```
 
 ### 自定义标题
@@ -192,11 +192,11 @@ export default {
 <press-tabs use-title-slot>
   <template #title-0>
     <span class="title">Title</span>
-    <press-icon-plus name="like-o" />
+    <press-icon name="like-o" />
   </template>
   <template #title-1>
     <span class="title">Title 1</span>
-    <press-icon-plus name="friends-o" />
+    <press-icon name="friends-o" />
   </template>
   <template #title-2>
     <span class="title">Title 2</span>
@@ -220,7 +220,7 @@ export default {
     :slot="`title-${index}`"
   >
     <span class="title">Title {{ index }}</span>
-    <press-icon-plus name="like-o" />
+    <press-icon name="like-o" />
   </div>
 
   <press-tab title="标签 1">内容 1</press-tab>

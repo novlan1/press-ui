@@ -1,109 +1,100 @@
-@import '../../common/style/press/hairline-more/top.scss';
-@import '../../common/style/press/hairline-more/right.scss';
-@import '../../common/style/press/var.scss';
+@import '../../common/style/smoba/layout';
 
-/* #ifdef MP-ALIPAY */
-.press-dialog-index {
+
+.press-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 99;
+
+  /* #ifdef MP-ALIPAY */
   touch-action: none;
-}
 
-/* #endif */
+  /* #endif */
 
-::v-deep .press-dialog {
-  top: 45% !important;
-  overflow: hidden;
-  width: var(--dialog-width, $dialog-width);
-  font-size: var(--dialog-font-size, $dialog-font-size);
-  border-radius: var(--dialog-border-radius, $dialog-border-radius);
-  background-color: var(--dialog-background-color, $dialog-background-color);
-
-  &__header {
-    text-align: center;
-    padding-top: var(--dialog-header-padding-top, $dialog-header-padding-top);
-    font-weight: var(--dialog-header-font-weight, $dialog-header-font-weight);
-    line-height: var(--dialog-header-line-height, $dialog-header-line-height);
-
-    &--isolated {
-      padding: var(
-        --dialog-header-isolated-padding,
-        $dialog-header-isolated-padding
-      );
-    }
-  }
-
-  &__message {
-    overflow-y: auto;
-    text-align: center;
-    -webkit-overflow-scrolling: touch;
-    font-size: var(--dialog-message-font-size, $dialog-message-font-size);
-    line-height: var(--dialog-message-line-height, $dialog-message-line-height);
-    max-height: var(--dialog-message-max-height, $dialog-message-max-height);
-    padding: var(--dialog-message-padding, $dialog-message-padding);
-
-    &-text {
-      word-wrap: break-word;
-    }
-
-    &--hasTitle {
-      padding-top: var(
-        --dialog-has-title-message-padding-top,
-        $dialog-has-title-message-padding-top
-      );
-      color: var(
-        --dialog-has-title-message-text-color,
-        $dialog-has-title-message-text-color
-      );
-    }
-
-    &--round-button {
-      padding-bottom: $padding-md;
-      color: $text-color;
-    }
-
-    &--left {
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
-
-    &--justify {
-      text-align: justify;
-    }
-  }
-
-  &__footer {
+  &__content-wrap {
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5.6rem;
+    padding: .48rem;
+    border-radius: .16rem;
+    background-color: $color-white;
+    box-sizing: border-box;
+  }
 
-    &--round-button {
-      position: relative !important;
-      padding: $padding-xs $padding-lg $padding-md !important;
+  &__title {
+    font-size: .32rem;
+    font-weight: 600;
+    color: $color-black;
+    text-align: center;
+  }
+
+  &__content {
+    max-height: 5.4rem;
+    font-size: $font-xm;
+    color: $color-gray-5;
+    line-height: .44rem;
+    margin-top: .24rem;
+    word-break: break-word;
+    overflow: scroll;
+  }
+
+  &__img-wrap {
+    width: 4rem;
+    height: 3.6rem;
+    margin: .24rem auto 0;
+    border: .02rem solid $color-gray-7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  &__btn--wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .48rem;
+  }
+
+
+  &__btn {
+    &--spacing {
+      margin-right: .32rem;
+      line-height: 0; // 修复两个按钮错位的问题
     }
-  }
-
-  &__button {
-    flex: 1;
-  }
-
-  &__confirm,
-  &__cancel {
-    border: 0 !important;
-  }
-
-  &-bounce-enter {
-    transform: translate3d(-50%, -50%, 0) scale(.7);
-    opacity: 0;
-  }
-
-  &-bounce-leave-active {
-    transform: translate3d(-50%, -50%, 0) scale(.9);
-    opacity: 0;
   }
 }
 
-@media (max-width: 321px) {
-  ::v-deep .press-dialog {
-    width: var(--dialog-small-screen-width, $dialog-small-screen-width);
+::v-deep {
+  .press-dialog__field {
+    margin-top: 12px;
+
+    .press-field {
+      background: #f3f3f3;
+      border-radius: 4px;
+
+      &__control {
+        font-size: 14px;
+      }
+    }
+
+    .press-cell__title {
+      display: none;
+    }
   }
 }

@@ -93,7 +93,7 @@
               height="100"
             >
               <template #loading>
-                <PressLoadingPlus
+                <PressLoading
                   type="spinner"
                   size="20"
                 />
@@ -160,7 +160,7 @@ import { imagePreviewHandler } from 'press-ui/press-image-preview/index';
 import ImagePreview from 'press-ui/press-image-preview/press-image-preview.vue';
 import PressImage from 'press-ui/press-image/press-image.vue';
 
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
+import PressLoading from 'press-ui/press-loading/press-loading.vue';
 import PressRow from 'press-ui/press-row/press-row.vue';
 
 
@@ -220,7 +220,7 @@ export default {
     PressCol,
     PressRow,
     PressImage,
-    PressLoadingPlus,
+    PressLoading,
     ImagePreview,
   },
   data() {

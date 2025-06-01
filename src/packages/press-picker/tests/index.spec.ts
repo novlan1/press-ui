@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils';
 
-import PickerPlus from '../press-picker-plus.vue';
+import PressPicker from '../press-picker.vue';
 
 
-describe('PickerPlus', () => {
+describe('PressPicker', () => {
   it('should return correct values from its methods', async () => {
     const columns = [{ text: 'A' }, 'B', 'C', { text: 'D' }];
 
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns,
       },
@@ -45,7 +45,7 @@ describe('PickerPlus', () => {
   });
 
   it('should ignore disabled items', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: [{ text: 'A', disabled: true }, 'B', { text: 'C', disabled: true }, { text: 'D' }],
       },
@@ -59,7 +59,7 @@ describe('PickerPlus', () => {
   });
 
   it('should emit change event when a different item is clicked', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: 'ABCD'.split(''),
       },
@@ -81,7 +81,7 @@ describe('PickerPlus', () => {
   });
 
   it('should not emit change event when the selected item is clicked', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: 'ABCD'.split(''),
         defaultIndex: 2,
@@ -93,7 +93,7 @@ describe('PickerPlus', () => {
   });
 
   it('should not emit change event when the item is disabled', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: [{ text: 'A', disabled: true }, { text: 'B' }, 'C'],
       },
@@ -105,7 +105,7 @@ describe('PickerPlus', () => {
   });
 
   it('should emit confirm event when the confirm button is clicked', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: 'ABCD'.split(''),
         showToolbar: true,
@@ -119,7 +119,7 @@ describe('PickerPlus', () => {
   });
 
   it('should emit cancel event when the cancel button is clicked', async () => {
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: 'ABCD'.split(''),
         showToolbar: true,
@@ -138,7 +138,7 @@ describe('PickerPlus', () => {
       Numbers: '123456'.split(''),
     };
 
-    const wrapper = mount(PickerPlus, {
+    const wrapper = mount(PressPicker, {
       propsData: {
         columns: [
           {

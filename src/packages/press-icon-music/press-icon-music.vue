@@ -17,7 +17,7 @@ import { style } from '../common/utils/style';
 import { PROPS } from './computed';
 
 export default {
-  name: 'PressIconMusic',
+  name: 'PressIconPlusMusic',
   props: {
     ...PROPS,
   },

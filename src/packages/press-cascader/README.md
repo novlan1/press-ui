@@ -25,7 +25,7 @@ export default {
 ### 基础用法
 
 
-级联选择组件可以搭配 Field 和 PopupPlus 组件使用，示例如下：
+级联选择组件可以搭配 Field 和 Popup 组件使用，示例如下：
 
 ```html
 <press-field
@@ -36,7 +36,7 @@ export default {
   placeholder="请选择所在地区"
   @click="onClick"
 />
-<press-popup-plus :show="show" round position="bottom">
+<press-popup :show="show" round position="bottom">
   <press-cascader
     v-if="show"
     :value="cascaderValue"
@@ -45,7 +45,7 @@ export default {
     @close="onClose"
     @finish="onFinish"
   />
-</press-popup-plus>
+</press-popup>
 ```
 
 ```js
@@ -97,7 +97,7 @@ export default {
 Cascader 组件常用于选择省市区，Press UI 提供了一份中国省市区数据，可以参照下面方法使用。
 
 ```html
-<press-popup-plus :show="show" round position="bottom">
+<press-popup :show="show" round position="bottom">
   <press-cascader
     v-if="show"
     :value="cascaderValue"
@@ -106,7 +106,7 @@ Cascader 组件常用于选择省市区，Press UI 提供了一份中国省市�
     @close="onClose"
     @finish="onFinish"
   />
-</press-popup-plus>
+</press-popup>
 ```
 
 ```js
@@ -151,7 +151,7 @@ export default {
 可以监听 `change` 事件并动态设置 `options`，实现异步加载选项。
 
 ```html
-<press-popup-plus :show="show" round position="bottom">
+<press-popup :show="show" round position="bottom">
   <press-cascader
     v-if="show"
     :value="cascaderValue"
@@ -161,7 +161,7 @@ export default {
     @change="onChange"
     @finish="onFinish"
   />
-</press-popup-plus>
+</press-popup>
 ```
 
 ```js
@@ -249,7 +249,7 @@ export default {
 | closeable      | 是否显示关闭图标                                                          | _boolean_            | `true`                                                   |
 | ellipsis       | 是否省略过长的标题文字, 关闭后文字过长会出现横向滚动                      | _boolean_            | `true`                                                   |
 | show-header    | 是否展示标题栏                                                            | _boolean_            | `true`                                                   |
-| close-icon     | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
+| close-icon     | 关闭图标名称或图片链接，等同于 IconPlus 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
 | field-names    | 自定义 `options` 结构中的字段                                             | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | use-title-slot | 是否使用自定义标题的插槽                                                  | _boolean_            | `false`                                                  |
 

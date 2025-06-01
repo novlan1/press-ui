@@ -39,9 +39,9 @@
         </template>
         <template v-else-if="status === 'loading'">
           <slot name="loading">
-            <PressLoadingPlus size="16">
+            <PressLoading size="16">
               {{ statusText }}
-            </PressLoadingPlus>
+            </PressLoading>
           </slot>
         </template>
       </div>
@@ -61,7 +61,7 @@ import { vModelMixin } from '../common/vue3/adapter';
 import { t } from '../locale';
 import { TouchMixin } from '../mixins/touch/index';
 
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 
 
 export function preventDefault(event) {
@@ -81,7 +81,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressLoadingPlus,
+    PressLoading,
   },
   mixins: [TouchMixin, vModelMixin],
   props: {

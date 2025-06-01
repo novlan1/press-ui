@@ -3,7 +3,7 @@
     v-if="innerShow"
     class="press-datetime-picker-popup"
   >
-    <PressPopup
+    <PressPopupPlus
       :show-title="getPropOrData('showTitle')"
       :close-icon="getPropOrData('closeIcon')"
       :arrow-icon="getPropOrData('arrowIcon')"
@@ -39,7 +39,7 @@
       >
         {{ tip }}
       </div>
-    </PressPopup>
+    </PressPopupPlus>
   </div>
 </template>
 
@@ -47,7 +47,7 @@
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { functionalMixin } from '../mixins/basic/functional';
 import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
-import PressPopup from '../press-popup/press-popup.vue';
+import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 
 import PressDatetimePicker from './press-datetime-picker.vue';
 
@@ -72,7 +72,7 @@ export default {
     ...getVirtualHostOptions(true, false),
   },
   components: {
-    PressPopup,
+    PressPopupPlus,
     PressDatetimePicker,
   },
   mixins: [functionalMixin(componentProps)],

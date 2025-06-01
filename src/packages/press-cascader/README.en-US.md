@@ -20,7 +20,7 @@ export default {
 
 ### Basic usage
 
-The cascade selection component can be used with Field and PopupPlus components, as shown below:
+The cascade selection component can be used with Field and Popup components, as shown below:
 
 ```html
 <press-field
@@ -31,14 +31,14 @@ The cascade selection component can be used with Field and PopupPlus components,
   placeholder="Please select your region"
   @click="onClick"
 />
-<press-popup-plus :show="show" round position="bottom">
+<press-popup :show="show" round position="bottom">
   <press-cascader
     v-if="show"
     :value="cascaderValue"
     title="Please select your region"
     :options="options" @close="onClose" @finish="onFinish" 
   /> 
-</press-popup-plus> 
+</press-popup> 
 ```
 
 ```js 
@@ -113,7 +113,7 @@ You can listen to the `change` event and dynamically set `options` to achieve as
   placeholder="Please select your region"
   @click="onClick"
 />
-<press-popup-plus :show="show" round position="bottom">
+<press-popup :show="show" round position="bottom">
   <press-cascader
     v-if="show"
     :value="cascaderValue"
@@ -123,7 +123,7 @@ You can listen to the `change` event and dynamically set `options` to achieve as
     @change="onChange"
     @finish="onFinish"
   />
-</press-popup-plus>
+</press-popup>
 ```
 
 ```js
@@ -211,7 +211,7 @@ export default {
 | closeable      | Whether to display the close icon                                                                          | _boolean_            | `true`                                                   |
 | ellipsis       | Whether to omit long title text. If the text is too long, horizontal scrolling will occur after closing    | _boolean_            | `true`                                                   |
 | show-header    | Whether to display the title bar                                                                           | _boolean_            | `true`                                                   |
-| close-icon     | Close icon name or image link, equivalent to the [name attribute](./press-icon-plus) of the Icon component | _string_             | `cross`                                                  |
+| close-icon     | Close icon name or image link, equivalent to the [name attribute](./press-icon-plus) of the IconPlus component | _string_             | `cross`                                                  |
 | field-names    | Customize the fields in the `options` structure                                                            | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | use-title-slot | Whether to use the slot for the custom title                                                               | _boolean_            | `false`                                                  |
 

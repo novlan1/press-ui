@@ -9,7 +9,7 @@
       @click="onClick"
     >
       <div class="press-tabbar-item__icon">
-        <PressIconPlus
+        <PressIcon
           v-if="icon"
           :name="icon"
           :class-prefix="iconPrefix"
@@ -44,7 +44,7 @@ import utils from '../common/utils/utils';
 
 import { ChildrenMixin } from '../mixins/basic/relation';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressInfo from '../press-info/press-info.vue';
 
 
@@ -55,7 +55,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressInfo,
   },
   mixins: [
@@ -68,7 +68,7 @@ export default {
     dot: Boolean,
     iconPrefix: {
       type: String,
-      default: 'press-icon-plus',
+      default: 'press-icon',
     },
     ...defaultProps,
   },

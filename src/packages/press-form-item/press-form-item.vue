@@ -29,7 +29,7 @@
               v-if="leftIcon"
               class="press-form-item__body__left__content__icon"
             >
-              <PressIconPlus
+              <PressIcon
                 :name="leftIcon"
                 :custom-style="leftIconStyle"
               />
@@ -87,7 +87,7 @@ import { getProperty, setProperty } from '../common/utils/property';
 
 import { style as styleUtil } from '../common/utils/style';
 import { errorTip } from '../common/utils/validator';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import props from './props.js';
 
@@ -95,7 +95,7 @@ import props from './props.js';
 export default {
   name: 'PressFormItem',
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [props],
   emits: [

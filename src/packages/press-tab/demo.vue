@@ -187,11 +187,11 @@
       >
         <template #title-0>
           <span class="title">{{ t('tab') }}</span>
-          <press-icon-plus name="like-o" />
+          <PressIcon name="like-o" />
         </template>
         <template #title-1>
           <span class="title">{{ t('tab') }} 1</span>
-          <press-icon-plus name="friends-o" />
+          <PressIcon name="friends-o" />
         </template>
         <template #title-2>
           <span class="title">{{ t('tab') }} 2</span>
@@ -225,7 +225,7 @@
           <!-- 为了兼容 Vue3，不能在 div 上加 key -->
           <div>
             <span class="title">{{ t('tab') }} {{ index }}</span>
-            <press-icon-plus name="like-o" />
+            <PressIcon name="like-o" />
           </div>
         </template>
         <!-- #endif -->
@@ -236,7 +236,7 @@
           :slot="`title-${index}`"
         >
           <span class="title">{{ t('tab') }} {{ index }}</span>
-          <press-icon-plus name="like-o" />
+          <PressIcon name="like-o" />
         </div>
         <!-- #endif -->
 
@@ -341,7 +341,7 @@
   </div>
 </template>
 <script>
-import pressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 import PressTab from 'press-ui/press-tab/press-tab.vue';
 import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
 
@@ -389,7 +389,7 @@ export default {
   components: {
     PressTabs,
     PressTab,
-    pressIconPlus,
+    PressIcon,
   },
   data() {
     return {

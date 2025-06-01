@@ -1,5 +1,5 @@
 <template>
-  <PressPopupPlus
+  <PressPopup
     :show="show"
     position="bottom"
     :z-index="zIndex"
@@ -7,7 +7,7 @@
     @click-overlay="clickOverlay"
     @close="cancel"
   >
-    <PressPickerPlus
+    <PressPicker
       ref="picker"
       show-toolbar
       :columns="columns"
@@ -19,19 +19,19 @@
       @cancel="cancel"
       @confirm="confirm"
     />
-  </PressPopupPlus>
+  </PressPopup>
 </template>
 <script>
-import PressPickerPlus from '../press-picker-plus/press-picker-plus.vue';
-import { pickerProps } from '../press-picker-plus/shared';
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+import PressPicker from '../press-picker/press-picker.vue';
+import { pickerProps } from '../press-picker/shared';
+import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
-  name: 'PressPickerPlusPopupPlus',
+  name: 'PressPickerPopupPlus',
   components: {
-    PressPopupPlus,
-    PressPickerPlus,
+    PressPopup,
+    PressPicker,
   },
   props: {
     ...pickerProps,

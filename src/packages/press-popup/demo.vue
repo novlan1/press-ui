@@ -1,414 +1,191 @@
 <template>
   <div class="demo-wrap">
-    <div>
-      <demo-block :title="t('basicUsage')">
-        <PressCell
-          :title="t('closeIcon')"
-          is-link
-          @click="onShowPopup('normal')"
-        />
-        <PressCell
-          :title="t('cancelIcon')"
-          is-link
-          @click="onShowPopup('cancel')"
-        />
-        <PressCell
-          :title="t('noCloseOrCancel')"
-          is-link
-          @click="onShowPopup('noClose')"
-        />
-      </demo-block>
+    <demo-block :title="t('basicUsage')">
+      <PressCell
+        :title="t('basicUsage')"
+        is-link
+        @click="onShowPopup('center')"
+      />
+    </demo-block>
 
-      <demo-block :title="t('customStyle')">
-        <PressCell
-          :title="t('plainButtonConfirm')"
-          is-link
-          @click="onShowPopup('borderBtn')"
-        />
-        <PressCell
-          :title="t('disabledButton')"
-          is-link
-          @click="onShowPopup('disabledButton')"
-        />
-        <PressCell
-          :title="t('horizontal')"
-          is-link
-          @click="onShowPopup('hor')"
-        />
-        <PressCell
-          :title="t('buttonSlot')"
-          is-link
-          @click="showSlotPopup = true"
-        />
-      </demo-block>
+    <demo-block :title="t('position')">
+      <PressCell
+        :title="t('top')"
+        is-link
+        @click="onShowPopup('top')"
+      />
+      <PressCell
+        :title="t('bottom')"
+        is-link
+        @click="onShowPopup('bottom')"
+      />
+      <PressCell
+        :title="t('left')"
+        is-link
+        @click="onShowPopup('left')"
+      />
+      <PressCell
+        :title="t('right')"
+        is-link
+        @click="onShowPopup('right')"
+      />
+    </demo-block>
 
-      <demo-block :title="t('asyncClose')">
-        <PressCell
-          :title="t('notPromiseFunction')"
-          is-link
-          @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_NORMAL)"
-        />
-        <PressCell
-          :title="t('promiseFunction')"
-          is-link
-          @click="onShowAsyncClosePopup(TYPE_MAP.ASYNC_PROMISE)"
-        />
-      </demo-block>
+    <demo-block :title="t('closeIcon')">
+      <PressCell
+        :title="t('closeIcon')"
+        is-link
+        @click="onShowPopup('bottom', { closeable: true })"
+      />
+      <PressCell
+        :title="t('customIcon')"
+        is-link
+        @click="onShowPopup('bottom', { closeable: true, closeIcon: 'close' })"
+      />
+      <PressCell
+        :title="t('iconPosition')"
+        is-link
+        @click="onShowPopup('bottom', { closeable: true, closeIconPosition: 'top-left' })"
+      />
+      <PressCell
+        :title="t('rightCloseIcon')"
+        is-link
+        @click="onShowPopup('right', { closeable: true })"
+      />
+    </demo-block>
 
-      <demo-block :title="t('useWay')">
-        <PressCell
-          :title="t('controlledPopup')"
-          is-link
-          @click="onShowControlledPopup"
-        />
-        <PressCell
-          :title="t('functional')"
-          is-link
-          @click="onShowFunctionalPicker"
-        />
-      </demo-block>
-    </div>
+    <demo-block :title="t('round')">
+      <PressCell
+        :title="t('round')"
+        is-link
+        @click="onShowPopup('bottom', { round: true, })"
+      />
+    </demo-block>
 
     <PressPopup
-      v-if="curPicker.show"
-      :is-showpopup-close="curPicker.isShowpopuoClose"
-      :show-back-arrow="curPicker.showBackArrow"
-      :is-cross-slab="curPicker.isCrossSlab"
-      :is-border-btn="curPicker.isBorderBtn"
-      :disabled-button="curPicker.disabledButton"
-      :width-number="54"
-      :custom-style="curPicker.customStyle"
-      :popup-title="curPicker.title"
-      :popup-title-btn="curPicker.popupTitleBtn"
-      :async-confirm="asyncConfirm"
-      :async-close="asyncCancel"
-      @onConfirm="curPicker.onConfirm"
-      @onCancel="curPicker.onCancel"
+      :show="show"
+      :position="popupPosition"
+      :custom-style="customStyle"
+      :round="isRound"
+      :closeable="isCloseable"
+      :close-icon="closeIcon"
+      :close-icon-position="closeIconPosition"
+      @close="onClose"
     >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      :is-show="showSlotPopup"
-      @confirm="showSlotPopup = false"
-      @cancel="showSlotPopup = false"
-    >
-      <template #icon>
-        <PressIconPlus
-          name="gem-o"
-          size="22px"
-        />
-      </template>
-
-      <!-- v-slot:title -->
-      <template #title>
-        <div>
-          {{ t('wayToWin') }}
-          <PressIconPlus
-            name="like-o"
-            size="16"
-          />
-        </div>
-      </template>
-
-      <template #button>
-        <PressIconPlus
-          name="setting-o"
-          size="22px"
-        />
-      </template>
-
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      :is-show="showControlledPopup"
-      :button="t('confirm')"
-      :title="t('controlledPopup')"
-      @confirm="showControlledPopup = false"
-      @cancel="showControlledPopup = false"
-    >
-      <div class="content">
-        {{ t('SomeContent') }}
-      </div>
-    </PressPopup>
-
-    <PressPopup
-      :id="PRESS_PICKER_ID"
-      :ref="PRESS_PICKER_ID"
-      mode="functional"
-    >
-      <scroll-view
-        scroll-y
-        :style="{maxHeight: '200px', padding: '0 20px'}"
-      >
-        <div class="content__inner">
-          {{ t('SomeScrollContent') }}
-        </div>
-        <div class="content__inner">
-          {{ t('SomeScrollContent') }}
-        </div>
-        <div class="content__inner">
-          {{ t('SomeScrollContent') }}
-        </div>
-      </scroll-view>
+      {{ popupPosition ==='center' ? t('content') : '' }}
     </PressPopup>
   </div>
 </template>
 <script>
-import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
-import { ScrollViewPureMixin } from 'press-ui/mixins/pure/scroll-view';
+import { nextTick } from 'press-ui/common/utils/system';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 import PressPopup from 'press-ui/press-popup/press-popup.vue';
 
 
-const PRESS_PICKER_ID = 'press-picker-functional';
-const TYPE_MAP = {
-  ASYNC_NORMAL: 'async-normal',
-  ASYNC_PROMISE: 'async-promise',
-};
-
-function asyncClose({
-  t,
-  type,
-  onTip,
-  onGShowLoading,
-}) {
-  return new Promise((resolve) => {
-    onGShowLoading(t('asyncConfirm'), {
-      mask: true,
-      duration: 3000,
-    });
-    setTimeout(() => {
-      if (type === 'confirm') {
-        onTip(t('asyncConfirmSuccess'));
-        resolve(true);
-      } else {
-        resolve(false);
-        onTip(t('asyncConfirmFail'));
-      }
-    }, 500);
-  });
-}
-let that;
+const DEFAULT_POSITION = 'center';
+const DEFAULT_CLOSE_ICON = 'cross';
+const DEFAULT_CLOSE_ICON_POSITION = 'top-right';
 
 export default {
   i18n: {
     'zh-CN': {
-      wayToWin: '决胜方式',
-      SomeContent: '一些内容',
-      SomeScrollContent: '一些可以滚动的内容',
-      controlledPopup: '受控组件',
-      functional: '函数式调用',
-      check: '查看',
+      show: '查看',
+      position: '弹出位置',
+      bottom: '底部弹出',
+      top: '顶部弹出',
+      left: '左侧弹出',
+      right: '右侧弹出',
       closeIcon: '关闭图标',
-      customStyle: '自定义样式',
-      buttonSlot: '使用插槽',
-      cancelIcon: '取消图标',
-      noCloseOrCancel: '没有关闭/取消',
-      plainButtonConfirm: '线框按钮',
-      disabledButton: '禁用状态',
-      horizontal: '横版',
-      asyncClose: '异步关闭',
-      asyncConfirm: '异步确认中...',
-      asyncConfirmSuccess: '异步确认后可以关闭',
-      asyncConfirmFail: '异步确认后禁止关闭',
-      useWay: '使用方式',
-      notPromiseFunction: 'Not Promise',
-      promiseFunction: 'Promise',
+      customIcon: '自定义图标',
+      iconPosition: '图标位置',
+      rightCloseIcon: '右侧弹出关闭图标',
+      round: '圆角弹窗',
     },
     'en-US': {
-      wayToWin: 'Bo Number',
-      SomeContent: 'Some Content',
-      controlledPopup: 'Controlled Popup',
-      functional: 'Functional Mode',
-      check: 'Check',
-      customStyle: 'Custom Style',
-      buttonSlot: 'Use Slot',
-      closeIcon: 'Close Ion',
-      cancelIcon: 'Cancel Icon',
-      noCloseOrCancel: 'No Close Or Cancel',
-      plainButtonConfirm: 'Plain Button',
-      disabledButton: 'Disabled Button',
-      horizontal: 'Horizontal Version',
-      asyncClose: 'Async Close',
-      asyncConfirm: 'Async Confirm ...',
-      asyncConfirmSuccess: 'Async Confirm Success',
-      asyncConfirmFail: 'Async Confirm Fail',
-      useWay: 'Use Way',
-      notPromiseFunction: 'Not Promise',
-      promiseFunction: 'Promise',
+      show: 'Show',
+      position: 'Position',
+      bottom: 'Bottom',
+      top: 'Top',
+      left: 'Left',
+      right: 'Right',
+      closeIcon: 'Close Icon',
+      customIcon: 'Custom Icon',
+      iconPosition: 'Icon Position',
+      rightCloseIcon: 'Right with Icon',
+      round: 'Round',
     },
   },
   components: {
     PressCell,
     PressPopup,
-    PressIconPlus,
   },
-  mixins: [ScrollViewPureMixin],
   data() {
-    that = this;
-    const commonOptions = {
-      title: this.t('wayToWin'),
-      popupTitleBtn: this.t('confirm'),
-      isCrossSlab: false,
-      isShowpopuoClose: false,
-      showBackArrow: false,
-      isBorderBtn: false,
-      disabledButton: false,
-      customStyle: '',
-      onConfirm: () => {
-        // this.onTip('confirm');
-        this.curPicker.show = false;
-      },
-      onCancel: () => {
-        // this.onTip('cancel');
-        this.curPicker.show = false;
-      },
-    };
-
-    const popupCustomStyle = '';
-
-    // #ifdef H5
-    // popupCustomStyle = 'top: 44px;';
-    // #endif
-
     return {
-      type: '',
+      show: false,
+      popupPosition: DEFAULT_POSITION,
       customStyle: '',
-      popupOptions: {
-        normal: {
-          isShowpopuoClose: true,
-        },
-        cancel: {
-          showBackArrow: true,
-        },
-        noClose: {},
-        hor: {
-          popupTitleBtn: '',
-          isCrossSlab: true,
-          isShowpopuoClose: true,
-          customStyle: popupCustomStyle,
-        },
-        borderBtn: {
-          isShowpopuoClose: true,
-          isBorderBtn: true,
-        },
-        disabledButton: {
-          isShowpopuoClose: true,
-          disabledButton: true,
-        },
-      },
-      commonOptions,
-      curPicker: {
-        ...commonOptions,
-      },
-      pressPickerFunctionalData: {},
-      PRESS_PICKER_ID,
-      showControlledPopup: false,
-      showSlotPopup: false,
-      TYPE_MAP,
+      isRound: false,
+      isCloseable: false,
+      closeIcon: DEFAULT_CLOSE_ICON,
+      closeIconPosition: DEFAULT_CLOSE_ICON_POSITION,
     };
-  },
-  computed: {
   },
   methods: {
-    onShowPopup(type) {
-      this.onGHideToast();
-      this.type = type;
-      if (type === 'disabledButton') {
-        setTimeout(() => {
-          this.curPicker.disabledButton = false;
-        }, 3000);
-      }
+    onClose() {
+      this.show = false;
+    },
+    onShowPopup(position, props = {}) {
+      this.popupPosition = position || DEFAULT_POSITION;
 
-      this.curPicker = {
-        ...this.commonOptions,
-        ...this.popupOptions[type],
-        show: true,
-      };
-    },
-    // validateConfirm 没有用了，被 asyncCancel/asyncConfirm 拦截
-    // validateConfirm() {
-    //   if (['noClose', 'borderBtn'].indexOf(this.type) <= -1) return true;
-    //   return asyncClose({
-    //     t: this.t,
-    //     type: this.type === 'noClose' ? 'confirm' : 'cancel',
-    //     onTip: this.onTip,
-    //   });
-    // },
-    onTip(title) {
-      this.onGTip(title);
-    },
-    onShowFunctionalPicker() {
-      showFunctionalComponent.call(this, {
-        context: this,
-        selector: `#${PRESS_PICKER_ID}`,
-        title: this.t('wayToWin'),
-        button: this.t('confirm'),
-        horizontal: false,
-        closeIcon: false,
-        arrowIcon: true,
-        borderButton: false,
-        customStyle: '',
-      }).then(() => {
-        this.onTip('confirm');
-      })
-        .catch(() => {
-          this.onTip('cancel');
-        });
-    },
-    onConfirm() {
-      this.onTip('confirm');
-    },
-    onCancel() {
-      this.onTip('cancel');
-    },
-    onShowControlledPopup() {
-      this.showControlledPopup = true;
-    },
-    onShowAsyncClosePopup(type) {
-      this.type = type;
-      this.curPicker = {
-        ...this.commonOptions,
-        isShowpopuoClose: true,
-        show: true,
-      };
-    },
-    asyncConfirm() {
-      if (that.type === TYPE_MAP.ASYNC_PROMISE) {
-        return asyncClose({
-          t: that.t,
-          type: 'confirm',
-          onTip: that.onTip,
-          onGShowLoading: that.onGShowLoading,
-        });
+      let customStyle = '';
+
+      this.isRound = !!props.round;
+      this.isCloseable = !!props.closeable;
+      this.closeIcon = props.closeIcon || DEFAULT_CLOSE_ICON;
+      this.closeIconPosition = props.closeIconPosition || DEFAULT_CLOSE_ICON_POSITION;
+      const sidePositionStyle = `${[
+        'width: 30%',
+        'height: calc(100% - var(--window-top, 0px))',
+        'top: calc(50% + var(--window-top, 0px) / 2)',
+        'bottom: 0',
+      ].join(';')};`;
+
+      switch (position) {
+        case 'top': {
+          customStyle = 'height: 20%;';
+          break;
+        }
+
+        case 'bottom': {
+          customStyle = 'height: 20%;';
+          break;
+        }
+
+        case 'left': {
+          customStyle = sidePositionStyle ;
+          break;
+        }
+
+        case 'right': {
+          customStyle = sidePositionStyle;
+          break;
+        }
+
+        case 'center': {
+          customStyle = 'padding: 30px 50px;';
+          break;
+        }
+
+        default: {
+          customStyle = '';
+        }
       }
-      if (that.type === TYPE_MAP.ASYNC_NORMAL) {
-        that.onTip('Can Close');
-        return true;
-      }
-      return true;
-    },
-    asyncCancel() {
-      if (that.type === TYPE_MAP.ASYNC_PROMISE) {
-        return asyncClose({
-          t: that.t,
-          type: 'cancel',
-          onTip: that.onTip,
-          onGShowLoading: that.onGShowLoading,
-        });
-      }
-      if (that.type === TYPE_MAP.ASYNC_NORMAL) {
-        that.onTip('Can not close');
-        return false;
-      }
-      return true;
+      this.customStyle = customStyle;
+
+      // 去除上一次遗留动画方向影响
+      nextTick(() => {
+        this.show = true;
+      });
     },
 
   },
@@ -416,17 +193,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .demo-wrap {
-  // height: calc(100vh + 80px);
   padding-bottom: 400px;
-}
-
-.content {
   font-size: 16px;
-  padding: 20px;
-
-  &__inner {
-    height: 200px;
-    font-size: 14px;
-  }
 }
 </style>

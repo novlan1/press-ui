@@ -115,7 +115,7 @@
           @keyboardheightchange="onKeyboardHeightChange"
         >
 
-        <PressIconPlus
+        <PressIcon
           v-if="showClear"
           :name="clearIcon"
           class="press-field__clear-root press-field__icon-root"
@@ -125,7 +125,7 @@
           class="press-field__icon-container"
           @click="onClickIcon"
         >
-          <PressIconPlus
+          <PressIcon
             v-if="rightIcon || icon"
             :name="rightIcon || icon"
             :class="'press-field__icon-root '+(iconClass)"
@@ -168,7 +168,7 @@ import { isObject } from '../common/utils/validator';
 
 import { nextTick, vModelMixin } from '../common/vue3/adapter';
 import PressCell from '../press-cell/press-cell.vue';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import computed from './computed';
 import { commonProps, inputProps, textareaProps } from './props';
@@ -183,7 +183,7 @@ export default {
   field: true,
   components: {
     PressCell,
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [vModelMixin],
   props: {

@@ -57,7 +57,7 @@
         }
       },
       {
-        "path": "icon-plus/icon-plus",
+        "path": "icon/icon",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -69,7 +69,7 @@
         }
       },
       {
-        "path": "popup-plus/popup-plus",
+        "path": "popup/popup",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -159,7 +159,7 @@
         }
       },
       {
-        "path": "picker-plus/picker-plus",
+        "path": "picker/picker",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -225,7 +225,7 @@
         }
       },
       {
-        "path": "dialog-plus/dialog-plus",
+        "path": "dialog/dialog",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -243,7 +243,7 @@
         }
       },
       {
-        "path": "loading-plus/loading-plus",
+        "path": "loading/loading",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -261,7 +261,7 @@
         }
       },
       {
-        "path": "popover-plus/popover-plus",
+        "path": "popover/popover",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -489,19 +489,19 @@
         }
       },
       {
-        "path": "dialog/dialog",
+        "path": "dialog-plus/dialog-plus",
         "style": {
           "navigationBarTitleText": ""
         }
       },
       {
-        "path": "icon/icon",
+        "path": "icon-plus/icon-plus",
         "style": {
           "navigationBarTitleText": ""
         }
       },
       {
-        "path": "loading/loading",
+        "path": "loading-plus/loading-plus",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -513,19 +513,19 @@
         }
       },
       {
-        "path": "picker/picker",
+        "path": "picker-plus/picker-plus",
         "style": {
           "navigationBarTitleText": ""
         }
       },
       {
-        "path": "popover/popover",
+        "path": "popover-plus/popover-plus",
         "style": {
           "navigationBarTitleText": ""
         }
       },
       {
-        "path": "popup/popup",
+        "path": "popup-plus/popup-plus",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -606,16 +606,16 @@
             "path": "pages/press/col/col"
         },
         {
-            "name": "IconPlus",
-            "path": "pages/press/icon-plus/icon-plus"
+            "name": "Icon",
+            "path": "pages/press/icon/icon"
         },
         {
             "name": "Image",
             "path": "pages/press/image/image"
         },
         {
-            "name": "PopupPlus",
-            "path": "pages/press/popup-plus/popup-plus"
+            "name": "Popup",
+            "path": "pages/press/popup/popup"
         },
         {
             "name": "Style",
@@ -674,8 +674,8 @@
             "path": "pages/press/number-keyboard/number-keyboard"
         },
         {
-            "name": "PickerPlus",
-            "path": "pages/press/picker-plus/picker-plus"
+            "name": "Picker",
+            "path": "pages/press/picker/picker"
         },
         {
             "name": "Radio",
@@ -718,8 +718,8 @@
             "path": "pages/press/barrage/barrage"
         },
         {
-            "name": "DialogPlus",
-            "path": "pages/press/dialog-plus/dialog-plus"
+            "name": "Dialog",
+            "path": "pages/press/dialog/dialog"
         },
         {
             "name": "DropdownMenu",
@@ -730,8 +730,8 @@
             "path": "pages/press/guide/guide"
         },
         {
-            "name": "LoadingPlus",
-            "path": "pages/press/loading-plus/loading-plus"
+            "name": "Loading",
+            "path": "pages/press/loading/loading"
         },
         {
             "name": "Notify",
@@ -742,8 +742,8 @@
             "path": "pages/press/overlay/overlay"
         },
         {
-            "name": "PopoverPlus",
-            "path": "pages/press/popover-plus/popover-plus"
+            "name": "Popover",
+            "path": "pages/press/popover/popover"
         },
         {
             "name": "PullRefresh",
@@ -894,32 +894,32 @@
             "path": "pages/press/area/area"
         },
         {
-            "name": "Dialog",
-            "path": "pages/press/dialog/dialog"
+            "name": "DialogPlus",
+            "path": "pages/press/dialog-plus/dialog-plus"
         },
         {
-            "name": "Icon",
-            "path": "pages/press/icon/icon"
+            "name": "IconPlus",
+            "path": "pages/press/icon-plus/icon-plus"
         },
         {
-            "name": "Loading",
-            "path": "pages/press/loading/loading"
+            "name": "LoadingPlus",
+            "path": "pages/press/loading-plus/loading-plus"
         },
         {
             "name": "Pagination",
             "path": "pages/press/pagination/pagination"
         },
         {
-            "name": "Picker",
-            "path": "pages/press/picker/picker"
+            "name": "PickerPlus",
+            "path": "pages/press/picker-plus/picker-plus"
         },
         {
-            "name": "Popover",
-            "path": "pages/press/popover/popover"
+            "name": "PopoverPlus",
+            "path": "pages/press/popover-plus/popover-plus"
         },
         {
-            "name": "Popup",
-            "path": "pages/press/popup/popup"
+            "name": "PopupPlus",
+            "path": "pages/press/popup-plus/popup-plus"
         }
     ]
 }

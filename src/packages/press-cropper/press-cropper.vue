@@ -1,5 +1,5 @@
 <template>
-  <PressPopupPlus
+  <PressPopup
     :show="show"
     wrap-class="press-cropper"
     custom-class="press-cropper__popup"
@@ -7,7 +7,7 @@
     @confirm="confirm"
     @cancel="cancel"
   >
-    <ToolBar
+    <PressPickerPlusToolbar
       v-if="showTitle"
       :title="title"
       :show-toolbar="true"
@@ -90,7 +90,7 @@
         确认
       </PressButton>
     </div>
-  </PressPopupPlus>
+  </PressPopup>
 </template>
 <script>
 // #ifdef H5
@@ -98,8 +98,8 @@ import { VueCropper } from '../common/vue3/vue-cropper';
 // #endif
 
 import PressButton from '../press-button/press-button.vue';
-import ToolBar from '../press-picker-toolbar/press-picker-toolbar.vue';
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+import PressPickerPlusToolbar from '../press-picker-toolbar/press-picker-toolbar.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
 // #ifndef H5
 import NiceCropper from './nice-cropper/cropper.vue';
@@ -113,9 +113,9 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressPopupPlus,
+    PressPopup,
     PressButton,
-    ToolBar,
+    PressPickerPlusToolbar,
 
     // #ifdef H5
     VueCropper,

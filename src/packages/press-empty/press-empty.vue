@@ -4,11 +4,11 @@
     :class="emptyClass"
     :style="wrapStyle"
   >
-    <PressIcon
+    <PressIconPlus
       v-if="isESportType"
       type="empty"
       size="10.66667vmin"
-      custom-class="press-icon--e-sport"
+      custom-class="press-icon-plus--e-sport"
     />
 
     <div
@@ -46,7 +46,7 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { style } from '../common/utils/style';
-import PressIcon from '../press-icon/press-icon.vue';
+import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
 
 import computed from './computed';
 
@@ -59,7 +59,7 @@ const EXTRA_TYPE_MAP = {
 export default {
   name: 'PressEmpty',
   components: {
-    PressIcon,
+    PressIconPlus,
   },
   options: {
     ...defaultOptions,

@@ -77,14 +77,14 @@ export default{
 <press-switch :checked="checked" @change="onChange" />
 
 <!-- #ifndef H5 -->
-<PressDialog
+<PressDialogPlus
   id="tip-match-comm-tips-dialog"
 />
 <!-- #endif -->
 ```
 
 ```js
-import PressDialogHandler from 'press-ui/press-dialog';
+import PressDialogPlusHandler from 'press-ui/press-dialog-plus';
 
 export default {
   data() {
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     onChange(value) {
-      PressDialogHandler.show({
+      PressDialogPlusHandler.show({
         title: '提示',
         content: '是否切换开关',
         confirmText: '确认',

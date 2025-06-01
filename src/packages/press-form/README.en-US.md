@@ -64,7 +64,7 @@ Note: The attribute names in `rules` are the same as those in `form`, and the `p
       placeholder="Please select gender"
       @click-input="showSex = true; hideKeyboard()"
     />
-    <PressIconPlus
+    <PressIcon
       slot="right"
       name="arrow"
     />

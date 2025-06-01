@@ -21,7 +21,7 @@
           </div>
           <div class="press-step__circle-container">
             <template v-if="index !== active">
-              <PressIconPlus
+              <PressIcon
                 v-if="item.inactiveIcon || inactiveIcon"
                 :color="status(index, active) === 'inactive' ? inactiveColor: activeColor"
                 :name="item.inactiveIcon || inactiveIcon"
@@ -34,7 +34,7 @@
               />
             </template>
 
-            <PressIconPlus
+            <PressIcon
               v-else
               :name="item.activeIcon || activeIcon"
               :color="activeColor"
@@ -56,7 +56,7 @@ import { defaultProps, defaultOptions } from '../common/component-handler/press-
 import { GREEN, GRAY_DARK } from '../common/constant/color';
 import utils from '../common/utils/utils';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 
 import status from './index-status';
 
@@ -68,7 +68,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
   },
   props: {
     icon: { type: String, default: '' },

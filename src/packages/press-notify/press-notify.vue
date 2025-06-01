@@ -26,7 +26,7 @@ import { WHITE } from '../common/constant/color';
 import { getEventDetail } from '../common/dom/event';
 
 import { getStatusBarHeight } from '../common/dom/rect';
-import { getDialogMixin } from '../press-dialog/dialog-mixin';
+import { getDialogMixin } from '../press-dialog-plus/dialog-mixin';
 import PressTransition from '../press-transition/press-transition.vue';
 
 import computed from './computed';

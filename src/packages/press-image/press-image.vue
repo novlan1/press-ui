@@ -58,7 +58,7 @@
         }"
       >
         <slot name="loading">
-          <PressIconPlus
+          <PressIcon
             :name="loadingIcon"
             :width="width"
             :height="height"
@@ -75,7 +75,7 @@
         }"
       >
         <slot name="error">
-          <PressIconPlus
+          <PressIcon
             :name="errorIcon"
             :width="width"
             :height="height"
@@ -95,7 +95,7 @@ import { isNotInUni } from '../common/utils/utils';
 // #ifdef H5
 import InnerImage from '../image/index.vue';
 // #endif
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressTransition from '../press-transition/press-transition.vue';
 
 import props from './computed';
@@ -108,7 +108,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressTransition,
     // #ifdef H5
     InnerImage,

@@ -30,7 +30,7 @@
       </PressButton>
     </demo-block>
 
-    <PressPopupPlus
+    <PressPopup
       :show="showGuide"
       position="bottom"
       :overlay="false"
@@ -140,7 +140,7 @@
           <div
             class="content"
           >
-            <PressIconPlus
+            <PressIcon
               name="arrow-up"
               size="32px"
               color="#fff"
@@ -197,7 +197,7 @@
           <div
             class="content"
           >
-            <PressIconPlus
+            <PressIcon
               name="arrow-up"
               size="32px"
               color="#fff"
@@ -256,7 +256,7 @@
           <div
             class="content"
           >
-            <PressIconPlus
+            <PressIcon
               name="arrow-up"
               size="32px"
               color="#fff"
@@ -320,7 +320,7 @@
         @skip="close"
         @finish="close"
       />
-    </PressPopupPlus>
+    </PressPopup>
   </div>
 </template>
 <script>
@@ -329,10 +329,10 @@ import PressButton from 'press-ui/press-button/press-button.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
 
 import PressGuide from 'press-ui/press-guide/press-guide.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 
 import PressImage from 'press-ui/press-image/press-image.vue';
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
+import PressPopup from 'press-ui/press-popup/press-popup.vue';
 
 
 export default {
@@ -357,8 +357,8 @@ export default {
     PressButton,
     PressField,
     PressImage,
-    PressPopupPlus,
-    PressIconPlus,
+    PressPopup,
+    PressIcon,
   },
   data() {
     const ORIGIN_STEPS = [

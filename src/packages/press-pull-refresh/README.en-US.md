@@ -92,7 +92,7 @@ Use slots to custom tips.
 
 | Attribute          | Description                              | Type               | Default               |
 | ------------------ | ---------------------------------------- | ------------------ | --------------------- |
-| v-model            | Loading status                           | _boolean_          | -                     |
+| v-model            | LoadingPlus status                           | _boolean_          | -                     |
 | pulling-text       | Text to show when pulling                | _string_           | `Pull to refresh...`  |
 | loosing-text       | Text to show when loosing                | _string_           | `Loose to refresh...` |
 | loading-text       | Text to show when loading                | _string_           | `Loading...`          |

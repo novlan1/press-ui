@@ -37,7 +37,7 @@
             :size="dataLoadingSize"
             custom-style="margin: 10px 0;"
           />
-          <PressIconPlus
+          <PressIcon
             v-else
             class="press-toast__icon"
             :name="dataType"
@@ -58,10 +58,10 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { isNotInUni } from '../common/utils/utils';
 
-import { getDialogMixin } from '../press-dialog/dialog-mixin';
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import { getDialogMixin } from '../press-dialog-plus/dialog-mixin';
+import PressIcon from '../press-icon/press-icon.vue';
 
-import PressLoading from '../press-loading-plus/press-loading-plus.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';
 import PressTransition from '../press-transition/press-transition.vue';
 
@@ -101,7 +101,7 @@ export default {
     ...defaultOptions,
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressLoading,
     PressOverlay,
     PressTransition,

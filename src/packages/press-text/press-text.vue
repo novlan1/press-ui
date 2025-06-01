@@ -20,7 +20,7 @@
       v-if="prefixIcon"
       class="press-text__prefix-icon"
     >
-      <PressIconPlus
+      <PressIcon
         :name="prefixIcon"
         :custom-style="parsedIconStyle"
       />
@@ -73,7 +73,7 @@
       v-if="suffixIcon"
       class="press-text__suffix-icon"
     >
-      <PressIconPlus
+      <PressIcon
         :name="suffixIcon"
         :custom-style="parsedIconStyle"
       />
@@ -86,7 +86,7 @@ import { getVirtualHostOptions } from '../common/component-handler/press-compone
 import { addUnit } from '../common/utils/add-unit';
 import { style as styleUtil } from '../common/utils/style';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressLink from '../press-link/press-link.vue';
 
 import button from './mixin-button';
@@ -112,7 +112,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressLink,
   },
   mixins,

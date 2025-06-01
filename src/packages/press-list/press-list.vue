@@ -28,12 +28,12 @@
           class="press-list__loading"
           :style="loadingStyle"
         >
-          <PressLoadingPlus
+          <PressLoading
             :vertical="!vertical"
             :size="loadingSize"
           >
             {{ loadingText }}
-          </PressLoadingPlus>
+          </PressLoading>
         </div>
       </slot>
 
@@ -70,7 +70,7 @@ import { vModelMixin } from '../common/vue3/adapter';
 import { BindEventMixin } from '../mixins/basic/bind-event';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
-import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 
 import {  SCROLL_VIEW_ID } from './config';
 
@@ -84,7 +84,7 @@ export default {
     ...defaultOptions,
   },
   components: {
-    PressLoadingPlus,
+    PressLoading,
   },
   mixins: [
     vModelMixin,

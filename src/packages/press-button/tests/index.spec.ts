@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils';
 
-import Button from '../press-button.vue';
+import PressButton from '../press-button.vue';
 
 // @ts-ignore
 global.wx = {};
 
 
 test('loading-size prop', () => {
-  const wrapper = mount(Button, {
+  const wrapper = mount(PressButton, {
     propsData: {
       loading: true,
       loadingSize: '10px',
@@ -17,7 +17,7 @@ test('loading-size prop', () => {
 });
 
 test('icon-position prop', () => {
-  const wrapper = mount(Button, {
+  const wrapper = mount(PressButton, {
     propsData: {
       icon: 'plus',
       iconPosition: 'right',
@@ -28,7 +28,7 @@ test('icon-position prop', () => {
 
 // test('click event', () => {
 //   const onClick = jest.fn();
-//   const wrapper = mount(Button, {
+//   const wrapper = mount(PressButton, {
 //     context: {
 //       on: {
 //         click: onClick,
@@ -42,7 +42,7 @@ test('icon-position prop', () => {
 
 // test('not trigger click event when disabled', () => {
 //   const onClick = jest.fn();
-//   const wrapper = mount(Button, {
+//   const wrapper = mount(PressButton, {
 //     propsData: {
 //       disabled: true,
 //     },
@@ -59,7 +59,7 @@ test('icon-position prop', () => {
 
 // test('not trigger click event when loading', () => {
 //   const onClick = jest.fn();
-//   const wrapper = mount(Button, {
+//   const wrapper = mount(PressButton, {
 //     propsData: {
 //       loading: true,
 //     },
@@ -76,7 +76,7 @@ test('icon-position prop', () => {
 
 // test('touchstart event', () => {
 //   const onTouchstart = jest.fn();
-//   const wrapper = mount(Button, {
+//   const wrapper = mount(PressButton, {
 //     context: {
 //       on: {
 //         touchstart: onTouchstart,
@@ -89,7 +89,7 @@ test('icon-position prop', () => {
 // });
 
 test('hide border when color is gradient', () => {
-  const wrapper = mount(Button, {
+  const wrapper = mount(PressButton, {
     propsData: {
       color: 'linear-gradient(#000, #fff)',
     },
@@ -100,7 +100,7 @@ test('hide border when color is gradient', () => {
 });
 
 test('icon-prefix prop', () => {
-  const wrapper = mount(Button, {
+  const wrapper = mount(PressButton, {
     propsData: {
       icon: 'success',
       iconPrefix: 'my-icon',
@@ -111,7 +111,7 @@ test('icon-prefix prop', () => {
 });
 
 test('loading slot', () => {
-  const wrapper = mount(Button, {
+  const wrapper = mount(PressButton, {
     propsData: {
       loading: true,
     },

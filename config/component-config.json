@@ -16,7 +16,7 @@
         "title": "布局"
       },
       {
-        "name": "IconPlus",
+        "name": "Icon",
         "title": "图标"
       },
       {
@@ -24,7 +24,7 @@
         "title": "图片"
       },
       {
-        "name": "PopupPlus",
+        "name": "Popup",
         "title": "弹出层"
       },
       {
@@ -90,7 +90,7 @@
         "title": "键盘"
       },
       {
-        "name": "PickerPlus",
+        "name": "Picker",
         "title": "选择器"
       },
       {
@@ -140,7 +140,7 @@
         "title": "弹幕"
       },
       {
-        "name": "DialogPlus",
+        "name": "Dialog",
         "title": "弹出框"
       },
       {
@@ -152,7 +152,7 @@
         "title": "引导"
       },
       {
-        "name": "LoadingPlus",
+        "name": "Loading",
         "title": "加载中"
       },
       {
@@ -164,7 +164,7 @@
         "title": "遮罩层"
       },
       {
-        "name": "PopoverPlus",
+        "name": "Popover",
         "title": "弹出框"
       },
       {
@@ -326,23 +326,23 @@
     ]
   },
   "e-sport": {
-    "name": "ESport Components",
-    "title": "ESport 组件",
+    "name": "Business Components",
+    "title": "业务组件",
     "list": [
       {
         "name": "Area",
         "title": "省市区选择"
       },
       {
-        "name": "Dialog",
+        "name": "DialogPlus",
         "title": "弹出框"
       },
       {
-        "name": "Icon",
+        "name": "IconPlus",
         "title": "图标"
       },
       {
-        "name": "Loading",
+        "name": "LoadingPlus",
         "title": "加载中"
       },
       {
@@ -350,15 +350,15 @@
         "title": "分页"
       },
       {
-        "name": "Picker",
+        "name": "PickerPlus",
         "title": "选择器"
       },
       {
-        "name": "Popover",
+        "name": "PopoverPlus",
         "title": "弹出框"
       },
       {
-        "name": "Popup",
+        "name": "PopupPlus",
         "title": "弹出层"
       }
     ]

@@ -23,7 +23,7 @@
         ]"
         @click.stop="onClose"
       >
-        <PressIconPlus
+        <PressIcon
           v-if="getPropOrData('closeable')"
           :name="getPropOrData('closeIcon')"
         />
@@ -61,7 +61,7 @@ import { nextTick } from '../common/utils/system';
 import { functionalMixin } from '../mixins/basic/functional';
 import { SwiperPureMixin } from '../mixins/pure/swiper';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressOverlay from '../press-overlay/press-overlay.vue';
 
 
@@ -116,7 +116,7 @@ export default {
   name: 'PressImagePreview',
   components: {
     PressOverlay,
-    PressIconPlus,
+    PressIcon,
   },
   mixins: [functionalMixin(imagePreviewProps), SwiperPureMixin],
   props: {

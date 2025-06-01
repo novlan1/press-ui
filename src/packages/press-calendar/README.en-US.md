@@ -293,7 +293,7 @@ When `poppable` of Calendar is `true`, the following props are supported:
 | Parameter              | Description                                              | Type      | Default  |
 | ---------------------- | -------------------------------------------------------- | --------- | -------- |
 | show                   | Whether to show the calendar popup                       | _boolean_ | `false`  |
-| position               | Popup position, optional values are `top` `right` `left` | _string_  | `bottom` |
+| position               | PopupPlus position, optional values are `top` `right` `left` | _string_  | `bottom` |
 | round                  | Whether to show rounded popups                           | _boolean_ | `true`   |
 | close-on-click-overlay | Whether to close the overlay on click                    | _boolean_ | `true`   |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation            | _boolean_ | `true`   |

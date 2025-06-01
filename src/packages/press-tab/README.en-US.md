@@ -157,14 +157,14 @@ If you nest press-tabs inside a component or node that hides content like press-
 This scenario can be circumvented by using `wx:if` to manually control the rendering of press-tabs.
 
 ```html
-<press-popup show="{{ show }}">
+<press-popup-plus show="{{ show }}">
    <press-tabs wx:if="{{ show }}">
      <press-tab title="Label 1">Content 1</press-tab>
      <press-tab title="Label 2">Content 2</press-tab>
      <press-tab title="Label 3">Content 3</press-tab>
      <press-tab title="Label 4">Content 4</press-tab>
    </press-tabs>
-</press-popup>
+</press-popup-plus>
 ```
 
 ## API

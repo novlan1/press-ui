@@ -73,7 +73,7 @@
               class="card-actions-item"
               @click="actionsClick( t('share'))"
             >
-              <PressIconPlus
+              <PressIcon
                 name="share-o"
                 size="18"
                 color="#999"
@@ -86,7 +86,7 @@
               class="card-actions-item"
               @click="actionsClick( t('star'))"
             >
-              <PressIconPlus
+              <PressIcon
                 name="like-o"
                 size="18"
                 color="#999"
@@ -99,7 +99,7 @@
               class="card-actions-item"
               @click="actionsClick( t('comment'))"
             >
-              <PressIconPlus
+              <PressIcon
                 name="chat-o"
                 size="18"
                 color="#999"
@@ -142,7 +142,7 @@
 <script>
 import PressCard from 'press-ui/press-card/press-card.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
@@ -175,7 +175,7 @@ export default {
   },
   components: {
     PressCard,
-    PressIconPlus,
+    PressIcon,
     PressSwitch,
     PressCell,
   },

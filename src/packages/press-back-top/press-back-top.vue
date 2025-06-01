@@ -10,7 +10,7 @@
       :style="contentStyle"
       @click="backToTop"
     >
-      <PressIconPlus
+      <PressIcon
         :name="icon"
         :custom-style="innerIconStyle"
       />
@@ -30,7 +30,7 @@ import { addUnit, getPx } from '../common/utils/add-unit';
 import { style } from '../common/utils/style';
 import { errorTip } from '../common/utils/validator';
 
-import PressIconPlus from '../press-icon-plus/press-icon-plus.vue';
+import PressIcon from '../press-icon/press-icon.vue';
 import PressTransition from '../press-transition/press-transition.vue';
 
 import props from './props.js';
@@ -47,7 +47,7 @@ export default {
     styleIsolation: 'shared',
   },
   components: {
-    PressIconPlus,
+    PressIcon,
     PressTransition,
   },
   mixins: [props],

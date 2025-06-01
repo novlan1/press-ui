@@ -28,7 +28,7 @@
         :safe-area-inset-top="false"
       >
         <template #right>
-          <PressIconPlus
+          <PressIcon
             name="search"
           />
         </template>
@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon/press-icon.vue';
 import PressNavBar from 'press-ui/press-nav-bar/press-nav-bar.vue';
 
 
@@ -52,7 +52,7 @@ export default {
   },
   components: {
     PressNavBar,
-    PressIconPlus,
+    PressIcon,
   },
   data() {
     return {

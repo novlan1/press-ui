@@ -38,7 +38,7 @@ Customize content through slots.
 
 ```html
 <press-nav-bar title="Title" left-text="Back" left-arrow>
-   <press-icon-plus name="search" slot="right" />
+   <press-icon name="search" slot="right" />
 </press-nav-bar>
 ```
 

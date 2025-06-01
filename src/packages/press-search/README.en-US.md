@@ -108,8 +108,8 @@ The background color outside the search box can be set through the `background` 
 | input-align          | Alignment of input box content, optional values are `center` `right`                                                                                                  | _string_           | `left`    |
 | use-left-icon-slot   | Whether to use the left icon slot of the input box                                                                                                                    | _boolean_          | `false`   |
 | use-right-icon-slot  | Whether to use the right icon slot of the input box                                                                                                                   | _boolean_          | `false`   |
-| left-icon            | The icon name or image link on the left side of the input box, see the Icon component for optional values (if use-left-icon-slot is set, this attribute is invalid)   | _string_           | `search`  |
-| right-icon           | The icon name or image link on the right side of the input box, see the Icon component for optional values (if use-right-icon-slot is set, this attribute is invalid) | _string_           | -         |
+| left-icon            | The icon name or image link on the left side of the input box, see the IconPlus component for optional values (if use-left-icon-slot is set, this attribute is invalid)   | _string_           | `search`  |
+| right-icon           | The icon name or image link on the right side of the input box, see the IconPlus component for optional values (if use-right-icon-slot is set, this attribute is invalid) | _string_           | -         |
 
 ### Events
 
