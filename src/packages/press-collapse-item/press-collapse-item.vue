@@ -12,6 +12,7 @@
       :clickable="clickable"
       :border="border && expanded"
       :custom-class="collapseItemCustomClass"
+      :custom-style="titleStyle"
       hover-class="press-cell--hover"
       center
       @click="onClick"
@@ -35,7 +36,10 @@
       :class="wrapperClass"
       :style="animationStyle"
     >
-      <div :class="['press-collapse-item__content', contentClass]">
+      <div
+        :class="['press-collapse-item__content', contentClass]"
+        :style="collapseItemContentStyle"
+      >
         <slot />
       </div>
     </div>
@@ -44,6 +48,7 @@
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_COLLAPSE as PARENT } from '../common/constant/parent-map';
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 
 import { ChildrenMixin } from '../mixins/basic/relation';
@@ -85,6 +90,14 @@ export default {
       type: String,
       default: '',
     },
+    titleStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    contentStyle: {
+      type: [String, Object],
+      default: '',
+    },
     contentClass: {
       type: String,
       default: '',
@@ -111,6 +124,9 @@ export default {
       let result = '';
       result = this.collapseItemClass;
       return result;
+    },
+    collapseItemContentStyle() {
+      return style(this.contentStyle);
     },
     wrapperClass() {
       return utils.bem2('collapse-item__wrapper');

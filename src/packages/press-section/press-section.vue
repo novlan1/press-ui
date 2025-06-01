@@ -18,6 +18,7 @@
         :class="[type, {
           ['press-section-header__decoration--active']: active
         }]"
+        :style="decorationStyleStr"
       />
       <slot
         v-else
@@ -110,11 +111,18 @@ export default {
       type: [String, Object],
       default: '',
     },
+    decorationStyle: {
+      type: [String, Object],
+      default: '',
+    },
   },
   emits: ['click'],
   computed: {
     wrapStyle() {
       return style(this.customStyle);
+    },
+    decorationStyleStr() {
+      return style(this.decorationStyle);
     },
     innerPadding() {
       if (typeof this.padding === 'string') {

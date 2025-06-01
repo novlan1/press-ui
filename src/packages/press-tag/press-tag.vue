@@ -8,6 +8,7 @@
       v-if="closeable"
       name="cross"
       custom-class="press-tag__close"
+      class="press-tag__close-in-tag"
       @click="onClose"
     />
   </div>

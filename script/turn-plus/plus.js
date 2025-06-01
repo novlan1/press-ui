@@ -192,7 +192,7 @@ function replaceMetaConfig() {
 }
 
 function main() {
-  // execCommand('git clean -df', process.cwd(), 'inherit');
+  execCommand('rm -rf src/packages/press-icon/press-icon-music.vue', process.cwd(), 'inherit');
   batchRenameSync(config.renameRoot, config.renameConfig);
   batchRenameSync(config.renameRoot, config.renameConfig2);
   batchRenameSync(config.renameRoot, config.renameConfig3);
@@ -201,6 +201,21 @@ function main() {
   });
   replaceImport();
   replaceMetaConfig();
+
+  replaceContent({
+    replaceList: [
+      {
+        list: [
+          ['DialogPlus', 'Dialog'],
+        ],
+        dirList: [
+          'src/packages/press-dialog-plus/handler.js',
+          'src/packages/press-dialog/handler.js',
+        ],
+      },
+    ],
+    targetProject: CONFIG.targetProject,
+  });
 }
 
 main();

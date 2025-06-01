@@ -181,8 +181,6 @@ export default {
   emits: ['close', 'confirm', 'cancel'],
   data() {
     return {
-      // ...getPropsData(this, props),
-
       utils,
       loading: {
         confirm: false,
@@ -193,16 +191,27 @@ export default {
   },
   computed: {
     popupCustomStyle() {
+      let width = utils.addUnit(this.dataWidth);
+
+      // #ifdef MP-TOUTIAO
+      width = this.dataWidth ? utils.addUnit(this.dataWidth) : '320px';
+      // #endif
+
       return style([
         {
-          width: utils.addUnit(this.dataWidth),
+          width,
+          // #ifdef MP-TOUTIAO
+          top: '45%',
+          fontSize: '16px',
+          borderRadius: '16px',
+          backgroundColor: '#fff',
+          // #endif
         },
         this.dataCustomStyle,
       ]);
     },
   },
   watch: {
-    // ...getPropsWatch(props),
     dataShow: {
       handler(val) {
         if (!val) {
@@ -212,9 +221,6 @@ export default {
     },
   },
   methods: {
-    // setData(data) {
-    //   setPropsToData.call(this, data);
-    // },
     onConfirm() {
       this.handleAction('confirm');
     },

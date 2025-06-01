@@ -71,6 +71,10 @@
     "usingComponents": true,
     "appid": "2021004137607104"
   },
+  "mp-toutiao": {
+    "usingComponents": true,
+    "appid": "tt1ec7687a81cc774d01"
+  },
   "h5": {
     "router": {
       "mode": "hash",

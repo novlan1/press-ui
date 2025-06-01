@@ -41,6 +41,8 @@
             <PressCollapseItem
               v-for="(item, index) of showPages"
               :key="item.key"
+              :title-style="collapseItemTitleStyle"
+              :content-style="collapseItemContentStyle"
               :name="`${index}`"
               :is-link="false"
             >
@@ -51,6 +53,7 @@
                   type="line"
                   :clickable="true"
                   :header-style="sectionStyle.header"
+                  decoration-style="margin-right: 10px;"
                   :active="activeNames.indexOf(`${index}`) > -1"
                 />
               </template>
@@ -61,6 +64,7 @@
                 is-link
                 :title="nav.title"
                 custom-class="component-cell"
+                :custom-style="contentCellCustomStyle"
                 @click="() => clickComponent(nav, item)"
               />
             </PressCollapseItem>
@@ -120,6 +124,22 @@ export default {
     showPages: {
       type: Array,
       default: () => ([]),
+    },
+    collapseItemTitleStyle: {
+      type: [Object, String],
+      default: 'background: #fff;padding: 0 16px 0 0;',
+    },
+    collapseItemContentStyle: {
+      type: [Object, String],
+      default: 'padding: 0',
+    },
+    contentCellCustomStyle: {
+      type: [Object, String],
+      default: () => ({
+        marginBottom: '12px',
+        borderRadius: '99px',
+        paddingLeft: '35px',
+      }),
     },
   },
   data() {
@@ -255,7 +275,7 @@ export default {
     onJumpToMap() {
       routerPush.call(this, MAP_PAGE_URL);
     },
-     /**
+    /**
      * 对外暴露
      */
     onJumpToLaunchApp() {

@@ -146,7 +146,7 @@ export default {
       default: 1000,
     },
   }),
-  emits: ['input', 'input', 'cancel', 'confirm', 'input', 'change'],
+  emits: ['cancel', 'confirm', 'input', 'change'],
   data() {
     return {
       innerValue: Date.now(),
@@ -451,7 +451,9 @@ export default {
 
       this.updateColumnValue(value).then(() => {
         this.$emit('input', value);
+        // #ifndef MP-TOUTIAO
         this.$emit('change', picker);
+        // #endif
       });
     },
     updateColumnValue(value, changePicker = true) {

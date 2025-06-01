@@ -105,6 +105,9 @@
   /* #ifdef MP-ALIPAY */
   ::v-deep &__close,
   /* #endif */
+  /* #ifdef MP-TOUTIAO */
+  &__close-in-tag,
+  /* #endif */
   &__close {
     min-width: 1em;
     margin-left: 2px;
