@@ -8,7 +8,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
     title: '一、开始',
     list: [
       [
-        '1、“Press UI 组件库”（以下简称 Press UI）是基于 uni-app 的跨端组件库，旨在',
+        '1、“Press UI 组件库”是基于 uni-app 的跨端组件库，旨在',
         {
           text: '提升开发效率、沉淀基础组件',
           light: true,

@@ -1,7 +1,11 @@
 <template>
-  <div class="demo-wrap">
+  <div
+    class="demo-wrap"
+    :style="customStyle"
+  >
     <PressProtocol
       :list="list"
+      :custom-style="customStyle"
       @click="onClickProtocol"
     />
   </div>
@@ -11,6 +15,7 @@ import { setClipboardData } from 'press-ui/common/clipboard/clipboard';
 import { parseProtocol } from 'press-ui/common/protocol/parse-protocol';
 
 import PressProtocol from 'press-ui/press-protocol/press-protocol.vue';
+
 import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'src/packages/press-protocol/demo-helper/data';
 
 
@@ -21,10 +26,10 @@ export default {
   data() {
     return {
       list: parseProtocol(DEFAULT_PRESS_UI_INTRODUCE),
+      customStyle: 'background: #fff',
     };
   },
   mounted() {
-    // this.onFetchData();
   },
   methods: {
     onFetchData() {
@@ -48,7 +53,7 @@ export default {
 <style scoped lang="scss">
 .demo-wrap {
   display: flex;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 press-protocol {

@@ -42,23 +42,35 @@
       </div>
     </div>
 
-    <PressDialogPlus
-      id="tip-match-comm-tips-dialog"
-      ref="tip-match-comm-tips-dialog"
-    />
+    <PressDialog
+      use-slot
+      title="Press UI 交流群"
+      :show="showDialog"
+      @close="onClose"
+      @confirm="onClose"
+    >
+      <div class="press-about__dialog-desc">
+        QQ扫码加入
+      </div>
+      <img
+        :src="helpConfig.groupQRCode"
+        :show-menu-by-longpress="true"
+        class="press-about__dialog-image"
+        mode="aspectFit"
+      >
+    </PressDialog>
   </div>
 </template>
 
 <script>
 import { routerPush } from '../common/utils/router';
-import DialogPlus from '../press-dialog-plus';
-import PressDialogPlus from '../press-dialog-plus/press-dialog-plus.vue';
+import PressDialog from '../press-dialog/press-dialog.vue';
 
 
 export default {
   name: 'PressAbout',
   components: {
-    PressDialogPlus,
+    PressDialog,
   },
   props: {
     helpConfig: {
@@ -68,23 +80,18 @@ export default {
   },
   data() {
     return {
+      showDialog: false,
     };
   },
   mounted() {
   },
   methods: {
     jumpToIntroduce() {
-      const url =  '/pages/index/introduce';
+      const url = '/pages/index/introduce';
       routerPush.call(this, url);
     },
     showGroupQrCode() {
-      Dialog.show({
-        context: this,
-        title: 'Press UI 交流群',
-        content: 'QQ扫码加入',
-        confirmText: '',
-        src: this.helpConfig.groupQRCode,
-      });
+      this.showDialog = true;
     },
     clickCell(item) {
       if (item.callback === 'INTRODUCE') {
@@ -92,6 +99,9 @@ export default {
       } else if (item.callback === 'GROUP_QRCODE') {
         this.showGroupQrCode();
       }
+    },
+    onClose() {
+      this.showDialog = false;
     },
   },
 };

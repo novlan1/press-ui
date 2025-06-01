@@ -76,9 +76,9 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <PressDialogPlus
-      id="tip-match-comm-tips-dialog"
-      ref="tip-match-comm-tips-dialog"
+    <PressDialog
+      id="press-dialog"
+      ref="press-dialog"
     />
     <!-- #endif -->
   </div>
@@ -86,9 +86,9 @@
 <script>
 import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
-import PressDialogPlusHandler from 'press-ui/press-dialog-plus';
+import { showConfirmDialog } from 'press-ui/press-dialog';
 
-import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
 
 
@@ -116,7 +116,7 @@ export default {
 
   components: {
     PressSwitch,
-    PressDialogPlus,
+    PressDialog,
     PressCell,
     PressCellGroup,
   },
@@ -140,15 +140,14 @@ export default {
       console.log('[value]', value, type);
 
       if (type === 'async') {
-        PressDialogPlusHandler.show({
+        showConfirmDialog({
           context: this,
           title: this.t('title'),
-          content: this.t('message'),
-          confirmText: this.t('confirm'),
-          cancelText: this.t('cancel'),
+          message: this.t('message'),
         }).then(() => {
           this.checkedMap.async = value;
-        });
+        })
+          .catch(() => {});
         return;
       }
       this.checkedMap[type] = value;

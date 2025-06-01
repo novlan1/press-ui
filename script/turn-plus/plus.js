@@ -1,5 +1,6 @@
 const { replaceContent, randomString, pascalCase, execCommand } = require('t-comm');
 
+const { CONFIG } = require('./config');
 const { batchRenameSync } = require('./rename');
 
 const rawList = [
@@ -128,7 +129,7 @@ function getReplaceList(rawList, dirList) {
 }
 
 const config = {
-  targetProject: process.cwd(),
+  targetProject: CONFIG.targetProject,
   renameRoot: 'src/packages',
   ...getRenameConfig(rawList),
 

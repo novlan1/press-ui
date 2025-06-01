@@ -101,6 +101,7 @@
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
     "turn:plus": "node script/turn-plus/plus",
+    "turn:plus:more": "node script/turn-plus/more",
     "version:tip": "node script/deploy/version-tip"
   },
   "lint-staged": {

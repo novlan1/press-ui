@@ -73,4 +73,25 @@
       color: #9299c6;
     }
   }
+
+  &__dialog-desc {
+    max-height: 270px;
+    font-size: 14px;
+    color: #596297;
+    line-height: 22px;
+    margin-top: 12px;
+    word-break: break-word;
+    overflow: scroll;
+    text-align: center;
+  }
+
+  &__dialog-image {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto 32px;
+    border: 1px solid #eef0f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
