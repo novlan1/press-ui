@@ -1,7 +1,6 @@
 const { execSync } = require('child_process');
 
 const ENV_FILE = '.env.local';
-const CLI_FILE = './bin/cli';
 require('dotenv').config({ path: ENV_FILE });
 
 const DEPLOY_CONFIG = {
@@ -20,7 +19,7 @@ const DEPLOY_CONFIG = {
 
 
 function main() {
-  execSync(`node ${CLI_FILE} deploy:github --repo ${DEPLOY_CONFIG.repo} \
+  execSync(`npx t-comm deploy:github --repo ${DEPLOY_CONFIG.repo} \
     --user ${DEPLOY_CONFIG.user} \
     --email ${DEPLOY_CONFIG.email} \
     --dir ${DEPLOY_CONFIG.targetDir} \

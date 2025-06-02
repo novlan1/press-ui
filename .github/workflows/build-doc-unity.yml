@@ -36,5 +36,5 @@ jobs:
 
       # 生成静态文件
       - name: Build
-        run:  npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build:unity && npm run build && cp -r dist/build/h5 docs/.vuepress/dist && npm run docs:deploy:docs
+        run:  npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build:unity && npm run build && cp -r dist/build/h5 docs/.vuepress/dist && npm run docs:deploy:unity
 
