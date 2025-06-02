@@ -10,7 +10,7 @@ const DEPLOY_CONFIG = {
   user: 'novlan1',
   email: '1576271227@qq.com',
 
-  targetDir: './docs/.vuepress/dist/',
+  targetDir: './docs/.vuepress/dist/.',
   token: process.env.ACCESS_TOKEN || process.env.DEPLOY_GITHUB_PAGE_TOKEN || '',
   branch: 'main',
 
