@@ -86,7 +86,7 @@ const MOMENTUM_DISTANCE = 15;
 
 
 export default {
-  name: 'PressPickerPlusColumn',
+  name: 'PressPickerColumn',
   options: {
     ...defaultOptions,
   },

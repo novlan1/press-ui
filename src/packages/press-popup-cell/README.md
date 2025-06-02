@@ -11,11 +11,11 @@ url : pages/press/popup-cell/popup-cell
 ## 引入
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 export default {
   components: {
-    PressPopupPlusCell,
+    PressPopupCell,
   }
 }
 ```
@@ -27,14 +27,14 @@ export default {
 先在模板中预埋下。
 
 ```html
-<PressPopupPlusCell
+<PressPopupCell
   :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
   mode="functional"
 />
 ```
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 function showPopupCell(options) {
   return showFunctionalComponent({
@@ -45,7 +45,7 @@ function showPopupCell(options) {
 
 export default {
   components: {
-    PressPopupPlusCell
+    PressPopupCell
   },
   methods: {
     onShowBasicPopupCell() {

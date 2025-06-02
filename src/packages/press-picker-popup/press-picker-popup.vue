@@ -28,7 +28,7 @@ import PressPopup from '../press-popup/press-popup.vue';
 
 
 export default {
-  name: 'PressPickerPopupPlus',
+  name: 'PressPickerPopup',
   components: {
     PressPopup,
     PressPicker,

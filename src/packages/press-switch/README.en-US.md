@@ -72,7 +72,7 @@ export default{
 ```
 
 ```js
-import PressDialogPlusHandler from 'press-ui/press-dialog-plus';
+import PressDialogHandler from 'press-ui/press-dialog-plus';
 
 export default {
    data() {
@@ -82,7 +82,7 @@ export default {
    },
    methods: {
      onChange(value) {
-       PressDialogPlusHandler. show({
+       PressDialogHandler. show({
          title: 'Prompt',
          content: 'Whether to toggle the switch',
          confirmText: 'Confirm',

@@ -4,7 +4,7 @@
       class="press-picker"
       :class="customClass"
     >
-      <PressPickerPlusToolbar
+      <PressPickerToolbar
         v-if="toolbarPosition === 'top'"
         :title="title"
         :show-toolbar="showToolbar"
@@ -26,7 +26,7 @@
         :style="columnStyle"
         @touchmove.stop.prevent="noop"
       >
-        <PressPickerPlusColumn
+        <PressPickerColumn
           v-for="(item,index) in computedColumns"
           ref="pickerColumn"
           :key="index"
@@ -54,7 +54,7 @@
         />
       </div>
 
-      <PressPickerPlusToolbar
+      <PressPickerToolbar
         v-if="toolbarPosition === 'bottom'"
         :custom-class="toolbarClass"
       />
@@ -67,8 +67,8 @@ import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { ParentMixin } from '../mixins/basic/relation';
 
 import PressLoading from '../press-loading/press-loading.vue';
-import PressPickerPlusColumn from '../press-picker-column/press-picker-column.vue';
-import PressPickerPlusToolbar from '../press-picker-toolbar/press-picker-toolbar.vue';
+import PressPickerColumn from '../press-picker-column/press-picker-column.vue';
+import PressPickerToolbar from '../press-picker-toolbar/press-picker-toolbar.vue';
 
 import { pickerProps } from './shared';
 
@@ -81,9 +81,9 @@ export default {
     ...defaultOptions,
   },
   components: {
-    PressPickerPlusColumn,
+    PressPickerColumn,
     PressLoading,
-    PressPickerPlusToolbar,
+    PressPickerToolbar,
   },
   mixins: [ParentMixin(PARENT)],
 

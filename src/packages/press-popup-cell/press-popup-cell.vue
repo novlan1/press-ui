@@ -154,7 +154,7 @@ const popupCellProps = {
 let that;
 
 export default {
-  name: 'PressPopupPlusCell',
+  name: 'PressPopupCell',
   options: {
     ...getVirtualHostOptions(true, false),
   },

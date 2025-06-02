@@ -12,14 +12,14 @@ The cells wrapped by the popup layer include `cell`, `checkbox`, `button`, `swit
 Pre-buried in the template first.
 
 ```html
-<PressPopupPlusCell
+<PressPopupCell
    :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
    mode="functional"
 />
 ```
 
 ```ts
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 function showPopupCell(options) {
    return showFunctionalComponent({
@@ -30,7 +30,7 @@ function showPopupCell(options) {
 
 export default {
    components: {
-     PressPopupPlusCell
+     PressPopupCell
    },
    methods: {
      onShowBasicPopupCell() {

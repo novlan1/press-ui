@@ -197,7 +197,7 @@ const column3 = {
 提供了简单的 `Popup` 和 `Picker` 的组合，供业务快速使用。
 
 ```html
-<PressPickerPlusPopup
+<PressPickerPopup
   :show="show"
   :columns="columns"
   @change="onChange"
@@ -207,11 +207,11 @@ const column3 = {
 ```
 
 ```ts
-import PressPickerPlusPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
+import PressPickerPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
 
 export default {
   components: {
-    PressPickerPlusPopup,
+    PressPickerPopup,
   },
 }
 ```
@@ -319,7 +319,7 @@ onConfirm(option) {
 1. 引入路径修改，改成
    
 ```ts
-import PressPickerPlusPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
+import PressPickerPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
 ```
 
 2. 控制显隐修改，`v-if="show"` 改成 `:show="show"`

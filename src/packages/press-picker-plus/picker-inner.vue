@@ -18,7 +18,7 @@
     >
       {{ tip }}
     </div>
-    <PressPickerPlusView
+    <PressPickerView
       ref="picker"
       :data="data"
       :has-tip="!!tip"
@@ -32,19 +32,19 @@
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { t } from '../locale';
-import PressPickerPlusView from '../press-picker-view/press-picker-view.vue';
+import PressPickerView from '../press-picker-view/press-picker-view.vue';
 import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
 
 
 export default {
-  name: 'PressPickerPlusInner',
+  name: 'PressPickerInner',
   options: {
     ...getVirtualHostOptions(true, false),
     styleIsolation: 'shared',
   },
   components: {
     PressPopupPlus,
-    PressPickerPlusView,
+    PressPickerView,
   },
   props: {
     // 弹窗标题

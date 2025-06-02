@@ -12,7 +12,7 @@
       />
     </demo-block>
 
-    <PressPopupPlusCell
+    <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
       :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
@@ -37,7 +37,8 @@ import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressPagination from 'press-ui/press-pagination/press-pagination.vue';
 import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
 
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+
 import { showCustomPopup, local } from 'src/packages/press-pagination/demo-helper/custom';
 import {
   FUNCTIONAL_ID_MAP,
@@ -47,7 +48,7 @@ import {
 export default {
   components: {
     PressPagination,
-    PressPopupPlusCell,
+    PressPopupCell,
     PressPickerPlus,
     PressCell,
   },

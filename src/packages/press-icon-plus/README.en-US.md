@@ -25,11 +25,11 @@ Basic usage:
 ```
 
 ```ts
-import PressIconPlusMusic from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIconMusic from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   components: {
-    PressIconPlusMusic,
+    PressIconMusic,
   }
 }
 ```

@@ -1,4 +1,4 @@
-const { replaceContentSimple } = require('@tencent/t-comm');
+const { replaceContentSimple } = require('t-comm');
 const { randomString, pascalCase, execCommand } = require('t-comm');
 
 const { CONFIG } = require('./config');
@@ -74,6 +74,15 @@ function getReplaceList(rawList, dirList) {
     ['<', ''],
     ['</', '>'],
   ];
+  // const pascalCasePrefixList = [
+  //   // ['"', '"'],s
+  //   [' ', ' '],
+  //   [' ', ','], // components 声明
+  //   ['</', '>'],
+  //   ['<', '\n'],
+  //   ['<', ' '],
+  //   ['\'', '\''], // name 声明
+  // ];
   for (const item of rawList) {
     const plusKey = `press-${item}-plus`;
     const key = `press-${item}`;
@@ -85,14 +94,21 @@ function getReplaceList(rawList, dirList) {
       list2.push([`${prefix[0]}${key}${prefix[1]}`, `${prefix[0]}${plusKey}${prefix[1]}`]);
       list3.push([`${prefix[0]}${tempKey}${prefix[1]}`, `${prefix[0]}${key}${prefix[1]}`]);
     }
-    list.push([pascalCase(plusKey), tempKey2]);
-    list2.push([pascalCase(key), pascalCase(plusKey)]);
-    list3.push([tempKey2, pascalCase(key)]);
+    const getPascalReg = value => new RegExp(`(?<=\\W)(${pascalCase(value)})(?=\\W)`, 'g');
+
+    list.push([getPascalReg(plusKey), pascalCase(tempKey2)]);
+    list.push([getPascalReg(key), pascalCase(plusKey)]);
+    list.push([getPascalReg(tempKey2), pascalCase(key)]);
+    // for (const prefix of pascalCasePrefixList) {
+    //   list.push([`${prefix[0]}${pascalCase(plusKey)}${prefix[1]}`, `${prefix[0]}${tempKey2}${prefix[1]}`]);
+    //   list2.push([`${prefix[0]}${pascalCase(key)}${prefix[1]}`, `${prefix[0]}${pascalCase(plusKey)}${prefix[1]}`]);
+    //   list3.push([`${prefix[0]}${tempKey2}${prefix[1]}`, `${prefix[0]}${pascalCase(key)}${prefix[1]}`]);
+    // }
   }
 
   const classPrefixList = [
-    [`.`, ' '],
-    [`.`, ','],
+    ['.', ' '],
+    ['.', ','],
     ['.', '-'], // press-icon-plus-* 一堆图标的类名
 
     ['', ';'], // press-icon font-family
@@ -187,10 +203,14 @@ function main() {
         list: [['pickerPlus', 'picker']],
         dirList: ['src/packages/common/constant/parent-map.js'],
       },
-       {
+      {
         // 顶层类名
         list: [['press-popup-plus', 'press-popup__wrap']],
         dirList: ['src/packages/press-popup/press-popup.vue'],
+      },
+      {
+        list: [['press-icon-plus-plus', 'press-icon']],
+        dirList: ['src/packages/press-icon/css/index.scss'],
       },
     ],
   });

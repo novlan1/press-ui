@@ -56,13 +56,13 @@
       </demo-block>
     </div>
 
-    <PressPopupPlusCell
+    <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL"
       :ref="FUNCTIONAL_ID_MAP.POPUP_CELL"
       mode="functional"
     />
 
-    <PressPopupPlusCell
+    <PressPopupCell
       :id="FUNCTIONAL_ID_MAP.POPUP_CELL_2"
       :ref="FUNCTIONAL_ID_MAP.POPUP_CELL_2"
       mode="functional"
@@ -85,7 +85,7 @@
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
 import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
-import PressPopupPlusCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
 import {
   FUNCTIONAL_ID_MAP,
@@ -163,7 +163,7 @@ export default {
     },
   },
   components: {
-    PressPopupPlusCell,
+    PressPopupCell,
     PressDatetimePickerPopup,
     PressPickerPlus,
     PressCell,

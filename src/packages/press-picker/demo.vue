@@ -62,7 +62,7 @@
     </demo-block>
 
 
-    <PressPickerPopupPlus
+    <PressPickerPopup
       :show="showPopupPlus"
       :columns="momentumColumns"
       :use-momentum="true"
@@ -73,7 +73,7 @@
   </div>
 </template>
 <script>
-import PressPickerPopupPlus from 'press-ui/press-picker-popup/press-picker-popup.vue';
+import PressPickerPopup from 'press-ui/press-picker-popup/press-picker-popup.vue';
 import PressPicker from 'press-ui/press-picker/press-picker.vue';
 
 
@@ -235,7 +235,7 @@ export default {
   },
   components: {
     PressPicker,
-    PressPickerPopupPlus,
+    PressPickerPopup,
   },
   data() {
     return {

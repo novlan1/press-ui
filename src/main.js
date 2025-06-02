@@ -9,7 +9,7 @@ import { initDemoI18n } from './packages/locale/demo-lang';
 import PressCell from './packages/press-cell/press-cell.vue';
 import DemoBlock from './packages/press-demo-block/press-demo-block.vue';
 import PressPickerPlus from './packages/press-picker-plus/press-picker-plus.vue';
-import PressPopupPlusCell from './packages/press-popup-cell/press-popup-cell.vue';
+import PressPopupCell from './packages/press-popup-cell/press-popup-cell.vue';
 
 import Toast from './packages/press-toast/index';
 import ToggleHeader from './packages/press-toggle-header/press-toggle-header.vue';
@@ -23,7 +23,7 @@ Vue.component('ToggleHeader', ToggleHeader);
 
 Vue.component('PressCell', PressCell);
 Vue.component('PressPickerPlus', PressPickerPlus);
-Vue.component('PressPopupPlusCell', PressPopupPlusCell);
+Vue.component('PressPopupCell', PressPopupCell);
 
 
 Vue.config.productionTip = false;

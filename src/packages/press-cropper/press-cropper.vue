@@ -7,7 +7,7 @@
     @confirm="confirm"
     @cancel="cancel"
   >
-    <PressPickerPlusToolbar
+    <PressPickerToolbar
       v-if="showTitle"
       :title="title"
       :show-toolbar="true"
@@ -98,7 +98,7 @@ import { VueCropper } from '../common/vue3/vue-cropper';
 // #endif
 
 import PressButton from '../press-button/press-button.vue';
-import PressPickerPlusToolbar from '../press-picker-toolbar/press-picker-toolbar.vue';
+import PressPickerToolbar from '../press-picker-toolbar/press-picker-toolbar.vue';
 import PressPopup from '../press-popup/press-popup.vue';
 
 // #ifndef H5
@@ -115,7 +115,7 @@ export default {
   components: {
     PressPopup,
     PressButton,
-    PressPickerPlusToolbar,
+    PressPickerToolbar,
 
     // #ifdef H5
     VueCropper,
