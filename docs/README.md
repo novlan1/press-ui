@@ -106,7 +106,7 @@ import PressButton from 'press-ui/press-button/press-button.vue'
 
 第二行分别为基于 `uni-app` 的 `Vue3.x` 版本的H5、微信小程序，及非 `uni-app` 环境的 `Vue2.x` 、`Vue3.x` 版本的H5项目。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-20250601.png" width="800">
+<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-20250602.png" width="800">
 
 ### 6. 示例项目
 
