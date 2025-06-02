@@ -1,5 +1,7 @@
 const { execSync } = require('child_process');
 
+const { timeStampFormat } = require('t-comm');
+
 const ENV_FILE = '.env.local';
 require('dotenv').config({ path: ENV_FILE });
 
@@ -12,7 +14,7 @@ const DEPLOY_CONFIG = {
   token: process.env.ACCESS_TOKEN || process.env.DEPLOY_GITHUB_PAGE_TOKEN || '',
   branch: 'main',
 
-  commitMessage: 'docs: update docs of press-ui',
+  commitMessage: `docs: update docs of press-ui. ${timeStampFormat(Date.now(), 'yyyy-MM-dd hh:mm:ss')}`,
   playgroundDir: './log/deploy-github-pages-playground',
   targetDirName: 'press-ui',
 };
