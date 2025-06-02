@@ -28,13 +28,11 @@
         <PressButton
           type="warning"
           :custom-style="customStyle"
-          @click="onLaunchMp"
         >
           {{ t('warning') }}
         </PressButton>
         <PressButton
           type="danger"
-          @click="onLaunchMp(1)"
         >
           {{ t('danger') }}
         </PressButton>
@@ -309,8 +307,6 @@
   </div>
 </template>
 <script>
-import { launchMiniProgramInGame } from 't-comm/lib/msdk/mini-program';
-
 import { isNotInUni } from 'press-ui/common/utils/utils';
 import PressButton from 'press-ui/press-button/press-button.vue';
 
@@ -390,15 +386,6 @@ export default {
 
   },
   methods: {
-    onLaunchMp(isQQ) {
-      console.log('[launchMiniProgramInGame]');
-      // #ifdef H5
-      launchMiniProgramInGame({
-        appId: 'wx99c1c10a389e7433',
-        isWxMp: !isQQ,
-      });
-      // #endif
-    },
     onClick(event) {
       console.log('[CLICK]', event);
     },
