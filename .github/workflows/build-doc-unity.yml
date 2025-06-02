@@ -1,0 +1,40 @@
+# action 的名称
+name: Deploy GitHub Pages Unity
+
+on:
+  push:
+    branches:
+      - master
+
+# 任务
+jobs:
+  build-and-deploy:
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    env:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      # 生成静态文件
+      - name: Build
+        run:  npm run init && export NODE_OPTIONS=--openssl-legacy-provider && npm run docs:build:unity && npm run build && cp -r dist/build/h5 docs/.vuepress/dist && npm run docs:deploy:docs
+

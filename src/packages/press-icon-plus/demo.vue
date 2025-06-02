@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import IconMap from 'src/utils/icon/icon.json';
 
 import { CLIPBOARD_MIXIN } from 'press-ui/mixins/clipboard/clipboard-mixin';
 import PressCard from 'press-ui/press-card/press-card.vue';
@@ -84,7 +85,6 @@ import PressCard from 'press-ui/press-card/press-card.vue';
 import PressIconMusic from 'press-ui/press-icon-music/press-icon-music.vue';
 import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 import PressNotify from 'press-ui/press-notify/press-notify.vue';
-import IconMap from 'src/utils/icon/icon.json';
 
 
 export default {

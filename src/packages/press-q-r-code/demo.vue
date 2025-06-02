@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       autosize: { maxHeight: 600, minHeight: 50 },
-      value: 'https://novlan1.github.io/press-ui/',
+      value: 'https://novlan1.github.io/docs/press-ui/',
       size: 200,
     };
   },

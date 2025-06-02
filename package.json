@@ -9,7 +9,7 @@
     "uniapp",
     "component"
   ],
-  "homepage": "https://novlan1.github.io/press-ui",
+  "homepage": "https://novlan1.github.io/docs/press-ui",
   "bugs": {
     "url": "https://github.com/novlan1/press-ui/issues"
   },
@@ -68,6 +68,7 @@
     "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
     "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
     "docs:build:igame": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
+    "docs:build:unity": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/docs/press-ui/ vuepress build docs",
     "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
     "docs:serve": "vuepress dev docs",
     "docs:sync": "node script/utils/docs-sync",

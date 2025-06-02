@@ -21,7 +21,7 @@
   </p>
 </div>
 
-[查看文档](https://novlan1.github.io/press-ui/) | [查看示例](https://novlan1.github.io/press-ui/h5/)
+[查看文档](https://novlan1.github.io/docs/press-ui/) | [查看示例](https://novlan1.github.io/press-ui/h5/)
 
 ### 1. 介绍
 

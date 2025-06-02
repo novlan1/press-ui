@@ -95,11 +95,11 @@ module.exports = {
     nav: [
       {
         text: 'Plugin Light',
-        link: 'https://novlan1.github.io/plugin-light',
+        link: 'https://novlan1.github.io/docs/plugin-light',
       },
       {
         text: 'T Comm',
-        link: 'https://novlan1.github.io/t-comm',
+        link: 'https://novlan1.github.io/docs/t-comm',
       },
       {
         text: '源码',

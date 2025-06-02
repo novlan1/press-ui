@@ -90,7 +90,7 @@ module.exports = {
 
 ## 3. 普通 Vue3 项目
 
-与 `uni-app` & `Vue3` 项目使用方式相似，只是需要多使用一个 `Vite` 版本的[条件编译插件](https://novlan1.github.io/plugin-light/zh/vite-plugin-ifdef.html)，使用方式如下。
+与 `uni-app` & `Vue3` 项目使用方式相似，只是需要多使用一个 `Vite` 版本的[条件编译插件](https://novlan1.github.io/docs/plugin-light/zh/vite-plugin-ifdef.html)，使用方式如下。
 
 ```bash
 npm i @plugin-light/vite-plugin-ifdef -D
@@ -113,7 +113,7 @@ export default defineConfig({
 
 ## 4. 普通 Vue2 项目
 
-与 `uni-app` & `Vue2` 项目使用方式相似，只是需要多使用一个 `Webpack` 版本的[条件编译工具](https://novlan1.github.io/plugin-light/zh/webpack-loader-ifdef.html)，使用方式如下。
+与 `uni-app` & `Vue2` 项目使用方式相似，只是需要多使用一个 `Webpack` 版本的[条件编译工具](https://novlan1.github.io/docs/plugin-light/zh/webpack-loader-ifdef.html)，使用方式如下。
 
 ```bash
 npm i @plugin-light/webpack-loader-ifdef -D

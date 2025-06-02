@@ -61,7 +61,7 @@ export const GRAY_DARK = '#969799';
 
 ## 4. timeStampFormat
 
-同 [T Comm](https://novlan1.github.io/t-comm/zh/time.html) 的同名方法。
+同 [T Comm](https://novlan1.github.io/docs/t-comm/zh/time.html) 的同名方法。
 
 ```ts
 import { timeStampFormat } from 'press-ui/common/format/time';

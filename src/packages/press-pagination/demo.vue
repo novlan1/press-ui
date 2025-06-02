@@ -38,7 +38,6 @@ import PressPagination from 'press-ui/press-pagination/press-pagination.vue';
 import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
 
 import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
-
 import { showCustomPopup, local } from 'src/packages/press-pagination/demo-helper/custom';
 import {
   FUNCTIONAL_ID_MAP,
