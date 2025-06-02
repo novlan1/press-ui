@@ -129,7 +129,7 @@ export default {
       default: 1000,
     },
   },
-  emits: ['change', 'confirm', 'cancel'],
+  emits: ['change', 'confirm', 'cancel', 'afterSetColumns'],
   data() {
     return {
       simple: true,
@@ -187,7 +187,10 @@ export default {
           return Promise.resolve();
         }
       }
+
       const stack = columns.map((column, index) => this.setColumnValues(index, column.values));
+      this.$emit('afterSetColumns');
+
       return Promise.all(stack);
     },
     emit(event) {
