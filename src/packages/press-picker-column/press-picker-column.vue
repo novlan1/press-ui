@@ -155,9 +155,6 @@ export default {
     },
     initialOptions: {
       handler(newVal, oldVal) {
-        // console.log('newVal', JSON.parse(JSON.stringify(newVal)));
-        // console.log('oldVal', JSON.parse(JSON.stringify(oldVal)));
-        // console.log('oldVal === newVal', JSON.stringify(oldVal) === JSON.stringify(newVal));
         if (JSON.stringify(oldVal) === JSON.stringify(newVal)) {
           return;
         }

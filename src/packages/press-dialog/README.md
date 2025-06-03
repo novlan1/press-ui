@@ -199,6 +199,8 @@ export default {
 | showCancelButton      | 是否展示取消按钮                                                                                                              | _boolean_                                   | `false`        |
 | confirmButtonText     | 确认按钮的文案                                                                                                                | _string_                                    | `确认`         |
 | cancelButtonText      | 取消按钮的文案                                                                                                                | _string_                                    | `取消`         |
+| confirmButtonStyle    | 确认按钮自定义样式                                                                                                            | _object \| string_                          | `确认`         |
+| cancelButtonStyle     | 取消按钮自定义样式                                                                                                            | _object \| string_                          | `确认`         |
 | overlay               | 是否展示遮罩层                                                                                                                | _boolean_                                   | `true`         |
 | overlayStyle          | 自定义遮罩层样式                                                                                                              | _object_                                    | -              |
 | closeOnClickOverlay   | 点击遮罩层时是否关闭弹窗                                                                                                      | _boolean_                                   | `false`        |

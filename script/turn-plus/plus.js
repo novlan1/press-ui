@@ -4,6 +4,8 @@ const { randomString, pascalCase, execCommand } = require('t-comm');
 const { CONFIG } = require('./config');
 const { batchRenameSync } = require('./rename');
 
+const getPascalReg = value => new RegExp(`(?<=\\W)(${pascalCase(value)})(?=\\W)`, 'g');
+
 const ALL_FILE = 'src/**/*.{js,ts,vue,md,scss}';
 const rawList = [
   'dialog',
@@ -94,7 +96,6 @@ function getReplaceList(rawList, dirList) {
       list2.push([`${prefix[0]}${key}${prefix[1]}`, `${prefix[0]}${plusKey}${prefix[1]}`]);
       list3.push([`${prefix[0]}${tempKey}${prefix[1]}`, `${prefix[0]}${key}${prefix[1]}`]);
     }
-    const getPascalReg = value => new RegExp(`(?<=\\W)(${pascalCase(value)})(?=\\W)`, 'g');
 
     list.push([getPascalReg(plusKey), pascalCase(tempKey2)]);
     list.push([getPascalReg(key), pascalCase(plusKey)]);

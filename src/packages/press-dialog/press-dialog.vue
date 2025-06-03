@@ -44,7 +44,7 @@
           :loading="loading.cancel"
           class="press-dialog__button press-hairline--right"
           custom-class="press-dialog__cancel"
-          :custom-style="'color: '+(dataCancelButtonColor)"
+          :custom-style="computedCancelButtonStyle"
           @click="onCancel"
         >
           {{ dataCancelButtonText }}
@@ -55,7 +55,7 @@
           class="press-dialog__button"
           :loading="loading.confirm"
           custom-class="press-dialog__confirm"
-          :custom-style="'color: '+(dataConfirmButtonColor)"
+          :custom-style="computedConfirmButtonStyle"
           :open-type="dataConfirmButtonOpenType"
           :lang="lang"
           :business-id="businessId"
@@ -151,6 +151,16 @@ const props = {
     type: String,
     default: t('cancel'),
   },
+
+  confirmButtonStyle: {
+    type: [String, Object],
+    default: '',
+  },
+  cancelButtonStyle: {
+    type: [String, Object],
+    default: '',
+  },
+
   confirmButtonColor: {
     type: String,
     default: RED,
@@ -190,6 +200,24 @@ export default {
     };
   },
   computed: {
+    computedConfirmButtonStyle() {
+      return style([
+        {
+          border: 0,
+          color: this.dataConfirmButtonColor,
+        },
+        this.dataConfirmButtonStyle,
+      ]);
+    },
+    computedCancelButtonStyle() {
+      return style([
+        {
+          border: 0,
+          color: this.dataCancelButtonColor,
+        },
+        this.dataCancelButtonStyle,
+      ]);
+    },
     popupCustomStyle() {
       let width = utils.addUnit(this.dataWidth);
 

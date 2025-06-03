@@ -7,5 +7,5 @@ export declare const PARENT_TABBAR = 'tabbar';
 export declare const PARENT_TABS = 'tabs';
 export declare const PARENT_INDEX_BAR = 'indexBar';
 export declare const PARENT_GRID = 'grid';
-export declare const PARENT_DROPDOWN_MENU = 'dropdown-menu';
+export declare const PARENT_DROPDOWN_MENU = 'dropdownMenu';
 export declare const PARENT_ROW = 'row';

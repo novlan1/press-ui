@@ -294,6 +294,7 @@
       </PressTabs>
     </demo-block>
 
+    <!-- #ifdef H5 || MP-WEIXIN || MP-QQ -->
     <demo-block
       :title="t('horTitle')"
       header-style="background: #f7f8fa;"
@@ -338,6 +339,7 @@
         </PressTab>
       </PressTabs>
     </demo-block>
+    <!-- #endif -->
   </div>
 </template>
 <script>
