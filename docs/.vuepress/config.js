@@ -18,6 +18,11 @@ const LOGIC_SIDEBAR_CONFIG = {
         subTitle: '适配器',
         path: '/components/logic/vue3-adapter.md',
       },
+      {
+        title: 'Global Var',
+        subTitle: '',
+        path: '/components/logic/global-var.md',
+      },
     ],
   },
   en: {

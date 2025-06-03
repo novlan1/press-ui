@@ -153,3 +153,38 @@ imagePreview({
  xxx
 </press-popup>
 ```
+
+## 8. custom-style 和 custom-class 属性区别
+
+`custom-style` 就是自定义样式，可以传入 CSS 对象或者字符串，用于覆盖组件默认样式，比如：
+
+```vue
+<press-button>
+  custom-style="color: red; font-size: 16px;"
+  :custom-style="customStyle"
+</press-button>
+```
+
+```ts
+<script>
+const customStyle = ref({
+  color: red;
+  fontSize: '16px',
+});
+</script>
+```
+
+`custom-class` 就是自定义类名，需要业务自己写名相应的样式，注意头条小程序等不支持样式覆盖。
+
+```vue
+<press-button>
+  custom-class="my-class"
+</press-button>
+```
+
+```css
+.my-class {
+  color: red;
+  font-size: 16px;
+}
+```
