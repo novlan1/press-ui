@@ -18,6 +18,7 @@
       @change="onChange"
       @confirm="onConfirm"
       @cancel="onCancel"
+      @afterSetColumns="afterSetColumns"
     />
   </div>
 </template>
@@ -151,6 +152,7 @@ export default {
     return {
       innerValue: Date.now(),
       columns: [],
+      firstUpdateColumnValue: false,
     };
   },
   watch: {
@@ -196,22 +198,7 @@ export default {
     },
   },
   mounted() {
-    const innerValue = this.correctValue(this.value);
-    setTimeout(() => {
-      this.updateColumnValue(innerValue, false)
-        .then(({ cb }) => {
-          setTimeout(() => {
-            cb();
-          }, 300);
-        })
-        .then(() => {
-          if (this.immediateCheck) {
-            this.onChange();
-          } else {
-            this.$emit('input', innerValue);
-          }
-        });
-    }, 0);
+    this.init();
   },
   methods: {
     setData(data) {
@@ -456,7 +443,7 @@ export default {
         // #endif
       });
     },
-    updateColumnValue(value, changePicker = true) {
+    updateColumnValue(value) {
       let values = [];
       const { type, innerValue } = this;
       const formatter = this.formatter || defaultFormatter;
@@ -496,17 +483,33 @@ export default {
 
 
       // values: ['2025', '01','01','01','01']
-      const cb = () => picker.setValues(values);
+      const cb = () => {
+        if (picker.children?.length) {
+          picker.setValues(values);
+        }
+      };
 
-      if (changePicker) {
-        return this.set({ innerValue: value })
-          .then(() => this.updateColumns())
-          .then(() => cb());
-      }
+
       return this.set({ innerValue: value })
+        .then(() => this.updateColumns())
+        .then(() => cb());
+    },
+    afterSetColumns() {
+      // #ifdef MP-TOUTIAO
+      if (this.firstUpdateColumnValue) return;
+      this.firstUpdateColumnValue = true;
+      this.init();
+      // #endif
+    },
+    init() {
+      const innerValue = this.correctValue(this.value);
+      this.updateColumnValue(innerValue, true)
         .then(() => {
-          this.updateColumns();
-          return { values, cb };
+          if (this.immediateCheck) {
+            this.onChange();
+          } else {
+            this.$emit('input', innerValue);
+          }
         });
     },
   },

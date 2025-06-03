@@ -178,6 +178,9 @@ export default {
     // this[PARENT].children.push(this);
   },
   mounted() {
+    // #ifdef MP-TOUTIAO
+    this[PARENT].setColumns();
+    // #endif
   },
   methods: {
     setData(data) {

@@ -19,6 +19,7 @@
     @change="onChange"
     @confirm="onConfirm"
     @cancel="onCancel"
+    @afterSetColumns="afterSetColumns"
   />
 </template>
 <script>
@@ -93,6 +94,7 @@ export default {
       columns: [{ values: [] }, { values: [] }, { values: [] }],
       typeToColumnsPlaceholder: {},
       code: this.value,
+      firstValidSetValues: false,
     };
   },
   computed: {
@@ -130,9 +132,11 @@ export default {
     requestAnimationFrame(() => {
       this.setValues();
     });
-    setTimeout(() => {
-      this.setValues();
-    }, 300);
+    // 头条小程序初次进入时，父子组件不一定按照 vue 正常的生命周期进行
+    // 可用延时，也可用回调
+    // setTimeout(() => {
+    //   this.setValues();
+    // }, 300);
   },
   methods: {
     getPicker() {
@@ -325,6 +329,13 @@ export default {
     reset(code) {
       this.code = code || '';
       return this.setValues();
+    },
+    afterSetColumns() {
+      // #ifdef MP-TOUTIAO
+      if (this.firstValidSetValues) return;
+      this.firstValidSetValues = true;
+      this.setValues();
+      // #endif
     },
   },
 };
