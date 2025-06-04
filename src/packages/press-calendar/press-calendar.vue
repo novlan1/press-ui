@@ -6,6 +6,7 @@
     <PressPopup
       v-if="poppable"
       :custom-class="'press-calendar__popup--'+(position)"
+      :custom-style="innerPopupCustomStyle"
       close-icon-class="press-calendar__close-icon"
       :show="show"
       :round="round"
@@ -38,6 +39,7 @@
         :current-date="currentDate"
         :subtitle="subtitle"
         :poppable="poppable"
+        :button-style="buttonStyle"
         @onConfirm="onConfirm"
         @onClickSubtitle="onClickSubtitle"
         @scrollIntoView="scrollIntoView"
@@ -67,6 +69,7 @@
       :current-date="currentDate"
       :subtitle="subtitle"
       :poppable="poppable"
+      :button-style="buttonStyle"
       @scrollIntoView="scrollIntoView"
       @onClickDay="onClickDay"
       @onConfirm="onConfirm"
@@ -83,6 +86,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
 import { requestAnimationFrame, nextTick } from '../common/utils/system';
 import { t } from '../locale';
 
@@ -150,7 +154,14 @@ export default {
       type: [String, Number],
       default: null,
     },
-
+    popupStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    buttonStyle: {
+      type: [String, Number],
+      default: '',
+    },
     readonly: Boolean,
     ...defaultProps,
   },
@@ -171,6 +182,26 @@ export default {
       currentDate: null,
       scrollIntoViewData: '',
     };
+  },
+  computed: {
+    innerPopupCustomStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = ['top', 'bottom'].includes(this.position)
+        ? {
+          height: '80%',
+        }
+        : {
+          height: 'calc(100% - var(--window-top, 0px))',
+          bottom: 0,
+          top: 'calc(50% + var(--window-top, 0px) / 2)',
+        };
+      // #endif
+      return style([
+        result,
+        this.popupStyle,
+      ]);
+    },
   },
   watch: {
     show: {

@@ -2,6 +2,7 @@
   <div
     ref="pressTabs"
     :class="tabsClass"
+    :style="tabsCustomStyle"
   >
     <PressSticky
       :disabled="(!sticky)"
@@ -10,7 +11,10 @@
       :container="container"
       @scroll="onTouchScroll"
     >
-      <div :class="tabsWrapClass">
+      <div
+        :class="tabsWrapClass"
+        :style="innerWrapCustomStyle"
+      >
         <slot name="nav-left" />
 
         <scroll-view
@@ -217,6 +221,10 @@ export default {
       type: String,
       default: '',
     },
+    wrapClass: {
+      type: String,
+      default: '',
+    },
     tabActiveClass: {
       type: String,
       default: '',
@@ -314,6 +322,19 @@ export default {
         lowerThreshold: 50,
       }),
     },
+
+    customStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    wrapStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    tabStyle: {
+      type: [String, Object],
+      default: '',
+    },
   },
   emits: ['scroll', 'disabled', 'click', 'input', 'change', 'scrolltoupper', 'scrolltolower', 'scrollViewScroll'],
   data() {
@@ -340,8 +361,8 @@ export default {
       return `${this.bem3('tabs', [type, { hor: isHor, 'e-sport': isESport }])} ${customClass}`;
     },
     tabsWrapClass() {
-      const { scrollable, type, border } = this;
-      return `${this.bem3('tabs__wrap', { scrollable })} ${type === 'line' && border ? this.bem3('hairline--top-bottom') : ''}`;
+      const { scrollable, type, border, wrapClass } = this;
+      return `${this.bem3('tabs__wrap', { scrollable })} ${wrapClass} ${type === 'line' && border ? this.bem3('hairline--top-bottom') : ''}`;
     },
     tabScrollClass() {
       const { type } = this;
@@ -370,6 +391,12 @@ export default {
     },
     realEllipsis() {
       return this.scrollable && this.ellipsis;
+    },
+    innerWrapCustomStyle() {
+      return style(this.wrapStyle);
+    },
+    tabsCustomStyle() {
+      return style(this.customStyle);
     },
   },
   watch: {
@@ -448,16 +475,22 @@ export default {
 
       const flexBasis =  realEllipsis ? `${88 / swipeThreshold}%` : null;
 
-      return type === 'card' ? style({
-        borderColor: color,
-        backgroundColor: !item.disabled && active ? color : null,
-        color: (index === currentIndex ? titleActiveColor : titleInactiveColor)
+      return type === 'card' ? style([
+        {
+          borderColor: color,
+          backgroundColor: !item.disabled && active ? color : null,
+          color: (index === currentIndex ? titleActiveColor : titleInactiveColor)
             || (!item.disabled && !active ? color : null),
-        flexBasis,
-      }) : style({
-        color: index === currentIndex ? titleActiveColor : titleInactiveColor,
-        flexBasis,
-      });
+          flexBasis,
+        },
+        this.tabStyle,
+      ]) : style([
+        {
+          color: index === currentIndex ? titleActiveColor : titleInactiveColor,
+          flexBasis,
+        },
+        this.tabStyle,
+      ]);
     },
     setData(data) {
       Object.keys(data).forEach((key) => {

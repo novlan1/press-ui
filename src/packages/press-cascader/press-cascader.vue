@@ -28,6 +28,9 @@
       custom-class="press-cascader__tabs"
       wrap-class="press-cascader__tabs-wrap"
       tab-class="press-cascader__tab"
+      :custom-style="innerTabsCustomStyle"
+      :tab-style="innerTabCustomStyle"
+      :wrap-style="innerTabsWrapCustomStyle"
       :color="activeColor"
       :border="false"
       :swipeable="swipeable"
@@ -62,6 +65,7 @@
 </template>
 
 <script>
+import { style } from '../common/utils/style';
 import { nextTick } from '../common/utils/system';
 import PressIcon from '../press-icon/press-icon.vue';
 import PressTab from '../press-tab/press-tab.vue';
@@ -133,6 +137,19 @@ export default {
       default: () => (defaultFieldNames),
     },
     useTitleSlot: Boolean,
+
+    tabStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    tabsStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    tabsWrapStyle: {
+      type: [String, Object],
+      default: '',
+    },
   },
   emits: [
     'change',
@@ -151,6 +168,39 @@ export default {
 
       utils,
     };
+  },
+  computed: {
+    innerTabsCustomStyle() {
+      return style(this.tabsStyle);
+    },
+    innerTabsWrapCustomStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        padding: '0 8px',
+        height: '48px',
+      };
+      // #endif
+      return style([
+        result,
+        this.tabsWrapStyle,
+      ]);
+    },
+    innerTabCustomStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        flex: 'none',
+        padding: '0 8px',
+        color: '#323233',
+        fontWeight: 600,
+      };
+      // #endif
+      return style([
+        result,
+        this.tabStyle,
+      ]);
+    },
   },
   watch: {
     options: {

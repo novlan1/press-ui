@@ -2,24 +2,37 @@
   <div class="demo-wrap">
     <demo-block :title="t('basicUsage')">
       <PressRow>
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
       </PressRow>
 
       <PressRow>
-        <PressCol :span="4">
+        <PressCol
+          :span="4"
+          class="press-col--in-tag"
+        >
           span: 4
         </PressCol>
         <PressCol
           :span="10"
           :offset="4"
+          class="press-col--in-tag"
         >
           offset: 4, span: 10
         </PressCol>
@@ -29,6 +42,7 @@
         <PressCol
           :offset="12"
           :span="12"
+          class="press-col--in-tag"
         >
           offset: 12, span: 12
         </PressCol>
@@ -37,13 +51,22 @@
 
     <demo-block :title="t('title2')">
       <PressRow :gutter="20">
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
-        <PressCol :span="8">
+        <PressCol
+          :span="8"
+          class="press-col--in-tag"
+        >
           span: 8
         </PressCol>
       </PressRow>
@@ -87,12 +110,26 @@ export default {
     text-align: center;
     background-clip: content-box;
 
+
+    /* #ifndef MP-TOUTIAO */
     &:nth-child(odd) {
       background-color: #39a9ed;
     }
     &:nth-child(even) {
       background-color: #66c6f2;
     }
+    /* #endif */
   }
+
+  /* #ifdef MP-TOUTIAO */
+  ::v-deep .press-col--in-tag {
+     &:nth-child(odd) .press-col {
+      background-color: #39a9ed;
+    }
+    &:nth-child(even) .press-col{
+      background-color: #66c6f2;
+    }
+  }
+  /* #endif */
 }
 </style>

@@ -34,7 +34,7 @@
       @select="onSelect"
       @cancel="onClose"
     >
-      <div style="padding: 16px;">
+      <div style="padding: 16px;font-size: 16px;">
         {{ t('content') }}
       </div>
     </PressActionSheet>

@@ -10,16 +10,28 @@
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <PressTabbarItem icon="home-o">
+        <PressTabbarItem
+          icon="home-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
-        <PressTabbarItem icon="search">
+        <PressTabbarItem
+          icon="search"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
-        <PressTabbarItem icon="friends-o">
+        <PressTabbarItem
+          icon="friends-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
-        <PressTabbarItem icon="setting-o">
+        <PressTabbarItem
+          icon="setting-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
       </PressTabbar>
@@ -38,24 +50,28 @@
         <PressTabbarItem
           icon="home-o"
           name="home"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="search"
           name="search"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="friends-o"
           name="friends"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="setting-o"
           name="setting"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
@@ -72,24 +88,30 @@
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <PressTabbarItem icon="home-o">
+        <PressTabbarItem
+          icon="home-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="search"
           dot
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="friends-o"
           info="5"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
         <PressTabbarItem
           icon="setting-o"
           info="20"
+          :style="itemStyle"
         >
           {{ t('tag') }}
         </PressTabbarItem>
@@ -106,7 +128,10 @@
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <PressTabbarItem info="3">
+        <PressTabbarItem
+          info="3"
+          :style="itemStyle"
+        >
           <template #icon>
             <img
               :src="icon.normal"
@@ -124,10 +149,16 @@
           </template>
           {{ t('custom') }}
         </PressTabbarItem>
-        <PressTabbarItem icon="search">
+        <PressTabbarItem
+          icon="search"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
-        <PressTabbarItem icon="setting-o">
+        <PressTabbarItem
+          icon="setting-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}
         </PressTabbarItem>
       </PressTabbar>
@@ -145,16 +176,28 @@
         :safe-area-inset-bottom="false"
         @change="onChange"
       >
-        <PressTabbarItem icon="home-o">
+        <PressTabbarItem
+          icon="home-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}A
         </PressTabbarItem>
-        <PressTabbarItem icon="search">
+        <PressTabbarItem
+          icon="search"
+          :style="itemStyle"
+        >
           {{ t('tag') }}B
         </PressTabbarItem>
-        <PressTabbarItem icon="friends-o">
+        <PressTabbarItem
+          icon="friends-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}C
         </PressTabbarItem>
-        <PressTabbarItem icon="setting-o">
+        <PressTabbarItem
+          icon="setting-o"
+          :style="itemStyle"
+        >
           {{ t('tag') }}D
         </PressTabbarItem>
       </PressTabbar>
@@ -202,6 +245,15 @@ export default {
       },
     };
   },
+  computed: {
+    itemStyle() {
+      let result = '';
+      // #ifdef MP-TOUTIAO
+      result = 'flex: 1';
+      // #endif
+      return result;
+    },
+  },
   methods: {
     onChange(val) {
       console.log('val', val);
@@ -210,6 +262,9 @@ export default {
     onChangeName(val) {
       console.log('val', val);
       this.activeName = val;
+    },
+    clickItem() {
+      console.log('[clickItem]');
     },
   },
 };

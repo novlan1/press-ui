@@ -57,6 +57,7 @@
         type="danger"
         :color="color"
         custom-class="press-calendar__confirm"
+        :custom-style="innerButtonStyle"
         :disabled="computed.getButtonDisabled(type, currentDate)"
         native-type="text"
         @click="onConfirm"
@@ -72,9 +73,12 @@
 </template>
 
 <script>
+import { style } from '../common/utils/style';
+
 // #ifdef H5
 import { intersectionObserverPloyFill } from '../common/utils/system';
 // #endif
+
 import utils from '../common/utils/utils';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 
@@ -112,6 +116,10 @@ export default {
       type: [String, Number, Array],
       default: null,
     },
+    buttonStyle: {
+      type: [String, Number],
+      default: '',
+    },
   },
   emits: [
     'onConfirm',
@@ -127,6 +135,20 @@ export default {
     };
   },
   computed: {
+    innerButtonStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        height: '36px',
+        margin: '7px 0',
+        lineHeight: '34px',
+      };
+      // #endif
+      return style([
+        result,
+        this.buttonStyle,
+      ]);
+    },
   },
   mounted() {
     this.initRect();

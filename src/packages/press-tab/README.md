@@ -4,9 +4,7 @@ url : pages/press/tab/tab
 
 ## Tab 标签页
 
-
 选项卡组件，用于在不同的内容区域之间进行切换。
-
 
 ## 引入
 
@@ -126,8 +124,6 @@ export default {
 </press-tabs>
 ```
 
-
-
 ### 粘性布局
 
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶。
@@ -211,7 +207,6 @@ export default {
 
 也可以使用 `v-for`。
 
-
 ```html
 <press-tabs use-title-slot>
   <div
@@ -270,6 +265,15 @@ export default {
 | mode                 | 模式，可传入 `hor`, `e-sport`                                         | _string_           | -                                            |
 | use-title-slot       | 是否使用自定义标题插槽                                                | _boolean_          | `false`                                      |
 | scroll-view-props    | `scroll-view`元素的属性，目前使用到 `upper-threshold/lower-threshold` | _object_           | `{ upperThreshold: 50, lowerThreshold: 50 }` |
+| custom-style         | 作用在 `tabs` 节点上的自定义样式                                      | _string \| object_ | -                                            |
+| wrap-style           | 作用在 `tabs__wrap` 节点上的自定义样式                                | _string \| object_ | -                                            |
+| tab-style            | 作用在 `tab` 节点上的自定义样式                                       | _string \| object_ | -                                            |
+| custom-class         | `tabs` 节点上的自定义类名                                             | _string_           | -                                            |
+| wrap-class           | `_` 节点上的自定义类名                                                | _string_           | -                                            |
+| tab-class            | `tab` 节点上的自定义类名                                              | _string_           | -                                            |
+| tab-active-class     | 当前选中 `tab` 节点上的自定义类名                                     | _string_           | -                                            |
+| nav-class            | `tabs__nav` 节点上的自定义类名                                        | _string_           | -                                            |
+| line-class           | `tabs__line` 节点上的自定义类名                                       | _string_           | -                                            |
 
 ### Tab Props
 

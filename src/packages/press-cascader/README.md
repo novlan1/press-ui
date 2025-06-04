@@ -238,20 +238,23 @@ export default {
 
 ### Props
 
-| 参数           | 说明                                                                      | 类型                 | 默认值                                                   |
-| -------------- | ------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------- |
-| title          | 顶部标题                                                                  | _string_             | -                                                        |
-| value          | 选中项的值                                                                | _string \| number_   | -                                                        |
-| options        | 可选项数据源                                                              | _CascaderOption[]_   | -                                                        |
-| placeholder    | 未选中时的提示文案                                                        | _string_             | `请选择`                                                 |
-| active-color   | 选中状态的高亮颜色                                                        | _string_             | `#1989fa`                                                |
-| swipeable      | 是否开启手势左右滑动切换                                                  | _boolean_            | `false`                                                  |
-| closeable      | 是否显示关闭图标                                                          | _boolean_            | `true`                                                   |
-| ellipsis       | 是否省略过长的标题文字, 关闭后文字过长会出现横向滚动                      | _boolean_            | `true`                                                   |
-| show-header    | 是否展示标题栏                                                            | _boolean_            | `true`                                                   |
-| close-icon     | 关闭图标名称或图片链接，等同于 IconPlus 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
-| field-names    | 自定义 `options` 结构中的字段                                             | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
-| use-title-slot | 是否使用自定义标题的插槽                                                  | _boolean_            | `false`                                                  |
+| 参数            | 说明                                                                      | 类型                 | 默认值                                                   |
+| --------------- | ------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------- |
+| title           | 顶部标题                                                                  | _string_             | -                                                        |
+| value           | 选中项的值                                                                | _string \| number_   | -                                                        |
+| options         | 可选项数据源                                                              | _CascaderOption[]_   | -                                                        |
+| placeholder     | 未选中时的提示文案                                                        | _string_             | `请选择`                                                 |
+| active-color    | 选中状态的高亮颜色                                                        | _string_             | `#1989fa`                                                |
+| swipeable       | 是否开启手势左右滑动切换                                                  | _boolean_            | `false`                                                  |
+| closeable       | 是否显示关闭图标                                                          | _boolean_            | `true`                                                   |
+| ellipsis        | 是否省略过长的标题文字, 关闭后文字过长会出现横向滚动                      | _boolean_            | `true`                                                   |
+| show-header     | 是否展示标题栏                                                            | _boolean_            | `true`                                                   |
+| close-icon      | 关闭图标名称或图片链接，等同于 IconPlus 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
+| field-names     | 自定义 `options` 结构中的字段                                             | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| use-title-slot  | 是否使用自定义标题的插槽                                                  | _boolean_            | `false`                                                  |
+| tabs-style      | 作用在 `press-tabs` 节点上的自定义样式                                    | _string \| object_   | -                                                        |
+| tabs-wrap-style | 作用在 `press-tabs__wrap` 节点上的自定义样式                              | _string \| object_   | -                                                        |
+| tab-style       | 作用在 `press-tab` 节点上的自定义样式                                     | _string \| object_   | -                                                        |
 
 ### CascaderOption 数据结构
 

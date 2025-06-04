@@ -165,19 +165,21 @@ export default {
 
 ### Props
 
-| 参数                   | 说明                            | 类型      | 默认值 |
-| ---------------------- | ------------------------------- | --------- | ------ |
-| show                   | 是否显示动作面板                | _boolean_ | -      |
-| actions                | 菜单选项                        | _Array_   | `[]`   |
-| title                  | 标题                            | _string_  | -      |
-| description `v1.0.0`   | 选项上方的描述信息              | _string_  | -      |
-| z-index                | z-index 层级                    | _number_  | `100`  |
-| cancel-text            | 取消按钮文字                    | _string_  | -      |
-| overlay                | 是否显示遮罩层                  | _boolean_ | -      |
-| round `v1.0.0`         | 是否显示圆角                    | _boolean_ | `true` |
-| close-on-click-action  | 是否在点击选项后关闭            | _boolean_ | `true` |
-| close-on-click-overlay | 点击遮罩是否关闭菜单            | _boolean_ | -      |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` |
+| 参数                   | 说明                            | 类型               | 默认值 |
+| ---------------------- | ------------------------------- | ------------------ | ------ |
+| show                   | 是否显示动作面板                | _boolean_          | -      |
+| actions                | 菜单选项                        | _Array_            | `[]`   |
+| title                  | 标题                            | _string_           | -      |
+| description            | 选项上方的描述信息              | _string_           | -      |
+| z-index                | z-index 层级                    | _number_           | `100`  |
+| cancel-text            | 取消按钮文字                    | _string_           | -      |
+| overlay                | 是否显示遮罩层                  | _boolean_          | -      |
+| round                  | 是否显示圆角                    | _boolean_          | `true` |
+| close-on-click-action  | 是否在点击选项后关闭            | _boolean_          | `true` |
+| close-on-click-overlay | 点击遮罩是否关闭菜单            | _boolean_          | -      |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_          | `true` |
+| button-style           | 按钮的自定义样式                | _string \| object_ | -      |
+| close-icon-style       | 关闭图标的自定义样式            | _string \| object_ | -      |
 
 ### Events
 

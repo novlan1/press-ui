@@ -18,6 +18,7 @@
       <PressIcon
         name="cross"
         custom-class="press-action-sheet__close"
+        :custom-style="innerCloseIconStyle"
         @click="onClose"
       />
     </div>
@@ -33,6 +34,7 @@
         :key="index"
         :open-type="getOpenType(item)"
         :style="item.color ? 'color: ' + item.color : ''"
+        :custom-style="innerButtonStyle"
         :class="true ? getActionClass(item) : ''"
         hover-class="press-action-sheet__item--hover"
         :data-index="index"
@@ -83,6 +85,7 @@
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
 import { button } from '../mixins/basic/button';
 
@@ -136,6 +139,14 @@ export default {
       type: Boolean,
       default: true,
     },
+    buttonStyle: {
+      type: [String, Object],
+      default: '',
+    },
+    closeIconStyle: {
+      type: [String, Object],
+      default: '',
+    },
     ...defaultProps,
   },
   emits: ['select', 'close', 'cancel', 'click-overlay', 'getuserinfo'],
@@ -143,6 +154,31 @@ export default {
     return {
 
     };
+  },
+  computed: {
+    innerButtonStyle() {
+      return style(this.buttonStyle);
+    },
+    innerCloseIconStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        padding: '16px',
+        fontSize: '22px',
+        color: '#c8c9cc',
+        boxSizing: 'border-box',
+        height: '48px',
+        lineHeight: '48px',
+      };
+      // #endif
+      return style([
+        result,
+        this.closeIconStyle,
+      ]);
+    },
   },
   methods: {
     getActionClass(item) {

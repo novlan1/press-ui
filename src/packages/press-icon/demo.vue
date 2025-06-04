@@ -114,7 +114,7 @@
             :name="icon"
             @click="copy(icon)"
           />
-          <span>{{ icon }}</span>
+          <span class="icon-name">{{ icon }}</span>
         </PressCol>
       </PressTab>
 
@@ -128,7 +128,7 @@
             :name="icon"
             @click="copy(icon)"
           />
-          <span>{{ icon }}</span>
+          <span class="icon-name">{{ icon }}</span>
         </PressCol>
       </PressTab>
 
@@ -142,7 +142,7 @@
             :name="icon"
             @click="copy(icon)"
           />
-          <span>{{ icon }}</span>
+          <span class="icon-name">{{ icon }}</span>
         </PressCol>
       </PressTab>
     </PressTabs>
@@ -270,7 +270,7 @@ export default {
     justify-content: center;
     flex-direction: column;
 
-    span {
+    .icon-name {
       display: block;
       height: 36px;
       margin: -4px 0 4px;

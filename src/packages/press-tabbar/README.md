@@ -6,8 +6,6 @@ url : pages/press/tabbar/tabbar
 
 底部导航栏，用于在不同页面之间进行切换。
 
-
-
 ## 引入
 
 ```ts
@@ -177,7 +175,6 @@ export default {
 };
 ```
 
-
 ## API
 
 ### Tabbar Props
@@ -216,6 +213,19 @@ export default {
 | icon        | 未选中时的图标 |
 | icon-active | 选中时的图标   |
 
+## 常见问题
+
+### 头条小程序样式问题
+
+头条小程序中使用 `tabbar-item` 时，需要加上属性 `flex: 1`，比如：
+
+```html
+<press-tabbar>
+  <press-tabbar-item style="flex: 1">
+    标签
+  </press-tabbar-item>
+</press-tabbar>
+```
 
 ## 在线调试
 
