@@ -24,6 +24,27 @@ export function getShowDemoMap() {
   }
   // #endif
 
-
   return showOtherDemoMap;
+}
+
+export function getHideDemoList() {
+  const hideList = [];
+
+  // #ifdef VUE2
+  if (isNotInUni()) {
+    hideList.push('vue2-not-uni');
+  } else {
+    hideList.push('vue2-uni');
+  }
+  // #endif
+
+  // #ifdef VUE3
+  if (isNotInUni()) {
+    hideList.push('vue3-not-uni');
+  } else {
+    hideList.push('vue3-uni');
+  }
+  // #endif
+
+  return hideList;
 }

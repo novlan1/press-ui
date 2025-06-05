@@ -132,6 +132,7 @@ export default {
 | content-active-class   | 右侧选项选中样式类            | _string_                    | -          |
 | main-disabled-class    | 左侧选项禁用样式类            | _string_                    | -          |
 | content-disabled-class | 右侧选项禁用样式类            | _string_                    | -          |
+| sidebar-style          | `sidebar` 自定义样式          | _string \| object_          | -          |
 
 ### Events
 

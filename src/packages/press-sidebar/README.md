@@ -100,9 +100,11 @@ export default {
 
 ### Sidebar Props
 
-| 参数      | 说明         | 类型               | 默认值 |
-| --------- | ------------ | ------------------ | ------ |
-| activeKey | 选中项的索引 | _string \| number_ | `0`    |
+| 参数         | 说明         | 类型               | 默认值 |
+| ------------ | ------------ | ------------------ | ------ |
+| active-key   | 选中项的索引 | _string \| number_ | `0`    |
+| custom-style | 自定义样式   | _string \| object_ | -      |
+| custom-class | 自定义类名   | _string_           | -      |
 
 ### Sidebar Event
 

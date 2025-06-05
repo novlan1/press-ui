@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 注释不要写在第一行，否则 vue3 中的 this.$el 会取到注释 -->
-    <!-- 需要再加一个最外层，因为this.$el.querySelector找不到最外层的元素 -->
+    <!-- 需要再加一个最外层，因为 this.$el.querySelector 找不到最外层的元素 -->
     <div
       ref="sticky"
       class="press-sticky"

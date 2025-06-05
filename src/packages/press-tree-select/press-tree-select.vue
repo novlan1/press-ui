@@ -10,6 +10,7 @@
       <PressSidebar
         :active-key="mainActiveIndex"
         custom-class="press-tree-select__nav__inner"
+        :custom-style="innerSidebarStyle"
         @change="onClickNav"
       >
         <PressSidebarItem
@@ -50,7 +51,10 @@
 </template>
 <script>
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
+
+import { style } from '../common/utils/style';
 import utils from '../common/utils/utils';
+
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressIcon from '../press-icon/press-icon.vue';
 import PressSidebarItem from '../press-sidebar-item/press-sidebar-item.vue';
@@ -121,6 +125,10 @@ export default {
       type: String,
       default: '',
     },
+    sidebarStyle: {
+      type: [String, Object],
+      default: '',
+    },
     ...defaultProps,
   },
   emits: ['click-item', 'click-nav'],
@@ -133,6 +141,19 @@ export default {
     };
   },
   computed: {
+    innerSidebarStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        width: '100%',
+        height: '100%',
+      };
+      // #endif
+      return style([
+        result,
+        this.sidebarStyle,
+      ]);
+    },
     selectedIconClass() {
       return 'press-tree-select__selected';
     },

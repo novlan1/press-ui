@@ -47,7 +47,6 @@ export const t = function (path = '', ...options) {
         return value(...options);
       }
       return value;
-      // return format(value, options);
     }
     if (!value) {
       return lang[array[array.length - 1]] || '';

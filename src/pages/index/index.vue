@@ -13,7 +13,7 @@ import {
   NOT_SHOW_IN_MP_COMPONENTS,
   NOT_SHOW_IN_PURE_PROJECT,
 } from 'press-ui/press-demo-index/config';
-import  { getShowDemoMap } from 'press-ui/press-demo-index/helper';
+import { getHideDemoList } from 'press-ui/press-demo-index/helper';
 
 import PressDemoIndex from 'press-ui/press-demo-index/press-demo-index.vue';
 
@@ -93,7 +93,7 @@ export default {
       pages: getAllPages(),
       isNotInUni: isNotInUni(),
 
-      showOtherDemoMap: getShowDemoMap(),
+      hideDemoList: getHideDemoList(),
       helpConfig: {},
     };
   },
@@ -148,21 +148,10 @@ export default {
       return result;
     },
     quickLinkList() {
-      const { showOtherDemoMap, helpConfig = {} } = this;
+      const { hideDemoList, helpConfig = {} } = this;
       let list = helpConfig.quickLinkList || [];
 
-      if (!showOtherDemoMap.vue2Uni) {
-        list = list.filter(item => item.name !== 'vue2-uni');
-      }
-      if (!showOtherDemoMap.vue2NotUni) {
-        list = list.filter(item => item.name !== 'vue2-not-uni');
-      }
-      if (!showOtherDemoMap.vue3Uni) {
-        list = list.filter(item => item.name !== 'vue3-uni');
-      }
-      if (!showOtherDemoMap.vue3NotUni) {
-        list = list.filter(item => item.name !== 'vue3-not-uni');
-      }
+      list = list.filter(item => !hideDemoList.includes(item.name));
 
       // #ifdef MP-QQ
       list = list.filter(item => !!item.mpQQ);

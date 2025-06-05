@@ -183,7 +183,7 @@ export default {
      * 对外暴露
      */
     onToggleLanguage() {
-      console.log('[onToggleLanguage]');
+      console.info('[onToggleLanguage]');
       toggleI18n(this.onGTip);
     },
     getUniqueKey(a, b) {
@@ -264,9 +264,14 @@ export default {
       }
       // #endif
 
-      setClipboardData(link).then(() => {
-        this.onGTip('🎉 复制成功，请到浏览器中查看');
-      });
+
+      setClipboardData(link)
+        .then(() => {
+          this.onGTip('🎉 复制成功，请到浏览器中查看');
+        })
+        .catch((err) => {
+          this.onGTip(err?.errMsg || '复制失败，请重试');
+        });
       // #endif
     },
     /**

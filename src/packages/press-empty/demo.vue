@@ -52,6 +52,8 @@
       </PressEmpty>
     </demo-block>
 
+    <!-- #ifdef H5 || MP-WEIXIN || MP-QQ -->
+
     <demo-block
       title="E-SPORT"
       :section-style="sectionStyle"
@@ -62,7 +64,9 @@
         custom-style="height: 300px;"
       />
     </demo-block>
+    <!-- #endif -->
 
+    <!-- #ifdef H5 -->
     <demo-block
       title="HOR"
       header-style="background: #f7f8fa;"
@@ -73,6 +77,7 @@
         :description="t('description')"
       />
     </demo-block>
+    <!-- #endif -->
   </div>
 </template>
 <script>

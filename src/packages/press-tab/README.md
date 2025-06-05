@@ -269,7 +269,7 @@ export default {
 | wrap-style           | 作用在 `tabs__wrap` 节点上的自定义样式                                | _string \| object_ | -                                            |
 | tab-style            | 作用在 `tab` 节点上的自定义样式                                       | _string \| object_ | -                                            |
 | custom-class         | `tabs` 节点上的自定义类名                                             | _string_           | -                                            |
-| wrap-class           | `_` 节点上的自定义类名                                                | _string_           | -                                            |
+| wrap-class           | `tabs__wrap` 节点上的自定义类名                                       | _string_           | -                                            |
 | tab-class            | `tab` 节点上的自定义类名                                              | _string_           | -                                            |
 | tab-active-class     | 当前选中 `tab` 节点上的自定义类名                                     | _string_           | -                                            |
 | nav-class            | `tabs__nav` 节点上的自定义类名                                        | _string_           | -                                            |

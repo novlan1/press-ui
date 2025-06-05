@@ -3,6 +3,7 @@
     <div
       class="press-sidebar"
       :class="customClass"
+      :style="sidebarStyle"
     >
       <slot />
     </div>
@@ -11,6 +12,7 @@
 <script>
 import { defaultOptions, defaultProps } from '../common/component-handler/press-component';
 import { PARENT_SIDEBAR as PARENT } from '../common/constant/parent-map';
+import { style } from '../common/utils/style';
 import { ParentMixin } from '../mixins/basic/relation';
 
 
@@ -28,7 +30,16 @@ export default {
       type: Number,
       default: 0,
     },
+    customStyle: {
+      type: [String, Object],
+      default: '',
+    },
     ...defaultProps,
+  },
+  computed: {
+    sidebarStyle() {
+      return style(this.customStyle);
+    },
   },
   watch: {
     activeKey: {

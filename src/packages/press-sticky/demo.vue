@@ -84,6 +84,7 @@ export default {
       show: 'Show Head',
     },
   },
+  onPageScroll() {},
   components: {
     PressSticky,
     PressButton,

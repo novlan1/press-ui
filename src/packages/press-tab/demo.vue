@@ -388,6 +388,7 @@ export default {
       slot: 'Slot',
     },
   },
+  onPageScroll() {},
   components: {
     PressTabs,
     PressTab,

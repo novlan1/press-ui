@@ -111,3 +111,13 @@ export default {
 小程序下滚动元素需为`page`，因为`press-sticky`监听的是`onPageScroll`事件。
 
 H5不限制滚动元素，`press-sticky`组件内部会自动寻找。
+
+### 头条小程序
+
+头条小程序必须在页面中先声明一下 `onPageScroll`，空方法就可以，否则 `sticky` 组件不生效。
+
+```ts
+export default {
+  onPageScroll() {},
+}
+```
