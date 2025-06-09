@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { getPagesJsonCondition } = require('t-comm');
+
 const {
   DEMO_DIR_MAP,
 } = require('../utils/utils');
@@ -41,28 +43,6 @@ function getPagesJsonConfig(componentConfig) {
 
 
   return list;
-}
-
-
-function getPagesJsonCondition(componentConfig) {
-  const allList = Object.values(componentConfig).reduce((acc, item) => [
-    ...acc,
-    ...(item.list || []),
-  ], [])
-    .filter(item => !item.demoRedirect)
-    .map(item => ({
-      name: item.name,
-      path: [
-        'pages',
-        item.subPackage || 'press',
-        hyphenate(item.name),
-        hyphenate(item.name),
-      ].join('/'),
-    }));
-  return {
-    current: 0,
-    list: allList,
-  };
 }
 
 

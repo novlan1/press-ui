@@ -1,5 +1,17 @@
 # 更新日志
 
+### [5.0.1](https://github.com/novlan1/press-ui/compare/v5.0.0...v5.0.1) (2025-06-09)
+
+
+### Features 🎉
+
+* 优化组件在抖音小程序表现 ([8a43726](https://github.com/novlan1/press-ui/commit/8a43726e85cfa06f212fbdc2e17a9ba351d99ae7))
+* **component-config:** 优化generateComponentConfig ([a0ac1ab](https://github.com/novlan1/press-ui/commit/a0ac1ab141e64df0698c42ae6606009ce5533639))
+* **dialog:** 优化dialog在头条小程序的表现 ([cea2aa9](https://github.com/novlan1/press-ui/commit/cea2aa96df0d58de1932d80cd683e25cde6b7197))
+* **relation:** 优化头条小程序表现 ([aa57064](https://github.com/novlan1/press-ui/commit/aa5706468a9d7c9ae49474ea30cdea0a5cf86de8))
+* **sidebar:** 兼容头条小程序 ([092b903](https://github.com/novlan1/press-ui/commit/092b90331e19020aac8b65a9fab277b675f70773))
+* tab/calendar/cascader/tabbar等组件样式兼容头条小程序 ([d667729](https://github.com/novlan1/press-ui/commit/d667729d976fd8db70ae9eaa67adcad1e241a787))
+
 ## [5.0.0](https://github.com/novlan1/press-ui/compare/v3.0.13...v5.0.0) (2025-06-01)
 
 
