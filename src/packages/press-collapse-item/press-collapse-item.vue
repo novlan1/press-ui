@@ -13,6 +13,8 @@
       :border="border && expanded"
       :custom-class="collapseItemCustomClass"
       :custom-style="titleStyle"
+      :title-style="cellTitleStyle"
+      :right-icon-style="rightIconStyle"
       hover-class="press-cell--hover"
       center
       @click="onClick"
@@ -116,6 +118,33 @@ export default {
     };
   },
   computed: {
+    cellTitleStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      if (this.disabled) {
+        result = {
+          color: '#c8c9cc',
+        };
+      }
+      // #endif
+      return result;
+    },
+    rightIconStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        transform: 'rotate(90deg)',
+        transition: 'transform .3s',
+      };
+      if (this.expanded) {
+        result.transform = 'rotate(-90deg)';
+      }
+      if (this.disabled) {
+        result.color = '#c8c9cc';
+      }
+      // #endif
+      return result;
+    },
     collapseItemClass() {
       const { disabled, expanded } = this;
       return utils.bem2('collapse-item__title', { disabled, expanded });

@@ -63,6 +63,7 @@
       :name="arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow'"
       :class="[rightIconBaseClass]"
       :custom-class="rightIconCustomClass"
+      :custom-style="rightIconStyle"
     />
     <slot
       v-else
@@ -124,7 +125,8 @@ export default {
       type: String,
       default: '',
     },
-    titleStyle: { type: String, default: '' },
+    titleStyle: { type: [String, Object], default: '' },
+    rightIconStyle: { type: [String, Object], default: '' },
     ...defaultProps,
   },
   emits: ['click'],

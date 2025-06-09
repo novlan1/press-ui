@@ -191,29 +191,30 @@ export default {
 
 ### Cell Props
 
-| 参数            | 说明                                                       | 类型               | 默认值       |
-| --------------- | ---------------------------------------------------------- | ------------------ | ------------ |
-| icon            | 左侧图标名称或图片链接，可选值见 IconPlus 组件                 | _string_           | -            |
-| title           | 左侧标题                                                   | _string \| number_ | -            |
-| title-width     | 标题宽度，须包含单位                                       | _string_           | -            |
-| value           | 右侧内容                                                   | _string \| number_ | -            |
-| label           | 标题下方的描述信息                                         | _string_           | -            |
-| size            | 单元格大小，可选值为 `large`                               | _string_           | -            |
-| border          | 是否显示下边框                                             | _boolean_          | `true`       |
-| center          | 是否使内容垂直居中                                         | _boolean_          | `false`      |
-| url             | 点击后跳转的链接地址                                       | _string_           | -            |
-| link-type       | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_           | `navigateTo` |
-| clickable       | 是否开启点击反馈                                           | _boolean_          | `false`      |
-| is-link         | 是否展示右侧箭头并开启点击反馈                             | _boolean_          | `false`      |
-| required        | 是否显示表单必填星号                                       | _boolean_          | `false`      |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down`                      | _string_           | -            |
-| use-label-slot  | 是否使用 label slot                                        | _boolean_          | `false`      |
-| title-style     | 标题样式                                                   | _string_           | -            |
-| type            | 额外类型，可选值为 `e-sport`                               | _string_           | -            |
-| custom-class    | 根节点样式类                                               | _string_           | -            |
-| title-class     | 标题样式类                                                 | _string_           | -            |
-| label-class     | 描述信息样式类                                             | _string_           | -            |
-| value-class     | 右侧内容样式类                                             | _string_           | -            |
+| 参数             | 说明                                                       | 类型               | 默认值       |
+| ---------------- | ---------------------------------------------------------- | ------------------ | ------------ |
+| icon             | 左侧图标名称或图片链接，可选值见 IconPlus 组件                 | _string_           | -            |
+| title            | 左侧标题                                                   | _string \| number_ | -            |
+| title-width      | 标题宽度，须包含单位                                       | _string_           | -            |
+| value            | 右侧内容                                                   | _string \| number_ | -            |
+| label            | 标题下方的描述信息                                         | _string_           | -            |
+| size             | 单元格大小，可选值为 `large`                               | _string_           | -            |
+| border           | 是否显示下边框                                             | _boolean_          | `true`       |
+| center           | 是否使内容垂直居中                                         | _boolean_          | `false`      |
+| url              | 点击后跳转的链接地址                                       | _string_           | -            |
+| link-type        | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_           | `navigateTo` |
+| clickable        | 是否开启点击反馈                                           | _boolean_          | `false`      |
+| is-link          | 是否展示右侧箭头并开启点击反馈                             | _boolean_          | `false`      |
+| required         | 是否显示表单必填星号                                       | _boolean_          | `false`      |
+| arrow-direction  | 箭头方向，可选值为 `left` `up` `down`                      | _string_           | -            |
+| use-label-slot   | 是否使用 label slot                                        | _boolean_          | `false`      |
+| title-style      | 标题样式                                                   | _string \| object_ | -            |
+| right-icon-style | 右侧图标样式                                               | _string \| object_ | -            |
+| type             | 额外类型，可选值为 `e-sport`                               | _string_           | -            |
+| custom-class     | 根节点样式类                                               | _string_           | -            |
+| title-class      | 标题样式类                                                 | _string_           | -            |
+| label-class      | 描述信息样式类                                             | _string_           | -            |
+| value-class      | 右侧内容样式类                                             | _string_           | -            |
 
 ### Cell Event
 

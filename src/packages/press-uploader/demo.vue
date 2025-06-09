@@ -80,13 +80,13 @@
         @afterRead="afterRead"
         @delete="deletePic"
       >
-        <PressImage
+        <img
           src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_799718017ac81b11c0.png"
           mode="widthFix"
           style="width: 250px;height: 150px;"
           width="250px"
           height="150px"
-        />
+        >
       </PressUploader>
     </demo-block>
 
@@ -100,7 +100,6 @@
   </div>
 </template>
 <script>
-import PressImage from 'press-ui/press-image/press-image.vue';
 import PressUploader from 'press-ui/press-uploader/press-uploader.vue';
 
 const IMG_URL = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg';
@@ -130,7 +129,6 @@ export default {
   },
   components: {
     PressUploader,
-    PressImage,
   },
   data() {
     return {
@@ -173,11 +171,12 @@ export default {
     // 新增图片
     async afterRead(event) {
       console.log('[afterRead] event', event);
+      const key = `fileList${event.name}`;
       // 当设置 multiple 为 true 时, file 为数组格式，否则为对象格式
       const lists = [].concat(event.file);
-      let fileListLen = this[`fileList${event.name}`].length;
+      let fileListLen = this[key].length;
       lists.map((item) => {
-        this[`fileList${event.name}`].push({
+        this[key].push({
           ...item,
           status: 'uploading',
           message: '上传中',
@@ -186,14 +185,13 @@ export default {
 
       for (let i = 0; i < lists.length; i++) {
         const result = await this.uploadFilePromise(lists[i].path);
-        const item = this[`fileList${event.name}`][fileListLen];
+        const item = this[key][fileListLen];
 
-        this[`fileList${event.name}`].splice(fileListLen, 1, Object.assign(item, {
-          // status: result.status, // 'success',
+        this[key].splice(fileListLen, 1, Object.assign(item, {
           message: '',
-          // url: result.url,
           ...result,
         }));
+        this[key] = this[key].map(item => ({ ...item }));
 
         fileListLen += 1;
       }
@@ -208,21 +206,6 @@ export default {
           message: '上传失败',
         }), 1000);
       });
-      // return new Promise((resolve, reject) => {
-      //   const a = uni.uploadFile({
-      //     url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
-      //     filePath: url,
-      //     name: 'file',
-      //     formData: {
-      //       user: 'test',
-      //     },
-      //     success: (res) => {
-      //       setTimeout(() => {
-      //         resolve(res.data.data);
-      //       }, 1000);
-      //     },
-      //   });
-      // });
     },
     onOversize(file) {
       console.log('[onOversize] file', file);

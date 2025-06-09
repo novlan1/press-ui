@@ -50,7 +50,7 @@
         theme="dark"
         :actions="t('actions')"
         :get-container="getContainer"
-        placement="bottom"
+        placement="bottom-start"
         custom-style="z-index: 1;margin-left: 16px;"
         @select="onSelect"
       >
@@ -202,6 +202,17 @@
         </template>
       </PressPopover>
     </demo-block>
+
+    <div
+      v-if="show.lightTheme
+        || show.darkTheme
+        || show.showIcon
+        || show.customContent
+        || show.disableAction
+      "
+      class="demo-overlay"
+      @click.stop="closeAllPopover"
+    />
   </div>
 </template>
 <script>
@@ -285,12 +296,12 @@ export default {
   data() {
     return {
       show: {
-        showIcon: false,
-        placement: false,
-        darkTheme: false,
         lightTheme: false,
-        customContent: false,
+        darkTheme: false,
+        placement: false,
+        showIcon: false,
         disableAction: false,
+        customContent: false,
       },
       showPicker: false,
       currentPlacement: 'top',
@@ -343,6 +354,11 @@ export default {
     onClosed() {
       console.log('onClosed');
     },
+    closeAllPopover() {
+      Object.keys(this.show).forEach((key) => {
+        this.show[key] = false;
+      });
+    },
   },
 };
 </script>
@@ -362,5 +378,16 @@ export default {
     justify-content: center;
     margin: 110px 0;
   }
+}
+
+.demo-overlay {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

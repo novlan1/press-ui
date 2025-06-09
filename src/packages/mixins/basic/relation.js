@@ -18,6 +18,10 @@ function findNearListParent(children = [], name) {
       // console.log('item === this', item);
       return temp;
     }
+    const foundInChildren = findNearListParent.call(this, item.$children, name);
+    if (foundInChildren) {
+      return foundInChildren;
+    }
   }
 
   return temp;

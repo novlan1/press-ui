@@ -1,4 +1,4 @@
-// press-ui-vue3 的文档提花，目前已不用
+// press-ui-vue3 的文档，目前已不用
 const { readFileSync, writeFileSync } = require('t-comm');
 const glob = require('glob');
 
