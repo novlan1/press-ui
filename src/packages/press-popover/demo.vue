@@ -165,21 +165,6 @@
         @select="onSelect"
       >
         <template #default>
-          <!-- <press-grid
-            square
-            clickable
-            :border="false"
-            :column-num="3"
-            custom-style="width: 240px;"
-          >
-            <press-grid-item
-              v-for="i in 6"
-              :key="i"
-              icon="photo-o"
-              :text="t('option')"
-              @click="show.customContent = false"
-            />
-          </press-grid> -->
           <PressGrid
             :column-num="3"
             custom-style="width: 240px;"
@@ -330,7 +315,32 @@ export default {
       return this.useGetContainer ? 'body' : '';
     },
   },
+  watch: {
+    'show.disableAction'() {
+      this.onCloseOthers('disableAction');
+    },
+    'show.lightTheme'() {
+      this.onCloseOthers('lightTheme');
+    },
+    'show.darkTheme'() {
+      this.onCloseOthers('darkTheme');
+    },
+    'show.customContent'() {
+      this.onCloseOthers('customContent');
+    },
+    'show.showIcon'() {
+      this.onCloseOthers('showIcon');
+    },
+  },
   methods: {
+    onCloseOthers(key) {
+      if (!this.show[key]) return;
+      Object.keys(this.show).forEach((item) => {
+        if (item !== key) {
+          this.show[item] = false;
+        }
+      });
+    },
     onPickerChange({ value, index }) {
       console.log('[onPickerChange]', value, index);
       setTimeout(() => {

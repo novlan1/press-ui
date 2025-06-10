@@ -54,7 +54,11 @@ export default {
     },
   },
 
-  emits: [],
+  emits: [
+    // #ifdef H5
+    'close',
+    // #endif
+  ],
   data() {
     return {
       innerShow: false,

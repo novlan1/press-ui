@@ -57,6 +57,7 @@
       <press-cell
         :title="t('check')"
         is-link
+        :value="cellValue"
         @click="onShowPopupPlus"
       />
     </demo-block>
@@ -239,6 +240,7 @@ export default {
     return {
       showPopupPlus: false,
       momentumColumns: Array.from({ length: 500 }).map((item, index) => `Momentum ${index + 1}`),
+      cellValue: '',
     };
   },
   computed: {
@@ -277,6 +279,7 @@ export default {
     },
     onChange(val) {
       console.log('onChange.val', val);
+      this.cellValue = val.value;
       this.onTip(val);
     },
     onCancel(val) {

@@ -32,6 +32,7 @@
       :title="t('title')"
       :show="show2"
       content="Some fake news 2"
+      custom-style="background-color: transparent;"
       @confirm="onConfirm('show2')"
       @cancel="onCancel('show2')"
     />

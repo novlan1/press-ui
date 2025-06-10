@@ -4,7 +4,7 @@
     v-if="dataShow"
     class="press-dialog"
     :class="dataCustomClass"
-    :style="{zIndex: `${dataZIndex}`}"
+    :style="dialogCustomStyle"
     @click.stop="touchRemove"
     @touchmove.stop="preventTouchMove"
   >
@@ -96,6 +96,7 @@
 <script>
 import { getVirtualHostOptions } from '../common/component-handler/press-component';
 import { toPromise } from '../common/format/function';
+import { style }  from '../common/utils/style';
 import { ScrollViewPureMixin } from '../mixins/pure/scroll-view';
 import PressButton from '../press-button/press-button.vue';
 import PressField from '../press-field/press-field.vue';
@@ -126,13 +127,20 @@ export default {
       promise: '',
       mShowButtonLoading: false,
 
-      // ...getPropsData(this, dialogProps),
-
       inputValue: '',
     };
   },
+  computed: {
+    dialogCustomStyle() {
+      return style([
+        {
+          zIndex: this.dataZIndex,
+        },
+        this.dataCustomStyle || '',
+      ]);
+    },
+  },
   watch: {
-    // ...getPropsWatch(dialogProps),
     dataFieldValue: {
       handler(value) {
         this.inputValue = value;
@@ -143,9 +151,6 @@ export default {
   mounted() {
   },
   methods: {
-    // setData(data) {
-    //   setPropsToData.call(this, data);
-    // },
     preventTouchMove() {
       return;
     },
@@ -176,7 +181,7 @@ export default {
       this.$emit('confirm');
       this.remove();
     },
-    // 取消,将promise断定为reject状态
+    // 取消,将 promise 断定为 reject 状态
     cancel() {
       if (typeof this.dataOnClickCancel === 'function') {
         this.dataOnClickCancel(this);
@@ -187,7 +192,6 @@ export default {
       this.$emit('cancel');
       this.remove();
     },
-    // 弹出messageBox,并创建promise对象
     showDialog() {
       this.dataShow = true;
 
@@ -195,7 +199,6 @@ export default {
         this.resolve = resolve;
         this.reject = reject;
       });
-      // 返回promise对象
       return this.promise;
     },
     touchRemove() {

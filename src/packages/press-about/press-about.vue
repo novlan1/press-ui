@@ -46,6 +46,7 @@
       use-slot
       title="Press UI 交流群"
       :show="showDialog"
+      custom-style="top: 48%"
       @close="onClose"
       @confirm="onClose"
     >

@@ -1,5 +1,3 @@
-// 此文件不能改为ts，否则条件编译有问题
-
 import { initFunctionalDialog } from '../common/component-handler/init-functional-dialog';
 import { addFunctionForDialog } from '../press-dialog/handler-helper';
 

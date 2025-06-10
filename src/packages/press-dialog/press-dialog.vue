@@ -42,8 +42,8 @@
           v-if="dataShowCancelButton"
           size="large"
           :loading="loading.cancel"
-          class="press-dialog__button press-hairline--right"
-          custom-class="press-dialog__cancel"
+          :class="cancelButtonClass"
+          :custom-class="cancelButtonCustomClass"
           :custom-style="computedCancelButtonStyle"
           @click="onCancel"
         >
@@ -237,6 +237,21 @@ export default {
         },
         this.dataCustomStyle,
       ]);
+    },
+    cancelButtonClass() {
+      let result = 'press-dialog__button';
+      // #ifndef MP-WEIXIN
+      result += ' press-hairline--right';
+      // #endif
+
+      return result;
+    },
+    cancelButtonCustomClass() {
+      let result = 'press-dialog__cancel';
+      // #ifdef MP-WEIXIN
+      result += ' press-hairline--right';
+      // #endif
+      return result;
     },
   },
   watch: {

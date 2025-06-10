@@ -102,10 +102,6 @@ export default {
     // #endif
   ],
   props: {
-    // value: {
-    //   type: Boolean,
-    //   default: false,
-    // },
     overlay: {
       type: Boolean,
       default: false,
@@ -195,13 +191,8 @@ export default {
         this[key] = data[key];
       });
     },
-    // onToggle(value) {
-    //   // this.$emit('input', value);
-    // },
-
     onClickWrapper() {
       if (this.trigger === 'click') {
-        // this.onToggle(!this.value);
         this.emitModelValue(!this.realModelValue);
       }
     },
@@ -242,7 +233,6 @@ export default {
       this.$emit('close');
     },
 
-    /* istanbul ignore next */
     onClosed() {
       this.$emit('closed');
     },

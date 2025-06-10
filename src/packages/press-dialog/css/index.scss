@@ -10,7 +10,7 @@
 /* #endif */
 
 ::v-deep .press-dialog {
-  top: 45% !important;
+  top: 45%;
   overflow: hidden;
   width: var(--dialog-width, $dialog-width);
   font-size: var(--dialog-font-size, $dialog-font-size);
@@ -77,8 +77,8 @@
     display: flex;
 
     &--round-button {
-      position: relative !important;
-      padding: $padding-xs $padding-lg $padding-md !important;
+      position: relative;
+      padding: $padding-xs $padding-lg $padding-md;
     }
   }
 
@@ -88,8 +88,15 @@
 
   &__confirm,
   &__cancel {
-    border: 0 !important;
+    border: 0;
   }
+
+  /* #ifdef MP-WEIXIN */
+  &__cancel::after {
+    border-right-width: 1px;
+  }
+
+  /* #endif */
 
   &-bounce-enter {
     transform: translate3d(-50%, -50%, 0) scale(.7);
