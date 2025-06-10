@@ -1,5 +1,14 @@
 # 更新日志
 
+### [5.0.2](https://github.com/novlan1/press-ui/compare/v5.0.1...v5.0.2) (2025-06-10)
+
+
+### Features 🎉
+
+* **dialog:** 优化dialog ([9813499](https://github.com/novlan1/press-ui/commit/9813499fe0c7bb737ac927477400e6a5a941a00f))
+* **mixin:** 兼容旧数据 ([1807720](https://github.com/novlan1/press-ui/commit/1807720a2fdc3467022d946485cdba4c2f033fd1))
+* **signature:** 兼容vue3 ([ae87389](https://github.com/novlan1/press-ui/commit/ae87389ef7416163cab86d2c63f18c70d5623ecc))
+
 ### [5.0.1](https://github.com/novlan1/press-ui/compare/v5.0.0...v5.0.1) (2025-06-09)
 
 

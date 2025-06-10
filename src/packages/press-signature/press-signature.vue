@@ -9,6 +9,7 @@
       class="press-signature__content"
     >
       <!-- #ifndef MP-QQ -->
+      <!-- #ifdef H5 -->
       <Canvas
         v-if="isRenderCanvas"
         :id="canvasId"
@@ -19,6 +20,19 @@
         @touchmove.prevent.stop="touchMove"
         @touchend.prevent.stop="touchEnd"
       />
+      <!-- #endif -->
+      <!-- #ifndef H5 -->
+      <canvas
+        v-if="isRenderCanvas"
+        :id="canvasId"
+        ref="canvasRef"
+        type="2d"
+        :canvas-id="canvasId"
+        @touchstart.passive="touchStart"
+        @touchmove.prevent.stop="touchMove"
+        @touchend.prevent.stop="touchEnd"
+      />
+      <!-- #endif -->
       <p v-else>
         {{ tips }}
       </p>
@@ -74,6 +88,7 @@ const hasCanvasSupport = () => {
 
 
 let id = 0;
+let globalCanvas = null;
 
 export default {
   name: 'PressSignature',
@@ -309,8 +324,13 @@ export default {
         });
       } else {
         const cb = () => {
+          let { canvas } = this;
+          // #ifdef VUE3
+          // https://developers.weixin.qq.com/community/develop/article/doc/000c02aa4d4530f96402a06a761413
+          canvas = globalCanvas;
+          // #endif
           uni.canvasToTempFilePath({
-            canvas: this.canvas,
+            canvas,
             canvasId: this.canvasId,
             fileType: this.fileType,
             quality: 1, // 图片质量
@@ -428,6 +448,8 @@ export default {
           .exec((res) => {
             const canvas = res[0].node;
             this.canvas = canvas;
+            globalCanvas = canvas;
+
             const ctx = canvas.getContext('2d');
             if (!this.inited) {
               this.inited = true;

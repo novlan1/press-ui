@@ -93,7 +93,7 @@
 
   /* #ifdef MP-WEIXIN */
   &__cancel::after {
-    border-right-width: 1px;
+    border-right-width: 1px !important;
   }
 
   /* #endif */
