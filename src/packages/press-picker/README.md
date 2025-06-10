@@ -192,9 +192,9 @@ const column3 = {
 };
 ```
 
-### 结合 Popup
+### 搭配弹出层使用
 
-提供了简单的 `Popup` 和 `Picker` 的组合，供业务快速使用。
+提供了 `Popup` 和 `Picker` 的组合，供业务快速使用。
 
 ```html
 <PressPickerPopup

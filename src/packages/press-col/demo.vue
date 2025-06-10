@@ -121,7 +121,7 @@ export default {
     /* #endif */
   }
 
-  /* #ifdef MP-TOUTIAO */
+  /* #ifdef MP-TOUTIAO || MP-WEIXIN || MP-QQ */
   ::v-deep .press-col--in-tag {
      &:nth-child(odd) .press-col {
       background-color: #39a9ed;

@@ -167,7 +167,7 @@ export default {
       title3: '配置显示列',
       title4: '配置列占位提示文字',
       columnsPlaceholder: ['请选择', '请选择', '请选择'],
-      withPopup: '结合Popup',
+      withPopup: '搭配弹出层使用',
       popupTitle: '选择地区',
       parseData: '特殊处理数据',
       areaList: getAreaData,

@@ -264,8 +264,7 @@ type IProps = {
 }
 ```
 
-
-### 结合 Popup
+### 搭配弹出层使用
 
 提供了 `datetime-picker-popup`，并支持函数式调用。本质上是对 `popup` 组件和 `datetime-picker` 的封装。
 

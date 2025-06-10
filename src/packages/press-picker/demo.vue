@@ -52,7 +52,7 @@
     </demo-block>
 
     <demo-block
-      :title="t('withPopupPlus')"
+      :title="t('withPopup')"
     >
       <press-cell
         :title="t('check')"
@@ -205,7 +205,6 @@ export default {
         福建: ['福州', '厦门', '莆田', '三明', '泉州'],
       },
       toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
-      withPopupPlus: '结合 PopupPlus',
     },
     'en-US': {
       city: 'City',
@@ -230,7 +229,6 @@ export default {
         Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
       },
       toastContent: (value, index) => `Value: ${value}, Index：${index}`,
-      withPopupPlus: 'With PopupPlus',
     },
   },
   components: {

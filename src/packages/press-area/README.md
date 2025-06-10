@@ -196,8 +196,7 @@ export function parseData(data) {
 }
 ```
 
-
-### 结合popup
+### 搭配弹出层使用
 
 要在弹出层中使用，可以引入 `press-area-popup`。
 
@@ -213,9 +212,8 @@ export function parseData(data) {
 />
 ```
 
-
 ```ts
-import PressAreaPopup from 'press-ui/press-area/press-area.vue';
+import PressAreaPopup from 'press-ui/press-area/press-area-popup.vue';
 
 
 export default {

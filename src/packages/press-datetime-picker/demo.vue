@@ -62,20 +62,15 @@
     </demo-block>
 
     <demo-block
-      :title="t('withPopupPlus')"
-    >
-      <PressCell
-        :title="t('check')"
-        is-link
-        @click="onShowPopupPlus"
-      />
-    </demo-block>
-
-    <demo-block
       :title="t('withPopup')"
     >
       <PressCell
-        :title="t('functional')"
+        title="Normal"
+        is-link
+        @click="onShowPopupPlus"
+      />
+      <PressCell
+        title="E-Sport"
         is-link
         @click="onShowFunctionalPicker"
       />
@@ -169,8 +164,7 @@ export default {
       optionFilter: '选项过滤器',
       yearMonth: '年月合并',
       sortColumns: '自定义列排序',
-      withPopup: '结合Popup',
-      withPopupPlus: '结合 PopupPlus',
+      withPopup: '搭配弹出层使用',
       functional: '函数式调用',
     },
     'en-US': {
@@ -189,7 +183,6 @@ export default {
       yearMonth: 'Year With Month',
       sortColumns: 'Columns Order',
       withPopup: 'With Popup',
-      withPopupPlus: 'With PopupPlus',
       functional: 'Functional Mode',
     },
   },
