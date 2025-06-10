@@ -1,5 +1,4 @@
-const { replaceContentSimple } = require('t-comm');
-const { randomString, pascalCase, execCommand } = require('t-comm');
+const { randomString, pascalCase, execCommand, replaceContentSimple } = require('t-comm');
 
 const { CONFIG } = require('./config');
 const { batchRenameSync } = require('./rename');
