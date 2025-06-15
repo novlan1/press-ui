@@ -221,14 +221,14 @@ export default {
     popupCustomStyle() {
       let width = utils.addUnit(this.dataWidth);
 
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       width = this.dataWidth ? utils.addUnit(this.dataWidth) : '320px';
       // #endif
 
       return style([
         {
           width,
-          // #ifdef MP-TOUTIAO
+          // #ifdef MP-TOUTIAO || MP-XHS
           top: '45%',
           fontSize: '16px',
           borderRadius: '16px',
