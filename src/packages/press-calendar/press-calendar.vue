@@ -186,7 +186,7 @@ export default {
   computed: {
     innerPopupCustomStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = ['top', 'bottom'].includes(this.position)
         ? {
           height: '80%',

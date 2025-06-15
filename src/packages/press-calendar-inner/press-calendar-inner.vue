@@ -137,7 +137,7 @@ export default {
   computed: {
     innerButtonStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         height: '36px',
         margin: '7px 0',

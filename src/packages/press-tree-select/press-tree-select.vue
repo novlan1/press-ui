@@ -143,7 +143,7 @@ export default {
   computed: {
     innerSidebarStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         width: '100%',
         height: '100%',

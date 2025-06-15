@@ -175,7 +175,7 @@ export default {
     },
     innerTabsWrapCustomStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         padding: '0 8px',
         height: '48px',
@@ -188,7 +188,7 @@ export default {
     },
     innerTabCustomStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         flex: 'none',
         padding: '0 8px',

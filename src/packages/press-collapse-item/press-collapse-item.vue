@@ -120,7 +120,7 @@ export default {
   computed: {
     cellTitleStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       if (this.disabled) {
         result = {
           color: '#c8c9cc',
@@ -131,7 +131,7 @@ export default {
     },
     rightIconStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         transform: 'rotate(90deg)',
         transition: 'transform .3s',

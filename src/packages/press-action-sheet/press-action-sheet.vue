@@ -161,7 +161,7 @@ export default {
     },
     innerCloseIconStyle() {
       let result = {};
-      // #ifdef MP-TOUTIAO
+      // #ifdef MP-TOUTIAO || MP-XHS
       result = {
         position: 'absolute',
         top: 0,
