@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.3](https://github.com/novlan1/press-ui/compare/v5.0.2...v5.0.3) (2025-06-16)
+
+
+### ✨ Features | 新功能
+
+* 兼容小红书小程序 ([1d1d187](https://github.com/novlan1/press-ui/commit/1d1d18785331984440d9dd2c318d8ada412daad5))
+* **area:** export getAreaData ([5154112](https://github.com/novlan1/press-ui/commit/515411255a2c94bfc11912c4f6a4d7c0cfe88f6e))
+* **dialog:** support xhs ([da7f5c3](https://github.com/novlan1/press-ui/commit/da7f5c39ceb6397e857c8173c22590611f8bbb9c))
+* **loading-plus:** update style ([e4a4f64](https://github.com/novlan1/press-ui/commit/e4a4f64da9da5e1fb636b8b98b6ca9aafc7ae48c))
+
 ### [5.0.2](https://github.com/novlan1/press-ui/compare/v5.0.1...v5.0.2) (2025-06-10)
 
 

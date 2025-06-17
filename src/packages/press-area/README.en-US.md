@@ -44,12 +44,12 @@ const areaList = {
 
 ### Data Sources
 
-Press provides a default province and city data, [address here](https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json).
+Press provides a default province and city data, [address here](https://tip-components-1251917893.file.myqcloud.com/rb/front-open-config__match__default__area_data.json).
 
 
 
 ```ts
-const AREA_DATA_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__area_data.json';
+const AREA_DATA_URL = 'https://tip-components-1251917893.file.myqcloud.com/rb/front-open-config__match__default__area_data.json';
 
 
 function getAreaData() {

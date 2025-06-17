@@ -12,6 +12,7 @@
         v-if="loading"
         :color="loadingColor"
         custom-class="press-switch__loading"
+        :custom-style="loadingStyle"
       />
     </div>
   </div>
@@ -59,6 +60,19 @@ export default {
   },
   emits: ['click', 'input', 'change', 'onSwitchChange'],
   computed: {
+    loadingStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        position: 'absolute',
+        top: '25%',
+        left: '25%',
+        width: '50%',
+        height: '50%',
+      };
+      // #endif
+      return result;
+    },
     realChecked() {
       const { open, checked } = this;
       if (typeof open === 'boolean') {

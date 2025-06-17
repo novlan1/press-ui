@@ -1,5 +1,10 @@
 <template>
-  <div class="demo-wrap">
+  <scroll-view
+    scroll-y
+    enhanced
+    :scroll-top="scrollTop"
+    @scroll="onScroll"
+  >
     <demo-block :title="t('basicUsage')">
       <press-cell
         :title="t('number')"
@@ -66,6 +71,11 @@
         />
       </press-cell>
     </demo-block>
+    <div class="grid-padding" />
+    <div
+      id="bottomDom"
+      class="bottom-dom"
+    />
 
     <PressNumberKeyboard
       :mode="mode"
@@ -109,9 +119,10 @@
       @close="onCloseCodeDemo"
       @change="onChangeCode"
     />
-  </div>
+  </scroll-view>
 </template>
 <script>
+import { ScrollViewPureMixin } from 'press-ui/mixins/pure/scroll-view';
 import PressCodeInput from 'press-ui/press-code-input/press-code-input';
 import PressField from 'press-ui/press-field/press-field';
 import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard';
@@ -159,6 +170,7 @@ export default {
     PressCodeInput,
     PressNumberKeyboard,
   },
+  mixins: [ScrollViewPureMixin],
   data() {
     return {
       mode: 'number',
@@ -171,6 +183,8 @@ export default {
       random: false,
       bindValue: '',
       codeValue: '',
+
+      scrollTop: 0,
     };
   },
   methods: {
@@ -183,6 +197,7 @@ export default {
       let title = '';
       let decimalMark = '.';
       let random = false;
+      let scrollTop = '';
       switch (type) {
         case 'number':
           break;
@@ -209,12 +224,16 @@ export default {
         case 'bindValue':
           show = false;
           showBindDemo = true;
+          scrollTop = 1000;
           break;
         case 'codeValue':
           show = false;
           showCodeDemo = true;
+          scrollTop = 1000;
           break;
       }
+
+
       this.mode = mode;
       this.show = show;
       this.showBindDemo = showBindDemo;
@@ -223,6 +242,14 @@ export default {
       this.title = title;
       this.decimalMark = decimalMark;
       this.random = random;
+
+      if (scrollTop) {
+        this.scrollTop = scrollTop;
+      }
+    },
+    onScroll(e) {
+      console.log('onScroll', e);
+      this.scrollTop = e.detail.scrollTop;
     },
     onChange(val) {
       console.log(`[onChange] ${val}`);
@@ -257,7 +284,15 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.demo-wrap {
-  padding-bottom: 300px;
+scroll-view {
+  height: 100%;
+}
+.grid-padding {
+  width: 100px;
+  height: 300px;
+}
+.bottom-dom {
+  width: 10px;
+  height: 10px;
 }
 </style>
