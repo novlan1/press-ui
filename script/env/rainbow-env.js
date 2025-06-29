@@ -2,11 +2,10 @@ const path = require('path');
 
 const { writeEnvFromRainbow } = require('t-comm');
 
+
 const { DEPLOY_CONFIG } = require('../../config/deploy-config');
 
-const envPath = require('./env-file')();
-const curEnvPath = path.resolve(__dirname, '../../.env.local');
-console.log('[curEnvPath]', curEnvPath);
+const envPath = path.resolve(__dirname, '../../.env.local');
 
 async function main() {
   await writeEnvFromRainbow({
@@ -14,9 +13,8 @@ async function main() {
     rainbowKey: DEPLOY_CONFIG.ENV_RAINBOW_KEY,
     envName: 'Default',
     groupName: 'devops',
+    sdk: require(' '),
   });
-
-  // execCommand(`cp ${envPath} ${curEnvPath}`, __dirname, 'inherit');
 }
 
 main();

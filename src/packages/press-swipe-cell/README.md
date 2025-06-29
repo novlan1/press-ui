@@ -171,7 +171,7 @@ onOpen(detail) {
 | 参数     | 类型     | 说明                                               |
 | -------- | -------- | -------------------------------------------------- |
 | position | _string_ | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | _object_ | SwipeCell 实例                                     |
+| instance | _object_ | SwipeCell 实例，头条小程序下不抛出                 |
 | name     | 标识符   | _string_                                           |
 
 ### 方法
@@ -186,3 +186,9 @@ onOpen(detail) {
 ## 在线调试
 
 <debug-online />
+
+## 常见问题
+
+### 头条小程序
+
+头条小程序 `close` 事件无法抛出 `instance` 实例，请自行通过 `ref` 获取。

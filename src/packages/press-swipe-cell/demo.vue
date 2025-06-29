@@ -39,6 +39,7 @@
       section-style="margin:0;"
     >
       <PressSwipeCell
+        ref="asyncSwipeCell"
         :right-width="65"
         :left-width="65"
         :async-close="true"
@@ -77,7 +78,7 @@
   </div>
 </template>
 <script>
-import Dialog from 'press-ui/press-dialog/handler';
+import { showConfirmDialog } from 'press-ui/press-dialog';
 import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
 import PressSwipeCell from 'press-ui/press-swipe-cell/press-swipe-cell.vue';
 
@@ -129,20 +130,26 @@ export default {
     },
     onAsyncClose(detail) {
       console.log('onAsyncClose.detail', detail);
+      const tryClose = () => {
+        // #ifdef MP-TOUTIAO
+        this.$refs.asyncSwipeCell?.close();
+        // #endif
+        instance?.close();
+      };
       const { position, instance } = detail;
       switch (position) {
         case 'left':
         case 'cell':
-          instance.close();
+          tryClose();
           break;
         case 'right':
-          DialogPlus.confirm({
+          showConfirmDialog({
             context: this,
             title: '确定删除吗？',
           })
             .then(() => {
-              console.log('1111');
-              instance.close();
+              console.log('close');
+              tryClose();
             })
             .catch((err) => {
               console.log('err', err);

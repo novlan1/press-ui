@@ -193,8 +193,10 @@ export default {
       if (this.asyncClose) {
         this.$emit('close', {
           position,
-          instance: this,
           name: this.name,
+          // #ifndef MP-TOUTIAO
+          instance: this,
+          // #endif
         });
       } else {
         this.swipeMove(0);

@@ -185,6 +185,7 @@ export default {
       codeValue: '',
 
       scrollTop: 0,
+      originScrollTop: 0,
     };
   },
   methods: {
@@ -197,7 +198,7 @@ export default {
       let title = '';
       let decimalMark = '.';
       let random = false;
-      let scrollTop = '';
+      let scrollTop = 0;
       switch (type) {
         case 'number':
           break;
@@ -244,12 +245,16 @@ export default {
       this.random = random;
 
       if (scrollTop) {
-        this.scrollTop = scrollTop;
+        this.scrollTop = this.originScrollTop;
+        setTimeout(() => {
+          this.scrollTop = scrollTop;
+        });
       }
     },
     onScroll(e) {
-      console.log('onScroll', e);
-      this.scrollTop = e.detail.scrollTop;
+      console.log('[onScroll]', e);
+      // 直接赋值给 scrollTop 会造成微信小程序抖动
+      this.originScrollTop = e.detail.scrollTop;
     },
     onChange(val) {
       console.log(`[onChange] ${val}`);

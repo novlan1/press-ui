@@ -6,6 +6,7 @@
       :using-custom-navbar="usingCustomNavbar"
       background-color="transparent"
       custom-class="press-guide___overlay"
+      :custom-style="overlayStyle"
       :z-index="zIndex"
       :enter-callback="callback"
       @after-enter="afterEnter"
@@ -205,6 +206,17 @@ export default {
     };
   },
   computed: {
+    overlayStyle() {
+      let result = {};
+      // #ifdef MP-TOUTIAO
+      result = {
+        backgroundColor: 'transparent',
+        height: 'calc(100vh - var(--window-top, 0))',
+        top: 'var(--window-top, 0)',
+      };
+      // #endif
+      return result;
+    },
     currentStep() {
       const { steps, innerCurrent } = this;
       const step = steps[innerCurrent];

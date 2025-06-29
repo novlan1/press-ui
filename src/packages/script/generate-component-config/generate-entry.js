@@ -198,7 +198,7 @@ function writeSrcIndexJs({
 
   generateIndexScss({ scssPath, globMatch, targetDir });
 
-  fs.writeFileSync(PACKAGE_ENTRY_JS, `${packageEntryJsContent}\n`, {
+  fs.writeFileSync(PACKAGE_ENTRY_JS, `/* eslint-disable no-duplicate-imports */\n${packageEntryJsContent}\n`, {
     encoding: 'utf-8',
   });
 }

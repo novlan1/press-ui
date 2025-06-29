@@ -67,6 +67,7 @@
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import { PARENT_PICKER as PARENT } from '../common/constant/parent-map';
 import { range } from '../common/format/number';
+import { checkSupportTouch } from '../common/utils/support-touch';
 import { isObj } from '../common/utils/validator';
 
 import { nextTick, forceUpdate } from '../common/vue3/adapter';
@@ -248,6 +249,7 @@ export default {
       this.setIndex(index, true);
     },
     onClickItem(event) {
+      if (!checkSupportTouch()) return;
       const { index } = event.currentTarget.dataset;
       this.setIndex(index, true);
     },

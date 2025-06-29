@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.4](https://github.com/novlan1/press-ui/compare/v5.0.3...v5.0.4) (2025-06-17)
+
+
+### ✨ Features | 新功能
+
+* **picker:** 支持pc端 ([4fce67c](https://github.com/novlan1/press-ui/commit/4fce67c98ad5e421841b1dd64415c84c8462356f))
+* **swipe-cell:** support toutiao mp ([f257770](https://github.com/novlan1/press-ui/commit/f257770bf8dd2f686b2fee8b265cc57712794fec))
+* **switch:** support toutiao ([860f6dc](https://github.com/novlan1/press-ui/commit/860f6dcbc5c34fd617f88ee7cfe77fcf29b6f2fd))
+
 ### [5.0.3](https://github.com/novlan1/press-ui/compare/v5.0.2...v5.0.3) (2025-06-16)
 
 

@@ -53,7 +53,7 @@ export default {
     // 千位分隔符，类似金额的分割(￥23,321.05中的",")
     separator: {
       type: String,
-      default: ',',
+      default: '',
     },
     customStyle: {
       type: [String, Object],

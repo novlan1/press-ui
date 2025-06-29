@@ -47,7 +47,6 @@
         :start-value="30"
         :end-value="500"
         :decimals="2"
-        :decimal="1"
       />
     </demo-block>
 

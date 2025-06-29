@@ -279,7 +279,7 @@ export default {
     },
     onChange(val) {
       console.log('onChange.val', val);
-      this.cellValue = val.value;
+      this.cellValue = val.value?.text || val.value;
       this.onTip(val);
     },
     onCancel(val) {

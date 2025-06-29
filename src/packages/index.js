@@ -1,3 +1,4 @@
+/* eslint-disable no-duplicate-imports */
 export { default as About } from './press-about/press-about.vue';
 export { default as ActDemo } from './press-act-demo/press-act-demo.vue';
 export { default as ActionSheet } from './press-action-sheet/press-action-sheet.vue';

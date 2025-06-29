@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "private": true,
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
@@ -9,7 +9,7 @@
     "uniapp",
     "component"
   ],
-  "homepage": "https://novlan1.github.io/docs/press-ui",
+  "homepage": "https://novlan1.github.io/docs/press-ui/",
   "bugs": {
     "url": "https://github.com/novlan1/press-ui/issues"
   },
@@ -44,6 +44,7 @@
     "build:quickapp-webview": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview vue-cli-service uni-build",
     "build:quickapp-webview-huawei": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview-huawei vue-cli-service uni-build",
     "build:quickapp-webview-union": "cross-env NODE_ENV=production UNI_PLATFORM=quickapp-webview-union vue-cli-service uni-build",
+    "demo:deploy": "node script/deploy/docs-deploy.js demo",
     "demo:watch": "node script/docs-demo/watch-demo",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run demo:watch\" \"npm run serve\"",
     "dev:app-plus": "cross-env NODE_ENV=development UNI_PLATFORM=app-plus vue-cli-service uni-build --watch",
@@ -69,6 +70,7 @@
     "docs:build:deploy": "npm run init:env && npm run init && npm run docs:build && npm run docs:deploy",
     "docs:build:igame": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/pmd-mobile.support.press-ui.press-ui/ vuepress build docs",
     "docs:build:unity": "npm run init && NODE_OPTIONS=--openssl-legacy-provider cross-env PUBLISH_PATH=/docs/press-ui/ vuepress build docs",
+    "docs:deploy": "node script/deploy/docs-deploy.js docs",
     "docs:deploy:unity": "node script/deploy/deploy-unity-docs.js",
     "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run docs:watch\" \"npm run docs:serve\"",
     "docs:serve": "vuepress dev docs",
