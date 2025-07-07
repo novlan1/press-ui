@@ -1,5 +1,14 @@
 # 更新日志
 
+### [5.0.5](https://github.com/novlan1/press-ui/compare/v5.0.4...v5.0.5) (2025-07-07)
+
+
+### Features 🎉
+
+* 优化count-to ([ba5ea5a](https://github.com/novlan1/press-ui/commit/ba5ea5ac3c300aa93492646140ab72a414259650))
+* 优化count-to ([c480cff](https://github.com/novlan1/press-ui/commit/c480cff03b863182cda18bcd6e9193217e15d658))
+* **generate-component-config:** update package/index.js ([b216329](https://github.com/novlan1/press-ui/commit/b2163295b0e73cd43eeee51f9e121a4a803bef20))
+
 ### [5.0.4](https://github.com/novlan1/press-ui/compare/v5.0.3...v5.0.4) (2025-06-17)
 
 

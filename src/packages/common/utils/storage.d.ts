@@ -1,1 +1,4 @@
-export const storageUtil: Record<string, any>;
+export const storageUtil: {
+  get: (k: string) => string;
+  set: (key: StringIterator, value: string | number) => void;
+};

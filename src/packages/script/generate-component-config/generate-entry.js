@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const { replaceAllPolyfill, hyphenate } = require('t-comm');
 const glob = require('glob');
+const { replaceAllPolyfill, hyphenate } = require('t-comm');
 
 replaceAllPolyfill();
 const PACKAGE_ENTRY_JS = './src/packages/index.js';
@@ -192,7 +192,10 @@ function writeSrcIndexJs({
   });
   const packageEntryJsContent = getAllPressComponents(globMatch)
     .compList
-    .map(item => (`export { default as ${item.componentName} } from './${item.folder}/${item.folder}.vue';`))
+    .map((item) => {
+      const result = (`export { default as ${item.componentName} } from './${item.folder}/press-${item.name}.vue';`);
+      return result;
+    })
     .join('\n');
 
 
