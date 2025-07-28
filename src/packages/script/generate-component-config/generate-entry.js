@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const glob = require('glob');
 const { replaceAllPolyfill, hyphenate } = require('t-comm');
+// eslint-disable-next-line import/order
+const glob = require('glob');
 
 replaceAllPolyfill();
 const PACKAGE_ENTRY_JS = './src/packages/index.js';
