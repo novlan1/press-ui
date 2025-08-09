@@ -51,6 +51,7 @@ export { default as Grid } from './press-grid/press-grid.vue';
 export { default as GridItem } from './press-grid-item/press-grid-item.vue';
 export { default as Guide } from './press-guide/press-guide.vue';
 export { default as GuideContent } from './press-guide-content/press-guide-content.vue';
+export { default as Highlight } from './press-highlight/press-highlight.vue';
 export { default as Icon } from './press-icon/press-icon.vue';
 export { default as IconDelete } from './press-icon-delete/press-icon-delete.vue';
 export { default as IconMusic } from './press-icon-music/press-icon-music.vue';

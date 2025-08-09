@@ -53,10 +53,12 @@
     <demo-block :title="t('yearMonth')">
       <PressDatetimePicker
         type="yearMonth-day-hour-minute"
-        :value="currentDate"
+        :value="currentDate2"
         :min-date="minDate"
+        :item-height="56"
         :max-date="yearMonthMaxDate"
         :formatter="yearMonthFormatter"
+        :filter="filter"
         @input="onInput"
       />
     </demo-block>
@@ -111,6 +113,20 @@ let that;
 const DATE_TIME_PICKER_ID = 'press-picker-functional';
 const ONE_YEAR_MIL_SECONDS = 1000 * 60 * 60 * 24 * 365;
 const formatTime = time => `${timeStampFormat(time, 'yyyy-MM-dd hh:mm')}`;
+
+
+function getTomorrowSameTime() {
+  const now = new Date();
+  const minutes = now.getMinutes();
+  if (minutes > 0 && minutes < 30) {
+    now.setMinutes(30);
+  }
+  if (minutes > 30 && minutes < 60) {
+    now.setMinutes(60);
+  }
+  now.setSeconds(0);
+  return now.getTime() + 24 * 60 * 60 * 1000;
+}
 
 
 const getDayDesc = (val, day, innerValue) => {
@@ -207,6 +223,7 @@ export default {
       maxDate,
       yearMonthMaxDate,
       currentDate: new Date().getTime(),
+      currentDate2: getTomorrowSameTime(),
       currentTime: '12:00',
 
       filter(type, options) {

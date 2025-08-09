@@ -235,6 +235,10 @@
           "path": "/en/components/press/press-fab.md"
         },
         {
+          "title": "Highlight",
+          "path": "/en/components/press/press-highlight.md"
+        },
+        {
           "title": "ImagePreview",
           "path": "/en/components/press/press-image-preview.md"
         },

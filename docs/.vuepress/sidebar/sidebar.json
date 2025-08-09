@@ -288,6 +288,11 @@
           "path": "/components/press/press-fab.md"
         },
         {
+          "title": "Highlight",
+          "subTitle": "高亮文本",
+          "path": "/components/press/press-highlight.md"
+        },
+        {
           "title": "ImagePreview",
           "subTitle": "图片预览",
           "path": "/components/press/press-image-preview.md"

@@ -17,7 +17,10 @@
     @scrolltolower="scrollToLower"
     @scroll="scroll"
   >
-    <div class="press-list__layout">
+    <div
+      class="press-list__layout"
+      :style="layoutStyle"
+    >
       <slot />
 
       <slot
@@ -123,10 +126,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    // scrollY: {
-    //   type: Boolean,
-    //   default: true,
-    // },
+    layoutStyle: {
+      type: String,
+      default: '',
+    },
     enableFlex: {
       type: Boolean,
       default: false,
@@ -147,14 +150,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    // lowerThreshold: {
-    //   type: Number,
-    //   default: () => 100,
-    // },
-    // scrollOffset: {
-    //   type: Number,
-    //   default: () => 0,
-    // },
     scrollToElementById: {
       type: String,
       default: '',

@@ -445,38 +445,38 @@ export default {
     },
     updateColumnValue(value) {
       let values = [];
-      const { type, innerValue } = this;
+      const { type } = this;
       const formatter = this.formatter || defaultFormatter;
       const picker = this.getPicker();
 
       if (type === 'time') {
         const pair = value.split(':');
-        values = [formatter('hour', pair[0], innerValue), formatter('minute', pair[1])];
+        values = [formatter('hour', pair[0], value), formatter('minute', pair[1], value)];
       } else {
         const date = new Date(value);
         values = [
-          formatter('year', `${date.getFullYear()}`, innerValue),
-          formatter('month', padZero(date.getMonth() + 1), innerValue),
+          formatter('year', `${date.getFullYear()}`, value),
+          formatter('month', padZero(date.getMonth() + 1), value),
         ];
 
         if (type === 'date') {
-          values.push(formatter('day', padZero(date.getDate()), innerValue));
+          values.push(formatter('day', padZero(date.getDate()), value));
         }
 
         if (type === 'datetime') {
           values.push(
-            formatter('day', padZero(date.getDate()), innerValue),
-            formatter('hour', padZero(date.getHours()), innerValue),
-            formatter('minute', padZero(date.getMinutes()), innerValue),
+            formatter('day', padZero(date.getDate()), value),
+            formatter('hour', padZero(date.getHours()), value),
+            formatter('minute', padZero(date.getMinutes()), value),
           );
         }
 
         if (type === YEAR_AND_MONTH_AND_DATE) {
           values = [
-            formatter(YEAR_AND_MONTH, date.getFullYear() * 12 + date.getMonth() + 1, innerValue),
-            formatter('day', padZero(date.getDate()), innerValue),
-            formatter('hour', padZero(date.getHours()), innerValue),
-            formatter('minute', padZero(date.getMinutes()), innerValue),
+            formatter(YEAR_AND_MONTH, date.getFullYear() * 12 + date.getMonth() + 1, value),
+            formatter('day', padZero(date.getDate()), value),
+            formatter('hour', padZero(date.getHours()), value),
+            formatter('minute', padZero(date.getMinutes()), value),
           ];
         }
       }

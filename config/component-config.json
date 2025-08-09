@@ -234,6 +234,10 @@
         "title": "悬浮按钮"
       },
       {
+        "name": "Highlight",
+        "title": "高亮文本"
+      },
+      {
         "name": "ImagePreview",
         "title": "图片预览"
       },

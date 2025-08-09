@@ -52,6 +52,7 @@ import Grid from './packages/press-grid/press-grid.vue';
 import GridItem from './packages/press-grid-item/press-grid-item.vue';
 import Guide from './packages/press-guide/press-guide.vue';
 import GuideContent from './packages/press-guide-content/press-guide-content.vue';
+import Highlight from './packages/press-highlight/press-highlight.vue';
 import Icon from './packages/press-icon/press-icon.vue';
 import IconDelete from './packages/press-icon-delete/press-icon-delete.vue';
 import IconMusic from './packages/press-icon-music/press-icon-music.vue';
@@ -180,6 +181,7 @@ const components = {
   GridItem,
   Guide,
   GuideContent,
+  Highlight,
   Icon,
   IconDelete,
   IconMusic,

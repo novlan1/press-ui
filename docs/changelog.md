@@ -1,5 +1,12 @@
 # 更新日志
 
+### [5.0.6](https://github.com/novlan1/press-ui/compare/v5.0.5...v5.0.6) (2025-07-29)
+
+
+### Bug Fixes 🐞
+
+* **date-time-picker:** 修复formatter innerValue延迟设置问题 ([ed51002](https://github.com/novlan1/press-ui/commit/ed510020543d37cee1f4268d18ae8f4a5e8653f2))
+
 ### [5.0.5](https://github.com/novlan1/press-ui/compare/v5.0.4...v5.0.5) (2025-07-07)
 
 

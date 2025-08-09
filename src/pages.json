@@ -357,6 +357,12 @@
         }
       },
       {
+        "path": "highlight/highlight",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "image-preview/image-preview",
         "style": {
           "navigationBarTitleText": ""
@@ -804,6 +810,10 @@
         {
             "name": "Fab",
             "path": "pages/press/fab/fab"
+        },
+        {
+            "name": "Highlight",
+            "path": "pages/press/highlight/highlight"
         },
         {
             "name": "ImagePreview",

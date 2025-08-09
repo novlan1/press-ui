@@ -1,6 +1,6 @@
 {
   "name": "press-ui",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "private": true,
   "description": "简单、易用的跨端组件库，兼容 Vue2 和 Vue3，同时支持 uni-app和普通 Vue 项目",
   "keywords": [
@@ -50,7 +50,7 @@
     "dev:app-plus": "cross-env NODE_ENV=development UNI_PLATFORM=app-plus vue-cli-service uni-build --watch",
     "dev:custom": "cross-env NODE_ENV=development uniapp-cli custom",
     "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
-    "dev:mp": "concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
+    "dev:mp": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"npm run demo:watch\" \"npm run dev:mp-weixin\"",
     "dev:mp-360": "cross-env NODE_ENV=development UNI_PLATFORM=mp-360 vue-cli-service uni-build --watch",
     "dev:mp-alipay": "cross-env NODE_ENV=development UNI_PLATFORM=mp-alipay vue-cli-service uni-build --watch",
     "dev:mp-baidu": "cross-env NODE_ENV=development UNI_PLATFORM=mp-baidu vue-cli-service uni-build --watch",
@@ -92,7 +92,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "new:comp": "node script/new/generate-new-component/generate-new-component",
     "prepare": "npm run init",
-    "release": "node script/version/release && npm run version:tip && node script/version/post-release",
+    "release": "node script/version/release && npm run version:tip",
     "release:mine": "node script/version/pre-commit",
     "release:prepare": "node script/version/prepare-release-script",
     "rem:px": "node script/utils/rem-to-px",

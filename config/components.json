@@ -52,6 +52,7 @@
   "divider": "./src/packages/press-divider/press-divider.vue",
   "empty": "./src/packages/press-empty/press-empty.vue",
   "fab": "./src/packages/press-fab/press-fab.vue",
+  "highlight": "./src/packages/press-highlight/press-highlight.vue",
   "image-preview": "./src/packages/press-image-preview/press-image-preview.vue",
   "link": "./src/packages/press-link/press-link.vue",
   "list": "./src/packages/press-list/press-list.vue",

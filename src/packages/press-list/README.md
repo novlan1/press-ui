@@ -115,6 +115,7 @@ export default {
 | auto-check-scroller | 是否自动检测滚动元素                           | _boolean_          | `false`     |
 | scroll-top          | 设置竖向滚动条位置                             | _number \| string_ | `0`         |
 | scroll-left         | 设置横向滚动条位置                             | _number \| string_ | `0`         |
+| layout-style        | `layout` 元素自定义样式                        | _string_           | -           |
 
 ### Event
 

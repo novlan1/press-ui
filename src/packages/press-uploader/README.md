@@ -335,6 +335,10 @@ uni-app 在 H5 端，实现了 `chooseImage`、`chooseVideo` 等方法，核心�
 
 Press UI 在非 uni-app 环境也按照这个方法实现了一遍，从而兼容普通 Vue 项目。
 
+### 微信小程序文件上传
+
+微信小程序下想使用文件管理器上传文件的话，可以使用 `web-view`，参考[这里](https://blog.csdn.net/weixin_45439337/article/details/140800965)。
+
 ### 文件对象
 
 一个文件对象的属性包括：
@@ -345,4 +349,3 @@ Press UI 在非 uni-app 环境也按照这个方法实现了一遍，从而兼�
 - size
 - type
 - webkitRelativePath (in chrome)
-
