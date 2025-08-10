@@ -43,4 +43,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="./css/index.scss">
+<style scoped lang="scss" src="./css/uni.scss" />
