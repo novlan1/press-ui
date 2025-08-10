@@ -8,12 +8,6 @@ export function getHighlightChunks({
   keywords,
   sourceString,
 }) {
-  console.log({
-    autoEscape,
-    caseSensitive,
-    keywords,
-    sourceString,
-  });
   const flags = caseSensitive ? 'g' : 'gi';
   const innerKeywords = Array.isArray(keywords) ? keywords : [keywords];
 

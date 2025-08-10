@@ -24,10 +24,11 @@ function getCurUId() {
 }
 
 
-function getLocalList() {
-  let list = storageUtil.get(STORAGE_EKY.PRESS_COUNT_DOWN_LIST) || '[]';
+function getLocalList(): any[] {
+  const listStr = storageUtil.get(STORAGE_EKY.PRESS_COUNT_DOWN_LIST) || '[]';
+  let list = [];
   try {
-    list = JSON.parse(list);
+    list = JSON.parse(listStr);
   } catch (err) {}
   return list;
 }
