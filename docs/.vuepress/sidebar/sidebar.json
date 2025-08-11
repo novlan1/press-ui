@@ -107,8 +107,13 @@
         },
         {
           "title": "NumberKeyboard",
-          "subTitle": "键盘",
+          "subTitle": "数字键盘",
           "path": "/components/press/press-number-keyboard.md"
+        },
+        {
+          "title": "PasswordInput",
+          "subTitle": "密码输入框",
+          "path": "/components/press/press-password-input.md"
         },
         {
           "title": "Picker",

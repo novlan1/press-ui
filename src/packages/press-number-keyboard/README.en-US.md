@@ -2,7 +2,7 @@
 url : pages/press/number-keyboard/number-keyboard
 ---
 
-## Keyboard
+## NumberKeyboard
 
 A virtual keyboard component that includes number mode (with or without decimal mark) and ID number mode, and can be used with CodeInput or Field component.
 

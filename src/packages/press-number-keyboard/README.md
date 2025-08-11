@@ -2,7 +2,7 @@
 url : pages/press/number-keyboard/number-keyboard
 ---
 
-## Keyboard 键盘
+## NumberKeyboard 数字键盘
 
 虚拟键盘，可配合输入框或验证码输入组件使用。
 

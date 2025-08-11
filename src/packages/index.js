@@ -71,6 +71,7 @@ export { default as Notify } from './press-notify/press-notify.vue';
 export { default as NumberKeyboard } from './press-number-keyboard/press-number-keyboard.vue';
 export { default as Overlay } from './press-overlay/press-overlay.vue';
 export { default as Pagination } from './press-pagination/press-pagination.vue';
+export { default as PasswordInput } from './press-password-input/press-password-input.vue';
 export { default as Picker } from './press-picker/press-picker.vue';
 export { default as PickerColumn } from './press-picker-column/press-picker-column.vue';
 export { default as PickerPlus } from './press-picker-plus/press-picker-plus.vue';

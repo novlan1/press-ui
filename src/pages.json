@@ -159,6 +159,12 @@
         }
       },
       {
+        "path": "password-input/password-input",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "picker/picker",
         "style": {
           "navigationBarTitleText": ""
@@ -678,6 +684,10 @@
         {
             "name": "NumberKeyboard",
             "path": "pages/press/number-keyboard/number-keyboard"
+        },
+        {
+            "name": "PasswordInput",
+            "path": "pages/press/password-input/password-input"
         },
         {
             "name": "Picker",

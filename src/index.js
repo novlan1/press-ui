@@ -72,6 +72,7 @@ import Notify from './packages/press-notify/press-notify.vue';
 import NumberKeyboard from './packages/press-number-keyboard/press-number-keyboard.vue';
 import Overlay from './packages/press-overlay/press-overlay.vue';
 import Pagination from './packages/press-pagination/press-pagination.vue';
+import PasswordInput from './packages/press-password-input/press-password-input.vue';
 import Picker from './packages/press-picker/press-picker.vue';
 import PickerColumn from './packages/press-picker-column/press-picker-column.vue';
 import PickerPlus from './packages/press-picker-plus/press-picker-plus.vue';
@@ -201,6 +202,7 @@ const components = {
   NumberKeyboard,
   Overlay,
   Pagination,
+  PasswordInput,
   Picker,
   PickerColumn,
   PickerPlus,

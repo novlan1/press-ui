@@ -19,6 +19,7 @@
   "field": "./src/packages/press-field/press-field.vue",
   "form": "./src/packages/press-form/press-form.vue",
   "number-keyboard": "./src/packages/press-number-keyboard/press-number-keyboard.vue",
+  "password-input": "./src/packages/press-password-input/press-password-input.vue",
   "picker": "./src/packages/press-picker/press-picker.vue",
   "radio": "./src/packages/press-radio/press-radio.vue",
   "rate": "./src/packages/press-rate/press-rate.vue",

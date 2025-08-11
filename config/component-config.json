@@ -87,7 +87,11 @@
       },
       {
         "name": "NumberKeyboard",
-        "title": "键盘"
+        "title": "数字键盘"
+      },
+      {
+        "name": "PasswordInput",
+        "title": "密码输入框"
       },
       {
         "name": "Picker",

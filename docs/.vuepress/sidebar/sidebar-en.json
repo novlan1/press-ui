@@ -91,6 +91,10 @@
           "path": "/en/components/press/press-number-keyboard.md"
         },
         {
+          "title": "PasswordInput",
+          "path": "/en/components/press/press-password-input.md"
+        },
+        {
           "title": "Picker",
           "path": "/en/components/press/press-picker.md"
         },
