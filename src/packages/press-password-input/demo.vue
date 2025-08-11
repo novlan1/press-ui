@@ -116,6 +116,7 @@ export default {
     PressNumberKeyboard,
   },
   data() {
+    const img = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png';
     return {
       current: '',
       values: {
@@ -132,6 +133,9 @@ export default {
 
       scrollTop: 0,
       originScrollTop: 0,
+
+      watermark: `<h5>我是h5标签我是h5标签我是h5标签我是h5标签</h5><p style="color:#f00">我是p标签</p><br><img style="width:30px" src="${img}" />`,
+
     };
   },
   methods: {

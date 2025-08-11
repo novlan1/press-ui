@@ -127,3 +127,4 @@ export { default as Transition } from './press-transition/press-transition.vue';
 export { default as TreeSelect } from './press-tree-select/press-tree-select.vue';
 export { default as Ui } from './press-ui/press-ui.vue';
 export { default as Uploader } from './press-uploader/press-uploader.vue';
+export { default as Watermark } from './press-watermark/press-watermark.vue';

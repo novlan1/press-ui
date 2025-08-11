@@ -67,6 +67,7 @@
   "swiper": "./src/packages/press-swiper/press-swiper.vue",
   "tag": "./src/packages/press-tag/press-tag.vue",
   "text-ellipsis": "./src/packages/press-text-ellipsis/press-text-ellipsis.vue",
+  "watermark": "./src/packages/press-watermark/press-watermark.vue",
   "back-top": "./src/packages/press-back-top/press-back-top.vue",
   "grid": "./src/packages/press-grid/press-grid.vue",
   "index-bar": "./src/packages/press-index-bar/press-index-bar.vue",

@@ -29,7 +29,7 @@
     "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
     "build:igame": "node script/deploy/build-igame",
     "build:js": "rm -rf lib && webpack --config script/build/webpack.conf.js && webpack --config script/build/webpack.component.js",
-    "build:mp": "npm run build:mp-weixin",
+    "build:mp": "NODE_OPTIONS=--openssl-legacy-provider npm run build:mp-weixin",
     "build:mp-360": "cross-env NODE_ENV=production UNI_PLATFORM=mp-360 vue-cli-service uni-build",
     "build:mp-alipay": "cross-env NODE_ENV=production UNI_PLATFORM=mp-alipay vue-cli-service uni-build",
     "build:mp-baidu": "cross-env NODE_ENV=production UNI_PLATFORM=mp-baidu vue-cli-service uni-build",

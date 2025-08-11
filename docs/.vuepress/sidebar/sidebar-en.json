@@ -293,6 +293,10 @@
         {
           "title": "TextEllipsis",
           "path": "/en/components/press/press-text-ellipsis.md"
+        },
+        {
+          "title": "Watermark",
+          "path": "/en/components/press/press-watermark.md"
         }
       ]
     },

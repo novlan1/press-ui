@@ -361,6 +361,11 @@
           "title": "TextEllipsis",
           "subTitle": "文本省略",
           "path": "/components/press/press-text-ellipsis.md"
+        },
+        {
+          "title": "Watermark",
+          "subTitle": "水印",
+          "path": "/components/press/press-watermark.md"
         }
       ]
     },

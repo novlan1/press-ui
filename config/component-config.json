@@ -292,6 +292,10 @@
       {
         "name": "TextEllipsis",
         "title": "文本省略"
+      },
+      {
+        "name": "Watermark",
+        "title": "水印"
       }
     ]
   },

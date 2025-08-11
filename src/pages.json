@@ -447,6 +447,12 @@
         }
       },
       {
+        "path": "watermark/watermark",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "back-top/back-top",
         "style": {
           "navigationBarTitleText": ""
@@ -876,6 +882,10 @@
         {
             "name": "TextEllipsis",
             "path": "pages/press/text-ellipsis/text-ellipsis"
+        },
+        {
+            "name": "Watermark",
+            "path": "pages/press/watermark/watermark"
         },
         {
             "name": "BackTop",

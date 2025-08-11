@@ -128,6 +128,7 @@ import Transition from './packages/press-transition/press-transition.vue';
 import TreeSelect from './packages/press-tree-select/press-tree-select.vue';
 import Ui from './packages/press-ui/press-ui.vue';
 import Uploader from './packages/press-uploader/press-uploader.vue';
+import Watermark from './packages/press-watermark/press-watermark.vue';
 
 const components = {
   About,
@@ -258,6 +259,7 @@ const components = {
   TreeSelect,
   Ui,
   Uploader,
+  Watermark,
 };
 
 const install = function (Vue) {
