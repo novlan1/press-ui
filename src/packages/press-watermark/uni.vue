@@ -75,13 +75,17 @@ export default {
     },
   },
   watch: {
-    fullPage: 'getWatermarkLength',
+    fullPage: {
+      handler() {
+        this.getWatermarkLength(100);
+      },
+    },
   },
   mounted() {
     this.getWatermarkLength();
   },
   methods: {
-    getWatermarkLength() {
+    getWatermarkLength(time = 500) {
       let wrapRect = {};
       let watermarkRect = {};
 
@@ -104,7 +108,7 @@ export default {
           this.forLength = Math.floor(wrapRect.width / watermarkRect.width)
             * Math.floor(wrapRect.height / watermarkRect.height);
         }
-      }, 500);
+      }, time);
     },
   },
 };
