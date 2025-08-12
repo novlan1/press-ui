@@ -15,9 +15,14 @@
           :disabled="current === 1"
           @click.stop="() => updateModelValue(current - 1)"
         >
+          <!-- #ifdef H5 -->
           <slot name="prev-text">
             {{ prevText }}
           </slot>
+          <!-- #endif -->
+          <!-- #ifndef H5 -->
+          {{ prevText }}
+          <!-- #endif -->
         </div>
       </div>
 
@@ -72,9 +77,14 @@
           :disabled="current === count"
           @click.stop="() => updateModelValue(current + 1)"
         >
+          <!-- #ifdef H5 -->
           <slot name="next-text">
             {{ nextText }}
           </slot>
+          <!-- #endif -->
+          <!-- #ifndef H5 -->
+          {{ nextText }}
+          <!-- #endif -->
         </div>
       </div>
     </div>
