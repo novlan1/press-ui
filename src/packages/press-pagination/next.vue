@@ -43,6 +43,7 @@
           @click.stop="() => updateModelValue(page.number)"
         >
           <div>
+            <!-- #ifdef H5 -->
             <slot
               name="page"
               :number="page.number"
@@ -51,6 +52,11 @@
             >
               {{ page.text }}
             </slot>
+            <!-- #endif -->
+
+            <!-- #ifndef H5 -->
+            {{ page.text }}
+            <!-- #endif -->
           </div>
         </div>
       </template>
