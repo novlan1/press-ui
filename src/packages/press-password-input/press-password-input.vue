@@ -75,6 +75,7 @@ export default {
       default: 6,
     },
   },
+  emits: ['focus'],
   data() {
     return {
     };

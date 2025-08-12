@@ -4,11 +4,75 @@ url : pages/press/pagination/pagination
 
 ## Pagination
 
+When the amount of data is too much, use pagination to separate the data, and load only one page at a time.
 
 ## Code Demo
 
-### Basic usage
+### Basic Usage
 
+```html
+<press-pagination 
+  :current="currentPage" 
+  :total-items="24" 
+  :items-per-page="5" 
+  @change="(value) => currentPage = value"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentPage = ref(1);
+    return { currentPage };
+  },
+};
+```
+
+### Simple mode
+
+```html
+<press-pagination 
+  :current="currentPage" 
+  :page-count="12" 
+  mode="simple" 
+  @change="(value) => currentPage = value"
+/>
+```
+
+### Show ellipses
+
+```html
+<press-pagination
+  :current="currentPage"
+  :total-items="125"
+  :show-page-size="3"
+  force-ellipses
+  @change="(value) => currentPage = value"
+/>
+```
+
+### Custom Button
+
+```html
+<press-pagination 
+  :current="currentPage" 
+  :total-items="50" 
+  :show-page-size="5" 
+  @change="(value) => currentPage = value"
+>
+  <template #prev-text>
+    <press-icon-plus name="arrow-left" />
+  </template>
+  <template #next-text>
+    <press-icon-plus name="arrow" />
+  </template>
+  <template #page="{ text }">{{ text }}</template>
+</press-pagination>
+```
+
+### E-Sport mode
 
 ```html
 <PressPagination
