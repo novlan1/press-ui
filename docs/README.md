@@ -49,26 +49,6 @@
 
 `Press UI`可应用于`uni-app`项目，或者普通的H5项目，同时支持 Vue2 和 Vue3。
 
-目前已应用在王者赛宝、HoK Club、赛宝Pro、和平赛事、高能赛事、商户赛等项目中。
-
-<div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="200">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fhok-club-screenshot.gif" width="200">
-</div>
-
-<br />
-
-<div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-example-gp-match.gif" width="200">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-example-gn-match.gif" width="200">
-</div>
-
-<br />
-
-<div style="display:flex;flex-wrap:wrap;margin-top:10px;">
-  <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fown_mike_2bfb54a9ad6b9bc0ff.gif" width="400">
-</div>
-
 ### 4. 如何使用
 
 #### 4.1. npm 方式

@@ -174,12 +174,13 @@ export default {
 
 ### Collapse Props
 
-| 参数               | 说明                | 类型                                                                   | 默认值  |
-| ------------------ | ------------------- | ---------------------------------------------------------------------- | ------- |
-| value              | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | -       |
-| accordion          | 是否开启手风琴模式  | _boolean_                                                              | `false` |
-| border             | 是否显示外边框      | _boolean_                                                              | `true`  |
-| default-expand-all | 是否默认展开全部    | _boolean_                                                              | `false` |
+| 参数               | 说明                    | 类型                                                                   | 默认值  |
+| ------------------ | ----------------------- | ---------------------------------------------------------------------- | ------- |
+| value              | 当前展开面板的 name     | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | -       |
+| accordion          | 是否开启手风琴模式      | _boolean_                                                              | `false` |
+| border             | 是否显示外边框          | _boolean_                                                              | `true`  |
+| default-expand-all | 是否默认展开全部        | _boolean_                                                              | `false` |
+| duration           | 动画持续时间，单位 `ms` | _number_                                                               | `240`   |
 
 ### Collapse Event
 

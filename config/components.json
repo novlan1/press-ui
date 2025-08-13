@@ -72,6 +72,7 @@
   "grid": "./src/packages/press-grid/press-grid.vue",
   "index-bar": "./src/packages/press-index-bar/press-index-bar.vue",
   "nav-bar": "./src/packages/press-nav-bar/press-nav-bar.vue",
+  "pagination": "./src/packages/press-pagination/press-pagination.vue",
   "sidebar": "./src/packages/press-sidebar/press-sidebar.vue",
   "tab": "./src/packages/press-tab/press-tab.vue",
   "tabbar": "./src/packages/press-tabbar/press-tabbar.vue",
@@ -80,7 +81,6 @@
   "dialog-plus": "./src/packages/press-dialog-plus/press-dialog-plus.vue",
   "icon-plus": "./src/packages/press-icon-plus/press-icon-plus.vue",
   "loading-plus": "./src/packages/press-loading-plus/press-loading-plus.vue",
-  "pagination": "./src/packages/press-pagination/press-pagination.vue",
   "picker-plus": "./src/packages/press-picker-plus/press-picker-plus.vue",
   "popover-plus": "./src/packages/press-popover-plus/press-popover-plus.vue",
   "popup-plus": "./src/packages/press-popup-plus/press-popup-plus.vue"

@@ -316,6 +316,10 @@
           "navigationStyle": ""
         },
         {
+          "url": "/press/pagination/pagination",
+          "navigationStyle": ""
+        },
+        {
           "url": "/press/sidebar/sidebar",
           "navigationStyle": ""
         },
@@ -350,10 +354,6 @@
         },
         {
           "url": "/press/loading-plus/loading-plus",
-          "navigationStyle": ""
-        },
-        {
-          "url": "/press/pagination/pagination",
           "navigationStyle": ""
         },
         {

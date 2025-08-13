@@ -78,6 +78,7 @@
     "grid": "Grid 宫格",
     "index-bar": "IndexBar 索引栏",
     "nav-bar": "NavBar 导航栏",
+    "pagination": "Pagination 分页",
     "sidebar": "Sidebar 侧边导航",
     "tab": "Tab 标签页",
     "tabbar": "Tabbar 标签栏",
@@ -87,7 +88,6 @@
     "dialog-plus": "DialogPlus 弹出框",
     "icon-plus": "IconPlus 图标",
     "loading-plus": "LoadingPlus 加载中",
-    "pagination": "Pagination 分页",
     "picker-plus": "PickerPlus 选择器",
     "popover-plus": "PopoverPlus 弹出框",
     "popup-plus": "PopupPlus 弹出层"
@@ -171,6 +171,7 @@
     "grid": "Grid",
     "index-bar": "IndexBar",
     "nav-bar": "NavBar",
+    "pagination": "Pagination",
     "sidebar": "Sidebar",
     "tab": "Tab",
     "tabbar": "Tabbar",
@@ -180,7 +181,6 @@
     "dialog-plus": "DialogPlus",
     "icon-plus": "IconPlus",
     "loading-plus": "LoadingPlus",
-    "pagination": "Pagination",
     "picker-plus": "PickerPlus",
     "popover-plus": "PopoverPlus",
     "popup-plus": "PopupPlus"

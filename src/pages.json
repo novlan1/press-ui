@@ -477,6 +477,12 @@
         }
       },
       {
+        "path": "pagination/pagination",
+        "style": {
+          "navigationBarTitleText": ""
+        }
+      },
+      {
         "path": "sidebar/sidebar",
         "style": {
           "navigationBarTitleText": ""
@@ -520,12 +526,6 @@
       },
       {
         "path": "loading-plus/loading-plus",
-        "style": {
-          "navigationBarTitleText": ""
-        }
-      },
-      {
-        "path": "pagination/pagination",
         "style": {
           "navigationBarTitleText": ""
         }
@@ -904,6 +904,10 @@
             "path": "pages/press/nav-bar/nav-bar"
         },
         {
+            "name": "Pagination",
+            "path": "pages/press/pagination/pagination"
+        },
+        {
             "name": "Sidebar",
             "path": "pages/press/sidebar/sidebar"
         },
@@ -934,10 +938,6 @@
         {
             "name": "LoadingPlus",
             "path": "pages/press/loading-plus/loading-plus"
-        },
-        {
-            "name": "Pagination",
-            "path": "pages/press/pagination/pagination"
         },
         {
             "name": "PickerPlus",

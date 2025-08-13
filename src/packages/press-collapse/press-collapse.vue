@@ -35,6 +35,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    duration: {
+      type: Number,
+      default: 240,
+    },
     ...defaultProps,
   },
   watch: {

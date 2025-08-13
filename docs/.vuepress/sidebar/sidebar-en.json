@@ -321,6 +321,10 @@
           "path": "/en/components/press/press-nav-bar.md"
         },
         {
+          "title": "Pagination",
+          "path": "/en/components/press/press-pagination.md"
+        },
+        {
           "title": "Sidebar",
           "path": "/en/components/press/press-sidebar.md"
         },
@@ -357,10 +361,6 @@
         {
           "title": "LoadingPlus",
           "path": "/en/components/press/press-loading-plus.md"
-        },
-        {
-          "title": "Pagination",
-          "path": "/en/components/press/press-pagination.md"
         },
         {
           "title": "PickerPlus",

@@ -142,6 +142,10 @@ export default {
       type: Number,
       default: 62,
     },
+    draggable: {
+      type: [Boolean, String],
+      default: true,
+    },
   },
   emits: ['fabClick', 'trigger'],
   data() {
@@ -188,46 +192,38 @@ export default {
     },
     // 动态计算宽度
     boxWidth() {
-      return this.getPosition(3, 'horizontal');
+      return this.getPosition('horizontal');
     },
     // 动态计算高度
     boxHeight() {
-      return this.getPosition(3, 'vertical');
+      return this.getPosition('vertical');
     },
     // 计算左下位置
     leftBottom() {
-      // return false;
-      return this.getPosition(0, 'left', 'bottom');
+      return this.horizontal === 'left' && this.vertical === 'bottom';
     },
     // 计算右下位置
     rightBottom() {
-      // return true;
-      return this.getPosition(0, 'right', 'bottom');
+      return this.horizontal === 'right' && this.vertical === 'bottom';
     },
     // 计算左上位置
     leftTop() {
-      // return false;
-      return this.getPosition(0, 'left', 'top');
+      return this.horizontal === 'left' && this.vertical === 'top';
     },
     rightTop() {
-      // return false;
-      return this.getPosition(0, 'right', 'top');
+      return this.horizontal === 'right' && this.vertical === 'top';
     },
     flexDirectionStart() {
-      // return false;
-      return this.getPosition(1, 'vertical', 'top');
+      return this.direction === 'vertical' && this.vertical === 'top';
     },
     flexDirectionEnd() {
-      // return true;
-      return this.getPosition(1, 'vertical', 'bottom');
+      return this.direction === 'vertical' && this.vertical === 'bottom';
     },
     horizontalLeft() {
-      // return false;
-      return this.getPosition(2, 'horizontal', 'left');
+      return this.direction === 'horizontal' && this.horizontal === 'left';
     },
     horizontalRight() {
-      // return true;
-      return this.getPosition(2, 'horizontal', 'right');
+      return this.direction === 'horizontal' && this.horizontal === 'right';
     },
   },
   watch: {
@@ -313,14 +309,7 @@ export default {
     /**
      * 获取 位置信息
      */
-    getPosition(types, paramA, paramB) {
-      if (types === 0) {
-        return this.horizontal === paramA && this.vertical === paramB;
-      } if (types === 1) {
-        return this.direction === paramA && this.vertical === paramB;
-      } if (types === 2) {
-        return this.direction === paramA && this.horizontal === paramB;
-      }
+    getPosition(paramA) {
       return this.isShow && this.direction === paramA ? this.contentWidth : this.contentWidthMin;
     },
 
@@ -329,37 +318,49 @@ export default {
       this.switchPos.startY = e.touches[0].pageY;
     },
     onTouchEnd() {
-      if (!this.switchPos.hasMoved) {
-        return;
-      }
+      if (!this.draggable) return;
+      if (!this.switchPos.hasMoved) return;
+
       this.switchPos.startX = 0;
       this.switchPos.startY = 0;
       this.switchPos.hasMoved = false;
       this.setSwitchPosition(this.switchPos.endX, this.switchPos.endY);
     },
     onTouchMove(e) {
-      if (e.touches.length <= 0) {
-        return;
-      }
+      if (!this.draggable) return;
+      if (e.touches.length <= 0) return;
+
       const offsetX = e.touches[0].pageX - this.switchPos.startX;
       const offsetY = e.touches[0].pageY - this.switchPos.startY;
       let x = Math.floor(this.switchPos.x - offsetX);
       let y = Math.floor(this.switchPos.y - offsetY);
       [x, y] = this.getSwitchButtonSafeAreaXY(x, y);
-      this.btnSwitchPos.x = x;
-      this.btnSwitchPos.y = y;
-      this.switchPos.endX = x;
-      this.switchPos.endY = y;
+
+      if (this.draggable !== 'vertical') {
+        this.btnSwitchPos.x = x;
+        this.switchPos.endX = x;
+      }
+      if (this.draggable !== 'horizontal') {
+        this.btnSwitchPos.y = y;
+        this.switchPos.endY = y;
+      }
+
       this.switchPos.hasMoved = true;
       e.preventDefault();
       e.stopPropagation();
     },
     setSwitchPosition(switchX, switchY) {
       [switchX, switchY] = this.getSwitchButtonSafeAreaXY(switchX, switchY);
-      this.switchPos.x = switchX;
-      this.switchPos.y = switchY;
-      this.btnSwitchPos.x = switchX;
-      this.btnSwitchPos.y = switchY;
+
+      if (this.draggable !== 'vertical') {
+        this.switchPos.x = switchX;
+        this.btnSwitchPos.x = switchX;
+      }
+
+      if (this.draggable !== 'horizontal') {
+        this.switchPos.y = switchY;
+        this.btnSwitchPos.y = switchY;
+      }
     },
   },
 };

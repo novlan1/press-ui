@@ -9,13 +9,13 @@ function getAnimation({ height, duration }) {
   ].join('');
 }
 
-function useAnimation(context, expanded, mounted, height) {
+function useAnimation(context, { expanded, mounted, height, duration: originDuration = 240 }) {
   if (expanded) {
     if (height === 0) {
       const duration = 0;
       context.animationStyle = getAnimation({ height: 'auto', duration });
     } else {
-      const duration = mounted ? 300 : 1;
+      const duration = mounted ? originDuration : 1;
       context.animationStyle = getAnimation({ height: `${height}px`, duration });
 
       setTimeout(() => {
@@ -29,15 +29,15 @@ function useAnimation(context, expanded, mounted, height) {
   context.animationStyle = getAnimation({ height: `${height}px`, duration  });
 
   requestAnimationFrame(() => {
-    context.animationStyle = getAnimation({ height: 0, duration: 300 });
+    context.animationStyle = getAnimation({ height: 0, duration: originDuration });
   });
 }
 
 
-export function setContentAnimate(context, expanded, mounted) {
+export function setContentAnimate(context, expanded, mounted, duration) {
   getRect(context, '.press-collapse-item__content')
     .then(rect => rect.height)
     .then((height) => {
-      useAnimation(context, expanded, mounted, height);
+      useAnimation(context, { expanded, mounted, height, duration });
     });
 }

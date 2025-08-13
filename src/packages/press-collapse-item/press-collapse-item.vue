@@ -170,7 +170,7 @@ export default {
       if (!this[PARENT]) {
         return;
       }
-      const { value, accordion } = this[PARENT];
+      const { value, accordion, duration } = this[PARENT];
       const { children = [] } = this[PARENT];
       const { name } = this;
       const index = children.indexOf(this);
@@ -179,7 +179,7 @@ export default {
         ? value === currentName
         : (value || []).some(name => name === currentName);
       if (expanded !== this.expanded) {
-        setContentAnimate(this, expanded, this.mounted);
+        setContentAnimate(this, expanded, this.mounted, duration);
       }
       // this.index = index;
       this.expanded = expanded;

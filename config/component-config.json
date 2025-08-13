@@ -320,6 +320,10 @@
         "title": "导航栏"
       },
       {
+        "name": "Pagination",
+        "title": "分页"
+      },
+      {
         "name": "Sidebar",
         "title": "侧边导航"
       },
@@ -356,10 +360,6 @@
       {
         "name": "LoadingPlus",
         "title": "加载中"
-      },
-      {
-        "name": "Pagination",
-        "title": "分页"
       },
       {
         "name": "PickerPlus",

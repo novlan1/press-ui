@@ -22,6 +22,7 @@
       :horizontal="horizontal"
       :vertical="vertical"
       :direction="direction"
+      draggable="all"
       @trigger="trigger"
       @fabClick="fabClick"
     />

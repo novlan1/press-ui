@@ -107,12 +107,16 @@ export default {
 ### Props
 
 
-| 参数      | 说明                                                      | 类型     | 默认值     |
-| --------- | --------------------------------------------------------- | -------- | ---------- |
-| pattern   | 可选样式配置项                                            | _object_ | -          |
-| direction | 展开菜单显示方式。horizontal:水平显示，vertical：垂直显示 | _string_ | horizontal |
-| content   | 展开菜单内容配置项                                        | _Array_  | -          |
-| top       | 顶部高度                                                  | _number_ | -          |
+| 参数             | 说明                                                                                        | 类型                | 默认值     |
+| ---------------- | ------------------------------------------------------------------------------------------- | ------------------- | ---------- |
+| pattern          | 可选样式配置项                                                                              | _object_            | -          |
+| direction        | 展开菜单显示方式。`horizontal` 水平显示，`vertical` 垂直显示                                | _string_            | horizontal |
+| content          | 展开菜单内容配置项                                                                          | _Array_             | -          |
+| top              | 顶部高度                                                                                    | _number_            | -          |
+| bottom-threshold | 底部距离限制                                                                                | _number_            | `20`       |
+| draggable        | 是否可拖拽。`true/all`可拖动，`vertical`可垂直拖动，`horizontal`可水平拖动，`false`禁止拖动 | _string \| boolean_ | -          |
+| init-x           | 水平方向初始位置                                                                            | _number_            | `12`       |
+| init-y           | 垂直方向初始位置                                                                            | _number_            | `62`       |
 
 ## 在线调试
 
