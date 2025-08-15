@@ -204,7 +204,8 @@ function getOSInfo() {
   } else if (isHarmonyOS) {
     osname = 'OpenHarmony';
     model = 'Phone';
-    const osversionFind = ua.match(/Android[\s/]([\w.]+)[;\s]/);
+    const osversionFind = ua.match(/OpenHarmony[\s/]([\w.]+)[;\s]/);
+
     osversion = osversionFind[1];
     deviceType = 'phone'  
   } else if (isWindows || isMac || isLinux) {
