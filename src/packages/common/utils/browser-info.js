@@ -58,9 +58,9 @@ const isLinux = /Linux|X11/i.test(ua);
  */
 const isIPadOS = isMac && navigator.maxTouchPoints > 0;
 /**
- * 是否是Harmony OS设备 
+ * 是否是Harmony OS设备
  */
-const isHarmonyOS = /OpenHarmony/i.test(ua)
+const isHarmonyOS = /OpenHarmony/i.test(ua);
 
 
 function getAndroidOSInfo() {
@@ -207,7 +207,7 @@ function getOSInfo() {
     const osversionFind = ua.match(/OpenHarmony[\s/]([\w.]+)[;\s]/);
 
     osversion = osversionFind[1];
-    deviceType = 'phone'  
+    deviceType = 'phone';
   } else if (isWindows || isMac || isLinux) {
     const {
       osname: pcOSName,
