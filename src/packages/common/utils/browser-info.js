@@ -57,6 +57,10 @@ const isLinux = /Linux|X11/i.test(ua);
  * 是否是iPadOS
  */
 const isIPadOS = isMac && navigator.maxTouchPoints > 0;
+/**
+ * 是否是Harmony OS设备 
+ */
+const isHarmonyOS = /OpenHarmony/i.test(ua)
 
 
 function getAndroidOSInfo() {
@@ -197,6 +201,13 @@ function getOSInfo() {
     osname = 'iOS';
     osversion = typeof window.BigInt === 'function' ? '14.0' : '13.0';
     deviceType = 'pad';
+  } else if (isHarmonyOS) {
+    osname = 'OpenHarmony';
+    model = 'Phone';
+    const osversionFind = ua.match(/OpenHarmony[\s/]([\w.]+)[;\s]/);
+
+    osversion = osversionFind[1];
+    deviceType = 'phone'  
   } else if (isWindows || isMac || isLinux) {
     const {
       osname: pcOSName,
