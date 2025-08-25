@@ -80,6 +80,7 @@ export default {
       alipayOpen: '支付宝开放能力',
       mpOpen: '小程序开放能力',
       getUserInfo: '获取用户信息',
+      share: '分享',
     },
     'en-US': {
       custom: 'Custom',
@@ -100,6 +101,7 @@ export default {
       alipayOpen: 'Alipay Open API',
       mpOpen: 'Mini Program Open API',
       getUserInfo: 'Get User Info',
+      share: 'Share',
     },
   },
 
@@ -165,6 +167,10 @@ export default {
   },
   computed: {
     actions() {
+      let options3Name = this.t('option3');
+      // #ifndef H5
+      options3Name += ` ${this.t('share')}`;
+      // #endif
       return [
         {
           name: this.t('option1'),
@@ -173,7 +179,7 @@ export default {
           name: this.t('option2'),
         },
         {
-          name: this.t('option3'),
+          name: options3Name,
           subname: this.t('subname'),
           openType: 'share',
         },

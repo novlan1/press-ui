@@ -1,5 +1,5 @@
-const { moveDocs } = require('../../src/packages/script/docs-demo/helper');
-const { watchPackages } = require('../../src/packages/script/docs-demo/watch');
+const { moveDocs } = require('@plugin-light/cli/script/docs-demo/helper');
+const { watchPackages } = require('@plugin-light/cli/script/docs-demo/watch');
 
 function main() {
   moveDocs();

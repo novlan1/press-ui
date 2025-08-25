@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { generateNewComponent } = require('../../../src/packages/script/generate-new-component/generate-new-component');
+const { generateNewComponent } = require('../@plugin-light/cli/script/generate-new-component/generate-new-component');
 
 const COMPONENT_CONFIG_PATH = path.resolve(process.cwd(), '.../../config/component-config.json');
 

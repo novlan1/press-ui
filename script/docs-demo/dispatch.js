@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { moveDemo, moveDocs } = require('../../src/packages/script/docs-demo/helper');
+const { moveDemo, moveDocs } = require('@plugin-light/cli/script/docs-demo/helper');
 
 function main() {
   moveDemo(null, null, {

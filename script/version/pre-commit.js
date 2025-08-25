@@ -1,17 +1,16 @@
 const { execSync } = require('child_process');
 
-const { insertDocChangeLog } = require('t-comm');
-
 const {
   genPureReleaseDir,
   copyReadme,
-} = require('../../src/packages/script/release/prepare');
+} = require('@plugin-light/cli/script/release/prepare');
 const {
   release,
-} = require('../../src/packages/script/release/release');
+} = require('@plugin-light/cli/script/release/release');
 const {
   changeVersion,
-} = require('../../src/packages/script/release/version');
+} = require('@plugin-light/cli/script/release/version');
+const { insertDocChangeLog } = require('t-comm');
 
 
 const {

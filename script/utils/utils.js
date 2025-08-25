@@ -4,7 +4,7 @@ const {
   isActComponent,
   getActPageDir,
   COMP_PREFIX,
-} = require('../../src/packages/script/generate-component-config/utils');
+} = require('@plugin-light/cli/script/generate-component-config/utils');
 
 
 module.exports = {

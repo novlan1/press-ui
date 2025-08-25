@@ -1,7 +1,7 @@
 const {
   genPureReleaseDir,
   copyReadme,
-} = require('../../src/packages/script/release/prepare');
+} = require('@plugin-light/cli/script/release/prepare');
 
 const {
   TO_DELETE_FILES,
