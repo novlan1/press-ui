@@ -16,31 +16,37 @@
     </demo-block>
 
     <div class="demo-container">
-      <PressList
+      <PressPullRefresh
         v-model="loading"
-        :finished="finished"
-        :immediate-check="immediateCheck"
-        :vertical="listLocal.vertical"
-        finished-text="没有更多了"
-        :auto-check-scroller="listLocal.autoCheckScroller"
-        :custom-style="listStyle"
-        @load="load"
-        @scroll="scroll"
+        @refresh="onRefresh"
+        @change="onChange"
       >
-        <div
-          :style="wrapStyle"
-          class="list__wrap"
+        <PressList
+          v-model="loading"
+          :finished="finished"
+          :immediate-check="immediateCheck"
+          :vertical="listLocal.vertical"
+          finished-text="没有更多了"
+          :auto-check-scroller="listLocal.autoCheckScroller"
+          :custom-style="listStyle"
+          @load="load"
+          @scroll="scroll"
         >
-          <div :style="hiddenUpPartStyle" />
           <div
-            v-for="item of showingData"
-            :key="item.value"
-            class="list__item"
+            :style="wrapStyle"
+            class="list__wrap"
           >
-            {{ item.label }}
+            <div :style="hiddenUpPartStyle" />
+            <div
+              v-for="item of showingData"
+              :key="item.value"
+              class="list__item"
+            >
+              {{ item.label }}
+            </div>
           </div>
-        </div>
-      </PressList>
+        </PressList>
+      </PressPullRefresh>
     </div>
 
     <PressPopupCell
@@ -60,6 +66,7 @@ import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressList from 'press-ui/press-list/press-list.vue';
 import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
 import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
+import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh.vue';
 
 import { showCustomPopup, local } from 'src/packages/press-list/demo-helper/custom';
 import { virtualListMixin } from 'src/packages/press-list/demo-helper/virtual-list-mixin';
@@ -101,6 +108,7 @@ export default {
     PressPopupCell,
     PressPickerPlus,
     PressCell,
+    PressPullRefresh,
   },
   mixins: [virtualListMixin()],
   data() {
@@ -144,6 +152,16 @@ export default {
     // this.onFetchData(true);
   },
   methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.onGTip('刷新成功');
+        this.onFetchData(true);
+      }, 1000);
+    },
+    onChange(value) {
+      console.log('[PullRefresh onChange]', value);
+    },
+
     load() {
       console.log('[load]');
       this.onFetchData();
@@ -173,7 +191,9 @@ export default {
         this.loading = false;
         this.finished = this.list.length >= total;
       })
-        .catch(() => {});
+        .catch(() => {
+          this.loading = false;
+        });
     },
 
     onShowBasicPopupCell() {
