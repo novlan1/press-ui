@@ -94,6 +94,7 @@
 </template>
 <script>
 // #ifdef H5
+import 'vue-cropper/dist/index.css';
 import { VueCropper } from '../common/vue3/vue-cropper';
 // #endif
 
@@ -175,6 +176,14 @@ export default {
           clearTimeout(this.timer);
           this.timer = setTimeout(() => {
             this.showCropper = true;
+            // #ifdef H5
+            // 修复 cropper-face 阻止滚轮缩放的问题
+            this.$nextTick(() => {
+              if (this.$refs.cropper && this.$refs.cropper.scaleImg) {
+                this.$refs.cropper.scaleImg();
+              }
+            });
+            // #endif
           }, this.delayShow);
         } else {
           clearTimeout(this.timer);

@@ -15,6 +15,8 @@
       :title="title"
       :use-momentum="useMomentum"
       :swipe-duration="swipeDuration"
+      :cancel-button-text="cancelButtonText"
+      :confirm-button-text="confirmButtonText"
       @change="onChange"
       @cancel="cancel"
       @confirm="confirm"

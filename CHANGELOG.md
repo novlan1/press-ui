@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.8](https://github.com/novlan1/press-ui/compare/v5.0.7...v5.0.8) (2025-10-30)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 还原代码 ([3fe6c19](https://github.com/novlan1/press-ui/commit/3fe6c19afe395eab8a68ca35b07276a533839fd6))
+* 修复h5环境cropper组件样式不显示问题 ([64a20c6](https://github.com/novlan1/press-ui/commit/64a20c65ef7558290a540ca07f7d56aad47d90ff))
+
+### [5.0.7](https://github.com/novlan1/press-ui/compare/v5.0.6...v5.0.7) (2025-10-22)
+
+
+### ✨ Features | 新功能
+
+* 优化pagination ([5f91b43](https://github.com/novlan1/press-ui/commit/5f91b43a1e695567538410b46345c1efdbe670f4))
+* 优化pagination ([295d478](https://github.com/novlan1/press-ui/commit/295d478514532a8cd24404bf12e7d6e01a8c3717))
+* **browser-info:** 支持鸿蒙判断 ([15f4e98](https://github.com/novlan1/press-ui/commit/15f4e98b1268503b6975013b901a15670d98584c))
+* **collapse:** add duration props ([dc0f35f](https://github.com/novlan1/press-ui/commit/dc0f35f74240c0d8c1eaef48bf92b688abd5afc3))
+* **fab:** support draggable props ([468b665](https://github.com/novlan1/press-ui/commit/468b6657688ab4e08964f02917309666ee4dfa98))
+* **highlight:** 优化highlight ([9fa0217](https://github.com/novlan1/press-ui/commit/9fa02172829d685cb612c0176e579c12b8dde0f7))
+* **highlight:** 支持小程序 ([f9635b6](https://github.com/novlan1/press-ui/commit/f9635b69341eab61fa5a7771ad5e0d5dc65ee270))
+* **highlight:** add new component ([f79be88](https://github.com/novlan1/press-ui/commit/f79be8810895a8aebeba281dc1edc1794d84ed7f))
+* **list:** add layout-style props ([d368576](https://github.com/novlan1/press-ui/commit/d368576557c0e4bede1fdb84f303cee666b6c39d))
+* **pagination:** 兼容小程序 ([4e43b20](https://github.com/novlan1/press-ui/commit/4e43b20e8ca881a7c298dd69edfe33aedbb3c275))
+* **pagination:** add simple/multi mode ([3e88216](https://github.com/novlan1/press-ui/commit/3e88216fd9d563be094ec2a9f29646a5183dabd9))
+* **pagination:** support mp ([48b3f58](https://github.com/novlan1/press-ui/commit/48b3f5890ec8a54a699d1afa28ff0b763511190f))
+* **password-input:** add new comp ([1d37b93](https://github.com/novlan1/press-ui/commit/1d37b93abb0e89394beb43489d6eb91acf945707))
+* **pickerPopup:** add cancel-button-text props ([ab6df42](https://github.com/novlan1/press-ui/commit/ab6df42e5524e2abd042073adede8b964dc8d6a4))
+* **watermark:** 优化watermark ([68ba1ff](https://github.com/novlan1/press-ui/commit/68ba1ffcb57b174f28853f2371d7fc2ba5cbb076))
+* **watermark:** add new component ([b919926](https://github.com/novlan1/press-ui/commit/b9199267de5f9b3c199e35c7e8f18283f17d7b6d))
+
 ### [5.0.6](https://github.com/novlan1/press-ui/compare/v5.0.5...v5.0.6) (2025-07-29)
 
 
