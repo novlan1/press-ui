@@ -94,7 +94,12 @@
 </template>
 <script>
 // #ifdef H5
+
+// #ifdef VUE3
+// eslint-disable-next-line import/no-unresolved
 import 'vue-cropper/dist/index.css';
+// #endif
+
 import { VueCropper } from '../common/vue3/vue-cropper';
 // #endif
 
