@@ -1,7 +1,0 @@
-@import '../../common/style/press/var.scss';
-
-
-// 微信小程序需要加 ::v-deep
-::v-deep .press-highlight__tag {
-  color: var(--press-highlight-tag-color, var(--press-primary-color,$color-primary));
-}

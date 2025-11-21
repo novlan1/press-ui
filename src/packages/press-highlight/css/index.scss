@@ -1,7 +1,0 @@
-.press-highlight {
-  --press-highlight-tag-color: var(--press-primary-color, #1181d7);
-
-  ::v-deep &__tag {
-    color: var(--press-highlight-tag-color);
-  }
-}
