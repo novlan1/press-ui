@@ -5,7 +5,7 @@ name: Deploy GitHub Pages - Press UI
 on:
   push:
     branches:
-      - master
+      - feature/archive
 
 # 任务
 jobs:
