@@ -14,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [24]
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -42,7 +42,7 @@ jobs:
       # 部署到 GitHub Pages
       - name: Deploy
         # 使用别人写好的一个 action
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           # 这里的 ACCESS_TOKEN 名字需要和下文中的相对应
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
