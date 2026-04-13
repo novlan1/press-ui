@@ -1,3 +1,6 @@
+/**
+ * @description 提取指定组件的 props 列表并输出为 Markdown 表格
+ */
 const { extractProps } = require('t-comm/lib/component/extract-props');
 
 const componentPath = process.argv[2];

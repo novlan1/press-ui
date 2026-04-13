@@ -1,3 +1,6 @@
+/**
+ * @description iGame 专用构建脚本，根据 appDir 分别构建文档或 demo
+ */
 const { execSync } = require('child_process');
 
 const path = require('path');

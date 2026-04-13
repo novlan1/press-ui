@@ -18,7 +18,6 @@
         class="press-dialog__content"
         v-html="dataHtmlContent"
       />
-
       <p
         v-else-if="dataHtmlContent"
         class="press-dialog__content"
@@ -31,6 +30,7 @@
       >
         {{ dataContent }}
       </p>
+      <slot name="middle-content" />
 
       <PressField
         v-if="dataShowField"

@@ -1,3 +1,6 @@
+/**
+ * @description 解析 SCSS 变量文件，生成主题默认配置 JSON
+ */
 const fs = require('fs');
 
 const PATH_MAP = {

@@ -1,3 +1,6 @@
+/**
+ * @description 发版配置，定义需要删除的文件和路径映射
+ */
 const path = require('path');
 
 const TO_DELETE_FILES = ['demo.vue', 'README.md', 'README.en-US.md', 'demo-helper/', 'tests'];

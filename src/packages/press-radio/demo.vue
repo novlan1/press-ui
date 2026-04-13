@@ -224,7 +224,7 @@ export default {
       customIcon: 'Custom Icon',
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
-      customIconSize: 'Custom IconPlus Size',
+      customIconSize: 'Custom Icon Size',
       disableLabel: 'Disable label click',
     },
   },

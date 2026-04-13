@@ -1,3 +1,6 @@
+/**
+ * @description 部署文档到 GitHub Pages（Unity 路径）
+ */
 const { execSync } = require('child_process');
 
 const { timeStampFormat } = require('t-comm');

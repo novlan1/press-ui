@@ -1,3 +1,6 @@
+/**
+ * @description 批量生成 TIM UserSig，用于即时通讯鉴权
+ */
 const TLSSigAPIv2 = require('tls-sig-api-v2');
 require('../utils/local-env')();
 

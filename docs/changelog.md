@@ -1,5 +1,26 @@
 # 更新日志
 
+### [5.0.11](https://github.com/novlan1/press-ui/compare/v5.0.10...v5.0.11) (2026-03-20)
+
+
+### Features 🎉
+
+* **press-dialog:** add slot for custom content in press dialog component(merge request !99) ([de5b828](https://github.com/novlan1/press-ui/commit/de5b82868b42eaa41b04c304bdf80210ca435f08))
+
+### [5.0.10](https://github.com/novlan1/press-ui/compare/v5.0.9...v5.0.10) (2025-12-30)
+
+
+### Features 🎉
+
+* **press-dialog:** add slot for custom content in press dialog component (merge request !98) ([fa1ac3c](https://github.com/novlan1/press-ui/commit/fa1ac3c8371e2ae38761e3dc7332587f007134cc))
+
+### [5.0.9](https://github.com/novlan1/press-ui/compare/v5.0.8...v5.0.9) (2025-10-31)
+
+
+### Features 🎉
+
+* **cropper:** update css import ([8faa545](https://github.com/novlan1/press-ui/commit/8faa54576f11dcb86be4a8c50f2a923d1568a332))
+
 ### [5.0.8](https://github.com/novlan1/press-ui/compare/v5.0.7...v5.0.8) (2025-10-30)
 
 

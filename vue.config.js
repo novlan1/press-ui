@@ -1,6 +1,5 @@
 const path = require('path');
 
-const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
 const { LOADER: crossGameStyle } = require('@plugin-light/webpack-loader-cross-game-style');
 const { LOADER: injectDynamicStyleMp } = require('@plugin-light/webpack-loader-inject-dynamic-style-mp');
 
@@ -15,6 +14,7 @@ const { FixNpmPackagePlugin } = require('@plugin-light/webpack-plugin-fix-npm-pa
 const { GenVersionMpPlugin, GenVersionWebPlugin } = require('@plugin-light/webpack-plugin-gen-version');
 const { RemToRpxPlugin } = require('@plugin-light/webpack-plugin-rem-to-rpx');
 const { ReplaceContentPlugin } = require('@plugin-light/webpack-plugin-replace-content');
+const { BUILD_NAME_MAP } = require('t-comm/lib/v-console/config');
 
 
 const LOADER_MAP = {

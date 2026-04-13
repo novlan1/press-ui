@@ -163,7 +163,7 @@ export default {
     'en-US': {
       checkbox: 'Checkbox',
       customIcon: 'Custom Icon',
-      customIconSize: 'Custom IconPlus Size',
+      customIconSize: 'Custom Icon Size',
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
       title3: 'Checkbox Group',

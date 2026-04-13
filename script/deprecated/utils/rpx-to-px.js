@@ -1,5 +1,5 @@
-const { writeFileSync, readFileSync } = require('t-comm');
 const glob = require('glob');
+const { writeFileSync, readFileSync } = require('t-comm');
 const pattern = new RegExp('([0-9.]*[0-9]+)([\\s]*)(rpx)', 'g');
 
 const factor = .5;

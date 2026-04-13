@@ -1,3 +1,6 @@
+/**
+ * @description 通用工具函数，封装组件配置相关方法
+ */
 const {
   ACT_DETAIL_COMPONENTS,
   hyphenate,

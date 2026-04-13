@@ -1,3 +1,6 @@
+/**
+ * @description 批量为 Vue 组件添加 name 属性
+ */
 const fs = require('fs');
 const path = require('path');
 

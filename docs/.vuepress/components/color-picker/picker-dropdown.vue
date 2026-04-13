@@ -145,5 +145,5 @@ export default {
 </style>
 
 <style lang="stylus" scoped>
-@require '../../theme/styles/button.styl';
+@require '~vuepress-theme-press/styles/button.styl';
 </style>

@@ -17,7 +17,7 @@
         :height="svgHeight"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        :style="
+        :style="'' +
           styles({
             padding: `0 ${gapX}px ${gapY}px 0`,
             opacity: opacity,
@@ -33,7 +33,7 @@
         :height="svgHeight"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
-        :style="
+        :style="'' +
           styles({
             padding: `0 ${gapX}px ${gapY}px 0`,
             opacity: opacity,
@@ -51,7 +51,7 @@
             :style="rotateStyle"
           >
             <slot name="content">
-              <span :style="`color: ${textColor}`">{{ content }}</span>
+              <span :style="'' + `color: ${textColor}`">{{ content }}</span>
             </slot>
           </div>
         </foreignObject>

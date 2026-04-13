@@ -1,3 +1,6 @@
+/**
+ * @description 从图标 CSS 中提取图标名称和 unicode，生成 icon.json
+ */
 const fs = require('fs');
 const path = require('path');
 

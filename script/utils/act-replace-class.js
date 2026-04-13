@@ -1,3 +1,6 @@
+/**
+ * @description 将活动组件中的原始 class 名替换为 press 命名规范
+ */
 const fs = require('fs');
 
 const { replaceAllPolyfill } = require('t-comm');

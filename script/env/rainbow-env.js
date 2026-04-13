@@ -1,3 +1,6 @@
+/**
+ * @description 从七彩石拉取环境变量并写入 .env.local
+ */
 const path = require('path');
 
 const { writeEnvFromRainbow } = require('t-comm');
@@ -12,8 +15,8 @@ async function main() {
     envPath,
     rainbowKey: DEPLOY_CONFIG.ENV_RAINBOW_KEY,
     envName: 'Default',
-    groupName: 'devops',
-    sdk: require(' '),
+    groupName: 'library_env',
+    sdk: require(''),
   });
 }
 

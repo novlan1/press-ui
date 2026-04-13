@@ -1,3 +1,6 @@
+/**
+ * @description 将组件从 press-ui 转换为 press-plus 格式（重命名 + 内容替换）
+ */
 const { randomString, pascalCase, execCommand, replaceContentSimple } = require('t-comm');
 
 const { CONFIG } = require('./config');
@@ -174,7 +177,7 @@ function replaceImport() {
 
 function replaceMetaConfig() {
   replaceContentSimple({
-    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json', ALL_FILE]),
+    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json']),
   });
 
   execCommand('npm run init', process.cwd(), 'inherit');
@@ -194,10 +197,16 @@ function main() {
   replaceContentSimple({
     replaceList: [
       {
-        list: [
-          ['DialogPlus', 'Dialog'],
+        list: rawList.map(item => [`${pascalCase(item)}Plus`, pascalCase(item)]),
+        dirList: [
+          // 'src/packages/press-dialog*/handler.js',
+          'src/packages/**/README.md',
+          'src/packages/**/README.en-US.md',
+          // 'src/packages/**/css/_var.scss',
+          // 'src/packages/**/demo-data/index.ts',
+          // 'src/packages/**/demo.vue',
+          // 'src/utils/i18n/title-i18n.json',
         ],
-        dirList: 'src/packages/press-dialog*/handler.js',
       },
       {
         list: [['pickerPlus', 'picker']],

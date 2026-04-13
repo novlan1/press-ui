@@ -1,6 +1,6 @@
 // press-ui-vue3 的文档，目前已不用
-const { readFileSync, writeFileSync } = require('t-comm');
 const glob = require('glob');
+const { readFileSync, writeFileSync } = require('t-comm');
 
 const GLOB_FILE = 'src/pages/**/*.vue';
 const MATCH_REG = /import\s+(\w+)\s+from\s+'press-ui\/(.*?);/g;

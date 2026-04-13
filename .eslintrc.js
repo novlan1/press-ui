@@ -20,6 +20,7 @@ module.exports = {
     weex: true,
     plus: true,
   },
+  plugins: ['light'],
   settings: {
     ...getESLintImportSettings({
       aliasMap: [['press-ui', './src/packages']],
@@ -41,6 +42,7 @@ module.exports = {
         'web-view',
       ],
     }],
+    // 'light/no-complex-style-class': 2,
     'import/no-unresolved': [2,
       {
         ignore: [

@@ -1,5 +1,5 @@
-const { execCommand } = require('t-comm');
 const glob = require('glob');
+const { execCommand } = require('t-comm');
 
 function main() {
   const list = glob.sync('src/packages/**/*.ts');

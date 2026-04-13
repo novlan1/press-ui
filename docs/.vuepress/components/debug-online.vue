@@ -66,7 +66,7 @@ export default {
 };
 </script>
 <style scoped lang="stylus">
-@require '../theme/styles/button.styl';
+@require '~vuepress-theme-press/styles/button.styl';
 
 .wrap {
   padding: 20px 0;

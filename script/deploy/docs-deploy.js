@@ -1,3 +1,6 @@
+/**
+ * @description 部署文档或 demo 到远端服务器
+ */
 const { execSync } = require('child_process');
 const ENV_FILE = '.env.local';
 

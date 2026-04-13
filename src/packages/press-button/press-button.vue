@@ -104,8 +104,8 @@ import { canIUseFormFieldButton } from '../common/utils/version';
 
 import { button } from '../mixins/basic/button';
 import PressIcon from '../press-icon/press-icon.vue';
-import PressLoading from '../press-loading/press-loading.vue';
 import PressLoadingPlus from '../press-loading-plus/press-loading-plus.vue';
+import PressLoading from '../press-loading/press-loading.vue';
 
 import { DEFAULT_SIZE_LIST, rootStyle, loadingColor } from './index';
 

@@ -1,3 +1,6 @@
+/**
+ * @description 为活动选择奖励组件的 CSS 添加隐藏提示样式
+ */
 const fs = require('fs');
 
 const { replaceAllPolyfill } = require('t-comm');

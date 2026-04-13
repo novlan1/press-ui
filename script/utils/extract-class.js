@@ -1,3 +1,6 @@
+/**
+ * @description 提取指定组件的 class 列表
+ */
 const { extractClass } = require('t-comm/lib/component/extract-class');
 
 // const reg = /(?!class=")(?=tip)([^"]+)/g;

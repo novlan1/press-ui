@@ -1,3 +1,6 @@
+/**
+ * @description 同步根目录 README.md 和 CONTRIBUTING.md 到 docs 目录
+ */
 const { readFileSync, writeFileSync } = require('t-comm');
 
 const CONTRIBUTING_CONFIG = {

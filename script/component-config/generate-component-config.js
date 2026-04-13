@@ -1,3 +1,6 @@
+/**
+ * @description 生成组件配置文件，扫描所有组件并输出到 component-config.json
+ */
 const path = require('path');
 
 const { generateComponentConfig } = require('@plugin-light/cli/script/generate-component-config/core');

@@ -1,3 +1,6 @@
+/**
+ * @description 批量执行 press-plus 内容替换
+ */
 const { replaceContent } = require('t-comm');
 
 const { CONFIG } = require('./config');

@@ -49,7 +49,7 @@ import { routerBack } from 'press-ui/common/utils/router';
 
 import PressButton from 'press-ui/press-button/press-button.vue';
 import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
-import DialogPlus from 'press-ui/press-dialog-plus';
+import Dialog from 'press-ui/press-dialog-plus';
 import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
 
