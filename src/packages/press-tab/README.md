@@ -165,7 +165,7 @@ export default {
 
 ### 嵌套 popup
 
-如果将 `press-tabs` 嵌套在 `press-popup` 等会隐藏内容的组件或节点内，当 `press-tabs` 显示时下划线将不会正常显示。
+如果将 `press-tabs` 嵌套在 `press-popup-plus` 等会隐藏内容的组件或节点内，当 `press-tabs` 显示时下划线将不会正常显示。
 
 此时可以通过使用 `v-if` 手动控制 press-tabs 的渲染来规避这种场景。
 

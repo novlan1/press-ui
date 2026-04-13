@@ -1,142 +1,87 @@
 <template>
-  <div
-    v-if="innerShow"
-    class="press-datetime-picker-popup"
+  <PressPopup
+    :show="show"
+    :z-index="zIndex"
+    position="bottom"
+    :close-on-click-overlay="closeOnClickOverlay"
+    @click-overlay="clickOverlay"
+    @close="cancel"
   >
-    <PressPopupPlus
-      :show-title="getPropOrData('showTitle')"
-      :close-icon="getPropOrData('closeIcon')"
-      :arrow-icon="getPropOrData('arrowIcon')"
-      :title="getPropOrData('title')"
-      :button="getPropOrData('button')"
-      :border-button="getPropOrData('borderButton')"
-      :z-index="getPropOrData('zIndex')"
-      :popup-class="getPropOrData('popupClass')"
-      :close-on-click-overlay="getPropOrData('closeOnClickOverlay')"
-      :custom-style="getPropOrData('customStyle')"
-      @confirm="confirm"
+    <PressDatetimePicker
+      :value="datetimePicker.value"
+      :show-toolbar="datetimePicker.showToolbar || false"
+      :item-height="datetimePicker.itemHeight || 56"
+      :type="datetimePicker.type || 'datetime'"
+      :max-date="datetimePicker.maxDate"
+      :min-date="datetimePicker.minDate"
+      :immediate-check="datetimePicker.immediateCheck"
+      :title="datetimePicker.title || ''"
+      :formatter="formatter"
+      :filter="filter"
+      @input="input"
       @cancel="cancel"
-    >
-      <div class="press-datetime-picker-popup__picker">
-        <PressDatetimePicker
-          ref="picker"
-          :value="getPropOrData('datetimePicker.value')"
-          :show-toolbar="getPropOrData('datetimePicker.showToolbar') || false"
-          :item-height="getPropOrData('datetimePicker.itemHeight') || 56"
-          :type="getPropOrData('datetimePicker.type') || 'datetime'"
-          :max-date="getPropOrData('datetimePicker.maxDate')"
-          :min-date="getPropOrData('datetimePicker.minDate')"
-          :immediate-check="immediateCheck"
-          :formatter="timeFormatter"
-          :filter="timeFilter"
-          @input="onInput"
-        />
-      </div>
-
-      <div
-        v-if="tip"
-        class="press-datetime-picker-popup__tip"
-      >
-        {{ tip }}
-      </div>
-    </PressPopupPlus>
-  </div>
+      @confirm="confirm"
+    />
+  </PressPopup>
 </template>
-
 <script>
-import { getVirtualHostOptions } from '../common/component-handler/press-component';
-import { functionalMixin } from '../mixins/basic/functional';
-import { PRESS_POPUP_CELL_PROPS } from '../press-popup-cell/computed';
-import PressPopupPlus from '../press-popup-plus/press-popup-plus.vue';
+import PressPopup from '../press-popup/press-popup.vue';
 
+import { defaultFormatter } from './helper';
 import PressDatetimePicker from './press-datetime-picker.vue';
 
 
-let gThis;
-
-const componentProps = {
-  ...PRESS_POPUP_CELL_PROPS,
-  datetimePicker: {
-    type: Object,
-    default: () => ({}),
-  },
-  tip: {
-    type: String,
-    default: '',
-  },
-};
-
 export default {
   name: 'PressDatetimePickerPopup',
-  options: {
-    ...getVirtualHostOptions(true, false),
-  },
   components: {
-    PressPopupPlus,
+    PressPopup,
     PressDatetimePicker,
   },
-  mixins: [functionalMixin(componentProps)],
   props: {
+    show: {
+      type: Boolean,
+      default: false,
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    datetimePicker: {
+      type: Object,
+      default: () => ({}),
+    },
+    // 不可通过 datetimePicker.formatter 传入，小程序下，JSON 序列化时会被去掉
+    formatter: {
+      type: [Function, null],
+      default: defaultFormatter,
+    },
+    filter: {
+      type: [Function, null],
+      default: null,
+    },
+    zIndex: {
+      type: Number,
+      default: 100,
+    },
   },
-  emits: [],
   data() {
     return {
-      currentValue: this.getPropOrData('datetimePicker.value'),
+
     };
   },
-  computed: {
-    immediateCheck() {
-      const res = this.getPropOrData('datetimePicker.immediateCheck') || true;
-      return res;
-    },
-  },
-  watch: {
-  },
-  created() {
-    gThis = this;
-  },
-  mounted() {
-  },
   methods: {
-    noop() {},
-    emitEvent(action) {
-      const params = { context: this, value: this.currentValue };
-      this.$emit(action);
-      this.promiseCallback(action, params);
+    input(value) {
+      this.$emit('input', value);
     },
-    confirm() {
-      this.emitEvent('confirm');
+    cancel(...args) {
+      this.$emit('cancel', ...args);
     },
-    cancel() {
-      this.emitEvent('cancel');
+    confirm(...args) {
+      this.$emit('confirm', ...args);
     },
-    onInput(value) {
-      this.currentValue = value;
-      this.getPropOrData('datetimePicker.input')?.(value);
-    },
-    timeFilter(type, values, current) {
-      const result = gThis.getPropOrData('datetimePicker.filter') || null;
-      if (result) {
-        return result(type, values, current);
-      }
-      return values;
-    },
-    timeFormatter(type, value, current) {
-      const result = gThis.getPropOrData('datetimePicker.formatter') || null;
-      if (result) {
-        return result(type, value, current);
-      }
-      return value;
+    clickOverlay() {
+      this.$emit('click-overlay');
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.press-datetime-picker-popup {
-  &__picker {
-  }
-  &__tip {
-  }
-}
-</style>

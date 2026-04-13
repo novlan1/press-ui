@@ -197,29 +197,29 @@ Page({
 
 ### 结合 Popup
 
-提供了 `datetime-picker-popup-plus`。本质上是对 `popup-plus` 组件和 `datetime-picker` 的封装。
+提供了 `press-datetime-picker-popup`。本质上是对 `press-popup` 组件和 `press-datetime-picker` 的封装。
 
-`popup-plus` 的参数展平传入，`datetime-picker` 的参数除 `filter/formatter` 展平传入外，其他属性通过 `datetimePicker` 对象控制。
+`press-popup` 的参数展平传入，`datetime-picker` 的参数除 `filter/formatter` 展平传入外，其他属性通过 `datetimePicker` 对象控制。
 
 ```html
 <PressDatetimePickerPopup
-  :show="popupPlus.show"
-  :datetime-picker="popupPlus.datetimePicker"
+  :show="dialog.show"
+  :datetime-picker="dialog.datetimePicker"
   :formatter="formatter"
   :filter="filter"
-  @cancel="popupPlus.show = false"
+  @cancel="dialog.show = false"
   @confirm="onConfirm"
   @input="onInput"
 />
 ```
 
 ```ts
-import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
 
 export default {
   data() {
     return {
-      popupPlus: {
+      dialog: {
         show: false,
         datetimePicker: {
           showToolbar: true,
@@ -235,7 +235,7 @@ export default {
       this.onTip(`${timeStampFormat(event, 'yyyy-MM-dd hh:mm')}`);
     },
     onConfirm(value) {
-      this.popupPlus.show = false;
+      this.dialog.show = false;
       console.log('[confirm]', value);
       this.onInput(value);
     }
@@ -266,10 +266,9 @@ type IProps = {
 
 ### 搭配弹出层使用
 
-提供了 `datetime-picker-popup`，并支持函数式调用。本质上是对 `popup` 组件和 `datetime-picker` 的封装。
+提供了 `press-datetime-picker-popup-plus`，并支持函数式调用。本质上是对 `press-popup-plus` 组件和 `press-datetime-picker` 的封装。
 
-`popup` 的参数展平传入，`datetime-picker` 的参数可传入 `datetimePicker` 对象。
-
+`press-popup-plus` 的参数展平传入，`press-datetime-picker`的参数可传入 `datetimePicker` 对象。
 
 ```html
 <PressDatetimePickerPopup
@@ -280,7 +279,7 @@ type IProps = {
 ```
 
 ```ts
-import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
 import { showFunctionalComponent } from 'press-ui/common/functional-component/index';
 
 

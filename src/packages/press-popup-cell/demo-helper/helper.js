@@ -9,7 +9,7 @@ export const FUNCTIONAL_ID_MAP = {
   POPUP_CELL: 'press-popup-cell-functional',
   POPUP_CELL_2: 'press-popup-cell-functional-2',
   PICKER: 'press-picker-functional',
-  DATE_TIME_PICKER: 'press-datetime-picker-popup-functional',
+  DATE_TIME_PICKER: 'press-datetime-picker-popup-plus-functional',
 };
 
 export const BATCH_SET_MAP = {

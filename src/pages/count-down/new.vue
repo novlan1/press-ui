@@ -34,7 +34,7 @@
       </PressButton>
     </div>
 
-    <PressDatetimePickerPopup
+    <PressDatetimePickerPopupPlus
       :id="DATE_TIME_PICKER_ID"
       :ref="DATE_TIME_PICKER_ID"
       mode="functional"
@@ -48,7 +48,7 @@ import { showFunctionalComponent } from 'press-ui/common/functional-component/in
 import { routerBack } from 'press-ui/common/utils/router';
 
 import PressButton from 'press-ui/press-button/press-button.vue';
-import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup.vue';
+import PressDatetimePickerPopupPlus from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
 import Dialog from 'press-ui/press-dialog-plus';
 import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 import PressField from 'press-ui/press-field/press-field.vue';
@@ -70,7 +70,7 @@ export default {
   components: {
     PressField,
     PressButton,
-    PressDatetimePickerPopup,
+    PressDatetimePickerPopupPlus,
     PressDialogPlus,
   },
   data() {

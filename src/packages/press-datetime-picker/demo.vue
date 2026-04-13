@@ -80,13 +80,13 @@
       />
     </demo-block>
 
-    <PressDatetimePickerPopup
+    <PressDatetimePickerPopupPlus
       :id="DATE_TIME_PICKER_ID"
       :ref="DATE_TIME_PICKER_ID"
       mode="functional"
     />
 
-    <PressDatetimePickerPopupPlus
+    <PressDatetimePickerPopup
       :show="popupPlus.show"
       :datetime-picker="popupPlus.datetimePicker"
       :formatter="formatter"
@@ -206,9 +206,9 @@ export default {
   },
   components: {
     PressDatetimePicker,
-    PressDatetimePickerPopup,
-    PressCell,
     PressDatetimePickerPopupPlus,
+    PressCell,
+    PressDatetimePickerPopup,
   },
   data() {
     that = this;

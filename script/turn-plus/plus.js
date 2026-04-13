@@ -1,7 +1,10 @@
 /**
  * @description 将组件从 press-ui 转换为 press-plus 格式（重命名 + 内容替换）
  */
-const { randomString, pascalCase, execCommand, replaceContentSimple } = require('t-comm');
+const fs = require('fs');
+
+const glob = require('glob');
+const { randomString, pascalCase, execCommand } = require('t-comm');
 
 const { CONFIG } = require('./config');
 const { batchRenameSync } = require('./rename');
@@ -25,7 +28,11 @@ function getRenameConfig(rawList) {
   const renameConfig = {};
   const renameConfig2 = {};
   const renameConfig3 = {};
-  for (const item of rawList) {
+  const iRawList = [
+    ...rawList,
+    'datetime-picker-popup'
+  ];
+  for (const item of iRawList) {
     const plusKey = `press-${item}-plus`;
     const key = `press-${item}`;
     const tempKey = randomString(6);
@@ -77,6 +84,8 @@ function getReplaceList(rawList, dirList) {
     ['/', '.vue'], // 文件引入
     ['<', ''],
     ['</', '>'],
+    // 会影响 press-icon 等文档的错误
+    // ['`', '`'],
   ];
   // const pascalCasePrefixList = [
   //   // ['"', '"'],s
@@ -142,6 +151,58 @@ function getReplaceList(rawList, dirList) {
   ];
 }
 
+const generatedReplaceList = getReplaceList(rawList, [ALL_FILE]);
+console.log('generatedReplaceList', generatedReplaceList, JSON.stringify(generatedReplaceList, null, 2));
+
+/**
+ * 批量替换文件内容（性能优化版）
+ * 将同 dirList 的规则合并，每个文件只读写一次
+ */
+function replaceContentBatch(replaceList) {
+  // 按 dirList 分组，将相同 dirList 的规则合并
+  const groupMap = new Map();
+
+  for (const item of replaceList) {
+    const { dirList, list } = item;
+    if (!list || !list.length) continue;
+
+    const newDir = Array.isArray(dirList) ? dirList : [dirList];
+    const dirKey = JSON.stringify(newDir.sort());
+
+    if (!groupMap.has(dirKey)) {
+      groupMap.set(dirKey, { dirList: newDir, rules: [] });
+    }
+    groupMap.get(dirKey).rules.push(...list);
+  }
+
+  for (const [, { dirList, rules }] of groupMap) {
+    const files = glob.sync(dirList);
+
+    for (const file of files) {
+      if (fs.statSync(file).isDirectory()) continue;
+
+      let content = fs.readFileSync(file, 'utf-8');
+      let changed = false;
+
+      for (const [from, to] of rules) {
+        const newContent = typeof from === 'string'
+          ? content.replaceAll(from, to)
+          : content.replace(from, to);
+
+        if (newContent !== content) {
+          content = newContent;
+          changed = true;
+        }
+      }
+
+      if (changed) {
+        fs.writeFileSync(file, content);
+        console.log(`[Replace Content Batch]: 文件: ${file}`);
+      }
+    }
+  }
+}
+
 const config = {
   targetProject: CONFIG.targetProject,
   renameRoot: 'src/packages',
@@ -157,10 +218,26 @@ const config = {
     },
     {
       list: [
-        ['press-picker-plus-popup-plus', 'abcdPickerAPopupD'],
+        // 注意先替换长的，再替换短的
+        ['press-picker-plus-popup-plus', 'V6AvnbHe6DPhb8'],
         ['press-picker-popup', 'press-picker-plus-popup-plus'],
-        ['abcdPickerAPopupD', 'press-picker-popup'],
+        ['V6AvnbHe6DPhb8', 'press-picker-popup'],
+
         ['PressPickerPlusPopupPlus', 'PressPickerPopup'],
+
+        ['press-datetime-picker-popup-plus', 'GQAe02CG1ZVeA'],
+        ['press-datetime-picker-popup', 'press-datetime-picker-popup-plus'],
+        ['GQAe02CG1ZVeA', 'press-datetime-picker-popup'],
+
+        ['PressDatetimePickerPopupPlus', 'jffUY8OEUpwwh9qF'],
+        ['PressDatetimePickerPopup', 'PressDatetimePickerPopupPlus'],
+        ['jffUY8OEUpwwh9qF', 'PressDatetimePickerPopup'],
+
+        ['`press-popup-plus`', '`cSrpXXJT4jxv6E`'],
+        ['`press-popup`', '`press-popup-plus`'],
+        ['`cSrpXXJT4jxv6E`', '`press-popup`'],
+
+
       ],
       dirList: [ALL_FILE],
 
@@ -170,15 +247,11 @@ const config = {
 };
 
 function replaceImport() {
-  replaceContentSimple({
-    replaceList: config.replaceList,
-  });
+  replaceContentBatch(config.replaceList);
 }
 
 function replaceMetaConfig() {
-  replaceContentSimple({
-    replaceList: getMetaConfigReplaceList(rawList, ['config/component-config.json']),
-  });
+  replaceContentBatch(getMetaConfigReplaceList(rawList, ['config/component-config.json']));
 
   execCommand('npm run init', process.cwd(), 'inherit');
 }
@@ -194,35 +267,33 @@ function main() {
   replaceImport();
   replaceMetaConfig();
 
-  replaceContentSimple({
-    replaceList: [
-      {
-        list: rawList.map(item => [`${pascalCase(item)}Plus`, pascalCase(item)]),
-        dirList: [
-          // 'src/packages/press-dialog*/handler.js',
-          'src/packages/**/README.md',
-          'src/packages/**/README.en-US.md',
-          // 'src/packages/**/css/_var.scss',
-          // 'src/packages/**/demo-data/index.ts',
-          // 'src/packages/**/demo.vue',
-          // 'src/utils/i18n/title-i18n.json',
-        ],
-      },
-      {
-        list: [['pickerPlus', 'picker']],
-        dirList: ['src/packages/common/constant/parent-map.js'],
-      },
-      {
-        // 顶层类名
-        list: [['press-popup-plus', 'press-popup__wrap']],
-        dirList: ['src/packages/press-popup/press-popup.vue'],
-      },
-      {
-        list: [['press-icon-plus-plus', 'press-icon']],
-        dirList: ['src/packages/press-icon/css/index.scss'],
-      },
-    ],
-  });
+  replaceContentBatch([
+    {
+      list: rawList.map(item => [`${pascalCase(item)}Plus`, pascalCase(item)]),
+      dirList: [
+        // 'src/packages/press-dialog*/handler.js',
+        'src/packages/**/README.md',
+        'src/packages/**/README.en-US.md',
+        // 'src/packages/**/css/_var.scss',
+        // 'src/packages/**/demo-data/index.ts',
+        // 'src/packages/**/demo.vue',
+        // 'src/utils/i18n/title-i18n.json',
+      ],
+    },
+    {
+      list: [['pickerPlus', 'picker']],
+      dirList: ['src/packages/common/constant/parent-map.js'],
+    },
+    {
+      // 顶层类名
+      list: [['press-popup-plus', 'press-popup__wrap']],
+      dirList: ['src/packages/press-popup/press-popup.vue'],
+    },
+    {
+      list: [['press-icon-plus-plus', 'press-icon']],
+      dirList: ['src/packages/press-icon/css/index.scss'],
+    },
+  ]);
 }
 
 main();

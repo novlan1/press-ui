@@ -93,7 +93,7 @@ module.exports = {
     // 共享主题参数化配置
     demoBaseLinkProd: 'https://novlan1.github.io/docs/press-ui/h5/#/',
     demoBaseLinkDev: 'http://localhost:9999/#/',
-    // knotAgentChatPath: 'node_modules/press-plus/press-knot-agent-chat/press-knot-agent-chat.vue',
+    knotAgentChatPath: 'node_modules/press-plus/press-knot-agent-chat/press-knot-agent-chat.vue',
     // Knot Agent Chat 配置，填入你的 agentId 即可启用 AI 问答助手
     agentId: '',
     logo: {
