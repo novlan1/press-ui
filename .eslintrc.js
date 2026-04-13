@@ -42,7 +42,7 @@ module.exports = {
         'web-view',
       ],
     }],
-    // 'light/no-complex-style-class': 2,
+    'light/no-complex-style-class': 2,
     'import/no-unresolved': [2,
       {
         ignore: [

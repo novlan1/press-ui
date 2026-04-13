@@ -88,7 +88,6 @@
 </template>
 <script>
 import PressNumberKeyboard from 'press-ui/press-number-keyboard/press-number-keyboard.vue';
-
 import PressPasswordInput from 'press-ui/press-password-input/press-password-input.vue';
 
 
