@@ -62,22 +62,22 @@ Specify icon width and height:
 
 ## API
 
-### IconPlus Props
+### Icon Props
 
 | property name | type   | default value | description                        |
 | ------------- | ------ | ------------- | ---------------------------------- |
-| size          | Number | 24            | IconPlus size                          |
+| size          | Number | 24            | Icon size                          |
 | type          | String | -             | icon pattern, refer to the example |
 | color         | String | -             | icon color                         |
 
-### IconPlus Events
+### Icon Events
 
 | event name | description                      | return value |
 | ---------- | -------------------------------- | ------------ |
-| @click     | Click the IconPlus to fire the event | -            |
+| @click     | Click the Icon to fire the event | -            |
 
 
-### IconPlus Music Props
+### Icon Music Props
 
 
 | property name | type   | default value | description                                   |

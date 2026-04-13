@@ -249,7 +249,7 @@ export default {
 | closeable       | 是否显示关闭图标                                                          | _boolean_            | `true`                                                   |
 | ellipsis        | 是否省略过长的标题文字, 关闭后文字过长会出现横向滚动                      | _boolean_            | `true`                                                   |
 | show-header     | 是否展示标题栏                                                            | _boolean_            | `true`                                                   |
-| close-icon      | 关闭图标名称或图片链接，等同于 IconPlus 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
+| close-icon      | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](./press-icon-plus) | _string_             | `cross`                                                  |
 | field-names     | 自定义 `options` 结构中的字段                                             | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | use-title-slot  | 是否使用自定义标题的插槽                                                  | _boolean_            | `false`                                                  |
 | tabs-style      | 作用在 `press-tabs` 节点上的自定义样式                                    | _string \| object_   | -                                                        |

@@ -314,7 +314,7 @@ onConfirm(option) {
 },
 ```
 
-### 从 PressPickerPlus 迁移
+### 从 PressPicker 迁移
 
 1. 引入路径修改，改成
    

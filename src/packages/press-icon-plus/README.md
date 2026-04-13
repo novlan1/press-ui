@@ -2,18 +2,18 @@
 url : pages/press/icon-plus/icon-plus
 ---
 
-## IconPlus 图标
+## Icon 图标
 
 基于字体的图标集，可以通过 `Icon` 组件使用，也可以在其他组件中通过 `icon` 属性引用。
 
 ## 引入
 
 ```ts
-import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
+import PressIcon from 'press-ui/press-icon-plus/press-icon-plus.vue';
 
 export default {
   components: {
-    PressIconPlus,
+    PressIcon,
   }
 }
 ```
@@ -71,7 +71,7 @@ export default {
 
 ## API
 
-### IconPlus Props
+### Icon Props
 
 | 参数  | 说明               | 类型     | 默认值 |
 | ----- | ------------------ | -------- | ------ |
@@ -79,13 +79,13 @@ export default {
 | type  | 图标图案，参考示例 | _string_ | -      |
 | color | 图标颜色           | _string_ | -      |
 
-### IconPlus Events
+### Icon Events
 
 | 事件名 | 说明               | 返回值 |
 | ------ | ------------------ | ------ |
-| @click | 点击 IconPlus 触发事件 | -      |
+| @click | 点击 Icon 触发事件 | -      |
 
-### IconPlus Music Props
+### Icon Music Props
 
 | 参数   | 说明                | 类型     | 默认值    |
 | ------ | ------------------- | -------- | --------- |

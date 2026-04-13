@@ -77,7 +77,7 @@ export default{
 <press-switch :checked="checked" @change="onChange" />
 
 <!-- #ifndef H5 -->
-<PressDialogPlus
+<PressDialog
   id="tip-match-comm-tips-dialog"
 />
 <!-- #endif -->

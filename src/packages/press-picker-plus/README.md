@@ -2,18 +2,18 @@
 url : pages/press/picker-plus/picker-plus
 ---
 
-## PickerPlus 选择器
+## Picker 选择器
 
 选择器组件，用于表单。
 
 ## 引入
 
 ```ts
-import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
+import PressPicker from 'press-ui/press-picker-plus/press-picker-plus.vue';
 
 export default {
   components: {
-    PressPickerPlus,
+    PressPicker,
   }
 }
 ```

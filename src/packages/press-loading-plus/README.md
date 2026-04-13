@@ -2,7 +2,7 @@
 url : pages/press/loading-plus/loading-plus
 ---
 
-## LoadingPlus 加载中
+## Loading 加载中
 
 加载中，分为图片模式和页面模式两种。
 
@@ -10,11 +10,11 @@ url : pages/press/loading-plus/loading-plus
 ## 引入
 
 ```ts
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
+import PressLoading from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
   components: {
-    PressLoadingPlus,
+    PressLoading,
   }
 }
 ```
@@ -37,11 +37,11 @@ export default {
 </template>
 
 <script>
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
+import PressLoading from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
   component: {
-    PressLoadingPlus,
+    PressLoading,
   },
 };
 

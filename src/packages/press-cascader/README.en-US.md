@@ -211,7 +211,7 @@ export default {
 | closeable      | Whether to display the close icon                                                                          | _boolean_            | `true`                                                   |
 | ellipsis       | Whether to omit long title text. If the text is too long, horizontal scrolling will occur after closing    | _boolean_            | `true`                                                   |
 | show-header    | Whether to display the title bar                                                                           | _boolean_            | `true`                                                   |
-| close-icon     | Close icon name or image link, equivalent to the [name attribute](./press-icon-plus) of the IconPlus component | _string_             | `cross`                                                  |
+| close-icon     | Close icon name or image link, equivalent to the [name attribute](./press-icon-plus) of the Icon component | _string_             | `cross`                                                  |
 | field-names    | Customize the fields in the `options` structure                                                            | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | use-title-slot | Whether to use the slot for the custom title                                                               | _boolean_            | `false`                                                  |
 

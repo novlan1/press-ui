@@ -133,7 +133,7 @@ The left and right content of the `Cell` can be vertically centered through the 
 
 | Parameter       | Description                                                             | Type               | Default      |
 | --------------- | ----------------------------------------------------------------------- | ------------------ | ------------ |
-| icon            | Left icon name or image link, see IconPlus component for optional values    | _string_           | -            |
+| icon            | Left icon name or image link, see Icon component for optional values    | _string_           | -            |
 | title           | left title                                                              | _string \| number_ | -            |
 | title-width     | Title width, must include units                                         | _string_           | -            |
 | value           | right side content                                                      | _string \| number_ | -            |

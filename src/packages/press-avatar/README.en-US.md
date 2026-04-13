@@ -48,7 +48,7 @@ Set the size via `size`.
 />
 ```
 
-### IconPlus avatar
+### Icon avatar
 
 Set the icon avatar through `icon`.
 

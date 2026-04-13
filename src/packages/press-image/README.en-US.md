@@ -56,7 +56,7 @@ The image can be set to be rounded through the `round` attribute.
    :src="src"
 />
 ```
-### LoadingPlus prompt
+### Loading prompt
 
 The `Image` component provides a default loading prompt and supports custom content through the `loading` slot.
 
@@ -71,7 +71,7 @@ The `Image` component provides a default loading prompt and supports custom cont
 </PressImage>
 ```
 
-### LoadingPlus failure prompt
+### Loading failure prompt
 
 The `Image` component provides a default loading failure prompt and supports custom content through the `error` slot.
 
@@ -100,8 +100,8 @@ The `Image` component provides a default loading failure prompt and supports cus
 | radius                 | rounded corner value, unit is arbitrary, if it is a numerical value, it is in `px` unit                                 | _number_           | `0`           |
 | lazy-load              | Whether to lazy load, only valid for WeChat mini-programs, Apps, Baidu mini-programs, and ByteDance mini-programs       | _boolean_          | `false`       |
 | show-menu-by-longpress | Whether to enable the long press image to display the recognition applet code menu, only valid for WeChat applet        | _boolean_          | `false`       |
-| loading-icon           | LoadingPlus icon, or small picture                                                                                          | _string_           | `photo`       |
-| error-icon             | IconPlus or small picture that failed to load                                                                               | _string_           | `photo-fail`  |
+| loading-icon           | Loading icon, or small picture                                                                                          | _string_           | `photo`       |
+| error-icon             | Icon or small picture that failed to load                                                                               | _string_           | `photo-fail`  |
 | show-loading           | Whether to display loading icons or custom `slot`                                                                       | _boolean_          | `true`        |
 | show-error             | Whether to display the loading error icon or a custom `slot`                                                            | _boolean_          | `true`        |
 | fade                   | Whether a fade-in effect is required                                                                                    | _boolean_          | `true`        |

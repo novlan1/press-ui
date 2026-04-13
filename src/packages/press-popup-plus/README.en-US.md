@@ -27,7 +27,7 @@ Set `close-icon` to `true`.
      <div class="content">
        some content
      </div>
-   </PressPopupPlus>
+   </PressPopup>
 </template>
 ```
 
@@ -70,7 +70,7 @@ Set `close-icon` to `true` and `arrow-icon` to `true`.
      <div class="content">
        some content
      </div>
-   </PressPopupPlus>
+   </PressPopup>
 </template>
 ```
 
@@ -93,7 +93,7 @@ Set `close-icon` to `false` and `arrow-icon` to `false`.
      <div class="content">
        some content
      </div>
-   </PressPopupPlus>
+   </PressPopup>
 </template>
 ```
 
@@ -119,7 +119,7 @@ Set `border-button` to `true`.
      <div class="content">
        some content
      </div>
-   </PressPopupPlus>
+   </PressPopup>
 </template>
 ```
 
@@ -142,7 +142,7 @@ Set `horizontal` to `true`.
      <div class="content">
        some content
      </div>
-   </PressPopupPlus>
+   </PressPopup>
 </template>
 ```
 
@@ -163,7 +163,7 @@ An asynchronous shutdown will be triggered when there is `validateConfirm` in th
    <div class="content">
      {{ t('SomeContent') }}
    </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 ```ts
@@ -246,7 +246,7 @@ export default {
 
 ## API
 
-### PopupPlus Props
+### Popup Props
 
 | property name          | type                                 | default value | description                                                                                 |
 | ---------------------- | ------------------------------------ | ------------- | :------------------------------------------------------------------------------------------ |
@@ -269,7 +269,7 @@ export default {
 
 
 
-### PopupPlus Events
+### Popup Events
 
 | event name | description     | return value |
 | ---------- | --------------- | ------------ |

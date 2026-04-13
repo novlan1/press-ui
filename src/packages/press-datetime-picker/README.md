@@ -195,14 +195,14 @@ Page({
 });
 ```
 
-### 结合 PopupPlus
+### 结合 Popup
 
 提供了 `datetime-picker-popup-plus`。本质上是对 `popup-plus` 组件和 `datetime-picker` 的封装。
 
 `popup-plus` 的参数展平传入，`datetime-picker` 的参数除 `filter/formatter` 展平传入外，其他属性通过 `datetimePicker` 对象控制。
 
 ```html
-<PressDatetimePickerPopupPlus
+<PressDatetimePickerPopup
   :show="popupPlus.show"
   :datetime-picker="popupPlus.datetimePicker"
   :formatter="formatter"
@@ -214,7 +214,7 @@ Page({
 ```
 
 ```ts
-import PressDatetimePickerPopupPlus from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
+import PressDatetimePickerPopup from 'press-ui/press-datetime-picker/press-datetime-picker-popup-plus.vue';
 
 export default {
   data() {

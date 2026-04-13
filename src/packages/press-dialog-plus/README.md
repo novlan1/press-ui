@@ -2,7 +2,7 @@
 url : pages/press/dialog-plus/dialog-plus
 ---
 
-## DialogPlus 弹窗
+## Dialog 弹窗
 
 
 弹窗组件，支持函数式调用
@@ -10,11 +10,11 @@ url : pages/press/dialog-plus/dialog-plus
 ## 引入
 
 ```ts
-import PressDialogPlus from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
+import PressDialog from 'press-ui/press-dialog-plus/press-dialog-plus.vue';
 
 export default {
   components: {
-    PressDialogPlus,
+    PressDialog,
   }
 }
 ```
@@ -128,7 +128,7 @@ export default {
 多例模式可以用组件调用方式，以及动态改变按钮文案，比如实现倒计时，也可以用组件模式。
 
 ```html
-<PressDialogPlus
+<PressDialog
   title="标题"
   :show="show"
   content="Some fake news"
@@ -179,10 +179,10 @@ setDialogDefaultOptions({
 
 | 方法名                                                   | 参数      | 返回值    | 介绍                             |
 | -------------------------------------------------------- | --------- | --------- | -------------------------------- |
-| DialogPlus                                                   | `options` | `Promise` | 展示弹窗                         |
+| Dialog                                                   | `options` | `Promise` | 展示弹窗                         |
 | showDialog，同 Dialog.show                               | `options` | `Promise` | 展示消息确认弹窗                 |
-| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 DialogPlus 生效 |
-| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 DialogPlus 生效 |
+| setDialogDefaultOptions，同 Dialog.setDefaultOptions     | `options` | `void`    | 修改默认配置，对所有 Dialog 生效 |
+| resetDialogDefaultOptions，同 Dialog.resetDefaultOptions | -         | `void`    | 重置默认配置，对所有 Dialog 生效 |
 
 
 ### Props

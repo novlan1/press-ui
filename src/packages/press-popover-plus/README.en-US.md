@@ -2,9 +2,9 @@
 url : pages/press/popover-plus/popover-plus
 ---
 
-## PopoverPlus 
+## Popover 
 
-A type of popup layer, which is partial compared to PopupPlus and can be used to host some tabs.
+A type of popup layer, which is partial compared to Popup and can be used to host some tabs.
 
 ## Code Demo
 
@@ -24,7 +24,7 @@ A type of popup layer, which is partial compared to PopupPlus and can be used to
      >
        options {{ item }}
      </div>
-   </PressPopoverPlus>
+   </PressPopover>
 </div>
 ```
 

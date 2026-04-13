@@ -139,9 +139,9 @@ export default {
 };
 ```
 
-### LoadingPlus Status
+### Loading Status
 
-When the PickerPlus data is fetched asynchronously, the loading hint can be displayed through the `loading` property.
+When the Picker data is fetched asynchronously, the loading hint can be displayed through the `loading` property.
 
 ```html
   <press-picker
@@ -171,13 +171,13 @@ When the PickerPlus data is fetched asynchronously, the loading hint can be disp
 
 ### Events
 
-The event of the PickerPlus component will return different parameters depending on whether the columns are single column or multiple columns.
+The event of the Picker component will return different parameters depending on whether the columns are single column or multiple columns.
 
 | Event Name | Description                                 | Parameters                                                                                                                                                                                            |
 | ---------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | confirm    | Triggered when the Done button is clicked   | Single column: selected value, index corresponding to the selected value<br>Multiple columns: selected value of all columns, index corresponding to the selected value of all columns                 |
 | cancel     | Triggered when the cancel button is clicked | Single column: selected value, index corresponding to the selected value<br>Multiple columns: selected value of all columns, index corresponding to the selected value of all columns                 |
-| change     | Triggered when the option is changed        | Single column: PickerPlus instance, selected value, index corresponding to the selected value<br>Multi-column: PickerPlus instance, selected values of all columns, index corresponding to the current column |
+| change     | Triggered when the option is changed        | Single column: Picker instance, selected value, index corresponding to the selected value<br>Multi-column: Picker instance, selected values of all columns, index corresponding to the current column |
 
 ### Columns data structure
 

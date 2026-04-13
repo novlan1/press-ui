@@ -2,7 +2,7 @@
 url : pages/press/loading-plus/loading-plus
 ---
 
-## LoadingPlus 
+## Loading 
 
 Loading, divided into picture mode and page mode
 
@@ -22,7 +22,7 @@ Loading, divided into picture mode and page mode
 </template>
 
 <script>
-import PressLoadingPlus from 'press-ui/press-loading-plus/press-loading-plus.vue';
+import PressLoading from 'press-ui/press-loading-plus/press-loading-plus.vue';
 
 export default {
    component: {

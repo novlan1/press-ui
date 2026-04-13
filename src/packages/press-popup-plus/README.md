@@ -2,7 +2,7 @@
 url : pages/press/popup-plus/popup-plus
 ---
 
-## PopupPlus 弹出层
+## Popup 弹出层
 
 
 弹出层组件，在应用中弹出一个消息提示窗口、提示框等
@@ -11,11 +11,11 @@ url : pages/press/popup-plus/popup-plus
 ## 引入
 
 ```ts
-import PressPopupPlus from 'press-ui/press-popup-plus/press-popup-plus.vue';
+import PressPopup from 'press-ui/press-popup-plus/press-popup-plus.vue';
 
 export default {
   components: {
-    PressPopupPlus,
+    PressPopup,
   }
 }
 ```
@@ -29,7 +29,7 @@ export default {
 
 ```html
 <template>
-  <PressPopupPlus
+  <PressPopup
     v-if="show"
     :close-icon="true"
     :arrow-icon="false"
@@ -41,7 +41,7 @@ export default {
     <div class="content">
       一些内容
     </div>
-  </PressPopupPlus>
+  </PressPopup>
 </template>
 ```
 
@@ -71,7 +71,7 @@ export default {
 
 
 ```html
-<PressPopupPlus
+<PressPopup
   v-if="show"
   :close-icon="false"
   :arrow-icon="true"
@@ -83,7 +83,7 @@ export default {
   <div class="content">
     一些内容
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 ### 没有关闭/取消
@@ -92,7 +92,7 @@ export default {
 
 
 ```html
-<PressPopupPlus
+<PressPopup
   v-if="show"
   :close-icon="false"
   :arrow-icon="false"
@@ -104,7 +104,7 @@ export default {
   <div class="content">
     一些内容
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 
@@ -115,7 +115,7 @@ export default {
 
 
 ```html
-<PressPopupPlus
+<PressPopup
   v-if="show"
   :close-icon="true"
   :arrow-icon="false"
@@ -128,7 +128,7 @@ export default {
   <div class="content">
     一些内容
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 ### 横版
@@ -137,7 +137,7 @@ export default {
 
 
 ```html
-<PressPopupPlus
+<PressPopup
   v-if="show"
   :close-icon="true"
   :horizontal="true"
@@ -149,7 +149,7 @@ export default {
   <div class="content">
     一些内容
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 
@@ -157,7 +157,7 @@ export default {
 
 
 ```html
-<PressPopupPlus
+<PressPopup
   v-if="show"
   :close-icon="true"
   :horizontal="true"
@@ -189,7 +189,7 @@ export default {
   <div class="content">
     {{ t('SomeContent') }}
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 
@@ -199,7 +199,7 @@ export default {
 可传入`asyncConfirm`、`asyncCancel`方法控制异步关闭，如果返回`false`或`Promise<false>`则不会关闭`popup`。
 
 ```html
- <PressPopupPlus
+ <PressPopup
   :close-icon="false"
   :arrow-icon="false"
   :button="t('confirm')"
@@ -209,7 +209,7 @@ export default {
   <div class="content">
     {{ t('SomeContent') }}
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 ```ts
@@ -274,7 +274,7 @@ export default {
 为了使用更简单，同时兼容历史代码，`popup`内部做了一些优化，推荐用这种方式使用(`v0.7.35`之后)：
 
 ```html
-<PressPopupPlus
+<PressPopup
   :is-show="show"
   button="确认"
   title="受控组件"
@@ -284,7 +284,7 @@ export default {
   <div class="content">
     {{ t('SomeContent') }}
   </div>
-</PressPopupPlus>
+</PressPopup>
 ```
 
 `show`为`true`时，`popup`才显示，要关闭时，设置 `show = false` 即可.
@@ -355,7 +355,7 @@ export default {
 
 ## API
 
-### PopupPlus Props 
+### Popup Props 
 
 | 参数                   | 说明                                       | 类型       | 默认值  |
 | ---------------------- | ------------------------------------------ | ---------- | ------- |
@@ -378,7 +378,7 @@ export default {
 
 
 
-### PopupPlus Events
+### Popup Events
 
 | 事件    | 说明     | 返回值 |
 | ------- | -------- | ------ |
@@ -404,7 +404,7 @@ export default {
 
 
 
-### PopupPlus Slot
+### Popup Slot
 
 | 名称   | 说明             |
 | ------ | ---------------- |

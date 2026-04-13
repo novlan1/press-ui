@@ -2,7 +2,7 @@
 url : pages/press/dialog-plus/dialog-plus
 ---
 
-## DialogPlus 
+## Dialog 
 
 
 Pop-up window component, support function call

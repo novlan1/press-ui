@@ -37,7 +37,7 @@ export default{
 <press-switch :checked="checked" disabled />
 ```
 
-### LoadingPlus Status
+### Loading Status
 
 ```html
 <press-switch :checked="checked" loading />
@@ -65,7 +65,7 @@ export default{
 <press-switch :checked="checked" @change="onChange" />
 
 <!-- #ifndef H5 -->
-<PressDialogPlus
+<PressDialog
    id="tip-match-comm-tips-dialog"
 />
 <!-- #endif -->

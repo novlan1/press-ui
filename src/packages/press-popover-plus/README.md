@@ -2,18 +2,18 @@
 url : pages/press/popover-plus/popover-plus
 ---
 
-## PopoverPlus 弹出框
+## Popover 弹出框
 
-弹出层的一种，与 PopupPlus 相比是局部的，可用于承载一些选项卡。
+弹出层的一种，与 Popup 相比是局部的，可用于承载一些选项卡。
 
 ## 引入
 
 ```ts
-import PressPopoverPlus from 'press-ui/press-popover-plus/press-popover-plus.vue';
+import PressPopover from 'press-ui/press-popover-plus/press-popover-plus.vue';
 
 export default {
   components: {
-    PressPopoverPlus,
+    PressPopover,
   }
 }
 ```
@@ -26,7 +26,7 @@ export default {
 
 ```html
 <div class="popover-wrap">
-  <PressPopoverPlus
+  <PressPopover
     :show="true"
     placement="bottom"
     custom-class="demo-nav-popover demo-nav-popover--bottom"
@@ -38,7 +38,7 @@ export default {
     >
       选项{{ item }}
     </div>
-  </PressPopoverPlus>
+  </PressPopover>
 </div>
 ```
 
@@ -83,7 +83,7 @@ export default {
 监听 `close` 事件，将 `show` 设置为 `false` 即可。
 
 ```html
-<PressPopoverPlus
+<PressPopover
   :show="show"
   :placement="direction"
   @close="onClose"
@@ -95,7 +95,7 @@ export default {
   >
     {{ t('options', item) }}
   </div>
-</PressPopoverPlus>
+</PressPopover>
 ```
 
 ```js
