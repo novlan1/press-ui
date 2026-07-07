@@ -193,7 +193,9 @@ export default {
     },
   },
   mounted() {
-    this.genQRCode();
+    setTimeout(() => {
+      this.genQRCode();
+    }, 0);
   },
   methods: {
     genQRCode() {
@@ -292,8 +294,21 @@ export default {
         );
       }, 300);
     },
-    codeH5Vue3() {
+    codeH5Vue3(retryCount = 0) {
+      const MAX_RETRY = 5;
+      const RETRY_DELAY = 100;
+
       const canvas = document.getElementById(this.canvasId);
+      if (!canvas) {
+        if (retryCount < MAX_RETRY) {
+          setTimeout(() => {
+            this.codeH5Vue3(retryCount + 1);
+          }, RETRY_DELAY);
+        } else {
+          console.warn('[press-q-r-code] canvas element not found:', this.canvasId);
+        }
+        return;
+      }
       const domImage = canvas.toDataURL('image/png');
       this.codeImg = domImage;
     },
