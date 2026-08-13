@@ -49,7 +49,7 @@
     "appid": "wxd593abb04ef95f3e",
     "libVersion": "latest",
     "setting": {
-      "urlCheck": true,
+      "urlCheck": false,
       "ignoreUploadUnusedFiles": true,
       "minified": true
     }

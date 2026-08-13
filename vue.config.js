@@ -77,7 +77,7 @@ module.exports = {
     },
     plugins,
   },
-  transpileDependencies: ['@zebra-ui/swiper'],
+  transpileDependencies: ['@zebra-ui/swiper', 'ble-bump'],
   css: {
     loaderOptions: {
       scss: {
