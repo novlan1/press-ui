@@ -32,26 +32,28 @@ module.exports = {
   },
   rules: {
     'vue/no-v-text-v-html-on-component': 0,
-    'vue/component-name-in-template-casing': ['error', 'PascalCase', {
-      registeredComponentsOnly: true,
-      ignores: [
-        'scroll-view',
-        'transition',
-        'swiper',
-        'swiper-item',
-        'web-view',
-      ],
-    }],
-    'light/no-complex-style-class': 2,
-    'import/no-unresolved': [2,
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
       {
-        ignore: [
-          'node_modules',
-          '@TIP_PLATFORM_NAME',
-          '^@/*',
+        registeredComponentsOnly: true,
+        ignores: [
+          'scroll-view',
+          'transition',
+          'swiper',
+          'swiper-item',
+          'web-view',
         ],
       },
     ],
+    'light/no-complex-style-class': 2,
+    'import/no-unresolved': [
+      2,
+      {
+        ignore: ['node_modules', '@TIP_PLATFORM_NAME', '^@/*'],
+      },
+    ],
     ...getESLintImportOrderRule(),
+    'import/order': 0,
   },
 };
