@@ -152,7 +152,7 @@
     "@vue/shared": "^3.0.0",
     "aegis-mp-sdk": "^1.37.1",
     "babel-core": "^6.26.3",
-    "ble-bump": "0.1.4",
+    "ble-bump": "0.1.5",
     "core-js": "^3.6.5",
     "ebus-light": "^0.0.2",
     "flyio": "^0.6.2",
