@@ -187,6 +187,41 @@ function copySourceFiles(demoConfig) {
   }
 }
 
+/**
+ * 把 exclude 模式转成 rsync 能识别的形式
+ *
+ * rsync 的 --exclude=PATTERN：不含 `/` 时匹配任意层级的文件/目录名，
+ * 但为了语义明确、避免歧义，统一加上 `**\/` 前缀显式声明"任意层级"。
+ * 否则像 tests、demo.vue 这类只写名字的模式在多层目录下容易漏匹配。
+ */
+function toRsyncExcludes(excludeList) {
+  return (excludeList || [])
+    .map((p) => {
+      const pattern = p.replace(/\/$/, '');
+      return `--exclude="${pattern}" --exclude="**/${pattern}"`;
+    })
+    .join(' ');
+}
+
+/**
+ * 判断某个 item 名是否命中 exclude 列表
+ *
+ * glob 展开出来的顶层"文件"是直接 cp 的，不经过 rsync，
+ * 所以 exclude 对它们不生效——必须在这里先拦一道。
+ * 否则 packages/package.json、LICENSE 之类的发包元文件会被带进 demo。
+ */
+function isExcludedItem(name, excludeList) {
+  if (!excludeList || !excludeList.length) return false;
+  const base = path.basename(name);
+  return excludeList.some((pattern) => {
+    const p = pattern.replace(/\/$/, '');
+    if (!p.includes('*')) return base === p;
+    const re = new RegExp(`^${p.split('*').map(s => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&'))
+      .join('.*')}$`);
+    return re.test(base);
+  });
+}
+
 function doCopy(demoConfig, dir, source, targetDir, filter, item) {
   if (demoConfig._hasRootFiles && fs.existsSync(targetDir) && hasRootOwnedFiles(targetDir)) {
     console.warn(`  [warn] 跳过 ${displayRelative(demoConfig, targetDir)}（root 属主文件）`); return;
@@ -215,7 +250,7 @@ function doCopy(demoConfig, dir, source, targetDir, filter, item) {
       if (!fs.existsSync(src)) return;
       const stat = fs.statSync(src);
       if (stat.isDirectory() && filter && filter.exclude && filter.exclude.length > 0) {
-        const ex = filter.exclude.map(p => `--exclude="${p}"`).join(' ');
+        const ex = toRsyncExcludes(filter.exclude);
         execCommand(`rsync -a ${ex} ${src}/ ${targetDir}/`, config.pressUiRoot);
       } else if (stat.isDirectory()) {
         execCommand(`cp -R ${src} ${path.dirname(targetDir)}`, config.pressUiRoot);
@@ -225,9 +260,11 @@ function doCopy(demoConfig, dir, source, targetDir, filter, item) {
       }
     } else if (filter && filter.include) {
       const glob = require('glob');
-      const ex = (filter.exclude || []).map(p => `--exclude="${p}"`).join(' ');
+      const ex = toRsyncExcludes(filter.exclude);
       for (const p of filter.include) {
         for (const m of glob.sync(p, { cwd: source, nodir: false })) {
+          // 顶层 item 自身命中 exclude 时直接跳过（rsync 的 --exclude 管不到这一层）
+          if (isExcludedItem(m, filter.exclude)) continue;
           const src = path.resolve(source, m);
           const dst = path.resolve(targetDir, m);
           const stat = fs.statSync(src);
@@ -245,7 +282,11 @@ function doCopy(demoConfig, dir, source, targetDir, filter, item) {
       execCommand(`cp -R ${source}/. ${targetDir}/`, config.pressUiRoot);
     }
   } catch (e) {
+    // 复制失败必须显性暴露：静默吞掉会导致 filter 没生效、
+    // 多余文件被带进 demo，最后要到打包才发现。
     console.warn(`  [warn] 复制失败: ${e.message}`);
+    console.warn(`         dir=${dir} item=${item || '-'} target=${displayRelative(demoConfig, targetDir)}`);
+    demoConfig._hasRootFiles = true;
   }
 }
 
@@ -267,11 +308,19 @@ function replaceImportsForHx(demoConfig) {
   const { replaceAlias } = require('t-comm/lib/replace-alias');
 
   // 1. 所有 `press-ui/*` → `uni_modules/press-ui/components/*`
+  //
+  // scanDirs 必须包含 uni_modules/press-ui/components：
+  // 组件包内部也有裸包名导入（如 press-cascader/helper.js 引
+  // 'press-ui/press-area/computed'、press-area/computed.js 引
+  // 'press-ui/common/utils/fetch-data'）。
+  // 漏扫这个目录会导致 HBuilderX 打包时
+  //   "Rollup failed to resolve import press-ui/press-area/computed"
+  // ——因为组件包内的引用不会走 node_modules 解析。
   console.log('  [alias] press-ui → uni_modules/press-ui/components');
   replaceAlias({
     rootDir: demoConfig.dir,
     aliasMap: { 'press-ui': 'uni_modules/press-ui/components' },
-    scanDirs: ['pages', 'utils', 'windows'],
+    scanDirs: ['pages', 'utils', 'windows', 'uni_modules/press-ui/components'],
     scanRootFiles: ['App.vue', 'main.js'],
     supportedExtensions: ['.vue', '.js', '.ts'],
   });
@@ -286,12 +335,59 @@ function replaceImportsForHx(demoConfig) {
     '/uni_modules/press-ui/mixins/': '/uni_modules/press-ui/components/mixins/',
     '/uni_modules/press-ui/common/': '/uni_modules/press-ui/components/common/',
   }, [], ['App.vue', 'main.js'], ['.vue', '.js']);
-  // style src 路径修正：补上 ./ 前缀（Vite 要求）
-  replaceInFiles(demoConfig.dir, {
-    'src="utils/': 'src="./utils/',
-  }, [], ['App.vue'], ['.vue']);
+  // 3. App.vue 的全局样式改成 @import 内联，不用 <style src> 外链。
+  //
+  // 主源写的是 <style lang="scss" src="src/utils/style/demo.scss">，
+  // vue3-pure / vue2-uni 有真实 src/ 目录所以能直接用；
+  // vue3-hx 是扁平结构（utils/ 在根），路径要改写。
+  //
+  // 但仅把 src 改成 './utils/...' 在 App 端仍会失败：
+  // uni-app App 端会把 App.vue 的 style 抽成独立的 app.css.js，
+  // 外链的相对基准随之改变，报
+  //   "Could not load ./utils/style/demo.scss ... (imported by ./app.css.js)"
+  // 改成 @import 写在 <style> 内部，路径由 scss 编译期解析，App/H5/小程序都稳。
+  const appVuePath = path.resolve(demoConfig.dir, 'App.vue');
+  if (fs.existsSync(appVuePath)) {
+    let appVue = fs.readFileSync(appVuePath, 'utf-8');
+    const styleSrcRe = /<style([^>]*?)\ssrc=["'](?:\.\/)?(?:src\/)?utils\/style\/([^"']+)["']([^>]*)>\s*<\/style>/g;
+    styleSrcRe.lastIndex = 0;
+    if (styleSrcRe.test(appVue)) {
+      styleSrcRe.lastIndex = 0;
+      appVue = appVue.replace(
+        styleSrcRe,
+        (_m, pre, file, post) => `<style${pre}${post}>\n@import './utils/style/${file}';\n</style>`,
+      );
+      fs.writeFileSync(appVuePath, appVue);
+      console.log('  [fix] App.vue style src → @import（App 端兼容）');
+    }
+  }
+
+  // 4. locale/ 兜底：补 en.json / zh.json
+  //
+  // locale/ 是 uni-app 的约定目录——只要存在，框架就启用内建 i18n，
+  // 并按系统语言查找对应文件。目录里只有 en-US.json / zh-CN.json 时，
+  // 系统语言为 en / zh 就会报
+  //   "当前应用配置的 fallbackLocale 或 locale 为: en, 但 locale 目录缺少该语言文件"
+  // 这里按 xx-YY.json 生成同内容的短代码 xx.json 兜底。
+  const localeDir = path.resolve(demoConfig.dir, 'locale');
+  if (fs.existsSync(localeDir)) {
+    for (const f of fs.readdirSync(localeDir)) {
+      const m = f.match(/^([a-z]{2})-[A-Za-z]+\.json$/);
+      if (!m) continue;
+      const shortFile = path.resolve(localeDir, `${m[1]}.json`);
+      if (fs.existsSync(shortFile)) continue;
+      fs.copyFileSync(path.resolve(localeDir, f), shortFile);
+      console.log(`  [fix] locale/${m[1]}.json（由 ${f} 兜底生成）`);
+    }
+  }
 }
 
+/**
+ * 历史遗留：submodule 时代 demo 仓库把 press-ui 挂在 src/press-ui/，
+ * 需要把 src/packages/ 改写成 src/press-ui/src/packages/。
+ * submodule 已全部移除，各 demo 改走 npm 包，所以现在所有 demo 的 pathFix 都是 false。
+ * 保留函数以兼容旧配置，不建议再打开。
+ */
 function applyPathFix(demoConfig) {
   if (!demoConfig.pathFix) return;
   const pagesDir = getTargetDir(demoConfig, 'pages');
@@ -373,9 +469,25 @@ function syncVersion(demoConfig) {
   } catch (e) {
     return;
   }
+
+  let changed = false;
+
   if (b.version !== a.version) {
-    b.version = a.version; writeFileSync(p1, b, true); console.log(`  [version] ${b.version}`);
+    b.version = a.version; changed = true; console.log(`  [version] ${b.version}`);
   }
+
+  // 组件走 npm 包的 demo：press-ui 依赖版本必须跟主源对齐。
+  // 否则主源新增的组件 / demo-helper 在 demo 里解析不到（装的还是旧包）。
+  if (demoConfig.alignPressUiDep && b.dependencies && b.dependencies['press-ui']) {
+    if (b.dependencies['press-ui'] !== a.version) {
+      console.log(`  [dep] press-ui ${b.dependencies['press-ui']} → ${a.version}`);
+      b.dependencies['press-ui'] = a.version;
+      changed = true;
+      demoConfig._needInstall = true;
+    }
+  }
+
+  if (changed) writeFileSync(p1, b, true);
 }
 
 // ============================================================
@@ -387,6 +499,7 @@ function syncOneDemo(demoName, demoConfig) {
   if (!fs.existsSync(demoConfig.dir)) {
     console.log('  [skip] 不存在'); return 'skipped';
   }
+
   let w = false;
 
   clearTargetDirs(demoConfig); if (demoConfig._hasRootFiles) w = true;
@@ -403,9 +516,14 @@ function syncOneDemo(demoName, demoConfig) {
   syncVersion(demoConfig);
 
   const result = w || demoConfig._hasRootFiles ? 'warning' : 'ok';
+  const needInstall = !!demoConfig._needInstall;
   delete demoConfig._hasRootFiles;
+  delete demoConfig._needInstall;
   console.log(`[${demoName}] ${result === 'ok' ? 'done' : 'done (有警告)'}`);
-  return result;
+  if (needInstall) {
+    console.log(`[${demoName}] press-ui 依赖版本已更新，需要重新安装依赖`);
+  }
+  return { result, needInstall };
 }
 
 function main() {
@@ -419,15 +537,18 @@ function main() {
   execCommand('npm run init', config.pressUiRoot, 'inherit');
   console.log('[press-ui] init 完成\n');
 
-  const ok = []; const warn = []; const skip = [];
+  const ok = []; const warn = []; const skip = []; const needInstall = [];
   for (const name of targets) {
     const dc = config.demos[name];
     if (!dc) {
       skip.push(name); continue;
     }
     const r = syncOneDemo(name, dc);
-    if (r === 'skipped') skip.push(name);
-    else if (r === 'warning') warn.push(name);
+    if (r === 'skipped') {
+      skip.push(name); continue;
+    }
+    if (r.needInstall) needInstall.push(name);
+    if (r.result === 'warning') warn.push(name);
     else ok.push(name);
   }
 
@@ -436,7 +557,29 @@ function main() {
   if (ok.length) console.log(`  成功: ${ok.join(', ')}`);
   if (warn.length) console.log(`  警告: ${warn.join(', ')}`);
   if (skip.length) console.log(`  跳过: ${skip.join(', ')}`);
+  if (needInstall.length) {
+    console.log(`  待安装依赖: ${needInstall.join(', ')}`);
+    console.log('    → 请在对应目录执行 pnpm install');
+  }
   console.log('========================================');
+
+  // 同步后立刻做一次 import 解析校验：
+  // 主源有 webpack alias（press-ui / src）能跑通的 import，
+  // 到 demo 环境未必解析得到，不校验就要等打包才发现。
+  const verified = targets.filter(n => config.demos[n] && !skip.includes(n));
+  if (verified.length) {
+    console.log('');
+    try {
+      execCommand(
+        `node ${path.resolve(__dirname, 'verify.js')} ${verified.join(',')}`,
+        config.pressUiRoot,
+        'inherit',
+      );
+    } catch (e) {
+      console.warn('[sync-to-demos] 校验发现断链引入，请按上面提示修复');
+      process.exitCode = 1;
+    }
+  }
 }
 
 main();

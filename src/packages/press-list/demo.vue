@@ -68,11 +68,11 @@ import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
 import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh.vue';
 
-import { showCustomPopup, local } from 'src/packages/press-list/demo-helper/custom';
-import { virtualListMixin } from 'src/packages/press-list/demo-helper/virtual-list-mixin';
+import { showCustomPopup, local } from 'press-ui/press-list/demo-helper/custom';
+import { virtualListMixin } from 'press-ui/press-list/demo-helper/virtual-list-mixin';
 import {
   FUNCTIONAL_ID_MAP,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
+} from 'press-ui/press-popup-cell/demo-helper/helper';
 
 
 function fetchData({ length, delay, beforeLength }) {

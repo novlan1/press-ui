@@ -120,10 +120,10 @@ import PressPickerPlus from 'press-ui/press-picker-plus/press-picker-plus.vue';
 
 import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 
-import { showCustomPopup, local } from 'src/packages/press-pagination/demo-helper/custom';
+import { showCustomPopup, local } from 'press-ui/press-pagination/demo-helper/custom';
 import {
   FUNCTIONAL_ID_MAP,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
+} from 'press-ui/press-popup-cell/demo-helper/helper';
 
 
 export default {

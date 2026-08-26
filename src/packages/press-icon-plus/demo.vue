@@ -84,7 +84,7 @@ import PressCard from 'press-ui/press-card/press-card.vue';
 import PressIconMusic from 'press-ui/press-icon-music/press-icon-music.vue';
 import PressIconPlus from 'press-ui/press-icon-plus/press-icon-plus.vue';
 import PressNotify from 'press-ui/press-notify/press-notify.vue';
-import IconMap from 'src/utils/icon/icon.json';
+import IconMap from 'press-ui/press-icon-plus/demo-helper/icon.json';
 
 
 export default {

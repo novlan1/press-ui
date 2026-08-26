@@ -90,9 +90,9 @@ import PressPopupCell from 'press-ui/press-popup-cell/press-popup-cell.vue';
 import {
   FUNCTIONAL_ID_MAP,
   showPopupCell,
-} from 'src/packages/press-popup-cell/demo-helper/helper';
-import { battleSet,  startMatchSet } from 'src/packages/press-popup-cell/demo-helper/popup';
-import { batchSet } from 'src/packages/press-popup-cell/demo-helper/popup-batch';
+} from 'press-ui/press-popup-cell/demo-helper/helper';
+import { battleSet,  startMatchSet } from 'press-ui/press-popup-cell/demo-helper/popup';
+import { batchSet } from 'press-ui/press-popup-cell/demo-helper/popup-batch';
 
 
 const local = {

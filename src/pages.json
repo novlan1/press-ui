@@ -618,10 +618,6 @@
     "current": 0,
     "list": [
       {
-        "name": "BleBump",
-        "path": "pages/bump/bump"
-      },
-      {
         "name": "Button",
         "path": "pages/press/button/button"
       },
