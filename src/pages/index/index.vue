@@ -103,15 +103,11 @@ export default {
     quickLinkList() {
       return [
         ...QUICK_LINK_LIST,
+        {
+          url: '/bump/bump',
+          label: 'Bump',
+        },
       ];
-      // 如需追加内部页面入口（碰一碰调试），可在此处追加：
-      // return [
-      //   ...QUICK_LINK_LIST,
-      //   {
-      //     url: '/bump/bump',
-      //     label: '碰一碰演示页面',
-      //   },
-      // ];
     },
   },
   methods: {

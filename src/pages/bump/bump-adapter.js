@@ -18,7 +18,7 @@ const IS_LOCAL = false;
 
 const BASE_URL = IS_LOCAL
   ? 'http://localhost:3008/api'
-  : 'https://uwayfly.com/api';
+  : 'https://bump.uwayfly.com/api';
 
 /** uid 存储 key（前端随机生成，持久化到 storage） */
 const UID_STORAGE_KEY = 'bump:uid';

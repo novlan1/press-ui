@@ -216,7 +216,12 @@ export default {
     },
 
     // ========== 额外区块 ==========
-    /** 额外的自定义区块 */
+    /**
+     * 额外的自定义区块（追加在组件分类之后、「其他功能」之前）
+     * 格式：[{ key, title, icon?, subTitle?, list: [{ title, url? , event? }] }]
+     *   - icon / subTitle 可选，不传则按 key 关键字自动推断
+     *   - list[].url 走 routerPush(`/pages${url}`)，list[].event 走事件路由
+     */
     extraSections: {
       type: Array,
       default: () => ([]),
@@ -555,9 +560,11 @@ export default {
     },
 
     /**
-     * 分类图标：根据 section key 返回对应的线性图标名
+     * 分类图标：优先用区块自带的 icon（extraSections 可自定义），
+     * 否则根据 section key 关键字匹配
      */
     getCategoryIcon(item) {
+      if (item.icon) return item.icon;
       const key = item.key || '';
       const map = [
         ['otherAbility', 'setting-o'],
@@ -574,9 +581,11 @@ export default {
     },
 
     /**
-     * 分类副标题：按区块类型显示数量
+     * 分类副标题：优先用区块自带的 subTitle（extraSections 可自定义），
+     * 否则按区块类型显示数量
      */
     getCategorySubTitle(item) {
+      if (item.subTitle) return item.subTitle;
       const count = item.list ? item.list.length : 0;
       const key = item.key || '';
       if (key.includes('otherAbility')) return `${count} 项功能`;
