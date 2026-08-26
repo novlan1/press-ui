@@ -32,16 +32,17 @@
   - demo.vue            # 组件示例
 ```
 
-`src/packages`下就是由这些组件文件夹和一些公共文件构成。
+`src/packages` 下就是由这些组件文件夹和一些公共文件构成。
 
-上面的组织结构并不能直接用，还需要把`README.md`移动到`docs`中，把`demo.vue`移动到`src/pages`中。开发时会监听这些文件变动，发生变动后就把它们拷贝到需要的位置上。
+上面的组织结构并不能直接用，还需要把 `README.md` 移动到 `docs` 中，把 `demo.vue` 移动到 `src/pages` 中。开发时会监听这些文件变动，发生变动后就把它们拷贝到需要的位置上。
 
 <img 
   src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/inner-architecture.png" width="700"
 />
 
-## 2. 开发
+> 根目录的 `README.md` 与 `CONTRIBUTING.md` 是唯一数据源，`docs/README.md` 与 `docs/contributing.md` 由 `npm run docs:sync` 自动生成，请勿直接编辑后者。
 
+## 2. 开发
 
 首先要执行如下命令，进行组件的派发：
 
@@ -51,7 +52,7 @@ npm run init
 
 ### 2.1. 组件开发
 
-对于H5、微信小程序、QQ小程序有不同的启动命令：
+对于 H5、微信小程序、QQ 小程序有不同的启动命令：
 
 ```bash
 # H5，建议 node 20 下运行
@@ -60,25 +61,19 @@ npm run dev
 # 微信小程序，建议 node 16 下运行
 npm run dev:mp-weixin
 
-# qq小程序，建议 node 16 下运行
+# QQ 小程序，建议 node 16 下运行
 npm run dev:mp-qq
 ```
 
 ### 2.2. 新增组件
 
-执行以下命令：
+执行以下命令，然后交互式输入组件英文名、中文名等内容即可：
 
 ```bash
 npm run new:comp
 ```
 
-然后交互式的输入组件英文名、中文名等内容即可。
-
-
-
 ### 2.3. 文档开发
-
-文档开发命令：
 
 ```bash
 npm run docs:dev
@@ -86,35 +81,90 @@ npm run docs:dev
 
 ### 2.4. 文档、示例部署
 
-`Press UI` 接入了CI，代码推送后会自动构建，并部署H5、微信小程序、QQ小程序三端示例及文档。
+`Press UI` 接入了 CI，代码推送后会自动构建，并部署 H5、微信小程序、QQ 小程序三端示例及文档。
 
-## 3. 开发规范
+## 3. 发版
 
-### 3.1. 代码规范
+发版拆成三步，因为 npm 账号开启了 2FA（两步验证）后，`npm publish` 需要一次性验证码（OTP），而它在 `standard-version` 钩子里是以子进程执行的，无法交互式输入。
 
-需符合公司代码规范。
+```bash
+# Step 1：升版本号 + 生成 CHANGELOG + 生成产物 + 本地 commit 打 tag（不发布）
+pnpm release:step1
 
-### 3.2. 提交规范
+# Step 2：手动带 OTP 发布到 npm，OTP 为验证器 App 里的 6 位动态码
+pnpm release:step2 -- 123456
 
-推荐[Angular 规范](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
+# Step 3：推送 commit 与 tag + 发送企业微信通知
+pnpm release:step3
+```
 
-### 3.3. 命名规范
+各步骤的产物与作用：
 
-- 对象、类、组件，用大驼峰命名法，首字母大写
-- 变量、方法，用小驼峰命名法，首字母小写，如`loader`、`post`、`appBase`、`getAreaCode`等
-- 文件名用小写+中划线，比如`message-dialog`，不能用`messageDialog`
+| 步骤 | 命令 | 作用 | 需要 OTP |
+| :- | :- | :- | :- |
+| Step 1 | `pnpm release:step1` | 升版本号、生成 `CHANGELOG.md`、生成纯净产物到 `log/press-ui/components`、`git commit` 并打 tag | 否 |
+| Step 2 | `pnpm release:step2 -- <OTP>` | 在产物目录执行 `npm publish` | **是** |
+| Step 3 | `pnpm release:step3` | `git push` 分支与 tag、发送版本通知 | 否 |
 
-### 3.4. 其他
+其他版本类型：
 
-对外API需简单、易记忆，比如`change`、`list`，最好一个单词组成，并且不能简写，与业界流行组件库对齐。
+```bash
+pnpm release:step1:minor   # 次版本号，如 5.0.29 -> 5.1.0
+pnpm release:step1:beta    # 预发布版本，如 5.0.29 -> 5.0.30-beta.0
+```
 
-不能在组件内部`console.log`。
+预发布版本在 Step 2 会自动带上 `--tag beta`，不会污染 `latest`。
 
-类名需符合[BEM](https://getbem.com/)规范，并以`press`为前缀。
+### 3.1. 免 OTP 发布
 
-## 4. 细节
+若不想每次手动输入验证码，可在 [npmjs 官网](https://www.npmjs.com/settings/~/tokens) 生成 **Automation** 类型的 Access Token（该类型可绕过 2FA），写入 `~/.npmrc`：
 
-### 4.1. rem单位
+```bash
+//registry.npmjs.org/:_authToken=<your-automation-token>
+```
+
+此时 Step 2 无需传 OTP，一步到位的 `pnpm release` 也能正常工作。
+
+### 3.2. 常见问题
+
+**报错 `404 Not Found - PUT https://registry.npmjs.org/press-ui`**
+
+不是包不存在，而是登录态失效。npm 对无发布权限的 `PUT` 请求会返回 404 而非 401，以避免泄露私有包是否存在。用 `npm whoami` 确认，若报 `E401` 则重新登录：
+
+```bash
+npm login   # 项目根目录的 .npmrc 已把 registry 指向 npmjs，无需额外传参
+npm whoami  # 应输出你的用户名
+```
+
+> 注意：不要用 `sudo` 执行发版命令。`sudo` 会把 `HOME` 切到 `/var/root`，导致读不到 `~/.npmrc` 里的登录凭证。
+
+**报错 `EOTP This operation requires a one-time password`**
+
+Step 2 没带 OTP，或验证码已过期（有效期约 30 秒）。重新看验证器再执行一次 Step 2 即可，无需重跑 Step 1。
+
+## 4. 开发规范
+
+### 4.1. 代码与提交
+
+- 代码需符合公司代码规范，提交前请执行 `npm run lint:fix` 与 `npm run lint:css:fix`
+- 提交信息推荐 [Angular 规范](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)，因为 `CHANGELOG.md` 由 `standard-version` 依据提交类型自动生成
+
+### 4.2. 命名规范
+
+- 对象、类、组件：大驼峰，首字母大写
+- 变量、方法：小驼峰，首字母小写，如 `loader`、`post`、`appBase`、`getAreaCode`
+- 文件名：小写 + 中划线，如 `message-dialog`，不能用 `messageDialog`
+- 类名：符合 [BEM](https://getbem.com/) 规范，并以 `press` 为前缀
+
+### 4.3. 其他
+
+对外 API 需简单、易记忆，比如 `change`、`list`，最好由一个单词组成，不能简写，与业界流行组件库对齐。
+
+不能在组件内部 `console.log`。
+
+## 5. 细节
+
+### 5.1. rem单位
 
 目前有的组件使用的单位是`rem`
 
@@ -123,7 +173,7 @@ npm run docs:dev
 
 `Press UI`并不强制单位，只要组件内部统一即可。
 
-### 4.2. 准入条件
+### 5.2. 准入条件
 
 `Press UI`内的组件、逻辑需要有一定的通用性或复杂性，比如`button`、`input`、`area`、`message-detail`等组件通用型强，`schedule-tree`组件复杂度高。
 
@@ -133,24 +183,23 @@ npm run docs:dev
 
 一开始就尽量把组件设计好，坚持高标准，避免后面返工。
 
-### 4.3. 脚本优先
+### 5.3. 脚本优先
 
 `js/ts`比`html`灵活，能写在`js/ts`中的，就不要在组件中判断，灵活意味着通用性强，在跨平台、横竖屏、技术栈迁移时候，`js/ts`都能够很方便的复用，但是组件就不行。
 
-### 4.4. 项目依赖关系
+### 5.4. 项目依赖关系
 
 Press UI 底层依赖 `t-comm`、`plugin-light` 等库。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_bbf5d09066a8980616.gif" width="500" />
 
-
-### 4.5. 适配多平台、多场景
+### 5.5. 适配多平台、多场景
 
 Press UI 在兼容 Vue3 项目、非 `uni-app` 环境、APP 环境时，采用的实现方式为，新建工程，并将 Press UI 组件库作为子仓库。
 
 <img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/6/own_mike_ea7bcae60b32baedd8.gif" width="500" />
 
-### 4.6. 通用 & 灵活
+### 5.6. 通用 & 灵活
 
 下图是 H5、小程序、APP语法灵活度的对比。
 
@@ -167,7 +216,7 @@ Press UI 在编写跨端代码的时候，采用以下原则：
 2. `popover-plus` 点击空白处会收起，即 `clickOutSide`
 3. `list` 支持自动检测外层 `scroller`，即支持任意父级的滚动
 
-### 4.7. i18n 实现
+### 5.7. i18n 实现
 
 有几个核心函数：
 
