@@ -1,5 +1,25 @@
 # 更新日志
 
+### [5.0.29](https://github.com/novlan1/press-ui/compare/v5.0.27...v5.0.29) (2026-08-26)
+
+
+### Bug Fixes 🐞
+
+* **qrcode:** 修复 canvas 偶现找不到的问题 ([85cfcca](https://github.com/novlan1/press-ui/commit/85cfccadbd266aed380ecaaf9593f68902b5ef26))
+
+
+### Features 🎉
+
+* **cropper:** update css import ([07ff5ae](https://github.com/novlan1/press-ui/commit/07ff5aea08bba4f10cc29725bb49f0a317614f0c))
+* **picker:** add cancelButtonText/confirmButtonText props ([e463519](https://github.com/novlan1/press-ui/commit/e463519175c3f65117b99ef0db8024192bec443a))
+* update ci ([6312f3c](https://github.com/novlan1/press-ui/commit/6312f3c1504cf8b3d7449df9d938189c9463b89a))
+* update ci ([254de57](https://github.com/novlan1/press-ui/commit/254de57d0b853b5d41755be3c2624172b874318c))
+* update pages ([16068d4](https://github.com/novlan1/press-ui/commit/16068d4f8f2c724289b82c65f2e751c15e3f09f8))
+* update press-ui ([1a4ab36](https://github.com/novlan1/press-ui/commit/1a4ab36717c5e30d3ec5b49989e5565ae21789f4))
+* 优化同步脚本 ([b6e0d97](https://github.com/novlan1/press-ui/commit/b6e0d97b2cb68a9a54f4aa3a82104168791199a3))
+* 优化首页 ([d62c338](https://github.com/novlan1/press-ui/commit/d62c338525a79183b178d881dc7ec57b0a3797af))
+* 支持碰一碰 ([41ea285](https://github.com/novlan1/press-ui/commit/41ea2856dedbde8f971315345cdc3a7656233c0e))
+
 ### [5.0.11](https://github.com/novlan1/press-ui/compare/v5.0.10...v5.0.11) (2026-03-20)
 
 
