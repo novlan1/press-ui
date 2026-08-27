@@ -4,7 +4,8 @@ name: Deploy GitHub Pages Unity
 on:
   push:
     branches:
-      - feature/archive
+      - master
+  workflow_dispatch:
 
 # 任务
 jobs:
