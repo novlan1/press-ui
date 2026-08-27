@@ -1,5 +1,16 @@
 # 更新日志
 
+### [5.0.30](https://github.com/novlan1/press-ui/compare/v5.0.29...v5.0.30) (2026-08-27)
+
+
+### Features 🎉
+
+* update image of about ([442133d](https://github.com/novlan1/press-ui/commit/442133db3c15814722a6fbf42bf8c7ce27c1c87d))
+* update introduce ([976c2f4](https://github.com/novlan1/press-ui/commit/976c2f498e59854fffed73ff544b2452c82f17d6))
+* update press-list ([2f02bdb](https://github.com/novlan1/press-ui/commit/2f02bdb3a9582116ba931c5f3b9642807df70550))
+* 优化barcode/qrcode/signature/sticky/passwordInput, 支持APP ([0efb1e0](https://github.com/novlan1/press-ui/commit/0efb1e09793501d5ce44957e9c942e38e5706d96))
+* 优化page-scroll ([d0e8a91](https://github.com/novlan1/press-ui/commit/d0e8a918c999c1245dab7ea7c988b784201489ff))
+
 ### [5.0.29](https://github.com/novlan1/press-ui/compare/v5.0.27...v5.0.29) (2026-08-26)
 
 
