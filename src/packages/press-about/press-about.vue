@@ -73,6 +73,7 @@
 <script>
 import { routerPush } from '../common/utils/router';
 import PressDialog from '../press-dialog/press-dialog.vue';
+import { isNotInUni } from '../common/utils/utils';
 
 
 export default {
@@ -94,6 +95,7 @@ export default {
   mounted() {
   },
   methods: {
+    isNotInUni,
     jumpToIntroduce() {
       const url = '/pages/index/introduce';
       routerPush.call(this, url);
