@@ -42,7 +42,6 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: '零外部依赖',
           light: true,
-          underline: true,
         },
         '，不依赖三方 npm 包',
       ],
@@ -70,6 +69,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: 'Vue3 uni-app 示例',
           light: true,
+          underline: true,
           link: 'https://novlan1.github.io/press-ui-demo-vue3-uni/',
         },
       ],
@@ -78,6 +78,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: 'Vue2 uni-app 示例',
           light: true,
+          underline: true,
           link: 'https://novlan1.github.io/press-ui-demo-vue2-uni/',
         },
       ],
@@ -86,6 +87,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: 'Vue3 非 uni-app 示例',
           light: true,
+          underline: true,
           link: 'https://novlan1.github.io/press-ui-demo-vue3-pure/',
         },
       ],
@@ -94,6 +96,7 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
         {
           text: 'Vue2 非 uni-app 示例',
           light: true,
+          underline: true,
           link: 'https://novlan1.github.io/press-ui-demo-vue2-pure/',
         },
       ],

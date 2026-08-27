@@ -174,6 +174,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * 禁用自动 check 触发的 load（仅禁止由 watch / mounted / scroll
+     * 触发的自动追加；用户主动滚到底触发 scrolltolower → load 不受影响）。
+     *
+     * 用途：调用方主动重置数据源（如切换分页大小）后只希望加载一次，
+     *      不希望 watch realModelValue 立刻又触发 emitInput → load → 累加循环。
+     *      加载完成后由调用方把 disableAutoLoad 设回 false，滚动到底时仍能继续加载。
+     */
+    disableAutoLoad: {
+      type: Boolean,
+      default: false,
+    },
     scrollLeft: {
       type: [Number, String],
       default: 0,
@@ -275,6 +287,13 @@ export default {
       const { offset } = this;
 
       if (this.innerLoading || this.finished) {
+        return;
+      }
+
+      // 调用方主动重置数据源时禁用自动 check（如 demo 切换 pageSize），
+      // 避免 watch realModelValue → check → emitInput → load 立刻又触发累加循环。
+      // 用户主动滚到底的 scrolltolower 走 emitInput 不受此限制。
+      if (this.disableAutoLoad) {
         return;
       }
 

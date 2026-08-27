@@ -11,8 +11,6 @@
     :show-collapse-arrow="true"
     :show-v-console="true"
     :show-language-toggle="true"
-    other-ability-label="其他功能"
-    other-project-label="相关项目"
   />
 </template>
 <script>
@@ -38,10 +36,20 @@ export default {
     'zh-CN': {
       name: '全端兼容 高性能',
       detail: DETAIL,
+      'quickLink.PressUIDocs': 'Press UI 文档',
+      'quickLink.vue3-uni': 'Vue3 uni-app 示例',
+      'quickLink.vue2-uni': 'Vue2 uni-app 示例',
+      'quickLink.vue3-not-uni': 'Vue3 非 uni-app 示例',
+      'quickLink.vue2-not-uni': 'Vue2 非 uni-app 示例',
     },
     'en-US': {
       name: 'Fully Compatible',
       detail: 'Press UI is an easy-to-use, uni-app-based component library',
+      'quickLink.PressUIDocs': 'Press UI Docs',
+      'quickLink.vue3-uni': 'Vue3 uni-app Demo',
+      'quickLink.vue2-uni': 'Vue2 uni-app Demo',
+      'quickLink.vue3-not-uni': 'Vue3 non-uni-app Demo',
+      'quickLink.vue2-not-uni': 'Vue2 non-uni-app Demo',
     },
   },
   components: {
@@ -101,7 +109,7 @@ export default {
      *     点击走 routerPush('/pages' + url)，而非跳外部项目。
      */
     quickLinkList() {
-      return [
+      const list = [
         ...QUICK_LINK_LIST,
         // #ifdef MP-WEIXIN
         {
@@ -110,6 +118,19 @@ export default {
         },
         // #endif
       ];
+
+      // 相关项目链接的 label 国际化：QUICK_LINK_LIST 里的 label 是中文硬编码，
+      // 这里用 item.name 作为 i18n key（quickLink.${name}）翻译；
+      // 未命中词条的项（如 Bump，无 name 字段）保持原 label。
+      return list.map((item) => {
+        if (!item.name) return item;
+        const key = `quickLink.${item.name}`;
+        const translated = this.t(key);
+        return {
+          ...item,
+          label: translated !== key ? translated : item.label,
+        };
+      });
     },
   },
   methods: {

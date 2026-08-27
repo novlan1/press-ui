@@ -149,6 +149,10 @@ export default {
       countComponent: count => `${count} 个组件`,
       countAbility: count => `${count} 项功能`,
       countProject: count => `${count} 个项目`,
+      countOther: count => `${count} 项`,
+      otherContent: '其他内容',
+      toggleLanguage: '切换语言',
+      toggleVConsole: '切换VConsole',
     },
     'en-US': {
       statComponent: 'Components',
@@ -157,6 +161,10 @@ export default {
       countComponent: count => `${count} components`,
       countAbility: count => `${count} features`,
       countProject: count => `${count} projects`,
+      countOther: count => `${count} items`,
+      otherContent: 'Other',
+      toggleLanguage: 'Language',
+      toggleVConsole: 'VConsole',
     },
   },
   options: {
@@ -246,12 +254,18 @@ export default {
       type: Array,
       default: () => ([]),
     },
-    /** 「其他功能」区块的标签文案 */
+    /**
+     * 「其他功能」区块的标签文案（已废弃：与其他功能、相关项目合并为「其他内容」区块，
+     * 标题改用 i18n 词条 otherContent，此 prop 不再生效，仅保留向后兼容）
+     */
     otherAbilityLabel: {
       type: String,
       default: '其他功能',
     },
-    /** 「相关项目」区块的标签文案 */
+    /**
+     * 「相关项目」区块的标签文案（已废弃：合并为「其他内容」区块，
+     * 标题改用 i18n 词条 otherContent，此 prop 不再生效，仅保留向后兼容）
+     */
     otherProjectLabel: {
       type: String,
       default: '相关项目',
@@ -379,43 +393,43 @@ export default {
         result.push(...this.extraSections);
       }
 
-      // 「其他功能」区块
-      if (this.showLanguageToggle || this.showVConsole) {
-        const otherAbilityList = [];
-        if (this.showLanguageToggle) {
-          otherAbilityList.push({
-            title: this.otherAbilityLabel.includes('切换') ? this.otherAbilityLabel : '切换语言',
-            event: 'onToggleLanguage',
-          });
-        }
-        if (this.showVConsole) {
-          otherAbilityList.push({
-            title: '切换VConsole',
-            event: 'onOpenVConsole',
-          });
-        }
-        if (otherAbilityList.length) {
-          result.push({
-            key: 'section-otherAbility',
-            title: this.otherAbilityLabel,
-            list: otherAbilityList,
-          });
-        }
+      // 「其他内容」区块：合并原「其他功能」（切换语言、VConsole）与「相关项目」快捷链接
+      const otherContentList = [];
+
+      if (this.showLanguageToggle) {
+        otherContentList.push({
+          title: this.t('toggleLanguage'),
+          event: 'onToggleLanguage',
+        });
       }
 
-      // 「相关项目」区块
+      // 切换 VConsole 仅在 H5 / 小程序展示；APP 端不展示（vconsole 是 H5 调试工具）
+      // #ifndef APP-PLUS || APP
+      if (this.showVConsole) {
+        otherContentList.push({
+          title: this.t('toggleVConsole'),
+          event: 'onOpenVConsole',
+        });
+      }
+      // #endif
+
+      // 「相关项目」快捷链接
       const resolvedQuickLinks = this.resolvedQuickLinkList;
-      if (resolvedQuickLinks.length) {
+      resolvedQuickLinks.forEach((item) => {
+        otherContentList.push({
+          ...item,
+          title: item.label || item.title,
+          // 带 url 的项是「本项目的内部页面」，走 clickComponent 里的 routerPush；
+          // 其余项是外部项目，走 onJumpToOtherDemo 跳 link。
+          ...(item.url ? {} : { event: 'onJumpToOtherDemo' }),
+        });
+      });
+
+      if (otherContentList.length) {
         result.push({
-          key: 'section-quickList',
-          title: this.otherProjectLabel,
-          list: resolvedQuickLinks.map(item => ({
-            ...item,
-            title: item.label || item.title,
-            // 带 url 的项是「本项目的内部页面」，走 clickComponent 里的 routerPush；
-            // 其余项是外部项目，走 onJumpToOtherDemo 跳 link。
-            ...(item.url ? {} : { event: 'onJumpToOtherDemo' }),
-          })),
+          key: 'section-otherContent',
+          title: this.t('otherContent'),
+          list: otherContentList,
         });
       }
 
@@ -587,6 +601,7 @@ export default {
       if (item.icon) return item.icon;
       const key = item.key || '';
       const map = [
+        ['otherContent', 'share-o'],
         ['otherAbility', 'setting-o'],
         ['quickList', 'share-o'],
         ['Basic', 'apps-o'],
@@ -608,6 +623,7 @@ export default {
       if (item.subTitle) return item.subTitle;
       const count = item.list ? item.list.length : 0;
       const key = item.key || '';
+      if (key.includes('otherContent')) return this.t('countOther', count);
       if (key.includes('otherAbility')) return this.t('countAbility', count);
       if (key.includes('quickList')) return this.t('countProject', count);
       return this.t('countComponent', count);

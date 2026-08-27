@@ -28,6 +28,7 @@
           :vertical="listLocal.vertical"
           finished-text="没有更多了"
           :auto-check-scroller="listLocal.autoCheckScroller"
+          :disable-auto-load="disableAutoLoad"
           :custom-style="listStyle"
           @load="load"
           @scroll="scroll"
@@ -127,6 +128,10 @@ export default {
       loading: false,
       finished: false,
       immediateCheck: true,
+      // 切参数（pageSize/total/delay/方向等）重置数据源期间禁用 PressList 的
+      // 自动 check 触发的 load，避免 watch realModelValue → check → emitInput
+      // → load 立刻又触发累加循环造成「一直 loading」。
+      disableAutoLoad: false,
       list: [],
 
       FUNCTIONAL_ID_MAP,
@@ -148,8 +153,12 @@ export default {
     },
   },
   mounted() {
-    // this.loading = true;
-    // this.onFetchData(true);
+    // APP 端 PressList 的 immediate-check 依赖 mounted 时 getRect 测量 scroll-view 高度，
+    // 但 scroll-view 元素刚 mounted 时可能尚未布局完成，getRect 返回 NaN/0 高度，
+    // 触发 commonCheck 的 `if (!scrollerHeight) return;` 直接退出，首次 load 不触发。
+    // 因此 demo 层面手动触发首次加载，不依赖 immediate-check 的时序。
+    this.loading = true;
+    this.onFetchData(true);
   },
   methods: {
     onRefresh() {
@@ -190,9 +199,12 @@ export default {
         console.log('[current total]', list.length);
         this.loading = false;
         this.finished = this.list.length >= total;
+        // generateData 重置数据源完成，恢复 PressList 的自动 check（用户滚到底可继续加载）
+        this.disableAutoLoad = false;
       })
         .catch(() => {
           this.loading = false;
+          this.disableAutoLoad = false;
         });
     },
 
@@ -245,6 +257,11 @@ export default {
       this.generateData();
     },
     generateData() {
+      // 切参数重置数据源期间禁用 PressList 自动 check 触发的 load，
+      // 否则 fetchData resolve → loading=false → PressList 立刻 check →
+      // emitInput → load 又触发，循环到 total 才停（用户感知为「一直 loading」）。
+      // 等本次 onFetchData 完成后再解除禁用。
+      this.disableAutoLoad = true;
       this.loading = true;
       this.onFetchData(true);
     },
