@@ -103,10 +103,12 @@ export default {
     quickLinkList() {
       return [
         ...QUICK_LINK_LIST,
+        // #ifdef MP-WEIXIN
         {
           url: '/bump/bump',
           label: 'Bump',
         },
+        // #endif
       ];
     },
   },

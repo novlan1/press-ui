@@ -5,6 +5,7 @@
   >
     <!-- #ifdef H5 -->
     <VueBarcode
+      v-if="!errorMessage"
       :value="value"
       :width="width"
       :height="height"
@@ -13,7 +14,28 @@
     />
     <!-- #endif -->
 
-    <!-- #ifndef H5 -->
+    <!-- APP 端：直接展示 canvas 本身。
+         原实现把 canvas 用 CSS 移到屏幕外「离屏绘制」，再用 <image> 展示
+         canvasToTempFilePath 生成的临时图。但 APP 端这条链路不可靠
+         （临时路径加载、层级遮挡都会出问题），而 canvas 上其实已经画好了条码。
+         因此这里让 APP 直接显示 canvas，转图仅用于对外抛 result 事件。
+         与 press-q-r-code 的处理保持一致。
+
+         注意：这里必须是**扁平的平级条件编译**，不要写成
+         `#ifndef H5` 里再嵌套 `#ifdef APP`。uni 对嵌套 ifdef 支持不可靠，
+         整块可能被直接剔除，导致条形码完全不渲染。 -->
+    <!-- #ifdef APP-PLUS || APP -->
+    <canvas
+      v-show="!errorMessage"
+      :id="cid"
+      class="press-barcode-canvas--visible"
+      :canvas-id="cid"
+      :style="{width:canvasWidth+'px',height:canvasHeight+'px'}"
+    />
+    <!-- #endif -->
+
+    <!-- 小程序端：离屏 canvas 绘制 + image 展示结果 -->
+    <!-- #ifdef MP-WEIXIN || MP-QQ || MP-ALIPAY || MP-BAIDU || MP-TOUTIAO -->
     <canvas
       :id="cid"
       class="press-barcode-canvas"
@@ -26,6 +48,15 @@
       :style="{width:canvasWidth+'px',height:canvasHeight+'px'}"
     />
     <!-- #endif -->
+
+    <!-- 编码失败提示（如输入中文）。一维码规范只支持 ASCII，
+         不给提示的话用户只会看到一片空白，不知道发生了什么。 -->
+    <div
+      v-if="errorMessage"
+      class="press-barcode__error"
+    >
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
@@ -110,12 +141,19 @@ export default {
   },
   emits: [
     'result',
+    'error',
   ],
   data() {
     return {
       result: '',
-      canvasWidth: 0,
-      canvasHeight: 0,
+      // 给一个非 0 的初始尺寸：canvas 的绘图区由 style 宽高决定，
+      // 若初始为 0，首次 mounted 绘制时画布还是零尺寸，内容画不出来
+      // （表现为「首次进页面空白，删掉重新输入才显示」）。
+      // 真实尺寸会在编码完成后由 cbCanvasSize 回调覆盖。
+      canvasWidth: 300,
+      canvasHeight: 100,
+      // 编码失败时的提示文案（如输入中文），为空表示正常
+      errorMessage: '',
 
       innerOptions: {
         ...DEFAULT_OPTIONS,
@@ -152,6 +190,26 @@ export default {
     innerMakeCode() {
       const that = this;
       this.getInnerOptions();
+      // 每次重新生成前清掉上一次的错误提示
+      this.errorMessage = '';
+
+      // 一维码（CODE128 / CODE39 / EAN / UPC 等）规范上只支持 ASCII 字符，
+      // 传中文会让编码器抛 RangeError。这里在所有端统一提前拦截，
+      // 保证 H5 / APP / 小程序表现一致（H5 走的是 VueBarcode，不经过下面的 Barcode）。
+      // eslint-disable-next-line no-control-regex
+      if (/[^\x00-\x7F]/.test(String(this.value))) {
+        this.errorMessage = `${this.format} 只支持 ASCII 字符，无法编码「${this.value}」`;
+        // 注意：这里不要把 canvasWidth/Height 置 0。
+        // canvas 由 errorMessage 控制隐藏即可，置 0 会让下次成功绘制时
+        // 又落回「零尺寸画布」的竞态，导致首次不显示。
+        this.setResult('');
+        this.$emit('error', {
+          type: 'INVALID_CHARACTER',
+          message: this.errorMessage,
+          text: this.value,
+        });
+        return;
+      }
 
       // #ifndef H5
       new Barcode(
@@ -164,6 +222,11 @@ export default {
         }),
         ((res) => { // 生成条形码的回调
           that.setResult(res);
+        }),
+        ((err) => { // 编码失败回调（如输入了中文等非 ASCII 字符）
+          that.errorMessage = err && err.message ? err.message : '条形码生成失败';
+          that.setResult('');
+          that.$emit('error', err);
         }),
       );
       // #endif

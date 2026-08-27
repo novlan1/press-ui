@@ -26,7 +26,7 @@
               {{ componentCount || iComponentCount }}
             </div>
             <div class="index-page__stat-label">
-              组件
+              {{ t('statComponent') }}
             </div>
           </div>
           <div class="index-page__stat-divider" />
@@ -35,7 +35,7 @@
               {{ totalCategoryCount }}
             </div>
             <div class="index-page__stat-label">
-              分类
+              {{ t('statCategory') }}
             </div>
           </div>
           <div class="index-page__stat-divider" />
@@ -44,7 +44,7 @@
               8+
             </div>
             <div class="index-page__stat-label">
-              端覆盖
+              {{ t('statPlatform') }}
             </div>
           </div>
         </div>
@@ -139,6 +139,26 @@ const DEFAULT_DETAIL = 'Press UI 是一套易用、灵活、基于 uni-app 的�
 
 export default {
   name: 'PressDemoIndex',
+  // 首页的统计数字与分类副标题原先是硬编码中文，切换语言时不会变。
+  // 这里补上词条，配合全局 mixin 注入的 t()（见 locale/demo-lang.js）实现多语言。
+  i18n: {
+    'zh-CN': {
+      statComponent: '组件',
+      statCategory: '分类',
+      statPlatform: '端覆盖',
+      countComponent: count => `${count} 个组件`,
+      countAbility: count => `${count} 项功能`,
+      countProject: count => `${count} 个项目`,
+    },
+    'en-US': {
+      statComponent: 'Components',
+      statCategory: 'Categories',
+      statPlatform: 'Platforms',
+      countComponent: count => `${count} components`,
+      countAbility: count => `${count} features`,
+      countProject: count => `${count} projects`,
+    },
+  },
   options: {
     styleIsolation: 'shared',
   },
@@ -588,9 +608,9 @@ export default {
       if (item.subTitle) return item.subTitle;
       const count = item.list ? item.list.length : 0;
       const key = item.key || '';
-      if (key.includes('otherAbility')) return `${count} 项功能`;
-      if (key.includes('quickList')) return `${count} 个项目`;
-      return `${count} 个组件`;
+      if (key.includes('otherAbility')) return this.t('countAbility', count);
+      if (key.includes('quickList')) return this.t('countProject', count);
+      return this.t('countComponent', count);
     },
 
     clickComponent(nav, item) {

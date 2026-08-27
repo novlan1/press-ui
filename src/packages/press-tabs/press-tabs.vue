@@ -1,5 +1,6 @@
 <template>
   <div
+    :id="tabsRootId"
     ref="pressTabs"
     :class="tabsClass"
     :style="tabsCustomStyle"
@@ -347,6 +348,9 @@ export default {
       skipTransition: true,
       scrollWithAnimation: false,
       lineOffsetLeft: 0,
+      // 根节点唯一 id：APP 端 sticky 的容器模式靠字符串选择器定位（见 mounted）
+      tabsRootId: `press-tabs-${Math.random().toString(36)
+        .slice(2, 8)}`,
 
       computed,
       utils,
@@ -432,7 +436,17 @@ export default {
   mounted() {
     requestAnimationFrame(() => {
       this.swiping = true;
+
+      // sticky 容器模式的定位方式：
+      // - 小程序 / H5：ref 返回可查询的节点（DOM 或 MP 节点），函数形式可用
+      // - APP：逻辑层 $refs 拿不到可查询对象，必须用字符串选择器
+      //   （press-sticky 内部会走页面级 createSelectorQuery）
+      // #ifdef APP-PLUS || APP
+      this.container = `#${this.tabsRootId}`;
+      // #endif
+      // #ifndef APP-PLUS || APP
       this.container = () => this.$refs.pressTabs;
+      // #endif
 
       this.updateTabs();
       this.resize();

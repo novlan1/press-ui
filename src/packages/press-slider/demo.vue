@@ -108,7 +108,10 @@
     </demo-block>
 
     <!-- #ifndef H5 -->
-    <PressToast id="press-toast" />
+    <PressToast
+      id="press-toast"
+      ref="press-toast"
+    />
     <!-- #endif -->
   </div>
 </template>

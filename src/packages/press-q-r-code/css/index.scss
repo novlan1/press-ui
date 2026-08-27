@@ -6,4 +6,21 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
+
+  /**
+   * APP 端 canvas 与生成后的 img 会同时存在（canvas 用 v-show 保留，
+   * 避免销毁重建造成的闪烁），因此需要让两者重叠而不是上下排开。
+   * 这里让容器成为定位父级，img 绝对定位覆盖在 canvas 之上。
+   */
+  position: relative;
+
+  /* #ifdef APP-PLUS || APP */
+  > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* #endif */
 }

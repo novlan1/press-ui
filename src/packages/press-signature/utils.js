@@ -1,14 +1,25 @@
+/** calcBethelLine 内部压感算法的基准线宽，对应下面 lineSize/lineMin/lineMax 那组默认值 */
+const BASE_LINE_WIDTH = 3;
+
 export function calcBethelLine(ctx, line, {
   lineColor = '#1A1A1A',
   updateRadius,
   radius,
+  // lineWidth 之前没有被接收（只解构了 lineColor/updateRadius/radius），
+  // 导致组件传进来的自定义线宽完全不起作用 —— 笔画粗细全由下面的
+  // 压感算法用硬编码常量算出，改 lineWidth 没有任何效果。
+  lineWidth = BASE_LINE_WIDTH,
 }) {
   let RADIUS = radius; // 画圆的半径
   const smoothness = 60; // 顺滑度，用60的距离来计算速度
   const pressure = 1; // 默认压力
-  const  lineSize = 1.5; // 笔记倍数
-  const lineMin = 0.5; // 最小笔画半径
-  const lineMax = 4; // 最大笔画半径
+
+  // 按 lineWidth 相对基准值等比缩放，保留原有压感手感：
+  // lineWidth = 3 时与改动前完全一致；调大/调小则整体变粗/变细。
+  const scale = (Number(lineWidth) || BASE_LINE_WIDTH) / BASE_LINE_WIDTH;
+  const lineSize = 1.5 * scale; // 笔记倍数
+  const lineMin = 0.5 * scale; // 最小笔画半径
+  const lineMax = 4 * scale; // 最大笔画半径
 
   if (line.length <= 1) {
     line[0].r = RADIUS;

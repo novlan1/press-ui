@@ -3,6 +3,7 @@
     <!-- #ifndef H5 -->
     <PressNotify
       id="press-notify"
+      ref="press-notify"
     />
     <!-- #endif -->
 

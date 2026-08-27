@@ -80,8 +80,8 @@
     </scroll-view>
     <PressNumberKeyboard
       :show="!!current"
-      @close="current = null"
-      @input="onInput"
+      @close="onKeyboardClose"
+      @change="onInput"
       @backspace="onDelete"
     />
   </div>
@@ -174,8 +174,12 @@ export default {
       // 直接赋值给 scrollTop 会造成微信小程序抖动
       this.originScrollTop = e.detail.scrollTop;
     },
+    onKeyboardClose() {
+      this.current = '';
+    },
     onFocus(value) {
       this.current = value;
+
       const scrollTop = this.current === 'showInfo' ? 1000 : 0;
 
       if (scrollTop) {

@@ -1,29 +1,31 @@
 <template>
   <div class="press-password-input">
-    <span
+    <div
       class="press-password-input__security"
       :class="{'press-hairline--surround': !gutter}"
       @click.stop.passive="onTouchStart"
     >
-      <span
+      <div
         v-for="(item, index) of points"
         :key="index"
         class="press-password-input__item"
         :class="{'press-hairline--left': item.showBorder}"
         :style="item.style"
       >
-        <span
+        <div
           v-if="mask"
           class="press-password-input__mask"
           :style="item.maskStyle"
         />
-        <template v-else>{{ item.char }}</template>
+        <template v-else>
+          {{ item.char || '' }}
+        </template>
         <div
           v-if="item.showCursor"
           class="press-password-input__cursor"
         />
-      </span>
-    </span>
+      </div>
+    </div>
     <div
       v-if="errorInfo || info"
       :class="{
@@ -110,7 +112,9 @@ export default {
   },
   methods: {
     onTouchStart(event) {
-      event.stopPropagation();
+      if (event && typeof event.stopPropagation === 'function') {
+        event.stopPropagation();
+      }
       this.$emit('focus', event);
     },
   },

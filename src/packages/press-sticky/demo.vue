@@ -1,12 +1,5 @@
 <template>
   <div class="demo-wrap">
-    <!-- #ifdef APP-PLUS -->
-    <PressNoticeBar
-      mode="closeable"
-      text="Sticky 组件暂不支持 App"
-    />
-    <!-- #endif -->
-
     <demo-block
       :title="t('basicUsage')"
       section-style="margin: 0;"
@@ -62,10 +55,9 @@
   </div>
 </template>
 <script>
-import { requestAnimationFrame } from 'press-ui/common/utils/system';
+
 import { getHideHeaderMixin } from 'press-ui/mixins/hide-header/index';
 import PressButton from 'press-ui/press-button/press-button.vue';
-import PressNoticeBar from 'press-ui/press-notice-bar/press-notice-bar.vue';
 import PressSticky from 'press-ui/press-sticky/press-sticky.vue';
 
 
@@ -88,23 +80,13 @@ export default {
   components: {
     PressSticky,
     PressButton,
-    PressNoticeBar,
   },
   mixins: [getHideHeaderMixin()],
   data() {
-    const that = this;
     return {
-      container() {
-        const res = that.$refs?.container;
-        return res;
-      },
-      // showHeader: true,
+      // 字符串选择器：三端通用（APP 端只支持这种形式）
+      container: '#container',
     };
-  },
-  mounted() {
-    requestAnimationFrame(() => {
-      this.container = () => this.$refs.container;
-    });
   },
   methods: {
     // onToggleShowHeader() {

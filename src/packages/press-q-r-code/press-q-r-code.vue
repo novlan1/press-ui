@@ -48,7 +48,7 @@
       />
       <!-- #endif -->
 
-      <!-- #ifdef MP-QQ || MP-ALIPAY || APP-PLUS || APP -->
+      <!-- #ifdef MP-QQ || MP-ALIPAY -->
       <canvas
         :id="canvasId"
         :style="style"
@@ -57,6 +57,21 @@
       <!-- #endif -->
     </template>
 
+    <!-- APP 端：canvas 上已经画好二维码，直接展示它即可。
+         这里不做 canvas -> 临时图片 的切换，原因有两点：
+         1. <img> 是 HTML 标签，加载不了 APP 的本地临时路径（_doc/uniapp_temp_.../xxx.png），
+            会触发 error，之前的「一闪就没 / 反复闪烁」正是它造成的；
+         2. 展示 canvas 本身就够了，转图只是为了长按保存等附加能力。
+         若外部需要图片路径，仍会通过 result 事件抛出。 -->
+    <!-- #ifdef APP-PLUS || APP -->
+    <canvas
+      :id="canvasId"
+      :style="style"
+      :canvas-id="canvasId"
+    />
+    <!-- #endif -->
+
+    <!-- #ifndef APP-PLUS || APP -->
     <img
       v-if="codeImg"
       :src="codeImg"
@@ -64,6 +79,7 @@
       :show-menu-by-longpress="true"
       @longpress="onLongPressImage"
     >
+    <!-- #endif -->
   </div>
 </template>
 
@@ -273,6 +289,8 @@ export default {
       // 调用绘制方法将二维码图案绘制到canvas上
       qr.drawCanvas();
 
+      // 转图仅用于对外抛出图片路径（如长按保存），不参与页面展示 ——
+      // 展示始终用 canvas，避免 <img> 加载不了 APP 本地临时路径而反复闪烁。
       setTimeout(() => {
         uni.canvasToTempFilePath(
           {
@@ -281,13 +299,18 @@ export default {
             width: this.size,
             height: this.size,
             success: (res) => {
-              console.log('[codeMpQQ]', res);
-              this.codeImg = res.tempFilePath;
-
-              this.$emit('result', this.codeImg);
+              const path = res && res.tempFilePath;
+              if (!path || typeof path !== 'string') {
+                console.warn('[press-q-r-code] tempFilePath 无效', res);
+                return;
+              }
+              // 注意：APP 端不要把 path 赋给 codeImg，
+              // 那会切换成 <img> 展示，而 <img> 加载不了 _doc/ 临时路径。
+              this.$emit('result', path);
             },
             fail: (err) => {
-              console.log(err);
+              // 失败也无妨：canvas 上的二维码始终在显示
+              console.warn('[press-q-r-code] canvasToTempFilePath 失败', err);
             },
           },
           this, // 组件内使用必传当前实例
