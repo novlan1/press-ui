@@ -24,6 +24,7 @@ import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'press-ui/press-
 
 
 export default {
+  name: 'PageIntroduce',
   components: {
     PressProtocol,
   },

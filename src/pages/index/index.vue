@@ -32,6 +32,7 @@ const DETAIL = 'Press UI 是一套易用、灵活、基于 uni-app 的组件库'
 
 
 export default {
+  name: 'PageIndex',
   i18n: {
     'zh-CN': {
       name: '全端兼容 高性能',

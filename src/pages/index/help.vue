@@ -13,6 +13,9 @@ import { DEFAULT_HELPER_CONFIG } from './help-config';
 
 
 export default {
+  // 组件名：与 src/views/press/index.vue 的 cachedPageNames 白名单对应，
+  // 让 keep-alive 能缓存 help 页面（保留 PressAbout 弹窗开关状态等）。
+  name: 'PageHelp',
   components: {
     PressAbout,
   },
@@ -28,8 +31,9 @@ export default {
 };
 </script>
 <style>
-page {
-  background: #f7f8fa;
+.about {
+  background: #f5f6fa;
+  min-height: 100%;
 }
 </style>
 <style scoped lang="scss">
