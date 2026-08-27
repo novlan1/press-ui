@@ -1,7 +1,14 @@
 <template>
   <div class="press-about">
     <div class="press-about__header">
+      <img
+        v-if="isNotInUni"
+        class="press-about__banner"
+        :src="helpConfig.banner"
+        mode="aspectFill"
+      >
       <image
+        v-else
         class="press-about__banner"
         :src="helpConfig.banner"
         mode="aspectFill"
