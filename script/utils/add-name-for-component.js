@@ -1,0 +1,36 @@
+/**
+ * @description 批量为 Vue 组件添加 name 属性
+ */
+const fs = require('fs');
+const path = require('path');
+
+const { traverseFolder, pascalCase, addNameForComponent } = require('t-comm');
+
+const dir = 'src/packages';
+
+
+function main() {
+  const list = fs.readdirSync(dir);
+  for (const item of list) {
+    if (!item.startsWith('press-')) {
+      continue;
+    }
+
+    traverseFolder((file) => {
+      const basename = path.basename(file);
+
+      if (basename.startsWith('press-')) {
+        addName(file, basename);
+      }
+    }, `${dir}/${item}`);
+  }
+}
+
+function addName(file, basename) {
+  const fileName = basename.replace('.vue', '');
+  const compName = pascalCase(fileName);
+
+  addNameForComponent(file, compName);
+}
+
+main();

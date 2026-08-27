@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider">
+        <div class="press-slider__bar" style="width: 50%; left: 0%; top: 0px;">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="press-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider">
+        <div class="press-slider__bar" style="width: 40%; left: 10%; top: 0px;">
+          <div data-index="0" class="press-slider__button-wrapper-left">
+            <div class="press-slider__button"></div>
+          </div>
+          <div data-index="1" class="press-slider__button-wrapper-right">
+            <div class="press-slider__button"></div>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider">
+        <div class="press-slider__bar" style="width: 100%; left: 0%; top: 0px;">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="press-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider press-slider--disabled">
+        <div class="press-slider__bar" style="width: 50%; left: 0%; top: 0px;">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="press-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider">
+        <div class="press-slider__bar" style="width: 50%; left: 0%; top: 0px;">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="press-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider" style="height: 4px;">
+        <div class="press-slider__bar" style="width: 50%; left: 0%; top: 0px; background-color: rgb(238, 10, 36);">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="press-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-slider-index">
+      <div class=" press-slider">
+        <div class="press-slider__bar" style="width: 50%; left: 0%; top: 0px;">
+          <!---->
+          <!---->
+          <div class="press-slider__button-wrapper">
+            <div class="custom-button">
+              50
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div style="height: 150px;">
+      <div class="press-slider-index">
+        <div class=" press-slider press-slider--vertical">
+          <div class="press-slider__bar" style="height: 50%; left: 0px; top: 0%;">
+            <!---->
+            <!---->
+            <div class="press-slider__button-wrapper">
+              <div class="press-slider__button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="press-slider-index" style="margin-left: 100px;">
+        <div class=" press-slider press-slider--vertical">
+          <div class="press-slider__bar" style="height: 40%; left: 0px; top: 10%;">
+            <div data-index="0" class="press-slider__button-wrapper-left">
+              <div class="press-slider__button"></div>
+            </div>
+            <div data-index="1" class="press-slider__button-wrapper-right">
+              <div class="press-slider__button"></div>
+            </div>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="press-toast-index" id="press-toast">
+    <!---->
+    <!---->
+  </div>
+</div>
+`;

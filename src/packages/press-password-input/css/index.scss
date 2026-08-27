@@ -1,0 +1,105 @@
+@import '../../common//style/press/hairline-more/left.scss';
+@import '../../common//style/press/hairline-more/surround.scss';
+
+
+.press-password-input {
+  --press-text-color: var(--press-gray-8, #323233);
+  --press-padding-md: 16px;
+
+  --press-password-input-height: 50px;
+  --press-password-input-margin: 0 var(--press-padding-md, 16px);
+  --press-password-input-font-size: 20px;
+  --press-password-input-radius: 6px;
+  --press-password-input-background: var(--press-background-2, var(--press-white, #fff));
+  --press-password-input-info-color: var(--press-text-color-2, var(--press-gray-6, #969799));
+  --press-password-input-info-font-size: var(--press-font-size-md, 14px);
+  --press-password-input-error-info-color: var(--press-danger-color, var(--press-red, #ee0a24));
+  --press-password-input-dot-size: 10px;
+  --press-password-input-dot-color: var(--press-text-color);
+  --press-password-input-text-color: var(--press-text-color);
+  --press-password-input-cursor-color: var(--press-text-color);
+  --press-password-input-cursor-width: 1px;
+  --press-password-input-cursor-height: 40%;
+  --press-password-input-cursor-duration: 1s;
+
+  position: relative;
+  margin: var(--press-password-input-margin);
+  user-select: none;
+
+  &__info,
+  &__error-info {
+    margin-top: var(--press-padding-md);
+    font-size: var(--press-password-input-info-font-size);
+    text-align: center;
+  }
+
+  &__info {
+    color: var(--press-password-input-info-color);
+  }
+
+  &__error-info {
+    color: var(--press-password-input-error-info-color);
+  }
+
+  &__security {
+    display: flex;
+    width: 100%;
+    height: var(--press-password-input-height);
+    cursor: pointer;
+
+    &::after {
+      border-radius: var(--press-password-input-radius);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--press-password-input-text-color);
+    font-size: var(--press-password-input-font-size);
+    line-height: 1.2;
+    background: var(--press-password-input-background);
+  }
+
+  &__mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--press-password-input-dot-size);
+    height: var(--press-password-input-dot-size);
+    background: var(--press-password-input-dot-color);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+  }
+
+  &__cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--press-password-input-cursor-width);
+    height: var(--press-password-input-cursor-height);
+    background: var(--press-password-input-cursor-color);
+    transform: translate(-50%, -50%);
+    animation: var(--press-password-input-cursor-duration) press-cursor-flicker
+      infinite;
+  }
+}
+
+@keyframes press-cursor-flicker {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

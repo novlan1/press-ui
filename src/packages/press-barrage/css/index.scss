@@ -1,0 +1,51 @@
+.press-barrage {
+  position: relative;
+  overflow: hidden;
+
+  ::v-deep &__item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    padding-bottom: var(--press-barrage-space, 10px);
+    opacity: .75;
+    line-height: 1;
+    font-size: var(--press-barrage-font-size,  16px);
+    font-family: var(--press-barrage-font, inherit);
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--press-barrage-color, var(--press-white, #fff));
+    text-shadow: 1px 0 1px #000,
+      0 1px 1px #000,
+      0 -1px 1px #000,
+      -1px 0 1px #000;
+    user-select: none;
+    will-change: transform;
+    transform: translateX(110%);
+
+    animation-name: press-barrage;
+  }
+}
+
+@keyframes press-barrage {
+  from {
+    transform: translateX(110%);
+  }
+
+  to {
+    transform: translateX(var(--move-distance));
+  }
+}
+
+::v-deep {
+  @keyframes press-barrage {
+    from {
+      transform: translateX(110%);
+    }
+
+    to {
+      transform: translateX(var(--move-distance));
+    }
+  }
+
+}

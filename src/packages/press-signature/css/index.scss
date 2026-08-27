@@ -1,0 +1,31 @@
+.press-signature {
+  padding: var(--press-signature-padding, var(--press-padding-xs, 8px));
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--press-signature-content-height, 200px);
+    background-color: var(--press-signature-content-background, var(--press-background-2, #fff));
+    border: var(--press-signature-content-border, 1px dotted #dadada);
+    border-radius: var(--press-radius-lg, 8px);
+    overflow: hidden;
+
+    canvas,
+    Canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .press-button,
+    ::v-deep .press-signature__button {
+      padding: 0 var(--press-padding-md, 12px);
+      margin: var(--press-padding-xs, 8px);
+    }
+  }
+}

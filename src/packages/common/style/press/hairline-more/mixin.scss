@@ -1,0 +1,17 @@
+@mixin hairline-common() {
+  position: relative;
+}
+
+@mixin hairline-after-common() {
+  border: 0 solid #ebedf0;
+  bottom: -50%;
+  box-sizing: border-box;
+  content: ' ';
+  left: -50%;
+  pointer-events: none;
+  position: absolute;
+  right: -50%;
+  top: -50%;
+  transform: scale(.5);
+  transform-origin: center;
+}

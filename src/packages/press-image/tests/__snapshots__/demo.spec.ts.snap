@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-wrap">
+  <div>
+    <!---->
+  </div>
+  <div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">aspectFit</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">aspectFill</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">center</span>
+        </div>
+      </div>
+    </div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">widthFix</span>
+        </div>
+      </div>
+      <div class="press-col press-col--16">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--long">heightFix</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">aspectFit</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">aspectFill</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">center</span>
+        </div>
+      </div>
+    </div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--gap">widthFix</span>
+        </div>
+      </div>
+      <div class="press-col press-col--16">
+        <div class="demo-grid">
+          <!----> <span class="image-title image-title--long">heightFix</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">默认提示</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">自定义提示</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="press-row">
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">默认提示</span>
+        </div>
+      </div>
+      <div class="press-col press-col--8">
+        <div class="demo-grid">
+          <!----> <span class="image-title">自定义提示</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="press-overlay-index">
+    <!---->
+  </div>
+</div>
+`;

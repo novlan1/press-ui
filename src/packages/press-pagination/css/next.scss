@@ -1,0 +1,102 @@
+.press-pagination {
+  --press-font-size-md: 14px;
+  --press-primary-color: #1181d7;
+  --press-gray-1: #f7f8fa;
+  --press-gray-7: #646566;
+  --press-white: #fff;
+  --press-background: var(--press-gray-1);
+  --press-background-2: var(--press-white);
+  --press-disabled-opacity: .5;
+  --press-padding-base: 4px;
+  --press-border-width: 1px;
+
+  --press-pagination-height: 40px;
+  --press-pagination-font-size: var(--press-font-size-md);
+  --press-pagination-item-width: 36px;
+  --press-pagination-item-default-color: var(--press-primary-color);
+  --press-pagination-item-disabled-color: var(--press-gray-7);
+  --press-pagination-item-disabled-background: var(--press-background);
+  --press-pagination-background: var(--press-background-2);
+  --press-pagination-desc-color: var(--press-gray-7);
+  --press-pagination-disabled-opacity: var(--press-disabled-opacity);
+
+
+  font-size: var(--press-pagination-font-size);
+
+  &__items {
+    display: flex;
+  }
+
+  &__item,
+  &__page-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    flex: 1;
+    box-sizing: border-box;
+    min-width: var(--press-pagination-item-width);
+    height: var(--press-pagination-height);
+    color: var(--press-pagination-item-default-color);
+    background: var(--press-pagination-background);
+    cursor: pointer;
+    user-select: none;
+
+    button {
+      flex: 1;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+
+    &:active {
+      color: var(--press-white);
+      background-color: var(--press-pagination-item-default-color);
+    }
+
+    &:not(:last-child)::after {
+      border-right-width: 0;
+    }
+
+    &--active {
+      color: var(--press-white);
+      background-color: var(--press-pagination-item-default-color);
+    }
+
+    &--page {
+      flex-grow: 0;
+    }
+
+    &--prev,
+    &--next {
+      padding: 0 var(--press-padding-base);
+      cursor: pointer;
+    }
+
+    &--border:first-child::after {
+      border-right-width: var(--press-border-width);
+    }
+
+    &--disabled {
+      &,
+      &:active {
+        color: var(--press-pagination-item-disabled-color);
+        background-color: var(--press-pagination-item-disabled-background);
+        opacity: var(--press-pagination-disabled-opacity);
+      }
+    }
+  }
+
+  &__page-desc {
+    flex: 1;
+    height: var(--press-pagination-height);
+    color: var(--press-pagination-desc-color);
+  }
+}

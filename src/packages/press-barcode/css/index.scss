@@ -1,0 +1,42 @@
+.press-barcode {
+  position: relative;
+}
+
+/**
+ * 仅小程序端使用：
+ * canvas 只负责离屏绘制，绘制完通过 canvasToTempFilePath 转成图片，
+ * 真正展示的是旁边的 <image>，所以把 canvas 移出可视区域。
+ *
+ * 注意：原先用的是 `-99999upx`。upx 是 uni 早期的废弃单位，
+ * APP 端不识别，该声明会被整条丢弃 —— canvas 于是留在原位，
+ * 又因为 canvas 层级高于普通元素，把下面的 <image> 完全盖住。
+ * APP 端现已改为直接展示 canvas（见组件模板），不再走离屏方案。
+ */
+.press-barcode-canvas {
+  position: fixed;
+  top: -99999px;
+  left: -99999px;
+  z-index: -99999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/**
+ * APP 端直接展示的 canvas。
+ * 显式声明为块级并禁止收缩，避免被父级 flex 布局压成 0 尺寸。
+ * 这里不加条件编译包裹 —— 类名本身只在 APP 模板里使用，
+ * 多余的 #ifdef 在 scss 里反而容易出问题。
+ */
+.press-barcode-canvas--visible {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* 编码失败提示（如输入了中文等非 ASCII 字符） */
+.press-barcode__error {
+  padding: 12px;
+  color: #ee0a24;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}

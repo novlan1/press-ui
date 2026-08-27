@@ -1,0 +1,30 @@
+.press-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &--circle {
+    border-radius: 100px;
+  }
+
+  &--square {
+    border-radius: 4px;
+  }
+
+  ::v-deep {
+    press-transition,
+    press-image {
+      height: 100%;
+    }
+  }
+
+  &__image {
+    &--circle {
+      border-radius: 100px;
+    }
+
+    &--square {
+      border-radius: 4px;
+    }
+  }
+}
