@@ -9,6 +9,8 @@ function isWindow(val) {
 
 const overflowScrollReg = /scroll|auto|overlay/i;
 export function getScroller(el, root) {
+  // 仅 H5 端可用：依赖 window.getComputedStyle 与真实 DOM。
+  // APP 逻辑层没有 window/document，此函数在 APP 构建上是空函数（返回 undefined）。
   // #ifdef H5
   if (root === void 0) {
     root = window;

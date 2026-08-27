@@ -90,6 +90,24 @@ function gte(version) {
 }
 
 
+/**
+ * H5 端不存在 SDKVersion（那是小程序基础库版本号），
+ * gte() 里 compareVersion(undefined, x) 恒为 -1，会把 H5 误判成「不支持」。
+ * H5 由浏览器渲染，标准 Web 能力齐全，故直接放行。
+ *
+ * 注意：不要把 APP 端也放行。APP 的 canvas 2d 需要通过
+ * createSelectorQuery().node() 取原生节点，而该能力在 APP 上拿不到，
+ * 应当继续走 uni.createCanvasContext 的旧版路径。
+ */
+function isWebRuntime() {
+  let result = false;
+  // #ifdef H5
+  result = true;
+  // #endif
+  return result;
+}
+
+
 export function canIUseModel() {
   return gte('2.9.3');
 }
@@ -111,6 +129,9 @@ export function canIUseGroupSetData() {
 
 
 export function canIUseCanvas2d() {
+  // APP 端 SDKVersion 为空会被 gte 判成 false，进而走进旧版
+  // uni.createCanvasContext 分支，导致 signature / barcode 等 canvas 组件异常
+  if (isWebRuntime()) return true;
   return gte('2.9.0');
 }
 
