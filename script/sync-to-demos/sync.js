@@ -264,7 +264,9 @@ function doCopy(demoConfig, dir, source, targetDir, filter, item) {
       for (const p of filter.include) {
         for (const m of glob.sync(p, { cwd: source, nodir: false })) {
           // 顶层 item 自身命中 exclude 时直接跳过（rsync 的 --exclude 管不到这一层）
-          if (isExcludedItem(m, filter.exclude)) continue;
+          // rootExclude（package.json / index.js 等顶层元文件）只在这里做顶层匹配，
+          // 不能进 toRsyncExcludes 的递归排除——否则组件目录内的 index.js 会被一并删掉。
+          if (isExcludedItem(m, [...(filter.exclude || []), ...(filter.rootExclude || [])])) continue;
           const src = path.resolve(source, m);
           const dst = path.resolve(targetDir, m);
           const stat = fs.statSync(src);

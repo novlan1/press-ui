@@ -50,18 +50,27 @@ const UNI_APP_FILES = ['uni.scss', 'index.js', 'index.scss', 'main.js'];
 const PACKAGES_INCLUDE = ['*'];
 
 // 同时要剔除的 packages 顶层文件（npm 发包用，不属于组件源码）
+//
+// 重要：这些只应做「顶层」剔除，绝不能递归剔除！
+// 尤其 index.js —— 组件目录里有 150+ 个 index.js，它们是目录引入的入口
+// （如 `press-dialog-plus`、`common/functional-component/index`、`press-toast/index`）。
+// 一旦递归剔除，这些目录引入会全部解析失败，verify 报断链。
 const PACKAGES_ROOT_META = ['package.json', 'LICENSE', '.npmrc', 'index.js'];
 
-// 同步时要剔除的"非运行时"文件
+// 同步时要「递归」剔除的"非运行时"文件（组件目录内也会出现，需全层级剔除）
 //   demo.vue    - 页面已由 dispatch 生成到 pages/press/，组件包内不需要
 //   tests       - 单测只在主源跑
 //   README      - 文档只在主源/官网
 // 注意：绝对不要加 demo-helper/！它是 pages/press/*.vue 的运行时依赖，
 //      排除后 demo 仓库会 "Could not resolve .../demo-helper/xxx"。
+//
+// 顶层元文件（package.json / index.js 等）不能放 exclude 里——
+// 因为 exclude 会被转成 rsync 的递归 --exclude（--exclude="**/xxx"），
+// 会把组件目录内的 index.js 一起删掉。它们只应放 rootExclude 做顶层匹配。
 const EXCLUDE_NON_RUNTIME = {
   include: PACKAGES_INCLUDE,
+  rootExclude: [...PACKAGES_ROOT_META],
   exclude: [
-    ...PACKAGES_ROOT_META,
     'demo.vue', 'demo-data.*',
     '__tests__', 'tests', '*.test.*',
     'README*.md', 'index.d.ts',
@@ -74,7 +83,8 @@ const EXCLUDE_NON_RUNTIME = {
 // 但 packages 顶层的 npm 发包元文件仍要剔除，避免污染 demo 的 src/packages/。
 const KEEP_ALL_FOR_LOCAL = {
   include: PACKAGES_INCLUDE,
-  exclude: [...PACKAGES_ROOT_META],
+  rootExclude: [...PACKAGES_ROOT_META],
+  exclude: [],
 };
 
 const config = {
@@ -87,7 +97,7 @@ const config = {
     //    组件作为 uni-app 插件放到 uni_modules/press-ui/components/
     //    可以直接发布为 devcloud 插件
     'vue3-hx': {
-      dir: path.resolve(PRESS_UI_ROOT, '../press-ui-demo-vue3-hx'),
+      dir: path.resolve(PRESS_UI_ROOT, '../press-ui-demo-vue3-uni'),
       cpList: ['pages', 'packages', 'static', 'locale', 'windows', 'utils'],
       cpMap: {
         pages: HX_BASE_DIR,
