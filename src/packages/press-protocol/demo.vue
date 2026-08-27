@@ -41,7 +41,15 @@ export default {
       // #ifdef H5
       window.location.href = item.link;
       // #endif
-      // #ifndef H5
+
+      // APP 端：用系统浏览器直接打开链接（与 press-link 组件行为一致），
+      // 不再复制链接让用户手动去浏览器粘贴。
+      // #ifdef APP-PLUS || APP
+      plus.runtime.openURL(item.link);
+      // #endif
+
+      // 小程序：无法随意打开外链，保持复制到剪贴板
+      // #ifndef H5 || APP-PLUS || APP
       setClipboardData(item.link).then(() => {
         this.onGTip('🎉 复制成功，请到浏览器中查看');
       });

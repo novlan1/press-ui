@@ -668,6 +668,7 @@ export default {
     handleJumpToOtherDemo(item) {
       const { link, mpWeixin, mpQQ } = item;
       if (!link) return;
+      let parsed = false;
 
       // #ifdef H5
       if (this.$toast) {
@@ -707,6 +708,17 @@ export default {
         return;
       }
       // #endif
+
+      // APP 端：用系统浏览器直接打开链接（与 press-link 组件行为一致），
+      // 不再复制链接让用户手动去浏览器粘贴
+      // #ifdef APP-PLUS || APP
+      plus.runtime.openURL(link);
+      parsed = true;
+      // #endif
+
+      if (parsed) {
+        return;
+      }
 
       setClipboardData(link)
         .then(() => {
