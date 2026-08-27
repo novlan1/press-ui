@@ -507,6 +507,26 @@ function syncVersion(demoConfig) {
   if (changed) writeFileSync(p1, b, true);
 }
 
+/**
+ * 校验 demo 的「发包保留文件」是否还在。
+ *
+ * uni_modules 插件（vue3-hx）发布需要 changelog.md / readme.md / package.json
+ * 这三个顶层元文件，它们不属于主源同步范围，由 demo 仓库自己维护。
+ * sync 的清理只到 uni_modules/press-ui/components，正常不会删它们，
+ * 这里做兜底校验：万一被误删（例如未来有人把 packages 映射改成顶层），
+ * 立即告警，避免拖到发包时才暴露。
+ */
+function checkKeepFiles(demoConfig) {
+  if (!demoConfig.keepFiles || !demoConfig.keepFiles.length) return;
+  for (const f of demoConfig.keepFiles) {
+    const fp = path.resolve(demoConfig.dir, f);
+    if (!fs.existsSync(fp)) {
+      console.warn(`  [warn] 发包元文件缺失: ${f}（uni_modules 插件发布必需）`);
+      demoConfig._hasRootFiles = true;
+    }
+  }
+}
+
 // ============================================================
 // 主流程
 // ============================================================
@@ -531,6 +551,7 @@ function syncOneDemo(demoName, demoConfig) {
   copyAppVue(demoConfig);
   runPostInit(demoConfig);
   syncVersion(demoConfig);
+  checkKeepFiles(demoConfig);
 
   const result = w || demoConfig._hasRootFiles ? 'warning' : 'ok';
   const needInstall = !!demoConfig._needInstall;

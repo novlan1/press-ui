@@ -125,6 +125,17 @@ const config = {
       pagesJson: true,
       pagesJsonPath: '.',
       appVue: false,
+      // uni_modules 插件发包必需的顶层元文件，sync 清理时不得删除。
+      //
+      // sync 的 cpMap.packages 只映射到 uni_modules/press-ui/components（组件目录），
+      // 清理也只会 rm -rf 这个 components 子目录，理论上不会碰到顶层这三个文件。
+      // 这里显式声明，一是自文档化（防止未来有人把 packages 映射改成顶层而误删），
+      // 二是 sync 完成后会校验它们仍在，若被意外删除则立即告警。
+      keepFiles: [
+        'uni_modules/press-ui/changelog.md',
+        'uni_modules/press-ui/readme.md',
+        'uni_modules/press-ui/package.json',
+      ],
       postInit: [
         // 清理旧同步留下的 src/ 残留
         'rm -rf src/pages', 'rm -rf src/packages',
