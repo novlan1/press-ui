@@ -30,7 +30,7 @@ export const QUICK_LINK_LIST = [
     link: 'https://novlan1.github.io/press-ui/',
   },
   {
-    label: 'Vue3 uni-app 示例',
+    label: 'Vue3 Uniapp 示例',
     name: 'vue3-uni',
     link: 'https://novlan1.github.io/press-ui-demo-vue3-uni/',
     mpWeixin: {
@@ -38,7 +38,7 @@ export const QUICK_LINK_LIST = [
     },
   },
   {
-    label: 'Vue2 uni-app 示例',
+    label: 'Vue2 Uniapp 示例',
     name: 'vue2-uni',
     link: 'https://novlan1.github.io/press-ui/h5/',
     mpWeixin: {
@@ -49,12 +49,12 @@ export const QUICK_LINK_LIST = [
     },
   },
   {
-    label: 'Vue3 非 uni-app 示例',
+    label: 'Vue3 Uniapp 示例',
     name: 'vue3-not-uni',
     link: 'https://novlan1.github.io/press-ui-demo-vue3-pure/',
   },
   {
-    label: 'Vue2 非 uni-app 示例',
+    label: 'Vue2 非 Uniapp 示例',
     name: 'vue2-not-uni',
     link: 'https://novlan1.github.io/press-ui-demo-vue2-pure/',
   },

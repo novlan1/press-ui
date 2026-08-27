@@ -94,10 +94,10 @@ import PressButton from 'press-ui/press-button/press-button.vue'
 
 点击下方链接查看示例项目。
 
-1. [Vue3 uni-app](https://github.com/novlan1/press-ui-demo-vue3-uni/)
-2. [Vue2 uni-app](https://github.com/novlan1/press-ui-demo-vue2-uni/)
-3. [Vue3 非 uni-app](https://github.com/novlan1/press-ui-demo-vue3-pure/)
-4. [Vue2 非 uni-app](https://github.com/novlan1/press-ui-demo-vue2-pure/)
+1. [Vue3 Uniapp](https://github.com/novlan1/press-ui-demo-vue3-uni/)
+2. [Vue2 Uniapp](https://github.com/novlan1/press-ui-demo-vue2-uni/)
+3. [Vue3 非 Uniapp](https://github.com/novlan1/press-ui-demo-vue3-pure/)
+4. [Vue2 非 Uniapp](https://github.com/novlan1/press-ui-demo-vue2-pure/)
 
 [node]: https://img.shields.io/node/v/press-ui
 [node-url]: https://nodejs.org
