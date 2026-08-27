@@ -1,5 +1,12 @@
 # 更新日志
 
+### [5.0.31](https://github.com/novlan1/press-ui/compare/v5.0.30...v5.0.31) (2026-08-27)
+
+
+### Features 🎉
+
+* update press-about ([ddcff33](https://github.com/novlan1/press-ui/commit/ddcff3388daa2970eec4e4c543dc01f1ac071d8a))
+
 ### [5.0.30](https://github.com/novlan1/press-ui/compare/v5.0.29...v5.0.30) (2026-08-27)
 
 
