@@ -292,12 +292,27 @@ function doCopy(demoConfig, dir, source, targetDir, filter, item) {
   }
 }
 
+// 应用入口文件：sync 不强制覆盖 demo 端已存在的版本。
+//
+// 这些文件经常需要按 demo 自身需求调整（例如 vue2-uni 改成走 npm 包
+// `press-ui/xxx` 形式而不是相对路径 `./packages/xxx`），sync 覆盖会把
+// demo 的自定义改回主源版本。改用"已存在则跳过"策略：
+//   - 首次 sync（demo 没这文件）→ 从主源复制
+//   - 后续 sync（demo 已有）   → 跳过，让 demo 自行维护
+//
+// 想强制覆盖 demo 的入口文件时，直接 rm 该文件再 sync 即可。
+const ENTRY_FILES = new Set(['main.js']);
+
 function copySingleFiles(demoConfig) {
   if (!demoConfig.files || !demoConfig.files.length) return;
   for (const file of demoConfig.files) {
     const source = path.resolve(config.pressUiSrc, file);
     const target = getTargetDir(demoConfig, file);
     if (!fs.existsSync(source)) continue;
+    if (ENTRY_FILES.has(file) && fs.existsSync(target)) {
+      console.log(`  [skip] ${displayRelative(demoConfig, target)} (应用入口已存在，保留 demo 版本)`);
+      continue;
+    }
     console.log(`  [copy] ${displayRelative(demoConfig, target)}`);
     fs.mkdirSync(path.dirname(target), { recursive: true });
     try {
