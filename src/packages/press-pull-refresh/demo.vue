@@ -61,12 +61,12 @@
           <template #loading>
             <img
               v-if="isNotInUni()"
-              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.png"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
               class="doge"
             >
             <image
               v-else
-              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.png"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
               class="doge"
             />
           </template>

@@ -16,7 +16,7 @@ import { parseProtocol } from 'press-ui/common/protocol/parse-protocol';
 
 import PressProtocol from 'press-ui/press-protocol/press-protocol.vue';
 
-import { getPressUIIntroduce, DEFAULT_PRESS_UI_INTRODUCE } from 'press-ui/press-protocol/demo-helper/data';
+import { DEFAULT_PRESS_UI_INTRODUCE } from 'press-ui/press-protocol/demo-helper/data';
 
 
 export default {
@@ -32,11 +32,6 @@ export default {
   mounted() {
   },
   methods: {
-    onFetchData() {
-      getPressUIIntroduce().then((res) => {
-        this.list = res;
-      });
-    },
     onClickProtocol(item) {
       // #ifdef H5
       window.location.href = item.link;

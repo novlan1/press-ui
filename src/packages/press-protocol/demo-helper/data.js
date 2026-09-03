@@ -1,8 +1,3 @@
-import { parseProtocol } from '../../common/protocol/parse-protocol';
-import { fetchData } from '../../common/utils/fetch-data';
-
-const INTRODUCE_URL = 'https://tip-components-1251917893.cos.ap-guangzhou.myqcloud.com/rb/front-open-config__match__default__press_ui_introduce_config.json';
-
 export const DEFAULT_PRESS_UI_INTRODUCE = [
   {
     title: '一、开始',
@@ -105,8 +100,3 @@ export const DEFAULT_PRESS_UI_INTRODUCE = [
   },
 ];
 
-export async function getPressUIIntroduce() {
-  const res = await fetchData(INTRODUCE_URL);
-
-  return parseProtocol(res);
-}

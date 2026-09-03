@@ -16,16 +16,4 @@ export declare const DEFAULT_PRESS_UI_INTRODUCE: ({
     link: string;
   })[])[];
 })[];
-export declare function getPressUIIntroduce(): Promise<{
-  uniqueKey: string;
-  list: {
-    uniqueKey: string;
-    list: {
-      uniqueKey: string;
-      text: string;
-      light?: boolean | undefined;
-      link?: string | undefined;
-    }[];
-  }[];
-  title?: string | undefined;
-}[]>;
+

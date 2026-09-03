@@ -3,7 +3,7 @@ const AEGIS_LINK = 'https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js';
 const AEGIS_ID = 'KJdZ8CqDv3JjZoaPV8';
 const AEGIS_REPORT_URL = 'https://rumt-zh.com';
 
-function initReport() {
+export function initReport() {
   if (reported) return ;
   reported = true;
 
@@ -37,8 +37,6 @@ export default ({ router }) => {
       const { app } = router;
 
       app.$once('hook:mounted', () => {
-        initReport();
-
         setTimeout(() => {
           const { hash } = document.location;
           if (hash.length > 1) {
