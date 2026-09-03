@@ -2,7 +2,7 @@ const PRESET_ICONS = ['qq', 'link', 'weibo', 'wechat', 'poster', 'qrcode', 'weap
 
 function getIconURL(icon) {
   if (PRESET_ICONS.indexOf(icon) !== -1) {
-    return `https://cdn.uwayfly.com/press%2Fimg%2Fshare-sheet-${icon}.png`;
+    return `https://cdn.uwayfly.com/press/img/share-sheet-${icon}.png`;
   }
 
   return icon;

@@ -31,7 +31,7 @@
     >
       <PressEmpty
         custom-class="custom-image"
-        image="https://cdn.uwayfly.com/press%2Fimg%2Fcustom-empty-image.png"
+        image="https://cdn.uwayfly.com/press/img/custom-empty-image.png"
         image-custom-style="width:90px;height:90px"
         :description="t('description')"
       />

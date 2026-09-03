@@ -182,7 +182,7 @@ export default {
   data() {
     return {
       cover: 'https://cdn.uwayfly.com/press/img/card-cover.jpeg',
-      avatar: 'https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar.png',
+      avatar: 'https://cdn.uwayfly.com/press/img/press-ui-avatar.png',
       extraIcon: {
         color: '#4cd964',
         size: '22',

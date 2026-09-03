@@ -78,7 +78,7 @@ export default {
 export default {
   data() {
     return {
-      avatar: 'https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar.png',
+      avatar: 'https://cdn.uwayfly.com/press/img/press-ui-avatar.png',
     }
   }
 }

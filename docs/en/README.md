@@ -1,5 +1,5 @@
 <div align="center">
-   <img alt="logo" src="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style=" margin-bottom: -25px;">
+   <img alt="logo" src="https://cdn.uwayfly.com/press/img/press-ui-avatar-transparent.png" width="150" style=" margin-bottom: -25px;">
 </div>
 <h3 align="center">Easy-to-use, flexible, uni-app-based cross-end component library</h3>
 

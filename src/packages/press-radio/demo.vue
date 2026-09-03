@@ -249,8 +249,8 @@ export default {
         cell: '1',
       },
       icon: {
-        normal: 'https://cdn.uwayfly.com/press%2Fimg%2Fuser-inactive.png',
-        active: 'https://cdn.uwayfly.com/press%2Fimg%2Fuser-active.png',
+        normal: 'https://cdn.uwayfly.com/press/img/user-inactive.png',
+        active: 'https://cdn.uwayfly.com/press/img/user-active.png',
       },
     };
   },

@@ -202,7 +202,7 @@ exports[`renders demo correctly 1`] = `
       <div class="press-hairline--top-bottom press-tabbar" style="z-index: 1;">
         <div class="press-tabbar-item-index">
           <div class="press-tabbar-item">
-            <div class="press-tabbar-item__icon"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fuser-inactive.png" mode="aspectFit" style="width: 23px; height: 18px;">
+            <div class="press-tabbar-item__icon"><img src="https://cdn.uwayfly.com/press/img/user-inactive.png" mode="aspectFit" style="width: 23px; height: 18px;">
               <div class="press-info press-info press-tabbar-item__info">
                 3
               </div>

@@ -212,7 +212,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-radio-index">
           <div class="press-radio">
             <!---->
-            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fuser-active.png" class="img"></div>
+            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://cdn.uwayfly.com/press/img/user-active.png" class="img"></div>
             <div class="press-radio__label press-radio__label--right ">
               单选框 1
             </div>
@@ -221,7 +221,7 @@ exports[`renders demo correctly 1`] = `
         <div class="press-radio-index">
           <div class="press-radio">
             <!---->
-            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fuser-inactive.png" class="img"></div>
+            <div class="press-radio__icon-wrap" style="font-size: 20px;"><img src="https://cdn.uwayfly.com/press/img/user-inactive.png" class="img"></div>
             <div class="press-radio__label press-radio__label--right ">
               单选框 2
             </div>

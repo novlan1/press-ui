@@ -41,7 +41,7 @@
         <div class="demo-preview">
           <img
             class="demo-preview-img"
-            src="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png"
+            src="https://cdn.uwayfly.com/press/img/press-ui-avatar-transparent-2.png"
           >
           <div class="demo-content">
             <div class="demo-content-h3">

@@ -138,15 +138,15 @@ export default {
       return  [
         {
           name: this.t('name'),
-          icon: 'https://cdn.uwayfly.com/press%2Fimg%2Fcustom-icon-fire.png',
+          icon: 'https://cdn.uwayfly.com/press/img/custom-icon-fire.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://cdn.uwayfly.com/press%2Fimg%2Fcustom-icon-light.png',
+          icon: 'https://cdn.uwayfly.com/press/img/custom-icon-light.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://cdn.uwayfly.com/press%2Fimg%2Fcustom-icon-water.png',
+          icon: 'https://cdn.uwayfly.com/press/img/custom-icon-water.png',
         },
       ];
     },
