@@ -20,8 +20,8 @@
     <demo-block :title="t('customImage')">
       <PressRate
         :value="value"
-        void-icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/star.png"
-        icon="https://image-1251917893.file.myqcloud.com/Esports/new/user/sel-star.png"
+        void-icon="https://cdn.uwayfly.com/Esports/new/user/star.png"
+        icon="https://cdn.uwayfly.com/Esports/new/user/sel-star.png"
         @change="onChange"
       />
     </demo-block>

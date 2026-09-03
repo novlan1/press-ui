@@ -5,7 +5,7 @@
   >
     <img
       :class="loadingScenes == 'btn' ? 'press-loading__img--btn' : 'press-loading__img--page'"
-      :src="`https://image-1251917893.file.myqcloud.com/Esports/user/img/${loadingScenes}-loading.gif`"
+      :src="`https://cdn.uwayfly.com/Esports/user/img/${loadingScenes}-loading.gif`"
     >
   </div>
 </template>

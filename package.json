@@ -237,6 +237,7 @@
     "clipboard": "^2.0.11",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "5",
+    "cos-nodejs-sdk-v5": "^2.15.4",
     "cross-env": "^7.0.2",
     "css-loader": "2",
     "dotenv": "^16.0.3",
