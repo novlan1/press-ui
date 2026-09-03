@@ -9,10 +9,18 @@
       <div class="index-page__header">
         <div class="index-page__header-brand">
           <img
+            v-if="isNotInUni()"
             class="index-page__header-logo"
             :src="logoPic"
             mode="aspectFit"
           >
+
+          <image
+            v-else
+            class="index-page__header-logo"
+            :src="logoPic"
+            mode="aspectFit"
+          />
           <div class="index-page__header-title">
             {{ slogan }}
           </div>
@@ -128,6 +136,7 @@ import PressCollapseItem from '../press-collapse-item/press-collapse-item.vue';
 import PressCollapse from '../press-collapse/press-collapse.vue';
 import PressIcon from '../press-icon/press-icon.vue';
 import PressSection from '../press-section/press-section.vue';
+import { isNotInUni } from '../common/utils/utils';
 
 import {
   SCROLL_TOP_KEY,
@@ -485,6 +494,7 @@ export default {
     this.onBeforeDestroy();
   },
   methods: {
+    isNotInUni,
     // ============================================================
     // 生命周期
     // ============================================================

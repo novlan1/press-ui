@@ -59,7 +59,6 @@ export default {
   data() {
     return {
       logoPic: 'https://cdn.uwayfly.com/press/img/press-ui-full-logo.png',
-      isNotInUni: isNotInUni(),
       hideDemoList: getHideDemoList(),
     };
   },
@@ -141,7 +140,7 @@ export default {
       disableList = NOT_SHOW_IN_MP_COMPONENTS;
       // #endif
       // #ifdef H5
-      if (this.isNotInUni) {
+      if (isNotInUni()) {
         disableList = NOT_SHOW_IN_PURE_PROJECT;
       }
       // #endif

@@ -40,9 +40,15 @@
       >
         <div class="demo-preview">
           <img
+            v-if="isNotInUni()"
             class="demo-preview-img"
             src="https://cdn.uwayfly.com/press/img/press-ui-avatar-transparent-2.png"
           >
+          <image
+            v-else
+            class="demo-preview-img"
+            src="https://cdn.uwayfly.com/press/img/press-ui-avatar-transparent-2.png"
+          />
           <div class="demo-content">
             <div class="demo-content-h3">
               {{ t('title') }}
@@ -59,6 +65,8 @@
 <script>
 import PressSkeleton from 'press-ui/press-skeleton/press-skeleton.vue';
 import PressSwitch from 'press-ui/press-switch/press-switch.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
+
 
 export default {
   i18n: {
@@ -88,6 +96,7 @@ export default {
     };
   },
   methods: {
+    isNotInUni,
     onChange(val) {
       this.loading = !val;
     },

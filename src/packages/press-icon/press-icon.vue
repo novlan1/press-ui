@@ -11,16 +11,23 @@
       custom-class="press-icon__info"
     />
     <img
-      v-if="isImage"
+      v-if="isNotInUni() && isImage"
       :src="name"
       mode="aspectFit"
       class="press-icon__image"
     >
+    <image
+      v-else-if="isImage"
+      :src="name"
+      mode="aspectFit"
+      class="press-icon__image"
+    />
   </div>
 </template>
 <script>
 import { defaultProps, defaultOptions } from '../common/component-handler/press-component';
 import PressInfo from '../press-info/press-info.vue';
+import { isNotInUni } from '../common/utils/utils';
 
 import computed from './index';
 
@@ -86,6 +93,7 @@ export default {
     },
   },
   methods: {
+    isNotInUni,
     onClick(event) {
       this.$emit('click', event);
     },

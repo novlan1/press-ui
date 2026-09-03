@@ -2,7 +2,7 @@
   <div class="press-about">
     <div class="press-about__header">
       <img
-        v-if="isNotInUni"
+        v-if="isNotInUni()"
         class="press-about__banner"
         :src="helpConfig.banner"
         mode="aspectFill"
@@ -33,9 +33,15 @@
         >
           <div class="press-about__cell-left">
             <img
+              v-if="isNotInUni()"
               :src="item.img"
               class="press-about__cell-img"
             >
+            <image
+              v-else
+              :src="item.img"
+              class="press-about__cell-img"
+            />
           </div>
           <div class="press-about__cell-right">
             <div class="press-about__cell-title">
@@ -61,11 +67,19 @@
         QQ扫码加入
       </div>
       <img
+        v-if="isNotInUni()"
         :src="helpConfig.groupQRCode"
         :show-menu-by-longpress="true"
         class="press-about__dialog-image"
         mode="aspectFit"
       >
+      <image
+        v-else
+        :src="helpConfig.groupQRCode"
+        :show-menu-by-longpress="true"
+        class="press-about__dialog-image"
+        mode="aspectFit"
+      />
     </PressDialog>
   </div>
 </template>

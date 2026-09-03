@@ -30,7 +30,7 @@
       </div>
       <template v-else>
         <div
-          v-if="isNotInUni"
+          v-if="isNotInUni()"
           class="press-circle__text"
         >
           {{ text }}
@@ -113,7 +113,6 @@ export default {
     return {
       hoverColor: BLUE,
       id: 1,
-      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -167,6 +166,7 @@ export default {
     this.onDestroyed();
   },
   methods: {
+    isNotInUni,
     onDestroyed() {
       this.clearMockInterval();
     },

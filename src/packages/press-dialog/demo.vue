@@ -51,10 +51,17 @@
       @getuserinfo="getUserInfo"
     >
       <img
+        v-if="isNotInUni()"
         src="https://cdn.uwayfly.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg"
         style="width: 100%;margin-top: 16px;"
         mode="aspectFit"
       >
+      <image
+        v-else
+        src="https://cdn.uwayfly.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg"
+        style="width: 100%;margin-top: 16px;"
+        mode="aspectFit"
+      />
     </PressDialog>
   </div>
 </template>
@@ -62,6 +69,7 @@
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import { showDialog, showConfirmDialog } from 'press-ui/press-dialog';
 import PressDialog from 'press-ui/press-dialog/press-dialog.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
 
 
 const gBeforeClose = action => new Promise((resolve) => {
@@ -107,6 +115,7 @@ export default {
     };
   },
   methods: {
+    isNotInUni,
     onShowDialog(type) {
       if (type === 'component') {
         this.show = true;

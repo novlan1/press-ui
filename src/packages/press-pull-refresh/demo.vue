@@ -34,22 +34,41 @@
         >
           <template #pulling="{ distance }">
             <img
+              v-if="isNotInUni()"
               class="doge"
               src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
               :style="{ transform: `scale(${distance / 80})` }"
             >
+            <image
+              v-else
+              class="doge"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+              :style="{ transform: `scale(${distance / 80})` }"
+            />
           </template>
           <template #loosing>
             <img
+              v-if="isNotInUni()"
               src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
               class="doge"
             >
+            <image
+              v-else
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+              class="doge"
+            />
           </template>
           <template #loading>
             <img
-              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
+              v-if="isNotInUni()"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.png"
               class="doge"
             >
+            <image
+              v-else
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.png"
+              class="doge"
+            />
           </template>
           <p class="demo-button">
             {{ tips }}
@@ -63,6 +82,7 @@
 import PressPullRefresh from 'press-ui/press-pull-refresh/press-pull-refresh.vue';
 import PressTab from 'press-ui/press-tab/press-tab.vue';
 import PressTabs from 'press-ui/press-tabs/press-tabs.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
 
 
 export default {
@@ -105,6 +125,7 @@ export default {
   },
 
   methods: {
+    isNotInUni,
     onRefresh() {
       setTimeout(() => {
         this.onGTip('刷新成功');

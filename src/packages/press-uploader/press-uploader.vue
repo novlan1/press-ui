@@ -12,7 +12,7 @@
         >
           <template v-if="item.isImage || (item.type && item.type === 'image')">
             <img
-              v-if="isNotInUni"
+              v-if="isNotInUni()"
               :src="item.thumb || item.url"
               :mode="imageMode"
               class="press-upload__wrap__preview__image"
@@ -190,7 +190,6 @@ export default {
       // #endif
       lists: [],
       isInCount: true,
-      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -208,6 +207,7 @@ export default {
     },
   },
   methods: {
+    isNotInUni,
     addUnit,
     formatFileList() {
       const {

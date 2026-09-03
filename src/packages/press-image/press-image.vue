@@ -13,7 +13,7 @@
       <template v-if="!isError">
         <!-- #ifdef H5 -->
         <InnerImage
-          v-if="isNotInUni"
+          v-if="isNotInUni()"
           :src="src"
           :mode="mode"
           :show-menu-by-longpress="showMenuByLongpress"
@@ -30,7 +30,7 @@
         <!-- #endif -->
 
         <image
-          v-if="!isNotInUni"
+          v-if="!isNotInUni()"
           :src="src"
           :mode="mode"
           :show-menu-by-longpress="showMenuByLongpress"
@@ -134,8 +134,6 @@ export default {
       backgroundStyle: {},
       // 用于fade模式的控制组件显示与否
       show: false,
-
-      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -179,6 +177,7 @@ export default {
     this.show = true;
   },
   methods: {
+    isNotInUni,
     addUnit,
     // 点击图片
     onClick() {

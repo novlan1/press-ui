@@ -52,9 +52,15 @@
           use-slot
         >
           <img
+            v-if="isNotInUni()"
             style="width: 100%; height: 90px;"
             :src="imageList[index]"
           >
+          <image
+            v-else
+            style="width: 100%; height: 90px;"
+            :src="imageList[index]"
+          />
         </PressGridItem>
       </PressGrid>
     </demo-block>
@@ -155,6 +161,7 @@
 <script>
 import PressGridItem from 'press-ui/press-grid-item/press-grid-item.vue';
 import PressGrid from 'press-ui/press-grid/press-grid.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
 
 
 export default {
@@ -203,6 +210,7 @@ export default {
     };
   },
   methods: {
+    isNotInUni,
 
   },
 };

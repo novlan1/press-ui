@@ -116,9 +116,15 @@
           {{ t('radio') }} 1
           <template #icon>
             <img
+              v-if="isNotInUni()"
               class="img"
               :src="valueMap.customIcon === 'a' ? icon.active : icon.normal"
             >
+            <image
+              v-else
+              class="img"
+              :src="valueMap.customIcon === 'a' ? icon.active : icon.normal"
+            />
           </template>
         </PressRadio>
         <PressRadio
@@ -128,9 +134,15 @@
           {{ t('radio') }} 2
           <template #icon>
             <img
+              v-if="isNotInUni()"
               class="img"
               :src="valueMap.customIcon === 'b' ? icon.active : icon.normal"
             >
+            <image
+              v-else
+              class="img"
+              :src="valueMap.customIcon === 'b' ? icon.active : icon.normal"
+            />
           </template>
         </PressRadio>
       </PressRadioGroup>
@@ -199,6 +211,7 @@ import PressCellGroup from 'press-ui/press-cell-group/press-cell-group.vue';
 import PressCell from 'press-ui/press-cell/press-cell.vue';
 import PressRadioGroup from 'press-ui/press-radio-group/press-radio-group.vue';
 import PressRadio from 'press-ui/press-radio/press-radio.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
 
 
 export default {
@@ -255,6 +268,7 @@ export default {
     };
   },
   methods: {
+    isNotInUni,
     onChange(val, type) {
       console.log('onChange.val & type: ', val, type);
       // #ifdef VUE2

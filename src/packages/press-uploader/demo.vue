@@ -81,12 +81,21 @@
         @delete="deletePic"
       >
         <img
+          v-if="isNotInUni()"
           src="https://cdn.uwayfly.com/article/2023/10/own_mike_799718017ac81b11c0.png"
           mode="widthFix"
           style="width: 250px;height: 150px;"
           width="250px"
           height="150px"
         >
+        <image
+          v-else
+          src="https://cdn.uwayfly.com/article/2023/10/own_mike_799718017ac81b11c0.png"
+          mode="widthFix"
+          style="width: 250px;height: 150px;"
+          width="250px"
+          height="150px"
+        />
       </PressUploader>
     </demo-block>
 
@@ -101,6 +110,8 @@
 </template>
 <script>
 import PressUploader from 'press-ui/press-uploader/press-uploader.vue';
+import { isNotInUni } from 'press-ui/common/utils/utils';
+
 
 const IMG_URL = 'https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg';
 
@@ -163,6 +174,7 @@ export default {
     that = this;
   },
   methods: {
+    isNotInUni,
     // 删除图片
     deletePic(event) {
       console.log('[deletePic] event', event);

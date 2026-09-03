@@ -39,7 +39,7 @@
         v-else-if="mode === 'link'"
       >
         <PressIcon
-          v-if="isNotInUni"
+          v-if="isNotInUni()"
           :class="[rightIconClass]"
           :custom-class="rightIconCustomClass"
           name="arrow"
@@ -134,7 +134,6 @@ export default {
       animationDuration: 0,
       contentWidth: 0,
       translateX: 0,
-      isNotInUni: isNotInUni(),
     };
   },
   computed: {
@@ -201,6 +200,7 @@ export default {
     this.onDestroyed();
   },
   methods: {
+    isNotInUni,
     onDestroyed() {
       this.timer && clearTimeout(this.timer);
     },
