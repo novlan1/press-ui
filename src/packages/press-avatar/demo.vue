@@ -93,7 +93,7 @@ import PressAvatarGroup from 'press-ui/press-avatar-group/press-avatar-group.vue
 import PressAvatar from 'press-ui/press-avatar/press-avatar.vue';
 
 
-const src = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_0ab8e66284a3617ed9.jpeg';
+const src = 'https://cdn.uwayfly.com/article/2023/10/own_mike_0ab8e66284a3617ed9.jpeg';
 
 
 export default {
@@ -125,11 +125,11 @@ export default {
       customStyle: 'margin-right: 20px',
       urls: [
         src,
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_ef8e6956717db34745.jpg',
+        'https://cdn.uwayfly.com/article/2023/10/own_mike_ef8e6956717db34745.jpg',
         src,
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_7157200e469d0468b3.jpg',
+        'https://cdn.uwayfly.com/article/2023/10/own_mike_7157200e469d0468b3.jpg',
         src,
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg',
+        'https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg',
         src,
       ],
     };

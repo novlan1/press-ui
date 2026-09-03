@@ -58,7 +58,7 @@ export default {
   },
   data() {
     return {
-      logoPic: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
+      logoPic: 'https://cdn.uwayfly.com/press/img/press-ui-full-logo.png',
       isNotInUni: isNotInUni(),
       hideDemoList: getHideDemoList(),
     };

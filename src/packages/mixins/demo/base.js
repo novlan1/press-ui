@@ -5,7 +5,7 @@ import Toast from '../../press-toast/index';
 const SHARE_INFO = {
   title: 'Press UI 组件库',
   // path: '/pages/index/index',
-  imageUrl: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-avatar-wx-share.png',
+  imageUrl: 'https://cdn.uwayfly.com/press/img/press-ui-avatar-wx-share.png',
 };
 
 // Vue2 和 Vue3 的 uni-app 工程，共用的 mixin

@@ -191,7 +191,7 @@ Through the default slot, the upload style can be customized.
    @delete="deletePic"
 >
    <image
-     src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_799718017ac81b11c0.png"
+     src="https://cdn.uwayfly.com/article/2023/10/own_mike_799718017ac81b11c0.png"
      mode="widthFix"
      style="width: 250px;height: 150px;"
    />

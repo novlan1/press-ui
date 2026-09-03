@@ -574,8 +574,8 @@
         "pagePath": "pages/index/index",
         "text": "组件",
         // #ifdef H5
-        "iconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_778695a56389b1bcb5.png",
-        "selectedIconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_aede73416a7ac7c219.png"
+        "iconPath": "https://cdn.uwayfly.com/article/2023/10/own_mike_778695a56389b1bcb5.png",
+        "selectedIconPath": "https://cdn.uwayfly.com/article/2023/10/own_mike_aede73416a7ac7c219.png"
         // #endif
         // #ifndef H5
         "iconPath": "static/tabbar/assembly_default_3x.png",
@@ -586,8 +586,8 @@
         "pagePath": "pages/index/help",
         "text": "帮助",
         // #ifdef H5
-        "iconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_36d43d17e7ff46ae00.png",
-        "selectedIconPath": "https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_0bcab918b51e5d4005.png"
+        "iconPath": "https://cdn.uwayfly.com/article/2023/10/own_mike_36d43d17e7ff46ae00.png",
+        "selectedIconPath": "https://cdn.uwayfly.com/article/2023/10/own_mike_0bcab918b51e5d4005.png"
         // #endif
         // #ifndef H5
         "iconPath": "static/tabbar/my_default_3x.png",

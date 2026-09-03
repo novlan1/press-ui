@@ -61,17 +61,17 @@ Use slots to custom tips.
   <template #pulling="props">
     <img
       class="doge"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+      src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <template #loosing>
-    <img class="doge" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png" />
+    <img class="doge" src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png" />
   </template>
 
   <template #loading>
-    <img class="doge" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg" />
+    <img class="doge" src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg" />
   </template>
   <p>Refresh Count: {{ count }}</p>
 </press-pull-refresh>

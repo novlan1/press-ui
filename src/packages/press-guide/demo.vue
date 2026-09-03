@@ -94,7 +94,7 @@
             <p>用户引导的说明文案 1</p>
             <PressImage
               class="guide-demo-image"
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+              src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
             />
           </div>
         </template>
@@ -107,7 +107,7 @@
             <p>用户引导的说明文案 2</p>
             <PressImage
               class="guide-demo-image"
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+              src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
             />
           </div>
         </template>
@@ -120,7 +120,7 @@
             <p>用户引导的说明文案 3</p>
             <PressImage
               class="guide-demo-image"
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+              src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
             />
           </div>
         </template>

@@ -225,7 +225,7 @@ export default {
   },
   data() {
     return {
-      src: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg',
+      src: 'https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg',
       MODE_LIST,
     };
   },

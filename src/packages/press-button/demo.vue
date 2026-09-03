@@ -162,7 +162,7 @@
         {{ t('button') }}
       </PressButton>
       <PressButton
-        icon="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png"
+        icon="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent-2.png"
       >
         {{ t('button') }}
       </PressButton>

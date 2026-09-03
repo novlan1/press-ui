@@ -182,7 +182,7 @@ export default {
     /** Logo 图片地址 */
     logoPic: {
       type: String,
-      default: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
+      default: 'https://cdn.uwayfly.com/press/img/press-ui-full-logo.png',
     },
     /** 主标题 */
     slogan: {

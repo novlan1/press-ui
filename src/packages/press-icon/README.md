@@ -26,7 +26,7 @@ export default {
 
 ```html
 <press-icon name="close" />
-<press-icon name="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png" />
+<press-icon name="https://cdn.uwayfly.com/article/2023/5/own_mike_ce77489af93cb34c4b.png" />
 ```
 
 ### 提示信息

@@ -35,19 +35,19 @@
           <template #pulling="{ distance }">
             <img
               class="doge"
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
               :style="{ transform: `scale(${distance / 80})` }"
             >
           </template>
           <template #loosing>
             <img
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
               class="doge"
             >
           </template>
           <template #loading>
             <img
-              src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
+              src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg"
               class="doge"
             >
           </template>

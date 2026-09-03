@@ -66,7 +66,7 @@ Used to display some information.
 export default {
    data() {
      return {
-       avatar: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar.png',
+       avatar: 'https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar.png',
      }
    }
 }

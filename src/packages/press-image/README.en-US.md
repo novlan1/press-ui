@@ -25,7 +25,7 @@ The basic usage is the same as the native `img` tag, and native attributes such 
 
 ```html
 <PressImage
-   src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_356f9fd1f505c35fa6.jpg"
+   src="https://cdn.uwayfly.com/article/2023/10/own_mike_356f9fd1f505c35fa6.jpg"
    width="100"
    height="100"
 />

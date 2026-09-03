@@ -212,7 +212,7 @@ export default {
 
 下面是`picker`有`8000`项时的对比，左图是未使用虚拟列表，右图是使用虚拟列表。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/7/virtual-list-before.gif" width="400">
+<img src="https://cdn.uwayfly.com/article/2023/7/virtual-list-before.gif" width="400">
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/7/virtual-list-after.gif" width="400">
+<img src="https://cdn.uwayfly.com/article/2023/7/virtual-list-after.gif" width="400">
 

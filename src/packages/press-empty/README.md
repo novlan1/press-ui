@@ -47,7 +47,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 ```html
 <press-empty
   class="custom-image"
-  image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fcustom-empty-image.png"
+  image="https://cdn.uwayfly.com/press%2Fimg%2Fcustom-empty-image.png"
   description="描述文字"
 />
 ```

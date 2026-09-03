@@ -2,7 +2,7 @@
 <!-- 复制到 docs 下的时候，去掉“查看文档”和“查看示例” -->
 <div align="center">
   <a href="https://github.com/novlan1/press-ui">
-    <img width="150" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
+    <img width="150" src="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" style="margin-bottom: -25px;">
   </a>
 
   <br>
@@ -36,7 +36,7 @@
 - 🍭 支持主题定制，内置 600+ 个主题变量
 - 🌍 支持国际化，内置 16+ 种语言包
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/services.gif" width="600">
+<img src="https://cdn.uwayfly.com/press/img/services.gif" width="600">
 
 ### 2. 解决痛点
 
@@ -88,7 +88,7 @@ import PressButton from 'press-ui/press-button/press-button.vue'
 
 第二行分别为基于 `uni-app` 的 `Vue3.x` 版本的H5、微信小程序，及非 `uni-app` 环境的 `Vue2.x` 、`Vue3.x` 版本的H5项目。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-demo-cluster-20250602.png" width="800">
+<img src="https://cdn.uwayfly.com/press%2Fimg%2Fpress-demo-cluster-20250602.png" width="800">
 
 ### 6. 示例项目
 
@@ -108,7 +108,7 @@ import PressButton from 'press-ui/press-button/press-button.vue'
 
 欢迎加入QQ群沟通。
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/qq-group-1212.png" width="180"/>
+<img src="https://cdn.uwayfly.com/press/img/qq-group-1212.png" width="180"/>
 
 <!-- ### 8. Star History
 

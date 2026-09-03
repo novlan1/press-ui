@@ -45,14 +45,14 @@
         >
           <PressImage
             v-if="mainActiveIndex == 0"
-            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+            src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
             width="100%"
             height="100%"
             transition-style="width: 100%;height: 100%;"
           />
           <PressImage
             v-else-if="mainActiveIndex == 1"
-            src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg"
+            src="https://cdn.uwayfly.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg"
             width="100%"
             height="100%"
             transition-style="width: 100%;height: 100%;"

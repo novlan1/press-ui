@@ -115,7 +115,7 @@ export default {
     PressNumberKeyboard,
   },
   data() {
-    const img = 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png';
+    const img = 'https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent.png';
     return {
       current: '',
       values: {

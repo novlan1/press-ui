@@ -69,7 +69,7 @@ Set the button icon through the `icon` property, which supports all icons in the
 ```html
 <press-button icon="star-o" type="primary" />
 <press-button icon="star-o" type="primary">button</press-button>
-<press-button icon="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar.png" type="info">
+<press-button icon="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar.png" type="info">
    button
 </press-button>
 ```

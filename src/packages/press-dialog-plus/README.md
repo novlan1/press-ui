@@ -57,7 +57,7 @@ export default {
         content: '仅限队长报名，发给队长来报名吧！',
         confirmText: '确认',
         cancelText: '取消',
-        src: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/qrcode-wx-mp.png',
+        src: 'https://cdn.uwayfly.com/press/qrcode/qrcode-wx-mp.png',
         onLongPressImage: () => {
           console.log('长按图片')
         }

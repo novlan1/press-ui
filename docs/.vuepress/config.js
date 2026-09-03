@@ -97,7 +97,7 @@ module.exports = {
     // Knot Agent Chat 配置，填入你的 agentId 即可启用 AI 问答助手
     agentId: '',
     logo: {
-      img: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
+      img: 'https://cdn.uwayfly.com/press/img/press-ui-full-logo.png',
       // link: '',
     },
     subLogo: {

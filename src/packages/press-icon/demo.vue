@@ -205,7 +205,7 @@ export default {
     return {
       RED,
       demoIcon: 'chat-o',
-      demoImage: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
+      demoImage: 'https://cdn.uwayfly.com/article/2023/5/own_mike_ce77489af93cb34c4b.png',
 
       icons: {
         basic: [],

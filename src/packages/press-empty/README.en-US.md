@@ -35,7 +35,7 @@ When a custom image is required, any image URL can be passed in the image attrib
 ```html
 <press-empty
    class="custom-image"
-   image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fcustom-empty-image.png"
+   image="https://cdn.uwayfly.com/press%2Fimg%2Fcustom-empty-image.png"
    description="Description text"
 />
 ```

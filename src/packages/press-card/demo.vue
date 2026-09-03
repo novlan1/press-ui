@@ -181,8 +181,8 @@ export default {
   },
   data() {
     return {
-      cover: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/card-cover.jpeg',
-      avatar: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar.png',
+      cover: 'https://cdn.uwayfly.com/press/img/card-cover.jpeg',
+      avatar: 'https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar.png',
       extraIcon: {
         color: '#4cd964',
         size: '22',

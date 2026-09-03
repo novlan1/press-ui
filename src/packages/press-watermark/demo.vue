@@ -115,7 +115,7 @@ export default {
   data() {
     return {
       fullPage: false,
-      image: 'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png',
+      image: 'https://cdn.uwayfly.com/press/img/press-ui-full-logo.png',
       watermark: `<div
               style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%);"
             >

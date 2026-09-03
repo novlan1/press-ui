@@ -1,5 +1,5 @@
 <div align="center">
-   <img alt="logo" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style=" margin-bottom: -25px;">
+   <img alt="logo" src="https://cdn.uwayfly.com/press%2Fimg%2Fpress-ui-avatar-transparent.png" width="150" style=" margin-bottom: -25px;">
 </div>
 <h3 align="center">Easy-to-use, flexible, uni-app-based cross-end component library</h3>
 
@@ -49,10 +49,10 @@ At the same time, depositing business components in the project into `press-ui` 
 
 `press-ui` can be applied to `uni-app` projects, or ordinary H5 projects, and has been applied to projects such as Wangwang Saibao, HoK Club, Saibao pro and so on.
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/pvp-esports-screenshort.png" width="300">
+<img src="https://cdn.uwayfly.com/article/2023/4/pvp-esports-screenshort.png" width="300">
 
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/4/hok-club-screenshot.png" width="300">
+<img src="https://cdn.uwayfly.com/article/2023/4/hok-club-screenshot.png" width="300">
 
 
 
@@ -104,7 +104,7 @@ module.exports = {
 
 The following figure is an example QR code with three terminals:
 
-<img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600">
+<img src="https://cdn.uwayfly.com/press/qrcode/press-ui-demo-qrcode-3.png" width="600">
 
 ### 6. Contribution Guidelines
 

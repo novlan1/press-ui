@@ -32,7 +32,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-upload">
       <div class="press-upload__wrap">
         <div class="press-upload__wrap__preview">
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
+          <image src="https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
           <div class="press-upload__status">
             <div class="press-upload__status__icon">
               <div class="press-loading-index" mode="circle">
@@ -51,7 +51,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="press-upload__wrap__preview">
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
+          <image src="https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
           <div class="press-upload__status">
             <div class="press-upload__status__icon">
               <div class=" press-icon-plus press-icon-plus-close" style="color: rgb(255, 255, 255); font-size: 22px;">
@@ -84,7 +84,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-upload">
       <div class="press-upload__wrap">
         <div class="press-upload__wrap__preview">
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
+          <image src="https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
           <!---->
           <div class="press-upload__deletable">
             <div class="press-upload__deletable__icon press-icon-plus press-icon-plus-cross" style="color: rgb(255, 255, 255); font-size: 16px;">
@@ -108,7 +108,7 @@ exports[`renders demo correctly 1`] = `
     <div class="press-upload">
       <div class="press-upload__wrap">
         <div class="press-upload__wrap__preview">
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
+          <image src="https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
           <!---->
           <div class="press-upload__deletable">
             <div class="press-upload__deletable__icon press-icon-plus press-icon-plus-cross" style="color: rgb(255, 255, 255); font-size: 16px;">
@@ -119,7 +119,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="press-upload__wrap__preview">
-          <image src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
+          <image src="https://cdn.uwayfly.com/article/2023/10/own_mike_a17f94292a34e9f644.jpeg" mode="aspectFill" class="press-upload__wrap__preview__image" style="width: 80px; height: 80px;"></image>
           <!---->
           <div class="press-upload__deletable">
             <div class="press-upload__deletable__icon press-icon-plus press-icon-plus-cross" style="color: rgb(255, 255, 255); font-size: 16px;">

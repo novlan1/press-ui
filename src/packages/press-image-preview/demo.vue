@@ -105,9 +105,9 @@ export default {
       show: false,
       customStyle,
       images: [
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg',
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg',
-        'https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg',
+        'https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg',
+        'https://cdn.uwayfly.com/article/2023/5/own_mike_8f25b9e2e75f6754ad.jpeg',
+        'https://cdn.uwayfly.com/article/2023/5/own_mike_260c4142c7225b5f73.jpeg',
       ],
       FUNCTIONAL_ID_MAP,
     };

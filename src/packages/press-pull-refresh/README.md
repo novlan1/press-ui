@@ -81,19 +81,19 @@ export default {
   <template #pulling="props">
     <img
       class="doge"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
+      src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <!-- 释放提示 -->
   <template #loosing>
-    <img class="doge" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png" />
+    <img class="doge" src="https://cdn.uwayfly.com/article/2024/7/own_mike_9ebf38f1fc4354df84.png" />
   </template>
 
   <!-- 加载提示 -->
   <template #loading>
-    <img class="doge" src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg" />
+    <img class="doge" src="https://cdn.uwayfly.com/article/2024/7/own_mike_aecbd81ffaca64b6f4.jpg" />
   </template>
   <p>刷新次数: {{ count }}</p>
 </press-pull-refresh>

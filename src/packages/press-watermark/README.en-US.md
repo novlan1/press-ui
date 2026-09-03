@@ -23,7 +23,7 @@ Use the `image` prop to set the watermark image, and use `opacity` prop to adjus
 
 ```html
 <press-watermark
-  image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
+  image="https://cdn.uwayfly.com/press/img/press-ui-full-logo.png"
   opacity="0.2"
 />
 ```
@@ -34,7 +34,7 @@ Use `gap-x` `gap-y` prop to control the gap between watermark items.
 
 ```html
 <press-watermark
-  image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
+  image="https://cdn.uwayfly.com/press/img/press-ui-full-logo.png"
   :gap-x="30"
   :gap-y="10"
   opacity="0.2"
@@ -47,7 +47,7 @@ Use `rotate` prop to control the rotate of watermark. The default value is `-22`
 
 ```html
 <press-watermark
-  image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
+  image="https://cdn.uwayfly.com/press/img/press-ui-full-logo.png"
   rotate="22"
   opacity="0.2"
 />
@@ -59,7 +59,7 @@ Use the `full-page` prop to control the display range of the watermark.
 
 ```html
 <press-watermark
-  image="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press/img/press-ui-full-logo.png"
+  image="https://cdn.uwayfly.com/press/img/press-ui-full-logo.png"
   opacity="0.2"
   :full-page="true"
 />

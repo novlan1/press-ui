@@ -142,7 +142,7 @@ Sets `mode` or the `mode` of a `step` to `dialog`, whichever takes precedence.
     <p>User guide text 1</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
   <div
@@ -152,7 +152,7 @@ Sets `mode` or the `mode` of a `step` to `dialog`, whichever takes precedence.
     <p>User guide text 2</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
   <div
@@ -162,7 +162,7 @@ Sets `mode` or the `mode` of a `step` to `dialog`, whichever takes precedence.
     <p>User guide text 3</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
 </PressGuide>
@@ -216,7 +216,7 @@ By not setting the `title` and `body` of a `step`, you can completely customize 
     <p>User guide text 1</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
   <div
@@ -226,7 +226,7 @@ By not setting the `title` and `body` of a `step`, you can completely customize 
     <p>User guide text 2</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
   <div
@@ -236,7 +236,7 @@ By not setting the `title` and `body` of a `step`, you can completely customize 
     <p>User guide text 3</p>
     <PressImage
       class="guide-demo-image"
-      src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
+      src="https://cdn.uwayfly.com/article/2023/5/own_mike_9f901ce42e18990883.jpeg"
     />
   </div>
 </PressGuide>

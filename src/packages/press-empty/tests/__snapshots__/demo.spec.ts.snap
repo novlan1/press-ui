@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-empty   ">
       <div class="press-empty__image"></div>
-      <div class="press-empty__image"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fempty-image-default.png" class="press-empty__image__img"></div>
+      <div class="press-empty__image"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fempty-image-default.png" class="press-empty__image__img"></div>
       <div class="press-empty__description"></div>
       <div class="press-empty__description">
         描述文字
@@ -52,7 +52,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-empty   custom-image">
       <div class="press-empty__image"></div>
-      <div class="press-empty__image"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fcustom-empty-image.png" class="press-empty__image__img" style="width: 90px; height: 90px;"></div>
+      <div class="press-empty__image"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fcustom-empty-image.png" class="press-empty__image__img" style="width: 90px; height: 90px;"></div>
       <div class="press-empty__description"></div>
       <div class="press-empty__description">
         描述文字
@@ -63,7 +63,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="press-empty   ">
       <div class="press-empty__image"></div>
-      <div class="press-empty__image"><img src="https://mike-1255355338.cos.ap-guangzhou.myqcloud.com/press%2Fimg%2Fempty-image-default.png" class="press-empty__image__img"></div>
+      <div class="press-empty__image"><img src="https://cdn.uwayfly.com/press%2Fimg%2Fempty-image-default.png" class="press-empty__image__img"></div>
       <div class="press-empty__description"></div>
       <div class="press-empty__description">
         描述文字
